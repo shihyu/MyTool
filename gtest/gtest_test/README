@@ -1,0 +1,1 @@
+g++ -g test_foo.cpp -o test_foo -I ../gtest-1.7.0/include/ ../gtest-1.7.0/lib/.libs/libgtest.a ../gtest-1.7.0/lib/.libs/libgtest_main.a -lpthread

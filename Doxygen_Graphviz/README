@@ -1,0 +1,4 @@
+先跑 doxygen -g myconfig 產生設定檔 myconfig, 再修改 myconfig:
+INPUT
+RECURSIVE = YES
+最後執行 doxygen myconfig 即可。
