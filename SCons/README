@@ -1,7 +1,3 @@
-1. vim SConstruct
-
-2.
-Program('SConsTest', Glob('*.cpp'))
-
-
-SConsTest 執行檔名稱
+setup stage:
+1. pythno setup.py build
+2. python setup.py install

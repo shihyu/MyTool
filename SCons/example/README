@@ -1,0 +1,7 @@
+1. vim SConstruct
+2. Program('SConsTest', Glob('*.cpp'))
+3. scons .  // build
+4. scons -c  // clear
+
+
+SConsTest 執行檔名稱
