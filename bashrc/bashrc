@@ -26,7 +26,7 @@ alias vi='vim'
 alias indent='indent -bad -bap -saf -sai -saw -npro -npcs -npsl -cli8 -i8 -ts8 -sob -l80 -ss -bl -bls -bli 0'
 alias gcc='gcc -Wall -g -pedantic'
 #alias indent='indent -npro -nip -nlp -npsl -i4 -ts4 -sob -l200 -ss -bl -bli 0 -l80'
-alias style='astyle --A2 --delete-empty-lines -s4 -K -f -p -H -U -c -n -l -N -L -Y -M -j -k1 -z2'
+alias style='astyle --A2 --delete-empty-lines -s4 -K -f -p -H -U -c -n -N -L -Y -M -j -k1 -z2'
 
 #HTC
 #alias pull='adb pull /storage/sdcard0/htclog'
