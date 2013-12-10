@@ -43,8 +43,9 @@ alias eclipse='/home/shihyu/adt-bundle-linux-x86_64-20130917/eclipse/eclipse'
 
 rm_log() 
 {
-    adb shell rm /data/htclog/*
-    adb shell rm /data/tombstones/tomb*
+    adb shell rm /data/htclog/*;
+    adb shell rm /data/log/*;
+    adb shell rm /data/tombstones/*;
 }
 
 #function dlx_envsetup()
