@@ -1,0 +1,33 @@
+[ui]
+username = fcamel@some-host
+editor = /usr/bin/vim
+
+[defaults]
+log = --color always
+diff = --color auto
+
+[extensions]
+color =
+fetch =
+convert =
+graphlog =
+bookmarks =
+mq =
+record =
+rebase =
+transplant =
+hgsubversion = /home/hg/extensions/hgsubversion/hgsubversion
+hgshelve = /home/hg/extensions/hgshelve/hgshelve.py
+histedit = /home/hg/extensions/histedit/hg_histedit.py
+
+[bookmarks]
+track.current = True
+
+[trusted]
+users = 
+
+[tortoisehg]
+editor = /usr/bin/gvim
+
+[extdiff] 
+cmd.vdiff = kdiff3 
