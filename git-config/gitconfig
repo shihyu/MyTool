@@ -32,6 +32,7 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
+    delete = !git ls-files -z --deleted | xargs -0 git rm
 
     reci = commit --amend
     unstage = reset HEAD --
@@ -40,3 +41,7 @@
     ign = ls-files -o -i --exclude-standard
 [core]
     editor = vim
+	excludesfile = /home/shihyu/.gitignore_global
+	quotepath = false
+
+
