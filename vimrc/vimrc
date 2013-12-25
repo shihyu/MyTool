@@ -311,12 +311,20 @@ fun! ShowFuncName()
   let lnum = line(".")
   let col = col(".")
   echohl ModeMsg
-  echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
+
+
+  if &filetype=="java"
+      "java code
+      echo getline(search("\\h\\+\\s\\+\\h\\+\\s*(.*)", 'bW'))
+  else
+      " c/c++ code
+      echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
+  endif
+
   echohl None
   call search("\\%" . lnum . "l" . "\\%" . col . "c")
 endfun
 map F :call ShowFuncName() <CR>
-
 
 " Open .h if it's a cpp file, and vice versa.
 function! OpenComplementFile()
