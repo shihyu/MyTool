@@ -45,7 +45,6 @@ Bundle 'rking/ag.vim'
 Bundle 'thinca/vim-logcat'
 filetype plugin indent on
 
-
 nmap <leader>U :GundoToggle<cr>
 let g:gundo_preview_bottom = 1
 let g:gundo_preview_height = 10
