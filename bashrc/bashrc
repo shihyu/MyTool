@@ -40,11 +40,11 @@ alias img_zip='zip rom.zip -j android-info.txt *.img *.hdr'
 alias logcat='adb logcat -c && adb logcat -v threadtime 2>&1 | tee /tmp/logcat.txt'
 #alias rm_log='adb shell rm /data/htclog/*'
 alias eclipse='/home/shihyu/adt-bundle-linux-x86_64-20130917/eclipse/eclipse'
-alias findcpp='find . -name '*.cpp''
-alias findc='find . -name '*.c''
-alias findh='find . -name '*.h''
-alias findmk='find . -name '*.mk''
-alias findjava='find . -name '*.java''
+alias findcpp="find . -name '*.cpp' -print"
+alias findc="find . -name '*.c'"
+alias findh="find . -name '*.h'"
+alias findmk="find . -name '*.mk'"
+alias findjava="find . -name '*.java'"
 
 rm_log() 
 {
