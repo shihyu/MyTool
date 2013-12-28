@@ -384,3 +384,21 @@ function! AdjustWindowHeight(minheight, maxheight)
    endw
    exe max([min([n_lines, a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
+
+"將當前正在編輯但未保存的文件與已保存的做diff
+func  DiffWithSaved () 
+    let  ft = &filetype
+     diffthis 
+    vnew  |  r  # |  normal!  1Gdd
+     diffthis 
+    exe  "setlocal bt=nofile bh=wipe nobl noswf ro ft="  .  ft 
+endfunc 
+nnoremap <leader>df  :call DiffWithSaved()<CR>
+
+"刪除行末空格
+"func  DeleteTrailingWhiteSpace () 
+"    normal  mZ
+"     % s / \s\+$ // e 
+"    normal  `Z
+"endfunc 
+"au  BufWrite  *  if  &ft  !=  'mkd'  |  call  DeleteTrailingWhiteSpace ()  |  endif
