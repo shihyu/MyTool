@@ -161,12 +161,6 @@ imap <F2> <C-R>=strftime("YAO - [%c]")<CR>
 imap jj <ESC>
 "imap ,, -><C-X><C-O>
 
-"nnoremap <F12> :TlistToggle<CR>
-
-
-nmap <silent> <F12> :TagbarToggle<CR>
-let g:tagbar_ctags_bin = 'ctags'
-let g:tagbar_width = 30
 
 " 删除所有行未尾空格
 nnoremap <F11> :%s/[ \t\r]\+$//g<cr>
@@ -402,3 +396,22 @@ nnoremap <leader>df  :call DiffWithSaved()<CR>
 "    normal  `Z
 "endfunc 
 "au  BufWrite  *  if  &ft  !=  'mkd'  |  call  DeleteTrailingWhiteSpace ()  |  endif
+
+
+" taglist setting
+" updatetime 加速
+set updatetime=100 
+nmap <silent> <F12> :TagbarToggle<CR>
+map <F7> <ESC>:wincmd p<CR>
+let g:tagbar_ctags_bin = 'ctags'
+let g:tagbar_width = 30
+let Tlist_Show_One_File = 1 " Displaying tags for only one file~
+let Tlist_Exist_OnlyWindow = 1 " if you are the last, kill yourself
+let Tlist_Use_Right_Window = 0 " split to the right side of the screen
+let Tlist_Display_Prototype = 0 " do not show prototypes and not tags in the taglist window.
+let Tlist_Compart_Format = 1 " Remove extra information and blank lines from the taglist window.
+let Tlist_GainFocus_On_ToggleOpen = 1 " Jump to taglist window on open.
+let Tlist_Display_Tag_Scope = 1 " Show tag scope next to the tag name.
+let Tlist_Close_On_Select = 1 " Close the taglist window when a file or tag is selected.
+let Tlist_Enable_Fold_Column = 0 " Don't Show the fold indicator column in the taglist window.
+let Tlist_WinWidth = 40
