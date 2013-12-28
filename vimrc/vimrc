@@ -281,6 +281,9 @@ colorscheme molokai
 au filetype php set dictionary-=~/.vim/php_funclist.txt dictionary+=~/.vim/php_funclist.txt
 au filetype php set complete-=k complete+=k
 
+
+"Preserve last editing position in VIM
+"need remove ~/.viminfo 
 if has("autocmd")
    autocmd BufRead *.txt set tw=78
    autocmd BufReadPost *
@@ -288,6 +291,7 @@ if has("autocmd")
       \   exe "normal g'\"" |
       \ endif
 endif
+
 
 set cursorline
 set cursorcolumn
