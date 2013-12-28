@@ -1,0 +1,60 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsBufEdit</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsBufEdit(const char *pszFilename, const char *pszLoadOptions="", int IgnoreNotFound=a, const char *pszLoadOptions2="", int quiet=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFilename">pszFilename</A></code> - File to open.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszLoadOptions">pszLoadOptions</A></code> - One of the following values:
+
+<dl>
+<dt>""</dt><dd>Display existing buffer or read
+<i>pszFilename</i> from disk.</dd>
+
+<dt>"+d"</dt><dd>Always read <i>pszFilename</i> from disk
+even if this file is already loaded in the
+editor.</dd>
+
+<dt>"+b"</dt><dd>Only succeed if a buffer already exists of the
+name <i>pszFilename</i>.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="IgnoreNotFound">IgnoreNotFound</A></code> - If non-zero, create a new buffer with name
+pszFilename if this file is not found.  This
+option has no effect if
+<i>pszLoadOptions</i> is "+bi" or "+b".
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszLoadOptions2">pszLoadOptions2</A></code> - This option may be one of the following:
+
+<dl>
+<dt>""</dt><dd>No effect.</dd>
+
+<dt>"+L"</dt><dd>Always load entire file and close file handle.</dd>
+
+<dt>"-L"</dt><dd>Never load entire file and leave file handle
+open to file.</dd>
+
+<dt>"+E:<i>ddd</i>"</dt><dd>Expand tabs to spaces.  This expands tabs in
+increments of <i>ddd</i>.</dd>
+
+<dt>"+E"</dt><dd>Expand tabs to spaces. If your tabs settings
+for the file being loaded are of the form
+"+<<i>increment</i>>" (like +4), then  tabs
+are expanded in increments of
+<i>increment</i>.  Otherwise tabs are
+expanded in increments of 8.  To set your
+tabs in a form "+<<i>increment</i>>", bring
+up the Extension Options dialog box
+("Tools", "Options", "File Extension Setup...",
+select the Indent tab, select the
+extension, and set the "Tabs:" text box).  For
+languages such as REXX and UNIX shell
+scripts which require the contents of the file
+to be analyzed before the file type is known,
+the fundamental mode tab settings are used.</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns buffer id if successful (0 is a valid buffer id).  Otherwise a
+negative error code is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="Edit_Window_Functions.html">Edit Window Functions</a>, <a href="Editor_Control_Functions.html">Editor Control Functions</a>, <a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsBufCreate.html">vsBufCreate</a></blockquote>
+</body>
+</html>

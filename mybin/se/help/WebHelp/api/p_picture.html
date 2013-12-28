@@ -1,0 +1,74 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_picture</title>
+</head>
+<body>
+
+<h3><b>int p_picture</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">The <b>p_picture</b> property is an index to a picture in the names table.<p>
+<P><b>List Box</b> - Determines the of scaling picture and whether the list should display pictures.<p>
+<P><b>Text Box, Combo Box</b> - Determines the picture displayed to the left of the text.<p>
+<P><b>Picture Box, Image</b> - Determines the picture displayed.<p>
+<P><b>Form</b> - Determines the picture displayed on a docked tool window that is part of tab group.<p>
+<p>Here's how you can create a toolbar for the editor without
+writing any code at all:
+<ol>
+<li>Create a new form for editing ("Macro", "New").
+<li>Create an image control.  Double click on the image control (bottom right.  Looks like slanted rectangle) in the dialog editor.
+<li>Set the p_picture property to find.bmp.  Make sure you specify the full path (c:\vslick\bitmaps is the default path used by installation program).
+<li>Set the p_command property to gui-find.  Notice that the down arrow of the combo box displays all the editor commands.
+<li>Set the p_message property to "Searches for a string you specify".
+<li>Set the p_style property to PSPIC_HIGHLIGHTED_BUTTON.
+<li>Repeat the steps 2-6 to add more tool bar buttons.
+</ol><p>
+Save your tool bar.  To run it such that is stays on top of the MDI Window, type
+the command "<b>show -mdi form-name</b>" on the SlickEdit command line where
+form-name is the name of the tool bar form you created.  If you want to bind
+it to a key, use macro recording to record typing the command on the command
+line.  The mouse may be used during macro recording to place your cursor on
+the command line.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+<code>
+#include 'slick.sh'
+
+#define PIC_LSPACE_Y 60    // Extra line spacing for list box.
+#define PIC_LINDENT_X 60   // Indent before for list box bitmap.
+
+defeventtab form1;
+list1.<a href="on_create.html">on_create</a>()
+{
+   <a href="p_pic_space_y.html">p_pic_space_y</a>=PIC_LSPACE_Y;
+   <a href="_lbadd_item.html">_lbadd_item</a>('a:',PIC_LINDENT_X,_pic_drremov);
+   <a href="_lbadd_item.html">_lbadd_item</a>('b:',PIC_LINDENT_X,_pic_drremov);
+   <a href="_lbadd_item.html">_lbadd_item</a>('c:',PIC_LINDENT_X,_pic_drfixed);
+   // The <b>p_picture</b> property must be set to indicate that this list box
+   // is displaying pictures and to provide a scaling picture for
+   // the <a href="p_pic_point_scale.html">p_pic_point_scale</a> property.  The <a href="p_pic_point_scale.html">p_pic_point_scale</a> property allows the picture to
+   // resized for fonts larger or smaller that the value of the <a href="p_pic_point_scale.html">p_pic_point_scale</a> point size.
+   <b>p_picture</b>=picture;
+   <a href="p_pic_point_scale.html">p_pic_point_scale</a>=8;
+}
+
+// Another example
+
+#include 'slick.sh'
+defeventtab form1;
+combo1.<a href="on_create.html">on_create</a>()
+{
+   <a href="p_picture.html">p_picture</a>=_pic_drremov;
+   // Set indent before picture.
+   <a href="p_pic_indent_x.html">p_pic_indent_x</a>=100;
+   // Set indent after picture.
+   <a href="p_text.html">p_text</a>='A:';
+   <a href="p_after_pic_indent_x.html">p_after_pic_indent_x</a>=200;
+   // Extra y spacing. Half displayed above and half below picture
+   <b>p_pic_space_y</b>=100;
+}
+
+
+</code>
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Combo Box, Text Box, List Box, Picture Box, Image</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Combo_Box_Properties.html">Combo Box Properties</a>, <a href="Text_Box_Properties.html">Text Box Properties</a>, <a href="List_Box_Properties.html">List Box Properties</a>, <a href="Picture_Box_Properties.html">Picture Box Properties</a>, <a href="Image_Properties.html">Image Properties</a></blockquote>
+</body>
+</html>

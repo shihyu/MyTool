@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>save_as</title>
+</head>
+<body>
+
+<h3><b>_command int save_as(_str cmdline='', int sv_flags=-1)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Saves current buffer under a name you specify.  If the -n option is not
+given, the buffer name is changed to the new name.  The -r option
+allows you to save to a file which is read only and is only supported by
+the UNIX version.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="cmdline">cmdline</A></code> - is a string in the format: [-n] [-r] <i>filename</i>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common return codes are
+INVALID_OPTION_RC, ACCESS_DENIED_RC,
+ERROR_OPENING_FILE_RC, ERROR_WRITING_FILE_RC,
+INSUFFICIENT_DISK_SPACE_RC, DRIVE_NOT_READY_RC,
+and PATH_NOT_FOUND_RC.  On error, message box is displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="gui_save_as.html">gui_save_as</a>, <a href="save.html">save</a>, <a href="name.html">name</a></blockquote>
+</body>
+</html>

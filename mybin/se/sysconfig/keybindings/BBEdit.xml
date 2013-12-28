@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<KeyBindings Version="1.0" Emulation="BBEdit">
+	<Mode Name="actionscript">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="*" Command="c-asterisk"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="/" Command="c-slash"/>
+		<Assign Key=":" Command="c-colon"/>
+		<Assign Key="=" Command="auto-codehelp-key"/>
+		<Assign Key="Enter" Command="actionscript-enter"/>
+		<Assign Key="Space" Command="actionscript-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+		<Assign Key="{" Command="c-begin"/>
+		<Assign Key="}" Command="c-endbrace"/>
+	</Mode>
+	<Mode Name="ada">
+		<Assign Key="'" Command="auto-codehelp-key"/>
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="Enter" Command="ada-enter"/>
+		<Assign Key="Space" Command="ada-space"/>
+	</Mode>
+	<Mode Name="asm390">
+		<Assign Key="Shift+Tab" Command="cob-backtab"/>
+		<Assign Key="Space" Command="asm390-space"/>
+		<Assign Key="Tab" Command="cob-tab"/>
+	</Mode>
+	<Mode Name="awk">
+		<Assign Key="Enter" Command="awk-enter"/>
+		<Assign Key="Space" Command="awk-space"/>
+		<Assign Key="{" Command="awk-begin"/>
+		<Assign Key="}" Command="awk-endbrace"/>
+	</Mode>
+	<Mode Name="c">
+		<Assign Key='"' Command="c-dquote"/>
+		<Assign Key="#" Command="c-pound"/>
+		<Assign Key="(" Command="c-paren"/>
+		<Assign Key="*" Command="c-asterisk"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="/" Command="c-slash"/>
+		<Assign Key=":" Command="c-colon"/>
+		<Assign Key=";" Command="c-semicolon"/>
+		<Assign Key="&lt;" Command="auto-functionhelp-key"/>
+		<Assign Key="=" Command="auto-codehelp-key"/>
+		<Assign Key="&gt;" Command="auto-codehelp-key"/>
+		<Assign Key="@" Command="c-atsign"/>
+		<Assign Key="\" Command="c-backslash"/>
+		<Assign Key="Enter" Command="c-enter"/>
+		<Assign Key="Space" Command="c-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+		<Assign Key="{" Command="c-begin"/>
+		<Assign Key="}" Command="c-endbrace"/>
+	</Mode>
+	<Mode Name="cg">
+		<Assign Key="Enter" Command="cg-enter"/>
+		<Assign Key="Tab" Command="smarttab"/>
+		<Assign Key="}" Command="cg-endbrace"/>
+	</Mode>
+	<Mode Name="cics">
+		<Assign Key="-" Command="cob-maybe-case-word"/>
+		<Assign Key="0 -&gt; 9" Command="cob-maybe-case-word"/>
+		<Assign Key="_" Command="cob-maybe-case-word"/>
+		<Assign Key="A -&gt; Z" Command="cob-maybe-case-word"/>
+		<Assign Key="a -&gt; z" Command="cob-maybe-case-word"/>
+		<Assign Key="Backspace" Command="cob-maybe-case-backspace"/>
+		<Assign Key="Enter" Command="cics-enter"/>
+		<Assign Key="Space" Command="cics-space"/>
+	</Mode>
+	<Mode Name="cobol">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="-" Command="cob-maybe-case-word"/>
+		<Assign Key="0 -&gt; 9" Command="cob-maybe-case-word"/>
+		<Assign Key=":" Command="auto-codehelp-key"/>
+		<Assign Key="_" Command="cob-maybe-case-word"/>
+		<Assign Key="A -&gt; Z" Command="cob-maybe-case-word"/>
+		<Assign Key="a -&gt; z" Command="cob-maybe-case-word"/>
+		<Assign Key="Backspace" Command="cob-maybe-case-backspace"/>
+		<Assign Key="Enter" Command="cobol-enter"/>
+		<Assign Key="Space" Command="cobol-space"/>
+	</Mode>
+	<Mode Name="coffeescript">
+		<Assign Key="Enter" Command="coffeescript-enter"/>
+		<Assign Key="Space" Command="ext-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+	</Mode>
+	<Mode Name="css">
+		<Assign Key="Enter" Command="css-enter"/>
+		<Assign Key="Space" Command="css-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+		<Assign Key="{" Command="css-begin"/>
+		<Assign Key="}" Command="css-endbrace"/>
+	</Mode>
+	<Mode Name="dbase">
+		<Assign Key="Enter" Command="dbase-enter"/>
+		<Assign Key="Space" Command="dbase-space"/>
+	</Mode>
+	<Mode Name="default">
+		<Assign Key=")" Command="keyin-match-paren"/>
+		<Assign Key="*" Command="rexx-star"/>
+		<Assign Key="?" Command="maybe-list-matches"/>
+		<Assign Key="Alt+," Command="function-argument-help"/>
+		<Assign Key="Alt+." Command="list-symbols"/>
+		<Assign Key="Alt+1" Command="cursor-error"/>
+		<Assign Key="Alt+3" Command="activate-watch"/>
+		<Assign Key="Alt+4" Command="activate-variables"/>
+		<Assign Key="Alt+5" Command="activate-registers"/>
+		<Assign Key="Alt+6" Command="activate-memory"/>
+		<Assign Key="Alt+7" Command="activate-call-stack"/>
+		<Assign Key="Alt+=" Command="execute-selection"/>
+		<Assign Key="Alt+Backspace" Command="undo"/>
+		<Assign Key="Alt+Command+," Command="function-argument-help"/>
+		<Assign Key="Alt+Command+." Command="list-symbols"/>
+		<Assign Key="Alt+Command+`" Command="transpose-words"/>
+		<Assign Key="Alt+Command+Down" Command="next-error"/>
+		<Assign Key="Alt+Command+L" Command="select-paragraph"/>
+		<Assign Key="Alt+Command+M" Command="iconize-all"/>
+		<Assign Key="Alt+Command+S" Command="save-all"/>
+		<Assign Key="Alt+Command+Up" Command="prev-error"/>
+		<Assign Key="Alt+Command+W" Command="close-all"/>
+		<Assign Key="Alt+Down" Command="bottom-of-window"/>
+		<Assign Key="Alt+End" Command="scroll-bottom"/>
+		<Assign Key="Alt+Home" Command="scroll-top"/>
+		<Assign Key="Alt+LButtonDn" Command="mou-click-copy-block"/>
+		<Assign Key="Alt+Left" Command="prev-word"/>
+		<Assign Key="Alt+PadStar" Command="debug-show-next-statement"/>
+		<Assign Key="Alt+PgDn" Command="scroll-page-down"/>
+		<Assign Key="Alt+PgUp" Command="scroll-page-up"/>
+		<Assign Key="Alt+Right" Command="next-word"/>
+		<Assign Key="Alt+Shift+Command+N" Command="bbedit-file-new-from-clipboard"/>
+		<Assign Key="Alt+Shift+Command+W" Command="close-all"/>
+		<Assign Key="Alt+Shift+Down" Command="cua-select"/>
+		<Assign Key="Alt+Shift+Left" Command="cua-select"/>
+		<Assign Key="Alt+Shift+Right" Command="cua-select"/>
+		<Assign Key="Alt+Shift+Up" Command="cua-select"/>
+		<Assign Key="Alt+Up" Command="top-of-window"/>
+		<Assign Key="BackButtonDn" Command="back"/>
+		<Assign Key="Backspace" Command="linewrap-rubout"/>
+		<Assign Key="Command+," Command="config"/>
+		<Assign Key="Command+." Command="push-tag"/>
+		<Assign Key="Command+/" Command="push-ref"/>
+		<Assign Key="Command+1" Command="cursor-error"/>
+		<Assign Key="Command+3" Command="activate-watch"/>
+		<Assign Key="Command+4" Command="activate-variables"/>
+		<Assign Key="Command+5" Command="activate-registers"/>
+		<Assign Key="Command+6" Command="activate-memory"/>
+		<Assign Key="Command+7" Command="activate-call-stack"/>
+		<Assign Key="Command+=" Command="execute-selection"/>
+		<Assign Key="Command+[" Command="move-text-backtab"/>
+		<Assign Key="Command+\" Command="plusminus"/>
+		<Assign Key="Command+]" Command="move-text-tab"/>
+		<Assign Key="Command+`" Command="transpose-chars"/>
+		<Assign Key="Command+A" Command="select-all"/>
+		<Assign Key="Command+B" Command="find-matching-paren"/>
+		<Assign Key="Command+Backspace" Command="cut-line"/>
+		<Assign Key="Command+C" Command="copy-to-clipboard"/>
+		<Assign Key="Command+D" Command="cursor-error"/>
+		<Assign Key="Command+Down" Command="bottom-of-buffer"/>
+		<Assign Key="Command+E" Command="set-find"/>
+		<Assign Key="Command+End" Command="bottom-of-buffer"/>
+		<Assign Key="Command+F" Command="gui-find"/>
+		<Assign Key="Command+G" Command="find-next"/>
+		<Assign Key="Command+Home" Command="top-of-buffer"/>
+		<Assign Key="Command+L" Command="select-line"/>
+		<Assign Key="Command+Left" Command="begin-line"/>
+		<Assign Key="Command+N" Command="new"/>
+		<Assign Key="Command+O" Command="gui-open"/>
+		<Assign Key="Command+P" Command="gui-print"/>
+		<Assign Key="Command+PadStar" Command="debug-show-next-statement"/>
+		<Assign Key="Command+PgDn" Command="scroll-page-down"/>
+		<Assign Key="Command+PgUp" Command="scroll-page-up"/>
+		<Assign Key="Command+Q" Command="safe-exit"/>
+		<Assign Key="Command+Right" Command="end-line"/>
+		<Assign Key="Command+S" Command="save"/>
+		<Assign Key="Command+Up" Command="top-of-buffer"/>
+		<Assign Key="Command+V" Command="paste"/>
+		<Assign Key="Command+W" Command="close-window"/>
+		<Assign Key="Command+X" Command="cut"/>
+		<Assign Key="Command+Z" Command="undo"/>
+		<Assign Key="Context" Command="context-menu"/>
+		<Assign Key="Ctrl+," Command="pop-bookmark"/>
+		<Assign Key="Ctrl+." Command="push-tag"/>
+		<Assign Key="Ctrl+/" Command="push-ref"/>
+		<Assign Key="Ctrl+0 -&gt; Ctrl+9" Command="alt-bookmark"/>
+		<Assign Key="Ctrl+=" Command="diff"/>
+		<Assign Key="Ctrl+[" Command="next-hotspot"/>
+		<Assign Key="Ctrl+\" Command="plusminus"/>
+		<Assign Key="Ctrl+]" Command="find-matching-paren"/>
+		<Assign Key="Ctrl+A" Command="select-all"/>
+		<Assign Key="Ctrl+Alt+A" Command="activate-autos"/>
+		<Assign Key="Ctrl+Alt+B" Command="activate-breakpoints"/>
+		<Assign Key="Ctrl+Alt+Backspace" Command="cut-prev-sexp"/>
+		<Assign Key="Ctrl+Alt+C" Command="activate-call-stack"/>
+		<Assign Key="Ctrl+Alt+Down" Command="forward-down-sexp"/>
+		<Assign Key="Ctrl+Alt+H" Command="activate-threads"/>
+		<Assign Key="Ctrl+Alt+L" Command="activate-locals"/>
+		<Assign Key="Ctrl+Alt+Left" Command="prev-sexp"/>
+		<Assign Key="Ctrl+Alt+M" Command="activate-members"/>
+		<Assign Key="Ctrl+Alt+Right" Command="next-sexp"/>
+		<Assign Key="Ctrl+Alt+Shift+Left" Command="select-prev-sexp"/>
+		<Assign Key="Ctrl+Alt+Shift+Right" Command="select-next-sexp"/>
+		<Assign Key="Ctrl+Alt+Up" Command="backward-up-sexp"/>
+		<Assign Key="Ctrl+Alt+V" Command="activate-variables"/>
+		<Assign Key="Ctrl+Alt+W" Command="activate-watch"/>
+		<Assign Key="Ctrl+B" Command="select-block"/>
+		<Assign Key="Ctrl+Backspace" Command="cut-line"/>
+		<Assign Key="Ctrl+C" Command="copy-to-clipboard"/>
+		<Assign Key="Ctrl+Command+/" Command="next-window"/>
+		<Assign Key="Ctrl+Command+A" Command="activate-autos"/>
+		<Assign Key="Ctrl+Command+B" Command="activate-breakpoints"/>
+		<Assign Key="Ctrl+Command+Backspace" Command="cut-prev-sexp"/>
+		<Assign Key="Ctrl+Command+C" Command="activate-call-stack"/>
+		<Assign Key="Ctrl+Command+Down" Command="forward-down-sexp"/>
+		<Assign Key="Ctrl+Command+H" Command="activate-threads"/>
+		<Assign Key="Ctrl+Command+L" Command="activate-locals"/>
+		<Assign Key="Ctrl+Command+Left" Command="prev-sexp"/>
+		<Assign Key="Ctrl+Command+M" Command="activate-members"/>
+		<Assign Key="Ctrl+Command+N" Command="bbedit-file-new-html"/>
+		<Assign Key="Ctrl+Command+Right" Command="next-sexp"/>
+		<Assign Key="Ctrl+Command+Up" Command="backward-up-sexp"/>
+		<Assign Key="Ctrl+Command+V" Command="activate-variables"/>
+		<Assign Key="Ctrl+Command+W" Command="activate-watch"/>
+		<Assign Key="Ctrl+D" Command="gui-cd"/>
+		<Assign Key="Ctrl+Del" Command="cut-code-block"/>
+		<Assign Key="Ctrl+E" Command="cut-end-line"/>
+		<Assign Key="Ctrl+End" Command="scroll-bottom"/>
+		<Assign Key="Ctrl+Enter" Command="nosplit-insert-line"/>
+		<Assign Key="Ctrl+F" Command="gui-find"/>
+		<Assign Key="Ctrl+F11" Command="record-macro-toggle"/>
+		<Assign Key="Ctrl+F12" Command="record-macro-end-execute"/>
+		<Assign Key="Ctrl+G" Command="find-next"/>
+		<Assign Key="Ctrl+H" Command="hsplit-window"/>
+		<Assign Key="Ctrl+Home" Command="scroll-top"/>
+		<Assign Key="Ctrl+I" Command="i-search"/>
+		<Assign Key="Ctrl+Ins" Command="copy-to-clipboard"/>
+		<Assign Key="Ctrl+J" Command="gui-goto-line"/>
+		<Assign Key="Ctrl+K" Command="copy-word"/>
+		<Assign Key="Ctrl+L" Command="select-line"/>
+		<Assign Key="Ctrl+LButtonDn" Command="mou-click-copy"/>
+		<Assign Key="Ctrl+M" Command="project-build"/>
+		<Assign Key="Ctrl+N" Command="next-buffer"/>
+		<Assign Key="Ctrl+O" Command="gui-open"/>
+		<Assign Key="Ctrl+P" Command="prev-buffer"/>
+		<Assign Key="Ctrl+PgDn" Command="scroll-page-down"/>
+		<Assign Key="Ctrl+PgUp" Command="scroll-page-up"/>
+		<Assign Key="Ctrl+Q" Command="quote-key"/>
+		<Assign Key="Ctrl+R" Command="gui-replace"/>
+		<Assign Key="Ctrl+RButtonDn" Command="mou-move-to-cursor"/>
+		<Assign Key="Ctrl+S" Command="save"/>
+		<Assign Key="Ctrl+Shift+," Command="complete-prev"/>
+		<Assign Key="Ctrl+Shift+." Command="complete-next"/>
+		<Assign Key="Ctrl+Shift+0 -&gt; Ctrl+Shift+9" Command="alt-gtbookmark"/>
+		<Assign Key="Ctrl+Shift+[" Command="prev-hotspot"/>
+		<Assign Key="Ctrl+Shift+A" Command="cap-selection"/>
+		<Assign Key="Ctrl+Shift+B" Command="list-buffers"/>
+		<Assign Key="Ctrl+Shift+C" Command="append-to-clipboard"/>
+		<Assign Key="Ctrl+Shift+Command+Left" Command="select-prev-sexp"/>
+		<Assign Key="Ctrl+Shift+Command+Right" Command="select-next-sexp"/>
+		<Assign Key="Ctrl+Shift+D" Command="javadoc-editor"/>
+		<Assign Key="Ctrl+Shift+Del" Command="unsurround"/>
+		<Assign Key="Ctrl+Shift+Down" Command="next-error"/>
+		<Assign Key="Ctrl+Shift+E" Command="list-errors"/>
+		<Assign Key="Ctrl+Shift+End" Command="cua-select"/>
+		<Assign Key="Ctrl+Shift+Enter" Command="nosplit-insert-line-above"/>
+		<Assign Key="Ctrl+Shift+F" Command="find-in-files"/>
+		<Assign Key="Ctrl+Shift+F12 0 -&gt; 9" Command="execute-last-macro-key"/>
+		<Assign Key="Ctrl+Shift+F12 a -&gt; z" Command="execute-last-macro-key"/>
+		<Assign Key="Ctrl+Shift+F12 F1 -&gt; F12" Command="execute-last-macro-key"/>
+		<Assign Key="Ctrl+Shift+F5" Command="debug-restart"/>
+		<Assign Key="Ctrl+Shift+F6" Command="prev-window"/>
+		<Assign Key="Ctrl+Shift+F9" Command="debug-clear-all-breakpoints"/>
+		<Assign Key="Ctrl+Shift+G" Command="find-prev"/>
+		<Assign Key="Ctrl+Shift+H" Command="hex"/>
+		<Assign Key="Ctrl+Shift+Home" Command="cua-select"/>
+		<Assign Key="Ctrl+Shift+I" Command="reverse-i-search"/>
+		<Assign Key="Ctrl+Shift+J" Command="toggle-bookmark"/>
+		<Assign Key="Ctrl+Shift+K" Command="cut-word"/>
+		<Assign Key="Ctrl+Shift+L" Command="lowcase-selection"/>
+		<Assign Key="Ctrl+Shift+Left" Command="cua-select"/>
+		<Assign Key="Ctrl+Shift+M" Command="start-process"/>
+		<Assign Key="Ctrl+Shift+N" Command="activate-bookmarks"/>
+		<Assign Key="Ctrl+Shift+O" Command="expand-alias"/>
+		<Assign Key="Ctrl+Shift+P" Command="expand-extension-alias"/>
+		<Assign Key="Ctrl+Shift+R" Command="replace-in-files"/>
+		<Assign Key="Ctrl+Shift+RButtonDn" Command="mou-copy-to-cursor"/>
+		<Assign Key="Ctrl+Shift+Right" Command="cua-select"/>
+		<Assign Key="Ctrl+Shift+S" Command="set-next-error"/>
+		<Assign Key="Ctrl+Shift+Space" Command="complete-more"/>
+		<Assign Key="Ctrl+Shift+Tab" Command="prev-window"/>
+		<Assign Key="Ctrl+Shift+U" Command="upcase-selection"/>
+		<Assign Key="Ctrl+Shift+Up" Command="prev-error"/>
+		<Assign Key="Ctrl+Shift+V" Command="list-clipboards"/>
+		<Assign Key="Ctrl+Shift+W" Command="prev-window"/>
+		<Assign Key="Ctrl+Shift+X" Command="append-cut"/>
+		<Assign Key="Ctrl+Shift+Z" Command="zoom-window"/>
+		<Assign Key="Ctrl+Space" Command="codehelp-complete"/>
+		<Assign Key="Ctrl+Tab" Command="edit-associated-file"/>
+		<Assign Key="Ctrl+U" Command="deselect"/>
+		<Assign Key="Ctrl+V" Command="paste"/>
+		<Assign Key="Ctrl+WheelDn" Command="scroll-page-down"/>
+		<Assign Key="Ctrl+WheelLeft" Command="fast-scroll"/>
+		<Assign Key="Ctrl+WheelRight" Command="fast-scroll"/>
+		<Assign Key="Ctrl+WheelUp" Command="scroll-page-up"/>
+		<Assign Key="Ctrl+X" Command="cut"/>
+		<Assign Key="Ctrl+Y" Command="redo"/>
+		<Assign Key="Ctrl+Z" Command="undo"/>
+		<Assign Key="Del" Command="linewrap-delete-char"/>
+		<Assign Key="Down" Command="cursor-down"/>
+		<Assign Key="End" Command="scroll-bottom"/>
+		<Assign Key="Enter" Command="maybe-split-insert-line"/>
+		<Assign Key="Esc" Command="cmdline-toggle"/>
+		<Assign Key="F11" Command="debug-step-into"/>
+		<Assign Key="F12" Command="load"/>
+		<Assign Key="ForwardButtonDn" Command="forward"/>
+		<Assign Key="Home" Command="scroll-top"/>
+		<Assign Key="Ins" Command="insert-toggle"/>
+		<Assign Key="LButtonDn" Command="mou-click"/>
+		<Assign Key="LDoubleClick" Command="mou-select-word"/>
+		<Assign Key="Left" Command="cursor-left"/>
+		<Assign Key="LTripleClick" Command="mou-select-line"/>
+		<Assign Key="MButtonDn" Command="mou-paste"/>
+		<Assign Key="PgDn" Command="scroll-page-down"/>
+		<Assign Key="PgUp" Command="scroll-page-up"/>
+		<Assign Key="RButtonDn" Command="mou-click-menu-block"/>
+		<Assign Key="Right" Command="cursor-right"/>
+		<Assign Key="Shift+Backspace" Command="undo-cursor"/>
+		<Assign Key="Shift+Command+/" Command="help"/>
+		<Assign Key="Shift+Command+[" Command="shift-selection-left"/>
+		<Assign Key="Shift+Command+]" Command="shift-selection-right"/>
+		<Assign Key="Shift+Command+A" Command="deselect"/>
+		<Assign Key="Shift+Command+C" Command="append-to-clipboard"/>
+		<Assign Key="Shift+Command+Down" Command="cua-select"/>
+		<Assign Key="Shift+Command+End" Command="cua-select"/>
+		<Assign Key="Shift+Command+G" Command="find-prev"/>
+		<Assign Key="Shift+Command+Home" Command="cua-select"/>
+		<Assign Key="Shift+Command+J" Command="bbedit-center-of-window"/>
+		<Assign Key="Shift+Command+Left" Command="cua-select"/>
+		<Assign Key="Shift+Command+N" Command="bbedit-file-new-from-selection"/>
+		<Assign Key="Shift+Command+Right" Command="cua-select"/>
+		<Assign Key="Shift+Command+Up" Command="cua-select"/>
+		<Assign Key="Shift+Command+V" Command="bbedit-paste-previous-clipbd"/>
+		<Assign Key="Shift+Command+X" Command="append-cut"/>
+		<Assign Key="Shift+Command+Z" Command="redo"/>
+		<Assign Key="Shift+Del" Command="cut"/>
+		<Assign Key="Shift+Down" Command="cua-select"/>
+		<Assign Key="Shift+End" Command="scroll-bottom"/>
+		<Assign Key="Shift+Enter" Command="keyin-enter"/>
+		<Assign Key="Shift+F11" Command="debug-step-out"/>
+		<Assign Key="Shift+F12" Command="save"/>
+		<Assign Key="Shift+Home" Command="scroll-top"/>
+		<Assign Key="Shift+Ins" Command="paste"/>
+		<Assign Key="Shift+LButtonDn" Command="mou-extend-selection"/>
+		<Assign Key="Shift+Left" Command="cua-select"/>
+		<Assign Key="Shift+PgDn" Command="scroll-page-down"/>
+		<Assign Key="Shift+PgUp" Command="scroll-page-up"/>
+		<Assign Key="Shift+Right" Command="cua-select"/>
+		<Assign Key="Shift+Space" Command="keyin-space"/>
+		<Assign Key="Shift+Tab" Command="move-text-backtab"/>
+		<Assign Key="Shift+Up" Command="cua-select"/>
+		<Assign Key="Space" Command="maybe-complete"/>
+		<Assign Key="Tab" Command="move-text-tab"/>
+		<Assign Key="Up" Command="cursor-up"/>
+		<Assign Key="WheelDn" Command="fast-scroll"/>
+		<Assign Key="WheelLeft" Command="fast-scroll"/>
+		<Assign Key="WheelRight" Command="fast-scroll"/>
+		<Assign Key="WheelUp" Command="fast-scroll"/>
+	</Mode>
+	<Mode Name="erlang">
+		<Assign Key="Enter" Command="erlang-enter"/>
+		<Assign Key="Space" Command="erlang-space"/>
+	</Mode>
+	<Mode Name="ext">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="Space" Command="ext-space"/>
+	</Mode>
+	<Mode Name="fileman">
+		<Assign Key="! -&gt; range-last-char-key" Command="maybe-normal-character"/>
+		<Assign Key="Alt+Shift+A" Command="select-all"/>
+		<Assign Key="Alt+Shift+B" Command="fileman-backup"/>
+		<Assign Key="Alt+Shift+C" Command="fileman-copy"/>
+		<Assign Key="Alt+Shift+D" Command="fileman-delete"/>
+		<Assign Key="Alt+Shift+E" Command="fileman-edit"/>
+		<Assign Key="Alt+Shift+F" Command="fileman-find"/>
+		<Assign Key="Alt+Shift+G" Command="fileman-replace"/>
+		<Assign Key="Alt+Shift+M" Command="fileman-move"/>
+		<Assign Key="Alt+Shift+N" Command="fileman-keyin-name"/>
+		<Assign Key="Alt+Shift+O" Command="fsort"/>
+		<Assign Key="Alt+Shift+P" Command="fileman-attr"/>
+		<Assign Key="Alt+Shift+R" Command="for-select"/>
+		<Assign Key="Alt+Shift+T" Command="fileman-attr"/>
+		<Assign Key="Enter" Command="fileman-enter"/>
+		<Assign Key="F1" Command="fileman-help"/>
+		<Assign Key="LDoubleClick" Command="fileman-enter"/>
+		<Assign Key="Shift+Command+A" Command="select-all"/>
+		<Assign Key="Shift+Command+B" Command="fileman-backup"/>
+		<Assign Key="Shift+Command+C" Command="fileman-copy"/>
+		<Assign Key="Shift+Command+D" Command="fileman-delete"/>
+		<Assign Key="Shift+Command+E" Command="fileman-edit"/>
+		<Assign Key="Shift+Command+F" Command="fileman-find"/>
+		<Assign Key="Shift+Command+G" Command="fileman-replace"/>
+		<Assign Key="Shift+Command+M" Command="fileman-move"/>
+		<Assign Key="Shift+Command+N" Command="fileman-keyin-name"/>
+		<Assign Key="Shift+Command+O" Command="fsort"/>
+		<Assign Key="Shift+Command+P" Command="fileman-attr"/>
+		<Assign Key="Shift+Command+R" Command="for-select"/>
+		<Assign Key="Shift+Command+T" Command="fileman-attr"/>
+		<Assign Key="Shift+Down" Command="fileman-select-down"/>
+		<Assign Key="Shift+PgDn" Command="fileman-deselect-down"/>
+		<Assign Key="Shift+PgUp" Command="fileman-deselect-up"/>
+		<Assign Key="Shift+Up" Command="fileman-select-up"/>
+		<Assign Key="Space" Command="fileman-space"/>
+	</Mode>
+	<Mode Name="fortran">
+		<Assign Key="Enter" Command="fortran-enter"/>
+		<Assign Key="Space" Command="fortran-space"/>
+	</Mode>
+	<Mode Name="fsharp">
+		<Assign Key="Enter" Command="fsharp-enter"/>
+	</Mode>
+	<Mode Name="gl">
+		<Assign Key="Enter" Command="gl-enter"/>
+		<Assign Key="Space" Command="gl-space"/>
+	</Mode>
+	<Mode Name="googlego">
+		<Assign Key="(" Command="c-paren"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key=":" Command="c-colon"/>
+		<Assign Key=";" Command="c-semicolon"/>
+		<Assign Key="\" Command="c-backslash"/>
+		<Assign Key="Enter" Command="c-enter"/>
+		<Assign Key="Space" Command="c-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+		<Assign Key="{" Command="c-begin"/>
+		<Assign Key="}" Command="c-endbrace"/>
+	</Mode>
+	<Mode Name="grep">
+		<Assign Key="Ctrl+Down" Command="preview-cursor-down"/>
+		<Assign Key="Ctrl+PgDn" Command="preview-page-down"/>
+		<Assign Key="Ctrl+PgUp" Command="preview-page-up"/>
+		<Assign Key="Ctrl+Up" Command="preview-cursor-up"/>
+		<Assign Key="Del" Command="grep-delete"/>
+		<Assign Key="Down" Command="grep-cursor"/>
+		<Assign Key="Enter" Command="grep-enter"/>
+		<Assign Key="LButtonDn" Command="grep-cursor"/>
+		<Assign Key="LDoubleClick" Command="grep-lbutton-double-click"/>
+		<Assign Key="PgDn" Command="grep-cursor"/>
+		<Assign Key="PgUp" Command="grep-cursor"/>
+		<Assign Key="Shift+Down" Command="grep-next-file"/>
+		<Assign Key="Shift+Up" Command="grep-prev-file"/>
+		<Assign Key="Up" Command="grep-cursor"/>
+	</Mode>
+	<Mode Name="haskell">
+		<Assign Key="Enter" Command="haskell-enter"/>
+	</Mode>
+	<Mode Name="html">
+		<Assign Key="%" Command="auto-codehelp-key"/>
+		<Assign Key="&amp;" Command="auto-codehelp-key"/>
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="*" Command="html-key"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="/" Command="auto-codehelp-key"/>
+		<Assign Key=":" Command="html-key"/>
+		<Assign Key="&lt;" Command="html-lt"/>
+		<Assign Key="=" Command="auto-codehelp-key"/>
+		<Assign Key="&gt;" Command="html-gt"/>
+		<Assign Key="[" Command="html-lt"/>
+		<Assign Key="]" Command="html-gt"/>
+		<Assign Key="Enter" Command="html-enter"/>
+		<Assign Key="Space" Command="html-space"/>
+		<Assign Key="Tab" Command="html-tab"/>
+		<Assign Key="{" Command="html-key"/>
+		<Assign Key="}" Command="html-key"/>
+	</Mode>
+	<Mode Name="java">
+		<Assign Key="#" Command="c-pound"/>
+		<Assign Key="(" Command="c-paren"/>
+		<Assign Key="*" Command="c-asterisk"/>
+		<Assign Key="," Command="java-comma"/>
+		<Assign Key="." Command="java-auto-codehelp-key"/>
+		<Assign Key=":" Command="java-colon"/>
+		<Assign Key=";" Command="c-semicolon"/>
+		<Assign Key="&lt;" Command="java-auto-functionhelp-key"/>
+		<Assign Key="=" Command="java-auto-codehelp-key"/>
+		<Assign Key="&gt;" Command="java-auto-codehelp-key"/>
+		<Assign Key="@" Command="c-atsign"/>
+		<Assign Key="[" Command="java-startbracket"/>
+		<Assign Key="\" Command="c-backslash"/>
+		<Assign Key="Enter" Command="java-enter"/>
+		<Assign Key="Space" Command="java-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+		<Assign Key="{" Command="java-begin"/>
+		<Assign Key="}" Command="java-endbrace"/>
+	</Mode>
+	<Mode Name="jcl">
+		<Assign Key="(" Command="embedded-key"/>
+		<Assign Key="." Command="embedded-key"/>
+		<Assign Key=":" Command="embedded-key"/>
+		<Assign Key="Enter" Command="embedded-key"/>
+		<Assign Key="Space" Command="embedded-key"/>
+		<Assign Key="Tab" Command="embedded-key"/>
+		<Assign Key="{" Command="embedded-key"/>
+		<Assign Key="}" Command="embedded-key"/>
+	</Mode>
+	<Mode Name="lua">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="Enter" Command="lua-enter"/>
+		<Assign Key="Space" Command="lua-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+		<Assign Key="}" Command="lua-endbrace"/>
+	</Mode>
+	<Mode Name="markdown">
+		<Assign Key="Enter" Command="markdown-enter"/>
+	</Mode>
+	<Mode Name="matlab">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="Enter" Command="matlab-enter"/>
+		<Assign Key="Space" Command="matlab-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+	</Mode>
+	<Mode Name="model204">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="Enter" Command="model204-enter"/>
+		<Assign Key="Space" Command="model204-space"/>
+	</Mode>
+	<Mode Name="modula">
+		<Assign Key="Enter" Command="modula-enter"/>
+		<Assign Key="Space" Command="modula-space"/>
+	</Mode>
+	<Mode Name="pascal">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="Enter" Command="pascal-enter"/>
+		<Assign Key="Space" Command="pascal-space"/>
+	</Mode>
+	<Mode Name="perl">
+		<Assign Key="(" Command="perl-key"/>
+		<Assign Key="." Command="embedded-key"/>
+		<Assign Key=":" Command="perl-key"/>
+		<Assign Key="&lt;" Command="embedded-key"/>
+		<Assign Key="=" Command="perl-key"/>
+		<Assign Key="&gt;" Command="embedded-key"/>
+		<Assign Key="Enter" Command="perl-enter"/>
+		<Assign Key="Space" Command="perl-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+		<Assign Key="{" Command="perl-begin"/>
+		<Assign Key="}" Command="perl-endbrace"/>
+	</Mode>
+	<Mode Name="pl1">
+		<Assign Key="#" Command="pl1-maybe-case-word"/>
+		<Assign Key="$" Command="pl1-maybe-case-word"/>
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="0 -&gt; 9" Command="pl1-maybe-case-word"/>
+		<Assign Key=";" Command="pl1-semi"/>
+		<Assign Key="@" Command="pl1-maybe-case-word"/>
+		<Assign Key="_" Command="pl1-maybe-case-word"/>
+		<Assign Key="A -&gt; Z" Command="pl1-maybe-case-word"/>
+		<Assign Key="a -&gt; z" Command="pl1-maybe-case-word"/>
+		<Assign Key="Backspace" Command="pl1-maybe-case-backspace"/>
+		<Assign Key="Enter" Command="pl1-enter"/>
+		<Assign Key="Space" Command="pl1-space"/>
+	</Mode>
+	<Mode Name="plsql">
+		<Assign Key="#" Command="plsql-maybe-case-word"/>
+		<Assign Key="$" Command="plsql-maybe-case-word"/>
+		<Assign Key="0 -&gt; 9" Command="plsql-maybe-case-word"/>
+		<Assign Key=";" Command="plsql-semi"/>
+		<Assign Key="_" Command="plsql-maybe-case-word"/>
+		<Assign Key="A -&gt; Z" Command="plsql-maybe-case-word"/>
+		<Assign Key="a -&gt; z" Command="plsql-maybe-case-word"/>
+		<Assign Key="Backspace" Command="plsql-maybe-case-backspace"/>
+		<Assign Key="Enter" Command="plsql-enter"/>
+		<Assign Key="Space" Command="plsql-space"/>
+	</Mode>
+	<Mode Name="powershell">
+		<Assign Key="Enter" Command="powershell-enter"/>
+		<Assign Key="Space" Command="powershell-space"/>
+	</Mode>
+	<Mode Name="process">
+		<Assign Key="Backspace" Command="process-rubout"/>
+		<Assign Key="Down" Command="process-down"/>
+		<Assign Key="Enter" Command="process-enter"/>
+		<Assign Key="Home" Command="process-begin-line"/>
+		<Assign Key="LDoubleClick" Command="cursor-error"/>
+		<Assign Key="Tab" Command="process-tab"/>
+		<Assign Key="Up" Command="process-up"/>
+	</Mode>
+	<Mode Name="python">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key=":" Command="python-colon"/>
+		<Assign Key="Enter" Command="python-enter"/>
+		<Assign Key="Space" Command="python-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+	</Mode>
+	<Mode Name="qbasic">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="Enter" Command="qbasic-enter"/>
+		<Assign Key="Space" Command="qbasic-space"/>
+	</Mode>
+	<Mode Name="rexx">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="Enter" Command="rexx-enter"/>
+		<Assign Key="Space" Command="rexx-space"/>
+	</Mode>
+	<Mode Name="ruby">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="Enter" Command="ruby-enter"/>
+		<Assign Key="Space" Command="ruby-space"/>
+		<Assign Key="{" Command="ruby-begin"/>
+	</Mode>
+	<Mode Name="rul">
+		<Assign Key="#" Command="auto-codehelp-key"/>
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key=";" Command="rul-semi"/>
+		<Assign Key="&gt;" Command="auto-codehelp-key"/>
+		<Assign Key="Enter" Command="rul-enter"/>
+		<Assign Key="Space" Command="rul-space"/>
+	</Mode>
+	<Mode Name="sas">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="Space" Command="sas-space"/>
+	</Mode>
+	<Mode Name="scala">
+		<Assign Key="Enter" Command="scala-enter"/>
+		<Assign Key="Space" Command="scala-space"/>
+	</Mode>
+	<Mode Name="slick">
+		<Assign Key='"' Command="c-dquote"/>
+		<Assign Key="#" Command="c-pound"/>
+		<Assign Key="(" Command="slick-paren"/>
+		<Assign Key="*" Command="c-asterisk"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="/" Command="c-slash"/>
+		<Assign Key=";" Command="slick-semicolon"/>
+		<Assign Key="&lt;" Command="auto-functionhelp-key"/>
+		<Assign Key="&gt;" Command="auto-codehelp-key"/>
+		<Assign Key="@" Command="c-atsign"/>
+		<Assign Key="\" Command="c-backslash"/>
+		<Assign Key="Enter" Command="slick-enter"/>
+		<Assign Key="Space" Command="slick-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+		<Assign Key="{" Command="c-begin"/>
+		<Assign Key="}" Command="c-endbrace"/>
+	</Mode>
+	<Mode Name="slickc-stack">
+		<Assign Key="Enter" Command="slickc-stack-goto"/>
+		<Assign Key="LDoubleClick" Command="slickc-stack-goto"/>
+	</Mode>
+	<Mode Name="sqlserver">
+		<Assign Key="#" Command="sqlserver-maybe-case-word"/>
+		<Assign Key="$" Command="sqlserver-maybe-case-word"/>
+		<Assign Key="0 -&gt; 9" Command="sqlserver-maybe-case-word"/>
+		<Assign Key="_" Command="sqlserver-maybe-case-word"/>
+		<Assign Key="A -&gt; Z" Command="sqlserver-maybe-case-word"/>
+		<Assign Key="a -&gt; z" Command="sqlserver-maybe-case-word"/>
+		<Assign Key="Backspace" Command="sqlserver-maybe-case-backspace"/>
+		<Assign Key="Enter" Command="sqlserver-enter"/>
+		<Assign Key="Space" Command="sqlserver-space"/>
+	</Mode>
+	<Mode Name="systemverilog">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="Enter" Command="systemverilog-enter"/>
+		<Assign Key="Space" Command="systemverilog-space"/>
+		<Assign Key="}" Command="systemverilog-endbrace"/>
+	</Mode>
+	<Mode Name="tcl">
+		<Assign Key="Enter" Command="tcl-enter"/>
+		<Assign Key="Space" Command="tcl-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+		<Assign Key="{" Command="tcl-begin"/>
+		<Assign Key="}" Command="tcl-endbrace"/>
+	</Mode>
+	<Mode Name="ttcn3">
+		<Assign Key="Enter" Command="ttcn3-enter"/>
+		<Assign Key="Space" Command="ttcn3-space"/>
+	</Mode>
+	<Mode Name="vbscript">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="Enter" Command="vbscript-enter"/>
+		<Assign Key="Space" Command="vbscript-space"/>
+	</Mode>
+	<Mode Name="vera">
+		<Assign Key="(" Command="vera-paren"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="Enter" Command="vera-enter"/>
+		<Assign Key="Space" Command="vera-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+		<Assign Key="{" Command="vera-beginbrace"/>
+		<Assign Key="}" Command="vera-endbrace"/>
+	</Mode>
+	<Mode Name="verilog">
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="Enter" Command="verilog-enter"/>
+		<Assign Key="Space" Command="verilog-space"/>
+	</Mode>
+	<Mode Name="vhd">
+		<Assign Key="'" Command="auto-codehelp-key"/>
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="Enter" Command="vhd-enter"/>
+		<Assign Key="Space" Command="vhd-space"/>
+	</Mode>
+	<Mode Name="xml">
+		<Assign Key="% -&gt; &amp;" Command="auto-codehelp-key"/>
+		<Assign Key="(" Command="auto-functionhelp-key"/>
+		<Assign Key="." Command="auto-codehelp-key"/>
+		<Assign Key="/" Command="xml-slash"/>
+		<Assign Key=":" Command="html-key"/>
+		<Assign Key="&lt;" Command="auto-codehelp-key"/>
+		<Assign Key="=" Command="auto-codehelp-key"/>
+		<Assign Key="&gt;" Command="xml-gt"/>
+		<Assign Key="Enter" Command="xml-enter"/>
+		<Assign Key="Space" Command="html-space"/>
+		<Assign Key="Tab" Command="smarttab"/>
+		<Assign Key="{" Command="html-key"/>
+		<Assign Key="}" Command="html-key"/>
+	</Mode>
+</KeyBindings>

@@ -1,0 +1,47 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_get_detail</title>
+</head>
+<body>
+
+<h3><b>void tag_get_detail(int tag_detail, var result)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve specific information about the current tag (as defined by calls to
+<i>tag_find_equal</i>, <i>tag_find_prefix</i>, <i>tag_find_in_file</i>, <i>tag_find_in_class</i>, etc.).
+This function complements <i>tag_get_info</i>, or can be used in its place for efficiency
+when only very specific information is needed.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_detail">tag_detail</A></code> - ID of default to extract.  One of the following:
+
+                  <dl compact>
+                  <dt>VS_TAGDETAIL_name<dd style="margin-left:150pt">      (string) tag name
+                  <dt>VS_TAGDETAIL_type<dd style="margin-left:150pt">   (string) tag type name, see tag_get_type.
+                  <dt>VS_TAGDETAIL_type_id<dd style="margin-left:150pt">(int) unique id for tag type.
+                  <dt>VS_TAGDETAIL_file_name<dd style="margin-left:150pt">(string) full path of file the tag is in
+                  <dt>VS_TAGDETAIL_file_date<dd style="margin-left:150pt">(string) date of file when tagged
+                  <dt>VS_TAGDETAIL_file_line<dd style="margin-left:150pt">(int) line number of tag within file
+                  <dt>VS_TAGDETAIL_file_id<dd style="margin-left:150pt">   (int) unique id for file the tag is located in
+                  <dt>VS_TAGDETAIL_class_simple<dd style="margin-left:150pt">(string) name of class the tag is present in
+                  <dt>VS_TAGDETAIL_class_name<dd style="margin-left:150pt">(string) name of class with outer classes
+                  <dt>VS_TAGDETAIL_class_package<dd style="margin-left:150pt">(string) package/namespace tag belongs to
+                  <dt>VS_TAGDETAIL_class_id<dd style="margin-left:150pt">(int) unique id for class tag belongs to
+                  <dt>VS_TAGDETAIL_flags<dd style="margin-left:150pt">  (int) tag flags, see tag_insert_simple
+                  <dt>VS_TAGDETAIL_return<dd style="margin-left:150pt"> (string) value or type of var/function
+                  <dt>VS_TAGDETAIL_arguments<dd style="margin-left:150pt">(string) function or template arguments
+                  <dt>VS_TAGDETAIL_tagseekloc<dd style="margin-left:150pt">(int) PRIVATE
+                  <dt>VS_TAGDETAIL_fileseekloc<dd style="margin-left:150pt">(int) PRIVATE
+                  <dt>VS_TAGDETAIL_classseekloc<dd style="margin-left:150pt">(int) PRIVATE
+                  <dt>VS_TAGDETAIL_num_tags<dd style="margin-left:150pt">(int) number of tags in database
+                  <dt>VS_TAGDETAIL_num_classes<dd style="margin-left:150pt">(int) number of classes in database
+                  <dt>VS_TAGDETAIL_num_files<dd style="margin-left:150pt">(int) number of files in database
+                  <dt>VS_TAGDETAIL_num_types<dd style="margin-left:150pt">(int) number of types in database
+                  <dt>VS_TAGDETAIL_num_refs<dd style="margin-left:150pt">(int) number of references in database
+                  <dt>VS_TAGDETAIL_throws<dd style="margin-left:150pt">(string) function/proc exceptions.
+                  <dt>VS_TAGDETAIL_included_by<dd style="margin-left:150pt">(string) file including this macro.
+                  <dt>VS_TAGDETAIL_return_only<dd style="margin-left:150pt">(string) just the return type of variable.
+                  <dt>VS_TAGDETAIL_return_value<dd style="margin-left:150pt">(string) default value of variable.
+                  </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="result">result</A></code> - (Output) Set to tag detail after successful completion of function.
+                  If the current tag is not defined, this will be set to either ''
+                  or 0, depending on if the detail is a string or numeric.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_get_detail2.html">tag_get_detail2</a>, <a href="tag_get_info.html">tag_get_info</a>, <a href="tag_find_equal.html">tag_find_equal</a>, <a href="tag_find_in_class.html">tag_find_in_class</a>, <a href="tag_find_in_file.html">tag_find_in_file</a>, <a href="tag_find_prefix.html">tag_find_prefix</a>, <a href="tag_next_equal.html">tag_next_equal</a>, <a href="tag_next_in_class.html">tag_next_in_class</a>, <a href="tag_next_in_file.html">tag_next_in_file</a>, <a href="tag_next_prefix.html">tag_next_prefix</a></blockquote>
+</body>
+</html>

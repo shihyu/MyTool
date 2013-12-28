@@ -1,0 +1,44 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Module Initializations</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s13.htm" title="Event-Driven Dialog Boxes"><link rel="next" href="ch14s15.htm" title="Compiling and Loading Macros"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_moduleinitializations_13765_27390"></a>
+    <a name="slick_c_moduleinitializations_13765_1025295"></a>
+    <a class="indexterm" name="slick-c_moduleinitializations_5C224B42_0597"></a>
+    <a class="indexterm" name="slick-c_moduleinitializations_BEFAFAD1_4AF9"></a>
+    <a class="indexterm" name="slick-c_moduleinitializations_D30D5C6F_384E"></a>
+    <a class="indexterm" name="slick-c_moduleinitializations_2B583C82_F9C2"></a>Module Initializations</h2></div></div></div><p class="NormalText">The Slick-C® language provides two module initialization functions called <span><strong class="command">definit</strong></span> and <span><strong class="command">defload</strong></span>. If the two are present, the procedures <span><strong class="command">definit</strong></span> and <span><strong class="command">defload</strong></span> are called when a module is loaded. The <span><strong class="command">definit</strong></span> module is called before <span><strong class="command">defload</strong></span>. When the module is saved by the <span><strong class="command">write_state</strong></span> command, the <span><strong class="command">definit</strong></span> procedure is invoked each time the editor is invoked. This gives your module an opportunity to perform initializations such as creating a temporary file, or allocating a selection, or bookmark. The following syntax is used for defining the special functions <span><strong class="command">definit</strong></span> and <span><strong class="command">defload</strong></span>:</p><pre class="programlisting"><span><strong class="command">
+    definit()
+    {
+    statements
+    }
+    defload()
+    {
+    statements
+    }
+  </strong></span></pre><p class="NormalText">The return value of these functions is always <span><strong class="command">void</strong></span>. You cannot specify an argument to the return statement. To enhance the performance of SlickEdit®, use the <span><strong class="command">defload</strong></span> primitive instead of the <span><strong class="command">definit</strong></span> primitive. The <span><strong class="command">definit</strong></span> primitive forces a module to be loaded when the editor is invoked. When <span><strong class="command">definit</strong></span> is called, the expression <span><strong class="command">arg(1)</strong></span> indicates whether the module was loaded with the <span><strong class="command">load</strong></span> command or when the editor initialized. When a module is loaded, <span><strong class="command">arg(1)</strong></span> returns <span><strong class="command">L</strong></span>. Otherwise <span><strong class="command">arg(1)</strong></span> returns a null string (<span><strong class="command">""</strong></span>).</p><p class="NormalText">Example:</p><pre class="programlisting">int gmarkid= -1;
+definit()
+{
+    //  If this is an editor invocation,
+    if (arg(1)!="L")  {
+       gmarkid=-1;    // indicate no mark is allocated.
+    }
+}</pre><p class="NormalText">There are two subtle points to this example when assuming that the <span><strong class="command">gmarkid</strong></span> variable is used to contain an allocated mark id (also called selection handle). First, the variable <span><strong class="command">gmarkid</strong></span> is scoped as global and not static. This is because the mark needs to remain allocated when this module is reloaded. When the module is reloaded, an unload of the module occurs first and the <span><strong class="command">_free_selection</strong></span> built-in is not called to free a mark already allocated (there is no <span><strong class="command">defunload</strong></span> primitive). Modules with static variables (module scope) lose their value when reloaded. Second, the value of <span><strong class="command">arg(1)</strong></span> is used to make sure that the variable <span><strong class="command">gmarkid</strong></span> is initialized only when the editor is invoked and not when the module is loaded. Use this as a template for creating a temporary buffer in the hidden window.</p><p class="NormalText">Example:</p><pre class="programlisting">#include "slick.sh"
+definit()
+{
+    get_view_id(view_id);
+    activate_view(HIDDEN_VIEW_ID);
+    status=find_view(".bookmark");
+    if ( status ) {
+       /* Create a buffer and view in hidden window. */
+       status=load_files("+c +t");
+       if (status) {
+          // The nls function may be used for national language support
+          // in the future.
+          _message_box(nls('Could not create bookmark buffer'))
+          return;
+       }
+       p_buf_name=".bookmark";_delete_line();
+       p_buf_flags= THROW_AWAY_CHANGES|HIDE_BUFFER|KEEP_ON_QUIT;
+    }
+    // Note: ELSE case cannot empty bookmark buffer unless mark ids
+    // are freed.  Might as well leave them.
+    get_view_id(bookmark_view_id);
+    activate_view(view_id);
+}</pre><p class="NormalText"></p></div></body></html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_move_to_cursor</title>
+</head>
+<body>
+
+<h3><b>int _move_to_cursor(_str markid="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Moves the selection to the cursor.  For block and character selections,
+the text is inserted at the cursor position.  In the case of a line
+selection, the lines are inserted before or after the current line
+depending upon the Line insert style.  Lines are inserted after the current
+line by default.  Resulting selection is placed on the inserted text.
+Text may be marked with one of the commands select_char (F8), select_line
+(Ctrl+L), or select_block (Ctrl+B).
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mark_id">mark_id</A></code> - is a handle to a selection returned by one of the built-ins
+                  _alloc_selection or _duplicate_selection.  A mark_id of ''
+                  or no mark_id parameter identifies the active selection.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common return values are
+        TEXT_NOT_SELECTED_RC, SOURCE_DEST_CONFLICT_RC, and
+        INVALID_SELECTION_HANDLE_RC.  On error, message is displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Selection_Functions.html">Selection Functions</a></blockquote>
+</body>
+</html>

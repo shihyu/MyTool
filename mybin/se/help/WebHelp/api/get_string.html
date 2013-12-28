@@ -1,0 +1,45 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>get_string</title>
+</head>
+<body>
+
+<h3><b>_str get_string(_str &line, _str prompt, _str arg_type_info='', _str initial_value='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Prompts user for an input string on the command line.  The result is
+placed in the variable <i>line</i>.  The users response is initialized to
+<i>initial_value</i> if given.  <i>prompt</i> is displayed to left of user
+input area.   <b>get_string</b> supports retrieval based on the <i>prompt</i>
+argument and completion.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="line">line</A></code> - (output) set to value entered by user</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="prompt">prompt</A></code> - the command prompt.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="arg_type_info">arg_type_info</A></code> - completion info has the syntax
+<i>arg_type</i>[;<i>help_name</i>] and is used for argument completion and
+help.  <i>arg_type</i> may be any completion constant listed in "slick.sh'".
+Completion constants have the suffix "_ARG".  If <i>arg_type</i> starts with
+a '-' character,  the <i>arg_type</i> is assumed to be the completion
+constant name without the "_ARG" suffix  (i.e. "FILE" for FILE_ARG).  If the
+<i>arg_type</i> starts with "-.", the string following is assumed to be a
+command name.  The command name may be used to get the completion information
+and help.  <i>help_name</i> may specify a help item in "vslick.hlp" (UNIX:
+"uvslick.hlp") or be a message.  If <i>help_name</i> starts with a '.', it
+should specify a help item in "vslick.hlp" (UNIX: "uvslick.hlp").</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="initial_value">initial_value</A></code> - (optional) The command line is set to initial value.
+If you want to specify this parameter and you don't want to specify the third
+parameter, pass '' for the third parameter.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Otherwise 1 (user aborted) is returned.
+On error, message is displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+     /* Completion/help on edit command. */
+     status=get_string(line,'Filename: ', '-.edit')
+
+     /* Completion/help on edit command. */
+     status=get_string(line,'Filename: ', FILE_ARG';.edit command')
+
+     /* Completion on file argument with pop-up message help. */
+     status=get_string(line,'Filename: ','-FILE;Help message')
+
+     /* Completion on file argument with pop-up message help. */
+     status=get_string(line,'Filename: ','-.edit;Help message')
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Command_Line_Functions.html">Command Line Functions</a>, <a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="letter_prompt.html">letter_prompt</a>, <a href="prompt.html">prompt</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<profile name="/language/js/aliases">
+	<p n="=surround_with_try...catch">
+		<text>
+			try {
+			%\m sur_text -indent%
+			} catch () {
+			}
+		</text>
+	</p>
+	<p n="=surround_with_try...catch...finally">
+		<text>
+			try {
+			%\m sur_text -indent%
+			} catch () {
+			} finally {
+			}
+		</text>
+	</p>
+	<p n="=surround_with_try...finally">
+		<text>
+			try {
+			%\m sur_text -indent%
+			} finally {
+			}
+		</text>
+	</p>
+</profile>

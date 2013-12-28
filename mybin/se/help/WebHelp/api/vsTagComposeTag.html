@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagComposeTag</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsTagComposeTag(char *proc_name, int proc_name_max, const char *tag_name, const char *class_name, const char *type_name, int tag_flags=a, const char *signature=a, const char *return_type=a, const char *template_signature=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Create the canonical tag display string of the form:
+<pre>
+   tag_name<template_signature>(class_name:type_name)flags(signature)return_type
+</pre>
+<p>
+This is used to speed up find-tag and maketags for languages that
+do not insert tags from DLLs.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="proc_name">proc_name</A></code> - output string for "composed" tag</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="proc_name_max">proc_name_max</A></code> - number of bytes allocated to proc_name</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - the name of the tag</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - class/container the tag belongs to</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_name">type_name</A></code> - the tag type, (see VS_TAGTYPE_*)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - (optional) integer tag flags (see VS_TAGFLAG_*)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="signature">signature</A></code> - (optional) function signature</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="return_type">return_type</A></code> - (optional) function return type</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="template_signature">template_signature</A></code> - (optional) template signature
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>void</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">nothing.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

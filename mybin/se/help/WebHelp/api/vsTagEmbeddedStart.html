@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagEmbeddedStart</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTagEmbeddedStart(VSHREFVAR orig_values)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Check if we are in an embedded context and enter embedded language
+mode if necessary.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="orig_values">orig_values</A></code> - HVAR used to save the original mode name
+                     extension, and related information.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<UL>
+<LI><B>0</B> --
+  Returns 0 if there is no embedded language
+<LI><B>1</B> --
+  Return 1,  indicates that the mode has been
+  switch to the embedded language.  Caller must
+  call vsTagEmbeddedEnd(orig_values)
+<LI><B>2</B> --
+  Returns 2 to indicate that there is embedded language
+  code, but in comment/in string like default processing
+  should be performed.
+<LI><B>3</B> --
+  Returns 3 if mode name is the same.
+</UL>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsTagEmbeddedEnd.html">vsTagEmbeddedEnd()</a></blockquote>
+</body>
+</html>

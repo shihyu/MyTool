@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_transfer_context</title>
+</head>
+<body>
+
+<h3><b>int tag_transfer_context(_str file_name)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Insert all the tags from the current context into the currently
+open tag file.  Assumes that the context is up-to-date at the
+time that this function is called.
+<p>
+For synchronization, macros should perform a tag_lock_context(true)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - typically <a href="p_buf_name.html">p_buf_name</a>, absolute path of buffer
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, < 0 on error, BT_RECORD_NOT_FOUND_RC if the context info is not set or from the wrong file or buffer.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_insert_context.html">tag_insert_context</a>, <a href="tag_insert_file_end.html">tag_insert_file_end</a>, <a href="tag_insert_file_start.html">tag_insert_file_start</a>, <a href="tag_insert_tag.html">tag_insert_tag</a></blockquote>
+</body>
+</html>

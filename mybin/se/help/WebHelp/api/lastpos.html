@@ -1,0 +1,75 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>lastpos</title>
+</head>
+<body>
+
+<h3><b>int lastpos(_str needle, _str haystack="", int start=MAXINT, _str options="", _str wordchars=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="needle">needle</A></code> - string to search for.  If this is the only parameter
+                      it retrieves tagged expression information. (see example).</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="haystack">haystack</A></code> - (optional) string to search within</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="start">start</A></code> - (optional) specifies the position at which the
+                      search should begin.  If not specified or if "" is specified,
+                      searching begins at end of <CODE>haystack</CODE>.
+                      <CODE>start</CODE> must be in the range 1..MAX_WHOLE_NUMBER.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - (optional) Multiple options may be specified with the
+                      following meaning:
+                      <DL compact>
+                      <DT>'I' <DD>Ignore case.
+                      <DT>'R' <DD>Interpret search string needle as a regular expression.
+                                  See help section "SlickEdit Regular Expressions"
+                                  for syntax of regular expressions.
+                      <DT>'U' <DD>Interpret search string as a UNIX regular expression.
+                                  See help section "UNIX Regular Expressions".
+                      <DT>'B' <DD>Interpret string as a Brief regular expression.
+                                  See help section "Brief Regular Expressions".
+                      <DT>'L' <DD>Interpret string as a Perl regular expression.
+                                  See help section "Perl Regular Expressions".
+                      <DT>'&' <DD>Interpret string as a Wildcard expression.
+                                  See help section "Wildcard Expressions".
+                      <DT>'Y' <DD>Binary search.  This allows start positions in the
+                                  middle of a DBCS character (only effects Japanese
+                                  operating systems).  This option is useful search binary
+                                  data which may contain characters which look like
+                                  DBCS but are not.
+                      </DL>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wordchars">wordchars</A></code> - (optional) Define the word characters
+                      set for the string, for use when you
+                      need to use regular expressions with
+                      word boundaries (example
+                      "[A-Za-z0-9]").</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the position <CODE>(1..length(haystack))</CODE> of the
+last occurrence of <CODE>needle</CODE> in <CODE>haystack</CODE>.
+If <CODE>needle</CODE> is not found, 0 is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+lastpos('a','aca') == '3'
+lastpos('aa','aaa',2) == '2'
+lastpos('W\cord','word test',3,'IR') == '2'
+</PRE>
+
+Calling the lastpos function with one parameter allows you to retrieve
+tagged expression information.  Specifying 'S' followed by a tagged
+expression number 0-9 (i.e.  'S0') will return the start position of that
+tagged expression.  1 is returned if that tagged expression was not found.
+If 'S' is not followed by a number, the start position of the entire
+string found is returned.  Specifying a tagged expression number 0-9 will
+return the match length of that tagged expression.  For 'R' option regular
+expressions, the first tagged expression is 0 and the last is 9.  For 'U'
+option regular expressions, the first tagged expression is 1 and the last
+is 0.  0 is returned if that tagged expression was not found.  A value of
+'' will return the match length of the entire string found.
+
+<PRE>
+get_line(line);
+word_sep='([~a-zA-Z0-9_$]|^|$)';
+i=lastpos(word_sep'{if|then|while}'word_sep,line,'','r');
+if (!i) {
+     message('Match not found');
+     return(1);
+}
+word=substr(line,lastpos('S0'),lastpos('0'));
+</PRE>
+
+The <CODE>pos</CODE> and <CODE>lastpos</CODE> function return the same tagged
+expression information.  For example, pos('S0')==lastpos('S0') will always be true.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="String_Functions.html">String Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="pos.html">pos</a>, <a href="substr.html">substr</a></blockquote>
+</body>
+</html>

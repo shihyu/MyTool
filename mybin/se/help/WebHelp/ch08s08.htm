@@ -1,0 +1,161 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Adaptive Formatting</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch08.htm" title="Chapter 8.  Editing Features"><link rel="prev" href="ch08s07.htm" title="Syntax Indent and SmartPaste®"><link rel="next" href="ch08s09.htm" title="Completions"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_adaptiveformatting_13892_52182"></a>
+    <a name="sect_adaptiveformatting_13892_1009337"></a>
+    <a class="indexterm" name="sect_adaptiveformatting_A7B94F96_AE72"></a>Adaptive Formatting</h2></div></div></div><p class="NormalText">Many development teams set standards for code formatting styles. These standards often vary from project to project or between languages. In this environment, you can lose valuable time in having to change configurations, set/unset options, or run beautifiers from file to file just so you can meet the team's requirements.</p><p class="NormalText">Adaptive Formatting addresses these situations by scanning a file for the 
+    formatting styles in use, and automatically matching those settings for the current editing session. 
+    This provides seamless integration of new code with existing code, making it easier to read, not only 
+    for you but for the next person who needs to edit the file.</p><p class="NormalText">Adaptive Formatting recognizes indentation and tab style settings, parentheses 
+    padding, and begin/end style settings. It also recognizes case settings, such as keyword casing for 
+    case-insensitive languages, and tag, attribute, and value casing for HTML-based languages. </p><p class="NormalText"><a href="ch08.htm#sect_notifications_33655_40630">Feature Notifications</a> are used when Adaptive 
+    Formatting identifies formatting that conflicts with your settings. With Feature Notifications, you 
+    can control whether you get a dialog, a pop-up message, or no notice at all. By default, Adaptive 
+    Formatting is set to display a pop-up message. You can change the notification level by selecting 
+    <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Application Options </strong></span> &#8594; <span><strong class="guimenuitem">Notfications</strong></span>.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_adaptiveformatting_13892_1009341"></a>Enabling/Disabling Adaptive Formatting</h3></div></div></div><p class="NormalText">Adaptive Formatting is disabled by default. You can toggle it on and off on a 
+      language-specific basis, and you can also enable/disable each of the individual formatting settings 
+      on a language-specific basis as well. To access these options, from the main menu, select <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">Application Languages </strong></span> &#8594; <span><strong class="guimenuitem">[Language] </strong></span> &#8594; <span><strong class="guimenuitem">Adaptive Formatting</strong></span>. As an example, the C/C++ Adaptive Formatting options are shown 
+      below.</p><div class="mediaobject"><img src="Resources/options_languages_c_adaptiveformatting.png"></div><p class="NormalText">The specific Adaptive Formatting settings available for that language are shown on the options screen. Select or clear the <span><strong class="guilabel">Use Adaptive Formatting</strong></span> check box to enable or disable the feature. When Adaptive Formatting is enabled, use the subsequent check boxes to select the settings for which SlickEdit® should scan.</p><p class="NormalText">You can also toggle Adaptive Formatting on and off for a language by using the menu item <span><strong class="guimenu">Document </strong></span> &#8594; <span><strong class="guimenuitem">Adaptive Formatting</strong></span> (or the <span><strong class="command">adaptive_format_toggle</strong></span> command). This turns the feature on and off for the current language without affecting the individual style settings.</p><p class="NormalText">The individual formatting style settings are located on various screens in the language-specific section of the Options dialog. A label, linked to the Adaptive Formatting options screen, appears next to each setting to indicate if Adaptive Formatting is on or off for that setting. Adaptive Formatting does not change the value set in these options; rather, it overrides the value on a document-by-document basis. For example, notice how Adaptive Formatting is enabled for settings on the C/C++ Indent options screen:</p><div class="mediaobject"><img src="Resources/options_languages_c_indent.png"></div><p class="NormalText">The values specified by Adaptive Formatting will be used instead of the values shown on the options screen. Click on the Adaptive Formatting hyperlinks to jump to the Adaptive Formatting options screen for that language.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_adaptiveformatting_13892_1009355"></a>Recognized Settings</h3></div></div></div><p class="NormalText">The table below shows each option recognized by Adaptive Formatting, the path to the option in SlickEdit®, and a description, along with a link for more information. Because these options are language-specific, the option paths are relative to the language-specific portion of the Options dialog: click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages</strong></span>, expand your language category and then select your language.</p><div class="informaltable"><a name="table_bf0357ad-3c5a-44d7-a9b8-178542016500"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Formatting Option</p>
+            </th><th>
+              <p class="CellHeading">Path to Option in SlickEdit</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Syntax indent</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Formatting</strong></span> (<a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>)
+              </p>
+            </td><td>
+              <p class="CellBody">When enabled, the Enter key indents according to the language syntax, and you can specify the amount to indent for each level. See <a href="ch08s07.htm#sect_syntaxindentsmartpaste_14409_73638">Syntax Indent</a> for information.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Tabs</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Formatting</strong></span> (<a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>)
+              </p>
+            </td><td>
+              <p class="CellBody">Specifies tab stops, which can be in increments of a specific value or at specific column positions. See <a href="ch08s07.htm#sect_syntaxindentsmartpaste_14409_22538">Indenting with Tabs</a> for information. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Indent with tabs</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Formatting</strong></span> (<a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>)
+              </p>
+            </td><td>
+              <p class="CellBody">Determines whether the <span><strong class="keycap">Tab</strong></span> key, <span><strong class="keycap">Enter</strong></span> key, and paragraph reformat commands indent with spaces or tabs. See <a href="ch08s07.htm#sect_syntaxindentsmartpaste_14409_22538">Indenting with Tabs</a> for information.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Begin/End style</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Formatting Options</strong></span> (<a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>) 
+              </p>
+            </td><td>
+              <p class="CellBody">The is the brace style used for Syntax
+                                                                                                                                                                                                                               Expansion and smart indenting. See the section for your language in the <a href="ch09.htm#chap_langspecediting_12633_26084">Language-Specific Editing</a> chapter. For example, <a href="ch12s11.htm#langspecformattingoptions">Language-Specific Formatting Options</a>.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Indent CASE from SWITCH</strong></span> and <span><strong class="guilabel">Indent constant from case</strong></span></p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Formatting Options</strong></span> (<a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>) 
+              </p>
+            </td><td>
+              <p class="CellBody">Specifies Syntax Expansion indentation. See
+                                                                                                                                                                                                 the section for your language in the <a href="ch09.htm#chap_langspecediting_12633_26084">Language-Specific Editing</a> chapter. For example, <a href="ch12s11.htm#langspecformattingoptions">Language-Specific Formatting Options</a>. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">No space before parenthesis</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Formatting Options</strong></span> (<a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>) 
+              </p>
+            </td><td>
+              <p class="CellBody">When enabled, no space is placed between
+                                                                                                                                                                                                                                                                                                                                                 keywords (such as <span><strong class="command">if</strong></span>, <span><strong class="command">for</strong></span>, or <span><strong class="command">while</strong></span>) and the open paren when Syntax Expansion occurs. See the section for your language in the <a href="ch09.htm#chap_langspecediting_12633_26084">Language-Specific Editing</a> chapter. For example, <a href="ch12s11.htm#langspecformattingoptions">Language-Specific Formatting Options</a>. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Insert padding between parenthesis</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Formatting Options</strong></span> (<a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>) 
+              </p>
+            </td><td>
+              <p class="CellBody">When enabled, a space is placed after the
+                                                                                                                                                                                                                                                                                               open parenthesis and before the close parenthesis, providing padding for the enclosed text. See the section for your language in the <a href="ch09.htm#chap_langspecediting_12633_26084">Language-Specific Editing</a> chapter. For example, <a href="ch12s11.htm#langspecformattingoptions">Language-Specific Formatting Options</a>. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Keyword case</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Formatting Options</strong></span> (<a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>) 
+              </p>
+            </td><td>
+              <p class="CellBody">Specifies the case of keywords used by Syntax Expansion. See the section for your language in the <a href="ch09.htm#chap_langspecediting_12633_26084">Language-Specific Editing</a> chapter. For example, <a href="ch09s02.htm#sect_ada_11861_78112">Ada Formatting Options</a>. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Case for inserted tags</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Formatting Options</strong></span> (<a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>) 
+              </p>
+            </td><td>
+              <p class="CellBody">Specifies the case for tags that are automatically inserted. See <a href="ch09s10.htm#sect_xmlandhtml_13004_39666">HTML Formatting Options</a> for more information. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Case for inserted attributes</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Formatting Options</strong></span> (<a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>) 
+              </p>
+            </td><td>
+              <p class="CellBody">Specifies the case for tag attributes that are automatically inserted. See <a href="ch09s10.htm#sect_xmlandhtml_13004_39666">HTML Formatting Options</a> for more information. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Case for inserted single word values</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Formatting Options</strong></span> (<a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>) 
+              </p>
+            </td><td>
+              <p class="CellBody">Specifies the case of word values that are automatically inserted inside a tag. See <a href="ch09s10.htm#sect_xmlandhtml_13004_39666">HTML Formatting Options</a> for more information. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Case for hex values</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">Formatting Options</strong></span> (<a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>) 
+              </p>
+            </td><td>
+              <p class="CellBody">Specifies the case for hex values that are automatically inserted inside a tag. See <a href="ch09s10.htm#sect_xmlandhtml_13004_39666">HTML Formatting Options</a> for more information. </p>
+            </td></tr></tbody></table></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_adaptiveformatting_13892_1009524"></a>
+      <a class="indexterm" name="sect_adaptiveformatting_60FCCB29_AA62"></a>Scanning for Styles in Use</h3></div></div></div><p class="NormalText">Adaptive Formatting has two modes of scanning: automatic, which is the default behavior, and manual, which lets you run a scan at any time to determine a file's formatting styles in order to quickly save them as the default settings.</p><p class="NormalText">When you open a file for editing, Adaptive Formatting initially 
+      scans for the indent-related settings that are in effect (<span><strong class="guilabel">Syntax indent</strong></span>, 
+      <span><strong class="guilabel">Indent with tabs</strong></span>, and <span><strong class="guilabel">Tabs</strong></span>), starting at the beginning of 
+      the file. Thereafter, Adaptive Formatting scans as you type to determine brace settings, 
+      parentheses padding, and other formatting styles. If Adaptive Formatting determines that the file 
+      is using a different formatting style than the current language-specific setting, a dialog is 
+      displayed that shows the settings in effect. You can then choose to use the settings or use the 
+      settings set for the language. Once the formatting style is determined, the options for those 
+      styles are used as long as the buffer is open for editing.</p><p class="NormalText">For example, when you type a keyword such as <span><strong class="command">if</strong></span> in a C/C++ 
+      file that uses formatting styles different from the current settings, the C/C++ Adaptive Formatting 
+      Results dialog is displayed (depending on your settings for Adaptive Formatting under Feature 
+      Notifications).</p><div class="mediaobject"><img src="Resources/adaptiveformattingresults_dialog.png"></div><p class="NormalText">On this dialog, the selected settings are used only for the current buffer. 
+      You can access the Adaptive Formatting options screen to enable/disable Adaptive Formatting for 
+      this language by clicking the hyperlink to <span><strong class="guilabel">Configure or disable Adaptive 
+      Formatting</strong></span>. </p><p class="NormalText">If you always want to accept the Adaptive Formatting results, select <span><strong class="guilabel">Don't show me this again</strong></span> to suppress the dialog from appearing in the future.</p><p class="NormalText">A similar dialog is shown when you run Adaptive Formatting manually. This mode lets you run Adaptive Formatting on the entire file at once, in order to quickly save the settings as the defaults for that language. To run a manual scan, use the <span><strong class="command">adaptive_format_stats</strong></span> command. The Adaptive Formatting Results dialog for that language is displayed, showing all of the recognized style settings that are in use in the current file.</p><div class="mediaobject"><img src="Resources/adaptiveformattingresults_dialog2.png"></div><p class="NormalText">This dialog lets you enable/disable the settings just for the current buffer, or select <span><strong class="guilabel">Use these settings for all files of this language</strong></span> to quickly set these values as the default.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_adaptiveformatting_13892_1009542"></a>
+        <a class="indexterm" name="sect_adaptiveformatting_69FD3495_508A"></a>
+        <a class="indexterm" name="sect_adaptiveformatting_3D9E4F50_F363"></a>Confidence Level and Statistics</h4></div></div></div><p class="NormalText">Both Adaptive Formatting Results dialogs show a confidence level and provide a link to a statistics screen. The Confidence Level is a statistical percentage, based on the frequency of use of that style in the file, that indicates the editor's confidence in this being a "correct" setting. To be considered the "correct" setting, the option must meet a confidence level of 66%. SlickEdit® ignores setting results with a confidence level of less than 66% and they do not appear on the results dialogs. For these options, the current language settings are used. </p><p class="NormalText">For example, if the dialog shows <span><strong class="guilabel">Indent with tabs</strong></span> enabled and a Confidence Level of 85%, this means that out of all of the examined instances of this style in the file, 85% of them were indented with tabs, and 15% were indented with spaces.</p><p class="NormalText">Click the <span><strong class="guibutton">Statistics</strong></span> button, and the Adaptive Formatting Statistics dialog shows each style that was found and the total number of times it occurred in the examined instances. Each individual setting is categorized in the tree according to type. Click on the plus/minus bitmaps to expand/collapse the tree categories.</p><div class="mediaobject"><img src="Resources/adaptiveformattingstatistics_dialog.png"></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_adaptiveformatting_13892_1009550"></a>Rescanning</h4></div></div></div><p class="NormalText">Certain events require the file to be rescanned in case any formatting changes have occurred. These events include beautification, auto-reload, and version control update. After one of these processes, Adaptive Formatting is placed again in automatic mode, just as when you first opened the file, scanning the entire file once for indent-type settings, then as you type for all of the other settings.</p><p class="NormalText">You can also rescan a file manually with the <span><strong class="command">adaptive_format_update</strong></span> command. This clears the Adaptive Formatting results from memory, then scans the entire file for all Adaptive Formatting settings available for that language. This is useful if you want to create a new file and use different settings for it than what you currently have configured.</p><p class="NormalText"></p></div></div></div></body></html>

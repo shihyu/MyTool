@@ -1,0 +1,62 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsStrTranslate</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsStrTranslate(char *pOutput, int OutputLen, size_t *pBytesRequired, const char *pInputStr, int InputLen, const char *pReplaceStr, int ReplaceLen, const char *pSearchStr, int SearchLen, int SearchFlags=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pOutput">pOutput</A></code> - (output) Character array to copy output to.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="OutputLen">OutputLen</A></code> - Number of bytes allocated to output array.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pBytesRequired">pBytesRequired</A></code> - Number of bytes required for pOutput (can
+be NULL).
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pInputStr">pInputStr</A></code> - Input string to translate.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="InputLen">InputLen</A></code> - Length of input string, -1 if null-terminated.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pReplaceStr">pReplaceStr</A></code> - String to replace search matches with.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ReplaceLen">ReplaceLen</A></code> - Length of replace string, -1 if null-
+terminated.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pSearchStr">pSearchStr</A></code> - String to search for.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="SearchLen">SearchLen</A></code> - Length of search string, -1 if null-
+terminated.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="SearchFlags">SearchFlags</A></code> - One or more of the following flags:
+
+<dl>
+<dt>VSSTRPOSFLAG_IGNORE_CASE</dt><dd>
+ Case insensitive search.</dd>
+<dt>VSSTRPOSFLAG_RE</dt><dd>
+ SlickEdit regular expression search.  See
+SlickEdit Regular Expressions.</dd>
+<dt>VSSTRPOSFLAG_WORD</dt><dd>
+ Reserved for future used.</dd>
+<dt>VSSTRPOSFLAG_UNIXRE</dt><dd>
+ UNIX regular expression search.  See UNIX
+Regular Expressions.</dd>
+<dt>VSSTRPOSFLAG_BINARY</dt><dd>
+ Binary search.  This allows start positions in
+the middle of a DBCS or UTF-8 character.
+This option is useful when editing binary
+files (in SBCS/DBCS mode) which may
+contain characters which look like DBCS
+but are not.  For example, if you search for
+the character 'a', it will not be found as the
+second character of a DBCS sequence unless
+this option is specified.</dd>
+<dt>VSSTRPOSFLAG_ACP </dt><dd>
+ Specifies that pSearchFor and pBuf contain
+active code page data and that an
+SBCS/DBCS mode search should be
+performed.  This flag is ignored if Unicode
+support is not active. </dd>
+<dt>VSSTRPOSFLAG_BRIEFRE</dt><dd>
+ Brief regular expression search.  See Brief
+Regular Expressions.</dd>
+<dt>VSSTRPOSFLAG_WILDCARDS</dt><dd>
+ Wildcards expression search.
+ See <b>Wildcard Expressions</b>.</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns <i>pInputStr</i> with all occurrences of <i>pSearchStr</i>
+replaced with <i>pReplaceStr</i>.  See <b>vsStrPos</b> function for
+information on valid search <i>options</i>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="String_Functions.html">String Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><b>vsStrPos</b>, <b>vsStrPosGetFlags</b></blockquote>
+</body>
+</html>

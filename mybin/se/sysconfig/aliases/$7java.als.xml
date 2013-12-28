@@ -1,0 +1,9 @@
+<profile name="/language/java/aliases">
+	<p n="=surround_with_braces">
+		<text>
+			{
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+</profile>

@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>fileman_command</title>
+</head>
+<body>
+
+<h3><b>_str fileman_command(_str msg, _str operation, _str source, _str destfilename, typeless doPause='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><pre>Executes a command built with the expression:<p>
+(<i>operation</i>" "maybe_quote_filename(<i>source</i>)" "maybe_quote_filename(<i>destfilename</i>) )<p>
+and handles file I/O error recovery.<p>
+The <i>operation</i> parameter is typically a file management command
+that has already been implemented to be supported by this procedure, such as
+<b>_fm_subcopy</b>, <b>_fm_copy</b>, or <b>_fm_move</b>.  If you write a new
+command, be sure that it returns 0 when your command completes successfully.<p>
+The message, <i>msg</i>, is displayed in a full screen shell window
+before the command is executed.  If <i>arg2</i> is not '' , the user must
+close the fileman status window before this function will return.
+</pre><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  If the command returns a non-zero
+value, this function returns that value which could be anything.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote>
+</body>
+</html>

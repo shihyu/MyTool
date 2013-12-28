@@ -1,0 +1,62 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>mou_capture</title>
+</head>
+<body>
+
+<h3><b>void mou_capture(bool grabMouse=true)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Forces all mouse messages to the current window.  This function is
+typically called after an lbutton_down event which performs a get_event
+loop which waits for an lbutton_up event to occur.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="grabMouse">grabMouse</A></code> - Set to true to grab mouse events for ALL
+                  windows (even those not belonging to the
+                  application). Defaults to true.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+#include 'slick.sh'
+
+defeventtab form1;
+// For this example, create a picture or image control and set the
+// p_picture property to "_arrow.bmp" or any two state bitmap.  Also
+// set the p_Nofstates property to 2.
+picture1.lbutton_down()
+{
+   mou_mode(1)
+   mou_capture();
+   done=0;
+   for (;;) {
+      event=get_event();
+      switch (event) {
+      case MOUSE_MOVE:
+         mx=mou_last_x('m');  // 'm' specifies mouse position in current scale mode
+
+         my=mou_last_y('m');
+         if (mx>=0 && my>=0 && mx<p_width && my<p_height) {
+            if (!p_value) {
+               // Show the button pushed in.
+               p_value=1;
+            }
+         } else {
+            if (p_value) {
+               // Show the button up.
+               p_value=0;
+            }
+         }
+         break;
+      case LBUTTON_UP:
+      case ESC:
+         done=1;
+      }
+      if (done) break;
+   }
+   mou_mode(0);
+
+   mou_release();
+   return('')
+}
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">All Window Objects
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Mouse_Functions.html">Mouse Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="mou_release.html">mou_release</a></blockquote>
+</body>
+</html>

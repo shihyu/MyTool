@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_insert_local2</title>
+</head>
+<body>
+
+<h3><b>int tag_insert_local2(_str tag_name, _str type_name, _str file_name, int line_no, int seekpos, int scope_line_no, int scope_seekpos, int end_line_no, int end_seekpos, _str class_name, int tag_flags, _str signature)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Add a tag and its context information to the local variables list, which is
+the list of tags found in the current function or procedure, accounting for
+scope and the current cursor position.
+<p>
+The context for the a local tag includes all tag information,
+as well as the ending line number and begin/scope/end seek
+positions in the file.  If unknown, the end line number/seek
+position may be deferred, see <a href="tag_end_local.html">tag_end_local</a>().
+<p>
+For synchronization, macros should perform a tag_lock_context(true)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - tag string</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_name">type_name</A></code> - Tag type name.  See <a href="tag_get_type.html">tag_get_type</a> for a list of all standard tag types.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - full path of file the tag is located in (<a href="p_buf_name.html">p_buf_name</a>)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="start_linenum">start_linenum</A></code> - start line number of tag within file</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="start_seekpos">start_seekpos</A></code> - start seek position of tag within file</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="scope_linenum">scope_linenum</A></code> - Line number where the scope of the tag begins in <i>file_name</i>.
+                        For example, this is the line on which opening brace is found in
+                        a C function.  For tags where scope is not applicable, simply
+                        the same value as <i>start_linenum</i>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="scope_seekpos">scope_seekpos</A></code> - Seek position where the scope of the tag begins in <i>file_name</i>.
+                        See explanation above.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="end_linenum">end_linenum</A></code> - (optional) ending line number of tag within file</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="end_seekpos">end_seekpos</A></code> - (optional) Line number where the tag ends in <i>file_name</i>.  Technically,
+                        this is the seek position of the last character in the tag.  Using
+                        a C function for example, this is the seek position of the close
+                        brace ending the function body.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - (optional) Name of class or package or other container that the tag
+                        belongs to.  See <a href="VS_TAGSEPARATOR_class.html">VS_TAGSEPARATOR_class</a> and <a href="VS_TAGSEPARATOR_package.html">VS_TAGSEPARATOR_package</a>
+                        for more details about constructing this value.  If the tag is not
+                        in a class scope, simple pass the empty string for this value.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - (optional) Tag flags indicating symbol attributes, see
+                        <a href="tag_insert_simple.html">tag_insert_simple</a> for details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="signature">signature</A></code> - (optional) Tag signature, includes type, value, and arguments
+                        for the symbol being inserted.  See <a href="VS_TAGSEPARATOR_args.html">VS_TAGSEPARATOR_args</a> and
+                        <a href="VS_TAGSEPARATOR_equals.html">VS_TAGSEPARATOR_equals</a> for more details about constructing
+                        this value.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">sequence number (local_id) of local variable on success, or <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_clear_locals.html">tag_clear_locals</a>, <a href="tag_current_local.html">tag_current_local</a>, <a href="tag_find_local.html">tag_find_local</a>, <a href="tag_get_local.html">tag_get_local</a>, <a href="tag_get_detail2.html">tag_get_detail2</a>, <a href="tag_get_num_of_locals.html">tag_get_num_of_locals</a>, <a href="tag_insert_context.html">tag_insert_context</a>, <a href="tag_insert_local.html">tag_insert_local</a>, <a href="tag_insert_match.html">tag_insert_match</a>, <a href="tag_insert_tag.html">tag_insert_tag</a>, <a href="tag_next_local.html">tag_next_local</a>, <a href="tag_set_local_parents.html">tag_set_local_parents</a>, <a href="tag_set_local_name_location.html">tag_set_local_name_location</a>, <a href="tag_end_local.html">tag_end_local</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>def_background_tagging_idle</title>
+</head>
+<body>
+
+<h3><b>int def_background_tagging_idle</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Specifies the amount of time in milliseconds to wait before starting
+to gather background tagging results.
+<p>
+This setting will also be used to calculate a minimum amount of idle
+time to wait before processing background tagging jobs that require
+foreground tagging work, such as files containing embedded code or files
+that use a proc-search for finding symbols.  The idle time delay in
+microseconds for slower tagging jobs is calculated by multiplying
+this setting by 50 and adding 1 second.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Default:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">100 ms</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Configuration_Variables.html">Configuration Variables</a></blockquote>
+</body>
+</html>

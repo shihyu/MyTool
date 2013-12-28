@@ -1,0 +1,19 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsRealloc</title>
+</head>
+<body>
+
+<h3><b>void*VSAPI vsRealloc(void *pBuf, size_t len)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Reallocates memory.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pBuf">pBuf</A></code> - Null pointer or pointer allocated by <a href="vsAlloc.html">vsAlloc</a>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="len">len</A></code> - New allocation size for <i>pBuf</i>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>void*VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If successful, resizes the memory allocated by <a href="vsAlloc.html">vsAlloc</a>
+        to allow up to <i>len</i> bytes and returns a pointer to the
+        newly allocated memory.  <i>pBuf</i> may be 0 to allocate new
+        memory.  Otherwise 0 is returned.  The new memory is
+        initialized to the previous value if any pointed to by
+        <i>pBuf</i>.  Use the <a href="vsFree.html">vsFree</a> function to free memory allocated
+        by this function.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsFree.html">vsFree</a>, <a href="vsAlloc.html">vsAlloc</a>, <a href="vsFree.html">vsFree</a>, <a href="vsAlloc.html">vsAlloc</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_adjust_block_selection</title>
+</head>
+<body>
+
+<h3><b>int _adjust_block_selection(_str markid="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Overlays the selected block of text specified at the cursor position and
+fills in the source block with spaces.  This command handles all source
+and destination conflicts.  A useful function for this command is to move
+a large column of numbers up or down.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mark_id">mark_id</A></code> - is a handle to a selection returned by one of the built-ins
+                  _alloc_selection or _duplicate_selection.  A mark_id of ''
+                  or no mark_id parameter identifies the active selection.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common return codes are
+TEXT_NOT_SELECTED_RC, BLOCK_SELECTION_REQUIRED_RC.  On error, message is
+displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Selection_Functions.html">Selection Functions</a></blockquote>
+</body>
+</html>

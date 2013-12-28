@@ -1,0 +1,19 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsHvarFindMethod</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsHvarFindMethod(VSHVAR hvar, VSPSZ func_name)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="hvar">hvar</A></code> - handle for interpreter variable</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="func_name">func_name</A></code> - name of class function
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Return the name index of the given (virtual) method
+        for the a class instance.  For virtual methods, this will
+        find the nearest virtual method, starting with the actual
+        type of the 'hvar' class instance.
+        Returns CLASS_MEMBER_NOT_FOUND_RC if the method is not found.
+        Returns INVALID_HVAR_ARGUMENT_RC if 'hvar' is
+        not a class instance.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsHvarCallMethod.html">vsHvarCallMethod</a></blockquote>
+</body>
+</html>

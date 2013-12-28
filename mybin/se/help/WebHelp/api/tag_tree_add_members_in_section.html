@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_tree_add_members_in_section</title>
+</head>
+<body>
+
+<h3><b>int tag_tree_add_members_in_section(_str prefix, int type_id, int mask, int nzero, _str category_name, int &in_count)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Add globals with the given type the given section of a
+category, as set up using <a href="tag_tree_prepare_expand.html">tag_tree_prepare_expand</a>.  Refer
+to <a href="tag_find_global.html">tag_find_global</a> for details about the parameters
+type_id, mask, and non_zero.  Categories are divided into
+sections when they have so many items that it would be
+impractical to attempt to view all the items in the
+category under one tree node.  Currently sections are not
+subdivided into subsections, even if they contain
+thousands of items.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="prefix">prefix</A></code> - Tag name prefix to search for.  If given the specific
+                string "[Misc]", it will insert all tags starting with
+                characters that are not identifier start characters.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_id">type_id</A></code> - Type id (see <a href="tag_get_type.html">tag_get_type</a>)  If (<i>type_id</i><0), inserts global
+                tags with any user defined tag types.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mask">mask</A></code> - Tag flags indicating symbol attributes, see
+                <a href="tag_insert_simple.html">tag_insert_simple</a> for details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="nzero">nzero</A></code> - add member if (mask & tag_flags) is zero or nonzero?</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="category_name">category_name</A></code> - tag category to add members from</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="in_count">in_count</A></code> - (Input, Output), number of items inserted.
+                See <a href="tag_tree_add_members_of.html">tag_tree_add_members_of</a> for more information about how
+                this relates to refresh operations and prompting.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on error, <0 on error.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_find_global.html">tag_find_global</a>, <a href="tag_get_type.html">tag_get_type</a>, <a href="tag_tree_add_members_in_category.html">tag_tree_add_members_in_category</a>, <a href="tag_tree_insert_tag.html">tag_tree_insert_tag</a>, <a href="tag_tree_prepare_expand.html">tag_tree_prepare_expand</a>, <a href="tag_tree_set_user_info.html">tag_tree_set_user_info</a></blockquote>
+</body>
+</html>

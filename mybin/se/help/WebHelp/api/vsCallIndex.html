@@ -1,0 +1,46 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsCallIndex</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsCallIndex(int wid, int index, int Nofargs, VSARGTYPE *pArgList)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>Calls a Slick-C&reg; function or method corresponding to the names table
+<i>index</i> specified with the arguments specified.  Any return
+value can be retrieved by accessing the VSHVAR_RC variable handle.
+If you want to call a command (Slick-C&reg; <b>_command</b> or DLL
+<b>_command</b>) and speed is not an issue, use the more
+convenient <b>vsExecute</b> function.  <b>vsCallIndex</b> may be
+used to call any registered DLL function.</p><p>
+<p>This function can not be used to call "built-in" Slick-C&reg; function or
+method such as <b>_default_option</b> function.  However, you can
+write your own Slick-C&reg; function to call a built-in and then use this
+function to call it.  To determine if a Slick-C&reg; function is a built-in, try
+the using the vsFindIndex function with
+VSTYPE_PROC|VSTYPE_COMMAND.  If 0 is returned, the
+function is a built-in.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+   // Call a Slick-C&reg; function which returns a Slick-C&reg; array or struct
+   int index;
+   index=vsFindIndex("ProcReturnsArray ",VSTYPE_PROC);
+   if (!index) {
+       vsMessage("not found");
+       return;
+   }
+   VSARGTYPE ArgList[1];
+   ArgList[0].kind=VSARGTYPE_PSZ;ArgList[0].u.psz="some * message";
+   vsCallIndex(0,index,1,ArgList);
+   // Get first element of array or struct
+   VSHVAR hvar;
+   hvar=vsHvarArrayEl(VSHVAR_RC,0);
+   VSPLSTR  plstr;
+   // Interpreter L strings are NULL terminated.
+   plstr=vsHvarGetLstr(hvar);
+   vsMessage((char *)plstr->str);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsHvarSetI.html">vsHvarSetI</a>, <a href="vsHvarSetI64.html">vsHvarSetI64</a>, <a href="vsHvarSetB.html">vsHvarSetB</a>, <a href="vsHvarSetZ.html">vsHvarSetZ</a>, <a href="vsHvarGetZ.html">vsHvarGetZ</a>, <a href="vsHvarGetLstr.html">vsHvarGetLstr</a>, <a href="vsHvarGetI.html">vsHvarGetI</a>, <a href="vsHvarGetI64.html">vsHvarGetI64</a>, <a href="vsArg.html">vsArg</a>, <a href="vsHvarAlloc.html">vsHvarAlloc</a>, <a href="vsHvarFree.html">vsHvarFree</a>, <a href="vsHvarHashtabEl.html">vsHvarHashtabEl</a>, <a href="vsHvarArrayEl.html">vsHvarArrayEl</a>, <a href="vsFindIndex.html">vsFindIndex</a></blockquote>
+</body>
+</html>

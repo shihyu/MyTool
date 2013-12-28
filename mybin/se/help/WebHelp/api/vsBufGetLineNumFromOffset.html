@@ -1,0 +1,15 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsBufGetLineNumFromOffset</title>
+</head>
+<body>
+
+<h3><b>seSeekPosRet VSAPI vsBufGetLineNumFromOffset(int buf_id, seSeekPos Offset, seSeekPos *pRLineNum=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Converts the offset (not ROffset) into a line number and optionally
+a real line number.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="buf_id">buf_id</A></code> - Buffer id returned by vsPropGetI(wid,VSP_BUF_ID),  vsBufEdit, or vsBufMatch.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Offset">Offset</A></code> - Byte offset into buffer including no save buffer data (lines with the VSLF_NOSAVE flag set).</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pRLineNum">pRLineNum</A></code> - If specified, set to real line number (excludes lines with the VSLF_NOSAVE flag set).
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>seSeekPosRet</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the line number which contains the offset specified
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote>
+</body>
+</html>

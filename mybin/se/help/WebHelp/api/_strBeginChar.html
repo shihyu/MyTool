@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_strBeginChar</title>
+</head>
+<body>
+
+<h3><b>int _strBeginChar(_str string, int col, int &charLen=0, boolean beginComposite=true)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="string">string</A></code> - Input string to perform operation on. When
+SlickEdit is running in UTF-8 mode,
+this string is UTF-8.  Otherwise, this string
+is SBCS/DBCS for the active code page.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="col">col</A></code> - Column position within string.
+1..length(<i>string</i>)
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="CharLen">CharLen</A></code> - Set to length of entire character at position
+<i>col</i>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="BeginComposite">BeginComposite</A></code> - When true, column position returned is the
+beginning of a composite character (one or
+more UTF-8 sequences) sequence.
+Otherwise, of a UTF-8 character sequences
+is returned.  This parameter is ignored when
+SlickEdit is not running in UTF-8
+mode.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the column position of the beginning of the character which
+contains the byte at column <i>col</i>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="String_Functions.html">String Functions</a></blockquote>
+</body>
+</html>

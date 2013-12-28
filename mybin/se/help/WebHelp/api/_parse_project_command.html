@@ -1,0 +1,104 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_parse_project_command</title>
+</head>
+<body>
+
+<h3><b>_str _parse_project_command(_str command, _str buf_name, _str project_name, _str cword, _str argline='', _str ToolName='', _str ClassPath='', int *recursionStatus=null, _str(*recursionMonitorHash):[]=null, int handle=0, _str config='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Used to generate a compile command which needs parts of the buffer
+name (<i>buf_name</i>), the project name (<i>project_name</i>), or
+the current word (<i>cword</i>) inserted.  The rules for substituting
+these parts into the command are:<p>
+<dl>
+<dt>%AP</dt><dd>The 3rd party project file name, for
+associated projects</dd>
+<dt>%AW</dt><dd>The 3rd party workspace file name, for
+associated workspaces</dd>
+<dt>%B</dt><dd>Configuration</dd>
+<dt>%BD</dt><dd>Configuration build directory</dd>
+<dt>%BN</dt><dd>Configuration name.  Same as %B option except
+for Visual C++ configuration names where
+configuration names are of the form
+CFG="[ConfigName]" or [ConfigName]|[Platform].</dd>
+<dt>%BP</dt><dd>Platform name from Visual C++ configuration
+[ConfigName]|[Platform].</dd>
+<dt>%C</dt><dd>Current word</dd>
+<dt>%CP</dt><dd>Java class path including <b>-classpath</b>.</dd>
+<dt>%DEFD</dt><dd>Configuration defines with dashes.  Example: %DEFD,
+project def = 'test' produces '"-Dtest"</dd>
+<dt>%DEFS</dt><dd>Configuration defines with slashes.  Example: %DEFS,
+project def = 'test' produces '"/Dtest"</dd>
+<dt>%DM</dt><dd>The file name only of the current buffer.</dd>
+<dt>%E</dt><dd>File extension with dot</dd>
+<dt>%F</dt><dd>Absolute filename</dd>
+<dt>%H</dt><dd>(Java only) Builds a temp HTML file to run the compiled applet,
+%H is replaced by the temp HTML file name.</dd>
+<dt>%I</dt><dd>Absolute include directories (individually listed) including
+'-i'.  Example: '-ic:\folder1 -ic:\folder2'</dd>
+<dt>%IR</dt><dd>Relative include directories (to the project) including '-I',
+seperated by semicolons.  Example: '-Ic:\folder1;c:\folder2'</dd>
+<dt>%IN</dt><dd>Absolute include directories (individually listed) including
+'-i '.  Example: '-i c:\folder1 -i c:\folder2'</dd>
+<dt>%JBD</dt><dd>Java build directory including -d.</dd>
+<dt>%LF</dt><dd>Current buffer name.</dd>
+<dt>%LIBS</dt><dd>Libraries space delimited.</dd>
+<dt>%M</dt><dd>Calls a macro function.  Any return value is included in the
+build command. Must be terminated by a matching %.   Example: %Mmy_function%,
+where my_function() is a macro function.</dd>
+<dt>%N</dt><dd>Filename without extension or path</dd>
+<dt>%O</dt><dd>Output filename.  Currently only GNU projects
+have an output filename on the Link Tab.</dd>
+<dt>%OBJS</dt><dd>Project objects (including libraries).</dd>
+<dt>%OE</dt><dd>Output extension with dot</dd>
+<dt>%ON</dt><dd>Output filename with no extension or path</dd>
+<dt>%OP</dt><dd>Output path</dd>
+<dt>%P</dt><dd>Path of current file</dd>
+<dt>%Q#</dt><dd>The current file's path (no file name) starting with the folder item
+indicated by #.  Example: %Q2, current file = 'c:\a\b\c\d\test.txt' produces
+'\b\c\d\'</dd>
+<dt>%R</dt><dd>Absolute project name</dd>
+<dt>%RE</dt><dd>Project extension</dd>
+<dt>%RM</dt><dd>Project display name (for associated workspaces).</dd>
+<dt>%RN</dt><dd>Project filename without extension or path</dd>
+<dt>%RP</dt><dd>Project path</dd>
+<dt>%RV</dt><dd>(Windows only) Project drive with :</dd>
+<dt>%RW</dt><dd>Project working directory</dd>
+<dt>%T</dt><dd>Project configuration target</dd>
+<dt>%V</dt><dd>(Windows Only) Drive of current file with :</dd>
+<dt>%W</dt><dd>Absolute workspace filename</dd>
+<dt>%WE</dt><dd>Workspace extension with dot</dd>
+<dt>%WN</dt><dd>Workspace filename with no extension or path</dd>
+<dt>%WP</dt><dd>Workspace path</dd>
+<dt>%WV or %WD</dt><dd>Workspace drive with :</dd>
+<dt>%WX</dt><dd>The workspace folder name only.  Example: %WX,
+workspace = 'c:\a\b\c\workspace.vpw' produces 'c'.</dd>
+<dt>%XUP </dt><dd>Translate all back slashes that follow to forward
+slashes (UNIX file separator)</dd>
+<dt>%XWP</dt><dd>Translate all forward slashes to back slashes
+(Windows file separator)</dd>
+<dt>%-#</dt><dd>Removes the previous # characters.</dd>
+<dt>%(envvar)</dt><dd>Value of environment variable envvar</dd>
+<dt>%#</dt><dd>The # item in argline (items are seperated by spaces).</dd>
+<dt>%{*.*}</dt><dd>A list of project files matching the pattern in braces.</dd>
+<dt>%[regkey]</dt><dd>Value of Windows registry entry.
+             example:
+             %[HKLM:\Software\Microsoft\Communicator@InstallationDirectory]</dd>
+<dt>%?</dt><dd>Prompts the user for a value.  The
+user input is then included in the build command. Must be
+terminated by a matching %. Example: %?Prompt text%,
+would prompt the user with the text 'Prompt text'.</dd>
+<dt>%%</dt><dd>Percent character</dd>
+</dl>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">The resulting command is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+          defmain()
+          {
+               // The message displayed is the same as 'cc -c':+p_buf_name
+               message(_parse_project_command('%f',_project_current(p_buf_name),'');
+          }
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

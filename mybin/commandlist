@@ -1,0 +1,18 @@
+#! /bin/bash
+echo "
+[1] battery info log  
+[2] power key and Screen On info log  
+[3] power status + keycode  
+[4] Quick boot log  
+[5] tombstones pa
+"
+read -p "choice:" i
+
+case "$i" in
+        1 ) ack 'AC\(\d+\)|Level\(\d+\)|BatteryService::sendIntent\(\) - success' $@ && echo -e "\n" &&  echo "ack 'AC\(\d+\)|Level\(\d+\)|BatteryService::sendIntent\(\) - success' $1";;
+        2 ) ack 'Set LcdLight brightness|keycode=26|setPowerState\:|BrightnessDialog::setBrightness' $@ && echo -e "\n" && echo "ack 'Set LcdLight brightness|keycode=26|setPowerState\:|BrightnessDialog::setBrightness' $1";;
+        3 ) ack 'setPowerState\:|keycode=26|Set LcdLight brightness' $@ && echo -e "\n" && echo "ack 'setPowerState\:|keycode=26' $1";;
+        4 ) ack 'Performing low-level shutdown|Back from hibernation state' $@ && echo -e "\n" && echo "ack 'Performing low-level shutdown|Back from hibernation state' $1";;
+        5 ) ack '>>> .* <<<' $@;;
+        * ) echo "input error!"; exit 1
+esac

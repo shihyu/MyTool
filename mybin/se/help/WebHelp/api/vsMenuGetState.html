@@ -1,0 +1,124 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMenuGetState</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsMenuGetState(int menu_handle, char *pszFindCommand, int *pflags, char by_category, char *pszItemText=a, int MaxItemTextLen=a, char *pszCommand=a, int MaxCommandLen=a, char *pszCategory=a, int MaxCategoryLen=a, char *pszHelpCommand=a, int MaxHelpCommandLen=a, char *pszHelpString=a, int MaxHelpStringLen=a, int *pMaxItemTextLen=a, int *pMaxCommandLen=a, int *pMaxCategoryLen=a, int *pMaxHelpCommandLen=a, int *pMaxHelpStringLen=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Gets menu item values for the menu items which contain the
+command or category specified.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="menu_handle">menu_handle</A></code> - Handle of loaded menu returned by
+VSP_MENUHANDLE, vsMenuLoad,
+vsMenuFind, or vsMenuGetState.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFindCommand">pszFindCommand</A></code> - Command or category of menu item to
+find.  If a command is specified, the
+command must match exactly.  See
+<i>by_category</i> parameter.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="by_category">by_category</A></code> - May be 'M', 'C', 'P'.  If the 'M' option is
+given, <i>pszFindCommand</i> is the
+command of the menu item to be found. If
+the 'C' option is given,
+<i>pszFindCommand</i> is the category of
+the menu item to be found.  If the 'P' option
+is given, <i>pszFindCommand</i> is an
+integer (you must cast
+<i>pszFindCommand</i> to int) position
+(0..vsMenuQInfo(<i>menu_handle</i>)-1)
+of the menu item with in
+<i>menu_handle</i> in ASCIIZ format.
+Defaults to 'C'.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mf_flags">mf_flags</A></code> - may be zero or more of the
+following flags defined in "vs.h":
+
+<ul>
+<li>VSMF_CHECKED</li>
+<li>VSMF_UNCHECKED</li>
+<li>VSMF_GRAYED</li>
+<li>VSMF_ENABLED</li>
+<li>VSMF_SUBMENU</li>
+</ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszItemText">pszItemText</A></code> - Menu item title.  This may be 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxItemTextLen">MaxItemTextLen</A></code> - Number of characters allocated to
+<i>pszItemText</i>.  We recommend
+VSMAXMENUSTRING.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszCommand">pszCommand</A></code> - For a sub-menu, <i>command</i> is set to a
+menu handle which may be used in calls to
+_menu_get_state or _menu_info (you must
+convert it to an int).  Otherwise, this is set to
+the command to be executed when the menu
+item is selected..  This may be 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxCommandLen">MaxCommandLen</A></code> - Number of characters allocated to
+<i>pszCommandLen</i>.  We recommend
+VSMAXMENUSTRING.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszCategory">pszCategory</A></code> - Menu item categories. This may be 0. May
+be one or more categories separated with a '|'
+character.  See <b>vsMenuSetState</b> function for
+more information about categories.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxCategoryLen">MaxCategoryLen</A></code> - Number of characters allocated to
+<i>pszCategory</i>.  We recommend
+VSMAXMENUSTRING.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszHelpCommand">pszHelpCommand</A></code> - Menu item help command.  This
+may be 0. Executed when F1 is pressed
+while on the menu item.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxHelpCommandLen">MaxHelpCommandLen</A></code> - Number of characters allocated to
+<i>pszHelpCommand</i>.  We recommend
+VSMAXMENUSTRING.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszHelpMessage">pszHelpMessage</A></code> - Menu item help message.  This may be 0.
+Displayed when menu item is selected.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxHelpMessageLen">MaxHelpMessageLen</A></code> - Number of characters allocated to
+<i>pszHelpMessage</i>. We recommend
+VSMAXMENUSTRING.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pMaxItemTextLen">pMaxItemTextLen</A></code> - If this is not 0, this is set to the
+number of characters you need to allocate to
+<i>pszItemText</i>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pMaxCommandLen">pMaxCommandLen</A></code> - If this is not 0, this is set to the
+number of characters you need to allocate to
+<i>pszCommand</i>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pMaxCategoryLen">pMaxCategoryLen</A></code> - If this is not 0, this is set to the
+number of characters you need to allocate to
+<i>pszCategory</i>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pMaxHelpCommandLen">pMaxHelpCommandLen</A></code> - If this is not 0, this is set to the
+number of characters you need to allocate to
+<i>pszHelpCommand</i>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pMaxHelpStringLen">pMaxHelpStringLen</A></code> - If this is not 0, this is set to the
+number of characters you need to allocate to
+<i>pszHelpString</i>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// This code traverses a menu that has been loaded with
+vsMenuLoad
+static void traverse_menu(int menu_handle)
+{
+    int Nofitems;
+    Nofitems=vsMenuQInfo(menu_handle,'c');
+    for (i=0;i<Nofitems;++i) {
+           int mf_flags;
+          char caption[VSMAXMENUSTRING];
+          char command[VSMAXMENUSTRING];
+          char categories[VSMAXMENUSTRING];
+          char  help_command[VSMAXMENUSTRING];
+          char help_message[VSMAXMENUSTRING];
+          vsMenuGetState(mh, i, &mf_flags, 'P',
+                                       caption,VSMAXMENUSTRING
+                                       command, VSMAXMENUSTRING,
+                                       categories, VSMAXMENUSTRING,
+                                       help_command, VSMAXMENUSTRING,
+                                       help_message, VSMAXMENUSTRING );
+
+         vsMessageBox (caption)
+         if (mf_flags & VSMF_SUBMENU) {
+             traverse_menu(command);
+         }
+    }
+}
+void VSAPI dllproc ()
+{
+     traverse_menu(vsPropGetI(VSWID_MDI,
+VSP_MENUHANDLE));
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Menu_Functions.html">Menu Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsMenuDelete.html">vsMenuDelete</a>, <a href="vsMenuDestroy.html">vsMenuDestroy</a>, <a href="vsMenuFind.html">vsMenuFind</a>, <a href="vsMenuGetState.html">vsMenuGetState</a>, <a href="vsMenuInsert.html">vsMenuInsert</a>, <a href="vsMenuLoad.html">vsMenuLoad</a>, <a href="vsMenuQInfo.html">vsMenuQInfo</a>, <a href="vsMenuSet.html">vsMenuSet</a>, <a href="vsMenuSetState.html">vsMenuSetState</a>, <a href="vsMenuShow.html">vsMenuShow</a></blockquote>
+</body>
+</html>

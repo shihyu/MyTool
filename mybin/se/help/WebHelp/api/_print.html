@@ -1,0 +1,82 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_print</title>
+</head>
+<body>
+
+<h3><b>int _print(_str sysmessage="", _str reserved="", void(*pfnCallback)(int reason, _str caption="")=0, _str font="", _str lheader="", _str lfooter="", _str options="", _str cheader="", _str cfooter="", _str rheader="", _str rfooter="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>Prints the contents of the current buffer according to the options given.
+This function is not supported by the UNIX version.</p><p>
+<p>It is much easier to create input parameters to this function by using
+macro recording.  Use the <b>Print Setup dialog box</b> to set your
+options.  Then print a document while macro recording is on.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="sysmessage">sysmessage</A></code> - is a description given to the operating system
+which identifies this particular print job.  Usually this is the buffer
+name.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="reserved">reserved</A></code> - should be '' to avoid compatibility problems.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="callback_index">callback_index</A></code> - is a pointer to a function or a names table
+index to a global function which is called with PRINT_ONINIT to
+initialize, and PRINT_ONEXIT to uninitialize.  The callback function
+can cancel printing by calling the <b>_print_cancel</b> function.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="font">font</A></code> - is a string in the format:
+<i>font_name, font_size, font_flags</i>[,]
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="font_flags">font_flags</A></code> - is a combination of the flags below:
+<ul>
+<li>F_BOLD</li>
+<li>F_ITALIC</li>
+<li>F_STRIKE_THRU</li>
+<li>F_UNDERLINE</li>
+<li>F_PRINTER</li>
+</ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="lheader,">lheader,</A></code> - <i>lfooter</i>, <i>cheader</i>, <i>cfooter</i>,
+<i>rheader</i>, and <i>rfooter</i> are strings which may have escape
+sequences with the following meaning embedded into them:
+<dl>
+<dt>%f</dt><dd>Buffer name</dd>
+<dt>%p</dt><dd>Page number</dd>
+<dt>%d</dt><dd>Date</dd>
+</dl>
+
+<p>The letters 'l', 'c', and 'r' correspond to the header or footer at the left,
+center, and right of the page.</p>
+
+<p>The header is printed at the top of each page.  The footer is printed at
+the bottom of each page.</p>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - is a string in the format:
+
+<i>left_ma, AfterHeader_ma, right_ma, BeforeFooter_ma,
+space_between_ma, print_flags, linenums_every ,top_ma,
+bottom_ma</i>
+
+<p><b>Windows:</b> The <i>left_ma</i>, <i>top_ma</i>,
+<i>right_ma</i>, and <i>bottom_ma</i> parameters are margin space
+from the outside edge of the paper to the printed text.
+<i>AfterHeader_ma </i>is the space in inches between the header and
+the first line on the page.  <i>BeforeFooter_ma</i> is the space in
+inches between the last line on a page and the footer.</p>
+
+<p><i>space_between_ma</i> is the spacing in twips between columns.
+This parameter is only used if the <i>print_flags</i> have the
+PRINT_TWO_UP flag.</p>
+
+<p><i>print_flags</i> is a combination of the flags below:</p>
+<ul>
+<li>PRINT_LEFT_HEADER</li>
+<li>PRINT_RIGHT_HEADER</li>
+<li>PRINT_CENTER_HEADER</li>
+<li>PRINT_LEFT_FOOTER</li>
+<li>PRINT_RIGHT_FOOTER</li>
+<li>PRINT_CENTER_FOOTER</li>
+<li>PRINT_TWO_UP</li>
+</ul>
+
+<p>The PRINT_LEFT_HEADER, PRINT_RIGHT_HEADER, and
+PRINT_CENTER_HEADER flags have no effect if the
+<i>cheader</i>, <i>cfooter</i>, <i>rheader</i>, and <i>rfooter</i>
+parameters are given.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a></blockquote>
+</body>
+</html>

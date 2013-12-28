@@ -1,0 +1,19 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>safe_exit</title>
+</head>
+<body>
+
+<h3><b>_command typeless safe_exit(_str doNotExit='', _str endingSession=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Exits editor.  If any files need to be saved, the number of buffers
+which need to be saved is displayed and you are asked whether you
+want to exit any way or write them all.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="doExit">doExit</A></code> - force exit when this macro is finished</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="endingSession">endingSession</A></code> - (Windows only) Is the user logging out
+                        rather than just closing SlickEdit?
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Exits editor if successful.  Common return codes are
+COMMAND_CANCELLED_RC, ACCESS_DENIED_RC, and
+INSUFFICIENT_DISK_SPACE_RC.  On error, message is displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

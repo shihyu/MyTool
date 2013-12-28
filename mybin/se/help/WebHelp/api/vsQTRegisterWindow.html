@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsQTRegisterWindow</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsQTRegisterWindow(QWidget *pwidget, int oi=VSOI_FORM)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Registers a system window as a SlickEdit object.  There are
+different reasons for registering form (outer) windows.  One reason is
+so that a window created outside of SlickEdits dialog boxes
+will get disabled when SlickEdit displays a modal dialog box.
+Another reason is so that you can make a particular window the parent
+of one of our dialog boxes.  Make sure you call
+<b>vsUnregisterWindow</b> before you destroy your window.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pwidget">pwidget</A></code> - QWidget to register
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="oi">oi</A></code> - Object type.   One of VSOI_??? constants.
+For now this must be VSOI_FORM.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns window id of newly registered window.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Window_Functions.html">Window Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsUnregisterWindow.html">vsUnregisterWindow</a></blockquote>
+</body>
+</html>

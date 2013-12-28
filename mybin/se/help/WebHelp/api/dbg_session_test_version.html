@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>dbg_session_test_version</title>
+</head>
+<body>
+
+<h3><b>int dbg_session_test_version(int session_id, _str debugger_path, _str &version, int timeout)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Test the given debugger executable for version compability.
+This command is used outside of a debugging session to query
+if a particular debugger executable is compatible.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="session_id">session_id</A></code> - debugger session ID (1 .. max_session)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="debugger_path">debugger_path</A></code> - Path to debugger executable to test</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="version">version</A></code> - On success, set to the version number</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="timeout">timeout</A></code> - Connection timeout in milliseconds
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">1 on success, 0 on successful failure,
+        <0 on serious failure (not executable, file not found)
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Since:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">10.0
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">To test the GDB supplied with cygwin, for example
+<pre>
+   _str version;
+   int status = dbg_session_test_version(session_id,
+                                         'C:\cygwin\bin\gdb.exe',
+                                         version,10000);
+   if (status==0) {
+      _message_box("Inadaquate GDB version");
+   } else if (status<0) {
+      _message_box("GDB executable failure: ":+get_message(status));
+   } else {
+      _message_box("GDB version is good");
+   }
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Debugger_Functions.html">Debugger Functions</a></blockquote>
+</body>
+</html>

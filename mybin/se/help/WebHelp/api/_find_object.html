@@ -1,0 +1,47 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_find_object</title>
+</head>
+<body>
+
+<h3><b>int _find_object(_str name, _str option='', int wid=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="object_name">object_name</A></code> - is a string in the format: form_name  [.control_name]</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - 'N' or 'E', as described above</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - (optional) last known window handle for the object
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns an instance handle (window id) to the object,
+<i>object_name</i>.  Returns 0 if an instance is not found.  Beware, by
+default, this function will find edited or non-edited instances of an object.
+Specify the 'N' option if you only want to find a non-edited instance of an
+object.  Specify the 'E' option if you only want to find an edited instance
+of an object.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+defmain()
+{
+   // Get an instance handle to the MDI button bar.  Don't want edited
+form.
+   // Can get a 0 return value if the user has turned off the menu bar.
+   form_wid=_find_object("_mdibutton_bar_form", 'N');
+   if (form_wid) {
+        // Lets delete it (HA HA).  Bet you didn't think you could do that
+       form_wid._delete_window();
+       // To restore the button bar,   invoke the menu item  "Macro",
+"Edit MDI Button Bar"
+       // and press the OK button.
+   }
+}
+</pre></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+defeventtab form1;
+command1.lbutton_up()
+{
+    wid=_find_object("form1.command1");   // Look for self
+    if (p_window_id==wid) {
+         message("Found myself");
+    } else {
+         message("You must have another instance of form1 that does not
+have a command1 button");
+    }
+}
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_find_formobj.html">_find_formobj</a>, <a href="_find_control.html">_find_control</a></blockquote>
+</body>
+</html>

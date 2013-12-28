@@ -1,0 +1,17 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsInsertLine</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsInsertLine(int wid, const char *pBuf, int BufLen=-)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Inserts line into editor buffer after the current line.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the current object.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pBuf">pBuf</A></code> - Data for new line.  Should not include line separator characters except for binary record files.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="BufLen">BufLen</A></code> - Number of characters in pBuf.  -1 specifies that pBuf is null terminate and length can be determined from it.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><pre>
+vsInsertLine(0,"add line after current line",-1);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsGetLine.html">vsGetLine</a>, <a href="vsReplaceLine.html">vsReplaceLine</a>, <a href="vsDeleteLine.html">vsDeleteLine</a>, <a href="vsGetText.html">vsGetText</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsFontQType</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsFontQType(int flags, const char *pszFontName, void *reserved=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flags">flags</A></code> - One or more of the
+VSFONTLISTFLAG_??? flags ORed
+together.
+
+<dl>
+<dt>VSFONTLISTFLAG_SCREEN_FONTS</dt><dd>Test screen font.</dd>
+<dt>VSFONTLISTFLAG_PRINTER_FONTS</dt><dd>
+ Test printer font.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFontName">pszFontName</A></code> - Name of font to list sizes for.  Specify 0 to
+list available font names.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns flags of information about this font.
+
+<dl>
+<dt>VSFONTTYPE_RASTER</dt><dd>Windows only.  Raster font.</dd>
+<dt>VSFONTTYPE_DEVICE</dt><dd>Windows only.  Device font.</dd>
+<dt>VSFONTTYPE_TRUETYPE</dt><dd>Windows only. True Type font.</dd>
+<dt>VSFONTTYPE_FIXED</dt><dd>Fixed pitch font.</dd>
+<dt>VSFONTTYPE_OUTLINE</dt><dd>Outline font.</dd>
+<dt>VSFONTTYPE_KERNING</dt><dd>No longer used.</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Font_Functions.html">Font Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsFontIsScalable.html">vsFontIsScalable</a>, <a href="vsFontList.html">vsFontList</a>, <a href="vsFontQType.html">vsFontQType</a>, <a href="vsFontQDefaultCharSet.html">vsFontQDefaultCharSet</a></blockquote>
+</body>
+</html>

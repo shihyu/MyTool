@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsQMaxTabCol</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsQMaxTabCol()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns highest tab expansion column.  This value is useful for
+dynamically determine how large a buffer you need to expand tabs for
+an entire line.  To determine the buffer size assume the worst case
+where the first byte of the line is a tab character and the first tab stop is
+the value returned by this function.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+ // Lets say     vsQMaxTabCol()  == 1000
+//   and            vsQLineLength(0)==10
+
+ BufferSize= vsQMaxTabCol()+vsQLineLength(0)+2== 1012
+char *pszBuffer=(char *)vsAlloc(BufferSize);
+if (pszBuffer) {
+     vsExpandTabsC(0,pszBuffer,BufferSize,1,-1,'E');
+}
+</pre>
+
+<p>We added 2 to adjust for adding a null terminating character and one
+more to be extra careful.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote>
+</body>
+</html>

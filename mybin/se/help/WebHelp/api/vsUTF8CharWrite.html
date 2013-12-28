@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsUTF8CharWrite</title>
+</head>
+<body>
+
+<h3><b>VSSTATIC int vsUTF8CharWrite(unsigned wch, char *pdest)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Converts a UTF-32 character range 0x0-0x7fffffff to
+UTF-8.  The caller must handle converting UTF-16
+(windows UNICODE) surrogates into the UTF-32 character
+equivalent.  That is, the caller must convert
+0xD800,0x0DC00 to 0x10000.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wch">wch</A></code> - UTF-32 character in range 0x0-0x7fffffff.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pdest">pdest</A></code> - Pointer to UTF-8 destination buffer
+              Must contain enough space for UTF-8
+              character.  In the worst case, 6 bytes are
+              required.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>VSSTATIC int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns number of UTF-8 bytes required to encode
+        the UTF-32 character given.  0 is returned if the UTF-32
+        character is too large (above 0x7fffffff).
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Unicode_Functions.html">Unicode Functions</a></blockquote>
+</body>
+</html>

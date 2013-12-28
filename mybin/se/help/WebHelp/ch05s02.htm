@@ -1,0 +1,462 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Working with Files</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch05.htm" title="Chapter 5.  Workspaces, Projects, and Files"><link rel="prev" href="ch05.htm" title="Chapter 5.  Workspaces, Projects, and Files"><link rel="next" href="ch06.htm" title="Chapter 6.  Context Tagging®"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_workingwithfiles_13027_72706"></a>
+    <a name="sect_workingwithfiles_13027_1016462"></a>
+    <a class="indexterm" name="sect_workingwithfiles_A9BB4A42_EE51"></a>
+    <a class="indexterm" name="sect_workingwithfiles_D762D75F_8612"></a>Working with Files</h2></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithfiles_13027_1016463"></a>Overview</h3></div></div></div><p class="NormalText">SlickEdit® provides familiar operations for creating, opening, and working with files. There are many ways to perform these tasks and many options available for specifying your preferences.</p><p class="NormalText">Topics in this section are:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_42770">The Working Directory</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_71768">Creating Files</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_36250">Opening Files</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_97698">Saving Files</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_16069">File Backups</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_25881">Closing Files</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_80832">The SlickEdit® File Manager</a>
+        </p></li></ul></div><p class="NormalText">Here are a few tips to keep in mind as you read through this section and work with files:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">SlickEdit supports file names up to 200 characters long.</p></li><li><p class="NormalText">If you're using the command line and need to edit a file whose name contains space characters, place double quotation marks around the name.</p></li><li><p class="NormalText">Options are available for specifying actions that automatically occur when a file is opened or saved, including adjustments for the line format. When you specify a file to edit, the format is automatically recognized and necessary adjustments are made, based on whether the file type is DOS, Linux, UNIX, or Mac (classic Mac line endings are a single carriage return, ASCII 13). An EOF character will not be appended to Linux, UNIX, or Mac text file formats when saved, regardless of the Save options.</p></li><li><p class="NormalText">When the text in one text file is copied to a buffer that has a different type of text file format, the line separation characters are reformatted to conform to the format of the destination buffer.</p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_1016499"></a>A Word of Caution for Binary Files</h4></div></div></div><p class="NormalText">The default Load and Save options are safe for editing binary files since all reformatting is turned off. As an extra precaution to ensure that no reformatting takes place when opening and saving binary files, set the encoding to <span><strong class="guilabel">Binary</strong></span> when opening the file.</p><p class="NormalText">While the default options are safe, it is NOT safe to edit binary files with the following non-default settings, due to the risk of damaging or losing the files. These options are located on the <span><strong class="guilabel">Load</strong></span> and <span><strong class="guilabel">Save</strong></span> option screens (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">File Options</strong></span>):</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Show EOF character</strong></span> - False</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Expand tabs to spaces</strong></span> - True</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Append EOF character</strong></span> - True</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Remove EOF character</strong></span> - True</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Strip trailing spaces</strong></span> - True</p></li></ul></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithfiles_13027_42770"></a>
+      <a name="sect_workingwithfiles_13027_1016508"></a>The Working Directory</h3></div></div></div><p class="NormalText">SlickEdit® uses the current working directory for various operations that involve file navigation, and to save you from tediously browsing and typing long path names when navigating files. For example, when you use the <span><strong class="command">e</strong></span> command to open a file for editing (see <a href="ch05s02.htm#sect_workingwithfiles_13027_92342">Using the e Command</a>), you don't need to specify the complete path if the file is in the current working directory. </p><p class="NormalText">To see the current working directory at any time, use the <span><strong class="command">pwd</strong></span> command on the SlickEdit command line. </p><p class="NormalText">SlickEdit automatically changes the working directory to save you time in various situations. You can also manually set the working directory at any time. Note that the working directory in SlickEdit is different from the working directory used by the Build tool window. See the following topics:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_54920">Automatic Changes to the Working Directory</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_58155">Manually Changing the Working Directory</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_57054">Working Directory in the Build Window</a>
+        </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_54920"></a>
+        <a name="sect_workingwithfiles_13027_1017186"></a>Automatic Changes to the Working Directory</h4></div></div></div><p class="NormalText">SlickEdit® automatically sets or changes the working directory in the following situations:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">By default, when you start SlickEdit, the working directory is automatically set to the directory from the previous editing session. You can turn this behavior off with the option <span><strong class="guilabel">Auto restore working directory</strong></span> (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Application Options </strong></span> &#8594; <span><strong class="guimenuitem">Auto Restore</strong></span>).</p></li><li><p class="NormalText">The working directory is automatically set or changed when you switch projects, according to the specified project directory or the directory specified in the <span><strong class="guilabel">Working directory</strong></span> field on the <span><strong class="guilabel">Directories</strong></span> tab of the Project Properties dialog (<span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">Project Properties</strong></span>).</p></li><li><p class="NormalText">By default, the working directory is automatically set or changed if you specify a directory with the <span><strong class="command">open</strong></span> or <span><strong class="command">save_as</strong></span> commands or specify a directory location in the Open and Save As dialogs (<span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Open</strong></span> and <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Save As</strong></span>). You can change this behavior by setting the <span><strong class="guilabel">Change directory</strong></span> option (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Appearance </strong></span> &#8594; <span><strong class="guimenuitem">General</strong></span>) to <span><strong class="command">False</strong></span>.</p></li><li><p class="NormalText">The working directory changes to match directories you select in the Open tool window. This window is docked to the left tab group of the editor by default, and can also be displayed by clicking <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Tool Windows </strong></span> &#8594; <span><strong class="guimenuitem">Open</strong></span> from the main menu.</p></li><li><p class="NormalText">The working directory can be automatically set to the corresponding directory when you navigate to a file, if the configuration variable <span><strong class="command">def_switchbuf_cd</strong></span> is modified (see <a href="ch13s04.htm">Configuration Variables</a>). This is similar to the <span><strong class="guilabel">Change directory</strong></span> option mentioned in the preceding bullet, except it also works for any file navigation operation (such as <span><strong class="command">e</strong></span> or <span><strong class="command">edit</strong></span> or when SlickEdit opens a file automatically, such as with <a href="ch08s04.htm#sect_navigation_12313_69846">Symbol Navigation</a>). This feature is on by default in GNU Emacs emulation and off in all other emulations.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_58155"></a>
+        <a name="sect_workingwithfiles_13027_1017176"></a>Manually Changing the Working Directory</h4></div></div></div><p class="NormalText">You can change the working directory at any time                                                                                                                                                                                                                                                                                                     
+        with the Change Directory dialog (from the main menu, click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Change Directory</strong></span> or use the <span><strong class="command">gui_cd</strong></span> command). If you want to also change the directory in the Build window, select the option <span><strong class="guilabel">Change directory in Build Window</strong></span>. To use an alias for the directory name, select <span><strong class="guilabel">Expand alias</strong></span>. Click <span><strong class="guibutton">Save Settings</strong></span> to preserve your preferences. The settings here are also used when you use the command line version of this feature.</p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_workingwithfiles_13027_1017178"></a>Changing Directories From the SlickEdit® Command Line</h5></div></div></div><p class="NormalText">To change the directory from the SlickEdit                                                                                                                                                                                             
+          command line, use the <span><strong class="command">cd</strong></span> command as follows, where 
+          the <span><strong class="command">p</strong></span> option corresponds to the <span><strong class="guilabel">Change 
+          directory in Build Window</strong></span> option on the Change Directory 
+          dialog, and <span><strong class="command">a </strong></span>corresponds to <span><strong class="guilabel">Expand 
+          alias</strong></span>: </p><pre class="programlisting">cd {+p|-p} {+a|-a} <span class="emphasis"><em>drive/and/path/to/directory</em></span></pre><p class="NormalText">You can also change the working directory with the <span><strong class="command">pushd</strong></span> and <span><strong class="command">popd</strong></span> commands. The <span><strong class="command">pushd</strong></span> command adds the current working directory to the top of the directory stack, and makes the specified directory the new working directory. For example:</p><pre class="programlisting">pushd <span class="emphasis"><em>drive/and/path/to/directory</em></span></pre><p class="NormalText">If no arguments are given, the current working directory is swapped with the directory at the top of the directory stack. After using <span><strong class="command">pushd</strong></span>, you can use the <span><strong class="command">popd</strong></span> command to remove the top directory from the directory stack and make it the new working directory.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_57054"></a>
+        <a name="sect_workingwithfiles_13027_1016525"></a>Working Directory in the Build Window</h4></div></div></div><p class="NormalText">The working directory in the editor is different from the working directory in the <a href="ch03s02.htm#sect_toolwindowstoolbars_13309_16310">Build</a> tool window. The Build window is a shell that displays build and compile output, and also allows you to type operating system commands and see the results. It is docked to the bottom tab group of the editor by default. It can also be displayed by clicking <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Tool Windows </strong></span> &#8594; <span><strong class="guimenuitem">Build</strong></span> from the main menu. </p><p class="NormalText">The working directory is shown in the prompt inside the Build window. When you first launch SlickEdit®, the window is blank. Type a command in the window for the prompt to be displayed. </p><p class="NormalText">By default, when the directory is changed in the                                                                                                                                                                                                                                                                                                                                                                                    
+    editor, it is also changed in the Build window. However, the reverse is not 
+    true: changing the directory in the Build window does not change the 
+    directory in the editor. To make the working directory completely 
+    independent so that a change directory does not affect the Build window, 
+    make sure the <span><strong class="guilabel">Change directory in Build Window</strong></span> option 
+    on the Change Directory dialog is off (not selected) and save the settings 
+    (see <a href="ch05s02.htm#sect_workingwithfiles_13027_58155">Manually Changing the Working Directory</a>). </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithfiles_56785_78890"></a>
+      <a class="indexterm" name="sect_workingwithfiles_17582_02686"></a>
+      The Files Tool Window
+    </h3></div></div></div><p class="NormalText">The Files tool window has three tabs to display: </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">the list of open buffers.</p></li><li><p class="NormalText">the list of files in the current project.</p></li><li><p class="NormalText">the list of files in the workspace.</p></li></ul></div><div class="mediaobject"><img src="Resources/files_toolwindow.png"></div><p class="NormalText">See <a href="ch12s08.htm#sect_document_menuanddialogs_14400_14717">Document Dialogs and Tool Windows</a> for 
+  more information.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithfiles_13027_71768"></a>
+      <a name="sect_workingwithfiles_13027_1016555"></a>
+      <a class="indexterm" name="sect_workingwithfiles_3EDC2DBC_3B16"></a>
+      <a class="indexterm" name="sect_workingwithfiles_E7BEC1DE_7A7A"></a>
+      <a class="indexterm" name="sect_workingwithfiles_900B707F_280E"></a>
+      <a class="indexterm" name="sect_workingwithfiles_664C2F40_7619"></a>
+      <a class="indexterm" name="sect_workingwithfiles_52788FF2_401A"></a>
+      <a class="indexterm" name="sect_workingwithfiles_145E2539_AFE5"></a>
+      <a class="indexterm" name="sect_workingwithfiles_5C8267A6_F8D8"></a>
+      <a class="indexterm" name="sect_workingwithfiles_73C6AA9A_0BA1"></a>
+      <a class="indexterm" name="sect_workingwithfiles_73C44DC6_CB7D"></a>
+      <a class="indexterm" name="sect_workingwithfiles_873517AD_78EF"></a>Creating Files</h3></div></div></div><p class="NormalText">SlickEdit® provides four methods for creating new files:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_92342">Using the e Command</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_83646">Using the New File Dialog</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_46587">Using Code Templates</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_43032">Using Write Selection</a>
+        </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_92342"></a>
+        <a name="sect_workingwithfiles_13027_1016574"></a>
+        <a class="indexterm" name="sect_workingwithfiles_73615_41674"></a>
+        Using the e Command
+      </h4></div></div></div><p class="NormalText">One of the quickest ways to both create and open files in SlickEdit is to 
+        use the <span><strong class="command">e </strong></span>command on the SlickEdit command line. Press the ESC key to open the 
+        command line (in most emulations), then type <span><strong class="command">e file</strong></span>, where 
+        <span class="emphasis"><em>file</em></span> is the name of the file. The <span><strong class="command">e</strong></span> command is just 
+        shorthand for the <span><strong class="command">edit</strong></span> command, so you can use <span><strong class="command">edit</strong></span> instead, if 
+        you prefer. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody">Many people prefer to use the <span><strong class="command">e</strong></span> command to create new 
+          files. Typing <span><strong class="command">e myfile.ext</strong></span> is the fastest way to create a new file in 
+          SlickEdit. Including the extension on the filename is all that is needed to let SlickEdit know 
+          what file type you are editing so it can use the correct language mode.</p></div><a class="indexterm" name="sect_workingwithfiles_01460_32723"></a><p class="NormalText">Depending on your options, SlickEdit will match the characters you type 
+        against the files in the current working directory, open files, and files in the current 
+        workspace. To configure this option, select <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>, expand <span><strong class="guimenu">File Options </strong></span> &#8594; <span><strong class="guimenuitem">Open</strong></span> and set <span><strong class="guilabel">e/edit command 
+        Smart Open</strong></span> to one of these values:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Smart Open off</strong></span> - matches only against files in the current 
+            working directory.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Smart Open open documents</strong></span> - 
+            matches files in the current working directory and those that are already open. Matching open 
+            files is useful if you have a lot of files open.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Smart Open workspace files and open documents</strong></span> - matches 
+            against files in the current working directory, open files, and files in the current 
+            workspace.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Smart Open workspace files</strong></span> - matches against files in the 
+            current working directory and files in the current workspace.</p></li></ul></div><p class="NormalText">If you're opening a file that is not in the current working directory, 
+        use the full path. <a href="ch03s04.htm#sect_usingcommandline_13192_10728">Command Line Completion</a> will help entering file 
+        names and paths. </p><p class="NormalText">If the file already exists, the file will be loaded in a new buffer. If the 
+    specified file does not exist, a new buffer by that name will be created. For new files, be sure to 
+    specify the file extension so SlickEdit knows what language mode to use.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_83646"></a>
+        <a name="sect_workingwithfiles_13027_1016580"></a>Using the New File Dialog</h4></div></div></div><p class="NormalText">If you prefer working with the GUI, use the menu item 
+        <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">New</strong></span> to create a new 
+        file. This displays the New dialog open to the <span><strong class="guilabel">File tab</strong></span>. First select the 
+        <span><strong class="guilabel">Document Mode</strong></span> for the new file (recently chosen modes are listed at the 
+        top). The <span><strong class="command">Add to Project</strong></span> box determines whether the new file will be added to 
+        the active project. Its value is retained from the last time this dialog was used. Specify a 
+        <span><strong class="guilabel">Filename</strong></span>, the <span><strong class="guilabel">Location</strong></span>, and 
+        <span><strong class="guilabel">Encoding</strong></span>, then click <span><strong class="guilabel">OK</strong></span>. See the section on the New 
+        dialog's <a href="ch12.htm#sect_file_menuanddialogs_13343_86593">New Dialog</a> for more information about these 
+        fields.</p><p class="NormalText">You can create a new, untitled buffer by unchecking <span><strong class="guilabel">Add to 
+    Project</strong></span>, then double-clicking on a language in the <span><strong class="guilabel">Document Mode</strong></span> 
+    list.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_46587"></a>
+        <a name="sect_workingwithfiles_13027_1016587"></a>Using Code Templates</h4></div></div></div><p class="NormalText">Code templates are pre-defined units of code that you can use to automate the creation of common code elements, like a standard class implementation or design patterns. See <a href="ch08s12.htm">Code Templates</a> for more information and details about this feature. </p><p class="NormalText">To instantiate a predefined Code Template, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">New Item from Template</strong></span> (or use the <span><strong class="command">add_item</strong></span> command). The Add New Item dialog is displayed.</p></li><li><p class="NormalText">In the <span><strong class="guilabel">Categories</strong></span> list, expand <span><strong class="guilabel">Installed Templates</strong></span>, then click through the tree to select the language and category of the file you want to create.</p></li><li><p class="NormalText">In the <span><strong class="guilabel">Templates</strong></span> box, select the template you want to use.</p></li><li><p class="NormalText">In the <span><strong class="guilabel">Name</strong></span> field, type the name of the new file.</p></li><li><p class="NormalText">In the <span><strong class="guilabel">Location</strong></span> field, type the directory path where you want to store the new file, or click <span><strong class="guibutton">Browse</strong></span>. This field is prepopulated with the active directory.</p></li><li><p class="NormalText">Optionally, select <span><strong class="guilabel">Add to current project</strong></span>.</p></li><li><p class="NormalText">The type of template you selected may generate more than one file. If you want to view a confirmation list of the files that will be created after you click <span><strong class="guibutton">Add</strong></span>, select <span><strong class="guilabel">Confirm files before adding</strong></span>.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">Add</strong></span>.</p></li></ol></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_43032"></a>
+        <a name="sect_workingwithfiles_13027_1016602"></a>Using Write Selection</h4></div></div></div><p class="NormalText">SlickEdit also lets you create a file from a selection. Select the text you want to write, then from the main menu, click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Write Selection</strong></span> (or use the <span><strong class="command">gui_write_selection</strong></span> command). The Write Selection dialog is displayed, with fields for specifying the file name and location (similar to the <a href="ch12.htm#sect_file_menuanddialogs_13343_38388">Save As Dialog</a>). The selected text is written to the specified file. </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithfiles_13027_36250"></a>
+      <a name="sect_workingwithfiles_13027_1016612"></a>
+      <a class="indexterm" name="sect_workingwithfiles_9304E914_795A"></a>
+      <a class="indexterm" name="sect_workingwithfiles_D30EDE39_CCDD"></a>
+      Opening Files</h3></div></div></div><p class="NormalText">SlickEdit provides many ways to open files. With most editors, you 
+      must explicitly open each file you want to view or edit. To do that you must know the filename and 
+      location of the file. In SlickEdit, you often open files implicitly, by browsing into them. With 
+      these mechanisms, you don't have to know the filename or where the file is located to open it.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_18358_00679"></a>Explicitly Opening Files</h4></div></div></div><p class="NormalText"></p><p class="NormalText">To open a file by name, use any of the following mechanisms:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">One of the quickest ways to open a file is to use the 
+          <span><strong class="command">e</strong></span> command (in the syntax <span><strong class="command">e</strong></span><span class="emphasis"><em>file</em></span>), 
+          which can also be used to create files. SlickEdit uses completions to match the filename you 
+          type against the current directory, open files, and files in your workspace. If you are 
+          entering the full path to a file, completions will assist you with that as well. See <a href="ch05s02.htm#sect_workingwithfiles_13027_92342">Using the e Command</a> for more information.</p></li><li><p class="NormalText">If you prefer to open files with the GUI, select 
+          <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Open</strong></span> (or use the 
+          <span><strong class="command">gui_open</strong></span> command). SlickEdit will prompt whether to open files using a 
+          standard file browser or using Smart Open. 
+        </p><div class="mediaobject"><img src="Resources/smartopen_dialog.png"></div><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">If you choose to use a file browser, then SlickEdit uses the 
+              standard Open dialog.  See <a href="ch12.htm#sect_file_menuanddialogs_13343_77861">Standard Open Dialog</a> for more information about the fields on 
+              this dialog.</p></li><li><a class="indexterm" name="sect_workingwithfiles_35451_40630"></a><p class="NormalText">Smart Open uses the Open tool window to browse and open 
+              files. This tool window allows you to browse through directories and view a list of files. 
+              You can type a filename and the list of displayed files will be filtered to match those 
+              from the active directory and, optionally, open files and files in your workspace. See 
+              <a href="ch12.htm#sect_file_menuanddialogs_40075_41674">Open Tool Window</a> for more information. 
+            </p></li></ul></div></li><li><p class="NormalText">The <a href="ch12s08.htm#sect_document_menuanddialogs_14400_14717">Document Dialogs and Tool Windows</a> displays 
+          a list of files in the current project or workspace. You can open a file by typing a 
+          portion of the filename and then selecting a matching file from the list.</p></li><li><p class="NormalText">On Windows platforms, you can open a file by double-clicking on it 
+            in the Windows Explorer. This assumes that you have associated the SlickEdit application with 
+            the extension of that file. See <a href="ch04s08.htm">Setting File Associations</a> for more 
+            information.</p></li><li><p class="NormalText">The Projects tool window displays a list of the files contained 
+            in the projects in this workspace. You can open a file by double-clicking on it in the tree. 
+            </p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_73276_35014"></a>Implicitly Opening Files</h4></div></div></div><p class="NormalText">You open a file implicitly by using information from another window or 
+        process rather than explicitly opening the file by name and location. </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">SlickEdit's <a href="ch08s04.htm#sect_navigation_12313_69846">Symbol Navigation</a> allows you to jump 
+            from a symbol to its definition or from a symbol to a reference. </p></li><li><p class="NormalText">The <a href="ch08s05.htm#sect_symbolbrowsing_12907_20451">Preview Tool Window</a> displays the 
+            definition for the symbol at the cursor. You can open that file for editing by 
+            double-clicking in the Preview window. 
+            </p></li><li><p class="NormalText">For C and C++, you can quickly open the header or source file that is 
+            associated with the current file. From the main menu, select <span><strong class="guimenu">Document </strong></span> &#8594; <span><strong class="guimenuitem">Edit Associated File</strong></span> (or use the 
+            <span><strong class="command">edit_associated_file</strong></span> command).</p></li><li><p class="NormalText">You can quickly navigate from an error message in the Build tool window 
+            to the associated code location. See <a href="ch07.htm#sect_buildingandcompiling_26963_41674">Navigating from Build Errors to Source Locations</a>.</p></li><li><p class="NormalText">You can jump from an item in the Message List to the corresponding code 
+            location. See <a href="ch08s18.htm">Message List</a>.
+            </p></li><li><p class="NormalText">SlickEdit contains a number of search mechanisms that allow you to 
+            search based on the contents of the file or part of the filename. For more information, see 
+            <a href="ch10.htm#sect_findreplace_12763_31678">Find and Replace</a> and <a href="ch05s02.htm#sect_workingwithfiles_13027_17648">Finding Files</a>.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_66804_45555"></a>
+        <a class="indexterm" name="sect_workingwithfiles_16085_40630"></a>
+        Recently Opened Files</h4></div></div></div><p class="NormalText">SlickEdit keeps two lists of recently opened files: a list of recently 
+        opened files on the File menu and a list of recently opened workspaces on the Project menu. To 
+        manage these lists, select <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>, expand <span><strong class="guilabel">Appearance</strong></span> and select 
+        <span><strong class="guimenu">History</strong></span>. You can see the history of items recently 
+        opened from the File or Project menu. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_33739">History Options</a> for more information.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_17648"></a>
+        <a name="sect_workingwithfiles_13027_1016661"></a>
+        <a class="indexterm" name="sect_workingwithfiles_4ACF75A4_D0EB"></a>
+        <a class="indexterm" name="sect_workingwithfiles_5F3E8FB1_8561"></a>
+        <a class="indexterm" name="sect_workingwithfiles_5ACC7F7A_571A"></a>Finding Files</h4></div></div></div><p class="NormalText">SlickEdit® provides a Find File feature so you can search for one or more files to open. To access this feature, from the main menu, click <span><strong class="guimenu">Search </strong></span> &#8594; <span><strong class="guimenuitem">Find File</strong></span> (or use the <span><strong class="command">find_file</strong></span> command). The Find File dialog is displayed. You can also access the dialog by clicking the <span><strong class="guibutton">Find File</strong></span> button on the Open dialog (<span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Open</strong></span>). See <a href="ch12.htm#sect_file_menuanddialogs_13343_34528">Find File Dialog</a> for information about using this dialog.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_53857"></a>
+        <a name="sect_workingwithfiles_13027_1016670"></a>
+        <a class="indexterm" name="sect_workingwithfiles_773C8C9E_5A2E"></a>
+        <a class="indexterm" name="sect_workingwithfiles_7472D585_D54A"></a>
+        <a class="indexterm" name="sect_workingwithfiles_FB915F48_4D17"></a>Opening URLs</h4></div></div></div><p class="NormalText">In addition to opening files on your computer, SlickEdit® lets you open files on the Web for editing. To open a file located at a particular Web address, from the main menu, click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Open URL</strong></span>. The Open URL dialog is displayed. In the <span><strong class="guilabel">URL</strong></span> text box, enter a URL to open. You can use forward or backward slashes, and the prefix "http://" is not required. The URL will be opened in a new editor window. For a description of this dialog, see <a href="ch12.htm#sect_file_menuanddialogs_13343_62995">Open URL Dialog</a>.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"> URLs in SlickEdit editor windows are treated as links. You can open these links in a Web browser by hovering over the link with your mouse pointer and using the binding <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Click</strong></span> (or <span><strong class="keycap">Cmd</strong></span>+<span><strong class="keycap">Click</strong></span> on the Mac). See <a href="ch08s04.htm#sect_navigation_12313_16520">Navigating to URLs</a> for more information.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_81156"></a>
+        <a name="sect_workingwithfiles_13027_1016685"></a>
+        <a class="indexterm" name="sect_workingwithfiles_E14ECBC0_EA50"></a>
+        <a class="indexterm" name="sect_workingwithfiles_51D8DC75_49A0"></a>
+        <a class="indexterm" name="sect_workingwithfiles_64BA9050_320A"></a>Inserting Files</h4></div></div></div><p class="NormalText">The Insert File feature can be used to insert a file at the cursor location in the current buffer. To access this feature, from the main menu, click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Insert a File</strong></span> (or use the <span><strong class="command">gui_insert_file</strong></span> command). The Insert File dialog is displayed (similar to the standard Open dialog), which lets you specify the file to insert.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_52523"></a>
+        <a name="sect_workingwithfiles_13027_1016688"></a>Invoke and Edit</h4></div></div></div><p class="NormalText">Using your operating system command line, you can invoke SlickEdit® with a file(s) loaded for editing. The syntax is:</p><pre class="programlisting">
+        <span><strong class="command">vs {options} file1 {options} file2</strong></span>
+      </pre><p class="NormalText">If the file that you want to edit is not found, an empty buffer is created with that name.</p><p class="NormalText">The table below shows some invocation examples. See <a href="ch01s06.htm#sect_startingexiting_55651_41674">Invocation Options</a> in the Appendix for more options and information.</p><div class="informaltable"><a name="table_71c2b4db-8e73-4b1c-a2b2-196512dced30"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Invocation Example</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">vs project1.vpw</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Auto Restore from workspace file. If you specify <code class="filename">.vpj</code>, SlickEdit Auto Restores the project.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">vs project1.dsw</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Auto Restore from a Visual C++ workspace file.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">vs autoexec.bat config.sys</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Edit two files.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">vs "this is.c" </strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Edit a file with a space character.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">vs test.c -#1000</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Edit <code class="filename">test.c</code> and go to line 1000.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">vs orders -#bottom-of-buffer -#/invoice/- </strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Edit <code class="filename">orders</code> file, go to bottom of buffer, and search backward for "invoice".</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">vs +70 test.exe </strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Edit binary file <code class="filename">test.exe</code> in record width 70.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">vs *.c 	</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Edit all C source files in the current directory.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">vs -r list \	</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Start the Windows file manager and list the entire drive contents.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">vs -x rich.sta autoexec.bat</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Specify a different state file (<code class="filename">rich.sta</code>) and edit the file <code class="filename">autoexec.bat</code>.</p>
+              </td></tr></tbody></table></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_60719"></a>
+        <a name="sect_workingwithfiles_13027_1016743"></a>
+        <a class="indexterm" name="sect_workingwithfiles_66BDB40F_CD49"></a>Options for Opening Files</h4></div></div></div><p class="NormalText">SlickEdit provides several options related to opening files:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <a href="ch05s02.htm#sect_workingwithfiles_13027_30236">Activating Change Directory</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch05s02.htm#sect_workingwithfiles_13027_28006">Setting Global Load Options</a>
+          </p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <a href="ch05s02.htm#sect_workingwithfiles_13027_47420">Working with Large Files</a>
+              </p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <a href="ch05s02.htm#sect_workingwithfiles_13027_46838">Different Options for Different Drives</a>
+              </p></li></ul></div></li><li><p class="NormalText">
+            <a href="ch05s02.htm#sect_workingwithfiles_13027_64469">Setting Language-Specific Load Options</a>
+          </p></li></ul></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_workingwithfiles_13027_30236"></a>
+          <a name="sect_workingwithfiles_13027_1016773"></a>Activating Change Directory</h5></div></div></div><p class="NormalText">You can specify that the current directory is changed in the editor when the directory is changed in the Open, Save As, and Change Directory dialogs. From the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>, expand <span><strong class="guimenu">Appearance</strong></span> and select <span><strong class="guilabel">General</strong></span>, then set the option <span><strong class="guilabel">Change directory</strong></span> to <span><strong class="guilabel">True</strong></span>.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_workingwithfiles_13027_28006"></a>
+          <a name="sect_workingwithfiles_13027_1016776"></a>Setting Global Load Options</h5></div></div></div><p class="NormalText">SlickEdit® provides many global Load options, such as specifying which file is active after multiple files are loaded at once, expanding tabs to spaces, size limits for files to be loaded, and Auto Reload preferences. These options affect the Open dialog box and any other command that uses the <span><strong class="command">e</strong></span> or <span><strong class="command">edit</strong></span> commands to open a file. In fact, you can override many of these global Load options by selecting the corresponding option on the Open dialog. To access global Load options, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>, then expand <span><strong class="guilabel">File Options</strong></span> and select <span><strong class="guilabel">Load</strong></span>. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_26374">Load File Options</a> for information about each option.</p><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="sect_workingwithfiles_13027_47420"></a>
+            <a class="indexterm" name="sect_workingwithfiles_6FAB8BA6_3998"></a>
+            <a class="indexterm" name="sect_workingwithfiles_324C141E_F7B0"></a>Working with Large Files</h6></div></div></div><p class="NormalText">The editor reads the entire file for files that are color-coded. However, the<span><strong class="command"></strong></span><span><strong class="guilabel">Load partial</strong></span> option enhances system performance because the original file is used as a read-only spill file. To determine when the entire file is read, go to the bottom of the file. If the line number is displayed at the bottom of the file, the entire file has been read; however, this does not mean the entire file is in memory. When the entire file is not loaded, it will be locked, and other applications will not be able to write to it.</p><p class="NormalText">
+            <a class="indexterm" name="sect_workingwithfiles_67F9113C_85E7"></a>By default, 2 MB is used for the buffer cache. When the cache is full, modified blocks are written to the spill file. Blocks that are not modified and that can be reread from the original file are discarded. Scrolling through a 2 GB file requires no more than 2 MB of memory (default). A search and replace operation that hits every block requires that almost all blocks be spilled. Saving a 2 GB file requires 4 GB of disk space. The file data must first be spilled before saving the file. Turn backups off before saving a large file since this requires additional disk space, equal to the size of the file. The block size is 16 K.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="sect_workingwithfiles_13027_46838"></a>
+            <a class="indexterm" name="sect_workingwithfiles_E476919D_7FF2"></a>Different Options for Different Drives</h6></div></div></div><p class="NormalText">If you want to specify different global Load options for different disk drives, define an environment variable called <span><strong class="command">VSLICKLOAD</strong></span> and specify each drive followed by the appropriate switch. For example, the following command specifies preloading files from jump drives M and N:</p><pre class="programlisting">
+            <span><strong class="command">set VSLICKLOAD= m: +L n: +L</strong></span>
+          </pre><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody">
+              <span><strong class="command">TIP</strong></span> See <a href="ch03s04.htm#sect_usingcommandline_13192_83175">Command Line Switches</a> for information about enabling and disabling switches on the SlickEdit® command line. </p></div></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_workingwithfiles_13027_64469"></a>
+          <a name="sect_workingwithfiles_13027_1016800"></a>Setting Language-Specific Load Options</h5></div></div></div><p class="NormalText">Some options for loading files, such as loading as binary and expanding tabs to spaces, can be set on a language-specific basis. Language-specific File options override all global File options as well as any other options set for that language. To access these, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>. Expand <span><strong class="guilabel">Languages</strong></span>, the language category and language, then select <span><strong class="guilabel">File Options</strong></span>. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_33788">Language-Specific File Options</a> for more information.</p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithfiles_13027_97698"></a>
+      <a name="sect_workingwithfiles_13027_1016814"></a>
+      <a class="indexterm" name="sect_workingwithfiles_78881D4B_06F7"></a>
+      <a class="indexterm" name="sect_workingwithfiles_8588B106_4685"></a>
+      <a class="indexterm" name="sect_workingwithfiles_C15B992A_A298"></a>
+      <a class="indexterm" name="sect_workingwithfiles_2CD68630_1E1D"></a>
+      <a class="indexterm" name="sect_workingwithfiles_FE1B6511_807C"></a>
+      <a class="indexterm" name="sect_workingwithfiles_053F6DC2_9D8F"></a>
+      <a class="indexterm" name="sect_workingwithfiles_6CA0598E_E3DF"></a>
+      <a class="indexterm" name="sect_workingwithfiles_5156C700_458B"></a>Saving Files</h3></div></div></div><p class="NormalText">You can use the following methods to save files in SlickEdit®:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span class="bold"><strong>To save the current file or buffer</strong></span>: From the main menu, click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Save</strong></span> (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">S</strong></span> or <span><strong class="command">save</strong></span> command). Alternately, right-right click on a file tab and select <span><strong class="guilabel">Save [file]</strong></span> from the context menu.</p></li><li><p class="NormalText">
+          <span class="bold"><strong>To save the current file or buffer with another 
+          name</strong></span>: From the main menu, click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Save As</strong></span> 
+          (<span><strong class="command">gui_save_as</strong></span> command). The standard Save As dialog 
+          is displayed. Select the <span><strong class="guilabel">Keep old file</strong></span> option if 
+          you do not want the buffer name to be changed. See                                         
+          <a href="ch12.htm#sect_file_menuanddialogs_13343_38388">Save As Dialog</a> for more 
+      information.</p></li><li><p class="NormalText">
+          <span class="bold"><strong>To save all open buffers</strong></span>: Click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Save All</strong></span> (<span><strong class="command">save_all</strong></span> command). Alternately, right-click on any file tab and select <span><strong class="guilabel">Save All</strong></span> from the context menu.</p></li></ul></div><p class="NormalText">If a Save operation fails, for example, because the file does not have write permissions, the Save Failed dialog box is displayed, presenting some alternate choices. See <a href="ch12.htm#sect_file_menuanddialogs_13343_72275">Save Failed Dialog</a> for a description of this dialog.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_84759"></a>
+        <a name="sect_workingwithfiles_13027_1016826"></a>Options for Saving Files</h4></div></div></div><p class="NormalText">SlickEdit® provides many options regarding the saving of files:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <a href="ch05s02.htm#sect_workingwithfiles_13027_84759">Setting Global Save Options</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch05s02.htm#sect_workingwithfiles_13027_91421">Setting Language-Specific Save Options</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch05s02.htm#sect_workingwithfiles_13027_13569">Setting Backup Options</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch05s02.htm#sect_workingwithfiles_13027_80016">Setting AutoSave Options</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch05s02.htm#sect_workingwithfiles_13027_46422">Setting Files of Type Filter Options</a>
+          </p></li></ul></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_workingwithfiles_13027_1016853"></a>Setting Global Save Options</h5></div></div></div><p class="NormalText">Global Save options are available to specify actions that automatically occur when a file is saved, such as appending/removing EOF characters, expanding tabs to spaces, and setting the line format. You can override some of these global Save options by selecting the corresponding option on the Save As dialog. To access global Save options, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>, then expand <span><strong class="guilabel">File Options</strong></span> and select <span><strong class="guilabel">Save</strong></span>. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_12512">Save File Options</a> for information about each option.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_workingwithfiles_13027_91421"></a>
+          <a name="sect_workingwithfiles_13027_1016859"></a>Setting Language-Specific Save Options</h5></div></div></div><p class="NormalText">Some options for saving files, such as saving as binary and expanding tabs to spaces, can be set on a language-specific basis. Language-specific Save options override all global Save options as well as any other options set for that language. To access these, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>. Expand <span><strong class="guilabel">Languages</strong></span>, the language category and language, then select <span><strong class="guilabel">File Options</strong></span>. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_33788">Language-Specific File Options</a> for more information.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_workingwithfiles_13027_13569"></a>
+          <a name="sect_workingwithfiles_13027_1016865"></a>Setting Backup Options</h5></div></div></div><p class="NormalText">When a file is saved, SlickEdit can automatically create a backup of the 
+      file. To enable Backup and configure Backup options, from the main menu, click 
+      <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>, then expand 
+      <span><strong class="guilabel">File Options</strong></span> and select <span><strong class="guilabel">Backup</strong></span>. See <a href="ch05s02.htm#sect_workingwithfiles_13027_16069">File Backups</a> for more information.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_workingwithfiles_13027_80016"></a>
+          <a name="sect_workingwithfiles_13027_1016872"></a>
+          <a class="indexterm" name="sect_workingwithfiles_07ABFF87_BEEB"></a>Setting AutoSave Options</h5></div></div></div><p class="NormalText">SlickEdit® can save temporary versions of files, in the event of power failure or other unforeseen circumstances. To enable AutoSave and set your AutoSave preferences, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>, then expand <span><strong class="guilabel">File Options</strong></span> and select <span><strong class="guilabel">AutoSave</strong></span>. When AutoSave is enabled, SlickEdit creates temporary files in the <code class="filename">autosave</code> directory of your user config. These files are deleted the next time AutoSave occurs. AutoSave does not save buffers that are not named. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_30372">AutoSave File Options</a> for more information.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_workingwithfiles_13027_46422"></a>
+          <a name="sect_workingwithfiles_13027_1016878"></a>Setting Files of Type Filter Options</h5></div></div></div><p class="NormalText">You can change the file specifications that appear as choices in the 
+      drop-down lists for the <span><strong class="guilabel">Files of type</strong></span> and <span><strong class="guilabel">Save as type</strong></span> 
+      fields on the <span><strong class="guilabel">Open</strong></span> and <span><strong class="guilabel">Save As</strong></span> dialogs, respectively. By 
+      default, all files are listed; however, you might want a smaller list that displays only the 
+      source files you typically edit. To edit these file filters, from the main menu, click 
+      <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>, then expand 
+      <span><strong class="guimenu">File Options</strong></span> and select <span><strong class="guimenu">Files of 
+      Type 
+      Filters</strong></span>. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_99758">Files of Type Filter Options</a> for 
+      more information.</p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithfiles_13027_16069"></a>
+      <a name="sect_workingwithfiles_13027_1017008"></a>
+      <a class="indexterm" name="sect_workingwithfiles_6F66C8CF_78B4"></a>
+      <a class="indexterm" name="sect_workingwithfiles_68C2B8B2_E00D"></a>File Backups</h3></div></div></div><p class="NormalText">SlickEdit provides two mechanisms for creating backup files:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Backup History - creates a backup each time you save a file, forming a 
+          version history that you can browse, compare, and restore.</p></li><li><p class="NormalText">Single backup on first save - saves a backup file the first time 
+          in an editting session that you save a file. This preserves the state of the file prior to you 
+          working on it.</p></li></ul></div><p class="NormalText">Backup History is on by default. To change how SlickEdit makes backup 
+        files,  from the main menu select <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>, expand <span><strong class="guilabel">File Options</strong></span> and select 
+        <span><strong class="guimenu">Backup</strong></span>, then set the 
+        <span><strong class="guilabel">Make backup files</strong></span> option to one of the following:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Create backup history on save</p></li><li><p class="NormalText">Create backup file on first save</p></li><li><p class="NormalText">Off</p></li></ul></div><p class="NormalText">You can set other Backup options such as the location of the backup 
+        files, the number of backups to keep for each file, and a limit for the maximum size of a 
+        particular backup. For more information see <a href="ch12s11.htm#fileoptionsbackup">Backup File Options</a>.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_91989"></a>
+        <a name="sect_workingwithfiles_13027_1017030"></a>
+        <a class="indexterm" name="sect_workingwithfiles_BABA4C7C_284A"></a>
+        <a class="indexterm" name="sect_workingwithfiles_03351FC3_B89D"></a>Backup History</h4></div></div></div><p class="NormalText">Backup History maintains a version history for a file, creating a new 
+        version each time you save. This creates a more fine-grained version history that bridges the gap 
+        between checkins with your source control system. With Backup History you can compare the 
+        current version to previous versions, compare two previous versions, or open a previous version 
+        for editing. SlickEdit creates and stores deltas to conserve disk space. </p><p class="NormalText">To access Backup History for the current file, from the main menu click 
+        <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Backup history for</strong></span> 
+        or select <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Tool Windows </strong></span> &#8594; <span><strong class="guimenuitem">Backup History</strong></span>). An icon is also available in the Standard toolbar to 
+        open the Backup History. 
+        </p><div class="mediaobject"><img src="Resources/backuphistory_toolwindow.png"></div><p class="NormalText">Once opened, use the context menu or icons to perform the following 
+        operations on the Backup History:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Save Selected Backup As</strong></span> - saves the selected version to the 
+            location of your choosing.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Open Selected Backup</strong></span> - opens the selected version for editing. 
+            The file is opened as a copy with a number appended to the filename.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Run Diff on Selected Backup</strong></span> - compares the selected version to 
+            the current version. You can also select two versions and compare them to each other.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Revert to Selected Backup</strong></span> - loads the selected version for 
+            editing as the most recent version of this file.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Add Comments to Selected Backup</strong></span> - allows you to enter a comment 
+            on a version.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">View Source Control History</strong></span> - displays the source control 
+            history for the selected file.</p></li></ul></div><p class="NormalText">For more information on diffing files and using DIFFzilla, see <a href="ch10s02.htm#sect_comparingmerging_13768_91853">DIFFzilla®</a>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_38269"></a>
+        <a name="sect_workingwithfiles_13027_1017050"></a>
+        <a class="indexterm" name="sect_workingwithfiles_F986C31F_47B1"></a>
+        <a class="indexterm" name="sect_workingwithfiles_73CCCF91_3EF0"></a>
+        <a class="indexterm" name="sect_workingwithfiles_3EFA58AB_7675"></a>
+        <a class="indexterm" name="sect_workingwithfiles_436E24C1_64CB"></a>Backing Up Network Files</h4></div></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_workingwithfiles_13027_1017051"></a>Windows Backups</h5></div></div></div><p class="NormalText">Sometimes the default backup style does not work correctly when a network 
+      file is saved. By default, backups are placed in a subdirectory named <code class="filename">backup</code> 
+      under the SlickEdit® installation directory. For this backup style to work, make sure the 
+      application has access rights to this directory and that this directory exists. Specify the backup 
+      directory in the <span><strong class="guilabel">Backup directory path</strong></span> field on the <a href="ch12s11.htm#sect_options_menuanddialogs_14207_67401">Backup File Options</a> screen (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">File Options </strong></span> &#8594; <span><strong class="guimenuitem">Backup</strong></span>).</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_workingwithfiles_13027_1017056"></a>Linux, UNIX, and Mac Backups</h5></div></div></div><p class="NormalText">The default backup style will work properly under Linux, UNIX, and Mac 
+          platforms because backup files are placed in the <code class="filename">$HOME/.vslick</code> directory, 
+          which should always have read-write permissions.</p><p class="NormalText">A backup file is created the first time a file is saved in a given edit 
+      session. Therefore, the backup file may not represent the last save.</p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithfiles_13027_25881"></a>
+      <a name="sect_workingwithfiles_13027_1016886"></a>
+      <a class="indexterm" name="sect_workingwithfiles_B8D2418F_71E5"></a>
+      <a class="indexterm" name="sect_workingwithfiles_00AAB197_8091"></a>Closing Files</h3></div></div></div><p class="NormalText">Files can be closed in SlickEdit® with the methods below. Prior to closing, you will be prompted to save any changes.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span class="bold"><strong>To close the current file</strong></span>: Click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Close</strong></span> (<span><strong class="keycap">F3</strong></span> or <span><strong class="command">q</strong></span> command), or right-click on the file tab and select <span><strong class="guimenu">Close [file]</strong></span> from the context menu. You can also use <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">LeftClick</strong></span> or the middle mouse button on a file tab to close a file, even if the focus is not on the file to be closed. Note that the middle mouse button must be configured to send a Middle Button event.</p></li></ul></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"> The <span><strong class="command">q</strong></span> command is a shortcut for the <span><strong class="command">quit</strong></span> command. Use <span><strong class="command">q</strong></span> (or <span><strong class="command">quit</strong></span>) in the syntax <span><strong class="command">q [file]</strong></span>, where <span><strong class="command">[file]</strong></span> is a file or list of files to close. Wildcards are permitted. For example, <span><strong class="command">q c:\temp\*.*</strong></span> closes all files in the <code class="filename">temp</code> directory that you had open.</p></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span class="bold"><strong>To close all open files</strong></span>: Click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Close All</strong></span> (<span><strong class="command">close_all</strong></span> command) or right-click on the file tab and select <span><strong class="guimenu">Close All</strong></span> from the context menu.</p></li><li><p class="NormalText">
+          <span class="bold"><strong>To close all open files except for the one currently in focus</strong></span>: Right-click on the file tab and select <span><strong class="guimenu">Close Others</strong></span> from the context menu.</p></li></ul></div><p class="NormalText">See <a href="ch05.htm#sect_workingwithworkspacesandprojects_15038_76283">Opening and Closing Workspaces</a> for information about closing workspaces and projects.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithfiles_13027_80832"></a>
+      <a name="sect_workingwithfiles_13027_1016909"></a>
+      <a class="indexterm" name="sect_workingwithfiles_B8E31C11_02FA"></a>
+      <a class="indexterm" name="sect_workingwithfiles_9D0C3EE1_FC3A"></a>The SlickEdit® File Manager</h3></div></div></div><p class="NormalText">The SlickEdit File Manager offers a rich set of file listing, selecting, and operating capabilities. You can select, deselect, list, and unlist files by extension, attribute, and search pattern. Once you have listed and selected the files to be operated on, you can change file attributes, copy, move, delete, or back up the selected files. </p><p class="NormalText">File Manager operations and options can be accessed from the main menu by clicking <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">File Manager</strong></span>. </p><p class="NormalText">Topics in this section:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_42013">Creating a New File List</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_31086">Selecting Files in the File List</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch05s02.htm#sect_workingwithfiles_13027_24245">Operating on Selected Files</a>
+        </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_42013"></a>
+        <a name="sect_workingwithfiles_13027_1016927"></a>
+        <a class="indexterm" name="sect_workingwithfiles_C77D3766_63EC"></a>Creating a New File List</h4></div></div></div><p class="NormalText">Before managing files in the File Manager, you
+        must first create a list of files to be managed. To create a new file
+        list, use the <span><strong class="command">fileman</strong></span> command, or from the main menu,
+        click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">File Manager </strong></span> &#8594; <span><strong class="guimenuitem">New File List</strong></span>. The List Files dialog is
+        displayed.</p><div class="mediaobject"><img src="Resources/files_fileman_list_files.png"></div><p class="NormalText">The dialog has the following options:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">File name</strong></span> - Specify in this text box one or more files separated by spaces. Each file specification may contain wildcard characters. For example, "<code class="filename">*.c *.h</code>" will list all C and H files.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Include system files</strong></span> - When checked, files with the system attribute set are included in the list. This option is ignored on UNIX. This option is always turned on under Windows if the <span><strong class="guilabel">Show all files</strong></span> option is set on the Open dialog box (see <a href="ch12.htm#sect_file_menuanddialogs_13343_77861">Standard Open Dialog</a>).</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Include hidden files</strong></span> - When checked, files with the hidden attribute set are included in the list. This option is ignored on UNIX. This option is always turned on under Windows if the <span><strong class="guilabel">Show all files</strong></span> option is set on the Open dialog box (see <a href="ch12.htm#sect_file_menuanddialogs_13343_77861">Standard Open Dialog</a>).</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Subdirectories</strong></span> - When checked, all subdirectories below each file specified in the <span><strong class="guilabel">File name</strong></span> text box are searched.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Include directories</strong></span> - When checked,
+              directories will be included in the listing.</p></li></ul></div><p class="NormalText">The listing of files will appear in a new buffer window.</p><p class="NormalText">You can append files to your current file list. From the main menu, click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">File Manager </strong></span> &#8594; <span><strong class="guimenuitem">Append File List</strong></span> or use the <span><strong class="command">fileman</strong></span> command. The Append File List dialog contains the same fields and options as the List Files dialog described above.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody">
+          <span class="bold"><strong>
+            <a name="sect_workingwithfiles_13027_1016943"></a>TIP</strong></span> To modify and close a file list without being prompted to save each time, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">General</strong></span>, then set the <span><strong class="guilabel">Throw away file lists</strong></span> option to <span><strong class="guilabel">True</strong></span>.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_31086"></a>
+        <a name="sect_workingwithfiles_13027_1016946"></a>Selecting Files in the File List</h4></div></div></div><p class="NormalText">To select files in the file list, use the File Manager selection functions. To access these functions, from the main menu, click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">File Manager </strong></span> &#8594; <span><strong class="guimenuitem">Select</strong></span>, then choose one of the following sub-menu items:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guimenu">All</strong></span> - Selects all files in the list.</p></li><li><p class="NormalText">
+            <span><strong class="guimenu">Deselect All</strong></span>
+            <span><strong class="command"></strong></span>- Deselects all files that were previously selected.</p></li><li><p class="NormalText">
+            <span><strong class="guimenu">InvertSelect</strong></span> - Invert the selection.</p></li><li><p class="NormalText">
+            <a class="indexterm" name="sect_workingwithfiles_1C4D1F1C_9AD3"></a>
+            <span><strong class="guimenu">Attribute</strong></span> - Selects files that contain specific attribute flags
+            that you specify, including Read-Only, Hidden, System, Directory,
+            and Archive.  On UNIX systems, you can specify read/write/execute
+            attributes.
+          </p></li><li><p class="NormalText">
+            <a class="indexterm" name="sect_workingwithfiles_75998_13122"></a>
+            <span><strong class="guimenu">Extension</strong></span> - Selects all files with the specified extension. Enter the extension without the Dot character.</p></li><li><p class="NormalText">
+            <span><strong class="guimenu">Highlight</strong></span> - Selects all files within a marked area.</p></li><li><p class="NormalText">
+            <span><strong class="guimenu">Deselect Highlight</strong></span>
+            <span><strong class="command"></strong></span>- Deselects highlighted files.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithfiles_13027_24245"></a>
+        <a name="sect_workingwithfiles_13027_1016957"></a>Operating on Selected Files</h4></div></div></div><p class="NormalText">The following operations are available on the File Manager menu (<span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">File Manager</strong></span>):</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <a class="indexterm" name="sect_workingwithfiles_1AD30FE7_0256"></a>
+            <span><strong class="guimenu">Sort</strong></span> - (<span><strong class="command">fsort</strong></span> command) Sorts the files listed in File Manager on a primary and optionally a secondary key. Check the <span><strong class="guilabel">Secondary Sort</strong></span> check box if you want to sort on a secondary key.</p></li><li><p class="NormalText">
+            <a class="indexterm" name="sect_workingwithfiles_7BC548B2_A1B2"></a>
+            <span><strong class="guimenu">Backup</strong></span> - (<span><strong class="command">fileman_backup</strong></span> command) Copies the selected files (lines with "&gt;" character as first character of line) to a directory you choose. The directory structure on the source file is preserved. Typically only a drive letter is specified for the destination directory. However, you may specify a path if you wish to further nest the directory structure.</p></li><li><p class="NormalText">
+            <a class="indexterm" name="sect_workingwithfiles_0D6B2464_2B77"></a>
+            <span><strong class="guimenu">Copy</strong></span> - (<span><strong class="command">fileman_copy</strong></span> command) Copies the selected files (lines with "&gt;" character as first character of line) to a directory you choose.</p></li><li><p class="NormalText">
+            <a class="indexterm" name="sect_workingwithfiles_0AD71A1A_439C"></a>
+            <span><strong class="guimenu">Move</strong></span> - (<span><strong class="command">fileman_move</strong></span> command) Moves the selected files (lines with "&gt;" character as first character of line) to a directory you choose. The destination drive does not have to be the same as the source drive.</p></li><li><p class="NormalText">
+            <span><strong class="guimenu">Delete</strong></span> - (<span><strong class="command">fileman_delete</strong></span> command) Prompts whether to delete the selected files.</p></li><li><p class="NormalText">
+            <a class="indexterm" name="sect_workingwithfiles_5C651938_FE99"></a>
+            <span><strong class="guimenu">Edit</strong></span> - (<span><strong class="command">fileman_edit</strong></span> command) Opens the selected files for editing.</p></li><li><p class="NormalText">
+            <a class="indexterm" name="sect_workingwithfiles_60916EF9_3DFA"></a>
+            <span><strong class="guimenu">Select</strong></span> - Displays a menu of selection commands. See <a href="ch05s02.htm#sect_workingwithfiles_13027_31086">Selecting Files in the File List</a>.</p></li><li><p class="NormalText">
+            <span><strong class="guimenu">Files</strong></span> - Displays a menu of the following file commands:</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guimenu">Unlist All</strong></span> - (<span><strong class="command">unlist_all</strong></span> command) Removes all files from the list.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guimenu">Unlist Selected</strong></span> - (<span><strong class="command">unlist_select</strong></span> command) Removes selected files from the list.</p></li><li><p class="NormalText">
+                <a class="indexterm" name="sect_workingwithfiles_98126_13122"></a>
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guimenu">Unlist Extension</strong></span> - (<span><strong class="command">gui_unlist_ext</strong></span> command)
+                Removes files with a specific extension from the list. Enter
+                the extension without the dot character.</p></li><li><p class="NormalText">
+                <a class="indexterm" name="sect_workingwithfiles_49361_39226"></a>
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guimenu">Unlist Attribute</strong></span> - (<span><strong class="command">unlist_attr</strong></span> command) Removes
+                files with a specific attribute from the list. Windows
+                attributes include Read-Only, Hidden, System, Directory and
+                Archive.  On UNIX systems, you can specify read/write/execute
+            attributes.</p></li><li><p class="NormalText">
+                <a class="indexterm" name="sect_workingwithfiles_42AA7C2D_180F"></a>
+                <span><strong class="guimenu">Unlist Search</strong></span> - (<span><strong class="command">unlist_search</strong></span> command) Deletes lines which contain a search pattern you specify.</p></li><li><p class="NormalText">
+                <a class="indexterm" name="sect_workingwithfiles_1A1B1244_20F1"></a>
+                <span><strong class="guimenu">Read List</strong></span>
+                <span><strong class="command"></strong></span>- (<span><strong class="command">read_list</strong></span> command) This dialog box is similar to the Append List dialog box which adds files to the current list. The difference is that the Read List dialog box prompts you for a file name which contains the names of files to append to the current list. The file may be a list of file names or may be a file in the same format as a file manager list. You may use the Write List dialog box to write a list containing the selected file names.</p></li><li><p class="NormalText">
+                <a class="indexterm" name="sect_workingwithfiles_BE9959D7_9163"></a>
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guimenu">Write List</strong></span> - (<span><strong class="command">write_list</strong></span> command) Writes a list of the currently selected file names to a file you choose. The Open dialog box is displayed to prompt you for a file.</p></li></ul></div></li><li><p class="NormalText">
+            <a class="indexterm" name="sect_workingwithfiles_A71C3A55_C355"></a>
+            <span><strong class="guimenu">Attribute</strong></span> - (<span><strong class="command">fileman_attr</strong></span> command) Sets the <span><strong class="guilabel">Read Only</strong></span>, <span><strong class="guilabel">Hidden</strong></span>, <span><strong class="guilabel">System</strong></span>, and <span><strong class="guilabel">Archive</strong></span> attributes of the selected files.</p></li><li><p class="NormalText">
+            <a class="indexterm" name="sect_workingwithfiles_01500_51490"></a>
+            <span><strong class="guimenu">Repeat Command</strong></span> - (<span><strong class="command">for_select</strong></span> command) Runs internal or external commands on selected files.</p></li><li><p class="NormalText">
+            <a class="indexterm" name="sect_workingwithfiles_D92A5386_4CE0"></a>
+            <span><strong class="guimenu">Global Replace</strong></span> - (<span><strong class="command">fileman_replace</strong></span> command, or <span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">G</strong></span>) The Global Replace dialog box performs a search and replace on the selected files in the File Manager. The following options are available:</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Search for</strong></span>
+                <span><strong class="command"></strong></span>- Enter the string you want to search for here.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Replace with</strong></span> - Search string is replaced with this string.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Match case</strong></span> - When checked, a case sensitive search is performed.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Match whole word</strong></span> - When checked, a word search is performed. Before a search is considered successful, the characters to the left and right of the occurrence of the search string found are checked to be non-word characters. To change the word characters for a specific language, use the <span><strong class="guilabel">Word chars</strong></span> box on the language-specific <span><strong class="guimenu">General</strong></span> options screen (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">[Language Category] </strong></span> &#8594; <span><strong class="guimenuitem">[Language] </strong></span> &#8594; <span><strong class="guimenuitem">General</strong></span>). See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_24528">Language-Specific General Options</a>.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Regular expression</strong></span> - When checked, a regular expression search is performed. See <a href="ch10.htm#sect_findreplace_12763_53102">Find and Replace with Regular Expressions</a><span><strong class="command"></strong></span>for more information.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Place cursor at end</strong></span> - When checked, the cursor is placed at the end of the occurrence found.</p></li></ul></div></li><li><p class="NormalText">
+            <span><strong class="command">
+              <a class="indexterm" name="sect_workingwithfiles_6C2FE0C2_0E3F"></a>
+            </strong></span>
+            <span><strong class="guimenu">Global Find</strong></span> - (<span><strong class="command">fileman_find</strong></span> command) Performs a search on selected files.</p></li></ul></div></div></div></div></body></html>

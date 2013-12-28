@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsInit</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsInit(VSINIT *pvsinit)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>This function is intended for use by OEMs only.  OEMs receive a
+special CD which has serveral examples which use this function.  We
+recommend you look at the sample applications to get quickly started
+using this function.</p><p>
+<p>This function is called once before calling any other SlickEdit
+editor API function to initialize the API.  After calling this function,
+you can create as many editor controls as you want with
+"<b>vsCreateEditorCtl</b>".  Make sure you call
+<b>vsPrepareForTerminate</b> and <b>vsTerminate</b> to properly
+terminate the editor and release all resources.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pvsinit">pvsinit</A></code> - See comments for VSINIT structure in
+"vs.h".  You must initialized the contents of
+this structure to 0.  For C and C++, this can
+be done using memset() or defining this
+structure as a global or static variable.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

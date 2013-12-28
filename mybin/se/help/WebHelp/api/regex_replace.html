@@ -1,0 +1,69 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>regex_replace</title>
+</head>
+<body>
+
+<h3><b>_command typeless regex_replace()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>Performs a regular expression search and replace.  Prompts for the
+search string and replace string on the command line.  A long search
+may be stopped by pressing Ctrl+Alt+Shift.  For syntax of regular
+expressions see <b>Regular Expressions</b>.  The following keys
+take on a different definition while entering the regular expression
+argument.</p><p>
+<dl>
+<dt>Ctrl+R</dt><dd>Searches in reverse for next occurrence of search
+string.</dd>
+<dt>Ctrl+S</dt><dd>Searches forward for next occurrence of search
+string.</dd>
+<dt>Ctrl+T</dt><dd>Toggles regular expression pattern matching on/off.</dd>
+<dt>Ctrl+W</dt><dd>Toggles word searching on/off.</dd>
+<dt>Ctrl+C</dt><dd>Toggles case sensitivity.</dd>
+<dt>Ctrl+M</dt><dd>Toggles searching within mark.</dd>
+<dt>Ctrl+Q</dt><dd>Quotes the next character typed.</dd>
+<dt>Ctrl+O</dt><dd>Toggles incremental search mode.</dd>
+</dl><p>
+<p>You will be prompted with the message "Yes/No/Last/Go/Suspend?"
+for each occurrence of the search string.  Type the letter of the action
+you want to take.  The actions are:</p><p>
+<dl>
+<dt>Y or SPACE</dt><dd>Make change and continue searching.</dd>
+<dt>N or BACKSPACE</dt><dd>No change and continue searching.</dd>
+<dt>L or .</dt><dd>Make change and stop searching.</dd>
+<dt>G or !</dt><dd>Make change and change the rest without
+prompting.</dd>
+<dt>Q or ESC</dt><dd>Exits command.  By default, the cursor is
+NOT restored the to its original position.  If
+you want the cursor restored to its original
+position, invoke command "<b>set-var def-
+restore-cursor 1</b>" and save the
+configuration.</dd>
+<dt>S</dt><dd>Suspend change and replace.  Invoke the
+RESUME command to reinvoke the change
+and replace starting from the new cursor
+position.  Only one level of suspend is
+allowed.  Therefore, you must issue the
+RESUME command before you can use the
+suspend option in a new search and replace
+command.  This is an advanced option which
+allows you edit the area where the string that
+was found any way you like and then resume
+the command.</dd>
+<dt>Ctrl+G</dt><dd>Exits command and restore cursor to its
+original position.</dd>
+<dt>Ctrl+R</dt><dd>Searches in reverse for next occurrence of
+search string</dd>
+<dt>Ctrl+S</dt><dd>Searches forward for next occurrence of
+search string</dd>
+<dt>Ctrl+T</dt><dd>Toggles regular expression pattern matching
+on/off.</dd>
+<dt>Ctrl+W</dt><dd>Toggles word searching on/off.</dd>
+<dt>Ctrl+C</dt><dd>Toggles case sensitivity.</dd>
+<dt>Ctrl+M</dt><dd>Toggles searching within mark.</dd>
+<dt>F1 or ?</dt><dd>Displays help on <b>replace</b> command.</dd>
+</dl>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="reverse_regex_search.html">reverse_regex_search</a>, <a href="regex_search.html">regex_search</a>, <a href="replace_string.html">replace_string</a>, <a href="query_replace.html">query_replace</a>, <a href="reverse_i_search.html">reverse_i_search</a>, <a href="find.html">find</a>, <a href="replace.html">replace</a>, <a href="gui_find.html">gui_find</a>, <a href="gui_replace.html">gui_replace</a>, <a href="find_next.html">find_next</a>, <a href="find_prev.html">find_prev</a></blockquote>
+</body>
+</html>

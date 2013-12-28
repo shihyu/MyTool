@@ -1,0 +1,215 @@
+// TODO: add document comments
+
+function $assertkill();
+function $assertoff();
+function $asserton();
+function $bits();
+function $bitstoreal();
+function $bitstoshortreal();
+function $cast();
+function $countones();
+function $coverage_control();
+function $coverage_get(); 
+function $coverage_get_max(); 
+function $coverage_merge();
+function $coverage_save();
+function $dimensions();
+function $display();
+function $displayb();
+function $displayh();
+function $displayo();
+function $dumpfile();
+function $dumpvars();
+function $error();
+function $exit;
+function $fatal();
+function $fclose();
+function $fdisplay();
+function $fell();
+function $ferror();
+function $fflush();
+function $fgetc();
+function $fgets();
+function $finish();
+function $fmonitor();
+function $fopen();
+function $fread();
+function $fscanf();
+function $fseek();
+function $fstrobe();
+function $ftell();
+function $fwrite();
+function $get_coverage();
+function $high();
+function $increment();
+function $info();
+function $isunbounded();
+function $isunknown();
+function $left();
+function $load_coverage_db();
+function $low();
+function $monitor();
+function $monitorb();
+function $monitorh();
+function $monitoro();
+function $onehot();
+function $onehot0();
+function $past();
+function $printtimescale();
+function $random;
+function $readmemb();
+function $readmemh();
+function $realtime;
+function $realtobits();
+function $rewind();
+function $right();
+function $rose();
+function $sampled();
+function $set_coverage_db_name();
+function $sformat();
+function $shortrealtobits();
+function $signed()
+function $size();
+function $sscanf();
+function $stable();
+function $stime;
+function $stop();
+function $strobe();
+function $strobeb();
+function $strobeh();
+function $strobeo();
+function $swrite();
+function $swriteb();
+function $swrited();
+function $swriteo();
+function $test$plusargs();
+function $time();
+function $time;
+function $timeformat();
+function $typename();
+function $typeof();
+function $ungetc();
+function $unsigned();
+function $urandom();
+function $urandom_range();
+function $value$plusargs();
+function $warning();
+function $write();
+function $writeb();
+function $writeh();
+function $writememb();
+function $writememh();
+function $writeo();
+
+function $setup();
+function $hold();
+function $setuphold();
+function $recovery();
+function $removal();
+function $recrem();
+function $skew();
+function $timeskew();
+function $fullskew();
+function $period();
+function $width();
+function $nochange();
+
+function string get_randstate();
+function void set_randstate();
+function void srandom();
+
+class semaphore {
+   function new();
+   function put();
+   function get();
+   function try_get();
+}
+
+class mailbox {
+   function new(bound);
+   function num();
+   function put(message);
+   function try_put(message);
+   function get(message);
+   function try_get(message);
+   function peek(message);
+   function try_peek(message);
+}
+
+function int randomize();
+
+class process {
+   enum state { FINISHED, RUNNING, WAITING, SUSPENDED, KILLED };
+   function self();
+   function status();
+   function kill();
+   function await();
+   function suspend();
+   function resume();
+}
+
+interface "string" {
+   function atobin();
+   function atohex();
+   function atoi();
+   function atooct();
+   function atoreal();
+   function bintoa();
+   function compare();
+   function getc();
+   function hextoa();
+   function icompare();
+   function itoa();
+   function len();
+   function octtoa();
+   function putc();
+   function realtoa();
+   function substr();
+   function tolower();
+   function toupper();
+}
+
+interface "enum" {
+   function first();
+   function last();
+   function name();
+   function next();
+   function num();
+   function prev();
+}
+
+interface __ARRAY_TYPE {
+   function and();
+   function delete();
+   function exists();
+   function find();
+   function find_first();
+   function find_first_index();
+   function find_index();
+   function find_last();
+   function find_last_index();
+   function first();
+   function insert();
+   function last();
+   function max();
+   function min();
+   function next();
+   function num();
+   function or();
+   function pop_back();
+   function pop_front();
+   function prev();
+   function product();
+   function push_back();
+   function push_front();
+   function reverse();
+   function rsort();
+   function shuffle();
+   function size();
+   function sort();
+   function sum();
+   function unique();
+   function unique_index();
+   function xor();
+}
+

@@ -1,0 +1,26 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Writing Selection Filters</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s28.htm" title="Selection Functions"><link rel="next" href="ch14s30.htm" title="Unicode and SBCS or DBCS Macro Programming"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_writingselectionfilters_13391_76687"></a>
+    <a name="slick_c_writingselectionfilters_13391_1005974"></a>
+    <a class="indexterm" name="slick-c_writingselectionfilters_E7C8C784_EB7C"></a>
+    <a class="indexterm" name="slick-c_writingselectionfilters_57122716_2D28"></a>
+    <a class="indexterm" name="slick-c_writingselectionfilters_51B2464D_DDCD"></a>Writing Selection Filters</h2></div></div></div><p class="NormalText">The module <code class="filename">markfilt.e</code> provides the procedure <span><strong class="command">filter_selection</strong></span> for filtering selected text. Define a global procedure that accepts a string and returns a string. Then pass the name of the procedure to the <span><strong class="command">filter_selection</strong></span> procedure. </p><p class="NormalText">The following batch program converts the marked text into hexadecimal ASCII codes. Each hexadecimal ASCII code is separated by a comma. One possible use of this function could be to convert a binary font file into hexadecimal ASCII codes to be compiled into a C  program.</p><pre class="programlisting">#include "slick.sh"
+ 
+_str hex_filt(string);
+ 
+defmain() 
+{
+    if (_select_type()=="" ) {
+       message(get_message(TEXT_NOT_SELECTED_RC));
+       return(TEXT_NOT_SELECTED_RC);
+    }
+    // Underscores must be converted to dashes.
+    return(filter_selection(hex_filt));
+}
+ 
+_str hex_filt(string)
+{
+    line="";
+    for (i =1;i&lt;=length(string);++i) {
+       line=line:+dec2hex(_asc(substr(string,i,1))):+",";
+    }
+    return(line);
+}</pre><p class="NormalText"></p></div></body></html>

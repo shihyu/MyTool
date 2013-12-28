@@ -1,0 +1,188 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Environment Variables</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch13.htm" title="Chapter 13.  Appendix"><link rel="prev" href="ch13s02.htm" title="Encoding"><link rel="next" href="ch13s04.htm" title="Configuration Variables"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_environmentvariables_14642_33962"></a>
+    <a name="sect_environmentvariables_14642_1004137"></a>
+    <a class="indexterm" name="sect_environmentvariables_D98BDE9F_BF76"></a>
+    <a class="indexterm" name="sect_environmentvariables_3681B0B5_6FDC"></a>Environment Variables</h2></div></div></div><p class="NormalText">Below is a list of environment variables that can be used  within SlickEdit®. Configuration environment variables are set in the operating system or in 
+    <code class="filename">vslick.ini</code> file. For more information see <a href="ch13s03.htm#sect_environmentvariables_14642_setting_environ_variables">Setting Environment Variables in vslick.ini</a></p><p class="NormalText">You can also use the <span><strong class="command">set</strong></span> command from the SlickEdit 
+    command line to temporarily change one of the configuration environment variables or any other 
+    environment variable. See <a href="ch13s03.htm#sect_environmentvariables_14642_21830">Using the set Command</a> for more information. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Caution</h3><p class="CellBody">
+      <span><strong class="command"></strong></span>Do not set the SLICKEDITCONFIG environment variable in <code class="filename">vslick.ini</code>. 
+      SLICKEDITCONFIG determines where the editor looks for <code class="filename">vslick.ini</code>. When the 
+      editor starts up, it sets the value of environment variables specified in 
+      <code class="filename">vslick.ini</code>. For more information, see <a href="ch13s03.htm#sect_environmentvariables_14642_setting_environ_variables">Setting Environment Variables in vslick.ini</a>.</p></div><p class="NormalText"></p><div class="informaltable"><a name="table_bc6a37d0-fac6-43b8-b996-b0f03d95b092"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+            <p class="CellHeading">Environment Variable</p>
+          </th><th>
+            <p class="CellHeading">Description</p>
+          </th></tr></thead><tbody><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_8B37E1C1_36DA"></a>VSLICKRESTORE</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Directory to store Auto Restore files.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_AD232B5D_D57A"></a>
+                <a name="sect_environmentvariables_14642_83137"></a>SLICKEDITCONFIG</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Directory where user's local configuration files are stored. Used in multi-user environments. Defaults to:</p>
+            <p class="CellBody"></p>
+            <div class="itemizedlist"><ul type="disc"><li><p class="NormalText">(Windows) <code class="filename">.../My Documents/My 
+                  SlickEdit Config/[version]/</code></p></li><li><p class="NormalText">(Mac) 
+                  <code class="filename">$HOME/Library/Application Support/SlickEdit/Editor_Version/ 
+                  </code></p></li><li><p class="NormalText">(Linux, UNIX) 
+                  <code class="filename">$HOME/.slickedit/[version]/</code></p></li></ul></div>
+            <p class="CellBody"></p>
+            <p class="CellBody">
+              <span class="bold"><strong>Note that VSLICKCONFIG and VSLICKCLASSICCONFIG are no longer supported. </strong></span>VSLICKCONFIG has been replaced with a new variable, SLICKEDITCONFIG.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_39C45140_C7BA"></a>VSLICK</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Specifies additional command line arguments to editor as if you were typing them in when invoking the editor. See also <a href="ch01s06.htm#sect_startingexiting_55651_41674">Invocation Options</a>.</p> 
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_6DB35057_DE0B"></a>VSLICKPATH</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">One or more directories separated with a semicolon (<span><strong class="keycap">;</strong></span>) (or a colon [<span><strong class="keycap">:</strong></span>] on UNIX) where batch macros or executable files are searched.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_E4DABB9D_E5CA"></a>VSLICKMACROS</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">One or more directories separated with a semicolon (<span><strong class="keycap">;</strong></span>) (or a colon [<span><strong class="keycap">:</strong></span>] on UNIX) that contain macro files (<code class="filename">*.e</code>). <span><strong class="command">VSLICKPATH</strong></span> must also contain the directories listed here.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_04AAAEE3_7816"></a>VSLICKBIN</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">One or more directories separated with a semicolon (<span><strong class="keycap">;</strong></span>) (or a colon [<span><strong class="keycap">:</strong></span>] on UNIX) that contain binary files. <span><strong class="command">VSLICKPATH</strong></span> must also contain the directories listed here.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_F02D5C7A_FE3E"></a>VSLICKBITMAPS</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">One or more directories separated with a semicolon (<span><strong class="keycap">;</strong></span>) (or a colon [<span><strong class="keycap">:</strong></span>] on UNIX) that contain bitmap files (<code class="filename">*.bmp</code>). <span><strong class="command">VSLICKPATH</strong></span> must also contain the directories listed here.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_E32F871F_CF41"></a>VSLICKMISC</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">One or more directories separated with a semicolon (<span><strong class="keycap">;</strong></span>) (or a colon [<span><strong class="keycap">:</strong></span>] on UNIX) that contain miscellaneous files including <code class="filename">*.vlx</code>, <code class="filename">*.slk</code>, <code class="filename">*.api</code>, <code class="filename">*.idx</code>, <code class="filename">vslick.sta</code> (UNIX: <code class="filename">vslick.stu</code>), <code class="filename">*.hlp</code>, <code class="filename">scommon.lst</code>, <code class="filename">main.dct</code>, <code class="filename">*.pif</code>, <code class="filename">*.ini</code> (except for <code class="filename">vslick.ini</code>), and <code class="filename">*.lst</code>. <span><strong class="command">VSLICKPATH</strong></span> must also contain the directories listed here.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_00A9B653_F78B"></a>VSLICKALIAS</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">One or more file names separated with a semicolon (<span><strong class="keycap">;</strong></span>) (or a colon [<span><strong class="keycap">:</strong></span>] on UNIX) that contain alias definitions.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_8F14EBDC_42E0"></a>VSLICKTAGS</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Specifies global tag files. One or more file names separated with a semicolon (<span><strong class="keycap">;</strong></span>) (or a colon [<span><strong class="keycap">:</strong></span>] on UNIX) that contain tags. Do not put this environment variable in <code class="filename">vslick.ini</code>. </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_6D67917F_AB34"></a>VSLICKBACKUP</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Directory to place backup files. Affects <span><strong class="command">+D</strong></span> (default) and <span><strong class="command">-D</strong></span> backup configurations only. </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">VSLICKSAVE</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Allows save options to be specified per drive. </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_771B47BB_EE5B"></a>VSLICKLOAD</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Allows load options to be specified per drive. </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_D9CF390D_EABE"></a>VSLICK_XIM</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Set this to <span><strong class="command">VSLICK_XIM=scim</strong></span> to activate the Smart Common Input Method (SCIM) editor. XMODIFIERS (<span><strong class="command">XMODIFIERS=@scim</strong></span>) is set by your operating system and you must enable SCIM support for this option to have any effect. (This may cause keyboard input instability.) </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_C98D8600_43F3"></a>VSLICKXTERM</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">(UNIX only) Allows you to specify the default xterm program and arguments used by the <span><strong class="command">dos</strong></span> command and <span><strong class="command">shell</strong></span> function. The complete path to the xterm program must be specified. You may not specify the <span><strong class="command">-e</strong></span> option in the command string. For example, setting <span><strong class="command">VSLICKXTERM</strong></span> to:</p>
+            <p class="CellBody">
+              <span><strong class="command">/usr/X11/bin/xterm -geometry 80x40</strong></span>
+            </p>
+            <p class="CellBody">will create xterm windows with a width of 80 characters and a height of 40 characters. </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">VSUSER</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">The License Manager handles system crashes better if each user sets the <span><strong class="command">VSUSER</strong></span> environment variable to a unique name.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_0C0CDDEA_14DD"></a>VST</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Specifies additional command line arguments to the macro compiler as if you typed them in when invoking the compiler.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_CEC20D14_012A"></a>VSLICKXNOBLINK</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Suppresses the blinking cursor.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_environmentvariables_CCA43CEB_BADA"></a>VSLICKXNOPLUSNEWMSG</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Suppresses a message when starting a second instance of SlickEdit.</p>
+          </td></tr></tbody></table></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_environmentvariables_14642_setting_environ_variables"></a>
+      <a name="sect_environmentvariables_14642_1004249"></a>
+      <a class="indexterm" name="sect_environmentvariables_8753AA39_CB1B"></a>
+      <a class="indexterm" name="sect_environmentvariables_77283B21_C9ED"></a>
+      <a class="indexterm" name="sect_environmentvariables_F3B56303_6C4D"></a>Setting Environment Variables in vslick.ini</h3></div></div></div><p class="NormalText">Along with whatever facilities are provided by your operating system to 
+      set environement variables, you can set configuration environment variables in the file 
+      <code class="filename">vslick.ini</code>. This file is located in the following default directory based on 
+      your platform (if it does not exist, it can be created manually):</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Windows: <code class="filename">.../My Documents/My SlickEdit 
+          Config/[version]/</code></p></li><li><p class="NormalText">Mac: <code class="filename">$HOME/Library/Application 
+      Support/SlickEdit/Editor_Version/ </code></p></li><li><p class="NormalText">Linux and UNIX: 
+          <code class="filename">$HOME/.slickedit/[version]/</code></p></li></ul></div><p class="NormalText">Below is text from a sample <code class="filename">vslick.ini</code> file with an environment section.</p><pre class="programlisting">[Environment]
+VSLICKPATH=c:\vslick\win;c:\vslick\macros;c:\vslick\bitmaps;c:\vmacros
+VSLICKALIAS=c:\vmacros\alias.slk
+VSLICKINCLUDE=c:\vslick\macros;c:\vmacros
+VSLICKLOAD=a: +l b: +l
+VSLICKSAVE=a: +o b: +o
+MYPROJECTVERSION=c:\myprog4.2</pre><p class="NormalText">When the editor starts, the following environment variables are created by the editor:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="command">VSDRIVE</strong></span> - Drive letter followed by a colon (<span><strong class="keycap">:</strong></span>) where editor executable resides.</p></li><li><p class="NormalText">
+          <span><strong class="command">VSDIR</strong></span> - Directory of editor executable with a trailing backslash (UNIX: slash).</p></li></ul></div><p class="NormalText">Environment variables can be embedded in any line within a section by placing <span><strong class="keycap">%</strong></span> characters around the environment variable.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_environmentvariables_14642_21830"></a>
+      <a name="sect_environmentvariables_14642_1005149"></a>
+      <a class="indexterm" name="sect_environmentvariables_7BF0D2A2_2506"></a>
+      <a class="indexterm" name="sect_environmentvariables_47E89E78_0377"></a>
+      <a class="indexterm" name="sect_environmentvariables_63AD8337_B7A8"></a>Using the set Command</h3></div></div></div><p class="NormalText">Change or view the environment while running using the <span><strong class="command">set</strong></span> 
+      command on the SlickEdit command line. The operation of the built-in <span><strong class="command">set</strong></span> 
+      command is almost identical to the DOS <span><strong class="command">SET</strong></span> command. Use the 
+      <span><strong class="command">set</strong></span> command to temporarily change one of the configuration environment variables 
+      or any other environment variable. For a complete listing of configuration environment variables, 
+      see <a href="ch13s03.htm">Environment Variables</a>. The syntax of the 
+      <span><strong class="command">set</strong></span> command is:</p><pre class="programlisting"><span><strong class="command">set [</strong></span><span class="emphasis"><em>envvar_name</em></span><span><strong class="command"> [=</strong></span><span class="emphasis"><em>value</em></span><span><strong class="command">]]</strong></span></pre><p class="NormalText">When you invoke the <span><strong class="command">set</strong></span> command with no parameters, a new buffer is created and the current environment variable settings are inserted. The current value of an individual environment variable may be retrieved by executing the <span><strong class="command">set</strong></span> command followed by the name of the environment variable. Specify the name of the environment variable followed by an equal sign and the new value will replace the value of an existing environment variable or assign a value to a new environment variable. </p><p class="NormalText">To remove an environment variable, specify the name of the environment variable followed by an equal sign, but omit the <span class="emphasis"><em>value</em></span> parameter (ex. <span><strong class="command">set classpath=</strong></span>). The DOS command shell removes environment variables in this way also. </p><p class="NormalText">The following steps are a convenient way to change the <span><strong class="command">PATH</strong></span> environment variable:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Press <span><strong class="keycap">Esc</strong></span> to toggle the cursor to the command line.</p></li><li><p class="NormalText">Type <span><strong class="command">set path</strong></span> and press <span><strong class="keycap">Enter</strong></span>. This will place the current value of the <span><strong class="command">PATH</strong></span> variable on the command line.</p></li><li><p class="NormalText">Edit the current value and press <span><strong class="keycap">Enter</strong></span>.</p></li></ol></div><p class="NormalText">You can use the above steps to change the value of any other environment variable by specifying a different environment variable name in the second step. The <span><strong class="command">set</strong></span> command supports completion on the environment variable name. Typing <span><strong class="command">set ?</strong></span> on the command line will give you a selection list of all of the environment variable names.</p><p class="NormalText"></p></div></div></body></html>

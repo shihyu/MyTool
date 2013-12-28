@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsEndSelectCompare</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsEndSelectCompare(int wid, int markid=-)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="markid">markid</A></code> - Handle to a selection returned by
+<b>vsAllocSelection</b> or
+<b>vsDuplicateSelection</b>.  A
+<i>mark_id</i> of -1 identifies the active
+selection.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<dl>
+<dt>0</dt><dd>Current line is on last line of selection.</dd>
+<dt>>0</dt><dd>Current line is after last line of selection.</dd>
+<dt><0</dt><dd>Current line is before last line of selection.</dd>
+<dt>-1</dt><dd>Text is not selected or selection is not in
+current buffer.</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Selection_Functions.html">Selection Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsBeginSelectCompare.html">vsBeginSelectCompare</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>C API Functions By Category</title>
+</head>
+<body><p>See Also <a href="macro_functions_by_category.html">Macro Functions by Category</a>
+<p>We use the term <b>method</b> to indicate a function which takes a SlickEdit object instance handle as the first argument.
+<p>We use the term <b>property</b> to indicate one of the VSP_??? constants defined in "vs.h".  The following functions are used to get and set properties:
+<DL style="margin-left:10pt">
+<dt><a href="vsPropSetB.html">vsPropSetB</a></dt><dd>Set buffer (array of bytes) property.</dd>
+<dt><a href="vsPropGetB.html">vsPropGetB</a></dt><dd>Get buffer (array of bytes) property.</dd>
+<dt><a href="vsPropSetI.html">vsPropSetI</a></dt><dd>Set integer or boolean property.</dd>
+<dt><a href="vsPropGetI.html">vsPropGetI</a></dt><dd>Get integer or boolean property.</dd>
+<dt><a href="vsPropSetL.html">vsPropSetL</a></dt><dd>Set long integer property.</dd>
+<dt><a href="vsPropGetL.html">vsPropGetL</a></dt><dd>Get long integer property.</dd>
+<dt><a href="vsPropSetZ.html">vsPropSetZ</a></dt><dd>Set null terminated string property.</dd>
+<dt><a href="vsPropGetZ.html">vsPropGetZ</a></dt><dd>Get property as null terminated string.</dd>
+</DL><p>These property functions automatically do conversions from one type to another where possible.  For example, you can use the <b>vsPropGetZ</b> function to get an integer property such as the line number (VSP_LINE) in string format.  An error will occur if the property can not be converted to the actual type.
+<p>Note:  To reduce the on-line help, we show the Slick-C names for properties.  The Slick-C name for a property can be converted to one of the VSP_??? constants by changing the leading "p" to VSP, uppercasing all characters, and removing all underscores except the first underscore.   For example, the Slick-C property name <b>p_buf_name</b> corresponds to VSP_BUFNAME.
+<br><br>
+
+<a href="CPP_Bookmark_Functions.html">C Bookmark Functions</a><br>
+<a href="CPP_Buffer_Functions.html">C Buffer Functions</a><br>
+<a href="CPP_Check_Box_Methods.html">C Check Box Methods</a><br>
+<a href="CPP_Clipboard_Functions.html">C Clipboard Functions</a><br>
+<a href="CPP_Combo_Box_Methods.html">C Combo Box Methods</a><br>
+<a href="CPP_Command_Button_Methods.html">C Command Button Methods</a><br>
+<a href="CPP_Completion_Functions.html">C Completion Functions</a><br>
+<a href="CPP_Configuration_Functions.html">C Configuration Functions</a><br>
+<a href="CPP_CursorMovement_Functions.html">C CursorMovement Functions</a><br>
+<a href="CPP_Debugger_Functions.html">C Debugger Functions</a><br>
+<a href="CPP_Deprecated_Breakpoint_Functions.html">C Deprecated Breakpoint Functions</a><br>
+<a href="CPP_Directory_List_Box_Methods.html">C Directory List Box Methods</a><br>
+<a href="CPP_Drive_List_Methods.html">C Drive List Methods</a><br>
+<a href="CPP_Editor_Control_Functions.html">C Editor Control Functions</a><br>
+<a href="CPP_Editor_Control_Callback_Functions.html">C Editor Control Callback Functions</a><br>
+<a href="CPP_Editor_Control_Methods.html">C Editor Control Methods</a><br>
+<a href="CPP_Edit_Window_Functions.html">C Edit Window Functions</a>, <a href="CPP_Edit_Window_Methods.html">Methods</a><br>
+<a href="CPP_File_Functions.html">C File Functions</a><br>
+<a href="CPP_File_List_Box_Methods.html">C File List Box Methods</a><br>
+<a href="CPP_Font_Functions.html">C Font Functions</a><br>
+<a href="CPP_Form_Functions.html">C Form Functions</a>, <a href="CPP_Form_Methods.html">Methods</a><br>
+<a href="CPP_Frame_Methods.html">C Frame Methods</a><br>
+<a href="CPP_Gauge_Methods.html">C Gauge Methods</a><br>
+<a href="CPP_Marker_Functions.html">C Marker Functions</a><br>
+<a href="CPP_Hscroll_Bar_Methods.html">C Hscroll Bar Methods</a><br>
+<a href="CPP_Image_Methods.html">C Image Methods</a><br>
+<a href="CPP_Keyboard_Functions.html">C Keyboard Functions</a><br>
+<a href="CPP_Label_Methods.html">C Label Methods</a><br>
+<a href="CPP_List_Box_Methods.html">C List Box Methods</a><br>
+<a href="CPP_Macro_Programming_Functions.html">C Macro Programming Functions</a><br>
+<a href="CPP_MDI_Window_Methods.html">C MDI Window Methods</a><br>
+<a href="CPP_Menu_Functions.html">C Menu Functions</a><br>
+<a href="CPP_Miscellaneous_Functions.html">C Miscellaneous Functions</a><br>
+<a href="CPP_Miscellaneous_Defines.html">C Miscellaneous Defines</a><br>
+<a href="CPP_Mouse_Functions.html">C Mouse Functions</a><br>
+<a href="CPP_Names_Table_Functions.html">C Names Table Functions</a><br>
+<a href="CPP_Picture_Box_Methods.html">C Picture Box Methods</a><br>
+<a href="CPP_Project_Functions.html">C Project Functions</a><br>
+<a href="CPP_Radio_Button_Methods.html">C Radio Button Methods</a><br>
+<a href="CPP_Refactoring_Functions.html">C Refactoring Functions</a><br>
+<a href="CPP_Search_Functions.html">C Search Functions</a><br>
+<a href="CPP_Selection_Functions.html">C Selection Functions</a><br>
+<a href="CPP_Selective_Display_Functions.html">C Selective Display Functions</a><br>
+<a href="CPP_Spin_Methods.html">C Spin Methods</a><br>
+<a href="CPP_String_Functions.html">C String Functions</a><br>
+<a href="CPP_Tagging_Functions.html">C Tagging Functions</a><br>
+<a href="CPP_Text_Box_Methods.html">C Text Box Methods</a><br>
+<a href="CPP_Tree_View_Methods.html">C Tree View Methods</a><br>
+<a href="CPP_Unicode_Functions.html">C Unicode Functions</a><br>
+<a href="CPP_Version_Control_Functions.html">C Version Control Functions</a><br>
+<a href="CPP_Vscroll_Bar_Methods.html">C Vscroll Bar Methods</a><br>
+<a href="CPP_Window_Functions.html">C Window Functions</a><br>
+<a href="CPP_XMLCFG_Functions.html">C XMLCFG Functions</a><br>
+</body>

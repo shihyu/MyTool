@@ -1,0 +1,72 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_insert_instance</title>
+</head>
+<body>
+
+<h3><b>int tag_insert_instance(_str inst_name, _str inst_type, int inst_flags, _str inst_class, _str inst_args, _str file_name, int line_no)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Insert the given tag instance into a references database. If an exact match already exists in the database, then just return the existing ID.  This function is comparable to tag_insert_simple and tag_insert_tag, except that it is specifically tuned for references database.  The most specific difference is the fact that this function returns a unique ID for the instance which is stored in the database as a key, which is not needed for tag databases.  However in a references database, this key is required in order to efficiently index and store huge cross references databases.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="inst_name">inst_name</A></code> - name of tag instance (case insensitive)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="inst_type">inst_type</A></code> - Tag type name.  See <a href="tag_get_type.html">tag_get_type</a> for a list of
+                  all standard tag types.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="inst_flags">inst_flags</A></code> - Set of the following instance attribute flags, as applicable.
+                  <dl compact>
+                  <dt>VS_INSTFLAG_virtual<dd style="margin-left:120pt">    virtual function (instance)
+                  <dt>VS_INSTFLAG_static<dd style="margin-left:120pt">     static method / member (class)
+                  <dt>VS_INSTFLAG_const<dd style="margin-left:120pt">      C++ const method
+                  <dt>VS_INSTFLAG_volatile<dd style="margin-left:120pt">      C/C++ volatile method
+
+                  </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="inst_class">inst_class</A></code> - Name of class or package or other container that the
+                  tag belongs to.  See <a href="VS_TAGSEPARATOR_class.html">VS_TAGSEPARATOR_class</a> and
+                  <a href="VS_TAGSEPARATOR_package.html">VS_TAGSEPARATOR_package</a> for more details about
+                  constructing this value.  If the tag is not in a
+                  class scope, simple pass the empty string for this value.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="inst_args">inst_args</A></code> - arguments associated with tag (eg. function args)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - name of file where tag instance is located</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="line_no">line_no</A></code> - Line number where the tag begins in <i>file_name</i>.  Use 0 to
+                  represent an unknown line number.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">tag instance ID (>0) on success, <0 on error.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">The following example illustrates tagging references.
+<pre>
+static void foo(int a) {
+    printf("a=%d\n",a);
+    bar(a+1);
+}
+static void bar(int ap1) {
+     if (a>1000) return;
+     foo(a*2);
+}
+int main(int argc, char *argv[]) {
+     foo( 0 );
+     return 0;
+}
+</pre>
+<p>For the C code fragment above, <a href="tag_insert_instance.html">tag_insert_instance</a> and <a href="tag_insert_reference.html">tag_insert_reference</a>
+ would be invoked as follows in order to create a references database.
+
+<pre>
+tag_insert_instance(
+         "foo", "func", VS_INSTFLAG_static,
+         "", "int a", "/home/vslick/docs/testrefs.c", 1);   // returns 1
+tag_insert_instance(
+         "bar", "func", VS_INSTFLAG_static,
+         "", "int ap1", "/home/vslick/docs/testrefs.c", 5);  // returns 2
+tag_insert_instance(
+         "main", "func", 0,
+         "", "int argc, char*argv[]",
+         "/home/vslick/docs/testrefs.c", 9);  // returns 3
+tag_insert_instance(
+         "printf", "func", 0,
+         "", "const char*, . . . "/usr/include/stdio.h", 312);  // returns 4
+
+tag_insert_reference(
+         4, 1, "/home/vslick/docs/testrefs.c",
+         VS_REFTYPE_call, "/home/vslick/docs/testrefs.c", 2);
+tag_insert_reference(
+         2, 1, "/home/vslick/docs/testrefs.c",
+         VS_REFTYPE_call, "/home/vslick/docs/testrefs.c", 3);
+tag_insert_reference(
+         1, 2, "/home/vslick/docs/testrefs.c",
+         VS_REFTYPE_call, "/home/vslick/docs/testrefs.c", 7);
+tag_insert_reference(
+         1, 3, "/home/vslick/docs/testrefs.c",
+         VS_REFTYPE_call, "/home/vslick/docs/testrefs.c", 10);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_insert_file_end.html">tag_insert_file_end</a>, <a href="tag_insert_file_start.html">tag_insert_file_start</a>, <a href="tag_insert_reference.html">tag_insert_reference</a>, <a href="tag_insert_tag.html">tag_insert_tag</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsSetSelectType</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsSetSelectType(int wid, int markid, int type, char option='L')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This function changes the selection type for a specified selection
+handle.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="markid">markid</A></code> - <i>mark_id</i> is a selection handle
+allocated by the <b>vsAllocSelection</b> or
+<b>vsDuplicateSelection</b> function.  A
+<i>mark_id</i> of -1 specifies the active
+selection or selection showing and is always
+allocated.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type">type</A></code> - One of the following:
+
+<p>If <i>option</i>=='L' or option=='T'</p>
+<ul>
+<li>VSSELECT_LINE</li>
+<li>VSSELECT_CHAR</li>
+<li>VSSELECT_BLOCK</li>
+<li>VSSELECT_NONINCLUSIVEBLOCK</li>
+</ul>
+
+<p>If <i>option</i>=='S'</p>
+<ul>
+<li>VSSELECT_CURSOREXTENDS</li>
+</ul>
+
+<p>If <i>option</i>=='U'</p>
+<ul>
+<li>VSSELECT_PERSISTENT</li>
+</ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - 'L', 'T', 'S', or 'U'.
+ For 'L' or 'T' the select type is set to the
+<i>type</i> given.  When the 'L' option,
+<i>type==VSSELECT_LINE,</i>, and the
+last line of a character selection has 0 bytes
+selected, the last line is not included in the
+new line selection.
+
+<p>For 'S', the selection style is set to extend as
+the cursor moves or not to extend as the
+cursor moves.</p>
+
+<p>For 'U', the selection style is set to be
+persistent or not persistent.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if the <i>markid</i> specified is valid.  Otherwise a
+negative error code is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Selection_Functions.html">Selection Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsQSelectType.html">vsQSelectType</a></blockquote>
+</body>
+</html>

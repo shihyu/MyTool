@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Options SYSTEM "http://www.slickedit.com/dtd/vse/14.0/options.dtd">
+<Options Version="1.0" SlickEditVersion="14.0.0.0">
+    <OptionsTree DefaultHeight="8955" DefaultWidth="13600">
+        <Dialog Caption="Welcome" Form="_quick_start_welcome_form" SystemHelp="Quick Start" DialogHelp=" " />
+        <Dialog Caption="Emulation" Form="_emulation_form" SystemHelp="Emulation (Quick Start)" DialogHelp="An emulation makes SlickEdit work like another editor, mimicking common key bindings and behaviors.  Changing the emulation will affect things like cursor movement, selection style, and other editor behaviors. If you are not sure which emulation to choose, we recommend using the default emulation, CUA." />
+        <Dialog Caption="Colors" Form="_quick_start_colors_form" SystemHelp="Colors (Quick Start)" DialogHelp="Select a color scheme for SlickEdit. Both light and dark backgrounds schemes are provided." />
+        <Dialog Caption="Fonts" Form="_quick_start_fonts_form" SystemHelp="Fonts (Quick Start)" DialogHelp="Select the font to use for Unicode and Non-Unicode editor windows. Unicode editor windows display characters using UTF, commonly used for XML, or EBCIDIC. Non-Unicode windows display regular text using Single Byte Character Sets (SBCS) or Double Byte Character Sets (DBCS)." />
+        <Dialog Caption="Coding" Form="_quick_start_coding_form" SystemHelp="Coding (Quick Start)" DialogHelp="These options control the look of your code as well as how your editor behaves while you type.  Syntax Expansion and Line Numbers are controlled by tri-state checkboxes. Checked will turn the option on for all languages. Unchecked turns it off for all languages. Grayed in means no change, and the individual language settings will be retained." />
+        <Dialog Caption="Associate File Types" Form="_associate_file_types_form" Exclusions="OS2386, UNIX,Eclipse" SystemHelp="Associate File Types (Quick Start)" DialogHelp="Select which file types should automatically load in SlickEdit when opened from within Windows Explorer." />
+        <Dialog Caption="Workspaces & Projects" Form="_quick_start_setup_project_form" SystemHelp="Workspaces and Projects (Quick Start)" DialogHelp=" " Exclusions="Eclipse" />
+        <Dialog Caption="Context Tagging" Form="_tag_compilers_form" SystemHelp="Context Tagging (Quick Start)" DialogHelp="Select the compiler tag files you would like SlickEdit to begin build for future use.  The tag files will be built in the background." />
+        <Dialog Caption="More Information" Form="_quick_start_more_information_form" SystemHelp="More Information (Quick Start)" DialogHelp=" " />
+    </OptionsTree>
+</Options>

@@ -1,0 +1,52 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsGetEditorName</title>
+</head>
+<body>
+
+<h3><b>char*VSAPI vsGetEditorName(int option, char *pszName, int MaxNameLen, int *pMaxNameLen=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - One of the VSEDITORNAME_???
+constants defined in "vs.h":
+
+<dl>
+<dt>VSEDITORNAME_INVOCATION_NAME</dt><dd>
+ Invocation name of editor.  (argv[0]).  This
+name will contain a path if the user invoked
+the editor with a path specification.  Under
+Windows, this name is used when
+associating an extension to the editor.</dd>
+
+<dt>VSEDITORNAME_EXE_PATH</dt><dd>
+ Absolute editor executable path with trailing
+backslash.  A few files in a single user
+configuration are stored in this directory
+(vrestore.slk, vslick.ini).</dd>
+
+<dt>VSEDITORNAME_STATE_FILENAME</dt><dd>
+ Absolute state file name.</dd>
+
+<dt>VSEDITORNAME_AUTORESTORE_FILENAME</dt><dd>
+ Absolute auto restore file name.</dd>
+
+<dt>VSEDITORNAME_DDE_SERVER_NAME</dt><dd>
+ DDE server name.</dd>
+
+<dt>VSEDITORNAME_APPLICATION_NAME</dt><dd>
+ Application name.  This is currently only
+used by vsMessageBox as the default title.
+However, it is likely other dialogs will use
+this in the future.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszName">pszName</A></code> - Buffer to contain copy of value.  This
+parameter is used as the return value.  This
+can be 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxNameLen">MaxNameLen</A></code> - Number of bytes allocated to pszName.
+Must be at least 1.  We recommend
+VSMAXFILENAME.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pMaxNameLen">pMaxNameLen</A></code> - If this is not 0, this is set to the number
+characters  you need to be allocate.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>char*VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns string corresponding to <i>option</i> specified.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

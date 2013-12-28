@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>concur_shell</title>
+</head>
+<body>
+
+<h3><b>int concur_shell(_str cmdline)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Creates a build window running in the current buffer.  If <i>command</i>
+is an empty string ('') then the default command processor is started.  The
+default command processor is defined by the COMSPEC (UNIX: SHELL) environment
+variable.  Otherwise <i>command</i> contains the program name and arguments
+to be executed as a concurrent process.  Each copy of SlickEdit can
+run one concurrent session.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common error codes are: TOO_MANY_FILES_RC,
+TOO_MANY_SELECTIONS_RC, CANT_FIND_INIT_PROGRAM_RC, ERROR_CREATING_SEMAPHORE_RC,
+TOO_MANY_OPEN_FILES_RC, NOT_ENOUGH_MEMORY_RC, ERROR_CREATING_QUEUE_RC,
+INSUFFICIENT_MEMORY_RC, and ERROR_CREATING_THREAD_RC.  On error, message is
+displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="shell.html">shell</a>, <a href="xcom.html">xcom</a>, <a href="dos.html">dos</a></blockquote>
+</body>
+</html>

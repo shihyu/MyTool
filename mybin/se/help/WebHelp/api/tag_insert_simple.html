@@ -1,0 +1,92 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_insert_simple</title>
+</head>
+<body>
+
+<h3><b>int tag_insert_simple(_str tag_name, int type_id, _str file_name, int line_no, _str class_name, int tag_flags, _str signature)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Insert the given tag with the accompanying information into the
+database.  This function is identical to vsTagInsert, except
+that rather than passing in a tag type, you pass in an int, using
+one of the standard types defined above (see VS_TAGTYPE_*).<p>
+If a record with the same tag name, type, file, *and* class
+already exists in the database, the line number will be updated.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - tag string</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_id">type_id</A></code> - Tag type ID.  See <a href="tag_get_type.html">tag_get_type</a> for a list of all standard tag types.
+                  Will return an error
+                  if (tag_type &lt;= 0 || tag_type > VSTAGTYPE_LASTID).</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - full path of file the tag is located in</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="line_no">line_no</A></code> - (optional) line number of tag within file</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - (optional) name of class that tag is present in,
+                  use concatenation (as defined by language rules)
+                  to specify names of inner classes.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - (optional) Tag flags indicating symbol attributes.
+                  <dl compact>
+                  <dt>VS_TAGFLAG_virtual<dd style="margin-left:135pt">        virtual function (instance)
+                  <dt>VS_TAGFLAG_static<dd style="margin-left:135pt">         static method / member (class)
+                  <dt>VS_TAGFLAG_access<dd style="margin-left:135pt">         public/protected/private/package
+                  <dt>VS_TAGFLAG_public<dd style="margin-left:135pt">         test equality with (flags & access)
+                  <dt>VS_TAGFLAG_protected<dd style="margin-left:135pt">      protected access
+                  <dt>VS_TAGFLAG_private<dd style="margin-left:135pt">        private access
+                  <dt>VS_TAGFLAG_package<dd style="margin-left:135pt">        Java package access
+                  <dt>VS_TAGFLAG_const<dd style="margin-left:135pt">          C++ const method
+                  <dt>VS_TAGFLAG_final<dd style="margin-left:135pt">          Java final method or member
+                  <dt>VS_TAGFLAG_abstract<dd style="margin-left:135pt">       abstract/deferred method
+                  <dt>VS_TAGFLAG_inline<dd style="margin-left:135pt">         inline / out-of-line method
+                  <dt>VS_TAGFLAG_operator<dd style="margin-left:135pt">       overloaded operator
+                  <dt>VS_TAGFLAG_constructor<dd style="margin-left:135pt">    class constructor
+                  <dt>VS_TAGFLAG_volatile<dd style="margin-left:135pt">       volatile method or data
+                  <dt>VS_TAGFLAG_template<dd style="margin-left:135pt">       template class
+                  <dt>VS_TAGFLAG_inclass<dd style="margin-left:135pt">        part of class interface?
+                  <dt>VS_TAGFLAG_destructor<dd style="margin-left:135pt">     class destructor
+                  <dt>VS_TAGFLAG_const_destr<dd style="margin-left:135pt">    class constructor or destructor
+                  <dt>VS_TAGFLAG_synchronized<dd style="margin-left:135pt">   synchronized (thread safe)
+                  <dt>VS_TAGFLAG_transient<dd style="margin-left:135pt">      transient / persistent data
+                  <dt>VS_TAGFLAG_native<dd style="margin-left:135pt">         Java native method
+                  <dt>VS_TAGFLAG_macro<dd style="margin-left:135pt">          Tag was part of macro expansion
+                  <dt>VS_TAGFLAG_extern<dd style="margin-left:135pt">         "extern" C prototype (not local)
+                  <dt>VS_TAGFLAG_maybe_var<dd style="margin-left:135pt">      Proto may be a var.  Anonymous union.
+                  <dt>VS_TAGFLAG_anonymous<dd style="margin-left:135pt">      Anonymous structure or class
+                  <dt>VS_TAGFLAG_mutable<dd style="margin-left:135pt">        mutable C++ class member
+                  <dt>VS_TAGFLAG_extern_macro<dd style="margin-left:135pt">   external macro (COBOL copy file)
+                  <dt>VS_TAGFLAG_linkage<dd style="margin-left:135pt">        01 level var in COBOL linkage section
+                  <dt>VS_TAGFLAG_partial<dd style="margin-left:135pt">        For C# partial class, struct, or interface
+                  <dt>VS_TAGFLAG_ignore<dd style="margin-left:135pt">         Tagging should ignore this tag/statement
+                  <dt>VS_TAGFLAG_forward<dd style="margin-left:135pt">        Forward class/interface/struct/union declaration
+                  <dt>VS_TAGFLAG_opaque<dd style="margin-left:135pt">         Opaque enumerated type (unlike C/C++ enum)
+                  </dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="signature">signature</A></code> - (optional) Tag signature, includes type, value, and arguments for
+                  the symbol being inserted.  See <a href="VS_TAGSEPARATOR_args.html">VS_TAGSEPARATOR_args</a> and
+                  <a href="VS_TAGSEPARATOR_equals.html">VS_TAGSEPARATOR_equals</a> for more details about constructing this value.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">The following example illustrates tagging some sample Java source code.
+<pre>
+package java.lang;
+/*
+ * This interface imposes a total ordering on the objects of each class that
+ * implements it.  This ordering is referred to as the class's <i>natural
+ * ordering</i>, and the class's <tt>compareTo</tt> method is referred to as
+ * its <i>natural comparison method</i>.<p>
+ */
+ public interface Comparable {
+        public int compareTo(Object o);
+}
+</pre>
+For the Java code fragment above, <a href="tag_insert_simple.html">tag_insert_simple</a> would be invoked as
+follows in order to insert tags into the database.
+<pre>
+tag_insert_simple(
+         "java.lang", VS_TAGTYPE_package,
+         "/usr/jdk1.2/src/java/lang/Comparable.java", 1,
+         "", 0, "");
+tag_insert_simple(
+         "Comparable", VS_TAGTYPE_interface,
+         "/usr/jdk1.2/src/java/lang/Comparable.java", 8,
+         "java.lang", VS_TAGFLAG_inclass, "");
+tag_insert_simple(
+         "compareTo", VS_TAGTYPE_proto,
+         "/usr/jdk1.2/src/java/lang/Comparable.java", 9,
+         "java.lang/Comparable", VS_TAGFLAG_inclass,
+"int\1Object o");
+</pre>
+<p>Note that that tag flags denote access restrictions and other attributes of  class members (proc's, proto's, and var's).  Certain combinations of tag flags are not sensible, others have special meanings.  NOT virtual and NOT static implies normal class method.  NOT protected and NOT private implies public access.  BOTH protected and private implies package access.  NOT const implies normal read/write access.  NOT volatile implies normal optimizations are safe.  NOT template implies normal class definition.
+<p>Members of an anonymous union have the maybe_var tag flag which in C and C++ implies special rules need to be followed when determining the variable's visibility for Context Tagging&reg;.  For prototypes, the maybe_var flag is set when it is ambiguous whether a tag is a variable declaration (using a class constructor) or a function prototype.
+<p>Members of a class, struct, package, etc. should have the VS_TAGFLAG_inclass flag set if the member is declared within the scope of the class, etc.  If a class member does not have this flag, it indicates that it is being defined outside of the class definition.  This situation arises in languages such as C++ where a method prototype appears inside the class definition, but the actual function (definition) is outside the class definition.  Distinguishing what is in the class from other tags makes it easy to find the tags belonging to a class without appearing to list duplicates for definitions and declarations.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_insert_file_end.html">tag_insert_file_end</a>, <a href="tag_insert_file_start.html">tag_insert_file_start</a>, <a href="tag_insert_tag.html">tag_insert_tag</a></blockquote>
+</body>
+</html>

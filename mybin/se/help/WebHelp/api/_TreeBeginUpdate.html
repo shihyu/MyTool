@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_TreeBeginUpdate</title>
+</head>
+<body>
+
+<h3><b>int _TreeBeginUpdate(int ItemIndex, _str options="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Start effecient update of tree contents.  Using this function saves
+time and reduces the amount of memory allocation and redraws that
+get triggered when the contents of a tree are updated.<p>
+Do not set column flags (_TreeSetColButtonInfo) between calls
+to _TreeBeginUpdate and _TreeEndUpdate, they will be reset.<p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ItemIndex">ItemIndex</A></code> - Specifies a tree item (parent node to update children of)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - if 'T', update the node and all child nodes recursively
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Tree View
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tree_View_Methods.html">Tree View Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_TreeAddItem.html">_TreeAddItem</a>, <a href="_TreeEndUpdate.html">_TreeEndUpdate</a></blockquote>
+</body>
+</html>

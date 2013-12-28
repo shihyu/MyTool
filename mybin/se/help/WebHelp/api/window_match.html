@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>window_match</title>
+</head>
+<body>
+
+<h3><b>int window_match(_str name_prefix, int find_first, _str options="", int buf_id=-1, _str findWindowOptions=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="name_prefix">name_prefix</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="find_first">find_first</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - is a string of zero or more of the following:
+
+                  <dl>
+                  <dt>'I'</dt><dd>Windows with <b>p_visible</b> false will be returned.</dd>
+                  <dt>'X'</dt><dd>Exact buffer name match instead of prefix matching.</dd>
+                  <dt>'H'</dt><dd>Windows with (p_window_flags &
+                  HIDE_WINDOW_OVERLAP) true will be returned.</dd>
+                  <dt>'E'</dt><dd>Only windows with <b>p_edit</b> true will be returned.</dd>
+                  <dt>'N'</dt><dd>Only windows with <b>p_edit</b> false will be returned.</dd>
+                  <dt>'A'</dt><dd>Non-MDI edit window ids will be returned.  By default,
+                  only MDI edit window ids are returned.</dd>
+                  </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="buf_id">buf_id</A></code> - If !=-1, match this buffer id instead of the
+                  name_prefix</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="findWindowOptions">findWindowOptions</A></code> - If !=null, find a window tile with
+                          the specified string of options.
+                          Only supported if Tab Groups are
+                          supported by the MDI interface.
+                          find_first paramter is ignored.
+   <dl compact>
+   <dt><b>VG</b> <dd>Match visible document tab of current
+   tab group.
+   <dt><b>VM</b> <dd>Match visible document tab of current
+   MDI window.
+   <dt><b>VA</b> <dd>Match visible document tab in any tab
+   group
+   <dt><b>G</b> <dd>Match document tab of current tab group.
+   <dt><b>M</b> <dd>Match ocument tab of current MDI window.
+   <dt><b>A</b> <dd>Match document tab in any tab group
+   <dt><b>N</b> <dd>Use MDI next window order. This option is
+   only useful when used in conjunction with smart next
+   window to find the most recently referenced window. Only
+   matches MDI child edit windows. All other options are
+   ignored when this option is used.
+   </dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns window id of window which has a buffer name
+        (<b>p_buf_name</b>) with prefix matching <i>name_prefix</i>.  A
+        non-zero value for <i>find_first</i>,  begins a new search.  If
+        <i>find_first</i> is zero, the next matching window id is returned.  0
+        is returned if no match is found.  Search is not case sensitive except
+        for file systems like UNIX which are case sensitive.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// Look for window displaying ".process" buffer.
+wid=window_match('.process','xn');
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Window_Functions.html">Window Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="buf_match.html">buf_match</a>, <a href="name_match.html">name_match</a>, <a href="file_match.html">file_match</a></blockquote>
+</body>
+</html>

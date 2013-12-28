@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<outlineviewdata>
+	<scheme name="DocBook Sections Only">
+		<rule nodetype="sect1" autoexpand="0">
+			<![CDATA[Sect 1: (%xreflabel)]]>
+		</rule>
+		<rule nodetype="sect2" autoexpand="0">
+			<![CDATA[Sect 2: (%xreflabel)]]>
+		</rule>
+		<rule nodetype="sect3" autoexpand="0">
+			<![CDATA[Sect 3: (%xreflabel)]]>
+		</rule>
+		<rule nodetype="sect4" autoexpand="0">
+			<![CDATA[Sect 4: (%xreflabel)]]>
+		</rule>
+		<rule nodetype="sect5" autoexpand="0">
+			<![CDATA[Sect 5: (%xreflabel)]]>
+		</rule>
+	</scheme>
+	<scheme name="DocBook">
+		<rule nodetype="sect1" autoexpand="0">
+			<![CDATA[Section 1: (%xreflabel)]]>
+		</rule>
+		<rule nodetype="para" autoexpand="0">
+			<![CDATA[para: "(%\v)"]]>
+		</rule>
+		<rule nodetype="sect2" autoexpand="0">
+			<![CDATA[Section 2: (%xreflabel)]]>
+		</rule>
+		<rule nodetype="sect3" autoexpand="0">
+			<![CDATA[Section 3: (%xreflabel)]]>
+		</rule>
+		<rule nodetype="sect4" autoexpand="0">
+			<![CDATA[Section 4: (%xreflabel)]]>
+		</rule>
+		<rule nodetype="sect5" autoexpand="0">
+			<![CDATA[Section 5: (%xreflabel)]]>
+		</rule>
+	</scheme>
+</outlineviewdata>

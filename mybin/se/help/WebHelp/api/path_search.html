@@ -1,0 +1,51 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>path_search</title>
+</head>
+<body>
+
+<h3><b>_str path_search(_str filename, _str env_var="PATH", _str options="", _str dotExtList=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Searches the path specified for a file or program.  The path given with
+the filename is searched first.  Then the directories specified by the
+environment variable <i>env_var</i> are searched.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - is a string of zero or more of the following:
+
+<dl>
+<dt>'P'</dt><dd>Program search.  Does not effect UNIX.</dd>
+<dt>'M'</dt><dd>Program search including search for .e and .ex Slick-
+C batch macros.</dd>
+<dt>'S'</dt><dd>Don't search in current directory.  Does not effect
+UNIX.</dd>
+</dl>
+
+<p>Non-UNIX platforms:  The search order for a program or macro is:</p>
+
+<dl>
+<dt>.com</dt>
+<dt>.exe</dt>
+<dt>.e</dt><dd>(if M option specified)</dd>
+<dt>.ex</dt><dd>(if M option specified)</dd>
+<dt>.bat</dt><dd>(Windows and Windows 95/98 only)</dd>
+<dt>.cmd</dt><dd>(Windows NT only)</dd>
+</dl>
+
+<p>UNIX:  The search order for a program or macro is:</p>
+
+<dl>
+<dt>filename</dt><dd>(No changes to filename)</dd>
+<dt>.e</dt><dd>(if M option specified)</dd>
+<dt>.ex</dt><dd>(if M option specified)</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If successful, a complete file specification for a filename is returned.
+Otherwise '' is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+name=path_search('vs','PATH','P');  // Find vs.exe
+name=path_search('draw','PATH','M');   // Find external draw
+macro
+name=path_search('vslick.ini');  // Find ini file
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote>
+</body>
+</html>

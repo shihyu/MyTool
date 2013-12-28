@@ -1,0 +1,14 @@
+<profile name="/language/e/aliases">
+	<p n="=surround_with_say">
+		<text>
+			say('%\m sur_text -stripend ;% "'%\m sur_text -stripend ;%'"');
+		</text>
+	</p>
+	<p n="=surround_with_if_condition">
+		<text>
+			if (%\m sur_text -stripend ;%) {
+			%\i%\c
+			}
+		</text>
+	</p>
+</profile>

@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsSavePos</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsSavePos(int wid, VSSAVEPOS *pbuf, int reserved=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>Saves the editor cursor position and scroll position information so that
+it can be restored later by <b>vsRestorePos</b>. NO EDITS should be
+made to this buffer inbetween the vsSavePos and vsRestorePos calls.
+Use <b>vsSavePos2</b> and <b>vsRestorePos2</b> to save and
+restore where edits are made.</p><p>
+<p>IMPORTANT:  You do not have to call vsRestorePos after calling this
+function or free and memory.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pbuf">pbuf</A></code> - Structure filled in with editor cursor position
+and scroll position information.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="CursorMovement_Functions.html">CursorMovement Functions</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote>
+</body>
+</html>

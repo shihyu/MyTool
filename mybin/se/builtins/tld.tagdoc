@@ -1,0 +1,207 @@
+
+/**
+ * 5.3.5 The Tag Library Descriptor Format
+ * <p>
+ * This section describes the DTD for the Tag Library Descriptor.
+ * This is the same DTD as 
+ * <a href="http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+ * "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd"
+ * </a>, except for some formatting changes to extract comments
+ * and make them more readable.
+ * <p>
+ * <b>Notation</b>
+ * <pre>
+ *    <!NOTATION WEB-JSPTAGLIB.1_1 PUBLIC “-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN”>
+ * </pre>
+ * <p>
+ * A TLD file is useful as a descriptive mechanism for providing information 
+ * on a Tag Library.  It has the advantage that it can be read by tools 
+ * without having to instantiate objects or load classes.  The approach we 
+ * follow conforms to the conventions used in other J2EE technologies.
+ */
+
+private tag tld_element {
+   /**
+    * The DTD to the tag library descriptor is organized so that interesting 
+    * elements have an optional ID attribute.  This attribute can be used by 
+    * other documents, like vendor-specific documents, to provide annotations of 
+    * the TLD information.  An alternative approach, based on XML name spaces 
+    * have some interesting properties but it was not pursued in part for 
+    * consistency with the rest of the J2EE descriptors.  
+    */
+    attr id;
+}
+
+/**
+ * The taglib element is the document root. A taglib has two attributes.
+ * <P>
+ * A taglib element also has several subelements that define:
+ * <UL>
+ * <LI><b>tlibversion</b> --
+ *    the version of the tag library implementation
+ * <LI><b>jspversion</b> -- 
+ *    the version of JSP specification the tag library depends upon
+ * <li><b>shortname</b> -- 
+ *    a simple default short name that could be used by a JSP page
+ *    authoring tool to create names with a mnemonic value; for example,
+ *    the it may be used as the preferred prefix value in taglib directives.
+ * <li><b>uri</b> -- a uri uniquely identifying this taglib.
+ * <li><b>info</b> -- a string describing the “use” of this taglib
+ * </ul>
+ * <pre>
+ *    <!ELEMENT taglib  (tlibversion, jspversion?, shortname, uri?, info?, tag+) >
+ * </pre>
+ */
+tag taglib : tld_element {
+   attr xmlns="http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd";
+}
+
+/**
+ * Describes this version (number) of the taglibrary..97 JavaServer Pages 1.1 
+ * Specification • November 30, 1999.
+ */
+tag tlibversion : tld_element {
+
+}
+
+/**
+ * Describes the JSP specification version (number) this taglibrary requires
+ * in order to function.  The default is 1.1
+ */
+tag jspversion : tld_element {
+}
+
+/**
+ * Defines a simple default short name that could be used by a JSP page
+ * authoring tool to create names with a mnemonic value; for example, the it
+ * may be used as the preferred prefix value in taglib directives and/or to
+ * create prefixes for IDs .  Do not use white space, and do not start with
+ * digits or underscore.
+ */
+tag shortname : tld_element {
+}
+
+/**
+ * Defines a public URI that uniquely identifies this version of the tag
+ * library.  It is recommended that the URI identifying a tag library is
+ * actually a URL to the tag library descriptor for this specific version of
+ * the tag library.
+ */
+tag uri : tld_element {
+}
+
+/**
+ * Defines an arbitrary text string describing the tag library.
+ */
+tag info : tld_element {
+}
+
+/**
+ * The tag defines an action in this tag library. It has one attribute.
+ * <p>
+ * The tag may have several subelements defining:
+ * <ul>
+ * <li><b>name</b> -- the unique action name
+ * <li><b>tagclass</b> -- 
+ *    the tag handler class implementing javax.servlet.jsp.tagext.Tag
+ * <li><b>teiclass</b> --
+ *    an optional subclass of javax.servlet.jsp.tagext.TagExtraInfo
+ * <li><b>bodycontent</b> -- the body content type
+ * <li><b>info</b> -- optional tag-specific information
+ * <li><b>attribute</b> -- all attributes of this action
+ * </ul>
+ * <pre>
+ *    <!ELEMENT tag  (name, tagclass, teiclass?, bodycontent?, info?, attribute*) >
+ * </pre>
+ */
+tag "tag" : tld_element {
+}
+
+/**
+ * Defines the tag handler class implementing the javax.serlvet.jsp.tagext.Tag
+ * interface. This element is required.
+ */
+tag tagclass : tld_element {
+}
+
+/**
+ * Defines the subclass of javax.servlet.jsp.tagext.TagExtraInfo for this tag.
+ * This element is optional.
+ */
+tag teiclass : tld_element {
+}
+
+/**
+ * Provides a hint as to the content of the body of this action.  Primarily
+ * intended for use by page composition tools.
+ * <p>
+ * There are currently three values specified:.99 JavaServer Pages 1.1
+ * Specification • November 30, 1999 tagdependent The body of the action is
+ * interpreted by the tag handler itself, and is most likely in a different
+ * “language”, e.g.  embedded SQL statements.  The body of the action may be
+ * empty.
+ * <p>
+ * JSP The body of the action contains elements using the JSP syntax.
+ * The body of the action may be empty.
+ * <ul>
+ * <li><b>empty</b> -- The body must be empty
+ * <li><b>JSP</b> -- The default value is "JSP".
+ * </ul>
+ */
+tag bodycontent : tld_element {
+}
+
+/**
+ * Provides information on an attribute of this action.  Attribute defines an
+ * id attribute for external linkage.
+ * <p>
+ * The subelements of attribute are of the form:
+ * <ul>
+ * <li><b>name</b> -- the attributes name (required)
+ * <li><b>required</b> -- if the attribute is required or optional (optional)
+ * <li><b>rtexprvalue</b> -- if the attributes value may be dynamically
+ *    calculated at runtime by a scriptlet expression (optional)
+ * </ul>
+ * <pre>
+ *    <!ELEMENT attribute  (name, required?, rtexprvalue?) >
+ * </pre>
+ */
+tag attribute : tld_element {
+}
+
+/**
+ * Defines the canonical name of a tag or attribute being defined
+ */
+tag name : tld_element {
+}
+
+/**
+ * Defines if the nesting attribute is required or optional.
+ * <ul>
+ * <li>true
+ * <li>false -- default
+ * <li>yes
+ * <li>no
+ * </ul>
+ * <p>
+ * If not present then the default is "false", i.e the attribute is optional.
+ */
+tag required : tld_element {
+}
+
+/**
+ * Defines if the nesting attribute can have scriptlet expressions as a 
+ * value, i.e the value of the attribute may be dynamically calculated at 
+ * request time, as opposed to a static value determined at translation time.  
+ * <ul>
+ * <li>true
+ * <li>false -- default
+ * <li>yes
+ * <li>no
+ * </ul>
+ * <p>
+ * If not present then the default is "false", i.e the attribute has a static value.
+ */
+tag rtexprvalue : tld_element {
+}
+

@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_xmlcfg_set_path2</title>
+</head>
+<body>
+
+<h3><b>int _xmlcfg_set_path2(int handle, _str QueryStr, _str element, _str AttrName, _str AttrValue)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">another element with the attribute specified below QueryStr.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="handle">handle</A></code> - Handle to an XMLCFG tree returned by _xmlcfg_open(), _xmlcfg_create(), or _xmlcfg_open_from_buffer().</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="QueryStr">QueryStr</A></code> - This is a small subset of an XPath expression.  See _xmlcfg_find_simple() for information on this parameter.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="element">element</A></code> - Name of tag to add.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="AttrName">AttrName</A></code> - Name of attribute to set value for ElementName</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="AttrValue">AttrValue</A></code> - Value for attribute.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns index of element node if successful.  Otherwise a negative error code is returned.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><pre>
+// Add another [Set] element under /Workspace/Environment
+// and set the value.
+Node=_xmlcfg_set_path2(handle,
+    "/Workspace/Environment","Set",
+    "Name",
+    "VERSION"
+    );
+_xmlcfg_set_attribute(handle,Node,"Value","8.0");
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="XMLCFG_Functions.html">XMLCFG Functions</a></blockquote>
+</body>
+</html>

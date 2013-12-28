@@ -1,0 +1,145 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Performance Tuning</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch01.htm" title="Chapter 1.  Introduction"><link rel="prev" href="ch01s08.htm" title="Product Improvement Program"><link rel="next" href="ch02.htm" title="Chapter 2.  Quick Start"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_performancetuning_24870_48386"></a>Performance Tuning</h2></div></div></div><p class="NormalText">
+    SlickEdit was designed with speed in mind. Most operations perform nearly 
+    instantaneously. However, the size and location of your codebase can affect SlickEdit performance 
+    along with various settings within SlickEdit. This guide will help you to make sure that you get the 
+    best performance possible.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_performancetuning_63395_07811"></a>First Steps</h3></div></div></div><p class="NormalText">In some cases, Symbol Coloring can cause delays while typing. If you are 
+      experiencing performance problems while typing, please turn off that feature to see if the problem 
+      is fixed. For more information, see <a href="ch04s06.htm#sect_colors_74438_07811">Symbol Coloring</a>.</p><p class="NormalText">Virus checkers also might be a cause for bad performance. Many do 
+      real-time checking each time a file is read. When trying to diagnose the cause of a performance 
+      problem, please turn off any such checking. Some virus checkers give you the option of exempting 
+      specific file types from these checks. If so, you can achieve better performance by exempting 
+      SlickEdit workspace files (.vpw), project files (.vpj), and 
+      tag files (.vtg). You may also wish to exempt your source files from these 
+      checks.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_performancetuning_84126_95954"></a>File Locations</h3></div></div></div><p class="NormalText">Whenever possible, make sure that your source code files, 
+       workspace and project files, and configuration files are stored locally. 
+      SlickEdit is subject to normal file latency. When files are stored remotely they take longer 
+      to access.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_performancetuning_09480_62785"></a>Source Files</h4></div></div></div><p class="NormalText">Storing your source files remotely will increase the amount of time it 
+        takes to open and save files. Additionally, it will increase the amount of time it takes to tag 
+        your files. Tagging is the process of building a symbol database, which is used for many advanced 
+        operations in SlickEdit. On a fast, reliable network you may find that storing your source files 
+        remotely does little to harm performance. On a slow network, these operations will likely take 
+        unacceptably long to complete.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_performancetuning_88271_59421"></a>Workspaces and Project Files</h4></div></div></div><p class="NormalText">Even if you store your source files remotely, you should try to store your 
+        workspace and project files locally. These files are referenced and updated frequently by 
+        SlickEdit, so you want to be sure they can be processed quickly. Further, the location of your 
+        workspace determines the location of your tag files. The tag files are used for operations, like 
+        completions, that happen while you type. Storing your tag files remotely often introduces 
+        unacceptable latency into this access, slowing down SlickEdit's response time.</p><p class="NormalText">You set the location of workspaces and projects when you create them using 
+        <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">New</strong></span>. For best 
+        performance, be sure to specify a location on a local drive. SlickEdit makes no assumptions 
+        about the location of your source code files. They need not reside in the same subdirectory as 
+        the project.  So you can still add remote source files to a project that you are storing 
+        locally. For more information see <a href="ch05.htm#sect_workingwithworkspacesandprojects_15038_53861">Workspaces and Projects</a>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_performancetuning_72098_23789"></a>
+        SlickEdit Configuration Files</h4></div></div></div><p class="NormalText">Your SlickEdit Configuration files should also be stored locally. This is 
+        where SlickEdit stores a great deal of information about your options and the state of SlickEdit. 
+        Having these files located remotely will introduce latency at unpredictable times. </p><p class="NormalText">
+        By default, SlickEdit stores your config files in <code class="filename">\\My 
+        Documents\My SlickEdit Config</code> on Windows and in <code class="filename">$HOME/.slickedit</code>
+        on UNIX, Linux, and Mac. 
+        These are typically on a local drive. You can specify a different location for your config using 
+        the -sc option when SlickEdit is launched: </p><pre class="synopsis">vs -sc /dev/seconfig</pre><p class="NormalText">If necessary, use this option to specify a new location for your config 
+        files that is on a local drive. </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_performancetuning_99779_37687"></a>Memory and Caching</h3></div></div></div><p class="NormalText">Along with making sure that your tag files are stored locally, you should 
+      make sure that SlickEdit has enough memory to hold all of your tag files in memory. When it 
+      doesn't, it has to page sections of the tagging database in and out of the cache. </p><p class="NormalText">To increase the size of your tag file cache, select 
+      <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">Context Tagging</strong></span> and change the value for <span><strong class="guilabel">Tag file cache size 
+      (KB)</strong></span>. Try to make it large enough (within reason) so that we can get your entire 
+      workspace tag file and extension specific tag files into memory. To determine that size, 
+      open <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Tag Files</strong></span>. This lists all of the tag files in 
+      SlickEdit. Not all of them are used at any one time, though.
+      You may also want to adjust the value for <span><strong class="guilabel">Tag file cache maximum (KB)</strong></span>.
+      This setting controls the maximum amount of memory that can be dedicated to the tag file cache
+      depending on the amount of memory available on your machine at the time that SlickEdit starts.
+      If you have a machine with lots of memory available, setting this maximum to a large value
+      is the simplest way to get good tag file performance without having to worry about adding
+      up the total sizes of your tag files as described below.
+    </p><p class="NormalText">For a given workspace, you need to add the size of your 
+      workspace tag file, 
+      listed at the top of the tree, to the size of the extension-specific tag files used in that 
+      workspace. If you are only using a single language, then it will just be the one extension-specific 
+      tag file. If you are using a mixture of languages, you will need to add the tag file for each 
+      language. If you have tagged multiple tool chains in a given language, like GNU C/C++ and Microsoft 
+      Visual Studio, you need only factor in the one used by that workspace. The Tag Files dialog will 
+      tell you the location of the tag files. Use the operating system to determine the size of the 
+      files. Add them together, and use that value for the tag file cache size. </p><p class="NormalText">The tag file cache size is a global value that is used for all workspaces, so 
+      you should set this value for your largest workspace. If that workspace is atypical or infrequently 
+      used, set it based on the tag file sizes used by a more typical workspace.</p><p class="NormalText">It is possible that you could hit a threshold where increasing the cache size 
+      reduces performance. This is likely to be the case if the tag file cache size exceeds the amount of 
+      free memory available on your system. So, once you've set this value check your operating system 
+      and make sure it isn't being forced to do a lot of paging. If it is, you should decrease the tag 
+      file cache size. Like most performance tuning, this could be an iterative process until you find a 
+      value that provides the best speed for your codebase and system.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_performancetuning_18292_43955"></a>Tuning Context Tagging</h3></div></div></div><p class="NormalText">After you've checked the items above, the next optimizations to try are the 
+      various control settings for Context Tagging. SlickEdit's Context Tagging system provides many of 
+      the advanced features that make using SlickEdit so great. Context Tagging creates a database of all 
+      the symbols in your code and where they are located. This is used to provide rapid navigation from 
+      a symbol to its definition, for all kinds of completions, and for rapid symbol searches. All of 
+      that information is great, but it does you no good if you have to wait too long to get it. </p><p class="NormalText">As mentioned above, Symbol Coloring can cause performance problems 
+      while it attempts to identify and resolve symbols. If you are having a performance issue while 
+      typing, the first thing to do is to shut off Symbol Coloring. For more information, see <a href="ch04s06.htm#sect_colors_74438_07811">Symbol Coloring</a>.</p><p class="NormalText">To configure Context Tagging, open <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">Context Tagging</strong></span>. 
+      This screen contains a number of parameters you can use to control the performance of Context 
+      Tagging. 
+      </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_performancetuning_68880_97486"></a>Background Tagging</h4></div></div></div><p class="NormalText">If you are experiencing sporadic pauses in SlickEdit, the first thing to 
+        check is that <span><strong class="guilabel">Background tagging of other files</strong></span> is off. It's generally fine 
+        to leave <span><strong class="guilabel">Background tagging of open files</strong></span> on. We recommend that you turn 
+        that off only after you've applied all other tuning approaches.  Likewise, you should leave 
+        <span><strong class="guilabel">Tag file on save</strong></span> enabled. This ensures that the tag database is always 
+        current by tagging a file when it is saved. </p><p class="NormalText">The context tagging engine is single threaded with SlickEdit, and 
+        background tagging has been known to introduce random periods of unresponsiveness. Generally, you 
+        don't need to tag other files in the background. Once you've tagged your workspace, you only need 
+        to tag files that are being changed, and SlickEdit does this automatically if you leave the other 
+        two values on. </p><p class="NormalText">The exception to this is if you fetch updated files from a source code 
+        repository. Then, other developers may have changed files or added new ones. SlickEdit won't know 
+        about those changes until you retag the workspace. For normal size projects, SlickEdit can tag the 
+        workspace in a few minutes. On extremely large projects, this can take over an hour. Your strategy 
+        for how and when to tag depends on the size of your codebase.  </p><p class="NormalText">For a normal codebase, you can open the Project tool window
+        and right-click on the workspace entry, and select <span><strong class="guilabel">Retag Workspace</strong></span>.
+          You will have to wait while SlickEdit retags your workspace.
+        Retagging is generally faster since it only has to look at new or modified files. 
+        </p><p class="NormalText">For extremely large codebases, you may want to script this process. You could 
+        set up a nightly process that fetches all new and updated files from source control, adds the new 
+        files to appropriate projects, and then runs the tagging engine on them. </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_performancetuning_44252_57441"></a>Context Tagging Maximums</h4></div></div></div><p class="NormalText">These tuning options for Context Tagging set maximum values for specific 
+        tagging operations. You can change these values when a specific operation is found to be too 
+        slow. For example, if you type in a function call, like </p><pre class="synopsis">foo();</pre><p class="NormalText">After typing the open parenthesis, SlickEdit will look for a list of local 
+        variables that match the parameters in foo. The value, <span><strong class="guilabel">Maximum candidates for list 
+        parameters</strong></span> determines the upper limit in that search. By default it is set to 200. Once that 
+        number is reached, it will stop looking for matches. If you find that SlickEdit is taking too 
+        long in this situation, you can decrease that number to, say, 100. You have to weigh the tradeoff 
+        between 
+        completeness and responsiveness.</p><p class="NormalText">We won't go into each of the values in that list. When you select an item 
+        in the Options dialog, help is provided that will guide your decision on whether to change that 
+        value.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Warning</h3><p class="CellBody">You can easily degrade the performance of SlickEdit by changing the 
+          Context Tagging defaults. You should compare your changes to the performance using a default 
+          configuration. To create a default configuration, use the -sc options on the command line:</p><pre class="synopsis">vs -sc config</pre><p class="NormalText">This will launch SlickEdit putting the configuration in a 
+          "config" directory below your SlickEdit install directory. Be sure to use a new location or 
+          delete that directory before launching SlickEdit in this manner, or it will use the config that 
+          was already in place.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_performancetuning_18492_92726"></a>References</h4></div></div></div><p class="NormalText">The Context Tagging options also contain a group for References. If you are 
+        experiencing performance issues with reference lookup (when using <span><strong class="keycap">Ctrl </strong></span>+<span><strong class="keycap">/ </strong></span> or 
+        <span><strong class="command">push-ref</strong></span>), then you may want to change some of the values in this group. Turning 
+        on <span><strong class="guilabel">Build workspace tag file with references</strong></span> makes reference look-ups faster, but it makes 
+        creating tag files take longer. For normal sized codebases the slow-down is negligible, so we often 
+        turn this on. </p><p class="NormalText">If you have a large codebase, you may want to turn on <span><strong class="guilabel">Find references 
+        incrementally (faster)</strong></span>. When set to <span><strong class="guilabel">True</strong></span>, reference queries are 
+        faster because SlickEdit does not open each candidate file to eliminate invalid references. 
+        So, you get your answer more quickly, but 
+        it may not be fully accurate. </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_performancetuning_78469_28694"></a>Add as Wildcard</h3></div></div></div><p class="NormalText">When you set up a project, you can use <span><strong class="guilabel">Add
+                                                                   as wildcard
+                                                                   </strong></span> checkbox on the <span><strong class="guilabel">Add Tree</strong></span> dialog (accessed from the <span><strong class="guilabel">Project Properties</strong></span> dialog) to specify directories to search for new files. This
+      capability is useful when other team members are not using SlickEdit. In that case, other 
+      programmers will be adding files without updating and checking in the project files. </p><p class="NormalText">Each time SlickEdit is launched, projects that
+      were configured using <span><strong class="guilabel">Add as wildcard</strong></span> search the
+      specified directories for new files. This is an exhaustive search and can
+      take a long time, particularly on large projects or if source directories
+      are stored on network resources.
+    </p><p class="NormalText">If you are experiencing delays when launching SlickEdit, you may want to 
+      redefine your projects, adding your files in a one-time tree traversal,
+      rather than as wildcards (dynamic tree traversale).  When new files are
+      added, you will have to use Add Tree to find and add them to your
+      projects. Which approach is better for you depends on how frequently you
+      look for new files and the size of your codebase.
+    </p><p class="NormalText">For more information on <span><strong class="guilabel">Add
+                                                      as wildcard</strong></span> see
+                                                      <a href="ch05.htm#sect_workingwithworkspacesandprojects_73994_43254">Add as wildcard</a>. </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_performancetuning_34510_36798"></a>Profiling</h3></div></div></div><p class="NormalText">SlickEdit includes a profiler to measure the amount of time 
+      spent in different functions. This tool can be very helpful to track down performance problems. To 
+      run the profiler, do the following:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Start the profiler from the SlickEdit command line by typing the 
+          following: <span><strong class="command">profile on</strong></span>. Then press Enter.</p></li><li><p class="NormalText">Perform the operations to be measured. Try to include only the 
+          steps necessary to produce the problem.</p></li><li><p class="NormalText">Stop the profiler. From the command line, type the following: 
+        <span><strong class="command">profile save "&lt;filename&gt;"</strong></span>, where &lt;filename&gt; is the name of the 
+        file to save to. For example, you could type: profile save "profile.txt".</p></li></ul></div><p class="NormalText">You can then send the file into Product Support to be analyzed.</p></div></div></body></html>

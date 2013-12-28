@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>compare</title>
+</head>
+<body>
+
+<h3><b>_command int compare()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Compares two buffers in two tiled windows starting from the current cursor
+position of each window.  If the current window is not one of two tiled windows,
+you will be prompted for the files/buffers you want to compare and two tiled
+windows will be set up for you.
+<pre>
+You can perform the following steps to manually set up two tiled windows before invoking the <b>compare</b> command:
+   -- Open (Ctrl+O) both files you wish to compare
+   -- Make current one of the files you wish to compare current.
+   -- Zoom the current window by clicking on the Maximize button.
+   -- Use the <b>hsplit_window</b> command (Ctrl+H or "Window", "Hsplit") to create two tiled windows.
+   -- Use the <b>link_window</b> command ("Window", "Link Window") and to display the other buffer in the newly created window.<p>
+After a compare mismatch, you can use the <b>resync</b> command to adjust the
+cursor in both windows to the next reasonable match.  This command will be
+improved in the future to handle more sophisticated mismatches.<p>
+Use the <b>compare_options</b> command displays the <b>Compare Options
+dialog box</b> to set various compare options.<p>
+In ISPF emulation, this command is not called when invoked from the command
+line.  Instead <b>ispf_compare</b> is called.  At the moment, you can't
+access the <b>compare</b> command when in ISPF emulation unless you bind
+it to a key.
+</pre>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="compare_options.html">compare_options</a>, <a href="resync.html">resync</a>, <a href="ispf_compare.html">ispf_compare</a>, <a href="diff.html">diff</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagGetDetailZ</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTagGetDetailZ(int detail_id, int item_id, char *pszValue, int max_len=VS_TAG_MAX_FILENAME)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve specific string information about the given tag, context item or
+local variable.  This function complements vsTagGetTagInfo(),
+vsTagGetContextInfo() and vsTagGetLocalInfo(), but is capable of getting
+more specific information about the given tag.
+<p>
+For synchronization, macros should perform a tag_lock_context(false)
+or tag_lock_matches(false) prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="detail_id">detail_id</A></code> - ID of detail to extract, one of:
+<PRE>
+      VS_TAGDETAIL_name                   (string) tag name
+      VS_TAGDETAIL_type                   (string) tag type name, see tag_get_type.
+      VS_TAGDETAIL_file_name              (string) full path of file the tag is in
+      VS_TAGDETAIL_file_date              (string) date of file when tagged
+      VS_TAGDETAIL_class_simple           (string) name of class the tag is present in
+      VS_TAGDETAIL_class_name             (string) name of class with outer classes
+      VS_TAGDETAIL_class_package          (string) package/namespace tag belongs to
+      VS_TAGDETAIL_return                 (string) value or type of var/function
+      VS_TAGDETAIL_arguments              (string) function or template arguments
+      VS_TAGDETAIL_throws                 (string) function/proc exceptions.
+      VS_TAGDETAIL_included_by            (string) file including this macro.
+      VS_TAGDETAIL_return_only            (string) just the return type of variable.
+      VS_TAGDETAIL_return_value           (string) default value of variable.
+      VS_TAGDETAIL_file_ext               (string) p_LangId for file name
+      VS_TAGDETAIL_language_id            (string) p_language_id for file name
+      VS_TAGDETAIL_template_args          (string) template signature
+
+      VS_TAGDETAIL_context_tag_file       (string) tag file match is from.
+      VS_TAGDETAIL_context_name           (string) tag name.
+      VS_TAGDETAIL_context_type           (string) tag type name.
+      VS_TAGDETAIL_context_file           (string) file that the tag is in.
+      VS_TAGDETAIL_context_class          (string) name of class.
+      VS_TAGDETAIL_context_args           (string) tag arguments.
+      VS_TAGDETAIL_context_return         (string) value or type of symbol.
+      VS_TAGDETAIL_context_parents        (string) class derivation.
+      VS_TAGDETAIL_context_throws         (string) function/proc exceptions.
+      VS_TAGDETAIL_context_included_by    (string) file including this macro.
+      VS_TAGDETAIL_context_return_only    (string) just the type of variable.
+      VS_TAGDETAIL_context_return_value   (string) default value of variable.
+      VS_TAGDETAIL_context_template_args  (string) template signature
+
+      VS_TAGDETAIL_local_tag_file         (string) tag file match is from.
+      VS_TAGDETAIL_local_name             (string) tag name.
+      VS_TAGDETAIL_local_type             (string) tag type name.
+      VS_TAGDETAIL_local_file             (string) file that the tag is in.
+      VS_TAGDETAIL_local_class            (string) name of class.
+      VS_TAGDETAIL_local_args             (string) tag arguments.
+      VS_TAGDETAIL_local_return           (string) value or type of symbol.
+      VS_TAGDETAIL_local_parents          (string) class derivation.
+      VS_TAGDETAIL_local_throws           (string) function/proc exceptions.
+      VS_TAGDETAIL_local_included_by      (string) file including this macro.
+      VS_TAGDETAIL_local_return_only      (string) just the type of variable.
+      VS_TAGDETAIL_local_return_value     (string) default value of variable.
+      VS_TAGDETAIL_local_template_args    (string) template signature
+</PRE></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="item_id">item_id</A></code> - ID of local variable or context item to get
+                        information about, ignored if the detail is for
+                        the current tag in the tag database.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszValue">pszValue</A></code> - (Output, 1024 bytes allocated) Set to tag detail
+                        after successful completion of function.  If the
+                        given tag does not exist, this will be set to "".</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="max_len">max_len</A></code> - (optional, default is VS_TAG_MAX_FILENAME), number of bytes
+                        allocated to pszValue.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

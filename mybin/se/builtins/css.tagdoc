@@ -1,0 +1,3412 @@
+/**
+ * CSS 2.1 Properties
+ * http://www.w3.org/TR/CSS2/propidx.html
+
+ * CSS 3 background and border properties
+ * http://www.w3.org/TR/css3-background/
+
+ * CSS 3 color properties
+ * http://www.w3.org/TR/css3-color/
+
+ * CSS 3 Flexible Box layout
+ * http://www.w3.org/TR/css3-flexbox/
+
+ * CSS3 Grid Layout
+ * http://www.w3.org/TR/css3-grid-layout/
+
+ * CSS3 Text Layout
+ * http://www.w3.org/TR/css3-text/
+
+ * CSS3 Transform
+ * http://www.w3.org/TR/css3-transforms/
+
+ * CSS3 Target
+ * http://www.w3.org/TR/css3-hyperlinks/
+
+ * CSS3 UI
+ * http://www.w3.org/TR/css3-ui/
+
+ */
+
+/**
+ * CSS Color names
+ */
+private enum CSSColor {
+   /**
+    * Color: aliceblue
+    * Hex: #F0F8FF
+    * Decimal: rgb(240,248,255)
+   **/
+   aliceblue
+   /**
+    * Color: antiquewhite
+    * Hex: #FAEBD7
+    * Decimal: rgb(250,235,215)
+   **/
+   antiquewhite
+   /**
+    * Color: aqua
+    * Hex: #00FFFF
+    * Decimal: rgb(0,255,255)
+   **/
+   aqua
+   /**
+    * Color: aquamarine
+    * Hex: #7FFFD4
+    * Decimal: rgb(127,255,212)
+   **/
+   aquamarine
+   /**
+    * Color: azure
+    * Hex: #F0FFFF
+    * Decimal: rgb(240,255,255)
+   **/
+   azure
+   /**
+    * Color: beige
+    * Hex: #F5F5DC
+    * Decimal: rgb(245,245,220)
+   **/
+   beige
+   /**
+    * Color: bisque
+    * Hex: #FFE4C4
+    * Decimal: rgb(255,228,196)
+   **/
+   bisque
+   /**
+    * Color: black
+    * Hex: #000000
+    * Decimal: rgb(0,0,0)
+   **/
+   black
+   /**
+    * Color: blanchedalmond
+    * Hex: #FFEBCD
+    * Decimal: rgb(255,235,205)
+   **/
+   blanchedalmond
+   /**
+    * Color: blue
+    * Hex: #0000FF
+    * Decimal: rgb(0,0,255)
+   **/
+   blue
+   /**
+    * Color: blueviolet
+    * Hex: #8A2BE2
+    * Decimal: rgb(138,43,226)
+   **/
+   blueviolet
+   /**
+    * Color: brown
+    * Hex: #A52A2A
+    * Decimal: rgb(165,42,42)
+   **/
+   brown
+   /**
+    * Color: burlywood
+    * Hex: #DEB887
+    * Decimal: rgb(222,184,135)
+   **/
+   burlywood
+   /**
+    * Color: cadetblue
+    * Hex: #5F9EA0
+    * Decimal: rgb(95,158,160)
+   **/
+   cadetblue
+   /**
+    * Color: chartreuse
+    * Hex: #7FFF00
+    * Decimal: rgb(127,255,0)
+   **/
+   chartreuse
+   /**
+    * Color: chocolate
+    * Hex: #D2691E
+    * Decimal: rgb(210,105,30)
+   **/
+   chocolate
+   /**
+    * Color: coral
+    * Hex: #FF7F50
+    * Decimal: rgb(255,127,80)
+   **/
+   coral
+   /**
+    * Color: cornflowerblue
+    * Hex: #6495ED
+    * Decimal: rgb(100,149,237)
+   **/
+   cornflowerblue
+   /**
+    * Color: cornsilk
+    * Hex: #FFF8DC
+    * Decimal: rgb(255,248,220)
+   **/
+   cornsilk
+   /**
+    * Color: crimson
+    * Hex: #DC143C
+    * Decimal: rgb(220,20,60)
+   **/
+   crimson
+   /**
+    * Color: cyan
+    * Hex: #00FFFF
+    * Decimal: rgb(0,255,255)
+   **/
+   cyan
+   /**
+    * Color: darkblue
+    * Hex: #00008B
+    * Decimal: rgb(0,0,139)
+   **/
+   darkblue
+   /**
+    * Color: darkcyan
+    * Hex: #008B8B
+    * Decimal: rgb(0,139,139)
+   **/
+   darkcyan
+   /**
+    * Color: darkgoldenrod
+    * Hex: #B8860B
+    * Decimal: rgb(184,134,11)
+   **/
+   darkgoldenrod
+   /**
+    * Color: darkgray
+    * Hex: #A9A9A9
+    * Decimal: rgb(169,169,169)
+   **/
+   darkgray
+   /**
+    * Color: darkgreen
+    * Hex: #006400
+    * Decimal: rgb(0,100,0)
+   **/
+   darkgreen
+   /**
+    * Color: darkgrey
+    * Hex: #A9A9A9
+    * Decimal: rgb(169,169,169)
+   **/
+   darkgrey
+   /**
+    * Color: darkkhaki
+    * Hex: #BDB76B
+    * Decimal: rgb(189,183,107)
+   **/
+   darkkhaki
+   /**
+    * Color: darkmagenta
+    * Hex: #8B008B
+    * Decimal: rgb(139,0,139)
+   **/
+   darkmagenta
+   /**
+    * Color: darkolivegreen
+    * Hex: #556B2F
+    * Decimal: rgb(85,107,47)
+   **/
+   darkolivegreen
+   /**
+    * Color: darkorange
+    * Hex: #FF8C00
+    * Decimal: rgb(255,140,0)
+   **/
+   darkorange
+   /**
+    * Color: darkorchid
+    * Hex: #9932CC
+    * Decimal: rgb(153,50,204)
+   **/
+   darkorchid
+   /**
+    * Color: darkred
+    * Hex: #8B0000
+    * Decimal: rgb(139,0,0)
+   **/
+   darkred
+   /**
+    * Color: darksalmon
+    * Hex: #E9967A
+    * Decimal: rgb(233,150,122)
+   **/
+   darksalmon
+   /**
+    * Color: darkseagreen
+    * Hex: #8FBC8F
+    * Decimal: rgb(143,188,143)
+   **/
+   darkseagreen
+   /**
+    * Color: darkslateblue
+    * Hex: #483D8B
+    * Decimal: rgb(72,61,139)
+   **/
+   darkslateblue
+   /**
+    * Color: darkslategray
+    * Hex: #2F4F4F
+    * Decimal: rgb(47,79,79)
+   **/
+   darkslategray
+   /**
+    * Color: darkslategrey
+    * Hex: #2F4F4F
+    * Decimal: rgb(47,79,79)
+   **/
+   darkslategrey
+   /**
+    * Color: darkturquoise
+    * Hex: #00CED1
+    * Decimal: rgb(0,206,209)
+   **/
+   darkturquoise
+   /**
+    * Color: darkviolet
+    * Hex: #9400D3
+    * Decimal: rgb(148,0,211)
+   **/
+   darkviolet
+   /**
+    * Color: deeppink
+    * Hex: #FF1493
+    * Decimal: rgb(255,20,147)
+   **/
+   deeppink
+   /**
+    * Color: deepskyblue
+    * Hex: #00BFFF
+    * Decimal: rgb(0,191,255)
+   **/
+   deepskyblue
+   /**
+    * Color: dimgray
+    * Hex: #696969
+    * Decimal: rgb(105,105,105)
+   **/
+   dimgray
+   /**
+    * Color: dimgrey
+    * Hex: #696969
+    * Decimal: rgb(105,105,105)
+   **/
+   dimgrey
+   /**
+    * Color: dodgerblue
+    * Hex: #1E90FF
+    * Decimal: rgb(30,144,255)
+   **/
+   dodgerblue
+   /**
+    * Color: firebrick
+    * Hex: #B22222
+    * Decimal: rgb(178,34,34)
+   **/
+   firebrick
+   /**
+    * Color: floralwhite
+    * Hex: #FFFAF0
+    * Decimal: rgb(255,250,240)
+   **/
+   floralwhite
+   /**
+    * Color: forestgreen
+    * Hex: #228B22
+    * Decimal: rgb(34,139,34)
+   **/
+   forestgreen
+   /**
+    * Color: fuchsia
+    * Hex: #FF00FF
+    * Decimal: rgb(255,0,255)
+   **/
+   fuchsia
+   /**
+    * Color: gainsboro
+    * Hex: #DCDCDC
+    * Decimal: rgb(220,220,220)
+   **/
+   gainsboro
+   /**
+    * Color: ghostwhite
+    * Hex: #F8F8FF
+    * Decimal: rgb(248,248,255)
+   **/
+   ghostwhite
+   /**
+    * Color: gold
+    * Hex: #FFD700
+    * Decimal: rgb(255,215,0)
+   **/
+   gold
+   /**
+    * Color: goldenrod
+    * Hex: #DAA520
+    * Decimal: rgb(218,165,32)
+   **/
+   goldenrod
+   /**
+    * Color: gray
+    * Hex: #808080
+    * Decimal: rgb(128,128,128)
+   **/
+   gray
+   /**
+    * Color: green
+    * Hex: #008000
+    * Decimal: rgb(0,128,0)
+   **/
+   green
+   /**
+    * Color: greenyellow
+    * Hex: #ADFF2F
+    * Decimal: rgb(173,255,47)
+   **/
+   greenyellow
+   /**
+    * Color: grey
+    * Hex: #808080
+    * Decimal: rgb(128,128,128)
+   **/
+   grey
+   /**
+    * Color: honeydew
+    * Hex: #F0FFF0
+    * Decimal: rgb(240,255,240)
+   **/
+   honeydew
+   /**
+    * Color: hotpink
+    * Hex: #FF69B4
+    * Decimal: rgb(255,105,180)
+   **/
+   hotpink
+   /**
+    * Color: indianred
+    * Hex: #CD5C5C
+    * Decimal: rgb(205,92,92)
+   **/
+   indianred
+   /**
+    * Color: indigo
+    * Hex: #4B0082
+    * Decimal: rgb(75,0,130)
+   **/
+   indigo
+   /**
+    * Color: ivory
+    * Hex: #FFFFF0
+    * Decimal: rgb(255,255,240)
+   **/
+   ivory
+   /**
+    * Color: khaki
+    * Hex: #F0E68C
+    * Decimal: rgb(240,230,140)
+   **/
+   khaki
+   /**
+    * Color: lavender
+    * Hex: #E6E6FA
+    * Decimal: rgb(230,230,250)
+   **/
+   lavender
+   /**
+    * Color: lavenderblush
+    * Hex: #FFF0F5
+    * Decimal: rgb(255,240,245)
+   **/
+   lavenderblush
+   /**
+    * Color: lawngreen
+    * Hex: #7CFC00
+    * Decimal: rgb(124,252,0)
+   **/
+   lawngreen
+   /**
+    * Color: lemonchiffon
+    * Hex: #FFFACD
+    * Decimal: rgb(255,250,205)
+   **/
+   lemonchiffon
+   /**
+    * Color: lightblue
+    * Hex: #ADD8E6
+    * Decimal: rgb(173,216,230)
+   **/
+   lightblue
+   /**
+    * Color: lightcoral
+    * Hex: #F08080
+    * Decimal: rgb(240,128,128)
+   **/
+   lightcoral
+   /**
+    * Color: lightcyan
+    * Hex: #E0FFFF
+    * Decimal: rgb(224,255,255)
+   **/
+   lightcyan
+   /**
+    * Color: lightgoldenrodyellow
+    * Hex: #FAFAD2
+    * Decimal: rgb(250,250,210)
+   **/
+   lightgoldenrodyellow
+   /**
+    * Color: lightgray
+    * Hex: #D3D3D3
+    * Decimal: rgb(211,211,211)
+   **/
+   lightgray
+   /**
+    * Color: lightgreen
+    * Hex: #90EE90
+    * Decimal: rgb(144,238,144)
+   **/
+   lightgreen
+   /**
+    * Color: lightgrey
+    * Hex: #D3D3D3
+    * Decimal: rgb(211,211,211)
+   **/
+   lightgrey
+   /**
+    * Color: lightpink
+    * Hex: #FFB6C1
+    * Decimal: rgb(255,182,193)
+   **/
+   lightpink
+   /**
+    * Color: lightsalmon
+    * Hex: #FFA07A
+    * Decimal: rgb(255,160,122)
+   **/
+   lightsalmon
+   /**
+    * Color: lightseagreen
+    * Hex: #20B2AA
+    * Decimal: rgb(32,178,170)
+   **/
+   lightseagreen
+   /**
+    * Color: lightskyblue
+    * Hex: #87CEFA
+    * Decimal: rgb(135,206,250)
+   **/
+   lightskyblue
+   /**
+    * Color: lightslategray
+    * Hex: #778899
+    * Decimal: rgb(119,136,153)
+   **/
+   lightslategray
+   /**
+    * Color: lightslategrey
+    * Hex: #778899
+    * Decimal: rgb(119,136,153)
+   **/
+   lightslategrey
+   /**
+    * Color: lightsteelblue
+    * Hex: #B0C4DE
+    * Decimal: rgb(176,196,222)
+   **/
+   lightsteelblue
+   /**
+    * Color: lightyellow
+    * Hex: #FFFFE0
+    * Decimal: rgb(255,255,224)
+   **/
+   lightyellow
+   /**
+    * Color: lime
+    * Hex: #00FF00
+    * Decimal: rgb(0,255,0)
+   **/
+   lime
+   /**
+    * Color: limegreen
+    * Hex: #32CD32
+    * Decimal: rgb(50,205,50)
+   **/
+   limegreen
+   /**
+    * Color: linen
+    * Hex: #FAF0E6
+    * Decimal: rgb(250,240,230)
+   **/
+   linen
+   /**
+    * Color: magenta
+    * Hex: #FF00FF
+    * Decimal: rgb(255,0,255)
+   **/
+   magenta
+   /**
+    * Color: maroon
+    * Hex: #800000
+    * Decimal: rgb(128,0,0)
+   **/
+   maroon
+   /**
+    * Color: mediumaquamarine
+    * Hex: #66CDAA
+    * Decimal: rgb(102,205,170)
+   **/
+   mediumaquamarine
+   /**
+    * Color: mediumblue
+    * Hex: #0000CD
+    * Decimal: rgb(0,0,205)
+   **/
+   mediumblue
+   /**
+    * Color: mediumorchid
+    * Hex: #BA55D3
+    * Decimal: rgb(186,85,211)
+   **/
+   mediumorchid
+   /**
+    * Color: mediumpurple
+    * Hex: #9370DB
+    * Decimal: rgb(147,112,219)
+   **/
+   mediumpurple
+   /**
+    * Color: mediumseagreen
+    * Hex: #3CB371
+    * Decimal: rgb(60,179,113)
+   **/
+   mediumseagreen
+   /**
+    * Color: mediumslateblue
+    * Hex: #7B68EE
+    * Decimal: rgb(123,104,238)
+   **/
+   mediumslateblue
+   /**
+    * Color: mediumspringgreen
+    * Hex: #00FA9A
+    * Decimal: rgb(0,250,154)
+   **/
+   mediumspringgreen
+   /**
+    * Color: mediumturquoise
+    * Hex: #48D1CC
+    * Decimal: rgb(72,209,204)
+   **/
+   mediumturquoise
+   /**
+    * Color: mediumvioletred
+    * Hex: #C71585
+    * Decimal: rgb(199,21,133)
+   **/
+   mediumvioletred
+   /**
+    * Color: midnightblue
+    * Hex: #191970
+    * Decimal: rgb(25,25,112)
+   **/
+   midnightblue
+   /**
+    * Color: mintcream
+    * Hex: #F5FFFA
+    * Decimal: rgb(245,255,250)
+   **/
+   mintcream
+   /**
+    * Color: mistyrose
+    * Hex: #FFE4E1
+    * Decimal: rgb(255,228,225)
+   **/
+   mistyrose
+   /**
+    * Color: moccasin
+    * Hex: #FFE4B5
+    * Decimal: rgb(255,228,181)
+   **/
+   moccasin
+   /**
+    * Color: navajowhite
+    * Hex: #FFDEAD
+    * Decimal: rgb(255,222,173)
+   **/
+   navajowhite
+   /**
+    * Color: navy
+    * Hex: #000080
+    * Decimal: rgb(0,0,128)
+   **/
+   navy
+   /**
+    * Color: oldlace
+    * Hex: #FDF5E6
+    * Decimal: rgb(253,245,230)
+   **/
+   oldlace
+   /**
+    * Color: olive
+    * Hex: #808000
+    * Decimal: rgb(128,128,0)
+   **/
+   olive
+   /**
+    * Color: olivedrab
+    * Hex: #6B8E23
+    * Decimal: rgb(107,142,35)
+   **/
+   olivedrab
+   /**
+    * Color: orange
+    * Hex: #FFA500
+    * Decimal: rgb(255,165,0)
+   **/
+   orange
+   /**
+    * Color: orangered
+    * Hex: #FF4500
+    * Decimal: rgb(255,69,0)
+   **/
+   orangered
+   /**
+    * Color: orchid
+    * Hex: #DA70D6
+    * Decimal: rgb(218,112,214)
+   **/
+   orchid
+   /**
+    * Color: palegoldenrod
+    * Hex: #EEE8AA
+    * Decimal: rgb(238,232,170)
+   **/
+   palegoldenrod
+   /**
+    * Color: palegreen
+    * Hex: #98FB98
+    * Decimal: rgb(152,251,152)
+   **/
+   palegreen
+   /**
+    * Color: paleturquoise
+    * Hex: #AFEEEE
+    * Decimal: rgb(175,238,238)
+   **/
+   paleturquoise
+   /**
+    * Color: palevioletred
+    * Hex: #DB7093
+    * Decimal: rgb(219,112,147)
+   **/
+   palevioletred
+   /**
+    * Color: papayawhip
+    * Hex: #FFEFD5
+    * Decimal: rgb(255,239,213)
+   **/
+   papayawhip
+   /**
+    * Color: peachpuff
+    * Hex: #FFDAB9
+    * Decimal: rgb(255,218,185)
+   **/
+   peachpuff
+   /**
+    * Color: peru
+    * Hex: #CD853F
+    * Decimal: rgb(205,133,63)
+   **/
+   peru
+   /**
+    * Color: pink
+    * Hex: #FFC0CB
+    * Decimal: rgb(255,192,203)
+   **/
+   pink
+   /**
+    * Color: plum
+    * Hex: #DDA0DD
+    * Decimal: rgb(221,160,221)
+   **/
+   plum
+   /**
+    * Color: powderblue
+    * Hex: #B0E0E6
+    * Decimal: rgb(176,224,230)
+   **/
+   powderblue
+   /**
+    * Color: purple
+    * Hex: #800080
+    * Decimal: rgb(128,0,128)
+   **/
+   purple
+   /**
+    * Color: red
+    * Hex: #FF0000
+    * Decimal: rgb(255,0,0)
+   **/
+   red
+   /**
+    * Color: rosybrown
+    * Hex: #BC8F8F
+    * Decimal: rgb(188,143,143)
+   **/
+   rosybrown
+   /**
+    * Color: royalblue
+    * Hex: #4169E1
+    * Decimal: rgb(65,105,225)
+   **/
+   royalblue
+   /**
+    * Color: saddlebrown
+    * Hex: #8B4513
+    * Decimal: rgb(139,69,19)
+   **/
+   saddlebrown
+   /**
+    * Color: salmon
+    * Hex: #FA8072
+    * Decimal: rgb(250,128,114)
+   **/
+   salmon
+   /**
+    * Color: sandybrown
+    * Hex: #F4A460
+    * Decimal: rgb(244,164,96)
+   **/
+   sandybrown
+   /**
+    * Color: seagreen
+    * Hex: #2E8B57
+    * Decimal: rgb(46,139,87)
+   **/
+   seagreen
+   /**
+    * Color: seashell
+    * Hex: #FFF5EE
+    * Decimal: rgb(255,245,238)
+   **/
+   seashell
+   /**
+    * Color: sienna
+    * Hex: #A0522D
+    * Decimal: rgb(160,82,45)
+   **/
+   sienna
+   /**
+    * Color: silver
+    * Hex: #C0C0C0
+    * Decimal: rgb(192,192,192)
+   **/
+   silver
+   /**
+    * Color: skyblue
+    * Hex: #87CEEB
+    * Decimal: rgb(135,206,235)
+   **/
+   skyblue
+   /**
+    * Color: slateblue
+    * Hex: #6A5ACD
+    * Decimal: rgb(106,90,205)
+   **/
+   slateblue
+   /**
+    * Color: slategray
+    * Hex: #708090
+    * Decimal: rgb(112,128,144)
+   **/
+   slategray
+   /**
+    * Color: slategrey
+    * Hex: #708090
+    * Decimal: rgb(112,128,144)
+   **/
+   slategrey
+   /**
+    * Color: snow
+    * Hex: #FFFAFA
+    * Decimal: rgb(255,250,250)
+   **/
+   snow
+   /**
+    * Color: springgreen
+    * Hex: #00FF7F
+    * Decimal: rgb(0,255,127)
+   **/
+   springgreen
+   /**
+    * Color: steelblue
+    * Hex: #4682B4
+    * Decimal: rgb(70,130,180)
+   **/
+   steelblue
+   /**
+    * Color: tan
+    * Hex: #D2B48C
+    * Decimal: rgb(210,180,140)
+   **/
+   tan
+   /**
+    * Color: teal
+    * Hex: #008080
+    * Decimal: rgb(0,128,128)
+   **/
+   teal
+   /**
+    * Color: thistle
+    * Hex: #D8BFD8
+    * Decimal: rgb(216,191,216)
+   **/
+   thistle
+   /**
+    * Color: tomato
+    * Hex: #FF6347
+    * Decimal: rgb(255,99,71)
+   **/
+   tomato
+   /**
+    * Color: turquoise
+    * Hex: #40E0D0
+    * Decimal: rgb(64,224,208)
+   **/
+   turquoise
+   /**
+    * Color: violet
+    * Hex: #EE82EE
+    * Decimal: rgb(238,130,238)
+   **/
+   violet
+   /**
+    * Color: wheat
+    * Hex: #F5DEB3
+    * Decimal: rgb(245,222,179)
+   **/
+   wheat
+   /**
+    * Color: white
+    * Hex: #FFFFFF
+    * Decimal: rgb(255,255,255)
+   **/
+   white
+   /**
+    * Color: whitesmoke
+    * Hex: #F5F5F5
+    * Decimal: rgb(245,245,245)
+   **/
+   whitesmoke
+   /**
+    * Color: yellow
+    * Hex: #FFFF00
+    * Decimal: rgb(255,255,0)
+   **/
+   yellow
+   /**
+    * Color: yellowgreen
+    * Hex: #9ACD32
+    * Decimal: rgb(154,205,50)
+   **/
+   yellowgreen
+
+   transparent
+}
+
+private tag CSSDefault {
+   enum {
+      inherit
+   }
+}
+
+tag align-content : CSSDefault {
+   enum {
+      flex-start
+      flex-end
+      center
+      space-between
+      space-around
+      stretch
+   }
+}
+
+tag align-items : CSSDefault {
+   enum {
+      flex-start
+      flex-end
+      center
+      baseline
+      stretch
+   }
+}
+
+tag align-self : CSSDefault {
+   enum {
+      auto
+      flex-start
+      flex-end
+      center
+      baseline
+      stretch
+   }
+}
+
+tag alignment-adjust : CSSDefault {
+   enum {
+      auto
+      baseline
+      before-edge
+      text-before-edge
+      middle
+      central
+      after-edge
+      text-after-edge
+      ideographic
+      alphabetic
+      hanging
+      mathematical
+   }
+}
+
+tag alignment-baseline : CSSDefault {
+   enum {
+      baseline
+      use-script
+      before-edge
+      text-before-edge
+      after-edge
+      text-after-edge
+      central
+      middle
+      ideographic
+      alphabetic
+      hanging
+      mathematical
+   }
+}
+
+tag anchor-point : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag animation : animation-name, animation-duration, animation-timing-function, animation-direction,
+                animation-fill-mode, animation-delay, animation-iteration-count {
+}
+
+tag animation-delay : CSSDefault {
+}
+
+tag animation-direction : CSSDefault {
+   enum {
+      normal
+      reverse
+      alternate
+      alternate-reverse
+   }
+}
+
+tag animation-duration : CSSDefault {
+}
+
+tag animation-fill-mode : CSSDefault {
+   enum {
+      none
+      forwards
+      backwards
+      both
+   }
+}
+
+tag animation-iteration-count : CSSDefault {
+   enum {
+      infinite
+   }
+}
+
+tag animation-name : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag animation-play-state : CSSDefault{
+   enum {
+      running
+      paused
+   }
+}
+
+tag animation-timing-function : CSSDefault {
+   enum {
+      ease
+      linear
+      ease-in
+      ease-out
+      ease-in-out
+      step-start
+      step-end
+   }
+   function steps(number, startend);
+   function cubic-bezier(num1, num2, num3, num3);
+}
+
+tag appearance : CSSDefault {
+}
+
+tag azimuth : CSSDefault {
+   enum {
+      left-side
+      far-left
+      left
+      center-left
+      center
+      center-right
+      right
+      far-right
+      right-side
+      behind
+      leftwards
+      rightwards
+   }
+}
+
+tag backface-visibility : CSSDefault {
+   enum {
+      visible
+      hidden
+   }
+}
+
+tag background : background-attachment, background-color, background-attachment, background-image, background-position, background-repeat {
+}
+
+tag background-attachment : CSSDefault {
+   enum {
+      scroll
+      fixed
+      local
+   }
+}
+
+tag background-clip : CSSDefault {
+   enum {
+      border-box
+      padding-box
+      content-box
+   }
+}
+
+tag background-color : CSSColor, CSSDefault {
+}
+
+tag background-image : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag background-origin : CSSDefault {
+   enum {
+      border-box
+      padding-box
+      content-box
+   }
+}
+
+tag background-position : CSSDefault {
+   enum {
+      top
+      right
+      bottom
+      left
+      center
+   }
+}
+
+tag background-repeat : CSSDefault {
+   enum {
+      repeat
+      repeat-x
+      repeat-y
+      no-repeat
+   }
+}
+
+tag background-size : CSSDefault {
+   enum {
+      auto
+      cover
+      contain
+   }
+}
+
+tag baseline-shift : CSSDefault {
+   enum {
+      baseline
+      sub
+      super
+   }
+}
+
+tag binding : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag bleed : CSSDefault {
+}
+
+tag bookmark-label : CSSDefault {
+   function content();
+}
+
+tag bookmark-level : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag bookmark-state : CSSDefault {
+   enum {
+      open
+      closed
+   }
+}
+
+tag bookmark-target : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag border : border-width, border-style, border-color {
+}
+
+tag border-bottom : border-color, border-style, border-width {
+}
+
+tag border-bottom-color : border-color {
+}
+
+tag border-bottom-left-radius : CSSDefault {
+}
+
+tag border-bottom-right-radius : CSSDefault {
+}
+
+tag border-bottom-style : border-style {
+}
+
+tag border-bottom-width : border-width {
+}
+
+tag border-collapse : CSSDefault {
+   enum {
+      collapse
+      seperate
+   }
+}
+
+tag border-color : CSSColor, CSSDefault {
+}
+
+tag border-image : border-image-source, border-image-slice, border-image-width, border-image-outset, border-image-repeat {
+}
+
+tag border-image-outset : CSSDefault {
+}
+
+tag border-image-repeat : CSSDefault {
+   enum {
+      stretch
+      repeat
+      round
+      space
+   }
+}
+
+tag border-image-slice : CSSDefault {
+   enum {
+      fill
+   }
+}
+
+tag border-image-source : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag border-image-width : CSSDefault {
+}
+
+tag border-left : border-color, border-style, border-width {
+}
+
+tag border-left-color : border-color {
+}
+
+tag border-left-style : border-style {
+}
+
+tag border-left-width : border-width {
+}
+
+tag border-radius : CSSDefault {
+}
+
+tag border-right : border-color, border-style, border-width {
+}
+
+tag border-right-color : border-color {
+}
+
+tag border-right-style : border-style {
+}
+
+tag border-right-width : border-width {
+}
+
+tag border-spacing : CSSDefault {
+}
+
+tag border-style : CSSDefault {
+   enum {
+      none
+      hidden
+      dotted
+      dashed
+      solid
+      double
+      groove
+      ridge
+      inset
+      outset
+   }
+}
+
+tag border-top : border-color, border-style, border-width {
+}
+
+tag border-top-color : border-color {
+}
+
+tag border-top-left-radius : CSSDefault {
+}
+
+tag border-top-right-radius : CSSDefault {
+}
+
+tag border-top-style : border-style {
+}
+
+tag border-top-width : border-width {
+}
+
+tag border-width : CSSDefault {
+   enum {
+      thin
+      medium
+      thick
+   }
+}
+
+tag bottom : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag box-decoration-break : CSSDefault {
+   enum {
+      slice
+      clone
+   }
+}
+
+tag box-shadow : CSSDefault {
+   enum {
+      none
+      inset
+   }
+}
+
+tag box-sizing : CSSDefault {
+   enum {
+      content-box
+      padding-box
+      border-box
+   }
+}
+
+tag break-after : CSSDefault {
+   enum {
+      auto
+      always
+      avoid
+      left
+      right
+      page
+      column
+      avoid-page
+      avoid-column
+   }
+}
+
+tag break-before : CSSDefault {
+   enum {
+      auto
+      always
+      avoid
+      left
+      right
+      page
+      column
+      avoid-page
+      avoid-column
+   }
+}
+
+tag break-inside : CSSDefault {
+   enum {
+      auto
+      avoid
+      avoid-page
+      avoid-column
+   }
+}
+
+tag caption-side : CSSDefault {
+   enum side {
+      top
+      bottom
+   }
+}
+
+tag clear : CSSDefault {
+   enum {
+      none
+      left
+      right
+      both
+   }
+}
+
+tag clip : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag color : CSSColor, CSSDefault {
+}
+
+tag color-profile : CSSDefault {
+   enum {
+      auto
+      sRGB
+   }
+}
+
+tag column-count : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag column-fill : CSSDefault {
+   enum {
+      auto
+      balance
+   }
+}
+
+tag column-gap : CSSDefault {
+   enum {
+      normal
+   }
+}
+
+tag column-rule : column-rule-width, column-rule-style, column-rule-color {
+}
+
+tag column-rule-color : CSSColor, CSSDefault {
+}
+
+tag column-rule-style : border-style {
+}
+
+tag column-rule-width : border-width {
+}
+
+tag column-span : CSSDefault {
+   enum {
+      none
+      all
+   }
+}
+
+tag column-width : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag columns : column-width, column-count {
+}
+
+private tag CSSGlyph {
+   enum {
+      box
+      check
+      circle
+      diamond
+      disc
+      hyphen
+      square
+   }
+}
+
+tag content : CSSGlyph, CSSDefault {
+   enum {
+      normal
+      none
+      inhibit
+      contents
+      footnote
+      endnote
+      section-note 
+      list-item
+      open-quote
+      close-quote
+      no-open-quote
+   }
+
+   function pending(ident);
+}
+
+tag counter-increment : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag counter-reset : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag crop : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag cue : cue-before, cue-0after {
+}
+
+tag cue-after : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag cue-before : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag cursor : CSSDefault {
+   enum {
+      auto
+      crosshair
+      CSSDefault
+      pointer
+      move
+      e-resize
+      ne-resize
+      nw-resize
+      n-resize
+      se-resize
+      sw-resize
+      s-resize
+      w-resize
+      text
+      wait
+      help
+      progress
+   }
+}
+
+tag direction : CSSDefault {
+   enum {
+      ltr
+      rtl
+   }
+}
+
+tag display : CSSDefault {
+   enum {
+      inline
+      block
+      inline-block
+      list-item
+      run-in
+      compact
+      table
+      inline-table
+      table-row-group
+      table-header-group
+      table-footer-group
+      table-row
+      table-column-group
+      table-column
+      table-cell
+      table-caption
+      ruby
+      ruby-base
+      ruby-text
+      ruby-base-group
+      ruby-text-group
+      none
+   }
+}
+
+tag dominant-baseline : CSSDefault {
+   enum {
+      auto
+      use-script
+      no-change
+      reset-size
+      alphabetic
+      hanging
+      ideographic
+      mathematical
+      central
+      middle
+      text-after-edge
+      text-before-edge
+   }
+}
+
+tag drop-initial-after-adjust : CSSDefault {
+   enum {
+      central
+      middle
+      after-edge
+      text-after-edge
+      ideographic
+      alphabetic
+      mathematical
+   }
+}
+
+tag drop-initial-after-align : alignment-baseline {
+}
+
+tag drop-initial-before-adjust : CSSDefault {
+   enum {
+      before-edge
+      text-before-edge
+      central
+      middle
+      hanging
+      mathematical
+   }
+}
+
+tag drop-initial-before-align :  alignment-baseline {
+   enum {
+      caps-height
+   }
+}
+
+tag drop-initial-size : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag drop-initial-value : CSSDefault {
+   enum {
+      initial
+   }
+}
+
+tag elevation : CSSDefault {
+   enum {
+      below
+      level
+      above
+      higher
+      lower
+   }
+}
+
+tag empty-cells : CSSDefault {
+   enum {
+      show
+      hide
+   }
+}
+
+tag fit : CSSDefault {
+   enum {
+      fill
+      hidden
+      meet
+      slice
+   }
+
+}
+
+tag fit-position : CSSDefault {
+   enum {
+      top
+      center
+      bottom
+      left
+      right
+      auto
+   }
+}
+
+tag flex : flex-grow, flex-shrink, flex-basis {
+   enum {
+      none
+   }
+}
+
+tag flex-flow : flex-direction, flex-wrap {
+}
+
+tag flex-basis : CSSDefault {
+}
+
+tag flex-direction : CSSDefault {
+   enum {
+      row
+      row-reverse
+      column
+      column-reverse
+   }
+}
+
+tag flex-flow : flex-direction, flex-wrap {
+}
+
+tag flex-grow : CSSDefault {
+}
+
+tag flex-shrink : CSSDefault {
+}
+
+tag flex-wrap : CSSDefault {
+   enum {
+      nowrap
+      wrap
+      wrap-reverse
+   }
+}
+
+tag "float" : CSSDefault {
+   enum {
+      left
+      right
+      none
+   }
+}
+
+tag float-offset : CSSDefault {
+}
+
+tag font : font-style, font-variant, font-weight, font-size, line-height, font-family {
+   enum {
+      caption
+      icon
+      menu
+      message-box
+      small-caption
+      status-bar
+   }
+}
+
+tag font-feature-settings : CSSDefault {
+   enum {
+      normal
+   }
+}
+
+tag font-family : CSSDefault {
+   enum {
+      serif
+      sans-serif
+      cursive
+      fantasy
+      monospace
+   }
+}
+
+tag font-kerning : CSSDefault {
+   enum {
+      auto
+      normal
+      none
+   }
+}
+
+tag font-language-override : CSSDefault {
+   enum {
+      normal
+   }
+}
+
+tag font-size : CSSDefault {
+   enum {
+      xx-small
+      x-small
+      small
+      medium
+      large
+      x-large
+      xx-large
+      larger
+      smaller
+   }
+}
+
+tag font-size-adjust : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag font-stretch : CSSDefault {
+   enum {
+      normal
+      ultra-condensed
+      extra-condensed
+      condensed
+      semi-condensed
+      semi-expanded
+      expanded
+      extra-expanded
+      ultra-expanded
+   }
+}
+
+tag font-style : CSSDefault {
+   enum {
+      normal
+      italic
+      oblique
+   }
+}
+
+tag font-synthesis : CSSDefault {
+   enum {
+      none
+      weight
+      style
+   }
+}
+
+tag font-variant : font-variant-alternates, font-variant-caps, font-variant-east-asian, font-variant-ligatures, font-variant-numeric {
+}
+
+tag font-variant-alternates : CSSDefault {
+   enum {
+      normal
+      historical-forms
+   }
+   function stylistic();
+   function styleset();
+   function character-variant();
+   function swash();
+   function ornaments();
+   function annotation();
+}
+
+tag font-variant-caps : CSSDefault {
+   enum {
+      normal
+      small-caps
+      all-small-caps
+      petite-caps
+      all-petite-caps
+      titling-caps
+      unicase
+   }
+}
+
+tag font-variant-east-asian : CSSDefault {
+   enum {
+      normal
+      jis78
+      jis83
+      jis90
+      jis04
+      simplified
+      traditional
+      full-width
+      proportional-width
+      ruby
+    }
+}
+
+tag font-variant-ligatures : CSSDefault {
+   enum {
+      normal
+      none
+      common-ligatures
+      no-common-ligatures
+      discretionary-ligatures
+      no-discretionary-ligatures
+      historical-ligatures
+      no-historical-ligatures
+      contextual
+      no-contextual
+   }
+}
+
+tag font-variant-numeric : CSSDefault {
+   enum {
+      normal
+      lining-nums
+      oldstyle-nums
+      proportional-nums
+      tabular-nums
+      diagonal-fractions
+      stacked-fractions
+      ordinal
+      slashed-zero
+   }
+}
+
+tag font-variant-position : CSSDefault {
+   enum {
+      normal
+      sub
+      super
+   }
+}
+
+tag font-weight : CSSDefault {
+   enum {
+      normal
+      bold
+      bolder
+      lighter
+      100
+      200
+      300
+      400
+      500
+      600
+      700
+      800
+      900
+   }
+}
+
+tag grid-cell : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag grid-column : CSSDefault {
+   enum {
+      start
+      end
+      auto
+   }
+}
+
+tag grid-column-align : CSSDefault {
+   enum {
+      start
+      end
+      center
+      stretch
+   }
+}
+
+tag grid-column-sizing : CSSDefault {
+}
+
+tag grid-column-span : CSSDefault {
+}
+
+tag grid-columns : CSSDefault {
+}
+
+tag grid-flow : CSSDefault {
+   enum {
+      none
+      rows
+      columns
+   }
+}
+
+tag grid-row : CSSDefault {
+   enum {
+      start
+      end
+      auto
+   }
+}
+
+tag grid-row-align : CSSDefault {
+   enum {
+      start
+      end
+      center
+      stretch
+   }
+}
+
+tag grid-row-sizing : CSSDefault {
+}
+
+tag grid-row-span : CSSDefault {
+}
+
+tag grid-rows : CSSDefault {
+}
+
+tag grid-template : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag hanging-punctuation : CSSDefault {
+   enum {
+      none
+      first
+      force-end
+      allow-end
+      last
+   }
+}
+
+tag height : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag hyphens : CSSDefault {
+   enum {
+      none
+      manual
+      auto
+   }
+}
+
+tag icon : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag image-orientation : CSSDefault {
+}
+
+tag image-rendering : CSSDefault {
+}
+
+tag image-resolution : CSSDefault {
+   enum {
+      from-image
+      snap
+   }
+}
+
+tag inline-box-align : CSSDefault {
+   enum {
+      initial
+      last
+   }
+}
+
+tag justify-content : CSSDefault {
+   enum {
+      flex-start
+      flex-end
+      center
+      space-between
+      space-around
+   }
+}
+
+tag left : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag letter-spacing : CSSDefault {
+   enum {
+      normal
+   }
+}
+
+tag line-break : CSSDefault {
+   enum {
+      auto
+      loose
+      normal
+      strict
+   }
+}
+
+tag line-height : CSSDefault {
+   enum {
+      normal
+   }
+}
+
+tag line-stacking : line-stacking-strategy, line-stacking-shift, line-stacking-ruby  {
+}
+
+tag line-stacking-ruby : CSSDefault {
+   enum {
+      exclude-ruby
+      include-ruby
+   }
+}
+
+tag line-stacking-shift : CSSDefault {
+   enum {
+      consider-shifts
+      disregard-shifts
+   }
+}
+
+tag line-stacking-strategy : CSSDefault {
+   enum {
+      inline-line-height
+      block-line-height
+      max-height
+      grid-height
+   }
+}
+
+tag list-style : list-style-type, list-style-position, list-style-image {
+}
+
+tag list-style-image : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag list-style-position : CSSDefault {
+   enum {
+      inside
+      outside
+      hanging
+   }
+}
+
+tag list-style-type : CSSDefault {
+   enum {
+      inline
+      none
+   }
+}
+
+tag margin : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag margin-bottom : margin {
+}
+
+tag margin-left : margin {
+}
+
+tag margin-right : margin {
+}
+
+tag margin-top : margin {
+}
+
+tag marker-offset : CSSDefault {
+}
+
+tag marks : CSSDefault {
+   enum {
+      crop
+      cross
+      none
+   }
+}
+
+tag marquee-direction : CSSDefault {
+   enum {
+      forward
+      reverse
+   }
+}
+
+tag marquee-loop : CSSDefault {
+   enum {
+      infinite
+   }
+}
+
+tag marquee-play-count : CSSDefault {
+   enum {
+      infinite
+   }
+}
+
+tag marquee-speed : CSSDefault {
+   enum {
+      slow
+      normal
+      fast
+   }
+}
+
+tag marquee-style : CSSDefault {
+   enum {
+      scroll
+      slide
+      alternate
+   }
+}
+
+tag max-height : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag max-width : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag min-height : CSSDefault {
+}
+
+tag min-width : CSSDefault {
+}
+
+tag move-to : CSSDefault {
+   enum {
+      normal
+      here
+   }
+}
+
+tag nav-down : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag nav-index : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag nav-left : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag nav-right : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag nav-up : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag opacity : CSSDefault {
+}
+
+tag order : CSSDefault {
+}
+
+tag orphans : CSSDefault {
+}
+
+tag outline : outline-color, outline-style, outline-width {
+}
+
+tag outline-color : CSSColor {
+   enum {
+      invert
+   }
+}
+
+tag outline-offset : CSSDefault {
+}
+
+tag outline-style : border-style {
+}
+
+tag outline-width : border-width {
+}
+
+tag overflow : CSSDefault {
+   enum {
+      visible
+      hidden
+      scroll
+      auto
+      no-display
+      no-content
+   }
+}
+
+tag overflow-style : CSSDefault {
+   enum {
+      auto
+      marquee-line
+      marquee-block
+   }
+}
+
+tag overflow-wrap : CSSDefault {
+   enum {
+      normal
+      break-word
+   }
+}
+
+tag overflow-x : overflow {
+}
+
+tag overflow-y : overflow {
+}
+
+tag padding : CSSDefault {
+}
+
+tag padding-bottom : CSSDefault {
+}
+
+tag padding-left : CSSDefault {
+}
+
+tag padding-right : CSSDefault {
+}
+
+tag padding-top : CSSDefault {
+}
+
+tag page : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag page-break-after : CSSDefault {
+   enum {
+      auto
+      always
+      avoid
+      left
+      right
+   }
+}
+
+tag page-break-before : CSSDefault {
+   enum {
+      auto
+      always
+      avoid
+      left
+      right
+   }
+}
+
+tag page-break-inside : CSSDefault {
+   enum {
+      auto
+      avoid
+   }
+}
+
+tag page-policy : CSSDefault {
+   enum {
+      start
+      first
+      last
+   }
+}
+
+tag pause : CSSDefault {
+   enum {
+      none
+      x-weak
+      weak
+      medium
+      strong
+      x-strong
+   }
+}
+
+tag pause-after : pause {
+}
+
+tag pause-before : pause {
+}
+
+tag perspective : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag perspective-origin : CSSDefault {
+   enum {
+      left
+      center
+      right
+      top
+      bottom
+   }
+}
+
+tag pitch : CSSDefault {
+   enum {
+      x-low
+      low
+      medium
+      high
+      x-high
+   }
+}
+
+tag pitch-range : CSSDefault {
+}
+
+tag play-during : CSSDefault {
+   enum {
+      mix
+      repeat
+      auto
+      none
+   }
+}
+
+tag position : CSSDefault {
+   enum {
+      "static"
+      relative
+      absolute
+      fixed
+   }
+}
+
+tag presentation-level : CSSDefault {
+   enum {
+      same
+      increment
+   }
+}
+
+tag punctuation-trim : CSSDefault {
+}
+
+tag quotes : CSSDefault {
+}
+
+tag rendering-intent : CSSDefault {
+   enum {
+      auto
+      perceptual
+      relative-colorimetric
+      saturation
+      absolute-colorimetric
+      inherit
+   }
+}
+
+tag resize : CSSDefault {
+   enum {
+      none
+      both
+      horizontal
+      vertical
+      inherit
+   }
+}
+
+tag rest : CSSDefault {
+   enum {
+      none
+      x-weak
+      weak
+      medium
+      strong
+      x-strong
+   }
+}
+
+tag rest-after : rest {
+}
+
+tag rest-before : rest {
+}
+
+tag richness : CSSDefault {
+}
+
+tag right : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag rotation : CSSDefault {
+}
+
+tag rotation-point : CSSDefault {
+}
+
+tag ruby-align : CSSDefault {
+   enum {
+      auto
+      start
+      left
+      center
+      end
+      right
+      distribute-letter
+      distribute-space
+      line-edge
+   }
+}
+
+tag ruby-overhang : CSSDefault {
+   enum {
+      auto
+      start
+      end
+      none
+   }
+}
+
+tag ruby-position : CSSDefault {
+   enum {
+      before
+      after
+      inter-character
+      inline
+   }
+}
+
+tag ruby-span : CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag size : CSSDefault {
+   enum {
+      auto
+      portrait
+      landscape
+   }
+}
+
+tag speak : CSSDefault {
+   enum {
+      auto
+      none
+      normal
+   }
+}
+
+tag speak-as : CSSDefault {
+   enum {
+      normal
+      spell-out
+      digits
+      literal-punctuation
+      no-punctuation
+   }
+}
+
+tag speak-header : CSSDefault {
+   enum {
+      once
+      always
+   }
+}
+
+tag speak-numeral : CSSDefault {
+   enum {
+      digits
+      continuous
+   }
+
+}
+
+tag speak-punctuation : CSSDefault {
+   enum {
+      code
+      none
+   }
+}
+
+tag speech-rate : CSSDefault {
+   enum {
+      x-slow
+      slow
+      medium
+      fast
+      x-fast
+      faster
+      slower
+   }
+}
+
+tag stress : CSSDefault {
+}
+
+tag string-set : CSSDefault {
+}
+
+tag tab-size : CSSDefault {
+}
+
+tag table-layout : CSSDefault {
+   enum {
+      auto
+      fixed
+   }
+}
+
+tag target : target-name, target-new, target-position {
+}
+
+tag target-name : CSSDefault {
+   enum {
+      current
+      root
+      parent
+      new
+      modal
+   }
+}
+
+tag target-new : CSSDefault {
+   enum {
+      window
+      tab
+      none
+   }
+}
+
+tag target-position : CSSDefault {
+   enum {
+      above
+      behind
+      front
+      back
+   }
+}
+
+tag text-align : CSSDefault {
+   enum {
+      start
+      end
+      left
+      right
+      center
+      justify
+      match-parent
+   }
+}
+
+tag text-align-last : CSSDefault {
+   enum {
+      auto
+      start
+      end
+      left
+      right
+      center
+      justify
+   }
+}
+
+tag text-decoration : CSSDefault {
+   enum {
+      none
+      underline
+      overline
+      line-through
+      blink
+   }
+}
+
+tag text-decoration-color : CSSColor, CSSDefault {
+}
+
+tag text-decoration-line : CSSDefault {
+   enum {
+      none
+      underline
+      overline
+      line-through
+   }
+}
+
+tag text-decoration-skip : CSSDefault {
+   enum {
+      none
+      objects
+      spaces
+      ink
+      edges
+   }
+}
+
+tag text-decoration-style : CSSDefault {
+   enum {
+      solid
+      double
+      dotted
+      dashed
+      wavy
+   }
+}
+
+tag text-emphasis : text-emphasis-style, text-emphasis-color {
+}
+
+tag text-emphasis-color : CSSColor, CSSDefault {
+}
+
+tag text-emphasis-position : CSSDefault {
+   enum {
+      above
+      below
+      right
+      left
+   }
+}
+
+tag text-emphasis-style : CSSDefault {
+   enum {
+      none
+      filled
+      open
+      dot
+      circle
+      double-circle
+      triangle
+      sesame
+   }
+}
+
+tag text-height : CSSDefault {
+   enum {
+      auto
+      font-size
+      text-size
+      max-size
+   }
+}
+
+tag text-indent : CSSDefault {
+   enum {
+      hanging
+      each-line
+   }
+}
+
+tag text-justify : CSSDefault {
+   enum {
+      auto
+      none
+      inter-word
+      inter-ideograph
+      inter-cluster
+      distribute
+      kashida
+   }
+}
+
+tag text-outline : CSSDefault {
+}
+
+tag text-shadow : CSSColor, CSSDefault {
+   enum {
+      none
+   }
+}
+
+tag text-space-collapse : CSSDefault {
+}
+
+tag text-transform : CSSDefault {
+   enum {
+      capitalize
+      uppercase
+      lowercase
+      none
+   }
+}
+
+tag text-underline-position : CSSDefault {
+   enum {
+      auto
+      alphabetic
+      below
+      left
+      right
+   }
+}
+
+tag text-wrap : CSSDefault {
+}
+
+tag top : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag transform : CSSDefault {
+   enum {
+      none
+   }
+
+   function matrix(num,num,num,num,num,num);
+   function translate(num,num);
+   function translateX(num);
+   function translateY(num);
+   function scale(num,num);
+   function scaleX(num);
+   function scaleY(num);
+   function rotate(angle);
+   function skew(angle,angle);
+   function skewX(angle);
+   function skewY(angle);
+
+   function matrix3d(num,num,num,num,num,num,num,num,num,num,num,num,num,num,num,num);
+   function translate3d(value,value,length);
+   function translateZ(length);
+   function scale3d(num);
+   function rotate3d(num,num,num,angle);
+   function rotateX(angle);
+   function rotateY(angle);
+   function rotateZ(angle);
+   function perspective(length);
+}
+
+tag transform-origin : CSSDefault {
+   enum {
+      left
+      center
+      right
+      top
+      bottom
+   }
+}
+
+tag transform-style : CSSDefault {
+   enum {
+      flat
+      preserve-3d
+   }
+}
+
+tag transition : transition-property, transistion-duration, transistion-delay, transition-timing-function {
+}
+
+tag transition-delay : CSSDefault {
+}
+
+tag transition-duration : CSSDefault {
+}
+
+tag transition-property : CSSDefault {
+   enum {
+      none
+      all
+   }
+}
+
+tag transition-timing-function : CSSDefault {
+   enum {
+      ease
+      linear
+      ease-in
+      ease-out
+      ease-in-out
+      step-start
+      step-end
+   }
+   function steps(num,startend);
+   function cubic-bezier(num,num,num,num);
+}
+
+tag unicode-bidi : CSSDefault {
+   enum {
+      normal
+      embed
+      bidi-override
+   }
+}
+
+tag vertical-align : CSSDefault {
+   enum {
+      auto
+      use-script
+      baseline
+      sub
+      super
+      top
+      text-top
+      central
+      middle
+      bottom
+      text-bottom
+   }
+}
+
+tag visibility : CSSDefault {
+   enum {
+      visible
+      hidden
+      collapse
+   }
+}
+
+tag voice-balance : CSSDefault {
+   enum {
+      left
+      center
+      right
+      leftwards
+      rightwards
+   }
+}
+
+tag voice-duration : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag voice-family : CSSDefault {
+}
+
+tag voice-pitch : CSSDefault {
+   enum {
+      absolute
+      x-low
+      low
+      medium
+      high
+      x-high
+   }
+}
+
+tag voice-range : CSSDefault {
+   enum {
+      absolute
+      x-low
+      low
+      medium
+      high
+      x-high
+   }
+}
+
+tag voice-rate : CSSDefault {
+   enum {
+      normal
+      x-slow
+      slow
+      medium
+      fast
+      x-fast
+   }
+
+}
+
+tag voice-stress : CSSDefault {
+   enum {
+      normal
+      strong
+      moderate
+      none
+      reduced
+   }
+}
+
+tag voice-volume : CSSDefault {
+   enum {
+      silent
+      x-soft
+      soft
+      medium
+      loud
+      x-loud
+   }
+}
+
+tag volume : CSSDefault {
+   enum {
+      silent
+      x-soft
+      soft
+      medium
+      loud
+      x-loud
+   }
+}
+
+tag white-space : CSSDefault {
+   enum {
+      normal
+      pre
+      nowrap
+      pre-wrap
+      pre-line
+   }
+}
+
+tag widows : CSSDefault {
+}
+
+tag width : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+tag word-break : CSSDefault {
+   enum {
+      normal
+      keep-all
+      break-all
+   }
+}
+
+tag word-spacing : CSSDefault {
+   enum {
+      normal
+   }
+}
+
+tag word-wrap : CSSDefault {
+   enum {
+      normal
+      break-word
+   }
+}
+
+tag z-index : CSSDefault {
+   enum {
+      auto
+   }
+}
+
+
+/**
+ *  Vendor specific extensions
+ *
+ */
+
+tag "-epub-caption-side" {}
+tag "-epub-hyphens" {}
+tag "-epub-text-combine" {}
+tag "-epub-text-emphasis" {}
+tag "-epub-text-emphasis-color" {}
+tag "-epub-text-emphasis-style" {}
+tag "-epub-text-orientation" {}
+tag "-epub-text-transform" {}
+tag "-epub-word-break" {}
+tag "-epub-writing-mode" {}
+tag "-moz-appearance" {}
+tag "-moz-background-inline-policy" {}
+tag "-moz-binding" {}
+tag "-moz-border-bottom-colors" {}
+tag "-moz-border-end" {}
+tag "-moz-border-end-color" {}
+tag "-moz-border-end-style" {}
+tag "-moz-border-end-width" {}
+tag "-moz-border-left-colors" {}
+tag "-moz-border-right-colors" {}
+tag "-moz-border-start" {}
+tag "-moz-border-start-color" {}
+tag "-moz-border-start-style" {}
+tag "-moz-border-start-width" {}
+tag "-moz-border-top-colors" {}
+tag "-moz-box-align" {}
+tag "-moz-box-direction" {}
+tag "-moz-box-flex" {}
+tag "-moz-box-ordinal-group" {}
+tag "-moz-box-orient" {}
+tag "-moz-box-pack" {}
+tag "-moz-box-sizing" {}
+tag "-moz-column-count" {}
+tag "-moz-column-fill" {}
+tag "-moz-column-gap" {}
+tag "-moz-column-rule" {}
+tag "-moz-column-rule-color" {}
+tag "-moz-column-rule-style" {}
+tag "-moz-column-rule-width" {}
+tag "-moz-column-width" {}
+tag "-moz-columns" {}
+tag "-moz-float-edge" {}
+tag "-moz-font-feature-settings" {}
+tag "-moz-font-language-override" {}
+tag "-moz-force-broken-image-icon" {}
+tag "-moz-hyphens" {}
+tag "-moz-image-region" {}
+tag "-moz-margin-end" {}
+tag "-moz-margin-start" {}
+tag "-moz-orient" {}
+tag "-moz-outline-radius" {}
+tag "-moz-outline-radius-bottomleft" {}
+tag "-moz-outline-radius-bottomright" {}
+tag "-moz-outline-radius-topleft" {}
+tag "-moz-outline-radius-topright" {}
+tag "-moz-padding-end" {}
+tag "-moz-padding-start" {}
+tag "-moz-script-level" {}
+tag "-moz-script-min-size" {}
+tag "-moz-script-size-multiplier" {}
+tag "-moz-stack-sizing" {}
+tag "-moz-tab-size" {}
+tag "-moz-text-align-last" {}
+tag "-moz-text-blink" {}
+tag "-moz-text-decoration-color" {}
+tag "-moz-text-decoration-line" {}
+tag "-moz-text-decoration-style" {}
+tag "-moz-text-size-adjust" {}
+tag "-moz-transform" {}
+tag "-moz-user-focus" {}
+tag "-moz-user-input" {}
+tag "-moz-user-modify" {}
+tag "-moz-user-select" {}
+tag "-moz-window-shadow" {}
+tag "-ms-accelerator" {}
+tag "-ms-background-position-x" {}
+tag "-ms-background-position-y" {}
+tag "-ms-behavior" {}
+tag "-ms-block-progression" {}
+tag "-ms-content-zoom-chaining" {}
+tag "-ms-content-zoom-limit" {}
+tag "-ms-content-zoom-limit-max" {}
+tag "-ms-content-zoom-limit-min" {}
+tag "-ms-content-zoom-snap" {}
+tag "-ms-content-zoom-snap-points" {}
+tag "-ms-content-zoom-snap-type" {}
+tag "-ms-content-zooming" {}
+tag "-ms-filter" {}
+tag "-ms-flex" {}
+tag "-ms-flex-align" {}
+tag "-ms-flex-direction" {}
+tag "-ms-flex-order" {}
+tag "-ms-flex-pack" {}
+tag "-ms-flex-wrap" {}
+tag "-ms-flow-from" {}
+tag "-ms-flow-into" {}
+tag "-ms-grid-column" {}
+tag "-ms-grid-column-align" {}
+tag "-ms-grid-column-span" {}
+tag "-ms-grid-columns" {}
+tag "-ms-grid-row" {}
+tag "-ms-grid-row-align" {}
+tag "-ms-grid-row-span" {}
+tag "-ms-grid-rows" {}
+tag "-ms-high-contrast-adjust" {}
+tag "-ms-hyphenate-limit-chars" {}
+tag "-ms-hyphenate-limit-lines" {}
+tag "-ms-hyphenate-limit-zone" {}
+tag "-ms-hyphens" {}
+tag "-ms-ime-mode" {}
+tag "-ms-interpolation-mode" {}
+tag "-ms-layout-flow" {}
+tag "-ms-layout-grid" {}
+tag "-ms-layout-grid-char" {}
+tag "-ms-layout-grid-line" {}
+tag "-ms-layout-grid-mode" {}
+tag "-ms-layout-grid-type" {}
+tag "-ms-overflow-style" {}
+tag "-ms-overflow-x" {}
+tag "-ms-overflow-y" {}
+tag "-ms-progress-appearance" {}
+tag "-ms-scroll-chaining" {}
+tag "-ms-scroll-limit" {}
+tag "-ms-scroll-limit-x-max" {}
+tag "-ms-scroll-limit-x-min" {}
+tag "-ms-scroll-limit-y-max" {}
+tag "-ms-scroll-limit-y-min" {}
+tag "-ms-scroll-rails" {}
+tag "-ms-scroll-snap-points-x" {}
+tag "-ms-scroll-snap-points-y" {}
+tag "-ms-scroll-snap-type" {}
+tag "-ms-scroll-snap-x" {}
+tag "-ms-scroll-snap-y" {}
+tag "-ms-scroll-translation" {}
+tag "-ms-scrollbar-arrow-color" {}
+tag "-ms-scrollbar-base-color" {}
+tag "-ms-scrollbar-darkshadow-color" {}
+tag "-ms-scrollbar-face-color" {}
+tag "-ms-scrollbar-highlight-color" {}
+tag "-ms-scrollbar-shadow-color" {}
+tag "-ms-scrollbar-track-color" {}
+tag "-ms-text-align-last" {}
+tag "-ms-text-autospace" {}
+tag "-ms-text-justify" {}
+tag "-ms-text-kashida-space" {}
+tag "-ms-text-overflow" {}
+tag "-ms-text-underline-position" {}
+tag "-ms-touch-action" {}
+tag "-ms-user-select" {}
+tag "-ms-word-break" {}
+tag "-ms-word-wrap" {}
+tag "-ms-wrap-flow" {}
+tag "-ms-wrap-margin" {}
+tag "-ms-wrap-through" {}
+tag "-ms-writing-mode" {}
+tag "-ms-zoom" {}
+tag "-o-object-fit" {}
+tag "-o-object-position" {}
+tag "-o-tab-size" {}
+tag "-o-table-baseline" {}
+tag "-o-text-overflow" {}
+tag "-o-transform" {}
+tag "-o-transform-origin" {}
+tag "-o-transition" {}
+tag "-o-transition-delay" {}
+tag "-o-transition-duration" {}
+tag "-o-transition-property" {}
+tag "-o-transition-timing-function" {}
+tag "-webkit-align-content" {}
+tag "-webkit-align-items" {}
+tag "-webkit-align-self" {}
+tag "-webkit-animation" {}
+tag "-webkit-animation-delay" {}
+tag "-webkit-animation-direction" {}
+tag "-webkit-animation-duration" {}
+tag "-webkit-animation-fill-mode" {}
+tag "-webkit-animation-iteration-count" {}
+tag "-webkit-animation-name" {}
+tag "-webkit-animation-play-state" {}
+tag "-webkit-animation-timing-function" {}
+tag "-webkit-app-region" {}
+tag "-webkit-appearance" {}
+tag "-webkit-aspect-ratio" {}
+tag "-webkit-backface-visibility" {}
+tag "-webkit-background-clip" {}
+tag "-webkit-background-composite" {}
+tag "-webkit-background-origin" {}
+tag "-webkit-background-size" {}
+tag "-webkit-blend-mode" {}
+tag "-webkit-border-after" {}
+tag "-webkit-border-after-color" {}
+tag "-webkit-border-after-style" {}
+tag "-webkit-border-after-width" {}
+tag "-webkit-border-before" {}
+tag "-webkit-border-before-color" {}
+tag "-webkit-border-before-style" {}
+tag "-webkit-border-before-width" {}
+tag "-webkit-border-bottom-left-radius" {}
+tag "-webkit-border-bottom-right-radius" {}
+tag "-webkit-border-end" {}
+tag "-webkit-border-end-color" {}
+tag "-webkit-border-end-style" {}
+tag "-webkit-border-end-width" {}
+tag "-webkit-border-fit" {}
+tag "-webkit-border-horizontal-spacing" {}
+tag "-webkit-border-image" {}
+tag "-webkit-border-radius" {}
+tag "-webkit-border-start" {}
+tag "-webkit-border-start-color" {}
+tag "-webkit-border-start-style" {}
+tag "-webkit-border-start-width" {}
+tag "-webkit-border-top-left-radius" {}
+tag "-webkit-border-top-right-radius" {}
+tag "-webkit-border-vertical-spacing" {}
+tag "-webkit-box-align" {}
+tag "-webkit-box-decoration-break" {}
+tag "-webkit-box-direction" {}
+tag "-webkit-box-flex" {}
+tag "-webkit-box-flex-group" {}
+tag "-webkit-box-lines" {}
+tag "-webkit-box-ordinal-group" {}
+tag "-webkit-box-orient" {}
+tag "-webkit-box-pack" {}
+tag "-webkit-box-reflect" {}
+tag "-webkit-box-shadow" {}
+tag "-webkit-box-sizing" {}
+tag "-webkit-clip-path" {}
+tag "-webkit-color-correction" {}
+tag "-webkit-column-axis" {}
+tag "-webkit-column-break-after" {}
+tag "-webkit-column-break-before" {}
+tag "-webkit-column-break-inside" {}
+tag "-webkit-column-count" {}
+tag "-webkit-column-gap" {}
+tag "-webkit-column-progression" {}
+tag "-webkit-column-rule" {}
+tag "-webkit-column-rule-color" {}
+tag "-webkit-column-rule-style" {}
+tag "-webkit-column-rule-width" {}
+tag "-webkit-column-span" {}
+tag "-webkit-column-width" {}
+tag "-webkit-columns" {}
+tag "-webkit-dashboard-region" {}
+tag "-webkit-filter" {}
+tag "-webkit-flex" {}
+tag "-webkit-flex-basis" {}
+tag "-webkit-flex-direction" {}
+tag "-webkit-flex-flow" {}
+tag "-webkit-flex-grow" {}
+tag "-webkit-flex-shrink" {}
+tag "-webkit-flex-wrap" {}
+tag "-webkit-flow-from" {}
+tag "-webkit-flow-into" {}
+tag "-webkit-font-feature-settings" {}
+tag "-webkit-font-kerning" {}
+tag "-webkit-font-size-delta" {}
+tag "-webkit-font-smoothing" {}
+tag "-webkit-font-variant-ligatures" {}
+tag "-webkit-grid-column" {}
+tag "-webkit-grid-columns" {}
+tag "-webkit-grid-row" {}
+tag "-webkit-grid-rows" {}
+tag "-webkit-highlight" {}
+tag "-webkit-hyphenate-character" {}
+tag "-webkit-hyphenate-limit-after" {}
+tag "-webkit-hyphenate-limit-before" {}
+tag "-webkit-hyphenate-limit-lines" {}
+tag "-webkit-justify-content" {}
+tag "-webkit-line-align" {}
+tag "-webkit-line-box-contain" {}
+tag "-webkit-line-break" {}
+tag "-webkit-line-clamp" {}
+tag "-webkit-line-grid" {}
+tag "-webkit-line-snap" {}
+tag "-webkit-locale" {}
+tag "-webkit-logical-height" {}
+tag "-webkit-logical-width" {}
+tag "-webkit-margin-after" {}
+tag "-webkit-margin-after-collapse" {}
+tag "-webkit-margin-before" {}
+tag "-webkit-margin-before-collapse" {}
+tag "-webkit-margin-bottom-collapse" {}
+tag "-webkit-margin-collapse" {}
+tag "-webkit-margin-end" {}
+tag "-webkit-margin-start" {}
+tag "-webkit-margin-top-collapse" {}
+tag "-webkit-marquee" {}
+tag "-webkit-marquee-direction" {}
+tag "-webkit-marquee-increment" {}
+tag "-webkit-marquee-repetition" {}
+tag "-webkit-marquee-speed" {}
+tag "-webkit-marquee-style" {}
+tag "-webkit-mask" {}
+tag "-webkit-mask-attachment" {}
+tag "-webkit-mask-box-image" {}
+tag "-webkit-mask-box-image-outset" {}
+tag "-webkit-mask-box-image-repeat" {}
+tag "-webkit-mask-box-image-slice" {}
+tag "-webkit-mask-box-image-source" {}
+tag "-webkit-mask-box-image-width" {}
+tag "-webkit-mask-clip" {}
+tag "-webkit-mask-composite" {}
+tag "-webkit-mask-image" {}
+tag "-webkit-mask-origin" {}
+tag "-webkit-mask-position" {}
+tag "-webkit-mask-position-x" {}
+tag "-webkit-mask-position-y" {}
+tag "-webkit-mask-repeat" {}
+tag "-webkit-mask-repeat-x" {}
+tag "-webkit-mask-repeat-y" {}
+tag "-webkit-mask-size" {}
+tag "-webkit-max-logical-height" {}
+tag "-webkit-max-logical-width" {}
+tag "-webkit-min-logical-height" {}
+tag "-webkit-min-logical-width" {}
+tag "-webkit-nbsp-mode" {}
+tag "-webkit-opacity" {}
+tag "-webkit-order" {}
+tag "-webkit-overflow-scrolling" {}
+tag "-webkit-padding-after" {}
+tag "-webkit-padding-before" {}
+tag "-webkit-padding-end" {}
+tag "-webkit-padding-start" {}
+tag "-webkit-perspective" {}
+tag "-webkit-perspective-origin" {}
+tag "-webkit-perspective-origin-x" {}
+tag "-webkit-perspective-origin-y" {}
+tag "-webkit-print-color-adjust" {}
+tag "-webkit-region-break-after" {}
+tag "-webkit-region-break-before" {}
+tag "-webkit-region-break-inside" {}
+tag "-webkit-region-overflow" {}
+tag "-webkit-rtl-ordering" {}
+tag "-webkit-shape-inside" {}
+tag "-webkit-shape-outside" {}
+tag "-webkit-svg-shadow" {}
+tag "-webkit-tap-highlight-color" {}
+tag "-webkit-text-decoration-line" {}
+tag "-webkit-text-decoration-style" {}
+tag "-webkit-text-decorations-in-effect" {}
+tag "-webkit-text-emphasis-position" {}
+tag "-webkit-text-fill-color" {}
+tag "-webkit-text-security" {}
+tag "-webkit-text-size-adjust" {}
+tag "-webkit-text-stroke" {}
+tag "-webkit-text-stroke-color" {}
+tag "-webkit-text-stroke-width" {}
+tag "-webkit-touch-callout" {}
+tag "-webkit-transform" {}
+tag "-webkit-transform-origin" {}
+tag "-webkit-transform-origin-x" {}
+tag "-webkit-transform-origin-y" {}
+tag "-webkit-transform-origin-z" {}
+tag "-webkit-transform-style" {}
+tag "-webkit-transition" {}
+tag "-webkit-transition-delay" {}
+tag "-webkit-transition-duration" {}
+tag "-webkit-transition-property" {}
+tag "-webkit-transition-timing-function" {}
+tag "-webkit-user-drag" {}
+tag "-webkit-user-modify" {}
+tag "-webkit-user-select" {}
+tag "-webkit-wrap" {}
+tag "-webkit-wrap-flow" {}
+tag "-webkit-wrap-margin" {}
+tag "-webkit-wrap-padding" {}
+tag "-webkit-wrap-through" {}
+

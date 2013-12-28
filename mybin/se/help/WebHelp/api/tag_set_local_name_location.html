@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_set_local_name_location</title>
+</head>
+<body>
+
+<h3><b>int tag_set_local_name_location(int local_id, int name_line_no, int name_seekpos)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Set the name and line number positions for the local symbol name
+with the given local ID.
+<p>
+For synchronization, macros should perform a tag_lock_context(true)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="local_id">local_id</A></code> - Local ID [ from 1 to <a href="tag_get_num_of_locals.html">tag_get_num_of_locals</a>() ]</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="name_line_no">name_line_no</A></code> - line number that symbol name is located on</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="name_seekpos">name_seekpos</A></code> - Seek position of the first character of the symbol name
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_insert_local.html">tag_insert_local</a>, <a href="tag_end_local.html">tag_end_local</a>, <a href="tag_get_detail2.html">tag_get_detail2</a></blockquote>
+</body>
+</html>

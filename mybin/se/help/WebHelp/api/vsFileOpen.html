@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsFileOpen</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsFileOpen(const char *pszFilename, int option)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Opens the file specified with access specified by <i>option</i>.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - may be one of the following.
+
+<dl>
+<dt>0</dt><dd>Open file for shared reading.</dd>
+
+<dt>1</dt><dd>Open file for writing.  File is created if it does not
+exist.  File is truncated.</dd>
+
+<dt>2</dt><dd>Open file for reading (read shared) and writing.
+File is created if it does not exist.  File is truncated.</dd>
+
+<dt>3</dt><dd>Open file for reading (read shared) and writing.
+FILE_NOT_FOUND_RC is returned if the file does
+not exist.  File is NOT truncated.</dd>
+
+<p>UNIX, unfortunately does not support sharing.  On UNIX it is possible
+for the compiler to be reading a file that you are writing to.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If successful, a handle to file which may be used by other vsFilexxx
+functions.  Otherwise a negative error code is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsFileOpen.html">vsFileOpen</a>, <a href="vsFileClose.html">vsFileClose</a>, <a href="vsFileRead.html">vsFileRead</a>, <a href="vsFileWrite.html">vsFileWrite</a>, <a href="vsFileSeek.html">vsFileSeek</a>, <a href="vsFileMove.html">vsFileMove</a></blockquote>
+</body>
+</html>

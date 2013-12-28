@@ -1,0 +1,87 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_get_detail2</title>
+</head>
+<body>
+
+<h3><b>void tag_get_detail2(int tag_detail, int item_id, var result)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Get the given detail type for the given item either as a
+context tag, local tag, or part of a match set.
+<p>
+For synchronization, macros should perform a tag_lock_matches(false)
+or tag_lock_context(false) prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_detail">tag_detail</A></code> - ID of detail to extract. One of the following:
+                  <dl compact>
+                  <dt>VS_TAGDETAIL_context_tag_file<dd style="margin-left:180pt">(string) tag file match is from.
+                  <dt>VS_TAGDETAIL_context_name<dd style="margin-left:180pt">    (string) tag name.
+                  <dt>VS_TAGDETAIL_context_type<dd style="margin-left:180pt">    (string) tag type name.
+                  <dt>VS_TAGDETAIL_context_file<dd style="margin-left:180pt">    (string) file that the tag is in.
+                  <dt>VS_TAGDETAIL_context_line<dd style="margin-left:180pt">    (int) start line number of tag.
+                  <dt>VS_TAGDETAIL_context_start_linenum<dd style="margin-left:180pt"> (int) same as *_line, above.
+                  <dt>VS_TAGDETAIL_context_start_seekpos<dd style="margin-left:180pt"> (int) seek position tag starts at
+                  <dt>VS_TAGDETAIL_context_name_linenum<dd style="margin-left:180pt"> (int) line number symbol name is on
+                  <dt>VS_TAGDETAIL_context_name_seekpos<dd style="margin-left:180pt"> (int) seek position of symbol name
+                  <dt>VS_TAGDETAIL_context_scope_linenum<dd style="margin-left:180pt"> (int) line number body starts at.
+                  <dt>VS_TAGDETAIL_context_scope_seekpos<dd style="margin-left:180pt"> (int) seek position body starts at.
+                  <dt>VS_TAGDETAIL_context_end_linenum<dd style="margin-left:180pt">(int) line number tag ends on.
+                  <dt>VS_TAGDETAIL_context_end_seekpos<dd style="margin-left:180pt">(int) seek position tag ends at.
+                  <dt>VS_TAGDETAIL_context_class<dd style="margin-left:180pt">      (string) name of class.
+                  <dt>VS_TAGDETAIL_context_flags<dd style="margin-left:180pt">         (int) tag attribute flags.
+                  <dt>VS_TAGDETAIL_context_args<dd style="margin-left:180pt">          (string) tag arguments.
+                  <dt>VS_TAGDETAIL_context_return<dd style="margin-left:180pt">     (string) value or type of symbol.
+                  <dt>VS_TAGDETAIL_context_outer<dd style="margin-left:180pt">         (int) ID of first enclosing tag.
+                  <dt>VS_TAGDETAIL_context_parents<dd style="margin-left:180pt">       (string) class derivation.
+                  <dt>VS_TAGDETAIL_context_throws<dd style="margin-left:180pt">        (string) function/proc exceptions.
+                  <dt>VS_TAGDETAIL_context_included_by<dd style="margin-left:180pt">(string) file including this macro.
+                  <dt>VS_TAGDETAIL_context_return_only<dd style="margin-left:180pt">(string) just the type of variable.
+                  <dt>VS_TAGDETAIL_context_return_value<dd style="margin-left:180pt">(string) default value of variable.
+                  <dt>VS_TAGDETAIL_local_tag_file<dd style="margin-left:180pt">        (string) tag file match is from.
+                  <dt>VS_TAGDETAIL_local_name<dd style="margin-left:180pt">            (string) tag name.
+                  <dt>VS_TAGDETAIL_local_type<dd style="margin-left:180pt">   (string) tag type name.
+                  <dt>VS_TAGDETAIL_local_file<dd style="margin-left:180pt">               (string) file that the tag is in.
+                  <dt>VS_TAGDETAIL_local_line<dd style="margin-left:180pt">            (int) start line number of tag.
+                  <dt>VS_TAGDETAIL_local_start_linenum<dd style="margin-left:180pt">(int) same as *_line, above.
+                  <dt>VS_TAGDETAIL_local_start_seekpos<dd style="margin-left:180pt">(int) seek position tag starts at
+                  <dt>VS_TAGDETAIL_local_name_linenum<dd style="margin-left:180pt"> (int) line number symbol name is on
+                  <dt>VS_TAGDETAIL_local_name_seekpos<dd style="margin-left:180pt"> (int) seek position of symbol name
+                  <dt>VS_TAGDETAIL_local_scope_linenum<dd style="margin-left:180pt">(int) line number body starts at.
+                  <dt>VS_TAGDETAIL_local_scope_seekpos<dd style="margin-left:180pt">(int) seek position body starts at.
+                  <dt>VS_TAGDETAIL_local_end_linenum<dd style="margin-left:180pt">(int) line number tag ends on.
+                  <dt>VS_TAGDETAIL_local_end_seekpos<dd style="margin-left:180pt">(int) seek position tag ends at.
+                  <dt>VS_TAGDETAIL_local_class<dd style="margin-left:180pt">        (string) name of class.
+                  <dt>VS_TAGDETAIL_local_flags<dd style="margin-left:180pt">           (int) tag attribute flags.
+                  <dt>VS_TAGDETAIL_local_args<dd style="margin-left:180pt">            (string) tag arguments.
+                  <dt>VS_TAGDETAIL_local_return<dd style="margin-left:180pt">       (string) value or type of symbol.
+                  <dt>VS_TAGDETAIL_local_outer<dd style="margin-left:180pt">           (int) ID of first enclosing tag.
+                  <dt>VS_TAGDETAIL_local_parents<dd style="margin-left:180pt">      (string) class derivation.
+                  <dt>VS_TAGDETAIL_local_throws<dd style="margin-left:180pt">       (string) function/proc exceptions.
+                  <dt>VS_TAGDETAIL_local_included_by<dd style="margin-left:180pt">(string) file including this macro.
+                  <dt>VS_TAGDETAIL_local_return_only<dd style="margin-left:180pt">(string) just the type of variable.
+                  <dt>VS_TAGDETAIL_local_return_value<dd style="margin-left:180pt">(string) default value of variable.
+                  <dt>VS_TAGDETAIL_match_tag_file<dd style="margin-left:180pt">        (string) tag file match is from.
+                  <dt>VS_TAGDETAIL_match_name<dd style="margin-left:180pt">            (string) tag name.
+                  <dt>VS_TAGDETAIL_match_type<dd style="margin-left:180pt">   (string) tag type name.
+                  <dt>VS_TAGDETAIL_match_file<dd style="margin-left:180pt">            (string) file that the tag is in.
+                  <dt>VS_TAGDETAIL_match_line<dd style="margin-left:180pt">         (int) start line number of tag.
+                  <dt>VS_TAGDETAIL_match_start_linenum<dd style="margin-left:180pt">(int) same as *_line, above.
+                  <dt>VS_TAGDETAIL_match_start_seekpos<dd style="margin-left:180pt">(int) seek position tag starts at
+                  <dt>VS_TAGDETAIL_match_name_linenum<dd style="margin-left:180pt"> (int) line number symbol name is on
+                  <dt>VS_TAGDETAIL_match_name_seekpos<dd style="margin-left:180pt"> (int) seek position of symbol name
+                  <dt>VS_TAGDETAIL_match_scope_linenum<dd style="margin-left:180pt">(int) line number body starts at.
+                  <dt>VS_TAGDETAIL_match_scope_seekpos<dd style="margin-left:180pt">(int) seek position body starts at.
+                  <dt>VS_TAGDETAIL_match_end_linenum<dd style="margin-left:180pt">(int) line number tag ends on.
+                  <dt>VS_TAGDETAIL_match_end_seekpos<dd style="margin-left:180pt">(int) seek position tag ends at.
+                  <dt>VS_TAGDETAIL_match_class<dd style="margin-left:180pt">        (string) name of class.
+                  <dt>VS_TAGDETAIL_match_flags<dd style="margin-left:180pt">        (int) tag attribute flags.
+                  <dt>VS_TAGDETAIL_match_args<dd style="margin-left:180pt">            (string) tag arguments.
+                  <dt>VS_TAGDETAIL_match_return<dd style="margin-left:180pt">    (string) value or type of symbol.
+                  <dt>VS_TAGDETAIL_match_outer<dd style="margin-left:180pt">           (int) ID of first enclosing tag.
+                  <dt>VS_TAGDETAIL_match_parents<dd style="margin-left:180pt">      (string) class derivation.
+                  <dt>VS_TAGDETAIL_match_throws<dd style="margin-left:180pt">       (string) function/proc exceptions.
+                  <dt>VS_TAGDETAIL_match_included_by<dd style="margin-left:180pt">(string) file including this macro.
+                  <dt>VS_TAGDETAIL_match_return_only<dd style="margin-left:180pt">(string) just the type of variable.
+                  <dt>VS_TAGDETAIL_match_return_value<dd style="margin-left:180pt">(string) default value of variable.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="item_id">item_id</A></code> - context_id, local_id, or match_id</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="result">result</A></code> - (Output) value of detail is returned here
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_get_detail.html">tag_get_detail</a>, <a href="tag_get_info.html">tag_get_info</a>, <a href="tag_find_context.html">tag_find_context</a>, <a href="tag_find_equal.html">tag_find_equal</a>, <a href="tag_find_local.html">tag_find_local</a>, <a href="tag_find_prefix.html">tag_find_prefix</a>, <a href="tag_next_context.html">tag_next_context</a>, <a href="tag_next_equal.html">tag_next_equal</a>, <a href="tag_next_local.html">tag_next_local</a></blockquote>
+</body>
+</html>

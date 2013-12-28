@@ -1,0 +1,211 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Configuration Directories and Files</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch13.htm" title="Chapter 13.  Appendix"><link rel="prev" href="ch13s04.htm" title="Configuration Variables"><link rel="next" href="ch13s06.htm" title="File Search Order"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_configurationfiles_13203_19684"></a>
+    <a name="sect_configurationfiles_13203_1000064"></a>
+    <a class="indexterm" name="sect_configurationfiles_E63EFFFF_A8D6"></a>
+    <a class="indexterm" name="sect_configurationfiles_32631E6B_BB54"></a>
+    <a class="indexterm" name="sect_configurationfiles_87F34A59_2271"></a>Configuration Directories and Files</h2></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_configurationfiles_13203_73239"></a>
+      <a name="sect_configurationfiles_13203_1004566"></a>
+      <a class="indexterm" name="sect_configurationfiles_F298A3AA_0F9F"></a>
+      <a class="indexterm" name="sect_configurationfiles_5B693192_F556"></a>User Configuration Directory</h3></div></div></div><p class="NormalText">Your SlickEdit® configuration directory contains configuration files representing the changes you have made through setting editor options, and it preserves the state of SlickEdit by using the state file, <a href="ch13s05.htm#sect_configurationfiles_13203_31323">Table of User Configuration Files</a>.</p><p class="NormalText">You should make periodic backups of your SlickEdit configuration directory. If you experience a problem in the editor, you can often solve it by using a saved config directory.</p><p class="NormalText">Configuration changes are saved when you exit the editor. Note that SlickEdit cannot save configuration changes when another instance is running. If you attempt to close an instance that contains configuration changes, while another instance is running, a <span><strong class="command">Save failed</strong></span> message is displayed, then a prompt asks whether or not to exit anyway.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_configurationfiles_13203_1007335"></a>Configuration Directory Location</h4></div></div></div><p class="NormalText">By default, the user configuration directory is in the 
+        following location, depending on the operating system you are using:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Windows: <code class="filename">.../My Documents/My SlickEdit Config/Editor_Version/</code></p></li><li><p class="NormalText">Mac: <code class="filename">$HOME/Library/Application 
+        Support/SlickEdit/Editor_Version/ </code></p></li><li><p class="NormalText">Linux, UNIX: <code class="filename">$HOME/.slickedit/editor_version/</code></p></li></ul></div><p class="NormalText">SlickEdit® creates a versioned config 
+        subdirectory for each version of SlickEdit you run. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="NormalText">You can view the path to the config directory by clicking <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">About SlickEdit</strong></span>. When SlickEdit displays the config directory, it includes the versioned subdirectory. For example: <code class="filename">C:\Documents and Settings\SlickEditUser\My Documents\My SlickEdit Config\13.0.0\</code>.</p></div><p class="NormalText">If you want to use a different directory for your config files, set the <a href="ch13s03.htm#sect_environmentvariables_14642_83137">SLICKEDITCONFIG</a> environment variable (see <a href="ch13s03.htm">Environment Variables</a>), or specify the location by using the <span><strong class="command">-sc</strong></span> invocation option on the command line (see <a href="ch01s06.htm#sect_startingexiting_55651_41674">Invocation Options</a>). In both cases, SlickEdit will create a versioned subdirectory below the specified directory.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_configurationfiles_13203_1007348"></a>Resetting the Configuration Directory</h4></div></div></div><p class="NormalText">For troubleshooting purposes, it is sometimes helpful to reset the configuration directory to the defaults. SlickEdit Product Support may also ask you to use a default configuration to help debug problems. To reset to the default configuration:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Exit any instances of SlickEdit® that are running.</p></li><li><p class="NormalText">Make a backup of the user config directory and store the backup in a safe location.</p></li><li><p class="NormalText">Delete the contents of the versioned config directory (i.e. 13.0.0) but NOT the directory itself.</p></li><li><p class="NormalText">Start SlickEdit.</p></li></ol></div><p class="NormalText">After completing these steps, SlickEdit opens with the default configuration settings. Note that you will be prompted for all of the initial setup information just as if you were running SlickEdit for the first time (see <a href="ch01s06.htm#sect_startingexiting_13343_21284">Running SlickEdit</a>).</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> If, instead of deleting the contents of the directory, you delete the directory itself, SlickEdit will attempt to migrate your settings from a previous version.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_configurationfiles_13203_31323"></a>
+        <a name="sect_configurationfiles_13203_1004644"></a>
+        <a class="indexterm" name="sect_configurationfiles_98D47FE5_1336"></a>Table of User Configuration Files</h4></div></div></div><p class="NormalText">The table below provides a list of the user configuration files.</p><div class="informaltable"><a name="table_bcbad32a-902a-4028-8de5-ac2b480a9def"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">User Config File</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <code class="filename">*.als</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains user-defined language-specific aliases.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">alias.slk</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains user-defined global aliases (directory aliases).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">ftp.ini</code>
+                </p>
+                <p class="CellBody">(UNIX: <code class="filename">uftp.ini</code>)</p>
+              </td><td>
+                <p class="CellBody">A text file that contains user-defined FTP configurations.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">project.vpe</code>
+                </p>
+                <p class="CellBody">(UNIX: <code class="filename">uproject.vpe</code>)</p>
+              </td><td>
+                <p class="CellBody">A text file that contains user-defined language-specific projects.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">ubox.ini</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains user-defined box and line comment styles.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">uformat.ini</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains user-defined beautifier schemes.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">uprint.ini</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains user-defined printing schemes.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">uscheme.ini</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains user-defined color schemes.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">user.vlx</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains color coding changes (keywords, etc.). This file is updated when you close the Color Coding dialog box.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">usercpp.h</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains defines (default preprocessing) for Context Tagging® of C++ and C code.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">uservc.slk</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains user-defined version control systems.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">usrprjtemplates.vpt</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains user-defined project packages.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">vrestore.slk</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains auto-restore
+                  information, such as buffer information and command line
+                  history. The workspace files also contain auto-restore
+                  information, but only for the files/windows previously open.
+                </p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">vslick.ini</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains a few miscellaneous options. The user-configured backup directory is stored here. In addition, some customizable environment variables for path searching for macros, bitmaps, and binary files are stored here as well.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">vslick.sta</code>
+                </p>
+                <p class="CellBody">(UNIX: <code class="filename">vslick.stu</code>)</p>
+              </td><td>
+                <p class="CellBody">A binary file that contains dialog boxes, menus, macro pcode, key bindings, and all other configuration data not stored in one of the other configuration files. Both user and system configuration information is stored here.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">vusrdefs.e</code>
+                </p>
+                <p class="CellBody">(UNIX: <code class="filename">vunxdefs.e</code>)</p>
+              </td><td>
+                <p class="CellBody">A Slick-C® text file that contains the emulation setting, key bindings, color settings, language setup information, and some other miscellaneous options.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">vusrobjs.e</code>
+                </p>
+                <p class="CellBody">(UNIX: <code class="filename">vunxobjs.e</code>)</p>
+              </td><td>
+                <p class="CellBody">A text file that contains user-defined dialog boxes and menus in Slick-C syntax.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">vusrs*.e</code>
+                </p>
+                <p class="CellBody">(UNIX: <code class="filename">vunxs*.e</code>)</p>
+              </td><td>
+                <p class="CellBody">A text file that contains system modified dialog boxes and menus. These changes are NOT automatically transferred unless the version encoding matches. For example, <code class="filename">vusrs10e.e</code>.</p>
+              </td></tr></tbody></table></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_configurationfiles_13203_1004466"></a>
+      <a class="indexterm" name="sect_configurationfiles_B6674C0A_F14A"></a>
+      <a class="indexterm" name="sect_configurationfiles_4C965AB0_5DFA"></a>System Configuration Files</h3></div></div></div><p class="NormalText">System configuration files are located in the SlickEdit® installation directory.</p><p class="NormalText">Typically, these files are only modified by SlickEdit Inc. or OEM customers. OEM customers might want to modify one of these files to ship a customized version of SlickEdit.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_configurationfiles_13203_1004926"></a>
+        <a class="indexterm" name="sect_configurationfiles_222880AD_1FBF"></a>Table of System Configuration Files</h4></div></div></div><p class="NormalText">The table below provides a list of the system configuration files.</p><div class="informaltable"><a name="table_de0e7c13-ba38-42c7-a26f-060750ecd340"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">System Config File</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <code class="filename">alias.slk</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains default global aliases (for example, directory aliases).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">box.ini</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains default box and line comment styles. This file is NOT modified by the dialogs and is not preserved when a new editor is installed.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">format.ini</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains default beautifier schemes.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">print.ini</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains default printing schemes. This file is NOT modified by the dialogs and is not preserved when a new editor is installed.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">prjtemplates.vpt</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains default project packages. This file is NOT modified by the dialogs and is not preserved when a new editor is installed.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">syscpp.h</code>
+                </p>
+                <p class="CellBody">(UNIX: <code class="filename">usyscpp.h</code>)</p>
+              </td><td>
+                <p class="CellBody">A text file that contains system-defined default preprocessing for Context Tagging® of C++ and C code.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">vcsystem.slk</code>
+                </p>
+                <p class="CellBody">(UNIX: <code class="filename">uvcsys.slk</code>)</p>
+              </td><td>
+                <p class="CellBody">A text file that contains default version control systems. This file is NOT modified by the dialogs and is not preserved when a new editor is installed.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">vslick.ini</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains a few miscellaneous options. Some customizable environment variables for path searching for macros, bitmaps, and binary files are stored here as well. This file is NOT modified by the dialogs and is not preserved when a new editor is installed.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">vslick.sta </code>
+                </p>
+                <p class="CellBody">(UNIX: <code class="filename">vslick.stu</code>)</p>
+              </td><td>
+                <p class="CellBody">A binary file that contains default dialog boxes, menus, macro pcode, key bindings, and all other configuration data not stored in one of the other configuration files.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">vslick.vlx</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains default color coding lexer definitions.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <code class="filename">vsscheme.ini</code>
+                </p>
+              </td><td>
+                <p class="CellBody">A text file that contains default color schemes. This file is NOT modified by the dialogs and is not preserved when a new editor is installed.</p>
+              </td></tr></tbody></table></div><p class="NormalText"></p></div></div></div></body></html>

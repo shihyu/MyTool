@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd">
+<SETemplate Version="1.0" Type="Item">
+
+  <TemplateDetails>
+    <Name>SlickEdit Item Template</Name>
+    <Description>This a template for an item template</Description>
+    <DefaultName>ItemTemplate</DefaultName>
+  </TemplateDetails>
+  <TemplateContent>
+    <Files>
+      <File TargetFilename="$fileinputname$.setemplate">ItemTemplate.setemplate.src</File>
+    </Files>
+  </TemplateContent>
+
+</SETemplate>

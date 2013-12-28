@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsGetDefaultColor</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsGetDefaultColor(int cfgfield, int *pFGColor, int *pBGColor, int *pFontFlag=NULL, int *pcfgParentColor=NULL)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Gets rgb color values (always in Windows format) and font style flag
+for the <i><b>cfgfield</b></i> specified.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="cfgfield">cfgfield</A></code> - One of the VSCFG_??? constants or a color
+index allocated by <b>vsAllocColor</b>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pFGColor">pFGColor</A></code> - Ouput only.  Set to rgb foreground color.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pBGColor">pBGColor</A></code> - Ouput only.  Set to rgb background color.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pFontFlag">pFontFlag</A></code> - Output only.  Set to one of the
+VSFONTFLAG_?? constants or 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pcfgParentColor">pcfgParentColor</A></code> - Output only.  Set to the color ID of the color
+                        which 'cfgfield' inherits properties from.
+                        One of the VSCFG_??? constants or a color
+                        index allocated by <b>vsAllocColor</b>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Functions.html">Edit Window Functions</a>, <a href="Editor_Control_Functions.html">Editor Control Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsAllocColor.html">vsAllocColor</a>, <a href="vsFreeColor.html">vsFreeColor</a>, <a href="vsSetTextColor.html">vsSetTextColor</a>, <a href="vsSetDefaultColor.html">vsSetDefaultColor</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>file_match</title>
+</head>
+<body>
+
+<h3><b>_str file_match(_str name_prefix_options, int find_first)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Performs find first, find next directory search.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="name_prefix_options">name_prefix_options</A></code> - has the following syntax:
+         {<i>name_prefix</i>  | ['-' | '+' <i>option_letters</i>]}
+<p>
+When prefix match is on, file names with prefix matching
+<i>name_prefix</i> are returned (the prefix "abc" matches "abcd" and "abce").
+When prefix match is off, a normal directory search is performed for file
+names matching name_prefix.  If any wild card characters such as '*' or '?'
+are present in <i>name_prefix</i>, prefix matching is ignored.
+<p>
+<i>option_letters</i>  may be:
+<DL compact style="margin-left:20pt;">
+  <DT>H        <DD>Include hidden files.  Defaults to off. On
+  UNIX this option is ignored.  This option is always turned
+  on under Windows if the "Show all files" explorer option is
+  set.
+  <DT>S        <DD>Include system files.  Defaults to off.  Ignored by UNIX version.
+   This option is always turned on under Windows if the "Show all
+  files" explorer option is set.
+  <DT>D        <DD>Include directory files.  Defaults to on.
+  <DT>P        <DD>Prefix match.  Defaults to on.
+  <DT>T        <DD>Tree list.  Defaults to off.
+  <DT>U        <DD>UNIX dot files.  Defaults to on.
+  <DT>X        <DD>Exclude non-directory files.  Defaults to off.
+  <DT>V        <DD>Verbose match.  Defaults to off.  When on, string returned is in the
+  same format as the file manager file list except that no path is included.
+  Column constants in "slick.sh" may be used to parse out name, file size,
+  date, time, and attributes.
+  <DT>G        <DD>List registered data sets.  This option is ignored for all platforms
+  except OS/390.
+  <DT>N        <DD>Stat of data sets.  By default, no trailing slash is appended to
+  partitioned data sets (directories).  We have this default mainly due to the
+  fact that this feature can cause a hang.  Use this option when you have to
+  differentiate files from directories.  This option is ignored for all
+  platforms except OS/390.
+  <DT>Z        <DD>Return data set member info in the same format as ISPF. This option is
+  ignored for all platforms except OS/390.
+  <DT>DIR_SIZE_COL
+  <DT>DIR_SIZE_WIDTH
+  <DT>DIR_DATE_COL
+  <DT>DIR_DATE_WIDTH
+  <DT>DIR_TIME_COL
+  <DT>DIR_TIME_WIDTH
+  <DT>DIR_ATTR_COL
+  <DT>DIR_ATTR_WIDTH
+  <DT>DIR_FILE_COL
+</DL>
+<p>
+There is an R option for read only files which defaults to off.
+However, read only files will always be included in file matching due to
+operating system limits.
+<P></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="find_first">find_first</A></code> - A non-zero value for <i>find_first</i>, begins a new directory search.
+If <i>find_first</i> is zero, the next matching file name is returned.  '' is
+returned if no match is found and <b>rc</b> is set to the error code.  Search
+is not case sensitive except for file systems like UNIX which are case
+sensitive.  If a directory is found, the name returned ends with a backslash.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+          // Find all C source files in the current directory.  '-P' turns
+          // off prefix match.
+          //  No directories will be found since the D switch is not on.
+          filename= file_match('*.c -P',1);         // find first.
+          for (;;) {
+              if (filename=='=' )  break;
+              messageNwait('name found='filename);
+              // Be sure to pass filename with correct path.
+              // Result filename is built with path of given file name.
+              filename= file_match(filename,0);       // find next.
+          }
+
+           // find out if the file "junk" is read only
+           if (pos('R',substr("junk",DIR_ATTR_COL,DIR_ATTR_WIDTH)) ) {
+                message('File "junk" is read only');
+           } else {
+                message('File "junk" is NOT read only');
+           }
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="find_index.html">find_index</a>, <a href="name_match.html">name_match</a>, <a href="buf_match.html">buf_match</a>, <a href="path_search.html">path_search</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>save_search</title>
+</head>
+<body>
+
+<h3><b>void save_search(_str &search_string, int &flags, _str &word_re, _str &ReservedMore="", int &flags2=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Saves the current search data we recommend using the
+<i>ReservedMore</i> variable to ensure all search data is restored.
+For backward compatibility, the <i>ReservedMore</i> parameter is
+optional.  The built-in function <b>restore_search</b> is called with
+the same data to restore the search which is used by the built-in
+functions <b>repeat_search</b>, <b>_select_match</b>, and
+<b>match_length</b>.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Flags">Flags</A></code> - is a combination of the search flag constants below
+(defined in "slick.sh"):
+
+<ul>
+<li>VSSEARCHFLAG_IGNORECASE</li>
+<li>VSSEARCHFLAG_MARK</li>
+<li>VSSEARCHFLAG_POSITIONONLASTCHAR</li>
+<li>VSSEARCHFLAG_REVERSE</li>
+<li>VSSEARCHFLAG_RE</li>
+<li>VSSEARCHFLAG_WORD</li>
+<li>VSSEARCHFLAG_UNIXRE</li>
+<li>VSSEARCHFLAG_NO_MESSAGE</li>
+<li>VSSEARCHFLAG_GO</li>
+<li>VSSEARCHFLAG_INCREMENTAL</li>
+<li>VSSEARCHFLAG_WRAP</li>
+<li>VSSEARCHFLAG_HIDDEN_TEXT</li>
+<li>VSSEARCHFLAG_SCROLL_STYLE</li>
+<li>VSSEARCHFLAG_BINARYDBCS</li>
+<li>VSSEARCHFLAG_BRIEFRE</li>
+<li>VSSEARCHFLAG_PRESERVE_CASE</li>
+<li>VSSEARCHFLAG_WORDPREFIX</li>
+<li>VSSEARCHFLAG_WORDSUFFIX</li>
+<li>VSSEARCHFLAG_WORDSTRICT</li>
+<li>VSSEARCHFLAG_HIDDEN_TEXT_ONLY</li>
+<li>VSSEARCHFLAG_NOSAVE_TEXT</li>
+<li>VSSEARCHFLAG_NOSAVE_TEXT_ONLY</li>
+<li>VSSEARCHFLAG_PROMPT_WRAP</li>
+</ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flags2">flags2</A></code> - currently contains flags for color coding.  Constants are
+not yet defined for this.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+search('test');
+save_search(string, options, word_re);
+status=search('xyz');
+if (status) {
+    messageNwait("Can't find xyz");
+}
+restore_search(string, options, word_re);
+// Repeats search for 'test'
+repeat_search();
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="repeat_search.html">repeat_search</a>, <a href="_select_match.html">_select_match</a>, <a href="match_length.html">match_length</a>, <a href="search_replace.html">search_replace</a>, <a href="restore_search.html">restore_search</a>, <a href="search.html">search</a>, <a href="_search_case.html">_search_case</a></blockquote>
+</body>
+</html>

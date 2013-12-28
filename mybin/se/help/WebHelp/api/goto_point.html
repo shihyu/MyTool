@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>goto_point</title>
+</head>
+<body>
+
+<h3><b>int goto_point(_str text_pos, int linenum=-1)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>Moves the current buffer location to text position specified.
+<i>text_pos</i> may either be a seek position to any byte in the current
+buffer or a text line position which is specified with a seek position to the
+beginning of a line followed by a count of the number of lines to scroll
+down.  If <i>line_number</i> is specified, the current line number is set to
+line_number.  The built-in function <b>point</b> may be used to return the
+text line position (not necessarily the seek position for a record file) of
+the beginning of the current line.  The current line number may also be
+retrieved by the built-in function <b>point</b>.</p><p>
+<p>IMPORTANT:  This function includes lines with NOSAVE_LF set which means
+that these file offsets will not match what is on disk if the file has non-
+savable lines.  Use <b>_GoToROffset</b>, <b>_QROffset</b>, <b>p_RLine</b>,
+and <b>p_RNoflines</b> for dealing with disk seek positions and line numbers.</p><p>
+<p>If a file offset is given, it can not be past the end of the file.
+Negative file offsets are possible due to SlickEdit's implementation
+of line 0.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Otherwise INVALID_POINT_RC is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+        // Get seek position to the beginning of the current line
+        text_pos=point();line_number=point('L');
+        down(4);
+        goto_point(text_pos,line_number);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="CursorMovement_Functions.html">CursorMovement Functions</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="point.html">point</a>, <a href="seek.html">seek</a>, <a href="gui_seek.html">gui_seek</a>, <a href="_nrseek.html">_nrseek</a>, <a href="_GoToROffset.html">_GoToROffset</a>, <a href="_QROffset.html">_QROffset</a></blockquote>
+</body>
+</html>

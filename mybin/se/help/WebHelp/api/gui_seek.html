@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>gui_seek</title>
+</head>
+<body>
+
+<h3><b>_command typeless gui_seek()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>The <b>gui_seek</b> command displays the current buffer seek position and
+allows you to specify a mathematical expression representing a seek position
+(see <b>math</b> command for syntax of expression).  A seek position is a
+character position relative to the beginning of the file.  The first
+character of the file is seek position 0.</p><p>
+<p>If a seek position is given, it cannot be past the end of the file.
+Negative seek positions are possible due to SlickEdit's implementation
+of line 0.</p><p>
+<p>You may use the <b>gui_seek</b> command to determine the number of
+bytes in a file.  However, keep in mind that if your load options are set to
+expand tabs when loading, the seek file size will not match the disk file
+size.  In addition, for ASCII files, SlickEdit strips the EOF
+(character 27) if there is one at the end of the file.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="seek.html">seek</a>, <a href="_QROffset.html">_QROffset</a>, <a href="_GoToROffset.html">_GoToROffset</a>, <a href="goto_point.html">goto_point</a>, <a href="point.html">point</a>, <a href="_nrseek.html">_nrseek</a></blockquote>
+</body>
+</html>

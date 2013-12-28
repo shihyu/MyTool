@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsHvarArrayInsertEl</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsHvarArrayInsertEl(HVAR hvarArray, HVAR hvarValue, int start, int Nofitems=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Inserts an element into an array.
+Nofitems defaults to 1.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="hvarArray">hvarArray</A></code> - array to insert item(s) into</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="hvarValue">hvarValue</A></code> - value to insert into array</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="start">start</A></code> - start index corresponding to item(s) to insert</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Nofitems">Nofitems</A></code> - (default 1) number of items to insert
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+   vsHvarMakeEmpty(VSHVAR_RC);
+   hvar = vsHvarArrayEl(VSHVAR_RC, 0);
+   vsHvarSetI(hvar, 1);
+   hvar = vsHvarArrayEl(VSHVAR_RC, 1);
+   vsHvarSetI(hvar, 2);
+   hvar = vsHvarArrayEl(VSHVAR_RC, 2);
+   vsHvarSetI(hvar, 3);
+   vsHvarArrayDeleteEl(VSHVAR_RC, 1);
+   hvar = vsHvarAlloc();
+   vsHvarSetI(hvar, 4);
+   vsHvarInsertArray(VSHVAR_RC, hvar, 1, 2);  // { 1,4,4,2,3 }
+   vsHvarFree(hvar);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsHvarArrayDeleteEl.html">vsHvarArrayDeleteEl</a>, <a href="vsHvarNextEl.html">vsHvarNextEl</a>, <a href="vsHvarMakeEmpty.html">vsHvarMakeEmpty</a>, <a href="vsHvarIsEmpty.html">vsHvarIsEmpty</a>, <a href="vsHvarFormat.html">vsHvarFormat</a>, <a href="vsHvarIndexIn.html">vsHvarIndexIn</a></blockquote>
+</body>
+</html>

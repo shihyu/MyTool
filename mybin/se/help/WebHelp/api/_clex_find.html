@@ -1,0 +1,121 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_clex_find</title>
+</head>
+<body>
+
+<h3><b>int _clex_find(int clexflags, _str options="O")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Searches for language specific symbols or returns information about the
+symbol at the cursor.  This function returns 0 if the p_lexer_name
+property has not be set.
+</P>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="clexflags">clexflags</A></code> - Determines the language elements to search or to test for.
+                 May be one or more of the following flags, which are defined
+                 in "slick.sh."  Use the OR operator to specify more than one flag.
+
+                 <UL>
+                 <LI>OTHER_CLEXFLAG
+                 <LI>KEYWORD_CLEXFLAG
+                 <LI>NUMBER_CLEXFLAG
+                 <LI>STRING_CLEXFLAG
+                 <LI>COMMENT_CLEXFLAG
+                 <LI>PPKEYWORD_CLEXFLAG
+                 <LI>LINENUM_CLEXFLAG
+                 <LI>SYMBOL1_CLEXFLAG
+                 <LI>SYMBOL2_CLEXFLAG
+                 <LI>SYMBOL3_CLEXFLAG
+                 <LI>SYMBOL4_CLEXFLAG
+                 </UL></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - options may be one of the following:
+                 <DL compact>
+                 <DT>O<DD>(Default) Find any of the language
+                 elements specified.  Returns 0 and places cursor on first character of
+                 symbol if it is found.  Otherwise, STRING_NOT_FOUND_RC is returned.
+
+                 <DT>N<DD>Find language elements specified which
+                 are NOT any of the language elements specified in clexflags.  Returns 0
+                 and placed cursor on first character of symbol if it is found.  Otherwise,
+                 STRING_NOT_FOUND_RC is returned.
+
+                 <DT>T<DD>Test if symbol under cursor is any of
+                 the language elements specified in clexflags.  Returns non-zero value if
+                 cursor is on one of the language elements specified.
+
+                 <DT>G<DD>Return the color constant (NOT CLEXFLAG)
+                 which corresponds to the symbol under the cursor.  The clexflags argument
+                 is ignored.  Color constants are defined in "slick.sh" and may be one of
+                 the following:
+                 <UL>
+                 <LI>CFG_WINDOW_TEXT
+                 <LI>CFG_MODIFIED_LINE
+                 <LI>CFG_INSERTED_LINE
+                 <LI>CFG_KEYWORD
+                 <LI>CFG_LINENUM
+                 <LI>CFG_NUMBER
+                 <LI>CFG_STRING
+                 <LI>CFG_COMMENT
+                 <LI>CFG_PPKEYWORD
+                 <LI>CFG_SYMBOL1
+                 <LI>CFG_SYMBOL2
+                 <LI>CFG_SYMBOL3
+                 <LI>CFG_SYMBOL4
+                 </UL>
+
+                 <DT>D<DD>Return the detailed color constant (NOT CLEXFLAG)
+                 which corresponds to the symbol under the cursor.  The clexflags argument
+                 is ignored.  This option is very similar to the 'G' option above,
+                 except that it also recognizes the following specialized colors:
+                 <UL>
+                 <LI>CFG_LINE_COMMENT
+                 <LI>CFG_DOCUMENTATION
+                 <LI>CFG_DOC_KEYWORD
+                 <LI>CFG_DOC_PUNCTUATION
+                 <LI>CFG_DOC_ATTRIBUTE
+                 <LI>CFG_DOC_ATTR_VALUE
+                 <LI>CFG_IDENTIFIER
+                 <LI>CFG_FLOATING_NUMBER
+                 <LI>CFG_HEX_NUMBER
+                 <LI>CFG_SINGLEQUOTED_STRING
+                 <LI>CFG_BACKQUOTED_STRING
+                 <LI>CFG_UNTERMINATED_STRING
+                 <LI>CFG_INACTIVE_CODE
+                 <LI>CFG_INACTIVE_KEYWORD
+                 <LI>CFG_INACTIVE_COMMENT
+                 <LI>CFG_IMAGINARY_SPACE
+                 </UL>
+
+                 <DT>E<DD>Searches for embedded source.  Returns 0
+                 if succesful.  Otherwise, STRING_NOT_FOUND_RC is returned.  The clexflags
+                 argument is ignored.
+
+                 <DT>S<DD>Searches for non-embedded source.
+                 Returns 0 if succesful.  Otherwise, STRING_NOT_FOUND_RC is returned.  The
+                 clexflags argument is ignored.
+
+                 <DT>M</DT><DD>Search only within the current selection
+                 </DL>
+
+                 <P>
+                 The option parameter may include a '-' (dash) character to enable the 'O'
+                 and 'N' options to search backwards.
+                 </P>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+// Find start of comment or string
+status=_clex_find(COMMENT_CLEXFLAG|STRING_CLEXFLAG);
+if (status) {
+   messageNwait("Not found");
+   stop();
+}
+color=_clex_find(0,"g");
+if (color==CFG_COMMENT) {
+   ...
+}
+// Assuming already in comment, find non-comment character
+status=_clex_find(COMMENT_CLEXFLAG,"n");
+// Assuming already in comment, find non-comment character backwards
+status=_clex_find(COMMENT_CLEXFLAG,"n-");
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_clex_load.html">_clex_load</a>, <a href="p_color_flags.html">p_color_flags</a>, <a href="_clex_skip_blanks.html">_clex_skip_blanks</a></blockquote>
+</body>
+</html>

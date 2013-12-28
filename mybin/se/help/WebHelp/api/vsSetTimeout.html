@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsSetTimeout</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsSetTimeout(int ms)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Set the timeout amount for performance critical functions.
+The timeout is not a strict timeout, it's a software timeout.
+Use <a href="_CheckTimeout.html">_CheckTimeout()</a> to test if the timeout is expired.
+<p>
+It is good practice to clear the timeout after you are done
+with it by calling _SetTimeout(0).
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ms">ms</A></code> - number of milliseconds to time out after.
+            use 0 to clear an existing timeout.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Normally will return 'ms', but if there is an existing
+        earlier timeout, the earlier timeout will be returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

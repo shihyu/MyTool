@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>project_rebuild</title>
+</head>
+<body>
+
+<h3><b>_command typeless project_rebuild()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>Executes a user defined rebuild command.    The rebuild command
+may be specified per project or per file extension.  Parts of the buffer
+name may be parsed into the compile command before it is executed.
+Use the <b>new</b> command ("Project", "New...") to create a
+new workspace or project.  Once a project is open, you can
+use the Tools Tab ("Project", "Project Properties...", select
+Tools Tab) to modify project commands, files, and other
+project setup information.  If the current project has a
+compile command defined, the extension specific
+project compile command will be ignored.</p><p>
+<p>The rebuild command is executed in SlickEdit's build window by default.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if command queued successfully.  However, this does not
+mean that the command will execute successfully.  A non-zero return
+code means that the build window was not created.
+Common error codes are: TOO_MANY_SELECTIONS_RC,
+TOO_MANY_FILES_RC, CANT_FIND_INIT_PROGRAM_RC,
+ERROR_CREATING_SEMAPHORE_RC,
+TOO_MANY_OPEN_FILES_RC, NOT_ENOUGH_MEMORY_RC,
+ERROR_CREATING_QUEUE_RC,
+INSUFFICIENT_MEMORY_RC, and
+ERROR_CREATING_THREAD_RC. On error, message is displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Project_Functions.html">Project Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="project_add_file.html">project_add_file</a>, <a href="project_build.html">project_build</a>, <a href="project_rebuild.html">project_rebuild</a>, <a href="project_debug.html">project_debug</a>, <a href="project_execute.html">project_execute</a>, <a href="project_user1.html">project_user1</a>, <a href="project_user2.html">project_user2</a>, <a href="workspace_open.html">workspace_open</a>, <a href="project_compile.html">project_compile</a>, <a href="project_edit.html">project_edit</a>, <a href="project_load.html">project_load</a>, <a href="new.html">new</a>, <a href="workspace_insert.html">workspace_insert</a>, <a href="workspace_dependencies.html">workspace_dependencies</a>, <a href="workspace_set_active.html">workspace_set_active</a>, <a href="workspace_properties.html">workspace_properties</a>, <a href="workspace_close.html">workspace_close</a>, <a href="workspace_organize.html">workspace_organize</a></blockquote>
+</body>
+</html>

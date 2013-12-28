@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_begin_select_compare</title>
+</head>
+<body>
+
+<h3><b>int _begin_select_compare(_str markid="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Compares current line position to first line of mark specified.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="markid">markid</A></code> - is a handle to a selection returned by one of the
+              built-ins _alloc_selection or _duplicate_selection.  A <i>mark_id</i> of '' or
+              no <i>mark_id</i> parameter identifies the active selection.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+        <DL compact>
+        <DT>0      <DD>Current line is on first line of mark
+        <DT>&gt; 0 <DD>Current line is after first line of mark
+        <DT>&lt; 0 <DD>Current line is before first line of mark
+        <DT>-1     <DD>Text is not marked or mark is not in current buffer
+        </DL></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Selection_Functions.html">Selection Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_end_select_compare.html">_end_select_compare</a></blockquote>
+</body>
+</html>

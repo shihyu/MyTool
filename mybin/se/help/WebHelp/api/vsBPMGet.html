@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsBPMGet</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsBPMGet(int BreakPointIndex, seSeekPos *pRealLineNum=0, int *pflags=a, void **ppuserdata=a, int *pBufID=a, void *preserved1=a, void *preserved2=a)</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>Use vsLineMarker* functions
+
+Retrieves various information for a break point.
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="BreakPointIndex">BreakPointIndex</A></code> - Index to a break point from
+<b>vsBPMAdd</b>(),
+<b>vsBPMAddB</b>(), or
+<b>vsBPMNext</b>().
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pRealLineNum">pRealLineNum</A></code> - Set to real line number
+(<B>VSP_RLINE</B>) of breakpoint.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pflags">pflags</A></code> - Set to flags of break point.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ppuserdata">ppuserdata</A></code> - Set to pointer to user data.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="PBufID">PBufID</A></code> - Set to buffer id or a negative number if this
+break point if for a file which has not been
+loaded.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Deprecated_Breakpoint_Functions.html">Deprecated Breakpoint Functions</a></blockquote>
+</body>
+</html>

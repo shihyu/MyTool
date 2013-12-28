@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_SetTextColor</title>
+</head>
+<body>
+
+<h3><b>int _SetTextColor(int ColorIndex, int Nofbytes, boolean replacePreviousColor=true)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sets the text color for the number of bytes specified starting from the cursor.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ColorIndex">ColorIndex</A></code> - index of color in color table</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Nofbytes">Nofbytes</A></code> - number of bytes to color code</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="replacePreviousColor">replacePreviousColor</A></code> - When true, previous color is replaced with new color.  When adding lots of color,
+                  this slows down adding color.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+int gColorIndex;
+definit()
+{
+     if (arg(1)=='L' && gColorIndex) return;
+     gColorIndex=_AlocColor();
+     _default_color(gColorIndex,0xffffff,0xFF0000);
+}
+defmain()
+{
+     // Change the color of 5 bytes of text starting from cursor
+     _SetTextColor(gColorIndex,5);
+}
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_FreeColor.html">_FreeColor</a>, <a href="_AllocColor.html">_AllocColor</a>, <a href="_GetTextColor.html">_GetTextColor</a>, <a href="_default_color.html">_default_color</a></blockquote>
+</body>
+</html>

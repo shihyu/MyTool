@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_tree_filter_member</title>
+</head>
+<body>
+
+<h3><b>int tag_tree_filter_member(int filter_flags, _str type_name, int in_class, int tag_flags, int &i_access, int &i_type)</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>Use <a href="tag_tree_filter_member2.html">tag_tree_filter_member2</a>
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Filter the given item based on the given filtering flags,
+and determine the access level and member type.  Though
+this function is typically used by the symbol browser for filtering
+items, it can also be used simply to determine the access level and
+bitmap type for the tag, just ignore the return value in this case.
+This function is deprecated, use <a href="tag_tree_filter_member2.html">tag_tree_filter_member2</a>
+instead.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filter_flags">filter_flags</A></code> - Filtering options flags, see <a href="tag_tree_filter_member2.html">tag_tree_filter_member2</a>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_name">type_name</A></code> - Tag type, See <a href="tag_get_type.html">tag_get_type</a>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="in_class">in_class</A></code> - if 1, treat as a class member, (class_name != '')</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - Set of tag attribute flags.  See <a href="tag_insert_simple.html">tag_insert_simple</a> for
+                 more information about the tag flags.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="i_access">i_access</A></code> - (Output) Access level (public, package, protected, or
+                 private) of tag, see <a href="tag_tree_filter_member2.html">tag_tree_filter_member2</a>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="i_type">i_type</A></code> - (Output) Tag bitmap type to use to represent tag, see
+                 <a href="tag_tree_filter_member2.html">tag_tree_filter_member2</a>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 if the item is filtered out, 1 if it passes the filters.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_get_info.html">tag_get_info</a>, <a href="tag_get_type.html">tag_get_type</a>, <a href="tag_tree_filter_member2.html">tag_tree_filter_member2</a>, <a href="tag_tree_insert_tag.html">tag_tree_insert_tag</a></blockquote>
+</body>
+</html>

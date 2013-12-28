@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsGetVar</title>
+</head>
+<body>
+
+<h3><b>VSHVAR VSAPI vsGetVar(int index)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="index">index</A></code> - Names table index returned by
+<b>vsFindIndex</b> or
+<b>vsNameMatch</b>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>VSHVAR</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns handle to global variable corresponding to the name table
+<i>index</i> given.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+       VSHVAR hvar;
+       VSPLSTR plstr;
+       char buffer[100];
+
+       // The rc variable is a global variable which always exists.
+       index=vsFindIndex("rc",VSTYPE_VAR);
+       // Get handle to interpreter variable
+       hvar=vsGetVar(index);
+       // Convert contents of typeless variable into <B>ASCIIZ</B>
+buffer.
+       vsZLstrcpy(buffer,vsHvarGetLstr(hvar),100);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsHvarSetI.html">vsHvarSetI</a>, <a href="vsHvarSetI64.html">vsHvarSetI64</a>, <a href="vsHvarSetB.html">vsHvarSetB</a>, <a href="vsHvarSetZ.html">vsHvarSetZ</a>, <a href="vsHvarGetZ.html">vsHvarGetZ</a>, <a href="vsHvarGetLstr.html">vsHvarGetLstr</a>, <a href="vsHvarGetI.html">vsHvarGetI</a>, <a href="vsHvarGetI64.html">vsHvarGetI64</a>, <a href="vsArg.html">vsArg</a>, <a href="vsHvarAlloc.html">vsHvarAlloc</a>, <a href="vsHvarFree.html">vsHvarFree</a>, <a href="vsHvarHashtabEl.html">vsHvarHashtabEl</a>, <a href="vsHvarArrayEl.html">vsHvarArrayEl</a></blockquote>
+</body>
+</html>

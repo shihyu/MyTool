@@ -1,0 +1,4486 @@
+
+/**
+ * Returns the absolute value of a number.  The absolute value of a
+ * number is the number without its sign.
+ *
+ * @param number         Any number.
+ *
+ * @see Sgn
+ */
+float Abs(number);
+
+/**
+ * The range of the result is 0 to Pi.<p>To convert degrees to radians,
+ * multiply degrees by Pi/180. To convert radians to degrees, multiply
+ * radians by 180.
+ *
+ * @param number         Cosine of the angle that is to be
+ *                       calculated. This value must be
+ *                       between -1 and 1, inclusive.
+ *
+ * @return the arccosine of a number in radians.
+ *         The arccosine is the angle whose cosine is number.
+ *
+ * @see Cos
+ * @see Sin
+ * @see ASin
+ * @see Tan
+ * @see Pi
+ */
+float ACos(number);
+
+/**
+ * Appends an array index to the end of the specified array.
+ *
+ * @param array          Name of the array to which you want
+ *                       to append an index.
+ * @param value          The value you want to place into
+ *                       the specified
+ *                       array in the last index position.
+ *
+ * @return Returns a Boolean TRUE on successful completion.
+ * 
+ * @see ArrayPrepend
+ */
+boolean ArrayAppend(array, value);
+
+/**
+ * Returns the average of the values in the specified arr
+ *
+ * @param array          Name of the array containing values
+ *                       you want to average.
+ */
+float ArrayAvg(array);
+
+/**
+ * Deletes all data in the specified array.
+ *
+ * @param array          Name of the array in which you want
+ *                       to delete data.
+ *
+ * @return Returns a Boolean TRUE on successful completion.
+ *
+ * @see ArrayDeleteAt
+ */
+boolean ArrayClear(array);
+
+/**
+ * Deletes data from the specified array at the specified index position.
+ * Note that when an array index is deleted, index positions in the
+ * array are recalculated. For example, in an array containing the
+ * months of the year, deleting index position [5] removes the entry
+ * for May. If you then want to delete the entry for November, you
+ * delete index position [10], not [11], since the index positions were
+ * recalculated after index position [5] was removed.<p>Returns a
+ * Boolean TRUE on successful completion.
+ *
+ * @param array          Name of the array in which you want
+ *                       to delete index data specified in position.
+ * @param position       Array position containing the data
+ *                       you want to delete.
+ *
+ * @see ArrayInsertAt
+ */
+boolean ArrayDeleteAt(array, position);
+
+/**
+ * Inserts data in the specified array at the specified index position.
+ * All array elements with indexes greater than the new position are
+ * shifted right by one. The length of the array increases by one
+ * index.<p>Returns a Boolean TRUE on successful completion.
+ *
+ * @param array          Name of the array in which you want
+ *                       to insert data.
+ * @param position       The index position in the specified
+ *                       array where you want to insert the data
+ *                       specified in value.
+ * @param value          The value of the data you want to
+ *                       insert into the array.
+ *
+ * @see ArrayDeleteAt
+ */
+boolean ArrayInsertAt(array, position, value);
+
+/**
+ * Determines whether the specified array is empty of data. <p>Returns a
+ * Boolean TRUE if specified array is empty, FALSE if not empty.
+ *
+ * @param array          Name of the array you want to
+ *                       check for data.
+ *
+ * @see ArrayLen
+ */
+boolean ArrayIsEmpty(array);
+
+/**
+ * Returns the length of the specified array.
+ *
+ * @param array          Name of the array whose length you
+ *                       want to return.
+ *
+ * @see ArrayIsEmpty
+ */
+int ArrayLen(array);
+
+/**
+ * Returns the largest numeric value in the specified arr
+ *
+ * @param array          Name of the array from which you
+ *                       want to return the largest numeric value.
+ */
+float ArrayMax(array);
+
+/**
+ * Returns the smallest numeric value in the specified arr
+ *
+ * @param array          Name of the array from which you
+ *                       want to return the smallest numeric value.
+ */
+float ArrayMin(array);
+
+/**
+ * Creates an array of between 1 and 3 dimensions. Array elements are
+ * indexed with square brackets: [ ].
+ * Note that ColdFusion arrays expand dynamically as data is added.
+ *
+ * @param dimension      An integer value between 1 and 3.
+ */
+Object ArrayNew(dimension);
+
+/**
+ * Adds an array element to the beginning of the specified array.
+ * Returns a Boolean TRUE on successful completion.
+ *
+ * @param array          Name of the array to which you want
+ *                       to prepend data.
+ * @param value          The value you want to add to the
+ *                       beginning of the specified array.
+ *
+ * @see ArrayAppend
+ */
+boolean ArrayPrepend(array, value);
+
+/**
+ * Resets an array to a specified minimum number of elements.
+ * ArrayResize can provide some performance gains if used to size
+ * an array to its expected maximum. Use ArrayResize immediately
+ * after creating an array with ArrayNew for arrays greater than
+ * 500 elements.
+ * Note that ColdFusion arrays expand dynamically as data is added.
+ *
+ * @param array          Name of the array you want to resize.
+ * @param minimum_size   Minimum size of the specified array.
+ *
+ * @return a Boolean TRUE on successful completion.
+ */
+boolean ArrayResize(array, minimum_size);
+
+/**
+ * In a one-dimensional array, sets the elements in a specified range to
+ * the specified value. Useful in initializing an array after a call to
+ * ArrayNew. Returns a Boolean TRUE on successful completion.
+ *
+ * @param array          Name of the array you want to change.
+ * @param start_pos      Starting position in the specified array.
+ * @param end_pos        Ending position in the specified
+ *                       array. If this value exceeds the array
+ *                       length, elements are accordingly added
+ *                       to the array.
+ * @param value          The value you want to add to the
+ *                       range of elements in the specified array.
+ *
+ * @see ArrayNew
+ */
+boolean ArraySet(array, start_pos, end_pos, value);
+
+/**
+ * Returns the specified array with elements numerically or alphanumerically sorted.
+ *
+ * @param array          Name of the array you want to sort.
+ * @param sort_type      The type of sort to execute. Sort
+ *                       type can be:<ul>
+ *                           <li><code>numeric</code> -- Sorts numerically
+ *                           <li><code>text</code> -- Sorts text
+ *                               alphabetically, uppercase before lowercase
+ *                           <li><code>textnocase</code> -- Sorts
+ *                               text alphabetically; case is ignored
+ * @param sort_order     The sort order you want to enforce:<ul>
+ *                           <li><code>asc</code> -- (Default) Ascending sort order
+ *                           <li><code>desc</code> -- Descending sort order
+ *                           </ul>
+ */
+boolean ArraySort(array, sort_type, sort_order="asc");
+
+/**
+ * Returns the sum of values in the specified array.
+ *
+ * @param array          Name of the array containing values
+ *                       you want to add together.
+ */
+float ArraySum(array);
+
+/**
+ * Swaps array values for the specified array at the specified
+ * positions. ArraySwap can be used with greater efficiency than
+ * multiple CFSETs. <p>Returns a Boolean TRUE on successful completion.
+ *
+ * @param array          Name of the array whose elements
+ *                       you want to swap.
+ * @param position1      Position of the first element you
+ *                       want to swap.
+ * @param position2      Position of the second element you
+ *                       want to swap.
+ */
+boolean ArraySwap(array, position1, position2);
+
+/**
+ * Converts the specified one dimensional array to a list, delimited
+ * with the character you specify.
+ *
+ * @param array          Name of the array containing elements you
+ *                       want to use to build a list.
+ * @param delimiter      Specify the character(s) you want
+ *                       to use to delimit elements in the list.
+ *                       Default is comma ( , ).
+ */
+String ArrayToList(array, delimiter=",");
+
+/**
+ * Returns the ASCII value (character code) of the first character of a
+ * string. Returns 0 if string is empty.
+ *
+ * @param string         Any string.
+ *
+ * @see Chr
+ */
+int Asc(string);
+
+/**
+ * The range of the result is -Pi/2 to Pi/2 radians. To convert degrees
+ * to radians, multiply degrees by Pi/180. To convert radians to
+ * degrees, multiply radians by 180/Pi.
+ *
+ * @param number         Sine of the angle that is to be
+ *                       calculated. This value must be between 1 and -1.
+ *
+ * @return the arcsine of a number in radians. The arcsine is
+ *         the angle whose sine is number.
+ *
+ * @see Sin
+ * @see Cos
+ * @see Pi
+ * @see Tan
+ */
+float ASin(number);
+
+/**
+ * The range of the result is -Pi/2 to Pi/2 radians. To convert degrees
+ * to radians, multiply degrees by Pi/180. To convert radians to
+ * degrees, multiply radians by 180/Pi.
+ *
+ * @param number         Tangent of the angle you want.
+ *
+ * @return the arctangent of a number. The arctangent is the
+ *         angle whose tangent is number.
+ *
+ * @see Tan
+ * @see Sin
+ * @see Cos
+ * @see Pi
+ */
+float Atn(number);
+
+/**
+ * Returns the name of the security context.
+ *
+ * @see IsAuthenticated
+ * @see AuthenticatedUser
+ * @see IsAuthorized
+ */
+String AuthenticatedContext();
+
+/**
+ * Returns the name of the authenticated user.
+ *
+ * @see IsAuthenticated
+ * @see AuthenticatedContext
+ */
+String AuthenticatedUser();
+
+/**
+ * Returns the bitwise AND of two long integers.
+ * Bit functions operate on 32-bit integers.
+ *
+ * @param number1        Any long integers.
+ * @param number2        Any long integers.
+ *
+ * @see BitNot
+ * @see BitOr
+ * @see BitXor
+ */
+int BitAnd(number1, number2);
+
+/**
+ * Parameters start and length must be in the range from 0 to 31. <p>Bit
+ * functions operate on 32-bit integers.
+ *
+ * @param number         Long integer to be masked.
+ * @param start          Integer specifying the starting bit
+ *                       for masking.
+ * @param length         Integer specifying the length of mask.
+ *
+ * @return number bitwise cleared with length bits beginning from start.
+ *
+ * @see BitMaskRead
+ * @see BitMaskSet
+ */
+int BitMaskClear(number, start, length);
+
+/**
+ * Parameters start and length must be in the range from 0 to 31.<p>Bit
+ * functions operate on 32-bit integers.
+ *
+ * @param number         Long integer to be masked.
+ * @param start          Integer specifying the starting bit
+ *                       for reading.
+ * @param length         Integer specifying the length of mask.
+ *
+ * @return the integer created from length bits of number beginning from start.
+ *
+ * @see BitMaskClear
+ * @see BitMaskSet
+ */
+int BitMaskRead(number, start, length);
+
+/**
+ * Parameters start and length must be in the range from 0 to 31.<p>Bit
+ * functions operate on 32-bit integers.
+ *
+ * @param number         Long integer to be masked.
+ * @param mask           Long integer specifying the mask.
+ * @param start          Integer specifying the starting bit
+ *                       in number for masking.
+ * @param length         Integer specifying the length of mask.
+ *
+ * @return number bitwise masked with length bits of mask beginning from start.
+ *
+ * @see BitMaskClear
+ * @see BitMaskRead
+ */
+int BitMaskSet(number, mask, start, length);
+
+/**
+ * Returns the bitwise NOT of a long integer.  Bit functions operate on
+ * 32-bit integers.
+ *
+ * @param number         Any long integer.
+ *
+ * @see BitAnd
+ * @see BitOr
+ * @see BitXor
+ */
+int BitNot(number);
+
+/**
+ * Bit functions operate on 32-bit intege
+ * @param number1        Any long integers.
+ * @param number2        Any long integers.
+ *
+ * @return the bitwise OR of two long integers
+ *
+ * @see BitAnd
+ * @see BitNot
+ * @see BitXor
+ */
+int BitOr(number1, number2);
+
+/**
+ * Parameter count must be in the range from 0 to 31.<p>Bit functions
+ * operate on 32-bit integers.
+ *
+ * @param number         Long integer to be shifted to the left.
+ * @param count          Integer specifying number of bits
+ *                       the number should be shifted.
+ *
+ * @return number bitwise shifted without rotation to the left
+ *         by count bits.
+ *
+ * @see BitSHRN
+ */
+int BitSHLN(number, count);
+
+/**
+ * Parameter count must be in the range from 0 to 31.<p>Bit functions
+ * operate on 32-bit integers.
+ *
+ * @param number         Long integer to be shifted to the right.
+ * @param count          Integer specifying number of bits
+ *                       the number should be shifted.
+ *
+ * @return number bitwise shifted without rotation to the right
+ *         by count bits.
+ *
+ * @see BitSHLN
+ */
+int BitSHRN(number, count);
+
+/**
+ * Bit functions operate on 32-bit integers.
+ *
+ * @param number1        Any long integers.
+ * @param number2        Any long integers.
+ *
+ * @return bitwise XOR of two long integers.
+ *
+ * @see BitAnd
+ * @see BitNot
+ * @see BitOr
+ */
+int BitXor(number1, number2);
+
+/**
+ * Returns the closest integer greater than a given number.
+ *
+ * @param number         Any real number.
+ *
+ * @see Int
+ * @see Fix
+ * @see Round
+ */
+int Ceiling(number);
+
+/**
+ * Numbers from 0 to 31 are the standard, nonprintable ASCII codes. For
+ * example, Chr(10) returns a linefeed character and Chr(13) returns
+ * a carriage return character. Therefore, the two-character string
+ * Chr(13) &amp; Chr(10) is the newline string.
+ *
+ * @param number         Any ASCII value (a number in the
+ *                       range 0 to 255 inclusive).
+ *
+ * @return a character of a given ASCII value (character code).
+ *
+ * @see Asc
+ */
+String Chr(number);
+
+/**
+ * Centers a string in the specified field length.
+ *
+ * @param string         Any string to be centered.
+ * @param length         Length of field.
+ *
+ * @see LJustify
+ * @see RJustify
+ */
+String Cjustify(string, length);
+
+/**
+ * Performs a case-sensitive comparison of two strings. Returns a
+ * negative number if string1 is less than string2; 0 if string1 is
+ * equal to string2; or a positive number if string1 is greater than
+ * string2.
+ * <p>
+ * The comparison is performed on the ASCII values (character codes) of
+ * corresponding characters in string1 and string2.<p>If many strings
+ * are sorted in increasing order based on the Compare function, they
+ * appear listed in dictionary order.
+ *
+ * @param string1        Strings to be compared.
+ * @param string2        Strings to be compared.
+ *
+ * @see CompareNoCase
+ * @see Find
+ */
+int Compare(string1, string2);
+
+/**
+ * Performs a case-insensitive comparison of two strings. Returns a
+ * negative number if string1 is less than string2; 0 if string1 is
+ * equal to string2; or a positive number if string1 is greater
+ * than string2.
+ *
+ * @param string1        Strings to be compared.
+ * @param string2        Strings to be compared.
+ *
+ * @see Compare
+ * @see FindNoCase
+ */
+int CompareNoCase(string1, string2);
+
+/**
+ * The re of the result is -1 to 1. <p>To convert degrees to radians,
+ * multiply degrees by Pi/180. To convert radians to degrees, multiply
+ * radians by 180/Pi.
+ *
+ * @param number         Angle in radians for which you want
+ *                       the cosine.
+ *
+ * @return the cosine of a given angle in radians.
+ *
+ * @see Sin
+ * @see Tan
+ * @see Pi
+ */
+float Cos(number);
+
+/**
+ * CreateDate is a subset of CreateDateTime.<p>Time in the returned
+ * object is set to 00:00:
+ *
+ * @param year           Number representing the year in the
+ *                       range 100-9999. Years from 0 to 29 are
+ *                       interpreted as 21<sup>st</sup> century
+ *                       values. Years 30 to 99 are interpreted as
+ *                       20<sup>th</sup> century values.
+ * @param month          Number representing the month of
+ *                       the year, ranging from 1 (January) to 12
+ *                       (December).
+ * @param day            Number representing the day of the
+ *                       month, ranging from 1 to 31.
+ *
+ * @return a valid date/time object.
+ *
+ * @see CreateDateTime
+ * @see CreateODBCDate
+ */
+datetime CreateDate(year, month, day);
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century values.
+ *
+ * @param year           Number representing the year in the
+ *                       range 100-9999.
+ * @param month          Number representing the month of
+ *                       the year, ranging from 1 (January) to 12
+ *                       (December).
+ * @param day            Number representing the day of the
+ *                       month, ranging from 1 to 31.
+ * @param hour           Number representing the hour,
+ *                       ranging from 0 to 23.
+ * @param minute         Number representing the minute,
+ *                       ranging from 0 to 59.
+ * @param second         Number representing the second,
+ *                       ranging from 0 to 59.
+ *
+ * @return a valid date/time object.
+ *
+ * @see CreateDate
+ * @see CreateTime
+ * @see CreateODBCDateTime
+ * @see Now
+ */
+datetime CreateDateTime(year, month, day, hour, minute, second);
+
+/**
+ * Allows you tocreate COM, CORBA, and JAVA objects.
+ * <p>
+ * Note: ColdFusion administrators can disable the CFOBJECT tag in
+ * the ColdFusion Administrator Basic Security page, which also
+ * disables this function.
+ * <p>
+ * Note: On UNIX, COM objects are not currently supported by
+ * CreateObject.
+ *
+ * @param type           Depending on the value of the type
+ *                       parameter, there are several additional
+ *                       parameters you can use. This table shows
+ *                       which parameters you can use with each
+ *                       object type.
+ *                       <ul>
+ *                       <li>COM -- CreateObject allows you to create
+ *                           and use COM (Component Object Model) objects.
+ *                           Any automation server object type that is
+ *                           currently registered on a machine can be
+ *                           invoked. You can use a utility like
+ *                           Microsoft's OLEView to browse COM objects.
+ *                           OLEView, as well as information about COM
+ *                           and DCOM, can be found at Microsoft's OLE
+ *                           Development web site http://www.microsoft.com/oledev/.
+ *                           To create COM objects, you need to know
+ *                           the program ID or filename of the object,
+ *                           the methods and properties available
+ *                           through the IDispatch interface, and the
+ *                           arguments and return types of the object's
+ *                           methods. The OLEView utility can give you
+ *                           this information for most COM objects.
+ *                       <li>CORBA -- CreateObject allows you to call
+ *                           methods in CORBA objects. These CORBA
+ *                           objects must already have been defined
+ *                           and registered for use.
+ *                       <li>JAVA -- CreateObject allows you to
+ *                           create and use JAVA objects, and by
+ *                           extension EJB objects.
+ *                       </ul>
+ * @param class          Required.
+ *                       <ul>
+ *                       <li> COM -- Enter the component ProgID for
+ *                       the object you want to invoke.
+ *                       <li> CORBA --
+ *                            If CONTEXT is IOR -- Specifies the name
+ *                            of a file that contains the string
+ *                            version of the IOR. ColdFusion
+ *                            must be able to read this file at all
+ *                            times; it should be local to ColdFusion
+ *                            server or on the network in
+ *                            an open, accessible location. <p>
+ *                            If CONTEXT is NameService -- Specifies
+ *                            a period-delimited naming context for
+ *                            the naming service, such as
+ *                            Allaire.Department.Doc.empobject.
+ *                       <li> JAVA -- Specifies the Java class.
+ *                       </ul>
+ * @param context        <ul>
+ *                       <li> COM -- "InProc", "Local", or "Remote".
+ *                       Uses Registry setting when not specified.
+ *                       <li> CORBA --
+ *                            "IOR" -- ColdFusion uses the
+ *                            Interoperable Object Reference (IOR)
+ *                            to access the CORBA server. <p>
+ *                            "NameService" -- ColdFusion uses the
+ *                            naming service to access server.
+ *                            "NameService" is only valid with the
+ *                            InitialContext of a VisiBroker Orb.
+ *                       <li> JAVA -- not applicable
+ *                       </ul>
+ * @param serverName     <ul>
+ *                       <li> COM -- Required when CONTEXT="Remote".
+ *                       Enter a valid server name using UNC
+ *                       (Universal Naming Convention) or DNS
+ *                       <li> CORBA -- Optional. Sets arguments for a
+ *                       call to init_orb(..). Use of this attribute
+ *                       is specific to VisiBroker orbs, and
+ *                            is currently available on C++, Version 3.2.
+ *                       <li> JAVA -- not applicable
+ *                       </ul>
+ *
+ * To be able to call Java CFXs or Java objects, ColdFusion uses a
+ * JVM embedded in the process. The loading,
+ * location and the settings for the JVM are configurable using the
+ * ColdFusion Administrator pages.
+ * <p>
+ * Any Java class available in the class path specified in the CF
+ * Administrator can be loaded and used from
+ * ColdFusion using the CreateObject function.
+ * <p>
+ * Use the following steps to access Java methods and fields:
+ * <p>
+ * 1. Call CreateObject or CFOBJECT to load the class.
+ * <p>
+ * 2. Use the init method with appropriate arguments to call a
+ * constructor explicitly.
+ */
+Object CreateObject(type, class, context, serverName);
+
+/**
+ * Returns a date in ODBC date format.
+ *
+ * @param date           Date/time object in the period from
+ *                       100 AD to 9999 AD. Years from 0 to 29 are
+ *                       interpreted as 21<sup>st</sup> century
+ *                       values. Years 30 to 99 are interpreted as
+ *                       20<sup>th</sup> century values.
+ *
+ * @see CreateDate
+ * @see CreateODBCDateTime
+ */
+String CreateODBCDate(date);
+
+/**
+ * When passing a date/time value as a string, make sure it is enclosed
+ * in quotes. Otherwise, it is interpreted as a number representation of
+ * a date/time object, returning undesired results.
+ *
+ * @param date           Date/time object in the period from
+ *                       100 AD to 9999 AD. Years from 0 to 29 are
+ *                       interpreted as 21<sup>st</sup> century
+ *                       values. Years 30 to 99 are interpreted as
+ *                       20<sup>th</sup> century values.
+ *
+ * @return a date/time object in ODBC timestamp format.
+ *
+ * @see CreateDateTime
+ * @see CreateODBCDate
+ * @see CreateODBCTime
+ * @see Now
+ */
+datetime CreateODBCDateTime(date);
+
+/**
+ * When passing a date/time value as a string, make sure it is enclosed
+ * in quotes. Otherwise, it is interpreted as a number representation of
+ * a date/time object, returning undesired results.
+ *
+ * @param date           Date/time object in the period from
+ *                       100 AD to 9999 AD.
+ *
+ * @return a time object in ODBC time format.
+ *
+ * @see CreateODBCDateTime
+ * @see CreateTime
+ */
+datetime CreateODBCTime(date);
+
+/**
+ * CreateTime is a subset of CreateDateTime.<p>Time variables are
+ * special cases of date/time variables. The date portion of a time
+ * variable is set to December 30, 1899.
+ *
+ * @param hour           Number representing the hour,
+ *                       ranging from 0 to 23.
+ * @param minute         Number representing the minute,
+ *                       ranging from 0 to 59.
+ * @param second         Number representing the second,
+ *                       ranging from 0 to 59.
+ *
+ * @return a valid time variable in ColdFusion.
+ *
+ * @see CreateODBCTime
+ * @see CreateDateTime
+ */
+datetime CreateTime(hour, minute, second);
+
+/**
+ * The CreateTimeSpan function creates a special date/time object
+ * that should only be used to add and subtract from other date/time
+ * objects or with the /a> CACHEDWITHIN attribute.
+ *
+ * Creates a date/time object for adding and subtracting other date/time
+ * objects.
+ *
+ * @param days           Number representing the number of days.
+ * @param hours          Number representing the number of hours.
+ * @param minutes        Number representing the number
+ *                       of minutes.
+ * @param seconds        Number representing the number
+ *                       of seconds.
+ *
+ * @see CreateDateTime
+ * @see DateAdd
+ * @see DateConvert
+ */
+datetime CreateTimeSpan(days, hours, minutes, seconds);
+
+/**
+ * Each UUID returned by the CreateUUID function is a
+ * 35-character-string representation of a unique 128-bit integer.
+ * Use the CreateUUID function when you need a unique string that you
+ * will use as a persistent identifier in a distributed environment.
+ * To a very high degree of certainty, this function returns a unique
+ * value; no other invocation on the same or any other system should
+ * return the same value.
+ * <p>
+ * UUIDs are used by distributed computing frameworks, such as DCE/RPC,
+ * COM+, and CORBA. With ColdFusion, you can use UUIDs as primary table
+ * keys for applications where data is stored on a number of shared
+ * databases. In such cases, using numeric keys may cause primary key
+ * constraint violations during table merges. By using UUIDs, you can
+ * eliminate these violations because each UUID is unique.
+ *
+ * @return a Universally Unique Identifier (UUID) formatted as
+ *         `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXX' where `X' stands
+ *         for a hexadecimal digit (0-9 or A-F).
+ */
+String CreateUUID();
+
+/**
+ * The datepart specifiers "y," "d," and "w"  perform the same function
+ * -- add a certain number of days to a given date.<p>When passing a
+ * date/time value as a string, make sure it is enclosed in quotes.
+ * Otherwise, it is interpreted as a number representation of a
+ * date/time object, returning undesired results.
+ *
+ * @param datepart       One of the following strings:<ul>
+ *                           <ul>
+ *                           <li><code>yyyy</code> -- Year
+ *                           <li><code>q</code> -- Quarter
+ *                           <li><code>m</code> -- Month
+ *                           <li><code>y</code> -- Day of year
+ *                           <li><code>d</code> -- Day
+ *                           <li><code>w </code>-- Weekday
+ *                           <li><code>ww</code> -- Week
+ *                           <li><code>h</code> -- Hour
+ *                           <li><code>n</code> -- Minute
+ *                           <li><code>s</code> -- Second
+ *                           </ul>
+ * @param number         Number of units of datepart to add
+ *                       to date (positive to get dates in the future
+ *                       or negative to get dates in the past).
+ * @param date           Date/time object in the period from
+ *                       100 AD to 9999 AD. Years from 0 to 29 are
+ *                       interpreted as 21<sup>st</sup> century
+ *                       values. Years 30 to 99 are interpreted as
+ *                       20<sup>th</sup> century values.
+ *
+ * @return a date to which a specified time interval has been added.
+ *
+ * @see DateConvert
+ * @see DatePart
+ * @see CreateTimeSpan
+ */
+datetime DateAdd(datepart, number, date);
+
+/**
+ * When passing a date/time value as a string, make sure it is enclosed
+ * in quotes. Otherwise, it is interpreted as a number representation of
+ * a date/time object, returning undesired results.<p>Years from 0 to 29
+ * are interpreted as 21<sup>st</sup> century values. Years 30 to 99 are
+ * interpreted as 20<sup>th</sup> century values.
+ * Performs a full date/time comparison of two dates. Returns -1 if
+ * date1 is less than date2; returns 0 if date1 is equal to date2;
+ * returns 1 if date1 is greater than date2. See the description of
+ * datePart for information on specifying the precision of the
+ * comparison.
+ *
+ * @param date1          Date/time object in the period from
+ *                       100 AD to 9999 AD.
+ * @param date2          Date/time object in the period from
+ *                       100 AD to 9999 AD.
+ * @param datePart       Optional. The precision of the
+ *                       comparison. This parameter can have any of
+ *                       the following values:<ul>
+ *                           <ul>
+ *                           <li>s - precise to the second.
+ *                           <li>n- precise to the minute.
+ *                           <li>h- precise to the hour.
+ *                           <li>d- precise to the day.
+ *                           <li>m- precise to the month.
+ *                           <li>yyyy- precise to the year.
+ *                           </ul>
+ *                       By default, precision is to the second.
+ *
+ * @see CreateDateTime
+ * @see DatePart
+ */
+int DateCompare(date1, date2, datePart=2);
+
+ /**
+ * When passing a date/time value as a string, make sure it is enclosed
+ * in quotes. Otherwise, it is interpreted as a number representation of
+ * a date/time object, returning undesired resul
+ * Converts local time to Universal Coordinated Time (UTC ) or UTC to
+ * local time based on the specified parameters. This function uses
+ * the daylight savings settings in the executing machine to compute
+ * daylight savings time, if required.
+ *
+ * @param conversion-type   There are two conversion types:
+ *                       &quot;local2Utc&quot; and &quot;utc2Local.&quot;
+ *                       The former converts local time to UTC time.
+ *                       The later converts UTC time to local time.
+ * @param date           Any ColdFusion date and time string.
+ *                       In order to create a ColdFusion date
+ 8                          and time, use CreateDateTime.
+ *
+ * @see GetTimeZoneInfo
+ * @see CreateDateTime
+ * @see DatePart
+ */
+datetime DateConvert(conversion_type, date);
+
+/**
+ * If you want to know the number of days between date1 and date2,
+ * you can use either Day of Year ("y") or Day ("d").<p>When datepart
+ * is Weekday ("w"), DateDiff returns the number of weeks between the
+ * two dates. If date1 falls on a Monday, DateDiff counts the number of
+ * Mondays until date2. It counts date2 but not date1. If interval is
+ * Week ("ww"), however, the DateDiff function returns the number of
+ * calendar weeks between the two dates. It counts the number of Sundays
+ * between date1 and date2. DateDiff counts date2 if it falls on a
+ * Sunday; but it doesn't count date1, even if it does fall on a
+ * Sunday.<p>If Date1 refers to a later point in time than date2,
+ * the DateDiff function returns a negative number.<p>When passing
+ * date/time value as a string, make sure it is enclosed in quotes.
+ * Otherwise, it is interpreted as a number representation of a
+ * date/time object returning undesired results.<p>Years from 0 to 29
+ * are interpreted as 21<sup>st</sup> century values. Years 30 to 99
+ * are interpreted as 20<sup>th</sup> century values.
+ *
+ * @param datepart       One of the following strings:
+ *                           <ul>
+ *                           <li><code>yyyy</code> -- Year
+ *                           <li><code>q</code> -- Quarter
+ *                           <li><code>m</code> -- Month
+ *                           <li><code>y</code> -- Day of year
+ *                           <li><code>d </code>-- Day
+ *                           <li><code>w</code> -- Weekday
+ *                           <li><code>ww</code> -- Week
+ *                           <li><code>h</code> -- Hour
+ *                           <li><code>n</code> -- Minute
+ *                           <li><code>s</code> -- Second
+ *                           </ul>
+ * @param date1          Date/time object in the period from
+ *                       100 AD to 9999 AD.
+ * @param date2          Date/time object in the period from
+ *                       100 AD to 9999 AD.
+ *
+ * @return the number of intervals in whole units of type Datepart
+ *         by which Date1 is less than Date2.
+ *
+ * @see DateAdd
+ * @see DatePart
+ * @see CreateTimeSpan
+ */
+int DateDiff(datepart, date1, date);
+
+/**
+ * When passing a date/time value as a string, make sure it is enclosed
+ * in quotes. Otherwise, it is interpreted as a number representation of
+ * a date/time object, returning undesired results.
+ * <p>
+ * Note: On UNIX, there is a switch that provides fast date-time
+ * parsing. If you
+ * have enabled this switch, you must refer to dates in expressions in the
+ * following order: month, day, and year.
+ * If this switch is set, the default date format returned by the
+ * DateFormat() function cannot be parsed in an expression. However,
+ * if you specify a mask, indicating the correct order, such as,
+ * mm/dd/yyyy, the date returned by this function can be parsed.
+ * <p>
+ * The Fast Date/Time Parsing switch is set on the ColdFusion
+ 8 Administrator Server Settings page. Please refer to
+ * "Administering ColdFusion Server" for more information about
+ * ColdFusion settings.
+ *
+ * @param date           Date/time object in the period from
+ *                       1601 AD to 9999 AD.
+ * @param mask           Set of characters that are used to
+ *                       show how ColdFusion should display the date:
+ *                           <ul>
+ *                           <li><code>d</code> -- Day of the month
+ *                               as digits with no leading zero for
+ *                               single-digit days.
+ *                           <li><code>dd</code> -- Day of the month
+ *                               as digits with a leading zero for
+ *                               single-digit days.
+ *                           <li><code>ddd</code> -- Day of the week
+ *                               as a three-letter abbreviation.
+ *                           <li><code>dddd</code> -- Day of the week
+ *                               as its full name.
+ *                           <li><code>m</code> -- Month as digits
+ *                               with no leading zero for single-digit months.
+ *                           <li><code>mm</code> -- Month as digits
+ *                               with a leading zero for single-digit months.
+ *                           <li><code>mmm</code> -- Month as a
+ *                               three-letter abbreviation.
+ *                           <li><code>mmmm</code> -- Month as its full name.
+ *                           <li><code>y</code> -- Year as last two
+ *                               digits with no leading zero for
+ *                               years less than 10.
+ *                           <li><code>yy</code> -- Year as last two
+ *                               digits with a leading zero for years
+ *                               less than 10.
+ *                           <li><code>yyyy</code> -- Year represented by
+ *                               four digits.
+ *                           <li><code>gg</code> -- Period/era string.
+ *                               Currently ignored, but reserved for
+ *                               future use.
+ *                           </ul>
+ *
+ * @return a formatted date/time value. If no mask is specified,
+ *         DateFormat function returns date value using the
+ *         dd-mmm-yy format.
+ *
+ * @see Now
+ * @see CreateDate
+ * @see ParseDateTime
+ */
+String DateFormat(date, mask="dd-mmm-yy" );
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century
+ * values.<p>When passing a date/time value as a string, make sure
+ * it is enclosed in quotes. Otherwise, it is interpreted as a
+ * number representation of a date/time object, returning undesired results.
+ *
+ * @param datepart       One of the following strings:<ul>
+ *                           <ul>
+ *                           <li><code>yyyy</code> -- Year
+ *                           <li><code>q</code> -- Quarter
+ *                           <li><code>m</code> -- Month
+ *                           <li><code>y</code> -- Day of year
+ *                           <li><code>d</code> -- Day
+ *                           <li><code>w </code>-- Weekday
+ *                           <li><code>ww</code> -- Week
+ *                           <li><code>h</code> -- Hour
+ *                           <li><code>n</code> -- Minute
+ *                           <li><code>s</code> -- Second
+ *                           </ul>
+ * @param date           Any date.
+ *
+ * @return the specified part of a date as an integer.
+ *
+ * @see DateAdd
+ * @see DateConvert
+ */
+int DatePart(datepart, date);
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century
+ * values.<p>When passing a date/time value as a string, make sure
+ * it is enclosed in quotes. Otherwise, it is interpreted as a
+ * number representation of a date/time object, returning undesired results.
+ *
+ * @param date           Any date.
+ *
+ * @return the ordinal for the day of the month, ranging from 1 to 31.
+ *
+ * @see DayOfWeek
+ * @see DayOfWeekAsString
+ * @see DayOfYear
+ * @see DaysInMonth
+ * @see DaysInYear
+ * @see FirstDayOfMonth
+ */
+int Day(date);
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century
+ * values.<p>When passing a date/time value as a string, make sure
+ * it is enclosed in quotes. Otherwise, it is interpreted as a
+ * number representation of a date/time object, returning undesired results.
+ *
+ * @param date           Any date.
+ *
+ * @return the ordinal for the day of the week. The day is given
+ *         as an integer ranging from 1 (Sunday) to 7 (Saturday).
+ *
+ * @see Day
+ * @see DayOfWeekAsString
+ * @see DayOfYear
+ * @see DaysInMonth
+ * @see DaysInYear
+ * @see FirstDayOfMonth
+ */
+int DayOfWeek(date);
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century values.
+ *
+ * @param day_of_week    Integer representing the day of the
+ *                       week, where 1 is Sunday, 2 is Monday, and so on.
+ *
+ * @return the day of the week corresponding to day_of_week, an
+ *         integer ranging from 1 (Sunday) to 7 (Saturday).
+ *
+ * @see Day
+ * @see DayOfWeek
+ * @see DayOfYear
+ * @see DaysInMonth
+ * @see DaysInYear
+ * @see FirstDayOfMonth
+ */
+String DayOfWeekAsString(day_of_week);
+
+/**
+ * DayofYear is aware of leap years.<p>Years from 0 to 29 are
+ * interpreted as 21<sup>st</sup> century values. Years 30 to 99
+ * are interpreted as 20<sup>th</sup> century values.<p>When
+ * passing a date/time value as a string, make sure it is enclosed
+ * in quotes. Otherwise, it is interpreted as a number representation
+ *  of a date/time object, returning undesired results.
+ *
+ * @param date           Any date.
+ *
+ * @return the ordinal for the day of the year.<p>              
+ *                                                                                                                   /**
+ * @see Day
+ * @see DayOfWeek
+ * @see DayOfWeekAsString
+ * @see DaysInMonth
+ * @see DaysInYear
+ * @see FirstDayOfMonth
+ */
+int DayOfYear(date);
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century
+ * values.<p>When passing a date/time value as a string, make sure
+ * it is enclosed in quotes. Otherwise, it is interpreted as a
+ * number representation of a date/time object, returning undesired results.
+ *
+ * @param date           Any date.
+ *
+ * @return the number of days in the specified month (Date).
+ * 
+ * @see Day
+ * @see DayOfWeek
+ * @see DayOfWeekAsString
+ * @see DayOfYear
+ * @see DaysInYear
+ * @see FirstDayOfMonth
+ */
+int DaysInMonth(date);
+
+/**
+ * DaysInYear is aware of leap years.  Years from 0 to 29 are
+ * interpreted as 21<sup>st</sup> century values. Years 30 to 99
+ * are interpreted as 20<sup>th</sup> century values.  When
+ * passing a date/time value as a string, make sure it is enclosed
+ * in quotes. Otherwise, it is interpreted as a number representation
+ * of a date/time object, returning undesired results.
+ *
+ * @param date           Any date.
+ *
+ * @return the number of days in a year.
+ *
+ * @see Day
+ * @see DayOfWeek
+ * @see DayOfWeekAsString
+ * @see DayOfYear
+ * @see DaysInMonth
+ * @see DaysInYear
+ * @see FirstDayOfMonth
+ * @see IsLeapYear
+ */
+int DaysInYear(date);
+
+/**
+ * Returns its argument with double quotes wrapped around it and all
+ * double quotes inside it escaped. The DE (Delay Evaluation) function
+ * prevents the evaluation of a string as an expression when it is
+ * passed as an argument to IIf or Evaluate.
+ *
+ * @param string         String to be evaluated with delay.
+ *
+ * @see Evaluate
+ * @see IIf
+ */
+String DE(string);
+
+/**
+ * Returns number as a string formatted with two decimal places and
+ * thousands separator.
+ *
+ * @param number         Number being formatted.
+ *
+ * @see DollarFormat
+ * @see NumberFormat
+ */
+String DecimalFormat(number);
+
+/**
+ * Returns integer part of number decremented by one.
+ *
+ * @param number         Number being decremented.
+ *
+ * @see IncrementValue
+ */
+int DecrementValue(number);
+
+/**
+ * Decrypts an encrypted string.
+ *
+ * @param encrypted_string  String to be decrypted.
+ * @param key            String specifying the key used to
+ *                       encrypt encrypted_string.
+ *
+ * @see Encrypt
+ */
+String Decrypt(encrypted_string, key);
+
+/**
+ * If the client variable specified by name does not exist, an error is
+ * returned.
+ *
+ * @param name           Name of a client variable to be
+ *                       deleted, surrounded by double quotes.
+ *
+ * @see GetClientVariablesList
+ */
+int DeleteClientVariable(name);
+
+/**
+ * Returns YES if the directory specified in the argument does exist;
+ * otherwise, it returns NO.
+ *
+ * @param absolute_path  Any absolute path.
+ *
+ * @see FileExists
+ */
+boolean DirectoryExists(absolute_path);
+
+/**
+ * Returns number as a string formatted with two decimal places,
+ * thousands separator, dollar sign. Parentheses are used if number
+ * is negative.
+ *
+ * @param number         Number being formatted.
+ *
+ * @see DecimalFormat
+ * @see NumberFormat
+ */
+String DollarFormat(number);
+
+/**
+ * Encrypts a string.
+ *
+ * @param string         String to be encrypted.
+ * @param key            String specifying the key used to
+ *                       encrypt string.
+ *
+ * @see Decrypt
+ */
+String Encrypt(string, key);
+
+/**
+ * String expressions can be arbitrarily complex. Note, however, that
+ * they are somewhat more complicated to write because they are inside
+ * a string. In particular, if the string expression is double-quoted,
+ * double-quotes inside the expression must be escaped.
+ * The function evaluates all of its arguments, left to right, and
+ * returns the result of evaluating the last argument.
+ *
+ * @param string_expr1   Valid expressions to be evaluated.
+ * @param string_expr2   Valid expressions to be evaluated.
+ *
+ * @see DE
+ * @see IIf
+ */
+int Evaluate(string_expr1, string_expr2, ...);
+
+/**
+ * To calculate powers of other bases, use ^ (the exponentiation
+ * operator). Exp is the inverse of Log, the natural logarithm of number.
+ *
+ * @param number         Exponent applied to the base e.
+ *
+ * @return e raised to the power of number. The constant e
+ *         equals 2.71828182845904, the base of the natural logarithm.
+ *
+ * @see Log
+ * @see Log10
+ */
+float Exp(number);
+
+/**
+ * ExpandPath creates a platform-appropriate path. You can use either a
+ * slash (/) or a back slash (\) in the specified relative path.
+ * The return value contains a trailing slash (or back slash) if the
+ * specified relative path contains a trailing slash (or back slash).
+ *
+ * @param relative_path  Any relative path. ExpandPath
+ *                       converts relative directory references (.\
+ *                       and ..\)to an absolute path. The function
+ *                       throws an error if this argument or the
+ *                       resulting absolute path is invalid.
+ *
+ * @return a path equivalent to the relative_path appended to
+ *         the base template path. Note the following:<ul>
+ *
+ * @see FileExists
+ * @see GetCurrentTemplatePath
+ * @see GetFileFromPath
+ */
+String ExpandPath(relative_path);
+
+/**
+ * Returns YES if the file specified in the argument does exist;
+ * otherwise, it returns NO.
+ *
+ * @param absolute_path  Any absolute path.
+ *
+ * @see DirectoryExists
+ * @see ExpandPath
+ * @see GetTemplatePath
+ */
+boolean FileExists(absolute_path);
+
+/**
+ * Returns the first index of an occurrence of a substring in a string
+ * from a specified starting position. Returns 0 if substring is not in
+ * string. The search is case-sensitive.
+ *
+ * @param substring      String being sought.
+ * @param string         String being searched.
+ * @param start          Starting position for the search.
+ *
+ * @see FindNoCase
+ * @see Compare
+ * @see FindOneOf
+ * @see REFind
+ * @see Replace
+ */
+int Find(substring, string, start=0);
+
+/**
+ * Returns the first index of an occurrence of a substring in a string
+ * from a specified starting position. Returns 0 if substring is not in
+ * string. The search is case-insensitive.
+ *
+ * @param substring      String being sought.
+ * @param string         String being searched.
+ * @param start          Starting position for the search.
+ *
+ * @see Find
+ * @see CompareNoCase
+ * @see FindOneOf
+ * @see REFind
+ * @see Replace
+ */
+int FindNoCase(substring, string, start=0 );
+
+/**
+ * Return the first index of the occurrence of any character
+ * from set in
+ * string. Returns 0 if no characters are found. The search is
+ * case-sensitive.
+ *
+ * @param set            String containing one or more
+ *                       characters being sought.
+ * @param string         String being searched.
+ * @param start          Starting position for the search.
+ *
+ * @see Find
+ * @see Compare
+ * @see REFind
+ */
+int FindOneOf(set, string, start=0 );
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century
+ * values.  When passing a date/time value as a string, make sure
+ * it is enclosed in quotes. Otherwise, it is interpreted as a
+ * number representation of a date/time object, returning undesired resul
+ *
+ * @param date           Any date.
+ *
+ * @return the ordinal (the day's number in the year) for the
+ *         first day of the specified month.
+ *
+ * @see Day
+ * @see DayOfWeek
+ * @see DayOfWeekAsString
+ * @see DayOfYear
+ * @see DaysInMonth
+ * @see DaysInYear
+ */
+int FirstDayOfMonth(date);
+
+/**
+ * Returns the closest integer less than number if number is greater
+ * than or equal to 0. Returns the closest integer greater than number
+ * if number is less than 0.
+ *
+ * @param number         Any number.
+ *
+ * @see Ceiling
+ * @see Int
+ * @see Round
+ */
+int Fix(number);
+
+/**
+ * Converts a number to a string in the base specified by radix.
+ *
+ * @param number         Number to be converted.
+ * @param radix          Base of the result.
+ *
+ * @see InputBaseN
+ */
+String FormatBaseN(number, radix);
+
+/**
+ * Returns an object that contains data (variables, scopes, etc.) from a
+ * specified ancestor tag. By default the closest ancestor is returned.
+ * If there is no ancestor by the specified name, or if the ancestor
+ * does not expose any data (for example, CFIF), an exception
+ * will be thrown.
+ *
+ * @param tagname        Required. Specifies the ancestor
+ *                       tag name for which the function returns data.
+ * @param instancenumber Optional. Specifies the number of
+ *                       ancestor levels to jump before returning
+ *                       data. The default is 1.
+ *
+ * @see GetBaseTagList
+ */
+Object GetBaseTagData(tagname, instancenumber=n );
+
+/**
+ * Returns a comma-delimited list of uppercase ancestor tag names.
+ * The first element of the list is the parent tag. If you call this
+ * function for a top-level tag, it returns an empty string.
+ *
+ * @see GetBaseTagData
+ */
+String GetBaseTagList();
+
+/**
+ * Returns the fully specified path of the base template.
+ *
+ * @see GetCurrentTemplatePath
+ * @see FileExists
+ * @see ExpandPath
+ */
+String GetBaseTemplatePath();
+
+/**
+ * Returns a comma-delimited list of non-readonly client variables
+ * available to a template.
+ *
+ * @see DeleteClientVariable
+ */
+String GetClientVariablesList();
+
+/**
+ * This function differs from GetBaseTemplatePath in that it
+ * will return
+ * the template path of an included template if the call is made from a
+ * template included with a CFINCLUDE tag; whereas GetBaseTemplatePath
+ * returns the template path of the top-level template even when the
+ * call to GetBaseTemplatePath is actually made from an included template.
+ *
+ * @return the fully specified path of the template containing
+ *         the call to this function.
+ *
+ * @see GetBaseTemplatePath
+ * @see FileExists
+ * @see ExpandPath
+ */
+String GetCurrentTemplatePath();
+
+/**
+ * Extracts the directory (with a \ (backslash)) from a fully specified
+ * path.
+ *
+ * @param path           Fully specified path (drive, directory,
+ *                       filename, and extension).
+ *
+ * @see ExpandPath
+ * @see GetFileFromPath
+ *
+ */
+String GetDirectoryFromPath(path);
+
+/**
+ * Extracts filename from a fully specified path.
+ *
+ * @see ExpandPath
+ * @see GetCurrentTemplatePath
+ *
+ */
+String GetFileFromPath(path);
+
+/**
+ * Retruns a structure of functions that are available in ColdFusion.
+ */
+Object GetFunctionList();
+
+/**
+ * Returns the locale for the current request. Locales are determined
+ * by the native operating system. A locale is an encapsulation of
+ * the set of attributes that govern the display and formatting of
+ * international date, time, number, and currency values.
+ *
+ * @see SetLocale
+ */
+String GetLocale();
+
+/**
+ * On Windows NT, the function returns a ColdFusion structure with
+ * the following data fields
+ * <ul>
+ * <li>InstanceName
+ * <li>PageHits
+ * <li>ReqQueued
+ * <li>DBHits
+ * <li>ReqRunning
+ * <li>ReqTimedOut
+ * <li>BytesIn
+ * <li>BytesOut
+ * <li>AvgQueueTime
+ * <li>AvgReqTime
+ * <li>AvgDBTime
+ * <li>CachePops
+ * </ul>
+ * On Windows NT, GetMetricData returns all the internal data that is
+ * otherwise displayed in the Windows NT PerfMonitor. On UNIX,
+ * GetMetricData returns all of the internal data found by using
+ * CFStat. For it to work on NT you need to have turned on the
+ * PerfMonitor feature from the ColdFusion Administrator. See the
+ * Usage section for details of the structure that this function returns.
+ *
+ * @param monitor_name   The name of the performance monitor. On
+ *                       Windows NT, the performance monitor is
+ *                       PerfMonitor. On UNIX, it is CFStat.
+ */
+Object GetMetricData(monitor_name);
+
+/**
+ * Returns the value of an entry in an initialization file or an empty
+ * string if the value does not exist. An initialization file assigns
+ * values to configuration variables, also known as entries, that
+ * need to be set when the system boots, the operating system comes
+ * up, or an application starts. An initialization file is distinguished
+ * from other files by its .ini suffix, for example, boot.ini,
+ * Win32.ini, and setup.ini.
+ *
+ * @param iniPath        Fully qualified path (drive, directory,
+ *                       filename, and extension) of the initialization
+ *                       file, for example, C:\boot.ini.
+ * @param section        The section of the initialization
+ *                       file from which you would like to extract
+ *                       information.
+ * @param entry          The name of the value that you
+ *                       would like to see.
+ *
+ * @see SetProfileString
+ */
+String GetProfileString(iniPath, section, entry);
+
+/**
+ * Returns the full path name of a directory, including the trailing
+ * slash. The directory that is returned depends on the account under
+ * which ColdFusion is running as well as a variety of other factors.
+ * Before using this function in an application, test to see the
+ * directory it returns under your account.
+ *
+ * @see GetTempFile
+ */
+String GetTempDirectory();
+
+/**
+ * Creates and returns the name of a temporary file in a directory whose
+ * name starts with (at most) the first three characters of prefix.
+ *
+ * @param dir            Directory name.
+ * @param prefix         Prefix of a temporary file to be
+ *                       created in the directory specified by dir.
+ *
+ * @see GetTempDirectory
+ */
+String GetTempFile(dir, prefix);
+
+/**
+ * Returns the fully specified path of the base template.
+ *
+ * @see GetBaseTemplatePath
+ * @see FileExists
+ * @see ExpandPath
+ */
+String GetTemplatePath();
+
+/**
+ * The absolute value of the counter has no meaning. Generate useful
+ * timing values by taking differences between the results of
+ * GetTickCount() at specified points during page processin
+ *
+ * @return a millisecond clock counter that can be used for
+ *         timing sections of CFML code or any other aspects of
+ *         page processing.
+ */
+int GetTickCount();
+
+/**
+ * Returns a structure containing time zone information for the machine
+ * on which this function is executed. The structure contains four
+ * elements with the following keys.
+ * <ul>
+ * <li>utcTotalOffset -- total offset of the local time in minutes from
+ * UTC (Universal Coordinated Time). A plus sign (+) indicates that a
+ * time zone is west of UTC, such as all of the time zones in North
+ * and South America. A minus sign (-) indicates that a time zone
+ * is east of UTC, such as the time zones in Germany.
+ * <li>utcHourOffset -- offset in hours of local time from UTC.
+ * <li>utcMinuteOffset -- offset in minutes after the hours offset is
+ * taken into account. For North America, this will always be zero.
+ * However, for some countries that do not land exactly on the hour
+ * offset, the number will be between 0 and 60. For example, standard
+ * time in Adelaide, Australia has an offset of 9 hours and 30
+ * minutes from UTC.
+ * <li>isDSTOn -- True if Daylight Savings Time (DST) is on in the host
+ * machine; False if DST is off.
+ * </ul>
+ *
+ * @see DateConvert
+ * @see CreateDateTime
+ * @see DatePart
+ */
+Object GetTimeZoneInfo();
+
+/**
+ * Returns the specified token in a string. Default delimiters are
+ * spaces, tabs, and newline characters. If index is greater than
+ * the number of tokens in string, GetToken returns an empty string.
+ *
+ * @param string         Any string.
+ * @param index          Any integer &gt; 0 that indicates
+ *                       position of a token.
+ * @param delimiters     String containing sets of delimiters.
+ *
+ * @see Left
+ * @see Right
+ * @see Mid
+ * @see SpanExcluding
+ * @see SpanIncluding
+ */
+String GetToken(string, index, delimiters=" " );
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century
+ * values.  When passing a date/time value as a string, make sure
+ * it is enclosed in quotes. Otherwise, it is interpreted as a
+ * number representation of a date/time object, returning undesired resul
+ *
+ * @param date           Any date.
+ *
+ * @return the ordinal value for the hour, ranging from 0 to 23.
+ *
+ * @see DatePart
+ * @see Minute
+ * @see Second
+ */
+int Hour(date);
+
+/**
+ * Returns HTML escaped string enclosed in <code>&lt;PRE&gt; </code>and
+ * <code>&lt;/PRE&gt;</code> tags. All carriage returns are removed from
+ * string, and all special characters (&gt; &lt; " &amp;) are escaped.
+ *
+ * @param string         String being HTML escaped and
+ *                       preformatted.
+ * @param version        The specific HTML version to use in
+ *                       replacing special characters with their
+ *                       entity references. Valid entries are:<ul>
+ *                           <li><code>-1</code> -- The latest implementation of HTML
+ *                           <li><code>2.0</code> -- For HTML 2.0 (Default)
+ *                           <li><code>3.2</code> -- For HTML 3.2
+ *                           </ul>
+ *
+ * @see HTMLEditFormat
+ */
+String HTMLCodeFormat(string, version="2.0" );
+
+/**
+ * By escaping all special characters, this function increases the
+ * length of the specified string. This can cause unpredictable results
+ * when performing certain string functions (Left, Right, and Mid, for
+ * example) against the expanded string.
+ *
+ * @param string         String being HTML escaped.
+ * @param version        The specific HTML version to use in
+ *                       replacing special characters with their
+ *                       entity references. Valid entries are:<ul>
+ * @param version        The specific HTML version to use in
+ *                       replacing special characters with their
+ *                       entity references. Valid entries are:<ul>
+ *                           <li><code>-1</code> -- The latest implementation of HTML
+ *                           <li><code>2.0</code> -- For HTML 2.0 (Default)
+ *                           <li><code>3.2</code> -- For HTML 3.2
+ *                           </ul>
+ *
+ * @return HTML escaped string. All carriage returns are removed
+ *         from string, and all special characters (&gt; &lt; "
+ *         &amp;) are escaped.
+ *
+ * @see HTMLCodeFormat
+ */
+String HTMLEditFormat(string, version="2.0" );
+
+/**
+ * This function evaluates its condition as a Boolean. If the result is
+ * TRUE, it returns the value of Evaluate(string_expression1);
+ * otherwise, it returns the value of Evaluate(string_expression2).
+ * <p>
+ * Prior to using IIf, please read the Usage section and Note carefully.
+ * The IIf function is primarily intended for the conditional processing
+ * of dynamic expressions.
+ * <p>
+ * For general conditional processing, see #32;CFELSEIF&#32;CFELSE.
+ * For error handling, see #32;CFCATCH.
+ *
+ * @param condition      Any expression that can be evaluated as a Boolean.
+ * @param string_expr1   Valid string expression to be
+ *                       evaluated and returned if condition is TRUE.
+ * @param string_expr2   Valid string expression to be
+ *                       evaluated and returned if condition is FALSE.
+ *
+ * @see DE
+ * @see Evaluate
+ */
+boolean IIf(condition, string_expression1, string_expression2);
+
+/**
+ * Returns integer part of number incremented by one.
+ *
+ * @param number         Number being incremented.
+ *
+ * @see DecrementValue
+ */
+int IncrementValue(number);
+
+/**
+ * Returns the number obtained by converting string using the base
+ * specified by radix, an integer ranging from 2 to 36.
+ *
+ * @param string         Any string representing number in
+ *                       base specified by radix.
+ * @param radix          Base of number represented by
+ *                       string ranging from 2 to 36.
+ *
+ * @see FormatBaseN
+ */
+int InputBaseN(string, radix);
+
+/**
+ * Inserts a substring in a string after a specified character position.
+ * Prepends the substring if position is equal to 0.
+ *
+ * @param substring      String to be inserted.
+ * @param string         String to be inserted into.
+ * @param position       Integer that indicates the character position
+ *                       in string where the substring will be inserted.
+ *
+ * @see RemoveChars
+ * @see Len
+ */
+String Insert(substring, string, position);
+
+/**
+ * Returns the closest integer smaller than a number.
+ *
+ * @param number         Real number you want to round down
+ *                       to an integer.
+ *
+ * @see Ceiling
+ * @see Fix
+ * @see Round
+ */
+int Int(number);
+
+/**
+ * Returns TRUE if value is an array.
+ *
+ * @param value          Variable name or array name.
+ * @param number         Tests if the array has exactly the
+ *                       specified dimension.
+ */
+boolean IsArray(value, number=0 );
+
+/**
+ * Returns TRUE if the user has been authenticated for any ColdFusion
+ * security context.
+ * If you specify the name of the security context, IsAuthenticated
+ * returns TRUE if the
+ * user has been authenticated for the specified ColdFusion security context.
+ *
+ * @param security-context-name   The security context name.
+ *
+ * @see AuthenticatedContext
+ * @see AuthenticatedUser
+ * @see IsAuthorized
+ */
+boolean IsAuthenticated(security_context_name);
+
+/**
+ * If you specify THROWONFAILURE=Yes in the /a> tag, you can enclose
+ * IsAuthorized in a CFTRY/CFCATCH block to handle possible exceptions
+ * programmatical
+ *
+ * @param resourcetype   String specifying the type of
+ *                       resource:<ul>
+ *                           <li>Application
+ *                           <li>CFML
+ *                           <li>File
+ *                           <li>DataSource
+ *                           <li>Component
+ *                           <li>Collection
+ *                           <li>CustomTag
+ *                           <li>UserObject
+ *                           </ul>
+ *
+ * @param resourcename   String specifying the name of the
+ *                       resource. The value specified varies
+ *                       depending on the resource type:
+ *                       The actual resource that is protected, not
+ *                       to be confused with the rule name, which you
+ *                       specify in the ColdFusion Administrator.
+ *                           <ul>
+ *                           <lI>APPLICATION -- Application name
+ *                           <li>CFML -- CFML tag name
+ *                           <li>FILE -- File name
+ *                           <li>DATASOURCE -- Data source name
+ *                           <li>COMPONENT -- Component name
+ *                           <li>COLLECTION -- Verity collection name
+ *                           <li>CUSTOMTAG -- Custom tag name
+ *                           <li>USEROBJECT -- Object name
+ *                           </ul>
+ * @param action         String specifying the action for
+ *                       which authorization is requested. Do not
+ *                       specify this parameter for COMPONENT and
+ *                       CUSTOMTAG. For all other resource types,
+ *                       this parameter is required.
+ *                           <ul>
+ *                           <li>APPLICATION -- ALL, USECLIENTVARIABLES
+ *                           <li>CFML -- Valid actions for the tag
+ *                               specified by resourcename
+ *                           <li>FILE -- READ ,WRITE
+ *                           <li>DATASOURCE -- ALL ,CONNECT ,SELECT
+ *                               ,INSERT ,UPDATE ,DELETE ,SP (stored procedure)
+ *                           <li>COMPONENT -- No actions for this
+ *                               resource type
+ *                           <li>COLLECTION -- DELETE ,OPTIMIZE
+ *                               ,PURGE ,SEARCH ,UPDATE
+ *                           <li>CUSTOMTAG -- No actions for this
+ *                               resource type
+ *                           <li>USEROBJECT -- Action specified via
+ *                               the ColdFusion Administrator
+ *                           </ul>
+ *
+ * @return TRUE if the user is authorized to perform the specified
+ * action on the specified ColdFusion resource.
+ *
+ * @see IsAuthenticated
+ */
+boolean IsAuthorized(resourcetype, resourcename, action=a );
+
+/**
+ * Returns TRUE if value is binary; otherwise, the function returns FALSE.
+ *
+ * @param value          Any value.
+ *
+ * @see ToBinary
+ * @see ToBase64
+ * @see IsNumeric
+ * @see YesNoFormat
+ */
+boolean IsBinary(value);
+
+/**
+ * Returns TRUE if value can be converted to a Boolean; otherwise, FALSE.
+ *
+ * @param value          Any number or string.
+ *
+ * @see IsNumeric
+ * @see YesNoFormat
+ */
+boolean IsBoolean(value);
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century valu
+ *
+ * @param string         Any string value.
+ *
+ * @return TRUE if string can be converted to a date/time value;
+ *         otherwise, FALSE. Note that ColdFusion converts the
+ *         Boolean return value to its string equivalent, "Yes" and "No."
+ *
+ * @see ParseDateTime
+ * @see CreateDateTime
+ * @see IsNumericDate
+ */
+boolean IsDate(string);
+
+/**
+ * Returns TRUE if debugging mode was set via the ColdFusion
+ * Administrator and FALSE if debugging mode is disabl
+ */
+boolean IsDebugMode();
+
+/**
+ * Evaluates a string value to determine if the variable named in the
+ * string value exists. IsDefined returns TRUE if the specified variable
+ * is found, FALSE if not found.  IsDefined provides an alternative to
+ * the ParameterExists function, eliminating the need for cumbersome
+ * expressions used to test for the existence of a variable:
+ * <pre>Evaluate("ParameterExists(#var_name#)")
+ *
+ * @param variable_name  A string value, the name of the
+ *                       variable you want to test for. This value
+ *                       must always be enclosed in quotation marks.
+ * @see Evaluate
+ */
+boolean IsDefined(variable_name);
+
+/**
+ * Returns TRUE if the year is a leap year; otherwise, FALSE.
+ *
+ * @param year           Number representing the year.
+ *
+ * @see DaysInYear
+ */
+boolean IsLeapYear(year);
+
+/**
+ * Returns TRUE if string can be converted to a number; otherwise, FALSE.
+ *
+ * @param string         Any string value.
+ *
+ * @see IsBinary
+ */
+boolean IsNumeric(string);
+
+/**
+ * Evaluates "real value" of date/time object. Returns TRUE if the
+ * number represents "real value" of the date/time object; otherwise, FALSE.
+ *
+ * @param number         Real number.
+ *
+ * @see IsDate
+ * @see ParseDateTime
+ */
+boolean IsNumericDate(number);
+
+/**
+ * The IsProtected function only returns true if the resource is
+ * protected by a rule in the security context or sandbox within
+ * which a request is being processed.  An application may need to
+ * determine if a resource is protected and if the current user is
+ * authorized to use the resource.  If a resource is not protected,
+ * then the<strong> </strong>IsAuthorized function returns true. 
+ * In order to determine if a resource is explicitly protected with
+ * a rule, you must use the IsProtected functi
+ *
+ * @param resourcetype   String specifying the type of
+ *                       resource:<ul>
+ *                           <li>Application
+ *                           <li>CFML
+ *                           <li>File
+ *                           <li>DataSource
+ *                           <li>Component
+ *                           <li>Collection
+ *                           <li>CustomTag
+ *                           <li>UserObject
+ *                           </ul>
+ * @param resourcename   String specifying the name of the
+ *                       resource. Resourcename is the actual resource
+ *                       that is protected, not to be confused with the
+ *                       rule name, which you specify in the ColdFusion
+ *                       Administrator. The value specified varies
+ *                       depending on the resource type:
+ *                           <ul>
+ *                           <lI>APPLICATION -- Application name
+ *                           <li>CFML -- CFML tag name
+ *                           <li>FILE -- File name
+ *                           <li>DATASOURCE -- Data source name
+ *                           <li>COMPONENT -- Component name
+ *                           <li>COLLECTION -- Verity collection name
+ *                           <li>CUSTOMTAG -- Custom tag name
+ *                           <li>USEROBJECT -- Object name
+ *                           </ul>
+ * @param action         String specifying the action for
+ *                       which authorization is requested. Do not
+ *                       specify this parameter for COMPONENT and
+ *                       CUSTOMTAG. For all other resource types,
+ *                       this parameter is required.
+ *                           <ul>
+ *                           <li>APPLICATION -- ALL, USECLIENTVARIABLES
+ *                           <li>CFML -- Valid actions for the tag
+ *                               specified by resourcename
+ *                           <li>FILE -- READ ,WRITE
+ *                           <li>DATASOURCE -- ALL ,CONNECT ,SELECT
+ *                               ,INSERT ,UPDATE ,DELETE ,SP (stored procedure)
+ *                           <li>COMPONENT -- No actions for this
+ *                               resource type
+ *                           <li>COLLECTION -- DELETE ,OPTIMIZE
+ *                               ,PURGE ,SEARCH ,UPDATE
+ *                           <li>CUSTOMTAG -- No actions for this
+ *                               resource type
+ *                           <li>USEROBJECT -- Action specified via
+ *                               the ColdFusion Administrator
+ *                           </ul>
+ *
+ * @return TRUE if the resource is protected in the security
+ *         context of the authenticated user.
+ *
+ * @see IsAuthorized
+ */
+boolean IsProtected(resourcetype, resourcename, action=a);
+
+/**
+ * Returns TRUE if value is a query.
+ *
+ * @param value          Query variable.
+ *
+ * @see QueryAddRow
+ */
+boolean IsQuery(value);
+
+/**
+ * Returns TRUE if value is a string, number, Boolean, or date/time value.
+ *
+ * @param value          Variable or expression.
+ */
+boolean IsSimpleValue(value);
+
+/**
+ * Returns TRUE if variable is a structure.
+ *
+ * @param variable       Variable name.
+ */
+boolean IsStruct(variable);
+
+/**
+ * JSStringFormat escapes special JavaScript characters, such as the
+ * single quote ('), double quotes ("), and newline character so that
+ * you can put arbitrary strings safely into JavaScript.
+ *
+ * @param string         Any string.
+ *
+ * @return a string that is safe to use with JavaScript.
+ */
+String JSStringFormat(string);
+
+/**
+ * Returns string converted to lowercase.
+ *
+ * @param string         String being converted to lowercase.
+ *
+ * @see UCase
+ */
+String LCase(string);
+
+/**
+ * Returns the count of characters from the beginning of a string argument.
+ *
+ * @param string         String from which the leftmost
+ *                       characters are retrieved.
+ * @param count          Positive integer indicating how
+ *                       many characters to return.
+ *
+ * @see Right
+ * @see Mid
+ * @see Len
+ */
+int Left(string, count);
+
+/**
+ * Returns the length of a string or a binary object.
+ *
+ * @param string         Any string or binary object.
+ *
+ * @see ToBinary
+ * @see Left
+ * @see Right
+ * @see Mid
+ */
+int Len(string or binary object);
+
+/**
+ * When appending an element into a list, ColdFusion needs to insert
+ * a delimiter. If delimiters contains more than one delimiter,
+ * ColdFusion defaults to the first delimiter in the string, or,
+ * (comma) if delimiters was omitted.  If you intend to use list
+ * functions on strings that are delimited by the conjunction ",  "
+ * (comma-space), as is common in HTTP header strings such as the
+ * COOKIE header, we recommend that you specify delimiters to include
+ * both comma and space because ColdFusion Server does not skip white
+ * space. For example,<pre>ListAppend(List, "MyCookie", "," &amp; CHR(3).
+ *
+ * @param list           Any list.
+ * @param value          Number or list being appended.
+ * @param delimiters     Set of delimiters used in list.
+ *
+ * @return list with value appended behind its last element.
+ *                                                                                                                                                                        /**
+ * @see ListPrepend
+ * @see ListInsertAt
+ * @see ListSetAt
+ */
+String ListAppend(list, value, delimiters=d);
+
+/**
+ * Returns list with all delimiter characters changed to new_delimiter string.
+ *
+ * @param list           List of delimiters being changed.
+ * @param new_delimiter  String being used as a new delimiter.
+ * @param delimiters     Set of delimiters used in list.
+ *
+ * @see ListFirst
+ * @see ListQualify
+ *
+ */
+String ListChangeDelims(list, new_delimiter, delimiters=d );
+
+/**
+ * Returns the index of the first item that contains the specified
+ * substring. The search is case-sensitive. If the substring is not
+ * found in any of the list items, it returns zero (0).
+ *
+ * @param list           List being searched.
+ * @param substring      String being sought in elements of list.
+ * @param delimiters     Set of delimiters used in list.
+ *
+ * @see ListContainsNoCase
+ * @see ListFind
+ */
+String ListContains(list, substring, delimiters=d );
+
+/**
+ * Returns the index of the first element of a list that contains the
+ * specified substring within elements. The search is case-insensitive.
+ * If no element is found, returns 0.
+ *
+ * @param list           List being searched.
+ * @param substring      String being sought in elements of list.
+ * @param delimiters     Set of delimiters used in list.
+ *
+ * @see ListContains
+ * @see ListFindNoCase
+ */
+String ListContainsNoCase(list, substring, delimiters=d );
+
+/**
+ * Returns list with element deleted at the specified position.
+ *
+ * @param list           Any list.
+ * @param position       Positive integer indicating the
+ *                       position of the element being deleted. The
+ *                       starting position in a list is denoted by
+ *                       the number 1, not 0.
+ * @param delimiters     Set of delimiters used in list.
+ *
+ * @see ListGetAt
+ * @see ListSetAt
+ * @see ListLen
+ */
+String ListDeleteAt(list, position, delimiters=d );
+
+/**
+ * Returns the index of the first occurrence of a value within a list.
+ * Returns 0 if no value is found. The search is case-sensitive.
+ *
+ * @param list           List being searched.
+ * @param value          Number or string that is to be
+ *                       found in the items of the list.
+ * @param delimiters     Set of delimiters used in the list.
+ *
+ * @see ListContains
+ * @see ListFindNoCase
+ */
+String ListFind(list, value, delimiters=d );
+
+/**
+ * Returns the index of the first occurrence of a value within a list.
+ * Returns 0 if no value was found. The search is case-insensitive.
+ *
+ * @param list           List being searched.
+ * @param value          Number or string being sought among
+ *                       elements of list.
+ * @param delimiters     Set of delimiters used in list.
+ *
+ * @see ListContains
+ * @see ListFind
+ */
+String ListFindNoCase(list, value, delimiters=d );
+
+/**
+ * Returns the first element of the list.
+ *
+ * @param list           List whose first element is being retrieved.
+ * @param delimiters     Set of delimiters used in list.
+ *
+ * @see ListGetAt
+ * @see ListLast
+ * @see ListQualify
+ */
+String ListFirst(list, delimiters=d );
+
+/**
+ * Returns the element at a given position.
+ * The first position in a list is denoted by the number 1, not
+ *
+ * @param list           List whose element is being retrieved.
+ * @param position       Positive integer indicating the
+ *                       position of the element being retrieved.
+ * @param delimiters     Set of delimiters used in list.
+ *
+ * @see ListFirst
+ * @see ListLast
+ * @see ListQualify
+ * @see ListSetAt
+ */
+String ListGetAt(list, position, delimiters=d );
+
+/**
+ * When inserting elements into a list, ColdFusion needs to insert a
+ * delimiter. If delimiters contain more than one delimiter, ColdFusion
+ * defaults to the first delimiter in the string, or, (comma) if
+ * delimiters was omitted.  If you intend to use list functions
+ * on strings that are delimited by the conjunction ", " (comma-space),
+ * as is common in HTTP header strings such as the COOKIE header, we
+ * recommend that you specify delimiters to include both comma and space
+ * because ColdFusion Server does not skip white space.
+ *
+ * @param list           Any list.
+ * @param position       Position where the value is being
+ *                       inserted. The first position in a list is
+ *                       denoted by the number 1, not 0.
+ * @param value          Number or list being inserted.
+ * @param delimiters     Set of delimiters used in list.
+ *
+ * @return list with value inserted at the specified position.
+ *
+ * @see ListDeleteAt
+ * @see ListAppend
+ * @see ListPrepend
+ * @see ListSetAt
+ */
+String ListInsertAt(list, position, value, delimiters=d);
+
+/**
+ * Returns the last element of the list.
+ *
+ * @param list           List whose last element is being retrieved.
+ * @param delimiters     Set of delimiters used in list.
+ *
+ * @see ListGetAt
+ * @see ListFirst
+ */
+String ListLast(list, delimiters=d );
+
+/**
+ * Returns the number of elements in the list.
+ *
+ * @param list           Any list.
+ * @param delimiters     Set of delimiters used in list.
+ *
+ * @see ListAppend
+ * @see ListDeleteAt
+ * @see ListInsertAt
+ * @see ListPrepend
+ */
+int ListLen(list, delimiters=d );
+
+/**
+ * When prepending an element to a list, ColdFusion needs to insert a
+ * delimiter. If delimiters contain more than one delimiter, ColdFusion
+ * defaults to the first delimiter in the string, or, (comma) if
+ * delimiters was omitted.  If you intend to use list functions
+ * on strings that are delimited by the conjunction ", " (comma-space),
+ * as is common in HTTP header strings such as the COOKIE header, we
+ * recommend that you specify delimiters to include both comma and
+ * space because ColdFusion Server does not skip white space.
+ *
+ * @param list           Any list.
+ * @param value          Number or list being prepended.
+ * @param delimiters     Set of delimiters used in list.
+ *
+ * @return list with value inserted at the first position,
+ *         shifting all other elements one to the right.
+ *
+ * @see ListAppend
+ * @see ListInsertAt
+ * @see ListSetAt
+ */
+String ListPrepend(list, value, delimiters=d );
+
+/**
+ * The new list may not preserve all of the delimiters in the
+ * previous li
+ *
+ * @param list           Any list of items or a variable
+ *                       that names a list.
+ * @param qualifier      The character that is to be placed
+ *                       at the beginning and end of each item in the list.
+ * @param delimiters     Set of delimiters used in list.
+ * @param elements       Either the keyword &quot;ALL&quot;
+ *                       or &quot;CHAR.&quot; If you specify
+ *                       &quot;ALL,&quot; the function qualifies all
+ *                       items in the list. If you specify
+ *                       &quot;CHAR,&quot; the function qualifiers
+ *                       only items comprised of alphabetic
+ *                       characters; it does not qualify numeric items.
+ *
+ * @return a list with a qualifying character around each item
+ *         in the list, such as double or single quotes.
+ *         See the List Functions table.
+ */
+String ListQualify(list, qualifier, delimiters=d, elements="CHAR" );
+
+/**
+ * Returns list without its first element. Returns an empty list (empty
+ * string) if list has only one element.
+ *
+ * @param list           List whose elements are being retrieved.
+ * @param delimiters     Set of delimiters used in list.
+ *
+ * @see ListFirst
+ * @see ListGetAt
+ * @see ListLast
+ */
+String ListRest(list, delimiters=d );
+
+/**
+ * When assigning an element to a list, ColdFusion needs to insert a
+ * delimiter. If delimiters contain more than one delimiter, ColdFusion
+ * defaults to the first delimiter in the string, or, (comma) if
+ * delimiters was omitted.  If you intend to use list functions
+ * on strings that are delimited by the conjunction ", " (comma-space),
+ * as is common in HTTP header strings such as the COOKIE header, we
+ * recommend that you specify delimiters to include both comma and
+ * space because ColdFusion Server does not skip white space.
+ *
+ * @param list           Any list.
+ * @param position       Any position. The first position in
+ *                       a list is denoted by the number 1, not 0.
+ * @param value          Any value.
+ * @param delimiters     Set of delimiters.
+ *
+ * @return list with value assigned to its element at specified
+ *         position.
+ *
+ * @see ListDeleteAt
+ * @see ListGetAt
+ * @see ListInsertAt
+ */
+String ListSetAt(list, position, value, delimiters=d);
+
+/**
+ * Sorts and delimits the items in a list according to the specified
+ * sort type and sort order.
+ *
+ * @param list           List to be sorted. The items in the
+ *                       list must be separated by commas or otherwise delimited.
+ * @param sort_type      The type of sort to be executed.
+ *                       You can specify any of the following sort types:<ul>
+ *                           <li>Numeric - sorts numbers.
+ *                           <li>Text - sorts text alphabetically.
+ *                           <li>Textnocase - sorts text alphabetically.
+ *                               The case is ignored.
+ *                           </ul>
+ * @param sort_order     The order to be followed. You can
+ *                       specify any of the following:<ul>
+ *                           <li>Asc - (Default) Ascending sort order.
+ *                           <li>Desc - Descending sort order.
+ *                           </ul>
+ * @param delimiter      Specify the character(s) used to
+ *                       delimit elements in the list. Default is
+ *                       comma ( , ).
+ */
+String ListSort(list, sort_type, sort_order="asc", delimiter="," );
+
+/**
+ * Converts the specified list into an array.
+ *
+ * @param list           Name of the list variable that
+ *                       contains the elements to be used to build an
+ *                       array. You can define a list variable with a
+ *                       CFSET statement. The items in the list must
+ *                       be separated by commas or otherwise delimited.
+ * @param delimiter      Specify the character(s) used to
+ *                       delimit elements in the list. Default is
+ *                       comma ( , ).
+ *
+ * @see ArrayToList
+ */
+Object ListToArray(list, delimiter="," );
+
+/**
+ * Returns the number of instances of a specified value in a list.
+ * The underlying search that finds the instances is case-sensitive.
+ *
+ * @param list           A list or the name of a list that
+ *                       is to be searched.
+ * @param value          The string or number that the
+ *                       function is to find and count.
+ * @param delimiter      Optional. Specify the character(s)
+ *                       used to delimit elements in the list. The
+ *                       default is a comma ( , ).
+ *
+ * @see ListValueCountNoCase
+ */
+int ListValueCount(list, value, delimiters=d );
+
+/**
+ * Returns the number of instances of a specified value in a list.
+ * The underlying search that finds the instances is not case-sensitive.
+ *
+ * @param list           A list or the name of a list that
+ *                       is to be searched.
+ * @param value          The string or number that the
+ *                       function is to find and count.
+ * @param delimiter      Optional. Specify the character(s)
+ *                       used to delimit elements in the list. The
+ *                       default is a comma ( , ).
+ *
+ * @see ListValueCount
+ */
+int ListValueCountNoCase(list, value, delimiters=d );
+
+/**
+ * Returns left-justified string of the specified field length.
+ *
+ * @param string         String to be left-justified.
+ * @param length         Length of field.
+ *
+ * @see CJustify
+ * @see RJustify
+ */
+String LJustify(string, length);
+
+/**
+ * Returns the natural logarithm of a number. Natural logarithms are
+ * based on the constant e (2.71828182845904).
+ *
+ * @param number         Positive real number for which you
+ *                       want the natural logarithm.
+ *
+ * @see Exp
+ * @see Log10
+ */
+float Log(number);
+
+/**
+ * Returns the logarithm of number to base 10.
+ *
+ * @param number         Positive real number for which you
+ *                       want the logarithm.
+ *
+ * @see Exp
+ * @see Log
+ */
+float Log10(number);
+
+/**
+ * Returns a currency value using the locale convention. Default value
+ * is "local."  See, also, LSEuroCurrencyFormat.
+ *
+ * @param number         The currency value.
+ * @param type           Currency type. Valid arguments are:<ul>
+ *                           <li><code>none</code> -- (For example, 10.00)
+ *                           <li><code>local</code> -- (Default. For
+ *                               example, $10.00)
+ *                           <li><code>international</code> -- (For
+ *                               example, USD10.00)
+ *                           </ul>
+ */
+String LSCurrencyFormat(number, type="none");
+
+/**
+ * Formats the date portion of a date/time value using the locale
+ * convention. Like DateFormat LSDateFormat returns a formatted
+ * date/time value. If no mask is specified, LSDateFormat returns a
+ * date value using the locale-specific format.
+ * When passing date/time value as a string, make sure it is
+ * enclosed in
+ * quotes. Otherwise, it is interpreted as a number representation of a
+ * date/time object returning undesired results.
+ *
+ * @param date           Date/time object in the period from
+ *                       100 AD to 9999 AD.
+ * @param mask           Set of characters that are used to
+ *                       show how ColdFusion should display the date:<ul>
+ *                           <li><code>d</code> -- Day of the month
+ *                               as digits with no leading zero for
+ *                               single-digit days.
+ *                           <li><code>dd</code> -- Day of the month
+ *                               as digits with a leading zero for
+ *                               single-digit days.
+ *                           <li><code>ddd</code> -- Day of the week
+ *                               as a three-letter abbreviation.
+ *                           <li><code>dddd</code> -- Day of the week
+ *                               as its full name.
+ *                           <li><code>m</code> -- Month as digits
+ *                               with no leading zero for single-digit months.
+ *                           <li><code>mm</code> -- Month as digits
+ *                               with a leading zero for single-digit months.
+ *                           <li><code>mmm</code> -- Month as a
+ *                               three-letter abbreviation.
+ *                           <li><code>mmmm</code> -- Month as its full name.
+ *                           <li><code>y</code> -- Year as last two
+ *                               digits with no leading zero for
+ *                               years less than 10.
+ *                           <li><code>yy</code> -- Year as last two
+ *                               digits with a leading zero for years
+ *                               less than 10.
+ *                           <li><code>yyyy</code> -- Year represented by
+ *                               four digits.
+ *                           <li><code>gg</code> -- Period/era string.
+ *                               Currently ignored, but reserved
+ *                               for future use
+ *                           </ul>
+ */
+String LSDateFormat(date, mask="dd-mmm-yy" );
+
+/**
+ * The LSEuroCurrencyFormat function can display the Euro symbol
+ * (&euro;) only on Euro-enabled computers, such as Windows NT 4.0
+ * SP4, that have Euro-enabled fonts installed.  This function is
+ * similar to LSCurrencyFormat except that LSEuroCurrencyFormat
+ * displays the Euro currency symbol (&euro;) or the international
+ * Euro sign (EUR) if you specify the type as local or international,
+ * respectively, and the Euro is the accepted currency of the locale.
+ * <p>
+ * Note: The locale is set with the SetLocale function.
+ * @param currency-number   The currency value.
+ * @param type           Currency type. Valid arguments are:<ul>
+ *                           <li><code>none</code> -- (For example, 10.00)
+ *                           <li><code>local</code> -- (Default. For
+ *                               example, 10.00 &euro;)
+ *                           <li><code>international</code> -- (For
+ *                               example, EUR10.00)
+ *                           </ul>
+ *
+ * @return a currency value using the convention of the locale
+ *         and the Euro as the currency symbol. Default value is
+ *         "local." <div>
+ *
+ * @see LSParseEuroCurrency
+ * @see LSCurrencyFormat
+ * @see SetLocale
+ */
+String LSEuroCurrencyFormat(currency_number, type="none" );
+
+/**
+ * Checks whether a string is a locale-specific currency string. Returns
+ * TRUE if string is a currency string, FALSE otherwi
+ *
+ * @param string         The locale-specific currency string.
+ */
+boolean LSIsCurrency(string);
+
+/**
+ * Years less than 100 are interpreted as 20<sup>th</sup> century valu
+ * Like the IsDate function, LSIsDate returns TRUE if string can be
+ * converted to a date/time value in the current locale, FALSE otherwise.
+ *
+ * @param string         Any string value.
+ */
+boolean LSIsDate(string);
+
+/**
+ * Like the IsNumeric function, LSIsNumeric returns TRUE if string
+ * can be converted to a number in the current locale; otherwise, FAL
+ *
+ * @param string         Any string value.
+ */
+boolean LSIsNumeric(string);
+
+/**
+ * Formats a number using the locale convention. If mask is omitted, the
+ * number is formatted as an integer.
+ * <p>
+ * If you do not specify a sign for the mask, positive and negative numbers
+ * will not align in columns. As a result, if you expect to display both
+ * positive
+ * and negative numbers in your application, use either the space or use
+ * -
+ * (hyphen) to force a space in front of positive numbers and
+ * a minus sign
+ * in front of negative numbers.
+ * <p>
+ * The position of codes in format masks determines where those codes
+ * will have effect. For example, if you place a dollar sign character
+ * at the far left of a format mask, ColdFusion displays a dollar sign
+ * at the very left edge of the formatted number. If you separate the
+ * dollar sign on the left edge of the format mask by at least one
+ * underscore, ColdFusion displays the dollar sign just to the left
+ * of the digits in the formatted number.
+ * <p>
+ * In all examples below,
+ * the numbers under the masks and the formatted output are used to
+ * clearly show the positions of characters.
+ *
+ * @param number         The number you want to format.
+ * @param mask           All LSNumberFormat mask characters
+ *                       apply except that ($) dollar, (,) comma, and
+ *                       (.) dot are mapped to their locale-specific
+ *                       counterparts.<div>
+ *                       <li> _ (underscore) -- Optional digit placeholder.
+ *                       <li> 9 -- Optional digit placeholder. Same
+ *                       as _, but shows decimal places more clearly.
+ *                       <li> . -- Specifies the location of a mandatory decimal point.
+ *                       <li> 0 -- Located to the left or right of a
+ *                       mandatory decimal point, to force padding
+ *                       with zeros.
+ *                       <li> ( ) -- Places parentheses around the
+ *                       mask if the number is less than 0.
+ *                       <li> + -- Places + in front of positive
+ *                       numbers, - (minus sign) in front of negative numbers.
+ *                       <li> - -- Place " " (space) in front of
+ *                       positive, - (minus sign) in front of negative numbers.
+ *                       <li> , -- Separates thousands with commas.
+ *                       <li> L,C -- Specifies left-justify or center-justify
+ *                            a number within the width of the mask column.
+ *                            L or C must appear as the first character
+ *                            of the mask. By default, numbers are right-justified.
+ *                       <li> $ -- Places a dollar sign in front of
+ *                       the formatted number. $ must appear as the
+ *                       first character of the mask.
+ *                       <li> ^ -- Separates left from right formatting.
+ *                       </ul>
+ *
+ */
+String LSNumberFormat(number, mask=m);
+
+/**
+ * Converts a locale-specific currency string to a number. Attempts
+ * conversion through each of the three default currency formats (none,
+ * local, international). Returns the number matching the value of
+ * string.  See, also, LSCurrencyFormat and LSParseEuroCurrency.
+ * <p>
+ * Note that if you specify a year in the date, you should specify
+ * the full year.<p>If the date is formatted for a locale other than
+ * the English (US) locale, add or subtract the conversion time,
+ * depending on the locale. LSParseDateTime does not accept POP
+ * dates, nor does it have the capacity to convert dates to Greenwich
+ * Mean Time.<p>Years from 0 to 29 are interpreted as 21<sup>st</sup>
+ * century values. Years 30 to 99 are interpreted as 20<sup>th</sup>
+ * century values.
+ *
+ * @param string         The locale-specific string you want
+ *                       to convert to a number.
+ */
+float LSParseCurrency(string);
+
+/**
+ * A locale-specific version of the ParseDateTime function, except that
+ * there is no option for POP date/time object parsing. Returns a
+ * date/time object.
+ *
+ * @param date-time-string  String being converted to date/time
+ *                       object. This string must be in a form that
+ *                       is readable in the current locale setting.
+ *                       By default the locale is set to English (US).
+ *
+ * @see ParseDateTime
+ * @see SetLocale
+ */
+datetime LSParseDateTime(date_time_string);
+
+/**
+ * The LSParseEuroCurrency function can read the Euro symbol (&euro;)
+ * only on Euro-enabled computers, such as Windows NT 4.0 SP4, that
+ * have Euro-enabled fonts installed. <p>This function is similar
+ * to LSParseCurrency except that LSParseEuroCurrency parses only
+ * the Euro currency symbol (&euro;) or the international Euro sign
+ * (EUR), not other currency symbols such as the dollar sign ($) or
+ * the pound sign (&pound).
+ * Converts a locale-specific currency string that contains the Euro
+ * symbol (&euro;) or sign (EUR) to a number. Attempts conversion
+ * through each of the three default currency.
+ * formats (none, local, international). Returns the number matching the
+ * value of string.<p>See, also, LSParseCurrency, LSEuroCurrencyFormat
+ * and SetLocale.
+ *
+ * @param currency-string   The locale-specific string you want
+ *                       to convert to a number.
+ */
+float LSParseEuroCurrency(currency_string);
+
+/**
+ * Converts a locale-specific string to a number. Returns the number
+ * matching the value of string.
+ *
+ * @param string         String being converted to a number.
+ */
+float LSParseNumber(string);
+
+/**
+ * When passing date/time value as a string, make sure it is
+ * enclosed in
+ * quotes. Otherwise, it is interpreted as a number representation of a
+ * date/time object returning undesired results.
+ *
+ * @param string         Any date/time value or string
+ *                       convertible to a time value.
+ * @param mask           A set of masking characters determining the format:<ul>
+ *                       <li><code>h</code> -- Hours with no leading
+ *                       zero for single-digit hours. (Uses a 12-hour clock.)
+ *                       <li><code>hh</code> -- Hours with a leading
+ *                       zero for single-digit hours. (Uses a 12-hour clock.)
+ *                       <li><code>H</code> -- Hours with no leading
+ *                       zero for single-digit hours. (Uses a 24-hour clock.)
+ *                       <li><code>HH</code> -- Hours with a leading
+ *                       zero for single-digit hours. (Uses a 24-hour clock.)
+ *                       <li><code>m</code> -- Minutes with no leading zero for single-digit minutes
+ *                       <li><code>mm</code> -- Minutes with a leading zero for single-digit minutes
+ *                       <li><code>s</code> -- Seconds with no leading zero for single-digit seconds
+ *                       <li><code>ss</code> -- Seconds with a leading zero for single-digit seconds
+ *                       <li><code>t</code> -- Single-character time
+ *                       marker string, such as A or P. Ignored by
+ *                       some locales.
+ *                       <li><code>tt</code> -- Multiple-character
+ *                       time marker string, such as AM or PM
+ *                       </ul>
+ *
+ * @return a custom-formatted time value using the locale convention.
+ *
+ * @see LSParseDateTime
+ */
+String LSTimeFormat(time, mask="hh:mm:ss");
+
+/**
+ * Returns string with leading spaces removed.
+ *
+ * @param string         String being left-trimmed.
+ *
+ * @see RTrim
+ * @see ToBase64
+ */
+String LTrim(string);
+
+/**
+ * Returns the maximum, or higher, value of two numbers.
+ *
+ * @param number1        Any numbers.
+ * @param number2        Any numbers.
+ *
+ * @see Min
+ */
+float Max(number1, number2);
+
+/**
+ * Returns count characters from string beginning at start position.
+ *
+ * @param string         Any string.
+ * @param start          Starting position for count.
+ * @param count          Number of characters being returned.
+ *
+ * @see Left
+ * @see Len
+ * @see Right
+ */
+String Mid(string, start, count);
+
+/**
+ * Returns the minimum, or smaller, value of two numbers.
+ *
+ * @param number1        Any numbers.
+ * @param number2        Any numbers.
+ *
+ * @see Max
+ */
+float Min(number1, number2);
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century
+ * values.<p>When passing a date/time value as a string, make sure
+ * it is enclosed in quotes. Otherwise, it is interpreted as a
+ * number representation of a date/time object, returning undesired resul
+ *
+ * @param date           Any date.
+ *
+ * @return the ordinal for the minute, ranging from 0 to 59.
+ *
+ * @see DatePart
+ * @see Hour
+ * @see Second
+ */
+int Minute(date);
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century
+ * values.  When passing a date/time value as a string, make sure
+ * it is enclosed in quotes. Otherwise, it is interpreted as a
+ * number representation of a date/time object, returning undesired results.
+ *
+ * @return the ordinal for the month, ranging from 1 (January)
+ *         to 12 (December).
+ *
+ * @param date           Any date.
+ *
+ * @see DatePart
+ * @see MonthAsString
+ * @see Quarter
+ */
+int Month(Date);
+
+/**
+ * Returns the name of the month corresponding to month_number.
+ *
+ * @param month_number   An integer ranging from 1 to 12.
+ *
+ * @see DatePart
+ * @see Month
+ * @see Quarter
+ */
+String MonthAsString(month_number);
+
+/**
+ * Returns the current date and time as a valid date time object.
+ *
+ * @see CreateDateTime
+ * @see DatePart
+ */
+datetime Now();
+
+/**
+ * Creates a custom-formatted number value. If no mask is specified,
+ * returns the value as an integer with a thousands separator.
+ * <p>
+ * If you do not specify a sign for the mask, positive and negative numbers
+ * will not align in columns. As a result, if you expect to display both
+ * positive
+ * and negative numbers in your application, use either the space or use
+ * -
+ * (minus sign) to force a space in front of positive numbers
+ * and a minus
+ * sign in front of negative numbers.
+ * <p>
+ * The position of codes in format masks determines where those codes
+ * will have effect. For example, if you place a dollar sign character
+ * at the far left of a format mask, ColdFusion displays a dollar sign
+ * at the very left edge of the formatted number. If you separate the
+ * dollar sign on the left edge of the format mask by at least one
+ * underscore, ColdFusion displays the dollar sign just to the left
+ * of the digits in the formatted number. <p>In all examples below,
+ * the numbers under the masks and the formatted output are used to
+ * clearly show the positions of characters.
+ *
+ * @param number         The number you want to format.
+ * @param mask           Set of characters that are used to
+ *                       show how ColdFusion should display the number.
+ *                       <ul>
+ *                       <li> _ (underscore) -- Optional digit placeholder.
+ *                       <li> 9 -- Optional digit placeholder. Same
+ *                       as _, but shows decimal places more clearly.
+ *                       <li> . -- Specifies the location of a mandatory decimal point.
+ *                       <li> 0 -- Located to the left or right of a
+ *                       mandatory decimal point, to force padding
+ *                       with zeros.
+ *                       <li> ( ) -- Places parentheses around the
+ *                       mask if the number is less than 0.
+ *                       <li> + -- Places + in front of positive
+ *                       numbers, - (minus sign) in front of negative numbers.
+ *                       <li> - -- Place " " (space) in front of
+ *                       positive, - (minus sign) in front of negative numbers.
+ *                       <li> , -- Separates thousands with commas.
+ *                       <li> L,C -- Specifies left-justify or center-justify
+ *                           a number within the width of the mask column.
+ *                           L or C must appear as the first character of
+ *                           the mask. By default, numbers are right-justified.
+ *                       <li> $ -- Places a dollar sign in front of
+ *                       the formatted number. $ must appear as the
+ *                       first character of the mask.
+ *                       <li> ^ -- Separates left from right formatting.
+ *                       </ul>
+ *
+ * @see DecimalFormat
+ * @see DollarFormat
+ * @see IsNumeric
+ */
+String NumberFormat(number, mask=m);
+
+/**
+ * ParagraphFormat is useful for displaying data entered into
+ * TEXTAREA fields.
+ *
+ * @param string         String being converted to the HTML
+ *                       paragraph format.
+ *
+ * @return string with converted single newline characters
+ *         (CR/LF sequences) into spaces and double newline characters
+ *         into HTML paragraph markers (&lt;P&gt;).
+ *
+ * @see StripCR
+ *
+ */
+String ParagraphFormat(string);
+
+/**
+ * Returns True if the specified parameter has been passed to the
+ * current template or has already been created during execution of
+ * the current template. Otherwise returns NO.  This function is
+ * provided for backward compatibility with previous versions of
+ * ColdFusion. You should use the function IsDefined instead.
+ *
+ * @param parameter      Any syntactically valid parameter name.
+ *
+ * @see GetClientVariablesList
+ * @see IsDefined
+ */
+boolean ParameterExists(parameter);
+
+/**
+ * ParseDateTime is similar to CreateDateTime except that it takes a
+ * string instead of specifically enumerated date/time values.  Both
+ * ParseDateTime and CreateDateTime are provided primarily to increase
+ * the readability of code in compound expressions.  Years from 0 to
+ * 29 are interpreted as 21<sup>st</sup> century values. Years 30 to 99
+ * are interpreted as 20<sup>th</sup> century values.  When passing a
+ * date/time value as a string, make sure it is enclosed in quotes.
+ * Otherwise, it is interpreted as a number representation of a
+ * date/time object, returning undesired results.
+ * <p>
+ * conversion time, depending on the locale. LSParseDateTime does not
+ * accept POP dates, nor does it have the capacity to convert dates to
+ * Greenwich Mean Time.
+ *
+ * @param date-time-string  String being converted to date/time object.
+ * @param pop-conversion POP or STANDARD. If you specify
+ *                       POP, the function takes the date/time string
+ *                       passed from a POP mail server and converts
+ *                       it to GMT (Greenwich Mean Time) for the
+ *                       English (US) locale. If you specify STANDARD
+ *                       or nothing, the function provides no conversion.
+ *                       See the Note for more information about parsing
+ *                       date-time strings that are not from the
+ *                       English (US) locale.
+ *
+ * @return a date/time object from a string.
+ *
+ * @see LSParseDateTime
+ * @see IsDate
+ * @see IsNumericDate
+ */
+datetime ParseDateTime(date_time_string, pop_conversion="standard");
+
+/**
+ * Returns the number 3.14159265358979, the mathematical constant Pi,
+ * accurate to 15 digits.
+ *
+ * @see ASin
+ * @see Cos
+ * @see Sin
+ * @see Tan
+ */
+float Pi();
+
+/**
+ * PreserveSingleQuotes is useful in SQL statements.
+ * <p>
+ * Prevents ColdFusion from automatically &quot;escaping&quot; single
+ * quotes contained in variable.
+ *
+ * @param variable       Variable containing the string for
+ *                       which single quotes are preserved.
+ */
+String PreserveSingleQuotes(variable);
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century
+ * values.  When passing a date/time value as a string, make sure
+ * it is enclosed in quotes. Otherwise, it is interpreted as a
+ * number representation of a date/time object, returning undesired results.
+ *
+ * @param date           Any date.
+ *
+ * @return the number of the quarter, an integer ranging from 1 to 4.
+ *
+ * @see DatePart
+ * @see Month
+ */
+int Quarter(date);
+
+/**
+ * You can add columns to any type of query object, such as queries
+ * retrieved with CFQUERY or queries created with QueryNew. The only
+ * type of query that you cannot use QueryAddColumn on is a cached
+ * query.<p>This function is particularly useful if you are an Oracle
+ * developer and would like to generate a query object from the arrays
+ * of output parameters which Oracle stored procedures can generate.
+ * Padding is added, if necessary, on the query columns to ensure
+ * that all columns have the same number of row.
+ * <p>
+ * Adds a new column to a specified query and populates the column's
+ * rows with the contents of a one-dimensional array. Returns the
+ * query object with the additional column. Padding is added,
+ * if necessary,
+ * the query columns to ensure that all columns have the same number of
+ * rows.
+ *
+ * @param query          Name of a query that was created
+ *                       with QueryNew.
+ * @param column-name    The name of the new column.
+ * @param array-name     The name of the array whose elements are to
+ *                       populate the new column.
+ *
+ * @see QueryNew
+ * @see QueryAddRow
+ * @see QuerySetCell
+ */
+boolean QueryAddColumn(query, column_name, array_name);
+
+/**
+ * Adds a specified number of empty rows to the specified query. Returns
+ * the total number of rows in the query that you are adding rows to.
+ *
+ * @param query          Name of the query already executed.
+ * @param number         Number of rows to add to the query.
+ *                       Default is 1.
+ *
+ * @see QueryNew
+ * @see QueryAddColumn
+ * @see QuerySetCell
+ */
+boolean QueryAddRow(query, number=1);
+
+/**
+ * If you specify an empty string, you can add a new column to the query
+ * and populate its rows with the contents of a one-dimensional array
+ * using QueryAddColumn.
+ *
+ * @param columnlist     Comma-separated list of columns you
+ *                       want to add to the new query or an empty string.
+ *
+ * @return an empty query with a set of columns or an empty
+ *         query with no columns. See Usage for more information.
+ *
+ * @see QueryAddColumn
+ * @see QueryAddRow
+ * @see QuerySetCell
+ */
+Object QueryNew(columnlist);
+
+/**
+ * Sets the cell in a specified column to a specified value. If no
+ * row number is specified, the cell on the last row will be set.
+ * Returns TRUE.
+ *
+ * @param query          Name of the query already executed.
+ * @param column_name    Name of the column in the query.
+ * @param value          Value to set in the specified cell.
+ * @param row_number     Number of the row. Defaults to last row.
+ *
+ * @see QueryAddColumn
+ * @see QueryAddRow
+ */
+boolean QuerySetCell(query, column_name, value, row_number=last_row );
+
+/**
+ * Returns a comma-separated list of the values of each record returned
+ * from a previously executed query. Each value in the list is enclosed
+ * in single quotes.
+ *
+ * @param query.column   Name of an already executed query
+ *                       and column. Separate query name and column
+ *                       name with a period ( . ).
+ * @param delimiter      A string delimiter to separate
+ *                       column data.
+ *
+ * @see ValueList
+ */
+String QuotedValueList(query.column, delimiter="," );
+
+/**
+ * To ensure even greater randomness, call Randomize before calling Rand.
+ *
+ * @return a random decimal number in the range 0 to 1.
+ *
+ * @see Randomize
+ * @see RandRange
+ */
+float Rand();
+
+/**
+ * Seeds the random number generator in ColdFusion with the integer part
+ * of a number. By seeding the random number generator with a variable
+ * value, you help to ensure that the Rand function generates highly
+ * random numbers.
+ * <p>
+ * Call this function before calling Rand. Although this function
+ * returns a decimal number in the range 0 to 1, it is not a random
+ * number and you should not use it.
+ *
+ * @param number         Any number.
+ *
+ * @see Rand
+ * @see RandRange
+ */
+float Randomize(number);
+
+/**
+ * Returns a random integer between two specified numbers. Note that
+ * requests for random integers greater than 100,000,000 will result
+ * in non-random behavior. This restriction prevents overflow during
+ * internal computations.
+ *
+ * @param number1        Integer numbers less than 100,000,000.
+ * @param number2        Integer numbers less than 100,000,000.
+ *
+ * @see Rand
+ * @see Randomize
+ */
+int RandRange(number1, number2);
+
+/**
+ * In order to find multiple instances of a substring, you must call
+ * REFind more than once, each time with a different starting position.
+ * To determine the next starting position for the function, use the
+ * returnsubexpressions parameter and add the value returned in the
+ * position key to the value in the length key. <p>If you do not use
+ * parentheses in the regular expression, the returnsubexpressions
+ * parameter returns single element arrays that denote the position
+ * and length of the first match found in the string. <p>If you do
+ * use parentheses to denote subexpressions within the regular
+ * expression, the returnsubexpressions parameter returns the
+ * position and length of the first match of the regular expression in
+ * the first element of the respective arrays; the position and length
+ * of the first instance of each subexpression within the regular
+ * expression are returned in subsequent elements of the array.
+ *
+ * @param reg_expression Regular expression used for search.
+ *                       This regular expression can include
+ *                       POSIX-specified character classes
+ *                       (for example, [[:alpha:]], [[:digit:]],
+ *                        [[:upper:]], and [[:lower:]]).
+ * @param string         String being searched.
+ * @param start          Optional. Starting position for the
+ *                       search. Default is 1.
+ * @param returnsubexprs Optional. A Boolean value indicating whether
+ *                       a substring is returned. If you set this
+ *                       parameter to TRUE, the function returns a
+ *                       CFML structure composed of two arrays containing
+ *                       the position and length of the first substring
+ *                       that matches the criteria of the search.
+ *                       You can retrieve the position and length of
+ *                       the matching subexpression by using the keys
+ *                       "pos" and "len." If there are no occurrences
+ *                       of the regular expression, the "pos" and the
+ *                       "len" arrays each contain one element that
+ *                       has a value of zero. If you set this
+ *                       parameter to FALSE, a scalar value is
+ *                       returned indicating the position of the first
+ *                       occurrence of a regular expression.
+ *                       The default value of this parameter is FALSE.
+ *
+ * @return the position of the first occurrence of a regular
+ *         expression in a string starting from the specified
+ *         position. Returns 0 if no occurrences are found. This
+ *         search is case sensitive.<p>Returns the position and
+ *         length of the first occurrence of a regular expression in a
+ *         string if the returnsubexpressions parameter is set to True.
+ *         See the description of the returnsubexpressions parameter and
+ *         the &quot;Usage&quot; section for details.
+ *
+ * @see Find
+ * @see REFindNoCase
+ * @see REReplace
+ */
+int REFind(reg_expression, string, start=0, returnsubexprs=false);
+
+/**
+ * In order to find multiple instances of a substring, you must call
+ * REFind more than once, each time with a different starting position.
+ * To determine the next starting position for the function, use the
+ * returnsubexpressions parameter and add the value returned in the
+ * position key to the value in the length key. <p>If you do not use
+ * parentheses in the regular expression, the returnsubexpressions
+ * parameter returns single element arrays that denote the position
+ * and length of the first match found in the string. <p>If you do
+ * use parentheses to denote subexpressions within the regular
+ * expression, the returnsubexpressions parameter returns the
+ * position and length of the first match of the regular expression in
+ * the first element of the respective arrays; the position and length
+ * of the first instance of each subexpression within the regular
+ * expression are returned in subsequent elements of the array.
+ *
+ * @param reg_expression Regular expression used for search.
+ *                       This regular expression can include
+ *                       POSIX-specified character classes (for example,
+ *                       [[:alpha:]], [[:digit:]], [[:upper:]], and [[:lower:]]).
+ * @param string         String being searched.
+ * @param start          Optional. Starting position for the
+ *                       search. Default is 1.
+ * @param returnsubexpressions              Optional. A Boolean
+ *                       value indicating whether a substring is
+ *                       returned. If you set this parameter to TRUE,
+ *                       the function returns a CFML structure composed
+ *                       of two single-element arrays containing the
+ *                       position and length of the first substring
+ *                       that matches the criteria of the search. You
+ *                       can retrieve the position and length of the
+ *                       matching subexpression by using the keys
+ *                       "pos" and "len." If there are no occurrences
+ *                       of the regular expression, the "pos" and the
+ *                       "len" arrays each contain one element that
+ *                       has a value of zero. If you set this parameter
+ *                       to FALSE, a scalar value is returned
+ *                       indicating the position of the first
+ *                       occurrence of a regular expression. The
+ *                       default value of this parameter is FALSE.
+ *
+ * @return the position of the first occurrence of a regular
+ *         expression in a string starting from the specified
+ *         position if the returnsubexpressions parameter is not
+ *         set to True. Returns 0 if no occurrences are found.
+ *         The search is case-insensitive.
+ *         <p>
+ *         Returns the position and length of the first occurrence of
+ *         a regular expression in a string if the returnsubexpressions
+ 8         parameter is set to True. See the description of the
+ *         returnsubexpressions parameter and the &quot;Usage&quot;
+ *         section for details.
+ *
+ * @see Find
+ * @see FindNoCase
+ * @see REReplace
+ * @see REReplaceNoCase
+ */
+int REFindNoCase(reg_expression, string, start=0, returnsubexpressions=false);
+
+/**
+ * Returns string with count characters removed from the specified
+ * starting position. Return 0 if no characters are found.
+ *
+ * @param string         Any string.
+ * @param start          Starting position for the search.
+ * @param count          Number of characters being removed.
+ *
+ * @see Insert
+ * @see Len
+ */
+String RemoveChars(string, start, count);
+
+/**
+ * Returns a string created from string being repeated a specified
+ * number of times.
+ *
+ * @param string         String being repeated.
+ * @param count          Number of repeats.
+ *
+ * @see CJustify
+ * @see LJustify
+ * @see RJustify
+ */
+String RepeatString(string, count);
+
+/**
+ * Returns string with occurrences of substring1 being replaced with
+ * substring2 in the specified scope.
+ *
+ * @param string         Any string.
+ * @param substring1     String to be replaced.
+ * @param substring2     String that should replace occurrences of substring1.
+ * @param scope          Defines how to complete the replace
+ *                       operation:<ul>
+ *                       <li><code>ONE</code> -- Replace only the
+ *                       first occurrence (default).
+ *                       <li><code>ALL</code> -- Replace all occurrences.
+ *                       </ul>
+ *
+ * @see Find
+ * @see ReplaceNoCase
+ * @see ReplaceList
+ * @see REReplace
+ */
+String Replace(string, substring1, substring2, scope="one");
+
+/**
+ * Note that the list of substrings to be replaced is processed one
+ * after another. In this way you may experience recursive replacement
+ * if one of your list1 elements is contained in list2 elements. The
+ * second example listed below demonstrates such replacement.
+ *
+ * @param string         Any string.
+ * @param list1          Comma-delimited list of substrings
+ *                       to be replaced.
+ * @param list2          Comma-delimited list of replace
+ *                       substrings.
+ *
+ * @return string with all occurrences of the elements from the
+ *         specified comma-delimited list being replaced with
+ *         their corresponding elements from another comma-delimited
+ *         list. The search is case-sensitive.
+ *
+ * @see Find
+ * @see Replace
+ * @see REReplace
+ */
+String ReplaceList(string, list1, list2);
+
+/**
+ * Returns string with occurrences of substring1 being replaced
+ * regardless of case matching with substring2 in the specified scope.
+ *
+ * @param string         Any string.
+ * @param substring1     String to be replaced.
+ * @param substring2     String that should replace occurrences of substring1.
+ * @param scope          Defines how to complete the replace
+ *                       operation:<ul>
+ *                       <li><code>ONE</code> -- Replace only the
+ *                       first occurrence (default).
+ *                       <li><code>ALL</code> -- Replace all occurrences.
+ *                       </ul>
+ *
+ * @see Find
+ * @see Replace
+ * @see ReplaceList
+ * @see REReplace
+ */
+String ReplaceNoCase(string, substring1, substring2, scope="one" );
+
+/**
+ * Returns string with a regular expression being replaced with
+ * substring in the specified scope. This is a case-sensitive search.
+ *
+ * @param string         Any string.
+ * @param reg_expression Regular expression to be replaced.
+ *                       This regular expression can include
+ *                       POSIX-specified character classes (for example,
+ *                       [:alpha:], [:digit:], [:upper:], and [:lower:]).
+ * @param substring      String replacing reg_expression.
+ * @param scope          Defines how to complete the replace
+ *                       operation:<ul>
+ *                       <li><code>ONE</code> -- Replace only the
+ *                       first occurrence (default).
+ *                       <li><code>ALL</code> -- Replace all occurrences.
+ *                       </ul>
+ *
+ * @see REFind
+ * @see Replace
+ * @see ReplaceList
+ * @see REReplaceNoCase
+ */
+String REReplace(string, reg_expression, substring, scope="one" );
+
+/**
+ * Returns string with a regular expression being replaced with
+ * substring in the specified scope. The search is case-insensitive.
+ *
+ * @param string         Any string.
+ * @param reg_expression Regular expression to be replaced.
+ *                       This regular expression can include
+ *                       POSIX-specified character classes (for example,
+ *                       [:alpha:], [:digit:], [:upper:], and [:lower:]).
+ * @param substring      String replacing reg_expression.
+ * @param scope          Defines how to complete the replace
+ *                       operation:<ul>
+ *                       <li><code>ONE</code> -- Replace only the
+ *                       first occurrence (default).
+ *                       <li><code>ALL</code> -- Replace all occurrences.
+ *                       </ul>
+ *
+ * @see REFind
+ * @see REFindNoCase
+ * @see Replace
+ * @see ReplaceList
+ */
+String REReplaceNoCase(string, reg_expression, substring, scope="one" );
+
+/**
+ * Returns string with reversed order of characters.
+ *
+ * @param string         String being reversed.
+ *
+ * @see Left
+ * @see Mid
+ * @see Right
+ */
+String Reverse(string);
+
+/**
+ * Returns the rightmost count characters of a string.
+ *
+ * @param string         String from which the rightmost
+ *                       characters are retrieved.
+ * @param count          Integer indicating how many characters to return.
+ *
+ * @see Left
+ * @see Len
+ * @see Mid
+ */
+String Right(string, count);
+
+/**
+ * Returns right-justified string in the specified field length.
+ *
+ * @param string         String to be right-justified.
+ * @param length         Length of field.
+ *
+ * @see CJustify
+ * @see LJustify
+ */
+String RJustify(string, length);
+
+/**
+ * Rounds a number to the closest integer.
+ *
+ * @param number         Number being rounded.
+ *
+ * @see Ceiling
+ * @see Fix
+ * @see Int
+ */
+int Round(number);
+
+/**
+ * Returns string with removed trailing spaces.
+ *
+ * @param string         String being right-trimmed.
+ *
+ * @see LTrim
+ * @see Trim
+ */
+String RTrim(string);
+
+/**
+ * For a date/time value, returns the ordinal for the second, an integer
+ * from 0 to 59.
+ * <p>
+ * When passing a date/time value as a string, make sure it is enclosed
+ * in quotes. Otherwise, it is interpreted as a number representation of
+ * a date/time object, returning undesired resul
+ *
+ * @param date           Any date.
+ *
+ * @see DatePart
+ * @see Hour
+ * @see Minute
+ */
+int Second(date);
+
+/**
+ * Sets the locale to the specified new locale for the current session.
+ *
+ * The variable Server.ColdFusion.SupportedLocales is initialized at startup
+ * with a comma-delimited list of the locales that ColdFusion and the
+ * operating system support. GetLocale( ) will return an entry from that
+ * list.
+ * SetLocale will fail if called with a locale name not on that list.
+ *
+ * @param new_locale     The name of the locale you want to set.
+ *
+ * @return the old locale in case it needs to be restored.
+ *
+ * @see GetLocale
+ */
+String SetLocale(String new_locale);
+
+/**
+ * Sets the value of a profile entry in an initialization file. This
+ * function returns an empty string if the operation succeeds or an
+ * error message if the operation fails.
+ *
+ * @param iniPath        Fully qualified path (drive, directory,
+ *                       filename, and extension) of the initialization file.
+ * @param section        The section of the initialization
+ *                       file in which the entry is to be set.
+ * @param entry          The name of the entry that is to be set.
+ * @param value          The value to which to set the entry.
+ *
+ * @see GetProfileString
+ */
+String SetProfileString(iniPath, section, entry, value);
+
+/**
+ * The function sets the variable specified by name to value
+ * and returns
+ * the new value of the variable.
+ * <p>
+ * When setting client variables, it is required that the client
+ * variable exists prior to the using of this function and the
+ * ClientManagement attribute of CFAPPLICATION tag has been set to
+ * "Yes" for this template.
+ *
+ * @param name           Valid variable name.
+ * @param value          String or number assigned to the variable.
+ *
+ * @see DeleteClientVariable
+ * @see GetClientVariablesList
+ */
+void SetVariable(name, value);
+
+/**
+ * Determines the sign of a number. Returns 1 if number is positive;
+ * 0 if number is 0; and -1 if number is negative.
+ *
+ * @param number         Any number.
+ *
+ * @see Abs
+ */
+int Sgn(number);
+
+/**
+ * Returns the sine of the given angle.
+ *
+ * @param number         Angle in radians for which you want
+ *                       the sine. If the angle is in degrees,
+ *                       multiply it by PI()/180 to convert it to radians.
+ *
+ * @see ASin
+ * @see Atn
+ * @see Cos
+ * @see Pi
+ * @see Tan
+ */
+float Sin(number);
+
+/**
+ * Returns all characters from string from its beginning until it
+ * reaches a character from the set of characters. The search is
+ * case-sensitive.
+ *
+ * @param string         Any string.
+ * @param set            String containing one or more
+ *                       characters being sought.
+ *
+ * @see GetToken
+ * @see SpanIncluding
+ */
+String SpanExcluding(string, set);
+
+/**
+ * Returns all characters from string from its beginning until it
+ * reaches a character that is not included in the specified set of
+ * characters. The search is case-sensitive.
+ *
+ * @param string         Any string.
+ * @param set            String containing one or more
+ *                       characters being sought.
+ *
+ * @see GetToken
+ * @see SpanExcluding
+ */
+String SpanIncluding(string, set);
+
+/**
+ * Number must be greater than or equal to
+ *
+ * @param number         Number for which you want the
+ *                       square root.
+ *
+ * @return a positive square root.
+ *
+ * @see Abs
+ */
+float Sqr(number);
+
+/**
+ * Function StripCR is useful for preformatted HTML display of data
+ * (PRE) entered into TEXTAREA fiel
+ *
+ * @param string         String being formatted.
+ *
+ * @return string with all carriage return characters removed.
+ *
+ * @see ParagraphFormat
+ */
+String StripCR(string);
+
+/**
+ * Removes all data from the specified structure. Always returns Yes.
+ *
+ * @param structure      Structure to be cleared.
+ *
+ * @see StructDelete
+ * @see StructFind
+ * @see StructInsert
+ * @see StructIsEmpty
+ * @see StructKeyArray
+ * @see StructCount
+ * @see StructKeyArray
+ * @see StructUpdate
+ */
+boolean StructClear(structure);
+
+/**
+ * This function throws an exception if structure does not exist.
+ *
+ * @param structure      Structure to be copied.
+ *
+ * @return a new structure with all the keys and values of the
+ *         specified structure.
+ *
+ * @see StructClear
+ * @see StructDelete
+ * @see StructFind
+ * @see StructInsert
+ * @see StructIsEmpty
+ * @see StructKeyArray
+ * @see StructKeyArray
+ * @see StructUpdate
+ */
+Object StructCopy(structure);
+
+/**
+ * This function throws an exception if structure does not exist.
+ *
+ * @param structure      Structure to be accessed.
+ *
+ * @return the number of keys in the specified structure.
+ *
+ * @see StructClear
+ * @see StructDelete
+ * @see StructFind
+ * @see StructInsert
+ * @see StructIsEmpty
+ * @see StructKeyArray
+ * @see StructKeyArray
+ * @see StructUpdate
+ *
+ */
+int StructCount(structure);
+
+/**
+ * Removes the specified item from the specified structure.
+ *
+ * @param structure      Structure containing the item to
+ *                       be removed.
+ * @param key            Item to be removed.
+ * @param indicatenotexisting  Indicates whether the function
+ *                       returns FALSE if key does not exist. The
+ *                       default is FALSE, which means that the
+ *                       function returns Yes regardless of whether
+ *                       key exists. If you specify TRUE for this
+ *                       parameter, the function returns Yes if key
+ *                       exists and No if it does not.
+ *
+ * @see StructClear
+ * @see StructFind
+ * @see StructInsert
+ * @see StructIsEmpty
+ * @see StructKeyArray
+ * @see StructCount
+ * @see StructKeyArray
+ * @see StructUpdate
+ */
+boolean StructDelete(structure, key, indicatenotexisting=false );
+
+/**
+ * This function throws an exception if structure does not exi
+ *
+ * @param structure      Structure containing the value to
+ *                       be returned.
+ * @param key            Key whose value is returned.
+ *
+ * @return the value associated with the specified key in the
+ *         specified structure.
+ *
+ * @see StructClear
+ * @see StructDelete
+ * @see StructInsert
+ * @see StructIsEmpty
+ * @see StructKeyArray
+ * @see StructCount
+ * @see StructKeyArray
+ * @see StructUpdate
+ */
+String StructFind(structure, key);
+
+/**
+ * Inserts the specified key-value pair into the specified structure.
+ * Returns Yes if the insert was successful and No if an error occurs.
+ * <p>
+ * This function throws an exception if structure does not exist or
+ * if key exists and allowoverwrite is set to FAL
+ *
+ * @param structure      Structure to contain the new key-value pair.
+ * @param key            Key that contains the inserted value.
+ * @param value          Value to be added.
+ * @param allowoverwrite Optionally indicates whether to
+ *                       allow overwriting an existing key. The
+ *                       default is FALSE.
+ *
+ * @see StructClear
+ * @see StructDelete
+ * @see StructFind
+ * @see StructIsEmpty
+ * @see StructKeyArray
+ * @see StructCount
+ * @see StructKeyArray
+ * @see StructUpdate
+ */
+boolean StructInsert(structure, key, value, allowoverwrite=false);
+
+/**
+ * Indicates whether the specified structure contains data. Returns TRUE
+ * if structure is empty and FALSE if it contains data.
+ * <p>
+ * This function throws an exception if structure does not exist.
+ *
+ * @param structure      Structure to be tested.
+ *
+ * @see StructClear
+ * @see StructDelete
+ * @see StructFind
+ * @see StructInsert
+ * @see StructKeyArray
+ * @see StructCount
+ * @see StructKeyArray
+ * @see StructUpdate
+ */
+boolean StructIsEmpty(structure);
+
+/**
+ * The array of keys returned by StructKeyArray is not in any particular
+ * order. In order to sort keys alphabetically or numerically, use
+ * ArraySort.<p>Note that this function throws an exception if structure
+ * does not exi
+ *
+ * @param structure      Structure from which the list of
+ *                       keys is to be extracted.
+ *
+ * @return an array of the keys in the specified ColdFusion
+ *         structure.
+ *
+ * @see StructClear
+ * @see StructDelete
+ * @see StructFind
+ * @see StructInsert
+ * @see StructIsEmpty
+ * @see StructKeyList
+ * @see StructKeyExists
+ * @see StructCount
+ * @see StructUpdate
+ */
+Object StructKeyArray(structure);
+
+/**
+ * This function throws an exception if structure does not exi
+ *
+ * @param structure      Structure to be tested.
+ * @param key            Key to be tested.
+ *
+ * @return TRUE if the specified key is in the specified structure and
+ * FALSE if it is not.
+ *
+ * @see StructClear
+ * @see StructDelete
+ * @see StructFind
+ * @see StructInsert
+ * @see StructIsEmpty
+ * @see StructCount
+ * @see StructKeyArray
+ * @see StructUpdate
+ */
+boolean StructKeyExists(structure, key);
+
+/**
+ * The list of keys returned by StructKeyList is not in any particular
+ * order. In order to sort keys alphabetically or numerically, use
+ * ListSort.<p>Note that this function throws an exception if structure
+ * does not exis
+ *
+ * @param structure      Structure from which the list of
+ *                       keys are to be extracted.
+ * @param delimiter      Optional. The value of this parameter
+ *                       indicates the character that will separate
+ *                       the keys in the list. By default, a comma
+ *                       (,) is used.
+ *
+ * @return the list of keys that are in the specified ColdFusion
+ *         structure.
+ *
+ * @see StructKeyArray
+ * @see StructClear
+ * @see StructDelete
+ * @see StructFind
+ * @see StructInsert
+ * @see StructIsEmpty
+ * @see StructCount
+ * @see StructUpdate
+ */
+String StructKeyList(structure, delimiter=",");
+
+/**
+ * Returns a new structure.
+ *
+ * @see StructClear
+ * @see StructDelete
+ * @see StructFind
+ * @see StructInsert
+ * @see StructIsEmpty
+ * @see StructKeyArray
+ * @see StructCount
+ * @see StructUpdate
+ */
+Object StructNew();
+
+/**
+ * Updates the specified key with the specified value. Returns Yes if
+ * the function is successful and throws an exception if an error occurs.
+ * <p>
+ * This function throws an exception if structure does not exist.
+ *
+ * @param structure      Structure to be updated.
+ * @param key            Key whose value is updated.
+ * @param value          New value.
+ *
+ * @see StructClear
+ * @see StructDelete
+ * @see StructFind
+ * @see StructInsert
+ * @see StructIsEmpty
+ * @see StructKeyArray
+ * @see StructCount
+ * @see StructKeyArray
+ */
+boolean StructUpdate(structure, key, value);
+
+/**
+ * Returns the tangent of a given angle.
+ *
+ * @param number         Angle in radians for which you want
+ *                       the tangent. If the angle is in degrees,
+ *                       multiply it by PI()/180 to convert it to radians.
+ *
+ * @see Atn
+ * @see ASin
+ * @see Cos
+ * @see Sin
+ * @see Pi
+ */
+float Tan(number);
+
+/**
+ * When passing a date/time value as a string, make sure it is enclosed
+ * in quotes. Otherwise, it is interpreted as a number representation of
+ * a date/time object, returning undesired results.
+ *
+ * @param time           Any date/time value or string
+ *                       convertible to a time value.
+ * @param mask           A set of masking characters determining the format:<ul>
+ *                       <li><code>h</code> -- Hours with no leading
+ *                       zero for single-digit hours. (Uses a 12-hour clock.)
+ *                       <li><code>hh</code> -- Hours with a leading
+ *                       zero for single-digit hours. (Uses a 12-hour clock.)
+ *                       <li><code>H</code> -- Hours with no leading
+ *                       zero for single-digit hours. (Uses a 24-hour clock.)
+ *                       <li><code>HH</code> -- Hours with a leading
+ *                       zero for single-digit hours. (Uses a 24-hour clock.)
+ *                       <li><code>m</code> -- Minutes with no leading zero for single-digit minutes
+ *                       <li><code>mm</code> -- Minutes with a leading zero for single-digit minutes
+ *                       <li><code>s</code> -- Seconds with no leading zero for single-digit seconds
+ *                       <li><code>ss</code> -- Seconds with a leading zero for single-digit seconds
+ *                       <li><code>t</code> -- Single-character time
+ *                       marker string, such as A or P
+ *                       <li><code>tt</code> -- Multiple-character
+ *                       time marker string, such as AM or PM
+ *                       </ul>
+ *
+ * @return a custom-formatted time value. If no mask is specified, the
+ * TimeFormat function returns time value using the hh:mm tt format.
+ *
+ * @see CreateTime
+ * @see Now
+ * @see ParseDateTime
+ */
+String TimeFormat(time, mask="hh:mm:ss" );
+
+/**
+ * Base 64 provides 6 bit encoding of 8-bit ASCII characters. Because
+ * high ASCII values and binary objects are not safe for transport
+ * over internet protocols such as HTTP and SMTP, ColdFusion offers
+ * Base 64 as a means to safely send ASCII and binary data over these
+ * protocols. <p>In addition, Base 64 allows you to store binary objects
+ * in a database if you convert the data into Base 64 fir
+ *
+ * @param string or binary_object               String or
+ *                       binary object that is to be converted to Base 64.
+ *
+ * @return the Base 64 representation of the string or binary
+ *         object. Base64 is a format that uses printable characters,
+ *         allowing binary data to be sent in forms and Email, and
+ *         stored in a database or file.
+ */
+String ToBase64(binary_object);
+
+/**
+ * Base 64 provides 6 bit encoding of 8-bit ASCII characters.If you
+ * receive data in Base 64, you can re-create the actual binary object
+ * that it represents, such as a .gif , .jpeg, or executable file, by
+ * using the ToBinary functio
+ *
+ * @param string_in_Base64 or binary_value              String
+ *                       in Base 64 that is to be converted to binary
+ *                       or binary value that is to be tested to
+ *                       ensure that it is an acceptable binary value.
+ *
+ * @return the binary representation of Base64 encoded data.
+ */
+Object ToBinary(string_in_Base64);
+
+/**
+ * Attempts to convert a value of any type, including a binary value,
+ * into a string.
+ * <p>
+ * If ToString cannot convert the value into a string, it throws an
+ * exception. All simple values can be converted into a string, even
+ * binary values that do not contain byte zero can be convert
+ *
+ * @param any_value      The value that is to be converted
+ *                       into a string.
+ */
+String ToString(any_value);
+
+/**
+ * Returns string with both leading and trailing spaces removed.
+ *
+ * @param string         String being trimmed.
+ *
+ * @see LTrim
+ * @see RTrim
+ */
+String Trim(string);
+
+/**
+ * Returns string converted to uppercase.
+ *
+ * @param string         String being converted to uppercase.
+ *
+ * @see LCase
+ */
+String UCase(string);
+
+/**
+ * URL encoding refers to a data format where all high ASCII and
+ * non-alphanumeric characters are encoded using a percent sign
+ * followed by the two character hexadecimal representation of the
+ * character code. For example, a character with code 129 will be
+ * encoded as %81. In addition, spaces can be encoded using the plus
+ * sign (+).<p>Query strings in HTTP are always URL-encoded.
+ * <p>URL-encoded strings can be created using the URLEncodedFormat functi
+ * Decodes a URL-encoded string.
+ *
+ * @param urlEncodedString  A string that has been URL-encoded.
+ * @see URLEncodedFormat
+ */
+String URLDecode(String urlEncodedString);
+
+/**
+ * URL encoding refers to a data format where all high ASCII and
+ * non-alphanumeric characters are encoded using a percent sign
+ * followed by the two character hexadecimal representation of the
+ * character code. For example, a character with code 129 will be
+ * encoded as %81. In addition, spaces can be encoded using the plus
+ * sign (+).<p>Query strings in HTTP are always URL-encoded.
+ * <p>URL-encoded strings can be created using the URLEncodedFormat functi
+ *
+ * @param string         String being URL encoded.
+ *
+ * @return a URL-encoded string. Spaces are replaced with + and
+ *         all non-alphanumeric characters with equivalent
+ *         hexadecimal escape sequences. This function enables
+ *         you to pass arbitrary strings within a URL, because
+ *         ColdFusion automatically decodes all URL parameters
+ *         that are passed to the template.<p>See also URLDecode.
+ */
+String URLEncodedFormat(string);
+
+/**
+ * Returns a number that the beginning of a string can be converted to.
+ * Returns 0 if conversion is not possible.
+ *
+ * @param string         Any string.
+ *
+ * @see IsNumeric
+ */
+float Val(string);
+
+/**
+ * Returns a comma-separated list of the values of each record returned
+ * from a previously executed query.
+ *
+ * @param query.column   Name of an already executed query
+ *                       and column. Separate query name and column
+ *                       name with a period ( . ).
+ * @param delimiter      A string delimiter to separate
+ *                       column data.
+ *
+ * @see QuotedValueList
+ */
+String ValueList(query.column, delimiter=",");
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century
+ * values.<p>When passing date as a string, make sure it is enclosed in
+ * quotes. Otherwise, it is interpreted as a number representation of
+ * a date returning undesired results.
+ *
+ * @return the ordinal for the week number in a year; an integer
+ *         ranging from 1 to 53.
+ *
+ * @param date           Any date/time value or string
+ *                       convertible to date.
+ *
+ * @see DatePart
+ */
+int Week(date);
+
+/**
+ * XMLFormat escapes special XML characters so that you can put
+ * arbitrary strings safely into XML. The characters that are escaped
+ * by XMLFormat include the following:
+ * <ul>
+ * <li>greater than sign (&gt;)
+ * <li>less than sign (&lt;)
+ * <li>single quotation mark (')
+ * <li>double quotation mark (")
+ * <li>ampersand (&amp;)
+ * </ul>
+ *
+ * @param text           string to escape for XML.
+ *
+ * @return a string that is safe to use with XML.
+ */
+String XMLFormat(text);
+
+/**
+ * Appends text to the page output stream. Although you can call this
+ * function anywhere within a page, it is most useful inside a
+ * CFSCRIPT block.
+ * <p>
+ * NOTE: When within the CFQUERY and CFMAIL tags, the WriteOutput function
+ * does not output to the current page, but instead writes to the
+ * current SQL
+ * statement or mail text. Do not use WriteOutput within CFQUERY and
+ * CFMAIL.
+ *
+ * @param string         Text to be appended to the page
+ *                       output stream.
+ */
+String WriteOutput(string);
+
+/**
+ * Years from 0 to 29 are interpreted as 21<sup>st</sup> century values.
+ * Years 30 to 99 are interpreted as 20<sup>th</sup> century
+ * values.<p>When passing a date as a string, make sure it is
+ * enclosed in quotes. Otherwise, it is interpreted as a number
+ * representation of a date returning, undesired results.
+ *
+ * @param date           Any date/time value or string
+ *                       convertible to date.
+ *
+ * @return the year corresponding to date.
+ *
+ * @see DatePart
+ * @see IsLeapYear
+ */
+int Year(date);
+
+/**
+ * The YesNoFormat function returns all non-zero values as YES and zero
+ * values as NO.
+ *
+ * @param value          Any number or Boolean value.
+ *
+ * @return Boolean data as YES or NO.
+ *
+ * @see IsBinary
+ * @see IsNumeric
+ */
+String YesNoFormat(value);
+
+
+
+// ColdFusion Variables
+//
+// ColdFusion returns a wide variety of variables, such as those
+// returned in a CFDIRECTORY or CFFTP operation. Variables
+// are usually referenced by "scoping" the variable according to
+// its type, as in Session.varname, or Application.varname.
+
+/**
+ * ColdFusion supports the Variables scope. Unscoped variables
+ * created with the CFSET tag acquire the Variables scope
+ * by default. For example, the variable created by:
+ * <PRE>
+ * <CFSET linguist = Chomsky>
+ * </PRE>
+ * can be referenced as:
+ * <PRE>
+ * #Variables.linguist#
+ * </PRE>
+ */
+interface Variables {
+}
+/**
+ * These client variables are read-only.
+ */
+interface Client {
+   int CFID;
+   string CFToken;
+   string HitCount;
+   string LastVisit;
+   string TimeCreated;
+   string URLToken;
+}
+/**
+ * Use CFAPPLICATION to enable application and session variables.
+ * They are referenced as:
+ * <PRE>
+ * Application.myvariable
+ * Session.myvariable
+ * </PRE>
+ * Use CFLOCK to ensure that modifications to shared data
+ * occur one after another. See CFML Language Reference
+ * description of CFLOCK for details.
+ * The predefined application and session variables are:
+ */
+interface Application {
+   string ApplicationName;
+}
+/**
+ * Use CFAPPLICATION to enable application and session variables.
+ * They are referenced as:
+ * <PRE>
+ * Application.myvariable
+ * Session.myvariable
+ * </PRE>
+ * Use CFLOCK to ensure that modifications to shared data
+ * occur one after another. See CFML Language Reference
+ * description of CFLOCK for details.
+ * The predefined application and session variables are:
+ */
+interface Session {
+   int CFID;
+   string CFToken;
+   string URLToken;
+}
+/**
+ * Use the Server. prefix to reference server variables.
+ */
+interface Server {
+   interface ColdFusion {
+      string ProductName;
+      string ProductVersion;
+      string ProductLevel;
+      string SerialNumber;
+      string SupportedLocales;
+   }
+   interface Server.OS {
+      string Name;
+      string AdditionalInformation;
+      string Version;
+      string BuildNumber;
+   }
+}
+/**
+ * Any ColdFusion custom tag returns the following variables.
+ * <P>
+ * A custom tag can also set a Caller variable to provide information
+ * to the caller. The Caller variable is set as follows:
+ * <PRE>
+ * <CFSET Caller. variable_name = "value">
+ * </PRE>
+ * The calling page can access the variable with the <CFOUTPUT> tag:
+ * <PRE>
+ * <CFOUTPUT>#Caller. variable_name#</CFOUTPUT>
+ * </PRE>
+ */
+interface CFTag {
+   string ExecutionMode;
+   string HasEndTag;
+   string GeneratedContent;
+   string AssocAttribs[index];
+}
+/**
+ * Request variables store data that pertains to the processing
+ * of a single page request. Request variables allow you to store
+ * data in a structure that can be passed to nested tags, such as
+ * Custom Tags, and processed once.
+ * Set a Request variable to provide information to nested tags.
+ * The Request variable is set as follows:
+ * <PRE>
+ * <CFSET Request. field_name1 = "value">
+ * <CFSET Request. field_name2 = "value">
+ * <CFSET Request. field_name3 = "value">
+ * ...
+ * </PRE>
+ * Each nested tag can access the variable with the <CFOUTPUT> tag:
+ * <PRE>
+ * <CFOUTPUT>#Request. field_name1#</CFOUTPUT>
+ * </PRE>
+ */
+interface Request {
+}
+/**
+ * ColdFusion supports the Form variable FieldNames. FieldNames
+ * returns the names of the fields on a form. You can
+ * use it on the action page associated with a form.
+ */
+interface Form {
+   string FieldNames[];
+}
+/**
+ * Within a CFCATCH block, the properties of the active exception
+ * can be accessed as variables:
+ */
+interface CFCATCH {
+   string Type;
+   string Message;
+   string Detail;
+   string ErrNumber;
+   string NativeErrorCode;
+   string SQLState;
+   string LockName;
+   string LockOperation;
+   string MissingFileName;
+   string TagContext;
+   string ErrNumber;
+   string ErrorCode;
+   string ExtendedInfo;
+}
+CFCATCH Catch;
+/**
+ * When used with ACTION=LIST, CFDIRECTORY returns a
+ * query object. Queryname is the value of the NAME attribute
+ * used in the CFDIRECTORY operation.
+ */
+interface CFDIRECTORY {
+   string CurrentRow;
+   string RecordCount;
+   string ColumnList;
+
+   string Name;
+   string Size;
+   string Type;
+   string DateLastModified;
+   string Attributes;
+   string Mode;
+}
+/**
+ * When CFERROR generates an error page, the following error
+ * variables are available if you have specified TYPE="Request",
+ * TYPE="Exception", TYPE="Monitor" , TYPE="Validation".
+ * <P>
+ * In addition, any of the CFCATCH variables that apply to the
+ * exception type can be accessed within the Error scope.
+ * <P>
+ * NOTE: You can substitute the prefix CFERROR for Error if you
+ * have specified the type as "Exception" or "Monitor"; for example,
+ * CFERROR.Diagnostics, CFERROR.Mailto or CFERROR.DateTime.
+ */
+interface CFERROR {
+   string Diagnostics;
+   string MailTo;
+   string DateTime;
+   string Browser;
+   string GeneratedContent;
+   string RemoteAddress;
+   string HTTPReferer;
+   string Template;
+   string QueryString;
+
+   string ValidationHeader;
+   string InvalidFields;
+   string ValidationFooter;
+
+   string Type;
+   string Message;
+   string Detail;
+   string ErrNumber;
+   string NativeErrorCode;
+   string SQLState;
+   string LockName;
+   string LockOperation;
+   string MissingFileName;
+   string TagContext;
+   string ErrorCode;
+   string ExtendedInfo;
+}
+CFERROR Error;
+/**
+ * File variables are read-only. Use the CFFILE. prefix to reference
+ * file variables: CFFILE.ClientDirectory. Note that
+ * although still supported, the File. prefix is deprecated in
+ * favor of the CFFILE. prefix.
+ */
+interface CFFILE {
+   string AttemptedServerFile;
+   string ClientDirectory;
+   string ClientFile;
+   string ClientFileExt;
+   string ClientFileName;
+   string ContentSubType;
+   string ContentType;
+   string DateLastAccessed;
+   string FileExisted;
+   string FileSize;
+   string FileWasAppended;
+   string FileWasOverwritten;
+   string FileWasRenamed;
+   string FileWasSaved;
+   string OldFileSize;
+   string ServerDirectory;
+   string ServerFile;
+   string ServerFileExt;
+   string ServerFileName;
+   string TimeCreated;
+   string TimeLastModified;
+}
+/**
+ * When you use the CFFTP STOPONERROR attribute, three
+ * variables are populated.
+ * <P>
+ * Some of the CFFTP file and directory operations provide a
+ * return value in the variable:
+ * <PRE>
+ * CFFTP.ReturnValue
+ * </PRE>
+ * The value of the CFFTP.ReturnValue variable is determined
+ * by the results of the ACTION attribute used in CFFTP. When
+ * you specify any of the following actions, CFFTP returns a
+ * value:
+ * <P>
+ * When you use CFFTP with the ListDir action, CFFTP returns a
+ * query object. Queryname is the value of the NAME attribute
+ * used in the CFFTP operation. Row is the row number for each
+ * file/directory entry returned by the ListDir operation. A separate
+ * row is created for each entry.
+ */
+interface CFFTP {
+   string Succeeded;
+   string ErrorCode;
+   string ErrorText;
+   string ReturnValue;
+
+   string GetCurrentDir;
+   string GetCurrentURL;
+   string ExistsDir;
+   string ExistsFile;
+   string Exists;
+
+   string Name[row];
+   string Path[row];
+   string URL[row];
+   string Length[row];
+   string LastModified[row];
+}
+/**
+ * CFHTTP GET operations can return text and binary files. Files
+ * are downloaded and the contents stored in a variable or file,
+ * depending on the MIME type.
+ */
+interface CFHTTP {
+   string FileContent;
+   string MimeType;
+   string Header;
+   string ResponseHeader[http_hd_key];
+   string StatusCode;
+}
+/**
+ * CFLDAP returns information about the LDAP query if
+ * ACTION=QUERY:
+ */
+interface CFLDAP {
+   string CurrentRow;
+   string RecordCount;
+   string ColumnList;
+}
+/**
+ * CFPOP returns the following result columns, depending on
+ * the value of the ACTION attribute and the use of other
+ * attributes like ATTACHMENTPATH. Queryname is the value of
+ * the NAME attribute used in the CFPOP operation.
+ */
+interface CFPOP {
+   string Date;
+   string From;
+   string Body;
+   string Header;
+   string MessageNumber;
+   string ReplyTo;
+   string Subject;
+   string CC;
+   string To;
+   string CurrentRow;
+   string RecordCount;
+   string ColumnList;
+   string Attachments;
+   string AttachmentFiles;
+}
+/**
+ * In addition to returning data from a ColdFusion data source,
+ * the CFQUERY tag also returns information about the query:
+ * CFQUERY also uses the name of the query to scope data
+ * about the query:
+ */
+interface CFQUERY {
+   string CurrentRow;
+   string RecordCount;
+   string ColumnList;
+}
+/**
+ * In addition to returning data from a ColdFusion data source,
+ * the CFQUERY tag also returns information about the query:
+ * CFQUERY also uses the name of the query to scope data
+ * about the query:
+ * <P>
+ * The CFSTOREDPROC tag also returns:
+ */
+interface CFSTOREDPROC {
+   string ExecutionTime;
+   string CurrentRow;
+   string RecordCount;
+   string ColumnList;
+   string StatusCode;
+}
+/**
+ * The CFREGISTRY tag returns a query record set that you can
+ * reference after executing the GetAll action. Queryname is
+ * the value of the NAME attribute used in the CFREGISTRY
+ * operation.
+ */
+interface CFREGISTRY {
+   string Entry;
+   string Type;
+   string Value;
+}
+/**
+ * Every CFSEARCH operation returns the following variables.
+ * Searchname is the value of the NAME attribute used in the
+ * CFSEARCH operation.
+ */
+interface CFSEARCH {
+   string URL;
+   string Key;
+   string Title;
+   string Score;
+   string Custom1;
+   string Custom2;
+   string Summary;
+   string RecordCount;
+   string CurrentRow;
+   string RecordsSearched;
+   string ColumnList;
+}
+/**
+ * If the WRITEOUTPUT attribute is NO, CFSERVLET returns the
+ * text output of the servlet in the following variable:
+ * <P>
+ * If the servlet returns any response headers, they are in the
+ * CFSERVLET return structure. Each response header can be
+ * accessed through a key. In the following syntax, servletRe-sponseHeader
+ * is a key, which is the name of the response
+ * header set in the servlet:
+ */
+interface CFSERVLET {
+   string Output;
+   string servletResponseHeader;
+}
+/**
+ * This is a list of CGI 1.1 variables many Web servers create
+ * when a CGI script is called.
+ * <P>
+ * NOTE: The CGI variables that are available for your use vary
+ * with the Web server and configuration. Some of the follow-ing
+ * variables may not be available to you.
+ * <P>
+ * NOTE: The CERT_ISSUER, CERT_SUBJECT,
+ * CLIENT_CERT_ENCODED variables are available only if you
+ * are using client certificates.
+ */
+interface CGI {
+   // Request
+   string AUTH_TYPE;
+   string CONTENT_LENGTH;
+   string CONTENT_TYPE;
+   string PATH_INFO;
+   string PATH_TRANSLATED;
+   string QUERY_STRING;
+   string REMOTE_ADDR;
+   string REMOTE_HOST;
+   string REMOTE_USER;
+   string REQUEST_METHOD;
+   string SCRIPT_NAME;
+   // Server
+   string GATEWAY_INTERFACE;
+   string SERVER_NAME;
+   string SERVER_PORT;
+   string SERVER_PROTOCOL;
+   string SERVER_SOFTWARE;
+   // Client
+   string CERT_ISSUER;
+   string CERT_SUBJECT;
+   string CLIENT_CERT_ENCODED;
+   string HTTP_ACCEPT;
+   string HTTP_IF_MODIFIED_SINCE;
+   string HTTP_USER_AGENT;
+}

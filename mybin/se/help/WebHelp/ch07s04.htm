@@ -1,0 +1,99 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Working With Android Projects</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch07.htm" title="Chapter 7.  Building, Running, and Debugging"><link rel="prev" href="ch07s03.htm" title="Working With Google Web Toolkit Projects"><link rel="next" href="ch08.htm" title="Chapter 8.  Editing Features"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_workingwithandroid_14180_78682"></a>
+    <a name="sect_workingwithandroid_14180_998342"></a>
+    <a class="indexterm" name="sect_workingwithandroid_C01E9C1F_B3AA"></a>
+    <a class="indexterm" name="sect_workingwithandroid_7778303D_0CB7"></a>Working With Android Projects</h2></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithandroid_14180_1001592"></a>
+      <a class="indexterm" name="sect_workingwithandroid_3B7E4269_6949"></a>Getting Started</h3></div></div></div><p class="NormalText">
+        Create a new Android project at <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">New </strong></span> &#8594; <span><strong class="guimenuitem">Java </strong></span> &#8594; <span><strong class="guimenuitem">Java - Android Application</strong></span>.  
+		You will be prompted to fill in information pertaining to your new project as shown in the dialog below.  
+		</p><div class="mediaobject"><img src="Resources/android_targetmenu.png"></div><p class="NormalText">
+		The <span><strong class="guilabel">Build Target</strong></span> field refers to the Android platform library that you 
+		would like to build your project against.  The menu to the right of this field will allow you to 
+		choose a specific target from those available if you have already specified an Android SDK 
+		location.  If you choose a target from this menu, the <span><strong class="guilabel">Minimum SDK</strong></span> field 
+		will be automatically generated.
+	</p><p class="NormalText">
+		If your Android project uses the Android NDK toolset, select <span><strong class="guilabel">Android NDK Project</strong></span> 
+        and specify the location of your Android NDK installation in the <span><strong class="guilabel">NDK Location</strong></span> 
+        field.  SlickEdit will add your native-code source files and makefiles to your project, and run the 
+        NDK build tools as part of the normal build process for your application. 
+		</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+			Set the <span><strong class="guilabel">ANDROID_NDK_ROOT</strong></span> environment variable to the root of your Android NDK 
+			installation when working with NDK applications in SlickEdit. 
+		  </p></div><p class="NormalText">
+	</p><p class="NormalText">
+		Open an existing Android project at <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">Open Other Workspace </strong></span> &#8594; <span><strong class="guimenuitem">Android Project... </strong></span>, and  
+		browse to your existing <code class="filename">AndroidManifest.xml</code> file.  
+		You will then be prompted for some project information in case you want to update your 
+		Android project before opening in SlickEdit.  
+		</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> 
+			We recommend that you update your existing project with the location of the local 
+			Android SDK (and NDK, if applicable) and your desired build target in order to ensure 
+            that SlickEdit is properly configured to work with your project. 
+		  </p></div><p class="NormalText">
+    </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithandroid_14180_1001593"></a>Android Toolbar</h4></div></div></div><p class="NormalText">
+		 The Android Toolbar will be automatically shown when an Android project is opened in SlickEdit.  
+		 You can manually show the toolbar at <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Toolbars</strong></span>.  The toolbar has buttons for opening 
+		 Android utility tools contained in the Android SDK (from left to right: Android AVD Manager, 
+		 Android SDK Manager, and DDMS). 
+		 </p><div class="mediaobject"><img src="Resources/android_toolbar.png"></div><p class="NormalText">
+	  </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithandroid_14180_1001594"></a>
+      <a class="indexterm" name="sect_workingwithandroidt_3B7E4269_6944"></a>Building and Running</h3></div></div></div><p class="NormalText">
+		Once your Android project is open in SlickEdit, the following build tools will be set up to work with 
+		the Ant build files of your project: <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Build</strong></span>,  <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Rebuild</strong></span>, and 
+		<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Clean</strong></span>.  SlickEdit will build the debug or release configuration for your project 
+		depending on which configuration is set as active (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Set Active Configuration</strong></span>).
+	  </p><p class="NormalText">
+	    Install and run your Android application on a device at <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Execute on Device...</strong></span>.  
+		This will launch the device chooser shown below, where you can select any Android emulator or 
+		connected hardware device for testing.
+		</p><div class="mediaobject"><img src="Resources/android_devicechooser.png"></div><p class="NormalText">
+		</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+			  <span><strong class="guilabel">Wait for Debugger</strong></span> - When selected, this will prevent the application from running 
+			  until a debugger attaches to the process. 
+			</p></li><li><p class="NormalText">
+			  <span><strong class="guilabel">AVD Manager</strong></span> - Launches the Android Virtual Device Manager tool, 
+			  located within the Android SDK.  This tool allows you to create, edit, or delete Android emulators. 
+			</p></li></ul></div><p class="NormalText">
+		When you select a device, your Android application will be installed and run.
+		If the device chosen is an emulator which is not currently running, then the emulator will be 
+		automatically started for you, and the application will be queued up to start when the emulator 
+		is determined to be ready.
+	  </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithandroid_14180_1001595"></a>
+      <a class="indexterm" name="sect_workingwithandroid_3B7E4269_6943"></a>Debugging</h3></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithandroid_14180_1001596"></a>Java</h4></div></div></div><p class="NormalText">
+    		You can use the SlickEdit debugger to debug an Android application on an emulator or hardware device by 
+    		attaching the debugger to the running process. 
+            </p><div class="orderedlist"><ol type="1"><li><p class="NormalText">
+    			  Once an application is running, activate the Android DDMS tool.  If you have the Android Toolbar shown 
+    			  in SlickEdit, you can simply click the DDMS icon.  If you need to manually open the utility it is located 
+    			  at <code class="filename">ANDROID_SDK_DIR/tools/ddms</code>.
+    			</p></li><li><p class="NormalText">
+    			  In DDMS, locate the running application you wish to debug in the process list.  If you select the process 
+    			  you will see two ports listed, one of which will be port 8700 (by default).
+    			</p></li><li><p class="NormalText">
+    			  In SlickEdit select <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Attach Debugger </strong></span> &#8594; <span><strong class="guimenuitem">Attach to Java Virtual Machine...</strong></span>, and use either of the ports found in step 2 as the port, and 
+    			  use <span><strong class="guilabel">localhost</strong></span> as the host.  
+    			  Click <span><strong class="guilabel">OK</strong></span> to attach the debugger.
+    			</p></li><li><p class="NormalText">
+    			  You can now use the SlickEdit debugger to enable/disable breakpoints and step through the execution of 
+    			  your Android application just like you would any other Java application.
+    			</p></li></ol></div><p class="NormalText">
+        </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_workingwithandroid_14180_1001597"></a>C/C++</h4></div></div></div><p class="NormalText">
+            You can use the SlickEdit debugger to launch a native debugging session with GDB if you want to debug 
+            a native-code library in your Android application.  The tools used for NDK debugging require that you 
+            have <code class="code">bash</code> and <code class="code">make</code> on your system and in your PATH.
+            </p><div class="orderedlist"><ol type="1"><li><p class="NormalText">
+                  Create a GDB Debugger Configuration at <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Debugging </strong></span> &#8594; <span><strong class="guimenuitem">Configurations</strong></span> for the GDB of your choice.  
+                  The GDB builds for use with the Android NDK can be found under 
+                  <code class="filename">ANDROID_NDK_DIR/toolchains/</code>.  Make sure that you mark this configuration 
+                  as the <span><strong class="guilabel">Default native debugging configuration</strong></span>. 
+                </p></li><li><p class="NormalText">
+                  Build the <span><strong class="guilabel">Debug</strong></span> configuration of your Android application and run it 
+                  via <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Execute on Device...</strong></span>.
+                </p></li><li><p class="NormalText">
+                  Select <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Attach Debugger </strong></span> &#8594; <span><strong class="guimenuitem">GDB </strong></span> &#8594; <span><strong class="guimenuitem">Attach to Android Application Process (GDB)</strong></span> 
+					(<span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Attach Debugger </strong></span> &#8594; <span><strong class="guimenuitem">Attach to Android Application Process (GDB for NDK)</strong></span> on Mac and Linux) and the 
+                  debugger will automatically use your default native debugging configuration to attach 
+                  to the running Android process.  If there are multiple online Android devices you will 
+                  be prompted to select which device you would like to debug. 
+                </p></li></ol></div><p class="NormalText">
+          </p></div></div></div></body></html>

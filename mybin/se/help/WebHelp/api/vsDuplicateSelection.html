@@ -1,0 +1,45 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsDuplicateSelection</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsDuplicateSelection(int wid, int markid, bool mark_to_cursor=true)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mark_id">mark_id</A></code> - Selection id to duplicated.   If -1 is specified
+for the <i>mark_id</i> parameter, a handle
+to the active selection is returned (no
+duplication is performed).  This is different
+than other selection functions which
+automatically assume the active selection
+and perform the same operation.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If successful, a handle to a newly created selection identical to the
+selection specified.  Otherwise a negative error code is returned.
+Possible error codes are INVALID_SELECTION_HANDLE_RC or
+TOO_MANY_SELECTIONS_RC.  <i>mark_id</i> is a handle to a
+selection returned by one of the built-ins <b>vsAllocSelection</b> or
+<b>vsDuplicateSelection</b>.
+
+<p>IMPORTANT:  If -1 is specified for the <i>mark_id</i> parameter, a
+handle to the active selection is returned (no duplication is performed).
+This is different than other selection functions which automatically
+assume the active selection and perform the same operation.</p>
+
+<p>On error, message is displayed.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+vsDeselect(0);vsSelectLine (0);
+mark_showing=vsDuplicateSelection(0,-1); // Save handle of active
+selection
+mark_id=vsDuplicateSelection(0,mark_showing);    // Duplicate
+active selection
+vsCopyToCursor(0);
+vsShowSelection(0,mark_id);  // Keep selection on source text.
+vsFreeSelection (mark_showing);  // Free selection on destination text.
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Selection_Functions.html">Selection Functions</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_check_for_enum</title>
+</head>
+<body>
+
+<h3><b>int tag_check_for_enum(_str symbol, _str class_name, _str(&tag_files)[], boolean case_sensitive)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Lookup 'symbol' and see if it could be an enumerated type.
+If so, return 1, otherwise return 0.
+<p>
+For synchronization, threads should perform a tag_lock_context(false)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="symbol">symbol</A></code> - symbol to investigate</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - namespace or class to search</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_files">tag_files</A></code> - (reference to _str[]) tag files to search</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="case_sensitive">case_sensitive</A></code> - use case-sensitive comparisons?
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">1 if 'symbol' could be an enum, 0 otherwise, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

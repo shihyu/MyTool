@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Options Version="1.0" SlickeditVersion="16.1.0.0" TemplateFile="../commonOptions.xml">
+    <OptionsTree>
+        <Category Caption="Indent" SystemHelp="Bogus">
+            <PropertySheet Caption="General" SystemHelp="indent_ex.java">
+                <Select Caption="Indent with"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_INDENT_POLICY">
+                    <Choices>
+                        <Choice Caption="Tabs" Value="COMBO_IN_TABS"/>
+                        <Choice Caption="Spaces" Value="COMBO_IN_SPACES"/>
+                    </Choices>
+                </Select>
+                <Numeric Caption="Syntax indent" Min="0" Max="500" Type="int" Function="beautifier_load_or_save" FunctionKey="CPPB_INDENT_SYNTAX" DialogHelp="Bogus" />
+                <Numeric Caption="Tab stops" Min="0" Max="500" Type="int" Function="beautifier_load_or_save" FunctionKey="CPPB_INDENT_TAB" DialogHelp="Bogus" />
+                <Numeric Caption="Line continuation indent" Min="0" Max="500" Function="beautifier_load_or_save" FunctionKey="CPPB_CONTINUATION_WIDTH" DialogHelp="Bogus"/>
+                <PropertyGroup Caption="Original Tab Size">
+                    <Boolean Caption="Use current tab setting" Type="string" Function="beautifier_load_or_save" FunctionKey="CPPB_INDENT_USE_TAB" DialogHelp="Bogus"/>
+                    <Numeric Caption="Original tab size" Type="int" Min="0" Max="500" Function="beautifier_load_or_save" FunctionKey="CPPB_ORIGINAL_TAB" DialogHelp="Bogus">
+                        <Dependencies Evaluate="All">
+                            <Condition Option="Use current tab setting" Value="Off"/>
+                        </Dependencies>
+                    </Numeric>
+                </PropertyGroup>
+            </PropertySheet>
+
+            <PropertySheet Caption="Indent Rule Exceptions" SystemHelp="indent_rule.java">
+                <PropertyGroup Caption="'case' statements">
+                    <Boolean Caption="Indent" Type="string" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_INDENT_CASE"/>
+                    <Numeric Caption="Indent width" Type="int" Min="0" Max="500" Function="beautifier_load_or_save" FunctionKey="CPPB_CASE_INDENT_WIDTH" DialogHelp="Bogus"/>
+                    <Boolean Caption="Brace aligned with 'case'" Type="string" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_BRACE_FOLLOWS_CASE"/>
+                </PropertyGroup>
+
+                <PropertyGroup Caption="'goto' labels'">
+                    <Boolean Caption="Indent" Type="string" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_INDENT_GOTO"/>
+                    <Numeric Caption="Indent width" Type="int" Min="0" Max="500" Function="beautifier_load_or_save" FunctionKey="CPPB_LABEL_INDENT" DialogHelp="Bogus"/>
+                </PropertyGroup>
+                <PropertyGroup Caption="Block indents">
+<!--                <Boolean Caption="Indent class body" Type="string" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="JAVA_IND_CLASS_BODY"/>-->
+                    <Boolean Caption="Indent enum body" Type="string" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="JAVA_IND_ENUM_BODY"/>
+                    <Boolean Caption="Indent enum constant body" Type="string" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="JAVA_IND_ENUM_CONST_BODY"/>
+                    <Boolean Caption="Indent annotation type body" Type="string" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="JAVA_IND_ANNOT_TYPE_BODY"/>
+                    <Boolean Caption="Indent first level of code" Type="string" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_INDENT_FIRST_LEVEL"/>
+                </PropertyGroup>
+            </PropertySheet>
+            <PropertySheet Caption="Continuation Indent" SystemHelp="continuations.java">
+                <Boolean Caption="Align on '='" Type="string" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_ALIGN_ON_EQUALS"/>
+                <Select Caption="Method parameter alignment" Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_FUNCALL_PARAM_ALIGN">
+                    <Choices>
+                        <Choice Caption="Auto" Value="COMBO_AL_AUTO"/>
+                        <Choice Caption="Continuation Indent"  Value="COMBO_AL_CONT"/>
+                        <Choice Caption="Align on Parens" Value="COMBO_AL_PARENS"/>
+                    </Choices>
+                </Select>
+                <Select Caption="Expression parenthesis alignment" Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_EXP_PAREN_ALIGN">
+                    <Choices>
+                        <Choice Caption="Continuation Indent"  Value="COMBO_AL_CONT"/>
+                        <Choice Caption="Align on Parens" Value="COMBO_AL_PARENS"/>
+                    </Choices>
+                </Select>
+            </PropertySheet>
+        </Category>
+
+        <Category Caption="Doc comments" CategoryTemplate="DocCommentCategoryTemplate" SystemHelp="Bogus"/>
+
+        <Category Caption="Brace Style" SystemHelp="Bogus">
+            <PropertySheet Caption="Statement Styles" SystemHelp="braces_ex.java">
+                <Select Caption="'if' statement blocks"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_BRACE_LOC_IF">
+                    <Choices>
+                        <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                        <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                        <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                    </Choices>
+                </Select>
+                <Select Caption="'for' loop blocks"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_BRACE_LOC_FOR">
+                    <Choices>
+                        <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                        <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                        <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                    </Choices>
+                </Select>
+                <Select Caption="'while' loop blocks"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_BRACE_LOC_WHILE">
+                    <Choices>
+                        <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                        <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                        <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                    </Choices>
+                </Select>
+                <Select Caption="'do' loop blocks"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_BRACE_LOC_DO">
+                    <Choices>
+                        <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                        <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                        <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                    </Choices>
+                </Select>
+                <Select Caption="'switch' statement blocks"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_BRACE_LOC_SWITCH">
+                    <Choices>
+                        <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                        <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                        <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                    </Choices>
+                </Select>
+                <Select Caption="'try' statement blocks"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_BRACE_LOC_TRY">
+                    <Choices>
+                        <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                        <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                        <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                    </Choices>
+                </Select>
+                <Select Caption="'catch' statement blocks"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_BRACE_LOC_CATCH">
+                    <Choices>
+                        <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                        <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                        <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                    </Choices>
+                </Select>
+                <PropertyGroup Caption="Large conditional/loop condition override">
+                    <Select Caption="&gt;1 line conditional/loop"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_BRACELOC_MULTILINE_COND">
+                        <Choices>
+                            <Choice Caption="Use Statement Setting" Value="COMBO_MULTILINE_NO"/>
+                            <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                            <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                            <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                        </Choices>
+                    </Select>
+                </PropertyGroup>
+            </PropertySheet>
+            <PropertySheet Caption="Declaration Styles" SystemHelp="braces_decl.java">
+                <Select Caption="'class' blocks"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_BRACE_LOC_CLASS">
+                    <Choices>
+                        <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                        <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                        <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                    </Choices>
+                </Select>
+                <Select Caption="Anonymous class blocks"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="JAVA_ANON_CLASS_BRACELOC">
+                    <Choices>
+                        <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                        <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                        <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                    </Choices>
+                </Select>
+                <Select Caption="'enum' blocks"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="JAVA_ENUM_BRACELOC">
+                    <Choices>
+                        <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                        <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                        <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                    </Choices>
+                </Select>
+                <Select Caption="'enum' constant body blocks"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="JAVA_ENUM_CONSTBODY_BRACELOC">
+                    <Choices>
+                        <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                        <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                        <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                    </Choices>
+                </Select>
+                <Select Caption="Method blocks"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="CPPB_BRACE_LOC_FUN">
+                    <Choices>
+                        <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                        <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                        <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                    </Choices>
+                </Select>
+                <Select Caption="Annotation type blocks"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save" FunctionKey="JAVA_ANNOT_TYPE_BRACELOC">
+                    <Choices>
+                        <Choice Caption="Same Line" Value="COMBO_SAMELINE"/>
+                        <Choice Caption="Next Line" Value="COMBO_NEXTLINE"/>
+                        <Choice Caption="Next Line Indented" Value="COMBO_NEXTLINE_IN"/>
+                    </Choices>
+                </Select>
+
+                <!-- TODO: Anonymous function blocks -->
+            </PropertySheet>
+        </Category>
+
+        <PropertySheet Caption="Comments" SystemHelp="comments_ex.java" DialogHelp="bogus">
+            <PropertyGroup Caption="Standalone comments">
+                <Boolean Caption="Indent standalone comments"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save" FunctionKey="CPPB_COMMENT_INDENT" />
+                <Boolean Caption="Indent column 1 comments"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save" FunctionKey="CPPB_COMMENT_COL1_INDENT" />
+            </PropertyGroup>
+            <PropertyGroup Caption="Trailing Comments">
+                <Select Caption="Trailing comment alignment"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save" FunctionKey="CPPB_TRAILING_COMMENT_ALIGN">
+                    <Choices>
+                        <Choice Caption="Original absolute column" Value="TC_ORIG_ABS_COL"/>
+                        <Choice Caption="Original relative indent" Value="TC_ORIG_REL_INDENT"/>
+                        <Choice Caption="To absolute column" Value="TC_ABS_COL"/>
+                    </Choices>
+                </Select>
+                <Numeric Caption="Comment column number" Type="int" Min="0" Max="500" Function="beautifier_load_or_save" FunctionKey="CPPB_TRAILING_COMMENT_VALUE" DialogHelp="Bogus">
+                    <Dependencies Evaluate="All">
+                        <Condition Option="Trailing comment alignment" Value="To absolute column"/>
+                    </Dependencies>
+                </Numeric>
+            </PropertyGroup>
+        </PropertySheet>
+
+        <Category Caption="Spacing" SystemHelp="Bogus">
+            <PropertySheet Caption="General" SystemHelp="spacing.java">
+                <Boolean Caption="Remove trailing whitespace"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save" FunctionKey="CPPB_RM_TRAILING_WS" />
+                <Boolean Caption="Remove duplicate whitespace between words"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save" FunctionKey="CPPB_RM_DUP_WS"/>
+            </PropertySheet>
+            <Category Caption="Declarations" SystemHelp="Bogus">
+                <PropertySheet Caption="Array Declaration" Checkbox="True" SystemHelp="arraydecl.java">
+                    <Boolean Caption="Space before opening ["  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_ARRAYDECL_LBRACKET" />
+                    <Boolean Caption="Pad inside of []"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_ARRAYDECL_PADBRACKET" />
+                    <Boolean Caption="Space after closing ]"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_ARRAYDECL_RBRACKET" />
+                </PropertySheet>
+                <PropertySheet Caption="Annotations" Checkbox="True" SystemHelp="annotations.java">
+                    <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ANNOT_LPAREN" />
+                    <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ANNOT_PADPAREN" />
+                    <Select Caption="Comma"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ANNOT_COMMA" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Boolean Caption="After closing parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ANNOT_RPAREN" />
+                </PropertySheet>
+                <PropertySheet Caption="Class" Checkbox="True" SystemHelp="classdecl.java">
+                    <Select Caption="Opening brace"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_CLASS_LBRACE" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <PropertyGroup Caption="Table Alignment of Instance/Class Declarations">
+                        <Select Caption="Name justification"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_INSTVARALIGN_JUSTIFICATION">
+                            <Choices>
+                                <Choice Caption="Left" Value="LEFT_JUSTIFICATION"/>
+                                <Choice Caption="Right" Value="RIGHT_JUSTIFICATION"/>
+                            </Choices>
+                        </Select>
+                    </PropertyGroup>
+                </PropertySheet>
+                <PropertySheet Caption="Annotation type" Checkbox="True" SystemHelp="annotationType.java">
+                    <Select Caption="Opening brace"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ANNOT_TYPE_BRACE" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                </PropertySheet>
+                <PropertySheet Caption="Enum" Checkbox="True" SystemHelp="enumdecl.java">
+                    <Select Caption="Opening brace"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ENUM_LBRACE" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Select Caption="Comma between constants"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ENUM_COMMA" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Select Caption="Equals"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ENUM_EQ" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Select Caption="Opening brace of constant body"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ENUM_CONSTBODY_LBRACE" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <PropertyGroup Caption="Constant arguments">
+                        <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ENUM_INIT_LPAREN" />
+                        <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ENUM_INIT_PADDING" />
+                        <Boolean Caption="After closing parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ENUM_INIT_RPAREN" />
+                    </PropertyGroup>
+                </PropertySheet>
+                <PropertySheet Caption="Methods" Checkbox="True" SystemHelp="constructor.java">
+                    <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FUN_LPAREN" />
+                    <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FUN_PADPAREN" />
+                    <Select Caption="Comma"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FUN_COMMA" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Boolean Caption="After closing parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FUN_RPAREN" />
+                    <Boolean Caption="Space between empty parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FUN_VOIDPAREN" />
+                    <Select Caption="Opening brace"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FUN_LBRACE" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                </PropertySheet>
+                <PropertySheet Caption="Generic Declaration" Checkbox="True" SystemHelp="tmpdecl.java">
+                    <Boolean Caption="Space before opening &lt;"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_TMPLDECL_LT" />
+                    <Boolean Caption="Pad inside of angle brackets"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_TMPLDECL_PAD" />
+                    <Select Caption="Comma"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_TMPLDECL_COMMA" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                </PropertySheet>
+                <PropertySheet Caption="Generic Parameters" Checkbox="True" SystemHelp="tmpparam.java">
+                    <Boolean Caption="Space before opening &lt;"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_TMPLPARM_LT" />
+                    <Boolean Caption="Pad inside of angle brackets"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_TMPLPARM_PAD" />
+                    <Select Caption="Comma"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_TMPLPARM_COMMA" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                </PropertySheet>
+                <PropertySheet Caption="Local Var Declarations" Checkbox="True" SystemHelp="localvar.java">
+                    <PropertyGroup Caption="Table Alignment of Declarations">
+                        <Select Caption="Name justification"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_VARALIGN_JUSTIFICATION">
+                            <Choices>
+                                <Choice Caption="Left" Value="LEFT_JUSTIFICATION"/>
+                                <Choice Caption="Right" Value="RIGHT_JUSTIFICATION"/>
+                            </Choices>
+                        </Select>
+                    </PropertyGroup>
+                </PropertySheet>
+            </Category>
+            <Category Caption="Statements" SystemHelp="Bogus">
+                <PropertySheet Caption="General Statement" Checkbox="True" SystemHelp="gen_stmt.java">
+                    <Boolean Caption="Space before semicolon" Type="string" DialogHelp="Bogus" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_STMT_BEFORE_SEMI"/>
+                    <Boolean Caption="Space after semicolon" Type="string" DialogHelp="Bogus" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_STMT_SEMICOLON"/>
+                </PropertySheet>
+                <PropertySheet Caption="if" Checkbox="True" SystemHelp="ifstmt.java">
+                    <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_IF_LPAREN" />
+                    <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_IF_PADPAREN" />
+                    <Boolean Caption="After closing parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_IF_RPAREN" />
+                    <Select Caption="Opening brace"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_IF_LBRACE" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                </PropertySheet>
+                <PropertySheet Caption="for" Checkbox="True" SystemHelp="forstmt.java">
+                    <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FOR_LPAREN" />
+                    <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FOR_PADPAREN" />
+                    <Select Caption="Semicolon"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FOR_SEMICOLON" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Select Caption="Comma"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FOR_COMMA" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Select Caption="Colon"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_FOREACH_COLON" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Boolean Caption="After closing parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FOR_RPAREN" />
+                    <Select Caption="Opening brace"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FOR_LBRACE" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                </PropertySheet>
+                <PropertySheet Caption="return" Checkbox="True" SystemHelp="throwret.java">
+                    <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_RET_PAREXPR" />
+                    <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_RETURN_PADPAREN" />
+                </PropertySheet>
+                <PropertySheet Caption="switch" Checkbox="True" SystemHelp="switch.java">
+                    <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_SWITCH_LPAREN" />
+                    <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_SWITCH_PADPAREN" />
+                    <Boolean Caption="After closing parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_SWITCH_RPAREN" />
+                    <Select Caption="Opening brace"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_SWITCH_LBRACE" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                </PropertySheet>
+                <PropertySheet Caption="synchronized" Checkbox="True" SystemHelp="syncstmt.java">
+                    <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_SYNC_LPAREN" />
+                    <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_SYNC_PAD" />
+                    <Boolean Caption="After closing parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_SYNC_RPAREN" />
+                </PropertySheet>
+                <PropertySheet Caption="try" Checkbox="True" SystemHelp="catchstmt.java">
+                    <Select Caption="Opening brace"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_TRY_LBRACE" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <PropertyGroup Caption="try-with (Java 1.7)">
+                        <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_BEFORE_TRY_LPAREN" />
+                        <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_PADPAREN_TRY" />
+                        <Boolean Caption="After closing parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_AFTER_TRY_RPAREN" />
+                    </PropertyGroup>
+                </PropertySheet>
+                <PropertySheet Caption="catch" Checkbox="True" SystemHelp="catchstmt.java">
+                    <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_CATCH_LPAREN" />
+                    <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_CATCH_PADPAREN" />
+                    <Select Caption="| separating exceptions"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_EXCEPTION_CHOICE">
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Boolean Caption="After closing parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_CATCH_RPAREN" />
+                    <Select Caption="Opening brace"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_CATCH_LBRACE" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                </PropertySheet>
+                <PropertySheet Caption="throw" Checkbox="True" SystemHelp="throwret.java">
+                    <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_THROW_PAREXPR" />
+                    <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_THROW_PADPAREN" />
+                </PropertySheet>
+                <PropertySheet Caption="while" Checkbox="True" SystemHelp="whilestmt.java">
+                    <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_WHILE_LPAREN" />
+                    <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_WHILE_PADPAREN" />
+                    <Boolean Caption="After closing parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_WHILE_RPAREN" />
+                    <Select Caption="Opening brace"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_WHILE_LBRACE" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                </PropertySheet>
+
+            </Category>
+            <Category Caption="Expressions" SystemHelp="Bogus">
+                <PropertySheet Caption="Binary Operators" Checkbox="True" SystemHelp="binop.java">
+                    <Select Caption="Equals"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_OP_ASSIGNMENT" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Select Caption="Comparison/relation operators"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_OP_COMPARISON" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Select Caption="Bitwise binary operators"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_OP_BITWISE" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Select Caption="Logical operators ||, &&"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_OP_LOGICAL" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Select Caption="* and / operators"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_OP_MULT" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Select Caption="Other binary operators"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_OP_BINARY" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                </PropertySheet>
+                <PropertySheet Caption="Unary Operators" Checkbox="True" SystemHelp="unaryops.java">
+                    <Select Caption="Prefix ++ and --"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_OP_PREFIX" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Select Caption="Postfix ++ and --"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_OP_POSTFIX" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Select Caption="Other unary operators"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_OP_UNARY" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                </PropertySheet>
+
+                <PropertySheet Caption="Expression Parenthesis" CheckBox="True" SystemHelp="expr_paren.java">
+                    <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_EXPR_LPAREN" />
+                    <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_EXPR_PADPAREN" />
+                    <Boolean Caption="After closing parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_EXPR_RPAREN" />
+                </PropertySheet>
+
+                <PropertySheet Caption="Method calls" Checkbox="True" SystemHelp="calls.java">
+                    <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FUNCALL_LPAREN" />
+                    <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FUNCALL_PADPAREN" />
+                    <Select Caption="Comma"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FUNCALL_COMMA" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                    <Boolean Caption="After closing parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FUNCALL_RPAREN" />
+                    <Boolean Caption="Space between empty parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_FUNCALL_VOIDPAREN" />
+                </PropertySheet>
+                <PropertySheet Caption="Member access" Checkbox="True" SystemHelp="members.java">
+                    <Select Caption=". in a.b"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_MEMBER_DOT" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                </PropertySheet>
+                <PropertySheet Caption="Casts" Checkbox="True" SystemHelp="casts.java">
+                    <Boolean Caption="Before opening parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_CAST_LPAREN" />
+                    <Boolean Caption="Pad inside parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_CAST_PADPAREN" />
+                    <Boolean Caption="After closing parenthesis"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_CAST_RPAREN" />
+                </PropertySheet>
+                <PropertySheet Caption="Array Indices" Checkbox="True" SystemHelp="exprarray.java">
+                    <Boolean Caption="Space before opening ["  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_ARRAYEXPR_LBRACKET" />
+                    <Boolean Caption="Pad inside of []"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_ARRAYEXPR_PADBRACKET" />
+                    <Boolean Caption="Space after closing ]"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_SP_ARRAYEXPR_RBRACKET" />
+                </PropertySheet>
+                <PropertySheet Caption="Array initialization" Checkbox="True" SystemHelp="arraydecl.java">
+                    <Boolean Caption="Pad inside braces"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ARRAY_INIT_PAD" />
+                    <Select Caption="Comma"  Type="int" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_SP_ARRAY_INIT_COMMA" >
+                        <Choices>
+                            <Choice Caption="No Spaces" Value="COMBO_NO"/>
+                            <Choice Caption="Space Before" Value="COMBO_B"/>
+                            <Choice Caption="Space After" Value="COMBO_A"/>
+                            <Choice Caption="Space Before & After" Value="COMBO_BA"/>
+                        </Choices>
+                    </Select>
+                </PropertySheet>
+            </Category>
+        </Category>
+        <Category Caption="Newlines" SystemHelp="Bogus">
+            <PropertySheet Caption="Annotation Newlines" Checkbox="True" SystemHelp="annotations.java">
+                <PropertyGroup Caption="Force newlines after">
+                    <Boolean Caption="Type annotations"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_ANNOT_NEWLINE" />
+                    <Boolean Caption="Package annotations"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_ANNOT_NEWLINE_PACKAGE" />
+                    <Boolean Caption="Field annotations"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_ANNOT_NEWLINE_FIELD" />
+                    <Boolean Caption="Method annotations"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_ANNOT_NEWLINE_METHOD" />
+                    <Boolean Caption="Parameter annotations"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_ANNOT_NEWLINE_PARAMETER" />
+                    <Boolean Caption="Local variable annotations"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_ANNOT_NEWLINE_LOCAL" />
+                </PropertyGroup>
+            </PropertySheet>
+            <PropertySheet Caption="'if' Statements" Checkbox="True" SystemHelp="iflines.java">
+                <Boolean Caption="Unblocked then statement on same line"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_ONELINE_THEN" />
+                <Boolean Caption="Unblocked else statement on same line"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_ONELINE_ELSE" />
+                <Boolean Caption="Insert newline between '}' and else"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_NEWLINE_BEFORE_ELSE" />
+                <Boolean Caption="Keep 'else' and 'if' on the same line for 'else if' statement."  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_ONELINE_ELSIF" />
+                <Boolean Caption="Indent 'if' of 'else if'"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_NL_INDENT_LONE_ELSE">
+                    <Dependencies Evaluate="All">
+                        <Condition Option="Keep 'else' and 'if' on the same line for 'else if' statement." Value="Off"/>
+                    </Dependencies>
+                </Boolean>
+            </PropertySheet>
+            <PropertySheet Caption="Other Control Statements" Checkbox="True" SystemHelp="lines.java">
+                <Boolean Caption="Newline after case statements"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_NL_CASE" />
+                <Boolean Caption="} catch on same line"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_ONELINE_CATCH" />
+                <Boolean Caption="} while on same line"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_ONELINE_DOWHILE" />
+                <Boolean Caption="Unblocked control statement on same line"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_ONELINE_STATEMENT" />
+            </PropertySheet>
+            <PropertySheet Caption="Statements And Declarations" Checkbox="True" SystemHelp="onelines.java">
+                <Boolean Caption="Leave multiple statements on same line"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_LEAVE_STMTMULT" />
+                <Boolean Caption="Leave multiple declarations on same line"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_LEAVE_DECLMULT" />
+                <Boolean Caption="At the end of the file"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_NL_FILE" />
+            </PropertySheet>
+            <PropertySheet Caption="Statement Blocks" Checkbox="True" SystemHelp="stmt_blocks.java">
+                <Boolean Caption="In empty block"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_NL_EMPTY" />
+                <Boolean Caption="In empty class body"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_NL_CLASS" />
+                <Boolean Caption="In empty method body"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ST_NL_FN" />
+                <Boolean Caption="Allow one line code blocks"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="CPPB_ALLOW_CLASS_ONE_LINE_BLOCK" />
+            </PropertySheet>
+            <PropertySheet Caption="Array initializers" Checkbox="True" SystemHelp="arrayinit_nl.java">
+                <PropertyGroup Caption="Force newlines">
+                    <Boolean Caption="Inside outer braces" Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_NL_ARRAY_INIT_OUTER_PAD"/>
+                    <Boolean Caption="Inside nested braces" Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_NL_ARRAY_INIT_INNER_PAD"/>
+                    <Boolean Caption="Before outer braces" Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_NL_ARRAY_INIT_BEFORE_OUTER_LBRACE"/>
+                    <Boolean Caption="Before nested braces" Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JAVA_NL_ARRAY_INIT_BEFORE_INNER_LBRACE"/>
+                </PropertyGroup>
+            </PropertySheet>
+        </Category>
+        <Category Caption="Blank Lines">
+            <PropertySheet Caption="Package declaration" Checkbox="True" SystemHelp="bl_package.java">
+                <Numeric Caption="Before package declaration" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="JAVA_BL_BEFORE_PACKAGE" DialogHelp="Bogus"/>
+                <Numeric Caption="After package declaration" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="JAVA_BL_AFTER_PACKAGE" DialogHelp="Bogus"/>
+                <Numeric Caption="Lines to leave between imports" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="JAVA_BL_LEAVE_BETWEEN_IMPORTS" DialogHelp="Bogus"/>
+                <Numeric Caption="After import section" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="JAVA_BL_AFTER_IMPORTS" DialogHelp="Bogus"/>
+            </PropertySheet>
+            <PropertySheet Caption="Declarations" Checkbox="True" SystemHelp="bl_class.java">
+                <Numeric Caption="Before first line of method" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_START_BLOCK_METHOD" DialogHelp="Bogus"/>
+                <Numeric Caption="Between classes" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_BETWEEN_CLASSES" DialogHelp="Bogus"/>
+                <Numeric Caption="Before first class member" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_BEFORE_FIRST_DECL" DialogHelp="Bogus"/>
+                <Numeric Caption="Between methods" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_BETWEEN_METHODS" DialogHelp="Bogus"/>
+                <Numeric Caption="Between abstract/interface methods" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_BETWEEN_FN_PROTOTYPES" DialogHelp="Bogus"/>
+                <Numeric Caption="Between uncommented fields" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_BETWEEN_FIELDS" DialogHelp="Bogus"/>
+                <Numeric Caption="Between commented fields" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_BETWEEN_COMMENTED_FIELDS" DialogHelp="Bogus"/>
+                <Numeric Caption="Between member classes" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_BETWEEN_MEMBER_CLASSES" DialogHelp="Bogus"/>
+                <Numeric Caption="Between different declaration types" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_BETWEEN_DIFFERENT_DECLS" DialogHelp="Bogus"/>
+            </PropertySheet>
+            <Category Caption="Statements" SystemHelp="Bogus">
+                <PropertySheet Caption="Local declarations" Checkbox="True" SystemHelp="localdecl.java">
+                    <Numeric Caption="Before local declarations" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_BEFORE_LOCALS" DialogHelp="Bogus"/>
+                    <Numeric Caption="After local declarations" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_AFTER_LOCALS" DialogHelp="Bogus"/>
+                </PropertySheet>
+                <PropertySheet Caption="do" Checkbox="True" SystemHelp="whilestmt.java">
+                    <Numeric Caption="At start of block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_START_BLOCK_DO" DialogHelp="Bogus"/>
+                    <Numeric Caption="After block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_END_BLOCK_DO" DialogHelp="Bogus"/>
+                </PropertySheet>
+                <PropertySheet Caption="if" Checkbox="True" SystemHelp="ifstmt.java">
+                    <Numeric Caption="At start of block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_START_BLOCK_IF" DialogHelp="Bogus"/>
+                    <Numeric Caption="After block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_END_BLOCK_IF" DialogHelp="Bogus"/>
+                </PropertySheet>
+                <PropertySheet Caption="for" Checkbox="True" SystemHelp="forstmt.java">
+                    <Numeric Caption="At start of block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_START_BLOCK_FOR" DialogHelp="Bogus"/>
+                    <Numeric Caption="After block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_END_BLOCK_FOR" DialogHelp="Bogus"/>
+                </PropertySheet>
+                <PropertySheet Caption="while" Checkbox="True" SystemHelp="whilestmt.java">
+                    <Numeric Caption="At start of block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_START_BLOCK_WHILE" DialogHelp="Bogus"/>
+                    <Numeric Caption="After block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_END_BLOCK_WHILE" DialogHelp="Bogus"/>
+                </PropertySheet>
+                <PropertySheet Caption="switch/case" Checkbox="True" SystemHelp="bl_statements.java">
+                    <Numeric Caption="At start of block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BLANK_BEFORE_FIRST_CASE" DialogHelp="Bogus"/>
+                    <Numeric Caption="After block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_END_BLOCK_SWITCH" DialogHelp="Bogus"/>
+                    <PropertyGroup Caption="'case'/'default' clauses">
+                        <Numeric Caption="Before groups of case statements" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BLANK_BEFORE_CASE" DialogHelp="Bogus"/>
+                    </PropertyGroup>
+                </PropertySheet>
+                <PropertySheet Caption="synchronized" Checkbox="True" SystemHelp="syncstmt.java">
+                    <Numeric Caption="At start of block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="JAVA_BL_BEFORE_SYNC" DialogHelp="Bogus"/>
+                    <Numeric Caption="After block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="JAVA_BL_AFTER_SYNC" DialogHelp="Bogus"/>
+                </PropertySheet>
+                <PropertySheet Caption="try/catch" Checkbox="True" SystemHelp="catchstmt.java">
+                    <PropertyGroup Caption="try">
+                        <Numeric Caption="At start of block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_START_BLOCK_TRY" DialogHelp="Bogus"/>
+                    </PropertyGroup>
+                    <PropertyGroup Caption="catch">
+                        <Numeric Caption="At start of block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_START_BLOCK_CATCH" DialogHelp="Bogus"/>
+                        <Numeric Caption="After block" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_BL_END_BLOCK_CATCH" DialogHelp="Bogus"/>
+                    </PropertyGroup>
+                </PropertySheet>
+            </Category>
+        </Category>
+
+        <Category Caption="Edits" SystemHelp="Bogus">
+            <PropertySheet Caption="Forcing/Removing Parenthesis" Checkbox="True" SystemHelp="rewrites.java">
+                <Select Caption="Parenthesis for 'throw'"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_RW_FORCE_THROW_PARENS">
+                    <Choices>
+                        <Choice Caption="Force" Value="COMBO_FORCE_PARENS"/>
+                        <Choice Caption="Remove" Value="COMBO_REMOVE_PARENS"/>
+                    </Choices>
+                </Select>
+                <Select Caption="Parenthesis for 'return'"  Type="int" DialogHelp="Bogus" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_RW_FORCE_RETURN_PARENS">
+                    <Choices>
+                        <Choice Caption="Force" Value="COMBO_FORCE_PARENS"/>
+                        <Choice Caption="Force If Complex Expression" Value="COMBO_FORCE_PARENS_IF_COMPLEX"/>
+                        <Choice Caption="Remove" Value="COMBO_REMOVE_PARENS"/>
+                    </Choices>
+                </Select>
+            </PropertySheet>
+            <PropertySheet Caption="Function Declaration Parameter List" Checkbox="True" SystemHelp="voidparam.java">
+                <Boolean Caption="'void' in empty parameter list" Type="string" DialogHelp="Bogus" Function="beautifier_load_or_save_3state" FunctionKey="CPPB_FORCE_PARAM_VOID"/>
+            </PropertySheet>
+        </Category>
+    </OptionsTree>
+</Options>

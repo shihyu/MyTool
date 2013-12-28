@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Options SYSTEM "http://www.slickedit.com/dtd/vse/14.0/options.dtd">
+<Templates>
+    <!-- Reminder: don't give the example files extensions, as this file is shared between languages.  The 
+         code that displays the example files makes sure the correct language mode is used. -->
+    <CategoryTemplates>
+        <CategoryTemplate Name="DocCommentCategoryTemplate">
+            <Category Caption="Javadoc" SystemHelp="Bogus">
+                <PropertySheet Caption="Indent and formatting" SystemHelp="javadoc" Checkbox="True">
+<!--                    <Boolean Caption="Format HTML"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JD_FORMAT_HTM-->
+                    <Boolean Caption="Format code in '&lt;pre&gt;' blocks"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JD_FORMAT_PRE"/>
+                    <Boolean Caption="Indent @param description"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JD_INDENT_PARAM_DESC"/>
+                    <Boolean Caption="Indent past @param name"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JD_INDENT_PAST_PARAM_NAME">
+                        <Dependencies Evaluate="All">
+                            <Condition Option="Indent @param description" Value="On"/>
+                        </Dependencies>
+                    </Boolean>
+
+                    <Boolean Caption="/** and */ on their own line"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JD_FORCE_DELIM_NL"/>
+                </PropertySheet>
+                <PropertySheet Caption="Blank lines" SystemHelp="javadoc" Checkbox="True">
+                    <Numeric Caption="Before tag section start" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="JD_BLANK_LINES_BEFORE_TAGS" DialogHelp="Bogus"/>
+                    <Numeric Caption="Between two different tags" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="JD_BETWEEN_DIFF_TAGS" DialogHelp="Bogus"/>
+                    <Numeric Caption="Between two identical tags" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="JD_BETWEEN_SAME_TAGS" DialogHelp="Bogus"/>
+                    <Boolean Caption="Remove other blank lines"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="JD_RM_BLANK_LINES"/>
+                </PropertySheet>
+            </Category>
+            <Category Caption="Doxygen" SystemHelp="Bogus">
+                <PropertySheet Caption="Indent and formatting" SystemHelp="doxygen" Checkbox="True">
+                    <Boolean Caption="Format code in \code blocks"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="DOX_FORMAT_PRE"/>
+                    <Boolean Caption="Indent \param description"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="DOX_INDENT_PARAM_DESC"/>
+                    <Boolean Caption="Indent past \param name"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="DOX_INDENT_PAST_PARAM_NAME">
+                        <Dependencies Evaluate="All">
+                            <Condition Option="Indent \param description" Value="On"/>
+                        </Dependencies>
+                    </Boolean>
+                    <Boolean Caption="/*! and */ on their own line"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="DOX_FORCE_DELIM_NL"/>
+                </PropertySheet>
+                <PropertySheet Caption="Blank lines" SystemHelp="doxygen" Checkbox="True">
+                    <Numeric Caption="After \brief" Min="1" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="DOX_AFTER_BRIEF" DialogHelp="Bogus"/>
+                    <Numeric Caption="Between two different commands" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="DOX_BETWEEN_DIFF_TAGS" DialogHelp="Bogus"/>
+                    <Numeric Caption="Between two identical commands" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="DOX_BETWEEN_SAME_TAGS" DialogHelp="Bogus"/>
+                    <Boolean Caption="Remove other blank lines"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="DOX_RM_BLANK_LINES"/>
+                </PropertySheet>
+            </Category>
+            <Category Caption="XML documentation" SystemHelp="Bogus">
+                <PropertySheet Caption="Indent and formatting" SystemHelp="xmldoc" Checkbox="True">
+                    <Boolean Caption="Newline after open tags"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="XDOC_NL_AFTER_OPENTAG"/>
+                    <Boolean Caption="Newline before close tags"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="XDOC_NL_BEFORE_CLOSETAG"/>
+                    <Boolean Caption="Format code in '&lt;example&gt;/&lt;code&gt;' blocks"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="XDOC_FORMAT_PRE"/>
+                </PropertySheet>
+                <PropertySheet Caption="Blank lines" SystemHelp="xmldoc" Checkbox="True">
+                    <Numeric Caption="Between two different tags" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="XDOC_BETWEEN_DIFF_TAGS" DialogHelp="Bogus"/>
+                    <Numeric Caption="Between two identical tags" Min="0" Max="500" Type="int" Function="beautifier_load_or_save_3state" FunctionKey="XDOC_BETWEEN_SAME_TAGS" DialogHelp="Bogus"/>
+                    <Boolean Caption="Remove other blank lines"  Type="string" DialogHelp="Bogus"  Function="beautifier_load_or_save_3state" FunctionKey="XDOC_RM_BLANK_LINES"/>
+                </PropertySheet>
+            </Category>
+        </CategoryTemplate>
+    </CategoryTemplates>
+</Templates>

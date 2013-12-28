@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_find_global</title>
+</head>
+<body>
+
+<h3><b>int tag_find_global(int type_id, int mask, int nzero)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve the first tag included in this tag database with global
+scope that is one of the given type (type_id) and that
+matches the given tag flag mask (mask & tag.mask != 0).
+Tag names are ordered lexicographically, case insensitive.
+Use <a href="tag_get_info.html">tag_get_info</a> to extract the details about the tag.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_id">type_id</A></code> - Tag type ID.  See <a href="tag_get_type.html">tag_get_type</a> for a list of all standard tag types.
+               if (type_id<0), returns tags with ID>VS_TAGTYPE_LASTID</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mask">mask</A></code> - Tag flags indicating symbol attributes, see
+               <a href="tag_insert_simple.html">tag_insert_simple</a> for details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="nzero">nzero</A></code> - if 1, succeed if mask & tag.flags != 0
+               if 0, succeed if mask & tag.flags == 0
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">The following would be used to find the first inline global function.
+<pre>
+  tag_find_global(VS_TAGTYPE_function, VS_TAGFLAG_inline, true);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_get_type.html">tag_get_type</a>, <a href="tag_next_global.html">tag_next_global</a>, <a href="tag_reset_find_in_class.html">tag_reset_find_in_class</a></blockquote>
+</body>
+</html>

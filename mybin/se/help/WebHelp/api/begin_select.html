@@ -1,0 +1,17 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>begin_select</title>
+</head>
+<body>
+
+<h3><b>_command int begin_select(_str markid='', boolean LockSelection=true, boolean RestoreScrollPos=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Places cursor on first character of selection specified.  <i>mark_id</i> is a handle to a
+selection or bookmark returned by one of the built-ins <b>_alloc_selection</b> or <b>_duplicate_selection</b>.
+A <i>mark_id</i> of '' or no <i>mark_id</i> parameter identifies the active selection.  If the selection type is LINE,
+the cursor is moved to the first line of the selection and the column position is unchanged.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="markid">markid</A></code> - a handle to a selection or bookmark returned by one of the built-ins <b>_alloc_selection</b> or
+<b>_duplicate_selection</b> * @param LockSelection</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="RestoreScrollPos">RestoreScrollPos</A></code> -  </blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 if successful.  Possible return values are TEXT_NOT_SELECTED_RC or
+INVALID_SELECTION_HANDLE_RC.  On error, message is displayed.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Selection_Functions.html">Selection Functions</a></blockquote>
+</body>
+</html>

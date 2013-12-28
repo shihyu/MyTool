@@ -1,0 +1,56 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>set_eventtab_index</title>
+</head>
+<body>
+
+<h3><b>void set_eventtab_index(int eventtab_index, int key_index, int index, int key_index2=VSEV_NULL)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This functions binds a command, procedure, or event table to an event or range of events.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="eventtab_index">eventtab_index</A></code> - is an index to an event table which is simply array of
+                  VSEVENT_BINDING structures.
+                  array of integers.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="key_index">key_index</A></code> - Integer representation of the key.  Use event2index() to convert
+                  a key string to a key index.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="index">index</A></code> - Index into the names table of the command, procedure, or event table.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="key_index2">key_index2</A></code> - Integer representation of the key.  Use event2index() to convert
+                  a key string to a key index.  When specified, key_index must be greater
+                  than or equal to key_index2. There are some useful special range key names.
+
+<dl>
+<dt>VSEV_RANGE_FIRST_CHAR_KEY<dd>First character key.  This is character code 0. No shift flags may be combined with this.
+<dt>VSEV_RANGE_LAST_CHAR_KEY<dd>Last character key.  This is character code 0x1ffffff.  No shift flags may be combined with this.
+<dt>VSEV_RANGE_FIRST_NONCHAR_KEY<dd>First non unicode character key. No shift flags may be combined with this.
+<dt>VSEV_ALL_RANGE_LAST_NONCHAR_KEY<dd>Last non unicode character key with all shift flags.
+<dt>VSEV_RANGE_FIRST_MOUSE<dd>First mouse event.  Shift flags may be combined with this.
+<dt>VSEV_RANGE_LAST_MOUSE<dd>Last mouse event. Shift flags may be combined with this.
+<dt>VSEV_ALL_RANGE_LAST_MOUSE<dd>Last mouse event with all shift flags.
+<dt>VSEV_RANGE_FIRST_ON<dd>First ON event. No shift flags may be combined with this.
+<dt>"VSEV_RANGE_LAST_ON<dd>Last ON event. No shift flags may be combined with this.
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// "vsevents.sh" needs to be included.
+index=find_index('cmdline_toggle');
+
+root_eventtab_index=find_index('default_keys',EVENTTAB_TYPE);
+// Bind the fundamental mode escape key to command toggle.
+// The root and mode key tables both point to the "default_keys" key
+// table when in fundamental mode.
+set_eventtab_index(root_eventtab_index,event2index(ESC),index);
+
+// Unbind all character keys. This effects keys
+// like a-z, punctuation, and foreign language characters.
+// Keys like Alt+A which are not unicode characters are not effected.
+set_eventtab_index(root_eventtab_index,VSEV_RANGE_FIRST_CHAR_KEY,0,VSEV_RANGE_LAST_CHAR_KEY)
+
+// Unbind all non-character keys including keys like Enter, Backspace, Ctrl+Shift+Alt+Enter, Alt+A
+set_eventtab_index(root_eventtab_index,VSEV_RANGE_FIRST_NONCHAR_KEY,0,VSEV_ALL_RANGE_LAST_NONCHAR_KEY)
+
+// Unbind all mouse events in any shift key combination.
+set_eventtab_index(root_eventtab_index,VSEV_RANGE_FIRST_MOUSE,0,VSEV_ALL_RANGE_LAST_MOUSE)
+
+// Unbind all Ctrl+mouse events.
+set_eventtab_index(root_eventtab_index,VSEV_RANGE_FIRST_MOUSE|VSEVFLAG_CTRL,0,VSEV_ALL_RANGE_LAST_MOUSE|VSEVFLAG_CTRL)
+
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote>
+</body>
+</html>

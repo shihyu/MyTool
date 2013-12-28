@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_next_buffer</title>
+</head>
+<body>
+
+<h3><b>void _next_buffer(_str options="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Switches to the next buffer.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - is a string of zero or more of the following:
+   <DL compact>
+   <DT>'H'<DD>Allow switching to the hidden window.
+   <DT>'N'<DD>Don't update the active buffer's non-active cursor position information.
+   <DT>'R'<DD>Don't do any screen updating.
+   </DL>
+   <P>
+   The active cursor position information is saved in the active buffer's non-active
+   cursor position information unless the 'N' option is specified.  Each buffer maintains ONE
+   non-active cursor position which is updated when you switch to a
+   buffer within the same window using one of the built-ins _next_buffer,
+   _prev_buffer, _delete_buffer, load_files, _begin_select, and _end_select.
+   When the non-active buffer becomes active, the non-active cursor position information
+   is copied into the windows cursor position.  Switching windows DOES NOT update the
+   buffers non-active cursor position information.
+   <P>
+   The 'H' option determines whether buffers with (p_buf_flags&VSBUFFLAG_HIDDEN) true may be selected.
+   <P>
+   The 'R' options specifies that the screen should not be refreshed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_prev_buffer.html">_prev_buffer</a>, <a href="_delete_buffer.html">_delete_buffer</a></blockquote>
+</body>
+</html>

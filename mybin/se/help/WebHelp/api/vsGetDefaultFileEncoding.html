@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsGetDefaultFileEncoding</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsGetDefaultFileEncoding(const char *pszLangId, const char *pszExtension=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Looks up the default file encoding to be used when attempting to load
+files of the given langauge.  It looks first in the language specific
+file encodings and then for an extension specific file encodings, and
+finally it will default to the default file encoding.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszLangId">pszLangId</A></code> - Language ID (see <a href="p_LangId.html">p_LangId</a>
+                  For list of language types,
+                  Language Options dialog
+                  ("Tools", "Options", "Language Setup...").
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszExtension">pszExtension</A></code> - File extension.
+                     For list of file extension types,
+                     use our Extension Manager dialog
+                     ("Tools", "Options...", "File Extension Manager").
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Attention:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+This function is thread-safe.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Functions.html">Edit Window Functions</a>, <a href="Editor_Control_Functions.html">Editor Control Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsGetDefaultLanguageOptions.html">vsGetDefaultLanguageOptions</a></blockquote>
+</body>
+</html>

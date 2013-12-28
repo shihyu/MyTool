@@ -1,0 +1,199 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Building and Managing Tag Files</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch06.htm" title="Chapter 6.  Context Tagging®"><link rel="prev" href="ch06.htm" title="Chapter 6.  Context Tagging®"><link rel="next" href="ch07.htm" title="Chapter 7.  Building, Running, and Debugging"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_buildingmanagingtagfiles_14858_27012"></a>
+    <a name="sect_buildingmanagingtagfiles_14858_1002208"></a>Building and Managing Tag Files</h2></div></div></div><p class="NormalText">Context Tagging® creates tag files to store information about symbols and, 
+    optionally, cross-reference information from your source code. Many of the most powerful features of 
+    SlickEdit® use this information to speed your coding. </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_buildingmanagingtagfiles_14858_92144"></a>
+      <a name="sect_buildingmanagingtagfiles_14858_1008442"></a>
+      <a class="indexterm" name="sect_buildingmanagingtagfiles_5D4E67E6_C579"></a>Tag File Categories</h3></div></div></div><p class="NormalText">
+      SlickEdit creates 4 kinds of tag files. The "Context Tagging - Tag 
+    Files" dialog (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Tag Files</strong></span>) lists the tag files by category.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span class="bold"><strong>Workspace tag files</strong></span> contain the symbols in 
+        the files that are part of your workspace. This includes any file that has been added to a 
+        project that this workspace contains.  Your workspace tag file is listed under "Workspace Tag 
+        File". This will change when you switch workspaces in SlickEdit.</p></li><li><p class="NormalText">
+          <span class="bold"><strong>Compiler-specific tag files</strong></span> are used only 
+        when the specified compiler is selected in Project Properties. The compiler tag files are listed 
+        with the name of the compiler in quotes followed by "Compiler Configuration Tag Files".</p></li><li><p class="NormalText">
+          <span class="bold"><strong>Language-specific tag files </strong></span>are used 
+        anytime you code in a particular language. This is useful for things like third-party libraries 
+        that you use a lot. These tag files are listed by language. For example, the C/C++ library tag 
+        files are listed under '"C/C++" Tag Files'.</p></li><li><p class="NormalText">
+          <a class="indexterm" name="sect_buildingmanagingtagfiles_82723_40630"></a>
+          <span class="bold"><strong>Auto-Updated tag files </strong></span>are designed to be shared by multiple 
+        users of SlickEdit® on a network. You can use the <span><strong class="command">vsmktags</strong></span> 
+        utility to rebuild these tag files as part of your nightly build process. When SlickEdit detects 
+        that a newer version of an auto-updated tag file is available, it will automatically copy in the 
+        newer version and begin using it. These files are listed under "Auto-Updated Tag Files".</p></li></ul></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_buildingmanagingtagfiles_14858_71586"></a>
+      <a name="sect_buildingmanagingtagfiles_14858_1013067"></a>
+      <a class="indexterm" name="sect_buildingmanagingtagfiles_6DA8FE08_7B55"></a>
+      <a class="indexterm" name="sect_buildingmanagingtagfiles_DEE85DD6_D0D0"></a>Building Tag Files</h3></div></div></div><p class="NormalText">Each kind of tag file is built differently. Refer to the following 
+      sections for how to build each kind.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Caution</h3><p class="CellBody"> We do not recommend you run a second copy of the editor to perform tag 
+        file updating because it will cause tag file access problems. Under UNIX the editor will crash if 
+        multiple editors are updating the same tag files.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_buildingmanagingtagfiles_14858_68720"></a><a class="indexterm" name="sect_buildingmanagingtagfiles_31580_32723"></a>
+        <a class="indexterm" name="sect_buildingmanagingtagfiles_62376_00679"></a>
+        <a class="indexterm" name="sect_buildingmanagingtagfiles_88042_78890"></a>
+        Creating Tag Files for Workspace Files</h4></div></div></div><p class="NormalText">Tag files for your workspace files are 
+        automatically created and updated as you edit. If you edit a source 
+        file with a different editor, you will have to retag the file or 
+        workspace to make sure that the symbol information is up to date.
+        </p><p class="NormalText"><a class="indexterm" name="sect_buildingmanagingtagfiles_81908_41674"></a> 
+        To retag your workspace, do either of the following:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Use the 
+            <span><strong class="guilabel">Projects</strong></span> tool window - right-click on the root node and select 
+            <span><strong class="guilabel">Retag Workspace</strong></span>.</p></li><li><p class="NormalText"> Use the <span><strong class="guilabel">Context Tagging - Tag Files </strong></span>dialog 
+            - select <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Tag Files</strong></span> from the main menu. Select the tag file listed under 
+            <span><strong class="guilabel">Workspace Tag File</strong></span> and click the <span><strong class="guilabel">Rebuild Tag File</strong></span> 
+            button.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_buildingmanagingtagfiles_14858_58720"></a>
+        <a name="sect_buildingmanagingtagfiles_14858_1007991"></a>
+        <a class="indexterm" name="sect_buildingmanagingtagfiles_86E8ECB1_1B64"></a>
+        <a class="indexterm" name="sect_buildingmanagingtagfiles_85298_35014"></a>
+        Creating Tag Files for Compiler-Specific Libraries</h4></div></div></div><p class="NormalText">The <span class="bold"><strong>Tag Compiler Libraries 
+        </strong></span>dialog is used to tag libraries associated with the most commonly used 
+        languages in SlickEdit. This dialog appears as part of the Quick Start 
+        Configuration Wizard, when SlickEdit® is run for the first 
+        time. It allows you to build tag files for commonly used languages and their 
+        libraries, including C, C++, Java, and .NET. You can access this dialog at any time 
+        from the 
+                             <a href="ch12s10.htm#sect_tools_menuanddialogs_13396_70511">Context Tagging - Tag Files Dialog</a> (select 
+        <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Tag Files</strong></span>, then 
+        click <span><strong class="guibutton">Auto Tag</strong></span>). </p><div class="mediaobject"><img src="Resources/tagcompilerlibraries_dialog.png"></div><p class="NormalText">To create tag files for the languages listed, select the 
+         packages you want to build.  If you want to have the tag files built in the 
+         backgroun, select <span><strong class="guibutton">Build tag files using a background thread</strong></span>.  
+                               Click 
+        <span><strong class="guibutton">OK</strong></span> to begin.  If you have chosen to build your tag files in the 
+        foreground, then the Building Tag Files dialog box opens, showing the progress as the 
+        tag file is built.</p><p class="NormalText">If you have chosen to build in the background, the 
+        progress dialog shows the progress of queuing files for background tagging. You can then 
+        continue to edit code while your files are being tagged. To inform you of the progress of this 
+        task, an icon id displayed in the Alert area. While background tagging is being performed, the 
+        icon is highlighted.</p><p class="NormalText">You can configure some compilers by selecting them in the tree 
+          and then clicking the <span><strong class="guibutton">Configure </strong></span>button. This will open the 
+          Compiler Properties dialog for that language.</p><p class="NormalText">For languages not listed on the "Create Tag Files for Compiler 
+          Libraries" dialog, you can create language-specific tag files (see <a href="ch06s02.htm#sect_buildingmanagingtagfiles_14858_13187">Configuring Other Languages</a>).</p><div class="mediaobject"><img src="Resources/compiler_properties_dialog.png"></div><p class="NormalText">In the Compiler Properties dialog, do the following:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Click <span><strong class="guibutton">Add</strong></span> to enter the name of the compiler you 
+            are configuring. 
+            </p></li><li><p class="NormalText">Click <span><strong class="guibutton">Set Default</strong></span> if this is the main compiler 
+        you use for this language.</p></li><li><p class="NormalText">Click the <span><strong class="guibutton">...</strong></span> button (ellipses) next to the 
+        "Built-in Compiler Include Directories" field to specify an include directory. SlickEdit will 
+        tag all files in that directory and any subdirectories.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">Build Tag File</strong></span> to build the tag file for 
+            this compiler.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span> to finish.</p></li></ol></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_buildingmanagingtagfiles_14858_16171"></a>
+        <a name="sect_buildingmanagingtagfiles_14858_1015207"></a>
+        <a class="indexterm" name="sect_buildingmanagingtagfiles_04B39B96_2246"></a>
+        <a class="indexterm" name="sect_buildingmanagingtagfiles_95809B58_E9C6"></a>
+        <a class="indexterm" name="sect_buildingmanagingtagfiles_2F42A038_13B0"></a>
+        <a class="indexterm" name="sect_buildingmanagingtagfiles_831D56EB_0C47"></a> 
+        Creating Language-Specific Tag Files</h4></div></div></div><p class="NormalText">Language-specific tag files provide the same symbolic information for 
+        libraries that is provided for code in your projects. A library is a pre-built unit of code 
+        that is not edited as part of this development effort. These tag files are accessible from 
+        any project written in the same language.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">Language-specific tag files are used by all projects using that language. 
+          If you have a library that is used by one project and not another, the symbols in that library 
+          will show up as completions in both projects. </p></div><p class="NormalText">You should create a language-specific tag file for any library that is 
+        not a compiler-specific library or part of the codebase you are editting. For example, you may 
+        have local libraries that are reused from project to project.</p><p class="NormalText">To create a language-specific tag file, select 
+      <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Tag Files</strong></span> from the main menu. The <a href="ch12s10.htm#sect_tools_menuanddialogs_13396_70511">Context Tagging - Tag Files Dialog</a> is displayed.  Click <span><strong class="guibutton">Add Tag File</strong></span> to open the Add Tag File dialog.</p><div class="mediaobject"><img src="Resources/addtagfile_dialog.png"></div><p class="NormalText">The Add Tag File dialog has the following 
+          fields:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText"><span><strong class="guilabel">Language</strong></span> - Select the language type into which you want 
+          the tag file inserted. </p></li><li><p class="NormalText"><span><strong class="guilabel">Generate References</strong></span>                        
+                                        - Select this only if you want 
+          library functions to be shown when you list references.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="NormalText">
+                <span><strong class="guilabel">Generate References</strong></span> creates an inverted file index so that you can 
+                quickly find which files contain which symbols. Workspace tag files create this index by 
+                default. This information is used to build a list of references (using the 
+                <span><strong class="command">push_ref</strong></span> command, bound to <span><strong class="keycap">Ctrl 
+                </strong></span>+<span><strong class="keycap">/</strong></span> in the CUA emulation). In general, it's better to 
+                have the reference list contain functions that are part of this workspace and not in 
+                libraries. If <span><strong class="guilabel">Generate References</strong></span> is not checked, you will still be 
+                able to jump from a symbol to its definition in a library using <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Dot</strong></span> 
+                (<span><strong class="command">push_tag</strong></span>). </p><p class="NormalText">This option is off by default since most programmers do not want to 
+                see library functions shown in the reference list.</p></div></li><li><p class="NormalText"><span><strong class="guilabel">Tag files in background when 
+                possible</strong></span> - Check this option to use background 
+                tagging when possible.</p></li><li><p class="NormalText"><span><strong class="guilabel">Add existing 
+                                        tag file</strong></span> - If you are 
+                                        adding an existing tag file, select 
+                                        this option, which will enable the 
+                                        following fields:</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText"><span><strong class="guilabel">File</strong></span> 
+                        - The path to your tag file.</p></li><li><p class="NormalText"><span><strong class="guilabel">Rebuild 
+                                                tag file</strong></span> - Check 
+                                                this option to go ahead and 
+                                                rebuild the tag file when 
+                                                adding it.</p></li></ul></div></li><li><p class="NormalText"><span><strong class="guilabel">Create new tag 
+                file</strong></span> - select this option to create a new tag 
+                file.  These additional options will be enabled:</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText"><span><strong class="guilabel">Save 
+                                                as</strong></span> - Where to 
+                                                save the new tag file.  Give it 
+                                                a name that is representative of 
+                                                the library being tagged. If you 
+                                                are tagging the Boost library, 
+                                                you would name the file 
+            "Boost". Tag files are required to have the extension <code class="filename">.vtg</code>.</p></li><li><p class="NormalText"><span><strong class="guilabel">Source 
+                                                path</strong></span> - The path 
+                                                to the directory from which 
+                                                to include files.</p></li><li><p class="NormalText"><span><strong class="guilabel">Recursive</strong></span> 
+                        - If checked, the selected directory will be 
+                        searched recursively.</p></li><li><p class="NormalText"><span><strong class="guilabel">Include 
+                                                filespecs</strong></span> - 
+                                                The <span><strong class="guilabel">Include
+        Filespecs</strong></span> combo box lets you select from predefined
+        wildcard specifications or you can type your own. Each file spec
+        should be separated with semicolons  (colons on UNIX,
+          e.g. <code class="filename">*.c;*.cpp;*.h</code> for Windows,
+          <code class="filename">*.c:*.cpp:*.h</code> for UNIX). For
+        example, to include only Java files, select
+        <span><strong class="guilabel">*.java</strong></span> from the predefined list. To include all
+        files in a directory, type the wildcard <span><strong class="keycap">*</strong></span>. To
+        customize the items in this list, see the <a href="ch12s11.htm#sect_options_menuanddialogs_14207_99758">Files of Type Filter Options</a>.</p></li><li><p class="NormalText"><span><strong class="guilabel">Exclude 
+                filespecs</strong></span> - Use this combo box to exclude paths, files, or file types from 
+        the specified directory using wildcards. To specify multiple patterns, separate them with 
+        semicolons (colons on UNIX). No files are searched in a path that is
+        excluded, including any files in sub-directories beneath. For
+        examples, see <a href="ch12s05.htm#sect_project_menuanddialogs_13898_1023928">Exclusion Examples</a> below.</p></li></ul></div></li></ul></div><p class="NormalText">After filling in the fields, click OK to build 
+        your tag file.  The Building Tag File dialog opens showing the progress 
+        as the tag file is built. When finished, the contents are displayed in 
+        the Context Tagging® - Tag Files dialog.
+      </p><p class="NormalText">See <a href="ch06s02.htm#sect_buildingmanagingtagfiles_14858_35974">Managing Tag Files</a> for more information.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_buildingmanagingtagfiles_14858_1002917"></a>
+        <a class="indexterm" name="sect_buildingmanagingtagfiles_F513F703_536A"></a>
+        Configuring Context Tagging for COBOL</h4></div></div></div><p class="NormalText">All of the Context Tagging features for COBOL, except Parameter 
+        Information, are provided by scanning COBOL source file and the copy books that are included. 
+        This information is used by List Members, completions, tag-driven navigation, symbol preview, and 
+        in the Outline view. Parameter Information for COBOL commands and intrinsic functions are 
+        provided by the COBOL built-ins file created during product installation. To provide Parameter 
+        Information for subroutines, you must build a tag file that will hold linkage information from 
+        the subroutine's point of view.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_buildingmanagingtagfiles_14858_13187"></a>
+        <a name="sect_buildingmanagingtagfiles_14858_1002778"></a>
+        <a class="indexterm" name="sect_buildingmanagingtagfiles_13A20DFE_4131"></a> 
+        Configuring Context Tagging for Other Languages
+      </h4></div></div></div><p class="NormalText">For languages other than C/C++, Java, or .Net, you can create 
+        language-specific tag files for the standard libraries that are part of those languages.</p><p class="NormalText">A tag file is automatically built for the run-time libraries of C#, 
+        InstallShield, JavaScript, Perl, PV-WAVE, Slick-C®, Tornado, TCL, and Visual Basic .NET, and 
+        usually it is not necessary to build tag files for the run-times of these languages. If you 
+        already built a tag file for run-times during installation, you can skip this section. If you are 
+        using Perl, Python, or TCL, and the compiler cannot be found in PATH (or registry for Windows), 
+        you need to build tag files for these run-time libraries.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_buildingmanagingtagfiles_14858_35974"></a>
+      <a name="sect_buildingmanagingtagfiles_14858_1008421"></a>
+      <a class="indexterm" name="sect_buildingmanagingtagfiles_952FBC4D_5DAF"></a>Managing Tag Files</h3></div></div></div><p class="NormalText">The <a href="ch12s10.htm#sect_tools_menuanddialogs_13396_70511">Context Tagging - Tag Files Dialog</a> (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Tag Files</strong></span>)<span><strong class="command"></strong></span> is used to manage your tag files. </p><div class="mediaobject"><img src="Resources/contexttagging-tagfiles_dialog.png"></div><p class="NormalText">The left pane of the dialog lists all of your tag files, separated into categories (see <a href="ch06s02.htm#sect_buildingmanagingtagfiles_14858_92144">Tag File Categories</a> below). A tag file having a <span><strong class="guibutton">File</strong></span> bitmap with blue arrows indicates the tag file is built with support for cross-referencing. The right pane of the dialog lists all the source files indexed by the currently selected tag file. </p><p class="NormalText">For information about the buttons available, see <a href="ch12s10.htm#sect_tools_menuanddialogs_13396_70511">Context Tagging - Tag Files Dialog</a>.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_buildingmanagingtagfiles_14858_1008452"></a>
+        <a class="indexterm" name="sect_buildingmanagingtagfiles_CDF5B896_F945"></a>Tag File Search Order</h4></div></div></div><p class="NormalText">When doing tag lookups, the tag files are searched in a specific order, which affects the tags found. The following are examples of the order in which tag files are searched.</p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_buildingmanagingtagfiles_14858_1008462"></a>Example: C/C++ Tag File Search Order</h5></div></div></div><p class="NormalText">If a C/C++ source file is open, when a tagging-related operation is performed, the tag files are searched in the following order:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Workspace tag file, providing it contains other C/C++ source files.</p></li><li><p class="NormalText">Auto-updated tag files containing other C/C++ source files.</p></li><li><p class="NormalText">The "C" Compiler Configuration tag file corresponding to your default C compiler configuration as specified in your project (see <a href="ch09s04.htm#sect_candcpp_11652_89789">C/C++ Compiler Settings</a>), or global default.</p></li><li><p class="NormalText">Language-specific C tag files, in the order that they are listed in the <a href="ch12s10.htm#sect_tools_menuanddialogs_13396_70511">Context Tagging - Tag Files Dialog</a>. Note that if you have a "C" Compiler Configuration tag file, <code class="filename">cpp.vtg</code> will be excluded from this list.</p></li></ol></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_buildingmanagingtagfiles_14858_1008454"></a>Example: Java Tag File Search Order</h5></div></div></div><p class="NormalText">If a Java source file is open, when a tagging-related operation is performed, the tag files are searched in the following order:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Workspace tag file, providing it contains other Java source files.</p></li><li><p class="NormalText">Auto-updated tag files, containing other Java source files.</p></li><li><p class="NormalText">Language-specific Java tag files, in the order that they are listed in the <a href="ch12s10.htm#sect_tools_menuanddialogs_13396_70511">Context Tagging - Tag Files Dialog</a>.</p></li></ol></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_buildingmanagingtagfiles_14858_70528"></a>
+        <a name="sect_buildingmanagingtagfiles_14858_1008472"></a>
+        <a class="indexterm" name="sect_buildingmanagingtagfiles_22893_94002"></a>
+        <a class="indexterm" name="sect_buildingmanagingtagfiles_7F970DC6_9775"></a>Rebuilding Tag Files</h4></div></div></div><p class="NormalText">The Rebuild Tag File dialog box contains options for rebuilding the 
+        selected file. To display the Rebuild Tag File dialog, click select <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Tag Files</strong></span>. When the <a href="ch12s10.htm#sect_tools_menuanddialogs_13396_70511">Context Tagging - Tag Files Dialog</a> is displayed, select a file to rebuild, then 
+        click <span><strong class="guibutton">Rebuild Tag File</strong></span>.</p><div class="mediaobject"><img src="Resources/rebuild_tagfile.png"></div><p class="NormalText">The following settings are available:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Retag modified files only</strong></span> - If checked, SlickEdit® will incrementally rebuild the tag file, only retagging files that have been modified since the last time they were tagged. If not checked, SlickEdit will rebuild the entire tag file from scratch.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Generate References</strong></span> - If checked, the tag file will be built with support for cross-referencing. Tag files with support for references are slightly larger and take slightly more time to build. They will also be included in all symbol references searches, which may not be necessary, especially for third-party libraries.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Remove all deleted files without prompting</strong></span> - If checked and the tag file 
+            contains a source file which no longer exists on disk, the source file will be removed from 
+            the tag file without prompting for confirmation. This checkbox is not present when 
+            rebuilding the workspace tag file since the list of files in the workspace's projects 
+            determine what files should be tagged.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Keep all deleted files without prompting</strong></span> - If checked and the tag file 
+            contains a source file which no longer exists on disk, the source file will not be removed 
+            from the tag file without prompting for confirmation. This checkbox is not present when 
+            rebuilding the workspace tag file since the list of files in the workspace's projects 
+            determine what files should be tagged.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Retag files in background when possible</strong></span> - If checked the tag file is 
+            rebuilt in the background if background tagging is supported for these files.</p></li></ul></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> The options <span><strong class="guilabel">Remove all deleted files without 
+          prompting</strong></span> and <span><strong class="guilabel">Keep all deleted files without prompting</strong></span> are 
+          mutually exclusive. Selecting one will clear the other.</p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_buildingmanagingtagfiles_14858_1002296"></a>
+      <a class="indexterm" name="sect_buildingmanagingtagfiles_09CB92F6_4DB1"></a>Context Tagging® Options</h3></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_buildingmanagingtagfiles_14858_1005429"></a>General Context Tagging® Options</h4></div></div></div><p class="NormalText">Options are available for setting general parameters for the Context 
+        Tagging feature set. You can designate how tagging is done, how references function within the 
+        application, and tune the application to maximize performance. To display the options, from the 
+        main menu, select <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">Context Tagging</strong></span>. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_96417">Context Tagging® Options</a> for descriptions of the options. 
+        </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"> To improve tagging performance, you may need to adjust the tag file cache size (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Application Options </strong></span> &#8594; <span><strong class="guimenuitem">Virtual Memory</strong></span>). See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_36734">Virtual Memory Options</a> for more information.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_buildingmanagingtagfiles_14858_1004980"></a>Language-Specific Context Tagging® Options</h4></div></div></div><p class="NormalText">You can activate and deactivate various Context Tagging features on a 
+        per-language basis. To access these options, from the main menu, select 
+        <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages</strong></span>, expand your language category and language, then select 
+        <span><strong class="guilabel">Context Tagging®</strong></span>. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_99210">Language-Specific Context Tagging® Options</a> for more information.</p><p class="NormalText"></p></div></div></div></body></html>

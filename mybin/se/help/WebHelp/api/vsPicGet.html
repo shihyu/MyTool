@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsPicGet</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsPicGet(int PicIndex, seSeekPos *pRealLineNum=a, seSeekPos *pLineNum=a, seSeekPos *pNofLines=a, void **ppUserData=a, int *pBufID=a, char *pszBufName=a, int *pBMIndex=a, int *ptype=a, char **pszMessage=a, char *pszLineData=a, int *pmarkid=a, seSeekPos *pBeginLineROffset=a, int *pcol=a, void *preserved2=a)</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>.  Use <a href="vsLineMarkerGet.html">vsLineMarkerGet</a>() instead.
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="PicIndex">PicIndex</A></code> - Index of pic returned by a vsPicAdd
+function.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pRealLineNum">pRealLineNum</A></code> - Set to real line number.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pLineNum">pLineNum</A></code> - Set to line number.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pNofLines">pNofLines</A></code> - Set to number of lines.  Used to determine
+how lines to draw a box around.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ppuserdata">ppuserdata</A></code> - Set to userdata.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pBufID">pBufID</A></code> - Set to buffer id or negative number  if file is
+not currently loaded.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszBufName">pszBufName</A></code> - Set to buffer name.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pBMIndex">pBMIndex</A></code> - Set to index into names table of bitmap.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ptype">ptype</A></code> - Set to type.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszMessage">pszMessage</A></code> - Set to message.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszLineData">pszLineData</A></code> - Set to line data.  This parameter is typically
+only used by pics with a valid mark id.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pmarkid">pmarkid</A></code> - Set to mark id.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pBeginLineROffset">pBeginLineROffset</A></code> - Set to real seek position to the
+beginning of the line.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pcol">pcol</A></code> - Set to column.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Marker_Functions.html">Marker Functions</a></blockquote>
+</body>
+</html>

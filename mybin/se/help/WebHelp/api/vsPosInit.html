@@ -1,0 +1,50 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsPosInit</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsPosInit(seLineOffset LineOffset)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>The vsPosXXX functions provide the fastest way to scan buffers.
+However, once you use a non vsPosXXX function to access buffer
+data (may be to modify something), you MUST call <b>vsPosInit</b>
+again to avoid crashing the editor.  For this reason, we recommend you
+only use this function if you want your searching to be as fast as
+possible.</p><p>
+<p><b>Speed tips</b>: Use the <b>vsSearch</b> function if you are
+searching for something which occurs far less times than the number
+of bytes in the file.  Using <b>vsGetText</b> to retrieve 4k of data or
+more is almost as fast as using vsPosInit except that a copy of the
+buffer data must be made.</p><p>
+<p>The Pos cursor is NOT the same as the cursor position.</p><p>
+<p>Use the <b>vsPropSetI</b> function with the VSP_WINDOW_ID
+property index to set the current object.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="LineOffset">LineOffset</A></code> - Offset tp set the Pos cursor with in the
+current line.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// Process all the bytes in the current buffer as fast as possible.
+// Move the cursor to the top of the current buffer.
+vsTop(0);
+// Initialize the Pos cursor to the first byte of the current line.
+vsPosInit(0);
+unsigned char *p,*pEndLine,*pEndBuf);
+vsPosGetPointers(&p,&pEndLine,&pEndBuf);
+// Count the number of star characters in the current buffer
+int count=0;
+for(;;++p) {
+     if(p>=pEndBuf) {
+           int status;
+           status=vsPosRelPGoTo(pEndBuf);
+           if(status) break;
+           vsPosGetPointers(&p,&pEndLine,&pEndBuf);
+           continue;
+     }
+     if(*p=='*' ) ++count;
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsPosGetLinePointers.html">vsPosGetLinePointers</a>, <a href="vsPosIsEOL.html">vsPosIsEOL</a>, <a href="vsPosSetPointer.html">vsPosSetPointer</a>, <a href="vsPosRelPGoTo.html">vsPosRelPGoTo</a>, <a href="vsPosNextBOL.html">vsPosNextBOL</a>, <a href="vsPosSave.html">vsPosSave</a>, <a href="vsPosRestore.html">vsPosRestore</a>, <a href="vsPosIsEOR.html">vsPosIsEOR</a>, <a href="vsPosGetPointers.html">vsPosGetPointers</a>, <a href="vsPosSetCurLine.html">vsPosSetCurLine</a>, <a href="vsPosQCol.html">vsPosQCol</a></blockquote>
+</body>
+</html>

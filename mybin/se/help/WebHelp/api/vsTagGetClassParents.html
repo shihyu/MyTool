@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagGetClassParents</title>
+</head>
+<body>
+
+<h3><b>const char**VSAPI vsTagGetClassParents(const char *pszClassName)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Return the list of parents for the given class name.  The parents are
+returned as an array of null-terminated character strings.
+This function has the side effect of positioning the class iterator
+on the given class.  Since tagging usually cannot resolve the scope
+of parent classes, you will normally have to use this in conjunction
+with vsTagFindClass to get the qualified name for the parent class.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszClassName">pszClassName</A></code> - Qualified name of class or interface to update
+                        inheritance information for.  See VS_TAGSEPARATOR_class
+                        and VS_TAGSEPARATOR_package for details on constructing
+                        this string.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>const char**VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on failure, otherwise it returns the list of parent classes.
+        Note that the list returned is allocated statically, and NULL terminated.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_retrieve_value</title>
+</head>
+<body>
+
+<h3><b>typeless _retrieve_value(_str cmdline="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sets text box <b>p_text</b> property to value saved by  the
+<b>_append_retrieve</b> function.  When no argument is given, the
+history is retrieved based on the active form name and active control
+name (<b>p_name</b>).  If the <i>cmdline</i> argument does not
+contain a '.', the history is based on the active form name and
+<i>cmdline</i> specifies an alternate control name.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="cmdline">cmdline</A></code> - is a string in the format: <i>form_name</i>[<i>.ctl_name</i>]
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the value placed into the p_text property.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+defeventtab form1;
+combo1.on_destroy()
+{
+    // When OK button is pressed, you will want to save combo box
+retrieve information.
+    _append_retrieve(_control combo1,combo1.p_text);
+}
+combo1.on_create()
+{
+     // Fill in the combo box list
+     _retrieve_value();
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Retrieve_Functions.html">Retrieve Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_append_retrieve.html">_append_retrieve</a></blockquote>
+</body>
+</html>

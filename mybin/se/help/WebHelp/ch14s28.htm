@@ -1,0 +1,50 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Selection Functions</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s27.htm" title="Search Functions"><link rel="next" href="ch14s29.htm" title="Writing Selection Filters"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_selectionfunctions_13330_28245"></a>
+    <a name="slick_c_selectionfunctions_13330_1005941"></a>
+    <a class="indexterm" name="slick-c_selectionfunctions_C3E779BA_8889"></a>Selection Functions</h2></div></div></div><p class="NormalText">SlickEdit® supports multiple selections; however, only one selection can be active or visible. Selections are specified by handles. Most selection functions accept a selection handle. A handle of <span><strong class="command">''</strong></span> specifies the active selection or selection showing, that is always available. </p><p class="NormalText">The table below describes some common selection functions.</p><div class="informaltable"><a name="table_596d8383-3065-4c4d-bbaa-ee3c8a95dae1"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+            <p class="CellHeading">Function</p>
+          </th><th>
+            <p class="CellHeading">Description</p>
+          </th></tr></thead><tbody><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_alloc_selection</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns a handle to a selection.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_free_selection</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Frees a selection associated with the selection handle given. Note that it cannot free the active selection. To free the active selection, use <span><strong class="command">_show_selection</strong></span> first.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_show_selection</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Used to make another selection the active selection.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_duplicate_selection()</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns the actual handle number of the active selection.</p>
+          </td></tr></tbody></table></div><p class="NormalText">Example:</p><pre class="programlisting">    //  Duplicate the current line.
+    mark_id=_alloc_selection();
+    // 
+    if (mark_id&lt;0) {
+       message(get_message(mark_id));
+       return(rc);
+    }
+    _select_line(mark_id);
+    _copy_to_cursor(mark_id);
+    // This selection can be freed because it is not the active selection. 
+    _free_selection(mark_id);
+    
+    // This code copies selected text and keeps the resulting selection on the // source text instead of 
+    the destination text. if (_select_type()==""){ 
+       message(get_message(TEXT_NOT_SELECTED_RC)); return(1); 
+    } mark_id=_duplicate_selection()   // Make a copy of the active selection. 
+    _copy_to_cursor(); // Save the selection id. 
+    old_active_mark_id= duplicate_selection(); 
+    // Must make another mark active before the old active mark can be freed. show(selection(mark_id)); 
+    // Make copy of visible mark active. free(selection(old_active_mark_id));</pre><p class="NormalText">For more information about selection functions, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>, then click <span><strong class="guimenu">Selection Functions</strong></span>.</p><p class="NormalText"></p></div></body></html>

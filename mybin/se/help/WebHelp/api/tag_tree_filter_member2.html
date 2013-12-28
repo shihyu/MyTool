@@ -1,0 +1,128 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_tree_filter_member2</title>
+</head>
+<body>
+
+<h3><b>int tag_tree_filter_member2(int filter_flags_1, int filter_flags_2, _str type_name, int in_class, int tag_flags, int &i_access, int &i_type)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Filter the given item based on the given filtering flags,
+and determine the access level and member type.  Though
+this function is typically used by the symbol browser for filtering
+items, it can also be used simply to determine the access level and
+bitmap type for the tag, just ignore the return value in this case.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filter_flags_1">filter_flags_1</A></code> - Filtering options flags, combination of the following:
+                 <dl compact>
+                 <dt>CB_SHOW_class_data<dd style="margin-left:150pt">            static class data members
+                 <dt>CB_SHOW_instance_data<dd style="margin-left:150pt">         non-static class data members
+                 <dt>CB_SHOW_out_of_line<dd style="margin-left:150pt">           not inline functions
+                 <dt>CB_SHOW_inline<dd style="margin-left:150pt">                inline functions
+                 <dt>CB_SHOW_static<dd style="margin-left:150pt">                static functions
+                 <dt>CB_SHOW_non_virtual<dd style="margin-left:150pt">           not virtual member functions
+                 <dt>CB_SHOW_virtual<dd style="margin-left:150pt">               virtual member functions
+                 <dt>CB_SHOW_abstract<dd style="margin-left:150pt">              abstract member functions
+                 <dt>CB_SHOW_operators<dd style="margin-left:150pt">             overloaded operators
+                 <dt>CB_SHOW_constructors<dd style="margin-left:150pt">          class constructors
+                 <dt>CB_SHOW_final_members<dd style="margin-left:150pt">         final class members (Java)
+                 <dt>CB_SHOW_non_final_members<dd style="margin-left:150pt">     not final class members
+                 <dt>CB_SHOW_const_members<dd style="margin-left:150pt">         const class (C++)
+                 <dt>CB_SHOW_non_const_members<dd style="margin-left:150pt">     not const class members
+                 <dt>CB_SHOW_volatile_members<dd style="margin-left:150pt">      volatile variables and functions
+                 <dt>CB_SHOW_non_volatile_members<dd style="margin-left:150pt">  not volatile variables and functions
+                 <dt>CB_SHOW_template_classes<dd style="margin-left:150pt">      template (parameterized) classes
+                 <dt>CB_SHOW_non_template_classes<dd style="margin-left:150pt">  standard (not template) classes
+                 <dt>CB_SHOW_package_members<dd style="margin-left:150pt">       members with package scope (Java)
+                 <dt>CB_SHOW_private_members<dd style="margin-left:150pt">       members with private scope
+                 <dt>CB_SHOW_protected_members<dd style="margin-left:150pt">     members with protected scope
+                 <dt>CB_SHOW_public_members<dd style="margin-left:150pt">        members with public scope
+                 <dt>CB_SHOW_inherited_members<dd style="margin-left:150pt">     inherited members
+                 <dt>CB_SHOW_class_members<dd style="margin-left:150pt">         class member functions
+                 <dt>CB_SHOW_data_members<dd style="margin-left:150pt">          class data members
+                 <dt>CB_SHOW_other_members<dd style="margin-left:150pt">         other members, not functions or data
+                 <dt>CB_SHOW_non_abstract<dd style="margin-left:150pt">          not abstract functions
+                 <dt>CB_SHOW_non_special<dd style="margin-left:150pt">           not special functions
+                 <dt>CB_SHOW_transient_data<dd style="margin-left:150pt">        transient data members (Java)
+                 <dt>CB_SHOW_persistent_data<dd style="margin-left:150pt">       persistent data members (Java)
+                 <dt>CB_SHOW_synchronized<dd style="margin-left:150pt">          synchronized functions (Java)
+                 <dt>CB_SHOW_non_synchronized<dd style="margin-left:150pt">      not synchronized functions (Java)
+                 </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filter_flags_2">filter_flags_2</A></code> - Extended filtering options flags, from the following:
+                 <dl compact>
+                 <dt>CB_SHOW_native<dd style="margin-left:120pt">          native functions (Java, others)
+                 <dt>CB_SHOW_non_native<dd style="margin-left:120pt">      non-native functions (Java, others)
+                 <dt>CB_SHOW_extern<dd style="margin-left:120pt">          external functions
+                 <dt>CB_SHOW_non_extern<dd style="margin-left:120pt">      tags not declared extern
+                 <dt>CB_SHOW_macros<dd style="margin-left:120pt">          tags declared in expanded macro
+                 <dt>CB_SHOW_non_macros<dd style="margin-left:120pt">      tag not declared in expanded macros
+                 <dt>CB_SHOW_anonymous<dd style="margin-left:120pt">       anonymous structs, classes, or unions
+                 <dt>CB_SHOW_non_anonymous<dd style="margin-left:120pt">   named structs, classes, or unions
+                 </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_name">type_name</A></code> - tag type (from <a href="tag_get_type.html">tag_get_type</a>)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="in_class">in_class</A></code> - if 1, treat as a class member, (class_name != '')</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - Set of tag attribute flags.  See
+                 <a href="tag_insert_simple.html">tag_insert_simple</a> for more information about the tag flags.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="i_access">i_access</A></code> - (Output) access level of tag
+                 <dl compact>
+                 <dt>CB_access_public<dd style="margin-left:120pt">        public or global scope
+                 <dt>CB_access_protected<dd style="margin-left:120pt">     protected scope
+                 <dt>CB_access_private<dd style="margin-left:120pt">       private scope
+                 <dt>CB_access_package<dd style="margin-left:120pt">       package scope (Java)
+                 </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="i_type">i_type</A></code> - (Output) Tag bitmap type to use to represent tag.
+                 <dl compact>
+                 <dt>CB_type_function<dd style="margin-left:120pt">        function
+                 <dt>CB_type_prototype<dd style="margin-left:120pt">       function prototype
+                 <dt>CB_type_data<dd style="margin-left:120pt">            variable, global, local, class member
+                 <dt>CB_type_operator<dd style="margin-left:120pt">        overloaded operator (C++)
+                 <dt>CB_type_constructor<dd style="margin-left:120pt">     class constructor
+                 <dt>CB_type_destructor<dd style="margin-left:120pt">      class destructor
+                 <dt>CB_type_enumeration<dd style="margin-left:120pt">     value in enumerated type
+                 <dt>CB_type_typedef<dd style="margin-left:120pt">         type definition
+                 <dt>CB_type_define<dd style="margin-left:120pt">          macro definition
+                 <dt>CB_type_property<dd style="margin-left:120pt">        class property (Delphi Object Pascal)
+                 <dt>CB_type_constant<dd style="margin-left:120pt">        constant
+                 <dt>CB_type_label<dd style="margin-left:120pt">           label (for goto statement)
+                 <dt>CB_type_import<dd style="margin-left:120pt">          import statement
+                 <dt>CB_type_friend<dd style="margin-left:120pt">          friend relationship (C++)
+                 <dt>CB_type_index<dd style="margin-left:120pt">           database index
+                 <dt>CB_type_trigger<dd style="margin-left:120pt">         database trigger
+                 <dt>CB_type_control<dd style="margin-left:120pt">         GUI control
+                 <dt>CB_type_menu<dd style="margin-left:120pt">            GUI menu
+                 <dt>CB_type_param<dd style="margin-left:120pt">           function or procedure parameter
+                 <dt>CB_type_proc<dd style="margin-left:120pt">            procedure
+                 <dt>CB_type_procproto<dd style="margin-left:120pt">       procedure prototype
+                 <dt>CB_type_include<dd style="margin-left:120pt">         include statement
+                 <dt>CB_type_file<dd style="margin-left:120pt">            file descriptor
+                 <dt>CB_type_subfunc<dd style="margin-left:120pt">         nested function
+                 <dt>CB_type_subproc<dd style="margin-left:120pt">         nested procedure
+                 <dt>CB_type_annotation<dd style="margin-left:120pt">      annotation or attribute
+                 <dt>CB_type_miscellaneous<dd style="margin-left:120pt">   miscellaneous tag type
+                 </dl>
+                 Container types:
+                 <dl compact>
+                 <dt>CB_type_struct<dd style="margin-left:120pt">          struct or record
+                 <dt>CB_type_enum<dd style="margin-left:120pt">            enumerated type
+                 <dt>CB_type_class<dd style="margin-left:120pt">           class type
+                 <dt>CB_type_template<dd style="margin-left:120pt">        template class
+                 <dt>CB_type_base_class<dd style="margin-left:120pt">      base class
+                 <dt>CB_type_package<dd style="margin-left:120pt">         package, library, program, module
+                 <dt>CB_type_union<dd style="margin-left:120pt">           union or variant type
+                 <dt>CB_type_database<dd style="margin-left:120pt">        database definition
+                 <dt>CB_type_table<dd style="margin-left:120pt">           database table
+                 <dt>CB_type_form<dd style="margin-left:120pt">            GUI form or dialog
+                 <dt>CB_type_eventtab<dd style="margin-left:120pt">        GUI event table
+                 <dt>CB_type_task<dd style="margin-left:120pt">            task (Ada)
+                 <dt>CB_type_group<dd style="margin-left:120pt">           group variable/structure
+                 <dt>CB_type_misc<dd style="margin-left:120pt">            miscellaneous container
+                 <dt>CB_type_tag<dd style="margin-left:120pt">             HTML/XML tag
+                 <dt>CB_type_statement<dd style="margin-left:120pt">       general statement type
+                 <dt>CB_type_annotype<dd style="margin-left:120pt">        annotation class type
+                 <dt>CB_type_assign<dd style="margin-left:120pt">          assignment statement
+                 <dt>CB_type_call<dd style="margin-left:120pt">            function call statement
+                 <dt>CB_type_if<dd style="margin-left:120pt">              if or switch statement
+                 <dt>CB_type_loop<dd style="margin-left:120pt">            for/while/do loop statement
+                 <dt>CB_type_break<dd style="margin-left:120pt">           break or exit statement
+                 <dt>CB_type_continue<dd style="margin-left:120pt">        continue statement
+                 <dt>CB_type_return<dd style="margin-left:120pt">          return or throw statement
+                 <dt>CB_type_goto<dd style="margin-left:120pt">            goto statement
+                 <dt>CB_type_try<dd style="margin-left:120pt">             try statement
+                 <dt>CB_type_preprocessing<dd style="margin-left:120pt">   preprocessing statement
+                 </dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 if the item is filtered out, 1 if it passes the filters.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_get_info.html">tag_get_info</a>, <a href="tag_get_type.html">tag_get_type</a>, <a href="tag_tree_insert_tag.html">tag_tree_insert_tag</a>, <a href="tag_tree_select_bitmap.html">tag_tree_select_bitmap</a></blockquote>
+</body>
+</html>

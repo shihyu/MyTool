@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>def_hotspot_navigation</title>
+</head>
+<body>
+
+<h3><b>boolean def_hotspot_navigation</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">If enabled, alias and syntax expansion can define hotspots
+in order to have multiple cursor stops.
+<p>
+For example, if you have an alias such as:
+<pre>
+    if ( %\c) {
+        %\c
+    }
+</pre>
+<p>
+Initially the cursor will be positioned at the first cursor
+stops (%\c), when you hit Ctrl+[ (next_hotspot), the cursor
+will jump to the next hotspot within the brace block.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Default:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">true</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Configuration_Variables.html">Configuration Variables</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="expand_alias.html">expand_alias</a>, <a href="c_space.html">c_space</a>, <a href="next_hotspot.html">next_hotspot</a>, <a href="prev_hotspot.html">prev_hotspot</a></blockquote>
+</body>
+</html>

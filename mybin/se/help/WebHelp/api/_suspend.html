@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_suspend</title>
+</head>
+<body>
+
+<h3><b>int _suspend()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Pushes a new level for a signal handler.  After a <b>_suspend</b> has
+been executed, errors which halt the interpreter will set the variable
+<b>rc</b> to the error code and <b>_resume</b> execution at the
+first statement after <b>_suspend</b>.  The <b>_resume</b> function
+restores the interpreter stack and code position to the state it was in
+after the last <b>_suspend</b> was executed.  Be sure to execute
+<b>_resume</b> to restore the previous signal handler.  This function
+sets the <b>rc</b> variable to 0 if successful.  Interpreter is stopped if
+too many suspends are performed.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+_suspend(); // rc is set to 0 by
+_suspend in first pass.
+if (rc) {
+     if (rc==1) { // normal return?
+         return(0);
+     }
+     message('Please specify floating point number');
+     return(1);
+}
+// If arg(1) is not a valid number, run time error will occur which
+cause _resume
+f=arg(1);
+++f;
+// Initiate normal return
+rc=1;
+_resume();
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="signal_handler.html">signal_handler</a>, <a href="_resume.html">_resume</a></blockquote>
+</body>
+</html>

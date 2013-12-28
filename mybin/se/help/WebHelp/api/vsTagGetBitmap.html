@@ -1,0 +1,17 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagGetBitmap</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTagGetBitmap(int filter_flags_1, int filter_flags_2, const char *type_name, const char *class_name, int tag_flags, int &leaf_flag, int &pic_member)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Simple to use, but very fast entry point for selecting the bitmap
+to be displayed in the tree control corresponding to the given
+tag information.  You must call tag_tree_prepare_expand() prior to
+calling this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filter_flags_1">filter_flags_1</A></code> - first part of class browser filter flags</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filter_flags_2">filter_flags_2</A></code> - second part of class browser filter flags</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_name">type_name</A></code> - tag type name</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - tag class name, just checked for null/empty</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - tag flags, bitset of VS_TAGFLAG_</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="leaf_flag">leaf_flag</A></code> - (reference) -1 implies leaf item, 0 or 1 container</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pic_member">pic_member</A></code> - (reference) set to picture index of bitmap
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error, >0 if filtered out.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

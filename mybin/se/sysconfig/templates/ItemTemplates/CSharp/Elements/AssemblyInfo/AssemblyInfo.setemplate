@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd">
+<SETemplate Version="1.0" Type="Item">
+
+  <TemplateDetails>
+    <Name>C# Assembly Descriptor File</Name>
+    <Description>Defines the file attributes of the compiled assembly file</Description>
+    <SortOrder>0</SortOrder>
+    <DefaultName>AssemblyInfo</DefaultName>
+  </TemplateDetails>
+  <TemplateContent>
+    <Parameters>
+        <Parameter Name="1assemblytitle" Value="" Prompt="1" PromptString="Assembly Title"/>
+        <Parameter Name="2assemblydescription" Value="" Prompt="1" PromptString="Assembly Description"/>
+        <Parameter Name="3assemblycompany" Value="" Prompt="1" PromptString="Company Name"/>
+        <Parameter Name="4assemblyproduct" Value="" Prompt="1" PromptString="Product Name"/>
+        <Parameter Name="5assemblycopyright" Value="" Prompt="1" PromptString="Copyright"/>
+        <Parameter Name="6assemblytrademark" Value="" Prompt="1" PromptString="Trademark"/>
+    </Parameters>
+    <Files>
+      <File TargetFilename="AssemblyInfo.cs" ReplaceParameters="1">AssemblyInfo.cs</File>
+    </Files>
+  </TemplateContent>
+
+</SETemplate>

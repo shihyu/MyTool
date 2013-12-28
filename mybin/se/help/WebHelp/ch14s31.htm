@@ -1,0 +1,12 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Shelling Programs from a Slick-C® Macro</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s30.htm" title="Unicode and SBCS or DBCS Macro Programming"><link rel="next" href="ch14s32.htm" title="Interfacing With Other Languages (DLL)"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_shellingprograms_13226_53387"></a>
+    <a name="slick_c_shellingprograms_13226_1006129"></a>
+    <a class="indexterm" name="slick-c_shellingprograms_905B61E9_E792"></a>
+    <a class="indexterm" name="slick-c_shellingprograms_5A2F908A_CF7B"></a>Shelling Programs from a Slick-C® Macro</h2></div></div></div><p class="NormalText">To execute another program from a Slick-C macro, use the <span><strong class="command">shell</strong></span> built-in, the <span><strong class="command">dos</strong></span> command, or the <span><strong class="command">execute</strong></span> built-in. The latter method is similar to executing a command on the command line, and enables the creation of expressions that execute Slick-C internal commands, Slick-C batch programs, or external programs. If you are only interested in executing an external program, use the <span><strong class="command">shell</strong></span> built-in or the <span><strong class="command">dos</strong></span> command.</p><p class="NormalText">Example:</p><pre class="programlisting">    // Capture the output of Slick GREP and process the error messages.
+    dos("-e sgrep DEBUG *.c");
+    // Redirect the output of sgrep to a file.
+    shell("sgrep DEBUG *.c &gt;junk");
+    // Run the DOS dir command and wait for a key to be pressed before
+    // closing command shell window.
+    shell("dir *.c &gt;junk","w");
+    // Display the Calculator dialog box. Show is an internal command.
+    execute("show _calc_form"); </pre><p class="NormalText"></p></div></body></html>

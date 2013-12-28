@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_get_context</title>
+</head>
+<body>
+
+<h3><b>int tag_get_context(int context_id, _str &tag_name, _str &type_name, _str &file_name, int &start_line_no, int &start_seekpos, int &scope_line_no, int &scope_seekpos, int &end_line_no, int &end_seekpos, _str &class_name, int &tag_flags, _str &arguments, _str &return_type)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve information about the given context ID.
+<p>
+For synchronization, threads should perform a tag_lock_context(false)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="context_id">context_id</A></code> - Context ID [ from 1 to <a href="tag_get_num_of_context.html">tag_get_num_of_context</a>() ]
+                  of context tag to retrieve information about.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - (Output) tag string (native case)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_name">type_name</A></code> - (Output) Tag type name, see <a href="tag_get_type.html">tag_get_type</a>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - (Output) Full path of file the tag is located in</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="start_line_no">start_line_no</A></code> - (Output) Start line number of tag within file</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="start_seekpos">start_seekpos</A></code> - (Output) Start seek position of tag within file</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="scope_line_no">scope_line_no</A></code> - (Output) Line number where the scope of the tag begins
+                  in <i>file_name</i>.  For example, this is the line on which
+                  opening brace is found in a C function.  For tags
+                  where scope is not applicable, simply the same value
+                  as <i>start_line_no</i>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="scope_seekpos">scope_seekpos</A></code> - (Output) Start seek position of tag inner scope</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="end_line_no">end_line_no</A></code> - (Output) ending line number of tag within file</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="end_seekpos">end_seekpos</A></code> - (Output) Line number where the tag ends in
+                  <i>file_name</i>.  Technically, this is the seek
+                  position of the last character in the tag.  Using a
+                  C function for example, this is the seek position of
+                  the close brace ending the function body</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - (Output) Name of class or package or other container
+                  that the tag belongs to.  See <i>VS_TAGSEPARATOR_class</i> and
+                  <i>VS_TAGSEPARATOR_package</i> for more details about
+                  constructing this value.  If the tag is not in a class
+                  scope, simple pass the empty string for this value.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - (Output)Tag flags indicating symbol attributes, see
+                  <a href="tag_insert_simple.html">tag_insert_simple</a> for details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="arguments">arguments</A></code> - (Output) arguments or formal parameters</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="return_type">return_type</A></code> - (Output) Return type and/or value of symbol or constant.
+                  See <i>VS_TAGSEPARATOR_equals</i> for more details.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, or <0 on error.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_clear_context.html">tag_clear_context</a>, <a href="tag_current_context.html">tag_current_context</a>, <a href="tag_find_context.html">tag_find_context</a>, <a href="tag_get_detail2.html">tag_get_detail2</a>, <a href="tag_get_num_of_context.html">tag_get_num_of_context</a>, <a href="tag_next_context.html">tag_next_context</a>, <a href="tag_get_context_simple.html">tag_get_context_simple</a></blockquote>
+</body>
+</html>

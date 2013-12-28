@@ -1,0 +1,4537 @@
+/* 
+  Abbreviations used:
+ 
+     SASLang = "SAS Language, Reference Version 6 First Edition"
+     SASPnnn = "SAS Technical Report P-nnn"
+     SASL610 = "SAS Software: Changes and Enhancements, Release 6.10"
+     SASGRPH = "SAS/GRAPH Software Volume 1, Reference Ver 6 First Edition"
+     [e] denotes an EBCDIC value
+     [a] denotes an ASCII value
+ 
+  Information gathered from the following sources:
+     (C&E = "Changes and Enhancements"; Ver = "Version")
+     SAS Language, Reference Ver 6 First Edition
+     SAS TR P-222, C&E to Base SAS Software Release 6.07
+     SAS TR P-242, SAS Software: C&E Release 6.08
+     SAS Software: C&E, Release 6.10
+     SAS Software: C&E, Release 6.11
+     What's New for the 6.09 Enhanced Release of SAS Software: C&E, 6.09E Release
+     SAS Companion for the MVS Environment, Ver 6 Second Edition
+     SAS TR P-218, C&E to the SAS System for the MVS Environment Release 6.07
+     SAS Companion for the CMS Environment, Ver 6 First Edition
+     SAS TR P-219, C&E to the SAS System for the CMS Environment Release 6.07
+     SAS Companion for the VSE Environment, Ver 6 First Edition
+     SAS Companion for the UNIX Environments: Language, Ver 6 First Edition
+     SAS Companion for the VMS Environment, Ver 6 First Edition
+     SAS TR P-220, C&E to the SAS System for the VMS Environment Release 6.07
+     SAS Companion for the OpenVMS Environment, Ver 6 Second Edition
+     SAS Companion for the Microsoft Windows Environment, Ver 6 Second Edition
+     Microsoft Windows Environment, C&E to the SAS System Release 6.10
+     Microsoft Windows Environment: C&E to the SAS System, Release 6.11
+     SAS Companion for the OS/2 Environment, Ver 6 Second Edition
+     OS/2 Environment, C&E to the SAS System Release 6.10
+     OS/2 Environment: C&E to the SAS System, Release 6.11
+     SAS Companion for the Macintosh, Ver 6 First Edition
+     SAS/GRAPH Software Volume 1, Reference Ver 6 First Edition
+     SAS/QC Software Volume 2, Usage & Reference Ver 6 First Edition
+     SAS Companion for the AOS/VS Environment, Ver 6 First Edition
+     SAS TR: C&E to the SAS System for the OpenVMS Alpha Environment, Rel. 6.12
+     SAS TR P-229, SAS/STAT Software C&E Release 6.07
+     What's New in Release 6.12 Base SAS (Technical Support Consultant's Copy)
+     What's New in SAS Software for Ver 7 and the Ver 8 Developer's Release
+     SAS Technical Support Notes and Usage Notes
+     Version 7 and Version 8 Online Documentation
+*/ 
+
+/**
+ * memory address of variable var
+ * 
+ * @param var
+ * 
+ * @since version 7, avail on CMS and MVS in 6.07
+ */
+function ADDR(var);
+ 
+/**
+ * invokes native help system
+ * 
+ * @param method
+ * @param file
+ * @param parm
+ * 
+ * @since avail on UNIX, WINDOWS, and OS/2 in 6.11; avail on OpenVMS in 6.12
+ */
+function HOSTHELP(method,<file>,<parm>);
+ 
+/**
+ * character return value from execution of external routine modn
+ * 
+ * @param cntl
+ * @param modn
+ * @param arg1
+ * @param argn
+ * 
+ * @since version 7, avail on WINDOWS and OS/2 in 6.11
+ */
+function MODULEC(<cntl>,modn,arg1,...argn);
+ 
+/**
+ * numeric return value from execution of external routine modn
+ * 
+ * @param cntl
+ * @param modn
+ * @param arg1
+ * @param argn
+ * 
+ * @since version 7, avail on WINDOWS and OS/2 in 6.11
+ */
+function MODULEN(<cntl>,modn,arg1,...argn);
+ 
+/**
+ * executes external routine modn
+ * 
+ * @param cntl
+ * @param modn
+ * @param arg1
+ * @param argn
+ * 
+ * @since version 7, avail on WINDOWS and OS/2 in 6.11
+ */
+procedure MODULE(<cntl>,modn,arg1,...argn);
+ 
+/**
+ * the contents of a numeric variable stored at memory
+ * location addr for length len [2-8]; default len = 4
+ * 
+ * @param addr
+ * @param len
+ *
+ * @since version 7, avail on CMS and MVS in 6.07; avail on WINDOWS and OS/2 in 6.11
+ */
+function PEEK(addr,<len>);
+ 
+/**
+ * the contents of a character variable stored at memory
+ * location addr for length len [1-200]; default len = 8
+ * 
+ * @param addr
+ * @param len
+ * 
+ * @since version 7, avail on CMS and MVS in 6.07; avail on WINDOWS and OS/2 in 6.11
+ */
+function PEEKC(addr,<len>);
+ 
+/**
+ * stores data from s into memory location p for length l
+ * 
+ * @param s
+ * @param p
+ * @param l
+ *
+ * @since SAS version 7
+ */
+function POKE(s,p,<l>);
+ 
+/**
+ * stores data from src into memory location ptr for length len
+ * 
+ * @param src
+ * @param ptr
+ * @param len
+ * 
+ * @since version 7, avail on CMS and MVS in 6.07
+ */
+procedure POKE(src,ptr,<len>);
+  
+/**
+ * value of host-specific variable var
+ * 
+ * @param var
+ * 
+ * @since version 6.12/g09E and later, avail on UNIX in 6.06 and avail on CMS in 6.07
+ */
+function SYSGET(var);
+  
+/**
+ * return code from invocation of system command str
+ * 
+ * @param str
+ * 
+ * @since version 6.12/609E and later, avail on CMS, MVS, and UNIX in 6.06
+ */
+function SYSTEM(str);
+  
+/**
+ * issues system command str
+ * 
+ * @param str
+ */
+procedure SYSTEM(str);
+  
+/**
+ * return code from invocation of system command str
+ * @warning system specific -- CMS only
+ * 
+ * @param str
+ */
+function CMS(str);
+  
+/**
+ * value of EXEC2 or REXX variable var
+ * @warning system specific -- CMS only
+ * 
+ * @param var
+ */
+function GETEXEC(var);
+  
+/**
+ * assigns EXEC2 or REXX variable var the value val
+ * @warning system specific -- MVS only
+ * 
+ * @param var
+ * @param val
+ */
+procedure PUTEXEC(var,val);
+  
+/**
+ * return code from invocation of system command str
+ * @warning system specific -- MVS only
+ * 
+ * @param str
+ */
+function TSO(str);
+  
+/**
+ * issues system command str
+ * @warning system specific -- VMS and/or OpenVMS only
+ * 
+ * @param str
+ */
+procedure TSO(str);
+  
+/**
+ * return code from deletion of external file fn
+ * @warning system specific
+ * 
+ * @param fn
+ */
+function DELETE(fn);
+  
+/**
+ * file attribute item i for file fn
+ * @warning system specific
+ * 
+ * @param fn
+ * @param i
+ *
+ * @since SAS version 6.07
+ */
+function FILEATTR(fn,i);
+  
+/**
+ * releases resources associated with a directory search
+ * @warning system specific
+ * 
+ * @param cntxt
+ */
+procedure FINDEND(cntxt);
+  
+/**
+ * first filename in search path that matches file spec fn
+ * @warning system specific
+ * 
+ * @param fn
+ * @param cntxt
+ */
+function FINDFILE(fn,cntxt);
+  
+/**
+ * retrieves specified item of information from a device
+ * @warning system specific
+ * 
+ * @param dev
+ * @param item
+ */
+function GETDVI(dev,item);
+  
+/**
+ * retrieves job process information
+ * @warning system specific
+ * 
+ * @param jpi
+ * @param pid
+ */
+function GETJPI(jpi,<pid>);
+ 
+/**
+ * information about DCL logical name ln
+ * @warning system specific
+ * 
+ * @param ln
+ * @param t
+ * @param x
+ * @param m
+ * @param c
+ * @param i
+ *
+ * @since SAS version 6.07
+ */
+function GETLOG(ln,<t>,<x>,<m>,<c>,<i>);
+ 
+/**
+ * text for VMS status(error) code stat
+ * @warning system specific
+ * 
+ * @param stat
+ */
+function GETMSG(stat);
+ 
+/**
+ * retrieves disk quota information
+ * @warning system specific
+ * 
+ * @param dev
+ * @param usr
+ * @param usage
+ * @param prm
+ * @param ovr
+ * @param cntxt
+ */
+function GETQUOTA(dev,usr,usage,prm,ovr,cntxt);
+ 
+/**
+ * value of DCL symbol sym
+ * @warning system specific
+ * 
+ * @param sym
+ */
+function GETSYM(sym);
+ 
+/**
+ * current setting of terminal device characteristic ch;
+ * characteristics are listed in SAS Technical Report P-220, p119-120
+ * @warning system specific
+ * 
+ * @param ch
+ *
+ * @since SAS version 6.07
+ */
+function GETTERM(ch);
+ 
+/**
+ * name of current node [up to 16 bytes long]
+ * @warning system specific
+ * 
+ * @since SAS version 6.07
+ */
+function NODENAME();
+ 
+/**
+ * return code from creating OpenVMS logical name lname
+ * @warning system specific
+ * 
+ * @param lname
+ * @param val
+ */
+function PUTLOG(lname,val);
+ 
+/**
+ * creates DCL symbol sym as val with scope sc
+ * @warning system specific
+ * 
+ * @param sym
+ * @param val
+ * @param sc
+ */
+function PUTSYM(sym,val,sc);
+ 
+/**
+ * return code from renaming file old to file new
+ * @warning system specific
+ * 
+ * @param old
+ * @param new
+ */
+function RENAME(old,new);
+ 
+/**
+ * sets terminal device characteristic with new value v
+ * characteristics are listed in SAS Technical Report P-220, p119-120
+ * @warning system specific
+ * 
+ * @param ch
+ * @param v
+ *
+ * @since SAS version 6.07
+ */
+function SETTERM(ch,v);
+ 
+/**
+ * number of characters read from SYS$INPUT with prompt p
+ * @warning system specific
+ * 
+ * @param p
+ */
+function TERMIN(p);
+ 
+/**
+ * return code from writing out to SYS$OUTPUT
+ * @warning system specific
+ * 
+ * @param out
+ */
+function TERMOUT(out);
+ 
+/**
+ * rc from modifying I/O channel ch
+ * @warning system specific
+ * 
+ * @param specifications
+ * @param ch
+ */
+function TTCONTRL(specifications,ch);
+ 
+/**
+ * return code from invocation of system command str
+ * 
+ * @warning system specific -- UNIX, WINDOWS, OS/2, and OpenVMS
+ * 
+ * @param str
+ */
+function VMS(str);
+ 
+/**
+ *  generates a sound of frequency freq for duration dur
+ *  @warning system specific -- AOS/VS, VMS, and OpenVMS
+ * 
+ * @param freq
+ * @param dur
+ */
+procedure SOUND(freq,dur);
+ 
+/**
+ * return code from closing I/O channel ch
+ * @warning system specific -- AOS/VS, VMS, and OpenVMS
+ * 
+ * @param ch
+ */
+function TTCLOSE(ch);
+ 
+/**
+ * rc from assigning I/O channel ch to a terminal
+ * @warning system specific -- AOS/VS, VMS, and OpenVMS
+ * 
+ * @param specifications
+ * @param ch
+ */
+function TTOPEN(specifications,ch);
+ 
+/**
+ * reads data from channel ch into buf for max size s
+ * @warning system specific -- AOS/VS, VMS, and OpenVMS
+ * 
+ * @param ch
+ * @param buf
+ * @param s
+ */
+function TTREAD(ch,buf,<s>);
+ 
+/**
+ * writes data from buffer buf to channel ch for max size s
+ * help methods are listed in OS/2 C&E for Release 6.10, p44
+ * @warning system specific -- OS/2 only
+ * 
+ * @param ch
+ * @param buf
+ * @param s
+ */
+function TTWRITE(ch,buf,<s>);
+ 
+/**
+ * displays help information using help method h
+ * @warning system specific -- WINDOWS only
+ * 
+ * @param h
+ * @param p1
+ * @param p2
+ *
+ * @since SAS version 6.10
+ */
+function OS2HELP(h,p1,p2);
+ 
+/**
+ * wait s seconds for a multimedia device to become active
+ * @warning system specific -- WINDOWS only
+ * 
+ * @param s
+ *
+ * @since SAS version 6.10
+ */
+function MCIPISLP(s);
+ 
+/**
+ * return information from invocation of MCI string command com
+ * @warning system specific -- WINDOWS only
+ * 
+ * @param com
+ *
+ * @since SAS version 6.10
+ */
+function MCIPISTR(com);
+ 
+/**
+ * the contents of a numeric variable, returned by a 16-bit
+ * DLL routine, stored at memory location addr for length len
+ * @warning system specific
+ * 
+ * @param addr
+ * @param len
+ *
+ * @since SAS version 6.11
+ */
+function PEEK16(addr,<len>);
+ 
+/**
+ * the contents of a character variable, returned by a
+ * 16-bit DLL routine, stored at memory location addr for length len
+ * @warning system specific
+ * 
+ * @param addr
+ * @param len
+ *
+ * @since SAS version 6.11
+ */
+function PEEK16C(addr,<len>);
+ 
+/**
+ * displays help information using help method h
+ * help methods are listed in Windows C&E for Release 6.10, p54
+ * @warning system specific -- WINDOWS and OS/2 only
+ * 
+ * @param h
+ * @param p1
+ * @param p2
+ *
+ * @since SAS version 6.10
+ */
+function WINHELP(h,p1,p2);
+ 
+/**
+ * character count in hex for packet str
+ * @warning system specific
+ * 
+ * @param str
+ */
+function DMYTECHC(str);
+ 
+/**
+ * checksum value for packet str; icks is initial
+ * checksum and ccks is calculated checksum
+ * @warning system specific
+ * 
+ * @param str
+ * @param icks
+ * @param ccks
+ */
+procedure DMYTECKS(str,icks,ccks);
+ 
+/**
+ * number of tokens in packet str; if packet >200 characters,
+ * str is the first 200, rstr is the remainder; else rstr = ''
+ * @warning system specific
+ * 
+ * @param str
+ * @param rstr
+ */
+function DMYTECWD(str,rstr);
+ 
+/**
+ * converts DataMyte 2-byte hex number x to an ascii number
+ * @warning system specific
+ * 
+ * @param x
+ */
+function DMYTERVC(x);
+ 
+/**
+ * suspends execution of a sas data step for t seconds
+ * @warning system specific
+ * 
+ * @param t
+ */
+function SLEEP(t);
+ 
+/**
+ * 't' specifies a time when a data step begins execution; the return
+ * value is the number of seconds slept
+ * @warning system specific
+ * 
+ * @param t
+ */
+function WAKEUP(t);
+ 
+/**
+ * convexity for an enumerated cashflow
+ * 
+ * @param y
+ * @param f
+ * @param c1
+ * @param cn
+ *
+ * @since version 8
+ */
+function CONVX(y,f,c1,...cn);
+
+/**
+ * convexity for a periodic cashflow stream
+ * the missing argument of the four; f = a(1 + r)**n
+ * 
+ * @param a
+ * @param c
+ * @param n
+ * @param k
+ * @param k0
+ * @param y
+ *
+ * @since version 8
+ */
+function CONVXP(a,c,n,k,k0,y);
+
+/**
+ * compound interest?
+ * 
+ * @param a
+ * @param f
+ * @param r
+ * @param n
+ */
+function COMPOUND(a,f,r,n);
+ 
+/**
+ * accumulated depreciation using a declining balance method
+ * 
+ * @param p
+ * @param v
+ * @param y
+ * @param r
+ */
+function DACCDB(p,v,y,r);
+ 
+/**
+ * same as DACCCB but with conversion to an sld function
+ * 
+ * @param p
+ * @param v
+ * @param y
+ * @param r
+ */
+function DACCDBSL(p,v,y,r);
+ 
+/**
+ * accumulated depreciation using the straight-line method
+ * 
+ * @param p
+ * @param v
+ * @param y
+ */
+function DACCSL(p,v,y);
+ 
+/**
+ * accumulated depreciation using the sum-of-years-digits method
+ * 
+ * @param p
+ * @param v
+ * @param y
+ */
+function DACCSYD(p,v,y);
+ 
+/**
+ * accumulated depreciation using user-specified tables
+ * 
+ * @param p
+ * @param v
+ * @param t1
+ * @param tn
+ */
+function DACCTAB(p,v,t1,...<tn>);
+ 
+/**
+ * depreciation using the declining balance method
+ * 
+ * @param p
+ * @param v
+ * @param y
+ * @param r
+ */
+function DEPDB(p,v,y,r);
+ 
+/**
+ * same as DEPDB but with conversion to an sld function
+ * 
+ * @param p
+ * @param v
+ * @param y
+ * @param r
+ */
+function DEPDBSL(p,v,y,r);
+ 
+/**
+ * straight-line depreciation
+ * 
+ * @param p
+ * @param v
+ * @param y
+ */
+function DEPSL(p,v,y);
+ 
+/**
+ * sum-of-years-digits depreciation
+ * 
+ * @param p
+ * @param v
+ * @param y
+ */
+function DEPSYD(p,v,y);
+ 
+/**
+ * depreciation using specified tables
+ * 
+ * @param p
+ * @param v
+ * @param t1
+ * @param tn
+ */
+function DEPTAB(p,v,t1,...<tn>);
+ 
+/**
+ * modified duration for an enumerated cashflow
+ * 
+ * @param y
+ * @param f
+ * @param c1
+ * @param cn
+ *
+ * @since version 8
+ */
+function DUR(y,f,c1,...cn);
+
+/**
+ * modified duration for a periodic cashflow stream
+ * 
+ * @param a
+ * @param c
+ * @param n
+ * @param k
+ * @param k0
+ * @param y
+ *
+ * @since version 8
+ */
+function DURP(a,c,n,k,k0,y);
+
+/**
+ * internal rate of return as a fraction
+ * 
+ * @param freq
+ * @param c0
+ * @param c1
+ * @param cn
+ */
+function INTRR(freq,c0,c1,...cn);
+ 
+/**
+ * internal rate of return as a percentage
+ * 
+ * @param freq
+ * @param c0
+ * @param c1
+ * @param cn
+ */
+function IRR(freq,c0,c1,...cn);
+ 
+/**
+ * missing argument of the four amortization parms
+ * 
+ * @param amt
+ * @param pay
+ * @param rate
+ * @param period
+ */
+function MORT(amt,pay,rate,period);
+ 
+/**
+ * net present value with rate as a fraction
+ * 
+ * @param rate
+ * @param freq
+ * @param c0
+ * @param c1
+ * @param cn
+ */
+function NETPV(rate,freq,c0,c1,...cn);
+ 
+/**
+ * net present value with rate as a percentage
+ * 
+ * @param rate
+ * @param freq
+ * @param c0
+ * @param c1
+ * @param cn
+ */
+function NPV(rate,freq,c0,c1,...cn);
+ 
+/**
+ * present value for a periodic cashflow stream
+ * 
+ * @param a
+ * @param c
+ * @param n
+ * @param k
+ * @param k0
+ * @param y
+ * 
+ * @since version 8
+ */
+function PVP(a,c,n,k,k0,y);
+
+/* present value for a savings stream
+ *
+ * @param f
+ * @param p
+ * @param r
+ * @param n
+ */
+function SAVING(f,p,r,n);
+ 
+/**
+ * yield-to-maturity for a periodic cashflow stream<br>
+ * the missing argument of the four from a periodic saving
+ * <pre>
+ *     f =  (p(1 + r)((1 + r)**n - 1)) / r
+ * </pre>
+ * 
+ * @param a
+ * @param c
+ * @param n
+ * @param k
+ * @param k0
+ * @param y
+ * 
+ * @since version 8
+ */
+function YIELDP(a,c,n,k,k0,y);
+
+/**
+ * closes directory dirid
+ * 
+ * @param dirid      directory ID from DOPEN()
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function DCLOSE(dirid);
+ 
+/**
+ * host-specific information itm concerning directory dirid
+ * 
+ * @param dirid      directory ID from DOPEN()
+ * @param itm
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function DINFO(dirid,itm);
+ 
+/**
+ * number of members in directory dirid
+ * 
+ * @param dirid      directory ID from DOPEN()
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function DNUM(dirid);
+ 
+/**
+ * opens directory fileref and returns a unique numeric
+ * directory identifier, returns 0 if open unsuccessful
+ * 
+ * @param fileref
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function DOPEN(fileref);
+ 
+/**
+ * host-specific info item number n about directory dirid
+ * 
+ * @param dirid      directory ID from DOPEN()
+ * @param n
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function DOPTNAME(dirid,n);
+ 
+/**
+ * number of information items available for directory dirid
+ * 
+ * @param dirid      directory ID from DOPEN()
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function DOPTNUM(dirid);
+ 
+/**
+ * name of the nth member in directory dirid
+ * 
+ * @param dirid      directory ID from DOPEN()
+ * @param n
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function DREAD(dirid,n);
+ 
+/**
+ * deletes note marker notid from FNOTE [DROPNOTE can also
+ * be used to delete a notid from NOTE--refer to "Data Step Functions"]
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @param notid
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function DROPNOTE(fid,notid);
+ 
+/**
+ * appends current record in the FDB to file fid with
+ * optional carriage control character cc
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @param cc         optional carriage control character cc
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FAPPEND(fid,<cc>);
+ 
+/**
+ * closes file fid
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FCLOSE(fid);
+ 
+/**
+ * current column position in the FDB for file fid
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FCOL(fid);
+ 
+/**
+ * deletes file fid
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FDELETE(fid);
+ 
+/**
+ * copies data from the FDB into variable var for
+ * optional length len
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @param var
+ * @param len
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FGET(fid,var,<len>);
+ 
+/**
+ * host-specific information itm concerning file fid
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @param itm
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FINFO(fid,itm);
+ 
+/**
+ * unique note identifier for the last record read from file fid
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FNOTE(fid);
+ 
+/**
+ * opens file filref for input or update
+ * and returns a unique numeric file identifier, returns 0 if open
+ * unsuccessful; optional record length recl and record format recfm
+ * 
+ * @param filref
+ * @param mode
+ * @param recl
+ * @param recfm
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FOPEN(filref,<mode>,<recl>,<recfm>);
+ 
+/**
+ * host-specific information item number n about file fid
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @param n
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FOPTNAME(fid,n);
+ 
+/**
+ * number of information items available for file fid
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FOPTNUM(fid);
+ 
+/**
+ * positions the read pointer to notid (from the FNOTE
+ * function) in file fid
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @param notid
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FPOINT(fid,notid);
+ 
+/**
+ * positions column pointer in the FDB to column p for file fid
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @param p
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FPOS(fid,p);
+ 
+/**
+ * moves data d to the FDB of file fid starting at the FDB's
+ * current column position; d can be text or a variable
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @param d
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FPUT(fid,d);
+ 
+/**
+ * reads a record from file fid into the FDB
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FREAD(fid);
+ 
+/**
+ * positions file pointer to the beginning of file fid
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FREWIND(fid);
+ 
+/**
+ * size of last record read or current record size of file fid
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FRLEN(fid);
+ 
+/**
+ * sets token delimiter(s) sep for file fid
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @param sep
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FSEP(fid,sep);
+ 
+/**
+ * writes the  current record in the FDB to file fid with
+ * optional carriage control character cc
+ * 
+ * @param fid        file ID from FOPEN() or MOPEN()
+ * @param cc
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FWRITE(fid,<cc>);
+ 
+/**
+ * opens member mname in directory
+ * dirid for input or update and returns a unique numeric file
+ * identifier, returns 0 if open unsuccessful; optional record parms
+ * 
+ * 
+ * @param dirid      directory ID from DOPEN()
+ * @param mname
+ * @param mode
+ * @param recl
+ * @param recfm
+ * @return 0 if the specific operation was successful and a
+ *         nonzero value if the operation was not successful
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function MOPEN(dirid,mname,<mode>,<recl>,<recfm>);
+ 
+/**
+ * character value of the nth variable in data set dsid
+ * 
+ * @param dsid
+ * @param n
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function GETVARC(dsid,n);
+ 
+/**
+ * numeric value of the nth variable in data set dsid
+ * 
+ * @param dsid
+ * @param n
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function GETVARN(dsid,n);
+ 
+/**
+ * format assigned to the nth variable in data set dsid
+ * 
+ * @param dsid
+ * @param n
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function VARFMT(dsid,n);
+ 
+/**
+ * informat assigned to the nth variable in data set dsid
+ * 
+ * @param dsid
+ * @param n
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function VARINFMT(dsid,n);
+ 
+/**
+ * label assigned to the nth variable in data set dsid
+ * 
+ * @param dsid
+ * @param n
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function VARLABEL(dsid,n);
+ 
+/**
+ * length of the nth variable in data set dsid
+ * 
+ * @param dsid
+ * @param n
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function VARLEN(dsid,n);
+ 
+/**
+ * name of the nth variable in data set dsid
+ * 
+ * @param dsid
+ * @param n
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function VARNAME(dsid,n);
+ 
+/**
+ * position of variable vname in data set dsid, 0 if
+ * the variable does not exist in the data set
+ * 
+ * @param dsid
+ * @param vname
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function VARNUM(dsid,vname);
+ 
+/**
+ * type ('C'|'N') of the nth variable in data set dsid
+ * 
+ * @param dsid
+ * @param n
+ * 
+ * @since SAS version 6.12/609E and later
+ */
+function VARTYPE(dsid,n);
+ 
+/**
+ * value of character attribute attr for data set dsid
+ * 
+ * @param dsid
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function ATTRC(dsid,attr);
+ 
+/**
+ * value of numeric attribute attr for data set dsid
+ * 
+ * @param dsid
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function ATTRN(dsid,attr);
+ 
+/**
+ * closes data set dsid
+ * 
+ * @param dsid
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function CLOSE(dsid);
+ 
+/**
+ * current observation number from data set dsid
+ * 
+ * @param dsid
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function CUROBS(dsid);
+ 
+/**
+ * deletes a note marker notid from NOTE [DROPNOTE can also
+ * delete a notid from FNOTE--refer to "External File Functions"]
+ * 
+ * @param dsid
+ * @param notid
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function DROPNOTE(dsid,notid);
+ 
+/**
+ * data set name associated with dsid
+ * 
+ * @param dsid
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function DSNAME(dsid);
+ 
+/**
+ * reads the next nondeleted observation from data set
+ * dsid into the DDV
+ * 
+ * @param dsid
+ * @param NOSET
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FETCH(dsid,<NOSET>);
+ 
+/**
+ * reads observation number obs from from data set
+ * dsid into the DDV
+ * 
+ * @param dsid
+ * @param obs
+ * @param opts
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FETCHOBS(dsid,obs,<opts>);
+ 
+/**
+ * unique note identifier for current obs of data set dsid
+ * 
+ * @param dsid
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function NOTE(dsid);
+ 
+/**
+ * opens data set dsname for input and returns a unique
+ * numeric data set identifier, returns 0 if open unsuccessful
+ * 
+ * @param dsname
+ * @param mode
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function OPEN(dsname,<mode>);
+ 
+/**
+ * locates observation identified by notid (from the NOTE
+ * function) in data set dsid
+ * 
+ * @param dsid
+ * @param notid
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function POINT(dsid,notid);
+ 
+/**
+ * positions data set dsid back to beginning
+ * 
+ * @param dsid
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function REWIND(dsid);
+ 
+/**
+ * automatically sets values of data set variables or macro
+ * variables after a READ; typically follows an OPEN function call
+ * 
+ * 
+ * @param dsid
+ *
+ * @since SAS version 6.12/609E and later
+ */
+procedure SET(dsid);
+ 
+/**
+ * w/v = "associated with the variable"<BR>
+ * var_by_exp = "the variable defined by the expression"<br>
+ * w/var_by_exp = "associated with the variable defined by expression"
+ * 
+ * @param var
+ * @return 1 if variable var is an array, 0 if not
+ *
+ * @since SAS version 7
+ */
+function VARRAY(var);
+ 
+/**
+ * @return 1 if var_by_exp exp is an array, 0 if not
+ * 
+ * @param exp
+ *
+ * @since SAS version 7
+ */
+function VARRAYX(exp);
+ 
+/**
+ * format w/v var
+ * 
+ * @param var
+ *
+ * @since SAS version 7
+ */
+function VFORMAT(var);
+ 
+/**
+ * decimal value of the format w/v var
+ * 
+ * @param var
+ *
+ * @since SAS version 7
+ */
+function VFORMATD(var);
+ 
+/**
+ * decimal value of the format w/var_by_exp exp
+ * 
+ * @param exp
+ *
+ * @since SAS version 7
+ */
+function VFORMATDX(exp);
+ 
+/**
+ * name of the format w/v var
+ * 
+ * @param var
+ *
+ * @since SAS version 7
+ */
+function VFORMATN(var);
+ 
+/**
+ * name of the format w/var_by_exp exp
+ * 
+ * @param exp
+ *
+ * @since SAS version 7
+ */
+function VFORMATNX(exp);
+ 
+/**
+ * width value of the format w/v var
+ * 
+ * @param var
+ *
+ * @since SAS version 7
+ */
+function VFORMATW(var);
+ 
+/**
+ * width value of the format w/var_by_exp exp
+ * 
+ * @param exp
+ *
+ * @since SAS version 7
+ */
+function VFORMATWX(exp);
+ 
+/**
+ * format w/var_by_exp exp
+ * 
+ * @param exp
+ *
+ * @since SAS version 7
+ */
+function VFORMATX(exp);
+ 
+/**
+ * @return 1 if variable var is a member of an array, 0 if not
+ * 
+ * @param var
+ *
+ * @since SAS version 7
+ */
+function VINARRAY(var);
+ 
+/**
+ * @return 1 if var_by_exp is a member of an array, 0 if not
+ * 
+ * @param exp
+ *
+ * @since SAS version 7
+ */
+function VINARRAYX(exp);
+ 
+/**
+ * informat w/v var
+ * 
+ * @param var
+ *
+ * @since SAS version 7
+ */
+function VINFORMAT(var);
+ 
+/**
+ * decimal value of the informat w/v var
+ * 
+ * @param var
+ *
+ * @since SAS version 7
+ */
+function VINFORMATD(var);
+ 
+/**
+ * decimal value of the informat w/var_by_exp exp
+ * 
+ * @param exp
+ *
+ * @since SAS version 7
+ */
+function VINFORMATDX(exp);
+ 
+/**
+ * name of the informat w/v var
+ * 
+ * @param var
+ *
+ * @since SAS version 7
+ */
+function VINFORMATN(var);
+ 
+/**
+ * name of the informat w/var_by_exp exp
+ * 
+ * @param exp
+ *
+ * @since SAS version 7
+ */
+function VINFORMATNX(exp);
+ 
+/**
+ * width value of the informat w/v var
+ * 
+ * @param var
+ *
+ * @since SAS version 7
+ */
+function VINFORMATW(var);
+ 
+/**
+ * width value of the informat w/var_by_exp exp
+ * 
+ * @param exp
+ *
+ * @since SAS version 7
+ */
+function VINFORMATWX(exp);
+ 
+/**
+ * informat w/var_by_exp exp
+ * 
+ * @param exp
+ *
+ * @since SAS version 7
+ */
+function VINFORMATX(exp);
+ 
+/**
+ * label w/v var
+ * 
+ * @param var
+ *
+ * @since SAS version 7
+ */
+function VLABEL(var);
+ 
+/**
+ * label w/var_by_exp exp
+ * 
+ * @param exp
+ *
+ * @since SAS version 7
+ */
+function VLABELX(exp);
+ 
+/**
+ * compile-time size of the variable var
+ * 
+ * @param var
+ *
+ * @since SAS version 7
+ */
+function VLENGTH(var);
+ 
+/**
+ * compile-time size of the var_by_exp exp
+ * 
+ * @param exp
+ *
+ * @since SAS version 7
+ */
+function VLENGTHX(exp);
+ 
+/**
+ * name of the variable var
+ * 
+ * @param var
+ *
+ * @since SAS version 7
+ */
+function VNAME(var);
+ 
+/**
+ * assigns the name of variable var1 as the value of
+ *           variable var2
+ * 
+ * @param var1
+ * @param var2
+ */
+procedure VNAME(var1,var2);
+ 
+/**
+ * name of the var_by_exp exp
+ * 
+ * @param exp
+ *
+ * @since SAS version 7
+ */
+function VNAMEX(exp);
+ 
+/**
+ * type ('C'|'N') of the variable var
+ * 
+ * @param var
+ *
+ * @since SAS version 7
+ */
+function VTYPE(var);
+ 
+/**
+ * type ('C'|'N') of the var_by_exp exp
+ * 
+ * @since SAS version 7
+ * 
+ * @param exp
+ */
+function VTYPEX(exp);
+ 
+/**
+ * @return 1 if catalog or catalog entry cent exists, 0 if not
+ * 
+ * @param cent   catalog entry
+ * @param U      optional 'U' keyword parameter verifies ability to update
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function CEXIST(cent,<U>);
+ 
+/**
+ * first differences between var and its nth lag; default n = 1
+ * 
+ * @param var
+ * 
+ * @return DIF
+ */
+function DIF(var,n=1);
+ 
+/**
+ * nth dimension dim of a multidimensional array; default n = 1
+ * 
+ * @param array
+ * @param dim
+ */
+function DIM(array,dim=1);
+ 
+/**
+ * executes resolved value of sas macro mac following the
+ * current data step; the data step must end with a run statement
+ * 
+ * @param mac
+ *
+ * @since SAS version 6.07
+ */
+procedure EXECUTE(mac);
+ 
+/**
+ * @return 1 if SAS data library member exists, 0 if not
+ * 
+ * @param mem
+ * @param mtyp    optional member type mtyp
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function EXIST(mem,<mtyp>);
+ 
+/**
+ * @return 1 if external file identified by fileref fref exists, 0 if not
+ * 
+ * @param fref
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FEXIST(fref);
+ 
+/**
+ * @return 1 if external file identified by physical name pname exists, 0 if not
+ * 
+ * @param pname
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FILEEXIST(pname);
+ 
+/**
+ * if pname is present, return code
+ * from assigning fileref lname to physical file pname with device dev
+ * and host-specific options opts; if pname absent, deassigns fileref
+ * 
+ * @param lname
+ * @param pname
+ * @param dev
+ * @param opts
+ * @param dir
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FILENAME(lname,<pname>,<dev>,<opts>,<dir>);
+ 
+/**
+ * zero if filename fn has been assigned, nonzero if it has not
+ * 
+ * @param fn
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function FILEREF(fn);
+ 
+/**
+ * value of option opt with optional reporting keyword rep
+ * 
+ * @param opt
+ * @param rep
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function GETOPTION(opt,<rep>);
+ 
+/**
+ * upper bound of nth dimension dim of a multidim array
+ * 
+ * @param array
+ * @param dim
+ */
+function HBOUND(array,dim);
+ 
+/**
+ * upper bound of the nth dimension of array; default n = 1
+ * 
+ * @param array
+ * 
+ * @return HBOUND
+ */
+function HBOUND(array,n=1);
+ 
+/**
+ * read the value of src using informat inf
+ * use this to convert character data to numeric data
+ * 
+ * @param src
+ * @param inf
+ */
+function INPUT(src,inf);
+ 
+/**
+ * read the value of src using character informat inf
+ * specified at run time; w = width and d = decimal value for informat
+ * 
+ * @param src
+ * @param inf
+ * @param w
+ * @param d
+ *
+ * @since SAS version 6.07
+ */
+function INPUTC(src,inf,<w>,<d>);
+ 
+/**
+ * read the value of src using numeric informat inf
+ * specified at run time; w = width and d = decimal value for informat
+ * 
+ * @param src
+ * @param inf
+ * @param w
+ * @param d
+ *
+ * @since SAS version 6.07
+ */
+function INPUTN(src,inf,<w>,<d>);
+ 
+/**
+ * formatted error message associated with current value of _IORC_
+ *
+ * @since SAS version 7
+ */
+function IORCMSG();
+ 
+/**
+ * assigns label str to the variable var
+ * 
+ * @param var
+ * @param str
+ */
+procedure LABEL(var,str);
+ 
+/**
+ * nth lag value of variable var stored/retrieved in a queue
+ * 
+ * @param var
+ * 
+ * @return LAG
+ */
+function LAG(var,n);
+ 
+/**
+ * lower bound of the nth dimension dim of a multidim array; default n = 1
+ * 
+ * @param array
+ * @param dim
+ */
+function LBOUND(array,dim=1);
+ 
+/**
+ * if pname is present, return code from
+ * assigning libref lname to physical library pname with engine eng and
+ * host-specific options opts; if pname is absent, deassigns libref
+ * 
+ * @param lname
+ * @param pname
+ * @param eng
+ * @param opts
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function LIBNAME(lname,<pname>,<eng>,<opts>);
+ 
+/**
+ * zero if libname lib has been assigned, nonzero if it has not
+ * 
+ * @param lib
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function LIBREF(lib);
+ 
+/**
+ * @return 1 if variable or expression e contains a missing value, 0 if not
+ * 
+ * @param e
+ *
+ * @since SAS version 7
+ */
+function MISSING(e);
+ 
+/**
+ * physical name of SAS data library or external file fref
+ * 
+ * @param fref
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function PATHNAME(fref);
+ 
+/**
+ * write the value of src using format f
+ * use this to convert numeric data to character data
+ * 
+ * @param src
+ * @param f
+ */
+function PUT(src,f);
+ 
+/**
+ * write the value of src using character format for
+ * specified at run time; w = width and d = decimal value for format
+ * 
+ * @param src
+ * @param for
+ * @param w
+ * @param d
+ *
+ * @since SAS version 6.07
+ */
+function PUTC(src,for,<w>,<d>);
+ 
+/**
+ * write the value of src using numeric format for
+ * specified at run time; w = width and d = decimal value for format
+ * 
+ * @param src
+ * @param for
+ * @param w
+ * @param d
+ *
+ * @since SAS version 6.07
+ */
+function PUTN(src,for,<w>,<d>);
+ 
+/**
+ * resolved value of sas macro mac [more flexible than SYMGET]
+ * 
+ * @param mac
+ *
+ * @since SAS version 6.07
+ */
+function RESOLVE(mac);
+ 
+/**
+ * value of sas macro mac during datastep execution
+ * 
+ * @param mac
+ */
+function SYMGET(mac);
+ 
+/**
+ * assigns the value to str to sas macro mac
+ * 
+ * @param mac
+ * @param str
+ */
+procedure SYMPUT(mac,str);
+ 
+/**
+ * message produced from a data set or external file function call
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function SYSMSG();
+ 
+/**
+ * @return 1 if sas product prod is licensed, 0 if prod is not licensed,
+ *         and -1 if prod is not recognized
+ * 
+ * @param prod
+ *
+ * @since SAS version 6.07
+ */
+function SYSPROD(prod);
+ 
+/**
+ * return code from a data set or external file function call
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function SYSRC();
+ 
+/**
+ * value of the string specified with the SYSPARM option
+ */
+function SYSPARM();
+ 
+/**
+ * decoded string from str containing HTML numeric character
+ * references or HTML character entity references
+ * 
+ * @param str
+ *
+ * @since SAS version 8
+ */
+function HTMLDECODE(str);
+ 
+/**
+ * encoded string from str using HTML character entity references
+ * 
+ * @param str
+ *
+ * @since SAS version 8
+ */
+function HTMLENCODE(str);
+ 
+/**
+ * decoded string from str using the URL escape syntax
+ * 
+ * @param str
+ *
+ * @since SAS version 8
+ */
+function URLDECODE(str);
+ 
+/**
+ * encoded string from str using the URL escape syntax
+ * 
+ * @param str
+ *
+ * @since SAS version 8
+ */
+function URLENCODE(str);
+ 
+/**
+ * current setting for attribute 'attr'; varplist
+ * attribute, refer to SASGRPH, p650-685
+ * 
+ * @param attr     attribute
+ * @param parms    parameter list
+ */
+procedure GASK(attr,parms,...);
+ 
+/**
+ * return code from creating graphic element 'ge';
+ * varplist element, refer to SASGRPH, p686-695
+ * 
+ * @param ge
+ * @param parms...
+ */
+function GDRAW(ge,parms...);
+ 
+/**
+ * return code from initializing DSGI (Data Step Graphics Interface)
+ * 
+ */
+function GINIT();
+ 
+/**
+ * displays message that corresponds to error code 'code'
+ * 
+ * @param code
+ */
+function GPRINT(code);
+ 
+/**
+ * return code from performing library management
+ * task 'tsk'; varplist task, refer to SASGRPH, p696-699
+ * 
+ * @param tsk
+ * @param parms...
+ */
+function GRAPH(tsk,parms...);
+ 
+/**
+ * return code from setting graphic element attribute
+ * 'attr'; varplist attribute, refer to SASGRPH, p700-733
+ * 
+ */
+function GSET(attr,parms...);
+ 
+/**
+ *  return code from terminating DSGI (Data Step Graphics Interface)
+ */
+function GTERM();
+ 
+/**
+ * character return value from execution of
+ * external routine modn; invoked from within the IML procedure
+ * 
+ * @param cntl
+ * @param modn
+ * @param arg1
+ * @param argn
+ *
+ * @since SAS version 7
+ */
+function MODULEIC(<cntl>,modn,arg1,...argn);
+ 
+/**
+ * numeric return value from execution of
+ * external routine modn; invoked from within the IML procedure
+ * 
+ * @param cntl
+ * @param modn
+ * @param arg1
+ * @param argn
+ *
+ * @since SAS version 7
+ */
+function MODULEIN(<cntl>,modn,arg1,...argn);
+ 
+/**
+ * executes external routine modn;
+ * invoked from within the IML procedure
+ * 
+ * @param cntl
+ * @param modn
+ * @param arg1
+ * @param argn
+ *
+ * @since SAS version 7
+ */
+procedure MODULEI(<cntl>,modn,arg1,...argn);
+ 
+/**
+ * average outgoing quality type[B]
+ * 
+ * @param rep
+ * @param N
+ * @param a1
+ * @param r1
+ * @param a2
+ * @param n1
+ * @param n2
+ * @param p
+ */
+function AOQ2(rep,N,a1,r1,a2,n1,n2,p);
+ 
+/**
+ * average sample number type[B]
+ * 
+ * @param mode
+ * @param a1
+ * @param r1
+ * @param a2
+ * @param n1
+ * @param n2
+ * @param p
+ */
+function ASN2(mode,a1,r1,a2,n1,n2,p);
+ 
+/**
+ * average total inspection type[B]
+ * 
+ * @param N
+ * @param a1
+ * @param r1
+ * @param a2
+ * @param n1
+ * @param n2
+ * @param p
+ */
+function ATI2(N,a1,r1,a2,n1,n2,p);
+ 
+/**
+ * posterior probabilities that observations are contaminated with a larger variance
+ * 
+ * @param k
+ * @param s
+ * @param df
+ * @param a1
+ * @param an
+ * @param y1
+ * @param yn
+ * @param b1
+ * @param bn
+ * @param p
+ */
+procedure BAYESACT(k,s,df,a1,...<an>,y1,...<yn>,b1,...<bn>,p);
+ 
+/**
+ * expected value of the standard deviation of n inrvars
+ * 
+ * @param n
+ */
+function C4(n);
+ 
+/**
+ * average run length of a one- or two-sided
+ * cumulative sum control chart scheme
+ * 
+ * @param type
+ * @param sd
+ * @param h
+ * @param k
+ * @param hs
+ */
+function CUSUMARL(type,sd,h,k,<hs>);
+ 
+/**
+ * expected value of the sample range of n inrvars
+ * 
+ * @param n
+ */
+function D2(n);
+ 
+/**
+ * standard deviation of the range of n inrvars
+ * 
+ * @param n
+ */
+function D3(n);
+ 
+/**
+ * average run length for exponentially weighted moving average
+ * 
+ * @param sd
+ * @param r
+ * @param k
+ */
+function EWMAARL(sd,r,k);
+ 
+/**
+ * acceptance probablility type[A]
+ * 
+ * @param a1
+ * @param r1
+ * @param a2
+ * @param n1
+ * @param n2
+ * @param D
+ * @param N
+ */
+function PROBACC2(a1,r1,a2,n1,n2,D,N);
+ 
+/**
+ * acceptance probablility type[B]
+ * 
+ * @param a1
+ * @param r1
+ * @param a2
+ * @param n1
+ * @param n2
+ * @param p
+ */
+function PROBACC2(a1,r1,a2,n1,n2,p);
+ 
+/**
+ * probability that the sample median is less than or equal to x
+ * for a sample of n inrvars
+ * 
+ * @param n
+ * @param x
+ */
+function PROBMED(n,x);
+ 
+/**
+ * standard deviation of the median of a normally distributed sample
+ * with size n
+ * 
+ * @param n
+ */
+function STDMED(n);
+ 
+/**
+ * returns variate generated from the a<n>|normal distribution with mean 0 and variance 1
+ * 
+ * @param seed
+ */
+function NORMAL(seed);
+ 
+/**
+ * returns variate generated from the a<n>|binomial distribution with mean np and variance np(1-p)
+ * 
+ * @param seed
+ * @param n
+ * @param p
+ */
+function RANBIN(seed,n,p);
+ 
+/**
+ * returns variate generated from the a<n>|Cauchy distribution with location parameter 0 and scale parameter 1
+ * 
+ * @param seed
+ */
+function RANCAU(seed);
+ 
+/**
+ * returns variate generated from the a<n>|exponential distribution with parameter 1
+ * 
+ * @param seed
+ */
+function RANEXP(seed);
+ 
+/**
+ * returns variate generated from the a<n>|gamma distribution with parameter a
+ * 
+ * @param seed
+ * @param a
+ */
+function RANGAM(seed,a);
+ 
+/**
+ * returns variate generated from the a<n>|normal distribution with mean 0 and variance 1
+ * 
+ * @param seed
+ */
+function RANNOR(seed);
+ 
+/**
+ * returns variate generated from the a<n>|Poisson distribution with mean m
+ * 
+ * @param seed
+ * @param m
+ */
+function RANPOI(seed,m);
+ 
+/**
+ * returns variate generated from the a<n>|probability distribution mass function defined by p1-pn
+ * 
+ * @param seed
+ * @param p1
+ * @param pn
+ */
+function RANTBL(seed,p1,...pn);
+ 
+/**
+ * returns variate generated from the a<n>|triangular distribution with parameter h
+ * 
+ * @param seed
+ * @param h
+ */
+function RANTRI(seed,h);
+ 
+/**
+ * returns variate generated from the a<n>|uniform distribution on the interval (0,1)
+ * 
+ * @param seed
+ */
+function RANUNI(seed);
+ 
+/**
+ * updates seed and returns a variate generated from the a<n>|binomial distribution with mean np and variance np(1-p)
+ * 
+ * @param seed
+ * @param n
+ * @param p
+ */
+procedure RANBIN(seed,n,p);
+ 
+/**
+ * updates seed and returns a variate generated from the a<n>|Cauchy distribution w/location parameter 0 and scale parameter 1
+ * 
+ * @param seed
+ */
+procedure RANCAU(seed);
+ 
+/**
+ * updates seed and returns a variate generated from the a<n>|exponential distribution with parameter 1
+ * 
+ * @param seed
+ */
+procedure RANEXP(seed);
+ 
+/**
+ * updates seed and returns a variate generated from the a<n>|gamma distribution with parameter a
+ * 
+ * @param seed
+ * @param a
+ */
+procedure RANGAM(seed,a);
+ 
+/**
+ * updates seed and returns a variate generated from the a<n>|normal distribution with mean 0 and variance 1
+ * 
+ * @param seed
+ */
+procedure RANNOR(seed);
+ 
+/**
+ * updates seed and returns a variate generated from the a<n>|Poisson distribution with mean m
+ * 
+ * @param seed
+ * @param m
+ */
+procedure RANPOI(seed,m);
+ 
+/**
+ * updates seed and returns a variate generated from the a<n>|probability distribution mass function defined by p1-pn
+ * 
+ * @param seed
+ * @param p1
+ * @param pn
+ */
+procedure RANTBL(seed,p1,...pn);
+ 
+/**
+ * updates seed and returns a variate generated from the a<n>|triangular distribution with parameter h
+ * 
+ * @param seed
+ * @param h
+ */
+procedure RANTRI(seed,h);
+ 
+/**
+ * updates seed and returns a variate generated from the a<n>|uniform distribution on the interval (0,1)
+ * 
+ * @param seed
+ */
+procedure RANUNI(seed);
+ 
+/**
+ * returns variate generated from the a<n>|uniform distribution on the interval (0,1)
+ * 
+ * @param seed
+ */
+function UNIFORM(seed);
+ 
+/**
+ * corrected sum of squares of nonmissing args n1-nn
+ * 
+ * @param n1
+ * @param n2
+ * @param nn
+ */
+function CSS(n1,n2,...<nn>);
+ 
+/**
+ * coefficient of variation of nonmissing args n1-nn
+ * 
+ * @param n1
+ * @param n2
+ * @param nn
+ */
+function CV(n1,n2,...<nn>);
+ 
+/**
+ * kurtosis of nonmissing arguments n1-nn
+ * 
+ * @param n1
+ * @param n2
+ * @param n3
+ * @param n4
+ * @param nn
+ */
+function KURTOSIS(n1,n2,n3,n4,...<nn>);
+ 
+/**
+ * maximum value of nonmissing arguments n1-nn
+ * 
+ * @param n1
+ * @param n2
+ * @param nn
+ */
+function MAX(n1,n2,...<nn>);
+ 
+/**
+ * mean value of nonmissing arguments n1-nn
+ * 
+ * @param n1
+ * @param n2
+ * @param nn
+ */
+function MEAN(n1,n2,...<nn>);
+ 
+/**
+ * minimum value of nonmissing arguments n1-nn
+ * 
+ * @param n1
+ * @param n2
+ * @param nn
+ */
+function MIN(n1,n2,...<nn>);
+ 
+/**
+ * number of nonmissing arguments n1-nn
+ * 
+ * @param n1
+ * @param nn
+ */
+function N(n1,...<nn>);
+ 
+/**
+ * number of missing arguments n1-nn
+ * 
+ * @param n1
+ * @param nn
+ */
+function NMISS(n1,...<nn>);
+ 
+/**
+ * largest of the first count arguments n1-nn
+ * 
+ * @param count
+ * @param n1
+ * @param n2
+ * @param nn
+ */
+function ORDINAL(count,n1,n2,...<nn>);
+ 
+/**
+ * difference between the largest and smallest of
+ * nonmissing arguments n1-nn
+ * 
+ * @param n1
+ * @param n2...nn
+ */
+function RANGE(n1,n2...<nn>);
+ 
+/**
+ * skewness statistic of nonmissing arguments n1-nn
+ * 
+ * @param n1
+ * @param n2
+ * @param n3
+ * @param nn
+ */
+function SKEWNESS(n1,n2,n3,...<nn>);
+ 
+/**
+ * standard deviation of nonmissing arguments n1-nn
+ * 
+ * @param n1
+ * @param n2
+ * @param nn
+ */
+function STD(n1,n2,...<nn>);
+ 
+/**
+ * standard error of the mean of nonmissing args n1-nn
+ * 
+ * @param n1
+ * @param n2
+ * @param nn
+ */
+function STDERR(n1,n2,...<nn>);
+ 
+/**
+ * sum of nonmissing args n1-nn
+ * 
+ * @param n1
+ * @param n2
+ * @param nn
+ */
+function SUM(n1,n2,...<nn>);
+ 
+/**
+ * uncorrected sum of squares of nonmissing args n1-nn
+ * 
+ * @param n1
+ * @param n2
+ * @param nn
+ */
+function USS(n1,n2,...<nn>);
+ 
+/**
+ * variance of nonmissing arguments n1-nn
+ * 
+ * @param n1
+ * @param n2
+ * @param nn
+ */
+function VAR(n1,n2,...<nn>);
+ 
+/**
+ * pth quantile from beta distribution with shape parms a and b
+ * 
+ * @param p
+ * @param a
+ * @param b
+ */
+function BETAINV(p,a,b);
+ 
+/**
+ * left cumulative distribution function from various continuous and discrete distrubitions
+ * 
+ * @param id
+ * @param q
+ * @param s
+ * @param l
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function CDF(id,q,<s>,<l>);
+ 
+/**
+ * pth quantile from the chi-square distribution with
+ * degrees of freedom df and a noncentrality parameter nc
+ * 
+ * @param p
+ * @param df
+ * @param nc
+ */
+function CINV(p,df,<nc>);
+ 
+/**
+ * the noncentrality parameter from a noncentral chi-square
+ * distribution whose parameters are x, df, and nc
+ * 
+ * @param x
+ * @param df
+ * @param prob
+ * 
+ * @since SAS version 6.07
+ */
+function CNONCT(x,df,prob);
+ 
+/**
+ * pth quantile from the F distribution with numerator
+ * and denominator degrees of freedom ndf and ddf and a noncentrality
+ * parameter nc
+ * 
+ * @param p
+ * @param ndf
+ * @param ddf
+ * @param nc
+ */
+function FINV(p,ndf,ddf,<nc>);
+ 
+/**
+ * the noncentrality parameter from an noncentral F
+ * distribution whose parameters are x, ndf, ddf, and nc
+ * 
+ * @param x
+ * @param ndf
+ * @param ddf
+ * @param nc
+ *
+ * @since SAS version 6.07
+ */
+function FNONCT(x,ndf,ddf,<nc>);
+ 
+/**
+ * pth quantile from the gamma distribution with shape parameter a
+ * 
+ * @param p
+ * @param a
+ */
+function GAMINV(p,a);
+ 
+/**
+ * logarithm of the probability density function from various continuous and discrete distrubitions
+ * 
+ * @param id
+ * @param q
+ * @param s
+ * @param l
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function LOGPDF(id,q,<s>,<l>);
+ 
+/**
+ * logarithm of the probability mass function from various continuous and discrete distrubitions
+ * 
+ * @param id
+ * @param q
+ * @param s
+ * @param l
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function LOGPMF(id,q,<s>,<l>);
+ 
+/**
+ * log of the survival function (log upper tail) from various continuous and discrete distrubitions
+ * 
+ * @param id
+ * @param q
+ * @param s
+ * @param l
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function LOGSDF(id,q,<s>,<l>);
+ 
+/**
+ * probability density function from various continuous and discrete distrubitions
+ * 
+ * @param id
+ * @param q
+ * @param s
+ * @param l
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function PDF(id,q,<s>,<l>);
+ 
+/**
+ * probability mass function from various continuous and discrete distrubitions
+ * 
+ * @param id
+ * @param q
+ * @param s
+ * @param l
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function PMF(id,q,<s>,<l>);
+ 
+/**
+ * returns the probability that an observatino from a<n>|the Poisson distribution, with mean m, is less than or equal to n
+ * 
+ * @param m
+ * @param n
+ */
+function POISSON(m,n);
+ 
+/**
+ * returns the probability that an observatino from a<n>|the beta distribution, with shape parameters a and b, is less than or equal to x
+ * 
+ * @param x
+ * @param a
+ * @param b
+ */
+function PROBBETA(x,a,b);
+ 
+/**
+ * returns the probability that an observatino from a<n>|the binomial distribution, with probability of success p,
+ * number of trials n, and number of successes m, is less than or equal to m
+ * 
+ * @param p
+ * @param n
+ * @param m
+ */
+function PROBBNML(p,n,m);
+ 
+/**
+ * probability from the bivariate normal distribution
+ * 
+ * @param x
+ * @param y
+ * @param r
+ *
+ * @since version 7, avail with the QC product in 6.07
+ */
+function PROBBNRM(x,y,r);
+ 
+/**
+ * returns the probability that an observatino from a<n>|the chi-square distribution, with degrees of freedom df
+ * and noncentrality parameter nc, is less than or equal to x
+ * 
+ * @param x
+ * @param df
+ * @param nc
+ */
+function PROBCHI(x,df,<nc>);
+ 
+/**
+ * returns the probability that an observatino from a<n>|the F distribution, with numerator and denominator
+ * degrees of freedom ndf and ddf, and noncentrality parameter nc, is less than or equal to x
+ * 
+ * @param x
+ * @param ndf
+ * @param ddf
+ * @param nc
+ */
+function PROBF(x,ndf,ddf,<nc>);
+ 
+/**
+ * returns the probability that an observatino from a<n>|the gamma distribution, with shape parameter a, is less than or equal to x
+ * 
+ * @param x
+ * @param a
+ */
+function PROBGAM(x,a);
+ 
+/**
+ * returns the probability that an observatino from a<n>|the extended hypergeometric distribution, with
+ * population n, items k, sample size s, and odds ratio r, is less than or equal to x
+ * 
+ * @param n
+ * @param k
+ * @param s
+ * @param r
+ */
+function PROBHYPR(n,k,s,<r>);
+ 
+/**
+ * pth quantile from the standard normal distribution
+ * 
+ * @param p
+ */
+function PROBIT(p);
+ 
+/**
+ * probability or the quantile from various
+ * distributions with finite and infinite degrees of freedom for the
+ * variance estimate
+ * 
+ * @param dist
+ * @param q
+ * @param p
+ * @param df
+ * @param np
+ * @param parms
+ *
+ * @since version 7, avail with the QC product in 6.07
+ */
+function PROBMC(dist,q,p,df,np,<parms>);
+ 
+/**
+ * returns the probability that an observatino from a<n>|the negative binomial distribution, with probability of
+ * success p and number of successes n, is less than or equal to m
+ * 
+ * @param p
+ * @param n
+ * @param m
+ */
+function PROBNEGB(p,n,m);
+ 
+/**
+ * returns the probability that an observatino from a<n>|the standard normal distribution le x
+ * 
+ * @param x
+ */
+function PROBNORM(x);
+ 
+/**
+ * returns the probability that an observatino from a<n>|the Student's t distribution with degrees of freedom df
+ * 
+ * @param x
+ * @param df
+ * @param nc
+ */
+function PROBT(x,df,<nc>);
+ 
+/**
+ * survival function (upper tail) from various continuous and discrete distrubitions
+ * and noncentrality parameter nc, is less than or equal to x
+ * 
+ * @param id
+ * @param q
+ * @param s
+ * @param l
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function SDF(id,q,<s>,<l>);
+ 
+/**
+ * pth quantile from the Student's t distribution with
+ * degrees of freedom df and a noncentrality parameter nc
+ * 
+ * @param p
+ * @param df
+ * @param nc
+ */
+function TINV(p,df,<nc>);
+ 
+/**
+ * the noncentrality parameter from a noncentral t
+ * distribution whose parameters are x, df, and nc
+ * 
+ * @param x
+ * @param df
+ * @param prob
+ *
+ * @since SAS version 6.07
+ */
+function TNONCT(x,df,prob);
+ 
+/**
+ * converts FIPS code to a state name <= 20 characters in upper case
+ * 
+ * @param fcode
+ */
+function FIPNAME(fcode);
+ 
+/**
+ * converts FIPS code to a state name <= 20 characters in mixed case
+ * 
+ * @param fcode
+ */
+function FIPNAMEL(fcode);
+ 
+/**
+ * converts FIPS code to a two-char postal state code
+ * 
+ * @param fcode
+ */
+function FIPSTATE(fcode);
+ 
+/**
+ * converts two-char postal state code to a FIPS code
+ * 
+ * @param pcode
+ */
+function STFIPS(pcode);
+ 
+/**
+ * converts two-char postal state code to a state name <= 20 characters in upper case
+ * 
+ * @param pcode
+ */
+function STNAME(pcode);
+ 
+/**
+ * converts two-char postal state code to a state name <= 20 characters in mixed case
+ * 
+ * @param pcode
+ */
+function STNAMEL(pcode);
+ 
+/**
+ * converts five-char zip code to a FIPS code
+ * 
+ * @param zcode
+ */
+function ZIPFIPS(zcode);
+ 
+/**
+ * converts five-char zip code to a state name <= 20 characters in upper case
+ * 
+ * @param zcode
+ */
+function ZIPNAME(zcode);
+ 
+/**
+ * converts five-char zip code to a state name <= 20 characters in mixed case
+ * 
+ * @param zcode
+ */
+function ZIPNAMEL(zcode);
+ 
+/**
+ * converts five-char zip code to a two-char postal state code
+ * 
+ * @param zcode
+ */
+function ZIPSTATE(zcode);
+ 
+/**
+ * converts string str from ansi to oem for
+ * length len and stores result in string dst
+ * @warning system specific -- WINDOWS only
+ * 
+ * @param str
+ * @param dst
+ * @param len
+ */
+procedure ANSI2OEM(str,dst,len);
+ 
+/**
+ * converts string str from ascii to ebcdic
+ * @warning system specific -- VMS only
+ * 
+ * @param str
+ */
+function ASCEBC(str);
+ 
+/**
+ * nth character in ascii or ebcdic collating sequence
+ * 
+ * @param n
+ */
+function BYTE(n);
+ 
+/**
+ * string of chars in collating seq fr start pos s to end pos e
+ *          (s,,<l>) string of chars in collate seq from start pos s for length l
+ * 
+ * @param s
+ * @param e
+ */
+function COLLATE(s,<e>);
+ 
+/**
+ * removes multiple blanks between blank-delimited substrs in str
+ * 
+ * @param str
+ *
+ * @since SAS version 6.07
+ */
+function COMPBL(str);
+ 
+/**
+ * removes blanks OR chars specified in rem from str
+ * 
+ * @param str
+ * @param rem
+ */
+function COMPRESS(str,<rem>);
+ 
+/**
+ * removes surrounding quotes, single or double, from str
+ * and removes multiple single and double quotes within str
+ * 
+ * @param str
+ *
+ * @since SAS version 6.07
+ */
+function DEQUOTE(str);
+ 
+/**
+ * converts string str from ebcdic to ascii
+ * @warning system specific -- VMS only
+ * 
+ * @param str
+ */
+function EBCASC(str);
+ 
+/**
+ * first position of string str located in string src
+ * 
+ * @param src
+ * @param str
+ */
+function INDEX(src,str);
+ 
+/**
+ * first position of any character in any of the
+ * strings str-strn located in string src
+ * 
+ * @param src
+ * @param str
+ * @param strn
+ */
+function INDEXC(src,str,...<strn>);
+ 
+/**
+ * first position of the blank-delimited substring str in
+ * string src
+ * 
+ * @param src
+ * @param str
+ *
+ * @since SAS version 6.07
+ */
+function INDEXW(src,str);
+ 
+/**
+ * converts leading blanks to trailing blanks in string str
+ * 
+ * @param str
+ */
+function LEFT(str);
+ 
+/**
+ * length of string str
+ * 
+ * @param str
+ */
+function LENGTH(str);
+ 
+/**
+ * converts all uppercase characters in str to lowercase
+ * 
+ * @param str
+ *
+ * @since SAS version 6.07
+ */
+function LOWCASE(str);
+ 
+/**
+ * converts string str from oem to ansi for
+ * length len and stores result in string dst
+ * @warning system specific -- WINDOWS only
+ * 
+ * @param str
+ * @param dst
+ * @param len
+ */
+procedure OEM2ANSI(str,dst,len);
+ 
+/**
+ * adds surrounding double quotes to string str, and doubles any
+ * double quotes found within str
+ * 
+ * @param str
+ *
+ * @since SAS version 6.07
+ */
+function QUOTE(str);
+ 
+/**
+ * position of character x in ascii or ebcdic collating sequence
+ * 
+ * @param x
+ */
+function RANK(x);
+ 
+/**
+ * string consisting of string str repeated n+1 times
+ * 
+ * @param str
+ * @param n
+ */
+function REPEAT(str,n);
+ 
+/**
+ * string str with its characters in reverse order
+ * 
+ * @param str
+ */
+function REVERSE(str);
+ 
+/**
+ * changes substring(s) that match a pattern
+ * 
+ * @param rx
+ * @param n
+ * @param src
+ * @param str
+ *
+ * @since SAS version 7
+ */
+procedure RXCHANGE(rx,n,src,str);
+ 
+/**
+ * frees memory allocated by other RX functions
+ * 
+ * @param rx
+ *
+ * @since SAS version 7
+ */
+procedure RXFREE(rx);
+ 
+/**
+ * position of beginning of a substring that matches a pattern
+ * 
+ * @param rx
+ * @param str
+ *
+ * @since SAS version 7
+ */
+function RXMATCH(rx,str);
+ 
+/**
+ * unique identifier value from parsing pattern expression expr
+ * 
+ * @param expr
+ *
+ * @since SAS version 7
+ */
+function RXPARSE(expr);
+ 
+/**
+ * finds position, length, and score of a
+ * substring that matches a pattern
+ * 
+ * @param rx
+ * @param str
+ * @param pos
+ * @param len
+ * @param n
+ *
+ * @since SAS version 7
+ */
+procedure RXSUBSTR(rx,str,<pos>,<len>,<n>);
+ 
+/**
+ * converts trailing blanks to leading blanks in string str
+ * 
+ * @param str
+ */
+function RIGHT(str);
+ 
+/**
+ * nth substring in str separated by delimeters dlmc
+ * default dlm = ' .< (+|&!$*);^/-,%>\'; beginning with V7 a negative
+ * value of n scans the string right to left
+ * 
+ * @param str
+ * @param n
+ * @param dlm
+ */
+function SCAN(str,n,<dlm>);
+ 
+/**
+ * a value representing the likelihood that string str matches
+ * string key
+ * 
+ * @param str
+ * @param key
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function SPEDIS(str,key);
+ 
+/**
+ * "x=substr ()" returns n characters of str beginning at position p
+ * "substr ()=x" assigns n chars of x to str beginning at position p
+ * 
+ * @param str
+ * @param pos
+ * @param n
+ */
+function SUBSTR(str,pos,<n>);
+ 
+/**
+ * encodes string str according to a patented search algorithm
+ * described in SASP222, p64
+ * 
+ * @param str
+ *
+ * @since SAS version 6.07
+ */
+function SOUNDEX(str);
+ 
+/**
+ * converts all characters in str that
+ * occur in from1 to their respective character in to1 for every
+ * fromn-ton pair of strings
+ * 
+ * @param str
+ * @param to1
+ * @param from1
+ * @param ton
+ * @param fromn
+ */
+function TRANSLATE(str,to1,from1,...<ton,fromn>);
+ 
+/**
+ * converts all blank-delimited occurrences of string
+ * from in string str to string to
+ * 
+ * @param str
+ * @param to
+ * @param from
+ *
+ * @since SAS version 6.07
+ */
+function TRANWRD(str,to,from);
+ 
+/**
+ * removes all trailing blanks
+ * 
+ * @param str
+ */
+function TRIM(str);
+ 
+/**
+ * removes all trailing blanks, NULL if result is a blank
+ * 
+ * @param str
+ *
+ * @since SAS version 6.07
+ */
+function TRIMN(str);
+ 
+/**
+ * converts all lowercase characters in str to uppercase
+ * 
+ * @param str
+ */
+function UPCASE(str);
+ 
+/**
+ * position of the first character in str
+ * that is not present in any of the strings excerpt1-excerptn
+ * 
+ * @param str
+ * @param excerpt1
+ * @param excerptn
+ */
+function VERIFY(str,excerpt1,...<excerptn>);
+ 
+/**
+ * the bitwise AND of x1 and x2
+ * 
+ * @param x1
+ * @param x2
+ *
+ * @since SAS version 6.07
+ */
+function BAND(x1,x2);
+ 
+/**
+ * the bitwise left shift of x1 for n bits
+ * 
+ * @param x1
+ * @param n
+ *
+ * @since SAS version 6.07
+ */
+function BLSHIFT(x1,n);
+ 
+/**
+ * the bitwise NOT of x1
+ * 
+ * @param x1
+ *
+ * @since SAS version 6.07
+ */
+function BNOT(x1);
+ 
+/**
+ * the bitwise OR of x1 and x2
+ * 
+ * @param x1
+ * @param x2
+ *
+ * @since SAS version 6.07
+ */
+function BOR(x1,x2);
+ 
+/**
+ * the bitwise right shift of x1 for n bits
+ * 
+ * @param x1
+ * @param n
+ *
+ * @since SAS version 6.07
+ */
+function BRSHIFT(x1,n);
+ 
+/**
+ * the bitwise EXCLUSIVE OR of x1 and x2
+ * 
+ * @param x1
+ * @param x2
+ *
+ * @since SAS version 6.07
+ */
+function BXOR(x1,x2);
+ 
+/**
+ * absolute value of num
+ * 
+ * @param num
+ */
+function ABS(num);
+ 
+/**
+ * value of the airy function; the differential equation w"-xw=0
+ * 
+ * @param num
+ *
+ * @since SAS version 6.07
+ */
+function AIRY(num);
+ 
+/**
+ * arccosine in radians; -1 < num < 1
+ * 
+ * @param num
+ */
+function ARCOS(num);
+ 
+/**
+ * arcsine in radians; -1 < num < 1
+ * 
+ * @param num
+ */
+function ARSIN(num);
+ 
+/**
+ * arctangent in radians
+ * 
+ * @param num
+ */
+function ATAN(num);
+ 
+/**
+ * smallest integer greater than or equal to num
+ * 
+ * @param num
+ */
+function CEIL(num);
+ 
+/**
+ * combinations of n elements taken r at a time
+ * 
+ * @param n
+ * @param r
+ *
+ * @since SAS version 7
+ */
+function COMB(n,r);
+ 
+/**
+ * machine or mathematical constant c, values of c are:
+ * <pre>
+ *    E        natural base     LOGBIG     log w/respect to base of big
+ *    PI       pi               LOGSMALL   log w/respect to base of small
+ *    EULER    euler constant   SQRTBIG    square root of big
+ *    EXACTINT exact integer    SQRTSMALL  square root of small
+ *    BIG      largest dp num   MACEPS     machine precision constant
+ *    SMALL    smallest dp num  LOGMACEPS  log w/respect to base of maceps
+ *    [dp = double-precision]   SQRTMACEPS square root of maceps
+ * </pre>
+ * 
+ * @param c
+ *
+ * @since SAS version 7
+ */
+function CONSTANT(c);
+ 
+/**
+ * cosine; num must be in radians
+ * 
+ * @param num
+ */
+function COS(num);
+ 
+/**
+ * hyperbolic cosine
+ * 
+ * @param num
+ */
+function COSH(num);
+ 
+/**
+ * derivative of the airy function
+ * 
+ * @param num
+ *
+ * @since SAS version 6.07
+ */
+function DAIRY(num);
+ 
+/**
+ * deviance from distribution dist using random
+ * variable var; parameter list varies depending on distribution
+ * 
+ * @param dist
+ * @param var
+ * @param parms...
+ *
+ * @since SAS version 7
+ */
+function DEVIANCE(dist,var,parms...);
+ 
+/**
+ * derivative of the LGAMMA function; num > 0
+ * 
+ * @param num
+ */
+function DIGAMMA(num);
+ 
+/**
+ * the integral defined in SASLang, p546
+ * 
+ * @param num
+ */
+function ERF(num);
+ 
+/**
+ * complement to the ERF function [1-erf(num)]
+ * 
+ * @param num
+ */
+function ERFC(num);
+ 
+/**
+ * the constant e raised to the power of num
+ * 
+ * @param num
+ */
+function EXP(num);
+ 
+/**
+ * factorial of num
+ * 
+ * @param num
+ *
+ * @since SAS version 7
+ */
+function FACT(num);
+ 
+/**
+ * largest integer less than or equal to num
+ * 
+ * @param num
+ */
+function FLOOR(num);
+ 
+/**
+ * nearest integer value if num is within 1e-12 of the integer
+ * 
+ * @param num
+ */
+function FUZZ(num);
+ 
+/**
+ * the integral defined in SASLang, p551
+ * 
+ * @param num
+ */
+function GAMMA(num);
+ 
+/**
+ * bessel function when kode=0, and modified bessel function
+ * when kode != 0 of order nu evaluated at x
+ * 
+ * @param nu
+ * @param x
+ * @param kode
+ *
+ * @since SAS version 6.07
+ */
+function IBESSEL(nu,x,kode);
+ 
+/**
+ * truncates decimal portion of num
+ * 
+ * @param num
+ */
+function INT(num);
+ 
+/**
+ * bessel function of order nu evaluated at x
+ * 
+ * @param nu
+ * @param x
+ *
+ * @since SAS version 6.07
+ */
+function JBESSEL(nu,x);
+ 
+/**
+ * natural logarithm of GAMMA(num)
+ * 
+ * @param num
+ */
+function LGAMMA(num);
+ 
+/**
+ * natural logarithm of num
+ * 
+ * @param num
+ */
+function LOG(num);
+ 
+/**
+ * common logarithm of num
+ * 
+ * @param num
+ */
+function LOG10(num);
+ 
+/**
+ * logarithm to the base 2 of num
+ * 
+ * @param num
+ */
+function LOG2(num);
+ 
+/**
+ * remainder of the quotient num/div
+ * 
+ * @param num
+ * @param div
+ */
+function MOD(num,div);
+ 
+/**
+ * permutations of n elements taken r at a time
+ * 
+ * @param n
+ * @param r
+ *
+ * @since SAS version 7
+ */
+function PERM(n,r);
+ 
+/**
+ * num rounded to the nearest unit u; default u = 1
+ * 
+ * @param num
+ * @param u
+ */
+function ROUND(num,u);
+ 
+/**
+ * -1 if num < 0, 0 if num = 0, and 1 if num > 0
+ * 
+ * @param num
+ */
+function SIGN(num);
+ 
+/**
+ * sine; num must be in radians
+ * 
+ * @param num
+ */
+function SIN(num);
+ 
+/**
+ * hyperbolic sine
+ * 
+ * @param num
+ */
+function SINH(num);
+ 
+/**
+ * square root of num
+ * 
+ * @param num
+ */
+function SQRT(num);
+ 
+/**
+ * tangent; num must be in radians and not an odd multiple of pi/2
+ * 
+ * @param num
+ */
+function TAN(num);
+ 
+/**
+ * hyperbolic tangent
+ * 
+ * @param num
+ */
+function TANH(num);
+ 
+/**
+ * derivative of the DIGAMMA function; num > 0
+ * 
+ * @param num
+ */
+function TRIGAMMA(num);
+ 
+/**
+ * truncates num stored as a double to len bytes
+ * 
+ * @param num
+ * @param len
+ */
+function TRUNC(num,len);
+ 
+/**
+ * number of days between sas date values d1 and d2 according
+ * to basis b ('30/360' or 'Actual')
+ * 
+ * @param d1
+ * @param d2
+ * @param b
+ *
+ * @since SAS version 7
+ */
+function DATDIF(d1,d2,b);
+ 
+/**
+ * sas date equal to the current date
+ * 
+ */
+function DATE();
+ 
+/**
+ * converts julian date n to a sas date; n = yyddd or yyyyddd
+ * 
+ * @param n
+ */
+function DATEJUL(n);
+ 
+/**
+ * date portion of the sas datetime value dt
+ * 
+ * @param dt
+ */
+function DATEPART(dt);
+ 
+/**
+ * sas datetime equal to the current date and time
+ */
+function DATETIME();
+ 
+/**
+ * day-of-month [1-31] from the sas date value d
+ * 
+ * @param d
+ */
+function DAY(d);
+ 
+/**
+ * sas datetime from date, hour, minute, and second
+ * 
+ * @param d
+ * @param h
+ * @param m
+ * @param s
+ */
+function DHMS(d,h,m,s);
+ 
+/**
+ * sas time from hour, minute, and second
+ * 
+ * @param h
+ * @param m
+ * @param s
+ */
+function HMS(h,m,s);
+ 
+/**
+ * hour [0-23] from either sas time or sas datetime value tdt
+ * 
+ * @param tdt
+ */
+function HOUR(tdt);
+ 
+/**
+ * number of time intervals 'int' from 'fr' to 'to';
+ * fr and to are sas dates, times, or datetimes; interval values are
+ * listed in SASLang, p558 and SASP222+, p58
+ * 
+ * @param int
+ * @param fr
+ * @param to
+ */
+function INTCK(int,fr,to);
+ 
+/**
+ * adds 'num' 'int' intervals to starting 'fr'
+ * fr and to are sas dates, times, or datetimes; interval values are
+ * listed in SASLang, p560 and SASP222+, p59
+ * 
+ * @param int
+ * @param fr
+ * @param num
+ * @param align     'align' parm added in Rel 6.11 and 6.09E; advances
+ *                  result to the 'beginning', 'middle', or 'end' of the interval
+ */
+function INTNX(int,fr,num,align);
+ 
+/**
+ * julian date equivalent of the sas date d
+ * 
+ * @param d
+ */
+function JULDATE(d);
+ 
+/**
+ * julian date (with a 4-digit year) equivalent of the sas date d
+ * 
+ * @param d
+ *
+ * @since SAS version 6.12/609E and later
+ */
+function JULDATE7(d);
+ 
+/**
+ * sas date month, day, and year
+ * 
+ * @param m
+ * @param d
+ * @param y
+ */
+function MDY(m,d,y);
+ 
+/**
+ * minute [0-59] from either sas time or sas datetime value tdt
+ * 
+ * @param tdt
+ */
+function MINUTE(tdt);
+ 
+/**
+ * month [1-12] from the sas date value d
+ * 
+ * @param d
+ */
+function MONTH(d);
+ 
+/**
+ * quarter of the year [1-4] during which sas date value d falls
+ * 
+ * @param d
+ */
+function QTR(d);
+ 
+/**
+ * second [0-59] from either sas time or sas datetime value tdt
+ * 
+ * @param tdt
+ */
+function SECOND(tdt);
+ 
+/**
+ * sas time equal to the current time
+ */
+function TIME();
+ 
+/**
+ * time portion of the sas datetime value dt
+ * 
+ * @param dt
+ */
+function TIMEPART(dt);
+ 
+/**
+ * sas date equal to the current date
+ */
+function TODAY();
+ 
+/**
+ * day-of-week [1-7] from the sas date value d, 1 = Sunday, etc.
+ * 
+ * @param d
+ */
+function WEEKDAY(d);
+ 
+/**
+ * year as a four digit number from the sas date value d
+ * 
+ * @param d
+ */
+function YEAR(d);
+ 
+/**
+ * number of years between sas date values d1 and d2 according
+ * to basis b ('30/360', 'Actual', 'ACT/360', or 'ACT/365')
+ * 
+ * @param d1
+ * @param d2
+ * @param b
+ *
+ * @since SAS version 7
+ */
+function YRDIF(d1,d2,b);
+ 
+/**
+ * sas date equal to the first day of quarter q in year y
+ * 
+ * @param y
+ * @param q
+ */
+function YYQ(y,q);
+ 
+/*
+  Some Function Q and A
+  ---------------------
+ 
+  Q) What is the best way to create a sas datetime value from a sas date variable
+     and a sas time variable?
+  A) datetime = dhms(date,0,0,time);
+     (no need to use the hour, minute, and/or second functions)
+ 
+  Q) There is no cube root function; how do I get the cube root of a number?
+  A) Use fractional exponents:
+     y = x**(1/3);
+ 
+  Q) LAG lets me look at previous values of a variable; how do I look ahead
+     at subsequent values?
+  A) The dataset must be merged with itself:
+     for example, using the data set created by the following:
+        data one; do i = 1 to 20; output; end;
+     to create the variable 'nexti' containing the next value of i:
+        data next; merge one one(firstobs=2 rename=(i=nexti) keep=i);
+     to create the variable 'fifthi' containing the value of i five observations
+     ahead:
+        data fifth; merge one one(firstobs=5 rename=(i=fifthi) keep=i);
+ 
+  Q) How do i convert a numeric variable to a character variable?
+  A) You must create a differently-named variable using the PUT function.
+ 
+  Q) How do i convert a character variable to a numeric variable?
+  A) You must create a differently-named variable using the INPUT function.
+ 
+  Q) How do I compute the factorial of a number?
+  A) In V7 and above, use the FACT function:
+        factor = fact(x);
+     In prior releases, use the increment of the number and the GAMMA function:
+        factor = gamma(x + 1);
+     Note that you are limited to the architecture of the machine as to what
+     magnitude of number will cause an overflow error.  On the IBM mainframe,
+     the largest factorial that can be stored is 56!, which is approximately
+     7.1099859e74.  IBM PC's have a much greater range limit.
+ 
+  Q) How do I use the constant pi within SAS?
+  A) In V7 and above, use the CONSTANT function:
+        pi = constant('pi');
+     In prior releases, here are two efficient methods of computing pi:
+        pi = 4 * atan(1);
+        pi = arcos(-1);   [slightly less efficient]
+ 
+  Q) How can I compute the age of something?
+  A) Given two sas date variables born and calc:
+     age = int(intck('month',born,calc) / 12);
+     if month(born) = month(calc) then
+        age = age - (day(born) > day(calc));
+ 
+  Q) How can I compute the number of months between two dates?
+  A) Given two sas date variables begin and end:
+     months = intck('month',begin,end) - (day(end) < day(begin));
+ 
+  Q) How can I determine the position of the nth word within a character string?
+  A) Use a combination of the INDEXW and SCAN functions:
+     pos = indexw(string,scan(string,n));
+  Q) Why is there no WEEK function that returns 1-52?
+  A) Since neither 365 nor 366 is divisible by 7, some dates will
+     have to be in week '0' or week '53'.  The following code can be
+     used if week of year is necessary:
+     weekofyr = intck('week',intnx('year',date,0),date);
+     (refer to SAS Communications, First Quarter 1992, p48)
+ 
+  Q) I need to reorder characters within a string...use SUBSTR?
+  A) You can do this using only one function call with TRANSLATE
+     versus two functions calls with SUBSTR.  The following lines
+     each move the first character of a 4-character string to the last:
+        reorder = translate('2341',string,'1234');
+        reorder = substr(string,2,3) || substr(string,1,1);
+        
+        
+Numeric (standard input) informats
+------------------------
+ 
+  BESTw.d      standard numeric integer and decimal data and scientific notation
+               refer to W.d for examples
+  BINARYw.d    binary data as positive numbers
+               00001111 | num binary8   | 15
+               00001111 | num binary8.2 | 0.15
+  BZw.d        translates trailing and embedded blanks to zeroes
+               34   | num bz4.  | 3400
+               -2 1 | num bz4.1 | -20.1
+  COMMAw.d     removes commas, blanks, dollar and percent signs, dashes and right
+               parantheses, and translates left parantheses to minus signs
+               $1,000,000 | comma10.  | 1000000
+               500        | comma10.1 | 50
+               (500)      | comma10.  | -500
+               (-500)     | comma10.  | -500
+  COMMAXw.d    removes periods, commas, blanks, dollar and percent signs, dashes
+               and right ')'s, and translates left '('s to minus signs
+               $1.000.000 | commax10.  | 1000000
+               (500)      | commax10.  | -500
+               (500)      | commax10.1 | -50
+  Dw.d         standard numeric integer and decimal data and scientific notation
+               refer to W.d for examples
+  DOLLARw.d    same as COMMAw.d
+               refer to COMMAw.d for examples
+  DOLLARXw.d   same as COMMAXw.d
+               refer to COMMAXw.d for examples
+  Ew.d         scientific notation
+               1.257E3 | e7.  | 1257
+               1.257E3 | e7.1 | 125.7
+  Fw.d         standard numeric integer and decimal data and scientific notation
+               refer to W.d for examples
+  HEXw.        if w < 16, hexadecimal integers; if w = 16, hexadecimal
+               signed floating point numbers
+               01F              | hex3.  | 31
+               4152000000000000 | hex16. | 5.125
+               C310000000000000 | hex16. | -256
+  NUMXw.d&     numeric values with a comma for the decimal point
+               896,48 | numx6. | 896.48
+  OCTALw.d     values stored in base eight
+               177 | octal3.  | 127
+               177 | octal3.1 | 12.7
+  PERCENTw.    percentages; removes commas, blanks, dollar signs, and dashes,
+               translates left parantheses to minus signs, and interprets right
+               parantheses as division by 100
+               1%     | percent6. | 0.01
+               -1%    | percent6. | -0.01
+               20-%   | percent6. | 0.2
+               (20%)  | percent6. | -0.2
+               (-20%) | percent6. | -0.2
+  w.d          standard numeric integer and decimal data and scientific notation
+               23    | 5.  | 23
+               23    | 5.5 | 0.00023
+               -23   | 5.  | -23
+               23.2  | 5.  | 23.2
+               23.2  | 5.5 | 23.2
+               2.3E1 | 5.  | 23
+  YENw.d#      removes commas, decimal points, and yen signs
+               Y1254.71 | yen10.2 | 1254.71
+
+Numeric (hexadecimal input) informats
+---------------------------
+ 
+  BITSw.d      extracts bits as positive numbers, d is 0-based offset [0-63]
+               'C2'x | bits4.4 |  2
+               'C2'x | bits6.1 | 33
+  CBw.d        column-binary files in punchcard code
+               refer to SASLang, p647 for example
+  FLOATw.d+    floating point numbers; compare with RBw.d--different results
+               for truncated 8-byte floating point numbers under operating
+               systems using IEEE floating point standard
+  IBw.d        signed integers
+               '00000080'x | ib4.  | 128
+               '00000080'x | ib4.2 | 1.28
+               'FFFFFFFE'x | ib4.  | -2
+  IBRw.d       integer binary (fixed-point) in Intel and DEC format
+               'A900'x     | ibr2.  | 169
+               '31420000'x | ibr4.2 | 169.45
+  IEEEw.d+     floating point numbers stored in IEEE standard format
+  PDw.d        signed packed decimal data
+               '0000128A'x | pd4.  | 128
+               '0000128B'x | pd4.  | -128
+               '0000128C'x | pd4.  | 128
+               '0000128D'x | pd4.  | -128
+               '0000128E'x | pd4.  | 128
+               '0000128F'x | pd4.  | 128
+               '0000128F'x | pd4.2 | 1.28
+  PIBw.d       positive integers
+               A       | pib1.  | [e]193 [a]65
+               '65'x   | pib1.  | 101
+               '65'x   | pib1.1 | 10.1
+               '0100'x | pib2.  | 256
+  PIBRw.d      positive integer binary (fixed-point) in Intel and DEC format
+               '0001'x | pibr2. | 256
+  PKw.d        unsigned packed decimal data
+               '001234'x | pk3.  | 1234
+               '001234'x | pk3.2 | 12.34
+  PUNCH.d      whether a row of column-binary data is punched
+               refer to SASLang, p660 for example
+  RBw.d        floating point numbers
+               '4280000000000000'x | rb8.  | 128
+               '4280000000000000'x | rb8.1 | 12.8
+               '4280089345600000'x | rb8.  | 128.03349718
+               'C110000000000000'x | rb8.  | -1
+  ROWw.d       column-binary field down a card column
+               refer to SASLang, p664 for example
+  S370FFw.d=   standard numeric data stored in IBM mainframe format
+               'F1F2F3'x | s370ff3.  | 123
+               'F1F2F3'x | s370ff3.2 | 1.23
+  S370FIBw.d   signed integers stored in IBM mainframe format
+               refer to IBw.d for examples
+  S370FIBUw.d= unsigned integers stored in IBM mainframe format
+               identical to S370FPIBw.d
+  S370FPDw.d   signed packed decimal data stored in IBM mainframe format
+               refer to PDw.d for examples
+  S370FPDUw.d= unsigned packed decimal data stored in IBM mainframe format,
+               similar to S370FPDw.d, but all sign digits except 'F' are rejected
+  S370FPIBw.d  positive integers stored in IBM mainframe format
+               refer to PIBw.d for examples
+  S370FRBw.d   floating point numbers stored in IBM mainframe format
+               refer to RBw.d for examples
+  S370FZDw.d=  zoned decimal data stored in IBM mainframe format
+               refer to ZDw.d for examples
+  S370FZDLw.d= zoned decimal leading sign data stored in IBM mainframe format
+               'C1F2F3'x | s370fzdl3.  | 123
+               'C1F2F3'x | s370fzdl3.2 | 1.23
+               'D1F2F3'x | s370fzdl3.2 | -123
+  S370FZDSw.d= zoned decimal separate leading sign data stored in IBM mainframe
+               format
+               '4EF1F2F3'x | s370fzds4.  | 123
+               '60F1F2F3'x | s370fzds4.2 | -1.23
+  S370FZDTw.d= zoned decimal separate trailing sign data stored in IBM mainframe
+               format
+               'F1F2F34E'x | s370fzdt4.  | 123
+               'F1F2F360'x | s370fzdt4.2 | -1.23
+               'F1F2F340'x | s370fzdt4.2 | [invalid]
+  S370FZDUw.d= unsigned zoned decimal data stored in IBM mainframe
+               similar to S370FZDw.d, but all sign digits except 'F' are rejected
+  VAXRBw.d     floating point numbers stored in VMS format
+               refer to RBw.d for examples
+  VMSZNw.d*+   [VMS] zoned decimal data in VMS format, last digit is '0'-'9' for
+               positive values and 'p'-'y' for negative values
+               1234 | vmszn4.  | 1234
+               123t | vmszn4.1 | -123.4
+  ZDw.d        zoned decimal data, ignores high order nibbles, last digit is
+               '{'-'I' for positive values and '}'-'R' for negative values
+               'F0F1F2C8'x | zd4.  | 128
+               'F1F0F2D8'x | zd4.  | -1028
+               '81F0F2F8'x | zd4.  | 1028
+               'F1F2F3D9'x | zd4.1 | -123.9
+  ZDBw.d       zoned decimal data produced in IBM 1410, 1401, and 1620 form
+               (zeroes are '40'x instead of 'F0'x)
+               '40F140C8'x | zd4.  | 108
+               'F1F240D9'x | zd4.1 | -120.9
+  ZDVw.d+      zoned decimal data; validates high order nibbles
+               'F1F0F2D8'x | zd4.  | -1028
+               '81F0F2F8'x | zd4.  | [invalid]
+ 
+Character informats
+---------
+ 
+  $ASCIIw.     converts ascii to native format
+               abc | $ascii3. | [e]'818283'x [a]'616263'x
+  $BINARYw.    binary data (every 8 bits = 1 character)
+               01001100010011101 | $binary16. | [e]'LM'x [a]'<('
+  $CBw.        column-binary files in punchcard code
+               refer to SASLang, p638 for example
+  $CHARw.      preserves leading and trailing blanks, '.' is not read as missing
+                abc | $char5. | ' abc '
+  $CHARZBw.    translates nulls to blanks
+               '81820083'x | $charzb4. | 'ab c'
+  $EBCDICw.    converts ebcdic to native format
+               abc | $ascii3. | [e]'818283'x [a]'616263'x
+  $Fw.         trims leading blanks, '.' is read as missing
+               refer to $W. for examples
+  $HEXw.       hexadecimal data
+               5A5A | $hex4. | [e]'!!' [a]'ZZ'x
+  $OCTALw.     octal data, width w is the number of octal digits multiplied by 3
+               132132 | $octal18. | [e]'!!' [a]'ZZ'x
+  $PHEXw.      packed decimal notation, the low-order nibble is ignored
+               '1E0F'x | $phex2. | '1E0'
+  $QUOTEw.+    removes matching beginning and ending quotes
+               'SAS' | $quote3. | SAS
+               "SAS" | $quote3. | SAS
+               "6'2" | $quote3. | 6'2
+  $REVERJw.@   inputs text right to left, preserves leading and trailing blanks
+               ABCD   | $reverj6. | '  DCBA'
+  $REVERSw.@   inputs text right to left, left justifies result
+               ABCD   | $revers6. | 'DCBA  '
+  $UPCASEw.+   converts all lowercase characters to uppercase
+               sas | $upcase3. | 'SAS'
+  $VARYINGw.   varying lengths of data, a length variable must follow, w=max len
+               5floyd | lv 1. str $varying9. lv | str='floyd'
+  $w.          trims leading blanks, '.' is read as missing
+                abc | $5. | 'abc  '
+ 
+Dates and Times informats
+---------------
+  DATEw.       date of the form ddmmmyy<yy>,
+               delimiters may separate day, month, and year values, but
+               the delimiter must be consistent and used throughout
+               1jan1990   | date10. | 10958
+               01 jan 90  | date10. | 10958
+               1-jan-1990 | date10. | 10958
+  DATETIMEw.   datetime of the form ddmmmyy<yy>chh:mm<:ss.ss>,
+               delimiters may separate day, month, and year values, but
+               the delimiter must be consistent and used throughout,
+               c is any delimiter
+               23dec89 10:03:17.2     | datetime22. | 946029797.2
+               23dec1989D10:03:17.2   | datetime22. | 946029797.2
+               23-dec-1989/10:03:17.2 | datetime22. | 946029797.2
+  DDMMYYw.     date of the form ddmmyy<yy>,
+               delimiters may separate day, month, and year values, but
+               the delimiter must be consistent and used throughout
+               231090     | ddmmyy8.  | 11253
+               23/10/90   | ddmmyy8.  | 11253
+               23 10 90   | ddmmyy8.  | 11253
+               23/10/1990 | ddmmyy10. | 11253
+  EURDFDEw.#   date in an international format similar to DATE.,
+               refer to SASL610, p4-6 for description of the DFLANG
+               option and language prefix types
+  EURDFDTw.#   datetime in an international format,
+               refer to SASL610, p4-6 for description of the DFLANG
+               option and language prefix types
+  EURDFMYw.#   date in an international format similar to MONYY.,
+               refer to SASL610, p4-6 for description of the DFLANG
+               option and language prefix types
+ 8JDATEYMDw.   Japanese kanji date in the form <yy>yymmmdd
+               refer to V8 online documentation for examples
+ 8JNENGOw.     Japanese kanji date in the form yymmdd
+               refer to V8 online documentation for examples
+  JULIANw.     date of the form <yy>yyddd
+               90091 | julian5. | 11048
+  MMDDYYw.     date of the form mmddyy<yy>,
+               delimiters may separate day, month, and year values, but
+               the delimiter must be consistent and used throughout
+               010190     | mmddyy8.  | 10958
+               1/1/90     | mmddyy8.  | 10958
+               01 1 90    | mmddyy8.  | 10958
+               01/01/1990 | mmddyy10. | 10958
+  MINGUOw.+    date of the Taiwanese form yyymmdd, base year is 1912,
+               delimiters may separate day, month, and year values, but
+               the delimiter must be consistent and used throughout
+               88-01-01  | minguo9. | [jan 01, 1999]
+               100/12/01 | minguo9. | [dec 01, 2011]
+               1001201   | minguo9. | [dec 01, 2011]
+  MONYYw.      date of the form mmmyy<yy>, the first day of the month is used
+               jan90 | monyy5. | 10958
+  MSEC8.       time stored in IBM mainframe TIME MIC values
+               '0000EA044E65A000'x | msec8. | 62818.412122
+  NENGOw.      date stored in Japanese form r.yymmdd; r is a character
+               representing an emperor's reign (see SASLAng, p655),
+               delimiters may separate day, month, and year values, but
+               the delimiter must be consistent and used throughout
+               S.640101   | nengo10. | 10593
+               H.02/01/01 | nengo10. | 10958
+  PDJULGw.&    IBM packed decimal julian dates in the hexadecimal form yyyydddF
+               '1999003F'x | pdjulg4. | [jan 03, 1999]
+               '2000003F'x | pdjulg4. | [jan 03, 2000]
+  PDJULIw.&    IBM packed decimal julian dates in the hexadecimal form ccyydddF
+               where cc is the century indicator ('00'x = 1900, '01'x = 2000)
+               '0001003F'x | pdjuli4. | [jan 03, 1901]
+               '0101003F'x | pdjuli4. | [jan 03, 2001]
+  PDTIME4.     time stored in IBM mainframe SMF and RMF records
+               '0142225F'x | pdtime4. | 51745
+  RMFDUR4.     time from RMF measurement intervals of IBM mainframe RMF records
+               '3552226F'x | rmfdur4. | 2152.266
+  RMFSTAMP8.   datetime stored in IBM mainframe RMF records
+               '0142225F0089286F'x | rmfstamp8. | 939910945
+ 7SHRSTAMP8.   datetime stored in IBM mainframe SHR records
+               '0097239F12403576'x | shrstamp8. | 1188304835.8
+  SMFSTAMP8.   datetime stored in IBM mainframe SMF records
+               '004EF5280089286F'x | smfstamp8. | 939910945.68
+  TIMEw.       time of the form hh:mm:<ss.ss><am|pm>, the ':' may be substituted
+               with any non-alphanumeric character
+               14:22:25   | time8. | 51745
+               02:22:25pm | time10. | 51745
+               02:22:25am | time10. | 8545
+  TODSTAMP8.   datetime stored as IBM mainframe time-of-day clock value
+               '93B200C19E7A2000'x | todstamp8. | 704914018.41
+  TU4.         time stored as IBM mainframe timer unit value
+               '8FC7A9BC'x | tu4. | 62818.411563
+  VMSTIME.*    [VMS] time stored in VMS format timestamp
+  YYMMDDw.     date of the form <yy>yymmdd,
+               delimiters may separate day, month, and year values, but
+               the delimiter must be consistent and used throughout
+               900101     | yymmdd8.  | 10958
+               90/1/1     | yymmdd8.  | 10958
+               1990 1 1   | yymmdd8.  | 10958
+               1990/01/01 | yymmdd10. | 10958
+  YYMMNw.&     date in the form of <yy>yymm, the first day of the month is used;
+               prior to 6.09E TS470 and 6.12 TS060, this informat is available
+               only to sites licensing ETS
+               9001   | yymmn4. | 10958
+               199001 | yymmn6. | 10958
+  YYQw.        date in the form of <yy>yyQq, resulting in the first day of the
+               quarter 'q' for year '<yy>yy'
+               90Q2 | yyq4. | 11048
+
+Numeric (standard output) formats
+-------------------------
+ 
+  BESTw.       SAS chooses best notation for specified width
+               1257000 | best7. | 1257000
+               1257000 | best6. | 1.26E6
+               1257000 | best3. | 1E6
+  BINARYw.     binary representation; truncates decimal, writes all negative
+               values as all '1's
+               123.45 | binary8. | 01111011
+               123    | binary8. | 01111011
+               -123   | binary8. | 11111111
+  COMMAw.d     inserts commas, prior to V7 d must be zero or two
+               23451.23 | comma9.2 | 23,451.23
+  COMMAXw.d    inserts periods with a comma separating the decimal fraction,
+               prior to V7 d must be zero or two
+               23451.23 | commax9.2 | 23.451,23
+  Dw.s#        numeric values using at least s significant digits (this writes
+               numbers in similar ranges with same number of decimal places)
+               12345  | d10.4 |    12345.0
+               1234.5 | d10.4 |     1234.5
+               123.45 | d10.4 |  123.45000
+               12.345 | d10.4 |   12.34500
+               1.2345 | d10.4 |    1.23450
+               .12345 | d10.4 |    0.12345
+  DOLLARw.d    prefixes '$', inserts commas, prior to V7 d must be zero or two
+               1254.71 | dollar9.2 | $1,254.71
+  DOLLARXw.d   prefixes '$', inserts periods with a comma separating the decimal
+               fraction, prior to V7 d must be zero or two
+               1254.71 | dollar9.2 | $1.254,71
+  Ew.d         scientific notation
+               1257  | e10. |  1.257E+03
+  Fw.d         standard numeric integer and decimal data
+               refer to W.d for examples
+  FRACTw.      converts decimal data to fractions in reduced form
+               0.666667 | fract8.  |      2/3
+               0.2784   | fract10. |    174/625
+  HEXw.        if w < 16, hexadecimal integers; if w = 16, hexadecimal
+               signed floating point numbers
+               31    | hex8.  | 0000001F
+               5.125 | hex16. | 4152000000000000
+               -256  | hex16. | C310000000000000
+  NEGPARENw.d  displays negative numbers in parantheses, inserts commas
+               1000  | negparen10. | b   1,000b [b = blank]
+               -1000 | negparen10. | (   1,000)
+  NUMXw.d&     numeric values with a comma for the decimal point
+               896.48 | numx6.2 | 896,48
+               896.48 | numx6   |    896
+  OCTALw       octal integers
+               3592 | octal6. | 007010
+  PERCENTw.d   percentages; uses BESTw. format, displays negative values in
+               parantheses, width must be between 0 and 2
+               0.1    | percent10.  | b     10%b [b = blank]
+               1.2    | percent10.  | b    120%b [b = blank]
+               -0.05  | percent10.  | (      5%)
+               -0.053 | percent10.2 | (   5.30%)
+  PVALUEw.d#   writes p-values
+               -1 | pvalue. |    0.0
+               0  | pvalue. | 0.0001
+               1  | pvalue. | 1.0000
+  ROMANw.      values in Roman numerals
+               1992 | roman7. | MCMXCII
+  SSNw.        social security numbers with dashes
+               263878439 | ssn11. | 263-87-8439
+  UICw.*       [VMS] converts numeric values to VMS UIC strings
+  VMSMSGw.*+   [VMS] numeric values as character strings containing the
+               equivalent VMS message
+  w.d          standard numeric integer and decimal data
+               23.45 | 6.3 | 23.450
+  WORDFw.      numbers in English with fractions in hundredths
+               2.5  | wordf15. | two and 50/100
+               2.5  | wordf10. | two and 5*
+               -2.5 | wordf19. | minus two and 50/1*
+               -2.5 | wordf21. | minus two and 50/100
+  WORDSw.      numbers and fractions in English with fractions in hundredths
+               2.1  | words23. | two and ten hundredths
+               -2.1 | words23. | minus two and ten hund*
+               -2.1 | words28. | minus two and ten hundredths
+  YENw.d#      prefixes yen sign, inserts commas, d must be zero or two
+               1254.71 | yen9.2 | Y1,254.71
+  Zw.d         standard numeric integer and decimal data with leading zeroes
+               23.45 | z9.3 | 00023.450
+  FLOATw.d+    floating point numbers; compare with RBw.d--different results
+               for truncated 8-byte floating point numbers under operating
+               systems using IEEE floating point standard
+  IBw.d        signed integers
+               128  | ib4.  | '00000080'x
+               1.28 | ib4.2 | '00000080'x
+               -2   | ib4.  | 'FFFFFFFE'x
+  IBRw.d       integer binary (fixed-point) in Intel and DEC format
+               169    | ibr2.  | 'A900'x
+               169.45 | ibr4.2 | '31420000'x
+  IEEEw.d+     floating point numbers in IEEE standard format
+  PDw.d        signed packed decimal values
+               128  | pd4.  | '0000128C'x
+               1.28 | pd4.2 | '0000128C'x
+               -128 | pd4.  | '0000128D'x
+  PIBw.d       positive integers
+               193  | pib1.  | 'C1'x
+               101  | pib1.  | '65'x
+               10.1 | pib1.1 | '65'x
+               256  | pib2.  | '0100'x
+  PIBRw.d      positive integer binary (fixed-point) in Intel and DEC format
+               256 | pibr2.  | '0001'x
+  PKw.d        unsigned packed decimal values
+               1234  | pk3.  | '001234'x
+               12.34 | pk3.2 | '001234'x
+  RBw.d        floating point numbers
+               128          | rb8.  | '4280000000000000'x
+               12.8         | rb8.1 | '427FFFFFFFFFFFFF'x
+               128.03349718 | rb8.  | '42800893456C9BB4'x
+               -1           | rb8.  | 'C110000000000001'x
+  S370FFw.d    standard numeric data stored in IBM mainframe format
+               123 | s370ff3. | 'F1F2F3'x
+  S370FIBw.d   signed integers in IBM mainframe format
+               refer to IBw.d for examples
+  S370FIBUw.d= unsigned integers in IBM mainframe format, 
+               takes the absolute value of negative values
+               245  | s370fibu1. | 'F5'x
+               -245 | s370fibu1. | 'F5'x
+  S370FPDw.d   signed packed decimal values in IBM mainframe format
+               refer to PDw.d for examples
+  S370FPDUw.d= unsigned packed decimal data in IBM mainframe format, 
+               takes the absolute value of negative values
+               123  | s370fpdu2. | '123F'x
+               -123 | s370fpdu2. | '123F'x
+  S370FPIBw.d  positive integers in IBM mainframe format
+               refer to PIBw.d for examples
+  S370FRBw.d   floating point numbers in IBM mainframe format
+               refer to RBw.d for examples
+  S370FZDw.d=  zoned decimal data in IBM mainframe format
+               refer to ZDw.d for examples
+  S370FZDLw.d= zoned decimal leading sign data in IBM mainframe format
+               123  | s370fzdl3. | 'C1F2F3'x
+               -123 | s370fzdl3. | 'D1F2F3'x
+  S370FZDSw.d= zoned decimal separate leading sign data in IBM mainframe format
+               123  | s370fzds4. | '4EF1F2F3'x
+               -123 | s370fzds4. | '60F1F2F3'x
+  S370FZDTw.d= zoned decimal separate trailing sign data in IBM mainframe format
+               123  | s370fzdt4. | 'F1F2F34E'x
+               -123 | s370fzdt4. | 'F1F2F360'x
+  S370FZDUw.d= unsigned zoned decimal data in IBM mainframe format, 
+               takes the absolute value of negative values
+               123  | s370fzdu3. | 'F1F2F3'x
+               -123 | s370fzdu3. | 'F1F2F3'x
+  VMSZNw.d*+   [VMS] zoned decimal data in VMS format, last digit is '0'-'9' for
+               positive values and 'p'-'y' for negative values
+               -1234 | vmszn5. | 123t
+  ZDw.d        zoned decimal data, last digit is '{'-'I' for positive values and
+               '}'-'R' for negative values
+               128    | zd4.  | 'F0F1F2C8'x
+               -1028  | zd4.  | 'F1F0F2D8'x
+               -123.9 | zd4.1 | 'F1F2F3D9'x
+ 
+Character formats
+---------
+ 
+  $ASCIIw.     converts native format to ascii
+               abc | $ascii3. | [a]'616263'x
+  $BINARYw.    converts to binary data (every character = 8 binary digits)
+               AB | $binary16. | [e]'1100000111000010' [a]'0100000101000010'
+  $CHARw.      standard character data, does not trim leading blanks
+               refer to $W. for examples
+  $EBCDICw.    converts native format to ebcdic
+               abc | $ascii3. | [e]'818283'x
+  $Fw.         standard character data, does not trim leading blanks
+               refer to $W. for examples
+  $HEXw.       converts to hexadecimal data (every character = 2 hex digits)
+               AB | $hex4. | [e]'C1C2' [a]'4142'x
+  $MSGCASEw.+  converts lowercase characters to uppercase based on the value of
+               the MSGCASE system option
+  $OCTALw.     converts to octal data (every character = 3 octal digits)
+               A | $octal9. | [e]'301100100' [a]'101040040'x
+  $QUOTEw.+    adds enclosing double quotation marks
+               SAS | $quote. | "SAS"
+  $REVERJw.@   reverses character order, does not justify result
+               ABCD   | $reverj6. | '  DCBA'
+  $REVERSw.@   reverses character order, left justifies result
+               ABCD   | $revers6. | 'DCBA  '
+  $UPCASEw.+   converts lowercase characters to uppercase
+               sas | $upcase3. | SAS
+  $VARYINGw.   varying lengths of data, length variable must follow, w=max len
+               str='floyd' lv=5 | str $varying9. lv | 'floyd'
+  $w.          standard character data, does not trim leading blanks
+                abc | $char5. | ' abc '
+                
+Dates and Times formats
+---------------
+                
+  DATEw.       date value in the form ddmmmyy<yy>
+               10847 | date5. | 12SEP
+               10847 | date7. | 12SEP89
+               10847 | date9. | 12SEP1989
+  DATEAMPMw.d& datetime value in the form ddmmmyy<yy>:hh:mm:ss.ss AM|PM
+               937192783 | dateampm10. | 12SEP89:03
+               937192783 | dateampm13. | 12SEP89:03 AM
+               937192783 | dateampm19. | 12SEP89:03:19:43 AM
+  DATETIMEw.d  datetime value in the form ddmmmyy<yy>:hh:mm:ss.ss
+               937192783 | datetime7.   | 12SEP89
+               937192783 | datetime16.  | 12SEP89:03:19:43
+               937192783 | datetime18.1 | 12SEP89:03:19:43.0
+  DAYw.        day of month [1-31] from a date value
+               10919 | day2. | 23
+  DDMMYYw.     date value in the form ddmmyy<yy>
+               11316 | ddmmyy5.  | 25/12
+               11316 | ddmmyy6.  | 251290
+               11316 | ddmmyy10. | 25/12/1990
+ 7DDMMYYxw.&   date value in the form ddmmyy<yy>;
+               with x being C, D, N, P, or S to designate comma, dash,
+               null, period, or slash, respectively as the separator;
+               avail in 6.12 and 6.09E as DDMMYYNw. (with only the 'N' separator)
+               11316 | ddmmyyn6. | 120989
+               11316 | ddmmyyn8. | 12091989
+               11316 | ddmmyyd8. | 12-09-89
+  DOWNAMEw.    day of week from a date value
+               10621 | downame6. | Sunday
+               10621 | downame3. | Sun
+  EURDFDDw.#   date in an international format similar to DDMMYY.,
+               refer to SASL610, p8-10 for a complete list of
+               international language formats
+  EURDFDEw.#   date in an international format similar to DATE.,
+               refer to SASL610, p8-10 for a complete list of
+               international language formats
+  EURDFDNw.#   date in an international format similar to WEEKDAY.,
+               refer to SASL610, p8-10 for a complete list of
+               international language formats
+  EURDFDTw.#   datetime in an international format,
+               refer to SASL610, p8-10 for a complete list of
+               international language formats
+  EURDFDWNw.#  date in an international format similar to DOWNAME.,
+               refer to SASL610, p8-10 for a complete list of
+               international language formats
+  EURDFMNw.#   date in an international format similar to MONNAME.,
+               refer to SASL610, p8-10 for a complete list of
+               international language formats
+  EURDFMYw.#   date in an international format similar to MONYY.,
+               refer to SASL610, p8-10 for a complete list of
+               international language formats
+  EURDFWDXw.#  date in an international format similar to WORDDATX.,
+               refer to SASL610, p8-10 for a complete list of
+               international language formats
+  EURDFWKXw.#  date in an international format similar to WEEKDATX.,
+               refer to SASL610, p8-10 for a complete list of
+               international language formats
+  HHMMw.d      hours and minutes from a time value
+               10530 | hhmm.   |  2:55
+               10530 | hhmm7.2 | 2:55.50
+  HOURw.d      hours from a time value
+               10530 | hour.   |  3
+               10530 | hour6.2 |   2.93
+  JULDAYw.     julian day of the year from a date value
+               11048 | julday3. |  91
+  JULDATEw.    julian date from a date value
+               refer to JULIANw. for examples
+  JULIANw.     julian date from a date value
+               11048 | julian5. | 90091
+               11048 | julian7. | 1990091
+  MINGUOw.+    date value in the Taiwanese form yyymmdd, base year is 1912
+               [dec 01, 2011] | minguo9. | 100/12/01
+  MMDDYYw.     date value in the form mmddyy<yy>
+               10847 | mmddyy4.  | 0912
+               10847 | mmddyy5.  | 09/12
+               10847 | mmddyy6.  | 091289
+               10847 | mmddyy7.  |  091289
+               10847 | mmddyy8.  | 09/12/89
+               10847 | mmddyy10. | 09/12/1989
+ 7MMDDYYxw.&   date value in the form mmddyy<yy>,
+               with x being C, D, N, P, or S to designate comma, dash,
+               null, period, or slash, respectively as the separator;
+               avail in 6.12 and 6.09E as MMDDYYNw. (with only the 'N' separator)
+               10847 | mmddyyn6. | 091289
+               10847 | mmddyyn8. | 09121989
+               10847 | mmddyyd8. | 09-12-89
+  MMSSw.d      minutes and seconds from a time value
+               4530    | mmss.   | 75:30
+               4530.34 | mmss8.2 | 75:30.34
+  MMYYxw.      month and year from a date value,
+               with x being C, D, N, P, or S to designate comma, dash,
+               null, period, or slash, respectively as the separator
+               10741 | mmyy5.  | 05M89
+               10741 | mmyyd7. | 05-1989
+               10741 | mmyys7. | 05/1989
+  MONNAMEw.    month name from a date value
+               10919 | monname9. |  November
+               10919 | monname3. | Nov
+  MONTHw.      month of the year [1-12] from a date value
+               10919 | month2. | 11
+  MONYYw.      date value in the form mmmyy<yy>
+               10958 | monyy5. | JAN90
+               10958 | monyy7. | JAN1990
+  NENGOw.      date value in the Japanese form r.yymmdd; r is a character
+               representing an emperor's reign (see SASLAng, p695)
+               9784 | nengo7.  | S611015
+               9784 | nengo10. | S.61/10/15
+  PDJULGw.&    IBM packed decimal julian dates in the hexadecimal form yyyydddF
+               14247 | pdjulg4. | '1999003F'x
+               14612 | pdjulg4. | '2000003F'x
+  PDJULIw.&    IBM packed decimal julian dates in the hexadecimal form ccyydddF
+               where cc is the century indicator ('00'x = 1900, '01'x = 2000)
+               -21547 | pdjuli4. | '0001003F'x
+               14978  | pdjuli4. | '0101003F'x
+  QTRw.        quarter of the year from a date value
+               10741 | qtr1. | 2
+  QTRRw.       quarter of the year from a date value using Roman numerals
+               10741 | qtr3. |  II
+  TIMEAMPMw.d& time in the form hh:mm:ss.ss AM|PM from a time value
+               51745 | timeampm5.  |  2 PM
+               51745 | timeampm11. |  2:22:25 PM
+               8545  | timeampm11. |  2:22:25 AM
+  TIMEw.d      time in the form hh:mm:ss.ss from a time value
+               51745    | time8.   | 14:22:25
+               51745.23 | time11.2 | 14:22:25.23
+  TODw.        time portion from a datetime value
+               956978640 | tod8. |  3:24:00
+  VMSTIMEF.*   [VMS] datetime value in VMS date and time format
+  WEEKDATEw.   day name, month name, day, and year from a date value
+               10848 | weekdate3.  | Wed
+               10848 | weekdate9.  | Wednesday
+               10848 | weekdate17. | Wed, Sep 13, 1989
+               10848 | weekdate29. | Wednesday, September 13, 1989
+  WEEKDATXw.   day name, day, month name, and year from a date value
+               10848 | weekdatx17. | Wed,  13 Sep 1989
+               10848 | weekdatx29. | Wednesday,  13 September 1989
+  WEEKDAYw.    day of week [1-7] from a date value
+               10848 | weekday1. | 4
+  WORDDATEw.   month name, day, and year from a date value
+               10848 | worddate3.  | Sep
+               10848 | worddate9.  | September
+               10848 | worddate12. | Sep 13, 1989
+               10848 | worddate18. | September 13, 1989
+  WORDDATXw.   day, month name, and year from a date value
+               10848 | worddatx3.  | Sep
+               10848 | worddatx9.  | September
+               10848 | worddatx12. |  13 Sep 1989
+               10848 | worddatx18. |  13 September 1989
+  YEARw.       year from a date value
+               10848 | year2. | 89
+               10848 | year4. | 1989
+  YYMMxw.      year and month from a date value,
+               with x being C, D, N, P, or S to designate comma, dash,
+               null, period, or slash, respectively as the separator
+               10741 | yymm5.  | 89M05
+               10741 | yymmc7. | 1989:05
+  YYMMDDw.     date value in the form <yy>yymmdd
+               10669 | yymmdd4.  | 8903
+               10669 | yymmdd5.  | 89-03
+               10669 | yymmdd6.  | 890318
+               10669 | yymmdd10. | 1989-03-18
+ 7YYMMDDxw.&   date value in the form <yy>yymmdd, 
+               with x being C, D, N, P, or S to designate comma, dash,
+               null, period, or slash, respectively as the separator
+               avail in 6.12 and 6.09E as YYMMDDNw. (with only the 'N' separator)
+               10669 | yymmddn6. | 890318
+               10669 | yymmddn8. | 19890318
+               10669 | yymmddd8. | 89-03-18
+  YYMONw.      date value in the form <yy>yymmm
+               10958 | yymon5. | 90JAN
+               10958 | yymon7. | 1990JAN
+  YYQxw.       year and quarter from a date value,
+               with x being C, D, N, P, or S to designate comma, dash,
+               null, period, or slash, respectively as the separator
+               10741 | yyqd6. | 1989-2
+               10741 | yyqn5. | 19892
+  YYQRxw.      year and quarter (Roman numerals) from a date value,
+               with x being C, D, N, P, or S to designate comma, dash,
+               null, period, or slash, respectively as the separator
+               10741 | yyqrp8. |  1989.II
+               10782 | yyqrs8. | 1989/III
+               
+ 
+  Q) How can I put my sas date variable so that December 25, 1995 would appear
+     as '19951225'? (with no separator)
+  A) Beginning with Releases 6.09E TS470 and 6.12 TS060, use the new format
+     YYMMDDN.  There are also new formats MMDDYYN. and DDMMYYN.  Beginning with
+     Version 7, use the new format YYMMDDx. with the N separator.  There are
+     also new formats MMDDYYx. and DDMMYYx.  If you have an earlier release of
+     SAS then there are two alternatives:  use a combination of the YEAR. and
+     MMDDYY. formats to simply display the value:
+        put sasdate year4. sasdate mmddyy4.;
+     or use a combination of the PUT and COMPRESS functions to store the value:
+        newvar = compress(put(sasdate,yymmdd10.),'/');
+ 
+  Q) How can I put my sas time variable with a leading zero for hours 1-9?
+  A) Use a combination of the Z. and MMSS. formats:
+     hrprint = hour(sastime);
+     put hrprint z2. ':' sastime mmss5.
+*/

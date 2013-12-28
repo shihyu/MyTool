@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_begin_end_style</title>
+</head>
+<body>
+
+<h3><b>int p_begin_end_style</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Determines the brace style of the current buffer. This
+property is available only when the control is displayed.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+   // begin/end style 1
+   p_begin_end_style = 0;
+   if (x) {
+      x = 5;
+   }
+
+   // begin/end style 2
+   p_begin_end_style = VS_C_OPTIONS_STYLE1_FLAG;
+   if (x)
+   {
+      x = 5;
+   }
+
+   // begin/end style 3
+   p_begin_end_style = VS_C_OPTIONS_STYLE2_FLAG;
+   if (x)
+      {
+      x = 5;
+      }
+
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Editor Control, Edit Window</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Editor_Control_Properties.html">Editor Control Properties</a>, <a href="Edit_Window_Properties.html">Edit Window Properties</a></blockquote>
+</body>
+</html>

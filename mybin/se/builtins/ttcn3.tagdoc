@@ -1,0 +1,197 @@
+/*
+   Copyright 2012 by SlickEdit Inc.
+   All rights reserved.
+
+   This software is the confidential and proprietary information
+   of SlickEdit Inc. You shall not disclose this information and
+   shall use it only with Visual SlickEdit.
+
+   You may modify this file to add new built-ins
+   for Visual SlickEdit's Context Tagging(TM).  Let us know about
+   new built-ins.  This way our installation/update will install the
+   most up-to-date version and you won't need to maintain a
+   backup.
+*/
+
+/* Denotes the module name in which the macro is used*/
+__MODULE__;
+/* Denotes the canonical (absolute) file name*/
+__FILE__;
+/* Denotes the basic (relative) file name*/
+__BFILE__;
+/* Denotes the line number of the file in which the macro is used*/
+__LINE__;
+/* Denotes the unqualified name of the lowest named basic scope unit in which themacro is used*/
+__SCOPE__;
+
+enum verdicttype {
+    none,
+    inconc,
+    pass,
+    fail,
+    error,
+}
+
+interface port {
+    function send(message);
+    function receive(message);
+}
+
+interface timer {
+    function timeout();
+}
+
+
+/* Puts the referenced altstep as the first element into the list of defaults and return a default reference*/
+function default activate(altstep_ref);
+/* Removes the referenced default from the list of defaults*/
+function deactivate(default_ref);
+/* When called without parameters, deactivates all defaults of a test component*/
+deactivate;
+
+/* Setup connections to the SUT or between test components*/
+procedure connect(component_ref:port first_port,[component_ref:port second_port]);
+/* Remove connections to the SUT or between test components*/
+procedure disconnect(component_ref:port first_port, [component_ref:port second_port]);
+/* Setup connections to the SUT or between test components*/
+procedure map(component_ref:port first_port, [component_ref:port second_port]);
+/* Remove connections to the SUT or between test components*/
+procedure unmap(component_ref:port first_port, [component_ref:port second_port]);
+/* Shorthand for unmap(self:all port) for the calling component*/
+unmap;
+/* Shorthand for disconnect(self:all port) for the calling component*/
+disconnect;
+
+/* Returns true true if the data object reference fulfils the (present) template restriction.*/
+function boolean ispresent(in template any_type invalue);
+/* Returns true if and only if the data object reference specifies the variant of the
+   union type that is actuallyselected for a given data object. */
+function boolean ischosen(in template any_union_type inpar);
+/* Returns true, if inpar is completely initialized and resolves to a specific value.*/
+function boolean isvalue(in template any_type inpar);
+/* Rreturns true, if inpar is at least partially initialized.*/
+function boolean isbound(in template any_type inpar);
+
+/* Sets the response value for the current component or test case */
+procedure setverdict(verdicttype v);
+
+/* Gets the current verdicttype response value for the active component or test case */
+getverdict;
+
+/* Provides the means to write one or more log items to some logging device associated with the testcontrol or the test component */
+procedure log(free_text);
+
+/* Returns the length of a value or template that is of type bitstring, hexstring,
+   octetstring, charstring, universal charstring, record of, set of, or array.*/
+function integer lengthof(in template (present) any_string_or_list_type inpar);
+
+/* Returns the actual number of elements of a value or template of a record or set type*/
+function integer sizeof ( in template   (present) any_record_set_type inpar)
+
+/* Converts an integer value in the range of 0 to 127 (8-bit encoding) into
+   a single-character-length charstring value*/
+function charstring int2char(in integer invalue);
+/* Converts an integer value in the range of 0 to 2 147 483 647 (32-bit encoding)
+into asingle-character-length universal charstring value*/
+function "universal charstring" int2unichar(in integer invalue);
+/* Converts a single integer value to a single bitstring value*/
+function bitstring int2bit(in integer value, in integer length);
+/* Converts an integer value into an enumerated value of a given enumerated type*/
+function int2enum (in integer inpar, out Enumerated_type outpar);
+/* Converts a single integer value to a single hexstring value*/
+function hexstring int2hex(in integer invalue,in integer length);
+/* Converts a single integer value to a single octetstring value*/
+function octetstring int2octet(in integer invalue,in integer length);
+/* Converts the integer value into its string equivalent */
+function charstring int2str(in integer invalue);
+/* Converts an integer value into a float value*/
+function float int2float(in integer invalue);
+/* Converts a float value into an integer value by removing the
+   fractional part of the argument*/
+function integer float2int(in float invalue);
+/* Converts a single-character-length charstring value into an integer
+   value in the range of 0 to 127*/
+function integer char2int(in charstring invalue);
+/* Converts a charstring invalue to an octetstring*/
+function octetstring char2oct(in charstring invalue);
+/* Converts a single-character-length universal charstring value into an integer
+   value in the range of 0 to 2,147,483,647. The integer value describes the 32-bit
+   encoding of the character.*/
+function integer unichar2int(in universal charstring invalue);
+/* Converts a single bitstring value to a single integer value */
+function integer bit2int(in bitstring invalue);
+/* Converts a single bitstring value to a single hexstring . The resulting hexstring
+   represents thesame value as the bitstring*/
+function hexstring bit2hex(in bitstring invalue);
+/* Converts a single bitstring value to a single octetstring. The resulting octetstring 
+   represents the same value as the bitstring .*/
+function octetstring bit2oct(in bitstring invalue);
+/* Converts a single bitstring value to a single charstring. The resulting charstring has
+   the same length as the bitstring and contains only the characters '0' and '1'.*/
+function charstring bit2str(in bitstring invalue);
+/* Converts a single hexstring value to a single integer value*/
+function integer hex2int(in hexstring invalue);
+/* Converts a single hexstring value to a single bitstring . The resulting bitstring
+   represents thesame value as the hexstring.*/
+function bitstring hex2bit(in hexstring invalue);
+/* Converts a single hexstring value to a single octetstring . The resulting octetstring
+   represents thesame value as the hexstring.*/
+function octetstring hex2oct(in hexstring invalue);
+/* Converts a single hexstring value to a single charstring . The resulting charstring
+   represents thesame value as the hexstring and contains only the characters '0' to '9'and 'A' to 'F'.*/
+function charstring hex2str(in hexstring invalue);
+/* Converts a single octetstring value to a single integer value*/
+function integer oct2int(in octetstring invalue);
+/* Converts a single octetstring value to a single bitstring.*/
+function bitstring oct2bit(in octetstring invalue);
+/* Converts a single octetstring value to a single hexstring.*/
+function hexstring oct2hex(in octetstring invalue);
+/* Converts a single octetstring value to a charstring representing the string equivalent
+   of the input value. The resulting charstring shall have the same length as the incoming octetstring.*/
+function charstring oct2str(in octetstring invalue);
+/* Converts an octetstring invalue to a charstring. The input parameter invalue shall not contain
+   octet values higher than 7F. The resulting charstring shall have the same length as the input octetstring.*/
+function charstring oct2char (in octetstring invalue);
+/* Converts a charstring representing an integer value to the equivalent integer.*/
+function integer str2int(in charstring invalue);
+/* Converts a string of the type charstring to an octetstring.*/
+function octetstring str2oct(in charstring invalue);
+/* Converts a string of the type charstring to a hexstring.*/
+function hexstring str2hex(in charstring invalue);
+/* Converts a charstring comprising a number into a float value.*/
+function float str2float(in charstring invalue);
+/* Accepts an enumerated value and returns the integer value associated to the enumerated value*/
+function integer enum2int(in Enumerated_type inpar);
+
+/* This function first matches the parameter inpar against the expression in the second parameter.
+   If this matching is successful, the substring of inpar shall be returned, which matched the groupno
+   -s group of expression during the matching.*/
+function any_character_string regexp(in template (value) any_character_string_type inpar,
+                                     in template (present) any_character_string_type expression,
+                                     in integer groupno);
+
+/* Returns a substring or subsequence from a value that is of a string type or a sequence type.*/
+function input_string_or_sequence_type substr(in template (present) any_string_or_sequence_type inpar,
+                                              in integer index, in integer count);
+/* Replaces the substring or subsequence of value inpar at index index of length len*/
+function any_string_or_sequence replace(in any_string_or_sequence_type inpar,
+                                        in integer index, in integer len,
+                                        in any_string_or_sequence_type repl);
+/* Encodes a value or template into a bitstring*/
+function bitstring encvalue(in template (value) any_type inpar);
+/* Decodes a bitstring into a value*/
+function integer decvalue(inout bitstring encoded_value, out any_type decoded_value);
+
+/* Returns a (pseudo) random number less than 1 but greater or equal to 0.
+   The random number generator is initialized by means of an optional seed value.*/
+function float rnd(in float optional_seed);
+
+/* Returns the unqualified name of the actually executing test case*/
+function charstring testcasename();
+
+
+
+
+
+
+

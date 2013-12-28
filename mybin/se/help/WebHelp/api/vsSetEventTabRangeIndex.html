@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsSetEventTabRangeIndex</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsSetEventTabRangeIndex(int keytab_index, int event1, int event2, int index, int version=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sets range of event bindings
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="keytab_index">keytab_index</A></code> - Index into names table of event table.  When
+                  setting key bindings this is usually the event
+                  table returned by
+                  <b>vsQDefaultEventTab</b>() or
+                  VSP_MODEEVENTTAB.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="event1">event1</A></code> - An event constant VSEV_??? from vsevents.h</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="event2">event2</A></code> - An event constant VSEV_??? from vsevents.h
+<dl>
+<dt>VSEV_RANGE_FIRST_CHAR_KEY<dd>First character key.  This is character code 0. No shift flags may be combined with this.
+<dt>VSEV_RANGE_LAST_CHAR_KEY<dd>Last character key.  This is character code 0x1ffffff.  No shift flags may be combined with this.
+<dt>VSEV_RANGE_FIRST_NONCHAR_KEY<dd>First non unicode character key. No shift flags may be combined with this.
+<dt>VSEV_ALL_RANGE_LAST_NONCHAR_KEY<dd>Last non unicode character key with all shift flags.
+<dt>VSEV_RANGE_FIRST_MOUSE<dd>First mouse event.  Shift flags may be combined with this.
+<dt>VSEV_RANGE_LAST_MOUSE<dd>Last mouse event. Shift flags may be combined with this.
+<dt>VSEV_ALL_RANGE_LAST_MOUSE<dd>Last mouse event with all shift flags.
+<dt>VSEV_RANGE_FIRST_ON<dd>First ON event. No shift flags may be combined with this.
+<dt>"VSEV_RANGE_LAST_ON<dd>Last ON event. No shift flags may be combined with this.
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="index">index</A></code> - Names table index.  May be 0 to unbind key.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="version">version</A></code> - Must be 0.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+static int VSAPI MyCommand()
+{
+   vsMessageBox("Got here");
+}
+
+extern "C" int VSAPI vsDllInit()
+{
+   vsLibExport("_command int MyCommand()",
+           0,0,
+           MyCommand);
+   // Bind this command to a range of characters
+   // ' ' - Last supported Unicode character
+   vsSetEventTabRangeIndex(
+          vsQDefaultEventTab(),
+          VSEV_SPACE,
+          VSEV_RANGE_LAST_CHAR_KEY,
+          vsFindIndex("MyCommand", VSTYPE_COMMAND));
+
+   // Unbind all character keys. This effects keys
+   // like a-z, punctuation, and foreign language characters.
+   // Keys like Alt+A which are not unicode characters are not effected.
+   vsSetEventTabRangeIndex(
+          vsQDefaultEventTab(),
+          VSEV_RANGE_FIRST_CHAR_KEY,
+          VSEV_RANGE_LAST_CHAR_KEY,
+          0);
+
+   // Unbind all non-character keys including keys like Enter,
+   // Backspace, Ctrl+Shift+Alt+Enter, Alt+A
+   vsSetEventTabRangeIndex(
+          vsQDefaultEventTab(),
+          VSEV_RANGE_NONFIRST_CHAR_KEY,
+          VSEV_ALL_RANGE_NONLAST_CHAR_KEY,
+          0);
+
+   // Unbind all mouse events in any shift key combination.
+   vsSetEventTabRangeIndex(
+          vsQDefaultEventTab(),
+          VSEV_RANGE_FIRST_MOUSE,
+          VSEV_ALL_RANGE_LAST_MOUSE,
+          0);
+
+   // Unbind all Ctrl+mouse events.
+   vsSetEventTabRangeIndex(
+          vsQDefaultEventTab(),
+          VSEV_RANGE_FIRST_MOUSE|VSEVFLAG_CTRL,
+          VSEV_ALL_RANGE_LAST_MOUSE|VSEVFLAG_CTRL,
+          0);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsEvent2Name.html">vsEvent2Name</a>, <a href="vsEventTabIndex.html">vsEventTabIndex</a>, <a href="vsQDefaultEventTab.html">vsQDefaultEventTab</a></blockquote>
+</body>
+</html>

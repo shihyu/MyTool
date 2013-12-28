@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd">
+<SETemplate Version="1.0" Type="Item">
+
+  <TemplateDetails>
+    <Name>Objective-C Class</Name>
+    <Description>Simple interface and implementation files</Description>
+    <SortOrder>0</SortOrder>
+    <DefaultName>MyClass</DefaultName>
+  </TemplateDetails>
+  <TemplateContent>
+    <Parameters>
+      <Parameter Name="superclassname" Value="NSObject" Prompt="1" PromptString="Superclass"/>
+    </Parameters>
+    <Files>
+      <File TargetFilename="$fileinputname$.h" ReplaceParameters="1">Class.h</File>
+      <File TargetFilename="$fileinputname$.m" ReplaceParameters="1">Class.m</File>
+    </Files>
+  </TemplateContent>
+
+</SETemplate>

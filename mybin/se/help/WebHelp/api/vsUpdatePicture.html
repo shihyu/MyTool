@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsUpdatePicture</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsUpdatePicture(const char *pszFilename, int reserved=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Loads a .bmp, .ico, .png, or .xpm file. We recommend that the
+filename start with an "_" (ex. "c:\slickedit\_stackex.ico").
+This tells SlickEdit that the bitmap is global (not attatched
+to a Slick-C&reg; dialog box).
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFilename">pszFilename</A></code> - Filename of picture to load.  The filename
+stored in the names table has no path.  So if
+you use <b>vsFindIndex</b> to lookup your
+bitmap, make sure you strip the path.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If succcessful, returns names table index of picture.  Otherwise, a
+negative error code is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote>
+</body>
+</html>

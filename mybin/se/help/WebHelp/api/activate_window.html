@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>activate_window</title>
+</head>
+<body>
+
+<h3><b>void activate_window(int window_id)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Determines the current object/current window.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="window_id">window_id</A></code> - ID of window
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include "slick.sh"
+defmain()
+{
+   //  Calling a function as a method like below
+   _mdi.p_child.myproc();
+
+   // is identical to the code below
+   new_wid= _mdi.p_child;
+   orig_wid=p_window_id;
+   p_window_id=new_wid;
+   myproc();
+   p_window_id=orig_wid;
+}
+static myproc()
+{
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">All Window Objects
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Window_Functions.html">Window Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="p_window_id.html">p_window_id</a>, <a href="get_window_id.html">get_window_id</a>, <a href="load_files.html">load_files</a>, <a href="_next_window.html">_next_window</a>, <a href="_prev_window.html">_prev_window</a>, <a href="_delete_window.html">_delete_window</a>, <a href="_open_temp_view.html">_open_temp_view</a>, <a href="_delete_temp_view.html">_delete_temp_view</a>, <a href="_create_window.html">_create_window</a></blockquote>
+</body>
+</html>

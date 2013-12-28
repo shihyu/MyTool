@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_TreeGetInfo</title>
+</head>
+<body>
+
+<h3><b>void _TreeGetInfo(int ItemIndex, int &ShowChildren, int &NonCurrentBMIndex=0, int &CurrentBMIndex=0, int &moreFlags=0, int &lineNumber, int flagMask=-1)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieves some tree item properties.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ItemIndex">ItemIndex</A></code> - Specifies a tree item.  The root of the tree
+cannot be deleted and always has an item index of 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ShowChildren">ShowChildren</A></code> - whether children of this node are displayed.
+TREE_NODE_COLLAPSED indicates children are not displayed.
+TREE_NODE_EXPANDED indicates children of this node are
+displayed. TREE_NODE_LEAF for leaf items.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NonCurrentBMIndex">NonCurrentBMIndex</A></code> - Names table index to a picture which gets displayed to
+the left of the caption text when this node is not the
+current node.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="CurrentBMIndex">CurrentBMIndex</A></code> - Names table index to a picture which gets displayed to
+the left of the caption text when this node is the current
+node.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="moreFlags">moreFlags</A></code> - whether this item is hidden
+(TREENODE_HIDDEN).
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="lineNumber">lineNumber</A></code> - Set to the line number of the current node in the tree as
+if the tree we are list box.  This has an impact on
+performance, so do mnot specify this parameter if you are
+not actually using it.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flagMask">flagMask</A></code> - Mask indicating which TREENODE_* flags to get
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Tree View
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tree_View_Methods.html">Tree View Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_TreeSetCaption.html">_TreeSetCaption</a>, <a href="_TreeGetCaption.html">_TreeGetCaption</a>, <a href="_TreeSetInfo.html">_TreeSetInfo</a>, <a href="_TreeSetUserInfo.html">_TreeSetUserInfo</a>, <a href="_TreeGetUserInfo.html">_TreeGetUserInfo</a></blockquote>
+</body>
+</html>

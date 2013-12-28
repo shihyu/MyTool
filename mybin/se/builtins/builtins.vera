@@ -1,0 +1,1107 @@
+//////////////////////////////////
+// Compiler-defined macros
+//////////////////////////////////
+
+// Current line number as integer
+#define __LINE__
+// Current file name as string
+#define __FILE__
+// Current date as string
+#define __DATE__
+// Current time as string
+#define __TIME__
+// Current value of Vera (integer, usually 1)
+#define __VERA__
+// Current version of Vera (integer)
+#define __VERSION__
+// Major version of Vera (integer)
+#define __VERA_VERSION__
+// Minor version of Vera (integer)
+#define __VERA_MINOR__
+// Patch number of Vera (integer)
+#define __VERA_PATCH__
+// Vera's virtual machine major version (integer)
+#define __VERA_VMC__
+// Vera's virtual machine minor version (integer)
+#define __VERA_VMC_MINOR__
+
+////////////////////////////////////////
+// string built-in functions and tasks
+////////////////////////////////////////
+
+class string{
+    // Returns the length of the string as an integer
+    function integer len(){}
+    // Returns the integral value of the character at position i
+    function integer getc(integer i){}
+    // Returns a new string in lower case
+    function string tolower(){}
+    // Returns a new string in upper case
+    function string toupper(){}
+    // Assigns the character at position i the value of char
+    task putc(integer i, string char){}
+    /**
+     * Returns the current status flag value
+     * @returns 1 for STR_ERR_OUT_OF_RANGE when putc fails
+     *          2 for STR_ERR_REGEXP_SYNTAX when match() syntax is incorrect
+     *          0 for no flag set
+     */
+    function integer get_status(){}
+    // Returns a descriptive error string describing the flag returned from get_status()
+    function string get_status_msg(){}
+    /**
+     * Case sensitive comparison
+     * @param rhs string to compare with
+     * @returns 0 for identical
+     *          positive for rhs being greater
+     *          negative for rhs being lesser
+     */
+    function integer compare(string rhs){}
+    /**
+     * Case insensitive comparison
+     * @param rhs string to compare with
+     * @returns 0 for identical
+     *          positive for rhs being greater
+     *          negative for rhs being lesser
+     */
+    function integer icompare(string rhs){}
+    /**
+     * Hashes (encodes) the string and returns a non-negative integer
+     * @param size Max value for the hash
+     * @returns hash value less than size
+     */
+    function integer hash(integer size){}
+    /**
+     * Returns a substring (copy)
+     * @param startpos Position to begin copying from (inclusive)
+     * @returns substring from startpos to the end
+     */
+    function string substr(integer startpos){}
+        /**
+     * Returns a substring (copy)
+     * @param startpos Position to begin copying from (inclusive)
+     * @param endpos Position to stop at (inclusive)
+     * @returns substring between startpos and endpos
+     */
+    function string substr(integer startpos, integer endpos){}
+    /**
+     * Searches for a pattern in a string
+     * @param pattern string pattern (literal, not a regex)
+     * @returns index value of starting position, or -1 if not found
+     */
+    function integer search(string pattern) {}
+    /**
+     * Searches for a pattern in a string using regular expressions
+     * @param regex regular expression (Perl syntax)
+     * @returns 1 if found, 0 if not found. If not found due to regex
+     *          syntax error, get_status will be set to STR_ERR_REGEXP_SYNTAX
+     */
+    function integer match(string regex) {}
+    /**
+     * Returns the substring preceeding a match after a successful
+     * call to match()
+     * @returns substring before the matched regex pattern
+     */
+    function string prematch() {}
+    /**
+     * Returns the substring following a match after a successful
+     * call to match()
+     * @returns substring after the matched regex pattern
+     */
+    function string postmatch() {}
+    /**
+     * Returns the substring of the matched text after a successful
+     * call to match()
+     * @returns substring of the matched pattern
+     */
+    function string thismatch() {}
+    /**
+     * Returns the substring of the matched backreference (match group)
+     * @param idx Number of the perl regex group, index starts at 0
+     * @returns substring of the matched group
+     */
+    function string backref(integer idx) {}
+    /**
+     * Converts a string to an integer
+     * @returns integer value
+     */
+    function integer atoi() {}
+    /**
+     * Initializes the string from an integer value
+     * @param value integer value
+     */
+    task itoa(integer value) {}
+    /**
+     * Handles a string as an ASCII hexadecimal number (`hAEF2) and converts it
+     * to a bit value
+     * @returns bit/reg value
+     */
+    function reg atohex() {}
+    /**
+     * Handles a string as an ASCII octal number (`o2) and converts it
+     * to a bit value
+     * @returns bit/reg value
+     */
+    function reg atooct() {}
+    /**
+     * Handles a string as an ASCII binary number (`b01) and converts it
+     * to a bit value
+     * @returns bit/reg value
+     */
+    function reg atobin() {}
+    /**
+     * Initializes the string from bit value
+     * @param value bit value
+     */
+    task bittostr(bit value) {}
+}
+
+////////////////////////////////////////
+// class built-in functions and tasks
+////////////////////////////////////////
+
+class _vera_class_builtins {
+    // Explicit garbage-collection call
+    virtual task finalize(){}
+    /**
+     * Randomizes variables in the object
+     * @param options One of the VERA_SOLVE_MODE, VERA_CHECK_MODE, VERA_ENABLE_TRACE_n, VERA_ENABLE_CHECKER_TRACE_n, etc
+     *                values define in vera_defines.h
+     * @returns OK or FAIL
+     */
+    virtual function integer randomize(integer options = 0){}
+    // Called before randomize()
+    task pre_randomize() {}
+    // Called after randomize()
+    task post_randomize() {}
+    /**
+     * Controls whether a random variable is active or inactive
+     * @param stat One of ON, OFF, or REPORT
+     * @param varname variable to be changed or queried
+     * @param idx Index value if varname is an array type
+     * @returns The new mode value (ON or OFF). or the current value if mode == REPORT
+     */
+    function integer rand_mode(integer mode, string varname = "", integer idx = -1){}
+    /**
+     * Controls whether a constraint is active or inactive
+     * @param mode One of ON, OFF, or REPORT
+     * @param varname constraint to be changed or queried
+     * @param idx Index value if varname is an array type
+     * @returns The new mode value (ON or OFF). or the current value if mode == REPORT
+     */
+    function integer constraint_mode(integer mode, string varname = "", integer idx = -1){}
+    /**
+     * Prints the object to stdout or a file
+     * @param file A file descriptor or the stdout / stderr text macros
+     * @param attributes Optional attribute string, eg: "depth=1 indent=5"
+     *                   Available attributes are depth, indent, severity, port, format, array_depth, V
+     */
+    public task object_print(integer file = stdout, string attributes = "") {}
+    /**
+     * Compares two objects of the same class type
+     * @param obj Instance to compare with
+     * @returns 1 If the comparison succeeds (objects are the same), or 0 for failure
+     */
+    function integer object_compare(object obj) {}
+    /**
+     * Performs a deep copy of an object
+     * @returns A copy
+     */
+    virtual function object object_copy() {}
+    /**
+     * Packs class object data
+     * @param dest Output associative array to receive the data
+     * @param index array index at which to start the pack
+     * @param left Number of bits on the left of index to leave unchanged
+     * @param right Number of bits on the right of index to leave unchanged
+     * @returns The number of bits packed
+     */
+    function integer pack(var reg[N:0] dest[], var integer index, var integer left, var integer right ) {}
+    /**
+     * Unpacks class object data
+     * @param src Associative array containing packed data
+     * @param index array index at which to start unpacking
+     * @param left Number of bits on the left of index to leave unchanged
+     * @param right Number of bits on the right of index to leave unchanged
+     * @returns The number of bits unpacked
+     */
+    function integer unpack(reg[N:0] src[], var integer index, var integer left, var integer right ) {}
+
+};
+
+
+/////////////////////////////////////////
+// dynarray built-ins
+/////////////////////////////////////////
+class dynarray {
+    // Returns the size of the array
+    function integer size() {}
+    // Removes a specific item from the array
+    task delete(integer index) {}
+    // Clears the entire array
+    task delete() {}
+};
+
+/////////////////////////////////////////
+// SmartQueue built-ins
+/////////////////////////////////////////
+class SmartQueue {
+    // Returns the total number of elements the queue can accomodate
+    function integer capacity() {}
+    // Removes a specific item from the queue
+    task delete(integer index) {}
+    // Clears the entire queue
+    task delete() {}
+    // Finds elements matching the "with index" expression
+    function SmartQueue find() {}
+    // Finds all indices matching the "with index" expression
+    function integer[$] find_index() {}
+    // Gets the first element of the queue. Can be used with a "with index" expression
+    function data_type first() {}
+    // Gets the first element index of the match for a "with index" expression
+    function integer first_index() {}
+    // Returns 1 if the queue is empty, or zero
+    function integer empty() {}
+    // Inserts the element at the specified index
+    task insert(integer index, data_type element) {}
+    // Inserts a queue of elements at the specified index
+    task insert(integer index, data_type elements[$]) {}
+    // Gets the last element of the queue. Can be used with a "with index" expression
+    function data_type last() {}
+    // Gets the last element index of the match for a "with index" expression
+    function integer last_index() {}
+    // Gets the maximum value from the queue. Can be used with a "with index" expression
+    function data_type max() {}
+    // Gets the maximum value element index of the match for a "with index" expression
+    function integer max_index() {}
+    // Gets the minimum value from the queue. Can be used with a "with index" expression
+    function data_type min() {}
+    // Gets the minimum value element index of the match for a "with index" expression
+    function integer min_index() {}
+    // Selects a random element from the queue
+    function data_type pick() {}
+    // Selects a random element index from the queue
+    function integer pick_index() {}
+    // Removes and returns the last element
+    function data_type pop_back() {}
+    // Removes and returns the first element
+    function data_type pop_front() {}
+    // Inserts a new element at the end
+    task push_back(data_type element){}
+    // Inserts a new element at the beginning
+    task push_front(data_type element){}
+    // Allocates memory for a number of elements
+    task reserve(integer number){}
+    // Reverse the element order
+    task reverse(){}
+    // Sorts elements in descending order when used with a "with index" expression
+    task rsort(){}
+    // Sorts elements in ascending order when used with a "with index" expression
+    task sort(){}
+    // Returns the size of the queue
+    function integer size() {}
+    // Computes the sum of all elements (use "with index" expression for non-numeric types)
+    function integer sum(){}
+    // Finds all unique elements (use "with index" expression for non-numeric types)
+    function data_type[$] unique(){}
+    // Finds all indices of all unique elements (use "with index" expression for non-numeric types)
+    function integer[$] unique_index() {}
+}
+
+////////////////////////////////////////
+// functional coverage groups
+/////////////////////////////////////////
+class coverage_group {
+    function integer get_at_least() {}
+    function integer inst_get_at_least() {}
+    function integer get_auto_bin_max() {}
+    function integer inst_get_auto_bin_max() {}
+    function integer get_cov_weight() {}
+    function integer inst_get_cov_weight() {}
+    function integer get_coverage_goal() {}
+    function integer inst_get_coverage_goal() {}
+    function integer get_cross_bin_max() {}
+    function integer inst_get_cross_bin_max() {}
+    function integer inst_get_collect() {}
+    function integer inst_query() {}
+    function integer query() {}
+    function string query_str() {}
+    function integer set_bin_activation() {}
+    function integer inst_set_bin_activation() {}
+
+    task set_at_least(integer atleast) {}
+    task inst_set_at_least(integer atleast) {}
+    task set_auto_bin_max(integer abmax) {}
+    task inst_set_auto_bin_max(integer abmax) {}
+    task set_cov_weight(integer weight) {}
+    task inst_set_cov_weight(integer weight) {}
+    task set_coverage_goal(integer goal) {}
+    task inst_set_coverage_goal(integer goal) {}
+    task set_cross_bin_max(integer cbmax) {}
+    task inst_set_cross_bin_max(integer cbmax) {}
+    task inst_set_collect(integer coll) {}
+    task load(string arg) {}
+    task set_name(string name) {}
+}
+
+////////////////////////////////////////
+// Vera library globals
+/////////////////////////////////////////
+
+/**
+* System call to allocate synchronization resources, like mailboxes and semaphores
+* @param type One of MAILBOX, SEMAPHORE, REGION
+* @param id Base identifier. Use 0 to have Vera automatically generate the id
+* @param count Number of resource objects to allocate
+* @returns The base ID of the objects created, or 0 for failure
+*/
+function integer alloc(integer type, integer id, integer count){}
+/**
+* Manipulates or inspects associative arrays
+* @param func One of CHECK, DELETE, FIRST, NEXT
+* @param array_name The array to operate on
+* @param index For FIRST and NEXT, the index value. For CHECK, the element count
+* @return 1 for success, 0 for failure
+*/
+function integer assoc_index(integer func, object array_name[], object integer index ){}
+/**
+ * Assigns values to variables
+ * @param dest_var Target variable for assignment
+ * @param source_exp Source expression to be cast and assigned to dest_var
+ * @param doCheck Optional arg. Either not provided or CHECK
+ * @returns 1 if cast successful, 0 for no assignment
+ */
+function void cast_assign(scalar dest_var, scalar source_exp , [CHECK]){}
+/**
+ * Deprecated function or task
+ */
+function void close_conn(){}
+/**
+ * Starts and stops coverage data for the simulation
+ * @param mode One of CM_START, CM_STOP, or CM_CHECK
+ * @param type One of CM_SOURCE, CM_CONDITION, CM_TOGGLE, CM_FSM, CM_FSM_TRANS, or CM_FSM_STATE
+ * @param scope Either CM_MODULE or CM_HIER
+ * @param module_or_instance Module or instance name
+ * @returns One of the CM_ status codes: CM_NOERROR, CM_ERROR, CM_NOCOV, CM_PARTIAL
+ */
+function integer cm_coverage(integer mode, integer type, integer scope, string module_or_instance){}
+/**
+ * Accesses current coverage totals
+ * @param type One of CM_SOURCE, CM_CONDITION, CM_TOGGLE, CM_FSM, CM_FSM_TRANS
+ * @param scope Either CM_MODULE or CM_HIER
+ * @param module_or_instance Module or instance name
+ * @returns 0 to MAXINT (positive) for the current coverage total (relative to cm_get_limit), or CM_ERROR or CM_NOCOV
+ */
+function integer cm_get_coverage(integer type, integer scope, string module_or_instance){}
+/**
+ * Determines the limiting value for coverage (which represents 100% coverage)
+ * @param type One of CM_SOURCE, CM_CONDITION, CM_TOGGLE, CM_FSM, CM_FSM_TRANS
+ * @param scope Either CM_MODULE or CM_HIER
+ * @param module_or_instance Module or instance name
+ * @returns Integer value that represents 100% coverage
+ */
+function integer cm_get_limit(integer type, integer scope, string module_or_instance){}
+/**
+ * Blocks Vera while times elapses on the HDL side of the simulation
+ * @param time Length of delay, in time units used by the HDL
+ */
+task delay(integer time){}
+/**
+ * Generates a Vera simulation error
+ * @param format C-style format string
+ */
+task error(string format, ...){}
+/**
+ * Sets the error generation mode
+ * @param onoff ON or OFF
+ * @param mode One of the predefined EC_ error classes (EC_EXPECT, EC_RETURN, etc)
+ */
+task error_mode(integer onoff, integer mode){}
+/**
+ * Terminates the Vera program
+ * @param exit_code Integer constant or variable. Specify zero for normal termination.
+ */
+task exit(integer exit_code){}
+/**
+ * Closes the specified file
+ * @param file_desc 32-bit file descriptor
+ */
+task fclose(integer file_desc){}
+/**
+ * Determines if the EOF indicator is set for the file stream
+ * @param file_desc 32-bit file descriptor
+ * 
+ * @return integer Non-zero if the end-of-file indicator is set
+ */
+function integer feof(integer file_desc){}
+/**
+* Returns a non-zero integer when and error occurs in the file stream
+* @param file_desc File descriptor (handle)
+* @returns Non-zero when there is an error
+*/
+function integer ferror(integer file_desc){}
+/**
+ * Writes buffered data to the specified file
+ * @param file_desc 32-bit file descriptor
+ */
+task fflush(integer file_desc){}
+/**
+* Sets and clears error flags
+* @param mode ON or OFF
+* @returns The previous value of the error flag
+*/
+function integer flag(integer mode){}
+/**
+ * Opens the specified file and returns an integer that is the
+ * 32-bit file descriptor, or 0 if it fails.
+ * @param filename   file path to open
+ * @param accessmode "r" for read, "w" for create/truncate, or "a" for append
+ * @param verbosity Either VERBOSE or SILENT
+ * @return integer 32 bit file descriptor. Zero (0) for failure
+ */
+function integer fopen(string filename, string accessmode, integer verbosity){}
+/**
+ * Forces signals from Vera
+ * @param signal_ref Reference to interface or port signal being forced (interface.signal or port.$signal)
+ * @param expr Either a bit, bit_vector, or integer value (depending on the signal)
+ */
+task force(signal signal_ref, object expr){}
+/**
+ * Sends output to a file
+ * @param file_desc 32-bit file descriptor
+ * @param format string format specifiers
+ */
+task fprintf(integer file_desc, string format, ...){}
+/**
+ * Reads binary formatted data file line-by-line and returns
+ * the data as a bit vector. Whitespace-only lines are ignored.
+ * @param file_desc 32-bit file descriptor
+ * @param verbosity Either VERBOSE or SILENT
+ * @return reg Bit vector
+ */
+function reg freadb(integer file_desc, integer verbosity){}
+/**
+ * Reads hex formatted data file line-by-line and returns
+ * the data as a bit vector. Whitespace-only lines are ignored.
+ * @param file_desc 32-bit file descriptor
+ * @param verbosity Either VERBOSE or SILENT
+ * @return reg Bit vector
+ */
+function reg freadh(integer file_desc, integer verbosity){}
+/**
+ * Reads entire file and returns the string contents. Returned string
+ * does not contain line-feed sequences.
+ * @param file_desc 32-bit file descriptor
+ * @param verbosity Either VERBOSE, SILENT, or RAWIN
+ * @return string File contents
+ */
+function string freadstr(integer file_desc, integer verbosity){}
+/**
+ * Deprecated function or task
+ */
+function void get_bind(){}
+/**
+ * Deprecated function or task
+ */
+function void get_bind_id(){}
+/**
+ * Deprecated function or task
+ */
+function void get_conn_err(){}
+/**
+ * Returns the current simulation cycle count
+ * @param sigref Any valid signal reference. System clock is the default.
+ * @returns cycle count
+ */
+function reg get_cycle(object sigref){}
+/**
+ * Returns the current simulation cycle count using the system clock
+ * @returns cycle count
+ */
+function reg get_cycle(){}
+/**
+ * Returns the value of an environment variable
+ * @param varname environment variable name
+ * @returns variable value, or null
+ */
+function string get_env(string varname){}
+/**
+ * (Not documented in the Vera spec)
+ */
+function integer get_memsize(){}
+/**
+ * Reads HDL plus arguments
+ * @param request Either CHECK, HNUM, NUM, or STR
+ * @param plus_arg The argument that is to be evaluated
+ * @returns Value of the plus_arg, up to 32 bits for numbers
+ */
+function reg get_plus_arg(integer request, string plus_arg){}
+/**
+ * Returns the number of seconds since 1/1/1970
+ * @returns time in elapsed seconds
+ */
+function reg get_systime(){}
+/**
+ * Returns the current 64-bit simulation time as two 32-bit values
+ * @param hilo Either HI or LO
+ * @returns Upper or lower 32-bit value
+ */
+function reg get_time(integer hilo){}
+/**
+ * Returns the base 10 exponent of the internal simulation time units
+ * @returns integer
+ */
+function integer get_time_unit(){}
+/**
+ * Returns a copy of the state values for the current thread or object
+ * @param stateval
+ */
+task getstate(var VeraRandomState stateval, var object obj){}
+/**
+ * Returns the base 10 exponent of the Vera shell time units
+ * @returns integer
+ */
+function integer get_vera_shell_time_unit(){}
+/**
+ * Allows a user-defined state arry to be initialized for future use
+ * @param seed Non-zero seed value
+ * @param randstate target random state (of type VeraRandomState)
+ * @param obj (Optional) object used to seed an object instead of the current thread
+ */
+task initstate(integer seed, var VeraRandomState randstate, var object obj){}
+/**
+ * Locks a file for the specified time
+ * @param filename Path to file to be locked
+ * @param timeout Duration in seconds. Zero (0) indicates the lock 
+                  does not time out.
+ * @return integer One (1) for success, Zero (0) for failure
+ */
+function integer lock_file(string filename, integer timeout){}
+/**
+ * Returns data stored in a mailbox
+ * @param time_mode Either WAIT, NO_WAIT, COPY_NO_WAIT, or COPY_WAIT
+ * @param mailboxid Specifies what mailbox to retrieve
+ * @param dest Output variable
+ * @param maybeCheck Optionally specify CHECK
+ * @returns Return code varies based on the time_mode param and CHECK option
+ */
+function integer mailbox_get(integer time_mode, integer mailboxid, var object dest, integer maybeCheck){}
+/**
+ * Sends data to a mailbox
+ * @param mailboxid Specifies what mailbox to send data to
+ * @param data Scalar or object data
+ */
+task mailbox_put(integer mailboxid, var object data){}
+/**
+ * Deprecated function or task. See mailbox_get
+ */
+function integer mailbox_receive(){}
+/**
+ * Deprecated function or task. See mailbox_put
+ */
+task mailbox_send(){}
+/**
+ * Deprecated function or task
+ */
+function void make_client(){}
+/**
+ * Deprecated function or task
+ */
+function void make_server(){}
+/**
+ * Issues commands to the OS shell
+ * @param cmdline Exact command string to pass to the operating system
+ * @returns The value returned by the system() call. Values vary by OS
+ */
+function integer os_command(string cmdline){}
+/**
+ * Sends information to STDOUT
+ * 
+ */
+task printf(string format, ...){}
+/**
+ * Similar to sprintf, expect printed string
+ * is the return value.
+ * 
+ * @return string Formatted string
+ */
+function string psprintf(string format, ...){}
+/**
+* Generates a random integer based on the Irand48 algorithm
+* @param seed Seed value
+* @returns random number
+*/
+function integer rand48(integer seed){}
+/**
+* Generates a random integer with poisson distribution
+* @param mean Seed value (positive)
+* @returns random number
+*/
+function integer rand_poisson(integer mean){}
+/**
+* Generates a random integer with normal distribution
+* @param mean Seed value (positive)
+* @param sd Standard deviation
+* @returns random number
+*/
+function integer rand_normal(integer mean, integer sd){}
+/**
+* Generates a random integer with chi square distribution
+* @param df Degrees of freedom
+* @returns random number
+*/
+function integer rand_chi_square(integer df){}
+/**
+* Generates a random integer with t distribution
+* @param df Degrees of freedom
+* @returns random number
+*/
+function integer rand_t(integer df){}
+/**
+* Generates a random integer with exponential distribution
+* @param mean Seed value (positive)
+* @returns random number
+*/
+function integer rand_exponential(integer mean){}
+/**
+* Generates a random integer with erlang distribution
+* @param k Number of stages
+* @param mean Seed value (positive)
+* @returns random number
+*/
+function integer rand_erlang(integer k, integer mean){}
+/**
+* Generates a random integer from the current thread's RNG
+* @param seed Seed value
+* @returns 31-bit psuedo-random number
+*/
+function integer random(integer seed){}
+/**
+* Generates a random integer between maxval and zero
+* @param maxval Maximum value
+* @returns random number
+*/
+function integer random_range(integer maxval){}
+/**
+* Generates a random integer between maxval and minval
+* @param maxval Maximum value
+* @param minval Maximum value
+* @returns random number
+*/
+function integer random_range(integer maxval, integer minval){}
+/**
+ * Checks to see if a particular region is in use
+ * @param time_mode WAIT or NO_WAIT
+ * @param region_id The region being entered
+ * @param value1 bit vector or integer value to be checked against the region's values
+ * @returns 1 if none of the values are in use.
+ */
+function integer region_enter(integer time_mode, integer region_id, reg value1, ..., reg valueN){}
+/**
+ * Removes specified values from the in-use state
+ * @param region_id Region being entered
+ * @param value1 bit vector or integer value to be released
+ */
+task region_exit(integer region_id, reg value1, ..., reg valueN){}
+/**
+ * Releases signals from Vera
+ * @param signal_ref Reference to interface or port signal being released (interface.signal or port.$signal)
+ */
+task release(any signal_ref){}
+/**
+ * Moves the file access pointer to BOF
+ * @param file_desc 32-bit file descriptor (handle)
+ */
+task rewind(integer file_desc){}
+/**
+ * Checks the specified semaphore for the number of required keys
+ * @param mode either WAIT or NO_WAIT
+ * @param semaphore_id The semaphore to get keys from
+ * @param Specifies the number of keys taken from the semaphore
+ * @returns 1 if enough keys are available, or 0
+ */
+function integer semaphore_get(integer mode, integer semaphore_id, integer key_count){}
+/**
+ * Returns keys to a semaphore
+ * @param semaphore_id Specifies which semaphore to return the keys to
+ * @param key_count Number of keys being returned
+ */
+task semaphore_put(integer semaphore_id, integer key_count){}
+/**
+ * Attaches the state array to the current thread or specified object
+ */
+task setstate(var VeraRandomState randstate, object obj){}
+/**
+ * Assigns interface signals to port signals at runtime
+ * @param port_signal The signal being mapped
+ * @param target_signal interface signal or port variable
+ * @param attributes (Optional) Attribute string, eg: "dir=input width=1 otype=PHOLD"
+ * @param clock (Optional) The clock to which port_signal is synchronized
+ * @returns 1 for success, 0 for failure
+ */
+function integer signal_connect(signal port_signal, var signal target_signal, string attributes, signal clock){}
+/**
+ * Deprecated function or task
+ */
+function void simwave_plot(){}
+/**
+ * Sends output to a string variable
+ * 
+ */
+task sprintf(string dest, string format, ...){}
+/**
+ * Initializes the current RNG array using the seed value
+ */
+task srandom(integer seed, object obj){}
+/**
+ * Reads input from the string, parses based on the
+ * the format specified, and assigns parsed values to
+ * the argument list variables
+ */
+task sscanf(string to_be_read, string format, ...){}
+/** Halts the simulation. Equivalient to the
+ * verilog $stop task.
+ */
+task stop(){}
+/** Suspends the current thread until all other ready
+ * concurrent threads have a chance to block.
+ */
+task suspend_thread(){}
+/**
+* Synchronizes statement execution to one or more
+* triggers.
+* @param how One of ANY, ALL, ORDER, CHECK
+* @param event_name event variable name(s) on which the sync is activated
+* @returns 1 if the event is ON, 0 for OFF
+*/
+function integer sync(integer how, event event_name1, ..., event event_nameN){}
+/** 
+* Sets timeout limits for a specific event
+* @param event_name event variable
+* @param cycle_limit Maximum number of cycles to wait. 0 to disable timeout.
+*/
+task timeout(event event_name, integer cycle_limit){}
+/** 
+* Sets global timeout limits for synchronization objects
+*  @param type EVENT, SEMAPHORE, REGION, MAILBOX, WAIT_VAR, or WAIT_CHILD
+* @param cycle_limit Maximum number of cycles to wait. 0 to disable timeout.
+*/
+task timeout(integer type, integer cycle_limit ){}
+/** 
+* Sets timeout limits for individual synchronization objects
+* @param type SEMAPHORE, REGION, MAILBOX, WAIT_VAR, or WAIT_CHILD
+* @param cycle_limit Maximum number of cycles to wait. 0 to disable timeout.
+* @param objectID Individual object identifier
+*/
+task timeout(integer type, integer cycle_limit, integer objectID ){}
+/**
+* Enables or disables trace messages for events
+* @param trace_state ON or OFF
+* @param event_name event variable
+*/
+task trace(integer trace_state, event event_name){}
+/**
+* Enables or disables trace messages for various types of objects
+* @param trace_state ON or OFF
+* @param type PROGRAM or VERBOSE
+*/
+task trace(integer trace_state, integer type){}
+/**
+* Enables or disables trace messages for synchronization objects
+* @param trace_state ON or OFF
+* @param type SEMAPHORE, REGION, or MAILBOX
+* @param objectID sync object identifier
+*/
+task trace(integer trace_state, integer type, integer objectID){}
+/**
+* Changes the state of an event.
+* @param newstate [ONE_SHOT | ONE_BLAST | HAND_SHAKE | ON | OFF ]
+* @param event_name event variable name(s) to change
+*/
+task trigger(integer newstate, event event_name1, ..., event event_nameN){}
+// Not documented
+function integer unit_delay(){}
+/**
+ * Unlocks a file
+ * @param filename Path to file to be unlocked
+ */
+task unlock_file(string filename){}
+/**
+* Returns a 32-bit pseudo-random unsigned bit vector based
+* on the mrand48 algorithm
+* @param seed Seed value
+* @returns reg[31:0] bit vector
+*/
+function reg urand48(integer seed){}
+/**
+* Returns a 32-bit pseudo-random unsigned bit vector
+* @param seed RND seed value
+* @returns reg[31:0] bit vector
+*/
+function reg urandom(integer seed){}
+/**
+ * Returns an unsigned value in the range maxval .. 0
+ * @param maxval reg[31:0] maximum value
+ * @returns random number
+ */
+function reg urandom_range(reg maxval){}
+/**
+ * Returns an unsigned value in the range maxval .. minval
+ * @param maxval reg[31:0] maximum value
+ * @param minval reg[31:0] minimum value
+ * @returns random number
+ */
+function reg urandom_range(reg maxval, reg minval){}
+/**
+ * Copies a bit vector while reversing its order
+ * @param dest_vect Destination bit vector
+ * @param src_vect Source bit vector
+ */
+task vera_bit_reverse(var reg dest_vect, reg src_vect){}
+/**
+ * Calculates cyclic redundancy check
+ * @param N Order of the CRC algorithm (One of 8,16,32,64)
+ * @param stream Bit vector or array of bit vectors used for the CRC calculation
+ * @param index1 With index2, specifies the range of stream
+ * @param index2 With index1, specifies the range of stream
+ * @returns
+ */
+function reg vera_crc(integer N, reg stream, reg index1, reg index2){}
+/**
+ * Calculates cyclic redundancy check
+ * @param N Order of the CRC algorithm (One of 8,16,32,64)
+ * @param stream Bit vector or array of bit vectors used for the CRC calculation
+ * @param index1 With index2, specifies the range of stream
+ * @param index2 With index1, specifies the range of stream
+ * @param initCRC Initial value for the CRC calculation
+ * @returns
+ */
+function reg vera_crc(integer N, reg stream, reg index1, reg index2, reg initCRC){}
+/**
+ * Determines if a signal is bound to void or not
+ * @param port_signal_member port signal member
+ * @returns 1 if non-void bound, 0 if void bound
+ */
+function integer vera_is_bound(any port_signal_member){}
+/**
+ * Determines the direction of a signal
+ * @param port_ifc_signal port or interface signal
+ * @returns 0 for input, 1 for output, 2 for inout
+ */
+function integer vera_get_dir(signal port_ifc_signal){}
+/**
+ * Determines the input type of a signal
+ * @param port_ifc_signal port or interface signal
+ * @returns 0 for NSAMPLE, 1 for PSAMPLE, 2 for CLOCK, 3 for DDR input/inout
+ */
+function integer vera_get_in_type(signal port_ifc_signal){}
+/**
+ * Determines the input skew of a signal
+ * @param port_ifc_signal port or interface signal
+ * @returns positive integer value
+ */
+function integer vera_get_in_skew(signal port_ifc_signal){}
+/**
+ * Determines the depth of the pipeline for sampled values
+ * @param port_ifc_signal port or interface signal
+ * @returns positive integer value
+ */
+function integer vera_get_in_depth(signal port_ifc_signal){}
+/**
+ * Determines the output type of a signal
+ * @param port_ifc_signal port or interface signal
+ * @returns One of the following:
+ *          0=NDRIVE;
+ *          1=PDRIVE;
+ *          2=NHOLD;
+ *          3=PHOLD;
+ *          4=NR0;
+ *          5=NR1;
+ *          6=NRZ;
+ *          7=NRX;
+ *          8=PR0;
+ *          9=PR1;
+ *          10=PRZ;
+ *          11=PRX;
+ */
+function integer vera_get_out_type(signal port_ifc_signal){}
+/**
+ * Determines the output skew of a signal
+ * @param port_ifc_signal port or interface signal
+ * @returns positive integer value
+ */
+function integer vera_get_out_skew(signal port_ifc_signal){}
+/**
+ * Determines the number of bits in a signal
+ * @param port_ifc_signal port or interface signal
+ * @returns number of bits
+ */
+function integer vera_get_width(signal port_ifc_signal){}
+/**
+ * Returns the name of the signal from the inteface definition
+ * @param port_ifc_signal port or interface signal
+ * @returns name
+ */
+function string ver_get_name(signal port_ifc_signal){}
+/**
+ * Returns the name of the signal's inteface
+ * @param port_ifc_signal port or interface signal
+ * @returns interface name
+ */
+function string ver_get_ifc_name(signal port_ifc_signal){}
+/**
+ * Returns the name of the signal's clock
+ * @param port_ifc_signal port or interface signal
+ * @returns clock name
+ */
+function string ver_get_clk_name(signal port_ifc_signal){}
+/**
+ * Determines if a signal uses surround-by-x
+ * @param port_ifc_signal port or interface signal
+ * @returns 1 for true, 0 false
+ */
+function integer vera_has_surrx(signal port_ifc_signal){}
+/**
+ * Returns surround-by-x data as time-to-x/time-to-value tuples.
+ * @param port_ifc_signal port or interface signal
+ * @param time_to_x Output variable
+ * @param time_to_value Output variable
+ */
+task vera_get_surrx_R(signal port_ifc_signal, var integer time_to_x, var integer time_to_value){}
+/**
+ * Returns surround-by-x data as time-to-x/time-to-value tuples.
+ * @param port_ifc_signal port or interface signal
+ * @param time_to_x Output variable
+ * @param time_to_value Output variable
+ */
+task vera_get_surrx_F(signal port_ifc_signal, var integer time_to_x, var integer time_to_value){}
+/**
+ * Returns surround-by-x data as time-to-x/time-to-value tuples.
+ * @param port_ifc_signal port or interface signal
+ * @param time_to_x Output variable
+ * @param time_to_value Output variable
+ */
+task vera_get_surrx_D(signal port_ifc_signal, var integer time_to_x, var integer time_to_value){}
+/**
+ * Returns surround-by-x data as time-to-x/time-to-value tuples.
+ * @param port_ifc_signal port or interface signal
+ * @param time_to_x Output variable
+ * @param time_to_value Output variable
+ */
+task vera_get_surrx_Z(signal port_ifc_signal, var integer time_to_x, var integer time_to_value){}
+/**
+ * Returns the number of bits packed into a bit vector or array of bit vectors
+ * @param storage Bit vector(s) into which the data is to be packed
+ * @param bit_offset Total number of bits packed in storage from this call and previous calls
+ * @param args List of variables to be packed
+ * @returns Number of bits packed during this call
+ */
+function integer vera_pack(reg storage, var integer bit_offset, ...){}
+/**
+ * Returns the number of bits packed into a bit vector or array of bit vectors
+ * @param storage Bit vector(s) into which the data is to be packed
+ * @param bit_offset Total number of bits packed in storage from this call and previous calls
+ * @param args List of variables to be packed
+ * @returns Number of bits packed during this call
+ */
+function integer vera_pack_big_endian(reg storage, var integer bit_offset, ...){}
+/**
+ * (Not documented in spec)
+ */
+task vera_plot(){}
+/**
+ * Restores the thread state saved with vera_save_rng_state
+ */
+task vera_restore_rng_state(){}
+/**
+ * Saves the current thread state
+ */
+task vera_save_rng_state(){}
+/**
+ * (Not documented in spec)
+ */
+task vera_report_profile(){}
+/**
+ * Returns the number of bits unpacked from a bit vector or array of bit vectors
+ * @param storage Bit vector(s) from which the data is to be packed
+ * @param bit_offset Total number of bits unpacked from storage from this call and previous calls
+ * @param args List of target variables to be populated
+ * @returns Number of bits unpacked during this call
+ */
+function integer vera_unpack(reg storage, var integer bit_offset, ...){}
+/**
+ * Returns the number of bits unpacked from a bit vector or array of bit vectors
+ * @param storage Bit vector(s) from which the data is to be packed
+ * @param bit_offset Total number of bits unpacked from storage from this call and previous calls
+ * @param args List of target variables to be populated
+ * @returns Number of bits unpacked during this call
+ */
+function integer vera_unpack_big_endian(reg storage, var integer bit_offset, ...){}
+/**
+ * Submit calls from Vera to a remote application
+ * @param cxn_id Connection identifier (from vsv_make_client)
+ * @param time_mode either WAIT or NO_WAIT
+ * @param func_name Name of remote procedure to invoke
+ * @param ret_val Integer, reg, or string value
+ * @param args Variable argument list
+ * @returns
+ */
+function integer vsv_call_func(integer cxn_id, integer time_mode, string func_name, var scalar ret_val, ...){}
+/**
+ * Submit calls from Vera to a remote application
+ * @param cxn_id Connection identifier (from vsv_make_client)
+ * @param time_mode either WAIT or NO_WAIT
+ * @param task_name Name of remote procedure to invoke  
+ * @param args Variable argument list
+ * @returns 
+ */
+function integer vsv_call_task(integer cxn_id, integer time_mode, string task_name, ...){}
+/**
+ * Returns an error message describing the cause of a failure
+ * @returns Error message
+ */
+function string vsv_get_conn_err(){}
+/**
+ * Initializes client/server connections
+ * @param hostaddress String that specifies the IP address or Host name of the server
+ * @param portid Virtual port number (positive value)
+ * @param authcode Authentication code to use while establishing connections
+ * @returns Non-zero integer to identify the connection, or 0 for failure
+ */
+function integer vsv_make_client(string hostaddress, integer portid, integer authcode){}
+/**
+ * Initializes client/server connections
+ * @param portid Virtual port number (positive value)
+ * @param authcode Authentication code to use while establishing connections
+ * @param verbose VERBOSE (optional param) will have the server output error messages
+ * @returns Non-zero integer to identify the connection, or 0 for failure
+ */
+function integer vsv_make_server(integer portid, integer authcode, integer verbose){}
+/**
+* Once all connections are configured, this system call
+* will attempt to activate them all.
+* @param timeout Seconds-per-connection time limit for bringing up connections.
+* @returns 0 for success, -1 for failure.
+*/
+function integer vsv_up_connections(integer timeout){}
+/**
+ * Suspends the current Vera thread until all remote client calls have been processed
+ * and the replies have been returned
+ */
+task vsv_wait_for_done(){}
+/**
+ * Suspends the current Vera thread until a remote client function request
+ * is received
+ * @param time_mode Either WAIT or NO_WAIT
+ */
+task vsv_wait_for_input(integer time_mode){}
+/**
+ * Ensures all child processes are executed before the Vera program terminates
+ */
+task wait_child(){}
+/**
+ * Blocks the calling process until one of the variables in the
+ * argument list changes values
+ * @param args Consists or one or more variables of type integer, reg (aka bit), string, or enum
+ */
+task wait_var(...){}

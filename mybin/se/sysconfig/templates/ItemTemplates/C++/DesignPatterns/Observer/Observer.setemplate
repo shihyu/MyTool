@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd">
+<SETemplate Version="1.0" Type="Item">
+  <TemplateDetails>
+    <Name>C++ Observer</Name>
+    <Description>C++ implementation of the Observer design pattern, using STL vector</Description>
+    <SortOrder>0</SortOrder>
+    <DefaultName>ObservedSubjectName</DefaultName>
+  </TemplateDetails>
+  <TemplateContent>
+    <Parameters/>
+    <Files>
+      <File TargetFilename="$fileinputname$.h">ObservedSubject.h</File>
+      <File TargetFilename="$fileinputname$.cpp">ObservedSubject.cpp</File>
+    </Files>
+  </TemplateContent>
+
+</SETemplate>

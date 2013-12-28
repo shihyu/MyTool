@@ -1,0 +1,15 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsRefactorProgress</title>
+</head>
+<body>
+
+<h3><b>int vsRefactorProgress(size_t progress, size_t maximum)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Update the caller on our progress when doing a refactoring operation.
+If the progress callback returns < 0, it must indicate a cancellation.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="progress">progress</A></code> - Progress factor between 0 .. maximum</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="maximum">maximum</A></code> - Number that progress is computed relative to
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on cancellation.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Refactoring_Functions.html">Refactoring Functions</a></blockquote>
+</body>
+</html>

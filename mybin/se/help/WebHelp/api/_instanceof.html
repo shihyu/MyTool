@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_instanceof</title>
+</head>
+<body>
+
+<h3><b>boolean _instanceof(_str typeName)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="typeName">typeName</A></code> - String containing name of type to test.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>boolean</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Return <code>true</code> if the given class is an instance
+of the named class.  Note that it is preferable to use the
+"instanceof" operator instead of this builtin wherever possible.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+class AAAA { int x; int y; };
+class BBBB : AAAA { int z; };
+class CCCC { _str ch; };
+void testInstanceOf() {
+   AAAA a;
+   BBBB b;
+   CCCC c;
+   true1  := b._instanceof("AAAA");  // BBBB inherits from AAAA
+   true2  := b._instanceof("BBBB");  // b._typename() = BBBB
+   false1 := b._instanceof("CCCC");  // no relation to CCCC
+   false2 := b._instanceof("DDDD");  // no such class DDDD
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_typename.html">_typename</a>, <a href="_construct.html">_construct</a></blockquote>
+</body>
+</html>

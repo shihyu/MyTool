@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd">
+<SETemplate Version="1.0" Type="Item">
+
+  <TemplateDetails>
+    <Name>C# Main Entry Point</Name>
+    <Description>C# main application entry point</Description>
+    <SortOrder>0</SortOrder>
+    <DefaultName>AppMain</DefaultName>
+  </TemplateDetails>
+  <TemplateContent>
+    <Files>
+      <File TargetFilename="$fileinputname$.cs" ReplaceParameters="1">ClassMain.cs</File>
+    </Files>
+  </TemplateContent>
+
+</SETemplate>

@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagUnlockDB</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTagUnlockDB(int dbHandle, int justReleaseWriteLock=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Unlock the given database to allow other threads to access it.
+<p>
+You can do this with a database which is open for writing in order
+to leave the database in a writable state and allow other threads
+to search it and perform transactions and do whatever they want
+to the state of the database.  In this case, you should use
+vsTagOpenDB() to relock the database. The advantage is that you can
+avoid needing to flush the modifications to the database to disk
+which would normally happen if you called vsTagCloseDB() to release
+the lock you have on the database.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="dbHandle">dbHandle</A></code> - database handle returned from vsTagOpenDB()
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsTagOpenDB.html">vsTagOpenDB()</a>, <a href="vsTagCloseDB.html">vsTagCloseDB()</a>, <a href="vsTagWriteLockDB.html">vsTagWriteLockDB()</a>, <a href="vsTagReadLockDB.html">vsTagReadLockDB()</a></blockquote>
+</body>
+</html>

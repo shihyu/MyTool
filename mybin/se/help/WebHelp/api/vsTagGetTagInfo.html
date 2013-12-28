@@ -1,0 +1,19 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagGetTagInfo</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTagGetTagInfo(char *pszTagName, char *pszTypeName, int &tag_flags, char *pszFilename, int &line_no, char *pszClassName=a, char *pszReturnType=a, char *pszArguments=a, char *pszExceptions=a, char *pszClassParents=a, char *pszTmplSignature=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve general information about the current tag (as defined
+by calls to vsTagFindGlobal or vsTagFindMember.  If the current tag
+is not defined, such as immediately after opening a database or a
+failed search), all strings will be set to "", and line_no and tag_flags
+will be set to 0.  Any of the string arguments, except pszTagName, may be
+passed as 0, and then will not be retrieved.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszTagName">pszTagName</A></code> - (Output, required) Name of tag or symbol</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszTypeName">pszTypeName</A></code> - (Output, optional) Tag type name, see tag_get_type.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - (Output) Tag flags indicating symbol attributes, VS_TAGFLAG_</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFilename">pszFilename</A></code> - (Output, optional) File name as stored in database.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="line_no">line_no</A></code> - (Output) Line number that tag occurs on in file_name.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszClassName">pszClassName</A></code> - (Output, optional) Name of class that tag belongs to.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszReturnType">pszReturnType</A></code> - (Output, optional) Declared type/value of symbol or function</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszArguments">pszArguments</A></code> - (Output, optional) Function/Macro arguments.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszExceptions">pszExceptions</A></code> - (Output, optional) Exceptions thrown or other function details</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszClassParents">pszClassParents</A></code> - (Output, optional) Class parents</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszTmplSignature">pszTmplSignature</A></code> - (Output, optional) Template signature
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

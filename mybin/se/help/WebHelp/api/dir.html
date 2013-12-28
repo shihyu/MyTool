@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>dir</title>
+</head>
+<body>
+
+<h3><b>_command typeless dir(_str path='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Creates a buffer and inserts a list of the files specified with columns
+for size, date, time, attributes (UNIX: permissions), and name.  The mode
+is changed to fileman mode.  When in fileman mode, there are some additions
+and changes to the key bindings.  See help on <b>fileman_mode</b>.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="command_line">command_line</A></code> - has the following syntax:<br>
+         {[ [- | +] <i>option_letters</i>] [ [@]<i>filespec </i>]}
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option_letters">option_letters</A></code> - may be 'H','S','D','P','T' with the following meaning:
+<DL compact style="margin-left:20pt;">
+  <DT>H<DD>Include hidden files.  Default is off.  Ignored by UNIX version.
+   This option is always turned on under Windows if the "Show all files" explorer option is set.
+  <DT>S<DD>Include system files.  Default is off.  Ignored by UNIX version.
+   This option is always turned on under Windows if the "Show all files" explorer option is set.
+  <DT>D <DD>Include directory files.  Defaults to on.
+  <DT>P<DD>Append path.  Default is on.
+  <DT>T<DD>Tree file list.  Default is off.
+</DL></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filespec">filespec</A></code> - may contain operating system wild cards such as '*' and '?'.  If <i>filespec</i> is not specified, the current directory is used.  '@' sign prefix to <i>filespec</i> indicates that <i>filespec</i> is a file or buffer which contains a list of file names to be used as arguments to this command.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common return values are TOO_MANY_FILES_RC, FILE_NOT_FOUND_RC, PATH_NOT_FOUND_RC, and TOO_MANY_SELECTIONS_RC.  On error, message is displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+dir   List file and directory entries of the current directory.
+dir @backup.lst
+   List file or directory entries specified by each line of the file "backup.lst".
+dir c:\  List file and directory entries in the root directory of drive C.
+dir +HS c:\ List file and directory entries in the root directory of drive C including hidden and system files.
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="fileman.html">fileman</a></blockquote>
+</body>
+</html>

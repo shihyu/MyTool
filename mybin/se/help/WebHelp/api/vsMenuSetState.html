@@ -1,0 +1,63 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMenuSetState</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsMenuSetState(int menu_handle, const char *pszFindCommand, int flags, char by_category, const char *pszItemText=a, const char *pszCommand=a, const char *pszCategory=a, const char *pszHelpCommand=a, const char *pszHelpString=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sets menu item values for the menu items which contain the command
+or category specified.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="menu_handle">menu_handle</A></code> - Handle of loaded menu returned by
+<b>vsMenuLoad</b>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFindCommand">pszFindCommand</A></code> - Command or category of menu item
+to find.  If a command is specified, the
+command must match exactly.  See
+<i>by_category</i> parameter.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="by_category">by_category</A></code> - May be 'M', 'C', 'P'.  If the 'M' option is
+given, <i>psaFindCommand</i> is the
+command of the menu item to be found. If
+the 'C' option is given,
+<i>pszFindCommand</i> is the category of
+the menu item to be found.  If the 'P' option
+is given, <i>pszFindCommand</i> is an
+integer (you must cast <i>pszFindCommand
+</i>to int) position
+(0..<b>vsMenuQInfo</b>(<i>menu_handle
+</i>)-1) of the menu item with in
+<i>menu_handle</i>.  Defaults to 'C'.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mf_flags">mf_flags</A></code> - may be zero or more of the
+following flags defined in "vs.h":
+
+<ul>
+<li>VSMF_CHECKED</li>
+<li>VSMF_UNCHECKED</li>
+<li>VSMF_GRAYED</li>
+<li>VSMF_ENABLED</li>
+<li>VSMF_SUBMENU</li>
+</ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszItemText">pszItemText</A></code> - Menu item title.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszCategory">pszCategory</A></code> - Menu item categories. May be one or more
+categories separated with a '|' character.  See
+<b>vsMenuSetState</b> function for more
+information about categories.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszHelpCommand">pszHelpCommand</A></code> - Menu item help command.
+Executed when F1 is pressed while on the
+menu item.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszHelpMessage">pszHelpMessage</A></code> - Menu item help message.  Displayed when
+menu item is selected.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+void VSAPI dllproc ()
+{
+    // Gray out all menu items which are not allowed when there
+    // no child windows.
+    vsMenuSetState(
+           vsPropGetI(VSWID_MDI,VSP_MENUHANDLE),
+           "new",VSMF_GRAYED,'M');
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Menu_Functions.html">Menu Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsMenuDelete.html">vsMenuDelete</a>, <a href="vsMenuDestroy.html">vsMenuDestroy</a>, <a href="vsMenuFind.html">vsMenuFind</a>, <a href="vsMenuGetState.html">vsMenuGetState</a>, <a href="vsMenuInsert.html">vsMenuInsert</a>, <a href="vsMenuLoad.html">vsMenuLoad</a>, <a href="vsMenuQInfo.html">vsMenuQInfo</a>, <a href="vsMenuSet.html">vsMenuSet</a>, <a href="vsMenuSetState.html">vsMenuSetState</a>, <a href="vsMenuShow.html">vsMenuShow</a></blockquote>
+</body>
+</html>

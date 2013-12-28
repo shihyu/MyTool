@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsFileQType</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsFileQType(VSPSZ pszFilename)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Determines the file type given the absolute (make sure the
+<i>filename</i> is absolute) <i>filename</i> specified.  This function
+is needed because SlickEdit has some NFS-like features for
+handling some special files.  These special files may have performance
+limitations or other limitations.  This function lets you check the type
+and special case operations.  For example, the filename
+"c:\java\src.zip\java\lang\Object.java" is a special file type because
+SlickEdit will treat "src.zip" like a directory so that files can be
+loaded out of a zip (or jar) file without requiring much special code.
+Currently, SlickEdit's NFS-like layer does not support writing
+to zip or jar files.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns one of the VSFILETYPE_* constants.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote>
+</body>
+</html>

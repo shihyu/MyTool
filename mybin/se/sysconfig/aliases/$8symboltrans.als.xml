@@ -1,0 +1,37 @@
+<profile>
+	<p n="&amp;&amp;">
+		<text>
+			&amp;amp;
+		</text>
+	</p>
+	<p n="&amp;&gt;">
+		<text>
+			&amp;gt;
+		</text>
+	</p>
+	<p n="&amp;&lt;">
+		<text>
+			&amp;lt;
+		</text>
+	</p>
+	<p n='&amp;"'>
+		<text>
+			&amp;quot;
+		</text>
+	</p>
+	<p n="&amp;'">
+		<text>
+			&amp;apos;
+		</text>
+	</p>
+	<p n="&gt;&gt;">
+		<text>
+			&amp;gt;
+		</text>
+	</p>
+	<p n="&lt;&lt;">
+		<text>
+			&amp;lt;
+		</text>
+	</p>
+</profile>

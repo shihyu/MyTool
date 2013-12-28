@@ -1,0 +1,315 @@
+<profile name="/language/docbook/aliases">
+	<p n="indexterm1">
+		<params>
+			<param n="description" default="" prompt="Description"/>
+		</params>
+		<text>
+			&lt;indexterm %\m create_docbook_id%&gt;
+			%\i&lt;primary&gt;%(description)&lt;/primary&gt;
+			&lt;/indexterm&gt;
+		</text>
+	</p>
+	<p n="indexterm2">
+		<params>
+			<param n="category" default="" prompt="Category"/>
+			<param n="description" default="" prompt="Description"/>
+		</params>
+		<text>
+			&lt;indexterm %\m create_docbook_id%&gt;
+			%\i&lt;primary&gt;%(category)&lt;/primary&gt;
+			%\i&lt;secondary&gt;%(description)&lt;/secondary&gt;
+			&lt;/indexterm&gt;
+		</text>
+	</p>
+	<p n="emphasis">
+		<text>
+			&lt;emphasis role="bold"&gt;%\c&lt;/emphasis&gt;
+		</text>
+	</p>
+	<p n="orderedlist">
+		<text>
+			&lt;orderedlist&gt;
+			%\i&lt;listitem&gt;
+			%\i%\i&lt;para role="NormalText"&gt;%\c&lt;/para&gt;
+			%\i&lt;/listitem&gt;
+			%\i&lt;listitem&gt;
+			%\i%\i&lt;para role="NormalText"&gt;&lt;/para&gt;
+			%\i&lt;/listitem&gt;
+			&lt;/orderedlist&gt;
+		</text>
+	</p>
+	<p n="url">
+		<params>
+			<param n="url" default="" prompt="URL"/>
+			<param n="name" default="" prompt="Name"/>
+		</params>
+		<text>
+			&lt;ulink url="%(url)"&gt;&lt;citetitle&gt;%(name)&lt;/citetitle&gt;&lt;/ulink&gt;
+		</text>
+	</p>
+	<p n="superscript">
+		<text>
+			&lt;superscript&gt;%\c&lt;/superscript&gt;
+		</text>
+	</p>
+	<p n="listitem">
+		<text>
+			&lt;listitem&gt;
+			%\i&lt;para role="NormalText"&gt;%\c&lt;/para&gt;
+			&lt;/listitem&gt;
+		</text>
+	</p>
+	<p n="image">
+		<params>
+			<param n="filename" default="" prompt="File name"/>
+			<param n="filetype" default="" prompt="File type (jpg, gif, png)"/>
+			<param n="width" default="" prompt="Width"/>
+			<param n="height" default="" prompt="Height"/>
+		</params>
+		<text>
+			&lt;mediaobject&gt;
+			%\i&lt;imageobject&gt;
+			%\i%\i&lt;imagedata fileref="Resources/%(filename)" format="%(filetype)" width="%(width)px" depth="%(height)px" /&gt;
+			%\i&lt;/imageobject&gt;
+			&lt;/mediaobject&gt;
+		</text>
+	</p>
+	<p n="table">
+		<text>
+			&lt;table %\m create_docbook_id%&gt;
+			%\i&lt;tgroup cols="2"&gt;
+			%\i%\i&lt;thead&gt;
+			%\i%\i%\i&lt;row&gt;
+			%\i%\i%\i%\i&lt;entry&gt;
+			%\i%\i%\i%\i%\i&lt;para role="CellHeading"&gt;Column 1&lt;/para&gt;
+			%\i%\i%\i%\i&lt;/entry&gt;
+			%\i%\i%\i%\i&lt;entry&gt;
+			%\i%\i%\i%\i%\i&lt;para role="CellHeading"&gt;Column 2&lt;/para&gt;
+			%\i%\i%\i%\i&lt;/entry&gt;
+			%\i%\i%\i&lt;/row&gt;
+			%\i%\i&lt;/thead&gt;
+			%\i%\i&lt;tbody&gt;
+			%\i%\i%\i&lt;row&gt;
+			%\i%\i%\i%\i&lt;entry&gt;
+			%\i%\i%\i%\i%\i&lt;para role="CellBody"&gt;
+			%\i%\i%\i%\i%\i%\i%\c
+			%\i%\i%\i%\i%\i&lt;/para&gt;
+			%\i%\i%\i%\i&lt;/entry&gt;
+			%\i%\i%\i%\i&lt;entry&gt;
+			%\i%\i%\i%\i%\i&lt;para role="CellBody"&gt;
+			%\i%\i%\i%\i%\i&lt;/para&gt;
+			%\i%\i%\i%\i&lt;/entry&gt;
+			%\i%\i%\i&lt;/row&gt;
+			%\i%\i&lt;/tbody&gt;
+			%\i&lt;/tgroup&gt;
+			&lt;/table&gt;
+		</text>
+	</p>
+	<p n="tip">
+		<text>
+			&lt;tip&gt;
+			%\i&lt;para role="CellBody"&gt;%\c&lt;/para&gt;
+			&lt;/tip&gt;
+		</text>
+	</p>
+	<p n="anchor">
+		<params>
+			<param n="name" default="" prompt="Name"/>
+		</params>
+		<text>
+			&lt;anchor xreflabel="%(name)" %\m create_docbook_id% /&gt;
+		</text>
+	</p>
+	<p n="italics">
+		<text>
+			&lt;emphasis&gt;%\c&lt;/emphasis&gt;
+		</text>
+	</p>
+	<p n="bold">
+		<text>
+			&lt;emphasis role="bold"&gt;%\c&lt;/emphasis&gt;
+		</text>
+	</p>
+	<p n="command">
+		<text>
+			&lt;command&gt;%\c&lt;/command&gt;
+		</text>
+	</p>
+	<p n="guilabel">
+		<text>
+			&lt;guilabel&gt;%\c&lt;/guilabel&gt;
+		</text>
+	</p>
+	<p n="comment">
+		<text>
+			&lt;!--
+			%\c
+			--&gt;
+		</text>
+	</p>
+	<p n="note">
+		<text>
+			&lt;note&gt;
+			%\i&lt;para role="CellBody"&gt;%\c&lt;/para&gt;
+			&lt;/note&gt;
+		</text>
+	</p>
+	<p n="warning">
+		<text>
+			&lt;warning&gt;
+			%\i&lt;para role="CellBody"&gt;%\c&lt;/para&gt;
+			&lt;/warning&gt;
+		</text>
+	</p>
+	<p n="subscript">
+		<text>
+			&lt;subscript&gt;%\c&lt;/subscript&gt;
+		</text>
+	</p>
+	<p n="code">
+		<text>
+			&lt;programlisting&gt;
+			%\c
+			&lt;/programlisting&gt;
+		</text>
+	</p>
+	<p n="caution">
+		<text>
+			&lt;caution&gt;
+			%\i&lt;para role="CellBody"&gt;%\c&lt;/para&gt;
+			&lt;/caution&gt;
+		</text>
+	</p>
+	<p n="guibutton">
+		<text>
+			&lt;guibutton&gt;%\c&lt;/guibutton&gt;
+		</text>
+	</p>
+	<p n="xref">
+		<params>
+			<param n="id" default="" prompt="ID"/>
+		</params>
+		<text>
+			&lt;xref linkend="%(id)" /&gt;
+		</text>
+	</p>
+	<p n="para">
+		<text>
+			&lt;para role="NormalText"&gt;%\c&lt;/para&gt;
+		</text>
+	</p>
+	<p n="sect1">
+		<params>
+			<param n="name" default="" prompt="Name"/>
+		</params>
+		<text>
+			&lt;sect1 xreflabel="%(name)" %\m create_docbook_id%&gt;
+			%\i&lt;title role="SectionHeading1"&gt;%(name)&lt;/title&gt;
+			%\i&lt;para role="NormalText"&gt;%\c&lt;/para&gt;
+			&lt;/sect1&gt;
+		</text>
+	</p>
+	<p n="sect2">
+		<params>
+			<param n="name" default="" prompt="Name"/>
+		</params>
+		<text>
+			&lt;sect2 xreflabel="%(name)" %\m create_docbook_id%&gt;
+			%\i&lt;title role="SectionHeading2"&gt;%(name)&lt;/title&gt;
+			%\i&lt;para role="NormalText"&gt;%\c&lt;/para&gt;
+			&lt;/sect2&gt;
+		</text>
+	</p>
+	<p n="sect3">
+		<params>
+			<param n="name" default="" prompt="Name"/>
+		</params>
+		<text>
+			&lt;sect3 xreflabel="%(name)" %\m create_docbook_id%&gt;
+			%\i&lt;title role="SectionHeading3"&gt;%(name)&lt;/title&gt;
+			%\i&lt;para role="NormalText"&gt;%\c&lt;/para&gt;
+			&lt;/sect3&gt;
+		</text>
+	</p>
+	<p n="sect4">
+		<params>
+			<param n="name" default="" prompt="Name"/>
+		</params>
+		<text>
+			&lt;sect4 xreflabel="%(name)" %\m create_docbook_id%&gt;
+			%\i&lt;title role="SectionHeading4"&gt;%(name)&lt;/title&gt;
+			%\i&lt;para role="NormalText"&gt;%\c&lt;/para&gt;
+			&lt;/sect4&gt;
+		</text>
+	</p>
+	<p n="itemizedlist">
+		<text>
+			&lt;itemizedlist&gt;
+			%\i&lt;listitem&gt;
+			%\i%\i&lt;para role="NormalText"&gt;%\c&lt;/para&gt;
+			%\i&lt;/listitem&gt;
+			%\i&lt;listitem&gt;
+			%\i%\i&lt;para role="NormalText"&gt;%\c&lt;/para&gt;
+			%\i&lt;/listitem&gt;
+			&lt;/itemizedlist&gt;
+		</text>
+	</p>
+	<p n="filename">
+		<text>
+			&lt;filename&gt;%\c&lt;/filename&gt;
+		</text>
+	</p>
+	<p n="sect5">
+		<params>
+			<param n="name" default="" prompt="Name"/>
+		</params>
+		<text>
+			&lt;sect5 xreflabel="%(name)" %\m create_docbook_id%&gt;
+			%\i&lt;title role="SectionHeading5"&gt;%(name)&lt;/title&gt;
+			%\i&lt;para role="NormalText"&gt;%\c&lt;/para&gt;
+			&lt;/sect5&gt;
+		</text>
+	</p>
+	<p n="icon">
+		<params>
+			<param n="filename" default="" prompt="File name"/>
+			<param n="filetype" default="" prompt="File type (jpg, gif, png)"/>
+			<param n="width" default="" prompt="Width"/>
+			<param n="height" default="" prompt="Height"/>
+		</params>
+		<text>
+			&lt;inlinemediaobject&gt;
+			%\i&lt;imageobject&gt;
+			%\i%\i&lt;imagedata fileref="Resources/%(filename)" format="%(filetype)" width="%(width)px" depth="%(height)px" /&gt;
+			%\i&lt;/imageobject&gt;
+			&lt;/inlinemediaobject&gt;
+		</text>
+	</p>
+	<p n="keycombo">
+		<params>
+			<param n="key1" default="" prompt="Key 1"/>
+			<param n="key2" default="" prompt="Key 2"/>
+		</params>
+		<text>
+			&lt;keycombo action="simul"&gt;&lt;keycap&gt;%(key1) &lt;/keycap&gt;&lt;keycap&gt;%(key2) &lt;/keycap&gt;&lt;/keycombo&gt;
+		</text>
+	</p>
+	<p n="options">
+		<params>
+			<param n="topmenu" default="" prompt="Option Node"/>
+			<param n="submenu" default="" prompt="Option Leaf"/>
+		</params>
+		<text>
+			&lt;menuchoice&gt;&lt;guimenu&gt;Tools &lt;/guimenu&gt;&lt;guimenuitem&gt; Options&lt;/guimenuitem&gt;&lt;guimenuitem&gt; %(topmenu)&lt;/guimenuitem&gt;&lt;guimenuitem&gt; %(submenu)&lt;/guimenuitem&gt;&lt;/menuchoice&gt;
+		</text>
+	</p>
+	<p n="menu">
+		<params>
+			<param n="topmenu" default="" prompt="Top menu"/>
+			<param n="submenu" default="" prompt="Sub menu"/>
+		</params>
+		<text>
+			&lt;menuchoice&gt;&lt;guimenu&gt;%(topmenu) &lt;/guimenu&gt;&lt;guimenuitem&gt;%(submenu) &lt;/guimenuitem&gt;&lt;/menuchoice&gt;
+		</text>
+	</p>
+</profile>

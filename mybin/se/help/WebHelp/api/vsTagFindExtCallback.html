@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagFindExtCallback</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTagFindExtCallback(const char *callback_name, const char *language_id=a)</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>use <a href="vsFindLanguageCallbackIndex.html">vsFindLanguageCallbackIndex()</a>
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This function is used to look up a language-specific
+callback function.
+<p>
+Return the names table index for the callback function for the
+current language, or an inherited language. The current
+object should be an editor control.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="callback_name">callback_name</A></code> - name of callback to look up, with a
+                      '%s' marker in place where the language
+                      ID would be normally located.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ext">ext</A></code> - current language ID
+                      (default=<a href="p_LangId.html">p_LangId</a>)
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Names table index for the callback.
+        0 if the callback is not found or not callable.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

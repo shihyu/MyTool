@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_append_retrieve</title>
+</head>
+<body>
+
+<h3><b>void _append_retrieve(int ctl_wid, _str value, _str ctl_name='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This command is typically called to add retrieve information for
+a combo box control.  After adding combo box retrieve information,
+the <b>_retrieve_list</b> method can be called to fill the combo box list.
+Dialog box retrieval functions call this function to store retrieve
+data of radio button, command button, check box, text box, and
+combo box controls.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ctl_wid">ctl_wid</A></code> - the window id (p_window_id) of the control.
+                The default <i>object_name</i> is form_name.ctl_name.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="value">value</A></code> - the text of a combo box or text box.  For a button control, value is 0 or 1.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ctl_name">ctl_name</A></code> - an override name for the combo box
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><pre>
+defeventtab form1;
+ok.lbutton_up()
+{
+    // When OK button is pressed, you will want to save combo box
+    // retrieve information.
+    _append_retrieve(_control combo1,combo1.p_text);
+}
+ok.on_create()
+{
+     // Fill in the combo box list
+     combo1._retrieve_list();
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Retrieve_Functions.html">Retrieve Functions</a></blockquote>
+</body>
+</html>

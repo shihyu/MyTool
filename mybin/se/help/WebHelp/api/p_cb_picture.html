@@ -1,0 +1,41 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_cb_picture</title>
+</head>
+<body>
+
+<h3><b>CTL_PICTURE p_cb_picture</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>Combo box is no longer split into 4 controls.
+            Just use the regular <a href="p_window_id.html">p_window_id</a> for
+            everything
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns the window id of a picture box sub-control of a combo box.  A
+combo box consists of 4 controls: the root window, text box, picture box,
+and list box.  The properties and methods of the sub-controls may be
+accessed individually with the <a href="p_cb.html">p_cb</a>, <a href="p_cb_text_box.html">p_cb_text_box</a>, <b>p_cb_picture</b>,
+<a href="p_cb_list_box.html">p_cb_list_box</a> instances handle properties.  The <b>p_cb_picture</b> property is
+only available when the control is displayed.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+#include "slick.sh"
+defeventtab form1;
+combo1.on_create()
+{
+   // Show a picture which indicates that click on the picture box button displays a dialog box.
+   p_cb_picture.p_picture=_pic_cbdots;
+}
+combo1.lbutton_down()
+{
+   if (p_cb_active==p_cb_picture) {
+       result=show('-modal form2')
+       // process result
+       return('');
+   }
+    //  Skip user level 1 inheritance and execute the default event handler.
+    call_event(p_window_id, lbutton_down,'2');
+
+}
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Combo Box, Drive List</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Combo_Box_Properties.html">Combo Box Properties</a>, <a href="Drive_List_Properties.html">Drive List Properties</a></blockquote>
+</body>
+</html>

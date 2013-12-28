@@ -1,0 +1,67 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+	Version="10.0"
+	VendorName="SlickEdit"
+	WorkingDir=".">
+	<Config
+		Name="Release"
+		Type="java"
+		AppTypeList="application,applet,custom"
+		DebugCallbackName="jdwp"
+		ObjectDir="classes"
+		AppType="application"
+		Version="8"
+		OutputFile=""
+		CompilerConfigName="JDK 1.5.0_17">
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				Dialog="_java_options_form Compiler"
+				EnableBuildFirst="0"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='javac %jbd %cp "%f"'/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				Dialog="_java_options_form Compiler"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine="javamake"/>
+			</Target>
+			<Target
+				Name="Make Jar"
+				MenuCaption="Make &amp;Jar"
+				ShowOnMenu="HideIfNoCmdLine"
+				Dialog="_java_options_form jar"
+				CaptureOutputWith="ProcessBuffer"
+				BuildFirst="1"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine="javamakejar jar cvf vsjunit.jar  %{*} %~other"/>
+			</Target>
+		</Menu>
+		<ClassPath>
+			<ClassPathElement Value="C:/Program Files (x86)/Java/junit-4.8.2.jar"/>
+		</ClassPath>
+	</Config>
+	<Files AutoFolders="PackageView">
+		<Folder
+			Name="org.junit.internal"
+			Type="Package">
+			<F N="org/junit/internal/TextListener.java"/>
+		</Folder>
+		<Folder
+			Name="org.junit.runner"
+			Type="Package">
+			<F N="org/junit/runner/JUnitCore.java"/>
+		</Folder>
+	</Files>
+</Project>

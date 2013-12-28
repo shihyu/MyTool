@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>create_ext</title>
+</head>
+<body>
+
+<h3><b>int create_ext(int &kt_index, _str extension, _str ref_language, _str mode_name='', _str setup_info='', _str compile_info='', _str syntax_info='', _str be_info='', _str include_info='', _str word_chars='', _str lexer_name='', _str color_flags='')</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>Use <a href="_CreateLanguage.html">_CreateLanguage()</a> and <a href="_CreateExtension.html">_CreateExtension()</a>.
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Creates file extension specific setup data which is used by the
+Language Options dialog box.  This procedure is typically used
+when adding support for languages not already provided by
+SlickEdit's default configuration.
+<P>
+See defload procedure in the macro file "modula.e" for an example.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="kt_index">kt_index</A></code> - (output) Names table index to mode event
+                     table for this extension.  The key table name
+                     is derived from the input variable mode_name
+                     with the string "-keys" appended.
+                     Not set if ref_extension is not ''.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="extension">extension</A></code> - File extension to be setup.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ref_language">ref_language</A></code> - If not '', this extension will refer to
+                     the same setup data as files with of the
+                     language represented by 'ref_language'
+                     All other parameters are ignored if
+                     'ref_language' is specified.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mode_name">mode_name</A></code> - Name given to the extension's mode.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="setup_info">setup_info</A></code> - A string which specifies the mode_name,
+                     tabs, margins, key table name, word wrap
+                     setting, indent with tabs setting, and show
+                     tabs style.  See defload procedure in the
+                     macro file "modula.e" for an example.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="compile_info">compile_info</A></code> - Compile command.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="syntax_info">syntax_info</A></code> - A string of numbers separated by spaces.<BR>
+                     first number specifies "Syntax Indent".
+                     Second number specifies syntax expansion on or off.<BR>
+                     Numbers that follow specify extension specific options.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="be_info">be_info</A></code> - String of "Begin/end pairs".</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="include_info">include_info</A></code> - Default include path or copy book search path</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="word_chars">word_chars</A></code> - set of characters used in identifiers/words</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="lexer_name">lexer_name</A></code> - name of lexer for Color Coding</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="color_flags">color_flags</A></code> - Color coding flags
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the name index of the setup information created.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="../ch14s14.htm#slick-c_moduleinitializations_BEFAFAD1_4AF9">defload</a></blockquote>
+</body>
+</html>

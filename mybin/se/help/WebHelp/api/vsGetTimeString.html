@@ -1,0 +1,50 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsGetTimeString</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsGetTimeString(char *pszTime, int maxlen, char option='T')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Get system time in the output buffer specified. If the output
+buffer is null or maxlen=0, then the size required to store
+the time string is returned.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszString">pszString</A></code> - (out) Output buffer for system time string.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="maxlen">maxlen</A></code> - Maximum number of characters in output
+                  buffer.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - May be one of the following:
+
+<dl>
+<dt>'T'</dt><dd>Return time in the format <i>hh</i>:<i>mmcc</i>
+where <i>hh</i> is an hour between 1 and 12, mm
+is the minutes between 0 and 59, and <i>cc</i> is
+the "am" or "pm".</dd>
+
+<dt>'B'</dt><dd>Return binary time in milliseconds.  This options is
+used for comparing dates with the :< and :>
+operators.</dd>
+
+<dt>'M'</dt><dd>24-hour (Military) time in the format
+<i>hh</i>:<i>mm</i>:<i>ss</i> where <i>hh</i>
+is an hour between 0 and 23, <i>mm</i> is the
+minutes between 0 and 59, and <i>ss</i> is the
+seconds between 0 and 59.</dd>
+
+<dt>'L'</dt><dd>Returns time in the current local format.  Under
+Windows, this uses the regional settings "Time
+style."  For other platforms, this has not yet been
+defined.</dd>
+
+<dt>'F'</dt><dd>Return time in the format YYYYMMDDhhmmssfff
+where <i>YYYY</i> is the year, <i>MM</i> is the month,
+<i>DD</i> is the day, <i>hh</i> is an hour between 0 and 23,
+<i>mm</i> is the minutes between 0 and 59, <i>ss</i> is the
+seconds between 0 and 59, and <i>fff</i> is the fractional
+second, in milliseconds.</dd>
+
+<dt>'G'</dt><dd>Returns seconds elapsed since UNIX Epoch
+(Midnight of January 1, 1970). This value is always in
+UTC/GMT.</dd>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, >0 size required to store time string
+        if output buffer is null, otherwise <0 error code.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

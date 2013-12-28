@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd">
+<SETemplate Version="1.0" Type="Item">
+
+  <TemplateDetails>
+    <Name>Slick-C Command Module</Name>
+    <Description>Slick-C module with a command skeleton</Description>
+    <SortOrder>0</SortOrder>
+    <DefaultName>CommandName</DefaultName>
+  </TemplateDetails>
+  <TemplateContent>
+    <Parameters/>
+    <Files>
+      <File TargetFilename="$fileinputname$.e" ReplaceParameters="1">MyCommand.e</File>
+    </Files>
+  </TemplateContent>
+
+</SETemplate>

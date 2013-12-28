@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTreeSearch</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTreeSearch(int wid, int iIndex, const char *pSearchCaption, int iCaptionLength, int iFlags=0, const char *pSearchUserInfo=0, int iUserInfoLength=0, int iColIndex=-1)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Searches the tree for the specified value.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of tree control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iIndex">iIndex</A></code> - Tree item index.  By default, the parent index
+               of the children to be searched.  If the
+               TREE_SEARCH_SIBLING option is specified, then
+               this is the first sibling search.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pSearchCaption">pSearchCaption</A></code> - Caption to search for in the tree
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iFlags">iFlags</A></code> - Search flags.
+
+TREE_SEARCH_CI           case insensitive search
+
+TREE_SEARCH_PREFIX       prefix match
+
+TREE_SEARCH_SIBLING      search siblings.  when this is
+specified, iIndex is the first sibling searched, rather than
+the parent of items to be searched
+
+TREE_SEARCH_RECURSIVE    search recursively through the tree
+(by default, only one level is searched)
+
+TREE_SEARCH_HIDDEN       search hidden nodes
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pSearchUserInfo">pSearchUserInfo</A></code> - Optional user info to search for
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 if successful
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Tree View
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tree_View_Methods.html">Tree View Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_TreeSetCaption.html">_TreeSetCaption</a>, <a href="_TreeGetCaption.html">_TreeGetCaption</a>, <a href="_TreeSetInfo.html">_TreeSetInfo</a>, <a href="_TreeGetInfo.html">_TreeGetInfo</a>, <a href="_TreeGetUserInfo.html">_TreeGetUserInfo</a></blockquote>
+</body>
+</html>

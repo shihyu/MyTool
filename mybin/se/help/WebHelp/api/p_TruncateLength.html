@@ -1,0 +1,129 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_TruncateLength</title>
+</head>
+<body>
+
+<h3><b>int p_TruncateLength</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>If non-zero, this determines how text gets inserted/deleted and how
+lines are truncated.  Tab characters are not expanded when this
+property is set.  This property was added to support mainframe legacy
+code which is very column oriented and is typically set to 72.  When
+source code is written using ISPF, the last 8 columns (usually columns
+73-80) are used for line numbers.  ISPF tries to make sure that when
+text is inserted or deleted in columns 1-72 that the line numbers stay in
+the same column.  This property has allows you to ensure that data to
+the right of the truncation length does not change position.  In
+addition, newly inserted lines are truncated at the length specified by
+this property.  This property has no effect when saving a file.</p><p>
+<p>The following built-in functions (and any command which accesses
+these built-ins) are effected by this property:</p><p>
+<dl>
+<dt><b>_reflow_selection</b></dt><dd>
+   Only text at or before the truncation length is reflowed.</dd><p>
+<dt><b>insert_line</b>, <b>vsInsertLine</b></dt><dd>
+   Lines longer than the truncation length are truncated.</dd><p>
+<dt><b>replace_line</b>, <b>vsReplaceLine</b></dt><dd>
+   Lines longer than the truncation length are truncated and
+a error message is displayed.</dd><p>
+<dt><b>_split_line</b>, <b>vsSplitLine</b></dt><dd>
+   The text to the right of the truncation length stays on the
+current line and is not inserted into the next line.</dd><p>
+<dt><b>_join_line</b>, <b>vsJoinLine</b></dt><dd>
+   The join is aborted if the join will create a line longer
+than the truncation length.   An error status is returned if
+the join is aborted.</dd><p>
+<dt><b>_JoinLineToCursor</b>, <b>vsJoinLineToCursor</b></dt><dd>
+   The join is aborted if the join will create a line longer
+than the truncation length.   An error status is returned if
+the join is aborted.</dd><p>
+<dt><b>_insert_text</b>, <b>vsInsertText</b></dt><dd>
+   Any resulting lines longer than the truncation length are
+truncated.  In addition, the text to the right of the
+truncation length on the current line is not effected.  If the
+cursor is past the truncation length, the text is inserted
+into the next line.</dd><p>
+<dt><b>_delete_text</b>, <b>vsDeleteText</b></dt><dd>
+   The text to the right of the truncation length on the
+current line is not effected.</dd><p>
+<dt><b>_delete_selection</b>,<b>vsDeleteSelection</b></dt><dd>
+   The text to the right of the truncation length on the
+current line is not effected.</dd><p>
+<dt><b>vsTruncQLineLength</b></dt><dd>
+   Returns the length of the current line as if the text to the
+right of the truncation length does not exist.  In addition,
+trailing blanks (tab characters count) are not included in
+the length.</dd><p>
+<dt><b>_SearchInitSkipped</b>,<b>vsSearchInitSkipped</b></dt><dd>
+   Call this function before performing search and replace
+operation to reset NofSkipped and Skipped lines data
+returned by the _SearchQSkipped and
+_SearchQNofSkipped functions.</dd><p>
+<dt><b>_SearchQSkipped</b>, <b>vsSearchQSkipped</b></dt><dd>
+   Call this function after performing search and replace
+operation to determine the line numbers where the
+replace operation was skipped to avoid line truncation.</dd><p>
+<dt><b>_SearchQNofSkipped</b>,<b>vsSearchQNofSkipped</b></dt><dd>
+   Call this function after performing search and replace
+operation to determine how many replace operations were
+skipped to avoid line truncation.</dd><p>
+<dt><b>keyin</b>, <b>vsKeyin</b></dt><dd>
+   Text to the right of the truncation length on the current
+line is not effected.</dd><p>
+<dt><b>search</b>, <b>search_replace</b>, <b>vsSearch</b>,
+<b>vsSearchReplace</b>, <b>vsRepeatSearch</b></dt><dd>
+   Multi-line search or replace is not supported.  Search is
+performed as if the data to the right of the truncation
+length is not there.  Unfortunately, using regular
+expressions to match the end of line ($) does not work as
+if the data to the right of the truncation length is not there.
+After a replace, the text to the right truncation length is
+not effected.</dd><p>
+<dt><b>_overlay_block_selection</b>, <b>_adjust_block_selection</b>,
+<b>_fill_selection</b></dt><dd>
+   Text to the right of the truncation length is not effected.</dd><p>
+<dt><b>_shift_selection_left</b>, <b>vsShiftSelectionLeft</b></dt><dd>
+   Text to the right of the truncation length is not effected.</dd><p>
+<dt><b>_shift_selection_right</b>, <b>vsShiftSelectionRight</b></dt><dd>
+   Text to the right of the truncation length is not effected.</dd><p>
+<dt><b>_copy_to_cursor</b>, <b>vsCopyToCursor</b></dt><dd>
+   Text to the right of the truncation length is not effected.
+Any resulting lines longer than then truncation length are
+truncated.</dd><p>
+<dt><b>_move_to_cursor</b></dt><dd>
+   Text to the right of the truncation length is not effected.
+Any resulting lines longer than then truncation length are
+truncated.</dd>
+</dl><p>
+<p>The following built-in functions have been enhanced to support the
+truncation length:</p><p>
+<dl>
+<dt><b>_expand_tabsc</b>, <b>vsExpandTabsC</b>,
+<b>_expand_tabsc_raw</b></dt><dd>
+   A width value of -2 specifies that the
+<b>vsTruncQLineLength</b> be used instead of the real
+line length.</dd><p>
+<dt><b>_text_colc</b>, <b>vsTextColC</b></dt><dd>
+   A new 'E' option specifies that the
+<b>vsTruncQLineLength</b> be used instead of the real
+line length.</dd>
+</dl><p>
+<p>The following built-in functions have been enhanced to support
+maximum line length:</p><p>
+<dl>
+<dt><b>_save_file</b>, <b>vsSaveFile</b></dt><dd>
+   A new +CL option (Check Line length option) was
+added.  When specified, the new
+<b>vsCheckLineLengths</b> function is called if the
+output file has a required record length or if the source
+file has a non-zero <b>p_MaxLineLength</b> property.</dd><p>
+<dt><b>_CheckLineLengths</b>, <b>vsCheckLineLengths</b></dt><dd>
+   Allows you to get a list of lines longer than a specified
+line length.  Usually, <b>p_MaxLineLength</b> is
+specified.</dd>
+</dl>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Properties.html">Edit Window Properties</a>, <a href="Editor_Control_Properties.html">Editor Control Properties</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="p_TruncateLength.html">p_TruncateLength</a>, <a href="p_MaxLineLength.html">p_MaxLineLength</a>, <a href="trunc.html">trunc</a>, <a href="p_AutoSelectLanguage.html">p_AutoSelectLanguage</a></blockquote>
+</body>
+</html>

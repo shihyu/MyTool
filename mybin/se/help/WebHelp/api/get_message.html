@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>get_message</title>
+</head>
+<body>
+
+<h3><b>_str get_message(int rc=MAXINT, ...)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns message corresponding to error number error_code.
+If error_code does not exists, "Message not available" is returned.
+If the error_code argument is not given or is MAXINT,
+the message currently displayed on the SlickEdit message line is returned.
+The error codes are listed in the file "rc.sh".
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="rc">rc</A></code> - error status to look up
+            Also can pass in the following special arguments
+            <ul>
+            <li><b>-age</b> -- return the age of the current message on the message line
+            <li><b>-sticky</b> -- return 'true' if the current message on the message line is sticky
+            <li><b>-sticky_age</b> -- return the age of the current message, even if it is a sticky message
+            </ul></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="s0">s0</A></code> - string to replace %s0 with</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="s1">s1</A></code> - string to replace %s1 with</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="sN">sN</A></code> - string to replace %sN with
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Message string for the given error code with arguments collated.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="String_Functions.html">String Functions</a></blockquote>
+</body>
+</html>

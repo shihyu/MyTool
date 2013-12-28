@@ -1,0 +1,44 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_menu_load</title>
+</head>
+<body>
+
+<h3><b>int _menu_load(int menu_index, _str option='M')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">If successful, loads menu resource and returns handle of loaded menu.
+Otherwise a negative error code is returned.  option may be 'M' or 'P'.
+Specify 'P' for option to display a menu resource as a pop-up menu.
+menu_index is a handle to a menu resource returned by find_index or
+name_match.
+<P>
+IMPORTANT: _menu_load is a method because under X windows we must know
+which window a menu bar will be attached before you call _menu_set.  Make
+sure your _menu_load and _menu_set calls operate on the same object.
+Otherwise, your Slick-C&reg; code will not work under X windows.  For pop-up
+menus, _menu_load does not need know the object.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="menu_index">menu_index</A></code> - index to load menu at</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - load options
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+#include "slick.sh"
+// Create a form called form1 and set the border style to anything BUT
+// BDS_DIALOG BOX.  Windows does not allow forms with a dialog
+// box style border to have menu bars.
+defeventtab form1;
+form1.on_load()
+{
+    // Find index of SlickEdit MDI menu resource
+    index=find_index(def_mdi_menu,oi2type(OI_MENU));
+    // Load this menu resource
+    menu_handle=p_active_form._menu_load(index);
+    // _set_menu will fail if the form has a dialog box style border.
+
+    // Put a menu bar on this form.
+    _menu_set(menu_handle);
+    // You DO NOT need to call _menu_destroy.  This menu is destroyed when the form
+    // window is deleted.
+}
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Menu_Functions.html">Menu Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="on_init_menu.html">on_init_menu</a>, <a href="_menu_add_filehist.html">_menu_add_filehist</a>, <a href="_menu_add_hist.html">_menu_add_hist</a>, <a href="_menu_add_workspace_hist.html">_menu_add_workspace_hist</a>, <a href="_menu_delete.html">_menu_delete</a>, <a href="_menu_destroy.html">_menu_destroy</a>, <a href="_menu_find.html">_menu_find</a>, <a href="_menu_get_state.html">_menu_get_state</a>, <a href="_menu_info.html">_menu_info</a>, <a href="_menu_insert.html">_menu_insert</a>, <a href="_menu_match.html">_menu_match</a>, <a href="_menu_move.html">_menu_move</a>, <a href="_menu_set.html">_menu_set</a>, <a href="_menu_set_state.html">_menu_set_state</a>, <a href="_menu_show.html">_menu_show</a>, <a href="alt_menu.html">alt_menu</a>, <a href="insert_object.html">insert_object</a>, <a href="menu_mdi_bind_all.html">menu_mdi_bind_all</a>, <a href="mou_show_menu.html">mou_show_menu</a>, <a href="show.html">show</a></blockquote>
+</body>
+</html>

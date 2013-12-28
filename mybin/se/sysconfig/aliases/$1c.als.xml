@@ -1,0 +1,133 @@
+<profile name="/language/c/aliases">
+	<p n="=surround_with_while">
+		<text>
+			while (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_try">
+		<text>
+			try {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_union">
+		<text>
+			union {
+			%\m sur_text -indent%
+			} %\c;
+		</text>
+	</p>
+	<p n="=surround_with_catch">
+		<text>
+			catch (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_do...while">
+		<text>
+			do {
+			%\m sur_text -indent%
+			} while (%\c);
+		</text>
+	</p>
+	<p n="=surround_with_if">
+		<text>
+			if (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_type_struct">
+		<text>
+			typedef struct %\c {
+			%\m sur_text -indent%
+			};
+		</text>
+	</p>
+	<p n="=surround_with_default">
+		<text>
+			default:
+			%\m sur_text -indent%
+		</text>
+	</p>
+	<p n="=surround_with_case">
+		<text>
+			case %\c:
+			%\m sur_text -indent%
+			break;
+		</text>
+	</p>
+	<p n="=surround_with_#ifndef">
+		<text>
+			%\m begin_line%#ifndef %\c
+			%\m sur_text%
+			%\m begin_line%#endif
+		</text>
+	</p>
+	<p n="=surround_with_switch">
+		<text>
+			switch (%\c) {
+			%\m sur_text%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_if...else">
+		<text>
+			if (%\c) {
+			%\m sur_text -indent%
+			} else {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_struct">
+		<text>
+			struct {
+			%\m sur_text -indent%
+			} %\c;
+		</text>
+	</p>
+	<p n="=surround_with_#ifdef">
+		<text>
+			%\m begin_line%#ifdef %\c
+			%\m sur_text%
+			%\m begin_line%#endif
+		</text>
+	</p>
+	<p n="=surround_with_finally">
+		<text>
+			finally {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_type_union">
+		<text>
+			typedef union %\c {
+			%\m sur_text -indent%
+			};
+		</text>
+	</p>
+	<p n="=surround_with_for">
+		<text>
+			for (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_include_once">
+		<params>
+			<param n="macro" default="" prompt="Symbol"/>
+		</params>
+		<text>
+			#ifndef %(macro)
+			#define %(macro)
+			%\m sur_text%
+			#endif // %(macro)
+		</text>
+	</p>
+</profile>

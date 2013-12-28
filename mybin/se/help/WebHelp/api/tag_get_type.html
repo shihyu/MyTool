@@ -1,0 +1,79 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_get_type</title>
+</head>
+<body>
+
+<h3><b>int tag_get_type(int type_id, _str &type_name)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve the tag type name for the given type ID.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_id">type_id</A></code> - Unique integer ID of type, from tag_get_detail.  The standard tag types
+               (below) are by default always inserted in the database.  Tag type ID's
+               30-127 are reserved for future use in Visual SlickEdit.  Tag type ID's
+               128-255 are for user defined tag types.
+<pre>
+    VS_TAGTYPE_proc         1/proc         procedure or command
+    VS_TAGTYPE_proto        2/proto        function prototype
+    VS_TAGTYPE_define       3/define       preprocessor macro definition
+    VS_TAGTYPE_typedef      4/typedef      type definition
+    VS_TAGTYPE_gvar         5/gvar         global variable declaration
+    VS_TAGTYPE_struct       6/struct       record or structure definition
+    VS_TAGTYPE_enumc        7/enumc        enumeration value
+    VS_TAGTYPE_enum         8/enum         enumerated type
+    VS_TAGTYPE_class        9/class        class definition
+    VS_TAGTYPE_union        10/union       structure / union definition
+    VS_TAGTYPE_label        11/label       label
+    VS_TAGTYPE_interface    12/interface   interface, e.g., for Java
+    VS_TAGTYPE_constructor  13/constr      class constructor
+    VS_TAGTYPE_destructor   14/destr       class destructor
+    VS_TAGTYPE_package      15/package     package / module / namespace
+    VS_TAGTYPE_var          16/var         member of a struct or package
+    VS_TAGTYPE_lvar         17/lvar        local variable declaration
+    VS_TAGTYPE_constant     18/const       Pascal constant
+    VS_TAGTYPE_function     19/func        function
+    VS_TAGTYPE_property     20/prop        property?
+    VS_TAGTYPE_program      21/prog        Pascal program
+    VS_TAGTYPE_library      22/lib         Pascal library
+    VS_TAGTYPE_parameter    23/param       function parameter
+    VS_TAGTYPE_import       24/import      package import or using
+    VS_TAGTYPE_friend       25/friend      C++ friend relationship
+    VS_TAGTYPE_database     26/database    SQL/OO Database
+    VS_TAGTYPE_table        27/table       database Table
+    VS_TAGTYPE_column       28/column      database Column
+    VS_TAGTYPE_index        29/index       database index
+    VS_TAGTYPE_view         30/view        database view
+    VS_TAGTYPE_trigger      31/trigger     database trigger
+    VS_TAGTYPE_form         32/form        GUI Form or window
+    VS_TAGTYPE_menu         33/menu        GUI Menu
+    VS_TAGTYPE_control      34/control     GUI Control or Widget
+    VS_TAGTYPE_eventtab     35/eventtab    GUI Event table
+    VS_TAGTYPE_procproto    36/procproto   Prototype for procedure
+    VS_TAGTYPE_task         37/task        Ada task object
+    VS_TAGTYPE_include      38/include     C++ include, COBOL copy
+    VS_TAGTYPE_file         38/file        COBOL file descriptor
+    VS_TAGTYPE_group        40/group       COBOL group variable
+    VS_TAGTYPE_subfunc      41/subfunc     Nested function
+    VS_TAGTYPE_subproc      42/subproc     Nested procedure type_name
+    VS_TAGTYPE_cursor       43/cursor      Database result set cursor
+    VS_TAGTYPE_tag          44/tag         SGML or XML tag type (like a class)
+    VS_TAGTYPE_taguse       45/taguse      SGML or XML tag instance (like an object)
+    VS_TAGTYPE_statement    46/statements  generic statement
+    VS_TAGTYPE_annotype     47/annotype    Java annotation type or C# attribute class
+    VS_TAGTYPE_annotation   48/annotation  Java annotation or C# attribute instance
+    VS_TAGTYPE_call         49/call        Function/Method call
+    VS_TAGTYPE_if           50/if          If/Switch statement
+    VS_TAGTYPE_loop         51/loop        Loop statement
+    VS_TAGTYPE_break        52/break       Break statement
+    VS_TAGTYPE_continue     53/continue    Continue statement
+    VS_TAGTYPE_return       54/return      Return statement
+    VS_TAGTYPE_goto         55/goto        Goto statement
+    VS_TAGTYPE_try          56/try         Try/Catch/Finally statement
+    VS_TAGTYPE_pp           57/pp          Preprocessing statement
+    VS_TAGTYPE_block        58/block       Statement block
+    VS_TAGTYPE_mixin        59/mixin       D language mixin construct
+    VS_TAGTYPE_target       60/target      Ant build target
+    VS_TAGTYPE_assign       61/assign      Assignment statement
+</pre></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_name">type_name</A></code> - (Output) full path of type containing tags
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, < 0 on error, BT_RECORD_NOT_FOUND_RC if not found.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_get_detail.html">tag_get_detail</a>, <a href="tag_find_type.html">tag_find_type</a>, <a href="tag_next_type.html">tag_next_type</a></blockquote>
+</body>
+</html>

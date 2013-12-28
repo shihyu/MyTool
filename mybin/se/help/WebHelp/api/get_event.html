@@ -1,0 +1,46 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>get_event</title>
+</head>
+<body>
+
+<h3><b>_str get_event(_str options="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - defaults to '' and may be one or more of the
+following:
+
+<dl>
+<dt>'R'</dt> <dd>Specifies no screen refresh.</dd>
+<dt>'K'</dt><dd>Return keys from physical keyboard and not keyboard macro that is
+being played back.</dd>
+<dt>'N'</dt><dd>Get next key.  When a Slick-C&reg; macro uses <b>get_event</b> for
+multiple key sequence key bindings, all <b>get_event</b> calls after the
+first should pass this parameter.  Otherwise key stroke recording will not
+work since terminating key stroke recording requires that the last key
+sequence be removed.</dd>
+<dt>'D'</dt><dd>Return and possibly set the prefix key delay in 10ths of seconds.
+To set the prefix key delay, concatenate a number to the 'D'.  For example,
+the parameter 'D4' sets the prefix key delay to .4 seconds.  The current or
+new prefix key delay is returned.</dd>
+<dt>'B'</dt><dd>Reset mouse button click count to zero.</dd>
+<dt>'U'</dt><dd>Always return unshifted key with SHIFT
+modifier (Ex: '<' = Shift+,).</dd>
+<dt>'F'</dt><dd>Ignore FocusIn events coming to the
+command line</dd>
+</dl>
+
+<p>
+If 'R' option is not given, the screen is refreshed.
+</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Waits for a key to be pressed and returns a binary string
+representation of the key typed.  For ASCII keys a string of length 1 is
+returned except for extended keys such as Ctrl+ENTER, Ctrl+BACKSPACE, Alt+A,
+Ctrl+A, etc.  For extended keys a string of length 2 or 3 is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+     key=get_event();
+     message('The key pressed was 'event2name(key));
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="pgetkey.html">pgetkey</a>, <a href="test_event.html">test_event</a>, <a href="last_event.html">last_event</a>, <a href="call_key.html">call_key</a>, <a href="event2name.html">event2name</a>, <a href="event2index.html">event2index</a>, <a href="index2event.html">index2event</a>, <a href="list_bindings.html">list_bindings</a>, <a href="name2event.html">name2event</a>, <a href="eventtab_index.html">eventtab_index</a></blockquote>
+</body>
+</html>

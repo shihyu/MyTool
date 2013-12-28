@@ -1,0 +1,249 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Statements</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s07.htm" title="Declarations"><link rel="next" href="ch14s09.htm" title="Functions"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_statements_12669_28292"></a>
+    <a name="slick_c_statements_12669_1002626"></a>Statements</h2></div></div></div><p class="NormalText">Slick-C® statements are constructed in the same manner as the statements in the C language.</p><p class="NormalText">Topics in this section:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s08.htm#slick_c_statements_12669_87025">Assignment Operator</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s08.htm#slick_c_statements_12669_50164">if Statement</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s08.htm#slick_c_statements_12669_53773">Block Statement</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s08.htm#slick_c_statements_12669_70705">Loops</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s08.htm#slick_c_statements_12669_45530">parse Statement</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s08.htm#slick_c_statements_12669_17624">switch Statement </a>
+      </p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_statements_12669_87025"></a>
+      <a name="slick_c_statements_12669_1002629"></a>
+      <a class="indexterm" name="slick-c_statements_D4A3BD7D_AF0C"></a>Assignment Operator</h3></div></div></div><p class="NormalText">The simple assignment statement has the syntax <span class="emphasis"><em>variable</em></span><span><strong class="command">=</strong></span><span class="emphasis"><em>expression</em></span>. For example:</p><pre class="programlisting">i=1;
+i=i+1;</pre><p class="NormalText">Assignment statements can be cascaded (<span><strong class="command">x=y=z</strong></span>). Assignment statements within <span><strong class="command">if</strong></span> and <span><strong class="command">while</strong></span> conditions are not allowed. The compiler flags assignments within <span><strong class="command">if</strong></span> and <span><strong class="command">while</strong></span> statements as an error. See <a href="ch14s07.htm#slick_c_declarations_12678_35541">Declaring Local Variables With :=</a> for more information.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_statements_12669_50164"></a>
+      <a name="slick_c_statements_12669_1002635"></a>
+      <a class="indexterm" name="slick-c_statements_6BE5253F_A0C5"></a>if Statement</h3></div></div></div><p class="NormalText">The syntax for an <span><strong class="command">if</strong></span> statement is the following:</p><pre class="programlisting"><span><strong class="command">
+    if (expression) statement [else statement]
+    </strong></span></pre><p class="NormalText">
+      <span class="emphasis"><em>statement</em></span> can be a C-style statement block which contains multiple statements. For more information, see <span class="bold"><strong><a href="ch14s08.htm#slick_c_statements_12669_53773">Block Statement</a></strong></span>.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Caution</h3><p class="CellBody">
+        <span class="bold"><strong>
+          <a class="indexterm" name="slick-c_statements_4FD0B0B9_F4A8"></a>CAUTION</strong></span> The value <span><strong class="command">0</strong></span> for all types is false. All other values are true. Like C++, Slick-C® uses the value <span><strong class="command">0</strong></span> for null pointers. For the string type, only a one-byte length string where the first character is an ASCII 0 is false. A 0 length string (<span><strong class="command">""</strong></span>) is true when used in a boolean expression. Slick-C also considers an empty (<span><strong class="command">=null</strong></span>) pointer variable or class instance as false.</p></div><p class="NormalText">Example:</p><pre class="programlisting">    if (x&lt;y) a==1;
+    if (x=="a") {
+       y=1;
+    } else if (x=="b") {
+       y=2;
+    } else if (x=="c") {
+       y=3;
+    } else if (x=="d") {
+       y=4;
+    }</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_statements_12669_53773"></a>
+      <a name="slick_c_statements_12669_1002660"></a>
+      <a class="indexterm" name="slick-c_statements_E406FC34_5213"></a>Block Statement</h3></div></div></div><p class="NormalText">A statement block is typically used to allow multiple statements within an <span><strong class="command">if</strong></span> or loop construct. However, it can also be used to declare a new local scope. A statement block has the following syntax, where <span class="emphasis"><em>statement</em></span> may declare local variables:</p><pre class="programlisting"><span><strong class="command">
+    {
+    statement1;
+    statement2;
+    ...
+    }
+    </strong></span></pre><p class="NormalText">Example:</p><pre class="programlisting">int i=0;
+if (i&lt;1) {  
+   int x=1;
+   {
+      int x;
+      // Can do the assignment here.
+      x=3;
+   }
+   // The variable x will be 1 here and not 3.
+}</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_statements_12669_70705"></a>
+      <a name="slick_c_statements_12669_1025913"></a>
+      <a class="indexterm" name="slick-c_statements_7DCCC2EF_D95C"></a>Loops</h3></div></div></div><p class="NormalText">Slick-C® supports C-style <a href="ch14s08.htm#slick_c_statements_12669_37231">do</a>, <a href="ch14s08.htm#slick_c_statements_12669_86225">for</a>, and <a href="ch14s08.htm#slick_c_statements_12669_94810">while</a> loops. In addition, Slick-C also supports Java/C#-style <a href="ch14s08.htm#slick_c_statements_12669_93705">foreach</a> loops and the Ada-style <a href="ch14s08.htm#slick_c_statements_12669_13514">loop</a> statement. You can use <a href="ch14s08.htm#slick_c_statements_12669_38793">break</a> and <a href="ch14s08.htm#slick_c_statements_12669_16129">continue</a> with all styles of loops.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_statements_12669_37231"></a>
+        <a name="slick_c_statements_12669_1026887"></a>
+        <a class="indexterm" name="slick-c_statements_C83DA4B9_FB14"></a>do</h4></div></div></div><p class="NormalText">The <span><strong class="command">do</strong></span> loop executes <span class="emphasis"><em>statement</em></span> first and then evaluates <span class="emphasis"><em>condition_exp</em></span>. If <span class="emphasis"><em>expression</em></span> is true (not the value 0), the <span class="emphasis"><em>statement</em></span> continues to be executed until <span class="emphasis"><em>expression</em></span> becomes false (0) or a break statement is reached.</p><p class="NormalText">Example:</p><pre class="programlisting"><span><strong class="command">
+    [label:] do statement while ( condition_exp );
+      </strong></span></pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_statements_12669_86225"></a>
+        <a name="slick_c_statements_12669_1026897"></a>
+        <a class="indexterm" name="slick-c_statements_775014CC_5504"></a>for</h4></div></div></div><p class="NormalText">The C-style <span><strong class="command">for</strong></span> loop is free-form. The expressions before the first semicolon of the <span><strong class="command">for</strong></span> loop are executed before entering the loop. The <span class="emphasis"><em>condition_exp</em></span> expression is checked before entering the <span><strong class="command">for</strong></span> loop also. If <span class="emphasis"><em>condition_exp</em></span> is true (not the value 0), the <span class="emphasis"><em>statement</em></span> is executed. The <span class="emphasis"><em>statement</em></span> continues to be executed until <span class="emphasis"><em>condition_exp</em></span> becomes false (0) or a break statement is reached. When the bottom of the <span><strong class="command">for</strong></span> loop is reached, but before <span class="emphasis"><em>condition_exp</em></span> is checked again, the expressions after the second semicolon are executed.</p><p class="NormalText">The syntax of <span><strong class="command">for</strong></span> is:</p><pre class="programlisting"><span><strong class="command">
+    [label:] for (b4e1 ,b4e2 ... .b4e3]; [condition_exp] ; {cont_e1,cont_e2 ... ,cont_e3]) statement
+      </strong></span></pre><p class="NormalText">Examples:</p><pre class="programlisting">// The following loops are equivalent.
+loop1:  
+   for ( i=1;i&lt;10;++i ) {
+      messageNwait("i="i);
+   }
+loop2:
+   i=1;
+   for ( ;i&lt;10; ) {
+      messageNwait("i="i);
+      ++i;
+   }
+loop3:
+   for ( i=1;i&lt;10;++i ) messageNwait("i="i);
+loop4:
+   i=1;
+   while ( i &lt;10 ) {
+      messageNwait("i="i++);
+   }
+loop5:
+   i=1;
+   do {
+      messageNwait("i="i);
+   } while ( i&lt;10 );</pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_statements_12669_93705"></a>
+        <a name="slick_c_statements_12669_1027577"></a>
+        <a class="indexterm" name="slick-c_statements_F5D1A048_C205"></a>foreach</h4></div></div></div><p class="NormalText">The <span><strong class="command">foreach</strong></span> statement works with arrays, hash tables, strings (same as Bourne shell), structs (iterates over the fields of the struct), and classes (if instance of <span><strong class="command">sc.lang.llterable</strong></span>, otherwise like structs). The syntax of <span><strong class="command">foreach</strong></span> is:</p><pre class="programlisting"><span><strong class="command">
+    foreach ( [ k =&gt; ] v in a ) {
+    statements;
+    }
+      </strong></span></pre><p class="NormalText">Example:</p><pre class="programlisting">void printStats(int (&amp;statistics):[])  
+{
+   foreach (auto name =&gt; auto count in statistics) {
+      say("testForeach: "name"="count);
+   }
+   int i,j=0;
+   foreach (i in range(10, 20, 2)) {
+      say("printStats: sequence["j++"]="i);
+   }
+}</pre><p class="NormalText">There is an optional key which is useful for hash tables. The value can be omitted (<span><strong class="command">key=&gt; . in ht</strong></span>):</p><pre class="programlisting">   foreach( key =&gt; value in ht ) {
+      statements;
+   }</pre><p class="NormalText">Both <span><strong class="command">value</strong></span> and <span><strong class="command">index</strong></span> can be auto-declared using the <span><strong class="command">auto</strong></span> keyword. If <span><strong class="command">value</strong></span> is auto-declared, its type will be inferred from the type of the collection. The implementation uses <span><strong class="command">_nextel()</strong></span>. </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_statements_12669_13514"></a>
+        <a name="slick_c_statements_12669_1002700"></a>
+        <a class="indexterm" name="slick-c_statements_8A233181_D28A"></a>loop</h4></div></div></div><p class="NormalText">The generic <span><strong class="command">loop</strong></span> statement is similar to that found in the Ada and D languages. The following statements are equivalent:</p><pre class="programlisting">for(;;) { ... } 
+loop { ... }</pre><p class="NormalText">Example:</p><pre class="programlisting">status := search(":","@");  
+loop {
+   if ( status ) break;
+   get_line(line);
+   messageNwait("found match line="line);
+   status = repeat_search();
+}</pre><p class="NormalText">Another example:</p><pre class="programlisting">defmain()
+{
+   i:=0;
+   j:=0;
+   loop {
+      say("test, i="i);
+      i++;
+      if (i&gt;1000) {
+         break;
+      }
+      inner: loop {
+         say("defmain: j="j);
+         if (j++ &gt; 750) break inner;
+      }
+      say("defmain: H1");
+      if (i &lt; 500) {
+         continue;
+      }
+      say("defmain: H2");
+   }
+}</pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_statements_12669_94810"></a>
+        <a name="slick_c_statements_12669_1029124"></a>
+        <a class="indexterm" name="slick-c_statements_65386775_D826"></a>while</h4></div></div></div><p class="NormalText">The <span><strong class="command">while</strong></span> loop evaluates <span class="emphasis"><em>condition_exp</em></span> first and then executes <span class="emphasis"><em>statement</em></span> if <span class="emphasis"><em>condition_exp</em></span> is true (not the value <span><strong class="command">0</strong></span>). The <span class="emphasis"><em>statement</em></span> will continue to be executed until <span class="emphasis"><em>condition_exp</em></span> becomes false (<span><strong class="command">0</strong></span>) or a break statement is reached.</p><p class="NormalText">Example:</p><pre class="programlisting"><span><strong class="command">
+    [label:] while (condition_exp) statement
+      </strong></span></pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_statements_12669_38793"></a>
+        <a name="slick_c_statements_12669_1002717"></a>
+        <a class="indexterm" name="slick-c_statements_7A3E92D9_5FE7"></a>break</h4></div></div></div><p class="NormalText">Loops are exited with the <span><strong class="command">break</strong></span> primitive. The <span><strong class="command">break</strong></span> primitive supports an optional <span><strong class="command">label</strong></span> argument (like Java&#8482;). If specified, the label must match the <span class="emphasis"><em>label</em></span> of one of the loops that you are currently using.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_statements_12669_16129"></a>
+        <a name="slick_c_statements_12669_1026417"></a>
+        <a class="indexterm" name="slick-c_statements_0CD276A6_4CE4"></a>continue</h4></div></div></div><p class="NormalText">The <span><strong class="command">continue</strong></span> primitive can be used to skip to the top of a loop. Using <span><strong class="command">continue</strong></span> on a <span><strong class="command">for</strong></span> loop causes the expressions after the second semicolon to be executed before <span class="emphasis"><em>condition_exp</em></span> is checked. When <span><strong class="command">continue</strong></span> is used on a <span><strong class="command">do</strong></span> statement, the <span class="emphasis"><em>condition_exp</em></span> is not checked and execution resumes at the top of the loop.</p><p class="NormalText">Loops can also be exited with the <span><strong class="command">continue</strong></span> primitive. The <span><strong class="command">continue</strong></span> primitive supports an optional <span><strong class="command">label</strong></span> argument (like Java). If specified, the label must match the <span class="emphasis"><em>label</em></span> of one of the loops that you are currently using.</p><p class="NormalText">Example:</p><pre class="programlisting">outerloop:
+   for ( i=1;i&lt;3;++i ) {
+      for ( j=1;;++j ) {
+         if ( j==2 ) continue outerloop;  // Exit inner loop.
+         if ( j==3 ) break outerloop;     // Exit both loops.
+         messageNwait("i="i);
+      }
+   } </pre></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_statements_12669_45530"></a>
+      <a name="slick_c_statements_12669_1026428"></a>
+      <a class="indexterm" name="slick-c_statements_2E77DDE4_AEF2"></a>parse Statement</h3></div></div></div><p class="NormalText">The syntax for <span><strong class="command">parse</strong></span> is <span><strong class="command">parse </strong></span><span class="emphasis"><em>string</em></span><span><strong class="command"> with </strong></span><span class="emphasis"><em>template</em></span>. This statement parses <span class="emphasis"><em>string</em></span> as specified by <span class="emphasis"><em>template</em></span>. </p><p class="NormalText">The table below shows what <span class="emphasis"><em>template</em></span> may contain.</p><div class="informaltable"><a name="table_0d412efd-4d03-4a47-998f-4df12cae67ef"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Item</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span class="emphasis"><em>variable_name</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Output variable.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">.</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Null output variable.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span class="emphasis"><em>nnn</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Number specifying new parse column.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">+</strong></span>
+                <span class="emphasis"><em>nnn</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Amount to increment parse column relative to start of last string found or last column setting.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">-</strong></span>
+                <span class="emphasis"><em>nnn</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Amount to decrement parse column relative to start of last string found or last column setting.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span class="emphasis"><em>'text'[,search_options]</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">String constant to search for. If found, parse column becomes first character after <span class="emphasis"><em>text</em></span>. Otherwise parse column becomes first character after length of string being parsed.  <span class="emphasis"><em>search_options</em></span> is an optional expression that may evaluate to a string of one or more of the option letters <span><strong class="command">U</strong></span>, <span><strong class="command">R</strong></span>, <span><strong class="command">B</strong></span>, <span><strong class="command">I</strong></span>, and <span><strong class="command">Y</strong></span>:</p>
+              <div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                    <span><strong class="command">U</strong></span> specifies UNIX regular expressions.</p></li><li><p class="NormalText">
+                    <span><strong class="command">R</strong></span> specifies SlickEdit regular expressions.</p></li><li><p class="NormalText">
+                    <span><strong class="command">B</strong></span> specifies Brief regular expressions.</p></li><li><p class="NormalText">
+                    <span><strong class="command">L</strong></span> specifies Perl regular expressions.</p></li><li><p class="NormalText">
+                    <span><strong class="command">&amp;</strong></span> specifices wildcard regular expressions.</p></li><li><p class="NormalText">
+                    <span><strong class="command">I</strong></span> specifies a case insensitive search.</p></li><li><p class="NormalText">
+                    <span><strong class="command">Y</strong></span> specifies a binary which search allows positions in the middle of a DBCS character (only affects Japanese operating systems).</p></li></ul></div>
+              <p class="CellBody">See the topic "regular expressions" in the SlickEdit® Help system for more information.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span class="emphasis"><em>(expression)[,search_options]</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">String <span class="emphasis"><em>expression</em></span> to search for. If found, parse column becomes first character after text. Otherwise parse column becomes first character after length of string being parsed. See above for a description of the search options.</p>
+            </td></tr></tbody></table></div><p class="NormalText">The rules for parse column are:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">The parse column is initialized to column 1.</p></li><li><p class="NormalText">If a column or column increment specifies a column greater than the length of the string being parsed, the parse column is set to the length of the string being parsed plus one.</p></li><li><p class="NormalText">If a column decrement specifies a column less than the length of the string being parsed, the parse column is set to column 1.</p></li></ul></div><p class="NormalText">The rules for setting output variables are:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Output variables are set in groups. An output variable group is defined to be consecutive variables with no search or column specifiers between them.</p></li><li><p class="NormalText">Before variables of an output variable group can be set, the end parse column within the source string must be found. In the case the end parse column is set by a search, the end parse column for this output variable group becomes the first character to the left of the text found. In the case the end parse column is set by a column or column increment the end parse column becomes the first character to the left of the column. The start parse column is the current parse column as specified by the template.</p></li><li><p class="NormalText">A word parse of the text between the start and end columns is performed to set the variables in an output variable group if the group contains more than one variable. Otherwise the one output variable is set to the text between the start and end columns of the source string. Each variable set by a word parse will have no leading or trailing tabs/spaces except for the last output variable which is set to the rest of the sub-string.</p></li><li><p class="NormalText">If the start column is greater than the end column the variables in the output group are set to null.</p></li></ul></div><p class="NormalText">Wildcard regular expressions are supported for <span><strong class="command">parse</strong></span>. You can also use the <span><strong class="command">auto</strong></span> keyword to auto-declare the output string variables in a <span><strong class="command">parse</strong></span> statement. For example, the following statement declares "firstword" and "secondword" as strings:</p><pre class="programlisting"> parse s with auto firstword auto secondword;</pre><p class="NormalText">Examples of <span><strong class="command">parse</strong></span>:</p><pre class="programlisting">// Results are  a=='1', b=='2', c=='3'.
+parse '1 2 3' with a b c;
+ 
+// Results are  a=='1', b=='2', c=='3'. Note that tab and space characters are
+// stripped.
+parse '1 '\t' 2 '\t' 3' with a b c;
+ 
+// Results are  a=='1', b=='3'.
+parse '1 2 3' with a . b;
+ 
+// Results are  a=='1', b=='2', c=='3', d=='4', e=='5'.
+parse 'xxx1 2 3yyy 4 5' with 'xxx' a b c 'yyy' d e;
+ 
+// Results are  a=='1 2 3', b==' 4 5'.
+parse 'xxx1 2 3yyy 4 5' with 'xxx' a  'yyy' b;
+ 
+// Results are  a=='xxx1 2 3', b=='yyy 4 5'.
+parse 'xxx1 2 3yyy 4 5' with 'xxx' +0 a  'yyy' +0 b;
+ 
+// Results are delim=='/', s1=='x', s2=='y', options==''.
+parse 'c/x/y' with  2 delim +1 s1 (delim) s2 (delim) options;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_statements_12669_17624"></a>
+      <a name="slick_c_statements_12669_1026699"></a>
+      <a class="indexterm" name="slick-c_statements_95FA6A48_B1D4"></a>
+      <a class="indexterm" name="slick-c_statements_7F9C4B02_7F6A"></a>switch Statement </h3></div></div></div><p class="NormalText">Slick-C® supports the C <span><strong class="command">switch</strong></span> statement. The Slick-C <span><strong class="command">switch</strong></span> supports integers and string types. The <span><strong class="command">switch</strong></span> statement uses the following syntax:</p><pre class="programlisting"><span><strong class="command">
+    switch (expression) {
+    [ case expression: 
+    statements
+    ]
+    [ case expression: 
+    statements
+    ]
+    ...
+    [ default: 
+    statements
+    ]
+    }
+    </strong></span></pre><p class="NormalText">The <span><strong class="command">switch</strong></span> expression is evaluated and compared against all the case expressions. After a match is found, ALL statements below the case are executed, including those statements found in the next case and the default, until a break statement is reached.</p><p class="NormalText">Example: </p><pre class="programlisting">outerloop:  
+   for ( i=1;;++i ) {
+      switch ( i ) {
+      case 1:
+      case 2:
+         messageNwait("i=1 or i=2");
+         break;
+         // Done with these cases.
+      case 3:
+         break outerloop;
+      }
+   }</pre><p class="NormalText"></p></div></div></body></html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsFileDetermineEncoding</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsFileDetermineEncoding(int filehandle, int &encoding)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This function is used to convert one of the
+VSENCODING_AUTO<XXX> encoding options into an exact
+encoding.  All other values for encoding remain unchanged.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filehandle">filehandle</A></code> - File handle returned by
+<b>vsFileOpen</b>().
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="encoding">encoding</A></code> - On input this is one of the following:
+
+<ul>
+<li>VSCP_ACTIVE_CODEPAGE</li>
+<li>VSCP_CYRILLIC_KOI8_R</li>
+<li>VSCP_ISO_8859_1</li>
+<li>VSCP_ISO_8859_2</li>
+<li>VSCP_ISO_8859_3</li>
+<li>VSCP_ISO_8859_4</li>
+<li>VSCP_ISO_8859_5</li>
+<li>VSCP_ISO_8859_6</li>
+<li>VSCP_ISO_8859_7</li>
+<li>VSCP_ISO_8859_8 </li>
+<li>VSCP_ISO_8859_9</li>
+<li>VSCP_ISO_8859_10</li>
+<li>Any valid Windows code page</li>
+<li>VSENCODING_AUTOUNICODE</li>
+<li>VSENCODING_AUTOUNICODE2</li>
+<li>VSENCODING_AUTOXML</li>
+<li>VSENCODING_AUTOEBCDIC</li>
+<li>VSENCODING_AUTOEBCDIC_AND_UNICODE</li>
+<li>VSENCODING_AUTOEBCDIC_AND_UNICODE2</li>
+<li>VSENCODING_EBCDIC_SBCS</li>
+<li>VSENCODING_UTF8</li>
+<li>VSENCODING_UTF8_WITH_SIGNATURE</li>
+<li>VSENCODING_UTF16LE</li>
+<li>VSENCODING_UTF16LE_WITH_SIGNATURE</li>
+<li>VSENCODING_UTF16BE</li>
+<li>VSENCODING_UTF16BE_WITH_SIGNATURE</li>
+<li>VSENCODING_UTF32LE</li>
+<li>VSENCODING_UTF32LE_WITH_SIGNATURE</li>
+<li>VSENCODING_UTF32BE</li>
+<li>VSENCODING_UTF32BE_WITH_SIGNATURE -
+ This is set to exact encoding that should be
+used.</li>
+</ul>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 or positive number if successful.  Otherwise, a negative
+error code is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Unicode_Functions.html">Unicode Functions</a></blockquote>
+</body>
+</html>

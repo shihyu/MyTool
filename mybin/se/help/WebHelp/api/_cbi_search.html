@@ -1,0 +1,57 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_cbi_search</title>
+</head>
+<body>
+
+<h3><b>int _cbi_search(_str case_sense='', _str search_string='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>not_finished. We need to remove this function.
+<p>
+Searches for combo box text (<b>p_text</b>) in the combo box list starting from
+the beginning of the list.  This function is typically used to check if the users
+input is valid or adjust the current line in the combo box list after more items
+have been added.  Search is case insensitive by default.  Set the <b>p_case_sensitive</b>
+property to <b>true</b> if you want a case sensitive search.  Normally the search is
+considered successful if a line that begins with <b>p_text</b> is found.  To search
+for an exact match, specify '$' for the second argument.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="case_sense">case_sense</A></code> - 'e' for a case-sensitive search, 'i' for case-insensitive</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="search_string">search_string</A></code> - pass '$' for an exact match
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if text in combo box is found.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+defeventtab form1;
+void ok.lbutton_up()
+{
+     // Check if text in combo box is valid.  You might think you could use a
+     // non-editable style combo box.  However, many users prefer typing in
+     // names using completion, to using the mouse to select an item out
+     // of a list box.
+     status=_cbi_search('','$');
+     if (status) {
+          _message_box("Combo box contains invalid input");
+          return;
+     }
+      // have valid input
+      ....
+}
+command1.lbutton_up()
+{
+     // Add some items to the combo box list
+     combo1.p_cb_list_box._lbadd_item("Hello")
+     combo1.p_cb_list_box._lbadd_item("Open");
+     combo1.p_cb_list_box._lbadd_item("New");
+     // Make the correct item in the combo box list is current so combo box
+     // retrieval works better.
+     status=combo1._cbi_search('','$');
+     if (!status) {
+          messageNwait("Found it!");
+          // Select the line in the combo box so that an up or down arrow
+          // selects the line above or below and not the current line.
+          combo1.p_cb_list_box._lbselect_line();
+     }
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Combo Box
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Combo_Box_Methods.html">Combo Box Methods</a></blockquote>
+</body>
+</html>

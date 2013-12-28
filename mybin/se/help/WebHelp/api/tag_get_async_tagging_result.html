@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_get_async_tagging_result</title>
+</head>
+<body>
+
+<h3><b>int tag_get_async_tagging_result(_str &fileName, int &taggingFlags, int &bufferId, int &lastModified, int &updateFinished, _str &tagDatabase, int waitTimeInMS=0, int deferSlowerJobs=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Check the result of an asynchronous tagging operation, in order to report
+our progress as we create a tag file in the background, or update the
+current context or locals in the background, or update the tagging for
+other buffers in the background.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="fileName">fileName</A></code> - (output) set to name of file tagged</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="taggingFlags">taggingFlags</A></code> - (output) set to tagging flags (VSLTF_*) for operation</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="bufferId">bufferId</A></code> - (output) set to buffer Id of file which was tagged</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="lastModified">lastModified</A></code> - (output) set to the generation count of the file
+                        which was tagged</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="updateFinished">updateFinished</A></code> - (output) set to true if the context, locals,
+                        statements, or tag database was already updated
+                        on the thread.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tagDatabase">tagDatabase</A></code> - (output) tag database being updated (can be empty string)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="waitTimeInMS">waitTimeInMS</A></code> - (input) time to wait for result to appear on queue</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="deferSlowerJobs">deferSlowerJobs</A></code> - (input) if 'true', defer slower jobs that
+                        that require foreground processing until later.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

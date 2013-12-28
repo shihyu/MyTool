@@ -1,0 +1,252 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>VSCALLBACK_BUF_SET_LINE_COLOR</title>
+</head>
+<body>
+
+<h3><b>14 VSCALLBACK_BUF_SET_LINE_COLOR</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><PRE>int (VSAPI *pfnSetLineColor)(int buf_id,int wid, seSeekPos linenum,int LineFlags,
+                                  VSCOLORINDEX *pColor,int ColorLen,char *pTempLine,int reserved);</PRE><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="buf_id">buf_id</A></code> - Buffer id (VSP_BUFID).  Color coding is
+per buffer and not per window.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="linenum">linenum</A></code> - Line number (VSP_LINE).  If you have a
+lexer state array, it must be indexed with this
+line number.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="RealLineNum">RealLineNum</A></code> - Real line number (VSP_RLINE).  This line
+number does not include lines with the
+VSLF_NOSAVE (non-savable line) flag set.
+The difference editor adds non-savable lines.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="LineFlags">LineFlags</A></code> - Current line flags.  See VSLF_??? constants
+in "vs.h".
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pColor">pColor</A></code> - Array of color indexes.  All data in this array
+must be set.  Valid color indexes are any of
+the VSCFG_??? constants or a color index
+allocated by <b>vsAllocColor</b>.  0
+indicates a NULL color.  Use the NULL
+color to get our built-in color coding.  Some
+color layers will automaticaly overlay any
+color you define here.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ColorLen">ColorLen</A></code> - Number of color indexes that must be set.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pTempLine">pTempLine</A></code> - Optional temporary buffer which has
+<i>ColorLen</i>+1 characters allocated.
+Use the <b>vsGetLine</b> function to
+retrieve the contents of the current line.
+
+<p><b>Syntax Color Coding Sample Code for Select Mode Callback</b></p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>14</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Return VSLF_IN_SQUOTE if next line continues a multi-line single
+quoted string.  Return VSLF_IN_DQUOTE if next line continues a
+multi-line single quoted string.  Return VSLF_IN_LINE_COMMENT
+if this line end with a line comment.  Return vsLFHCommentInfo(1,0)
+if the next line continues a multi-line comment.  Otherwise return 0.
+
+<p>The SET_LINE_COLOR callback function is used to enhance and/or
+replace our built-in syntax color coding.  This callback is called when
+lines are displayed in a window, searching for syntax color coding, and
+when printing.  Any color set by the vsSetTextColor function will
+override syntax color coding.  In addition, difference color coding will
+also override syntax color.</p>
+
+<p>This callback should ONLY be set during the
+<B>VSCALLBACK_AR_APP_SELECT_MODE</B> callback
+because this callback is an extension specific callback.</p>
+
+<p>Unless you have already written a programmers editor with color
+coding, you probably don't have much of an idea about what is the best
+way to implement color coding.  All high performance color coding
+(including SlickEdit) is done by generating the syntax color as
+the visible source lines are displayed.  As long as you don't write a
+slow lexer, the user will not be able to type too fast for you color
+coding to keep up.   </p>
+
+<p>Here are some important tips about implementing your own color
+coding:</p>
+
+<ul>
+<li> It is easiest to implement syntax color coding for languages
+which have no multi-line constructs (like Basic or Assembler).
+If possible, we recommend you use our built-in color coding to
+process your multi-line constructs, and have your lexer do
+some additional color processing.</li>
+
+<li> Multi-line constructs such as multi-line comments, multi-line
+strings, and embedded languages (HTML can have embedded
+JavaScript or VBScript) require you to store lexer state data for
+each line in an editor buffer in your own array.  A byte or a 32
+bit integer per line is typically all you need.  Our built-in color
+coding only uses 8 bits per line for handling all the multi-line
+constructs we support.  For example, your set line color
+callback may need to check the lexer state data to see whether
+the line being processed
+(<b>gpArrayStateInfo[<i>linenum</i>]</b>) is inside a multi-
+line comment started on a previous line.  This requires that you
+implement some additional code for the following callbacks
+(see <b>vsCallbackAdd</b>) in addition to the typical
+callbacks:</li>
+
+<dl>
+<dt><B>VSCALLBACK_AR_BUF_LINES_INSERTED</B></dt><dd>
+During this callback you need to insert lines into your lexer
+state array.  These new lines should be initialized with a NULL
+(we use 0) lexer state value.</dd>
+<dt><B>VSCALLBACK_AR_BUF_LINES_DELETED</B></dt><dd>
+During this callback you need to delete the lines in your line
+array.</dd>
+<dt><B>VSCALLBACK_AR_BUF_TEXT_CHANGE</B></dt><dd>
+Your lexer must be able to start in any of your defined multi-
+line states.  During this callback you need to set the lexer state
+data for lines whose state may have changed.</dd>
+</dl>
+</ul>
+
+<p><b>Syntax Color Coding Sample Code for Text Change
+Callback</b></p>
+
+<p>Your DLL must define and export a function called
+"<b>dllinit_<i>DLLName</i></b>" where <i>DLLName</i>
+is the name of your DLL without the extension.  When the
+editor initializes, all functions starting with "<b>dllinit_</b>"
+are called.  During your "<b>dllinit_<i>DLLName</i></b>"
+function you need to register a
+<B>VSCALLBACK_AR_APP_SELECT_MODE</B>
+callback (see <b>vsCallbackAdd</b>) which checks the
+extension to see if the
+VSCALLBACK_BUF_SET_LINE_COLOR callback as well
+as the callbacks above need to be set.</p>
+
+<p><b>Syntax Color Coding Sample Code for Select Mode
+Callback</b></p>
+
+<p>SlickEdit has four layers of color:  syntax color, undoable
+buffer color,  undoable line insert/modify color, and intra-line
+difference color (version >=4.0).</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+static void VSAPI CallbackSelectMode(int wid,char *pszExtension)
+{
+     int buf_id;
+     buf_id=vsPropGetI(wid,VSP_BUFID);
+     if (
+#if VSUNIX
+        strcmp(pszExtension,"MyLanguageExtension")==0
+#else
+        _stricmp(pszExtension,"MyLanguageExtension")==0
+#endif
+        ) {
+          vsCallbackSet(buf_id,
+                        VSCALLBACK_BUF_SET_LINE_COLOR,
+                        CallbackSetLineColor);
+          vsCallbackAdd(buf_id,
+                        VSCALLBACK_AR_BUF_LINES_INSERTED,
+                        CallbackLinesInserted);
+          vsCallbackAdd(buf_id,
+                        VSCALLBACK_AR_BUF_LINES_DELETED,
+                        CallbackLinesDeleted);
+          vsCallbackAdd(buf_id,
+                        VSCALLBACK_AR_BUF_TEXT_CHANGE,
+                        CallbackTextChange);
+     } else {
+          // DONT set the VSCALLBACK_BUF_SET_LINE_COLOR
+          // here!
+          // For completeness, we remove our callbacks here
+          // in case the user renamed the buffer
+          // or changed the mode.
+          vsCallbackRemove(buf_id,
+                           VSCALLBACK_AR_BUF_LINES_INSERTED,
+                           CallbackLinesInserted);
+          vsCallbackRemove(buf_id,
+                           VSCALLBACK_AR_BUF_LINES_DELETED,
+                           CallbackLinesDeleted);
+          vsCallbackRemove(buf_id,
+                           VSCALLBACK_AR_BUF_TEXT_CHANGE,
+                           CallbackTextChange);
+     }
+}
+</pre>
+
+<p><b>Syntax Color Coding Sample Code for Text Change Callback</b></p>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include <vsapi.h>
+void VSAPI CallbackTextChange(int buf_id, int wid, seSeekPos StartMod, seSeekPos
+EndMod) {
+     VSSAVEPOS  pos;
+     vsSavePos(wid,&pos);   // Remember our cursor location.
+     int cur_linenum=vsPropGetI(wid,VSP_LINE);
+     vsGoToPoint(wid,StartMod);
+     // Go up one line since the edit may have occurred
+     // at the end of the previous line.
+     vsUp(wid,1);
+     seSeekPos linenum;
+     linenum=vsPropGetI64(wid,VSP_LINE);
+     if (linenum==0 ) {
+          vsDown(wid,1);++linenum;
+     }
+     int LexerStateInfo;
+     LexerStateInfo=gpArrayStateInfo[linenum];
+
+     // The following code is very similar to our built-in text
+     // change event for handling syntax color coding.  Ignore
+     // anything you don't think applies to your language.  Some
+     // of this code may seem like hocus pocus (the pass stuff)
+     // but our built-in color coding (unlike VC++ color coding
+     // which messes up on nested comments) has no known bugs.
+
+     int pass=1;
+     for (;;) {
+          seSeekPos StartOffsetOfLine,down_count;
+          vsQPoint(wid,&StartOffsetOfLine,&down_count);
+#define MAXLINELEN   1024
+          char szLine[MAXLINELEN];
+          int LineLen;
+          LineLen=vsGetLine(wid,szLine,MAXLINELEN);
+          seSeekPos linenum;
+          linenum=vsPropGetI64(wid,VSP_LINE);;
+          // IF the current line is in this change
+          if (cur_linenum==linenum) {
+               // Make sure the all visible lines are refreshed
+               // if the user is typing on this line.
+               // The user may have opened a multi-line construct.
+               // It actually is OK to always do this, and
+               // place this call out side this loop.
+               // We have not found this necessary.
+               vsBufRefresh(buf_id);
+          }
+          if (vsQLineFlags(wid)& VSLF_NOSAVE) {
+               // Use previous comment flags.
+               gpArrayStateInfo[linenum]=LexerStateInfo;
+               goto next_line;
+          }
+          int NextLineLexerStateInfo;
+
+          // Here's a function you need to implement.
+          NextLineLexerStateInfo=
+          DetermineNextLineLexerStateInfo(szLine,LineLen,
+                                          LexerStateInfo);
+
+          // IF nesting level has changed.
+          if (LexerStateInfo!=gpArrayStateInfo[linenum]) {
+               gpArrayStateInfo[linenum]=LexerStateInfo;
+          } else {
+               // IF we are past last line of modification AND
+               //    the lexer state info is the same
+               if (pass>=2) {
+                    break;
+               }
+          }
+          LexerStateInfo=NextLineLexerStateInfo;
+next_line:
+          //IF we hit the bottom of the buffer
+          if (vsDown(wid,1)) {
+               break;
+          }
+          if (pass==1 && StartOffsetOfLine>EndMod) {
+               ++pass;
+          }
+     }
+     vsRestorePos(wid,&pos);   // Remember our cursor location.
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Editor_Control_Callback_Functions.html">Editor Control Callback Functions</a></blockquote>
+</body>
+</html>

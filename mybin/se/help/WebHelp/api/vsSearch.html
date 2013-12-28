@@ -1,0 +1,131 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsSearch</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsSearch(int wid, const char *pSearchString, int SearchStringLen, const char *pszOptions=0, const char *pReplaceString=0, int ReplaceStringLen=0, VSINT64 *pNofchanges=0, int(VSAPI*pfnCompletionStatus)(VSINT64 offset, VSINT64 NofChanges, void*puserdata)=0, void *puserdata=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Searches for <i>pSearchString</i> specified.  If pReplaceString is
+non-zero, and search and replace without prompting is performed.
+Press and hold Ctrl+Alt+Shift to terminate a long search.
+<i>pszOptions</i> is one or more of the following option letters:
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pSearchString">pSearchString</A></code> - String to search for.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="SearchStringLen">SearchStringLen</A></code> - Number of characters in
+<i>pSearchString</i>.  You can specify -1 if
+<i>pSearchString</i> is null terminated.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszOption">pszOption</A></code> - String of zero or more of the following
+options:
+
+<dl>
+<dt>+</dt><dd>(Default) Forward search.</dd>
+<dt>-</dt><dd>Reverse search.</dd>
+<dt><</dt><dd>(Default) Place cursor at beginning of string found.</dd>
+<dt>></dt><dd>Place cursor after end of string found.</dd>
+<dt>E</dt><dd>(Default) Case sensitive search.</dd>
+<dt>I</dt><dd>Case insensitive search.</dd>
+<dt>M</dt><dd>Search within visible mark.</dd>
+<dt>H</dt><dd>Find text in hidden lines.   Only the line contain the
+first character of the search string is checked.</dd>
+<dt>R</dt><dd>Search for SlickEdit regular expression.  See
+<b>SlickEdit Regular Expressions</b>.</dd>
+<dt>U</dt><dd>Interpret string as a UNIX regular expression.   See
+section <b>UNIX Regular Expressions</b>.</dd>
+<dt>B</dt><dd>Interpret string as a Brief regular expression.   See
+section <b>Brief Regular Expressions</b>.</dd>
+<dt>N</dt><dd>(Default) Do not interpret search string as a regular
+search string.</dd>
+<dt>P</dt><dd>Wrap to beginning/end when string not found.  Flag
+is set.  However, this option has no effect on this
+function.</dd>
+<dt>@</dt><dd>Don't display error message.</dd>
+<dt>*</dt><dd>This option is ignored.</dd>
+<dt>W</dt><dd>Limits search to words.  Used to search and replace
+variable names.  The default word characters are
+[A-Za-z0-9_$].  To change the word characters for
+a specific extension, use the Extension Options
+dialog box ("Tools", "Options", "File Extension Setup...",
+select the Advanced tab).</dd>
+<dt>W=<i>SlickEdit-regular-expression</i></dt><dd>
+ Specifies a word search and sets the default word
+characters to those matched by the <i>SlickEdit-
+regular-expression</i> given.</dd>
+<dt>W:P</dt><dd>Limits search to word prefix.  For example,
+searching for "pre" matches "pre" and "prefix" but
+not "supreme" or "supre".</dd>
+<dt>W:PS</dt><dd>Limits search to strict word prefix.  For example,
+searching for "pre" matches "prefix" but not "pre",
+"supreme" or "supre".</dd>
+<dt>W:S</dt><dd>Limits search to word suffix.  For example,
+searching for "fix" matches "fix" and "sufix" but
+not "fixit".</dd>
+<dt>W:SS</dt><dd>Limits search to strict word suffix.  For example,
+searching for "fix" matches "sufix" but not "fix" or
+"fixit".</dd>
+<dt>Y</dt><dd>Binary search.  This allows start positions in the
+middle of a DBCS or UTF-8 character.  This option
+is useful when editing binary files (in SBCS/DBCS
+mode) which may contain characters which look
+like DBCS but are not.  For example, if you search
+for the character 'a', it will not be found as the
+second character of a DBCS sequence unless this
+option is specified.</dd>
+<dt>,</dt><dd>Delimiter to separate ambiguous options.</dd>
+<dt>X<i>CCLetters</i></dt><dd>Requires the first character of search string
+NOT be one of the color coding elements specified.
+For example, "XCS" requires that the first character
+not be in a comment or string. <i>CCLetters</i> is
+a string of one or more of the following color
+coding element letters:
+
+<dl>
+<dt>O</dt><dd>Other</dd>
+<dt>K</dt><dd>Keyword</dd>
+<dt>N</dt><dd>Number</dd>
+<dt>S</dt><dd>String</dd>
+<dt>C</dt><dd>Comment</dd>
+<dt>P</dt><dd>Preprocessing</dd>
+<dt>L</dt><dd>Line number</dd>
+<dt>1</dt><dd>Symbol 1</dd>
+<dt>2</dt><dd>Symbol 2</dd>
+<dt>3</dt><dd>Symbol 3</dd>
+<dt>4</dt><dd>Symbol 4</dd>
+<dt>F</dt><dd>Function color</dd>
+<dt>V</dt><dd>No save line</dd>
+</dl>
+</dd>
+
+<dt>C<i>CCLetters</i></dt><dd>Requires the first character of search string to
+be one of the color coding elements specified. See
+<i>CCLetters</i> above.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pReplaceString">pReplaceString</A></code> - String to replace search string with.  Specify
+0 to just perform a search.  If
+<i>pReplaceString</i> is not NULL, a
+search and replace without prompting is
+performed.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ReplaceStringLen">ReplaceStringLen</A></code> - Number of characters in
+<i>pReplaceString</i>.  You can specify -1
+if <i>pReplaceString</i> is null terminated.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pNofChanges">pNofChanges</A></code> - If this is non-zero and a search and replace is
+performed, this is set to the number of
+changes made.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if the search specified is found.  Common return codes are
+STRING_NOT_FOUND_RC, INVALID_OPTION_RC, and
+INVALID_REGULAR_EXPRESSION_RC.  On error, message is
+displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+      // Search for word delimited string "pathsearch" where the first
+character is
+      // not in a comment or a string.
+      int Nofchanges;
+      vsSearch( 0,"pathsearch",-1,"xcs,w", "path_search",-1,
+&Nofchanges);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsMatchLength.html">vsMatchLength</a>, <a href="vsMatchStart.html">vsMatchStart</a>, <a href="vsMatchCursorLength.html">vsMatchCursorLength</a>, <a href="vsSelectMatch.html">vsSelectMatch</a>, <a href="vsRepeatSearch.html">vsRepeatSearch</a>, <a href="vsSearchReplace.html">vsSearchReplace</a>, <a href="vsSaveSearch.html">vsSaveSearch</a>, <a href="vsRestoreSearch.html">vsRestoreSearch</a></blockquote>
+</body>
+</html>

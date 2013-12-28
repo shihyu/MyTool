@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsHvarHashtabEl</title>
+</head>
+<body>
+
+<h3><b>VSHVAR VSAPI vsHvarHashtabEl(VSHVAR hVarHashtab, const char *pBuf, int BufLen=-)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>VSHVAR</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns a Slick-C&reg; variable handle which refers to an element in a
+Slick-C&reg; hash table.  If the string index specified by pBuf does not
+exists in the hash table specified, a new uninitialized elemented is
+inserted.  If <i>hVarHashtab</i> is not currently a hash table, the
+current variable contents are destroyed and an empty hash table is
+created.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+   // Call a Slick-C&reg; function which returns a Slick-C&reg; hash table
+   int index;
+   index=vsFindIndex("ProcReturnsHashtab ",VSTYPE_PROC);
+   if (!index) {
+       vsMessage("not found");
+       return;
+   }
+   VSARGTYPE ArgList[1];
+   ArgList[0].kind=VSARGTYPE_PSZ;ArgList[0].u.psz="some
+message";
+   vsCallIndex(0,index,1,ArgList);
+   // Get known index element of a hash table
+   VSHVAR hvar;
+   hvar=vsHvarHashtabEl(VSHVAR_RC,"styles");
+  VSPLSTR  plstr;
+   // Interpreter L strings are NULL terminated.
+   plstr=vsHvarGetLstr(hvar);
+   vsMessage((char *)plstr->str);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsHvarSetI.html">vsHvarSetI</a>, <a href="vsHvarSetI64.html">vsHvarSetI64</a>, <a href="vsHvarSetB.html">vsHvarSetB</a>, <a href="vsHvarSetZ.html">vsHvarSetZ</a>, <a href="vsHvarGetZ.html">vsHvarGetZ</a>, <a href="vsHvarGetLstr.html">vsHvarGetLstr</a>, <a href="vsGetVar.html">vsGetVar</a>, <a href="vsArg.html">vsArg</a>, <a href="vsHvarArrayEl.html">vsHvarArrayEl</a>, <a href="vsHvarAlloc.html">vsHvarAlloc</a>, <a href="vsHvarFree.html">vsHvarFree</a></blockquote>
+</body>
+</html>

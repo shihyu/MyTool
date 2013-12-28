@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>dbg_session_expand_auto_watch</title>
+</head>
+<body>
+
+<h3><b>int dbg_session_expand_auto_watch(int session_id, int thread_id, int frame_id, _str autovar_path)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Expand the watched variable at the given variable path
+for the specified stack frame in the specified thread.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="session_id">session_id</A></code> - debugger session ID (1 .. max_session)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="thread_id">thread_id</A></code> - index of thread in table</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="frame_id">frame_id</A></code> - index of frame in thread's stack</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="autovar_path">autovar_path</A></code> - path to watched variable to expand
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Since:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">10.0
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<p>
+To expand the structured field at ID 5 under the auto
+watch with ID 8 in the current thread and the top-most
+stack frame:
+</p>
+<pre>
+  int thread_id = dbg_get_cur_thread();
+  int status = dbg_session_expand_auto_watch(session_id, thread_id, 1, "8 5");
+  if (status) {
+     return status;
+  }
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Debugger_Functions.html">Debugger Functions</a></blockquote>
+</body>
+</html>

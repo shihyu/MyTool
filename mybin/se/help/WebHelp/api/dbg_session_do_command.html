@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>dbg_session_do_command</title>
+</head>
+<body>
+
+<h3><b>int dbg_session_do_command(int session_id, _str command, _str &reply, _str &errmsg, boolean parse_reply)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Send the given command to the debugger and get the result
+including both normal result ouput, and possible error output.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="session_id">session_id</A></code> - debugger session ID (1 .. max_session)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="command">command</A></code> - debugger command to send</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="reply">reply</A></code> - command reply data</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="errmsg">errmsg</A></code> - output skimmed from stderr</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="parse_reply">parse_reply</A></code> - parse the command reply, or just return string?
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Since:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">10.0
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+   _str reply, errmsg;
+   int status = dbg_session_do_command(session_id,
+                                       "-insert-symbols vsapi.so",
+                                       reply, errmsg);
+   if (status) {
+      _message_box("error = " :+ errmsg);
+      return status;
+   }
+   _message_box("result = " :+ reply);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Debugger_Functions.html">Debugger Functions</a></blockquote>
+</body>
+</html>

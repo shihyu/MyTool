@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>undo</title>
+</head>
+<body>
+
+<h3><b>_command typeless undo()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>If the current buffer allows more than 0 undoable steps, the last
+operation is undone.  Cursor movement, scrolling, editing, and
+selection changes are undoable.  Undo does not affect disk files.  To
+set the maximum number of undoable steps for the current buffer, use
+the <b>undo_steps</b> command.  To set the maximum number of
+undoable steps for files not yet loaded, use the <b>File
+Options</b>.</p><p>
+<p>If the current buffer has 0 undoable steps, the current line is restored to
+its original value before the cursor moved onto it.</p><p>
+<p>If def_undo_with_cursor is false, this behaves the
+same as undo_cursor.  This is because most emulations actually need
+undo_cursor, but we want the older funcitonality to be available.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="redo.html">redo</a>, <a href="undo_steps.html">undo_steps</a>, <a href="undo_cursor.html">undo_cursor</a></blockquote>
+</body>
+</html>

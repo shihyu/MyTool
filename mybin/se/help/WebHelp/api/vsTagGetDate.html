@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagGetDate</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTagGetDate(const char *pszFilename, char *pszDate=a, const char *pszIncludedBy=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve the date of tagging for the given file.
+The string returned by this function is structured
+such that consecutive dates are ordered lexicographically,
+and is reported in local time coordinates (YYYYMMDDHHMMSSmmm).
+This function has the side effect of positioning the file
+iterator on the given file name, and may be used to test
+for the existence of a file in the database.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFilename">pszFilename</A></code> - File path of source file to retrieve tagging date for.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszDate">pszDate</A></code> - (20 bytes, optional) Modification date of file when tagged.
+                        Format is YYYYMMDDHHMMSSmmm
+                        (year, month, day, hour, minute, second, ms)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszIncludedBy">pszIncludedBy</A></code> - File path of source file which includes pszFilename
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, < 0 on error, BT_RECORD_NOT_FOUND_RC if the file is not found.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

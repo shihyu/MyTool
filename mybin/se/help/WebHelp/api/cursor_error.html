@@ -1,0 +1,26 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>cursor_error</title>
+</head>
+<body>
+
+<h3><b>_command typeless cursor_error()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This command is typically invoked when the build window
+(created by the <b>start_process</b> command) is active, to process
+compiler error messages from within the editor.  However, it can also
+be used to edit a filename such as an include filename at the cursor.
+The current line is assumed to contain a filename and possibly a line
+and column number.  The cursor is placed on the line and column of file
+specified by the current line.  Otherwise the filename at or before the
+cursor is loaded for editing.  The search strategy for include files
+is as follows:
+<OL>
+<LI>Current directory.
+<LI>Same directory as current buffer.
+<LI>Include directories specified by current project.
+</OL><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful. Common return values are TOO_MANY_FILES_RC,
+TOO_MANY_SELECTIONS_RC, and FILE_NOT_FOUND_RC.  On error, message is displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="next_error.html">next_error</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_tree_set_user_info</title>
+</head>
+<body>
+
+<h3><b>void tag_tree_set_user_info(int tree_wid, int tree_index, int tag_file_id, int file_id, int line_no)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>This function sets the user data for the given node in the given
+tree calculated using the algorithm designed for the symbol browser,
+creating a (potentially) large integer that may be decomposed to
+reveal a tag file ID, file ID, and line number.
+<p>The formula used to compute the integer stored is as follows:
+<pre>
+    <i>tag_file_id</i> * CB_MAX_LINE_NUMBER * CB_MAX_FILE_NUMBER
+      + <i>file_id</i> * CB_MAX_LINE_NUMBER + line_no
+</pre>
+<p>In most cases, tag_file_id is 0, allowing the result to fit in a
+normal 32-bit unsigned integer providing that the file_id is
+sufficiently small.<p>
+<p>The tag_file_id, file_id, and line_no identify the tag file name
+and location in source code for the given tag.  This information,
+together with the name of the tag from the caption is normally
+adequate to uniquely identify a tag in a tag database.  The reason
+for encoding them into a single integer is simply for efficiency and
+space-savings.  If this information were stored and not encoded in
+this manner, a tree with 10,000 or more tags displayed would require
+megabytes of memory, whereas using this scheme it only requires a few
+hundred kilobytes, as well as mitigating memory fragmentation
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_wid">tree_wid</A></code> - Window ID of the tree control to set user info for</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_index">tree_index</A></code> - Parent tree node index of node in tree to set info at</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_file_id">tag_file_id</A></code> - Unique numeric ID for tag file, 0 for 'current' tag file.
+                  Each tag file displayed in the symbol browser is
+                  assigned a unique integer ID, simply numbering them
+                  sequentially. The need for the tag file ID stems
+                  from using the raw <i>file_id</i>, which only makes
+                  sense in the context of a particular tag file.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_id">file_id</A></code> - file ID from <a href="tag_get_detail.html">tag_get_detail</a> of item being added to tree (0 for current)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="line_no">line_no</A></code> - line number at which tag occurs
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_TreeSetUserInfo.html">_TreeSetUserInfo</a>, <a href="tag_get_detail.html">tag_get_detail</a>, <a href="tag_tree_insert_tag.html">tag_tree_insert_tag</a>, <a href="tag_tree_prepare_expand.html">tag_tree_prepare_expand</a></blockquote>
+</body>
+</html>

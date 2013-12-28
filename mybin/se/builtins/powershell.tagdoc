@@ -1,0 +1,2740 @@
+/**
+ * Contains the last token of the last line received by the shell.
+ */
+attr $$;
+
+/**
+ * Contains True if last operation succeeded and False otherwise.
+ */
+attr $?;
+
+/**
+ * Contains the first token of the last line received by the shell.
+ */
+attr $^;
+   
+/**
+ * Contains the current pipeline object, used in script blocks, filters, and the where statement.
+ */
+attr $_;
+
+/**
+ * False
+ */
+const $false;
+
+/**
+ * True
+ */
+const $true;
+   
+/**
+ * Contains an array of the parameters passed to a function.
+ */
+const $Args;
+   
+/**
+ * Specifies the action to take when data is written using Write-Debug in a script or WriteDebug in a cmdlet or provider.
+ */
+attr $DebugPreference;
+   
+/**
+ * Contains objects for which an error occurred while being processed in a cmdlet.
+ */
+const $Error;
+   
+/**
+ * Specifies the action to take when data is written using Write-Error in a script or WriteError in a cmdlet or provider.
+ */
+attr $ErrorActionPreference;
+   
+/**
+ * Refers to the enumerator in a foreach loop.
+ */
+const $foreach;
+   
+/**
+ * Specifies the user's home directory. Equivalent of %homedrive%%homepath%.
+ */
+const $Home;
+   
+/**
+ * Use in script blocks that are in the middle of a pipeline.
+ */
+attr $Input;
+   
+/**
+ * Contains the exit code of the last Win32 executable execution.
+ */
+const $LASTEXITCODE;
+   
+/**
+ * Contains the maximum number of aliases available to the session.
+ */
+attr $MaximumAliasCount;
+   
+/**
+ * Contains the maximum number of drives available, excluding those provided by the underlying operating system.
+ */
+attr $MaximumDriveCount;
+   
+/**
+ * Contains the maximum number of functions available to the session.
+ */
+attr $MaximumFunctionCount;
+   
+/**
+ * Specifies the maximum number of entries saved in the command history.
+ */
+attr $MaximumHistoryCount;
+   
+/**
+ * Contains the maximum number of variables available to the session.
+ */
+attr $MaximumVariableCount;
+   
+/**
+ * The directory where the Windows PowerShell is installed.
+ */
+const $PsHome;
+   
+/**
+ * Contains information about the current host.
+ */
+const $Host;
+   
+/**
+ * Output Field Separator, used when converting an array to a string.
+ */
+attr $OFS;
+   
+/**
+ * When set to TRUE, shows the class names of displayed exceptions.
+ */
+attr $ReportErrorShowExceptionClass;
+   
+/**
+ * When set to TRUE, shows the chain of inner exceptions.
+ */
+attr $ReportErrorShowInnerException;
+
+/**
+ * When set to TRUE, shows the assembly names of displayed exceptions.
+ */
+attr $ReportErrorShowSource;
+   
+/**
+ * When set to TRUE, emits the stack traces of exceptions.
+ */
+attr $ReportErrorShowStackTrace
+   
+/**
+ * Specifies the action to take when ShouldProcess is used in a cmdlet.
+ */
+attr $ShouldProcessPreference;
+   
+/**
+ * Value returned by ShouldPolicy
+ */
+attr $ShouldProcessReturnPreference;
+   
+/**
+ * Contains detailed stack trace information about the last error.
+ */
+attr $StackTrace;
+   
+/**
+ * Specifies the action to take when data is written using Write-Verbose in a script.
+ */
+attr $VerbosePreference;
+
+/**
+ * Specifies the action to take when data is written using Write-Warning in a script.
+ */
+attr $WarningPreference;
+
+/**
+ * Colors available for the output console's backgroundColor or foregroundColor
+ */
+enum ConsoleColor{
+   Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow,
+   Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
+};
+
+
+/**
+ * Adds content to the specified item(s).
+ * @param -path Specifies the path to the items that receive the additional content. Wildcards are permitted. If you specify multiple paths, use commas to separate the paths.
+ * @param -value Specifies the content to be added. Type a quoted string, such as "This data is for internal use only" or specify an object that contains content, such as the DateTime object that Get-Date generates. You cannot specify the contents of a file by typing its path, because the path is just a string, but you can use a Get-Content command to get the content and pass it to the Value parameter.
+ * @param -literalPath Specifies the path to the items that receive the additional content. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -include Adds only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -credential Uses a credential to validate access to the file. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Content
+ * @see  Set-Content
+ * @see  Clear-Content
+ * @see  Get-Item
+ */
+procedure Add-Content;
+
+
+/**
+ * Deletes the contents of a item, such as deleting the text from a file, but does not delete the item.
+ * @param -path Specifies the paths to the items from which content is deleted. Wildcards are permitted. The paths must be paths to items, not to containers. For example, you must specify a path to one more files, not a path to a directory. Wildcards are permitted. This parameter is required, but the parameter name ("-Path") is optional.
+ * @param -literalPath Specifies the paths to the items from which content is deleted. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -include Clears only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -credential Uses a credential to validate access to the file. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Content
+ * @see  Set-Content
+ * @see  Add-Content
+ * @see  Get-Item
+ */
+procedure Clear-Content;
+
+
+/**
+ * Deletes the contents of an item, but does not delete the item.
+ * @param -path Specifies the path to the items being cleared. Wildcards are permitted. This parameter is required, but the parameter name ("-Path") is optional.
+ * @param -literalPath Specifies the path to the items being cleared. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -include Clears only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -credential Uses a credential to validate access to the file. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Copy-Item
+ * @see  Get-Item
+ * @see  Invoke-Item
+ * @see  Move-Item
+ * @see  Set-Item
+ * @see  New-Item
+ * @see  Remove-Item
+ * @see  Rename-Item
+ */
+procedure Clear-Item;
+
+
+/**
+ * Deletes the value of a property but it does not delete the property. 
+ * @param -path Specifies the path to the property being cleared. Wildcards are permitted.
+ * @param -name Specifies the name of the property to be cleared, such as the name of a registry value. Wildcards are not permitted.
+ * @param -literalPath Specifies the path to the property being cleared. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -include Clears only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt" or "s*. Wildcards are permitted.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -credential Uses a credential to validate access to the file. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Copy-ItemProperty
+ * @see  New-ItemProperty
+ * @see  Move-ItemProperty
+ * @see  Rename-ItemProperty
+ * @see  Get-ItemProperty
+ * @see  New-ItemProperty
+ */
+procedure Clear-ItemProperty;
+
+
+/**
+ * Converts a path from a Windows PowerShell path to a Windows PowerShell provider path.
+ * @param -path Specifies the Windows PowerShell path to be converted.
+ * @param -literalPath Specifies the path to be converted. The value of -LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @see  Test-Path
+ * @see  Split-Path
+ * @see  Resolve-Path
+ * @see  Join-Path
+ */
+procedure Convert-Path;
+
+
+/**
+ * Copies an item from one location to another within a namespace.
+ * @param -path Specifies the path to the items to copy.
+ * @param -literalPath Specifies a path to the item. The value of -LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -destination Specifies the path to where the items are to be copied.
+ * @param -container Preserves container objects during the copy operation.
+ * @param -recurse Specifies a recursive copy.
+ * @param -force Allows cmdlet to override restrictions such as renaming existing files as long as security is not compromised.
+ * @param -include Specifies only those items upon which the cmdlet will act, excluding all others.
+ * @param -exclude Omits the specified items. Wildcards are permitted.
+ * @param -filter Specifies filter elements as required and supported by providers.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -credential The credential is used to validate access. If a PSCredential object obtained earlier using get-credential is supplied, it will be used as is. If a user name is supplied, there will be a prompt for a password.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Clear-Item
+ * @see  Get-Item
+ * @see  Invoke-Item
+ * @see  Move-Item
+ * @see  Set-Item
+ * @see  New-Item
+ * @see  Remove-Item
+ * @see  Rename-Item
+ */
+procedure Copy-Item;
+
+
+/**
+ * Copies a property and value from a specified location to another location.
+ * @param -path Specifies the path to the property to be copied.
+ * @param -destination Specifies the path to the destination location.
+ * @param -name Specifies the name of the property to be copied.
+ * @param -literalPath Specifies a path to the item property. The value of -LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -force Allows the cmdlet to override restrictions such as renaming existing files as long as security is not compromised.
+ * @param -include Specifies only those items upon which the cmdlet will act, excluding all others.
+ * @param -exclude Omits the specified items. Wildcards are permitted.
+ * @param -filter Specifies filter elements as required and supported by providers.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -credential The credential is used to validate access. If a PSCredential object, obtained earlier using get-credential is supplied, it will be used as is. If a user name is supplied, there will be a prompt for a password.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Clear-ItemProperty
+ * @see  New-ItemProperty
+ * @see  Move-ItemProperty
+ * @see  Rename-ItemProperty
+ * @see  Get-ItemProperty
+ * @see  Set-ItemProperty
+ */
+procedure Copy-ItemProperty;
+
+
+/**
+ * Gets the items and child items in one or more specified locations.
+ * @param -literalPath Specifies a path to one or more locations. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -path Specifies a path to one or more locations. Wildcards are permitted. The default location is the current directory (.).
+ * @param -include Retrieves only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted. The Include parameter is effective only when the command includes the Recurse parameter or the path leads to the contents of a directory, such as C:\Windows\*, where the wildcard character specifies the contents of the C:\Windows directory.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted. This parameter does not work properly in this cmdlet.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -name Retrieves only the names of the items in the locations. If you pipe the output of this command to another command, only the item names are sent.
+ * @param -recurse Gets the items in the specified locations and in all child items of the locations. Recurse works only when the path points to a container that has child items, such as C:\Windows or C:\Windows\*, and not when it points to items that do not have child items, such as C:\Windows\*.exe.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -codeSigningCert Retrieves only the certificates that have code signing authority. This parameter is valid only when using the Windows PowerShell Certificate provider. For more information, type "get-help about_provider" and "get-help about_signing".
+ * @see  Get-Item
+ * @see  Get-Alias
+ * @see  Get-Location
+ * @see  Get-Process
+ */
+procedure Get-ChildItem;
+
+
+/**
+ * Gets the content of the item at the specified location.
+ * @param -path Specifies the path to an item. Get-Content retrieves the content of the item. Wildcards are permitted. The parameter name ("-Path" or "-FilePath") is optional.
+ * @param -literalPath Specifies the path to an item. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -totalCount Specifies how many lines of content are retrieved. The default is -1 (all lines).
+ * @param -readCount Specifies how many lines of content are sent through the pipeline at a time. The default value, 0, sends all of the content at one time. This parameter does not change the content displayed, but it does affect the time it takes to display the content. As the value of ReadCount increases, the time it takes to return the first line increases, but the total time for the operation decreases. This can make a perceptible difference in very large items.
+ * @param -include Retrieves only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -credential Uses a credential to validate access to the file. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @param -encoding Specifies the type of character encoding used to display the content. This parameter works only with the Windows PowerShell FileSystem provider.
+ * @see  Add-Content
+ * @see  Set-Content
+ * @see  Clear-Content
+ */
+procedure Get-Content;
+
+
+/**
+ * Gets information about local event logs or the entries stored in those event logs.
+ * @param -logName Specifies the name of the log file from which to get events.
+ * @param -list Returns a list of all event logs, rather than the entries from a specific log.
+ * @param -asString Sends the output as strings instead of objects.
+ * @param -newest Gets the newest 'n' event log entries, where 'n' represents a numerical value for the newest entries in the eventlog. Event logs commonly contain tens of thousands of event log entries, or perhaps more, so consider using the -Newest parameter to limit the number of entries returned.
+ * @see  
+ */
+procedure Get-EventLog;
+
+
+/**
+ * Gets the item at the specified location.
+ * @param -path Specifies the path to an item. Get-Item gets the item at the specified location. Wildcards are permitted. This parameter is required, but the parameter name ("-Path") is optional. Use a dot (.) to specify the current location. Use the wildcard character (*) to specify the all items in the current location.
+ * @param -literalPath Specifies a path to the item. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -include Retrieves only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted. The Include parameter is effective only when the command includes the contents of a item, such as C:\Windows\*, where the wildcard character specifies the contents of the C:\Windows directory.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted. The Exclude parameter is effective only when the command includes the contents of a item, such as C:\Windows\*, where the wildcard character specifies the contents of the C:\Windows directory.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -credential Uses a credential to validate access to the file. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @see  Clear-Item
+ * @see  Copy-Item
+ * @see  Invoke-Item
+ * @see  Move-Item
+ * @see  Set-Item
+ * @see  New-Item
+ * @see  Remove-Item
+ * @see  Rename-Item
+ */
+procedure Get-Item;
+
+
+/**
+ * Retrieves the properties of a specified item.
+ * @param -path Specifies the path to the item or items.
+ * @param -literalPath Specifies a path to the item property. The value of -LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -name Specifies the name of the property or properties to retrieve.
+ * @param -include Includes the specified items.
+ * @param -exclude Omits the specified items. Wildcards are permitted.
+ * @param -filter Specifies a provider-specific filter.
+ * @param -credential Specifies the credential used to validate access. If a PSCredential object obtained earlier using get-credential is supplied, it will be used as is. If a user name is supplied, there will be a prompt for a password.
+ * @see  Set-ItemProperty
+ * @see  Clear-ItemProperty
+ * @see  Copy-ItemProperty
+ * @see  Move-ItemProperty
+ * @see  New-ItemProperty
+ * @see  Remove-ItemProperty
+ * @see  Rename-ItemProperty
+ */
+procedure Get-ItemProperty;
+
+
+/**
+ * Gets information about the current working location.
+ * @param -psProvider Outputs a PathInfo object representing the current working location for the specified providers.
+ * @param -psDrive Outputs a PathInfo object representing the current working location for the specified drives.
+ * @param -stack Outputs a StackInfo object representing the current stack.
+ * @param -stackName Outputs StackInfo objects representing the specified stacks.
+ * @see  Pop-Location
+ * @see  Push-Location
+ * @see  Set-Location
+ */
+procedure Get-Location;
+
+
+/**
+ * Gets the processes that are running on the local computer.
+ * @param -inputObject Accepts a process object as input to the cmdlet. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -id Specifies one or more processes by process ID (PID). To specify multiple IDs, use commas to separate the IDs. To find the PID of a process, type "get-process".
+ * @param -name Specifies one or more processes by process name. You can type multiple process names (separated by commas) or use wildcard characters. The parameter name ("-Name") is optional.
+ * @see  Stop-Process
+ */
+procedure Get-Process;
+
+
+/**
+ * Gets information about Windows PowerShell drives.
+ * @param -literalName Specifies the new of the item. The value of LiteralName is used exactly as it is typed. No characters are interpreted as wildcards. If the name includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -name Specifies the name of the Windows PowerShell drive about which to retrieve information. To specify multiple Windows PowerShell drives, separate them by using commas.
+ * @param -pSProvider This parameter returns the PSDriveInfo object for all of the drives exposed by the specified provider(s).
+ * @param -scope Specifies the scope within which to search for the specified Windows PowerShell drive.
+ * @see  New-PSDrive
+ * @see  Remove-PSDrive
+ * @see  Get-Help
+ * @see  Get-Command
+ * @see  Get-Member
+ */
+procedure Get-PSDrive;
+
+
+/**
+ * Gets information about the specified Windows PowerShell provider.
+ * @param -psProvider Specifies the name or names of the Windows PowerShell providers about which to retrieve information.
+ * @see  Get-PSDrive
+ */
+procedure Get-PSProvider;
+
+
+/**
+ * Gets the services on the local computer.
+ * @param -displayName Specifies the display names of services to be retrieved. Wildcards are permitted. By default, Get-Service gets all services on the computer.
+ * @param -name Specifies the service names of services to be retrieved. Wildcards are permitted. By default, Get-Service gets all of the services on the computer.
+ * @param -include Retrieves only the specified services. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -exclude Omits the specified services. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -inputObject Specifies the ServiceController objects to be retrieved. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @see  Resume-Service
+ * @see  Start-Service
+ * @see  Stop-Service
+ * @see  Restart-Service
+ * @see  Suspend-Service
+ * @see  Set-Service
+ * @see  New-Service
+ */
+procedure Get-Service;
+
+
+/**
+ * Gets instances of WMI classes or information about available classes.
+ * @param -class Specifies the name of a WMI class. When this parameter is used, the cmdlet retrieves instances of the WMI class.
+ * @param -query Specifies a WMI Query Language (WQL) statement to run. Event queries are not supported.
+ * @param -property Specifies the WMI class property or set of properties to retrieve.
+ * @param -namespace When used with the Class parameter, this parameter specifies the WMI repository namespace where the referenced WMI class is located. When used with the List parameter, it specifies the namespace from which to gather WMI class information.
+ * @param -computerName Specifies the computer or computers the cmdlet will run against. The cmdlet will retrieve WMI class information and instances of WMI classes from the WMI Service (CIMOM) on the specified computers. The name of each computer can be specified as a NETBIOS name, an IP address, or a fully-qualified domain name. In addition, you can specify the local computer by using the dot (.) character.
+ * @param -filter Specifies a where clause to use as a filter. Use the syntax of the WQL language. Do not include the where keyword in the value of the parameter.
+ * @param -credential Uses the specified credential to authenticate the user. You can type a user name or submit a credential object created by using Get-Credential. If you supply a user name, you will be prompted for a password.
+ * @param -list Used to indicate that the names of the WMI classes in the WMI repository namespace specified in the Namespace parameter should be retrieved and displayed. The Default Namespace registry entry, contained in the registry key HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WBEM\Scripting is not used by this cmdlet to determine the default namespace. If you specify the List parameter, but not the Namespace parameter, the root\CIMV2 namespace is used by default.
+ * @see  Get-Credential
+ */
+procedure Get-WmiObject;
+
+
+/**
+ * Invokes the provider-specific default action on the specified item.
+ * @param -path The path to the item or file that is the object of the Cmdlet.
+ * @param -literalPath Specifies a path to the item. The value of -LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -include Specifies only those items upon which the Cmdlet will act, excluding all others.
+ * @param -exclude Omits the specified items. Wildcards are permitted.
+ * @param -filter Specifies filter elements as required and supported by providers.
+ * @param -credential The credential is used to validate access. If a PSCredential object obtained earlier using get-credential is supplied, it will be used as is. If a user name is supplied, there will be a prompt for a password.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Clear-Item
+ * @see  Get-Item
+ * @see  Move-Item
+ * @see  Set-Item
+ * @see  New-Item
+ * @see  Remove-Item
+ * @see  Rename-Item
+ * @see  Copy-Item
+ */
+procedure Invoke-Item;
+
+
+/**
+ * Combines a path and child-path into a single path. The provider supplies the path delimiters.
+ * @param -path Specifies the main path (or paths) to which the child-path is appended. Wildcards are permitted. The value of Path determines which provider joins the paths and adds the path delimiters. The Path parameter is required, although the parameter name (-path) is optional.
+ * @param -childPath Specifies the elements to append to the value of Path. Wildcards are permitted. The ChildPath parameter is required, although the parameter name (-ChildPath) is optional.
+ * @param -resolve Displays the items that are referenced by the joined path.
+ * @param -credential Uses a credential to validate access to the resource. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @see  Test-Path
+ * @see  Split-Path
+ * @see  Resolve-Path
+ * @see  Convert-Path
+ */
+procedure Join-Path;
+
+
+/**
+ * Moves an item from one location to another.
+ * @param -path Specifies the path to the current location of the items. The default is the current directory. Wildcards are permitted.
+ * @param -literalPath Specifies the path to the current location of the items. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -destination Specifies the path to the location where the items are being moved. The default is the current directory. Wildcards are permitted, but the result must specify a single location. To rename the item being moved, specify a new name in the value of Destination.
+ * @param -include Moves only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -credential Uses a credential to validate access to the file. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Clear-Item
+ * @see  Get-Item
+ * @see  Invoke-Item
+ * @see  Set-Item
+ * @see  New-Item
+ * @see  Remove-Item
+ * @see  Rename-Item
+ * @see  Copy-Item
+ */
+procedure Move-Item;
+
+
+/**
+ * Moves a property from one location to another.
+ * @param -path Specifies the path to the current location of the property. Wildcards are permitted.
+ * @param -destination Specifies the path to the destination location.
+ * @param -name Specifies the name of the property to be moved.
+ * @param -literalPath Specifies the path to the current location of the property. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -include Moves only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -credential Uses a credential to validate access to the file. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Clear-ItemProperty
+ * @see  New-ItemProperty
+ * @see  Copy-ItemProperty
+ * @see  Rename-ItemProperty
+ * @see  Get-ItemProperty
+ * @see  Set-ItemProperty
+ * @see  Remove-ItemProperty
+ */
+procedure Move-ItemProperty;
+
+
+/**
+ * Creates a new item in a namespace.
+ * @param -path Specifies the path to the location of the new item. Wildcards are permitted.
+ * @param -name Specifies the name of the new item.
+ * @param -itemType Specifies the provider-specified type of the new item
+ * @param -value Specifies the value the new item.
+ * @param -force Allows Cmdlet to override restrictions such as renaming existing files as long as security is not compromised.
+ * @param -credential The credential is used to validate access. If a PSCredential object obtained by using get-credential is supplied, it will be used as is. If a user name is supplied, there will be a prompt for a password.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Item
+ * @see  Set-Item
+ * @see  Remove-Item
+ * @see  Clear-Item
+ * @see  Invoke-Item
+ * @see  Rename-Item
+ * @see  Move-Item
+ * @see  Copy-Item
+ */
+procedure New-Item;
+
+
+/**
+ * Sets a new property of an item at a location.
+ * @param -path The path of the item for which a new property is to be created.
+ * @param -name The name of the property to be created.
+ * @param -literalPath Specifies a path to the item property. The value of -LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -propertyType The Type of the property.
+ * @param -value The Value of the property.
+ * @param -include Specifies only those items upon which the cmdlet will act, excluding all others.
+ * @param -exclude Omits the specified items. Wildcards are permitted.
+ * @param -filter Specifies filter elements as required and supported by providers.
+ * @param -force Allows the cmdlet to override restrictions such as renaming existing files as long as security is not compromised.
+ * @param -credential The credential is used to validate access. If a PSCredential object, obtained earlier using get-credential is supplied, it will be used as is. If a user name is supplied, there will be a prompt for a password.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Clear-ItemProperty
+ * @see  Copy-ItemProperty
+ * @see  Move-ItemProperty
+ * @see  Rename-ItemProperty
+ * @see  Get-ItemProperty
+ * @see  Set-ItemProperty
+ * @see  Remove-ItemProperty
+ */
+procedure New-ItemProperty;
+
+
+/**
+ * Installs a new WIndows PowerShell drive.
+ * @param -name The name of the drive being added.
+ * @param -psProvider The name of the specific provider.
+ * @param -root The provider internal root or path for the drive being added.
+ * @param -description A short description of the drive.
+ * @param -scope Accepts an index used to identify the scope where the drive will be installed.
+ * @param -credential The credential is used to validate access. If a PSCredential object, obtained earlier using get-credential is supplied, it will be used as is. If a user name is supplied, there will be a prompt for a password.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-PSDrive
+ * @see  Remove-PSDrive
+ */
+procedure New-PSDrive;
+
+
+/**
+ * Creates a new entry for a Windows Service in the registry and the Service Database.
+ * @param -name Specifies the name of the service.
+ * @param -binaryPathName Specifies the path to the executable file for the service.
+ * @param -displayName Specifies the display name for the service.
+ * @param -description Specifies a description of the service.
+ * @param -startupType Sets the startup type of the service.
+ * @param -credential Specifies the credential the service will start under.
+ * @param -dependsOn Names of other services upon which the new service depends. Separate multiple service names by using a comma.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Service
+ * @see  Start-Service
+ * @see  Stop-Service
+ * @see  Restart-Service
+ * @see  Resume-Service
+ * @see  Set-Service
+ * @see  Suspend-Service
+ */
+procedure New-Service;
+
+
+/**
+ * Changes the current location to the location most recently pushed onto the stack. You can pop the location from the default stack or from a stack that you create by using Push-Location.
+ * @param -stackName Specifies an alternate stack. Pop-Location pops the most recently added location from this stack. This stack now becomes the current stack.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @see  Push-Location
+ * @see  Set-Location
+ * @see  Get-Location
+ */
+procedure Pop-Location;
+
+
+/**
+ * Pushes the current location onto the stack.
+ * @param -path Changes your location to the location specified by this path after it adds (pushes) the current location onto the top of the stack. Enter a path to any location whose provider supports this cmdlet. Wildcards are permitted. The parameter name ("-Path") is optional.
+ * @param -stackName Specifies the name of a stack. The current location is pushed onto this stack, and this stack becomes the current stack. If the stack does not yet exist, it is created.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -literalPath Specifies the path to the new location. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @see  Pop-Location
+ * @see  Set-Location
+ * @see  Get-Location
+ */
+procedure Push-Location;
+
+
+/**
+ * Deletes the specified items.
+ * @param -path Specifies a path to the items being removed. Wildcards are permitted. The parameter name ("-Path") is optional.
+ * @param -literalPath Specifies a path to the items being removed. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -recurse Deletes the items in the specified locations and in all child items of the locations. The Recurse parameter in this cmdlet does not work properly.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -include Deletes only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt".Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -credential Uses a credential to validate access to the file. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Item
+ * @see  Copy-Item
+ * @see  Move-Item
+ * @see  New-Item
+ * @see  Rename-Item
+ * @see  Set-Item
+ * @see  Clear-Item
+ * @see  Invoke-Item
+ */
+procedure Remove-Item;
+
+
+/**
+ * Deletes the property and its value from an item.
+ * @param -path Specifies the path to the item whose properties are being removed. Wildcards are permitted.
+ * @param -name Specifies the names of the properties to be retrieved.
+ * @param -literalPath Specifies a path to the item property. The value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -include Deletes only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -credential Uses a credential to validate access to the file. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Set-ItemProperty
+ * @see  Clear-ItemProperty
+ * @see  Copy-ItemProperty
+ * @see  Move-ItemProperty
+ * @see  New-ItemProperty
+ * @see  Get-ItemProperty
+ * @see  Rename-ItemProperty
+ */
+procedure Remove-ItemProperty;
+
+
+/**
+ * Removes a Windows PowerShell drive from its location.
+ * @param -name Specifies the names of the Windows PowerShell drives to remove.
+ * @param -literalName 
+ * @param -psProvider Specifies the names of the Windows PowerShell providers. All drives associated with the provider will be removed.
+ * @param -scope Accepts an index used to identify the scope where the drive will be installed.
+ * @param -force Allows Cmdlet to override restrictions such as renaming existing files as long as security is not compromised.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-PSDrive
+ * @see  New-PSDrive
+ */
+procedure Remove-PSDrive;
+
+
+/**
+ * Renames an item in a Windows PowerShell provider namespace.
+ * @param -path Specifies the path to the item to rename.
+ * @param -newName Specifies the new name of the item.
+ * @param -force Allows the cmdlet to override restrictions to renaming files as long as security is not compromised.
+ * @param -passThru Passes the object created by this cmdlet along the pipeline. By default, this cmdlet does not pass objects along the pipeline.
+ * @param -credential Uses a credential to validate access. You can specify a PSCredential object obtained by using get-credential or, if a user name is supplied, you will be prompted for a password.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Clear-Item
+ * @see  Invoke-Item
+ * @see  Move-Item
+ * @see  Set-Item
+ * @see  New-Item
+ * @see  Remove-Item
+ * @see  Get-Item
+ * @see  Copy-Item
+ */
+procedure Rename-Item;
+
+
+/**
+ * Renames a property of an item.
+ * @param -path Specifies the path to the item to be renamed.
+ * @param -name Specifies the current name of the property to be renamed.
+ * @param -newName Specifies the new name for the property.
+ * @param -literalPath Specifies a path to the item property. The value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -force Allows cmdlet to override restrictions such as renaming existing files as long as security is not compromised.
+ * @param -credential The credential is used to validate access. If a PSCredential object, obtained earlier using get-credential is supplied, it will be used as is. If a user name is supplied, there will be a prompt for a password.
+ * @param -include Specifies only those items upon which the cmdlet will act, excluding all others.
+ * @param -exclude Omits the specified items. Wildcards are permitted.
+ * @param -filter Specifies filter elements as required and supported by providers.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Set-ItemProperty
+ * @see  Clear-ItemProperty
+ * @see  Copy-ItemProperty
+ * @see  Move-ItemProperty
+ * @see  New-ItemProperty
+ * @see  Get-ItemProperty
+ * @see  Remove-ItemProperty
+ */
+procedure Rename-ItemProperty;
+
+
+/**
+ * Resolves the wildcard characters in a path and displays the path contents.
+ * @param -path Specifies the Windows PowerShell path to resolve.
+ * @param -literalPath Specifies the path to be resolved. The value of -LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -credential Uses a credential to validate access to the resource. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @see  Test-Path
+ * @see  Split-Path
+ * @see  Convert-Path
+ * @see  Join-Path
+ */
+procedure Resolve-Path;
+
+
+/**
+ * Stops and then starts one or more services.
+ * @param -name Specifies the service names of services to be restarted.
+ * @param -displayName Specifies the display names of services to be restarted. Wildcards are permitted.
+ * @param -include Restarts only the specified services. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -exclude Omits the specified services. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -passthru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -inputObject Restarts the services represented by the specified ServiceController objects. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will stop and restart a service that has dependent services.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Start-Service
+ * @see  Stop-Service
+ * @see  Suspend-Service
+ * @see  Resume-Service
+ * @see  New-Service
+ * @see  Get-Service
+ * @see  Set-Service
+ */
+procedure Restart-Service;
+
+
+/**
+ * Resumes one or more suspended (paused) services.
+ * @param -name Specifies the service names of the services to be resumed. The parameter name is optional. You can use "-Name" or its alias, "-ServiceName", or you can omit the parameter name.
+ * @param -displayName Specifies the display names of the services to be resumed. Wildcards are permitted.
+ * @param -include Resumes only the specified services. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -exclude Omits the specified services. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -passthru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -inputObject Resumes the services represented by the specified ServiceController objects. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Service
+ * @see  Start-Service
+ * @see  Stop-Service
+ * @see  Restart-Service
+ * @see  Suspend-Service
+ * @see  Set-Service
+ * @see  New-Service
+ */
+procedure Resume-Service;
+
+
+/**
+ * Writes or replaces the content in an item with new content.
+ * @param -path Specifies the path to the item that will receive the content. Wildcards are permitted.
+ * @param -value Specifies the new content for the item.
+ * @param -literalPath Specifies the path to the item that will receive the content. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -include Changes only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -credential Uses a credential to validate access to the file. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Add-Content
+ * @see  Get-Content
+ * @see  Clear-Content
+ */
+procedure Set-Content;
+
+
+/**
+ * Changes the value of an item to the value specified in the command.
+ * @param -path Specifies a path to the location of the new items. Wildcards are permitted.
+ * @param -literalPath Specifies a path to the location of the new items. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -value Specifies a new value for the item.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -include Changes only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -credential Uses a credential to validate access to the file. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Item
+ * @see  New-Item
+ * @see  Remove-Item
+ * @see  Clear-Item
+ * @see  Invoke-Item
+ * @see  Rename-Item
+ * @see  Move-Item
+ * @see  Copy-Item
+ */
+procedure Set-Item;
+
+
+/**
+ * Sets the value of a property at the specified location.
+ * @param -path Specifies the path to the items with the property to be set.
+ * @param -inputObject Specifies the name of the properties to set.
+ * @param -name Specfies the name of the property.
+ * @param -value Specifies the value of the property.
+ * @param -literalPath Specifies a path to the item property. The value of -LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -include Specifies only those items upon which the cmdlet will act, excluding all others.
+ * @param -exclude Specifies those items upon which the cmdlet is not to act and include all others.
+ * @param -filter Specifies filter elements as required and supported by providers.
+ * @param -force Allows cmdlet to override restrictions such as renaming existing files as long as security is not compromised.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -credential The credential is used to validate access. If a PSCredential object obtained earlier using get-credential is supplied, it will be used as is. If a user name is supplied, there will be a prompt for a password.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-ItemProperty
+ * @see  New-ItemProperty
+ * @see  Clear-ItemProperty
+ * @see  Remove-ItemProperty
+ * @see  Rename-ItemProperty
+ * @see  Move-ItemProperty
+ * @see  Copy-ItemProperty
+ */
+procedure Set-ItemProperty;
+
+
+/**
+ * Sets the current working location to a specified location.
+ * @param -literalPath Specifies a path to the location. The value of -LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -path This parameter is used to specify the path to a new working location.
+ * @param -stackName The name of the stack to which the location is being set.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @see  Get-Location
+ * @see  Pop-Location
+ * @see  Push-Location
+ */
+procedure Set-Location;
+
+
+/**
+ * Changes the display name, description, or starting mode of a service.
+ * @param -name Specifies the service names of the services to be changed. Wildcards are permitted. The parameter name is optional. You can use "-Name" or its alias, "-ServiceName", or you can omit the parameter name.
+ * @param -displayName Specifies a new display name for the cmdlet.
+ * @param -description Specifies a new description for the service. The service description appears in Services in Computer Management. Description is not a property of the ServiceController object that Get-Service retrieves, but the Win32_Service WMI class includes a description property. To retrieve instances of that class, use the Get-WMIObject cmdlet.
+ * @param -startupType Changes the starting mode of the service. Valid values for StartupType are: -- Automatic: Start when the system starts. -- Manual : Starts only when started by a user or program. -- Disabled : Cannot be started.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Service
+ * @see  Start-Service
+ * @see  Stop-Service
+ * @see  Restart-Service
+ * @see  Resume-Service
+ * @see  Suspend-Service
+ * @see  New-Service
+ */
+procedure Set-Service;
+
+
+/**
+ * Returns the specified part of a path.
+ * @param -path Specifies the paths to be split. Wildcards are permitted. If the path includes spaces, enclose it in quotation marks.
+ * @param -qualifier Returns only the qualifier of the specified path. For the FileSystem or registry providers, the qualifier is the drive of the provider path, such as C: or HKCU:.
+ * @param -parent Returns only the parent containers of the item or container specified by the path. For example, in the path "C:\Test\Logs\Pass1.log", it returns "C:\Test\Logs". Parent is the default split location parameter.
+ * @param -leaf Returns only the last item or container in the path. For example, in the path "C:\Test\Logs\Pass1.log", it returns only "Pass1.log".
+ * @param -noQualifier Returns the path without the qualifier. For the FileSystem or registry providers, the qualifier is the drive of the provider path, such as C: or HKCU:. For example, in the path "C:\Test\Logs\Pass1.log", it returns only "\Test\Logs\Pass1.log".
+ * @param -isAbsolute Returns TRUE if the path is absolute and FALSE if it is relative. An absolute path has a length greater than zero and does not use "." to indicate the current path.
+ * @param -resolve Displays the items that are referenced by the path that remains after the split.
+ * @param -credential Uses a credential to validate access to the resource. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @param -literalPath Specifies the paths to be split. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @see  Test-Path
+ * @see  Convert-Path
+ * @see  Resolve-Path
+ * @see  Join-Path
+ */
+procedure Split-Path;
+
+
+/**
+ * Starts one or more stopped services.
+ * @param -name Specifies the service names for the service to be started. The parameter name is optional. You can use "-Name" or its alias, "-ServiceName", or you can omit the parameter name.
+ * @param -displayName Specifies the display names of the services to be started. Wildcards are permitted.
+ * @param -include Starts only the specified services. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -exclude Omits the specified services. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -passthru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -inputObject Starts the services represented by the specified ServiceController objects. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Service
+ * @see  Suspend-Service
+ * @see  Stop-Service
+ * @see  Restart-Service
+ * @see  Resume-Service
+ * @see  Set-Service
+ * @see  New-Service
+ */
+procedure Start-Service;
+
+
+/**
+ * Stops one or more running processes.
+ * @param -id Specifies the process IDs of the processes to be stopped. To specify multiple IDs, use commas to separate the IDs. To find the PID of a process, type "get-process". The parameter name ("-Id") is optional.
+ * @param -inputObject Stops the processes represented by the specified process objects. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -name Specifies the process names of the processes to be stopped. You can type multiple process names (separated by commas) or use wildcard characters.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Process, Start-Process
+ */
+procedure Stop-Process;
+
+
+/**
+ * Stops one or more running services.
+ * @param -name Specifies the service names of the services to be stopped. Wildcards are permitted. The parameter name is optional. You can use "-Name" or its alias, "-ServiceName", or you can omit the parameter name.
+ * @param -displayName Specifies the display names of the services to be stopped. Wildcards are permitted.
+ * @param -include Stops only the specified services. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -exclude Omits the specified services. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will stop a service that has dependent services.
+ * @param -passthru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -inputObject Stops the services represented by the specified ServiceController objects. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Service
+ * @see  Suspend-Service
+ * @see  Start-Service
+ * @see  Restart-Service
+ * @see  Resume-Service
+ * @see  Set-Service
+ * @see  New-Service
+ */
+procedure Stop-Service;
+
+
+/**
+ * Suspends (pauses) one or more running services.
+ * @param -name Specifies the service names of the services to be stopped. Wildcards are permitted. The parameter name is optional. You can use "-Name" or its alias, "-ServiceName", or you can omit the parameter name.
+ * @param -displayName Specifies the display names of the services to be suspended. Wildcards are permitted.
+ * @param -include Suspends only the specified services. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -exclude Omits the specified services. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -passthru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -inputObject Suspends the services represented by the specified ServiceController objects. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Service
+ * @see  Start-Service
+ * @see  Stop-Service
+ * @see  Restart-Service
+ * @see  Resume-Service
+ * @see  Set-Service
+ * @see  New-Service
+ */
+procedure Suspend-Service;
+
+
+/**
+ * Determines whether all elements of a path exist.
+ * @param -path Specifies a path to be tested. Wildcards are permitted. If the path includes spaces, enclose it in quotation marks. The parameter name ("-Path") is optional.
+ * @param -literalPath Specifies a path to be tested. Unlike Path, the value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+ * @param -pathType Determines the type of element that the path locates. Returns TRUE if the element is of the specified type and FALSE if it is not. Valid values are: -- Container: An element that contains other elements, such as a directory or registry key. -- Leaf: An element that does not contain other elements, such as a file or registry entry. -- Any: Either a container or a leaf.
+ * @param -isValid Determines whether the syntax of the path is correct, regardless of whether the elements of the path exist. Returns TRUE if the path syntax is valid; FALSE if it is not.
+ * @param -include Tests only the specified paths. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -credential Uses a credential to validate access to the resource. <Credential> represents a user-name, such as "User01" or "Domain01\User01", or a PSCredential object, such as the one retrieved by using the Get-Credential cmdlet. If you type a user name, you will be prompted for a password. This parameter appears, but it is not supported in any Windows PowerShell core cmdlets or providers.
+ * @see  Convert-Path
+ * @see  Split-Path
+ * @see  Resolve-Path
+ * @see  Join-Path
+ */
+procedure Test-Path;
+
+
+
+
+/**
+ * Creates a record of all or part of a Windows PowerShell session in a text file.
+ * @param -path Specifies a location for the transcript file. Enter a path to a .txt file. Wildcards are not permitted. If you do not specify a path, Start-Transcript uses the path in the value of the $Transcript global variable. If you have not created this variable, Start-Transcript stores the transcripts in the $Home\My Documents directory as \PowerShell_transcript.<time-stamp>.txt files. If any of the directories in the path do not exist, the command fails.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -noClobber Will not overwrite (replace the contents) of an existing file. By default, if a transcript file exists in the specified path, Start-Transcript overwrites the file without warning.
+ * @param -append Adds the new transcript to the end of an existing file. Use the Path parameter to specify the file.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Stop-Transcript
+ */
+procedure Start-Transcript;
+
+
+/**
+ * Stops a transcript.
+ * @see  Start-Transcript
+ */
+procedure Stop-Transcript;
+
+
+
+
+/**
+ * Adds a user-defined custom member to an instance of a Windows PowerShell object. 
+ * @param -inputObject Specifies the object to which the new member is added. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -memberType Specifies the type of the member to add. The valid values for this parameter are: AliasProperty, CodeProperty, NoteProperty, ScriptProperty, PropertySet, CodeMethod, MemberSet and ScriptMethod.
+ * @param -name Specifies the name of the member to be added. If you omit the "-Name" parameter name, the value of the -Name parameter must be the second unnamed parameter value in the command. If you include the parameter name, the parameters can appear in any order.
+ * @param -value Specifies the initial value of the added member. If you add an AliasProperty, CodeProperty or CodeMethod member, you can supply optional, additional information by using the SecondValue parameter.
+ * @param -secondValue Specifies optional additional information about AliasProperty, ScriptProperty, CodeProperty or CodeMethod members. If used when adding an AliasProperty, this parameter must be a data type. A conversion (cast) to the specified data type is added to the value of the AliasProperty. For example, if you add an AliasProperty that provides an alternate name for a string property, you can also specify a SecondValue of System.Int32 to indicate that the value of that string property should be converted to an integer when accessed by using the corresponding AliasProperty. You can use the SecondValue parameter to specify an additional ScriptBlock when adding a ScriptProperty member. In that case, the first ScriptBlock, specified in the Value parameter, is used to get the value of a variable and the second ScriptBlock, specified in the SecondValue parameter, is used to set the value of a variable.
+ * @param -force Adds a new member even if one with the same name already exists. Does not work for core members of a type.
+ * @param -passThru Passes the newly-extended object created by this cmdlet along the pipeline. By default, this cmdlet does not pass any objects along the pipeline.
+ * @see  Get-Member
+ * @see  Export-CLIXML
+ * @see  Import-CLIXML
+ */
+procedure Add-Member;
+
+
+/**
+ * Deletes the value of a variable.
+ * @param -name Specifies the name of the variable to be cleared. Wildcards are permitted. This parameter is required, but the parameter name ("-Name") is optional.
+ * @param -include Clears only the specified items. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -scope Specifies the scope in which this alias is valid. Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent). "Local" is the default. For more information, type "get-help about_scope".
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Variable
+ * @see  Set-Variable
+ * @see  New-Variable
+ * @see  Remove-Variable
+ */
+procedure Clear-Variable;
+
+
+/**
+ * Compares two sets of objects.
+ * @param -referenceObject Objects used as a reference for comparison.
+ * @param -differenceObject Objects to compare to those specified as reference objects.
+ * @param -syncWindow Defines a search region where an attempt is made to re-sync the order if there is no match.
+ * @param -property Specifies the properties of the reference and difference objects to compare.
+ * @param -caseSensitive  Indicates that comparisons should be case-sensitive.
+ * @param -culture  Specifies the culture to use for comparisons.
+ * @param -excludeDifferent  Displays only the characteristics of compared objects that are equal.
+ * @param -includeEqual  Displays characteristics of compared objects that are equal. By default, only characteristics that differ between the reference and difference object are displayed.
+ * @param -passThru  Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @see  Group-Object
+ * @see  Measure-Object
+ * @see  Sort-Object
+ * @see  ForEach-Object
+ * @see  New-Object
+ * @see  Select-Object
+ * @see  Tee-Object
+ * @see  Where-Object
+ */
+procedure Compare-Object;
+
+
+/**
+ * Creates an HTML page that represents an object or a set of objects.
+ * @param -inputObject Specifies the objects to represent as an HTML table. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -property Specifies the properties of the input object to represent within the HTML table.
+ * @param -body Specifies the text to include within the <body> element of the HTML output.
+ * @param -head Specifies the text to include within the <head> element of the HTML output.
+ * @param -title Specifies the text to include within the <title> element of the HTML output.
+ * @see  Export-Clixml
+ * @see  Export-Csv
+ */
+procedure ConvertTo-Html;
+
+
+/**
+ * Exports information about currently-defined aliases to a file.
+ * @param -path Specifies the path to the file in which to store alias information. You can use wildcards, but the resulting path value must resolve to a single file name.
+ * @param -name Specifies the names of the aliases to export. To enter multiple alias names, separate them by using commas. If you do not specify an alias name or names, the cmdlet exports information about all of the current aliases.
+ * @param -passThru Indicates that the object created by this cmdlet should be passed along the pipeline. By default, this cmdlet does not pass any objects along the pipeline.
+ * @param -as Determines whether the aliases are output in comma-separated value (CSV) format or in script (Script) format.
+ * @param -append Appends the output to the specified file, rather than overwriting the existing contents of that file.
+ * @param -description Enables you to add a description to the exported file. The description appears at the top of the file, following the header information. It is preceded by a # symbol.
+ * @param -scope Specifies the scope from which the aliases should be exported. This can be a named scope like "global", "local", or "script"; or it can be a number that indicates the level of scope to include in the export. A scope value of 0 indicates the current scope and increasing the value by 1 indicates that the scope should be the parent scope of the current scope.
+ * @param -force Forces the cmdlet to clear the read-only attribute of the output file if it is set. After the command is complete, the read-only attribute will be reset if possible.
+ * @param -noClobber Ensures that the cmdlet cannot overwrite an existing file. If the NoClobber parameter is not specified, Export-Alias overwrites the specified export file without warning. If both Append and NoClobber are specified, the output is appended to the existing file.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Import-Alias
+ * @see  Get-Alias
+ * @see  New-Alias
+ * @see  Set-Alias
+ */
+procedure Export-Alias;
+
+
+/**
+ * Creates an XML-based representation of an object or objects and stores it in a file.
+ * @param -path Specifies the path to the file where the XML representation of the object will be stored.
+ * @param -inputObject Specifies the object to be converted. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -depth Specifies how many levels of contained objects should be included in the XML representation. The object being exported might have properties that are themselves objects. If you want to save an XML representation of the properties of those contained objects, you must specify a depth of 2. The contained object may itself include properties that are objects. To save a representation of the properties of those objects you will have to increase the depth to 3 and so on. If the object being exported has a type-specific depth specified in the *.types.psxml files, it will be used if you do not specify the Depth parameter.
+ * @param -force Causes the cmdlet to clear the read-only attribute of the output file if necessary. The cmdlet will attempt to reset the read-only attribute when the command completes.
+ * @param -encoding Specifies the type of encoding for the target file. Valid values are: ASCII, UTF8, UTF7, UTF32, Unicode, BigEndianUnicode, Default, and OEM.
+ * @param -noClobber Ensures that the cmdlet does not overwrite the contents of an existing file. By default, if a file exists in the specified path, Export-Clixml overwrites the file without warning.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Import-Clixml
+ * @see  Export-Csv
+ * @see  ConvertTo-Html
+ */
+procedure Export-Clixml;
+
+
+/**
+ * Creates a comma-separated values (CSV) file that represents the input objects. 
+ * @param -path Specifies the path to the CSV to create.
+ * @param -inputObject Accepts objects that the cmdlet will represents as a CSV file. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -force Overwrites the file specified in path without prompting.
+ * @param -encoding Sets the type of encoding for the exported CSV file. Values can be: Unicode, UTF7, UTF8, ASCII.
+ * @param -noTypeInformation Omits the #TYPE header from the CSV file. If this parameter is not specified, the first line of the CSV file contains the string "#TYPE " followed by the fully-qualified name of the type of the object. If this parameter is specified, no type information is included in the CSV file.
+ * @param -noClobber Will not overwrite (replace the contents) of an existing file. By default, if a file exists in the specified path, Export-Csv overwrites the file without warning.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Import-Csv
+ * @see  Export-Clixml
+ * @see  ConvertTo-Html
+ */
+procedure Export-Csv;
+
+
+/**
+ * Uses a customized view to format the output.
+ * @param -property Specifies the object properties that appear in the display and the order in which they appear. Wildcards are permitted. If you omit this parameter, the properties that appear in the display depend on the object being displayed. The parameter name ("-Property") is optional. You cannot use the Property and View parameters in the same command.
+ * @param -inputObject Specifies the objects to be formatted. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -view Specifies the name of an alternate format or "view." If you omit this parameter, Format-Custom uses a default custom view. You cannot use the Property and View parameters in the same command.
+ * @param -groupBy Formats the output in groups based on a shared property or value. Enter an expression or a property of the output.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -expand Formats the collection object, as well as the objects in the collection. This parameter is designed to format objects that support the ICollection (System.Collections) interface. Valid values are: -- Enum (default): Displays the properties of the objects in the collection. -- Core: Displays the properties of the collection object. -- Both: Displays the properties of the collection object and the properties of objects in the collection.
+ * @param -displayError Displays errors at the command line.
+ * @param -showError Sends errors through the pipeline.
+ * @param -depth Specifies the number of columns in the display.
+ * @see  Format-List
+ * @see  Format-Wide
+ * @see  Format-Table
+ */
+procedure Format-Custom;
+
+
+/**
+ * Formats the output as a list of properties in which each property appears on a new line.
+ * @param -property Specifies the object properties that appear in the display and the order in which they appear. Wildcards are permitted. If you omit this parameter, the properties that appear in the display depend on the object being displayed. The parameter name ("-Property") is optional. You cannot use the Property and View parameters in the same command.
+ * @param -view Specifies the name of an alternate list format or "view." You cannot use the Property and View parameters in the same command.
+ * @param -groupBy Formats the output in groups based on a shared property or value. Enter an expression or a property of the output.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -inputObject Specifies the objects to be formatted. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -expand Formats the collection object, as well as the objects in the collection. This parameter is designed to format objects that support the ICollection (System.Collections) interface. Valid values are: -- Enum (default): Displays the properties of the objects in the collection. -- Core: Displays the properties of the collection object. -- Both: Displays the properties of the collection object and the properties of objects in the collection.
+ * @param -displayError Displays errors at the command line.
+ * @param -showError Sends errors through the pipeline.
+ * @see  Format-Custom
+ * @see  Format-Table
+ * @see  Format-Wide
+ * @see  Out-Host
+ * @see  Out-File
+ */
+procedure Format-List;
+
+
+/**
+ * Formats the output as a table.
+ * @param -property Specifies the object properties that appear in the display and the order in which they appear. Wildcards are permitted. If you omit this parameter, the properties that appear in the display depend on the object being displayed. The parameter name ("-Property") is optional. You cannot use the Property and View parameters in the same command.
+ * @param -autosize Adjusts the column size and number of columns based on the width of the data. By default, the column size and number are determined by the view.
+ * @param -hideTableHeaders Omits the column headings from the table.
+ * @param -groupBy Formats the output in groups based on a shared property or value. Enter an expression or a property of the output.
+ * @param -wrap Displays text that exceeds the column width on the next line. By default, text that exceeds the column width is truncated.
+ * @param -view Specifies the name of an alternate table format or "view." You cannot use the Property and View parameters in the same command.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -inputObject Specifies the objects to be formatted. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -expand Formats the collection object, as well as the objects in the collection. This parameter is designed to format objects that support the ICollection (System.Collections) interface. Valid values are: -- Enum (default): Displays the properties of the objects in the collection. -- Core: Displays the properties of the collection object. -- Both: Displays the properties of the collection object and the properties of objects in the collection.
+ * @param -displayError Displays errors at the command line.
+ * @param -showError Sends errors through the pipeline.
+ * @see  Format-Custom
+ * @see  Format-List
+ * @see  Format-Wide
+ * @see  Out-Host
+ * @see  Out-File
+ */
+procedure Format-Table;
+
+
+/**
+ * Formats objects as a wide table that displays only one property of each object.
+ * @param -property Specifies the object properties that appear in the display and the order in which they appear. Wildcards are permitted. If you omit this parameter, the properties that appear in the display depend on the object being displayed. The parameter name ("-Property") is optional. You cannot use the Property and View parameters in the same command.
+ * @param -autosize Adjusts the column size and number of columns based on the width of the data. By default, the column size and number are determined by the view. You cannot use the Autosize and Column parameters in the same command.
+ * @param -column Specifies the number of columns in the display. You cannot use the Autosize and Column parameters in the same command.
+ * @param -groupBy Formats the output in groups based on a shared property or value. Enter an expression or a property of the output.
+ * @param -view Specifies the name of an alternate table format or "view." You cannot use the Property and View parameters in the same command.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -inputObject Specifies the objects to be formatted. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -expand Formats the collection object, as well as the objects in the collection. This parameter is designed to format objects that support the ICollection (System.Collections) interface. Valid values are: -- Enum (default): Displays the properties of the objects in the collection. -- Core: Displays the properties of the collection object. -- Both: Displays the properties of the collection object and the properties of objects in the collection.
+ * @param -displayError Displays errors at the command line.
+ * @param -showError Sends errors through the pipeline.
+ * @see  Format-Custom
+ * @see  Format-Table
+ * @see  Format-List
+ * @see  Out-Host
+ * @see  Out-File
+ */
+procedure Format-Wide;
+
+
+/**
+ * Gets the aliases for the current session.
+ * @param -name Specifies the alias to retrieve. By default, Get-Alias retrieves all aliases defined for the current session. The parameter name ("-Name") is optional.
+ * @param -scope Specifies the scope in which this alias is valid. Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent). "Local" is the default. For more information, type "get-help about_scope".
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @see  Set-Alias
+ * @see  New-Alias
+ * @see  Export-Alias
+ * @see  Import-Alias
+ */
+procedure Get-Alias;
+
+
+/**
+ * Gets information about the regional settings on a computer.
+ * @see  Get-UICulture
+ */
+procedure Get-Culture;
+
+
+/**
+ * Gets the current date and time.
+ * @param -date Specifies a date and time. By default, Get-Date gets the current system date and time.
+ * @param -displayHint Determines which elements of the date and time are displayed. (This does not affect the DateTime object that Get-Date retrieves.) Valid values are: -- date: displays only the date -- time: displays only the time -- datetime: displays the date and time
+ * @param -format Displays the date and time in the .NET format indicated by the format specifier. <String> represents the format specifier. For a list of available format specifiers, see the System.Globalization.DateTimeFormatInfo Class topic in MSDN. When you use -format, Windows PowerShell retrieves only the properties of the DateTime object that it needs to display the date in the format that you specify. As a result, some properties and methods of DateTime objects might not be available.
+ * @param -uFormat Displays the date and time in Unix format. For a list of the format specifiers, see Additional Notes. When you use -uformat, Windows PowerShell retrieves only the properties of the DateTime object that it needs to display the date in the format that you specify. As a result, some properties and methods of DateTime objects might not be available.
+ * @param -year Specifies the year that is displayed. Enter a value from 1 - 9999. This value is displayed instead of the current year.
+ * @param -month Specifies the month that is displayed. Enter a value from 1 - 12. This value is displayed instead of the current month.
+ * @param -day Specifies the day of the month that is displayed. Enter a value from 1 - 31. This value is displayed instead of the current day. If you specify a value that is greater than the number of days in the month, Windows PowerShell adds the number of days to the month and displays the result. For example, "get-date -month 2 -day 31" displays "March 3", not "February 31".
+ * @param -hour Specifies the hour that is displayed. Enter a value from 1 - 23. This value is displayed instead of the current hour.
+ * @param -minute Specifies the minute that is displayed. Enter a value from 1 - 59. This value is displayed instead of the current minute.
+ * @param -second Specifies the second that is displayed. Enter a value from 1 - 59. This value is displayed instead of the current second.
+ * @see  Set-Date
+ * @see  New-TimeSpan
+ */
+procedure Get-Date;
+
+
+/**
+ * Gets a reference to the current console host object. Displays Windows Powershell version and regional information by default.
+ * @see  Read-Host
+ * @see  Clear-Host
+ * @see  Out-Host
+ * @see  Write-Host
+ */
+procedure Get-Host;
+
+
+/**
+ * Gets information about objects or collections of objects.
+ * @param -name Specifies the member names to retrieve information about.
+ * @param -inputObject Specifies the objects to retrieve information about. Using this parameter to provide input to Get-Member results in different output than pipelining the same input. When you pipeline input to Get-Member, if the input is a container, the cmdlet returns information about each unique type of element in the container. If you provide the same input by using the InputObject parameter, the cmdlet returns information about the container object itself. If you want to use pipelining to retrieve information about a container, you must proceed the pipelined input by a comma (,). For example, if you information about processes stored in a variable named $process, you would type ,$process | get-member to retrieve information about the container.
+ * @param -memberType Indicates type of members to retrieve information about. Valid member types are: AliasProperty, CodeProperty, Property, NoteProperty, ScriptProperty, Properties, PropertySet, Method, CodeMethod, ScriptMethod, Methods, ParameterizedProperty, MemberSet, and All.
+ * @param -static Specifies that static properties and methods should be retrieved.
+ * @see  Add-Member
+ * @see  Get-Help
+ * @see  Get-Command
+ * @see  Get-PSDrive
+ */
+procedure Get-Member;
+
+
+/**
+ * Gets the Windows PowerShell components that are instrumented for tracing.
+ * @param -name Gets only the specified trace sources. Wildcards are permitted. The parameter name ("-Name") is optional.
+ * @see  Set-TraceSource
+ * @see  Trace-Command
+ */
+procedure Get-TraceSource;
+
+
+/**
+ * gets information about the current user interface culture for Windows PowerShell.
+ * @see  Get-Culture
+ */
+procedure Get-UICulture;
+
+
+/**
+ * Returns the unique items from a sorted list.
+ * @param -inputObject Accepts input for Get-Unique. Enter a variable that contains the objects or type a command or expression that gets the objects. Get-Unique treats the input submitted by using InputObject as a collection; it doesn't enumerate individual items in the collection. Because the collection is a single item, input submitted by using InputObject is always returned unchanged.
+ * @param -asString Treats the data as a string. Without this parameter, data is treated as an object, so when you submit a collection of objects of the same type to Get-Unique, such as a collection of files, it returns just one (the first). You can use this parameter to find the unique values of object properties, such as the file names.
+ * @param -onType Returns only one object of each type.
+ * @see  Select-Object
+ * @see  Sort-Object
+ */
+procedure Get-Unique;
+
+
+/**
+ * Gets the variables in the current console.
+ * @param -name Specifies the name of the variable.
+ * @param -include Specifies only those items upon which the cmdlet will act, excluding all others. Wildcards are permitted.
+ * @param -exclude Omits the specified items. Wildcards are permitted.
+ * @param -valueOnly Gets only the value of the variable.
+ * @param -scope Limits the variables retrieved to the specified scope. The value can be a named scope: "global", "local", or "script", "private" or it can be a number relative to the current scope (0 through the number of scopes where 0 is the current scope and increasing the number by 1 moves to the parent scope of the current scope).
+ * @see  Set-Variable
+ * @see  New-Variable
+ * @see  Clear-Variable
+ * @see  Remove-variable
+ */
+procedure Get-Variable;
+
+
+/**
+ * Groups objects that contain the same value for specified properties.
+ * @param -property Specifies the property or list of properties upon which to group the input objects.
+ * @param -caseSensitive Specifies that case should be taken into account when determining whether property values are equal for the purpose of grouping.
+ * @param -noElement Determines whether the output objects contain the elements of each group.
+ * @param -culture Specifies the culture to use when performing string comparisons.
+ * @param -inputObject Specifies the objects to group. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @see  Sort-Object
+ * @see  Measure-Object
+ * @see  New-Object
+ * @see  Select-Object
+ * @see  ForEach-Object
+ * @see  Where-Object
+ * @see  Compare-Object
+ * @see  Tee-Object
+ */
+procedure Group-Object;
+
+
+/**
+ * Imports an alias list from a file.
+ * @param -path Specifies the path to a file that includes exported alias information. Wildcards are allowed but they must resolve to a single name.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -scope Specifies the scope to apply to the imported aliases. This can be a named scope: "global", "local", or "script", or it can be a number relative to the current scope (0 through the number of scopes where 0 is the current scope and 1 is its parent).
+ * @param -force Allows cmdlet to import an alias that is already defined and is read only. You can use the following command to display information about the currently-defined aliases: get-alias | select-object name,Options The value of the Options property will include 'ReadOnly' if the corresponding alias is read only.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Export-Alias
+ * @see  Get-Alias
+ * @see  New-Alias
+ * @see  Set-Alias
+ */
+procedure Import-Alias;
+
+
+/**
+ * Imports a CLIXML file and creates corresponding objects within Windows PowerShell.
+ * @param -path Specifies the location of the XML files to be converted into PSObjects.
+ * @see  Export-Clixml
+ */
+procedure Import-Clixml;
+
+
+/**
+ * Imports comma-separated value (CSV) files in the format produced by the Export-CSV cmdlet and returns objects that correspond to the objects represented in that CSV file.
+ * @param -path Specifies the path to the CSV file to import.
+ * @see  Export-Csv
+ */
+procedure Import-Csv;
+
+
+/**
+ * Runs a Windows PowerShell expression that is provided in the form of a string.
+ * @param -command Specifies a literal string or a variable that contains a string that is a valid Windows PowerShell expression.
+ * @see  Trace-Command
+ * @see  Invoke-Item
+ * @see  Invoke-History
+ */
+procedure Invoke-Expression;
+
+
+/**
+ * Measures the time it takes to run script blocks and cmdlets.
+ * @param -expression Specifies the expression that is being timed. Enclose the expression in curly braces ({}). The parameter name ("Expression") is optional.
+ * @param -inputObject Specifies an object that represents an expression. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @see  Trace-Command
+ * @see  Invoke-Expression
+ */
+procedure Measure-Command;
+
+
+/**
+ * Measures characteristics of objects and their properties.
+ * @param -inputObject Specifies the objects to be measured. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -property Specifies the properties to measure.
+ * @param -average Averages the values in the designated property.
+ * @param -line Counts the number of lines in the input object.
+ * @param -sum Sums the values of the properties.
+ * @param -minimum Determines the minimum value of the properties.
+ * @param -maximum Determines the maximum value of the properties.
+ * @param -word Counts the number of words in the input object.
+ * @param -character Counts the number of characters in the input object.
+ * @param -ignoreWhiteSpace Ignores white space in word counts and character counts. By default, white space is not ignored.
+ * @see  Compare-Object
+ * @see  ForEach-Object
+ * @see  Group-Object
+ * @see  New-Object
+ * @see  Select-Object
+ * @see  Sort-Object
+ * @see  Tee-Object
+ * @see  Where-Object
+ */
+procedure Measure-Object;
+
+
+/**
+ * Creates a new alias.
+ * @param -name Specifies the new alias. You can use any alphanumeric characters in an alias, but the first character cannot be a number.
+ * @param -value Specifies the name of the cmdlet or command element that is being aliased.
+ * @param -description Specifies a description of the alias. You can type any string. If the description includes spaces, enclose it quotation marks.
+ * @param -option Sets one or more optional properties of the alias. Valid values are: * None: Sets no options. (default) * ReadOnly: The alias cannot be changed unless you use the Force parameter. * Constant: The alias cannot be changed, even by using the Force parameter. * Private: The alias is available only within the scope specified by the Scope parameter. It is invisible in all other scopes.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -scope The scope from which the aliases should be exported. This can be a named scope: "global", "local", or "script", or it can be a number relative to the current scope (from 0 through the number of scopes where 0 is the current scope and 1 is its parent).
+ * @param -force If set, act like set-alias if the alias named already exists.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Set-Alias
+ * @see  Get-Alias
+ * @see  Export-Alias
+ * @see  Import-Alias
+ */
+procedure New-Alias;
+
+
+/**
+ * Creates an instance of a .Net or COM object.
+ * @param -typeName Specifies the fully-qualified name of the .Net class. You cannot specify both the TypeName parameter and the ComObject parameter.
+ * @param -comObject Programmatic Identifier (ProgID) of the COM object.
+ * @param -argumentList Specifies a list of arguments to pass to the constructor of the .Net class. Separate elements in the list by using commas (,).
+ * @param -strict Specifies that an error should be raised if the COM object that you attempt to create uses an interop assembly. This enables you to distinguish actual COM objects from .Net objects with COM-callable wrappers.
+ * @see  Compare-Object
+ * @see  Select-Object
+ * @see  Sort-Object
+ * @see  ForEach-Object
+ * @see  Group-Object
+ * @see  Measure-Object
+ * @see  Tee-Object
+ * @see  Where-Object
+ */
+procedure New-Object;
+
+
+/**
+ * Creates a TimeSpan object.
+ * @param -start Indicates the start of a timespan.
+ * @param -end Indicates the end of a timespan.
+ * @param -days Indicates the days in the timespan.
+ * @param -hours Indicates the hours in the timespan.
+ * @param -minutes Indicates the minutes in the timespan.
+ * @param -seconds Indicates the seconds in the timespan.
+ * @see  set-date
+ * @see  get-date
+ */
+procedure New-TimeSpan;
+
+
+/**
+ * Creates a new variable.
+ * @param -name The name of the new variable
+ * @param -value The value assigned to the variable
+ * @param -scope The scope from which the aliases should be exported. This can be a named scope: "global", "local", or "script", or it can be a number relative to the current scope (0 through the number of scopes where 0 is the current scope and 1 is its parent).
+ * @param -description User-supplied description of the variable
+ * @param -option Possible values include ReadOnly, Constant and Private. Any combination of these may be given.
+ * @param -force Allows Cmdlet to override restrictions such as renaming existing files as long as security is not compromised. Used to force the operation to make the best attempt at setting the variable.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Variable
+ * @see  Set-Variable
+ * @see  Remove-Variable
+ * @see  Clear-Variable
+ */
+procedure New-Variable;
+
+
+/**
+ * Send the output to the default formatter and the default output cmdlet. This cmdlet has no effect on the formatting or output. It is a placeholder that lets you write your own Out-Default function or cmdlet.
+ * @param -inputObject 
+ * @see  Out-File
+ * @see  Out-Host
+ * @see  Out-Null
+ * @see  Out-Printer
+ * @see  Out-String
+ */
+procedure Out-Default;
+
+
+/**
+ * Sends output to a file.
+ * @param -filePath Specifies the path to the output file.
+ * @param -encoding Specifies the type of character encoding used in the file. Valid values are "Unicode", "UTF7", "UTF8", "UTF32", "ASCII", "BigEndianUnicode", "Default", and "OEM". "Unicode" is the default. "Default" uses the encoding of the system's current ANSI code page. "OEM" uses the current original equipment manufacturer code page identifier for the operating system.
+ * @param -append Adds the output to the end of an existing file, instead of replacing the file contents.
+ * @param -width Specifies the number of characters in each line of output. Any additional characters are truncated, not wrapped. If you omit this parameter, the width is determined by the characteristics of the host. The default for the PowerShell.exe host is 80 (characters).
+ * @param -inputObject Specifies the objects to be written to the file. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -noClobber Will not overwrite (replace the contents) of an existing file. By default, if a file exists in the specified path, Out-File overwrites the file without warning. If both Append and NoClobber are used, the output is appended to the existing file.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Out-String
+ * @see  Out-Null
+ * @see  Out-Host
+ * @see  Out-Printer
+ * @see  Out-Default
+ * @see  Tee-Object
+ */
+procedure Out-File;
+
+
+/**
+ * Sends output to the command line.
+ * @param -paging Displays one page of output at a time, and waits for user input before displaying the remaining pages, much like the traditional "more" command. By default, all of the output is displayed on a single page. The page size is determined by the characteristics of the host.
+ * @param -inputObject Specifies the objects that are written to the console. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @see  Out-Printer
+ * @see  Out-Null
+ * @see  Out-File
+ * @see  Out-String
+ * @see  Out-Default
+ * @see  Write-Host
+ * @see  Clear-Host
+ */
+procedure Out-Host;
+
+
+/**
+ * Deletes output instead of sending it to the console.
+ * @param -inputObject Specifies the object that sent to null (deleted). Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @see  Out-Printer
+ * @see  Out-Host
+ * @see  Out-File
+ * @see  Out-String
+ * @see  Out-Default
+ */
+procedure Out-Null;
+
+
+/**
+ * Sends output to a printer.
+ * @param -name Specifies the alternate printer. The parameter name ("-Name") is optional.
+ * @param -inputObject Specifies the objects to be sent to the printer. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @see  Out-Host
+ * @see  Out-Null
+ * @see  Out-String
+ * @see  Out-File
+ * @see  Out-Default
+ */
+procedure Out-Printer;
+
+
+/**
+ * Sends objects to the host as a series of strings.
+ * @param -inputObject Specifies the objects to be written to a string. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -width Specifies the number of characters in each line of output. Any additional characters are truncated, not wrapped. If you omit this parameter, the width is determined by the characteristics of the host. The default for the PowerShell.exe host is 80 (characters).
+ * @param -stream Sends the strings for each object separately. By default, the strings for each object are accumulated and sent as a single string.
+ * @see  Out-File
+ * @see  Out-Null
+ * @see  Out-Host
+ * @see  Out-Printer
+ * @see  Out-Default
+ */
+procedure Out-String;
+
+
+/**
+ * Reads a line of input from the console.
+ * @param -prompt This is the string that will become the prompt object. If the prompt string includes spaces, it must be surrounded by quotes.
+ * @param -asSecureString If set to true, the input will be echoed as star characters (*). The output will then be a Securestring object.
+ * @see  Get-Host
+ * @see  Out-Host
+ * @see  Clear-Host
+ * @see  Write-Host
+ * @see  ConvertFrom-SecureString
+ */
+procedure Read-Host;
+
+
+/**
+ * Deletes a variable and its value.
+ * @param -name Specifies the name of the variable to be removed. The parameter name ("-Name") is optional.
+ * @param -include Deletes only the specified items. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Name parameter. Enter a name element or pattern, such as "s*". Wildcards are permitted.
+ * @param -scope Specifies the scope in which this alias is valid. Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent). "Local" is the default. For more information, type "get-help about_scope".
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Set-Variable
+ * @see  Get-Variable
+ * @see  Clear-Variable
+ * @see  New-Variable
+ */
+procedure Remove-Variable;
+
+
+/**
+ * Selects specified properties of an object or set of objects. It can also select unique objects from an array of objects or it can select a specified number of objects from the beginning or end of an array of objects.
+ * @param -property Specifies a property or properties to select. You can use wildcards in values for this parameter.
+ * @param -excludeProperty Specifies a property or properties that should not be selected. Excluded properties are removed after included properties are selected.
+ * @param -expandProperty Specifies a property to selected and indicates that an attempt should be made to expand that property. If the specified property is an array, for example, each value of the array should be included.
+ * @param -first Specifies the number of objects to select from the beginning of an array of input objects.
+ * @param -last Specifies the number of objects to select from the end of an array of input objects.
+ * @param -unique Specifies that, if a subset of the input objects have identical properties and values, only a single member of the subset will be selected.
+ * @param -inputObject Specifies an object or objects to input to the cmdlet.
+ * @see  Where-Object
+ * @see  Group-Object
+ * @see  Sort-Object
+ */
+procedure Select-Object;
+
+
+/**
+ * Identifies patterns in strings.
+ * @param -pattern Specifies the string or regular expression that represents the matching criteria. To learn about regular expressions in Windows PowerShell, type get-help about_regular_expression at the Windows PowerShell command prompt.
+ * @param -path Specifies strings or files to match against. Wildcard syntax is allowed.
+ * @param -inputObject Accepts an object as input to the cmdlet. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -text Specifies literal text to match against the string or regular expression value of the Pattern parameter.
+ * @param -include Include only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -exclude Exclude the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -simpleMatch Specifies that a simple match, rather than a regular expression match, should be used.
+ * @param -caseSensitive Makes matches case sensitive. By default, matching is not case sensitive.
+ * @param -quiet Suppresses most of the output from the cmdlet. When specified, only a boolean value is passed along the pipeline. The value is true if a match was found and false otherwise.
+ * @param -list Specifies that only one match should result for each input file. The returned MatchInfo objects only include information about that first match.
+ */
+procedure Select-String;
+
+
+/**
+ * Creates or changes an alias (alternate name) for a cmdlet or other command element in the current Windows PowerShell session.
+ * @param -name Specifies the new alias. You can use any alphanumeric characters in an alias, but the first character cannot be a number.
+ * @param -value Specifies the name of the cmdlet or command element that is being aliased.
+ * @param -description Specifies a description of the alias. You can type any string. If the description includes spaces, enclose it quotation marks.
+ * @param -option Sets the value of the Options property of the alias. Valid values are: * None: Sets no options. (default) * ReadOnly: The properties of the alias cannot be changed, except by using the Force parameter. You can use Remove-Item to delete the alias. * Constant: The alias cannot be deleted and its properties cannot be changed. Constant is available only when you are creating an alias. You cannot change the option of an existing alias to Constant. * Private: The alias is available only within the scope specified by the Scope parameter. It is invisible in all other scopes. * AllScope: The alias is copied to any new scopes that are created. To see the Options property of the aliases, type "get-alias | format-table -property Name, Definition, Options -autosize".
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -scope Specifies the scope in which this alias is valid. Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent). "Local" is the default. For more information, type "get-help about_scope".
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Alias
+ * @see  New-Alias
+ * @see  Export-Alias
+ * @see  Import-Alias
+ */
+procedure Set-Alias;
+
+
+/**
+ * Changes the system time on the computer to a time that you specify.
+ * @param -date Changes the date and time to the specified values. You can type a new date in the short date format and a time in the standard time format for your locale. Or, you can pass a Date-Time object from Get-Date. If you specify a date, but not a time, Set-Date changes the time to midnight on the specified date. If you specify only a time, it does not change the date.
+ * @param -adjust Adds or subtracts the specified value from the current date and time. You can type an adjustment in standard date and time format for your locale or use the Adjust parameter to pass a TimeSpan object from New-TimeSpan to Set-Date.
+ * @param -displayHint Determines which elements of the date and time are displayed. (This does not affect the DateTime object that Get-Date retrieves.) Valid values are: -- date: displays only the date -- time: displays only the time -- datetime: displays the date and time
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Date
+ * @see  New-TimeSpan
+ */
+procedure Set-Date;
+
+
+/**
+ * Configures, starts, and stops a trace of Windows PowerShell components.
+ * @param -name Determines which components are traced. Enter the name of the trace source of each component. Wildcards are permitted.
+ * @param -option Determines the type of events that are traced. The valid values are: None, Constructor, Dispose, Finalizer, Method, Property, Delegates, Events, Exception, Lock, Error, Errors, Warning, Verbose, WriteLine, Data, Scope, ExecutionFlow, Assert, and All. "All" is the default. The following values are combinations of other values: -- ExecutionFlow: (Constructor, Dispose, Finalizer, Method, Delegates, Events, and Scope) -- Data: (Constructor, Dispose, Finalizer, Property, Verbose, and WriteLine) -- Errors: (Error and Exception). To specify multiple options, separate them with commas, but with no spaces, and enclose them in quotation marks, such as "Constructor,Dispose".
+ * @param -filePath Sends the trace output to specified file. This parameter also selects the file trace listener. If you use this parameter to start the trace, use the RemoveFileListener parameter to stop the trace.
+ * @param -debugger Sends the trace output to the debugger. You can view the output in any user-mode or kernel mode debugger or in Visual Studio. This parameter also selects the default trace listener.
+ * @param -pSHost Sends the trace output to the Windows PowerShell host. This parameter also selects the PSHost trace listener.
+ * @param -listenerOption Adds optional data to the prefix of each trace message in the output. The valid values are None, LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, and Callstack. "None" is the default. To specify multiple options, separate them with commas, but with no spaces, and enclose them in quotation marks, such as "ProcessID,ThreadID".
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -removeListener Stops the trace by removing the trace listener. Use the following values with RemoveListener: To remove PSHost (console), type "Host". To remove Debugger, type "Debug". To remove all trace listeners, type "*". To remove the file trace listener, use the RemoveFileListener parameter.
+ * @param -removeFileListener Stops the trace by removing the file trace listener associated with the specified file. Enter the path and file name of the trace output file.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @see  Get-TraceSource
+ * @see  Trace-Command
+ * @see  Get-PSDebug
+ */
+procedure Set-TraceSource;
+
+
+/**
+ * Sets the value of a variable. Creates the variable if one with the requested name does not exist.
+ * @param -name Specifies the variable name.
+ * @param -include Specifies only those items upon which the cmdlet will act, excluding all others.
+ * @param -exclude Specifies those items upon which the cmdlet will not to act and include all others.
+ * @param -scope Specifies the scope from which aliases should be exported. This can be a named scope: "global", "local", or "script", or it can be a number relative to the current scope (0 through the number of scopes where 0 is the current scope and 1 is its parent).
+ * @param -value Specifies the value to assign to the variable.
+ * @param -description Specifies the description of the variable.
+ * @param -option Changes the value of the Options property of the variable. Valid values are: -- None: No options. (Default) -- ReadOnly: Cannot be deleted or changed without the Force parameter. -- Constant: Cannot be deleted or changed. Constant is valid only when creating a new variable. You cannot set the Constant option on an existing variable. -- Private: Visible only in the scope specified by the Scope parameter. -- AllScope: Variable is copied to all scopes that are created.
+ * @param -force Allows cmdlet to override restrictions such as renaming existing files as long as security is not compromised. Used to force the operation to make the best attempt at setting the variable.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Variable
+ * @see  New-Variable
+ * @see  Remove-Variable
+ * @see  Clear-Variable
+ */
+procedure Set-Variable;
+
+
+/**
+ * Sorts objects by property values.
+ * @param -property Specifies a property or properties to use when sorting. The value of this parameter can be a hash table like @{Expression={$_.PropName}; Ascending=$false} or @{Expression={$_.PropName}; Ascending=$true}, letting you sort on the result of a script block and enabling you to specify a different sort order for each element used in the sort.
+ * @param -inputObject Specifies the objects to be sorted. You can either use this parameter or pipe an object to the cmdlet.
+ * @param -culture Specifies the cultural configuration to use when sorting.
+ * @param -caseSensitive Indicates that the sort should be case sensitive.
+ * @param -unique Sorts on only the unique values of properties.
+ * @param -descending Sorts the objects in descending order.
+ * @see  Get-Unique
+ * @see  Compare-Object
+ * @see  ForEach-Object
+ * @see  Group-Object
+ * @see  Measure-Object
+ * @see  New-Object
+ * @see  Select-Object
+ * @see  Tee-Object
+ * @see  Where-Object
+ */
+procedure Sort-Object;
+
+
+/**
+ * Suspend shell, script, or runspace activity for the specified period of time.
+ * @param -seconds Specifies how long the resource sleeps in seconds. You can omit the parameter name (-Seconds) or you can abbreviate it to "-s".
+ * @param -milliseconds Specifies how long the resource sleeps in miiliseconds. The parameter can be abbreviated to "-m".
+ * @see  
+ */
+procedure Start-Sleep;
+
+
+/**
+ * Pipes object input to a file or variable, then passes the input along the pipeline. 
+ * @param -filePath Specifies the file where the cmdlet stores the object. Accepts wildcards that resolve to a single file.
+ * @param -variable Assigns a reference to the input objects to the specified variable.
+ * @param -inputObject Specifies the object input to the cmdlet. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @see  Write-Output
+ * @see  Out-File
+ */
+procedure Tee-Object;
+
+
+/**
+ * The Trace-Command cmdlet configures and starts a trace of the specified expression or command.
+ * @param -name Determines which Windows PowerShell components are traced. Enter the name of the trace source of each component. Wildcards are permitted. To find the trace sources on your computer, type "Get-TraceSource".
+ * @param -expression Specifies the expression that is being processed during the trace. Enclose the expression in curly braces ({}).
+ * @param -command Specifies a command that is being processed during the trace.
+ * @param -option Determines the type of events that are traced. The valid values are: None, Constructor, Dispose, Finalizer, Method, Property, Delegates, Events, Exception, Lock, Error, Errors, Warning, Verbose, WriteLine, Data, Scope, ExecutionFlow, Assert, and All. "All" is the default. The following values are combinations of other values: -- ExecutionFlow: (Constructor, Dispose, Finalizer, Method, Delegates, Events, and Scope) -- Data: (Constructor, Dispose, Finalizer, Property, Verbose, and WriteLine) -- Errors: (Error and Exception). To specify multiple options, separate them with commas, but with no spaces, and enclose them in quotation marks, such as "Constructor,Dispose".
+ * @param -filePath Sends the trace output to specified file. This parameter also selects the file trace listener.
+ * @param -debugger Sends the trace output to the debugger. You can view the output in any user-mode or kernel mode debugger or in Visual Studio. This parameter also selects the default trace listener.
+ * @param -pSHost Sends the trace output to the Windows PowerShell host. This parameter also selects the PSHost trace listener.
+ * @param -listenerOption Adds optional data to the prefix of each trace message in the output. The valid values are None, LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, and Callstack. "None" is the default. To specify multiple options, separate them with commas, but with no spaces, and enclose them in quotation marks, such as "ProcessID,ThreadID".
+ * @param -inputObject Provides input to the expression that is being processed during the trace. You can enter a variable that represents the input that the expression accepts, or pass an object through the pipeline.
+ * @param -argumentList Specifies the parameters and parameter values for the command being traced. This feature is especially useful for debugging dynamic parameters.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @see  Get-TraceSource
+ * @see  Set-TraceSource
+ */
+procedure Trace-Command;
+
+
+/**
+ * Updates and appends format data files.
+ * @param -appendPath Specifies the path to optional format.ps1xml files which will be included in the list of files loaded. These are processed after the built-in files are loaded.
+ * @param -prependPath Specifies the path to optional format.ps1xml files which will be included in the list of files loaded. These files are processed in the order they are specified and before the built-in files are loaded.
+ * @see  Update-TypeData
+ */
+procedure Update-FormatData;
+
+
+/**
+ * Updates the current extended type configuration by reloading the *.types.ps1xml files into memory.
+ * @param -appendPath Specifies the path to optional .ps1xml files which will be included in the list of files loaded. These are processed after the built-in files are loaded.
+ * @param -prependPath Specifies the path to optional .ps1xml files which will be included in the list of files loaded. However, these files are processed in the order they are specified and before the built-in files are loaded.
+ * @see  Update-FormatData
+ */
+procedure Update-TypeData;
+
+
+/**
+ * Writes a debug message to the host display.
+ * @param -message Specifies the debug message to send to the console.
+ * @see  Write-Verbose
+ * @see  Write-Error
+ * @see  Write-Host
+ * @see  Write-Progress
+ * @see  Write-Output
+ * @see  Write-Warning
+ */
+procedure Write-Debug;
+
+
+/**
+ * Writes an object to the error pipeline.
+ * @param -message Specifies the message text of the error.
+ * @param -exception Specifies the exception type of the error. This parameter can be used in place of Message and ErrorRecord, in which case it should appear as the first parameter of the parameter set.
+ * @param -errorRecord Specifies an error record describing details about the error. This parameter can be used in place of the Exception and Message parameters, in which case it is the first parameter of the parameter set.
+ * @param -category Specifies the category of the error.
+ * @param -errorId Specifies an ID to associate with the error. It should be a string unique to the error.
+ * @param -targetObject Specifies the object with which the error is associated.
+ * @param -recommendedAction Describes the recommended response to the error.
+ * @param -categoryActivity Describes the action which overrides the ErrorCategoryInfo default.
+ * @param -categoryReason Describes the reason the ErrorCategoryInfo default is overridden.
+ * @param -categoryTargetName Specifies the target name of the ErrorCategoryInfo override.
+ * @param -categoryTargetType Specifies the target type to override the ErrorCategoryInfo default.
+ * @see  Write-Debug
+ * @see  Write-Verbose
+ * @see  Write-Output
+ * @see  Write-Host
+ * @see  Write-Progress
+ * @see  Write-Warning
+ */
+procedure Write-Error;
+
+
+/**
+ * Displays objects by using the host user interface
+ * @param -object Objects to display in the console.
+ * @param -noNewLine Specifies that the content displayed in the console does not end with a newline character.
+ * @param -separator String to output between objects displayed on the console.
+ * @param -foregroundcolor Specifies the text color.
+ * @param -backgroundColor Specifies the background color.
+ * @see  Write-Verbose
+ * @see  Write-Error
+ * @see  Write-Progress
+ * @see  Write-Debug
+ * @see  write-Output
+ * @see  Write-Warning
+ * @see  Out-Host
+ * @see  Clear-Host
+ */
+procedure Write-Host;
+
+
+/**
+ * Writes objects to the success pipeline. 
+ * @param -inputObject Specifies the objects to send along the pipeline. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @see  Write-Debug
+ * @see  Write-Verbose
+ * @see  Write-Error
+ * @see  Write-Progress
+ * @see  Write-Host
+ * @see  Write-Warning
+ * @see  Tee-Object
+ */
+procedure Write-Output;
+
+
+/**
+ * Displays a progress bar within a Windows PowerShell command window.
+ * @param -activity Specifies a string that describes the activity about which progress is being reported. It appears as the first heading above the progress bar.
+ * @param -status Specifies a string that describes current state of the activity about which progress is being reported. It appears as the second heading above the progress bar.
+ * @param -id Specifies the activity identifier for this progress record.
+ * @param -percentComplete Specifies the percentage of the activity that is completed. Use the value -1 if the percentage complete is unknown or not applicable.
+ * @param -secondsRemaining Specifies the projected number of seconds remaining until the activity is completed. Use the value -1 if the number of seconds remaining is unknown or not applicable.
+ * @param -currentOperation Describes the operation that is currently taking place.
+ * @param -parentId Identifies the parent activity of the current activity. Use the value -1 if the current activity has no parent activity.
+ * @param -completed Indicates whether the progress bar is visible. If set to false, display progress information.
+ * @param -sourceId Identifies the source of the record
+ * @see  Write-Verbose
+ * @see  Write-Error
+ * @see  Write-Host
+ * @see  Write-Debug
+ * @see  Write-Output
+ * @see  Write-Warning
+ */
+procedure Write-Progress;
+
+
+/**
+ * Writes a string to the verbose display of the host.
+ * @param -message Specifies the message to display.
+ * @see  Write-Host
+ * @see  Write-Error
+ * @see  Write-Output
+ * @see  Write-Debug
+ * @see  Write-Progress
+ * @see  Write-Warning
+ */
+procedure Write-Verbose;
+
+
+/**
+ * Writes a warning message.
+ * @param -message Specifies the warning message.
+ * @see  Write-Debug
+ * @see  Write-Error
+ * @see  Write-Host
+ * @see  Write-Output
+ * @see  Write-Progress
+ * @see  Write-Verbose
+ */
+procedure Write-Warning;
+
+/**
+ * Converts a secure string into an encrypted standard string.
+ * @param -secureString Specifies the secure string to convert to an encrypted standard string.
+ * @param -secureKey Specifies the encryption key as a secure string. The secure string value is converted to a byte array before being used as the key.
+ * @param -key Specifies the encryption key as a byte array.
+ * @see  ConvertTo-SecureString
+ * @see  Read-Host
+ */
+procedure ConvertFrom-SecureString;
+
+/**
+ * Converts encrypted standard strings to secure strings. It can also convert plain text to secure strings. It is used with ConvertFrom-SecureString and Read-Host.
+ * @param -string Specifies the string to convert to a secure string.
+ * @param -secureKey Specifies the encryption key to use when converting a secure string into an encrypted standard string. The key must be provided in the format of a secure string. The secure string is converted to a byte array before being used as the key. Valid key lengths are 16, 24, and 32 bytes.
+ * @param -key Specifies the encryption key to use when converting a secure string into an encrypted standard string. Valid key lengths are 16, 24, and 32 bytes.
+ * @param -asPlainText Specifies a plain text string to convert to a secure string. The secure string cmdlets help protect confidential text. The text is encrypted for privacy and is deleted from computer memory after it is used. If you use this parameter to provide plain text as input, the system cannot protect that input in this manner. To use this parameter, you must also specify the Force parameter.
+ * @param -force Confirms that you understand the implications of using the AsPlainText parameter and still want to use it.
+ * @see  ConvertFrom-SecureString
+ * @see  Read-Host
+ */
+procedure ConvertTo-SecureString;
+
+/**
+ * Gets the security descriptor for a resource, such as a file or registry key.
+ * @param -path Specifies the path to a resource. Get-Acl gets the security descriptor of the resource indicated by the path. Wildcards are permitted. If you omit the Path parameter, Get-Acl gets the security descriptor of the current directory. The parameter name ("-Path") is optional.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -include Retrieves only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -audit Gets the audit data for the security descriptor from the system access control list (SACL).
+ * @see  Set-Acl
+ */
+procedure Get-Acl;
+
+
+/**
+ * Gets information about the Authenticode signature in a file.
+ * @param -filePath The path to the file being examined. Wildcards are permitted, but they must lead to a single file. The parameter name ("-FilePath") is optional.
+ * @see  Set-AuthenticodeSignature
+ * @see  Get-ExecutionPolicy
+ * @see  Set-ExecutionPolicy
+ */
+procedure Get-AuthenticodeSignature;
+
+
+/**
+ * Gets a credential object based on a user name and password.
+ * @param -credential Specifies a user name for the credential, such as "User01" or "Domain01\User01". The parameter name ("-Credential") is optional. When you enter the command, you will be prompted for a password. If you omit this parameter, you will be prompted for a user name and a password.
+ * @see  Get-WmiObject
+ */
+procedure Get-Credential;
+
+
+/**
+ * Gets the current execution policy for the shell.
+ * @see  Set-ExecutionPolicy
+ * @see  Get-AuthenticodeSignature
+ * @see  Set-AuthenticodeSignature
+ */
+procedure Get-ExecutionPolicy;
+
+
+/**
+ * Gets information about .pfx certificate files on the computer.
+ * @param -filePath The full path to the .pfx file of the secured file. The parameter name ("-FilePath") is optional.
+ * @see  Get-AuthenticodeSignature
+ * @see  Set-AuthenticodeSignature
+ */
+procedure Get-PfxCertificate;
+
+
+/**
+ * Changes the security descriptor of a specified resource, such as a file or a registry key.
+ * @param -path Identifies the resource whose security descriptor you want to change. Enter the path to a resource, such as a path to a file or registry key. Wildcards are permitted. If you pass a security object to Set-Acl (either by using the AclObject parameter or by passing an object from Get-Acl to Set-Acl), and you omit the Path parameter (name and value), Set-Acl uses the path that is included in the security object.
+ * @param -aclObject Specifies an ACL with the desired property values. Set-Acl changes the ACL of resource specified by the Path parameter to match the values in the specified security object. You can save the output of a Get-Acl command in a variable and then use the AclObject parameter to pass the variable, or type a Get-Acl command.
+ * @param -filter Specifies a filter in the provider's format or language. The value of this parameter qualifies the Path parameter. The syntax of the filter, including the use of wildcards, depends on the provider. Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+ * @param -include Changes only the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -exclude Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path element or pattern, such as "*.txt". Wildcards are permitted.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-Acl
+ */
+procedure Set-Acl;
+
+
+/**
+ * Uses an authenticode signature to sign a Windows PowerShell script or other file.
+ * @param -filePath Specifies the path to a file that is being signed.
+ * @param -certificate Specifies the certificate that will be used to sign the script or file. Enter a variable that stores an object representing the certificate or an expression that gets the certificate. To find the certificate, use Get-PfxCertificate or Get-ChildItem. If the certificate is not valid or does not have code-signing authority, the command fails.
+ * @param -includeChain Determines which certificates in the certificate trust chain are included in the digital signature. "NotRoot" is the default. Valid values are: "Signer": Includes only the signer's certificate. "NotRoot": Include all of the certificates in the certificate chain, except for the root authority. "All": Includes all certificates in the certificate chain.
+ * @param -timeStampServer Uses the specified timestamp server to certify the exact time that the certificate was added to the file. Type the URL of the timestamp server as a string.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. For example, Force will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-AuthenticodeSignature
+ * @see  Get-PfxCertificate
+ * @see  Get-ExecutionPolicy
+ * @see  Set-ExecutionPolicy
+ */
+procedure Set-AuthenticodeSignature;
+
+
+/**
+ * Changes the user preference for the execution policy of the shell.
+ * @param -executionPolicy Specifies a new execution policy for the shell. The parameter name ("-Name") is optional. Valid values are: -- Restricted: Does not load configuration files or run scripts. "Restricted" is the default. -- AllSigned: Requires that all scripts and configuration files be signed by a trusted publisher, including scripts that you write on the local computer. -- RemoteSigned: Requires that all scripts and configuration files downloaded from the Internet be signed by a trusted publisher. -- Unrestricted: Loads all configuration files and runs all scripts. If you run an unsigned script that was downloaded from the Internet, you are prompted for permission before it runs.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-ExecutionPolicy
+ * @see  Set-AuthenticodeSignature
+ * @see  Get-AuthenticodeSignature
+ */
+procedure Set-ExecutionPolicy;
+
+/**
+ * Appends entries to the session history.
+ * @param -inputObject Adds the specified HistoryInfo objects to the session history. You can use this parameter to submit a HistoryInfo object from Get-History, Import-Clixml, or Import-Csv to Add-History.
+ * @param -passthru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @see  Get-History
+ * @see  Invoke-History
+ */
+procedure Add-History;
+
+
+/**
+ * Adds one or more Windows PowerShell snap-ins to the current console.
+ * @param -name The unique name of each PSSnapIn to add to the current console; for example Microsoft.Exchange or MyCompany.User. The parameter name is optional.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @see  Get-PSSnapIn
+ * @see  Remove-PSSnapIn
+ * @see  Export-Console
+ */
+procedure Add-PSSnapin;
+
+
+/**
+ * Exports the configuration of the current console to a file so that you can reuse or share it.
+ * @param -path Specifies a path and file name for the console file (*.psc1). Enter a path (optional) and name. Wildcards are not permitted. If you type only a file name, Export-Console creates a file with that name and the ".psc1" file name extension in the current directory. This parameter is required unless you have exported a console file during the current session. It is also required when you use the NoClobber parameter to prevent the current console file from being overwritten. If you omit this parameter, Export-Console overwrites (replaces the content of) the console file that was used most recently during this session.
+ * @param -force Overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security. Force allows you to overwrite the data in a console configuration file without warning, even if the file has the read-only attribute. The read-only attribute is changed and is not reset when the command completes.
+ * @param -noClobber Will not overwrite (replace the contents) of an existing file. By default, if a file exists in the specified path, Export-Console overwrites the file without warning.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Add-PSSnapIn
+ * @see  Get-PSSnapIn
+ * @see  Remove-PSSnapIn
+ */
+procedure Export-Console;
+
+
+/**
+ * Performs an operation against each of a set of input objects.
+ * @param -process Specifies the script block that is applied to each incoming object.
+ * @param -inputObject Accepts an object that the script block specified in the process parameter will act upon. Enter a variable that contains the objects or type a command or expression that gets the objects.
+ * @param -begin Specifies a script block to run before processing any input objects.
+ * @param -end Specifies a script block to run after processing all input objects.
+ * @see  Where-Object
+ * @see  Compare-Object
+ * @see  Group-Object
+ * @see  Select-Object
+ * @see  Sort-Object
+ */
+procedure ForEach-Object;
+
+
+/**
+ * Gets basic information about cmdlets and about other elements of Windows PowerShell commands.
+ * @param -name Gets information only about the cmdlets or command elements with the specified name. <String> represents all or part of the name of the cmdlet or command element. Wildcards are permitted.
+ * @param -verb Gets information about cmdlets with names that include the specified verb. <String> represents one or more verbs or verb patterns, such as "remove" or *et". Wildcards are permitted.
+ * @param -noun Gets cmdlets with names that include the specified noun. <String> represents one or more nouns or noun patterns, such as "process" or "*item*". Wildcards are permitted.
+ * @param -commandType Gets only the specified types of command objects. Valid values for <CommandTypes> are: Alias ExternalScript All Filter Application Function Cmdlet (default) Script "Application" represents all non-PowerShell files on the system that you can run within PowerShell, including .txt, .exe. and .dll files in the Windows PowerShell path. "Filter" and "Function" represent all Windows PowerShell functions. You can use CommandType or its alias, Type.
+ * @param -totalCount Determines how many command elements Windows PowerShell retrieves.
+ * @param -syntax Gets only specified data about the command element. * For aliases, retrieves the standard name. * For cmdlets, retrieves the syntax. * For functions and filters, retrieves the function definition. * For scripts and applications (files), retrieves the path and filename.
+ * @param -argumentList Gets information about a cmdlet when it is used with the specified parameters ("arguments"), such as a path. To detect parameters that are added to a cmdlet dynamically, replace <Object[]> with parameters that are specific to a Windows PowerShell provider or cmdlet, for example, "HKML\Software" or "cert:\my".
+ * @param -pSSnapIn Get the cmdlets supported by the specified Windows PowerShell snap-in. For more information, type "get-help about-PSSnapins".
+ * @see  Get-Help
+ * @see  Get-PSDrive
+ * @see  Get-Member
+ */
+procedure Get-Command;
+
+
+/**
+ * Displays information about Windows PowerShell cmdlets and concepts.
+ * @param -name Requests help about the specified cmdlet or conceptual topic. <String> represents a cmdlet name, such as Get-Member, a conceptual topic, such as "About_Object", or an alias, such as "ls". Wildcards are permitted. The parameter name ("-Name") is optional.
+ * @param -component Displays a list of cmdlets with the specified component value, such as "Exchange." The core cmdlets do not have a value for the component property.
+ * @param -functionality Displays help for cmdlets with the specified functionality. The core cmdlets do not have a value for the functionality property.
+ * @param -role Displays help customized for the specified user role. <String> represents the role that the user plays in an organization. Some cmdlets display different text in their help files based on the value of this parameter. This parameter has no effect on help for the core cmdlets.
+ * @param -category Displays help for items in the specified category. Valid values for <String> are: * Alias: Help for a cmdlet by alias name. * Cmdlet: Help for a cmdlet by cmdlet name. * HelpFile: Help about concepts ("About_" topics.)
+ * @param -full Displays the entire help file for a cmdlet, including technical information about the parameters. This parameter has no effect on displays of conceptual ("About_") help.
+ * @param -detailed Displays additional information about a cmdlet, including descriptions of the parameters and examples of using the cmdlet. This parameter has no effect on displays of conceptual ("About_") help.
+ * @param -examples Displays examples of using the cmdlet. These examples are included the Detailed and Full views of help. This view also includes the name of the cmdlet and its brief description. To display only the examples, type "(get-help <cmdlet-name>).examples".
+ * @param -parameter Displays a detailed description of the specified parameter. These descriptions are included in the Full view of help. Wildcards are permitted.
+ * @see  Get-Command
+ * @see  Get-PSDrive
+ * @see  Get-Member
+ */
+procedure Get-Help;
+
+
+/**
+ * Gets a list of the commands entered during the current session.
+ * @param -id Specifies the ID number of a command in the session history. Get-History gets only the specified command. If you use Id and Count, Get-History gets the most recent commands ending with the command specified by the Id parameter.
+ * @param -count Displays the specified number of most-recent history entries. The default is 32. If you use both Count and Id in a command, the display ends with the command specified by Id.
+ * @see  Invoke-History
+ * @see  Add-History
+ */
+procedure Get-History;
+
+
+/**
+ * Gets the Windows PowerShell snap-ins on the computer.
+ * @param -name Gets only the specified Windows PowerShell snap-ins. Enter the names of one or more Windows PowerShell snap-ins. Wildcards are permitted. The parameter name ("-Name") is optional.
+ * @param -registered Gets only the Windows PowerShell snap-ins that have been registered on the system. The snap-ins that are installed with Windows PowerShell do not appear in this list.
+ * @see  Add-PSSnapIn
+ * @see  Remove-PSSnapIn
+ * @see  Export-Console
+ */
+procedure Get-PSSnapin;
+
+
+/**
+ * Runs commands from the session history.
+ * @param -iD Identifies a command in the history. You can type the ID number of the command or the first few characters of the command. If you type characters, Invoke-History matches the most recent commands first. If you omit this parameter, Invoke-History runs the last (most recent) command. The parameter name ("-id") is optional. To find the ID number of a command, use Get-History.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Get-History
+ * @see  Add-History
+ */
+procedure Invoke-History;
+
+
+/**
+ * Removes Windows PowerShell snap-ins from the current console.
+ * @param -name The unique-name(s) of the PSSnapIn(s) to remove from the current console file. The parameter name ("-Name") is optional.
+ * @param -passThru Passes the object created by this cmdlet through the pipeline. By default, this cmdlet does not pass any objects through the pipeline.
+ * @param -whatIf Describes what would happen if you executed the command without actually executing the command.
+ * @param -confirm Prompts you for confirmation before executing the command.
+ * @see  Add-PSSnapIn
+ * @see  Get-PSSnapIn
+ * @see  Export-Console
+ */
+procedure Remove-PSSnapin;
+
+
+/**
+ * Turns script debugging features on and off, sets the trace level and toggles strict mode.
+ * @param -trace Specifies the trace level: 0 - turn script tracing off 1 - trace script lines as they are executed 2 - trace script lines, variable assignments, function calls and scripts.
+ * @param -step Turns on script stepping. Before each line is run, the user is prompted to stop, continue or enter a new interpreter level to inspect the state of the script. Note that specifying Step automatically sets a Trace level of 1.
+ * @param -off Turns off all script debugging features.
+ * @param -strict Specfies that the interpreter should throw an exception if a variable is referenced before being assigned a value.
+ * @see  Write-Debug
+ */
+procedure Set-PSDebug;
+
+
+/**
+ * Creates a filter that controls which objects will be passed along a command pipeline.
+ * @param -filterScript Specifies the script block to evaluate in determining which input objects will be passed along the command pipeline.
+ * @param -inputObject Specifies the objects to be filtered. If you save the output of a command in a variable, you can use InputObject to pass the variable to Where-Object. However, typically, the InputObject parameter is not typed in the command. Instead, when you pass an object through the pipeline, Windows PowerShell associates the passed object with the InputObject parameter.
+ * @see  Select-Object
+ */
+procedure Where-Object;
+
+/**
+ * Alias for Add-Content
+ * @see Add-Content
+ */
+procedure ac;
+/**
+ * Alias for Add-PSSnapin
+ * @see Add-PSSnapin
+ */
+procedure asnp;
+/**
+ * Alias for Clear-Content
+ * @see Clear-Content
+ */
+procedure clc;
+/**
+ * Alias for Clear-Item
+ * @see Clear-Item
+ */
+procedure cli;
+/**
+ * Alias for Clear-ItemProperty
+ * @see Clear-ItemProperty
+ */
+procedure clp;
+/**
+ * Alias for Clear-Variable
+ * @see Clear-Variable
+ */
+procedure clv;
+/**
+ * Alias for Copy-Item
+ * @see Copy-Item
+ */
+procedure cpi;
+/**
+ * Alias for Copy-ItemProperty
+ * @see Copy-ItemProperty
+ */
+procedure cpp;
+/**
+ * Alias for Convert-Path
+ * @see Convert-Path
+ */
+procedure cvpa;
+/**
+ * Alias for Compare-Object
+ * @see Compare-Object
+ */
+procedure diff;
+/**
+ * Alias for Export-Alias
+ * @see Export-Alias
+ */
+procedure epal;
+/**
+ * Alias for Export-Csv
+ * @see Export-Csv
+ */
+procedure epcsv;
+/**
+ * Alias for Format-Custom
+ * @see Format-Custom
+ */
+procedure fc;
+/**
+ * Alias for Format-List
+ * @see Format-List
+ */
+procedure fl;
+/**
+ * Alias for ForEach-Object
+ * @see ForEach-Object
+ */
+procedure foreach;
+/**
+ * Alias for ForEach-Object
+ * @see ForEach-Object
+ */
+procedure %;
+/**
+ * Alias for Format-Table
+ * @see Format-Table
+ */
+procedure ft;
+/**
+ * Alias for Format-Wide
+ * @see Format-Wide
+ */
+procedure fw;
+/**
+ * Alias for Get-Alias
+ * @see Get-Alias
+ */
+procedure gal;
+/**
+ * Alias for Get-Content
+ * @see Get-Content
+ */
+procedure gc;
+/**
+ * Alias for Get-ChildItem
+ * @see Get-ChildItem
+ */
+procedure gci;
+/**
+ * Alias for Get-Command
+ * @see Get-Command
+ */
+procedure gcm;
+/**
+ * Alias for Get-PSDrive
+ * @see Get-PSDrive
+ */
+procedure gdr;
+/**
+ * Alias for Get-History
+ * @see Get-History
+ */
+procedure ghy;
+/**
+ * Alias for Get-Item
+ * @see Get-Item
+ */
+procedure gi;
+/**
+ * Alias for Get-Location
+ * @see Get-Location
+ */
+procedure gl;
+/**
+ * Alias for Get-Member
+ * @see Get-Member
+ */
+procedure gm;
+/**
+ * Alias for Get-ItemProperty
+ * @see Get-ItemProperty
+ */
+procedure gp;
+/**
+ * Alias for Get-Process
+ * @see Get-Process
+ */
+procedure gps;
+/**
+ * Alias for Group-Object
+ * @see Group-Object
+ */
+procedure group;
+/**
+ * Alias for Get-Service
+ * @see Get-Service
+ */
+procedure gsv;
+/**
+ * Alias for Get-PSSnapin
+ * @see Get-PSSnapin
+ */
+procedure gsnp;
+/**
+ * Alias for Get-Unique
+ * @see Get-Unique
+ */
+procedure gu;
+/**
+ * Alias for Get-Variable
+ * @see Get-Variable
+ */
+procedure gv;
+/**
+ * Alias for Get-WmiObject
+ * @see Get-WmiObject
+ */
+procedure gwmi;
+/**
+ * Alias for Invoke-Expression
+ * @see Invoke-Expression
+ */
+procedure iex;
+/**
+ * Alias for Invoke-History
+ * @see Invoke-History
+ */
+procedure ihy;
+/**
+ * Alias for Invoke-Item
+ * @see Invoke-Item
+ */
+procedure ii;
+/**
+ * Alias for Import-Alias
+ * @see Import-Alias
+ */
+procedure ipal;
+/**
+ * Alias for Import-Csv
+ * @see Import-Csv
+ */
+procedure ipcsv;
+/**
+ * Alias for Move-Item
+ * @see Move-Item
+ */
+procedure mi;
+/**
+ * Alias for Move-ItemProperty
+ * @see Move-ItemProperty
+ */
+procedure mp;
+/**
+ * Alias for New-Alias
+ * @see New-Alias
+ */
+procedure nal;
+/**
+ * Alias for New-PSDrive
+ * @see New-PSDrive
+ */
+procedure ndr;
+/**
+ * Alias for New-Item
+ * @see New-Item
+ */
+procedure ni;
+/**
+ * Alias for New-Variable
+ * @see New-Variable
+ */
+procedure nv;
+/**
+ * Alias for Out-Host
+ * @see Out-Host
+ */
+procedure oh;
+/**
+ * Alias for Remove-PSDrive
+ * @see Remove-PSDrive
+ */
+procedure rdr;
+/**
+ * Alias for Remove-Item
+ * @see Remove-Item
+ */
+procedure ri;
+/**
+ * Alias for Rename-Item
+ * @see Rename-Item
+ */
+procedure rni;
+/**
+ * Alias for Rename-ItemProperty
+ * @see Rename-ItemProperty
+ */
+procedure rnp;
+/**
+ * Alias for Remove-ItemProperty
+ * @see Remove-ItemProperty
+ */
+procedure rp;
+/**
+ * Alias for Remove-PSSnapin
+ * @see Remove-PSSnapin
+ */
+procedure rsnp;
+/**
+ * Alias for Remove-Variable
+ * @see Remove-Variable
+ */
+procedure rv;
+/**
+ * Alias for Resolve-Path
+ * @see Resolve-Path
+ */
+procedure rvpa;
+/**
+ * Alias for Set-Alias
+ * @see Set-Alias
+ */
+procedure sal;
+/**
+ * Alias for Start-Service
+ * @see Start-Service
+ */
+procedure sasv;
+/**
+ * Alias for Set-Content
+ * @see Set-Content
+ */
+procedure sc;
+/**
+ * Alias for Select-Object
+ * @see Select-Object
+ */
+procedure select;
+/**
+ * Alias for Set-Item
+ * @see Set-Item
+ */
+procedure si;
+/**
+ * Alias for Set-Location
+ * @see Set-Location
+ */
+procedure sl;
+/**
+ * Alias for Start-Sleep
+ * @see Start-Sleep
+ */
+procedure sleep;
+/**
+ * Alias for Sort-Object
+ * @see Sort-Object
+ */
+procedure sort;
+/**
+ * Alias for Set-ItemProperty
+ * @see Set-ItemProperty
+ */
+procedure sp;
+/**
+ * Alias for Stop-Process
+ * @see Stop-Process
+ */
+procedure spps;
+/**
+ * Alias for Stop-Service
+ * @see Stop-Service
+ */
+procedure spsv;
+/**
+ * Alias for Set-Variable
+ * @see Set-Variable
+ */
+procedure sv;
+/**
+ * Alias for Tee-Object
+ * @see Tee-Object
+ */
+procedure tee;
+/**
+ * Alias for Where-Object
+ * @see Where-Object
+ */
+procedure where;
+/**
+ * Alias for Where-Object
+ * @see Where-Object
+ */
+procedure ?;
+/**
+ * Alias for Write-Output
+ * @see Write-Output
+ */
+procedure write;
+/**
+ * Alias for Get-Content
+ * @see Get-Content
+ */
+procedure cat;
+/**
+ * Alias for Set-Location
+ * @see Set-Location
+ */
+procedure cd;
+/**
+ * Alias for Clear-Host
+ * @see Clear-Host
+ */
+procedure clear;
+/**
+ * Alias for Copy-Item
+ * @see Copy-Item
+ */
+procedure cp;
+/**
+ * Alias for Get-History
+ * @see Get-History
+ */
+procedure h;
+/**
+ * Alias for Get-History
+ * @see Get-History
+ */
+procedure history;
+/**
+ * Alias for Stop-Process
+ * @see Stop-Process
+ */
+procedure kill;
+/**
+ * Alias for Out-Printer
+ * @see Out-Printer
+ */
+procedure lp;
+/**
+ * Alias for Get-ChildItem
+ * @see Get-ChildItem
+ */
+procedure ls;
+/**
+ * Alias for New-PSDrive
+ * @see New-PSDrive
+ */
+procedure mount;
+/**
+ * Alias for Move-Item
+ * @see Move-Item
+ */
+procedure mv;
+/**
+ * Alias for Pop-Location
+ * @see Pop-Location
+ */
+procedure popd;
+/**
+ * Alias for Get-Process
+ * @see Get-Process
+ */
+procedure ps;
+/**
+ * Alias for Push-Location
+ * @see Push-Location
+ */
+procedure pushd;
+/**
+ * Alias for Get-Location
+ * @see Get-Location
+ */
+procedure pwd;
+/**
+ * Alias for Invoke-History
+ * @see Invoke-History
+ */
+procedure r;
+/**
+ * Alias for Remove-Item
+ * @see Remove-Item
+ */
+procedure rm;
+/**
+ * Alias for Remove-Item
+ * @see Remove-Item
+ */
+procedure rmdir;
+/**
+ * Alias for Write-Output
+ * @see Write-Output
+ */
+procedure echo;
+/**
+ * Alias for Clear-Host
+ * @see Clear-Host
+ */
+procedure cls;
+/**
+ * Alias for Set-Location
+ * @see Set-Location
+ */
+procedure chdir;
+/**
+ * Alias for Copy-Item
+ * @see Copy-Item
+ */
+procedure copy;
+/**
+ * Alias for Remove-Item
+ * @see Remove-Item
+ */
+procedure del;
+/**
+ * Alias for Get-ChildItem
+ * @see Get-ChildItem
+ */
+procedure dir;
+/**
+ * Alias for Remove-Item
+ * @see Remove-Item
+ */
+procedure erase;
+/**
+ * Alias for Move-Item
+ * @see Move-Item
+ */
+procedure move;
+/**
+ * Alias for Remove-Item
+ * @see Remove-Item
+ */
+procedure rd;
+/**
+ * Alias for Rename-Item
+ * @see Rename-Item
+ */
+procedure ren;
+/**
+ * Alias for Set-Variable
+ * @see Set-Variable
+ */
+procedure set;
+/**
+ * Alias for Get-Content
+ * @see Get-Content
+ */
+procedure type;
+
+
+

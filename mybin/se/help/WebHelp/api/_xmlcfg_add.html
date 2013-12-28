@@ -1,0 +1,44 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_xmlcfg_add</title>
+</head>
+<body>
+
+<h3><b>int _xmlcfg_add(int iHandle, int NodeIndex, _str NameOrValue, int NodeType, int iFlags)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Adds a element to an XML tree
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iHandle">iHandle</A></code> - Handle to an XML tree</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NodeIndex">NodeIndex</A></code> - Index to a node</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NameOrValue">NameOrValue</A></code> - Name or value of the element to be added.  If the NodeType specified
+                 requires a name, this specifies the name.  Otherwise, this specifies
+                 the value.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NodeType">NodeType</A></code> - One of the following:
+                 <DL>
+                 <DT>VSXMLCFG_NODE_ELEMENT_START</DT>
+                 <DD>Name contains name of element.  Value is null.</DD>
+                 <DT>VSXMLCFG_NODE_ELEMENT_START_END</DT>
+                 <DD>Name contains name of element.  Value is null.</DD>
+                 <DT>VSXMLCFG_NODE_XML_DECLARATION</DT>
+                 <DD>Name is set to "xml".   Attributes are set.  For compatibility with XPath, the _xmlcfg_find_XXX functions won't find these attributes.</DD>
+                 <DT>VSXMLCFG_NODE_PROCESSING_INSTRUCTION</DT>
+                 <DD>Name is set to the processor name (not including '?').  Value is set to all data after the processor name not including leading white space.</DD>
+                 <DT>VSXMLCFG_NODE_COMMENT</DT>
+                 <DD>Name is set to null.  Value contains all data not including leading '!--' and trailing '--'.</DD>
+                 <DT>VSXMLCFG_NODE_DOCTYPE</DT>
+                 <DD>Name is set to "DOCTYPE".  For convience, the DOCTYPE information is stored as attributes so it can be more easily identified an modified.   A "root" attribute is set to the document root element specified.  A "PUBLIC" attribute is set to the public literal specified.  A "SYSTEM" attribute is set to the system literal.  A "DTD" attribute is set to the internal DTD subset. For compatibility with XPath, the _xmlcfg_find_XXX functions won't find these attributes.</DD>
+                 <DT>VSXMLCFG_NODE_ATTIRIBUTE</DT>
+                 <DD>Name is set to attribute name.  Value is set to value of attribute not including quotes.</DD>
+                 <DT>VSXMLCFG_NODE_PCDATA></DT>
+                 <DD>Name is set to null.  Value is set to the PCDATA text.</DD>
+                 <DT>VSXMLCFG_NODE_CDATA</DT>
+                 <DD>Name is set to null.  Value is set to the CDATA text.</DD>
+                 </DL></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iFlags">iFlags</A></code> - Add flags.  By default, a new sibling is created after NodeIndex.
+                 Use these flags
+                 to change the behavior.
+                 <ul>
+                 <li>VSXMLCFG_ADD_BEFORE
+                 <li>VSXMLCFG_ADD_AS_CHILD
+                 </ul>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+        Returns index to new node if successful.  Otherwise a negative return
+        code defined in "rc.sh" is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="XMLCFG_Functions.html">XMLCFG Functions</a></blockquote>
+</body>
+</html>

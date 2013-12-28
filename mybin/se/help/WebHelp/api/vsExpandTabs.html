@@ -1,0 +1,42 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsExpandTabs</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsExpandTabs(int wid, char *pszDest, int *pDestLen, const char *pSource, int SrcLen, int StartCol, int ColWidth, char Option)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Takes sub-string of source buffer and places the result in the dest
+buffer.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszDest">pszDest</A></code> - Output. Resulting string terminated with
+ASCII 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pDestLen">pDestLen</A></code> - Output. Number of bytes written to
+<i>pszDest</i> not including ASCII 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pSource">pSource</A></code> - Input. Source buffer.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="SrcLen">SrcLen</A></code> - Input. Number of bytes in source buffer
+<i>pSource</i>.  You can specify -1 if
+pSource is an ASCIIZ string.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="StartCol">StartCol</A></code> - Input. Start (imaginary) column for sub-
+string.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ColWidth">ColWidth</A></code> - Input. Number of (imaginary) columns to
+get from <i>pSource</i>.   -1 specifies the
+rest or the string.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Option">Option</A></code> - Input. Specify 'E' if you want all tabs
+expanded.  Otherwise specify 'S' to return
+tabs unexpanded.
+
+<p>The <i>StartCol</i> and <i>ColWidth</i> specification correspond to
+the input <i>string</i> as if tab characters were expanded according to
+the buffers tab settings.  We call this type of text position or count
+imaginary.  Strings containing tab characters are expanded before
+displayed.  Hence, the need arises for a differentiation between
+physical and imaginary positions.  A physical position corresponds to
+a byte in a string where  the characters are numbered one to the length
+of string.  An imaginary position corresponds to a position in a string
+once tabs have been expanded.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="String_Functions.html">String Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsExpandTabsC.html">vsExpandTabsC</a></blockquote>
+</body>
+</html>

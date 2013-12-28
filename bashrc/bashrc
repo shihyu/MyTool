@@ -40,6 +40,11 @@ alias img_zip='zip rom.zip -j android-info.txt *.img *.hdr'
 alias logcat='adb logcat -c && adb logcat -v threadtime 2>&1 | tee /tmp/logcat.txt'
 #alias rm_log='adb shell rm /data/htclog/*'
 alias eclipse='/home/shihyu/adt-bundle-linux-x86_64-20130917/eclipse/eclipse'
+alias findcpp='find . -name '*.cpp''
+alias findc='find . -name '*.c''
+alias findh='find . -name '*.h''
+alias findmk='find . -name '*.mk''
+alias findjava='find . -name '*.java''
 
 rm_log() 
 {
@@ -416,7 +421,7 @@ export ANDROID_SWT="/home/shihyu/myandroid/prebuilt/linux-x86_64/swt"
 
 [[ -s /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh
 
-export PATH=~/.bin:$PATH
+export PATH=$HOME/.mybin:$PATH
 eval "$(fasd --init auto)"
 
 
@@ -440,3 +445,5 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/boost/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/boost/lib
 
 
+export PATH="/home/shihyu/data/tq210_note/4.4.6/bin/:$PATH"
+export PATH="/home/shihyu/data/tq210_note/mkimage/:$PATH"

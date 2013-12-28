@@ -1,0 +1,37 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>dbg_session_version</title>
+</head>
+<body>
+
+<h3><b>int dbg_session_version(int session_id, _str &description, _str &major_version, _str &minor_version, _str &runtime_version, _str &debugger_name)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Get the version information for the debugger.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="session_id">session_id</A></code> - debugger session ID (1 .. max_session)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="description">description</A></code> - Description of debugger and version</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="major_version">major_version</A></code> - Major version number</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="minor_version">minor_version</A></code> - Minor version number</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="runtime_version">runtime_version</A></code> - Version of runtime environment</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="debugger_name">debugger_name</A></code> - Name of debugger
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Since:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">10.0
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<p>
+To get the version information for the debugger:
+</p>
+<pre>
+   _str description;
+   _str major_version;
+   _str minor_version;
+   _str runtime_version;
+   _str debugger_name;
+   int status = dbg_session_version(session_id, description,
+                                    major_version, minor_version,
+                                    runtime_version, debugger_name);
+   if (status) {
+      return status;
+   }
+   _message_box("description=" :+ description :+ "\n" :+
+                "major=" :+ major_version :+ "\n" :+
+                "minor=" :+ minor_version :+ "\n" :+
+                "runtime=" :+ runtime_version :+ "\n" :+
+                "debugger_name=" :+ debugger_name);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Debugger_Functions.html">Debugger Functions</a></blockquote>
+</body>
+</html>

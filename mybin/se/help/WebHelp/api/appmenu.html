@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>appmenu</title>
+</head>
+<body>
+
+<h3><b>_command int appmenu(typeless arg1="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>This command is used to execute a menu item of another application.</p><p>
+<p>This command is only supported under Windows, Windows 95/98, and Windows NT.</p><p>
+<p>cmdline is a  string in the format: [-a] [-c[p] "ClassName"] [-t[p] "WindowTitle"] MenuSpec</p><p>
+<p>Where MenuSpec is a list of menu items separated by a vertical bar
+character '|' which indicate how to traverse the menu to find the final
+menu item.  The optional 'p' which follows the -c or -t options indicates
+that the name specified is a prefix match of the class or window title
+respectively.  Use the -a option to make the other application active.
+Sometimes, the other application becomes active anyway (depending on the
+Version of the OS, whether you are creating a dialog box, and the other
+application).</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 if succesful</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><p>
+syntax: appmenu [-a] [-c[p] classname] [-t[p] windowtitle] &lt;menuspec&gt;
+</p>
+
+<p>If you use the -t option, don't forget to use '"' around titles with spaces</p>
+<pre>
+<b>menuspec</b>:
+Separate with "|".
+    Will translate the & characters that may be in the menus, not "...".
+    Ex.:"File|Open..."
+<b>appmenu -a -cp Afx -tp "Microsoft Developer Studio" File|Open...</b>
+<b>appmenu -a -t "Borland C++" File|Open...</b>
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

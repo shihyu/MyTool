@@ -1,0 +1,66 @@
+[GLOBAL]
+version=6.0
+[.cob]
+workingdir=
+includedirs=
+tagfiles=
+reffile=
+compile=copts: savecurrent|concur|capture|menu: Compile:&Compilecmd: 
+make=copts: saveworkspacefiles|concur|capture|menu: Build:&Buildcmd: 
+rebuild=copts: saveworkspacefiles|concur|capture|menu: Rebuild:&Rebuildcmd: 
+debug=copts: menu: Debug:&Debugcmd: 
+execute=copts: menu: Execute:E&xecutecmd: 
+user1=copts: hide|menu: User 1:User 1cmd: 
+user2=copts: hide|menu: User 2:User 2cmd: 
+usertool_os390_vscob2=copts: savecurrent|concur|capture|hide|savenone|menu: OS/390 VS COBOL II:OS/390 VS &COBOL IIcmd: %(VSLICKBIN)/vscomp.rexx vscob2 %df "%ds1.obj(%dm)"
+[.c]
+workingdir=
+includedirs=
+tagfiles=
+reffile=
+compile=copts: concur|capture|menu: Compile:&Compilecmd: 
+make=copts: saveworkspacefiles|concur|capture|menu: Build:&Buildcmd: 
+rebuild=copts: saveworkspacefiles|concur|capture|menu: Rebuild:&Rebuildcmd: 
+debug=copts: menu: Debug:&Debugcmd: 
+execute=copts: menu: Execute:E&xecutecmd: 
+user1=copts: hide|menu: User 1:User 1cmd: 
+user2=copts: hide|menu: User 2:User 2cmd: 
+[.pl1]
+workingdir=
+includedirs=
+tagfiles=
+reffile=
+compile=copts: savecurrent|concur|capture|menu: Compile:&Compilecmd:
+make=copts: saveworkspacefiles|concur|capture|menu: Build:&Buildcmd: 
+rebuild=copts: saveworkspacefiles|concur|capture|menu: Rebuild:&Rebuildcmd: 
+debug=copts: menu: Debug:&Debugcmd: 
+execute=copts: menu: Execute:E&xecutecmd: 
+user1=copts: hide|menu: User 1:User 1cmd: 
+user2=copts: hide|menu: User 2:User 2cmd: 
+usertool_os390_pl1opt=copts: savecurrent|concur|capture|hide|savenone|menu: OS/390 PL/I Optimizing:OS/390 &PL/I Optimizingcmd: %(VSLICKBIN)/vscomp.rexx pl1opt %df "%ds1.obj(%dm)"
+[.asm390]
+workingdir=
+includedirs=
+tagfiles=
+reffile=
+compile=copts: savecurrent|concur|capture|menu: Compile:&Compilecmd: 
+make=copts: saveworkspacefiles|concur|capture|menu: Build:&Buildcmd: 
+rebuild=copts: saveworkspacefiles|concur|capture|menu: Rebuild:&Rebuildcmd: 
+debug=copts: menu: Debug:&Debugcmd: 
+execute=copts: menu: Execute:E&xecutecmd: 
+user1=copts: hide|menu: User 1:User 1cmd: 
+user2=copts: hide|menu: User 2:User 2cmd: 
+usertool_os390_high_level_assembler=copts: savecurrent|concur|capture|hide|savenone|menu: OS/390 High Level &Assembler:OS/390 High Level &Assemblercmd: %(VSLICKBIN)/vscomp.rexx hlasm %df "%ds1.obj(%dm)"
+[.for]
+workingdir=
+includedirs=
+tagfiles=
+reffile=
+compile=copts: savecurrent|concur|capture|menu: Compile:&Compilecmd: 
+make=copts: saveworkspacefiles|concur|capture|menu: Build:&Buildcmd: 
+rebuild=copts: saveworkspacefiles|concur|capture|menu: Rebuild:&Rebuildcmd: 
+debug=copts: menu: Debug:&Debugcmd: 
+execute=copts: menu: Execute:E&xecutecmd: 
+user1=copts: hide|menu: User 1:User 1cmd: 
+user2=copts: hide|menu: User 2:User 2cmd: 
+usertool_os390_vsfortran=copts: savecurrent|concur|capture|hide|savenone|menu: OS/390 VS Fortran:OS/390 VS &Fortrancmd: %(VSLICKBIN)/vscomp.rexx vsfor %df "%ds1.obj(%dm)"

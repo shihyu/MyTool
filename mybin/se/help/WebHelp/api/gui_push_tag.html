@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>gui_push_tag</title>
+</head>
+<body>
+
+<h3><b>_command typeless gui_push_tag(_str proc_name='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">The <b>push_tag</b> command pushes a bookmark at the cursor position
+and places the cursor on the source code for a tag you specify.  A dialog box
+is displayed which allows you to type the tag name in or select from a list
+of previously entered tag names.  Use the <b>pop_bookmark</b> command
+(Ctrl+,) to return to the previous bookmark. To create or modify a tag file,
+use the Tag Files dialog box ("Search", "Tag Files...").  Your tag files will
+automatically be updated when you make edits.  The SPACE BAR and '?' keys may
+be used to complete the tag name.  For those of you working in case sensitive
+languages, you may want to make tag name
+searching case sensitive.  The command "set-var def-ignore-tcase 0" will
+force all tag name searching to be case insensitive.  Currently the C, C++,
+Pascal, REXX, AWK, Modula-2, Clipper, Cobol, Fortran, and Assembly languages
+are supported.  See "tags.e" for information on adding support for other
+languages.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="proc_name">proc_name</A></code> - encoded tag name to find.  See <a href="tag_tree_compose_tag.html">tag_tree_compose_tag</a>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Bookmark_Functions.html">Bookmark Functions</a>, <a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="make_tags.html">make_tags</a>, <a href="push_tag.html">push_tag</a>, <a href="gui_make_tags.html">gui_make_tags</a>, <a href="find_tag.html">find_tag</a>, <a href="f.html">f</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,606 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Language Constructs</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s03.htm" title="Four Ways to Use Slick-C®"><link rel="next" href="ch14s05.htm" title="Types"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_languageconstructs_13379_75498"></a>
+    <a name="slick_c_languageconstructs_13379_1001613"></a>
+    <a class="indexterm" name="slick-c_languageconstructs_105AC7C3_7F0B"></a>Language Constructs</h2></div></div></div><p class="NormalText">The Slick-C® language is rooted in the C language. Slick-C contains some constructs from REXX and a dialog system usually found only in languages such as Microsoft® Visual Basic®. Slick-C also blends in object-oriented features from C++, Java, and Python.</p><p class="NormalText">Topics in this section:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s04.htm#slick_c_languageconstructs_13379_29212">Identifiers</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s04.htm#slick_c_languageconstructs_13379_32094">Reserved Words and Keywords</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s04.htm#slick_c_languageconstructs_13379_77849">Comments</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s04.htm#slick_c_languageconstructs_13379_55098">String Literals</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s04.htm#slick_c_languageconstructs_13379_11724">Numeric Literals</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s04.htm#slick_c_languageconstructs_13379_69298">Defining Constants Using #define</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s04.htm#slick_c_languageconstructs_13379_35318">Namespaces</a>
+      </p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_languageconstructs_13379_29212"></a>
+      <a name="slick_c_languageconstructs_13379_1001615"></a>Identifiers</h3></div></div></div><p class="NormalText">A variable or identifier may contain any of the characters "A-Za-z$_0-9" and must start with one of the characters "A-Za-z_$". </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_languageconstructs_13379_32094"></a>
+      <a name="slick_c_languageconstructs_13379_1001617"></a>Reserved Words and Keywords</h3></div></div></div><p class="NormalText">The following keywords are reserved in the Slick-C® language:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="command">_command </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_notinit </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_reinit </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_str </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">arg </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">auto </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">boolean </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">break </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">case </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">class </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">const </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">continue </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">default </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">defexit </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">defined </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">definit </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">defload </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">defmain </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">do </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">double </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">else </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">enum </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">enum_flags</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">extern </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">false </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">for </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">foreach </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">if </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">in </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">instanceof</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">int </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">intdiv </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">interface </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">long </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">loop </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">namespace </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">no_code_swapping </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">null   </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">parse </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">private</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">protected </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">public </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">return </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">short </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">static </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">struct </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">switch </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">this </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">true </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">typedef </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">typeless </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">union </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">using </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">var </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">void </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">while </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">with </strong></span>
+        </p></li></ul></div><p class="NormalText">The following keywords are reserved for built-in functions:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="command">_a2e</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_asc</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_assert</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_callmethod</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_callmethod </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_chr</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_construct</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_delete_unused</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_deleteel</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_dllexport</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_dllload</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_e2a</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_el</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_fieldindex</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_fieldindex </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_fieldname</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_fieldname </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_findmethod</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_findmethod </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_get_var</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_getfield</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_getfield </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_indexin</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_insertel</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_instanceof</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_instanceof </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_isempty</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_isfunptr</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_length</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_length </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_load</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_load_template</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_make</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_makeempty</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_maybe_e2a</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_nextel</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_set_var</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_setfield</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_setfield </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_sort</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_typename</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_typename</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_update_template</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_varformat</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_write_state</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">call</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">call_event</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">call_index</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">call_key</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">center</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">delete_name</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">dsay</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">env_match</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">error_pos</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">event2index</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">event2name</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">eventtab_index</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">eventtab_inherit</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">exit</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">file_match</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">find_index</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">get_env</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">index_callable</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">index2event</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">insert_name</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">isinteger</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">isnumber</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">keyin</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">last_index</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">lastpos</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">length</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">list_bindings</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">lowcase</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">name_index2funptr</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">name_info</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">name_match</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">name_name</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">name_type</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">name2event</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">nls</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">pos</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">pow</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">prev_index</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">replace_name</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">say</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">set_env</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">set_eventtab_index</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">set_name_info</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">signal_handler</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">stop</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">stranslate</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">strappend</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">strcmp</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">stricmp</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">strieq</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">strip</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">strrev</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">substr</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">togglecase</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">trace</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">translate</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">upcase</strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">verify</strong></span>
+        </p></li></ul></div><p class="NormalText">The following keywords are reserved for future use:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="command">catch </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">finally </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">throw </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">try  </strong></span>
+        </p></li></ul></div><p class="NormalText">The following keywords are reserved, but deprecated. Avoid using them.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="command">_notinit </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">bigint </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">bigfloat </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">bigstring  </strong></span>
+        </p></li></ul></div><p class="NormalText">The following keywords are reserved and used for event, dialog, and menu programming.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="command">_check_box </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_combo_box </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_command_button </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_control </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_editor </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_form </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_frame </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_gauge </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_hscroll_bar </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_image </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_inherit </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_label </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_list_box </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_menu </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_minihtml </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_nocheck </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_picture_box </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_print_preview </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_radio_button </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_spin </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_sstab </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_sstab_container </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_text_box </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_tree_view </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">_vscroll_bar </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">def </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">defeventtab </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">endsubmenu </strong></span>
+        </p></li><li><p class="NormalText">
+          <span><strong class="command">submenu </strong></span>
+        </p></li></ul></div><p class="NormalText">All identifiers starting with <span><strong class="command">p_</strong></span> are reserved to be used as Slick-C property names. SlickEdit® reserves all identifiers starting with an underscore (<span><strong class="command">_</strong></span>) for internal use.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_languageconstructs_13379_77849"></a>
+      <a name="slick_c_languageconstructs_13379_1001793"></a>
+      <a class="indexterm" name="slick-c_languageconstructs_70AEAF4A_AFDC"></a>Comments</h3></div></div></div><p class="NormalText">Slick-C® supports both of the C++ comment styles.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Use <span><strong class="command">//</strong></span> to declare that the rest of the line is a comment</p></li><li><p class="NormalText">Use <span><strong class="command">/*</strong></span> to open a block comment and <span><strong class="command">*/</strong></span> to close a block comment.</p></li><li><p class="NormalText">Block comments can be nested.</p></li></ul></div><p class="NormalText">Example:</p><pre class="programlisting">i=1; //this is a comment
+/* this is a /* nested */ comment */</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_languageconstructs_13379_55098"></a>
+      <a name="slick_c_languageconstructs_13379_1001808"></a>
+      <a class="indexterm" name="slick-c_languageconstructs_1E4051C9_EC08"></a>String Literals</h3></div></div></div><p class="NormalText">Strings can be surrounded with single or double quotes. Double-quoted strings are identical to C++ string literals. </p><p class="NormalText">A backslash followed by a character has special meaning, as outlined in the table below.</p><div class="informaltable"><a name="table_d63744a0-7404-4b08-9e2f-f5a2daf6f0fc"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Characters</p>
+            </th><th>
+              <p class="CellHeading">Meaning</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\a</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Bell character (7)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\b</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Backspace character (8)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\f</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Form feed character (12)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\n</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">New line character (10)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\r</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Carriage return (13)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\t</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Tab character (9)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\v</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Vertical tab character (11)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\?</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Question mark character</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\'</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Single quote character</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\"</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Double quote character</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\\</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Backslash character</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\x</strong></span>
+                <span class="emphasis"><em>hh</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Hexadecimal character code</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\</strong></span>
+                <span class="emphasis"><em>ooo</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Octal character code</p>
+            </td></tr></tbody></table></div><p class="NormalText">If single quotes are used, two single quotes consecutively represent one single quote character. If double quotes are used, a backslash followed by a double quote represents one double quote character. The operator <span><strong class="command">:==</strong></span> used in the example below compares two strings for exact equality. The Slick-C® language does have an operator <span><strong class="command">==</strong></span>. However, this operator strips leading and trailing spaces and tabs from both operands.</p><p class="NormalText">Examples:</p><pre class="programlisting">"abc" :== 'abc'
+"Can't find file" :== 'Can''t find file'
+"\t" :== _chr(9) 
+\t :== _chr(9)
+" spaces " == "spaces"</pre><p class="NormalText">A backslash (not inside quotation marks) followed by a character or a number has the special meaning, as shown in the table below. </p><div class="informaltable"><a name="table_0a2d2edd-2dd7-4753-9463-7d1f4ae1d955"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Characters</p>
+            </th><th>
+              <p class="CellHeading">Meaning</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\a</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Bell character (7)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\b</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Backspace character (8)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\f</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Form feed character(12)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\n</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">New line (10)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\r</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Carriage return (13)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\t</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Tab character (9)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\v</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Vertical tab character (11)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\x</strong></span>
+                <span class="emphasis"><em>dd</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <a class="indexterm" name="slick-c_languageconstructs_69023D20_D9A8"></a>Hexadecimal character code <span class="emphasis"><em>dd</em></span></p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">\</strong></span>
+                <span class="emphasis"><em>ddd</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Decimal character code <span class="emphasis"><em>ddd</em></span></p>
+            </td></tr></tbody></table></div><p class="NormalText"></p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Caution</h3><p class="CellBody"> Using the above feature is not recommended. Use a quoted string. </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_languageconstructs_13379_11724"></a>
+      <a name="slick_c_languageconstructs_13379_1001860"></a>
+      <a class="indexterm" name="slick-c_languageconstructs_FBAB6FD2_B5FA"></a>
+      <a class="indexterm" name="slick-c_languageconstructs_84839DAA_D770"></a>
+      <a class="indexterm" name="slick-c_languageconstructs_3AFCD14D_1D77"></a>Numeric Literals</h3></div></div></div><p class="NormalText">The Slick-C® language supports integer constants in both decimal and hexadecimal formats. Hexadecimal numbers are defined using <span><strong class="command">0x[hexdigits]</strong></span> just like they are in C.</p><p class="NormalText">
+      <a class="indexterm" name="slick-c_languageconstructs_85E8ACF9_C76C"></a>The Slick-C language supports floating point numbers. The mantissa is limited to 32 digits and the exponent is limited to nine digits. When precision is lost, the result is rounded. Overflow and underflow are detected. Floating point numbers have the following syntax:</p><pre class="programlisting"><span><strong class="command">[+|-] digits [.][digits][E[+|-]digits]</strong></span></pre><p class="NormalText">or</p><pre class="programlisting"><span><strong class="command">[+|-] [.][digits][E[+|-]digits]</strong></span></pre><p class="NormalText">There may be blank spaces before and after the leading sign.</p><p class="NormalText">Example:</p><pre class="programlisting">        4.04
+        4e2
+        4e2
+        4E-2
+        4E-2</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_languageconstructs_13379_69298"></a>
+      <a name="slick_c_languageconstructs_13379_1001894"></a>
+      <a class="indexterm" name="slick-c_languageconstructs_21C673E9_F555"></a>
+      <a class="indexterm" name="slick-c_languageconstructs_F1886678_00C2"></a>Defining Constants Using #define</h3></div></div></div><p class="NormalText">Slick-C® supports the <span><strong class="command">#define</strong></span> preprocessor directive. The <span><strong class="command">#define</strong></span> directive is for defining constants or in-line functions. Use the following syntax to define the constant or in-line function:</p><pre class="programlisting"><span><strong class="command">
+    #define name[(param1,param2,)] value
+    </strong></span></pre><p class="NormalText">Use a backslash at the end of a line to indicate that the <span class="emphasis"><em>value</em></span> text continues to the next line. Any occurrence of <span class="emphasis"><em>name</em></span> is replaced with the text <span class="emphasis"><em>value</em></span> before the source is compiled.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Caution</h3><p class="CellBody"> When <span class="emphasis"><em>value</em></span> represents an expression, place parentheses around it to make sure that there is not a problem with operator precedence.</p></div><p class="NormalText">Example:</p><pre class="programlisting">#define MAXLINES 15
+#define MAXLINESP1                            (MAXLINES+1)
+#define max(a,b)                              (((a) &gt;= (b)) ? (a) : (b)) 
+#define min(a,b)                              (((a) &lt;= (b)) ? (a) : (b))
+
+defmain() { 
+    x=MAXLINES;
+    y=MAXLINESP1; 
+    a=max(x,y);
+}</pre><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_languageconstructs_13379_1036002"></a>Defining Constants Using const</h4></div></div></div><p class="NormalText">A <span><strong class="command">const</strong></span> declaration is used to define a constant. A constant can be scoped within a class, namespace, or globally. The advantage to using <span><strong class="command">const</strong></span> instead of <span><strong class="command">#define</strong></span> is that <span><strong class="command">const</strong></span> constants are pure constants and can be introspected using <span><strong class="command">find_index()</strong></span> and <span><strong class="command">name_info()</strong></span>, but a <span><strong class="command">#define</strong></span> is just a lexical substitution. For consistency, we recommend that constants use all uppercase identifiers, optionally using underscores to separate words.</p><p class="NormalText">Examples:</p><pre class="programlisting">const MAXLINES = 15;  
+const MAXLINESP1 = (MAXLINES+1);
+const SEARCHKEY = "&lt;Search&gt;";</pre><p class="NormalText">A few notes about constants:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">The <span><strong class="command">const</strong></span> declaration works with Slick-C classes and namespaces.</p></li><li><p class="NormalText">Constants support type inference so that the compiler can tell ints from booleans from strings.</p></li><li><p class="NormalText">Constant names and values are stored in the state file in order to allow introspection.</p></li><li><p class="NormalText">Context Tagging® recognizes the <span><strong class="command">const</strong></span> declaration correctly.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_languageconstructs_13379_1036010"></a>Defining Constants Using Enumerators</h4></div></div></div><p class="NormalText">Slick-C® also allows you to define constants using enumerators. Enumerated types share the advantages of <span><strong class="command">const</strong></span> declarations. They are discussed in more detail in the section <a href="ch14s05.htm#slick_c_types_11595_27970">Enumerated Types</a>.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_languageconstructs_13379_35318"></a>
+      <a name="slick_c_languageconstructs_13379_914878"></a>Namespaces</h3></div></div></div><p class="NormalText">Slick-C® supports namespaces which allow you to partition functions and classes into independent areas in order to organize your code better, and to better isolate your code from name conflicts. Slick-C namespaces use "<span><strong class="command">.</strong></span>" instead of "<span><strong class="command">::</strong></span>". Slick-C does not allow un-named namespace declarations. Slick-C supports two types of namespace declarations, as shown in the following code:</p><pre class="programlisting">    // Module-wide (like Java).
+    namespace slickedit.tagging;   
+ 
+    // Scoped namespace declaration (like C++ and C#).
+    namespace slickedit.search {
+       . . .
+    }</pre><p class="NormalText">Namespace imports use the C++-style <span><strong class="command">using</strong></span> syntax:</p><pre class="programlisting">    // Pull all symbols from slickedit.tagging into current scope.
+    using namespace slickedit.tagging;
+ 
+    // Pull one symbol from slickedit.search into scope.
+    using slickedit.search.Regex;
+ 
+    // Qualified access to a symbol in the namespace.
+    slickedit.diff.Diff( f1, f2 );</pre><p class="NormalText">Slick-C includes the <span><strong class="command">default;</strong></span> namespace, which will return you to the "default" global namespace.</p><p class="NormalText"></p></div></div></body></html>

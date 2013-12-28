@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_list_globals_of_type</title>
+</head>
+<body>
+
+<h3><b>int tag_list_globals_of_type(int tree_wid, int tree_index, _str(&tag_files)[], int type_id, int mask, int nonzero, var vnum_matches, int max_matches)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">List the global symbols of the given type. See
+<a href="tag_find_global.html">tag_find_global</a> for more details.
+<p>
+For synchronization, macros should perform a tag_lock_matches(true)
+and tag_lock_context(false) prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_wid">tree_wid</A></code> - Window ID of tree control to insert into,
+                  0 indicates to insert into a match set, see <a href="tag_insert_match.html">tag_insert_match</a>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_index">tree_index</A></code> - Parent tree node index to insert item under, ignored if <i>tree_wid</i> is zero.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_files">tag_files</A></code> - (Input) Tag files to search</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_id">type_id</A></code> - Tag type ID.  See <a href="tag_get_type.html">tag_get_type</a> for a list of all standard tag types.
+                  if (type_id<0), returns tags with ID>VS_TAGTYPE_LASTID</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mask">mask</A></code> - Tag flags indicating symbol attributes, see
+                  <a href="tag_insert_simple.html">tag_insert_simple</a> for details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="nonzero">nonzero</A></code> - if 1, succeed if mask & tag.flags != 0
+                  if 0, succeed if mask & tag.flags == 0</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="vnum_matches">vnum_matches</A></code> - (Input, Output) number of matches</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="max_matches">max_matches</A></code> - Maximum number of matches allowed
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_find_global.html">tag_find_global</a>, <a href="tag_get_type.html">tag_get_type</a>, <a href="tag_insert_match.html">tag_insert_match</a>, <a href="tag_tree_insert_tag.html">tag_tree_insert_tag</a>, <a href="tag_tree_prepare_expand.html">tag_tree_prepare_expand</a></blockquote>
+</body>
+</html>

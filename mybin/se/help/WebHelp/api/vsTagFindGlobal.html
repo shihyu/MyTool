@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagFindGlobal</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTagFindGlobal(int type_id, int mask=a, int nzero=a, int find_first=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve the first tag included in this tag database with global scope
+that is one of the given type (type_id) and that matches the given tag
+flag mask ((mask & tag_flags) != 0) == non_zero.  Use vsTagGetInfo
+and/or vsTagGetDetail to extract the details about the tag.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_id">type_id</A></code> - Type id (VS_TAGTYPE_*)
+                        If (type_id<0), returns tags with any user defined tag types.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mask">mask</A></code> - Tag attribute flags set (VS_TAGFLAG_*).
+                        The intersection of  this set of flags and those
+                        for each tag found (tag_flags) will be calculated.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="nzero">nzero</A></code> - Accept tag if (mask & tag_flags) is non-zero</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="find_first">find_first</A></code> - find first match or next match
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, < 0 on error, BT_RECORD_NOT_FOUND_RC if not found.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">find the first inline global function.
+<PRE>
+     vsTagFindGlobalOfType(VS_TAGTYPE_function, VS_TAGFLAG_inline, 1);
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

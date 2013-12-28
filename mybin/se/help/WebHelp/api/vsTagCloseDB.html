@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagCloseDB</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTagCloseDB(const char *pszFilename=a, int leave_open=a, int dbHandle=-, bool releaseExtraWriteLock=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Close the current database.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFilename">pszFilename</A></code> - (optional) File path of database to close.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="leave_open">leave_open</A></code> - (optional) If true, do not really close the file,
+                        instead flush the buffer if open read-write, then
+                        leave the file open read-only.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="dbHandle">dbHandle</A></code> - (optional) Explicit database handle to close.
+                        If this is given, pszFilename is ignored.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="releaseExtraWriteLock">releaseExtraWriteLock</A></code> - (optional) If this database was opened using
+                        <a href="vsTagOpenWriterDB.html">vsTagOpenWriterDB()</a>, and then locked for
+                        writing in advance using <a href="vsTagWriteLockDB.html">vsTagWriteLockDB()</a>,
+                        release the extra write lock now.  This is done to
+                        prevent a race condition that could lead to deadlock.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">database handle >= 0 on success, < 0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

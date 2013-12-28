@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_parse_line</title>
+</head>
+<body>
+
+<h3><b>_str _parse_line(_str &lines, _str parse_ch="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the first line/item of <i>string.</i>  The first line/item is
+deleted from <i>string</i> so that this function may be called again to
+get the next line.  By default, the line delimiters may be (13,10), (10),
+or (13).  The optional <i>delimiter</i> argument is a single character
+used as the item delimiter instead of the default delimiters.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+line='First,Second,Third';
+for (;;){
+   item=_parse_line(line, ',');
+   if (item == '') break;
+   messageNwait('item='item);
+}
+line="First\nSecond\nThird";
+for(;;){
+   item=_parse_line(line);
+   if (item == '') break;
+   messageNwait('item='item);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="String_Functions.html">String Functions</a></blockquote>
+</body>
+</html>

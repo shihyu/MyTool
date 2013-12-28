@@ -1,0 +1,151 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Ada</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch09.htm" title="Chapter 9.  Language-Specific Editing"><link rel="prev" href="ch09.htm" title="Chapter 9.  Language-Specific Editing"><link rel="next" href="ch09s03.htm" title="Ant"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_ada_11861_61757"></a>
+    <a name="sect_ada_11861_998341"></a>Ada</h2></div></div></div><p class="NormalText">This section describes some of the features and options that are available for Ada, including language-specific options and the Ada Beautifier.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_ada_11861_78112"></a>
+      <a name="sect_ada_11861_1003031"></a>
+      <a class="indexterm" name="sect_ada_440113DA_C74E"></a>Ada Formatting Options</h3></div></div></div><p class="NormalText">To access the Ada Formatting Options, from the main menu, click
+      <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages</strong></span>,
+      expand <span><strong class="guilabel">Application Languages &gt; Ada</strong></span>, then click
+      <span><strong class="guilabel">Ada Formatting Options</strong></span>.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+        <span><strong class="command"></strong></span>Languages similar to Ada may have similar Formatting Options screens that are not specifically documented.</p></div><p class="NormalText">
+      </p><div class="mediaobject"><img src="Resources/snips_ada_language_formatting.png"></div><p class="NormalText">
+    </p><p class="NormalText">The following options are available for
+      Ada:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="guilabel">Indent with tabs</strong></span> - Determines whether <span><strong class="keycap">Tab</strong></span> key, <span><strong class="keycap">Enter</strong></span> key, and paragraph reformat commands indent with spaces or tabs. The hyperlink indicates if <a href="ch08s08.htm">Adaptive Formatting</a> is on or off for this setting. See <a href="ch08s07.htm#sect_syntaxindentsmartpaste_14409_22538">Indenting with Tabs</a> for more information.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Syntax indent</strong></span>- When this option is selected, the <span><strong class="keycap">Enter</strong></span> key indents according to language syntax. The value in the text box specifies the amount to indent for each level. The hyperlink indicates if <a href="ch08s08.htm">Adaptive Formatting</a> is on or off for this setting. See <a href="ch08s07.htm#sect_syntaxindentsmartpaste_14409_73638">Syntax Indent</a> for more information.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Tabs</strong></span> - Set tabs in increments of a specific value or at specific column positions. To specify an increment of three, enter <span class="bold"><strong>3</strong></span> in the text box. To specify columns, for example, enter <span class="bold"><strong>1 8 27 44</strong></span>, to specify tab stops that are not an increment of a specific value. The hyperlink indicates if <a href="ch08s08.htm">Adaptive Formatting</a> is on or off for this setting.</p></li><li><p class="NormalText"><span><strong class="guilabel">Keyword case</strong></span> - The
+          <span><strong class="guilabel"><a class="indexterm" name="sect_ada_6673FDBB_ECA2"></a>Keyword case</strong></span> option specifies the
+          case of keywords used by Syntax Expansion. For example, when you type
+          the word "procedure" and the <span><strong class="guilabel">Keyword case</strong></span> is set
+          to <span><strong class="guilabel">Upper case</strong></span>, the editor changes "procedure" to
+          "PROCEDURE". The hyperlink indicates if <a href="ch08s08.htm">Adaptive Formatting</a> is on or off for this setting.</p></li></ul></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_ada_11861_92037"></a>
+      <a name="sect_ada_11861_1003073"></a>
+      <a class="indexterm" name="sect_ada_44345A56_A695"></a>Ada Beautifier</h3></div></div></div><p class="NormalText">You can beautify Ada files and change the beautify settings by using the Ada Beautifier dialog box. This dialog box can be accessed from the main menu by clicking <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Beautify</strong></span>, or by using the <span><strong class="command"></strong></span><span><strong class="command">gui_beautify</strong></span> command.</p><p class="NormalText">To instantly beautify Ada code according to the settings that are selected on the Ada Beautifier dialog box, use the <span><strong class="command">ada_beautify</strong></span> or <span><strong class="command">ada_beautify_selection</strong></span> commands.</p><p class="NormalText">The following settings and operations are available on the Ada Beautifier:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="guilabel">Restrict to selection</strong></span> - When checked, only lines in the selection are beautified.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Sync extension options</strong></span> - When checked, the language options are updated to reflect any changes that these dialogs have in common.</p></li><li><p class="NormalText">
+          <span><strong class="guibutton">Beautify</strong></span> - Beautifies current selection or buffer and closes the dialog box.</p></li><li><p class="NormalText">
+          <span><strong class="guibutton">Reset</strong></span> - Restores the dialog box settings to the values that appeared when you invoked the dialog.</p></li><li><p class="NormalText">
+          <span><strong class="guibutton">Save Settings</strong></span> - Saves beautify options in the <code class="filename">uformat.ini</code> file. These settings are used by the <span><strong class="command">ada_beautify</strong></span> command.</p></li></ul></div><p class="NormalText">The tabs on the Ada Beautifier are described in the sections below.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_ada_11861_1003093"></a>Indent Tab</h4></div></div></div><p class="NormalText">The following settings are available:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Indent with tabs</strong></span> - When checked, tab characters
+        are used for leading indent of lines. This value defaults to the
+        <span><strong class="guilabel">Tabs</strong></span> text box on the language-specific
+        <span><strong class="guilabel">Formatting</strong></span> options screen (see <a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>).</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Indent for each level (Syntax indent)</strong></span> - The
+        amount to indent for each new nesting level. The words "Syntax indent"
+        are in parenthesis to help indicate that this field has the same meaning
+        as the <span><strong class="guilabel">Syntax indent</strong></span> text box on the
+        language-specific <span><strong class="guilabel">Formatting</strong></span> options screen (see
+        <a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>). By default,
+        this text box is initialized with the current language setup
+        setting.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Tab size</strong></span> - Specifies output tab size. The
+        output tab size is only used if the <span><strong class="guilabel">Indent with
+        tabs</strong></span> check box is enabled on the language-specific
+        <span><strong class="guilabel">Formatting</strong></span> options screen (see <a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>). This value defaults to the <span><strong class="guilabel">Syntax indent</strong></span> text box on the options screen.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Original tab size</strong></span> - Specifies what the original file's tab expansion size was. It is necessary to know the tab expansion size of your original file to handle reusing indent amounts from your original file. Currently the beautifier only reuses the original source file's indenting for comments. This option has no effect if the original file has no tab characters.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Continued Lines</strong></span>
+          </p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Max line length</strong></span> - Specifies the maximum length a statement line can be before it is wrapped to a new line. Set this value to <span class="bold"><strong>0</strong></span> to preserve line breaks.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Continuation indent</strong></span> - Specifies how much to indent lines of statements which continue to the next line. This has no affect on assignment statements or parenthesized expressions. Lines which are a continuation of an assignment statement are indented after the first equal sign (<span><strong class="keycap">=</strong></span>). Lines which are a continuation of a parenthesized expression are indented after the open paren.</p></li></ul></div></li><li><p class="NormalText">
+            <span><strong class="guilabel">Operator position</strong></span> - Specify where the operator should be positioned when breaking a statement across multiple lines. For example, given the statement:</p><pre class="programlisting">Seconds := Days * Hours_Per_Day * Minutes_Per_Hour * Seconds_Per_Minute ;</pre><p class="NormalText">An operator position setting of <span><strong class="guilabel">End of same line</strong></span> would result in:</p><pre class="programlisting">Seconds := Days *
+Hours_Per_Day *
+Minutes_Per_Hour *
+Seconds_Per_Minute ;</pre><p class="NormalText">An operator position setting of <span><strong class="guilabel">Beginning of next line</strong></span> would result in:</p><pre class="programlisting">Seconds := Days
+* Hours_Per_Day
+* Minutes_Per_Hour
+* Seconds_Per_Minute ;</pre></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_ada_11861_1003138"></a>Statements/Declarations Tab</h4></div></div></div><p class="NormalText">The following options are available on the <span><strong class="guimenu">Statements/Declarations</strong></span> tab:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Reserved word case</strong></span> - Specifies the case for reserved words. For example, if you choose <span><strong class="guilabel">UPPER</strong></span>, then the Ada reserved word "procedure" would be beautified to "PROCEDURE".</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">One statement per line</strong></span> - When checked, only one statement is allowed per line of code.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">One declaration per line</strong></span> - When checked, only one declaration is allowed per line of code.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">One parameter per line</strong></span> - When checked, only one parameter is allowed per line of code in a formal parameter list of a subprogram specification.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">One enumeration per line</strong></span> - When checked, only one enumeration is allowed per line of code in an enumerated type definition.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_ada_11861_1003154"></a>Horizontal Spacing Tab</h4></div></div></div><p class="NormalText">This tab allows you to specify how certain operators and separators are padded. The following options are available:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Item</strong></span> - Syntactic item to which padding settings get applied.</p></li></ul></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> The "Binary operators" item includes: <span><strong class="keycap">+ - * / ** := = /= =&gt; &lt;= &gt;= &lt; &gt;</strong></span></p></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Padding Before</strong></span> - When checked, one space is placed before the item.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Padding After</strong></span> - When checked, one space is placed after the item.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Padding Preserve</strong></span> - When checked, the original padding (or lack of padding) around the item is preserved.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_ada_11861_1003169"></a>Vertical Alignment Tab</h4></div></div></div><p class="NormalText">The following options are available on the <span><strong class="guimenu">Vertical Alignment</strong></span> tab:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Align on declaration colon</strong></span> - When checked, adjacent declaration lines (including parameter specifications) have their colons vertically aligned. For example, before beautify:</p><pre class="programlisting">procedure foo ( A_Var : Boolean ;
+   Another_Var : Boolean) ;</pre><p class="NormalText">After beautify:</p><pre class="programlisting">procedure foo ( A_Var       : Boolean ;
+                Another_Var : Boolean ) ;</pre></li><li><p class="NormalText">
+            <span><strong class="guilabel">Align on declaration in-out</strong></span> - When checked, the modes of parameter specifications in the formal part of a subprogram declaration are vertically aligned. For example, before beautify:</p><pre class="programlisting">procedure foo ( A_Var : in Boolean ;
+   Another_Var : in out Boolean);</pre><p class="NormalText">After beautify:</p><pre class="programlisting">procedure foo ( A_Var       : in     Boolean ;
+                Another_Var : in out Boolean ) ;</pre></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_ada_11861_1003201"></a>Blank Lines Tab</h4></div></div></div><p class="NormalText">The following options are available on the <span><strong class="guimenu">Blank Lines</strong></span> tab:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Item</strong></span> - Syntactic item to which blank lines settings get applied.</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Subprogram declaration</strong></span> - Procedure or Function declaration.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Subprogram body</strong></span> - Procedure or Function body.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Type declaration</strong></span> - Any declaration that begins with the reserved word "TYPE".</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">for-use</strong></span> - Aspect clause. For example:</p><pre class="programlisting">for Medium Size use 2*Byte;</pre></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Subunit comment header</strong></span>
+                <span><strong class="command"></strong></span>- The comment block that appears just before a subunit (e.g. Procedure body, etc.).</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">begin/end</strong></span> - Any line that starts with the reserved words "begin" or "end."</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">if/elsif/else</strong></span> - The <span><strong class="command">if</strong></span>, <span><strong class="command">elsif</strong></span>, and <span><strong class="command">else</strong></span> parts of an <span><strong class="command">if</strong></span> statement.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">return</strong></span> - Any line that starts with the reserved word "return."</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Loops</strong></span> - Loop statements (e.g. <span><strong class="command">loop</strong></span>, <span><strong class="command">while</strong></span>, <span><strong class="command">for</strong></span>).</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Nested paren list item</strong></span> - A parenthesized item that is itself enclosed in a larger parenthesized list. For example, before beautify:</p><pre class="programlisting">Default_Data : constant Data_Type :=
+   ( A_Set =&gt; ( others =&gt; ( Item1 =&gt; false , Item2 =&gt; false , Item3 =&gt; false ) ) , -- Paren-d item enclosed in larger paren-d list
+     B_Set =&gt; ( others =&gt; ( Item1 =&gt; false , Item2 =&gt; false , Item3 =&gt; false ) ) ) ;</pre><p class="NormalText">After beautify:</p><pre class="programlisting">Default_Data : constant Data_Type :=
+   ( A_Set =&gt; ( others =&gt; ( Item1 =&gt; false ,
+                            Item2 =&gt; false , 
+                            Item3 =&gt; false ) ) , -- Paren-d item enclosed in larger paren-d list
+     B_Set =&gt; ( others =&gt; ( Item1 =&gt; false ,
+                            Item2 =&gt; false ,
+                            Item3 =&gt; false ) ) ) ;</pre></li></ul></div></li><li><p class="NormalText">
+            <span><strong class="guilabel">Before</strong></span> - Specify how many blank lines are inserted before item.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">After</strong></span> - Specify how many blank lines are inserted after item.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Between</strong></span> - Specify how many blank lines are inserted between like items.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_ada_11861_1003268"></a>Comments Tab</h4></div></div></div><p class="NormalText">The following options are available on the <span><strong class="guimenu">Comments</strong></span> tab:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Comment lines immediately below a type declaration indented by</strong></span> - The amount to indent a comment appearing immediately below a TYPE declaration.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Trailing comments</strong></span> - Trailing comments appear at the end of lines which contain statements or declarations. For example:</p><pre class="programlisting">A := B + C ;  -- This is a trailing comment
+-- This is not a trailing comment
+procedure foo ( A_Var : Boolean ) ;</pre><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Specific column</strong></span> - When selected, trailing comments are placed at the specified column.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Indent by</strong></span> - When selected, trailing comments are indented by the specified number of columns after the last character of the end of the statement or declaration.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Original relative indent</strong></span> - When selected, trailing comments are indented by reusing the indent after the last character of the end of the statement or declaration of the original source file.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Force type declaration comments to next line</strong></span> - When selected, trailing comments appearing at the end of a TYPE declaration line are forced onto the next line.</p></li></ul></div></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_ada_11861_1003289"></a>Advanced Tab</h4></div></div></div><p class="NormalText">The following options are available on the <span><strong class="guimenu">Advanced</strong></span> tab:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">if-then-else continued lines</strong></span> - Use these advanced options to customize how multi-line conditional expressions of an <span><strong class="command">if-then-else</strong></span> statement are indented.</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Force a linebreak on logical operators </strong></span>- A line break is forced before/after (depending on your Operator position setting) every logical operator in the condition of an <span><strong class="command">if/elseif</strong></span>. For example, before beautify:</p><pre class="programlisting">-- Indent per level = 3
+-- Operator position = Beginning of next line
+
+if A = B and C = D then
+   null ;
+end if ;</pre><p class="NormalText">After beautify:</p><pre class="programlisting">if A = B
+   and C = D then 
+   null ; 
+end if ;</pre></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Additional indent for logical operator</strong></span> - Additional indent amount for a line broken on a logical operator. This amount is in addition to the current indent level. For example, before beautify (Indent per level = 3; Operator position = Beginning of next line; Additional indent for logical operator = 3):</p><pre class="programlisting">-- Indent per level = 3
+-- Operator position = Beginning of next line
+-- Additional indent for logical operator = 3
+
+if A = B and C = D then
+   null ;
+end if ;</pre><p class="NormalText">After beautify:</p><pre class="programlisting">if A = B
+      and C = D then
+   null ;
+end if ;</pre></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Additional indent for logical operator when followed by another line that begins with logical operator</strong></span> - Additional indent amount for a line broken on a logical operator that is followed by another line that also is broken on a logical operator that is different. This amount is in addition to the current indent level, and in addition to the <span><strong class="guilabel">Additional indent for logical operator</strong></span> setting.</p><p class="NormalText">For example, before beautify (Indent per level = 3; Additional indent for logical operator = 3; Additional indent for logical operator when followed by another line that begins with different logical operator = 3):</p><pre class="programlisting">-- Indent per level = 3
+-- Operator position = Beginning of next line
+-- Additional indent for logical operator = 3
+-- Additional indent for logical operator when
+--   followed by another line that begins with different logical operator = 3
+
+if A = B and then C = D or else E = F then
+   null ;
+end if ;</pre><p class="NormalText">After beautify:</p><pre class="programlisting">if A = B
+         and then C = D
+      or else E = F then
+   null ;
+end if ;</pre></li></ul></div></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_ada_11861_1003360"></a>Schemes Tab</h4></div></div></div><p class="NormalText">To define a new scheme, set the various beautify options then click the <span><strong class="guibutton">Save Scheme</strong></span> button. User-defined schemes are stored in <code class="filename">uformat.ini</code>.</p><p class="NormalText"></p></div></div></div></body></html>

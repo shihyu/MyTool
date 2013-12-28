@@ -1,0 +1,86 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>find</title>
+</head>
+<body>
+
+<h3><b>_command int find(_str string='', _str options=null, VSSEARCH_BOUNDS vssearch_bounds=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Syntax: <B>/<I>string</I> </B>[ <B>/<I>options</I></B> ] or <B>L /<I>string</I> </B>[ <B>/<I>options</I></B> ] or <B>find /<I>string</I> </B>[ <B>/<I>options</I></B> ]
+<p>The /, L, or find command searches for the string specified.  Press and hold Ctrl+Alt+Shift to terminate a long search.  Any search or search and replace command may be terminated by pressing and holding Ctrl+Alt+Shift.  If you use the L or find command, the first non blank character is used as the delimiter.
+<p>In ISPF emulation, this command is not called when invoked from the command line.  Instead ispf_find is called.  Use ("Edit", "Find...") to explicitly invoke the find command.
+<p>When no parameters are specified, you are prompted for the string parameter.  While you enter the string parameter the following keys take on a new meaning:
+<DL compact style="margin-left:20pt;">
+ <DT>Ctrl+R</DT><DD>Searches in reverse for the next occurrence of the search string</DD>
+ <DT>Ctrl+S</DT><DD>Searches forward for the next occurrence of the search string.</DD>
+ <DT>Ctrl+T</DT><DD>Toggles regular expression pattern matching on/off.  See section <a href="../ch10.htm#sect_findreplace_09115B94_B50B">Regular Expressions</a> for information on regular expressions.  The key bound to the BRIEF emulation command <a href="re_toggle.html">re_toggle</a> will also toggle regular expression pattern matching.</DD>
+ <DT>Ctrl+W</DT><DD>Toggles word searching on/off.  Word searching is useful for search and replacing variables.</DD>
+ <DT>Ctrl+C</DT><DD>Toggles case sensitivity.  The key bound to the BRIEF emulation command <a href="case_toggle.html">case_toggle</a> will also toggle the case sensitivity.</DD>
+ <DT>Ctrl+M</DT><DD>Toggles searching within selection.</DD>
+ <DT>Ctrl+O</DT><DD>Toggles incremental search mode.</DD>
+ <DT>Ctrl+Q</DT><DD>Quotes the next character typed.</DD>
+</DL>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="string">string</A></code> - Input string to search for.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - The options argument is a string of one or more of the following:
+
+               <DL compact>
+               <DT>E</DT><DD>Exact case.</DD>
+               <DT>I</DT><DD>Ignore case.</DD>
+               <DT>-</DT><DD>Reverse search.</DD>
+               <DT>M</DT><DD>Limit search to marked area.</DD>
+               <DT><</DT><DD>If found, place cursor at beginning of word.</DD>
+               <DT>></DT><DD>If found, place cursor at end of word.</DD>
+               <DT>R</DT><DD>Interpret string as a regular expression.  See section <a href="../ch10s08.htm#sect_regularexpressions_12D63A8D_B329">SlickEdit Regular Expressions</a> for syntax of regular expression.</DD>
+               <DT>U</DT><DD>Interpret string as a UNIX regular expression.   See section <a href="../ch10s08.htm#sect_regularexpressions_6C030629_5BF3">UNIX Regular Expressions</a>.</DD>
+               <DT>B</DT><DD>Interpret string as a Brief regular expression.   See section <a href="../ch10s08.htm#sect_regularexpressions_A86AFCBB_D272">Brief Regular Expressions</a>.</DD>
+               <DT>L</DT><DD>Interpret string as a Perl regular expression.</DD>
+               <DT>&</DT><DD>Interpret string as a Wildcard regular expression.</DD>
+
+               <DT>H</DT><DD>Search through hidden lines.</DD>
+               <DT>#</DT><DD>Highlight matched occurrences with highlight color.</DD>
+               <DT>N</DT><DD>Do not interpret search string as a regular expression.</DD>
+               <DT>P</DT><DD>Wrap to beginning/end when string not found.</DD>
+               <DT>W</DT><DD>Limits search to words.  Used to
+               search for variables. </DD>
+               <DT>W</DT><DD>SlickEdit-regular-expression Specifies the valid characters in a word.  The default value is [A-Za-z0-9_$].</DD>
+
+               <DT>W:P</DT><DD> search to word prefix.  For example, searching for "pre" matches "pre" and "prefix" but not "supreme" or "supre".</DD>
+               <DT>W:PS</DT><DD>Limits search to strict word prefix.  For example, searching for "pre" matches "prefix" but not "pre", "supreme" or "supre".</DD>
+               <DT>W:S</DT><DD>Limits search to word suffix.  For example, searching for "fix" matches "fix" and "sufix" but not "fixit".</DD>
+               <DT>W:SS</DT><DD>Limits search to strict word suffix.  For example, searching for "fix" matches "sufix" but not "fix" or "fixit".</DD>
+
+               <DT>Y</DT><DD>Binary search.  This allows start positions in the middle of a DBCS or UTF-8 character.  This option is useful when editing binary files (in SBCS/DBCS mode) which may contain characters which look like DBCS but are not.  For example, if you search for the character 'a', it will not be found as the second character of a DBCS sequence unless this option is specified.</DD>
+               <DT>,</DT><DD>Delimiter to separate ambiguous options.</DD>
+               <DT>X<I>CLetters</I>'</DT><DD>Requires the first character of search string NOT be one of the color coding elements specified. For example, "XCS" requires that the first character not be in a comment or string. <i>CCLetters</i> is a string of one or more of the following color coding element letters:</DD>
+               <DL compact style="margin-left:20pt;">
+               <DT>O</DT><DD>Other</DD>
+               <DT>K</DT><DD>Keyword</DD>
+               <DT>N</DT><DD>Number</DD>
+               <DT>S</DT><DD>String</DD>
+               <DT>C</DT><DD>Comment</DD>
+               <DT>P</DT><DD>Preprocessing</DD>
+               <DT>L</DT><DD>Line number</DD>
+               <DT>1</DT><DD>Symbol 1</DD>
+               <DT>2</DT><DD> Symbol 2</DD>
+               <DT>3</DT><DD> Symbol 3</DD>
+               <DT>4</DT><DD> Symbol 4</DD>
+               <DT>F</DT><DD>Function color</DD>
+               <DT>V</DT><DD>No save line</DD>
+               </DL>
+               <DT>C<i>CCLetters</i><DD>Requires the first character of search string to be one of the color coding elements specified. See <i>CCLetters</i> above.</DD>
+               </DL>
+               Default search options may be set by the
+               <a href="../ch12s11.htm#sect_options_menuanddialogs_D3BDF495_8B93">Search Options</a> ("Tools > Options
+               > Editing > Search").</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="vssearch_bounds">vssearch_bounds</A></code> - Specifies ISPF search bounds parameters
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if the search string specified is found.  Common return codes are STRING_NOT_FOUND_RC, INVALID_OPTION_RC and INVALID_REGULAR_EXPRESSION_RC.  On error, message is displayed</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Command Line Examples
+<DL style="margin-left:20pt;">
+<DT><b>/xyz/-</b></DT><dd>Search for string "xyz" using default search case in reverse.</DD>
+<DT><b>L /xyz/-</b></DT><DD>Search for string "xyz" using default search case in reverse.  Notice that prefixing the string "/xyz/-" with L has no effect on this command.</DD>
+<DT><b>L $xyz$-</b></DT><DD>Search for string "xyz" using default search case in reverse.  The L command can change the string delimiter which in this case is not necessary.</DD>
+<DT><b>L $/$</b></DT><DD>Search forward for the character slash.  The L command has been used so that the string delimiter could be changed to $ which allows searching for the / character.</DD>
+<DT><b>L $/$-</b></DT><DD>Search backward for the character slash.</DD>
+<DT><b>/i/w</b></DT><DD>Search for the variable i.</DD>
+<DT><b>/xyz/e</b></DT><DD>Search for "xyz" in exact case.</DD>
+</DL>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="i_search.html">i_search</a>, <a href="replace.html">replace</a>, <a href="gui_find.html">gui_find</a>, <a href="gui_replace.html">gui_replace</a>, <a href="find_next.html">find_next</a>, <a href="find_prev.html">find_prev</a></blockquote>
+</body>
+</html>

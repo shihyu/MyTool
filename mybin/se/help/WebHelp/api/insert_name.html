@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>insert_name</title>
+</head>
+<body>
+
+<h3><b>int insert_name(_str name, int type, _str info="", int copy_index=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Inserts <i>name</i> into names table with type and optional info.  Valid
+types are listed in "slick.sh" and have the suffix "_TYPE".  Internal name
+types may not be inserted except for PICTURE_TYPE and EVENTTAB_TYPE.  If the
+<i>type</i> given is PICTURE_TYPE, <i>name</i> must be a filename.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If successful, the index of the new name table entry is returned.
+Otherwise 0 is returned and <b>rc</b> is set to INTERPRETER_OUT_OF_MEMORY_RC.
+On error, message displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Names_Table_Functions.html">Names Table Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="find_index.html">find_index</a>, <a href="name_match.html">name_match</a>, <a href="name_name.html">name_name</a>, <a href="name_type.html">name_type</a>, <a href="name_info.html">name_info</a>, <a href="call_index.html">call_index</a>, <a href="set_name_info.html">set_name_info</a>, <a href="delete_name.html">delete_name</a>, <a href="_insert_name_list.html">_insert_name_list</a>, <a href="replace_name.html">replace_name</a></blockquote>
+</body>
+</html>

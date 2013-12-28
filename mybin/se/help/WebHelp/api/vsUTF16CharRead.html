@@ -1,0 +1,45 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsUTF16CharRead</title>
+</head>
+<body>
+
+<h3><b>unsigned short*VSAPI vsUTF16CharRead(const unsigned short *pwBuf, const unsigned short *pwEndBuf, unsigned &uch, VSUTF8_FILEINFO2 *pfile=0, int(VSAPI*pfnRead)(VSUTF8_FILEINFO2*pfile, const unsigned short*pCurrentPos)=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Reads a UTF-16 or UTF-32 (surrogate) character.  This function does
+not read composite characters.  This function is slower than the
+<b>vsUTF16CharRead2</b>() function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pwBuf">pwBuf</A></code> - Buffer contain UTF-16 text.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pwEndBuf">pwEndBuf</A></code> - Pointer to end of buffer.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="uch">uch</A></code> - Recieves UTF-32 character.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pfnRead">pfnRead</A></code> - Callback function to read more data when
+<i>pwBuf</i>>=<i>pwEndBuf</i>.  This
+allows you to write more efficient code
+which processes data directly from any
+source without having to make a copy of the
+data.  Returns 0 if successful, 1 if no more
+data, and a negative error code for an error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>unsigned short*VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns pointer to the next character to read.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<p>Sample callback function:</p>
+
+<pre>
+static char gTempBuffer[32768];
+
+static int VSAPI CallbackFileRead2(VSUTF8_FILEINFO2 *pfile,const
+unsigned short *pCurrentPos)
+{
+   if (pCurrentPos<pfile->pEndBuf) {
+      pfile->pBuf=(unsigned short *)pCurrentPos;
+      return(1);  // no more data.
+   }
+   int status=readfh(pfile->fh,gTempBuffer,sizeof(gTempBuffer));
+   pfile->pBuf=(unsigned short *)gTempBuffer;
+   pfile->pEndBuf=(unsigned short
+*)(gTempBuffer+(status&0xfffffffe));
+   return(status);   // 0 for success, negative number for error.
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Unicode_Functions.html">Unicode Functions</a></blockquote>
+</body>
+</html>

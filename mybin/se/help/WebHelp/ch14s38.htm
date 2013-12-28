@@ -1,0 +1,206 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Events</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s37.htm" title="Tutorials"><link rel="next" href="ch15.htm" title="Chapter 15.  Glossary"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_eventnames_12353_10297"></a>
+    <a name="slick_c_eventnames_12353_1007210"></a>Events</h2></div></div></div><p class="NormalText">This section contains the topics:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s38.htm#slick_c_eventnames_12353_34716">Event Names</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s38.htm#slick_c_eventnames_12353_22910">Keys</a>
+      </p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_eventnames_12353_34716"></a>
+      <a name="slick_c_eventnames_12353_1027939"></a>Event Names</h3></div></div></div><p class="NormalText">Event names are used as arguments to the <span><strong class="command">def</strong></span> primitive. Event names are also used when comparing events returned by the <span><strong class="command">get_event</strong></span> or <span><strong class="command">test_event</strong></span> built-in functions or when defining an event handler function. An event name is a string literal of a length of one or more. An event name string of a length one specifies an ASCII character. To keep the macro source compatible, some event names do not have to be enclosed in quotes as long as the <span><strong class="command">_</strong></span> (underscore) character is used instead of the <span><strong class="command">-</strong></span> (dash) character. The following sections list the acceptable constants.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_eventnames_12353_22910"></a>
+      <a name="slick_c_eventnames_12353_1027203"></a>Keys</h3></div></div></div><p class="NormalText">This section contains the following topics:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a href="ch14s38.htm#slick_c_eventnames_12353_65972">ASCII Characters</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s38.htm#slick_c_eventnames_12353_94407">Function Keys</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s38.htm#slick_c_eventnames_12353_45131">Extended Keys</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s38.htm#slick_c_eventnames_12353_93361">Miscellaneous Keys</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s38.htm#slick_c_eventnames_12353_85210">Key Name Examples</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s38.htm#slick_c_eventnames_12353_87501">Mouse Events</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s38.htm#slick_c_eventnames_12353_51134">on Events</a>
+        </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_eventnames_12353_65972"></a>
+        <a name="slick_c_eventnames_12353_1007212"></a>ASCII Characters</h4></div></div></div><p class="NormalText">Acceptable ASCII characters are <span><strong class="command">\0..\255</strong></span>. Backslash is used for non-displayable keys. </p><p class="NormalText">You may also quote displayable characters such as "a" or "4". The keys<span><strong class="command"> \1..\29</strong></span> are also represented by the following keys:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="keycap">C-A</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">C-B..C-Z</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">C-[,C-\\,C-]</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">C-^</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">C-_</strong></span>
+          </p></li></ul></div><p class="NormalText">The ASCII keys <span><strong class="command">\129..\255</strong></span> are the same key binding as <span><strong class="command">\128</strong></span>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_eventnames_12353_94407"></a>
+        <a name="slick_c_eventnames_12353_1007215"></a>Function Keys</h4></div></div></div><p class="NormalText">Acceptable function keys are <span><strong class="keycap">F1</strong></span>, <span><strong class="keycap">F2</strong></span>, and <span><strong class="keycap">F12</strong></span>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_eventnames_12353_45131"></a>
+        <a name="slick_c_eventnames_12353_1025342"></a>Extended Keys</h4></div></div></div><p class="NormalText">Acceptable extended keys are the following:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="keycap">Backspace </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Delete </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Down </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">End </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Enter </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Escape </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Home </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Insert </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Left </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Pad_5 </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Pad_Minus </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Pad_Plus </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Pad_Slash </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Pad_Star </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">PageDown </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">PageUp </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Right </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Tab </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">Up </strong></span>
+          </p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_eventnames_12353_93361"></a>
+        <a name="slick_c_eventnames_12353_1027329"></a>Miscellaneous Keys</h4></div></div></div><p class="NormalText">Acceptable miscellaneous keys are </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="keycap">C-A-Enter </strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">C-A-Tab</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">C-A-Esc</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">C-A-Backspace</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">C-PrtScn</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">C-Ctrl</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="keycap">A-Alt</strong></span>
+          </p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_eventnames_12353_85210"></a>
+        <a name="slick_c_eventnames_12353_1027417"></a>Key Name Examples</h4></div></div></div><p class="NormalText">The following are examples of uses for key names in the Slick-C® language:</p><pre class="programlisting">def "A-x"=safe_exit;  // Note that "A-a" is different than "A-A" which requires
+                      // the Alt and Shift keys to be pressed.
+def "A-?"=help;
+def "C-X" "b"=list_buffers;
+def \0 - \255= nothing;
+ctlcombo1.on_change()
+{
+}
+ctlcombo1."c-s-a"() // Define event handler for Ctrl+Shift+A
+{
+}
+ctlcombo1."a"-"z", "A-"Z"()    // Define event handler for characters A-Z upper-
+                               // and lowercase.
+{
+}
+void p()
+{
+   for (;;) {
+      key=get_event();
+if (key:==name2event("ESC") break;
+      if (key:==name2event("UP")) {
+          ...
+      } else if (key:==name2event("DOWN") ) {
+          ...
+      }
+   }
+}</pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_eventnames_12353_87501"></a>
+        <a name="slick_c_eventnames_12353_1027457"></a>Mouse Events</h4></div></div></div><p class="NormalText">The following are acceptable mouse events.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">lbutton_double_click</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="guilabel">lbutton_down</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="guilabel">lbutton_triple_click</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="guilabel">lbutton_up</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="guilabel">mbutton_double_click</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="guilabel">mbutton_down</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="guilabel">mbutton_triple_click</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="guilabel">mbutton_up</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="guilabel">rbutton_double_click</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="guilabel">rbutton_down</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="guilabel">rbutton_triple_click</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="guilabel">rbutton_up</strong></span>
+          </p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_eventnames_12353_51134"></a>
+        <a name="slick_c_eventnames_12353_1027547"></a>on Events</h4></div></div></div><p class="NormalText">Below is a list of the <span><strong class="command">on</strong></span> events. The acronyms "hsb" and "vsb" stand for horizontal and vertical scroll bar, respectively. ]</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="command">on_change </strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_change2 </strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_close </strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_create </strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_create2 </strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_destroy </strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_destroy2</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_drop_down</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_got_focus</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_hsb_bottom</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_hsb_line_down</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_hsb_line_up</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_hsb_page_down</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_hsb_page_up</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_hsb_thumb_pos</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_hsb_thumb_track</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_hsb_top</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_load</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_load_focus</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_resize</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_scroll</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_spin_down</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_spin_up</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_sscroll_lock</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_vsb_bottom</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_vsb_line_down</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_vsb_line_up</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_vsb_page_down</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_vsb_page_up</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_vsb_thumb_pos</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_vsb_thumb_track</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="command">on_vsb_top</strong></span>
+            </p></li></ul></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="slick_c_eventnames_12353_1027614"></a>Miscellaneous Events</h5></div></div></div><p class="NormalText">
+          <span><strong class="command">on_select</strong></span> is an acceptable miscellaneous event.</p><p class="NormalText"></p></div></div></div></div></body></html>

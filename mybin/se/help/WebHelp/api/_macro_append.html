@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_macro_append</title>
+</head>
+<body>
+
+<h3><b>void _macro_append(_str string)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">If macro recording and output is on (_macro()!=0), the string argument
+specified is appended to the end of the macro being recorded.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="string">string</A></code> - text to append to macro definition.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+   _macro_call('find','Find this', 'ri');
+   // The above is identical to
+   _macro_append("find('Find this', 'ri')");
+   // and is also identical to
+   _macro_append( "find(" _quote('Find this') ',' _quote('ri') ")" );
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Macro_Programming_Functions.html">Macro Programming Functions</a></blockquote>
+</body>
+</html>

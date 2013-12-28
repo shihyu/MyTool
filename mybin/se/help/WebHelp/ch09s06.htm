@@ -1,0 +1,450 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Java</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch09.htm" title="Chapter 9.  Language-Specific Editing"><link rel="prev" href="ch09s05.htm" title="COBOL"><link rel="next" href="ch09s07.htm" title="Pascal"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_java_11465_60340"></a>
+    <a name="sect_java_11465_1013839"></a>
+    <a class="indexterm" name="sect_java_1966E7E9_D1A2"></a>Java</h2></div></div></div><p class="NormalText">
+    SlickEdit® provides a full-featured Java development environment, allowing you to edit, build, and debug Java programs. Topics in this section:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch09s06.htm#sect_java_11465_32699">Initial Setup</a> - Read this to configure SlickEdit for your JDK and other settings needed for compiling and debugging.</p></li><li><p class="NormalText">
+        <a href="ch09s06.htm#sect_java_11465_13145">Java-Specific Features</a> - Information about features designed specifically for Java programmers.</p></li><li><p class="NormalText">
+        <a href="ch09s06.htm#sect_java_11465_39080">Java-Specific Interfaces</a> - Detailed descriptions of dialogs, tool windows, and option screens specific to Java programming.</p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_java_11465_32699"></a>
+      <a name="sect_java_11465_1013854"></a>Initial Setup</h3></div></div></div><p class="NormalText">
+      SlickEdit® relies on an installed Java Development Kit (JDK) for compiling and debugging. After you have installed the JDK on your computer, the following steps will configure SlickEdit to use it. The steps are divided into three categories:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_76689">Context Tagging® for Java</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_84609">Setting Up a Java Workspace and Project</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_60883">Configuring Java Build and Runtime Options</a>
+        </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_76689"></a>
+        <a name="sect_java_11465_1013869"></a>Context Tagging® for Java</h4></div></div></div><p class="NormalText">
+        SlickEdit® needs to tag the Java libraries to provide symbol completions and other Context Tagging features for those classes (see <a href="ch06.htm#sect_contexttaggingoverview_14396_11377">Context Tagging Features</a>). When you first run SlickEdit after an installation, you are prompted with a dialog to create these tag files. Complete the steps below if you did not create tag files at that time or to configure additional JDKs.</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Open the <a href="ch12s10.htm#sect_tools_menuanddialogs_13396_70511">Context Tagging - Tag Files Dialog</a> by selecting <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Tag Files</strong></span>.</p><div class="mediaobject"><img src="Resources/contexttagging-tagfiles_dialog_java.png"></div></li><li><p class="NormalText">Click the <span><strong class="guibutton">Auto Tag</strong></span> button to open the Create Tag 
+            Files for Compiler Libraries dialog. This dialog is displayed automatically when you first 
+            run SlickEdit.</p><div class="mediaobject"><img src="Resources/createtagfilesforcompilerlibraries_dialog.png"></div></li><li><p class="NormalText">
+            SlickEdit may detect that you have installed the JDK. If so, the section for Java will be filled out. If not, you will have to configure this manually.</p></li><li><p class="NormalText">Click the <span><strong class="guibutton">Configure</strong></span> button to open the <span><strong class="guilabel">Java Compiler Properties Dialog</strong></span>. You can have multiple JDKs installed on your computer at the same time and configure SlickEdit to use different JDKs for each project. This dialog provides the name and location for each JDK so that you can select it for tagging or building.</p><div class="mediaobject"><img src="Resources/javacompilerproperties_dialog.png"></div></li><li><p class="NormalText">Click the <span><strong class="guibutton">Add</strong></span> button to browse to the root of the desired JDK (or JRE).  If SlickEdit recognizes the Java vendor and version, it will automatically set the appropriate properties.  If not, you will be prompted for the configuration name. Give it a name that represents the associated JDK, like "JDK 1.6".</p></li><li><p class="NormalText">If a default JDK has not been specified, click the <span><strong class="guibutton">Set Default</strong></span> button to set this JDK as the default.</p></li><li><p class="NormalText">When finished, click the <span><strong class="guibutton">OK</strong></span> button to return to the auto tag dialog.</p></li><li><p class="NormalText">Make sure there is a check in the <span><strong class="guilabel">Create tag file for Java 
+        compiler libraries</strong></span> check box. Depending on your environment, there may be checks in 
+        the check boxes for C++ and .NET. Leave those checked if you have not already tagged those 
+        libraries. If you just want to tag the Java libraries, uncheck the other check boxes.</p></li><li><p class="NormalText">Click the <span><strong class="guibutton">Create tag file(s)</strong></span> button.</p></li><li><p class="NormalText">
+            SlickEdit will display a progress bar while your libraries are being tagged. When finished, SlickEdit will display the Context Tagging - Tag Files dialog. You can close this if you have no other libraries to tag.</p></li></ol></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_84609"></a>
+        <a name="sect_java_11465_1013904"></a>Setting Up a Java Workspace and Project</h4></div></div></div><p class="NormalText">In SlickEdit®, files are contained in projects, and projects are contained in workspaces. Except for the most basic editing, you should always work within a workspace and project in SlickEdit. Context Tagging® relies on having your source files contained in a project. See <a href="ch05.htm#sect_workingwithworkspacesandprojects_15038_53861">Workspaces and Projects</a> for more information.</p><p class="NormalText">Editing options are determined by the file extension and accessed by selecting <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span> from the main menu, then selecting the corresponding language in the options hierarchy. Editing options control how your code is formatted and key editing behaviors as you type.</p><p class="NormalText">The project type determines your build environment and provides options specific to that project type. For Java, this includes specifying which JDK to use, setting up the debugger, and configuring <a href="ch09s06.htm#sect_java_11465_77106">Java Live Errors</a>. To create a new Java project or to see a list of the available Java project types, select <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">New</strong></span> from the main menu, then expand the Java node in the tree under <span><strong class="guilabel">Project type</strong></span>. </p><p class="NormalText">After you have created a Java project, you can set the build options by selecting <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">Project Properties</strong></span> from the main menu, selecting <span><strong class="command">Build</strong></span> in the <span><strong class="guilabel">Tool name</strong></span> list, then clicking the <span><strong class="guibutton">Options</strong></span> button.  The options displayed are specific to the project type of the active project. If you are in a Java project, you will see Java options. If you are in a C++ project, you will see options for the C++ compiler. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> The <span><strong class="guibutton">Options</strong></span> button is only available if you have selected <span><strong class="guilabel">Build without a makefile (dependencies automatically checked)</strong></span> on the <span><strong class="guilabel">Build</strong></span> tab of <a href="ch12s05.htm#sect_project_menuanddialogs_13898_53193">Project Properties Dialog</a>. If you select either of the other two options, SlickEdit uses an external command to launch the build.</p></div><p class="NormalText">You can also change the build options for Java by selecting <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Java Options</strong></span> from the main menu (or the corresponding item for other languages).</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_60883"></a>
+        <a name="sect_java_11465_1013923"></a>Configuring Java Build and Runtime Options</h4></div></div></div><p class="NormalText">The Java Options dialog contains settings used when you build or execute a Java project. Most of the settings are stored for the particular Java project and configuration selected. You can set different values for different projects and for different configurations of the same project. For example, you might have different settings for the Debug configuration than from the Release configuration, allowing you to turn on optimizations used for release that are incompatible with debugging. See <a href="ch09s06.htm#sect_java_11465_23557">Java Options Dialog</a> for more information.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_java_11465_13145"></a>
+      <a name="sect_java_11465_1013929"></a>Java-Specific Features</h3></div></div></div><p class="NormalText">
+      SlickEdit® provides many features that work across several languages including Java, and Java-specific information is described throughout the documentation where applicable. The following are additional features designed specifically for Java developers:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_75415">Javadoc Comments</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_38608">Organize Imports</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_77106">Java Live Errors</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_51763">JUnit Testing</a>
+        </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_75415"></a>
+        <a name="sect_java_11465_1013948"></a>Javadoc Comments</h4></div></div></div><p class="NormalText">Several features are available to help you enter and format Javadoc comments (as well as other doc comment formats). See <a href="ch08s16.htm#sect_workingwithcomments_13005_47728">Doc Comments</a> for more information.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_38608"></a>
+        <a name="sect_java_11465_1013958"></a>
+        <a class="indexterm" name="sect_java_6F9F9FAB_D7B5"></a>
+        <a class="indexterm" name="sect_java_6A2B8C2D_5AAA"></a>
+        <a class="indexterm" name="sect_java_F47C9286_D48C"></a>
+        <a class="indexterm" name="sect_java_64CED341_CC1D"></a>Organize Imports</h4></div></div></div><p class="NormalText">Organize Imports automates the management of import statements in Java files. This feature minimizes the amount of time that it takes to compile code by only importing the classes that are used. Existing import statements are also sorted in a readable format and are more consistent between different Java packages in the same project. Organizing of imports is applied to an entire file. </p><p class="NormalText">To organize imports, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Imports </strong></span> &#8594; <span><strong class="guimenuitem">Organize Imports</strong></span>, or from the right-click context menu, select <span><strong class="guimenu">Imports </strong></span> &#8594; <span><strong class="guimenuitem">Organize Imports</strong></span>. Alternately, use the <span><strong class="command">jrefactor_organize_imports</strong></span> command.</p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_11465_1013962"></a>
+          <a class="indexterm" name="sect_java_9F0C11D9_8728"></a>Adding Imports</h5></div></div></div><p class="NormalText">To add an import statement for the class name under the cursor in Java code, move the cursor to the class name you want to import, then from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Imports </strong></span> &#8594; <span><strong class="guimenuitem">Add Import</strong></span>, or from the right-click context menu, select <span><strong class="guimenu">Imports </strong></span> &#8594; <span><strong class="guimenuitem">Add Import</strong></span>. Alternately, use the <span><strong class="command">jrefactor_add_import</strong></span> command.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_11465_1013967"></a>
+          <a class="indexterm" name="sect_java_EB4CF9CE_50ED"></a>
+          <a class="indexterm" name="sect_java_D0A760D7_9A96"></a>
+          <a class="indexterm" name="sect_java_EAE4DF4D_8604"></a>Import Options</h5></div></div></div><p class="NormalText">Several options are available on the Options dialog to control the behavior of Organize Imports. See <a href="ch09s06.htm#sect_java_11465_68495">Organize Java Imports Options Interface</a> for details.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_77106"></a>
+        <a name="sect_java_11465_1013986"></a>
+        <a class="indexterm" name="sect_java_A2EB363E_6D2E"></a>
+        <a class="indexterm" name="sect_java_0EB53E4E_6B43"></a>
+        <a class="indexterm" name="sect_java_A2B9A6CA_E67D"></a>Java Live Errors</h4></div></div></div><p class="NormalText">Java Live Errors is a feature that flags syntax and compilation errors as you edit your code. This feature also provides coding "best practice" warnings, and can be configured to accommodate any source compliance level.</p><p class="NormalText">To activate Live Errors, open a Java project then complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Open the Java Options dialog by selecting <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Java Options</strong></span> from the main menu.</p></li><li><p class="NormalText">Select the <span><strong class="guilabel">Compiler</strong></span> tab and enter the <span><strong class="guilabel">Source Compliance level</strong></span>.</p></li><li><p class="NormalText">Select the <span><strong class="guilabel">Live Errors</strong></span> tab and check <span><strong class="guilabel">Enable Live Errors</strong></span>.</p></li><li><p class="NormalText">In the <span><strong class="guilabel">Path to JDK 6 or later</strong></span> field, specify the root of the JDK 6 (or compatible JDK) installation. There is no requirement that you build your code with JDK 6, only that it is available to Live Errors.</p></li></ol></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> If you have Live Errors running and wish to specify a different JDK 6 (or other compatible JDK) root, after changing the path on the Java Options dialog, you must restart SlickEdit®.</p></div><p class="NormalText">After activating Live Errors, you can use the <span><strong class="command">rte_next_error</strong></span> command to jump through the live errors in the current file. Bind this command to a key sequence for more efficiency (see <a href="ch04s03.htm#sect_keymousebindings_13007_84952">Creating Bindings</a>). </p><p class="NormalText">See <a href="ch09s06.htm#sect_java_11465_92123">Live Errors Tab</a> for more information about the fields and options on this tab.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_51763"></a>
+        <a name="sect_java_11465_1014006"></a>
+        <a class="indexterm" name="sect_java_439806EA_A8D1"></a>
+        <a class="indexterm" name="sect_java_99063_36798"></a>
+        JUnit Testing</h4></div></div></div><p class="NormalText">JUnit tests can be run from within SlickEdit®. The results can be viewed and code that fails the testing can be easily reconciled. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+          JUnit support in SlickEdit® requires Java 5 or later, as well as JUnit 
+          4.6 or later.  No earlier versions are supported.
+        </p></div><p class="NormalText">To run a JUnit test, in the Projects tool window, select the project, package or file that you want, then on the right-click context menu, select <span><strong class="guimenu">Unit Test </strong></span> &#8594; <span><strong class="guimenuitem">Run</strong></span> (<span><strong class="command">junit</strong></span> command) or <span><strong class="guimenu">Unit Test </strong></span> &#8594; <span><strong class="guimenuitem">Debug</strong></span> (<span><strong class="command">junit_debug</strong></span> command). The results are displayed in the Unit Testing tool window. </p><div class="mediaobject"><img src="Resources/junit_toolbar.png"></div><p class="NormalText">The Unit Testing tool window displays the number of tests that ran, failed, passed, had errors, and were not run. Double-click the items found on the <span><strong class="guimenu">Tests</strong></span> or <span><strong class="guimenu">Defects </strong></span>tab to be redirected to the code that needs to be debugged. </p><p class="NormalText">A tree control displays the defect trace(s) for the currently selected test item. Buttons are available above the tabs to rerun tests:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">To rerun the last set of tests, click <span><strong class="guibutton">Run Current TestCases</strong></span>.</p></li><li><p class="NormalText">To rerun only the tests with defects from the last set of tests run, click <span><strong class="guibutton">Run Current TestCases with Defects</strong></span>.</p></li></ul></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_java_11465_39080"></a>
+      <a name="sect_java_11465_1014018"></a>Java-Specific Interfaces</h3></div></div></div><p class="NormalText">This section provides detailed information about the following dialogs, tool windows, and option screens that are specific to Java programming:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_97941">Java Compiler Properties Dialog</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_23557">Java Options Dialog</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_82777">Java Formatting Options Interface</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_68495">Organize Java Imports Options Interface</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_97759">Java Beautifier Dialog</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_65869">Javadoc Editor Dialog</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch09s06.htm#sect_java_11465_60657">Javadoc Beautifier Options Dialog</a>
+        </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_97941"></a>
+        <a name="sect_java_11465_1014050"></a>
+        <a class="indexterm" name="sect_java_376D814F_E6C0"></a>Java Compiler Properties Dialog</h4></div></div></div><p class="NormalText">In order to correctly perform symbol analysis and cross-referencing, SlickEdit® needs to know which JDK you are using and where the system libraries are located.</p><p class="NormalText">These properties can be specified using the Java Compiler Properties option screen or the Java Compiler Properties dialog. The interfaces contain the same fields and options so you can make changes using the one you prefer:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">Application Languages </strong></span> &#8594; <span><strong class="guimenuitem">Java</strong></span>, then select 
+            <span><strong class="guilabel">Compiler Properties</strong></span>.</p></li><li><p class="NormalText">With a Java project open, from the main menu, click <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">Project Properties</strong></span>. Select the <span><strong class="guilabel">Compile/Link</strong></span> tab, then click the <span><strong class="guibutton">Ellipsis</strong></span> button to the right of the <span><strong class="guilabel">Compiler</strong></span> combo box. The Java Properties dialog is displayed.</p><div class="mediaobject"><img src="Resources/javacompilerproperties_dialog.png"></div></li></ul></div><p class="NormalText">For Java, you can have multiple JDKs installed on your computer at the same 
+        time and configure SlickEdit to use different JDKs for each project. The interface provides 
+        the name and location for each JDK so that you can select it for tagging or building. See <a href="ch12s11.htm#langspeccompileroptions">Language-Specific Compiler Properties</a> for more information about these 
+        options.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_23557"></a><a name="sect_java_11465_1014064"></a>
+        <a class="indexterm" name="sect_java_50A91E25_FD70"></a>
+        <a class="indexterm" name="sect_java_70873_13122"></a>
+        <a class="indexterm" name="sect_java_82096_39226"></a>
+        <a class="indexterm" name="sect_java_452C38A8_069A"></a>
+        <a class="indexterm" name="sect_java_99F0111D_82A0"></a>
+        <a class="indexterm" name="sect_java_E4AD0AFF_8C92"></a>
+        <a class="indexterm" name="sect_java_AA48FDB2_B7C1"></a>
+        <a class="indexterm" name="sect_java_5C8FE1F9_2D75"></a>
+        <a class="indexterm" name="sect_java_07B040A5_68AE"></a>
+        <a class="indexterm" name="sect_java_DA66AB6C_30F0"></a>
+        <a class="indexterm" name="sect_java_81619FE0_1624"></a>
+        <a class="indexterm" name="sect_java_F8038226_D42D"></a>Java Options Dialog</h4></div></div></div><p class="NormalText">The Java Options dialog contains settings used when you build or execute a Java project. Most of the settings are stored for the particular Java project and configuration selected. You can set different values for different projects and for different configurations of the same project. For example, you might have different settings for the Debug configuration than from the Release configuration, allowing you to turn on optimizations used for release that are incompatible with debugging.</p><p class="NormalText">To access the Java Options dialog, first make sure you have a Java project or file open, then from the main menu, click <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Java Options</strong></span> (or, use the <span><strong class="command">javaoptions</strong></span> command).</p><div class="mediaobject"><img src="Resources/javaoptions_dialog.png"></div><p class="NormalText"></p><p class="NormalText">There are three settings on the dialog that apply to all tabs:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Settings for</strong></span> - The <span><strong class="guilabel">Settings for </strong></span>drop-down list at the top of the dialog is used to specify the project configuration you want to affect with the option settings. This is the same field that is on the Project Properties dialog, where you can also create new configurations. See <a href="ch05.htm#sect_workingwithworkspacesandprojects_15038_79593">Project Configurations</a> for more information.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">JDK installation directory (affects all projects and configurations)</strong></span> - Specifies the full path to the root of the JDK used to build and execute Java programs. This value is shared by all Java projects and all configurations. Click the button to the right of the field to browse. Use the drop-down button to select a recently used entry.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Ant installation directory (affects all projects and configurations)</strong></span> - Specifies the full path to the root of the Ant installation directory. Ant is a commonly used build tool for Java. It is not shipped with SlickEdit, so you need to specify where it is installed. Click the button to the right of the field to browse. Use the drop-down button to select a recently used entry.</p></li></ul></div><p class="NormalText">The other settings and options are divided into the following tabs:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <a href="ch09s06.htm#sect_java_11465_29637">Compiler Tab</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch09s06.htm#sect_java_11465_84632">Javadoc Tab</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch09s06.htm#sect_java_11465_16661">Jar Tab</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch09s06.htm#sect_java_11465_53704">Classpath Tab</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch09s06.htm#sect_java_11465_25821">JRE Tab</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch09s06.htm#sect_java_11465_61218">Debugger Tab</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch09s06.htm#sect_java_11465_92123">Live Errors Tab</a>
+          </p></li></ul></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"></p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Options that are self-explanatory are not described in the documentation.</p></li><li><p class="NormalText">Prior to making changes on the tabs of the dialog, be sure that your desired project configuration is selected in the <span><strong class="guilabel">Settings for</strong></span> drop-down list at the top of the dialog.</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_11465_29637"></a>
+          <a name="sect_java_11465_1014113"></a>Compiler Tab</h5></div></div></div><p class="NormalText">The Compiler tab on the Java Options dialog (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Java Options</strong></span>) is shown below.</p><div class="mediaobject"><img src="Resources/javaoptions_dialog_compiler_tab.png"></div><p class="NormalText">This tab contains the following fields and options:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Compiler name</strong></span> - Specifies the name of the compiler executable without the file extension. Click the <span><strong class="guibutton">Ellipsis</strong></span> button to browse for the file.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Output directory (-d)</strong></span> - Specifies the full path to a directory to save the generated class files. Click the <span><strong class="guibutton">Ellipsis</strong></span> button to browse for the directory.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Optimize output (-O)</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Generate no warnings (-nowarn)</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Verbose compiler output (-verbose)</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Notify about locations where deprecated APIs are used (-deprecation)</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Generate debug information (-g)</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Source Compliance level</strong></span> - Specifies the JDK version number to use when parsing the code. For example, JDK 1.6 can still parse the syntax for code written using JDK 1.4. Use this field to tell the compiler which Java syntax to use. This is the same as setting the <span><strong class="command">-source</strong></span> option on the javac command line.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Target Compliance level</strong></span> - Setting this value will generate code that will run on the specified version of the Java VM. This is the same as setting the <span><strong class="command">-target</strong></span> option on the javac command line.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Other options</strong></span> - Specify additional command line options in this text field. For example, you can use this field to enter a value like "-sourcepath c:\dev\src\BigProject".</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_11465_84632"></a>
+          <a name="sect_java_11465_1014131"></a>Javadoc Tab</h5></div></div></div><p class="NormalText">The Javadoc tab on the Java Options dialog (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Java Options</strong></span>) contains options to configure the application that processes the Javadoc comments in your code to produce project documentation. By default, SlickEdit® uses the javah program. Many of the options are specific to that processor. If you choose to use a different program, uncheck the command line arguments and enter your options using the <span><strong class="guilabel">Other options</strong></span> field.</p><div class="mediaobject"><img src="Resources/javaoptions_dialog_javadoc_tab.png"></div><p class="NormalText">This tab contains the following fields and options:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Javadoc app name</strong></span> - Specifies the name of the executable used to process the Javadoc comments in your source code. By default, this is set to <span><strong class="command">javadoc</strong></span>. The extension is not needed. Click the <span><strong class="guibutton">Ellipsis</strong></span> button to browse for the file.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Output directory (-d)</strong></span> - Specifies the directory in which to save the generated Javadoc. You can specify a full path or relative path. Relative paths are interpreted relative to the project location, specified when you created the project. For example, a value of <span><strong class="command">docs</strong></span> will create a subdirectory in the project directory to store the output from the Javadoc processor.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Include @version paragraphs (-version)</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Include @author paragraphs (-author)</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Do not include @deprecated paragraphs (-nodeprecated)</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Do not generate class hierarchy (-notree)</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Do not generate index (-noindex)</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Other options</strong></span> - Specify additional command line options in this text field to be passed to the Javadoc processor.</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_11465_16661"></a>
+          <a name="sect_java_11465_1014147"></a>Jar Tab</h5></div></div></div><p class="NormalText">The Jar tab on the Java Options dialog (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Java Options</strong></span>) is used to configure the Jar application that is used to package compiled Java classes. </p><div class="mediaobject"><img src="Resources/javaoptions_dialog_jar_tab.png"></div><p class="NormalText">This tab contains the following fields and options:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Jar app name</strong></span> - Specifies the name of the Jar executable, without the extension. Click the <span><strong class="guibutton">Ellipsis</strong></span> button to browse for the file.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Archive filename</strong></span> - Specifies the name of the archive to create.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Manifest filename</strong></span> - If you want to create a manifest, specify the name of the manifest file here.  If necessary, use this file to specify a main class for your 
+			  application.
+			</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Store only - no compression (-0)</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Verbose output (-v)</strong></span>
+            </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Other options</strong></span> - Specify additional command line options to pass to the Jar application.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Additional class files not included in this project (-C)</strong></span> - Used to specify additional classes you would like to include in the archive.</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="guibutton">Add File</strong></span> - Click to add a new class file to the archive.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="guibutton">Add Path</strong></span> - Click to specify a directory. All of the classes in that directory will be added.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="guibutton">Remove</strong></span> - Click to remove the selected file or directory.</p></li></ul></div></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_11465_53704"></a>
+          <a name="sect_java_11465_1014165"></a>Classpath Tab</h5></div></div></div><p class="NormalText">In Java, the classpath defines a search path for compiled Java classes. The elements are searched in the order specified and the first matching class is used. The <span><strong class="guilabel">Classpath</strong></span> tab on the Java Options dialog (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Java Options</strong></span>) allows you to configure the Java classpath used in SlickEdit® for running and debugging programs. This does not affect the classpath set in the operating system. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Warning</h3><p class="CellBody">If your classpath contains unnecessary files or directories, it 
+            could slow down the launching of the Java debugger using the step-into command. If you 
+            experience this problem, remove any elements not needed by this specific project and avoid 
+            using the system Classpath.</p></div><p class="NormalText">If you have different classpaths for different projects, configuring the classpath inside of SlickEdit is very useful. If you have a single classpath and use it with other external tools, it is best to configure it in the operating system and then put a reference to the external classpath in SlickEdit by using the <span><strong class="guibutton">Add Path</strong></span> button on this tab.</p><div class="mediaobject"><img src="Resources/javaoptions_dialog_classpath_tab.png"></div><p class="NormalText">This tab contains the following fields and options:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guibutton">Add Path</strong></span> - Click to browse for a directory. This directory is added to the classpath.</p></li><li><p class="NormalText">
+              <span><strong class="guibutton">Add Jar File</strong></span> - Click to add a JAR file to the classpath.</p></li><li><p class="NormalText">
+              <span><strong class="guibutton">Add Class Path</strong></span> - Click to insert the environment variable that contains the classpath defined in the operating system.</p></li><li><p class="NormalText">
+              <span><strong class="guibutton">Edit</strong></span> - Click to edit the selected classpath element.</p></li><li><p class="NormalText">
+              <span><strong class="guibutton">Delete</strong></span> - Click to delete the selected classpath element.</p></li><li><p class="NormalText">
+              <span><strong class="guibutton">Up/Down</strong></span> - Use the <span><strong class="guibutton">Up</strong></span> and <span><strong class="guibutton">Down</strong></span> buttons to move the selected item up and down in the list.</p></li><li><p class="NormalText">
+              <span><strong class="guibutton">Use Classpath settings for antmake commands</strong></span> - When this option is selected, the SlickEdit classpath is passed to Ant. See <a href="ch07.htm#sect_buildingandcompiling_14399_40828">Language-specific Build Methods</a> for more information about Ant support.</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_11465_25821"></a>
+          <a name="sect_java_11465_1014184"></a>JRE Tab</h5></div></div></div><p class="NormalText">The <span><strong class="guilabel">JRE</strong></span> tab on the Java Options dialog (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Java Options</strong></span>) is used to configure options for the Java Runtime Environment. These are used when executing a Java program inside SlickEdit®.</p><div class="mediaobject"><img src="Resources/javaoptions_dialog_jre_tab.png"></div><p class="NormalText">This tab contains the following fields and options:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">JRE app name</strong></span> - Specifies the name of the executable for the Java interpreter, <span><strong class="command">java</strong></span> by default. The extension is not needed. Click the <span><strong class="guibutton">Ellipsis</strong></span> button to browse for the executable.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Main class</strong></span> - Specifies the name of the class to begin execution. In Java, each class can contain a main function. This value determines where execution begins when you select <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Execute</strong></span> for this project.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Arguments</strong></span> - Specifies parameter values passed to the main function contained in the main class.</p></li></ul></div><p class="NormalText">The remaining options are common configuration parameters to pass to the Java interpreter. Each displays the command line switch used. For more information, look up the corresponding switch in the JRE documentation. If these values are not supported by the JRE you are using, uncheck them and use <span><strong class="guilabel">Other options</strong></span> to pass arguments to the JRE.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_11465_61218"></a>
+          <a name="sect_java_11465_1014196"></a>Debugger Tab</h5></div></div></div><p class="NormalText">The Debugger tab on the Java Options dialog (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Java Options</strong></span>) configures the debugger to be used when you select <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Start</strong></span>. You have two choices for debugging:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Use the SlickEdit® debugger, which provides a graphical front-end for debugging.</p></li><li><p class="NormalText">Use the JDB debugger, which provides a command line interface.</p></li></ul></div><div class="mediaobject"><img src="Resources/javaoptions_dialog_debugger_tab.png"></div><p class="NormalText">The first two options are used to select which debugger to use:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Use SlickEdit debugger (-Xdebug -Xrunjdwp: ...)</strong></span> - This option provides a graphical front-end for debugging that displays your code and provides windows for local variables and other information (see <a href="ch07s02.htm#sect_runninganddebugging_14180_76753">Debugging</a>).]</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="guilabel">Port</strong></span> - Specifies which port to use to communicate with the Java debugger.</p></li></ul></div></li><li><p class="NormalText">
+              <span><strong class="guilabel">Use JDB debugger</strong></span> - With this option, SlickEdit uses a command line interface to interact directly with JDB. The options below let you specify command line arguments passed to the debugger. For more information, look up the corresponding switch in the JDB documentation.</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="guilabel">Verbose output (-verbose)</strong></span>
+                </p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="guilabel">Run application in the Hotspot(TM) performance engine (-thotspot)</strong></span>
+                </p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="guilabel">Launch at startup (-launch)</strong></span>
+                </p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="guilabel">Debugger</strong></span> - Specifies the executable for the debugger. The extension is not needed. Click the ellipsis button to browse for the file.</p></li></ul></div></li><li><p class="NormalText">
+              <span><strong class="guilabel">Run the application in the Classic VM (-classic / -tclassic)</strong></span> - When this option is selected, the application is run using the Java 2 Classic VM.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Other options</strong></span> - Specifies additional command line arguments to be passed to the debugger.</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_11465_92123"></a>
+          <a name="sect_java_11465_1014218"></a>Live Errors Tab</h5></div></div></div><p class="NormalText">The Live Errors tab on the Java Options dialog (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Java Options</strong></span>) is used to configure the Live Errors feature. Live Errors identifies syntax errors as you type. SlickEdit compiles your code in the background and highlights errors directly in the editor.</p><div class="mediaobject"><img src="Resources/javaoptions_dialog_liveerrors_tab.png"></div><p class="NormalText">This tab provides the following fields and options:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Enable Live Errors</strong></span> - When selected, the Live Errors feature is activated. This setting is checked by default if SlickEdit has detected a valid JDK 6, or compatible, installation on your system, the first time a Java project is opened. For some coding, you may want to disable Live Errors since it will point out all syntax errors, which are common in incomplete code.</p><p class="NormalText">After activating Live Errors, you can use the <span><strong class="command">rte_next_error</strong></span> command to jump through the live errors in the current file. Bind this command to a key sequence for more efficiency.</p></li></ul></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"></p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">For Java Live Errors to work, you must have the full JDK downloaded and installed from Sun, and you must specify the root of the JDK installation in the <span><strong class="guimenu">JDK installation directory </strong></span>field of the Java Options dialog (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Java Options</strong></span>), unless it is automatically detected upon startup. There is no requirement that you build your code with JDK 6, only that it is available to Live Errors.</p></li><li><p class="NormalText">If you have Java Live Errors running and wish to specify a different JDK 6 (or compatible JDK) root, after changing the JDK path on the Java Options dialog, you must restart SlickEdit.</p></li><li><p class="NormalText">In order to boost performance, Java Live Errors generates <code class="filename">.class</code> files as you code. These files are stored in the <code class="filename">java_rte_classes</code> subdirectory of your config. You can remove these files, but they will be rebuilt the next time Java Live Errors is invoked.</p></li><li><p class="NormalText">To specify the source compliance level, use the <span><strong class="guilabel">Source Compliance level</strong></span> setting on the <a href="ch09s06.htm#sect_java_11465_29637">Compiler Tab</a>.</p></li></ul></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Deprecation warnings</strong></span> - When this option is selected, a <span><strong class="guibutton">Warning</strong></span> bitmap appears when Live Errors encounters a keyword that has been deprecated. This is useful for programmers coding to strict Java standards.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">No Warnings</strong></span> - When this option is selected, warning notices from Live Errors are not displayed.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Use "Other Options" from Compiler Tab</strong></span> - When this option is selected, 
+              any options specified in the "Other Options" field on the <span><strong class="guilabel">Compiler</strong></span> tab 
+              will be used for Live Errors.  Live Errors will automatically parse out those javac options 
+              which are not supported by the Java Compiler API.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Sleep Interval(ms)</strong></span> - Specifies the amount of time, in milliseconds, in which a Live Errors thread sleeps before checking for errors (during times when an error check is not forced). Use this to tune performance. A larger value will give the editor more time between builds and should reduce any performance issues.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">JVM Tuning</strong></span> - These options control how how much memory is allocated to the JVM used for Live Errors.  SlickEdit will require a restart in order for new values to take effect.</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                  <span><strong class="guilabel">Initial Heap Size: -Xms (M)</strong></span> - Initial heap size, in megabytes.  Must be greater than or equal to 2.</p></li><li><p class="NormalText">
+                  <span><strong class="guilabel">Max Heap Size: -Xmx (M)</strong></span> - Maximum heap size, in megabytes.</p></li><li><p class="NormalText">
+                  <span><strong class="guilabel">Stack Size: -Xss (K)</strong></span> - Stack size for each thread, in kilobytes.</p></li></ul></div></li><li><p class="NormalText">
+              <span><strong class="guilabel">Path to JDK 6 or later</strong></span> - Specifies the root directory of a valid JDK 6 or compatible JDK installation. Live Errors requires JDK 6 or a compatible JDK to run, and will not activate if this path is not correct. SlickEdit attempts to populate this field for you the first time a Java project is opened. Click the <span><strong class="guibutton">Ellipsis</strong></span> button to browse for the directory.</p></li></ul></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_82777"></a>
+        <a name="sect_java_11465_1014260"></a>
+        <a class="indexterm" name="sect_java_D2A75EFA_873C"></a>
+        <a class="indexterm" name="sect_java_E4BD54F4_F6BD"></a>
+        <a class="indexterm" name="sect_java_7221AEB9_9887"></a>
+        <a class="indexterm" name="sect_java_8E0B1EAA_8DB8"></a>
+        <a class="indexterm" name="sect_java_FE0565EC_C31F"></a>
+        <a class="indexterm" name="sect_java_0F432AC2_3FEC"></a>
+        <a class="indexterm" name="sect_java_2A202DF3_CCD6"></a>
+        <a class="indexterm" name="sect_java_6133D88E_1227"></a>
+        <a class="indexterm" name="sect_java_6876F2F5_4C34"></a>
+        <a class="indexterm" name="sect_java_DE04B2F8_0674"></a>
+        <a class="indexterm" name="sect_java_B24CFA4C_DCE3"></a>
+        <a class="indexterm" name="sect_java_3F76ADC7_FB73"></a>
+        <a class="indexterm" name="sect_java_C1694E2F_3EF3"></a>
+        <a class="indexterm" name="sect_java_9572E347_715C"></a>
+        <a class="indexterm" name="sect_java_3E5E8357_25CE"></a>
+        <a class="indexterm" name="sect_java_69AFC0ED_7AA7"></a>
+        <a class="indexterm" name="sect_java_35597770_EC93"></a>
+        <a class="indexterm" name="sect_java_0C1AAE77_42D9"></a>Java Formatting Options Interface</h4></div></div></div><p class="NormalText">Options are available for Java for changing the <a href="ch08s07.htm#sect_syntaxindentsmartpaste_14409_73638">Syntax Indent</a> and <a href="ch08s11.htm">Syntax Expansion</a> style settings. To access these options, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages</strong></span>, expand <span><strong class="guilabel">Application Languages &gt; Java</strong></span>, then click <span><strong class="guilabel">Java Formatting Options</strong></span>.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+          <span><strong class="command"></strong></span>Languages similar to Java have similar Formatting Options screens that are not specifically documented.</p></div><p class="NormalText">
+        </p><div class="mediaobject"><img src="Resources/snips_java_language_formatting.png"></div><p class="NormalText">
+      </p><p class="NormalText">The following settings are available:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Indent with tabs</strong></span> - Determines whether <span><strong class="keycap">Tab</strong></span> key, <span><strong class="keycap">Enter</strong></span> key, and paragraph reformat commands indent with spaces or tabs. The hyperlink indicates if <a href="ch08s08.htm">Adaptive Formatting</a> is on or off for this setting. See <a href="ch08s07.htm#sect_syntaxindentsmartpaste_14409_22538">Indenting with Tabs</a> for more information.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Syntax indent</strong></span>- When this option is selected, the <span><strong class="keycap">Enter</strong></span> key indents according to language syntax. The value in the text box specifies the amount to indent for each level. The hyperlink indicates if <a href="ch08s08.htm">Adaptive Formatting</a> is on or off for this setting. See <a href="ch08s07.htm#sect_syntaxindentsmartpaste_14409_73638">Syntax Indent</a> for more information.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Tabs</strong></span> - Set tabs in increments of a specific value or at specific column positions. To specify an increment of three, enter <span class="bold"><strong>3</strong></span> in the text box. To specify columns, for example, enter <span class="bold"><strong>1 8 27 44</strong></span>, to specify tab stops that are not an increment of a specific value. The hyperlink indicates if <a href="ch08s08.htm">Adaptive Formatting</a> is on or off for this setting.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Begin/end style</strong></span> - Specify the brace style to be used for <a href="ch08s07.htm#sect_syntaxindentsmartpaste_14409_73638">Syntax Indent</a> and <a href="ch08s11.htm">Syntax Expansion</a>. The hyperlink indicates if <a href="ch08s08.htm">Adaptive Formatting</a> is on or off for this setting. After specifying the brace style, choose from the following options:</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Insert braces immediately</strong></span> - Specifies whether template should be inserted with braces.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Insert blank line between braces</strong></span> - Specifies whether a blank line should be inserted between braces when a template expands with braces.</p></li><li><p class="NormalText">
+                <a class="indexterm" name="sect_java_11465_1014288"></a>
+                <span><strong class="guilabel">
+                  Quick brace/unbrace one line statements</strong></span> - Enables Quick Brace/Unbrace, features that allow you to convert a single line statement to a brace-enclosed block, and vice versa. See <a href="ch08s13.htm">Quick Brace/Unbrace</a> for more information.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Place "else" on same line as "}"</strong></span> - When this option is selected, SlickEdit® places the <span><strong class="command">else</strong></span> keyword on the same line as <span><strong class="keycap">}</strong></span>. This is common when using brace Style 1.</p></li></ul></div></li><li><p class="NormalText">
+            <span><strong class="guilabel">Indent first level of code</strong></span> - Specifies whether <a href="ch08s07.htm#sect_syntaxindentsmartpaste_14409_73638">Syntax Indent</a> should indent the cursor after declarations such as functions.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Use continuation indent on function parameters</strong></span> - Determines whether function parameters should always use the continuation indent.</p><p class="NormalText">By default, SlickEdit formats multi-line function parameters as follows:</p><pre class="programlisting">myLongMethodName(firstarg,
+secondarg,
+thirdarg
+);
+myLongMethodName(
+    firstarg,
+    new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            createdButtonFired(buttonIndex);
+        }
+    },
+    thirdarg
+    );
+myLongMethodName(new ActionListener() {   // special case anonymous class first argument
+        public void actionPerformed(ActionEvent e) {
+            createdButtonFired(buttonIndex);
+        }
+    },
+    secondarg,
+    thirdarg
+    );
+myLongMethodName(
+    secondarg,
+    new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            createdButtonFired(buttonIndex);
+        }
+    },
+    thirdarg
+    );</pre><p class="NormalText">If <span><strong class="guilabel">Use continuation indent on function parameters</strong></span> is selected, the format will change as follows:</p><pre class="programlisting">myLongMethodName(firstarg,
+    secondarg,
+    thirdarg
+    );
+myLongMethodName(
+    firstarg,
+    new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            createdButtonFired(buttonIndex);
+        }
+    },
+    thirdarg
+    );
+myLongMethodName(new ActionListener() {   // special case anonymous class first argument
+        public void actionPerformed(ActionEvent e) {
+            createdButtonFired(buttonIndex);
+        }
+    },
+    secondarg,
+    thirdarg
+    );</pre></li><li><p class="NormalText">
+            <span><strong class="guilabel">Indent CASE from SWITCH</strong></span> - When checked, <a href="ch08s11.htm">Syntax Expansion</a> places the case statement indented from the switch statement column. The hyperlink indicates if <a href="ch08s08.htm">Adaptive Formatting</a> is on or off for this setting.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">No space before parenthesis</strong></span> - Determines whether a space is placed between a keyword such as <span><strong class="command">if</strong></span>, <span><strong class="command">for</strong></span>, or <span><strong class="command">while</strong></span> and the open paren when syntax expansion occurs. Example: <span><strong class="command">(if( or if () </strong></span>The hyperlink indicates if <a href="ch08s08.htm">Adaptive Formatting</a> is on or off for this setting.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Insert padding between parentheses</strong></span> - When checked, a space is placed after the open paren, and before the close paren, providing padding for the enclosed text. For example, <span><strong class="command">if ()</strong></span> becomes
+<span><strong class="command">if ( )</strong></span>. The hyperlink indicates if <a href="ch08s08.htm">Adaptive Formatting</a> is on or off for this setting.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_97759"></a>
+        <a name="sect_java_23983_13122"></a>
+        <a class="indexterm" name="sect_java_38642_39226"></a>Java Beautifier</h4></div></div></div><p class="NormalText">To beautify a Java document, open the file you want to
+        beautify, then from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Beautify</strong></span> (or use
+        the <span><strong class="command">gui_beautify</strong></span> command). The Java Beautifier will
+        be displayed, which allows you to make settings for how the code will be
+        beautified.</p><p class="CellBody">
+            <span><strong class="command"></strong></span>The C#, JavaScript, and Slick-C Beautifiers contain the
+            same options and settings as the Java Beautifier. </p><p class="NormalText">The following buttons and settings are available on the Beautifier:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guibutton">
+                <a class="indexterm" name="sect_java_69261_72202"></a>Beautify</strong></span> - Beautifies current selection or buffer and closes the dialog box.</p></li><li><p class="NormalText">
+              <span><strong class="guibutton">
+                <a class="indexterm" name="sect_java_80774_21145"></a>Reset</strong></span> - Restores the dialog box settings to the values that appeared when you invoked the dialog.</p></li><li><p class="NormalText">
+              <span><strong class="guibutton">
+                <a class="indexterm" name="sect_java_05874_58282"></a>Save Settings</strong></span> - Saves beautify options
+          in <code class="filename">uformat.ini</code> file. These settings are used by
+          the <span><strong class="command">beautify</strong></span> command.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">
+                <a class="indexterm" name="sect_java_11470_60517"></a>Restrict to selection</strong></span> - When this option is selected, only lines in the selection are beautified.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">
+                <a class="indexterm" name="sect_java_16450_04082"></a>Sync extension options</strong></span> - When this option is selected, the language options are updated to reflect any changes that these dialogs have in common. For example, changing the begin-end style to <span><strong class="guilabel">Style 2</strong></span> will update your brace style for Syntax Expansion.</p></li></ul></div><p class="NormalText">The tabs on the Java Beautifier are described in
+          the sections below.</p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_06396_36242"></a>Begin-End Style Tab</h5></div></div></div><p class="NormalText">The <span><strong class="guimenu">Begin-End
+            Style</strong></span> tab of the Java Beautifier is pictured
+            below.</p><div class="mediaobject"><img src="Resources/cbeautifier_dialog_beginendtab.png"></div><p class="NormalText">The following options and settings are available:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="guilabel">Do not change brace style</strong></span> - Select this option if you do not want your brace style changed. This is useful if you are using a brace style that is not supported by SlickEdit®.</p></li><li><p class="NormalText">
+                <span><strong class="guilabel">
+                  <a class="indexterm" name="sect_java_13333_78722"></a>No space before paren</strong></span> - Determines whether a space is placed between a keyword such as<span><strong class="command"></strong></span><span><strong class="command">if</strong></span>, <span><strong class="command">for</strong></span>, or <span><strong class="command">while</strong></span> and the open paren.</p></li><li><p class="NormalText">
+                <span><strong class="guilabel">
+                  <a class="indexterm" name="sect_java_18359_04082"></a>else on same line as }</strong></span> - When this option is selected, the beautifier will place <span><strong class="keycap">}</strong></span> else on the same line. This is typical when using brace Style 1. The following is an example of using Style 1 with an <span><strong class="command">else</strong></span> clause:</p><pre class="programlisting">if (i&lt;j) {
+} else {
+}</pre></li><li><p class="NormalText">
+                 <span><strong class="guilabel">
+                   <a class="indexterm" name="sect_java_23390_45757"></a>Apply to function braces</strong></span> - When this option is selected, the beautifier will apply your begin/end style to braces for function definition.</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_28105_21250"></a>
+      <a class="indexterm" name="sect_java_34175_80642"></a>Indenting Tab</h5></div></div></div><p class="NormalText">The
+      <span><strong class="guimenu">Indenting</strong></span> tab of the Java
+      Beautifier, pictured below, provides indenting parameters that you can use
+      when working with Java files in SlickEdit®.</p><div class="mediaobject"><img src="Resources/cbeautifier_dialog_indentingtab.png"></div><p class="NormalText">The following options and settings are available:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_39015_34257"></a>Indent with tabs</strong></span> - When this option is
+      selected, tab characters are used for the leading indent of lines. This
+      value defaults to the <span><strong class="guilabel">Tabs</strong></span> text box setting on the
+      language-specific <span><strong class="guilabel">Formatting</strong></span> options screen (see
+      <a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>).</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_43473_36242"></a>Indent first level of code</strong></span> - Do not clear this check box. When this check box is selected, the first level of code inside a function or method definition is not indented.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_47598_78722"></a>Indent CASE from SWITCH</strong></span> - When this option is selected, the case and default statements found inside switch statements are indented from the switch.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_56511_45757"></a>
+            <a class="indexterm" name="sect_java_60881_21250"></a>Indent for each level (Syntax indent)</strong></span> - The
+      amount to indent for each new nesting level of code. We have put the words
+      "Syntax indent" in parenthesis to help indicate that this field has the
+      same value as the <span><strong class="guilabel">Syntax indent</strong></span> text box on the
+      language-specific <span><strong class="guilabel">Formatting</strong></span> options screen (see
+      <a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>). By default,
+      we initialize this text box with your current language setup
+      setting.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_66097_80642"></a>Tab size</strong></span> - The value in this field
+      specifies the output tab size. The output tab size is only used if the
+      option <span><strong class="guilabel">Indent with tabs</strong></span> is enabled on the
+      language-specific <span><strong class="guilabel">Formatting</strong></span> options screen (see
+      <a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a>). This value
+      defaults to the <span><strong class="guilabel">Syntax indent</strong></span> text box on the
+      <span><strong class="guilabel">Indent</strong></span> options screen.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_70747_34257"></a>Original tab size</strong></span> - The value in this field specifies the size of the original expansion tab. SlickEdit uses the expansion size of your original file to handle reusing indent amounts from your original file. Currently the beautifier only reuses the original source files indenting for comments. This option has no effect if the original file has no tab characters.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_74628_36242"></a>Continuation indent</strong></span>
+          <span><strong class="command"></strong></span>- The value in this field specifies how much to indent lines of statements that continue to the next line. This has no effect on assignment statements or parenthesized expressions. Lines that are a continuation of an assignment statement are indented after the first equal sign. Lines that are a continuation of a parenthesized expression are indented after the open paren. Given the following example:</p><pre class="programlisting">unsigned
+int i;</pre><p class="NormalText">The result would be:</p><pre class="programlisting">unsigned
+&lt;Continuation Indent&gt;int i;</pre></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_79401_78722"></a>Align on parens</strong></span> - When this option is selected, the text for parenthesized expressions that spans multiple lines is aligned on the first non-blank after the parenthesis or on the parenthesis itself.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_82990_04082"></a>Align on equal</strong></span>
+          <span><strong class="command"></strong></span>- When this option is selected, the text for multi-line assignment is aligned on the first non-blank after the equals sign (<span><strong class="keycap">=</strong></span>) or on the equal sign itself.</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_90813_45757"></a>
+      <a class="indexterm" name="sect_java_95947_21250"></a>Comments Tab</h5></div></div></div><p class="NormalText">The
+      <span><strong class="guimenu">Comments</strong></span> tab on the Java
+      Beautifier, pictured below, contains options for setting the parameters
+      that you want for the trailing comments.</p><div class="mediaobject"><img src="Resources/cbeautifier_dialog_commentstab.png"></div><p class="NormalText">The following options are available:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_00698_80642"></a>
+            <a class="indexterm" name="sect_java_04570_34257"></a>Indent stand alone comments</strong></span> - Indicates whether comments that appear on lines by themselves with no statement text to the left are indented to the current statement indent level. For example:</p><pre class="programlisting">/* stand alone
+ comment
+*/
+// another stand alone comment
+i=1;   // trailing comment</pre></li><li><p class="NormalText">
+          <span><strong class="guilabel">Indent column 1 comments</strong></span> - Normally comments that start in column 1 are left alone. Select this option if you want the indent for these comments to be adjusted.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Specific column</strong></span> - This text box specifies the column in which trailing comments should be placed. Trailing comments are comments that appear at the end of lines that contain statements or declarations. For example:</p><pre class="programlisting">// another stand alone comment
+/* stand alone
+ comment
+*/
+i=1;   // trailing comment
+if (x) {    /*  trailing
+              comment.
+          */
+}</pre></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_09526_36242"></a>Original absolute column</strong></span> - When this option is selected, trailing comments are placed at the same column as the original source file. Trailing comments are comments that appear at the end of lines that contain statements or declarations.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_13984_78722"></a>Original relative column</strong></span> - When this option is selected, trailing comments are indented by reusing the indent after the last character of the end of the statement or declaration of the original source file. Trailing comments are comments that are displayed at the end of lines that contain statements or declarations. For example, if the original code is as follows:</p><pre class="programlisting">if () {
+i=1;&lt;four characters&gt;//trailing comment
+i=4;&lt;four characters&gt;/* trailing
+                      comment.
+                   */
+}</pre><p class="NormalText">The resulting code would be:</p><pre class="programlisting">if () {
+ i=1;&lt;four characters&gt;//trailing comment
+ i=4;&lt;four characters&gt;/* trailing
+     &lt;four characters&gt;   comment.
+     &lt;four characters&gt;*/
+}</pre></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_20064_04082"></a>
+      <a class="indexterm" name="sect_java_27933_45757"></a>Other Tab</h5></div></div></div><p class="NormalText">The
+      <span><strong class="guimenu">Other</strong></span> tab on the Java
+      Beautifier, pictured below, contains the preprocessing and pad condition
+      options.
+    </p><div class="mediaobject"><img src="Resources/cbeautifier_dialog_othertab.png"></div><p class="NormalText">The following options are available:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_32786_21250"></a>Indent preprocessing</strong></span> - When this option is selected, the indent before the <span><strong class="keycap">#</strong></span> character of preprocessing is set to indicate the preprocessing nesting level.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_java_37718_80642"></a>Indent inside block</strong></span> - When this option is selected, preprocessing inside brace block is indented when inside preprocessing. Otherwise, preprocessing within a brace block start in column 1.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Indent inside special #ifndef</strong></span> - Many header files
+          starts with the following lines of code:</p><pre class="programlisting">#ifndef myheader_h
+#define myheader_h
+
+#endif</pre><p class="NormalText">When this option is selected, preprocessing inside this special #ifndef case is indented.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">
+              <a class="indexterm" name="sect_java_42069_34257"></a>Eat spaces after #</strong></span> - When this option is selected, the spaces after a preprocessor <span><strong class="keycap">#</strong></span>, but before the keyword (<span><strong class="command">if</strong></span>, <span><strong class="command">ifdef</strong></span>, <span><strong class="command">else</strong></span>, <span><strong class="command">elif</strong></span>, <span><strong class="command">endif</strong></span>, etc.), are removed. This is useful for fixing old C code where the <span><strong class="keycap">#</strong></span> character had to start in column 1 and spaces were used after the <span><strong class="keycap">#</strong></span> to indicate the nesting level.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">
+              <a class="indexterm" name="sect_java_46706_36242"></a>Force parens on return</strong></span> - When this option is selected, parentheses are added to return statements which do not have parentheses.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">
+              <a class="indexterm" name="sect_java_50698_78722"></a>Pad condition</strong></span> - These options indicate if parenthesized conditional expressions should have their spacing adjusted.</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_java_55032_04082"></a>
+        <a class="indexterm" name="sect_java_59261_45757"></a>
+        <a class="indexterm" name="sect_java_63520_21250"></a>Schemes Tab</h5></div></div></div><p class="NormalText">The
+        <span><strong class="guimenu">Schemes</strong></span> tab of the Java
+        Beautifier is pictured below.</p><div class="mediaobject"><img src="Resources/cbeautifier_dialog_schemestab.png"></div><p class="NormalText">To define a new scheme, set the various beautify options, and press the <span><strong class="guibutton">Save Scheme</strong></span> button. User defined schemes are stored in <code class="filename">uformat.ini</code>.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_68495"></a>
+        <a name="sect_java_11465_1014375"></a>Organize Java Imports Options Interface</h4></div></div></div><p class="NormalText">Options are available on the Options dialog to configure the Organize Imports feature (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">Application Languages </strong></span> &#8594; <span><strong class="guimenuitem">Java </strong></span> &#8594; <span><strong class="guimenuitem">Organize Imports</strong></span>). A more direct route to the options is to use one of the following methods:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Imports </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span></p></li><li><p class="NormalText">Select <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Imports </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span> from the right-click context menu in the editor window.</p></li><li><p class="NormalText">Use the <span><strong class="command">jrefactor_organize_imports_options</strong></span> command.</p></li></ul></div><div class="mediaobject"><img src="Resources/options_languages_java_organizejavaimports.png"></div><p class="NormalText">The following settings are available:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Package explicit import limit before using wildcard(.*)</strong></span> - If more than this number of classes are explicitly imported from the same package in one file, the imports will be replaced with a single wildcard import.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Add blank line between groups of imports</strong></span> - Organize Imports will group imports by package name or top-level package name. Select this option to force Organize Imports to add a blank line between these groups instead of having just one flat list of imports.</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Number of package nesting levels to group imports by</strong></span> - If this is set to <span class="bold"><strong>1</strong></span>, import statements will be grouped by top-level package name only. For example, all your imports from <code class="filename">java.</code> packages would be in a separate group from your imports from <code class="filename">com.</code> packages. If set to <span class="bold"><strong>2</strong></span>, import statements will be grouped by second level package names. For example, all your imports from <code class="filename">java.util</code> would be in a separate group from your imports from <code class="filename">java.awt</code>.</p></li></ul></div></li><li><p class="NormalText">
+            <span><strong class="guilabel">Automatically add import during code help for Java</strong></span> - If selected, SlickEdit® will attempt to automatically add imports as you edit Java code.</p></li><li><p class="NormalText">
+            <span><strong class="command">Automatically add import during code help for JSP</strong></span> - If selected, SlickEdit will attempt to automatically add imports as you edit Java code embedded in HTML. JSP imports are added using the following notation: <code class="filename">&lt;%@ page import="java.util.Vector"%&gt;</code>.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Package sort order</strong></span> - This list specifies the order in which package groups are sorted. Use the <span><strong class="guibutton">Ellipses</strong></span> (...) button to add a new package. Use the <span><strong class="guibutton">Up</strong></span> and <span><strong class="guibutton">Down</strong></span> arrow buttons to move items. Use the <span><strong class="guibutton">X</strong></span> button to delete the currently selected package from the list.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_65869"></a>
+        <a name="sect_java_11465_1014393"></a>
+        <a class="indexterm" name="sect_java_66F5DE69_39C2"></a>Javadoc Editor Dialog</h4></div></div></div><p class="NormalText">Use the Javadoc Editor to generate Javadoc syntax comments for Java, C, C++, JavaScript, and Slick-C®. To access the Javadoc Editor, right-click within the edit window and select <span><strong class="guimenu">Edit Javadoc Comments</strong></span>. Or, with the cursor inside a comment, click <span><strong class="guimenu">Document </strong></span> &#8594; <span><strong class="guimenuitem">Edit Javadoc Comment</strong></span>.</p><p class="NormalText">To add a custom or unsupported tag, append the tag (with an @ prefix) and its description into the <span><strong class="guilabel">Description</strong></span> text box. You can add @serial, @serialField, and @serialData fields this way.</p><p class="NormalText">For more information, see Sun's Javadoc documentation at <a href="http://java.sun.com" target="_blank"><em class="citetitle">http://java.sun.com</em></a>.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+          <span><strong class="command">NOTE</strong></span>
+          SlickEdit® provides powerful capabilities to create and edit Javadoc comments within the editor. See <a href="ch08s16.htm">Commenting</a> for more information.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_java_11465_60657"></a>
+        <a name="sect_java_11465_1014406"></a>
+        <a class="indexterm" name="sect_java_17C0B585_23DB"></a>Javadoc Beautifier Options Dialog</h4></div></div></div><p class="NormalText">To beautify Javadoc comments or set up Javadoc Beautifier options, first invoke the Javadoc Editor by right-clicking within the edit window and selecting <span><strong class="guimenu">Edit Javadoc Comments</strong></span>. Then click the <span><strong class="guibutton">Options</strong></span> button. The Javadoc Beautifier Options dialog is displayed. The following settings are available:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Align parameter comments to longest parameter name</strong></span> - If checked, the parameters are aligned to the length of the longest parameter name. If the parameter name length is less than the minimum length, the minimum length is used. If the parameter length is longer than the maximum parameter length, the description for the parameter will start on the next line.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Align exception comments to longest exception name</strong></span> - If checked, the exceptions are aligned to the length of the longest exception name. If the exception name length is less than the minimum length, the minimum length is used. If the exception length is longer than the maximum exception length, the description of the parameter will start on the next line.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Align return comments</strong></span> - Indicates whether @return comments should be aligned to the first line of comment text. No alignment is performed if tags which are indent-sensitive such as the <span><strong class="command">&lt;pre&gt;</strong></span> tag are used.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Align deprecated comments</strong></span> - Indicates whether @return comments should be aligned to the first line of comment text. No alignment is performed if tags which are indent-sensitive such as the <span><strong class="command">&lt;pre&gt;</strong></span> tag are used.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Add blank line after parameter comment</strong></span> - If checked, a blank line is added if a tag follows an @param tag.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Add blank line after parameter comment group</strong></span> - If checked, a blank line is added if a tag follows an @param group.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Add blank line after return comment</strong></span> - If checked, a blank line is added if a tag follows the @return tag.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Add blank line after description</strong></span> - If checked, a blank line is added between the description and the first @ tag. This option is ignored if the description contains a custom or unsupported @ tag.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Add blank line after example</strong></span> - If checked, a blank line is added if a tag follows the @example tag.</p></li></ul></div><p class="NormalText"></p></div></div></div></body></html>

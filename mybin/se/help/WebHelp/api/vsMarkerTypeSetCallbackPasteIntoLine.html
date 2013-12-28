@@ -1,0 +1,62 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMarkerTypeSetCallbackPasteIntoLine</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsMarkerTypeSetCallbackPasteIntoLine(int type, int(VSAPI*pfnMarkerPasteIntoLine)(int DestWid, int SrcMarkerIndex, int SrcType))</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sets the PasteIntoLine callback for the marker type specified. You will almost
+always need to define this callback when setting the VSMARKERTYPEFLAG_COPY_CHAR_LINE_SELECT
+flag on the marker type in order to allow you to decide whether the marker that
+was copied with the contents of a line should be pasted into the line
+specified in the edit window specified.<p>
+<p>
+This callback is called when a marker will be created due to
+a Paste/Copy-to-Clipboard or Buffer-to-Buffer-Copy AND the marker type
+contains VSMARKERTYPEFLAG_COPYPASTE | VSMARKERTYPEFLAG_COPY_CHAR_LINE_SELECT.
+</p><p>
+<p>
+Note:<br>
+Currently our copy/paste facility is performed by Buffer-to-Buffer-Copy
+because the SlickEdit clipboard is a buffer.
+</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type">type</A></code> - Type returned from vsMarkerTypeAlloc()</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pfnMarkerPasteIntoLine">pfnMarkerPasteIntoLine</A></code> - Callback function. DestWid is the window id that the marker would
+              be pasted to. SrcMarkerIndex is the source marker that would be copied
+              and used to create a new marker.
+              SrcType is the type of the marker that would be copied. The line
+              and column at which the marker would be pasted is set upon entry
+              into this callback. Return 0 if you DO NOT want the marker
+              pasted into the line, return 1 if you DO want the marker
+              pasted into the line. All properties for NewMarkerIndex have
+              been set (except for the user data).  You may call vsLineMarkerGet
+              to query information about the new marker.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if the marker type is valid.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+...
+int VSAPI myCallbackMarkerPasteIntoLine(int DestWid, int SrcMarkerIndex, int SrcType);
+int type = vsMarkerTypeAlloc();
+vsMarkerTypeSetFlags(type,VSMARKERTYPEFLAG_COPYPASTE|VSMARKERTYPEFLAG_UNDO|VSMARKERTYPEFLAG_AUTO_REMOVE|VSMARKERTYPEFLAG_COPY_CHAR_LINE_SELECT);
+vsMarkerTypeSetCallbackPasteIntoLine(type,myCallbackMarkerPasteIntoLine);
+...
+int VSAPI myCallbackMarkerPasteIntoLine(int DestWid, int SrcMarkerIndex, int SrcType)
+{
+    // Current column we are pasting into
+    int p_col = vsPropGetI(DestWid,VSP_COL);
+    // Current line number we are pasting into
+    VSINT64 p_line = vsPropGetI64(DestWid,VSP_LINE);
+    // Current line length (excluding newline chars) we are pasting into
+    int line_len = vsQLineLength(DestWid,0);
+
+    // TODO:
+    // Decide whether to allow this paste or not.
+    // Return 0 if you DO NOT want to perform the paste.
+    // Return 1 if you DO want to perform the paste.
+
+    // Allow the marker to be pasted
+    return 1;
+}
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Marker_Functions.html">Marker Functions</a></blockquote>
+</body>
+</html>

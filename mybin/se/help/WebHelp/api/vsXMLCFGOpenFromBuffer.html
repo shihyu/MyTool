@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsXMLCFGOpenFromBuffer</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsXMLCFGOpenFromBuffer(int wid, int &status, int flags=a, int StartRealSeekPos=a, int EndRealSeekPos=VSNULLSEEK, void *preserved=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Opens and parses an XML file into a tree.  The XMLCFG function are intended to be used on valid XML files for reading and writing various configuration information.  The XMLCFG functions are not for validating or checking for well formedness.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="status">status</A></code> - (Output only) Set to 0 if successful.  Otherwise a negative error code.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flags">flags</A></code> - zero or more of the following flags:
+
+                 <DL>
+                 <DT>VSXMLCFG_OPEN_ADD_PCDATA</dt><DD>
+                 When specified, PCDATA (text between tags including white space) nodes
+                 are added to tree.  CDATA (&lt;![CDATA[ ... ]]>) nodes are always added to
+                 the tree.
+                 </DD>
+                 <DT>VSXMLCFG_OPEN_RETURN_TREE_ON_ERROR</dt><DD>
+                 When specified, a valid tree handle is returned even if the
+                 XML document is not well formed.
+                 <p>One useful
+                 purpose for this option is to determine the namespaces
+                 for the current element. Unless
+                 the VSRC_XMLCFG_INPUT_ENDED_BEFORE_ALL_TAGS_WERE_TERMINATED is
+                 returned, you can't be sure if the XML tree was parsed up to the
+                 the current element.  Therefore, when determining the current
+                 namespaces, truncate the buffer before the '&lt;' for the current element
+
+                 <P>If a unrecoverable error occurs like "out of memory", a
+                 negative error code is returned.
+
+                 <P>By default, negative error code is returned.
+
+                 <P><B>Note</B>: this function DOES NOT perform a
+                 thorough well formness check.
+                 </Dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="StartRealSeekPos">StartRealSeekPos</A></code> - Start real seek position to start reading XML text.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="EndRealSeekPos">EndRealSeekPos</A></code> - End real seek position of XML text.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="preserved">preserved</A></code> -  </blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns XMLCFG tree handle if successful.  Otherwise a negative error code is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="XMLCFG_Functions.html">XMLCFG Functions</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_find_refer_to</title>
+</head>
+<body>
+
+<h3><b>int tag_find_refer_to(int inst_id, int &ref_type, _str &file_name, int &line_no)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Find the first tag instance referenced by the given tag instance.
+The tag is identified by its unique ID, see <a href="tag_match_instance.html">tag_match_instance</a>().
+This is typically used with functions (caller/callee relationship)
+or structures (container/item relationships).
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="inst_id">inst_id</A></code> - Unique ID of tag instance.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ref_type">ref_type</A></code> - (Output) reference type (see VS_REFTYPE_*)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - (Output) Full path of file the tag is located in</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="line_no">line_no</A></code> - (Output) Line number of tag within file
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns instance ID (> 0) of tag referenced in context
+  represented by <i>inst_id</i> or < 0 on error, BT_RECORD_NOT_FOUND_RC if not found.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_get_instance_info.html">tag_get_instance_info</a>, <a href="tag_match_instance.html">tag_match_instance</a>, <a href="tag_next_refer_to.html">tag_next_refer_to</a></blockquote>
+</body>
+</html>

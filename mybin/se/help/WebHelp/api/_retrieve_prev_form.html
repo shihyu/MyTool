@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_retrieve_prev_form</title>
+</head>
+<body>
+
+<h3><b>int _retrieve_prev_form()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieves the previous response to check boxes, radio buttons, text
+boxes, and combo boxes, for the active form.  This function is used to
+perform dialog box retrieval and is called by the dialog manager when
+you press F7.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include "slick.sh"
+// Create a text box with an OK command button on the form for
+this example
+defeventtab form1;
+ok.on_create()
+{
+   _retrieve_prev_form();
+}
+ok.lbutton_up()
+{
+   _save_form_response();
+   p_active_form._delete_window(0);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Form
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Form_Methods.html">Form Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_retrieve_next_form.html">_retrieve_next_form</a>, <a href="_save_form_response.html">_save_form_response</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>call_event</title>
+</head>
+<body>
+
+<h3><b>typeless call_event(..., int wid_or_etab, _str event, option='W')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Calls an event handler for an object or for a specific event table.  The
+event handler is called with arguments arg1,arg2,..,argN if specified.
+IMPORTANT: You must specify the option parameter if you want to call the
+event handler with arguments.
+<P>
+The option defaults to 'W' and may be one of the following:
+<DL compact style="margin-left:20pt">
+<DT>'W'<DD>Indicates that wid_or_etab is the window id of the object.  The event
+handler is determined by the dialog box inheritance order.
+<DT>'E'<DD>Indicates that wid_or_etab is an index to and event table.
+<DT>'2'<DD>Indicates that wid_or_etab is the window id of the object.  The event
+handler is determined by the dialog box inheritance order but the user
+level 1 inheritance is skipped.
+</DL>
+<P>
+event is an event constant.  Use name2event to specify a key event.  See
+help on Event Names
+</P>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid_or_etab">wid_or_etab</A></code> - window id</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="event">event</A></code> - event to call</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - see above ('W', 'E', or '2')
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+// Often dialog boxes have an OK button which applies changes and closes
+// the dialog box and an Apply button which applies changes but does not
+// close the dialog box
+defeventtab form1;
+ok.lbutton_up()
+{
+     // If the apply button does not reference itself, we do not need to use
+     // call event as a method.
+     apply.call_event(_control apply,LBUTTON_UP);
+     //  Some events do not have constants defined for them.  The commented
+     // out call_event statement below has the same effect but uses the
+
+     // name2event primitive which works for key events such
+     // as 'a', 'b', 'c'...'?','@','#' etc.
+     //     apply.call_event(_control apply,name2event('lbutton-up'));
+     p_active_form._delete_window(0);
+}
+apply.lbutton_up()
+{
+     // Add code for this event function here.
+     // We can return a value if we want to.
+}
+
+// Here's an example of calling an event handler of a specific event table
+ok.lbutton_up()
+{
+     // The sample code above is better because it does get effected by changing
+
+     // the form name.  The 'E' option should be used when the dialog
+     // box inheritance order won't call the correct event handler or if you
+     // have written your own user level2  inheritance code which needs to
+     // call other user level2 inheritance code.
+     apply.call_event(defeventtab form1.apply,LBUTTON_UP,'E');
+     p_active_form._delete_window(0);
+}
+</PRE></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">All Window Objects</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Check_Box_Methods.html">Check Box Methods</a>, <a href="Combo_Box_Methods.html">Combo Box Methods</a>, <a href="Command_Button_Methods.html">Command Button Methods</a>, <a href="Directory_List_Box_Methods.html">Directory List Box Methods</a>, <a href="Drive_List_Methods.html">Drive List Methods</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="File_List_Box_Methods.html">File List Box Methods</a>, <a href="Form_Methods.html">Form Methods</a>, <a href="Frame_Methods.html">Frame Methods</a>, <a href="Gauge_Methods.html">Gauge Methods</a>, <a href="Hscroll_Bar_Methods.html">Hscroll Bar Methods</a>, <a href="Image_Methods.html">Image Methods</a>, <a href="Label_Methods.html">Label Methods</a>, <a href="List_Box_Methods.html">List Box Methods</a>, <a href="MDI_Window_Methods.html">MDI Window Methods</a>, <a href="Picture_Box_Methods.html">Picture Box Methods</a>, <a href="Radio_Button_Methods.html">Radio Button Methods</a>, <a href="Spin_Methods.html">Spin Methods</a>, <a href="Text_Box_Methods.html">Text Box Methods</a>, <a href="Vscroll_Bar_Methods.html">Vscroll Bar Methods</a></blockquote>
+</body>
+</html>

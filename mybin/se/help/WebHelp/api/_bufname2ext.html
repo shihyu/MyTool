@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_bufname2ext</title>
+</head>
+<body>
+
+<h3><b>_str _bufname2ext(_str buf_name)</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>Use <a href="_Filename2LangId.html">_Filename2LangId()</a>
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns the canonical file extension for the given file.
+<p>
+If the file's actual extension extension matches an
+<code>_[ext]_Filename2LangId()</code> callback, it will
+first try the callback to see if the file, based on it's
+path or name should be referred to an alternate extension.
+<p> Otherwise, if the file's actual extension matches a
+<code>suffix_[ext]</code> callback, it will open the file
+in a temporary view and call <a href="_SetEditorLanguage.html">_SetEditorLanguage</a> to
+determine the file's actual language type.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="buf_name">buf_name</A></code> - file name and path to test
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns referred extension for buffer name, using
+        <a href="_Filename2LangId.html">_Filename2LangId</a>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="get_extension.html">get_extension</a>, <a href="_Filename2LangId.html">_Filename2LangId</a>, <a href="_Ext2LangId.html">_Ext2LangId</a></blockquote>
+</body>
+</html>

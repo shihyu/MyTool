@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_pic_space_y</title>
+</head>
+<body>
+
+<h3><b>int p_pic_space_y</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Determines the amount of extra line spacing in twips for a list box, text
+box, or combo box (text not list).  This property effects the line spacing
+even when there is not a picture in the control.  However, the line
+spacing is more typically changed when a picture is present.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+#include 'slick.sh'
+defeventtab form1;
+combo1.on_create()
+{
+   <a href="p_picture.html">p_picture</a>=_pic_drremov;
+   // Set indent before picture.
+   <a href="p_pic_indent_x.html">p_pic_indent_x</a>=100;
+   // Set indent after picture.
+   <a href="p_text.html">p_text</a>='A:';
+   <a href="p_after_pic_indent_x.html">p_after_pic_indent_x</a>=200;
+   // Extra y spacing. Half displayed above and half below picture
+   <b>p_pic_space_y</b>=100;
+}
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Combo Box, Text Box, List Box</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Combo_Box_Properties.html">Combo Box Properties</a>, <a href="Text_Box_Properties.html">Text Box Properties</a>, <a href="List_Box_Properties.html">List Box Properties</a></blockquote>
+</body>
+</html>

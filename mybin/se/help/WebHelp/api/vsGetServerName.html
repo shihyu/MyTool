@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsGetServerName</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsGetServerName(char *pszServerName, int MaxServerNameLen, int *pMaxServerNameLen=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">SlickEdit uses the server name to communicate with other
+instances of the editor and for DDE.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszServerName">pszServerName</A></code> - Ouput buffer for server name.  The server
+name is set by the vsInit call by VSINIT.
+pszServerNamePrefix.  This can be 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxServerNameLen">MaxServerNameLen</A></code> - Number of characters allocated to
+<i>pszServerName</i>.  We recommend
+you this be VSMAXSERVERNAME.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pMaxServerNameLen">pMaxServerNameLen</A></code> - If this is not 0, this is set to the exact
+number of characters you need to allocate.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>void</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns pszServerName.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

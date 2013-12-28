@@ -1,0 +1,67 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_OpenDialog</title>
+</head>
+<body>
+
+<h3><b>_str _OpenDialog(_str ShowArgs, _str pszTitle="", _str pszInitialWildCards="", _str pszFileFilters="", int VSOFNFlags=0, _str pszDefaultExt="", _str pszInitialFilename="", _str pszInitialDirectory="", _str pszRetrieveName="", _str pszHelpName="", typeless *pfnItemCallback=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Runs either explorer open dialog or Slick-C&reg;
+dialog for performing Open and Save As operations.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ShowArgs">ShowArgs</A></code> - This argument may be passed to the Slick-C&reg; show() function.
+                  It must contain the -modal option.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszTitle">pszTitle</A></code> - Title of the dialog.  Defaults to "Open" if "" is given.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszInitialWildCards">pszInitialWildCards</A></code> - Optional wildcards to start with.  Must exists in
+                  pszFileFilters.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFileFilters">pszFileFilters</A></code> - Comma delimited list of captions and wildcards in the
+                  Syntax shown below:
+
+                  <p>All Files (*.*),C/C++ Files (*.c;*.cpp;*.h),Java Files (*.java)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="VSOFNFlags">VSOFNFlags</A></code> - ofn_flags May a combination of the following flag constants defined in "slick.sh":
+                  <dl>
+                  <dt>OFN_EDIT
+                  <dd>Use the Edit form, rather than the
+                  regular open dialog.  This adds several
+                  options, such as the encoding, line format,
+                  read-only, expand tabs, preload file, etc.
+                  <dt>OFN_ALLOWMULTISELECT
+                  <dd>Allow multiple file selection.  When set, caller must process a return value which may have spaces delimited filenames some of which are double quoted.
+                  <dt>OFN_FILEMUSTEXIST
+                  <dd>File(s) selected must exist.
+                  <dt>OFN_CHANGEDIR
+                  <dd>Don't restore original directory on exit
+                  <dt>OFN_NOOVERWRITEPROMPT
+                  <dd>Don't prompt user with overwrite existing dialog.
+
+                  <dt>OFN_SAVEAS<dd>File list box does not select files and user is prompted whether to overwrite an existing file.
+                  <dt>OFN_SAVEAS_FORMAT<dd>Same as
+                  OFN_SAVEAS, but with additional options
+                  (line format, encoding, change dir option).
+                  <dt>OFN_READONLY<dd>Show read only button.    See OFN_PREFIXFLAGS flag.
+                  <dt>OFN_KEEPOLDFILE<dd>Show keep old name button.    See OFN_PREFIXFLAGS flag.
+                  <dt>OFN_PREFIXFLAGS<dd>Prefix return value with -r if OFN_READONLY flag given and -n if OFN_KEEPOLDFILE flag given.
+                  </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszDefaultExt">pszDefaultExt</A></code> - Usually '' is specified for this parameter.  This extension is
+                  used if the file the user has selected does not have an extension.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszInitialFilename">pszInitialFilename</A></code> - Filename that initially appears in the File Name combo box.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszInitialDirectory">pszInitialDirectory</A></code> - When not '', current directory is switched to this directory when
+                  the dialog box is displayed and then restored on exit.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszRetrieveName">pszRetrieveName</A></code> - Retrieve name used keep track of the previous typed file names
+                  in the File Name combo box.  Typically this is the name of the
+                  command or function that invoked the dialog box or the extension
+                  on the files being opened.  Can also be
+                  used to restore the last directory selected
+                  by this function (if pszInitialDirectory is
+                  blank).</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszHelpName">pszHelpName</A></code> - Specifies help displayed when F1 is pressed or the help button
+                  is pressed.  If the help_item starts with a '?' character, the
+                  characters that follow are displayed in a message box.  The
+                  help string may also specify a unique keyword in the "vslick.hlp"
+                  (UNIX: "uvslick.hlp") help file.  The unique keywords for the help
+                  file are contained in the file "vslick.lst" (UNIX: "uvslick.lst").
+                  In addition, you may specify a unique keyword for any windows help
+                  file by specifying a string in the format:  keyword:
+                  help_filename.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pfnItemCallback">pfnItemCallback</A></code> - Callback that will be called with the name (including
+                  absolute path) of each item that will be displayed in
+                  the open dialog.  This is used to prevent items from
+                  being included in the list.  The callback function should
+                  take one parameter that is a _str type.  This string
+                  will be the absolute filename of the item in question.
+                  The callback should return 1 if the item is to be included
+                  in the open dialog and 0 if not.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns a string of one or more filenames.  Filenames with spaces will be
+        in double quotes.  "" is returned if the user cancels the dialog.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Forms.html">Forms</a></blockquote>
+</body>
+</html>

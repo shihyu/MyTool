@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagMatchSymbolInContext</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTagMatchSymbolInContext(const char *prefix, const char *search_class, int treewid, int tree_index, VSHREFVAR tag_files, int &num_matches, int max_matches, int pushtag_flags, int context_flags, int exact_match=a, int case_sensitive=a, int strict=a, int find_parents=a, int find_all=a, const char *search_file=a, VSHREFVAR template_args=a, VSHREFVAR visited=a, int depth=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Match the given symbol based on the current context information.
+Order of searching is:
+<OL>
+<LI> local variables in current function
+<LI> members of current class, including inherited members
+<LI> globals found in the current file
+<LI> globals imported explicitely from current file
+<LI> globals, (not static variables), found in other files
+<LI> any symbol found in this file
+<LI> any symbol found in any tag file
+</OL>
+Failing that, it repeats steps (1-6) with pushtag_flags set to -1,
+thus disabling any filtering, unless 'strict' is true.
+The current object must be an editor control or current buffer.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="prefix">prefix</A></code> - symbol prefix to match</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="search_class">search_class</A></code> - name of class to search for matches</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="treewid">treewid</A></code> - window id of tree control to insert into,
+                       0 indicates to insert into a match set</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_index">tree_index</A></code> - tree index to insert items under, ignored
+                       if (treewid == 0)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_files">tag_files</A></code> - (reference to _str[]) tag files to search</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="num_matches">num_matches</A></code> - (reference) number of matches</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="max_matches">max_matches</A></code> - maximum number of matches allowed</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pushtag_flags">pushtag_flags</A></code> - VS_TAGFILTER_*, tag filter flags</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="context_flags">context_flags</A></code> - VS_TAGCONTEXT_*, tag context filter flags</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="exact_match">exact_match</A></code> - exact match or prefix match (0)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="case_sensitive">case_sensitive</A></code> - case sensitive (1) or case insensitive (0)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="strict">strict</A></code> - strict match, or allow any match?</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="find_parents">find_parents</A></code> - find parents of the given class?</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="find_all">find_all</A></code> - find all instances, for each level of scope</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="search_file">search_file</A></code> - file context to search for matches in (for imports)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="template_args">template_args</A></code> - template arguments (Slick-C hash table)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="visited">visited</A></code> - (optional) Slick-C&reg; hash table of prior results</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="depth">depth</A></code> - (optional) depth of recursive search
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

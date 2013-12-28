@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_ProjectWorkspaceFindFile</title>
+</head>
+<body>
+
+<h3><b>_str _ProjectWorkspaceFindFile(_str filename, boolean searchIncludes=true, boolean strict=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">First searches the current project for <i>filename</i>,
+then the current workspace.  If that fails, it reduces
+<i>filename</i> to it's basename and searches again.
+If that fails, it searches include paths as defined by
+the current project.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filename">filename</A></code> - path of file to search for</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="searchIncludes">searchIncludes</A></code> - search the project include paths</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="strict">strict</A></code> - search only for exact matches,
+                        do not strip path from filename
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">'' if not found, otherwise, the absolute path
+        to <i>filename</i>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Project_Functions.html">Project Functions</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd">
+<SETemplate Version="1.0" Type="Item">
+  <TemplateDetails>
+    <Name>C# 1.1 Composite</Name>
+    <Description>C# implementation of the Composite design pattern, using ArrayList</Description>
+    <SortOrder>0</SortOrder>
+    <DefaultName>CompositeName</DefaultName>
+  </TemplateDetails>
+  <TemplateContent>
+    <Parameters/>
+    <Files>
+      <File TargetFilename="$fileinputname$.cs">Composite1.cs</File>
+    </Files>
+  </TemplateContent>
+
+</SETemplate>

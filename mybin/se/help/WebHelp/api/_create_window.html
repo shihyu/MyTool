@@ -1,0 +1,54 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_create_window</title>
+</head>
+<body>
+
+<h3><b>int _create_window(int object_index, int parent_wid, _str title, int x, int y, int width, int height, int cw_flags=0, int bds_style=-1)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Creates an object and returns an instance handle.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="object_index">object_index</A></code> - An object constant with prefix "OI_" from "slick.sh".
+                  Can't use OI_MDI_FORM.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="parent_wid">parent_wid</A></code> - Must be an existing window id, _mdi constant,
+                  or _app constant.  _mdi is a window handle for the MDI window.
+                  _app is a window handle to the SlickEdit application window
+                  (exists but can be seen).</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="title">title</A></code> - Used by OI_FORM, OI_FRAME, OI_COMMAND_BUTTON, OI_CHECK_BOX,
+                  and OI_RADIO_BUTTON objects only.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="x">x</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="y">y</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="width">width</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="height">height</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="cw_flags">cw_flags</A></code> - Create window flags.  Many additional properties for
+                  objects can be set after the object is created.  These flags are a
+                  combination of the flags below.
+                  <DL compact style="margin-left:20pt;">
+                  <DT>CW_HIDDEN</DT><DD>Create the window initially hidden.
+                  <DT>CW_CHILD</DT><DD>Create the object as a child of the parent window,
+                  <i>parent_wid</i>.  This flag is not valid for an OI_FORM object and
+                  REQUIRED for all other objects.</DD>
+                  <DT>CW_PARENT</DT><DD>Keep form object on top of another window.
+                  This flag is only supported by form objects.</DD>
+                  <DT>CW_LEFT_JUSTIFY, CW_RIGHT_JUSTIFY</DT><DD>Displays text on left or
+                  right for OI_CHECK_BOX or OI_RADIO_BUTTON.</DD>
+                  <DT>CW_BSDEFAULT</DT><DD>Selects a OI_COMMAND_BUTTON to be the
+                  default button.</DD>
+                  <DT>CW_EDIT</DT><DD>Creates the window for editing in the dialog editor.</DD>
+                  <DT>CW_COMBO_LIST_ALWAYS</DT><DD>Used to create OI_COMBO_BOX in the list
+                  always style.  Effects OI_COMBO_BOX object only.</DD>
+                  <DT>CW_COMBO_NOEDIT</DT><DD>Used to create OI_COMBO_BOX in the no
+                  edit style.  Effects OI_COMBO_BOX object only.</DD>
+                  </DL></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="bds_style">bds_style</A></code> - Border style.  Effects OI_FORM object only.  May be one of the following:
+                  <DL compact style="margin-left:20pt;">
+                  <DT>BDS_NONE
+                  <DT>BDS_FIXED_SINGLE
+                  <DT>BDS_SIZABLE
+                  <DT>BDS_DIALOG_BOX
+                  </DL>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the window id of root window of the object created.  On error,
+        a negative error number is returned.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+form_wid=_create_window(OI_FORM,_mdi,"Title",0,0,4000,2000,
+              CW_PARENT|CW_HIDDEN,
+              BDS_DIALOG_BOX);
+text_wid=form_wid._create_window(OI_TEXT_BOX,form_wid,"",100,100,3500,100,
+   CW_CHILD);
+form_wid._center_window(_mdi)
+form_wid.p_visible=1;
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Window_Functions.html">Window Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_top_height.html">_top_height</a>, <a href="_bottom_height.html">_bottom_height</a></blockquote>
+</body>
+</html>

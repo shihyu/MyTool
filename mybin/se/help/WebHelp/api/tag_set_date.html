@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_set_date</title>
+</head>
+<body>
+
+<h3><b>int tag_set_date(_str file_name, _str modify_date=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Modify the date of tagging for the given file.  Since date of tagging
+is not involved in indexing, this is safe to do in the record, in place.
+This method always uses the current date when setting the date of tagging.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - File path of source file to set tagging date for.  See
+                 <a href="VS_TAGSEPARATOR_file.html">VS_TAGSEPARATOR_file</a> for more details about
+                 constructing this value.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="modify_date">modify_date</A></code> - Modification date when tagged, read from disk
+                 if modify_date is NULL.  Format is YYYYMMDDHHMMSSmmm (year, month, day, hour, minute, second, ms).
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_get_date.html">tag_get_date</a>, <a href="tag_get_file.html">tag_get_file</a>, <a href="tag_find_file.html">tag_find_file</a>, <a href="tag_next_file.html">tag_next_file</a></blockquote>
+</body>
+</html>

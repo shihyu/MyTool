@@ -1,0 +1,17 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsXMLCFGGetLastChild</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsXMLCFGGetLastChild(int iHandle, int NodeIndex, int NodeTypeFlags=~VSXMLCFG_NODE_ATTRIBUTE)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Gets the parent index from the specified index.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iHandle">iHandle</A></code> - Handle to an XMLCFG tree returned by vsXMLCFGOpen(), vsXMLCFGCreate(), or vsXMLCFGOpenFromBuffer().</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NodeIndex">NodeIndex</A></code> - Tree node index.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NodeTypeFlags">NodeTypeFlags</A></code> - Indicates node type of child to find.
+               1 or more VSXMLCFG_NODE_* flags.  See
+               <a href="_xmlcfg_add.html">_xmlcfg_add</a>() for more information on
+               this parameter.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the node index of the last child of the specified node type for the node given.  -1 is returned if the node specified has no children.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="XMLCFG_Functions.html">XMLCFG Functions</a></blockquote>
+</body>
+</html>

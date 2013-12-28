@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagFindFile</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTagFindFile(char *pszFilename, const char *pszPrefix=a, int find_first=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve the name of the first file included in this tag database,
+or optionally, the name of a specific file, either to check if the
+file is in the database or to position the file iterator at a
+specific point. Files are ordered lexicographically, case-sensitive
+on UNIX platforms, case insensitive on DOS/OS2/Windows platforms.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFilename">pszFilename</A></code> - (Output, 1024 bytes) File name as stored in database.
+                        Allocate VS_TAG_MAX_FILENAME characters.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszPrefix">pszPrefix</A></code> - (Optional) File name/path prefix to search for.
+                        Ignored if find_first==0</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="find_first">find_first</A></code> - (Optional) Find first match or next natch?
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, < 0 on error, BT_RECORD_NOT_FOUND_RC if not found.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

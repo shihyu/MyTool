@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_list_class_context</title>
+</head>
+<body>
+
+<h3><b>int tag_list_class_context(int tree_wid, int tree_index, _str(&tag_files)[], _str tag_name, _str class_name, int filter_flags, int context_flags, var vnum_matches, int max_matches, boolean exact_match, boolean case_sensitive, ...)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Attempt to locate the given symbol in the given class by searching
+the current context.  Recursively looks for symbols in enumerated
+types and anonymous unions (designated by having *both* the anonymous
+and 'maybe_var' tag flags).
+<p>
+Look at num_matches to see if any matches were found.  Generally
+if (num_matches >= max_matches) there may be more matches, but
+the search terminated early.
+<p>
+For synchronization, macros should perform a tag_lock_matches(true)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_wid">tree_wid</A></code> - window id of tree control to insert into,
+                  0 indicates to insert into a match set</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_index">tree_index</A></code> - Parent tree node index to insert item under, ignored if tree_wid is zero.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_files">tag_files</A></code> - (Input) List of tags files to search.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - Name of class to search for matches</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - Name of class context to search for tags belonging to.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filter_flags">filter_flags</A></code> - Tag filter flags, only insert tags passing this filter.
+                  See <a href="tag_filter_type.html">tag_filter_type</a> for more
+                  details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="context_flags">context_flags</A></code> - Context flags representing what to allow or restrict to.
+                  See <a href="tag_check_context_flags.html">tag_check_context_flags</a> for more details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="vnum_matches">vnum_matches</A></code> - (Input, Output) Number of matches</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="max_matches">max_matches</A></code> - Maximum number of matches allowed</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="exact_match">exact_match</A></code> - Specifies exact match or prefix match (0)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="case_sensitive">case_sensitive</A></code> - Specifies search case sensitivity.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="friend_list">friend_list</A></code> - (optional) List of friends to the current context</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="visited">visited</A></code> - (optional) hash table of prior results</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="depth">depth</A></code> - (optional) depth of recursive search
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">1 if the definition of the given class <i>class_name</i> is found,
+        othewise returns 0, indicating that no matches were found.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_find_class.html">tag_find_class</a>, <a href="tag_insert_match.html">tag_insert_match</a>, <a href="tag_list_class_locals.html">tag_list_class_locals</a>, <a href="tag_list_class_tags.html">tag_list_class_tags</a>, <a href="tag_list_context_globals.html">tag_list_context_globals</a>, <a href="tag_tree_insert_tag.html">tag_tree_insert_tag</a>, <a href="tag_tree_prepare_expand.html">tag_tree_prepare_expand</a></blockquote>
+</body>
+</html>

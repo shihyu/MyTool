@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsGetRText</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsGetRText(int wid, int Nofbytes, seSeekPos point, char *pszBuf, int *pNofbytesRead=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Places <i>Len</i> bytes of data starting from the byte offset specified
+by <i>RealSeekPos</i> into <i>pszBuf</i>.  The resulting string is
+always null terminated.  The buffer <i>pszBuf</i> must be large
+enough to contain <i>Len</i>+1 bytes of data.   Lines with the VSLF_
+NOSAVE flag set are not copied into the output buffer.  Use this
+function to read all data but no save lines.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Len">Len</A></code> - Number of characters to copy into
+<i>pszBuf</i>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="RealSeekPos">RealSeekPos</A></code> - Specifies the real seek position from which
+to start copying.  Specify VSNULLSEEK to
+start copying for the cursor position.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszBuf">pszBuf</A></code> - Output buffer for text. The buffer
+<i>pszBuf</i> must be large enough to
+contain <i>Len</i>+1 bytes of data.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns number of bytes copied not including null character.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsInsertLine.html">vsInsertLine</a>, <a href="vsReplaceLine.html">vsReplaceLine</a>, <a href="vsDeleteLine.html">vsDeleteLine</a>, <a href="vsGetLine.html">vsGetLine</a>, <a href="vsGetText.html">vsGetText</a>, <a href="vsGetRText.html">vsGetRText</a></blockquote>
+</body>
+</html>

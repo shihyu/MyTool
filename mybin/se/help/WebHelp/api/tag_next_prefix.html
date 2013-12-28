@@ -1,0 +1,16 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_next_prefix</title>
+</head>
+<body>
+
+<h3><b>int tag_next_prefix(_str tag_prefix, boolean case_sensitive=false, _str class_name=null, boolean skip_duplicates=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve the next tag with the given prefix (case-insensitive).
+Should be called only after calling vsTagGetTagPrefix().
+Should be called only after calling <a href="tag_find_prefix.html">tag_find_prefix</a>.  Use
+<a href="tag_get_info.html">tag_get_info</a> to extract the details about the tag.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_prefix">tag_prefix</A></code> - Prefix of tag name to search for.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="case_sensitive">case_sensitive</A></code> - Specifies search case sensitivity.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - Name of class that tag belongs to.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="skip_duplicates">skip_duplicates</A></code> - Skip tags with same name, type and class.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, < 0 on error, BT_RECORD_NOT_FOUND_RC if not found.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_find_equal.html">tag_find_equal</a>, <a href="tag_find_prefix.html">tag_find_prefix</a>, <a href="tag_find_tag.html">tag_find_tag</a>, <a href="tag_get_detail.html">tag_get_detail</a>, <a href="tag_next_equal.html">tag_next_equal</a>, <a href="tag_reset_find_tag.html">tag_reset_find_tag</a></blockquote>
+</body>
+</html>

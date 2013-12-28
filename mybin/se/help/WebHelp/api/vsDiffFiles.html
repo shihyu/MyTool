@@ -1,0 +1,139 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsDiffFiles</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsDiffFiles(const char *pszFileName1="", int iBuf1Index=-, int iWindow1Index=a, const char *pszFileName2="", int iBuf2Index=-, int iWindow2Index=a, int iFlags=a, const char *pszFileSpec="", const char *pszExcludeFileSpec="", const char *pszDialogTitle="", const char *pszFile1Title="", const char *pszFile2Title="", const char *pszComment="", const char *pszCommentButtonCaption="", const char *pszImaginaryLine=a, const char *pszSaveButton1Caption=a, const char *pszSaveButton2Caption=a, const char *pszDiffStateFile=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Diffs the files specified and displays the Diff dialog.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFileName1">pszFileName1</A></code> - Name of the first file to be diffed.  This will
+be loaded from disk.  If there is a buffer by
+the same name in memory, it will be used.
+This may be a directory if you want a multi-
+file diff.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iBuf1Index">iBuf1Index</A></code> - Buffer Index for the first buffer.  If you use
+this, be sure to specify "" for pszFileName1,
+and 0 for iWindow1Index.  Specify -1 to have
+this parameter ignored.  Do not use this for a
+multi-file diff.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iWindow1Index">iWindow1Index</A></code> - Window Index for the first buffer.  If you use
+this, be sure to specify "" for pszFileName1,
+and -1 for iBuf1Index.  Specify 0 to have
+this parameter ignored.  Do not use this for a
+multi-file diff.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFileName2">pszFileName2</A></code> - Name of the second file to be diffed.  This
+will be loaded from disk.  If there is a buffer
+by the same name in memory, it will be
+used.  This may only be a directory if you
+want a multi-file diff, or if pszFileName2
+differs from pszFileName1 by path only.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iBuf2Index">iBuf2Index</A></code> - Buffer Index for the second buffer.  If you
+use this, be sure to specify "" for
+pszFileName2, and 0 for iWindow2Index.
+Specify -1 to have this parameter ignored.
+Do not use this for a multi-file diff.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iWindow2Index">iWindow2Index</A></code> - Window Index for the second buffer.  If you
+use this, be sure to specify "" for
+pszFileName2, and -1 for iBuf2Index.
+Specify 0 to have this parameter ignored. Do
+not use this for a multi-file diff.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iFlags">iFlags</A></code> - Combination of the following flags.  None
+of these flags apply to multi-file diff:
+
+<dl>
+<dt>VSDIFF_OPT_BUF1</dt><dd>
+<i>pszFileName1</i> is a buffer name and not a relative
+filename which needs the path to be fully resolved.</dd>
+
+<dt>VSDIFF_OPT_BUF2</dt><dd>
+<i>pszFileName2</i> is a buffer name and not a relative
+filename which needs the path to be fully resolved.</dd>
+
+<dt>VSDIFF_OPT_PRESERVE_BUF1</dt><dd>
+Do not delete buffer 1 when the diff closes.  Should be used in
+conjunction with a non-null <i>iBuf1Index</i>.  If the user
+chooses to "save" changes to this buffer, the modify flag will
+be left on to show the caller that the user wishes to save the
+file.  If the user does not save changes to the buffer, all changes
+will be undone, and the modify flag will be off.  When using
+this option, be sure to turn VSP_MODIFY off, and set
+VSP_UNDOSTEPS to a large number (32000 or more) before
+calling this function.</dd>
+
+<dt>VSDIFF_OPT_PRESERVE_BUF2</dt><dd>
+Save as VSDIFF_OPT_PRESERVE_BUF1, except for buffer
+2.</dd>
+
+<dt>VSDIFF_OPT_QUIET</dt><dd>
+Quiet option.  Shuts off the "Files match" message</dd>
+
+<dt>VSDIFF_OPT_READ_ONLY_1</dt><dd>
+Make File1 read only.</dd>
+
+<dt>VSDIFF_OPT_READ_ONLY_2</dt><dd>
+Make File2 read only.</dd>
+
+<dt>VSDIFF_OPT_INTERLEAVED</dt><dd>
+Interleaved output in a single buffer.  Cannot be specified for a
+multi-file diff.</dd>
+
+<dt>VSDIFF_OPT_MODAL</dt><dd>
+Show diff dialog modally.  Cannot be used with
+VSDIFF_OPT_INTERLEAVED.</dd>
+
+<dt>VSDIFF_OPT_VIEW_ONLY</dt><dd>
+Make both files read only.  Will not allow the user to type, and
+will hide all the "copy" buttons.</dd>
+
+<dt>VSDIFF_OPT_RECURSIVE</dt><dd>
+Recurse subdirectories.  Use this option only with multi-file
+diffs.</dd>
+
+<dt>VSDIFF_OPT_NOMAP</dt><dd>
+Do not add information about this diff to the mapping
+file(diffmap.ini)</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFileSpec">pszFileSpec</A></code> - Filespecs to match for multi-file diff (ex "*.c
+*.h").  This is a space delimited list.  Specify
+only for a multi-file diff.  Specify "" to have
+this parameter ignored.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszExcludeFileSpec">pszExcludeFileSpec</A></code> - Filespecs to exclude for multi-file
+diff (ex "junk* test*"). This is a space
+delimited list.  Specify only for a multi-file
+diff.  Specify "" to have this parameter
+ignored.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszDialogTitle">pszDialogTitle</A></code> - Title of diff dialog box.  If "" is specified,
+the title will be "Diff".  Title cannot be
+blank. Do not use this for a multi-file diff.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFile1Title">pszFile1Title</A></code> - Title above file 1 editor control in diff
+dialog.  If "" is specified, the Document
+name, or buffer name will be used.  Title
+cannot be blank. Do not use this for a multi-
+file diff.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFile2Title">pszFile2Title</A></code> - Title above file 1 editor control in diff
+dialog.  If "" is specified, the Document
+name, or buffer name will be used.  Title
+cannot be blank.  Do not use this for a multi-
+file diff.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszComment">pszComment</A></code> - If this parameter is specified, a "Comment"
+button will be visible on the diff dialog.
+When the user presses the button, they will
+see a dialog with the contents of this
+parameter.  This string can contain new line
+characters ("\n").  Do not use this for a
+multi-file diff.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszCommentButtonCaption">pszCommentButtonCaption</A></code> - This is the caption for the "Comment"
+button.  Use this only in conjunction with
+the pszComment parameter.  Do not use this
+for a multi-file diff.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszImaginaryLineCaption">pszImaginaryLineCaption</A></code> - This is the text used for imaginary lines.
+Note that this parameter is a global setting
+and will effect other diffs currently in
+progress.  For this reason, you must make
+sure that this parameter is the same for all
+calls to vsDiffFiles and vsMergeFiles.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  On error a message box is display.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote>
+</body>
+</html>

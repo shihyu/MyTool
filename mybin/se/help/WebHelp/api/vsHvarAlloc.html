@@ -1,0 +1,37 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsHvarAlloc</title>
+</head>
+<body>
+
+<h3><b>VSHVAR VSAPI vsHvarAlloc(VSHVAR InitTohVar=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>VSHVAR</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns a handle to a newly created Slick-C&reg; variable.  You need to
+used this function if you want to call a Slick-C&reg; function or method
+which takes a call by reference input parameter.  You may also need to
+used this function when calling a Slick-C&reg; function or method which
+takes a more complex argument type like a Slick-C&reg; array.  If
+<i>InitTohVar</i> is non-zero, the returned variable is a copy of the
+input variable.  Use <b>vsHvarFree</b> to free a variable allocated by
+this function.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+   int index;
+   index=vsFindIndex("popup_message",VSTYPE_COMMAND);
+   if (!index) {
+       vsMessage("popup_message not found");
+       return;
+   }
+   // Note that we could call the popup_message method by using
+   // VSARG_PSZ instead of allocating a Slick-C&reg; variable.
+   VSHVAR hVar;
+   hVar=vsHvarAlloc(0);
+   vsHvarSetZ(hVar,"this is a message");
+   VSARGTYPE ArgList[1];
+   ArgList[0].kind=VSARGTYPE_HVAR;ArgList[0].u.hVar=hVar;
+   vsCallIndex(0,index,1,ArgList);
+   vsHvarFree(hVar);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsHvarGetI.html">vsHvarGetI</a>, <a href="vsHvarGetI64.html">vsHvarGetI64</a>, <a href="vsHvarSetI.html">vsHvarSetI</a>, <a href="vsHvarSetI64.html">vsHvarSetI64</a>, <a href="vsHvarSetB.html">vsHvarSetB</a>, <a href="vsHvarSetZ.html">vsHvarSetZ</a>, <a href="vsHvarGetZ.html">vsHvarGetZ</a>, <a href="vsHvarGetLstr.html">vsHvarGetLstr</a>, <a href="vsGetVar.html">vsGetVar</a>, <a href="vsArg.html">vsArg</a>, <a href="vsHvarHashtabEl.html">vsHvarHashtabEl</a>, <a href="vsHvarArrayEl.html">vsHvarArrayEl</a>, <a href="vsHvarFree.html">vsHvarFree</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_buf_flags</title>
+</head>
+<body>
+
+<h3><b>int p_buf_flags</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Determines buffer flags.  This property is only available when the control
+is displayed.  The buffer flags may be zero or more of the following
+constant flags defined in "slick.sh":
+<DL>
+<DT>VSBUFFLAG_HIDDEN
+<DD>Affects Edit Window only.
+    <a href="next_buffer.html">next_buffer</a> and <a href="prev_buffer.html">prev_buffer</a> commands won't switch to this buffer.
+<DT>VSBUFFLAG_THROW_AWAY_CHANGES
+<DD>Affects Edit Window only.
+    Allow <a href="quit.html">quit</a> without prompting for save when this buffer is modified.
+<DT>VSBUFFLAG_KEEP_ON_QUIT
+<DD>Affects Edit Window only.  Don't delete buffer on <a href="quit.html">quit</a>.
+<DT>VSBUFFLAG_REVERT_ON_THROW_AWAY
+<DD>Affects Edit Window only.
+    Replace buffer with copy on disk when the buffer is deleted with the <a href="quit.html">quit</a> command.
+<DT>VSBUFFLAG_PROMPT_REPLACE
+<DD>Indicates whether to prompt when replacing existing file on save.
+<DT>VSBUFFLAG_DELETE_BUFFER_ON_CLOSE
+<DD>Indicates whether the buffer should be deleted when a
+    list box or editor control is deleted.
+</DL>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Editor Control, Edit Window</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Editor_Control_Properties.html">Editor Control Properties</a>, <a href="Edit_Window_Properties.html">Edit Window Properties</a></blockquote>
+</body>
+</html>

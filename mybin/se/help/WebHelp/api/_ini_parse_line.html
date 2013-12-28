@@ -1,0 +1,26 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_ini_parse_line</title>
+</head>
+<body>
+
+<h3><b>int _ini_parse_line(int ini_view, _str &field_name, _str &info, int first=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">After a call to _ini_find_section, this function is called to
+parse each <i>field_name</i>=<i>value</i> line in the section.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">A non-zero value is returned when the end of the section is reached.
+
+<pre>
+   ".ini" File Syntax:
+         [<i>section1</i>]
+         <i>field_name1</i>=<i>value1</i>
+         <i>field_name2=value2</i>
+         ...
+         [<i>section2</i>]
+         <i>field_name1=value1</i>
+         field_name2=<i>value2</i>
+         ...
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a>, <a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,864 @@
+===============================================================================
+=    Welcome to the SlickEdit Vim Emulation Tutorial    -    Version 1.0      =
+===============================================================================
+     This tutorial file is a modification of the Vim Tutor Version 1.7
+     that ships with Vim. It has been expanded and modified to reflect
+     using Vim emulation in SlickEdit 2007 and later. See credits at
+     the bottom of this file.
+
+     SlickEdit and Vim are very powerful editors with many commands, too
+     many to explain in a tutor such as this.  This tutor is designed to 
+     describe enough of the commands that you will be able to easily use
+     SlickEdit Vim Emulation as quickly as possible.
+
+     A comprehensive list of Vim commands is available in the SlickEdit
+     help documentation. 
+
+     ATTENTION:
+     The commands in the lessons will modify the text.  If you created
+     this file with the SlickEdit "vimtutor" command, then you are
+     already working with a safe copy. The original file is located under
+     the SlickEdit installation directory in sysconfig/vimtutor.
+
+     It is important to remember that this tutor is set up to teach by
+     use.  That means that you need to execute the commands to learn them
+     properly.  If you only read the text, you will forget the commands!
+
+     NOTE: Vim tutors often refer to Command Mode as "Normal" mode. Since
+     the SlickEdit display always shows this mode as --COMMAND-- this tutor
+     will always refer to it as Command Mode.
+
+     FOR THE VIM VETERANS: Lessons that show key differences between standard
+     Vim and the SlickEdit emulation are marked with ~SLICKEDIT~CHANGE~ in the
+     lesson separator.
+
+     Now, make sure that you are in Vim Emulation and in Command Mode.
+     Select Tools > Options > Emulation and select Vim. Press ESC to make
+     certain that you are in Command Mode, and then press the  j  key enough
+     times to move the cursor so that Lesson 1.1 completely fills the screen.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Lesson 1.1:  MOVING THE CURSOR
+
+   ** To move the cursor, press the h,j,k,l keys as indicated. **
+	     ^
+	     k		    Hint:  The h key is at the left and moves left.
+       < h	 l >		   The l key is at the right and moves right.
+	     j			   The j key looks like a down arrow
+	     v
+  1. Move the cursor around the screen until you are comfortable.
+
+  2. Hold down the down key (j) until it repeats.
+     Now you know how to move to the next lesson.
+
+  3. Using the down key, move to Lesson 1.2.
+
+Note: If you are ever unsure about something you typed, press <ESC> to place
+      you in Command mode.  Then retype the command you wanted.
+
+Note: The cursor keys should also work.  But using hjkl you will be able to
+      move around much faster, once you get used to it.  Really!
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SLICKEDIT~CHANGE~~~~~~~
+		     Lesson 1.2: CLOSING WINDOWS
+
+  !! NOTE: Before executing any of the steps below, read this entire lesson!!
+
+  1. Press the <ESC> key (to make sure you are in Command mode).
+
+  2. Type a colon:  :
+     This places you in EX Mode (Traditional Vim Command Line). The status bar
+     will change to a text entry field prefixed with a :.
+
+  3. In the status bar command field type:  q! <ENTER>
+     This will close the current editor window, discarding any edits.
+
+  4. Type: Ctrl+A  
+     This will activate the SlickEdit command line. (No : prefix)
+
+  5. Type: vimtutor<ENTER>
+     This will execute the SlickEdit command that launches this tutorial with
+     a fresh copy of this file.
+
+NOTE:  :q! <ENTER>  discards any changes you made.  In a few lessons you
+       will learn how to save the changes to a file.
+
+  6. Move the cursor down to Lesson 1.3.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		     Lesson 1.3: TEXT EDITING - DELETION
+
+	   ** Press  x  to delete the character under the cursor. **
+
+  1. Move the cursor to the line below marked --->.
+
+  2. To fix the errors, move the cursor until it is on top of the
+     character to be deleted.
+
+  3. Press the	x  key to delete the unwanted character.
+
+  4. Repeat steps 2 through 4 until the sentence is correct.
+
+---> The ccow jumpedd ovverr thhe mooon.
+
+  5. Now that the line is correct, go on to Lesson 1.4.
+
+NOTE: As you go through this tutor, do not try to memorize, learn by usage.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		      Lesson 1.4: TEXT EDITING - INSERTION
+
+			** Press  i  to insert text. **
+
+  1. Move the cursor to the first line below marked --->.
+
+  2. To make the first line the same as the second, move the cursor on top
+     of the first character AFTER where the text is to be inserted.
+
+  3. Press  i  and type in the necessary additions.
+
+  4. As each error is fixed press <ESC> to return to Command mode.
+     Repeat steps 2 through 4 to correct the sentence.
+
+---> There is text misng this .
+---> There is some text missing from this line.
+
+  5. When you are comfortable inserting text move to lesson 1.5.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		     Lesson 1.5: TEXT EDITING - APPENDING
+
+			** Press  A  to append text. **
+
+  1. Move the cursor to the first line below marked --->.
+     It does not matter on what character the cursor is in that line.
+
+  2. Press  A  and type in the necessary additions.
+
+  3. As the text has been appended press <ESC> to return to Command mode.
+
+  4. Move the cursor to the second line marked ---> and repeat 
+     steps 2 and 3 to correct this sentence.
+
+---> There is some text missing from th
+     There is some text missing from this line.
+---> There is also some text miss
+     There is also some text missing here.
+
+  5. When you are comfortable appending text move to lesson 1.6.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SLICKEDIT~CHANGE~~~~~~~
+		     Lesson 1.6: EDITING A FILE
+
+	    ** Use  :wq  to save a file and close it. **
+
+  !! NOTE: Before executing any of the steps below, read this entire lesson!!
+
+  1. Type: :
+     To activate the Vim EX Command Line
+     OR
+     Type: Ctrl+A 
+     To activate the SlickEdit Command Line
+
+  2. At the prompt type this command:  edit test.txt <ENTER>
+     This will start editing a new file named test.txt in the current
+     working directory. The file doesn't yet exist on disk until it
+     is first saved.
+
+  3. Insert and delete text as you learned in the previous lessons.
+
+  4. Save the file with changes and close it with:  :wq <ENTER>
+
+  5. Activate the command line again and type: edit test.txt <ENTER>
+     This will reopen the file you just edited.
+
+  6. After reading the above steps and understanding them: do it.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			       LESSON 1 SUMMARY
+
+  1. The cursor is moved using either the arrow keys or the hjkl keys.
+	 h (left)	j (down)       k (up)	    l (right)
+
+  2. To start this tutorial, type vimtutor from the SlickEdit command line.
+     Type Ctrl+A to activate the SlickEdit command line.
+
+  3. To close an editor window type: <ESC> :q! <ENTER>  to discard all changes.
+	                    OR type: <ESC> :wq <ENTER>  to save the changes.
+
+  4. To delete the character at the cursor type:  x
+
+  5. To insert or append text type:
+	 i   type inserted text   <ESC>		insert before the cursor
+	 A   type appended text   <ESC>         append after the line
+
+NOTE: Pressing <ESC> will place you in Command mode or will cancel
+      an unwanted and partially completed command.
+
+Now continue with Lesson 2.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Lesson 2.1: DELETION COMMANDS
+
+		       ** Type  dw  to delete a word. **
+
+  1. Press  <ESC>  to make sure you are in Command mode.
+
+  2. Move the cursor to the line below marked --->.
+
+  3. Move the cursor to the beginning of a word that needs to be deleted.
+
+  4. Type   dw	 to make the word disappear.
+
+---> There are a some words fun that don't belong paper in this sentence.
+
+  5. Repeat steps 3 and 4 until the sentence is correct and go to Lesson 2.2.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		      Lesson 2.2: MORE DELETION COMMANDS
+
+	   ** Type  d$	to delete to the end of the line. **
+
+  1. Press  <ESC>  to make sure you are in Command mode.
+
+  2. Move the cursor to the line below marked --->.
+
+  3. Move the cursor to the end of the correct line (AFTER the first . ).
+
+  4. Type    d$    to delete to the end of the line.
+
+---> Somebody typed the end of this line twice. end of this line twice.
+
+  5. Move on to Lesson 2.3 to understand what is happening.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		     Lesson 2.3: ON OPERATORS AND MOTIONS
+
+  Many commands that change text are made from an operator and a motion.
+  The format for a delete command with the  d  delete operator is as follows:
+
+  	d   motion
+
+  Where:
+    d      - is the delete operator.
+    motion - is what the operator will operate on (listed below).
+
+  A short list of motions:
+    w - until the start of the next word, EXCLUDING its first character.
+    e - to the end of the current word, INCLUDING the last character.
+    $ - to the end of the line, INCLUDING the last character.
+
+  Thus typing  de  will delete from the cursor to the end of the word.
+
+NOTE:  Pressing just the motion while in Command mode without an operator will
+       move the cursor as specified.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		     Lesson 2.4: USING A COUNT FOR A MOTION
+
+   ** Typing a number before a motion repeats it that many times. **
+
+  1. Move the cursor to the start of the line marked ---> below.
+
+  2. Type  2w  to move the cursor two words forward.
+
+  3. Type  3e  to move the cursor to the end of the third word forward.
+
+  4. Type  0  (zero) to move to the start of the line.
+
+  5. Repeat steps 2 and 3 with different numbers.
+
+---> This is just a line with words you can move around in.
+
+  6. Move on to Lesson 2.5.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		     Lesson 2.5: USING A COUNT TO DELETE MORE
+
+   ** Typing a number with an operator repeats it that many times. **
+
+  In the combination of the delete operator and a motion mentioned above you
+  insert a count before the motion to delete more:
+	 d   number   motion
+
+  1. Move the cursor to the first UPPER CASE word in the line marked --->.
+
+  2. Type  2dw  to delete the two UPPER CASE words
+
+  3. Repeat steps 1 and 2 with a different count to delete the consecutive
+     UPPER CASE words with one command
+
+--->  this ABC DE line FGHI JK LMN OP of words is Q RS TUV cleaned up.
+
+NOTE:  A count between the operator  d  and the motion works similar to
+       using the motion without an operator. So  d2w  works like  2dw .
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 Lesson 2.6: OPERATING ON LINES
+
+		   ** Type  dd   to delete a whole line. **
+
+  Due to the frequency of whole line deletion, the designers of Vi decided
+  it would be easier to simply type two d's to delete a line.
+
+  1. Move the cursor to the second line in the phrase below.
+  2. Type  dd  to delete the line.
+  3. Now move to the fourth line.
+  4. Type   2dd   to delete two lines.
+
+--->  1)  Roses are red,
+--->  2)  Mud is fun,
+--->  3)  Violets are blue,
+--->  4)  I have a car,
+--->  5)  Clocks tell time,
+--->  6)  Sugar is sweet
+--->  7)  And so are you.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SLICKEDIT~CHANGE~~~~~~~
+			 Lesson 2.7: THE UNDO COMMAND
+			 
+   ** Press  u	to undo the last commands. **
+
+  1. Move the cursor to the line below marked ---> and place it on the
+     first error.
+  2. Type  x  to delete the first unwanted character.
+  3. Now type  u  to undo the last command executed.
+  4. This time fix all the errors on the line using the  x  command.
+  5. Now type Shift+F9 to redo the commands (undo the undo's).
+
+---> Fiix the errors oon thhis line and reeplace them with undo.
+
+  6. These are very useful commands.  Now move on to the Lesson 2 Summary.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			       LESSON 2 SUMMARY
+
+  1. To delete from the cursor upto the next word type:    dw
+  2. To delete from the cursor to the end of a line type:    d$
+  3. To delete a whole line type:    dd
+
+  4. To repeat a motion prepend it with a number:   2w
+  5. The format for a change command is:
+               operator   [number]   motion
+     where:
+       operator - is what to do, such as  d  for delete
+       [number] - is an optional count to repeat the motion
+       motion   - moves over the text to operator on, such as  w (word),
+		  $ (to the end of line), etc.
+
+  6. To move to the start of the line use a zero:  0
+
+  7. To undo previous actions, type:   u  (lowercase u)
+     To undo the undo's, type:         Shift+F9
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 Lesson 3.1: THE PUT COMMAND
+
+       ** Type	p  to put previously deleted text after the cursor. **
+
+  1. Move the cursor to the first ---> line below.
+
+  2. Type  dd  to delete the line and store it in the clipboard.
+
+  3. Move the cursor to the c) line, ABOVE where the deleted line should go.
+
+  4. Type   p   to put the line below the cursor.
+
+  5. Repeat steps 2 through 4 to put all the lines in correct order.
+
+---> d) Can you learn too?
+---> b) Violets are blue,
+---> c) Intelligence is learned,
+---> a) Roses are red,
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		       Lesson 3.2: THE REPLACE COMMAND
+
+       ** Type  rx  to replace the character at the cursor with  x . **
+
+  1. Move the cursor to the first line below marked --->.
+
+  2. Move the cursor so that it is on top of the first error.
+
+  3. Type   r	and then the character which should be there.
+
+  4. Repeat steps 2 and 3 until the first line is equal to the second one.
+
+--->  Whan this lime was tuoed in, someone presswd some wrojg keys!
+--->  When this line was typed in, someone pressed some wrong keys!
+
+  5. Now move on to Lesson 3.2.
+
+NOTE: Remember that you should be learning by doing, not memorization.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Lesson 3.3: THE CHANGE OPERATOR
+
+	   ** To change until the end of a word, type  ce . **
+
+  1. Move the cursor to the first line below marked --->.
+
+  2. Place the cursor on the  u  in  lubw.
+
+  3. Type  ce  and the correct word (in this case, type  ine ).
+
+  4. Press <ESC> and move to the next character that needs to be changed.
+
+  5. Repeat steps 3 and 4 until the first sentence is the same as the second.
+
+---> This lubw has a few wptfd that mrrf changing usf the change command.
+---> This line has a few words that need changing using the change command.
+
+Notice that  ce  deletes the word and places you in Insert mode.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		       Lesson 3.4: MORE CHANGES USING c
+
+     ** The change command is used with the same motions as delete. **
+
+  1. The change operator works in the same way as delete.  The format is:
+
+         c    [number]   motion
+
+  2. The motions are the same, such as   w (word) and  $ (end of line).
+
+  3. Move to the first line below marked --->.
+
+  4. Move the cursor to the first error.
+
+  5. Type  c$  and type the rest of the line like the second and press <ESC>.
+
+---> The end of this line needs some help to make it like the second.
+---> The end of this line needs to be corrected using the  c$  command.
+
+NOTE:  You can use the Backspace key to correct mistakes while typing.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			       LESSON 3 SUMMARY
+
+  1. To put back text that has just been deleted, type   p .  This puts the
+     deleted text AFTER the cursor (if a line was deleted it will go on the
+     line below the cursor).
+
+  2. To replace the character under the cursor, type   r   and then the
+     character you want to have there.
+
+  3. The change operator allows you to change from the cursor to where the
+     motion takes you.  eg. Type  ce  to change from the cursor to the end of
+     the word,  c$  to change to the end of a line.
+
+  4. The format for change is:
+
+	 c   [number]   motion
+
+Now go on to the next lesson.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		  Lesson 4.1: CURSOR LOCATION AND FILE STATUS
+
+  ** Type Ctrl-G to show your location in the file and the file status.
+     Type  G  to move to a line in the file. **
+
+  Note: Read this entire lesson before executing any of the steps!!
+
+  1. Hold down the Ctrl key and press  g .  We call this Ctrl-G.
+     A message will appear in the status bar with the filename and the
+     position in the file.  Remember the line number for Step 3.
+
+NOTE:  You may see the cursor position in the lower right corner of the screen
+       This happens when the 'ruler' option is set (explained in lesson 6).
+
+  2. Press  G (capital G, Shift+g) to move you to the bottom of the file.
+     Type  gg  to move you to the start of the file.
+
+  3. Type the number of the line you were on and then  G .  This will
+     return you to the line you were on when you first pressed Ctrl-G.
+
+  4. If you feel confident to do this, execute steps 1 through 3.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SLICKEDIT~CHANGE~~~~~~~
+                         Lesson 4.2: USING BOOKMARKS
+
+    **  Type m followed by a letter to set a bookmark, ' or ` to return **
+
+   1. In Command mode type the  m  character followed by another letter.
+      For example,  ma  creates a bookmark named a.
+
+   2. Move the cursor to the first line marked ----> and place the cursor
+      on the word *here*. Type  ma  to set a bookmark named a.
+      A bookmark symbol will appear in the gutter area.
+
+   3. Use  j  to move to the second line market ---->. Type  'a  to return.
+      'a  moves to the beginning of line line containing the bookmark.
+      `a  returns to the exact column position where the mark was set.
+
+----> Press  ma  *here* to set a bookmark named a. 
+
+
+----> Press 'a or `a  here to return to the line marked by a.
+
+   4. Type: Ctrl+Shift+N to show a toolwindow with all named bookmarks.
+  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SLICKEDIT~CHANGE~~~~~~~
+			Lesson 4.3: THE SEARCH COMMAND
+
+     ** Type  /  followed by a phrase to search for the phrase. **
+
+  1. In Command mode type the  /  character.  Notice that it and the cursor
+     appear at the bottom of the screen as with the  :	command.
+
+  2. Now type 'errroor' <ENTER>.  This is the word you want to search for.
+
+  3. To search for the same phrase again, simply type  n .
+     To search for the same phrase in the opposite direction, type  N .
+
+  4. To search for a phrase in the backward direction, use  ?  instead of  / .
+
+Note: "errroor" is not the way to spell error;  errroor is an error.
+Note: When the search reaches the end of the file it will continue at the
+      start, unless the 'wrapscan' option has been reset.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		   Lesson 4.4: MATCHING PARENTHESES SEARCH
+
+	      ** Type  %  to find a matching ),], or } . **
+
+  1. Place the cursor on any (, [, or { in the line below marked --->.
+
+  2. Now type the  %  character.
+
+  3. The cursor will move to the matching parenthesis or bracket.
+
+  4. Type  %  to move the cursor to the other matching bracket.
+
+  5. Move the cursor to another (,),[,],{ or } and see what  %  does.
+
+---> This ( is a test line with ('s, ['s ] and {'s } in it. ))
+
+
+Note: This is very useful in debugging a program with unmatched parentheses!
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		      Lesson 4.5: THE SUBSTITUTE COMMAND
+
+	** Type  :s/old/new/g  to substitute 'new' for 'old'. **
+
+  1. Move the cursor to the line below marked --->.
+
+  2. Type  :s/thee/the <ENTER> .  Note that this command only changes the
+     first occurrence of "thee" in the line.
+
+  3. Now type  :s/thee/the/g .  Adding the  g  flag means to substitute
+     globally in the line, change all occurrences of "thee" in the line.
+
+---> the best time to see the flowers is in the spring.
+
+  4. To change every occurrence of a character string between two lines,
+     type   :#,#s/old/new/g    where #,# are the line numbers of the range
+                               of lines where the subsitution is to be done.
+     Type   :%s/old/new/g      to change every occurrence in the whole file.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			       LESSON 4 SUMMARY
+
+  1. Ctrl-G  displays your location in the file and the file status.
+             G  moves to the end of the file.
+     number  G  moves to that line number.
+            gg  moves to the first line.
+
+  2. Typing  m  followed by a letter sets a named bookmark.
+     Typing ' or ` followed by a letter returns to that named bookmark.
+
+  3. Typing  /	followed by a phrase searches FORWARD for the phrase.
+     Typing  ?	followed by a phrase searches BACKWARD for the phrase.
+     After a search type  n  to find the next occurrence in the same direction
+     or  N  to search in the opposite direction.
+
+  4. Typing  %	while the cursor is on a (,),[,],{, or } goes to its match.
+
+  5. To substitute new for the first old in a line type    :s/old/new
+     To substitute new for all 'old's on a line type	   :s/old/new/g
+     To substitute phrases between two line #'s type	   :#,#s/old/new/g
+     To substitute all occurrences in the file type	   :%s/old/new/g
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SLICKEDIT~CHANGE~~~~~~~
+		Lesson 5.1: HOW TO EXECUTE A SLICKEDIT COMMAND
+
+   ** Type  Ctrl+A to activate the SlickEdit command line **
+
+  SlickEdit provides a vast assortment of commands that can invoked from
+  the command line. Many traditional Vim and EX commands have SlickEdit
+  equivalents or replacements. 
+
+  1. Type Ctrl+A to activate the SlickEdit command line.
+
+  2. Now type : pwd<enter>
+     This is the familiar "Print working directory" command, with the results
+     displayed in the status bar.
+
+  PLEASE READ THE NEXT TWO STEPS CAREFULLY.
+
+  3. Activate the SlickEdit command line and type: dir +HS <ENTER>
+     This will open an editor listing the contents of the current directory.
+     This file doesn't use Vim emulation key commands. Use the arrow keys to
+     move up and down the directory listing. <ENTER> on a line with a file name
+     will open that file for editing. 
+     
+  4. Close the directory listing window with F3, and/or use F8 to return to
+     this tutorial file. 
+
+  5. See the Help > Macro Functions by Category menu for a comprehensive list
+     of SlickEdit commands.
+
+Note:  For Vim veterans, you can still use :! to execute an external command
+       from the EX command line. However, these will execute in an external
+       shell window. Most common file operations that you would normally use
+       :! for have a direct replacement available as a SlickEdit command.
+
+Note:  All  SlickEdit command line commands must be finished by hitting <ENTER>
+       From here one we will not always mention it.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SLICKEDIT~CHANGE~~~~~~~
+		      Lesson 5.2: MORE ON WRITING FILES
+
+     ** To save the changes made to the text, type  :w FILENAME. **
+
+  1. On the SlickEdit command line type:  dir +HS  to get a directory listing.
+     You already know you must hit <ENTER> after this.
+
+  2. Choose a filename that does not exist yet, such as TEST.
+
+  3. Now type:	 :w TEST   (where TEST is the filename you chose.)
+
+  4. This saves the whole file (this tutorial file) under the name TEST.
+     To verify, get a new directory listing, or type: edit TEST from the EX or
+     SlickEdit command line.
+
+  5. To remove the file, from the SlickEdit command line type: dos-del TEST
+
+  6. You can also invoke delete from the EX command line by typing:
+     :!del TEST (on Windows)  or :!rm TEST (Unix/Linux/Mac)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		    Lesson 5.3: SELECTING TEXT TO WRITE
+  
+	** To save part of the file, type  v  motion  :w FILENAME **
+
+  1. Move the cursor to beginning of this line.
+
+  2. Press  v  and move the cursor using  j   to the fifth item below.  Notice
+     that the text is highlighted.
+
+  3. Press the  :  character.  The status bar will show :'<,'> followed by the
+     command line.
+
+  4. Type  w TEST  , where TEST is a filename that does not exist yet.  Verify
+     that you see  :'<,'>w TEST  before you press <ENTER>.
+
+  5. The selected lines will be written to the file TEST.  Do not remove it yet!
+     We will use it in the next lesson.
+
+NOTE:  Pressing  v  starts Visual selection.  You can move the cursor around
+       to make the selection bigger or smaller.  Then you can use an operator
+       to do something with the text.  For example,  d  deletes the text.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		   Lesson 5.4: RETRIEVING AND MERGING FILES
+
+       ** To insert the contents of a file, type  :r FILENAME  **
+
+  1. Place the cursor just above this line.
+
+NOTE:  After executing Step 2 you will see text from Lesson 5.3.  Then move
+       DOWN to see this lesson again.
+
+  2. Now retrieve your TEST file using the command   :r TEST   where TEST is
+     the name of the file you used. The file you retrieve is placed below the
+     cursor line.
+
+  3. You can undo the insertion with  u  .
+
+NOTE:  You can also read the output of an external command.  For example,
+       :r !ls  (or :r !dir) reads the output of the command and puts it below
+       the cursor.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			       LESSON 5 SUMMARY
+
+  1.  Ctrl+A activates the SlickEdit command line for entering commands.
+      :!command  executes an external (shell) command.
+
+  2.  :w FILENAME  writes the current file to disk with name FILENAME.
+
+  3.  v  motion  :w FILENAME  saves the Visually selected lines in file
+      FILENAME.
+
+  4.  :r FILENAME  retrieves disk file FILENAME and puts it below the
+      cursor position.
+
+  5.  :r !dir  reads the output of the dir command and puts it below the
+      cursor position.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 Lesson 6.1: THE OPEN COMMAND
+
+ ** Type  o  to open a line below the cursor and place you in Insert mode. **
+
+  1. Move the cursor to the line below marked --->.
+
+  2. Type the lowercase letter  o  to open up a line BELOW the cursor and place
+     you in Insert mode.
+
+  3. Now type some text and press <ESC> to exit Insert mode.
+
+---> After typing  o  the cursor is placed on the open line in Insert mode.
+
+  4. To open up a line ABOVE the cursor, simply type a capital	O , rather
+     than a lowercase  o.  Try this on the line below.
+
+---> Open up a line above this by typing O while the cursor is on this line.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Lesson 6.2: THE APPEND COMMAND
+
+	     ** Type  a  to insert text AFTER the cursor. **
+
+  1. Move the cursor to the start of the line below marked --->.
+  
+  2. Press  e  until the cursor is on the end of  li .
+
+  3. Type an  a  (lowercase) to append text AFTER the cursor.
+
+  4. Complete the word like the line below it.  Press <ESC> to exit Insert
+     mode.
+
+  5. Use  e  to move to the next incomplete word and repeat steps 3 and 4.
+  
+---> This li will allow you to pract appendi text to a line.
+---> This line will allow you to practice appending text to a line.
+
+Note:  a, i and A all go to the same Insert mode, the only difference is where
+       the characters are inserted.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		    Lesson 6.3: ANOTHER WAY TO REPLACE
+
+      ** Type a capital  R  to replace more than one character. **
+
+  1. Move the cursor to the first line below marked --->.  Move the cursor to
+     the beginning of the first  xxx .
+
+  2. Now press  R  and type the number below it in the second line, so that it
+     replaces the xxx .
+
+  3. Press <ESC> to leave Replace mode.  Notice that the rest of the line
+     remains unmodified.
+
+  5. Repeat the steps to replace the remaining xxx.
+
+---> Adding 123 to xxx gives you xxx.
+---> Adding 123 to 456 gives you 579.
+
+NOTE:  Replace mode is like Insert mode, but every typed character deletes an
+       existing character.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Lesson 6.4: COPY AND PASTE TEXT
+
+	  ** use the  y  operator to copy text and  p  to paste it **
+
+  1. Go to the line marked with ---> below and place the cursor after "a)".
+  
+  2. Start Visual mode with  v  and move the cursor to just before "first".
+  
+  3. Type  y  to yank (copy) the highlighted text.
+
+  4. Move the cursor to the end of the next line:  j$
+
+  5. Type  p  to put (paste) the text.  Then type:  a second <ESC> .
+
+  6. Use Visual mode to select " item.", yank it with  y , move to the end of
+     the next line with  j$  and put the text there with  p .
+
+--->  a) this is the first item.
+      b)
+
+  Note: you can also use  y  as an operator;  yw  yanks one word.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SLICKEDIT~CHANGE~~~~~~~
+			    Lesson 6.5: SET OPTION
+
+	  ** Set an option so a search or substitute ignores case **
+
+  1. Search for 'ignore' by entering:   /ignore  <ENTER>
+     Repeat several times by pressing  n .
+
+  2. Set the 'ic' (Ignore case) option by entering:   :set ic
+
+  3. Now search for 'ignore' again by pressing  n
+     Notice that Ignore and IGNORE are now also found.
+
+  4. Now type the search command again and see what happens:  /ignore <ENTER>
+
+  5. To disable ignoring case enter:  :set noic
+
+Note:  SlickEdit does not support all of the SET options that Vim does. To see
+       a listing of available options, type:  :set all.
+       The main place to set SlickEdit options is through the variouc config
+       dialogs. Go to Tools > Options for most settings.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			       LESSON 6 SUMMARY
+
+  1. Type  o  to open a line BELOW the cursor and start Insert mode.
+     Type  O  to open a line ABOVE the cursor.
+
+  2. Type  a  to insert text AFTER the cursor.
+     Type  A  to insert text after the end of the line.
+
+  3. The  e  command moves to the end of a word.
+
+  4. The  y  operator yanks (copies) text,  p  puts (pastes) it.
+
+  5. Typing a capital  R  enters Replace mode until  <ESC>  is pressed.
+
+  6. Typing ":set xxx" sets the option "xxx".  Some options are:
+  	'ic' 'ignorecase'	ignore upper/lower case when searching
+     You can either use the long or the short option name.
+
+  7. Prepend "no" to switch an option off:   :set noic
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		       Lesson 7.1: GETTING HELP
+
+SlickEdit has comprehensive help documentation in CHM format on Windows or
+HTML format on all other platforms.
+	- Press the <F1> key (when the focus is not in an editor window)
+	- or activate the SlickEdit command line (CTRL + a) and type:
+		 help<ENTER>
+
+Help index completion is also available. Activate the SlickEdit command line
+and type:
+	help beaut
+You'll see the command line completion list filled with several topics, 
+including 'beautifier', 'beautify', and 'Beautifying code'. Use the arrow
+keys or the TAB key to select a help topic and press <ENTER> 
+
+To get help for SlickEdit's VIM Emulation, activate the SlickEdit command line
+and type:
+	help vim
+and you'll see the help topic 'Vim emulation keys' in the completion list.
+Select this topic and press <ENTER> to show the emulation chart for Vim.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  This concludes the SlickEdit Vim Emulation tutorial.  It was intended to give
+  a brief overview of how SlickEdit implements Vim. It is far from complete as
+  both SlickEdit and Vim have many many more commands. Refer to the SlickEdit
+  help documentation for more Vim key bindings and SlickEdit commands.
+
+  The Vi version of this tutorial was originally written by Michael C. Pierce
+  and Robert K. Ware, Colorado School of Mines using ideas supplied by
+  Charles Smith, Colorado State University. It was modified for Vim by
+  Bram Moolenaar. 
+
+  Vim Tutorial version 1.7 was modified by SlickEdit to produce this file.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

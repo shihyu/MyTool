@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsGetSelInfo</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsGetSelInfo(int wid, int markid, int *pfirstcol, int *plastcol=0, int *pbuf_id=0, char *pszBufName=0, int MaxBufName=0, int *pMaxBufNameLen=0, bool mark_to_cursor=true)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns information about the selection specified.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="markid">markid</A></code> - Selection handle returned by
+<b>vsAllocSelection</b> or
+<b>vsDuplicateSelection</b>.  -1 specifies
+current selection.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pfirstcol">pfirstcol</A></code> - Output for first column of the first line of
+the selection.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="plastcol">plastcol</A></code> - Output for last column of the last line of the
+selection.  For a character selection, you
+need to check whether the selection includes
+this column (
+<b>vsQSelectType</b>(<i>markid</i>,'I') ).
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pbuf_id">pbuf_id</A></code> - Indicates the buffer id of the buffer which
+has this selection.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszBufName">pszBufName</A></code> - Indicates the name of the buffer which has
+this selection.  This can be 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxBufName">MaxBufName</A></code> - Number of bytes allocated to
+<i>pszBufName</i>.  We recommend
+VSMAXFILENAME.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pMaxBufNameLen">pMaxBufNameLen</A></code> - If this is not 0, this is set to the
+number of characters you need to allocate.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if <i>wid</i> and <i>markid</i> are valid.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Selection_Functions.html">Selection Functions</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_SetListColCaption</title>
+</head>
+<body>
+
+<h3><b>void _SetListColCaption(int index, _str caption)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This method along with the _SetListColInfo method allows you to create
+multiple labeled columns at the top of a list box and separate tabbed
+delimited list box data into columns.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+   #include "slick.sh"
+
+   defeventtab form1;
+   void list1.on_change(int reason)
+   {
+      if (reason==CHANGE_BUTTON_PRESS) {
+         index=arg(2);
+         _GetListColInfo(index,width,style,state);
+         say('state='state);
+         if (state) {
+            _SetListColCaption(index,"Caption2 A");
+         } else {
+            _SetListColCaption(index,"Caption2");
+         }
+      }
+   }
+   list1.on_create()
+   {
+        _lbadd_item("style\t"p_style);
+        _lbadd_item("width\t"p_width);
+        _lbadd_item("caption\tcaption");
+
+        _SetListColInfo(0,1000,LBCOLSTYLE_LABEL);
+        _SetListColCaption(0,"Caption1");
+        _SetListColInfo(1,1000,LBCOLSTYLE_2STATE,0);
+        _SetListColCaption(1,"Caption2");
+        _lbtop();
+   }
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Label
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Label_Methods.html">Label Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_GetListColInfo.html">_GetListColInfo</a>, <a href="_GetListColCaption.html">_GetListColCaption</a>, <a href="_SetListColInfo.html">_SetListColInfo</a></blockquote>
+</body>
+</html>

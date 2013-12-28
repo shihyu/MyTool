@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_AllocColor</title>
+</head>
+<body>
+
+<h3><b>int _AllocColor(int fg=0x000000, int bg=0xffffff, int fontFlags=0, int parent_color=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns an index to a color.  Use the _default_color function to set the
+color attributes.  Color indexes are passed to the _SetTextColor function
+to set color.  There is a limit of 255 colors so make sure to free the
+color when you are done.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="fg_color">fg_color</A></code> - foreground color (RGB)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="bg_color">bg_color</A></code> - background color (RGB)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="font_flags">font_flags</A></code> - is one of the following font flags:
+                  <UL>
+                  <LI>F_BOLD
+                  <LI>F_ITALIC
+                  <LI>F_STRIKE_THRU
+                  <LI>F_UNDERLINE
+                  <LI>F_INHERIT_STYLE
+                  </UL></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="parent_color">parent_color</A></code> - color to inherit attributes from
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+int gColorIndex;
+definit()
+{
+     if (arg(1)=='L' && gColorIndex) return;
+     gColorIndex=_AllocColor(0xffffff,0xFF0000);
+     //_default_color(gColorIndex,0xffffff,0xFF0000);
+}
+defmain()
+{
+     // Change the color of 5 bytes of text starting from cursor
+     _SetTextColor(gColorIndex,5);
+}
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_FreeColor.html">_FreeColor</a>, <a href="_SetTextColor.html">_SetTextColor</a>, <a href="_GetTextColor.html">_GetTextColor</a>, <a href="_default_color.html">_default_color</a>, <a href="_rgb.html">_rgb</a></blockquote>
+</body>
+</html>

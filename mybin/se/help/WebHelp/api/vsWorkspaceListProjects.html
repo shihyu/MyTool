@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsWorkspaceListProjects</title>
+</head>
+<body>
+
+<h3><b>char**VSAPI vsWorkspaceListProjects(int *pNofProjects, int *pActiveProject=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pNofProjects">pNofProjects</A></code> - Set to the number of projects in the current
+workspace.  Set to zero of there is not a
+workspace currently open.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pActiveProject">pActiveProject</A></code> - Set to the index (0..NofProjects-1) of the
+active project.  Set to -1 if no project is
+active.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>char**VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns an array of ASCIIZ strings which are the relative projects
+filenames in the current workspace.  0 is returned if an error occurs or
+there is no workspace currently open.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Project_Functions.html">Project Functions</a></blockquote>
+</body>
+</html>

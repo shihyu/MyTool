@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>enumerate</title>
+</head>
+<body>
+
+<h3><b>_command void enumerate(_str cmdline='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">   This commands adds incrementing numbers to a selection.<p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="cmdline">cmdline</A></code> - is a  string in the format:
+<pre>
+   [-x | -xf] [-l <i>leading</i>] [-t <i>trailing</i>]
+         [<i>start</i> [ <i>increment </i>[ <i>DigitWidth</i> ]]]
+</pre>
+<DL compact style="margin-left:20pt;">
+   <DT>-x   <DT>Specifies hexadecimal output.  If -l and -t options are not specified,
+the buffers extension specific syntax for hex numbers is used.  If not hex
+syntax has been defined in the buffers color coding, "0x" is used for leading
+text.
+   <DT>-xf  <DT>Specifies hexadecimal output.  If -l and -t options are not
+specified, the buffers extension specific syntax for hex numbers is used.  If
+not hex syntax has been defined in the buffers color coding, "0x" is used for
+leading text.  NOTE: the meaning of <i>start</i> and <i>increment</i> change
+when this option is specified (see below).
+   <DT>-l <i>leading</i>   <DT>Specifies text to prefix each number with.
+   <DT>-t <i>trailing</i>  <DT>Specifies text to append to each number.
+</DL</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="gui_enumerate.html">gui_enumerate</a></blockquote>
+</body>
+</html>

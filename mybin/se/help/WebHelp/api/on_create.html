@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>on_create</title>
+</head>
+<body>
+
+<h3><b>event on_create()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">All objects are sent an <b>on_create</b> event when a dialog box template
+is loaded with the <b>show</b> or <b>_load_template</b> function.  The
+<b>show</b> and <b>_load_template</b> function can be given a variable number
+of arguments to pass to the <b>on_create</b> event.  The on_create event can
+not be used to change the focus.  Use the <b>on_load</b> function to set the
+initial focus of a dialog box.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include 'slick.sh'
+_command mycommand()
+{
+    show('form1','first argument', 'second argument');
+}
+
+defeventtab form1;
+command1.on_create()
+{
+   arg1=arg(1);
+   arg2=arg(2);
+   message('arg1='arg1' arg2='arg2);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Text Box, Combo Box, List Box,  Directory List Box,
+File List Box, Drive List, Command Button, Check Box, Radio Button, Frame,
+Hscroll Bar, Vscroll Bar, Spin, Gauge, Image, Form, Tree View
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Check_Box_Events.html">Check Box Events</a>, <a href="Combo_Box_Events.html">Combo Box Events</a>, <a href="Command_Button_Events.html">Command Button Events</a>, <a href="Directory_List_Box_Events.html">Directory List Box Events</a>, <a href="Drive_List_Events.html">Drive List Events</a>, <a href="File_List_Box_Events.html">File List Box Events</a>, <a href="Form_Events.html">Form Events</a>, <a href="Frame_Events.html">Frame Events</a>, <a href="Gauge_Events.html">Gauge Events</a>, <a href="Hscroll_Bar_Events.html">Hscroll Bar Events</a>, <a href="Image_Events.html">Image Events</a>, <a href="List_Box_Events.html">List Box Events</a>, <a href="Radio_Button_Events.html">Radio Button Events</a>, <a href="Spin_Events.html">Spin Events</a>, <a href="Text_Box_Events.html">Text Box Events</a>, <a href="Tree_View_Events.html">Tree View Events</a>, <a href="Vscroll_Bar_Events.html">Vscroll Bar Events</a></blockquote>
+</body>
+</html>

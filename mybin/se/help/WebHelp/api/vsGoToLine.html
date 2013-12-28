@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsGoToLine</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsGoToLine(int wid, seSeekPos LineNumber, int OnlyCountRealLines=a, int doCenterScroll=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Searches for line specified and places the cursor on the line.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="LineNumber">LineNumber</A></code> - Indicates the old line number to find.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="OnlyCountRealLines">OnlyCountRealLines</A></code> - When non-zero, only real lines are
+counted.    The "real line number" does not
+count non-savable lines (that is lines with
+the VSLF_ NOSAVE flag).
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="doCenter">doCenter</A></code> - When non-zero, if scrolling is necessary to
+make the destination line visible, the line is
+scrolled to the center of the screen.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  If the line specified is past the end of the file,
+BOTTOM_OF_FILE_RC is returned and the cursor is placed at the
+end of the file.  Other possible error codes are
+INVALID_OBJECT_HANDLE_RC and
+PROPERTY_OR_METHOD_NOT_ALLOWED_RC.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_CheckLineLengths</title>
+</head>
+<body>
+
+<h3><b>boolean _CheckLineLengths(int AllowedLineLen, _str &LineNumbers, int FromCursor=0, int &MaxLineLen=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="AllowedLineLen">AllowedLineLen</A></code> - Lines lengths greater than this length are flagged.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="LineNumbers">LineNumbers</A></code> - (Ouput only) ASCIIZ string.
+                        Set to a space delimited list of line numbers of lines which are too long.
+                        Lines with the VSLF_NOSAVE flag set are ignored.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="FromCursor">FromCursor</A></code> - (optional) </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxLineLen">MaxLineLen</A></code> - (optional)
+ </blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>boolean</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if there are no lines longer than the AllowedLineLen specified.
+        At the moment only the physical line length is checked as if tab characters count
+        as 1 character.  We may change this in the future.
+
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="File_Functions.html">File Functions</a></blockquote>
+</body>
+</html>

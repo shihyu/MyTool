@@ -1,0 +1,97 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_sellist.on_create</title>
+</head>
+<body>
+
+<h3><b>typeless _sellist.on_create(_str title="", typeless flags="", typeless list_data="", _str buttons="", _str help_item="", _str font="", typeless callback="", _str separator="", _str retrieve="", _str completion="", typeless min_list="", typeless initial_value="", typeless SkipPrefixChars="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Displays a selection list.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="title">title</A></code> - Title of dialog box.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flags">flags</A></code> - Combination of the following flags defined in
+                  "slick.sh":
+
+                  <dl>
+                  <dt>SL_ALLOWMULTISELECT</dt><dd>Allow multiple items to be selected.  Multiple
+                  items are separated with space characters.  If an
+                  item contains spaces, double quotes are placed
+                  around the item.Currently this function does not
+                  support items which contain double quotes.  If the
+                  return string is longer than 200characters, a
+                  "@<i>buffer_name</i>" string is returned.  The
+                  buffer <i>buffer_name</i> contains the items
+                  selected.</dd>
+
+                  <dt>SL_NOTOP</dt><dd>Don't position cursor at top of list.</dd>
+
+                  <dt>SL_VIEWID</dt><dd>Indicates that
+                  <i>input_data</i> is a window id.
+                  </dd>
+
+                  <dt>SL_FILENAME</dt><dd>Indicates that <i>input_data</i> is a filename that should be
+                  loaded and placed in the list box.  File must contain blanks in
+                  column one.</dd>
+
+                  <dt>SL_BUFID</dt><dd>Indicates that <i>input_data</i> is a buffer id.  Buffer is
+                  deleted unless the SL_NODELETELIST flag given.</dd>
+
+                  <dt>SL_NOISEARCH</dt><dd>Indicates whether typing characters while list box is active
+                  performs incremental searching in the list.</dd>
+
+                  <dt>SL_NODELETELIST</dt><dd>No longer has
+                  any effect</dd>
+
+                  <dt>SL_SELECTCLINE</dt><dd>Select the current line in the list box when initializing.</dd>
+
+                  <dt>SL_MATCHCASE</dt><dd>Case sensitive incremental searching in  list box.  Has no effect if
+                  SL_NOISEARCH flag is given.</dd>
+
+                  <dt>SL_INVERT</dt><dd>Display Invert button</dd>
+
+                  <dt>SL_SELECTALL</dt><dd>Display Select All button.  Must be set if SL_BUTTON_SELECTALL
+                  is included in the buttons list</dd>
+
+                  <dt>SL_HELPCALLBACK</dt><dd>Call the callback routine when the help button is invoked.</dd>
+
+                  <dt>SL_DEFAULTCALLBACK</dt><dd>Call the callback routine when default button invoked.</dd>
+
+                  <dt>SL_COMBO</dt><dd>Display combo box above list box</dd>
+
+                  <dt>SL_MUSTEXIST</dt><dd>Selected item must exist.  Has no effect if
+                  SL_ALLOWMULTISELECT is given.</dd>
+
+                  <dt>SL_DESELECTALL</dt><dd>Deselect all items in list box when initializing.</dd>
+
+                  <dt>SL_SIZABLE</dt><dd>Dialog can be resized.</dd>
+                  </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="list_data">list_data</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="buttons">buttons</A></code> - Comma delimited string of button captions (<b>p_caption</b>).
+                  The buttons appear to the right of the list box. Cancel, and Help button are
+                  inserted after the first button in the list if there positions are explicitly
+                  specified.  The first button is the default button.  If buttons is '', a default
+                  button of OK is used.  A button may be given a control name (p_name) by appending
+                  colon and the control name.  This allows for easier access to the control in the
+                  call back function.  The control name for the default button is always
+                  "_sellistok" and may not be changed.   This parameter may be '' to specify OK,
+                  Cancel, and Help buttons. <i>help_item</i>   Specifies help displayed when F1 is
+                  pressed or the help button is pressed.  If the <i>help_item</i> starts with a
+                  '?' character, the characters that follow are displayed in a message box.  The
+                  help string may also specify a unique keyword in the "vslick.hlp" (UNIX:
+                  "uvslick.hlp") help file.  The unique keywords for "vslick.hlp" (UNIX:
+                  "uvslick.hlp") are contained in the file "vslick.lst" (UNIX: "uvslick.lst").  In
+                  addition, you may specify a unique keyword for any windows help file by specifying
+                  a string in the format:<br>
+                  <b><i>keyword</i>:<i>help_filename</i></b>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="help_item">help_item</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="font">font</A></code> - Font string of the form
+                  "<i>font_name,font_size, font_flags</i>".
+                  The font flags are defined in "slick.sh" and
+                  have the prefix "F_".  <i>font_size</i> is in
+                  points.  May be '' to specify default list box
+                  font.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="callback">callback</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="separator">separator</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="retrieve">retrieve</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="completion">completion</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="min_list">min_list</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="initial_value">initial_value</A></code> - Initial value displayed in combo box.   Useful
+                  only if combo box is displayed.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="SkipPrefixChars">SkipPrefixChars</A></code> -  </blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns '' if the dialog box is cancelled.  Otherwise, the selected item
+        is returned or the value specified by the call back function is returned.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+_str show('_sellist_form', <i>title</i>, <i>flags</i>, <i>input_data
+</i>[, <i>buttons</i> [,<i>help_item</i> [,<i>font</i>
+[,<i>callback_name</i>
+           [, <i>item_separator</i> [,<i>retrieve_name</i> [,
+<i>combo_completion</i> [,<i>min_list_width</i>
+[,<i>initial_value</i> ]]]]]]]]] )
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Forms.html">Forms</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_categories</title>
+</head>
+<body>
+
+<h3><b>_str p_categories</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This property is a string of categories.  Each category is separated with
+a vertical bar character ('|').  Categories are typically used to define a
+group of menu and/or menu items that are to be enabled/disabled at the
+same time.  For example, SlickEdit defines the "ab-sel" category.
+All menu items which contain this category are enabled when the active
+buffer has a selection and disabled when it does not.  The <a href="_menu_set_state.html">_menu_set_state</a>
+function allows you to enable/disable menus or menu items by category or
+command (only menu items have a <a href="p_command.html">p_command</a> property).  For sub-menus, the
+<b>p_categories</b> property is also used to uniquely identify the menu.  For
+example, if you wanted to maintain a history of files recently opened on a
+File menu, insert a menu item line with the <b>p_categories</b> property set to
+"filehist".  Then use the <a href="_menu_find.html">_menu_find</a> function to quickly find the menu
+item.  This is how the <a href="_menu_add_hist.html">_menu_add_hist</a> function maintains File and Project
+menu history.  The <a href="_menu_add_hist.html">_menu_add_hist</a> is a general purpose function for
+maintaining history on a menu.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Menu, Menu Item</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Menu_Properties.html">Menu Properties</a>, <a href="Menu_Item_Properties.html">Menu Item Properties</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsSetLineFlags</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsSetLineFlags(int wid, int Flags, int Mask=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sets the line status flags for the current line.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Flags">Flags</A></code> - <i>Flags</i> is one or more of the following constants ORed together:
+
+<dl>
+<dt>
+VSLF_MLCOMMENTINDEX</dt><dd>Indicates which multi-line comment.
+Only two are allowed.  Must know which multi-line comment we
+are in so we know what will terminate it.</dd>
+
+<dt>VSLF_MLCOMMENTLEVEL</dt><dd>Indicates multi-line
+comment nest level.</dd>
+<dt>VSLF_NOSAVE</dt><dd>Used by Difference
+Editor and Merge Editor.  Lines with the VSLF_NOSAVE flag
+set are not saved in the file.</dd>
+<dt> VSLF_VIMARK</dt><dd>Used by VI emulation to mark lines.</dd>
+<dt>VSLF_MODIFY</dt><dd>Line has been modified.</dd>
+<dt>VSLF_INSERTED_LINE</dt><dd>Line was inserted.</dd>
+<dt>VSLF_HIDDEN</dt><dd>Indicates that this line
+should not be displayed.</dd>
+<dt>VSLF_PLUSBITMAP</dt><dd>Display "+" bitmap to
+left of this line.</dd>
+<dt>VSLF_MINUSBITMAP</dt><dd>Display "-" bitmap to
+left of this line.</dd>
+<dt>VSLF_CURLINEBITMAP</dt><dd>Display current line bitmap.</dd>
+<dt>VSLF_LEVEL</dt><dd>Bits used to store
+selective display nest level.</dd>
+</dl>
+
+<p>The MLCOMMENT flags can not be modified.</p>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Mask">Mask</A></code> - The <i>Mask</i> indicates which bits will be set
+according to <i>Flags</i>.  If <i>Mask</i> is 0, <i>Mask</i>
+is set to the value of <i>Flags</i>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsQLineFlags.html">vsQLineFlags</a>, <a href="vsSetLineFlags.html">vsSetLineFlags</a>, <a href="vsResetModifiedLineFlags.html">vsResetModifiedLineFlags</a></blockquote>
+</body>
+</html>

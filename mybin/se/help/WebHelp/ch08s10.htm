@@ -1,0 +1,362 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Aliases</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch08.htm" title="Chapter 8.  Editing Features"><link rel="prev" href="ch08s09.htm" title="Completions"><link rel="next" href="ch08s11.htm" title="Syntax Expansion"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_aliases_12052_72420"></a>
+    <a name="sect_aliases_12052_1013426"></a>
+    <a class="indexterm" name="sect_aliases_9927B910_4903"></a>
+    <a class="indexterm" name="sect_aliases_7D33AC98_BF90"></a>Aliases</h2></div></div></div><p class="NormalText">Aliases are identifiers that you can quickly type which are then expanded into snippets of text. You can use aliases for any text that you frequently type, including directory paths, function names, statements, and comment headers. </p><p class="NormalText">There are two types of aliases in SlickEdit®: </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch08s10.htm#sect_aliases_12052_80559">Global Aliases</a> - These aliases can be used across multiple languages. They are also very useful as directory aliases, because they save you from having to type long paths in file name or directory fields within the editor.</p></li><li><p class="NormalText">
+        <a href="ch08s10.htm#sect_aliases_12052_80032">Language-Specific Aliases</a> - These aliases are set up on a per-language basis. For example, if you work in multiple languages, you could have one alias identifier for the same function but with different expansions applicable to each language.</p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_aliases_36711_36798"></a>
+      <a class="indexterm" name="sect_aliases_75743_17486"></a>Expanding Aliases</h3></div></div></div><p class="NormalText">After typing the alias identifier, aliases can be expanded using any of these methods: </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          Pressing <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">O</strong></span> for the <span><strong class="command">expand_alias</strong></span> command. This command always expands the alias, regardless of available completions.
+        </p></li><li><p class="NormalText">
+          Pressing <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Space</strong></span> for the <span><strong class="command">codehelp_complete</strong></span> command. This command will expand the alias only if there are no matching completions. Otherwise, it will show a list of completions.
+        </p></li><li><p class="NormalText">
+          If Syntax Expansion is enabled (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">[Language Category] </strong></span> &#8594; <span><strong class="guimenuitem">[Language] </strong></span> &#8594; <span><strong class="guimenuitem">Indent</strong></span>), aliases will automatically be 
+          expanded by typing a space. 
+        </p></li><li><p class="NormalText">
+          Pause while typing and the alias will be displayed in the 
+          Auto-Complete list.
+        </p></li></ul></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="NormalText">By default, alias expansion is not case-sensitive.  However, if you wish alias identifier matching to be
+        case-sensitive, you can get this behavior by setting the macro variable
+        <span><strong class="guilabel">def_alias_case</strong></span> to <span><strong class="guilabel">e</strong></span>.  To turn
+        off case-sensitivity, set this variable to <span><strong class="guilabel">i</strong></span>.  To
+        set a configuration variable, go to <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Set Macro Variable</strong></span>
+        or use the command <span><strong class="command">set-var</strong></span>.  For more information
+        about configuration variables, see <a href="ch13s04.htm">Configuration Variables</a></p></div><p class="NormalText"></p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="NormalText">An option is available to show a tool tip of the matching alias for the word under the cursor. Click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">[Language Category] </strong></span> &#8594; <span><strong class="guimenuitem">[Language] </strong></span> &#8594; <span><strong class="guimenuitem">Auto-Complete</strong></span> and check the option <span><strong class="guilabel">Alias expansion</strong></span>. See <a href="ch08s09.htm">Completions</a> for more information.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_aliases_12052_80559"></a>
+      <a name="sect_aliases_12052_1013439"></a>
+      <a class="indexterm" name="sect_aliases_72A247DC_31B6"></a>Global Aliases</h3></div></div></div><p class="NormalText">Global aliases work across all languages. One way to use global aliases is to save time in entering long directory paths. See <a href="ch08s10.htm#sect_aliases_12052_38241">Directory Aliases</a> below.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_aliases_12052_38241"></a>
+        <a name="sect_aliases_12052_1013446"></a>
+        <a class="indexterm" name="sect_aliases_2D8F6EAF_80FD"></a>
+        <a class="indexterm" name="sect_aliases_0A70F55B_43A1"></a>Directory Aliases</h4></div></div></div><p class="NormalText">Directory aliases take advantage of the fact that most users are constantly opening files from a small number of directories throughout the day. By using a directory alias when opening a file or changing directories, you do not have to type in long paths or click the mouse repeatedly in directory and file name fields within the editor. </p><p class="NormalText">After typing the alias identifier, directory aliases can be expanded by pressing <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Space</strong></span>. Global aliases are stored in the file <code class="filename">alias.slk</code>, located in the SlickEdit® root installation directory.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="NotedText">
+          SlickEdit Core doesn't modify Eclipse's file management-related dialogs such as <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Open</strong></span> or <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Save As</strong></span>. Therefore, directory aliases are not available in these dialogs.
+        </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_aliases_12052_1013451"></a>
+          <a class="indexterm" name="sect_aliases_69228FCC_E7AB"></a>
+          <a class="indexterm" name="sect_aliases_E6BFA31B_4E4E"></a>Defining a New Directory Alias</h5></div></div></div><p class="NormalText">Directory aliases typically consist of a short abbreviation of the last name in a long directory path. For example, if you had a directory called <code class="filename">c:\version20\src\project2\</code>, a good alias name might be <span><strong class="command">p2</strong></span>. For compiler include files, define an alias called <span><strong class="command">inc</strong></span> (<span><strong class="command">vinc</strong></span> in Microsoft Visual C++, <span><strong class="command">binc</strong></span> in C++ Builder®, or <span><strong class="command">ginc</strong></span> for GCC) if you have multiple compilers.</p><p class="NormalText">To define a new directory alias, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">Global Aliases</strong></span>.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">New</strong></span>, then type the characters you wish to use for an identifier in the <span><strong class="guilabel">Alias Name</strong></span> text box.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span>. The identifier you entered is now displayed in the alias list box on the options page.</p></li><li><p class="NormalText">Make sure your new identifier is selected, then in the large text box to the right, enter the alias value by typing in the directory path that you want the identifier substituted with.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span>.</p></li></ol></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_aliases_12052_1013460"></a>
+          <a class="indexterm" name="sect_aliases_045FDE41_8873"></a>Using Directory Aliases</h5></div></div></div><p class="NormalText">After the directory aliases are defined, you can use them in any text box or buffer, including the Build tool window and the Open and Change Directory dialogs. For example, to use a directory alias in the Open dialog, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">
+              On the SlickEdit command line, type <span><strong class="command">e</strong></span> (for "edit").
+            </p></li><li><p class="NormalText">
+              Type the alias name (identifier) for the directory where the file resides.
+            </p></li><li><p class="NormalText">
+              Press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Space</strong></span> to expand the alias.
+            </p></li><li><p class="NormalText">
+              Type the name of the file to open.
+            </p></li><li><p class="NormalText">
+              Press <span><strong class="keycap">Enter</strong></span>.
+            </p></li></ol></div><p class="NotedText">
+              When using the system native Open panel on Mac OS X, use <span><strong class="keycap">Option</strong></span>+<span><strong class="keycap">Escape</strong></span> to trigger 
+              directory alias expansion.
+          </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_aliases_12052_1013467"></a>
+          <a class="indexterm" name="sect_aliases_59D8F38B_0B4F"></a>
+          <a class="indexterm" name="sect_aliases_7F3CFFF4_BAEB"></a>Embedding Environment Variables in Directory Aliases</h5></div></div></div><p class="NormalText">If you keep source code in a version directory tree, you might want to set an environment variable and embed the environment variable in the alias value. For example, if you have a directory named <code class="filename">c:\version20\src\project2\</code>, define a <span><strong class="command">p2</strong></span> alias and give it a value such as <span><strong class="command">%VERSION%\src\project2\</strong></span>. Type the following command on the command line to set or create the <span><strong class="command">VERSION</strong></span> environment variable:</p><pre class="programlisting">
+          set VERSION=c:\version20
+        </pre><p class="NormalText">For more information about setting environment variables, see <a href="ch13s03.htm">Environment Variables</a>.</p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_aliases_12052_80032"></a>
+      <a name="sect_aliases_12052_1013477"></a>
+      <a class="indexterm" name="sect_aliases_A55E7263_B3E6"></a>
+      <a class="indexterm" name="sect_aliases_731B8B62_B8D4"></a>Language-Specific Aliases</h3></div></div></div><p class="NormalText">You can set up language-specific aliases for any frequently used text, such as comment headers. Each language can have one alias file, allowing aliases to be defined that do not affect other languages. Language-specific aliases are stored in files with the extension <code class="filename">.als</code> located in the user configuration directory.</p><p class="NormalText">The aliases that you create in a language are made 
+      available each time you open or create a file in that language. To manage 
+      language-specific aliases, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages</strong></span>, expand your language category and language, then select <span><strong class="guilabel">Aliases</strong></span>. As an example, the C/C++ Aliases screen is shown below.</p><div class="mediaobject"><img src="Resources/options_languages_c_aliases.png"></div><p class="NormalText">Alias names are displayed in the list box on the left. The value for the selected alias name is displayed in the large text box to the right. Click <span><strong class="keycap">Delete</strong></span> to remove a selected alias and its value.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_aliases_12052_12687"></a>
+        <a name="sect_aliases_12052_1013501"></a>
+        <a class="indexterm" name="sect_aliases_DF0F71D8_EE3F"></a>
+        <a class="indexterm" name="sect_aliases_817185B8_9A14"></a>
+        <a class="indexterm" name="sect_aliases_E49F6F89_7A82"></a>Creating a Language-Specific Alias</h4></div></div></div><p class="NormalText">To create a new alias, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Click <span><strong class="guibutton">New</strong></span>, then type 
+            the characters you wish to use for an identifier in the 
+            <span><strong class="guilabel">Alias Name</strong></span> text box.  If you wish to create a 
+            Surround With alias, check the <span><strong class="guilabel">Surround 
+                                             With</strong></span> checkbox. For more 
+                                             information about Surround With 
+                                             aliases, see <a href="ch08s14.htm#sect_surroundwith_13231_83116">Surround With</a>.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span>. The identifier you entered is now displayed in the list box in the Alias options page.</p></li><li><p class="NormalText">Make sure your new identifier is selected, then in the large text box to the right, enter the alias value by typing in the text that you want the identifier substituted with.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span>.</p></li></ol></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"></p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">You can use special escape sequences in your aliases, which will be substituted upon expansion with certain values. See <a href="ch08s10.htm#sect_aliases_12052_14617">Alias Escape Sequences</a> for more information.</p></li><li><p class="NormalText">You can also specify parameters in alias values. When the alias is expanded, you are prompted with a dialog to input the values. See <a href="ch08s10.htm#sect_aliases_12052_51375">Parameter Prompting</a> for more information.</p></li></ul></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_aliases_12052_14617"></a>
+        <a name="sect_aliases_12052_1013878"></a>
+        <a class="indexterm" name="sect_aliases_B4705130_4396"></a>
+        <a class="indexterm" name="sect_aliases_7D2E2E98_DDC2"></a>
+        <a class="indexterm" name="sect_aliases_95889726_3570"></a>Alias Escape Sequences</h4></div></div></div><p class="NormalText">Alias escape sequences can be used in alias values. When the aliases are expanded, the sequences are replaced with their values. The following table contains a list of the escape sequences that can be used for aliases. For examples, see <a href="ch08s10.htm#sect_aliases_12052_10320">Escape Sequence Examples</a> below.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">If you leave a blank line in an alias, SlickEdit will automatically insert the sequence to 
+        preserve leading spaces, <span><strong class="command">%\l</strong></span>, when you save the alias. This ensures that the 
+        blank line is preserved.</p></div><div class="informaltable"><a name="table_b291f7ff-369d-476d-8a51-1266c246e611"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Escape Sequence</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\a</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts the authors name.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\c</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Places the cursor. This sequence can be used multiple times in the same alias value in order to create a series of "hot spots" within the alias. After the alias is expanded, press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">[</strong></span> (<span><strong class="command">next_hotspot</strong></span> command) to jump to the next cursor stop.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\d</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts the date (locale-dependent).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\e</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts the date in <span><strong class="command">MMDDYY</strong></span> format.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\t</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts the time (locale-dependent).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%%</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts a percent character.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\f</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts the current file name.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\g</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts a file separator character. This is the backslash on Windows (\) platforms and slash (/) on UNIX/Mac.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\w</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Outputs the line number.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\n</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts the current function name.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\o</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts the current function name with signature.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\j</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts the current class name.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\j+</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts the current class name, fully-qualified.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\i</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Indents.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\b</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Unindents.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\s</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Preserves trailing spaces. This should be placed at the end of a line.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\l</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Preserves leading spaces. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\x</strong></span>
+                  <span class="emphasis"><em>ColumnNumber</em></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Moves the cursor to the specified column number.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\x+</strong></span>
+                  <span class="emphasis"><em>ddd</em></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Increments column by <span class="emphasis"><em>ddd</em></span>.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\x-</strong></span>
+                  <span class="emphasis"><em>ddd</em></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Decrements column by <span class="emphasis"><em>ddd</em></span>.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\m </strong></span>
+                  <span class="emphasis"><em>MacroName ArgumentList</em></span>
+                  <span><strong class="command">%</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Calls the specified Slick-C® macro with a specified optional 
+                  argument. This can be used for many purposes including surrounding text (see below) and 
+                  inserting formatted dates (see <a href="ch08s10.htm#sect_aliases_12052_10320">Escape Sequence Examples</a>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\m sur_text%</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Uses the escape sequence to call a macro to surround the 
+                  selected text. Indicates where the text to be surrounded is placed. See <a href="ch08s14.htm">Surrounding and Unsurrounding</a> for more information.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%</strong></span>
+                  <span class="emphasis"><em>EnvironmentVariable</em></span>
+                  <span><strong class="command">%</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts the value of the environment variable specified.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%(</strong></span>
+                  <span class="emphasis"><em>ParameterName</em></span>
+                  <span><strong class="command">)</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Parameter Prompting replacement. See <a href="ch08s10.htm#sect_aliases_12052_51375">Parameter Prompting</a> for more information.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\p</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts parameters from the function that is located beneath it. See <a href="ch08s16.htm#sect_workingwithcomments_13005_47728">Doc Comments</a> for more information.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\q</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Insert the type for the parameters (double, integer, string, etc.) from the function that is located beneath it. Typically used in conjunction with the <span><strong class="command">%\p</strong></span> escape sequence. See <a href="ch08s16.htm#sect_workingwithcomments_13005_47728">Doc Comments</a> for more information.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\r</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts the return type from the function that is located beneath it. See <a href="ch08s16.htm#sect_workingwithcomments_13005_47728">Doc Comments</a> for more information.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\u</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Includes this line in the expansion, if there are any function parameters that are expanded. If there are no function parameters expanded, this line is not included in the full expansion. See <a href="ch08s16.htm#sect_workingwithcomments_13005_47728">Doc Comments</a> for more information.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\v</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Includes this line in the expansion, if there are any return types that are expanded. If there are no return types expanded, this line is not included in the full expansion. See <a href="ch08s16.htm#sect_workingwithcomments_13005_47728">Doc Comments</a> for more information.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\un</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">If there are any function parameters that are expanded, this line is not included in the full expansion. If there are no function parameters expanded, this line is included in the full expansion. See <a href="ch08s16.htm#sect_workingwithcomments_13005_47728">Doc Comments</a> for more information.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%\vn</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">If there are any return types that are expanded, this line is not included in the full expansion. If there are no return types expanded, this line is included in the full expansion. See <a href="ch08s16.htm#sect_workingwithcomments_13005_47728">Doc Comments</a> for more information.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">%()</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Used to separate identifier characters. For example, <span><strong class="command">%\u%()n</strong></span> has the effect of the <span><strong class="command">%\u</strong></span> option followed by a literal "n". It is recommended that <span><strong class="command">%()</strong></span> be used to separate alias escape sequences ending with a letter from other identifier characters so that new aliases escape sequences won't break existing aliases you have. Don't write<span><strong class="command"> %\dx</strong></span>. Write <span><strong class="command">%\d%()x</strong></span> instead.</p>
+              </td></tr></tbody></table></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_aliases_12052_10320"></a>
+          <a name="sect_aliases_12052_1014010"></a>Escape Sequence Examples</h5></div></div></div><p class="NormalText">The following table contains some examples of using escape sequences in alias values:</p><div class="informaltable"><a name="table_e3f5a3cb-7ffa-4264-8700-343ac39ce8b4"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                  <p class="CellHeading">Alias Name and Description</p>
+                </th><th>
+                  <p class="CellHeading">Value</p>
+                </th></tr></thead><tbody><tr><td>
+                  <p class="CellBody">
+                    Sample formatted dates</p>
+                </td><td>
+                  <p class="NormalText"><span><strong class="command">%\mprinttime #b. #d, #Y%</strong></span>       ==&gt;  Apr. 07, 
+                    2008</p> 
+                  <p class="NormalText"><span><strong class="command">%\mprinttime #A, #B #d, #Y%</strong></span> ==&gt;  Monday, 
+                    April 07, 2008</p>
+                  <p class="NormalText"><span><strong class="command">%\mprinttime #m/#d/#Y%</strong></span>         ==&gt;  
+                    04/07/2008</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span class="bold"><strong>comment</strong></span> - A header comment to have the date and time inserted.</p>
+                </td><td>
+                  <pre class="programlisting">************************************************/
+/* Date: <span><strong class="command">%\d</strong></span> Time: <span><strong class="command">%\t</strong></span> */
+/***********************************************/</pre>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span class="bold"><strong>if</strong></span> - A simple <span><strong class="command">if</strong></span> statement, with indenting, support for surround, and a cursor position.</p>
+                </td><td>
+                  <pre class="programlisting">if(<span><strong class="command">%\c</strong></span>){
+<span><strong class="command">%\i</strong></span>// Comment goes here
+%\i%\m sur_text%
+}</pre>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span class="bold"><strong>ifelse</strong></span> - An <span><strong class="command">if/else</strong></span> statement with indenting and several cursor hot spots.</p>
+                </td><td>
+                  <pre class="programlisting">if(<span><strong class="command">%\c</strong></span>){
+%\i%\c
+} else {
+%\i%\c
+}</pre>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span class="bold"><strong>wm</strong></span> - A WinMain function template with indenting and a cursor position.</p>
+                </td><td>
+                  <pre class="programlisting">int APIENTRY WinMain(HANDLE hInstance,
+                     HANDLE hPrevInstance,
+                     LPSTR lpszCmdParam, 
+                     int nCmdShow)
+{
+%\i%\c
+}</pre>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span class="bold"><strong>/**</strong></span> - A Javadoc comment.</p>
+                </td><td>
+                  <pre class="programlisting">/**
+ * 
+ * %\c
+ * 
+ * @author %\a (%\d)
+ * %\u
+ * @param %\p %\c
+ * %\v
+ * @return %\c%\v
+ */</pre>
+                </td></tr></tbody></table></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_aliases_12052_51375"></a>
+        <a name="sect_aliases_12052_1013659"></a>
+        <a class="indexterm" name="sect_aliases_CBB1B7EC_F3A6"></a>
+        <a class="indexterm" name="sect_aliases_1D773E5F_B6F8"></a>
+        <a class="indexterm" name="sect_aliases_191FA1F9_56B1"></a>
+        <a class="indexterm" name="sect_aliases_DF420718_E9F9"></a>Parameter Prompting</h4></div></div></div><p class="NormalText">Parameters can be set up for aliases, so that when the alias is expanded, you are prompted with a dialog to input the values. This is useful for reducing even more key strokes for repetitive tasks when using aliases that may require different values each time they are used.</p><p class="NormalText">To use parameter prompting, first define the parameters, then use them in your alias values by typing <span><strong class="command">%(</strong></span><span class="emphasis"><em>ParamName</em></span><span><strong class="command">)</strong></span> where <span class="emphasis"><em>ParamName</em></span> is the name of the parameter that you have defined (see <a href="ch08s10.htm#sect_aliases_12052_74766">Creating an Alias for Parameter Prompting</a> below). When the alias is used and expanded, the Parameter Entry dialog will appear, prompting you for the parameter values, which will then be inserted into your text.</p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_aliases_12052_74766"></a>
+          <a name="sect_aliases_12052_1013666"></a>Creating an Alias for Parameter Prompting</h5></div></div></div><p class="NormalText">To create an alias for parameter prompting, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Click <span><strong class="guibutton">New</strong></span>, then enter the new alias name. In the aliases list box (on the left side of the Alias page), make sure the new alias is selected.</p></li><li><p class="NormalText">Click the <span><strong class="guibutton">Add</strong></span> button below the <span><strong class="guilabel">Parameters</strong></span> group box. The Enter Alias Parameter dialog is displayed.</p></li><li><p class="NormalText">Enter the following values:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="guilabel">Parameter Name</strong></span> - Enter the name that you wish to use in the alias value.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="guilabel">Prompt</strong></span> - Enter the text that you wish to be prompted with. This is the label that will appear on the Parameter Entry dialog that prompts for values after the alias is expanded.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="guilabel">Initial Value</strong></span> - (Optional) Enter the initial value of the parameter. This text will appear in the text field of the Parameter Entry dialog that prompts for values after the alias is expanded.</p></li></ul></div></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span>.</p></li><li><p class="NormalText">If you wish to add more parameters, repeat Steps 2 through 4.</p></li><li><p class="NormalText">On the Alias options page, the <span><strong class="guilabel">Parameters</strong></span> group box will now display a list of the parameters that you have added.</p></li><li><p class="NormalText">In the large text field on the right side of the Alias options page, you can now type the alias value. In the places where you want parameter prompting to occur, type <span><strong class="command">%(</strong></span><span class="emphasis"><em>ParamName</em></span><span><strong class="command">)</strong></span>, where <span class="emphasis"><em>ParamName</em></span> is the parameter name that you entered in Step 3.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span> when you are finished.</p></li></ol></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_41b8007d-345c-492a-8a03-46a6880bbfce"></a>Example: Instantiating a Variable in Java with Parameter Prompting</h6></div></div></div><p class="NormalText">In Java, instantiating variables can be a repetitive task. The following code shows a common Java code snippet:</p><pre class="programlisting">public class  {
+    public static void main (String args[]) {
+        String x = new String( arg[0] );
+    }
+}</pre><p class="NormalText">You could define an alias for entering new class names with variables and arguments. That way, when you press <span><strong class="keycap">Enter</strong></span> after the third line and type and expand the alias, you will be prompted for the values.</p><p class="NormalText">For this alias, use the Parameters section of the Alias options page to first define three parameters: <span><strong class="command">class_name</strong></span>, <span><strong class="command">var_name</strong></span>, and <span><strong class="command">arg_list</strong></span>. Then, enter the following text for the alias value:</p><pre class="programlisting">%(class_name) %(var_name) = new %(class_name)( %(arg_list) );</pre></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_aliases_12052_1013692"></a>
+        <a class="indexterm" name="sect_aliases_7F948709_BF2C"></a>
+        <a class="indexterm" name="sect_aliases_C44931D5_30C7"></a>
+        <a class="indexterm" name="sect_aliases_5A4937D4_2B19"></a>Creating a Language-Specific Alias from a Selection</h4></div></div></div><p class="NormalText">You can create a language-specific alias from a selection by following the steps below.</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Select some code.</p></li><li><p class="NormalText">Right-click and select <span><strong class="guimenu">Create Alias</strong></span>.</p></li><li><p class="NormalText">Give the alias a name and click <span><strong class="guibutton">OK</strong></span>.</p></li><li><p class="NormalText">The language-specific Alias options page appears, from which you can edit the code to fine-tune or add parameters.</p></li></ol></div><p class="NormalText"></p></div></div></div></body></html>

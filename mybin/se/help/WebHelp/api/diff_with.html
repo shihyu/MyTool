@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>diff_with</title>
+</head>
+<body>
+
+<h3><b>_command int diff_with(_str dirname='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Compare the current buffer against another file.
+<p>
+Command line usage:
+<pre>
+   diff-with &lt;dir or file name&gt;
+</pre>
+<p>
+The directory name can be just a directory root, and
+diff-with will splice together the entire matching file
+path for you.  For example, if the current file is
+<code>"E:\13.0.2\unittest\cparse\testcparse.cpp"</code>,
+you can compare it to
+<code>"E:\14.0.0\unittest\cparse\testcparse.cpp"</code>
+simply using the command:
+<pre>
+    diff-with e:\14.0.0
+</pre>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="dirname">dirname</A></code> - file or directory name to compare against
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 if successful, Otherwise a nonzero error code.
+        <p>
+        Note that "successful" implies nothing about the
+        number of differences between the files, just that
+        all files were loaded successfully,
+        and the difference engine ran succesfully.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="diff.html">diff</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>VSCALLBACK_WIN_FONT_CHANGE</title>
+</head>
+<body>
+
+<h3><b>39 VSCALLBACK_WIN_FONT_CHANGE</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><pre>void (VSAPI * vspfnChangeFont)(int wid, VSPSZ pszFontName, int FontWidth, int FontHeight, int CharSet);</pre>
+<p>
+The FONT_CHANGE callback function is used to notify of a font change in an
+editor control window.
+<p>
+Actual font name and metrics being used by an editor control window.
+This can be different from what the window properties report (e.g. VSP_FONTNAME,
+VSP_FONTWIDTH, etc.) because the operating system will often map a font
+differently when it is used.
+<p>
+Note:<br>
+This callback is not called the first time an editor control
+is created. Use vsGetWindowFontInfo after calling
+vsCreateEditorCtl to retrieve font name and metrics when an
+editor control window is created.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Editor control window id.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFontName">pszFontName</A></code> - Actual font name used to draw text.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="FontWidth">FontWidth</A></code> - Font width in pixels.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="FontHeight">FontHeight</A></code> - Font height in pixels. This is significant when
+                   a WidthxHeight font is selected (e.g. "Terminal 8x12" on Windows).</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pCharSet">pCharSet</A></code> - Character set. Windows only.
+                     Indicates the character set of the font. These
+                   character sets map directly onto the Windows
+                   character sets. See VSCHARSET_??? constants defined
+                   in "vs.h".
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Editor_Control_Callback_Functions.html">Editor Control Callback Functions</a></blockquote>
+</body>
+</html>

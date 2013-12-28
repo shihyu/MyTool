@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_cb_list_box</title>
+</head>
+<body>
+
+<h3><b>CTL_LISTBOX p_cb_list_box</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>Combo box is no longer split into 4 controls.
+            Just use the regular <a href="p_window_id.html">p_window_id</a> for
+            everything
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns the window id of a list box sub-control of a combo box.  A combo
+box consists of 4 controls: the root window, text box, picture box, and
+list box.  The properties and methods of the sub-controls may be accessed
+individually with the <a href="p_cb.html">p_cb</a>, <a href="p_cb_text_box.html">p_cb_text_box</a>, <a href="p_cb_picture.html">p_cb_picture</a>, <b>p_cb_list_box</b>
+instance handle properties.  The <b>p_cb_list_box</b> property is only available
+when the control is displayed.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+defeventtab form1;
+combo1.on_create()
+{
+   // Active the list box of the combo box control
+   p_window_id=p_cb_list_box;
+   for (i=1;i&lt;=100;++i){
+      _lbadd_item('line='i)
+   }
+   p_window_id=p_cb;
+}
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Combo Box, Drive List</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Combo_Box_Properties.html">Combo Box Properties</a>, <a href="Drive_List_Properties.html">Drive List Properties</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Using Functions as Methods</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s21.htm" title="Objects and Instances"><link rel="next" href="ch14s23.htm" title="Built-in Controls"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_functionsasmethods_12991_69672"></a>
+    <a name="slick_c_functionsasmethods_12991_1004333"></a>Using Functions as Methods</h2></div></div></div><p class="NormalText">A command or procedure can be called as a method without any additional declaration data. The sample Slick-C® source below is an example of this feature.<a class="indexterm" name="slick-c_functionsasmethods_8C9E28F0_415A"></a></p><pre class="programlisting">#include "slick.sh"
+defmain()
+{
+    // Call the tbupcase function as a method to operate on the SlickEdit
+    // command line. _cmdline is a constant instance handle defined in slick.sh.
+    _cmdline.tbupcase();
+}
+ 
+// This function uppercases the text in a text box or combo box input field
+// and has been written to operate on the current object.
+void tbupcase()
+{
+    // The p_text property is used to get and set the contents of a text box
+    // or combo box input field.
+    p_text=upcase(p_text);   
+}</pre><p class="NormalText">The <span><strong class="command">tbupcase</strong></span> is not defined to be a method of a particular class. This feature permits macros written in SlickEdit® text mode to be converted into SlickEdit macros and used as methods. Also, most functions are written to operate on the current object, meaning you have access to many methods. Using functions as methods is useful when writing dialog box event handlers. If a function is called and a statement within the function is not valid for the current object, the macro is stopped, and a dialog box is displayed indicating the error. The <span><strong class="command">find_error</strong></span> command (<span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Find Slick-C Error</strong></span>) can then be used to locate the source of the error.</p><p class="NormalText"></p></div></body></html>

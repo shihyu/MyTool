@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>dde</title>
+</head>
+<body>
+
+<h3><b>_command typeless dde(_str params='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Supported under Windows, Windows NT, and Windows 95/98.  When another
+application wants to communicate with SlickEdit using DDE, the other
+application should use the server name of SlickEdit, the system topic,
+and call this command so that the command is invoked on the correct object.
+The DDE command string:
+<pre>
+        '<b>dde -mdi -refresh edit c:\junk</b>'
+</pre>
+can be sent to SlickEdit to have SlickEdit open the file
+"c:\junk".  The first instance of SlickEdit has the server AND
+application window name "SlickEdit".  All instances of
+SlickEdit that follow have the server and application window name
+"SlickEdit Server <i>n</i>" where <i>n</i> starts at 1.  Invoke
+SlickEdit with the +new option to create another instance.
+The <b>editor_name</b> function may be used to get the server name.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="params">params</A></code> - params</i> is a string in the format: [-mdi] [-refresh] [-multi] <i>command</i>
+<p>
+The switches have the following meaning:
+<DL compact style="margin-left:20pt;">
+<DT>-mdi</DT><DD>Invoke command on mdi edit window.</DD>
+<DT>-refresh</DT><DD>Refresh the screen after the command is executed.  If
+you do not specify this command, you will need to send the <b>dderefresh</b>
+command after sending all dde commands to insure that the screen is correctly
+updated.</DD>
+<DT>-multi</DT><DD>Indicates that <i>command</i> contains multiple commands
+separated with semicolons.</DD>
+<DT>-cd <i>directory</i></DT><DD>Temporarily change the current directory to
+<i>directory</i> when executing the command.</DD>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

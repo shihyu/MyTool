@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_remove_files_from_tag_file_in_wildcards</title>
+</head>
+<body>
+
+<h3><b>int tag_remove_files_from_tag_file_in_wildcards(_str pszTagDatabase, int rebuildFlags, _str pszDirectoryPath, _str pszWildcardOpts)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Remove all the files matching the given wildcards from the tag file.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszTagDatabase">pszTagDatabase</A></code> - name of tag file to rebuild</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="rebuildFlags">rebuildFlags</A></code> - bitset of VS_TAG_REBUILD_
+                        <ul>
+                        <li>VS_TAG_REBUILD_SYNCHRONOUS --
+                        Remove the files in the foreground instead
+                        of finishing the work using a background thread.
+                        </ul></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszDirectoryPath">pszDirectoryPath</A></code> - base path to search for wildcards in</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszWildcardOpts">pszWildcardOpts</A></code> - command line options for wildcards
+                        <ul>
+                        <li><b>filespec</b> -- wildcard path/file specification
+                        <li><b>-T</b> -- find files recursively in subdirectories
+                        <li><b>-X filespec</b> -- exclude files matching this spec
+                        </ul>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Since:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">16.0
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

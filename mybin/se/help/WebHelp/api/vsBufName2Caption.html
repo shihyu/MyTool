@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsBufName2Caption</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsBufName2Caption(int wid, char *pszCaption, int MaxCaptionLen, char state, int *pMaxCaptionLen=a, bool showModified=true)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This function is used to convert the buffer name for an MDI child edit
+window into a window title.  Currently buffers with no name have a
+caption in the form "Untitled<nnn>" where nnn is the buffer id of the
+buffer.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszCaption">pszCaption</A></code> - Output string for window caption.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxCaptionLen">MaxCaptionLen</A></code> - Number of characters allocated in
+pszCaption.  We recommend
+VSMAXFILENAME.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="state">state</A></code> - Indicates the state of the MDI child edit
+window.  One of the following:
+
+<dl>
+<dt>'I'</dt><dd>Caption is for an iconized window.  No path
+is placed in the caption.</dd>
+<dt>'N'</dt><dd>Caption is for a normalized window.</dd>
+<dt>'M'</dt><dd>Caption is for a maximized window.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pMaxCaptionLen">pMaxCaptionLen</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="showModified">showModified</A></code> - If set to false, the modified indicator
+                    (*) will not be appended to caption when
+                    buffer is modified. Defaults to true.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote>
+</body>
+</html>

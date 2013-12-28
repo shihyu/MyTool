@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsSearchPromptReplace</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsSearchPromptReplace(int wid, const char *pszFindString, const char *pszReplaceString, const char *pszOptions)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This function searches for the string specified and replaces it with the
+string specified.  This function is different from vsCommandReplace
+in that it uses a dialog box instead of the message line to prompt the
+user.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFindString">pszFindString</A></code> - String to find.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszReplaceString">pszReplaceString</A></code> - String to replace string found with.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszOptions">pszOptions</A></code> - String of search options.  See vsSearch for
+list of most options.  The following addition
+options may be specified:
+
+<dl>
+<dt>*</dt><dd>Make changes without prompting.</dd>
+<dt>P</dt><dd>Wrap to beginning/end when string not
+found.</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common return codes are
+COMMAND_CANCELLED_RC, STRING_NOT_FOUND_RC,
+INVALID_OPTION_RC and
+INVALID_REGULAR_EXPRESSION_RC.  On error, message is
+displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsCommandReplaceQNofChanges.html">vsCommandReplaceQNofChanges</a></blockquote>
+</body>
+</html>

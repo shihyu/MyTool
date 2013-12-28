@@ -1,0 +1,3420 @@
+private tag commonAttributes {
+	attr ID "id";
+	attr ID "xml:id";
+	attr CDATA version;
+	attr CDATA "xml:lang";
+	attr CDATA "xml:base";
+	attr CDATA remap;
+	attr CDATA xreflabel;
+	attr revisionflag	{
+      changed
+      added
+      deleted
+      off
+   }
+	attr dir	{
+      ltr
+      rtl
+      lro
+      rlo
+   }
+	attr CDATA arch;
+	attr CDATA audience;
+	attr CDATA condition;
+	attr CDATA conformance;
+	attr CDATA os;
+	attr CDATA revision;
+	attr CDATA security;
+	attr CDATA userlevel;
+	attr CDATA vendor;
+	attr CDATA wordsize;
+	attr CDATA annotations;
+}
+
+private tag linkingAttributes {
+	attr IDREF linkend;
+   attr CDATA href;
+   attr CDATA title;
+	attr CDATA "xmlns:xlink" // http://www.w3.org/1999/xlink	
+	attr CDATA "xlink:href";
+	attr CDATA "xlink:type";
+	attr CDATA "xlink:role";
+	attr CDATA "xlink:arcrole";
+	attr CDATA "xlink:title";
+	attr CDATA "xlink:show" {
+      new
+      replace
+      embed
+      other
+      none
+   }
+	attr CDATA "xlink:actuate" {
+      onLoad
+      onRequest
+      other
+      none
+   }
+}
+
+private tag xmlnsAndRole {
+	attr CDATA xmlns;	 // http://docbook.org/ns/docbook
+	attr CDATA role;
+}
+
+
+/**
+ * An abbreviation, especially one followed by a period
+ */
+tag abbrev ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|trademark)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A summary
+ */
+tag abstract ( (((title|titleabbrev)*, (info)?), (anchor|para|formalpara|simpara)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A graphical user interface (GUI) keyboard shortcut
+ */
+tag accel ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Acknowledgements in an Article
+ */
+tag acknowledgements ( (((title|titleabbrev|subtitle)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * An often pronounceable word made from the initial (or selected) letters of a name or phrase
+ */
+tag acronym ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|trademark)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A response to a user event
+ */
+tag action () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A real-world address, generally a postal address
+ */
+tag address ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|personname|pob|street|city|state|postcode|country|phone|fax|email|uri|otheraddr)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr continuation {
+      continues
+      restarts
+   }
+	attr linenumbering {
+      numbered
+      unnumbered
+   }
+	attr NMTOKEN startinglinenumber;
+	attr CDATA language;
+	attr "xml:space" {
+      preserve
+   }
+}
+/**
+ * The institutional affiliation of an individual
+ */
+tag affiliation ( ((shortaffil)?, (jobtitle)*, ((org)?|((orgname)?, (orgdiv)*, (address)*))) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Text representation for a graphical element
+ */
+tag alt ( (#PCDATA|inlinemediaobject)* ) : commonAttributes, xmlnsAndRole {
+}
+/**
+ * A spot in the document
+ */
+tag anchor ( EMPTY ) : commonAttributes, xmlnsAndRole {
+}
+/**
+ * An answer to a question posed in a QandASet
+ */
+tag answer ( ((label)?, (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An appendix in a Book or Article
+ */
+tag appendix ( (((title|titleabbrev|subtitle)*, (info)?), ((glossary|bibliography|index|toc)*, (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((((section)+, (simplesect)*)|(simplesect)+|((sect1)+, (simplesect)*)|(refentry)+))?)|((section)+, (simplesect)*)|(simplesect)+|((sect1)+, (simplesect)*)|(refentry)+), (glossary|bibliography|index|toc)*)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for an Appendix
+ */
+tag appendixinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of a software program
+ */
+tag application ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      hardware
+      software
+   }
+}
+/**
+ * Arc
+ */
+tag arc ( EMPTY ) : commonAttributes, xmlnsAndRole {
+	attr NMTOKEN "xlink:from";
+	attr NMTOKEN "xlink:to";
+}
+/**
+ * A region defined for a Callout in a graphic or code example
+ */
+tag area ( (alt)? ) : commonAttributes, xmlnsAndRole {
+	attr units {
+      calspair
+      linecolumn
+      linecolumnpair
+      linerange
+      other
+   }
+	attr NMTOKEN otherunits;
+	attr IDREFS linkends;
+	attr CDATA label;
+	attr CDATA coords;
+}
+/**
+ * A set of related areas in a graphic or code example
+ */
+tag areaset ( ((area)+) ) : commonAttributes, xmlnsAndRole {
+	attr units {
+      calspair
+      linecolumn
+      linecolumnpair
+      linerange
+      other
+   }
+	attr NMTOKEN otherunits;
+	attr IDREFS linkends;
+	attr CDATA label;
+}
+/**
+ * A collection of regions in a graphic or code example
+ */
+tag areaspec ( ((area|areaset)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr units {
+      calspair
+      linecolumn
+      linecolumnpair
+      linerange
+      other
+   }
+	attr NMTOKEN otherunits;
+}
+/**
+ * An argument in a CmdSynopsis
+ */
+tag arg ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|arg|group|option|synopfragmentref|sbr)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr rep	{
+      norepeat
+      repeat
+   }
+	attr choice {
+      opt
+      plain
+      req
+   }
+}
+/**
+ * An article
+ */
+tag article ( (((title|titleabbrev|subtitle)*, (info)?), (glossary|bibliography|index|toc|appendix|acknowledgements|colophon)*, (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((((section)+, (simplesect)*)|(simplesect)+|((sect1)+, (simplesect)*)|(refentry)+))?)|((section)+, (simplesect)*)|(simplesect)+|((sect1)+, (simplesect)*)|(refentry)+), (glossary|bibliography|index|toc|appendix|acknowledgements|colophon)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for an Article
+ */
+tag articleinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The page numbers of an article as published
+ */
+tag artpagenums ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The source of a block quote or epigraph
+ */
+tag attribution ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|person|personname|citetitle|citation)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Pointer to external audio data
+ */
+tag audiodata ( (info)? ) : commonAttributes, xmlnsAndRole {
+	attr CDATA format;
+	attr CDATA fileref;
+	attr ENTITY entityref;
+}
+/**
+ * A wrapper for audio data and its associated meta-information
+ */
+tag audioobject ( ((info)?, audiodata) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of an individual author
+ */
+tag author ( ((personname, (personblurb|affiliation|email|uri|address|contrib)*)|(orgname, (orgdiv|affiliation|email|uri|address|contrib)*)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A short description or note about an author
+ */
+tag authorblurb () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Wrapper for author information when a document has multiple authors or collabarators
+ */
+tag authorgroup ( ((author|editor|othercredit)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The initials or other short identifier for an author
+ */
+tag authorinitials ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The location of a page break in a print version of the document
+ */
+tag beginpage () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The spatial or temporal coverage of a document
+ */
+tag bibliocoverage ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr spatial {
+      dcmipoint
+      iso3166
+      dcmibox
+      tgn
+      otherspatial
+   }
+	attr NMTOKEN otherspatial;
+	attr temporal {
+      dcmiperiod
+      w3c-dtf
+      othertemporal
+   }
+	attr NMTOKEN othertemporal;
+}
+/**
+ * A section of a Bibliography
+ */
+tag bibliodiv ( (((title|titleabbrev|subtitle)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, (biblioentry|bibliomixed)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * An entry in a Bibliography
+ */
+tag biblioentry ( ((abstract|address|artpagenums|author|authorgroup|authorinitials|bibliocoverage|biblioid|bibliosource|collab|confgroup|contractsponsor|contractnum|copyright|cover|date|edition|editor|issuenum|keywordset|legalnotice|mediaobject|org|orgname|othercredit|pagenums|printhistory|pubdate|publisher|publishername|releaseinfo|revhistory|seriesvolnums|subjectset|volumenum|annotation|extendedlink|bibliomisc|bibliomset|bibliorelation|biblioset|itermset|productname|productnumber|abbrev|acronym|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|subscript|superscript|wordasword|firstterm|glossterm|coref|citerefentry|citetitle|citebiblioid|person|personblurb|personname|subtitle|title|titleabbrev)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A bibliography
+ */
+tag bibliography ( (((title|titleabbrev|subtitle)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, ((bibliodiv)+|(biblioentry|bibliomixed)+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a Bibliography
+ */
+tag bibliographyinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An identifier for a document
+ */
+tag biblioid ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      doi
+      isbn
+      isrn
+      issn
+      libraryofcongress
+      pubsnumber
+      uri
+      other
+   }
+	attr NMTOKEN otherclass;
+}
+/**
+ * A wrapper for a set of bibliography entries
+ */
+tag bibliolist ( ((((title|titleabbrev)*, (info)?))?, (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, (biblioentry|bibliomixed)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Untyped bibliographic information
+ */
+tag bibliomisc ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An entry in a Bibliography
+ */
+tag bibliomixed ( (#PCDATA|abstract|address|artpagenums|author|authorgroup|authorinitials|bibliocoverage|biblioid|bibliosource|collab|confgroup|contractsponsor|contractnum|copyright|cover|date|edition|editor|issuenum|keywordset|legalnotice|mediaobject|org|orgname|othercredit|pagenums|printhistory|pubdate|publisher|publishername|releaseinfo|revhistory|seriesvolnums|subjectset|volumenum|annotation|extendedlink|bibliomisc|bibliomset|bibliorelation|biblioset|itermset|productname|productnumber|abbrev|acronym|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|subscript|superscript|wordasword|firstterm|glossterm|coref|citerefentry|citetitle|citebiblioid|person|personblurb|personname|subtitle|title|titleabbrev)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A cooked container for related bibliographic information
+ */
+tag bibliomset ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|abstract|address|artpagenums|author|authorgroup|authorinitials|bibliocoverage|biblioid|bibliosource|collab|confgroup|contractsponsor|contractnum|copyright|cover|date|edition|editor|issuenum|keywordset|legalnotice|mediaobject|org|orgname|othercredit|pagenums|printhistory|pubdate|publisher|publishername|releaseinfo|revhistory|seriesvolnums|subjectset|volumenum|extendedlink|bibliomisc|bibliomset|bibliorelation|biblioset|itermset|productname|productnumber|abbrev|acronym|emphasis|footnote|footnoteref|foreignphrase|quote|wordasword|firstterm|glossterm|coref|citerefentry|citetitle|citebiblioid|person|personblurb|personname|subtitle|title|titleabbrev)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA relation;
+}
+/**
+ * A cross reference to a bibliographic entry
+ */
+tag biblioref ( EMPTY  EMPTY ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA xrefstyle;
+	attr IDREF endterm;
+	attr NMTOKEN units;
+	attr NMTOKEN begin;
+	attr NMTOKEN end;
+}
+/**
+ * The relationship of a document to another
+ */
+tag bibliorelation ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      doi
+      isbn
+      isrn
+      issn
+      libraryofcongress
+      pubsnumber
+      uri
+      other
+   }
+	attr NMTOKEN otherclass;
+	attr type {
+      hasformat
+      haspart
+      hasversion
+      isformatof
+      ispartof
+      isreferencedby
+      isreplacedby
+      isrequiredby
+      isversionof
+      references
+      replaces
+      requires
+      othertype
+   }
+	attr NMTOKEN othertype;
+}
+/**
+ * A raw container for related bibliographic information
+ */
+tag biblioset ( ((abstract|address|artpagenums|author|authorgroup|authorinitials|bibliocoverage|biblioid|bibliosource|collab|confgroup|contractsponsor|contractnum|copyright|cover|date|edition|editor|issuenum|keywordset|legalnotice|mediaobject|org|orgname|othercredit|pagenums|printhistory|pubdate|publisher|publishername|releaseinfo|revhistory|seriesvolnums|subjectset|volumenum|annotation|extendedlink|bibliomisc|bibliomset|bibliorelation|biblioset|itermset|productname|productnumber|abbrev|acronym|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|subscript|superscript|wordasword|firstterm|glossterm|coref|citerefentry|citetitle|citebiblioid|person|personblurb|personname|subtitle|title|titleabbrev)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA relation;
+}
+/**
+ * The source of a document
+ */
+tag bibliosource ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      doi
+      isbn
+      isrn
+      issn
+      libraryofcongress
+      pubsnumber
+      uri
+      other
+   }
+	attr NMTOKEN otherclass;
+}
+/**
+ * Meta-information for a block element
+ */
+tag blockinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A quotation set off from the main text
+ */
+tag blockquote ( (((title|titleabbrev)*, (info)?), (attribution)?, (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A book
+ */
+tag book ( (((title|titleabbrev|subtitle)*, (info)?), (glossary|bibliography|index|toc|dedication|acknowledgements|preface|chapter|appendix|article|colophon|part|reference)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a Book
+ */
+tag bookinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A free-floating heading
+ */
+tag bridgehead ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr renderas {
+      sect1
+      sect2
+      sect3
+      sect4
+      sect5
+      other
+   }
+	attr MNTOKEN otherrenderas;
+}
+/**
+ * A “called out” description of a marked Area
+ */
+tag callout ( ((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr IDREFS arearefs;
+}
+/**
+ * A list of Callouts
+ */
+tag calloutlist ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, (callout)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A caption
+ */
+tag caption ( (#PCDATA|itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|caution|important|note|tip|warning|example|figure|table|informalexample|informalfigure|informaltable|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|programlisting|screen|literallayout|synopsis|programlistingco|screenco|cmdsynopsis|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|bridgehead|remark|revhistory|indexterm|equation|informalequation|anchor|para|formalpara|simpara|html:form|annotation)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA "class";
+	attr CDATA style;
+	attr CDATA title;
+	attr CDATA lang;
+	attr CDATA onclick;
+	attr CDATA ondblclick;
+	attr CDATA onmousedown;
+	attr CDATA onmouseup;
+	attr CDATA onmouseover;
+	attr CDATA onmousemove;
+	attr CDATA onmouseout;
+	attr CDATA onkeypress;
+	attr CDATA onkeydown;
+	attr CDATA onkeyup;
+}
+/**
+ * A note of caution
+ */
+tag caution ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A chapter, as of a book
+ */
+tag chapter ( (((title|titleabbrev|subtitle)*, (info)?), ((glossary|bibliography|index|toc)*, (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((((section)+, (simplesect)*)|(simplesect)+|((sect1)+, (simplesect)*)|(refentry)+))?)|((section)+, (simplesect)*)|(simplesect)+|((sect1)+, (simplesect)*)|(refentry)+), (glossary|bibliography|index|toc)*)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a Chapter
+ */
+tag chapterinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An inline bibliographic reference to another published work
+ */
+tag citation ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A citation of a bibliographic identifier
+ */
+tag citebiblioid ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      doi
+      isbn
+      isrn
+      issn
+      libraryofcongress
+      pubsnumber
+      uri
+      other
+   }
+	attr NMTOKEN otherclass;
+}
+/**
+ * A citation to a reference page
+ */
+tag citerefentry ( (refentrytitle, (manvolnum)?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The title of a cited work
+ */
+tag citetitle ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr pubwork {
+      article
+      bbs
+      book
+      cdrom
+      chapter
+      dvd
+      emailmessage
+      gopher
+      journal
+      manuscript
+      newsposting
+      part
+      refentry
+      section
+      series
+      set
+      webpage
+      wiki
+   }
+}
+/**
+ * The name of a city in an address
+ */
+tag city ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of a class, in the object-oriented programming sense
+ */
+tag classname ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The syntax summary for a class definition
+ */
+tag classsynopsis ( ((ooclass|ooexception|oointerface)+, (classsynopsisinfo|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA language;
+	attr class	{
+      "class"
+      "interface"
+   }
+}
+/**
+ * Information supplementing the contents of a ClassSynopsis
+ */
+tag classsynopsisinfo ( (#PCDATA|info|textobject|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype|lineannotation|co)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr continuation	{
+      continues
+      restarts
+   }
+	attr linenumbering {
+      numbered
+      unnumbered
+   }
+	attr NMTOKEN startinglinenumber;
+	attr CDATA language;
+	attr xml:space	{
+      preserve
+   }
+}
+/**
+ * A syntax summary for a software command
+ */
+tag cmdsynopsis ( ((info)?, (command|arg|group|sbr)+, (synopfragment)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA sepchar;
+	attr CDATA cmdlength;
+	attr CDATA label;
+}
+/**
+ * The location of a callout embedded in text
+ */
+tag co ( EMPTY ) : commonAttributes, xmlnsAndRole {
+	attr IDREFS linkends;
+	attr CDATA label;
+}
+/**
+ * An inline code fragment
+ */
+tag code ( (#PCDATA|"function"|parameter|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA language;
+}
+/**
+ * Specifications for a column in an HTML table
+ */
+tag col ( EMPTY ) : commonAttributes, xmlnsAndRole {
+	attr CDATA "class";
+	attr CDATA style;
+	attr CDATA title;
+	attr CDATA lang;
+	attr CDATA onclick;
+	attr CDATA ondblclick;
+	attr CDATA onmousedown;
+	attr CDATA onmouseup;
+	attr CDATA onmouseover;
+	attr CDATA onmousemove;
+	attr CDATA onmouseout;
+	attr CDATA onkeypress;
+	attr CDATA onkeydown;
+	attr CDATA onkeyup;
+	attr NMTOKEN span;
+	attr CDATA width;
+	attr align {
+      left
+      center
+      right
+      justify
+      char
+   }
+	attr CDATA char;
+	attr CDATA charoff;
+	attr valign {
+      top
+      middle
+      bottom
+      baseline
+   }
+}
+/**
+ * A group of columns in an HTML table
+ */
+tag colgroup ( ((col)*) ) : commonAttributes, xmlnsAndRole {
+	attr CDATA "class";
+	attr CDATA style;
+	attr CDATA title;
+	attr CDATA lang;
+	attr CDATA onclick;
+	attr CDATA ondblclick;
+	attr CDATA onmousedown;
+	attr CDATA onmouseup;
+	attr CDATA onmouseover;
+	attr CDATA onmousemove;
+	attr CDATA onmouseout;
+	attr CDATA onkeypress;
+	attr CDATA onkeydown;
+	attr CDATA onkeyup;
+	attr NMTOKEN span;
+	attr CDATA width;
+	attr align {
+      left
+      center
+      right
+      justify
+      char
+   }
+	attr CDATA char;
+	attr CDATA charoff;
+	attr valign {
+      top
+      middle
+      bottom
+      baseline
+   }
+}
+/**
+ * Identifies a collaborator
+ */
+tag collab ( ((person|personname|org|orgname)+, (affiliation)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of a collaborator
+ */
+tag collabname () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Text at the back of a book describing facts about its production
+ */
+tag colophon ( (((title|titleabbrev|subtitle)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Specifications for a column in a table
+ */
+tag colspec ( EMPTY ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr MNTOKEN colnum;
+	attr CDATA char;
+	attr colsep {
+      0
+      1
+   }
+	attr CDATA colwidth;
+	attr CDATA charoff;
+	attr CDATA colname;
+	attr rowsep {
+      0
+      1
+   }
+	attr align {
+      center
+      char
+      justify
+      left
+      right
+   }
+}
+/**
+ * The name of an executable program or other software command
+ */
+tag command ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Data, generally text, displayed or presented by a computer
+ */
+tag computeroutput ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|prompt|envar|filename|command|computeroutput|userinput|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|co|"tag"|markup|token|symbol|literal|code|constant|email|uri)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The dates of a conference for which a document was written
+ */
+tag confdates ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A wrapper for document meta-information about a conference
+ */
+tag confgroup ( ((confdates|conftitle|confnum|confsponsor|address)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An identifier, frequently numerical, associated with a conference for which a document was written
+ */
+tag confnum ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The sponsor of a conference for which a document was written
+ */
+tag confsponsor ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The title of a conference for which a document was written
+ */
+tag conftitle ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A programming or system constant
+ */
+tag constant ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      limit
+   }
+}
+/**
+ * A constraint in an EBNF production
+ */
+tag constraint ( EMPTY ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The definition of a constraint in an EBNF production
+ */
+tag constraintdef ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A syntax summary for a constructor
+ */
+tag constructorsynopsis ( ((modifier)*, (methodname)?, ((methodparam)+|(void)?), (exceptionname)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA language;
+}
+/**
+ * The contract number of a document
+ */
+tag contractnum ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The sponsor of a contract
+ */
+tag contractsponsor ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A summary of the contributions made to a document by a credited source
+ */
+tag contrib ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Copyright information about a document
+ */
+tag copyright ( ((year)+, (holder)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A cross reference to a co
+ */
+tag coref ( EMPTY ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+}
+/**
+ * A corporate author, as opposed to an individual
+ */
+tag corpauthor () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A corporation or organization credited in a document
+ */
+tag corpcredit () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of a corporation
+ */
+tag corpname () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of a country
+ */
+tag country ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Cover page
+ */
+tag cover ( ((anchor|para|formalpara|simpara|itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of a database, or part of a database
+ */
+tag database ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      altkey
+      constraint
+      datatype
+      field
+      foreignkey
+      group
+      index
+      key1
+      key2
+      name
+      primarykey
+      "procedure"
+      record
+      rule
+      secondarykey
+      table
+      user
+      view
+   }
+}
+/**
+ * The date of publication or revision of a document
+ */
+tag date ( (#PCDATA)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A wrapper for the dedication section of a book
+ */
+tag dedication ( (((title|titleabbrev|subtitle)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * A syntax summary for a destructor
+ */
+tag destructorsynopsis ( ((modifier)*, (methodname)?, ((methodparam)+|(void)?), (exceptionname)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA language;
+}
+/**
+ * The name or number of an edition of a document
+ */
+tag edition ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of the editor of a document
+ */
+tag editor ( ((personname, (personblurb|affiliation|email|uri|address|contrib)*)|(orgname, (orgdiv|affiliation|email|uri|address|contrib)*)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An email address
+ */
+tag email ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Emphasized text
+ */
+tag emphasis ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A cell in a table
+ */
+tag entry ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype|itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|revhistory|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|para|formalpara|simpara)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr valign	{
+      bottom
+      middle
+      top
+   }
+	attr CDATA char;
+	attr colsep	{
+      0
+      1
+   }
+	attr CDATA charoff;
+	attr NMTOKEN morerows;
+	attr CDATA colname;
+	attr CDATA namest;
+	attr CDATA spanname;
+	attr CDATA nameend;
+	attr rowsep	{
+      0
+      1
+   }
+	attr rotate	{
+      0
+      1
+   }
+	attr align {
+      center
+      char
+      justify
+      left
+      right
+   }
+}
+/**
+ * A subtable appearing in place of an Entry in a table
+ */
+tag entrytbl ( ((colspec)*, (spanspec)*, (thead)?, tbody) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA char;
+	attr CDATA charoff;
+	attr CDATA colname;
+	attr CDATA namest;
+	attr CDATA spanname;
+	attr CDATA nameend;
+	attr CDATA tgroupstyle;
+	attr NMTOKEN cols;
+	attr colsep	{
+      0
+      1
+   }
+	attr rowsep	{
+      0
+      1
+   }
+	attr align {
+      center
+      char
+      justify
+      left
+      right
+   }
+}
+/**
+ * A software environment variable
+ */
+tag envar ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A short inscription at the beginning of a document or component
+ */
+tag epigraph ( ((info)?, (attribution)?, (anchor|para|formalpara|simpara|literallayout)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A displayed mathematical equation
+ */
+tag equation ( (((title|titleabbrev)*, (info)?), (alt)?, ((mediaobject)+|(mathphrase)+), (caption)?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr pgwide {
+      0
+      1
+   }
+	attr CDATA floatstyle;
+}
+/**
+ * An error code
+ */
+tag errorcode ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An error name
+ */
+tag errorname ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An error message.
+ */
+tag errortext ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The classification of an error message
+ */
+tag errortype ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A formal example, with a title
+ */
+tag example ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, (caption)?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA floatstyle;
+	attr NMTOKEN width;
+	attr pgwide {
+      0
+      1
+   }
+}
+/**
+ * The name of an exception
+ */
+tag exceptionname ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of an exception
+ */
+tag extendedlink ( ((locator|arc)+)  ) : commonAttributes, xmlnsAndRole {
+}
+/**
+ * A fax number
+ */
+tag fax ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of a field in a class definition
+ */
+tag fieldsynopsis ( ((modifier)*, (type)?, varname, (initializer)?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA language;
+}
+/**
+ * A formal figure, generally an illustration, with a title
+ */
+tag figure ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, (caption)?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr pgwide {
+      0
+      1
+   }
+	attr CDATA floatstyle;
+}
+/**
+ * The name of a file
+ */
+tag filename ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA path;
+	attr class {
+      devicefile
+      directory
+      extension
+      headerfile
+      libraryfile
+      partition
+      symlink
+   }
+}
+/**
+ * The first name of a person
+ */
+tag firstname ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The first occurrence of a term
+ */
+tag firstterm ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA baseform;
+}
+/**
+ * A footnote
+ */
+tag footnote ( ((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr NMTOKEN label;
+}
+/**
+ * A cross reference to a footnote (a footnote mark)
+ */
+tag footnoteref ( EMPTY ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+}
+/**
+ * A word or phrase in a language other than the primary language of the document
+ */
+tag foreignphrase ( (#PCDATA|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|subscript|superscript|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|inlinemediaobject|indexterm|xref|link|olink|anchor|biblioref)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A paragraph with a title
+ */
+tag formalpara ( (((title|titleabbrev)*, (info)?), (indexterm)*, para) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A function (subroutine) name and its return type
+ */
+tag funcdef ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|type|"function")* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Parameters for a function referenced through a function pointer in a synopsis
+ */
+tag funcparams ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The prototype of a function
+ */
+tag funcprototype ( ((modifier)*, funcdef, (void|varargs|((paramdef)+, (varargs)?)), (modifier)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The syntax summary for a function definition
+ */
+tag funcsynopsis ( ((info)?, (funcsynopsisinfo|funcprototype)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA language;
+}
+/**
+ * Information supplementing the FuncDefs of a FuncSynopsis
+ */
+tag funcsynopsisinfo ( (#PCDATA|info|textobject|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype|lineannotation|co)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr continuation	{
+      continues
+      restarts
+   }
+	attr linenumbering	{
+      numbered
+      unnumbered
+   }
+	attr NMTOKEN startinglinenumber;
+	attr CDATA language;
+	attr "xml:space"	{ 
+      preserve 
+   }
+}
+/**
+ * The name of a function or subroutine, as in a programming language
+ */
+tag "function" ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A glossary
+ */
+tag glossary ( (((title|titleabbrev|subtitle)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, ((glossdiv)*|(glossentry)*), (bibliography)?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a Glossary
+ */
+tag glossaryinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A definition in a GlossEntry
+ */
+tag glossdef ( ((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, (glossseealso)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA subject;
+}
+/**
+ * A division in a Glossary
+ */
+tag glossdiv ( (((title|titleabbrev|subtitle)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, (glossentry)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * An entry in a Glossary or GlossList
+ */
+tag glossentry ( (glossterm, (acronym)?, (abbrev)?, (indexterm)*, (glosssee|(glossdef)+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA sortas;
+}
+/**
+ * A wrapper for a set of GlossEntrys
+ */
+tag glosslist ( ((((title|titleabbrev)*, (info)?))?, (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, (glossentry)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A cross-reference from one GlossEntry to another
+ */
+tag glosssee ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr IDREF otherterm;
+}
+/**
+ * A cross-reference from one GlossEntry to another
+ */
+tag glossseealso ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr IDREF otherterm;
+}
+/**
+ * A glossary term
+ */
+tag glossterm ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA baseform;
+}
+/**
+ * A displayed graphical object (not an inline)
+ */
+tag graphic () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A graphic that contains callout areas
+ */
+tag graphicco () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A group of elements in a CmdSynopsis
+ */
+tag group ( ((arg|group|option|synopfragmentref|replaceable|sbr)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr rep	{
+      norepeat
+      repeat
+   }
+	attr choice	{
+      opt
+      plain
+      req
+   }
+}
+/**
+ * The text on a button in a GUI
+ */
+tag guibutton ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|accel)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Graphic and/or text appearing as a icon in a GUI
+ */
+tag guiicon ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|accel)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The text of a label in a GUI
+ */
+tag guilabel ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|accel)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of a menu in a GUI
+ */
+tag guimenu ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|accel)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of a terminal menu item in a GUI
+ */
+tag guimenuitem ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|accel)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of a submenu in a GUI
+ */
+tag guisubmenu ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|accel)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A physical part of a computer system
+ */
+tag hardware ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A summary of the main points of the discussed component
+ */
+tag highlights () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of the individual or organization that holds a copyright
+ */
+tag holder ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The title of a person
+ */
+tag honorific ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * rm - An HTML form
+ */
+tag html () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Pointer to external image data
+ */
+tag imagedata ( (info)? ) : commonAttributes, xmlnsAndRole {
+	attr CDATA format;
+	attr CDATA fileref;
+	attr ENTITY entityref;
+	attr align {
+      center
+      char
+      justify
+      left
+      right
+   }
+	attr CDATA valign	{
+      bottom
+      middle
+      top
+   }
+	attr CDATA width;
+	attr CDATA contentwidth;
+	attr CDATA scalefit {
+      0
+      1
+   }
+	attr NMTOKEN scale;
+	attr CDATA depth;
+	attr CDATA contentdepth;
+}
+/**
+ * A wrapper for image data and its associated meta-information
+ */
+tag imageobject ( ((info)?, (imagedata)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A wrapper for an image object with callouts
+ */
+tag imageobjectco ( ((info)?, areaspec, (imageobject)+, (calloutlist)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An admonition set off from the text
+ */
+tag important ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An index
+ */
+tag index ( (((title|titleabbrev|subtitle)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, ((indexdiv)*|(indexentry)*|segmentedlist)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+   attr CDATA type;
+}
+/**
+ * A division in an index
+ */
+tag indexdiv ( (((title|titleabbrev|subtitle)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, ((indexentry)+|segmentedlist)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * An entry in an index
+ */
+tag indexentry ( (primaryie, (seeie|seealsoie)*, ((secondaryie, (seeie|seealsoie|tertiaryie)*))*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Meta-information for an Index
+ */
+tag indexinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A wrapper for terms to be indexed
+ */
+tag indexterm ( ((primary)?, (((secondary, (((tertiary, ((see|(seealso)+))?)|see|(seealso)+))?)|see|(seealso)+))?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr significance {
+      normal
+      preferred
+   }
+	attr IDREF startref;
+	attr IDREFS zone;
+	attr CDATA pagenum;
+	attr scope {
+      all
+      global
+      local
+   }
+	attr CDATA type;
+	attr class {
+      singular
+      startofrange
+      endofrange
+   }
+}
+/**
+ * Information
+ */
+tag info ( ((title|titleabbrev|subtitle)*|(abstract|address|artpagenums|author|authorgroup|authorinitials|bibliocoverage|biblioid|bibliosource|collab|confgroup|contractsponsor|contractnum|copyright|cover|date|edition|editor|issuenum|keywordset|legalnotice|mediaobject|org|orgname|othercredit|pagenums|printhistory|pubdate|publisher|publishername|releaseinfo|revhistory|seriesvolnums|subjectset|volumenum|annotation|extendedlink|bibliomisc|bibliomset|bibliorelation|biblioset|itermset|productname|productnumber)*)* ) : commonAttributes, xmlnsAndRole {
+}
+/**
+ * A displayed mathematical equation without a title
+ */
+tag informalequation ( ((info)?, (alt)?, ((mediaobject)+|(mathphrase)+), (caption)?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A displayed example without a title
+ */
+tag informalexample ( ((info)?, (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, (caption)?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA floatstyle;
+	attr NMTOKEN width;
+}
+/**
+ * A untitled figure
+ */
+tag informalfigure ( ((info)?, (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, (caption)?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr pgwide {
+      0
+      1
+   }
+	attr CDATA floatstyle;
+}
+/**
+ * A table without a title
+ */
+tag informaltable ( (info?, ((textobject*, (mediaobject+|tgroup+))|((col*|colgroup*), thead?, tfoot?, (tbody+|tr+)))) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA tabstyle;
+	attr CDATA floatstyle;
+	attr orient {
+      land
+      port
+   }
+	attr colsep	{
+      0
+      1
+   }
+	attr rowsep	{
+      0
+      1
+   }
+	attr frame {
+      all
+      bottom
+      none
+      sides
+      top
+      topbot
+      void
+      above
+      below
+      hsides
+      lhs
+      rhs
+      vsides
+      box
+      border
+   }
+	attr pgwide	{
+      0
+      1
+   }
+	attr rowheader {
+      firstcol
+      norowheader
+   }
+	attr CDATA "class";
+	attr CDATA style;
+	attr CDATA title;
+	attr CDATA lang;
+	attr CDATA onclick;
+	attr CDATA ondblclick;
+	attr CDATA onmousedown;
+	attr CDATA onmouseup;
+	attr CDATA onmouseover;
+	attr CDATA onmousemove;
+	attr CDATA onmouseout;
+	attr CDATA onkeypress;
+	attr CDATA onkeydown;
+	attr CDATA onkeyup;
+	attr CDATA summary;
+	attr CDATA width;
+	attr NMTOKEN border;
+	attr rules {
+      none
+      groups
+      rows
+      cols
+      all
+   }
+	attr CDATA cellspacing;
+	attr CDATA cellpadding;
+}
+/**
+ * The initializer for a FieldSynopsis
+ */
+tag initializer ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A mathematical equation or expression occurring inline
+ */
+tag inlineequation ( ((alt)?, ((inlinemediaobject)+|(mathphrase)+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An object containing or pointing to graphical data that will be rendered inline
+ */
+tag inlinegraphic () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An inline media object (video, audio, image, and so on)
+ */
+tag inlinemediaobject ( ((info)?, (alt)?, (videoobject|audioobject|imageobject|textobject|imageobjectco)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An element of a GUI
+ */
+tag "interface" () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of an interface
+ */
+tag interfacename ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An inventory part number
+ */
+tag invpartnumber () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The International Standard Book Number of a document
+ */
+tag isbn () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The International Standard Serial Number of a periodical
+ */
+tag issn () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The number of an issue of a journal
+ */
+tag issuenum ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A list in which each entry is marked with a bullet or other dingbat
+ */
+tag itemizedlist ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, (listitem)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr spacing {
+      compact
+      normal
+   }
+	attr NMTOKEN mark;
+}
+/**
+ * A set of index terms in the meta-information of a document
+ */
+tag itermset ( ((indexterm)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The title of an individual in an organization
+ */
+tag jobtitle ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The text printed on a key on a keyboard
+ */
+tag keycap ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr "function" {
+      alt
+      backspace
+      command
+      control
+      delete
+      down
+      end
+      enter
+      escape
+      home
+      insert
+      left
+      meta
+      option
+      pagedown
+      pageup
+      right
+      shift
+      space
+      tab
+      up
+      other
+   }
+	attr CDATA otherfunction;
+}
+/**
+ * The internal, frequently numeric, identifier for a key on a keyboard
+ */
+tag keycode ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A combination of input actions
+ */
+tag keycombo ( ((keycap|keycombo|keysym|mousebutton)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+   attr action	{
+      click
+      double-click
+      press
+      seq
+      simul
+      other
+   }
+   attr CDATA otheraction;
+}
+/**
+ * The symbolic name of a key on a keyboard
+ */
+tag keysym ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * One of a set of keywords describing the content of a document
+ */
+tag keyword ( (#PCDATA)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A set of keywords describing the content of a document
+ */
+tag keywordset ( ((keyword)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A label on a Question or Answer
+ */
+tag label ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A statement of legal obligations or requirements
+ */
+tag legalnotice ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The left-hand side of an EBNF production
+ */
+tag lhs ( (#PCDATA)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The portion of a person's name indicating a relationship to ancestors
+ */
+tag lineage ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A comment on a line in a verbatim listing
+ */
+tag lineannotation ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A hypertext link
+ */
+tag link ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA xrefstyle;
+	attr IDREF endterm;
+}
+/**
+ * A wrapper for the elements of a list item
+ */
+tag listitem ( ((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr NMTOKEN override;
+}
+/**
+ * Inline text that is some literal value
+ */
+tag literal ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A block of text in which line breaks and white space are to be reproduced faithfully
+ */
+tag literallayout ( (#PCDATA|info|textobject|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype|lineannotation|co)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr continuation	{
+      continues
+      restarts
+   }
+	attr linenumbering {
+      numbered
+      unnumbered
+   }
+	attr NMTOKEN startinglinenumber;
+	attr CDATA language;
+	attr "xml:space" {
+      preserve
+   }
+	attr class {
+      monospaced
+      normal
+   }
+}
+/**
+ * Locator
+ */
+tag locator ( EMPTY ) : commonAttributes, xmlnsAndRole {
+	attr NMTOKEN "xlink:label";
+}
+/**
+ * A list of the titles of formal objects (as tables or figures) in a document
+ */
+tag lot () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An entry in a list of titles
+ */
+tag lotentry () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A reference volume number
+ */
+tag manvolnum ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A string of formatting markup in text that is to be represented literally
+ */
+tag markup ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A mathematical phrase, an expression that can be represented with ordinary text and a small amount of markup
+ */
+tag mathphrase ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|emphasis)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A name that identifies the physical medium on which some information resides
+ */
+tag medialabel () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A displayed media object (video, audio, image, etc.)
+ */
+tag mediaobject ( ((info)?, (alt)?, (videoobject|audioobject|imageobject|textobject|imageobjectco)+, (caption)?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A media object that contains callouts
+ */
+tag mediaobjectco () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An element of a simple list
+ */
+tag member ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A selection or series of selections from a menu
+ */
+tag menuchoice ( ((shortcut)?, (guibutton|guiicon|guilabel|guimenu|guimenuitem|guisubmenu)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of a method
+ */
+tag methodname ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Parameters to a method
+ */
+tag methodparam ( ((modifier|type)*, ((parameter, initializer?)|funcparams), (modifier)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr rep	   {
+      norepeat
+      repeat
+   }
+	attr choice	{
+      opt
+      plain
+      req
+   }
+}
+/**
+ * A syntax summary for a method
+ */
+tag methodsynopsis ( ((modifier)*, ((type|void))?, methodname, ((methodparam)+|void), (exceptionname)*, (modifier)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA language;
+}
+/**
+ * th - A MathML equation
+ */
+tag mml () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Application-specific information necessary for the completion of an OLink
+ */
+tag modespec () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Modifiers in a synopsis
+ */
+tag modifier ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr "xml:space" {preserve}
+}
+/**
+ * The conventional name of a mouse button
+ */
+tag mousebutton ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A message in a message set
+ */
+tag msg ( (((title|titleabbrev)*, (info)?), msgmain, (msgsub|msgrel)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The audience to which a message in a message set is relevant
+ */
+tag msgaud ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A wrapper for an entry in a message set
+ */
+tag msgentry ( ((msg)+, (msginfo)?, (msgexplan)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Explanatory material relating to a message in a message set
+ */
+tag msgexplan ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Information about a message in a message set
+ */
+tag msginfo ( ((msglevel|msgorig|msgaud)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The level of importance or severity of a message in a message set
+ */
+tag msglevel ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The primary component of a message in a message set 
+ */
+tag msgmain ( (((title|titleabbrev)*, (info)?), msgtext) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The origin of a message in a message set
+ */
+tag msgorig ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A related component of a message in a message set
+ */
+tag msgrel ( (((title|titleabbrev)*, (info)?), msgtext) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A detailed set of messages, usually error messages
+ */
+tag msgset ( (((title|titleabbrev)*, (info)?), ((msgentry)+|(simplemsgentry)+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A subcomponent of a message in a message set
+ */
+tag msgsub ( (((title|titleabbrev)*, (info)?), msgtext) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The actual text of a message component in a message set
+ */
+tag msgtext ( ((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A non-terminal in an EBNF production
+ */
+tag nonterminal ( (#PCDATA)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA def;
+}
+/**
+ * A message set off from the text
+ */
+tag note ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Meta-information for an object
+ */
+tag objectinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A link that addresses its target indirectly, through an entity
+ */
+tag olink ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, xmlnsAndRole {
+	attr CDATA targetdoc;
+	attr CDATA role;
+	attr CDATA xrefstyle;
+	attr CDATA localinfo;
+	attr CDATA targetptr;
+	attr CDATA type;
+}
+/**
+ * A class in an object-oriented programming language
+ */
+tag ooclass ( (("package"|modifier)*, classname) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An exception in an object-oriented programming language
+ */
+tag ooexception ( (("package"|modifier)*, exceptionname) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An interface in an object-oriented programming language
+ */
+tag oointerface ( (("package"|modifier)*, interfacename) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An option for a software command
+ */
+tag option ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Optional information
+ */
+tag optional ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A list in which each entry is marked with a sequentially incremented label
+ */
+tag orderedlist ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, (listitem)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr spacing {
+      compact
+      normal
+   }
+	attr continuation {
+      continues
+      restarts
+   }
+	attr NMTOKEN startingnumber;
+	attr inheritnum {
+      ignore
+      inherit
+   }
+	attr numeration {
+      arabic
+      upperalpha
+      loweralpha
+      upperroman
+      lowerroman
+   }
+}
+/**
+ * A division of an organization
+ */
+tag orgdiv ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of an organization other than a corporation 
+ */
+tag orgname ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      consortium
+      corporation
+      informal
+      nonprofit
+      other
+   }
+	attr CDATA otherclass;
+}
+/**
+ * Uncategorized information in address
+ */
+tag otheraddr ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A person or entity, other than an author or editor, credited in a document
+ */
+tag othercredit ( ((personname, (personblurb|affiliation|email|uri|address|contrib)*)|(orgname, (orgdiv|affiliation|email|uri|address|contrib)*)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      copyeditor
+      graphicdesigner
+      other
+      productioneditor
+      technicaleditor
+      translator
+   }
+	attr NMTOKEN otherclass;
+
+}
+/**
+ * A component of a persons name that is not a first name, surname, or lineage
+ */
+tag othername ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A package
+ */
+tag "package" ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The numbers of the pages in a book, for use in a bibliographic entry
+ */
+tag pagenums ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A paragraph
+ */
+tag para ( (#PCDATA|info|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|a (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) bbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|o (personname, (address|affiliation|email|uri|personblurb)*) rg|orgname|e (orgname, (address|affiliation|email|uri|orgdiv)*) ditor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype|itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|revhistory|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Information about a function parameter in a programming language
+ */
+tag paramdef ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|initializer|type|parameter|funcparams)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr choice {
+      opt
+      req
+   }
+}
+/**
+ * A value or a symbolic reference to a value
+ */
+tag parameter ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      command
+      "function"
+      option
+   }
+}
+/**
+ * A division in a book
+ */
+tag part ( (((title|titleabbrev|subtitle)*, (info)?), (partintro)?, (glossary|bibliography|index|toc|dedication|acknowledgements|preface|chapter|appendix|article|colophon|refentry|reference)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a Part
+ */
+tag partinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An introduction to the contents of a part
+ */
+tag partintro ( (((title|titleabbrev|subtitle)*, (info)?), (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((((section)+, (simplesect)*)|(simplesect)+|((sect1)+, (simplesect)*)|(refentry)+))?)|((section)+, (simplesect)*)|(simplesect)+|((sect1)+, (simplesect)*)|(refentry)+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * A short description or note about a person
+ */
+tag personblurb ( (((title|titleabbrev)*, (info)?), (anchor|para|formalpara|simpara)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The personal name of an individual
+ */
+tag personname ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|honorific|firstname|surname|lineage|othername)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A telephone number
+ */
+tag phone ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A span of text
+ */
+tag phrase ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A post office box in an address
+ */
+tag pob ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A postal code in an address
+ */
+tag postcode ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Introductory matter preceding the first chapter of a book
+ */
+tag preface ( (((title|titleabbrev|subtitle)*, (info)?), ((glossary|bibliography|index|toc)*, (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((((section)+, (simplesect)*)|(simplesect)+|((sect1)+, (simplesect)*)|(refentry)+))?)|((section)+, (simplesect)*)|(simplesect)+|((sect1)+, (simplesect)*)|(refentry)+), (glossary|bibliography|index|toc)*)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a Preface
+ */
+tag prefaceinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The primary word or phrase under which an index term should be sorted
+ */
+tag primary ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA sortas;
+}
+/**
+ * A primary term in an index entry, not in the text
+ */
+tag primaryie ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, xmlnsAndRole {
+	attr IDREFS linkends;
+}
+/**
+ * The printing history of a document
+ */
+tag printhistory ( ((anchor|para|formalpara|simpara)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A list of operations to be performed in a well-defined sequence
+ */
+tag "procedure" ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, (step)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A production in a set of EBNF productions
+ */
+tag production ( (lhs, rhs, (constraint)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A cross-reference to an EBNF production
+ */
+tag productionrecap ( EMPTY ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A set of EBNF productions
+ */
+tag productionset ( (((title|titleabbrev)*, (info)?), (production|productionrecap)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The formal name of a product
+ */
+tag productname ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      copyright
+      registered
+      service
+      trade
+   }
+}
+/**
+ * A number assigned to a product
+ */
+tag productnumber ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A literal listing of all or part of a program
+ */
+tag programlisting ( (#PCDATA|info|textobject|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype|lineannotation|co)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr continuation	{continues|restarts}
+	attr linenumbering	{numbered|unnumbered}
+	attr NMTOKEN startinglinenumber;
+	attr CDATA language;
+	attr xml:space	{preserve}
+	attr NMTOKEN width;
+}
+/**
+ * A program listing with associated areas used in callouts
+ */
+tag programlistingco ( ((info)?, areaspec, programlisting, (calloutlist)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A character or string indicating the start of an input field in a computer display
+ */
+tag prompt ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|co)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A unit of data associated with some part of a computer system
+ */
+tag "property" ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The date of publication of a document
+ */
+tag pubdate ( (#PCDATA)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The publisher of a document
+ */
+tag publisher ( (publishername, (address)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of the publisher of a document
+ */
+tag publishername ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A number assigned to a publication other than an ISBN or ISSN or inventory part number
+ */
+tag pubsnumber () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A titled division in a QandASet
+ */
+tag qandadiv ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, ((qandadiv)+|(qandaentry)+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A question/answer set within a QandASet
+ */
+tag qandaentry ( (((title|titleabbrev)*, (info)?), question, (answer)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A question-and-answer set
+ */
+tag qandaset ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, ((qandadiv)+|(qandaentry)+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr defaultlabel {
+      none
+      number
+      qanda
+   }
+}
+/**
+ * A question in a QandASet
+ */
+tag question ( ((label)?, (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An inline quotation
+ */
+tag quote ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The scope or other indication of applicability of a reference entry
+ */
+tag refclass ( (#PCDATA|application)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A description of the topic of a reference page
+ */
+tag refdescriptor ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A reference page (originally a UNIX man-style reference page)
+ */
+tag refentry ( ((indexterm)*, (info)?, (refmeta)?, (refnamediv)+, (refsynopsisdiv)?, ((refsection)+|(refsect1)+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a Refentry
+ */
+tag refentryinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The title of a reference page
+ */
+tag refentrytitle ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A collection of reference entries
+ */
+tag reference ( (((title|titleabbrev|subtitle)*, (info)?), (partintro)?, (refentry)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a Reference
+ */
+tag referenceinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Meta-information for a reference entry
+ */
+tag refmeta ( ((indexterm)*, refentrytitle, (manvolnum)?, (refmiscinfo)*, (indexterm)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Meta-information for a reference entry other than the title and volume number
+ */
+tag refmiscinfo ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      source
+      version
+      manual
+      sectdesc
+      software
+      other
+   }
+	attr CDATA otherclass;
+}
+/**
+ * The name of (one of) the subject(s) of a reference page
+ */
+tag refname ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name, purpose, and classification of a reference page
+ */
+tag refnamediv ( ((refdescriptor)?, (refname)+, refpurpose, (refclass)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A short (one sentence) synopsis of the topic of a reference page
+ */
+tag refpurpose ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A major subsection of a reference entry
+ */
+tag refsect1 ( (((title|titleabbrev|subtitle)*, (info)?), (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((refsect2)+)?)|(refsect2)+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a RefSect1
+ */
+tag refsect1info () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A subsection of a RefSect1
+ */
+tag refsect2 ( (((title|titleabbrev|subtitle)*, (info)?), (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((refsect3)+)?)|(refsect3)+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a RefSect2
+ */
+tag refsect2info () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A subsection of a RefSect2
+ */
+tag refsect3 ( (((title|titleabbrev|subtitle)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a RefSect3
+ */
+tag refsect3info () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A recursive section in a refentry
+ */
+tag refsection ( (((title|titleabbrev|subtitle)*, (info)?), (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, (refsection)*)|(refsection)+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a refsection
+ */
+tag refsectioninfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A syntactic synopsis of the subject of the reference page
+ */
+tag refsynopsisdiv ( (((title|titleabbrev|subtitle)*, (info)?), (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, (((refsection)+|(refsect2)+))?)|(refsection)+|(refsect2)+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Meta-information for a RefSynopsisDiv
+ */
+tag refsynopsisdivinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Information about a particular release of a document
+ */
+tag releaseinfo ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A remark (or comment) intended for presentation in a draft manuscript
+ */
+tag remark ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Content that may or must be replaced by the user
+ */
+tag replaceable ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|co)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      command
+      "function"
+      option
+   }
+}
+/**
+ * The value returned by a function
+ */
+tag returnvalue ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A extended description of a revision to a document
+ */
+tag revdescription ( ((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A history of the revisions to a document
+ */
+tag revhistory ( (((title|titleabbrev)*, (info)?), (revision)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An entry describing a single revision in the history of the revisions to a document
+ */
+tag revision ( ((revnumber)?, date, (authorinitials|author)*, ((revremark|revdescription))?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A document revision number
+ */
+tag revnumber ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A description of a revision to a document
+ */
+tag revremark ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The right-hand side of an EBNF production
+ */
+tag rhs ( (#PCDATA|nonterminal|lineannotation|sbr)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A row in a table
+ */
+tag row ( ((entry|entrytbl)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr rowsep {
+      0
+      1
+   }
+	attr valign {
+      bottom
+      middle
+      top
+   }
+}
+/**
+ * An explicit line break in a command synopsis
+ */
+tag sbr ( EMPTY ) : commonAttributes, xmlnsAndRole {
+}
+/**
+ * Text that a user sees or might see on a computer screen
+ */
+tag screen ( (#PCDATA|info|textobject|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype|lineannotation|co)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr continuation {
+      continues
+      restarts
+   }
+	attr linenumbering {
+      numbered
+      unnumbered
+   }
+	attr NMTOKEN startinglinenumber;
+	attr CDATA language;
+	attr "xml:space" {
+      preserve
+   }
+	attr NMTOKEN width;
+}
+/**
+ * A screen with associated areas used in callouts
+ */
+tag screenco ( ((info)?, areaspec, screen, (calloutlist)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Information about how a screen shot was produced
+ */
+tag screeninfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A representation of what the user sees or might see on a computer screen
+ */
+tag screenshot ( (((title|titleabbrev|subtitle)*, (info)?), mediaobject) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A secondary word or phrase in an index term
+ */
+tag secondary ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA sortas;
+}
+/**
+ * A secondary term in an index entry, rather than in the text
+ */
+tag secondaryie ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, xmlnsAndRole {
+	attr IDREFS linkends;
+}
+/**
+ * A top-level section of document
+ */
+tag sect1 ( (((title|titleabbrev|subtitle)*, (info)?), (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((((sect2)+, (simplesect)*)|(simplesect)+))?)|((sect2)+, (simplesect)*)|(simplesect)+), (glossary|bibliography|index|toc)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a Sect1
+ */
+tag sect1info () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A subsection within a Sect1
+ */
+tag sect2 ( (((title|titleabbrev|subtitle)*, (info)?), (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((((sect3)+, (simplesect)*)|(simplesect)+))?)|((sect3)+, (simplesect)*)|(simplesect)+), (glossary|bibliography|index|toc)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a Sect2
+ */
+tag sect2info () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A subsection within a Sect2
+ */
+tag sect3 ( (((title|titleabbrev|subtitle)*, (info)?), (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((((sect4)+, (simplesect)*)|(simplesect)+))?)|((sect4)+, (simplesect)*)|(simplesect)+), (glossary|bibliography|index|toc)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a Sect3
+ */
+tag sect3info () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A subsection within a Sect3
+ */
+tag sect4 ( (((title|titleabbrev|subtitle)*, (info)?), (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((((sect5)+, (simplesect)*)|(simplesect)+))?)|((sect5)+, (simplesect)*)|(simplesect)+), (glossary|bibliography|index|toc)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a Sect4
+ */
+tag sect4info () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A subsection within a Sect4
+ */
+tag sect5 ( (((title|titleabbrev|subtitle)*, (info)?), (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((simplesect)+)?)|(simplesect)+), (glossary|bibliography|index|toc)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a Sect5
+ */
+tag sect5info () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A recursive section
+ */
+tag section ( (((title|titleabbrev|subtitle)*, (info)?), (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((((section)+, (simplesect)*)|(simplesect)+|(refentry)+))?)|((section)+, (simplesect)*)|(simplesect)+|(refentry)+), (glossary|bibliography|index|toc)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Meta-information for a recursive section
+ */
+tag sectioninfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Part of an index term directing the reader instead to another entry in the index
+ */
+tag see ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Part of an index term directing the reader also to another entry in the index
+ */
+tag seealso ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A See also entry in an index, rather than in the text
+ */
+tag seealsoie ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A See entry in an index, rather than in the text
+ */
+tag seeie ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An element of a list item in a segmented list
+ */
+tag seg ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A list item in a segmented list
+ */
+tag seglistitem ( ((seg)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A segmented list, a list of sets of elements
+ */
+tag segmentedlist ( (((title|titleabbrev)*, (info)?), (segtitle)+, (seglistitem)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The title of an element of a list item in a segmented list
+ */
+tag segtitle ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Numbers of the volumes in a series of books
+ */
+tag seriesvolnums ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A collection of books
+ */
+tag set ( (((title|titleabbrev|subtitle)*, (info)?), (toc)?, (set|book)+, (setindex)?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * An index to a set of books
+ */
+tag setindex ( (((title|titleabbrev|subtitle)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, ((indexdiv)*|(indexentry)*)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+   attr CDATA type;
+}
+/**
+ * Meta-information for a SetIndex
+ */
+tag setindexinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Meta-information for a Set
+ */
+tag setinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A component of SGML markup
+ */
+tag sgmltag () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A brief description of an affiliation
+ */
+tag shortaffil ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A key combination for an action that is also accessible through a menu
+ */
+tag shortcut ( ((keycap|keycombo|keysym|mousebutton)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr action	{
+      click
+      double-click
+      press
+      seq
+      simul
+      other
+   }
+	attr CDATA otheraction;
+}
+/**
+ * A portion of a document that is isolated from the main narrative flow
+ */
+tag sidebar ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Meta-information for a Sidebar
+ */
+tag sidebarinfo () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A paragraph that contains only text and inline markup, no block elements
+ */
+tag simpara ( (#PCDATA|info|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An undecorated list of single words or short phrases
+ */
+tag simplelist ( ((member)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr type {
+      horiz
+      vert
+      inline
+   }
+	attr NMTOKEN columns;
+}
+/**
+ * A wrapper for a simpler entry in a message set
+ */
+tag simplemsgentry ( (msgtext, (msgexplan)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA msgaud;
+	attr CDATA msgorig;
+	attr CDATA msglevel;
+}
+/**
+ * A section of a document with no subdivisions
+ */
+tag simplesect ( (((title|titleabbrev|subtitle)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA label;
+	attr CDATA status;
+}
+/**
+ * Formatting information for a spanned column in a table
+ */
+tag spanspec ( EMPTY ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA spanname;
+	attr CDATA namest;
+	attr CDATA nameend;
+	attr CDATA char;
+	attr colsep	{
+      0
+      1
+   }
+	attr CDATA charoff;
+	attr rowsep	{
+      0
+      1
+   }
+	attr align {
+      center
+      char
+      justify
+      left
+      right
+   }
+}
+/**
+ * A state or province in an address
+ */
+tag state ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A unit of action in a procedure
+ */
+tag step ( (((title|titleabbrev)*, (info)?), (((itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+, ((substeps|stepalternatives), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*)?)|((substeps|stepalternatives), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*))) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr performance {
+      optional
+      required
+   }
+}
+/**
+ * Alternative steps in a procedure
+ */
+tag stepalternatives ( ((info)?, (step)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr performance {
+      optional
+      required
+   }
+}
+/**
+ * A street address in an address
+ */
+tag street ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A field in a structure (in the programming language sense)
+ */
+tag structfield () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of a structure (in the programming language sense)
+ */
+tag structname () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * One of a group of terms describing the subject matter of a document
+ */
+tag subject ( ((subjectterm)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA weight;
+}
+/**
+ * A set of terms describing the subject matter of a document
+ */
+tag subjectset ( ((subject)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr NMTOKEN scheme;
+}
+/**
+ * A term in a group of terms describing the subject matter of a document
+ */
+tag subjectterm ( (#PCDATA)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A subscript (as in H2O, the molecular formula for water)
+ */
+tag subscript ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A wrapper for steps that occur within steps in a procedure
+ */
+tag substeps ( ((step)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr performance {
+      optional
+      required
+   }
+}
+/**
+ * The subtitle of a document
+ */
+tag subtitle ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A superscript (as in x2, the mathematical notation for x multiplied by itself)
+ */
+tag superscript ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A family name; in western cultures the last name
+ */
+tag surname ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * g - An SVG graphic
+ */
+tag svg () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A name that is replaced by a value before processing
+ */
+tag symbol ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      limit
+   }
+}
+/**
+ * A portion of a CmdSynopsis broken out from the main body of the synopsis
+ */
+tag synopfragment ( ((arg|group)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A reference to a fragment of a command synopsis
+ */
+tag synopfragmentref ( (#PCDATA)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A general-purpose element for representing the syntax of commands or functions
+ */
+tag synopsis ( (#PCDATA|info|textobject|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype|lineannotation|co)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr continuation	{
+      continues
+      restarts
+   }
+	attr linenumbering {
+      numbered
+      unnumbered
+   }
+	attr NMTOKEN startinglinenumber;
+	attr CDATA language;
+	attr "xml:space" {
+      preserve
+   }
+	attr CDATA label;
+}
+/**
+ * A system-related item or term
+ */
+tag systemitem ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable|co)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class	{
+      daemon
+      domainname
+      etheraddress
+      event
+      eventhandler
+      filesystem
+      fqdomainname
+      groupname
+      ipaddress
+      library
+      macro
+      netmask
+      newsgroup
+      osname
+      process
+      protocol
+      resource
+      server
+      service
+      systemname
+      username
+   }
+}
+/**
+ * A formal table in a document
+ */
+tag table ( ((info?, (title, titleabbrev?), indexterm*, textobject*, (mediaobject+|tgroup+))|(caption, (col*|colgroup*), thead?, tfoot?, (tbody+|tr+))) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA tabstyle;
+	attr CDATA floatstyle;
+	attr CDATA orient {
+      land
+      port
+   }
+	attr colsep	{
+      0
+      1
+   }
+	attr rowsep	{
+      0
+      1
+   }
+	attr frame {
+      all
+      bottom
+      none
+      sides
+      top
+      topbot
+      void
+      above
+      below
+      hsides
+      lhs
+      rhs
+      vsides
+      box
+      border
+   }
+	attr pgwide	{
+      0
+      1
+   }
+	attr shortentry {
+      0
+      1
+   }
+	attr tocentry {
+      0
+      1
+   }
+	attr CDATA rowheader {
+      firstcol
+      norowheader
+   }
+	attr CDATA "class";
+	attr CDATA style;
+	attr CDATA title;
+	attr CDATA lang;
+	attr CDATA onclick;
+	attr CDATA ondblclick;
+	attr CDATA onmousedown;
+	attr CDATA onmouseup;
+	attr CDATA onmouseover;
+	attr CDATA onmousemove;
+	attr CDATA onmouseout;
+	attr CDATA onkeypress;
+	attr CDATA onkeydown;
+	attr CDATA onkeyup;
+	attr CDATA summary;
+	attr CDATA width;
+	attr NMTOKEN border;
+	attr rules {
+      none
+      groups
+      rows
+      cols
+      all
+   }
+	attr CDATA cellspacing;
+	attr CDATA cellpadding;
+}
+/**
+ * Tag
+ */
+tag "tag"  (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* () : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      attribute
+      attvalue
+      element
+      emptytag
+      endtag
+      genentity
+      localname
+      namespace
+      numcharref
+      paramentity
+      pi
+      prefix
+      comment
+      starttag
+      xmlpi
+   }
+	attr CDATA namespace;
+}
+/**
+ * A task to be completed
+ */
+tag task ( (((title|titleabbrev|subtitle)*, (info)?), (tasksummary)?, (taskprerequisites)?, "procedure", (example)*, (taskrelated)?) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The prerequisites for a task
+ */
+tag taskprerequisites ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Information related to a task
+ */
+tag taskrelated ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A summary of a task
+ */
+tag tasksummary ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A wrapper for the rows of a table or informal table
+ */
+tag tbody ( ((row+|tr+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr valign {
+      bottom
+      middle
+      top
+      baseline
+   }
+	attr CDATA "class";
+	attr CDATA style;
+	attr CDATA title;
+	attr CDATA lang;
+	attr CDATA onclick;
+	attr CDATA ondblclick;
+	attr CDATA onmousedown;
+	attr CDATA onmouseup;
+	attr CDATA onmouseover;
+	attr CDATA onmousemove;
+	attr CDATA onmouseout;
+	attr CDATA onkeypress;
+	attr CDATA onkeydown;
+	attr CDATA onkeyup;
+	attr CDATA align {
+      left
+      center
+      right
+      justify
+      char
+   }
+	attr CDATA char;
+	attr CDATA charoff;
+}
+/**
+ * A table entry in an HTML table
+ */
+tag td ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|sproperty|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype|itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|revhistory|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|para|formalpara|simpara)* ) : commonAttributes, xmlnsAndRole {
+	attr CDATA "class";
+	attr CDATA style;
+	attr CDATA title;
+	attr CDATA lang;
+	attr CDATA onclick;
+	attr CDATA ondblclick;
+	attr CDATA onmousedown;
+	attr CDATA onmouseup;
+	attr CDATA onmouseover;
+	attr CDATA onmousemove;
+	attr CDATA onmouseout;
+	attr CDATA onkeypress;
+	attr CDATA onkeydown;
+	attr CDATA onkeyup;
+	attr NMTOKEN span;
+	attr CDATA width;
+	attr align {
+      left
+      center
+      right
+      justify
+      char
+   }
+	attr CDATA char;
+	attr CDATA charoff;
+	attr valign {
+      top
+      middle
+      bottom
+      baseline
+   }
+	attr CDATA abbr;
+   attr CDATA axis;
+   attr CDATA headers;
+   attr scope {
+      row
+      col
+      rowgroup
+      colgroup
+   }
+	attr NMTOKEN rowspan;
+	attr NMTOKEN colspan;
+}
+/**
+ * The word or phrase being defined or described in a variable list
+ */
+tag term ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An inline term definition
+ */
+tag termdef ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA sortas;
+	attr CDATA baseform;
+}
+/**
+ * A tertiary word or phrase in an index term
+ */
+tag tertiary ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA sortas;
+}
+/**
+ * A tertiary term in an index entry, rather than in the text
+ */
+tag tertiaryie ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, xmlnsAndRole {
+	attr IDREFS linkends;
+}
+/**
+ * Pointer to external text data
+ */
+tag textdata ( (info)? ) : commonAttributes, xmlnsAndRole {
+	attr CDATA format;
+	attr CDATA fileref;
+	attr ENTITY entityref;
+	attr CDATA encoding;
+}
+/**
+ * A wrapper for a text description of an object and its associated meta-information
+ */
+tag textobject ( ((info)?, (phrase|textdata|(itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A table footer consisting of one or more rows
+ */
+tag tfoot ( ((colspec)*, (row+|tr+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr valign {
+      bottom
+      middle
+      top
+      baseline
+   }
+	attr CDATA "class";
+	attr CDATA style;
+	attr CDATA title;
+	attr CDATA lang;
+	attr CDATA onclick;
+	attr CDATA ondblclick;
+	attr CDATA onmousedown;
+	attr CDATA onmouseup;
+	attr CDATA onmouseover;
+	attr CDATA onmousemove;
+	attr CDATA onmouseout;
+	attr CDATA onkeypress;
+	attr CDATA onkeydown;
+	attr CDATA onkeyup;
+	attr CDATA align {
+      left
+      center
+      right
+      justify
+      char
+   }
+	attr CDATA char;
+	attr CDATA charoff;
+}
+/**
+ * A wrapper for the main content of a table, or part of a table
+ */
+tag tgroup ( ((colspec)*, (spanspec)*, (thead)?, (tfoot)?, tbody) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA char;
+	attr CDATA charoff;
+	attr CDATA tgroupstyle;
+	attr NMTOKEN cols;
+	attr colsep {
+      0
+      1
+   }
+	attr rowsep {
+      0
+      1
+   }
+	attr align {
+      center
+      char
+      justify
+      left
+      right
+   }
+}
+/**
+ * A table header entry in an HTML table
+ */
+tag th ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype|itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|revhistory|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|para|formalpara|simpara)* ) : commonAttributes, xmlnsAndRole {
+	attr CDATA "class";
+	attr CDATA style;
+	attr CDATA title;
+	attr CDATA lang;
+	attr CDATA onclick;
+	attr CDATA ondblclick;
+	attr CDATA onmousedown;
+	attr CDATA onmouseup;
+	attr CDATA onmouseover;
+	attr CDATA onmousemove;
+	attr CDATA onmouseout;
+	attr CDATA onkeypress;
+	attr CDATA onkeydown;
+	attr CDATA onkeyup;
+	attr NMTOKEN span;
+	attr CDATA width;
+	attr align {
+      left
+      center
+      right
+      justify
+      char
+   }
+	attr CDATA char;
+	attr CDATA charoff;
+	attr valign {
+      top
+      middle
+      bottom
+      baseline
+   }
+}
+/**
+ * A table header consisting of one or more rows
+ */
+tag thead ( ((colspec)*, (row+|tr+)) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr valign	{
+      bottom
+      middle
+      top
+      baseline
+   }
+	attr CDATA "class";
+	attr CDATA style;
+	attr CDATA title;
+	attr CDATA lang;
+	attr CDATA onclick;
+	attr CDATA ondblclick;
+	attr CDATA onmousedown;
+	attr CDATA onmouseup;
+	attr CDATA onmouseover;
+	attr CDATA onmousemove;
+	attr CDATA onmouseout;
+	attr CDATA onkeypress;
+	attr CDATA onkeydown;
+	attr CDATA onkeyup;
+	attr align {
+      left
+      center
+      right
+      justify
+      char
+   }
+	attr CDATA char;
+	attr CDATA charoff;
+}
+/**
+ * A suggestion to the user, set off from the text
+ */
+tag tip ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The text of the title of a section of a document or of a formal block-level element
+ */
+tag title ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The abbreviation of a Title
+ */
+tag titleabbrev ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A table of contents
+ */
+tag toc ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, (tocdiv|tocentry)*) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An entry in a table of contents for a back matter component
+ */
+tag tocback () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An entry in a table of contents for a component in the body of a document
+ */
+tag tocchap () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Table of contents division.
+ */
+tag tocdiv ( (((title|titleabbrev|subtitle)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, (tocdiv|tocentry)+) ) : commonAttributes, xmlnsAndRole {
+	attr CDATA pagenum;
+}
+/**
+ * A component title in a table of contents
+ */
+tag tocentry ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|abbrev|acronym|date|emphasis|footnote|footnoteref|foreignphrase|phrase|quote|wordasword|firstterm|glossterm|coref|trademark|productnumber|productname|database|application|hardware|citation|citerefentry|citetitle|citebiblioid|author|person|personname|org|orgname|editor|jobtitle|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|inlineequation|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel|prompt|envar|filename|command|computeroutput|userinput|"function"|varname|returnvalue|type|classname|exceptionname|interfacename|methodname|modifier|initializer|ooclass|ooexception|oointerface|errorcode|errortext|errorname|errortype)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA pagenum;
+}
+/**
+ * An entry in a table of contents for a front matter component
+ */
+tag tocfront () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A top-level entry within a table of contents entry for a chapter-like component
+ */
+tag toclevel1 () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A second-level entry within a table of contents entry for a chapter-like component
+ */
+tag toclevel2 () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A third-level entry within a table of contents entry for a chapter-like component
+ */
+tag toclevel3 () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A fourth-level entry within a table of contents entry for a chapter-like component
+ */
+tag toclevel4 () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A fifth-level entry within a table of contents entry for a chapter-like component
+ */
+tag toclevel5 () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An entry in a table of contents for a part of a book
+ */
+tag tocpart () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A unit of information
+ */
+tag token ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A row in an HTML table
+ */
+tag tr ( ((th|td)+) ) : commonAttributes, xmlnsAndRole {
+	attr CDATA "class";
+	attr CDATA style;
+	attr CDATA title;
+	attr CDATA lang;
+	attr CDATA onclick;
+	attr CDATA ondblclick;
+	attr CDATA onmousedown;
+	attr CDATA onmouseup;
+	attr CDATA onmouseover;
+	attr CDATA onmousemove;
+	attr CDATA onmouseout;
+	attr CDATA onkeypress;
+	attr CDATA onkeydown;
+	attr CDATA onkeyup;
+	attr NMTOKEN span;
+	attr CDATA width;
+	attr align {
+      left
+      center
+      right
+      justify
+      char
+   }
+	attr CDATA char;
+	attr CDATA charoff;
+	attr valign {
+      top
+      middle
+      bottom
+      baseline
+   }
+}
+/**
+ * A trademark
+ */
+tag trademark ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr class {
+      copyright
+      registered
+      service
+      trade
+   }
+}
+/**
+ * The classification of a value
+ */
+tag type ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A link that addresses its target by means of a URL (Uniform Resource Locator)
+ */
+tag ulink () : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A Uniform Resource Identifier
+ */
+tag uri ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA type;
+}
+/**
+ * Data entered by the user
+ */
+tag userinput ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|prompt|envar|filename|command|computeroutput|userinput|replaceable|"package"|parameter|termdef|nonterminal|systemitem|option|optional|"property"|co|"tag"|markup|token|symbol|literal|code|constant|email|uri|guiicon|guibutton|guimenuitem|guimenu|guisubmenu|guilabel|menuchoice|mousebutton|keycombo|keycap|keycode|keysym|shortcut|accel)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An empty element in a function synopsis indicating a variable number of arguments
+ */
+tag varargs ( EMPTY ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A list in which each entry is composed of a set of one or more terms and an associated description
+ */
+tag variablelist ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)*, (varlistentry)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr spacing {
+      compact
+      normal
+   }
+	attr CDATA termlength;
+}
+/**
+ * A wrapper for a set of terms and the associated description in a variable list
+ */
+tag varlistentry ( ((term)+, listitem) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The name of a variable
+ */
+tag varname ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * Pointer to external video data
+ */
+tag videodata ( (info)? ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA format;
+	attr CDATA fileref;
+	attr ENTITY entityref;
+	attr align {
+      center
+      char
+      justify
+      left
+      right
+   }
+	attr CDATA valign	{
+      bottom
+      middle
+      top
+   }
+	attr CDATA width;
+	attr CDATA contentwidth;
+	attr CDATA scalefit {
+      0
+      1
+   }
+	attr NMTOKEN scale;
+	attr CDATA depth;
+	attr CDATA contentdepth;
+}
+/**
+ * A wrapper for video data and its associated meta-information
+ */
+tag videoobject ( ((info)?, videodata) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An empty element in a function synopsis indicating that the function in question takes no arguments
+ */
+tag void ( EMPTY ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * The volume number of a document in a set (as of books in a set or articles in a journal)
+ */
+tag volumenum ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * An admonition set off from the text
+ */
+tag warning ( (((title|titleabbrev)*, (info)?), (itemizedlist|orderedlist|"procedure"|simplelist|variablelist|segmentedlist|glosslist|bibliolist|calloutlist|qandaset|example|figure|table|equation|informalexample|informalfigure|informaltable|informalequation|sidebar|blockquote|address|epigraph|mediaobject|screenshot|task|productionset|constraintdef|msgset|screen|literallayout|programlistingco|screenco|programlisting|synopsis|bridgehead|remark|revhistory|indexterm|funcsynopsis|classsynopsis|methodsynopsis|constructorsynopsis|destructorsynopsis|fieldsynopsis|cmdsynopsis|caution|important|note|tip|warning|anchor|para|formalpara|simpara|annotation)+) ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A word meant specifically as a word and not representing anything else
+ */
+tag wordasword ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+/**
+ * A cross reference to another part of the document
+ */
+tag xref ( EMPTY ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+	attr CDATA xrefstyle;
+	attr IDREF endterm;
+}
+/**
+ * The year of publication of a document
+ */
+tag year ( (#PCDATA|inlinemediaobject|remark|superscript|subscript|xref|link|olink|anchor|biblioref|alt|annotation|indexterm|phrase|replaceable)* ) : commonAttributes, linkingAttributes, xmlnsAndRole {
+}
+

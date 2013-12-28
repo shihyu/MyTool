@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsNameInsert</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsNameInsert(const char *pszName, int kind, const char *pszInfo=a, int reserved=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This function creates a new names table item.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszName">pszName</A></code> - Name for new names table item.  For
+               kind==VSTYPE_PICTURE, <code>pszName</code> is
+               the filename of a ".bmp", ".ico", ".png", or
+               ".xpm" file whose path will be stripped off.
+               Your picture should start with an "_" (ex.
+               "c:\slickedit\_stackex.ico") to indicate that
+               your bitmap is global. Otherwise when the
+               configuration is written your bitmap will get
+               deleted if it is not attatched to a
+               Slick-C&reg; dialog box.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="kind">kind</A></code> - Type of new names table item.  May be
+VSTYPE_MISC, VSTYPE_PICTURE,
+VSTYPE_EVENTTAB, or
+VSTYPE_MENU.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszInfo">pszInfo</A></code> - Optional name information for new names
+table item.  Use <b>vsNameInfo</b>
+function to retrieve this information later.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If successful, the index of new names table item is
+returned. Otherwise, a negative error code is returned.  0 is
+never returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Attention:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+This function is thread-safe.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Names_Table_Functions.html">Names Table Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsFindIndex.html">vsFindIndex</a>, <a href="vsNameMatch.html">vsNameMatch</a>, <a href="vsNameName.html">vsNameName</a>, <a href="vsNameType.html">vsNameType</a>, <a href="vsNameInfo.html">vsNameInfo</a>, <a href="vsFindNameInfo.html">vsFindNameInfo</a>, <a href="vsNameSetInfo.html">vsNameSetInfo</a>, <a href="vsNameInfoArg2.html">vsNameInfoArg2</a>, <a href="vsCallIndex.html">vsCallIndex</a>, <a href="vsNameInsert.html">vsNameInsert</a>, <a href="vsNameReplace.html">vsNameReplace</a>, <a href="vsNameDelete.html">vsNameDelete</a>, <a href="vsNameCallable.html">vsNameCallable</a>, <a href="vsNameDllAddr.html">vsNameDllAddr</a></blockquote>
+</body>
+</html>

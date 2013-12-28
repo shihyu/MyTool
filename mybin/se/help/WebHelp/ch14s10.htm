@@ -1,0 +1,322 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Preprocessing</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s09.htm" title="Functions"><link rel="next" href="ch14s11.htm" title="Defining Controls"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_preprocessing_12494_45060"></a>
+    <a name="slick_c_preprocessing_12494_1003190"></a>Preprocessing</h2></div></div></div><p class="NormalText">Preprocessing in Slick-C® is identical to C/C++. Preprocessing allows you to conditionally compile source code or define textual replacements.</p><p class="NormalText">This chapter includes the following topics:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s10.htm#slick_c_preprocessing_12494_30486">#if</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s10.htm#slick_c_preprocessing_12494_96110">#pragma</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s10.htm#slick_c_preprocessing_12494_90924">#region and #endregion</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s10.htm#slick_c_preprocessing_12494_65437">Including Header Files</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s10.htm#slick_c_preprocessing_12494_43378">Importing Slick-C Modules</a>
+      </p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_preprocessing_12494_30486"></a>
+      <a name="slick_c_preprocessing_12494_1028649"></a>#if</h3></div></div></div><p class="NormalText">The syntax of the Slick-C® language conditional <span><strong class="command">if</strong></span> block is any of the following examples:</p><pre class="programlisting">
+      <span><strong class="command">
+    #if expression
+    [statements]
+    {#elif expression
+    [statements]}
+    [#else
+    statements]]
+    #endif
+    </strong></span>
+    </pre><p class="NormalText">There may be nothing more than space or tab characters preceding a <span><strong class="command">#</strong></span>. Text on the same line following <span><strong class="command">#else</strong></span> or <span><strong class="command">#endif</strong></span> is not permitted. The expression specified MUST be valid. To display an error message and end the compile, use the <span><strong class="command">#error</strong></span> directive: <span><strong class="command">#error </strong></span><span class="emphasis"><em>expression</em></span>.</p><p class="NormalText">Usually, preprocessing is used to write macros that operate on multiple operating systems or environments. The table below shows the constants that are automatically defined by the Slick-C translator.</p><div class="informaltable"><a name="table_29c77291-0bf9-48ac-9026-9582c51ae498"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Constant</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">__PCDOS__</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Non-zero if the current operating system is Windows. Use <span><strong class="command">machine()</strong></span> built-in function to determine at run time which of these operating systems you are running.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">__UNIX__</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Non-zero if current operating system is UNIX compatible.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">__NT__</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Non-zero if the current operating system is Microsoft Windows NT® compatible.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">__VERSION__ </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Version number of SlickEdit®.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">__COLUMN__ </p>
+            </td><td>
+              <p class="CellBody">Number of characters from start of current line.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">__FILE__ </p>
+            </td><td>
+              <p class="CellBody">Current file name.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">__LINE__ </p>
+            </td><td>
+              <p class="CellBody">Current line number.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">__PATH__ </p>
+            </td><td>
+              <p class="CellBody">Current file name and path.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">__DATE__ </p>
+            </td><td>
+              <p class="CellBody">Current date.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">__TIME__ </p>
+            </td><td>
+              <p class="CellBody">Current time.</p>
+            </td></tr></tbody></table></div><p class="NormalText">Use the Slick-C translator <span><strong class="command">-d</strong></span> option to define a constant for use by preprocessing. To test if a constant has been defined, use the <span><strong class="command">defined()</strong></span> function.</p><p class="NormalText">Example:</p><pre class="programlisting">#if !defined(my_constant)
+    #define my_constant "default value"
+#endif
+#if __PCDOS__
+    name="c:\util\myprog"
+#elif __UNIX__
+    name="/usr/bin/myprog"
+#else
+    #error "Don't know what to do for this OS"
+#endif</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_preprocessing_12494_96110"></a>
+      <a name="slick_c_preprocessing_12494_1003245"></a>
+      <a class="indexterm" name="slick-c_preprocessing_1F690C99_0392"></a>#pragma</h3></div></div></div><p class="NormalText">The <span><strong class="command">#pragma</strong></span> preprocessor directive is used to change various options during the course of a compile. The syntax is:</p><pre class="programlisting">
+      <span><strong class="command">
+    #pragma option(OptionName [, ( on | off ) ] )
+    </strong></span>
+    </pre><p class="NormalText">Slick-C® options (<span class="emphasis"><em>OptionName</em></span>) are shown in the table below.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+        <a name="slick_c_preprocessing_12494_1027689"></a>
+        <a class="indexterm" name="slick-c_preprocessing_83881272_4381"></a>
+      </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">For each option, if the second argument is not given, the value is restored to the command line invocation value.</p></li><li><p class="NormalText">All <span><strong class="command">#pragma</strong></span> options may be specified by command line compiler options. Run <code class="filename">vst.exe</code> (UNIX: <code class="filename">vst</code>) with no arguments to view compiler options. You can use the <span><strong class="command">VST</strong></span> environment variable to specify compiler options for all of your macros.</p></li></ul></div></div><p class="NormalText"></p><div class="informaltable"><a name="table_b78339f5-667d-4c6f-9e13-806146f7b127"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">OptionName</p>
+            </th><th>
+              <p class="CellHeading">Default Value</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_1D9C8031_8B23"></a>autodecl</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">On</p>
+            </td><td>
+              <p class="CellBody">Enables <span><strong class="command">autodeclvars</strong></span> and <span><strong class="command">autodeclctls</strong></span>. See those options for more information.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_7895C4C9_A641"></a>autodeclctls</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">On</p>
+            </td><td>
+              <p class="CellBody">When enabled, the compiler attempts to automatically declare control variables. This option is automatically enabled when <span><strong class="command">autodecl</strong></span>, <span><strong class="command">pedantic</strong></span>, <span><strong class="command">strict</strong></span>, or <span><strong class="command">strict2</strong></span> is enabled.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_F9E1051C_4231"></a>autodeclvars</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">On</p>
+            </td><td>
+              <p class="CellBody">When enabled, the compiler attempts to automatically declare typeless variables when an assignment is made. This option is automatically enabled when <span><strong class="command">autodecl</strong></span> is enabled. This option is automatically disabled when <span><strong class="command">pedantic</strong></span>, <span><strong class="command">strict</strong></span>, or <span><strong class="command">strict2</strong></span> is enabled.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_73C1587B_B9BD"></a>deprecation</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">Allows you to configure properties and built-in functions as deprecated. When enabled, the Slick-C compiler catches when a deprecated item is used and flags it as an error. A function is considered as deprecated if it has a Javadoc function comment containing the <span><strong class="command">@deprecated</strong></span> tag. Deprecation is automatically enabled when <span><strong class="command">pedantic</strong></span> is enabled. Note that using the <span><strong class="command">deprecation</strong></span> pragma may result in your macro not loading when you upgrade to a new release of SlickEdit if the code calls a function that becomes deprecated.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_7279543E_1185"></a>pedantic</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">Enabling this option automatically enables all existing and future strict syntax and type-checking options. Unlike other Slick-C pragmas, the meaning of <span><strong class="command">pedantic</strong></span> could be augmented in future releases of SlickEdit. This means that if you use the <span><strong class="command">pedantic</strong></span> pragma in your own macros, they may not load when you upgrade to a new release of SlickEdit if, for example, a function it is using becomes deprecated or stricter type checking reveals a problem.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_CF613083_EF3E"></a>redeclvars</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">This is used to generate code for variables without having the type information. When enabled, any variable can be redeclared as a typeless variable. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_0CEC7FF0_5FA0"></a>strict</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">This option is used to turn on a high level of type checking and syntax enforcement in the Slick-C translator. It automatically enables <span><strong class="command">autodeclctls</strong></span>, <span><strong class="command">autodeclvars</strong></span>, <span><strong class="command">strictnumbers</strong></span>, <span><strong class="command">strictparens</strong></span>, <span><strong class="command">strictsemicolons</strong></span>, and <span><strong class="command">strictstrings</strong></span>. We recommend using 
+	<span><strong class="command">#pragma option(strict,on)</strong></span> in user-written macros because it gives the best combination of high level of error checking and forward compatibility.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_4E0F66D2_2866"></a>strict2</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">Second generation of strict Slick-C compilation checks. Automatically enables all options that <span><strong class="command">strict</strong></span> enables, plus <span><strong class="command">strictarglists</strong></span>, <span><strong class="command">strictincludes</strong></span>, and <span><strong class="command">twopass</strong></span>.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_1A545434_F6E3"></a>strictarglists</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">When disabled, a function can have implicitly typeless arguments. When enabled, formal parameter lists for functions and prototypes must have types. The example illustrates an error case: </p>
+              <pre class="programlisting">void first_char(s) {
+   return substr(s,1,1);
+}</pre>
+              <p class="CellBody">This option is automatically enabled when <span><strong class="command">pedantic</strong></span> or <span><strong class="command">strict2</strong></span> is enabled.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_8D9A2460_502E"></a>strictboolean</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">When enabled, Slick-C variables with boolean types cannot be assigned to integers without using a cast. This means, for example, that the following would be flagged as an error:</p>
+              <pre class="programlisting">boolean b = 0;</pre>
+              <p class="CellBody">This option is automatically enabled within classes and namespaces.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_2999CC59_1953"></a>strictellipsis</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">When enabled, the ellipsis must be given as the last argument to a function or prototype for type checking to succeed when calling function with extra arguments. This option is automatically enabled when <span><strong class="command">pedantic</strong></span> or <span><strong class="command">strict2</strong></span> is enabled.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_0C4C65A4_730A"></a>strictincludes</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">When enabled, verifies that all 
+                <span><strong class="command">#import</strong></span> and <span><strong class="command">#include</strong></span> 
+                statements precede any real code in the current module. This is 
+                required for <a href="ch14s10.htm#slick-c_preprocessing_603A441D_7750">twopass</a> compilation. This option is automatically enabled when <span><strong class="command">pedantic</strong></span> or <span><strong class="command">strict2</strong></span> is enabled.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_B8C53345_7F94"></a>strictnames</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">When enabled, enforces naming conventions for symbols declared in Slick-C classes, namespaces, and enumerated types. See <a href="ch14.htm#slick_c_intro_11615_86509">Slick-C® Naming Conventions</a> for more information. This option is automatically enabled when <span><strong class="command">pedantic</strong></span> is enabled.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_009E0DB2_6FB0"></a>strictnumbers</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">When enabled, Slick-C numeric constants are treated strictly as integer or double precision floating point types, rather than than typeless variables. This makes it possible to use precise type inference with integer types, like <span><strong class="command">i := 0;</strong></span>. This option is automatically enabled when <span><strong class="command">pedantic</strong></span> is enabled. It is also automatically enabled within classes and namespaces.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_E6C3EDC2_5C42"></a>strictparens</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">Use this pragma for more readable code. When enabled, parentheses must be given on all built-in functions. This option is automatically enabled when <span><strong class="command">pedantic</strong></span>,  <span><strong class="command">strict</strong></span>, or <span><strong class="command">strict2</strong></span> is enabled.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_7B1B84E6_0E26"></a>strictprotos</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">When enabled, all function calls require the function to be previously declared or imported. When disabled, when the Slick-C compiler encounters a function call to a previously undefined function, it assumes that the function is a global function. The function call is resolved at link time, and an error will show up at run time if the function does not exist or is not provided enough parameters. This option is automatically enabled within classes and namespaces.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_804DD82D_BC64"></a>strictreturn</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">On</p>
+            </td><td>
+              <p class="CellBody">When enabled, and an explicit return type is given to a function, the compiler will flag an error if a return statement is potentially missing.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_99D545B3_70AB"></a>strictsemicolons</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">Use this pragma so that smart editing features work, and to prevent compilation errors. When enabled, semicolons must terminate all statements. This option is automatically enabled when <span><strong class="command">pedantic</strong></span>,  <span><strong class="command">strict</strong></span>, or <span><strong class="command">strict2</strong></span> is enabled.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_2AC07C0C_84DF"></a>strictstrings</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">When enabled, Slick-C string constants are treated strictly as string types, rather than typeless variables. This means, for example, that you can no longer assign <span><strong class="command">"0"</strong></span> to an integer variable. This option is automatically enabled when <span><strong class="command">pedantic</strong></span>,  <span><strong class="command">strict</strong></span>, or <span><strong class="command">strict2</strong></span> is enabled.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="slick-c_preprocessing_603A441D_7750"></a>twopass</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Off</p>
+            </td><td>
+              <p class="CellBody">When enabled, the Slick-C compiler does a two-pass compilation. This allows the compiler to verify all function call signatures even for functions that are declared later in the file. This option is automatically enabled when <span><strong class="command">pedantic</strong></span> or <span><strong class="command">strict2</strong></span> is enabled.</p>
+            </td></tr></tbody></table></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_preprocessing_12494_90924"></a>
+      <a name="slick_c_preprocessing_12494_1026134"></a>
+      <a class="indexterm" name="slick-c_preprocessing_ED6B3AFE_B353"></a>
+      <a class="indexterm" name="slick-c_preprocessing_ED6E16E9_94BA"></a>#region and #endregion</h3></div></div></div><p class="NormalText">The <span><strong class="command">#region</strong></span> directive lets you specify a block of code that you can expand or collapse when using Selective Display. The <span><strong class="command">#endregion</strong></span> directive marks the end of a <span><strong class="command">#region</strong></span> block. A <span><strong class="command">#region</strong></span> block must be terminated with <span><strong class="command">#endregion</strong></span>. The syntax of these directives is:</p><pre class="programlisting">
+      <span><strong class="command">
+    #region name
+    #endregion name
+    </strong></span>
+    </pre><p class="NormalText">The <span class="emphasis"><em>name</em></span> parameter (optional) is used to indicate the name of the region. This name is displayed in the editor window when the region is collapsed.</p><p class="NormalText">Example:</p><pre class="programlisting">#region Region_1
+void Test() {}
+void Test2() {}
+void Test3() {}
+#endregion Region_1
+ 
+defmain()
+{
+}</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_preprocessing_12494_65437"></a>
+      <a name="slick_c_preprocessing_12494_1003290"></a>
+      <a class="indexterm" name="slick-c_preprocessing_4A8B7DF9_F59C"></a>
+      <a class="indexterm" name="slick-c_preprocessing_2E30D760_2BBF"></a>Including Header Files</h3></div></div></div><p class="NormalText">The syntax of the <span><strong class="command">include</strong></span> statement is:</p><pre class="programlisting">
+      <span><strong class="command">
+    #include string_constant
+    </strong></span>
+    </pre><p class="NormalText">
+      <a class="indexterm" name="slick-c_preprocessing_F2485E04_3E9C"></a>
+      <a class="indexterm" name="slick-c_preprocessing_2EAD9F88_CF39"></a>
+      <a class="indexterm" name="slick-c_preprocessing_C486316A_251D"></a>
+      <a name="slick_c_preprocessing_12494_1028587"></a>This statement includes the file specified by <span class="emphasis"><em>string_constant</em></span> for compiling. If <span class="emphasis"><em>string_constant</em></span> does not specify a path, the Slick-C® translator will look in the same directory of the main source file. Otherwise, the path specified by <span class="emphasis"><em>string_constant</em></span> is searched. If the file is not found, the Slick-C translator looks for the include file in the directories specified by the <span><strong class="command">VSLICKINCLUDE</strong></span> and <span><strong class="command">VSLICKPATH</strong></span> environment variables (see "environment variables" in <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Index</strong></span>). Include files may be nested. </p><p class="NormalText">Unlike C++, Slick-C header files do not require guards. Our preprocessor automatically guards against recursive header file inclusion, and will never include the same header file twice for a single module either.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_preprocessing_12494_43378"></a>
+      <a name="slick_c_preprocessing_12494_1026315"></a>Importing Slick-C Modules</h3></div></div></div><p class="NormalText">
+      <span><strong class="command">#import</strong></span> is a preprocessing directive but it is more than a <span><strong class="command">#include</strong></span> in that it does the following:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Imports all public declarations from a Slick-C® module.</p></li><li><p class="NormalText">Uses an implicit header guard to prevent recursive or multiple importation of the same module.</p></li></ul></div><p class="NormalText">#imports are not recursive. If you #import a module (<code class="filename">abc.e</code>) that #imports another module (<code class="filename">def.e</code>), you will not get the declarations from <code class="filename">def.e</code>. This is an important consideration for compilation performance and to minimize inter-module dependencies.</p><p class="NormalText">
+      <span><strong class="command">#require</strong></span> is a preprocessing directive, like <span><strong class="command">#import</strong></span>, but it is recursive. If you want a module to always pull in another required module when it is #imported, use the<span><strong class="command"> #require</strong></span> directive. For example, a class (Abc) that derives from another class (Def) should #require the parent class module (<code class="filename">Def.e</code>). That way when another module #imports <code class="filename">Abc.e</code>, it will also have the declaration for the parent class Abc. As a general rule, a module needs to use <span><strong class="command">#require</strong></span> when its classes or function signatures use types that are declared in another module. Use <span><strong class="command">#import</strong></span> when your code (within function bodies) needs to call functions or use classes and global variables from other modules.</p><p class="NormalText">When processing a <span><strong class="command">#import</strong></span>, the following rules are in effect:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">All function definitions are treated as prototypes.</p></li><li><p class="NormalText">Global variable definitions are treated as declarations.</p></li><li><p class="NormalText">Static globals are ignored.</p></li><li><p class="NormalText">Forms, menus, event tables, and event handlers are ignored.</p></li><li><p class="NormalText">
+          <span><strong class="command">#includes</strong></span> continue to be treated as part of the <span><strong class="command">#import</strong></span>.</p></li></ul></div><p class="NormalText">Examples: </p><pre class="programlisting">    #import "stdcmds.e"
+    #import "slickedit/stringutil.e"
+    #import "slickedit/search.sh"</pre><p class="NormalText"></p></div></div></body></html>

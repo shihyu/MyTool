@@ -1,0 +1,610 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Basic Editing</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch08.htm" title="Chapter 8.  Editing Features"><link rel="prev" href="ch08s02.htm" title="Files, Buffers, and Editor Windows"><link rel="next" href="ch08s04.htm" title="Navigation"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_textediting_12462_59659"></a>
+    <a name="sect_textediting_12462_1017991"></a>
+    <a class="indexterm" name="sect_textediting_B2D01F50_F4C5"></a>Basic Editing</h2></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_textediting_12462_17775"></a>
+      <a name="sect_textediting_12462_1018014"></a>Overview</h3></div></div></div><p class="NormalText">
+      SlickEdit® provides familiar operations for selecting, copying, moving, and operating on text, with enhanced capabilities to meet the needs of developers.</p><p class="NormalText">The available editing features depend on the current emulation. Different editors provide different capabilities, and SlickEdit attempts to match these features in each emulation. For example, the Brief emulation provides a <span><strong class="command">brief_iselect_char</strong></span> command that will start an inclusive character selection. This is an operation familiar to Brief users that the other emulations don't necessarily provide. However, CUA is the default emulation mode for SlickEdit, so the operations described in this section are based on that mode. See <a href="ch04s02.htm">Emulations</a> for more information about emulation modes.</p><p class="NormalText">In addition to the basic and advanced editing features described in this section, SlickEdit provides many more text editing-related features that can be managed on a per-language basis. See topics in the <a href="ch08.htm#chap_editing_11859_20907">Editing Features</a> chapter for information.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_1018024"></a>
+        SlickEdit and Selections</h4></div></div></div><p class="NormalText">Many editing operations are performed on selected text, so you need to know how selections work in SlickEdit in order to gain the power of its editing features. There are several types of selections, and some are handled differently than others regarding operations and features. In particular, SlickEdit handles line selections differently than most other editors. See <a href="ch08s03.htm#sect_textediting_12462_41772">Selections</a> for more information.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_1018029"></a>
+        SlickEdit® Clipboards</h4></div></div></div><p class="NormalText">Most text editing operations involve clipboards. Clipboards in SlickEdit are internal to the editor and separate from the system clipboard provided by the operating system. While most operating systems only allow one clipboard at a time, SlickEdit, by default, keeps a stack of the 50 most recently used clipboards. You can see a list of your clipboards by using the Clipboards tool window (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">V</strong></span>, <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">List Clipboards</strong></span> or <span><strong class="command">list_clipboards</strong></span> command). See <a href="ch08s03.htm#sect_textediting_12462_13822">Clipboards</a> for more information.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_1018034"></a>Insert/Replace Editing Mode</h4></div></div></div><p class="NormalText">By default, SlickEdit® starts in Insert mode, which means text that you type is inserted at the cursor. When the editor is in Replace mode, text is typed over the subsequent characters, essentially replacing text as you type. The Insert or Replace editing mode is indicated in the status line of the editor (<span><strong class="guilabel">Ins</strong></span> or <span><strong class="guilabel">Rep</strong></span>). To toggle the editing mode between Insert and Replace, click on the indicator, press the <span><strong class="keycap">Insert</strong></span> key, or use the <span><strong class="command">insert_toggle</strong></span> command. To change the default start mode, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>, expand <span><strong class="guilabel">Editing</strong></span> and click <span><strong class="guilabel">General</strong></span>, then change the value of the <span><strong class="guilabel">Start mode</strong></span> option.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_1018036"></a>Improve Your Editing Efficiency</h4></div></div></div><p class="NormalText">The subsequent sections describe many editing commands. If a command you like to use isn't bound to a key or key sequence already, it's a good practice to give it a key binding for quicker keyboard access. See <a href="ch04s03.htm#sect_keymousebindings_13007_84952">Creating Bindings</a> for more information.</p><p class="NormalText">If you frequently use multiple text editing operations in succession, record the steps as a macro and bind it to a key to save time in the future. See <a href="ch11.htm#sect_macros_12165_66577">Recording a Macro</a> for more information.</p><p class="NormalText">All editing features are not necessarily documented here, nor are all commands documented for each feature. For example, in a subsequent section, common Cut operations are described, but more commands are also available. Usually these are emulation-specific. A good way to discover related commands is to type a portion of the command into the <span><strong class="guilabel">Search by command</strong></span> box on the Key Bindings option screen (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Keyboard and Mouse </strong></span> &#8594; <span><strong class="guimenuitem">Key Bindings</strong></span>). For example, type "cut" in this box, and the list of Commands is filtered to show only those with that contain the text "cut". Now you can see that some additional Cut commands are <span><strong class="command">append_next_cut</strong></span> and <span><strong class="command">cut_level</strong></span>, two features of the GNU Emacs emulation.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_29076"></a>
+        <a name="sect_textediting_12462_1018669"></a>Undoing Edit Operations</h4></div></div></div><p class="NormalText">To undo an edit operation, use the <span><strong class="command">undo</strong></span> command 
+        (<span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Undo</strong></span> or <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Z</strong></span>). To redo the operation after 
+        using Undo, use the <span><strong class="command">redo</strong></span> command (<span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Redo</strong></span> or <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Y</strong></span>). To cancel a text selection, 
+        use the <span><strong class="command">deselect</strong></span> command or press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">U</strong></span>. </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_textediting_12462_41772"></a>
+      <a name="sect_textediting_12462_1018049"></a>
+      <a class="indexterm" name="sect_textediting_8BDBB6D1_EBD2"></a>
+      <a class="indexterm" name="sect_textediting_6DF8E1A1_0DE8"></a>Selections</h3></div></div></div><p class="NormalText">Most applications let you select text and perform operations on the selected 
+      text, such as Cut, Copy, and Move. SlickEdit® offers three types of 
+      selections: character, line, and block. Each selection type provides different capabilities for 
+      different editing situations - and easy access. </p><p class="NormalText">
+      <a class="indexterm" name="sect_textediting_AD35784C_3198"></a>Selected text is rendered with a shaded background. You can change the color of the shading by modifying the Background color of the <span><strong class="command">Selection</strong></span> screen element (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Appearance </strong></span> &#8594; <span><strong class="guimenuitem">Colors</strong></span>). See <a href="ch04s06.htm#sect_fontsandcolors_13325_90477">Setting Colors for Screen Elements</a> for more information.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_12473"></a>
+        <a name="sect_textediting_12462_1018078"></a>Selection Types</h4></div></div></div><p class="NormalText">There are three selection types in SlickEdit®: character, line, and block. The following table shows a summary of each type and some methods for creating the selection. Each type is explained in more detail below. </p><div class="informaltable"><a name="table_a5e6f54f-e93a-47b3-b3e6-0edc1d751504"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Selection Type</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th><th>
+                <p class="CellHeading">Creation Methods</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <span class="bold"><strong>Character selection </strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">This is created when one or more individual characters are selected. This is also known as a "char" selection.</p>
+              </td><td>
+                <p class="CellBody">Use the mouse to drag or use the <span><strong class="command">select_char</strong></span> command (<span><strong class="keycap">F8</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Select </strong></span> &#8594; <span><strong class="guimenuitem">Char</strong></span>). See also <a href="ch08s03.htm#sect_textediting_12462_72337">Character Selections</a>.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span class="bold"><strong>Line selection </strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">This is created when one or more whole lines are selected as lines. You can select all of the characters on a line and still have a character selection. The selection type depends on how the selection was created.</p>
+              </td><td>
+                <p class="CellBody">Triple-click within a line or use the <span><strong class="command">select_line</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">L</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Select </strong></span> &#8594; <span><strong class="guimenuitem">Line</strong></span>). For multiple lines, drag in the left margin area of the edit window (when the mouse pointer changes to point right). See also <a href="ch08s03.htm#sect_textediting_12462_49482">Line Selections</a>.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span class="bold"><strong>Block selection </strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">This is created when columns of text are selected, also known as a "column selection".</p>
+              </td><td>
+                <p class="CellBody">Right-click and drag or use the <span><strong class="command">select_block</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">B</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Select </strong></span> &#8594; <span><strong class="guimenuitem">Block</strong></span>). See also <a href="ch08s03.htm#sect_textediting_12462_83034">Block Selections</a>.</p>
+              </td></tr></tbody></table></div><p class="NormalText"></p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_textediting_12462_72337"></a>
+          <a name="sect_textediting_12462_1018117"></a>
+          <a class="indexterm" name="sect_textediting_4E838FAC_2C96"></a>
+          <a class="indexterm" name="sect_textediting_88D215F7_DACB"></a>Character Selections</h5></div></div></div><p class="NormalText">Character selections (also called "char" selections) are used to select words, parts of a line, or a range of text between a starting location and an ending location. To create a character selection, use any of the following methods:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Use the mouse to click and drag.</p></li><li><p class="NormalText">Use the <span><strong class="command">select_char</strong></span> command (<span><strong class="keycap">F8</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Select </strong></span> &#8594; <span><strong class="guimenuitem">Char</strong></span>), then use the arrow keys to extend the selection, or use the mouse to click at the end of the selection.</p></li><li><p class="NormalText">Press and hold the <span><strong class="keycap">Shift</strong></span> key with any navigation key. See <a href="ch08s03.htm#sect_textediting_12462_65482">Starting/Extending a Character Selection</a> below for examples.</p></li></ul></div><p class="NormalText">You can also create character selections on words:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">To select the whole word under the cursor, double-click on the word or use the <span><strong class="command">select_whole_word</strong></span> command (<span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Select </strong></span> &#8594; <span><strong class="guimenuitem">Word</strong></span>).</p></li><li><p class="NormalText">To select from the cursor to the end of the current word or the next word, use the <span><strong class="command">select_word</strong></span> command.</p></li></ul></div><p class="NormalText">When viewing a list of clipboards, character selection types are indicated with the text "CHAR" (see <a href="ch08s03.htm#sect_textediting_12462_66184">Viewing and Inserting Clipboards</a> for more information).</p><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="sect_textediting_12462_65482"></a>
+            <a class="indexterm" name="sect_textediting_51084F3E_A8E3"></a>Starting/Extending a Character Selection</h6></div></div></div><p class="NormalText">You can start or extend a character selection with <span><strong class="keycap">Shift</strong></span> key shortcuts, described in the table below. For example, press <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Home</strong></span> to create a character selection from the cursor to the beginning of the line. Press <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">End</strong></span> to create a selection from the cursor to the end of the line. You can also use <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Home</strong></span> to create a character selection from the cursor to the top of the file, or <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">End</strong></span> to create a selection from the cursor to the end of the file.</p><p class="NormalText">Note that these shortcuts are based on the default CUA emulation.</p><div class="informaltable"><a name="table_a69417f4-f609-4da9-80a9-5188ec4c1d23"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                    <p class="CellHeading">Shortcut for Extending a Char Selection</p>
+                  </th><th>
+                    <p class="CellHeading">Description</p>
+                  </th></tr></thead><tbody><tr><td>
+                    <p class="CellBody">
+                      <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Right </strong></span>
+                    </p>
+                  </td><td>
+                    <p class="CellBody">Start or extend selection to right.</p>
+                  </td></tr><tr><td>
+                    <p class="CellBody">
+                      <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Left </strong></span>
+                    </p>
+                  </td><td>
+                    <p class="CellBody">Start or extend selection to left.</p>
+                  </td></tr><tr><td>
+                    <p class="CellBody">
+                      <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Up </strong></span>
+                    </p>
+                  </td><td>
+                    <p class="CellBody">Start or extend selection up one line.</p>
+                  </td></tr><tr><td>
+                    <p class="CellBody">
+                      <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Down </strong></span>
+                    </p>
+                  </td><td>
+                    <p class="CellBody">Start or extend selection down one line.</p>
+                  </td></tr><tr><td>
+                    <p class="CellBody">
+                      <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">PgUp </strong></span>
+                    </p>
+                  </td><td>
+                    <p class="CellBody">Start or extend selection up one page.</p>
+                  </td></tr><tr><td>
+                    <p class="CellBody">
+                      <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">PgDn </strong></span>
+                    </p>
+                  </td><td>
+                    <p class="CellBody">Start or extend selection down one page.</p>
+                  </td></tr><tr><td>
+                    <p class="CellBody">
+                      <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Home </strong></span>
+                    </p>
+                  </td><td>
+                    <p class="CellBody">Start or extend selection to top of buffer.</p>
+                  </td></tr><tr><td>
+                    <p class="CellBody">
+                      <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">End </strong></span>
+                    </p>
+                  </td><td>
+                    <p class="CellBody">Start or extend selection to bottom of buffer.</p>
+                  </td></tr></tbody></table></div></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_textediting_12462_49482"></a>
+          <a name="sect_textediting_12462_1018177"></a>
+          <a class="indexterm" name="sect_textediting_4D47E2A6_53E1"></a>
+          <a class="indexterm" name="sect_textediting_906373C9_BC77"></a>Line Selections</h5></div></div></div><p class="NormalText">A line selection is created when one or more complete lines are selected (partially selected lines are treated as character selections).</p><p class="NormalText">
+          SlickEdit® treats line selections very differently from character selections. A line selection can only be inserted before or after another line of code. That's because a line of code is a meaningful unit of functionality in most languages, and it would never be inserted inside another line of code. Handling line selections in this manner makes it faster to copy and paste lines of code.</p><p class="NormalText">Line selections are pasted before or after the current line, depending on your <span><strong class="guilabel">Line insert style</strong></span> setting (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">General</strong></span>). Furthermore, line selections work with <a href="ch08s07.htm#sect_syntaxindentsmartpaste_14409_17230">SmartPaste®</a>, which reindents inserted lines according to the surrounding code. See <a href="ch08s03.htm#sect_textediting_12462_88718">Inserting Lines</a> for more information.</p><p class="NormalText">To select a line, use one of the following methods:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Use the mouse to triple-click within a line, or to select multiple lines, drag in the left margin area of the edit window (when the mouse pointer changes to point right).</p></li><li><p class="NormalText">Use the <span><strong class="command">select_line</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">L</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Select </strong></span> &#8594; <span><strong class="guimenuitem">Line</strong></span>). This selects the current line, or, you can use the arrow keys to extend the selection to include more lines (or click with the mouse on the last line of the selection).</p></li></ul></div><p class="NormalText">The following operations are also treated as line selections:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">To select the current code block (an entire block statement such as if, loop, switch, etc.), use the <span><strong class="command">select_code_block</strong></span> command (<span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Select </strong></span> &#8594; <span><strong class="guimenuitem">Code Block</strong></span>).</p></li><li><p class="NormalText">To select the current procedure/function, including the function heading, use the <span><strong class="command">select_proc</strong></span> command (<span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Select </strong></span> &#8594; <span><strong class="guimenuitem">Procedure</strong></span>).</p></li><li><p class="NormalText">To select the entire buffer, use the <span><strong class="command">select_all</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">A</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Select </strong></span> &#8594; <span><strong class="guimenuitem">All</strong></span>).</p></li></ul></div><p class="NormalText">When viewing a list of clipboards, line selection types are indicated with the text "LINE" (see <a href="ch08s03.htm#sect_textediting_12462_66184">Viewing and Inserting Clipboards</a> for more information). </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_textediting_12462_83034"></a>
+          <a name="sect_textediting_12462_1018201"></a>
+          <a class="indexterm" name="sect_textediting_09EECD91_FF3B"></a>
+          <a class="indexterm" name="sect_textediting_31051A93_3794"></a>Block Selections</h5></div></div></div><p class="NormalText">Block selections, also known as column selections, are used to process columns of text. To create a block selection, use any of the following methods:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Use the mouse to right-click and drag.</p></li><li><p class="NormalText">Use the <span><strong class="command">select_block</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">B</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Select </strong></span> &#8594; <span><strong class="guimenuitem">Block</strong></span>), then use the arrow keys to extend the selection, or use the mouse to click at the end of the selection.</p></li></ul></div><p class="NormalText">When viewing a list of clipboards, block selection types are indicated with the text "BLOCK" (see <a href="ch08s03.htm#sect_textediting_12462_66184">Viewing and Inserting Clipboards</a> for more information).</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_53167"></a>
+        <a name="sect_textediting_12462_1018210"></a>Selection Styles </h4></div></div></div><p class="NormalText">Selections styles determine key behaviors for selections, like whether to extend the selection as the cursor moves or to deselect after a copy or paste operation. Selection features in SlickEdit® depend on the current selection style, which is set to match your emulation mode by default. However, note that the key bindings described in this section are based on the default emulation mode, CUA. If you are using a different emulation, see the emulation charts (located in the <code class="filename">docs</code> subdirectory of your installation directory) for a listing of selection keys. </p><p class="NormalText">To change the selection style, use the Selections option screen (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">Selections</strong></span>). See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_74175">Selection Options</a> for more information. </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_49101"></a>
+        <a name="sect_textediting_12462_1018220"></a>
+        <a class="indexterm" name="sect_textediting_AD99B5FD_50B8"></a>
+        <a class="indexterm" name="sect_textediting_2BF83865_8D4F"></a>Selection Indicator</h4></div></div></div><p class="NormalText">
+        SlickEdit® provides a selection indicator, located in the status area of the editor, to indicate the type of selection and the number of characters or lines in a selection. This is useful to quickly determine the selection type you have made, and to measure the length of a word or string, or the number of lines in a function. </p><p class="NormalText">The selection indicator displays the following information based on your current selection:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">When nothing is selected, the indicator is dimmed and displays the text "No Selection".</p></li><li><p class="NormalText">When the current selection is a <span class="bold"><strong>character selection</strong></span>:</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>If the character selection is contained on one line, the indicator displays the number of columns selected. For example, if three characters are selected, the indicator displays "3 Cols".
+              </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> Because columns are "virtual", the number of columns displayed by the indicator is not necessarily the actual number of characters or bytes in the selection, if the selection includes tab characters, Unicode characters, or extends beyond the end of the line.</p></div></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>If the character selection spans more than one line, the indicator shows the number of lines, with a plus sign (+) to indicate if there are "extra" characters selected, or a minus sign (-) to indicate if there are fewer characters selected, depending on the start and end columns of the selection. For example, if the selection spans one entire line and part of the subsequent line, the indicator displays "1 Line+".</p></li></ul></div></li><li><p class="NormalText">When the current selection is a <span class="bold"><strong>line selection</strong></span>, the indicator displays the number of lines. For example, if two lines are selected, the indicator displays "2 Lines".</p></li><li><p class="NormalText">When the current selection is a <span class="bold"><strong>block selection</strong></span>, the indicator displays the size of the block in the format <span class="emphasis"><em>Lines </em></span><span><strong class="command">x</strong></span><span class="emphasis"><em> Columns</em></span>. For example, if the selected block is two lines long and three columns wide, the indicator displays "2x3 Block".</p></li></ul></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"> The selection indicator can be used to count the number of characters in any text block. This can be useful for database work or any type of task that involves checking the number of characters. Simply paste the text into SlickEdit and select it with one of the character selection methods, then look at the selection indicator to see the number of characters.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_86460"></a>
+        <a name="sect_textediting_12462_1018236"></a>Cycling Through Selections</h4></div></div></div><p class="CellBody">You can quickly cycle through the three selection types (character, line, and block) with the mouse. To do this, press and hold the left button while clicking with the right button to change the selection type. For example, if you have a character selection, click once to start a block selection, or twice to make a line selection.</p><p class="NormalText">You can also cycle through successively larger selections by using the <span><strong class="command">select_toggle</strong></span> command or by clicking on the <a href="ch08s03.htm#sect_textediting_12462_49101">Selection Indicator</a> in the editor's status area. For example, if you have a character selection, you can use <span><strong class="command">select_toggle</strong></span> to extend the selection to include the entire word. Selections are cycled in the following order, starting with no selection:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Create empty character selection</p></li><li><p class="NormalText">Select current word</p></li><li><p class="NormalText">Select current line</p></li><li><p class="NormalText">Select current code block</p></li><li><p class="NormalText">Select larger code block</p></li><li><p class="NormalText">Select current function</p></li><li><p class="NormalText">Select entire file</p></li><li><p class="NormalText">Deselect</p></li></ol></div><p class="NormalText">Except for empty character selections and line selections, the selections are locked so that the cursor remains stationary.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_21200"></a>
+        <a name="sect_textediting_12462_1018255"></a>
+        <a class="indexterm" name="sect_textediting_9078B084_C5E7"></a>
+        <a class="indexterm" name="sect_textediting_BB998860_1DD4"></a>
+        <a class="indexterm" name="sect_textediting_E9963E69_DC2E"></a>Operating on Selected Text</h4></div></div></div><p class="NormalText">
+        SlickEdit® provides many methods for manipulating selected text. The table below describes some of the most common selection operations. See <a href="ch08s03.htm#sect_textediting_12462_73307">Cut, Copy, Paste, and Move</a> for more.  </p><div class="informaltable"><a name="table_2025b87e-9f52-426c-b104-9ede4a3f2fec"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Selection Operation</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th><th>
+                <p class="CellHeading">Usage</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">Add Numbers in Selection </p>
+              </td><td>
+                <p class="CellBody">Adds selected numbers and inserts result below the last line of the selection. Addition is performed for each adjacent line. If no operator exists between two adjacent numbers, addition is assumed. Works with character, line, and block selections.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">add</strong></span> command.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <a class="indexterm" name="sect_textediting_9EEE20AB_3C8A"></a>
+                  <a class="indexterm" name="sect_textediting_FF9B50F1_FFA6"></a>Add Numbers to Selection (Enumeration) </p>
+              </td><td>
+                <p class="CellBody">Automatically adds incrementing numbers to a selection of code.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">enumerate</strong></span> command to auto-add numbers or use the <span><strong class="command">gui_enumerate</strong></span> command (<span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Other </strong></span> &#8594; <span><strong class="guimenuitem">Enumerate</strong></span>) to display the <a href="ch12s02.htm#sect_edit_menuanddialogs_13764_12290">Enumerate Dialog</a>, where you can specify options.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Align Block Selection Center </p>
+              </td><td>
+                <p class="CellBody">Centers text in a block selection within the selected area. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">align_selection_center</strong></span> command. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Align Block Selection Left </p>
+              </td><td>
+                <p class="CellBody">Aligns text in a block selection so that the first non-blank character of each line is flush against the left edge of the selection. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">align_selection_left</strong></span> command. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Align Block Selection Right </p>
+              </td><td>
+                <p class="CellBody">Aligns text in a block selection so that the last non-blank character of each line is flush against the right edge of the selection. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">align_selection_right</strong></span> command. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Append Selection to Clipboard </p>
+              </td><td>
+                <p class="CellBody">Appends selected text to the clipboard.</p>
+              </td><td>
+                <p class="CellBody">
+                  <span><strong class="command">Use the </strong></span>
+                  <span><strong class="command">append_to_clipboard</strong></span>
+                  <span><strong class="command"> command (</strong></span>
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">C</strong></span>
+                  <span><strong class="command"> or </strong></span>
+                  <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Append to Clipboard</strong></span>
+                  <span><strong class="command">) </strong></span>
+                </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Beautify Selection </p>
+              </td><td>
+                <p class="CellBody">Beautifies the selected text according to the beautification settings for the current language. See <a href="ch08s20.htm">Beautifying Code</a> for more information.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">beautify_selection</strong></span> command, or check the <span><strong class="guilabel">Restrict to selection</strong></span> box on the Beautifier dialog (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Beautify</strong></span>). </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Cancel Selection </p>
+              </td><td>
+                <p class="CellBody">Cancels the selection. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">deselect</strong></span> command or press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">U</strong></span>. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Casing: Lowercase Selection </p>
+              </td><td>
+                <p class="CellBody">Translates characters within a selection to lowercase letters. See <a href="ch08s03.htm#sect_textediting_12462_45446">Case and Capitalization of Text</a> for more casing options. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">lowcase_selection</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">L</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Other </strong></span> &#8594; <span><strong class="guimenuitem">Lowcase</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Casing: Toggle Selection Casing </p>
+              </td><td>
+                <p class="CellBody">Toggles the characters within a selection between lowercase and uppercase. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">togglecase_selection</strong></span> command. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Casing: Uppercase Selection </p>
+              </td><td>
+                <p class="CellBody">Translates characters within a selection to lowercase letters. See <a href="ch08s03.htm#sect_textediting_12462_45446">Case and Capitalization of Text</a> for more casing options. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">upcase_selection</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">U</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Other </strong></span> &#8594; <span><strong class="guimenuitem">Upcase</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Copy Selection by Dragging </p>
+              </td><td>
+                <p class="CellBody">Drag/copies selected text.</p>
+              </td><td>
+                <p class="CellBody">
+                  <span><strong class="command">Press and hold </strong></span>
+                  <span><strong class="keycap">Ctrl</strong></span>
+                  <span><strong class="command"> while clicking inside a selection and then dragging with the mouse to the desired location (</strong></span>
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">LButtonDn</strong></span>
+                  <span><strong class="command">). </strong></span>
+                </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Copy Selection to Clipboard</p>
+              </td><td>
+                <p class="CellBody">Copies selected text (or the entire line, if no selection) to the 
+                  clipboard. You can also create a named clipboard with this operation (see <a href="ch08s03.htm#sect_textediting_12462_83170">Named Clipboards</a>). </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">copy_to_clipboard</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">C</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Copy</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Copy Selection to Cursor </p>
+              </td><td>
+                <p class="CellBody">Copies selected text to the cursor location. Char and block selections are inserted before the character at the cursor, while lines are inserted at the location specified by the <span><strong class="guilabel">Line insert style</strong></span> setting (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">General</strong></span>).</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">copy_to_cursor </strong></span>command or press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span> while holding the right mouse button (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">RbuttonDn</strong></span>). </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Cut Selection </p>
+              </td><td>
+                <p class="CellBody">Deletes a selection and copies it to the clipboard.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">cut</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">X</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Cut</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Delete and Append to Clipboard </p>
+              </td><td>
+                <p class="CellBody">Deletes a selection and appends it to the clipboard.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">append_cut</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">X</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Append Cut</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Execute Selection </p>
+              </td><td>
+                <p class="CellBody">Executes each line or sub-line of a selection as if entered on the command line.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">execute_selection</strong></span> command or press <span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">=</strong></span>. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Files: Append Selection to File </p>
+              </td><td>
+                <p class="CellBody">Appends selected text to the specified file.</p>
+              </td><td>
+                <p class="CellBody">Specify a file name with the <span><strong class="command">append</strong></span> command, or use the <span><strong class="command">gui_append_selection</strong></span> command to display a dialog where you can browse to pick the file. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Files: Write Selection to File </p>
+              </td><td>
+                <p class="CellBody">Writes selected text to the specified file.</p>
+              </td><td>
+                <p class="CellBody">Specify a file name with the <span><strong class="command">put</strong></span> command, or use the <span><strong class="command">gui_write_selection</strong></span> command (<span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Write Selection</strong></span>) to display a dialog where you can browse to pick the file. </p>
+              </td></tr><tr><td>
+                <a class="indexterm" name="sect_textediting_71675_36798"></a>
+                <p class="CellBody">Fill Selection </p>
+              </td><td>
+                <p class="CellBody">Fills a selection with the specified key character.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">fill_selection</strong></span> command to be prompted on the command line for the key, or use the <span><strong class="command">gui_fill_selection</strong></span> command (<span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Fill</strong></span>) to display a dialog prompt. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Hide Selection </p>
+              </td><td>
+                <p class="CellBody">Hides all lines in a selection by collapsing as a <a href="ch08s06.htm#sect_viewinganddisplaying_13437_24461">Selective Display</a> unit. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">hide_selection</strong></span> command (<span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Hide Selection</strong></span>). Use the <span><strong class="command">show_all</strong></span> command (<span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Show All</strong></span>) to redisplay lines. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Indenting: Indent Selection </p>
+              </td><td>
+                <p class="CellBody">Indents the selected text according to the
+              Syntax Indent settings or by one tab stop, depending on the
+              <span><strong class="guilabel">Indent with tabs</strong></span> setting on the <a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a> screen. One indent level is added for char and line selections, while one indent level starting from the left edge of the selection is used for block selections.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">indent_selection</strong></span> command (<span><strong class="keycap">Tab</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Indent</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Indenting: Unindent Selection </p>
+              </td><td>
+                <p class="CellBody">Unindents the selected text according to
+              the Syntax Indent settings or by one tab stop, depending on the
+              <span><strong class="guilabel">Indent with tabs</strong></span> setting on the <a href="ch12s11.htm#sect_options_menuanddialogs_14207_90298">Language-Specific Formatting Options</a> screen. One indent level is removed from each line of char and line selections, while one indent level starting from the left edge of the selection is removed for block selections.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">unindent_selection</strong></span> command (<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Tab</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Unindent</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">List Clipboards </p>
+              </td><td>
+                <p class="CellBody">Allows you to view and insert a clipboard. See <a href="ch08s03.htm#sect_textediting_12462_13822">Clipboards</a> for more information.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">list_clipboards</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">V</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">List Clipboards</strong></span>. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Move Selection by Dragging </p>
+              </td><td>
+                <p class="CellBody">Drag/moves selected text.</p>
+              </td><td>
+                <p class="CellBody">Press and hold the left mouse button while clicking on a selection and then dragging with the mouse to the new location. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Overlay Block Selection </p>
+              </td><td>
+                <p class="CellBody">Overlays a block selection at the current cursor location. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">overlay_block_selection</strong></span> command (<span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Other </strong></span> &#8594; <span><strong class="guimenuitem">Overlay Block</strong></span>). </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Overlay/Adjust Block Selection </p>
+              </td><td>
+                <p class="CellBody">Overlays a block selection at the current cursor location, and fills the source selection with blanks. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">adjust_block_selection</strong></span> command (<span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Other </strong></span> &#8594; <span><strong class="guimenuitem">Adjust Block</strong></span>). </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Paste </p>
+              </td><td>
+                <p class="CellBody">Inserts the most recent clipboard at the current cursor location. To insert another clipboard, see the List Clipboards operation or <a href="ch08s03.htm#sect_textediting_12462_13822">Clipboards</a>. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">paste</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">V</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Paste</strong></span>). </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Reflow Selection </p>
+              </td><td>
+                <p class="CellBody">Reflows text within a selection according to the margin settings specified on the Word Wrap option screen (see <a href="ch12s11.htm#sect_options_menuanddialogs_14207_11062">Language-Specific Word Wrap Options</a>). Block selections are wrapped within the columns of the block. Char selections are not supported for this operation.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">reflow_selection</strong></span> command (<span><strong class="guimenu">Document </strong></span> &#8594; <span><strong class="guimenuitem">Format Selection</strong></span>). </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Reverse Selection </p>
+              </td><td>
+                <p class="CellBody">Reverses the characters in a selection. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">reverse_selection</strong></span> command. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Shift Text in Selection Left</p>
+              </td><td>
+                <p class="CellBody">Shifts text within a selection to the left by one column, maintaining relative indentation. This operation supports line and block selections. If a character selection is used, it is converted to a line selection. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">shift_selection_left</strong></span> command (<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">F7</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Other </strong></span> &#8594; <span><strong class="guimenuitem">Shift Left</strong></span>). </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Shift Text in Selection Right</p>
+              </td><td>
+                <p class="CellBody">Shifts text within a selection to the right by one column, maintaining relative indentation. This operation supports line and block selections. If a character selection is used, it is converted to a line selection.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">shift_selection_right</strong></span> command (<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">F8</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Other </strong></span> &#8594; <span><strong class="guimenuitem">Shift Right</strong></span>). </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Sort Lines Within Selection </p>
+              </td><td>
+                <p class="CellBody">Sorts lines in a selected area in ascending order.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">sort_within_selection</strong></span> command or select the <span><strong class="guilabel">Sort within selection</strong></span> option on the Sort dialog (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Sort</strong></span>). </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Sort Selected Lines </p>
+              </td><td>
+                <p class="CellBody">Sorts lines in a selected area in ascending order, by comparing only the first columns. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">sort_on_selection</strong></span> command or select the <span><strong class="guilabel">Sort on selection</strong></span> option on the Sort dialog (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Sort</strong></span>). </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Spell Check Selection</p>
+              </td><td>
+                <p class="CellBody">Checks the spelling of selected text according to the Spell Option settings. See <a href="ch10s05.htm">Spell Checking</a> for more information. </p>
+              </td><td>
+                <p class="CellBody">Use the  <span><strong class="command">spell_check_selection</strong></span> command (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Spell Check </strong></span> &#8594; <span><strong class="guimenuitem">Check Selection</strong></span>). </p>
+              </td></tr></tbody></table></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_textediting_12462_73307"></a>
+      <a name="sect_textediting_12462_1018517"></a>
+      <a class="indexterm" name="sect_textediting_F0651619_1687"></a>Cut, Copy, Paste, and Move</h3></div></div></div><p class="NormalText">The main menu item <span><strong class="command">Edit</strong></span> provides access to commonly used editing features. 
+      Each menu item and its associated command are described in the <a href="ch12s02.htm#sect_edit_menuanddialogs_13764_47250">Edit Menu</a> section. Keyboard shortcuts 
+      for each menu item (if available) are displayed by default on the menu itself, based on the current emulation.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"> Several editing operations affect words. You can change the characters that SlickEdit® uses to recognize words, on a per-language basis. To do this, use the <span><strong class="guilabel">Word chars</strong></span> option on the <a href="ch12s11.htm#sect_options_menuanddialogs_14207_24528">Language-Specific General Options</a> screen (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">[Language Category] </strong></span> &#8594; <span><strong class="guimenuitem">[Language] </strong></span> &#8594; <span><strong class="guimenuitem">General</strong></span>). </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_30861"></a>
+        <a name="sect_textediting_12462_1018558"></a>Cutting and Deleting</h4></div></div></div><p class="NormalText">You can cut or delete any selected text, or individual words, lines, or entire code blocks. Cut operations copy the text to the clipboard before deleting. To remove selected text without copying it to the clipboard, press the <span><strong class="keycap">Delete</strong></span> key.</p><p class="NormalText">The table below shows some common Cut operations.  </p><div class="informaltable"><a name="table_5a14982d-5dc5-4bb2-bb33-e8331c53be8d"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Cut Operation</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th><th>
+                <p class="CellHeading">Usage</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">Cut</p>
+              </td><td>
+                <p class="CellBody">Deletes the selection and copies it to the clipboard.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">cut</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">X</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Cut</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Append Cut</p>
+              </td><td>
+                <p class="CellBody">Deletes the selection and appends it to the clipboard.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">append_cut</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">X</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Append Cut</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Cut Word</p>
+              </td><td>
+                <p class="CellBody">Deletes text starting from the cursor to the end of the current word or next word, and copies it to the clipboard. Invoking this operation from the keyboard multiple times in succession creates one clipboard. See the Tip at the beginning of this section to change word recognition characters.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">cut_word</strong></span> 
+                  command (<span><strong class="keycap">Ctrl </strong></span>+<span><strong class="keycap">Shift </strong></span>+<span><strong class="keycap">k</strong></span> or 
+                  <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Delete </strong></span> &#8594; <span><strong class="guimenuitem">Word</strong></span>).
+                </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Cut Line</p>
+              </td><td>
+                <p class="CellBody">Deletes the current line and copies it to the clipboard. Invoking this operation from the keyboard multiple times in succession creates one clipboard.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">cut_line</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Backspace</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Delete </strong></span> &#8594; <span><strong class="guimenuitem">Line</strong></span>). </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Cut to End of Line</p>
+              </td><td>
+                <p class="CellBody">Deletes text starting from the cursor to the end of the line, and copies it to the clipboard. Invoking this operation from the keyboard multiple times in succession creates one clipboard.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">cut_end_line</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">E</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Delete </strong></span> &#8594; <span><strong class="guimenuitem">To End of Line</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Cut Code Block</p>
+              </td><td>
+                <p class="CellBody">Prompts to delete the current code block statement and copies the lines to the clipboard.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">cut_code_block</strong></span> command or press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Del</strong></span>.</p>
+              </td></tr></tbody></table></div><p class="NormalText"></p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_95626"></a>
+        <a name="sect_textediting_12462_1018605"></a>Copying Text</h4></div></div></div><p class="NormalText">The table below shows some common Copy operations.  </p><div class="informaltable"><a name="table_247075a1-3fb2-4788-a810-bd84d1b18d44"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Copy Operation</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th><th>
+                <p class="CellHeading">Usage</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">Copy to Clipboard</p>
+              </td><td>
+                <p class="CellBody">Copies the selected text (or the entire line, if no selection) to 
+                  the clipboard. You can also create a named clipboard with this operation (see <a href="ch08s03.htm#sect_textediting_12462_83170">Named Clipboards</a>). </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">copy_to_clipboard</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">C</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Copy</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Copy Word</p>
+              </td><td>
+                <p class="CellBody">Copies the word at the cursor to the clipboard. Invoking this operation from the keyboard multiple times in succession creates one clipboard. See the Tip at the beginning of this section to change word recognition characters.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">copy_word</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">K</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Copy Word</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Copy to Cursor</p>
+              </td><td>
+                <p class="CellBody">Copies the selected text to the cursor location. Char and block selections are inserted before the character at the cursor, while lines are inserted at the location specified by the <span><strong class="guilabel">Line insert style</strong></span> setting (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">General</strong></span>).</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">copy_to_cursor </strong></span>command or press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span> while holding the right mouse button (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">RbuttonDn</strong></span>). </p>
+              </td></tr><tr><td>
+                <p class="CellBody">Copy to System Clipboard</p>
+              </td><td>
+                <p class="CellBody">Passes the selected text to the operating systems clipboard. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">copy</strong></span> command.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Copy Visible</p>
+              </td><td>
+                <p class="CellBody">Copies the currently visible lines to the clipboard. Ignores lines hidden by <a href="ch08s06.htm#sect_viewinganddisplaying_13437_24461">Selective Display</a>.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">copy_selective_display</strong></span> command (<span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Copy Visible</strong></span>).</p>
+              </td></tr></tbody></table></div><p class="NormalText"></p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_15404"></a>
+        <a name="sect_textediting_12462_1018652"></a>
+        <a class="indexterm" name="sect_textediting_F6E3F16A_B9CC"></a>Pasting Text</h4></div></div></div><p class="NormalText">When pasting text created from a character or block selection, the text is inserted before the character at the cursor. Line selections are inserted at the location specified by the <span><strong class="guilabel">Line insert style</strong></span> setting (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">General</strong></span>), and by default, indented according to your indent level settings. See <a href="ch08s03.htm#sect_textediting_12462_88718">Inserting Lines</a> for more information.</p><p class="NormalText">The most recent clipboard item can be inserted at the cursor location with the <span><strong class="command">paste</strong></span> command (<span><strong class="keycap">Ctrl+V</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Paste</strong></span>). </p><p class="NormalText">To insert another clipboard, use the Clipboards tool window (<span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">List Clipboards</strong></span>), or use the <span><strong class="command">list_clipboards</strong></span> command to display the Select Text to Paste dialog. Both the tool window and dialog show a list of your clipboards and let you select the clipboard to insert. The only difference is that the tool window can be docked and contains a Preview area that shows the entire color-coded contents of the clipboard. See <a href="ch08s03.htm#sect_textediting_12462_13822">Clipboards</a> for more information about these features.</p><p class="NormalText">You can also cycle through and paste clipboards with the <span><strong class="command">paste_next_clipboard</strong></span> and <span><strong class="command">paste_prev_clipboard</strong></span> commands. These commands cycle through the clipboard ring and paste the top item, while leaving the pasted text selected, so you can use the command again to see the next (or previous) clipboard text, if that wasn't the clipboard you wanted. For example, if you have three clipboards named 1, 2, and 3, invoking the <span><strong class="command">paste_next_clipboard</strong></span> command inserts (yet leaves selected) clipboard 2 and moves it to the top of the ring. Invoke the command again to see/paste the next clipboard instead, and so on. </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_55363"></a>
+        <a name="sect_textediting_12462_1018666"></a>
+        <a class="indexterm" name="sect_textediting_8C6F034F_D88A"></a>
+        <a class="indexterm" name="sect_textediting_A9673233_9141"></a>Moving Text</h4></div></div></div><p class="NormalText">To move a text selection from one location to another, use the mouse to drag and drop it where you want. SlickEdit® allows this capability by default. To disable it, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>, expand <span><strong class="guilabel">Editing</strong></span> and click <span><strong class="guilabel">General</strong></span>, then set the <span><strong class="guilabel">Allow drag drop text</strong></span> option to <span><strong class="command">False</strong></span>.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_textediting_12462_13822"></a>
+      <a name="sect_textediting_12462_1018747"></a>
+      <a class="indexterm" name="sect_textediting_4FEB2A44_BA10"></a>
+      <a class="indexterm" name="sect_textediting_FAE10575_2CED"></a>
+      <a class="indexterm" name="sect_textediting_9ABB72DD_725D"></a>Clipboards</h3></div></div></div><p class="NormalText">Use SlickEdit® clipboards to copy and move text in files, the SlickEdit command line, dialog text boxes, or any other application that supports text clipboards, such as a word processor. Clipboards in SlickEdit are internal to the editor and separate from the system clipboard provided by the operating system.</p><p class="NormalText">Common clipboard-related operations (cut, copy, paste, etc.) are available on the main <span><strong class="guimenu">Edit</strong></span> drop-down menu. The corresponding key binding for each item is also shown by default. See <a href="ch08s03.htm#sect_textediting_12462_73307">Cut, Copy, Paste, and Move</a> for more information about basic editing operations.</p><p class="NormalText">When using a cut or copy operation, a clipboard is created. Pressing the same cut key multiple times in succession creates one clipboard. For example, the shortcut <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">K</strong></span> is used to cut words (the binding for the <span><strong class="command">cut_word</strong></span> command). If you press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">K</strong></span> three times to cut three words, one clipboard is created that you can insert with <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">V</strong></span> (the <span><strong class="command">paste</strong></span> command). This is true for <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Backspace </strong></span>(<span><strong class="command">cut_line</strong></span> command) and <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">E</strong></span> (<span><strong class="command">cut_end_line</strong></span> command) as well.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"> If you are using the Brief emulation and want to place cut text on a clipboard, bind the commands <span><strong class="command">cut_word</strong></span>, <span><strong class="command">cut_end_line</strong></span>, and <span><strong class="command">cut_line</strong></span> to the appropriate keys.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_66184"></a>
+        <a name="sect_textediting_12462_1018776"></a>
+        <a class="indexterm" name="sect_textediting_45F92E3A_3282"></a>Viewing and Inserting Clipboards</h4></div></div></div><p class="NormalText">To insert the current clipboard into the buffer, from the main menu, select <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Paste</strong></span>, press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">V</strong></span>, or use the <span><strong class="command">paste</strong></span> command.</p><p class="NormalText">In the case of multiple clipboards, there are two ways to view and insert: by using the Clipboards tool window, or by using the modal Select Text to Paste dialog. Both provide the same information, except the Clipboards tool window is dockable and contains a color-coded Preview area for previewing clipboard contents.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">To display the Clipboards tool window, from the main menu, select <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">List Clipboards</strong></span>, press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">V</strong></span>, or use the <span><strong class="command">list_clipboards</strong></span> command.</p><div class="mediaobject"><img src="Resources/clipboards_toolwindow.png"></div></li><li><p class="NormalText">To display the Select Text to Paste dialog, you can use either the <span><strong class="command">old_list_clipboards</strong></span> command or the <span><strong class="command">list_clipboards_modal</strong></span> command. These commands are identical.</p><div class="mediaobject"><img src="Resources/selecttexttopaste_dialog.png"></div></li></ul></div><p class="NormalText">With either method, double-click on a clipboard to insert it at the cursor location, or, select the clipboard to insert and press <span><strong class="keycap">Enter</strong></span> or click <span><strong class="guibutton">OK</strong></span>.</p><p class="NormalText">Both the dialog and the tool window provide the same information:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Clipboard name/number</strong></span> - This is the number of the clipboard or the name, if using <a href="ch08s03.htm#sect_textediting_12462_83170">Named Clipboards</a>. Clipboards are numbered with the most recent clipboard first, which always appears at the top of the list. You can use this value with the <span><strong class="command">paste</strong></span> command to insert the specified clipboard. For example, type <span><strong class="command">paste 2</strong></span> on the command line to insert clipboard 2 at the cursor location.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Clipboard type</strong></span> - The clipboard type can be CHAR, LINE, or BLOCK. A CHAR type clipboard is inserted before the current character. A LINE type clipboard is inserted after the current line by default. If you want LINE type clipboards inserted before the current line, change the line insert style (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">General</strong></span>). A BLOCK type clipboard is inserted before the current character and pushes over all text intersecting with the block. No lines are inserted.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Line count</strong></span> - The number following the clipboard type indicates the number of complete or partial lines of text in the clipboard.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Clipboard contents/summary</strong></span> - This area shows all or a portion of the clipboard contents. If the contents exceed the viewing area, they are condensed.</p></li></ul></div><p class="NormalText">The Clipboards tool window contains a Preview area that shows the selected clipboard's color-coded contents. You can copy text in the Preview to create a new clipboard. To see the entire contents of a condensed clipboard using the Select Text to Paste dialog, click the <span><strong class="guibutton">View</strong></span> button. The View Clipboard dialog opens showing the color-coded contents in an edit window. From here, you can copy all or part of the contents to the operating system clipboard.</p><p class="NormalText">The Clipboards tool window contains additional functionality:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">You can filter the list of clipboards by text.  By typing a string into 
+          the <span><strong class="guilabel">Filter</strong></span> text box, only clipboards whose contents contain that 
+          entered string will be shown.  Clearing the filter will restore all clipboards.</p></li><li><p class="NormalText">To delete the selected clipboard item in the tool window, press <span><strong class="keycap">Delete</strong></span>, or, right-click and select <span><strong class="guimenu">Delete</strong></span> from the context-menu. To delete all clipboards, select <span><strong class="guimenu">Clear All</strong></span> from the right-click context menu.</p></li><li><p class="NormalText">To make the selected clipboard active, select <span><strong class="guilabel">Set as Current Clipboard</strong></span> from the right-click context menu.</p></li><li><p class="NormalText">To save the clipboard to a file, select <span><strong class="guilabel">Save clipboard to file</strong></span> from the right-click context menu.</p></li><li><p class="NormalText">To change the view of the tool window, the <span><strong class="guilabel">View</strong></span> menu item on the right-click context menu:</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guilabel">Auto</strong></span> - When this is selected, the Clipboards tool window switches between Horizontal and Vertical views automatically as you resize it.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guimenu">Horizontal</strong></span> - When this is selected, the clipboard list is displayed above the Preview area.</p></li><li><p class="NormalText">
+                <span class="bold"><strong></strong></span>
+                <span><strong class="guimenu">Vertical</strong></span> - When this is selected, the clipboard list and Preview area are displayed side-by-side.</p></li></ul></div></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_83170"></a>
+        <a name="sect_textediting_12462_1018807"></a>Named Clipboards</h4></div></div></div><p class="NormalText">You can create a named clipboard by simply typing the name after the <span><strong class="command">copy_to_clipboard</strong></span> command. For example, create a selection, then, on the SlickEdit® command line, type: <span><strong class="command">copy_to_clipboard a</strong></span>. A clipboard named "a" is created. Now, you can use the name with the <span><strong class="command">paste</strong></span> command to insert the named clipboard without using the Select Text to Paste dialog or Clipboards tool window (for example, <span><strong class="command">paste a</strong></span>). Note that named clipboards are limited to two characters, and that the <span><strong class="command">cut</strong></span> command is not supported for this feature.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_29130"></a>
+        <a name="sect_textediting_12462_1018810"></a>Clipboards in the Command Line and Text Boxes</h4></div></div></div><p class="NormalText">Only clipboards of one line can be inserted into the SlickEdit® command line or a text box. Both <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">V</strong></span> and <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">V</strong></span> key sequences can be used to insert clipboard text into these fields. The result of inserting a clipboard into a text box varies depending on the clipboard type. </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_85907"></a>
+        <a name="sect_textediting_12462_1018813"></a>Setting the Max Number of Clipboards</h4></div></div></div><p class="NormalText">By default, a stack of the 50 most recently used clipboards is kept. To change the maximum number of clipboards saved, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>, expand <span><strong class="guilabel">Editing</strong></span> and click <span><strong class="guilabel">General</strong></span>, then enter a value in the <span><strong class="guilabel">Maximum clipboards</strong></span> box.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_textediting_12462_58586"></a>
+      <a name="sect_textediting_12462_1018816"></a>Other Operations</h3></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_88718"></a>
+        <a name="sect_textediting_12462_1018831"></a>Inserting Lines</h4></div></div></div><p class="NormalText">
+        SlickEdit® provides several ways to start a new line or split a line, as described in the table below.  </p><div class="informaltable"><a name="table_fe1b0d92-7cf3-4156-8481-78e77397df5e"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Line Operation</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th><th>
+                <p class="CellHeading">Usage</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">Split Line at Cursor </p>
+              </td><td>
+                <p class="CellBody">Splits the line at the cursor and appends enough blanks at the beginning of the new line to align it with the first non-blank character of the original line. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">split_insert_line</strong></span> command or press <span><strong class="keycap">Enter</strong></span>.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">No Split Insert Line (After) </p>
+              </td><td>
+                <p class="CellBody">Inserts a blank line after the current line, aligning the cursor with the first non-blank character of the current line. The current line is not split.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">nosplit_insert_line</strong></span> command or press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Enter</strong></span>.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">No Split Insert Line (Before) </p>
+              </td><td>
+                <p class="CellBody">Inserts a blank line before the current line, aligning the cursor with the first non-blank character of the current line. The current line is not split.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">nosplit_insert_line_above</strong></span> command or press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Enter</strong></span>.</p>
+              </td></tr></tbody></table></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_45446"></a>
+        <a name="sect_textediting_12462_1018674"></a>
+        <a class="indexterm" name="sect_textediting_FFB3D000_B6E7"></a>
+        <a class="indexterm" name="sect_textediting_A3205976_1E6D"></a>Case and Capitalization of Text</h4></div></div></div><p class="NormalText">The table below shows some of the operations you can use to change the case and capitalization of characters and words.</p><div class="informaltable"><a name="table_816fcd90-ea4b-4f27-a6a4-00f3aca07721"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Casing Operation</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th><th>
+                <p class="CellHeading">Usage</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">Lowercase Selection </p>
+              </td><td>
+                <p class="CellBody">Translates characters within a selection to lowercase letters. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">lowcase_selection</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">L</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Other </strong></span> &#8594; <span><strong class="guimenuitem">Lowcase</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Lowercase Word </p>
+              </td><td>
+                <p class="CellBody">Translates the current word to lowercase letters and places the cursor after it. See the Tip at the beginning of this section to change word recognition characters.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">lowcase_word</strong></span> command.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Uppercase Selection</p>
+              </td><td>
+                <p class="CellBody">Translates characters within a selection to lowercase letters. </p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">upcase_selection</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">U</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Other </strong></span> &#8594; <span><strong class="guimenuitem">Upcase</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Uppercase Word </p>
+              </td><td>
+                <p class="CellBody">Translates the current word to uppercase letters and places the cursor after it. See the Tip at the beginning of this section to change word recognition characters.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">upcase_word</strong></span> command.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Toggle Casing </p>
+              </td><td>
+                <p class="CellBody">Toggles the case of letters within a selection.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">togglecase_selection</strong></span> command.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Uppercase Mode </p>
+              </td><td>
+                <p class="CellBody">Toggles Uppercase mode on and off. Uppercase mode means that 
+                  letters you type are automatically uppercased, so you don't need to press and hold 
+                  Shift. Note that you can enable auto-caps on a language-specific basis with the 
+                  <span><strong class="guilabel">Auto CAPS</strong></span> option (see <a href="ch12s11.htm#sect_options_menuanddialogs_14207_24528">Language-Specific General Options</a>).</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">caps</strong></span> command.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Capitalize Selection </p>
+              </td><td>
+                <p class="CellBody">Capitalizes the first letter of each word in a selection.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">cap_selection</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">A</strong></span> or <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Other </strong></span> &#8594; <span><strong class="guimenuitem">Capitalize</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">Capitalize Word </p>
+              </td><td>
+                <p class="CellBody">Capitalizes the first letter of the current word and places the cursor after the word. See the Tip at the beginning of this section to change word recognition characters.</p>
+              </td><td>
+                <p class="CellBody">Use the <span><strong class="command">cap_word</strong></span> command.</p>
+              </td></tr></tbody></table></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_23337"></a>
+        <a name="sect_textediting_12462_1018740"></a>
+        <a class="indexterm" name="sect_textediting_DA40E0C8_5A38"></a>
+        <a class="indexterm" name="sect_textediting_2E1F5386_CBB3"></a>
+        <a class="indexterm" name="sect_textediting_1FDA4B4C_FEFA"></a>
+        <a class="indexterm" name="sect_textediting_665B7F65_3920"></a>
+        <a class="indexterm" name="sect_textediting_5389C782_97FF"></a>Inserting Literal Characters</h4></div></div></div><p class="NormalText">Characters can be inserted at the cursor location in the current buffer. This is useful if you wish to insert non-ASCII characters (keys not on the keyboard). To insert a literal character, from the main menu, click <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Insert Literal</strong></span>, or use the <span><strong class="command">insert_literal</strong></span> command. The Insert Literal dialog is displayed.</p><p class="NormalText">The text box to the right of the <span><strong class="guilabel">Character Code</strong></span> label displays the character. The spin box displays the decimal character code, hex character code, or ASCII character depending on which of those options is selected.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_86875"></a>
+        <a name="sect_textediting_12462_1018869"></a>
+        <a class="indexterm" name="sect_textediting_5E98BCAA_4056"></a>
+        <a class="indexterm" name="sect_textediting_A19C0774_E329"></a>
+        <a class="indexterm" name="sect_textediting_F57D4FFB_6AD3"></a>Block Insert Mode</h4></div></div></div><p class="NormalText">Block insert mode is useful when you need to edit a block of text instead of just copying or deleting it. Additionally, when in this mode, characters you type, as well as other edits (such as backspacing and deleting), apply to the entire block/column selection.</p><p class="NormalText">After a block selection is created, you can enter block insert mode by simply typing some characters to insert, or by entering the <span><strong class="command">block_insert_mode</strong></span> command (<span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Other </strong></span> &#8594; <span><strong class="guimenuitem">Block Insert Mode</strong></span>). If the block selection is more than one column wide, then the initial block selection will be deleted when you type the first character. This mode also supports use of the keys <span><strong class="keycap">Tab</strong></span>, <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Tab</strong></span>, and <span><strong class="keycap">Backspace</strong></span>.</p><p class="NormalText">To cancel out of block insert mode, press the <span><strong class="keycap">Esc</strong></span> key.</p><p class="NormalText">The figure below shows an example of a block selection created by right-clicking and dragging to select a block. Notice the cursor position.</p><div class="mediaobject"><img src="Resources/bismode1.jpg"></div><p class="NormalText">The figure below shows how the above example changes when you type "i" at the cursor while the block is selected.</p><div class="mediaobject"><img src="Resources/bismode2.jpg"></div><p class="NormalText">The figure below shows how the original example changes when you type "int" at the cursor while the block is selected.</p><div class="mediaobject"><img src="Resources/bismode3.jpg"></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_textediting_12462_34523"></a>
+        <a name="sect_textediting_12462_1019258"></a>
+        <a class="indexterm" name="sect_textediting_C2DDBD48_F38D"></a>Hex Mode Editing</h4></div></div></div><p class="NormalText">You can enable Hex view/edit mode on a per-document or language-specific basis:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">To view the current binary or text file in a Hex mode, click <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Hex</strong></span> or <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Line Hex</strong></span> (or use the commands <span><strong class="command">hex</strong></span> or <span><strong class="command">linehex</strong></span>, respectively).</p></li><li><p class="NormalText">To enable Hex or Line Hex view on a language-specific basis, so that each file opened in that language is displayed in Hex mode, use the <a href="ch12s11.htm#sect_options_menuanddialogs_14207_98006">Language-Specific View Options</a>.</p></li></ul></div><p class="NormalText">If you close a file in Hex mode, the file will be displayed in Hex mode the next time it is opened. When the cursor is in hex data, the data can be overwritten or hex nibbles (characters <span><strong class="keycap">0</strong></span> through <span><strong class="keycap">F</strong></span>) can be inserted. When the cursor is in the text data, overwrite it if you want, or insert text characters the same as if editing a text file. All of the search and replace commands work while SlickEdit® is in Hex mode. Only character selections are displayed when in Hex mode.</p><p class="NormalText">See also <a href="ch08s06.htm#sect_viewinganddisplaying_13437_99431">Hex/Line Hex View</a> for more information.</p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_textediting_12462_1018892"></a>Hex/Text View Key Bindings</h5></div></div></div><p class="NormalText">Hex mode key bindings override normal key bindings for the emulation. Most of the other emulation keys will perform the same operation. However, keys that are bound to the following commands perform hex cursor motion: <span><strong class="command">top_of_buffer</strong></span>, <span><strong class="command">bottom_of_buffer</strong></span>, <span><strong class="command">page_up</strong></span>, <span><strong class="command">page_down</strong></span>, <span><strong class="command">begin_line</strong></span>, <span><strong class="command">end_line</strong></span>, <span><strong class="command">begin_line_text_toggle</strong></span>, <span><strong class="command">cursor_left</strong></span>, and <span><strong class="command">cursor_right</strong></span>.</p><div class="informaltable"><a name="table_02ec0aae-5b6e-4e8e-a5a8-f6b6b53e5236"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                  <p class="CellHeading">Hex/Text View Operation</p>
+                </th><th>
+                  <p class="CellHeading">Key Shortcut</p>
+                </th></tr></thead><tbody><tr><td>
+                  <p class="CellBody">Delete Byte to Left of Cursor and Move Cursor Left </p>
+                </td><td>
+                  <p class="CellBody">
+                    <span><strong class="keycap">Backspace </strong></span>
+                  </p>
+                </td></tr><tr><td>
+                  <p class="CellBody">Delete Byte Under Cursor </p>
+                </td><td>
+                  <p class="CellBody">
+                    <span><strong class="keycap">Delete </strong></span>
+                  </p>
+                </td></tr><tr><td>
+                  <p class="CellBody">Move Cursor to Beginning of Hex Line </p>
+                </td><td>
+                  <p class="CellBody">
+                    <span><strong class="keycap">Home </strong></span>
+                  </p>
+                </td></tr><tr><td>
+                  <p class="CellBody">Move Cursor to Last Character of Hex Line </p>
+                </td><td>
+                  <p class="CellBody">
+                    <span><strong class="keycap">End </strong></span>
+                  </p>
+                </td></tr><tr><td>
+                  <p class="CellBody">Toggle Cursor Between Hex Data on Left, Text Data on Right </p>
+                </td><td>
+                  <p class="CellBody">
+                    <span><strong class="keycap">Tab</strong></span> and <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Tab </strong></span></p>
+                </td></tr></tbody></table></div><p class="NormalText"></p></div></div></div></div></body></html>

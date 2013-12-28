@@ -1,0 +1,342 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>load_files</title>
+</head>
+<body>
+
+<h3><b>int load_files(_str options)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">For an explanation of how windows, views, and buffers are related, see
+section "Windows Structure."
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - <i>options</i> may contain one file or buffer name and the following options:
+
+<dl>
+<dt><i>FileOrBufferName</i></dt><dd>Find the buffer specified or load the file</dd>
+
+<dt>+ or -L[C|Z]</dt><dd>Turn on/off load entire file switch.  The optional C suffix
+count the number of lines in the file.  The Z suffix counts the number of
+lines in the file and truncates the file if an EOF character is found in the
+middle of the file.</dd>
+
+<dt>+ or -LF   +LF</dt><dd>Turns off loading entire file and turns on fast line count.
+This is the fastest way for SlickEdit to count the number of lines in
+a file.  -LF turns off fast line counting.</dd>
+
+<dt>+ or -LB</dt><dd>SBCS/DBCS mode. Turns on/off binary loading.  Sets initial value
+of <b>p_binary</b> property.  All edit/save options which performed
+translations are ignored.   For example, tab expansion or tab compression
+options are ignored.  This allows "safe" editing of binary files even when
+edit/save file translation are on.</dd>
+
+<dt>+ or -LE</dt><dd>Turns on/off show EOF option.  Sets initial value of
+<b>p_showeof</b> property.  When on, EOF characters at the end of DOS files
+are not stripped.  This option is not supported when the +LZ option is given.</dd>
+
+<dt>+ or -LN</dt><dd>Turns on/off show new line characters option.  When on, new line
+characters are initially visible.</dd>
+
+<dt>+ or -BP</dt><dd>Turn on/off reinsert selected buffer/window after current
+buffer/window.  Wonderful option!  Helps <b>prev_buffer</b> and
+<b>prev_window</b> commands to switch previously active file or window.</dd>
+
+<dt>+ or -S</dt><dd>Turn on/off unmodified block swapping to spill file.  Default is
+off.</dd>
+
+<dt>+<i>nnn</i></dt><dd>Load binary file(s) that follow in record width <i>nnn</i>.</dd>
+
+<dt>+T[I] [<i>buf_name</i>]</dt><dd>Start a default operating system format temp buffer
+with name <i>buf_name</i>. +TI indicates that <i>buf_name</i> is an internal name and
+should not be converted to absolute. </dd>
+
+<dt>+T[I]U [<i>buf_name</i>]</dt><dd>Start a UNIX format temp buffer with name
+<i>buf_name</i>. +TIU indicates that <i>buf_name</i> is an internal name and
+should not be converted to absolute. </dd>
+
+<dt>+T[I]M [<i>buf_name</i>]</dt><dd>Start a MACINTOSH format temp buffer with name
+<i>buf_name</i>. +TIM indicates that <i>buf_name</i> is an internal name and
+should not be converted to absolute. </dd>
+
+<dt>+T[I]D [<i>buf_name</i>]</dt><dd>Start a DOS format temp buffer with name
+<i>buf_name</i>. +TID indicates that <i>buf_name</i> is an internal name and
+should not be converted to absolute. </dd>
+
+<dt>+T[I]<i>nnn</i></dt><dd>Start a temp buffer where <i>nnn</i> is the decimal value
+of the character to be used as the line separator character. +TInnn indicates that <i>buf_name</i> is an internal name and
+should not be converted to absolute. </dd>
+
+<dt>+FU [<i>buf_name</i>]</dt><dd>Force SlickEdit to interpret a file in
+UNIX format.</dd>
+
+<dt>+FM [<i>buf_name</i>]</dt><dd>Force SlickEdit to interpret a file in
+MAC format.</dd>
+
+<dt>+FD [<i>buf_name</i>]</dt><dd>Force SlickEdit to interpret a file in
+DOS format.</dd>
+
+<dt>+F<i>nnn</i></dt><dd>SBCS/DBCS mode.  Force SlickEdit to use <i>nnn</i>
+as the decimal value of the line separator character.</dd>
+
+<dt>+FENDDEFAULTS</dt><dd>When an editing mode switch is such as "+FTEXT" or
+"+FUTF8" is specified, the value for the <b>p_encoding_set_by_user</b>
+property is set.  When this option is specified,
+<b>p_encoding_set_by_user</b> is set to -1.  This option made implementing
+the <b>p_encoding_set_by_user</b> property easier.</dd>
+
+<dt>+FTEXT</dt><dd>SBCS/DBCS mode.  Open SBCS/DBCS file.  This is the default mode
+when no mode (either SBCS/DBCS or Unicode) is specified.</dd>
+
+<dt>+FEBCDIC</dt><dd>SBCS/DBCS mode.  Open EBCDIC file.</dd>
+
+<dt>+FUTF8</dt><dd>Unicode mode.  Open UTF-8 file with or without signature.</dd>
+
+<dt>+FUTF8S</dt><dd>Unicode mode.  Open UTF-8 file with or without signature.</dd>
+
+<dt>+FUTF16LE</dt><dd>Unicode mode.  Open UTF-16 little endian file with or
+without signature.</dd>
+
+<dt>+FUTF16LES</dt><dd>Unicode mode.  Open UTF-16 little endian file with or
+without signature.</dd>
+
+<dt>+FUTF16BE</dt><dd>Unicode mode.  Open UTF-16 little endian file with or
+without signature.</dd>
+
+<dt>+FUTF16BES</dt><dd>Unicode mode.  Open UTF-16 big endian file with or without
+signature.</dd>
+
+<dt>+FUTF32LE</dt><dd>Unicode mode.  Open UTF-32 little endian file with or
+without signature.</dd>
+
+<dt>+FUTF32LES</dt><dd>Unicode mode.  Open UTF-32 little endian file with or
+without signature.</dd>
+
+<dt>+FUTF32BE</dt><dd>Unicode mode.  Open UTF-32 little endian file with or
+without signature.</dd>
+
+<dt>+FUTF32BES</dt><dd>Unicode mode.  Open UTF-32 big endian file with or without
+signature.</dd>
+
+<dt>+FCP<i>ddd</i></dt><dd>Unicode mode.  Open code page file specified by <i>ddd</i>.
+Under windows, this can be any valid code page or one of the VSCP_* constants
+defined in "slick.sh."</dd>
+
+<dt>+FACP</dt><dd>Unicode mode.  Open active code page file.  Under windows, this
+can be any valid code page or one of the VSCP_* constants defined in
+"slick.sh."</dd>
+
+<dt>+FAUTOXML</dt><dd> Unicode mode.  Open XML file.  The encoding is determined
+based on the encoding specified by the "?xml" tag.  If the encoding is not
+specified by the "?xml," the file data is assumed to be UTF-8 data which is
+consistent with XML standards.  We applied some modifications to the standard
+XML encoding determination to allow for some user error.  If the file has a
+standard Unicode signature, the Unicode signature is assumed to be correct
+and the encoding defined by the "?xml" tag is ignored.</dd>
+
+<dt>+FAUTOUNICODE</dt><dd>If the file has a standard Unicode signature,
+open the file as a Unicode file.  Otherwise, the file is loaded as SBCS/DBCS data.</dd>
+
+<dt>+FAUTOUNICODE2</dt><dd>If the file has a standard Unicode signature
+or "looks" like a Unicode * file, open the file as a Unicode file.  Otherwise, the file is
+loaded as * SBCS/DBCS data.  This option is NOT full proof and may give incorrect
+results.</dd>
+
+<dt>+FAUTOEBCDIC</dt><dd>If the file "looks" like an EBCDIC file, open the file
+as an EBCDIC file.  Otherwise, the file is loaded as SBCS/DBCS data.  This option is NOT
+full proof and may give incorrect results.  We have attempted to make this
+option support binary EBCDIC files.</dd>
+
+<dt>+FAUTOEBCDIC,UNICODE</dt><dd>This option is a combination of
+"+FAUTOEBCDIC" and "+FAUTOUNICODE" options.</dd>
+
+<dt>+FAUTOEBCDIC,UNICODE2</dt><dd>This option is a combination of
+"+FAUTOEBCDIC" and "+FAUTOUNICODE2" options.</dd>
+
+<dt>+ or -U[:<i>nnn</i>]</dt><dd>Turn on/off undo.  Specifying <i>nnn</i> sets the
+maximum number of undoable steps.  Default is off.  If +U  is not followed by
+:<i>nnn</i>, <i>nnn</i> defaults to 300.  The range of <i>nnn</i> is
+0..32767.</dd>
+
+<dt>+ or -E</dt><dd>Turn on/off expand tabs to spaces switch.  Default is off.  Only
+tabs of increments of 8 are supported.</dd>
+
+<dt>+E:<i>ddd</i></dt><dd>Expand tabs to spaces.  This expands tabs in increments of
+<i>ddd</i>.</dd>
+
+<dt>+ or -D</dt><dd>Turn on/off memory buffer name search.  Disk file search.</dd>
+
+<dt>-I or +I</dt><dd>Insert a window with no views. This option is not supported by
+_BufLoad or vsBufLoad().</dd>
+
+<dt>+ or -W</dt><dd>If the file or buffer is not already displayed in a window,
+insert a window for displaying the file or buffer. This option is not supported by
+_BufLoad or vsBufLoad().</dd>
+
+<dt>+B <i>buf_name</i></dt><dd>Look in memory only for buffer with buffer name or
+document name <i>buf_name</i>.</dd>
+
+<dt>+BB <i>buf_name</i></dt><dd>Look in memory only for buffer with buffer name
+<i>buf_name</i>.</dd>
+
+<dt>+BD <i>buf_name</i></dt><dd>Look in memory only for buffer with document name
+<i>buf_name</i>.</dd>
+
+<dt>+BI <i>buf_id</i></dt><dd>Activate buffer with buffer id <i>buf_id</i>.</dd>
+
+<dt>+ or -M</dt><dd>If on, do not save cursor position of current buffer before
+activating a new buffer.  This option is ignored by the _BufLoad() or vsBufLoad() functions.</dd>
+
+<dt>+ or -N</dt><dd>Network support switch.  When on, SlickEdit will detect
+when another application has the same file open and automatically select
+"Read only" mode.  This option requires an extra file handle open to the
+original file.</dd>
+
+<dt>+ or -R</dt><dd>Turn replace current buffer switch on/off.  This option is not
+supported by the _BufLoad() or vsBufLoad() functions.</dd>
+
+<dt>+ or -Q</dt><dd>Quiet switch.  This option is ignored by the _BufLoad() or vsBufLoad() functions</dd>
+</dl>
+
+<p>The options above that only show a plus sign will also take a minus
+sign.  However there function will remain the same.</p>
+
+<p>Here are more detailed descriptions of the options.</p>
+
+<dl>
+<dt>+ or -L[C]</dt><dd>Turn on/off load entire file switch.  Default is off.
+Entire file is loaded and unmodified blocks are swapped to spill file so that
+file handle is freed.  Used to speed up file scrolling on slow disk.  Used to
+free file handles or prevent file sharing problems.  Used to guard against
+losing files loaded from remote system.  The optional C suffix tells Visual
+SlickEdit to count the number of lines in the file.  The Z suffix counts the
+number of lines in the file and truncates the file if an EOF character is
+found in the middle of the file.</dd>
+
+<dt>+ or -BP</dt><dd>Turn on/off reinsert selected buffer/window after current
+buffer/window.  Effects any macro which uses the <b>edit</b> command to
+activate an existing buffer or window.  Effected commands include
+<b>push_tag</b>, <b>next_error</b>, <b>edit</b>, <b>cursor_error</b>, and
+<b>list_buffers</b>.  Helps the <b>prev_buffer</b> and <b>prev_window</b>
+commands to switch to previously active file or window.</dd>
+
+<dt>+ or -S</dt><dd>Turn on/off unmodified block swapping to spill file.  When on,
+unmodified blocks are spilled to spill file.  Used for editing remote files
+across slow links.  Once a block is loaded from a slow access link, if it
+needs to be spilled, it is written to your local hard disk or EMS/extended
+memory.</dd>
+
+<dt>+<i>nnn</i></dt><dd>Load binary file giving each line <i>nnn</i> characters.
+Used for editing binary or record files.</dd>
+
+<dt>+T [<i>buf_name</i>]</dt><dd>Start a temp buffer with name <i>buf_name</i>.
+<i>buf_name</i> is expanded to absolute form and stored in the internal
+variable ".buf_name".  The options +TU, +TM, and +TD are identical to the +T
+option except they select one of the ASCII file formats UNIX,  MACINTOSH, or
+DOS.</dd>
+
+<dt>+ or -U[:<i>nnn</i>]</dt><dd>Turn on/off undo.  Specifying <i>nnn</i> sets the
+maximum number of undoable steps.  Default is off.  If +U  is not followed by
+:<i>nnn</i>, <i>nnn</i> defaults to 300.  The range of <i>nnn</i> is
+0..32767.</dd>
+
+<dt>+ or -E</dt><dd>Turn on/off expand tabs to spaces switch.  Default is off.  Only
+tab increments of 8 are supported.</dd>
+
+<dt>+ or -D</dt><dd>Turn on/off memory buffer name search.  When on, files are loaded
+from disk regardless if there is a copy already in memory.  It is wise to
+rename the copy after loading it to prevent saving the wrong file.</dd>
+
+<dt>+V [<i>window_id</i>]</dt><dd>Selects buffer by window information.  If no window is
+specified the active window is assumed.</dd>
+
+<dt>+I</dt><dd>Insert a window with no views.  Window is deleted if no views are
+inserted.</dd>
+
+<dt>+ or -W</dt><dd>Insert a window for each file that follows.</dd>
+
+<dt>+B <i>buf_name</i></dt><dd>Look in memory only for buffer with buffer name or
+document name <i>buf_name</i>.  If buffer is not found, FILE_NOT_FOUND_RC is
+returned.  No buffer is created, if buffer is not found.  Buffer name search
+is case insensitive for file systems like DOS which are case insensitive.
+Buf_name must be in absolute form (Full path spec).</dd>
+
+<dt>+BB <i>buf_name</i></dt><dd>Look in memory only for buffer with buffer name
+<i>buf_name</i>.  If buffer is not found, FILE_NOT_FOUND_RC is returned.  No
+buffer is created, if buffer is not found.  Buffer name search is case
+insensitive for file systems like DOS which are case insensitive.  Buf_name
+must be in absolute form (Full path spec).</dd>
+
+<dt>+BD <i>buf_name</i></dt><dd>Look in memory only for buffer with document name
+<i>buf_name</i>.  If buffer is not found, FILE_NOT_FOUND_RC is returned.  No
+buffer is created, if buffer is not found.  Buffer name search is case
+insensitive for file systems like DOS which are case insensitive.  Buf_name
+must be in absolute form (Full path spec).</dd>
+
+<dt>+BI <i>buf_id</i></dt><dd>Activate buffer with buffer id <i>buf_id</i>.</dd>
+
+<dt>+ or -M</dt><dd>If on, do not save cursor position of current buffer before
+activating a new buffer.  This option has no effect if the +I or +W options
+are used.</dd>
+
+<dt>+ or -N</dt><dd>Network support switch.  When on, SlickEdit will detect
+when another application has the same file open and automatically select
+"Read only" mode.  This option requires an extra file handle open to the
+original file.</dd>
+
+<dt>+ or -R</dt><dd>Turn replace current buffer switch on/off.  When on the files
+that follow will replace the current buffer.</dd>
+
+<dt>+ or -Q</dt><dd>Quiet switch.  When on, no message is displayed when an error
+occurs.</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common return codes are
+FILE_NOT_FOUND_RC (occurs when wild card specification matches no files),
+NEW_FILE_RC (empty buffer created with filename specified because file did
+not exist), PATH_NOT_FOUND_RC, TOO_MANY_WINDOWS_RC, TOO_MANY_FILES_RC,
+TOO_MANY_SELECTIONS_RC, NOT_ENOUGH_MEMORY_RC.  On error, message is
+displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+         // Create a temp buffer and attatch it to the current window
+         // The previous buffers cursor position information is saved before
+         // switching to the new buffer.
+         load_files '+t'
+
+         // Create a temp buffer with no name and turn undo on saving last
+         // 300 steps.
+         load_files '+u +t'
+
+         // Create a temp buffer with no name and turn undo on saving last
+         // 32767 steps./
+         load_files '+u:32767 +t'
+
+         /* Load the file "test.c" from disk even if already in memory */
+         load_files '+d test.c'
+
+         /* Create a new window and a temporary buffer.  The new */
+         /* window will show the temporary buffer created. */
+         load_files '+i +t'
+
+         /* Create a new window and edit the file test.c in it. */
+         load_files '+i test.c'
+
+         /* Activate the ".command" retrieve buffer */
+         load_files '+b .command'
+
+   ;          Case 1  No buffer has name absolute(filename).
+   ;          Then     Filename is loaded from disk.  The active cursor position
+   ;                 information is replaced with the non-active cursor position
+   ;                 information of this
+   ;                       buffer.
+
+   ;          Case 2  Buffer exists with name absolute(filename).
+   ;          Then     The active cursor position information is replaced with the
+   ;                    non-active cursor position information of this buffer.
+   ;
+   ;          In any case, the active cursor position information is saved in the
+   ;          active buffer's non-active cursor position.
+
+   load_files 'filename'
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="File_Functions.html">File Functions</a>, <a href="Window_Functions.html">Window Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="get_window_id.html">get_window_id</a>, <a href="activate_window.html">activate_window</a>, <a href="_next_window.html">_next_window</a>, <a href="_prev_window.html">_prev_window</a></blockquote>
+</body>
+</html>

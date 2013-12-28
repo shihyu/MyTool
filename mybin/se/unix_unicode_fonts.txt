@@ -1,0 +1,32 @@
+UNICODE FONTS FOR UNIX
+
+SlickEdit's Unicode support requires certain fonts and
+Unicode fonts to be installed in the X server. These fonts are:
+
+   1. -adobe-helvetica-medium-r-normal--14-140-75-75-p-77-iso8859-1
+   2. -misc-fixed-medium-r-normal-ko-18-120-100-100-c-180-iso10646-1
+   3. -misc-fixed-medium-r-normal-ja-18-120-100-100-c-180-iso10646-1
+   4. -gnu-unifont-medium-r-normal--16-160-75-75-c-80-iso10646-1
+   5. -mutt-clearlyu-medium-r-normal--17-120-100-100-p-124-iso10646-1
+
+Your X server should already have the adobe-helvetica font. A newer X
+server on UNIX should also have the remaining fonts. Continue to the
+following sections if your X server is missing one or more of these fonts.
+
+
+X SERVER RUNNING ON UNIX
+
+The unicode/xfonts/ directory contains gzipped PCF fonts for mutt-clearlyu
+and gnu-unifont. If your X server is missing these fonts, please ask the
+system administrator to install these fonts. The X Window tool 'xlsfonts'
+can be used to list all the fonts supported by your X server.
+
+
+X SERVER RUNNING ON WINDOWS
+
+If you redirect your DISPLAY to a Hummingbird Exceed or WRQ ReflectionX
+X server, please refer to the X server's manufacturer help for font
+installation.
+
+
+   

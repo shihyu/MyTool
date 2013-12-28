@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>argument</title>
+</head>
+<body>
+
+<h3><b>_command void argument(...)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Prompts you for a repeat count and executes the next key you press
+the number of times specified.  The following keys have special meaning
+while being prompted for the repeat count:
+<DL compact style="margin-left:20pt;">
+<dt>0..9</dt><dd>Appends one of the digits 0..9 to the counter.</dd>
+<dt>Alt+0..Alt+9 </dt><dd>EMACS emulation only.  Appends one of the digits 0..9 to the counter.</dd>
+<dt>-, Alt+Minus </dt> <dd>Toggles the repeat count from positive to negative.</dd>
+</dl>
+Pressing the key bound to the <b>argument</b> command while being prompted for
+the repeat count multiplies the repeat count by 4.<p>
+The global variable "_argument" is set to the repeat count given before
+the command is executed.  The command invoked may test the value of this
+variable and set it to '' when finished processing the argument to do
+some special processing when executed with a repeat count.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote>
+</body>
+</html>

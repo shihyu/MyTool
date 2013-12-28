@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsCreateEditorCtl</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsCreateEditorCtl(int wid, VSSYSHWND hwndparent, int x, int y, int width, int height, int BorderStyle=VSBDS_FIXED_SINGLE, int visible=a, int buf_id=-, void *pdata=a, int mdi_wid=a, int reserved1=a, void *pvwidget=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>This function creates a new editor control.  DO NOT use this function
+to create an editor control on a Slick-C&reg; dialog box.  If you are NOT
+calling this function during the VSINIT.pfnMDICreateEditWindow
+callback, you need to call <b>vsRefresh</b> with the 'A' option so
+that the scroll bars are updated.</p><p>
+<p>You do not have to call <b>vsDestroyEditorCtl</b> on Windows
+because SlickEdit gets the Windows WM_DESTROY message
+and can cleanup their.  However, under X windows you must call
+<b>vsDestroyEditorCtl</b> just before destroying the parent window
+which contains the editor control window.  Otherwise, Visual
+SlickEdit will crash.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of new editor control.  This
+should be 0 except when this function is
+called during the
+VSINIT.pfnMDICreateEditWindow
+callback.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="hwndparent">hwndparent</A></code> - System window handle of parent.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="<i>x</i>,"><i>x</i>,</A></code> - <i>y</i>, <i>width</i>, <i>height</i>    Size in pixels to
+use when created new editor control.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="BorderStyle">BorderStyle</A></code> - Border style of editor control.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="visible">visible</A></code> - When non-zero, editor control is created
+initially visible.  Set the VSP_VISIBILE
+property to make an editor visible or
+invisible.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="buf_id">buf_id</A></code> - Buffer id to initially attatch to the new editor
+control.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pdata">pdata</A></code> - Initial window specific user data.  Use
+<b>vsWinQData</b> function to get your
+window specific user data.  Use the
+<b>vsWinSetData</b> function to change
+this value later.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mdi_wid">mdi_wid</A></code> - Window id of MDI frame window. If you
+have implemented our MDI callbacks,
+specify this parameter to register a new
+editor control MDI child.  Use this
+parameter during the VSINIT.
+pfnMDICreateEditWindow callback.
+Currently only one MDI frame window
+(VSWID_MDI) is supported.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If successful, returns window id of new editor control.  Otherwise
+negative error code is returned.  0 is not a valid window id and is never
+returned by this function.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Editor_Control_Functions.html">Editor Control Functions</a>, <a href="Window_Functions.html">Window Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsDestroyEditorCtl.html">vsDestroyEditorCtl</a></blockquote>
+</body>
+</html>

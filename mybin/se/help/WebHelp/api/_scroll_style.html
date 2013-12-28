@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_scroll_style</title>
+</head>
+<body>
+
+<h3><b>_str _scroll_style(_str newScrollStyle=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">If the 'C' argument is specified the scroll style is set to center scrolling,
+both horizontally and vertically.  The 'V' option specifies center
+scrolling vertically, and smooth scrolling horizontally.
+The 'H' option specifies center scrolling horizontally and smooth
+scrolling vertically.  Otherwise, it is set to smooth scrolling
+in both directions.
+<p>
+The scroll style affects the position of the cursor for
+primitives which cause the cursor to move to
+text that is not in view.  <i>number</i> specifies how close the cursor
+may get to the top or bottom of the window before scrolling occurs.
+For the <b>bottom</b> primitive, center scrolling style will also cause
+the bottom line of the buffer to be centered when the end of the
+bottom line is within view.  Scrolls style affects: <b>left</b>,
+<b>right</b>, <b>up</b>, <b>down</b>, <b>_rubout</b>,
+<b>tab</b>, <b>backtab</b>, <b>insert_line</b>, <b>keyin</b> and
+any macro procedure or command which executes one of these
+primitives.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="cmdline">cmdline</A></code> - is a string in the format: C | V | H | S  [<i>number</i>]
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="CursorMovement_Functions.html">CursorMovement Functions</a></blockquote>
+</body>
+</html>

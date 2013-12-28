@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsSetEventTabIndex</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsSetEventTabIndex(int keytab_index, int key_index, int index, int version=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Set event binding.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="keytab_index">keytab_index</A></code> - Index into names table of event table.  When
+                 setting key bindings this is usually the event
+                 table returned by
+                 <b>vsQDefaultEventTab</b>() or
+                 VSP_MODEEVENTTAB.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="key_index">key_index</A></code> - An event constant VSEV_??? from vsevents.h</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="index">index</A></code> - Names table index.  May be 0 to unbind key.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="version">version</A></code> - Must be 0.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Examples:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+     static int VSAPI MyCommand()
+     {
+           vsMessageBox("Got here");
+     }
+
+     extern "C" int VSAPI vsDllInit()
+     {
+         vsLibExport("_command int MyCommand()",
+                 0,0,
+                                     MyCommand);
+          // Bind this command to Shift+F12
+          vsSetEventTabIndex(
+                 vsQDefaultEventTab(),
+                 VSEV_F12|VSEVFLAG_SHIFT,    // Shift+F12
+                 vsFindIndex("MyCommand", VSTYPE_COMMAND));
+
+     }
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsEvent2Name.html">vsEvent2Name</a>, <a href="vsEventTabIndex.html">vsEventTabIndex</a>, <a href="vsQDefaultEventTab.html">vsQDefaultEventTab</a></blockquote>
+</body>
+</html>

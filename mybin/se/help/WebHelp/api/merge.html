@@ -1,0 +1,48 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>merge</title>
+</head>
+<body>
+
+<h3><b>_command int merge(_str arg1='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Displays 3 Way Merge Setup dialog box.  A 3 Way Merge is typically used
+after two people make a local copy of the same source file and make some
+modifications to their local copy.   A 3 Way Merge very cleverly takes both
+sets of changes and creates an new source file.   If there are any conflicts
+(because they edited the same area of code), a dialog box is displayed which
+lets you select whose change you want in the output file.  Our 3 Way Merge
+lets you edit the output file without exiting 3 Way Merge mode.<p>
+<P>Command line usage:
+   merge [options] &lt;base&gt; &lt;rev1&gt; &lt;rev2&gt; &lt;out&gt;
+<P>Command line options(case insensitive):
+<UL>
+<LI>   -bb                     - Base is a buffer name and should be loaded +b w/o absolute
+<LI>   -bbi                    - Base is a buffer id and should be loaded +b w/o absolute
+<LI>   -b1                     - rev1 is a buffer name and should be loaded +b w/o absolute
+<LI>   -b1i                    - rev1 is a buffer id and should be loaded +b w/o absolute
+<LI>   -b2                     - rev2 is a buffer name and should be loaded +b w/o absolute
+<LI>   -b2i                    - rev2 is a buffer id and should be loaded +b w/o absolute
+<LI>   -bout                   - output is a buffer name, and should not be deleted when
+                             the merge dialog is closed(saved for the user).
+<LI>   -bouti                  - output is a buffer id, and should not be deleted when
+                             the merge dialog is closed(saved for the user).
+<LI>   -smart                  - same as the "use smart merge" button on the dialog
+                             (uses the diff to try to resolve some conflicts)
+<LI>   -interleaved            - same as turning on "interleaved output" on dialog
+<LI>   -q                      - quiet option:only shuts off "Merge complete x
+                             conflicts" message
+<LI>   -callersaves            - If this option is used, the file is not actually
+                             saved after the user is prompted.  A 1 is returned
+                             if the user chose to save the file.  Returns 2
+                             if the user chose not to save the file.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If successful, returns: 1 if there were conflicts. if callersaves
+   option is specified, returns 1 or 2. 0 if no conflicts.  Otherwise, a
+   negative error code is returned.
+
+   Note that "successful" implies nothing about the number of differences
+   between the files, just that all files were loaded successfully,
+   and the merge engine ran succesfully.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="diff.html">diff</a></blockquote>
+</body>
+</html>

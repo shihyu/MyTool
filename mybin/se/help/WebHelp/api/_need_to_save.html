@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_need_to_save</title>
+</head>
+<body>
+
+<h3><b>boolean _need_to_save()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Use this function if you only want to check for MDI buffers.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>boolean</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns non-zero if the current buffer needs to be saved.  The
+<b>p_modify</b> property should be checked as well.  A non-zero
+<b>p_modify</b> property indicates the buffer has been modified.  However,
+certain special buffer names and buffers with the (p_buf_flags &
+(VSBUFFLAG_THROW_AWAY_CHANGES|VSBUFFLAG_HIDDEN)) true, do not need to be saved.  An example,
+will better describe the correct usage of this function.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+if (p_modify && _need_to_save()) {
+    // Prompt the user here or automatically save this file.
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote>
+</body>
+</html>

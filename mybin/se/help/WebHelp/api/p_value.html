@@ -1,0 +1,131 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_value</title>
+</head>
+<body>
+
+<h3><b>int p_value</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p><b>Radio Button</b> - Value of 1 turns on radio button.  Value of 0 turns off
+radio button.</p><p>
+<p><b>Check Box</b> - Value may be one of the following:</p><p>
+<dl>
+<dt>0</dt><dd>Not checked.</dd>
+<dt>1</dt><dd>Checked.</dd>
+<dt>2</dt><dd>Grayed.</dd>
+</dl><p>
+<p><b>Hscroll Bar, Vscroll Bar</b> - Indicates the scroll amount where
+<b>p_min</b>>= <b>p_value</b> &lt;=<b>p_max</b>.  Setting the
+p_value property has no effect.</p><p>
+<p><b>Gauge</b> - Indicates a portion of a total where <b>p_min</b>>=
+<b>p_value</b> &lt;=<b>p_max</b>.</p><p>
+<p><b>Picture Box, Image</b> - Determines which state of a picture gets
+displayed where 0>= p_value &lt;<b>p_Nofstates</b>.</p><p>
+<p><b>Frame</b> - Only applies when the frames
+<b>p_checkable</b> value is true.  In this case,
+<b>p_value</b> is the value of the checkbox.  Does not support
+tri-state checkboes. Value may be
+one of the following:</p><p>
+<dl>
+<dt>0</dt><dd>Not checked.</dd>
+<dt>1</dt><dd>Checked.</dd>
+</dl><p>
+<p>Here's how you can create a toolbar for the editor without
+writing any code at all:</p><p>
+<ol>
+<li>Create a new form for editing ("Macro", "New").
+<li>Create an image control.  Double click on the image
+control (bottom right.  Looks like slanted rectangle)
+in the dialog editor.</li>
+<li>Set the <b>p_picture</b> property to
+<b>find.bmp</b>.  Make sure you specify the
+full path (c:\vslick\bitmaps is the default path used
+by installation program).</li>
+<li>Set the <b>p_command</b> property to <b>gui-
+find</b>.  Notice that the down arrow of the combo
+box displays all the editor commands.</li>
+<li>Set the <b>p_message</b> property to "Searches
+for a string you specify".</li>
+<li>Set the <b>p_style</b> property to
+<B>PSPIC_HIGHLIGHTED_BUTTON</B>.</li>
+<li>Repeat the steps 2-6 to add more tool bar buttons.</li>
+</ol><p>
+<p>Save your tool bar.  To run it such that is stays on top of the MDI
+Window, type the command "show -mdi <i>form-name</i>" on the
+SlickEdit command line where <i>form-name</i> is the name
+of the tool bar form you created.  If you want to bind it to a key, use
+macro recording to record typing the command on the command line.
+The mouse may be used during macro recording to place your cursor
+on the command line.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// For this example, create a picture or image
+control and
+// set the p_picture property to "_arrow.bmp" or any
+two
+// state bitmap.  Also set the p_Nofstates property
+to 2.
+#include 'slick.sh'
+defeventtab form1;
+image1.on_create()
+{
+   index=_update_picture(-
+1,bitmap_path_search("_arrow.bmp"));
+   if (index<0) {
+       if (index==FILE_NOT_FOUND_RC) {
+          _message_box("Picture find.bmp was not found");
+       } else {
+          _message_box("Error loading picture
+find.bmp\n\n":+
+                       get_message(index));
+       }
+       return("");
+   }
+   p_picture=index;
+   p_Nofstates=2;
+   p_message="Searches for a string you specify";
+   p_style=PSPIC_AUTO_BUTTON;
+}
+picture1.lbutton_down()
+{
+   mou_mode(1)
+   mou_capture();
+   done=0;
+   for (;;) {
+      event=get_event();
+      switch (event) {
+      case MOUSE_MOVE:
+         // 'm' specifies mouse position in current
+scale mode
+         mx=mou_last_x('m');
+         my=mou_last_y('m');
+         if (mx>=0 && my>=0 && mx<p_width &&
+my<p_height) {
+            if (!p_value) {
+               // Show the button pushed in.
+               p_value=1;
+            }
+         } else {
+            if (p_value) {
+               // Show the button up.
+               p_value=0;
+            }
+         }
+         break;
+      case LBUTTON_UP:
+      case ESC:
+         p_value=1;
+         done=1;
+      }
+      if (done) break;
+   }
+   mou_mode(0);
+   mou_release();
+   return('')
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Radio Button, Check Box, Hscroll Bar, Vscroll Bar, Picture Box,
+Image, Gauge, Frame
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Check_Box_Properties.html">Check Box Properties</a>, <a href="Gauge_Properties.html">Gauge Properties</a>, <a href="Hscroll_Bar_Properties.html">Hscroll Bar Properties</a>, <a href="Image_Properties.html">Image Properties</a>, <a href="List_Box_Properties.html">List Box Properties</a>, <a href="Picture_Box_Properties.html">Picture Box Properties</a>, <a href="Radio_Button_Properties.html">Radio Button Properties</a>, <a href="Vscroll_Bar_Properties.html">Vscroll Bar Properties</a>, <a href="Frame_Properties.html">Frame Properties</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,11 @@
+LIBRARY simple
+
+DATA MULTIPLE NONSHARED READWRITE LOADONCALL
+
+DESCRIPTION 'SlickEdit Simple DLL Copyright (c) 1994-2002 SlickEdit Inc.'
+
+EXPORTS
+        dllproc
+        dllproc2
+        vsDllRegisterExports
+

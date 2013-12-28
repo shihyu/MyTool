@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsSetLastIndex</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsSetLastIndex(char option, int index)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - Indicates last index information to Set.
+
+<dl>
+<dt>'C'</dt><dd>Set the index of the last command or
+function executed by a key,
+<b>vsCallKey</b>, or <b>vsExecute</b>.</dd>
+
+<dt>'L'</dt><dd>Set the index of the last command or
+function executed by a key or the
+<b>vsCallKey</b> function.</dd>
+
+<dt>'K'</dt><dd>Set the index of the last event table used to
+determine a key binding.</dd>
+
+<dt>'W'</dt><dd>Set the command line/menu wait value.
+This flag is used by a command to determine
+whether it was invoke by <b>vsExecute</b>
+(command line or menu) or a key press.
+This flag is set to non-zero when
+<b>vsExecute</b> is called and 0 when a
+key is pressed or <b>vsCallKey</b> is
+called.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="index">index</A></code> - New value for index.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>void</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Sets a last index corresponding to <i>option</i> given.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsQLastIndex.html">vsQLastIndex</a>, <a href="vsQPrevIndex.html">vsQPrevIndex</a>, <a href="vsSetLastIndex.html">vsSetLastIndex</a>, <a href="vsSetPrevIndex.html">vsSetPrevIndex</a></blockquote>
+</body>
+</html>

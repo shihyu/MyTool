@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMacroSetRecordSource</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsMacroSetRecordSource(int value)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Determines what <b>vsMacroQRecordSource</b> will return to a
+command called by <b>vsExecute</b> or <b>vsCallIndex</b>.  By
+default,  will Use <b>vsMacroQRecordSource</b> and the
+<b>vsMacroQRecording</b> function to determine whether your
+macro command needs to generate source code.  If you have written a
+command, you should use <b>vsMacroQRecordSource</b> to check
+whether you need to generate source. If your command executes
+another command with <b>vsExecute</b> or <b>vsCallIndex</b>
+you may want to use <b>vsMacroSetRecordSource</b> to turn on or
+off macro recording before making the call.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="value">value</A></code> - Set to 1 if you want command called by
+<b>vsExecute</b> or <b>vsCallIndex</b>
+to do macro recording.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+void VSAPI mycommand()
+{
+     vsMacroSetRecordSource(0);
+     vsExecute(0,"save_as c:\\temp\\junk.c",
+                 "" // DONT specify M option here
+               );
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Macro_Programming_Functions.html">Macro Programming Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="cancel_recording.html">cancel_recording</a>, <a href="record_macro_toggle.html">record_macro_toggle</a>, <a href="record_macro_end_execute.html">record_macro_end_execute</a>, <a href="start_recording.html">start_recording</a>, <a href="end_recording.html">end_recording</a>, <a href="list_macros.html">list_macros</a>, <a href="last_macro.html">last_macro</a>, <a href="gui_save_macro.html">gui_save_macro</a>, <a href="save_macro.html">save_macro</a>, <a href="pause_recording.html">pause_recording</a>, <a href="vsMacroGetFilename.html">vsMacroGetFilename</a>, <a href="vsMacroEndRecording.html">vsMacroEndRecording</a>, <a href="vsMacroQDefined.html">vsMacroQDefined</a>, <a href="vsMacroQDefining.html">vsMacroQDefining</a>, <a href="vsMacroQRecording.html">vsMacroQRecording</a>, <a href="vsMacroQRecordSource.html">vsMacroQRecordSource</a>, <a href="vsMacroQRunning.html">vsMacroQRunning</a>, <a href="vsMacroSetRecordSource.html">vsMacroSetRecordSource</a>, <a href="vsMacroSetRunning.html">vsMacroSetRunning</a>, <a href="vsMacroStartRecording.html">vsMacroStartRecording</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>diff</title>
+</head>
+<body>
+
+<h3><b>_command int diff(_str cmdline='', boolean showNoEditorOptions=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Visually compare two files or directories for differences.
+<p>
+Command line usage:
+<pre>
+   diff [options] &lt;file1&gt; &lt;file2&gt;
+</pre>
+<p>
+Command line options:  (options are case insensitive)
+<dl compact>
+<dt><b>-i</b>
+<dd>interleaved output
+<dt><b>-r1</b>
+<dd>make file 1 read only
+<dt><b>-r2</b>
+<dd>make file 2 read only
+<dt><b>-q</b>
+<dd>quiet option:only shuts off the "Files match" message
+<dt><b>-modal</b>
+<dd>run diff modally
+<dt><b>-B1</b>
+<dd>filename1 is a buffer name and should be loaded +b w/o absolute
+<dt><b>-B2</b>
+<dd>filename2 is a buffer name and should be loaded +b w/o absolute
+<dt><b>-bi1</b>
+<dd>filename1 is a buffer id
+<dt><b>-bi2</b>
+<dd>filename2 is a buffer id
+<dt><b>-preserve1</b>
+<dd>Do not delete buffer 1 when the diff closes.  Should
+    be used in conjunction with -b1 or -bi1.  If the user
+    chooses to "save" changes to this buffer, the modify
+    flag will be left on to show the caller that the user
+    wishes to save the file.  If the user does not save
+    changes to the buffer, all changes will be undone, and
+    the modify flag will be off.
+    When using this option, be sure to turn
+    p_modify(VSP_MODIFY) off, and set
+    p_undo_steps(VSP_UNDOSTEPS) to a large number(32000 or more).
+<dt><b>-preserve2</b>
+<dd>Same as -preserve1, except for buffer 2.
+<dt><b>-NoMap</b>
+<dd>Do not add information about this diff to the mapping files
+<dt><b>-optionsfile</b>
+<dd>Put options in a file.  Used to launch a multifile
+    diff in a different process.
+    Supports the following options:
+    <pre>
+        filespec:&lt;filespec list, space delimited&gt;
+        excludefilespec:&lt;filespec list, space delimited&gt;
+        recursive:1|0
+        path1:&lt;first path&gt;
+        path2:&lt;second path&gt;
+    </pre>
+    diff will delete the file after it retrieves the
+    information from the file
+<dt><b>-listonly</b> &lt;outputfile&gt; &lt;PATH1FILELIST|PATH2FILELIST&gt;
+                     &lt;differentfiles|vieweddifferentfiles|matchingfiles|filesnotinpath1|filesnotinpath2&gt;
+<dd>will run a multifile diff
+    and give the for the path specified by the second argument
+    in the output file specified.  The third argument is a
+    comma delimited list of what type of items to put in
+    the output file.
+<dt><b>-verifymfd</b>
+<dd>verify multifile diff input is valid
+<dt><b>-registerasmfdchild</b> &lt;parent_wid&gt;
+<dd>specify that this diff will be a child of the
+    multi-file diff dialog &lt;parent_wid&gt;
+<dt><b>-refreshtagsclose</b> &lt;file1&gt; &lt;file2&gt;
+<dd>must be used "-registerasmfdchild &lt;wid&gt;".  When this
+    diff is closed, recompare file1 and file2 and refresh
+    the tags expanded for this file in the parent dialog.
+<dt><b>-nomapping</b>
+<dd>Do not save mapping for these files in diffmap.ini.
+    This option should be used for diffs that are done
+    with data that are not real files, like two old
+    versions of a file from a version control system
+<dt><b>-d1</b>
+<dd>Get file one from disk
+<dt><b>-d2</b>
+<dd>Get file two from disk
+<dt><b>-dialogtitle</b> &lt;title&gt;
+<dd>Set title of diff dialog to <B>title</B>
+<dt><b>-file1title</b>  &lt;title&gt;
+<dd>Set title of file1 dialog to <B>title</B>
+<dt><b>-file2title</b>  &lt;title&gt;
+<dd>Set title of file2 dialog to <B>title</B>
+<dt><b>-savebutton1caption</b>  &lt;caption&gt;
+<dd>Set title caption of file1's save button
+<dt><b>-savebutton2caption</b> &lt;caption&gt;
+<dd>Set title caption of file2's save button
+<dt><b>-viewonly</b>
+<dd>View differences only.  Buffers are set to read only
+    and  copy/delete buttons are hidden.
+<dt><b>-comment</b>
+<dd>currently unused
+<dt><b>-ok</b>
+<dd>currently unused
+<dt><b>-commentbuttoncaption</b>
+<dd>currently unused - Caption for <B>OK</B> button
+<dt><b>-viewid1</b>
+<dd>file1 is a view id
+<dt><b>-viewid2</b>
+<dd>file2 is a view id
+<dt><b>-imaginarylinecaption</b>
+<dd>caption to use for <I>Imaginary Buffer Line</B>s
+<dt><b>-autoclose</b>
+<dd>If a diff is launched from a multi-file diff, when the
+    <B>Next Diff</B> button is pressed and there are no
+    more differences, automatically close this diff dialog
+<dt><b>-geometry</b> &lt;width&gt;[xHeight [+X[+Y]]l]
+<dd>specify width, height, x and y
+<dt><b>-restorefromini</b>
+<dd>save/restore geometry information and options to/from diffmap.ini.
+<dt><b>-tags</b>
+<dd>Show different tags for these files.
+<dt><b>-matchmode2</b>
+<dd>Set file 2's mode to match that of file 1.
+<dt><b>-range1:</b>  &lt;start,end&gt
+<dd>Set the range of lines to compare in file 1.
+<dt><b>-range2:</b>  &lt;start,end&gt
+<dd>Set the range of lines to compare in file 2.
+<dt><b>-noeol</b>
+<dd>Do not compare the EOL characters
+<dt><b>-symbol</b> &lt;symbolname&gt;
+<dd>Compare symbol named <B>symbolname</B> in both files
+<dt><b>-useglobaldata</b>
+<dd>Get options from the <B>gDiffSetupData</B> global struct.
+<dt><b>-sourcediff</b>
+<dd>Diff code, use token information to balance files before
+running diff
+</dl>
+<p>
+The options below are intended only to be used to implement
+asynchronous diffs which invoke another copy of the editor.
+<dl compact>
+<dt><b>-optionflags</b> &lt;flags&gt;
+<dd>set def_diff_options to flags
+<dt><b>-recursive</b>
+<dd>recurse subdirectories(multi-file only)
+<dt><b>-loadstate</b> &lt;diffstatefilename&gt;
+<dd>Load the previously saved diff output specified
+</dl>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="cmdline">cmdline</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="showNoEditorOptions">showNoEditorOptions</A></code> -  </blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 if successful, Otherwise a nonzero error code.
+        <p>
+        Note that "successful" implies nothing about the
+        number of differences between the files, just that
+        all files were loaded successfully,
+        and the difference engine ran succesfully.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="merge.html">merge</a>, <a href="diff_with.html">diff_with</a></blockquote>
+</body>
+</html>

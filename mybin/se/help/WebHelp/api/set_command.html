@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>set_command</title>
+</head>
+<body>
+
+<h3><b>void set_command(_str command_text, int start_sel=-1, int end_sel=-1, _str prompt=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>Be sure to look at the macro function <b>get_string</b> which allow
+a macro to read command line input from the user.</p><p>
+<p><b>set_command</b> changes current setting of the command line.
+Text of command line is set to <i>command_text</i>.   The selection
+columns (1.. MAXINT) are set if <i>start_sel</i> is >=0.  If
+<i>end_sel</i><0, <i>end_sel</i> is set to <i>start_sel</i>.  The
+<i>prompt</i> parameter sets the command prompt.  The prompt may
+only be modified by the <b>set_command</b> primitive.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+          command_text='dir ';
+          set_command(command_text, length(command_text)+1);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Text Box, Combo Box
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Combo_Box_Methods.html">Combo Box Methods</a>, <a href="Text_Box_Methods.html">Text Box Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="command_state.html">command_state</a>, <a href="command_toggle.html">command_toggle</a>, <a href="left.html">left</a>, <a href="right.html">right</a>, <a href="_delete_char.html">_delete_char</a>, <a href="rubout.html">rubout</a>, <a href="execute.html">execute</a>, <a href="get_command.html">get_command</a></blockquote>
+</body>
+</html>

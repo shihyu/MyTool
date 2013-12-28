@@ -1,0 +1,41 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_cb_active</title>
+</head>
+<body>
+
+<h3><b>int p_cb_active</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>Combo box is no longer split into 4 controls.
+            Just use the regular <a href="p_window_id.html">p_window_id</a> for
+            everything
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns the window id of the sub-control of a combo box that was clicked
+in.  A combo box consists of 4 controls: the root window, text box,
+picture box, and list box.  The properties and methods of the sub-controls
+may be accessed individually with the <a href="p_cb.html">p_cb</a>, <a href="p_cb_text_box.html">p_cb_text_box</a>, <a href="p_cb_picture.html">p_cb_picture</a>,
+<a href="p_cb_list_box.html">p_cb_list_box</a> instance handle properties.  When the combo box receives the
+lbutton_down event, you may want to determine which of the sub-controls
+was actually clicked in.  Compare the <b>p_cb_active</b> property to the
+individual instance handles <a href="p_cb.html">p_cb</a>, <a href="p_cb_text_box.html">p_cb_text_box</a>, <a href="p_cb_picture.html">p_cb_picture</a>, and
+<a href="p_cb_list_box.html">p_cb_list_box</a>.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+defeventtab form1;
+combo1.lbutton_down()
+{
+   if (p_cb_active==p_cb_picture) {
+       message('clicked in picture box');delay(100);
+       if (p_cb_list_box.p_visible) {
+            p_cb_list_box.p_visible=0;
+       } else {
+           p_cb_list_box.p_visible=1;
+       }
+       return('');
+   }
+   //  Skip user level 1 inheritance and execute the default event handler.
+   <a href="call_event.html">call_event</a>(p_window_id,lbutton_down,'2');
+}
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Combo Box, Drive List</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Combo_Box_Properties.html">Combo Box Properties</a>, <a href="Drive_List_Properties.html">Drive List Properties</a></blockquote>
+</body>
+</html>

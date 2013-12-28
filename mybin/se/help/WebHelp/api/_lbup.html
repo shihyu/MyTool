@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_lbup</title>
+</head>
+<body>
+
+<h3><b>_str _lbup()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Places the cursor on the previous item in the list box.  If
+the <a href="p_multi_select.html">p_multi_select</a> property is <b>MS_NONE</b> or
+<b>MS_EXTENDED</b>, selected lines are deselected. The first
+item in a list box is on line 1 (<b>p_line</b>==1).  If there
+are non items in the list box, the current line will be line
+0 (<b>p_line</b>==0). If you call the <b>_lbup</b> function
+when on line 1, the cursor will be placed on line 0.  You
+might want to check if the list is empty
+(<b>p_Noflines</b>==0) or if you are on line 1
+(<b>p_line</b>==1) before calling this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns non-zero value call when on line 0
+        (<b>p_line</b>==0).
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">List Box</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="List_Box_Methods.html">List Box Methods</a></blockquote>
+</body>
+</html>

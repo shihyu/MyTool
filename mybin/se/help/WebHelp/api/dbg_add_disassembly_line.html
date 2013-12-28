@@ -1,0 +1,14 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>dbg_add_disassembly_line</title>
+</head>
+<body>
+
+<h3><b>int dbg_add_disassembly_line(_str source_file, int line_number, _str(&addresses)[], _str(&instructions)[], _str(&func_names)[], _str(&offsets)[])</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Add the disassembly for the indicated line in the indicated source file.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="source_file">source_file</A></code> - source file the line is in</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="line_number">line_number</A></code> - line number to disassemble</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="addresses">addresses</A></code> - (reference) array of instruction addresses</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="instructions">instructions</A></code> - (reference) array of disassembled instructions</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="func_names">func_names</A></code> - (reference) array of function names</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="offsets">offsets</A></code> - (reference) array of function offsets
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">the line ID > 0 on success, < 0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Debugger_Functions.html">Debugger Functions</a></blockquote>
+</body>
+</html>

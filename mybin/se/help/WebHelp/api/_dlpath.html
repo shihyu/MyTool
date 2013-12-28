@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_dlpath</title>
+</head>
+<body>
+
+<h3><b>_str _dlpath(_str newPath=null, boolean doRefresh=false, boolean show_dotfiles=true, boolean doCd=true)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Gets and optionally fills in the directory list control.
+<p>
+IMPORTANT: <br>
+Current window must be directory list control (e.g. list box, tree).
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="newPath">newPath</A></code> - Directory to use when filling in the directory list
+                 control.  If this is <B>null</B>, the current
+                 directory list settings are returned and the
+                 directory list is not changed.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="doRefresh">doRefresh</A></code> - Normally the directory list control is not
+                 updated when you specify the same directory.  This
+                 option skips this check.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filter390">filter390</A></code> - Filter to used when listing OS/390 data sets.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="doCd">doCd</A></code> - Change the current working directory to the
+                 path given by <code>newPath</code>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">current path</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Directory List Box</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include 'slick.sh'
+defeventtab form1;
+command1.lbutton_up()
+{
+    // list1 is the name of the directory list box.
+    // Two backslashes are not required unless you use double quotes
+    result=list1._dlpath("c:\\vslick");
+    messageNwait('new path is 'result);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Directory_List_Box_Methods.html">Directory List Box Methods</a></blockquote>
+</body>
+</html>

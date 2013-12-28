@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_okay.on_create</title>
+</head>
+<body>
+
+<h3><b>void _okay.on_create()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Displays <b>Font dialog box</b> which allows you to change the font
+for the current MDI edit window or all MDI edit windows.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - is a string of zero or more of the following option
+letters:
+
+<dl>
+<dt>F</dt><dd>Display fixed pitch fonts only.</dd>
+<dt>S</dt><dd>(Default) Display screen fonts.</dd>
+<dt>P</dt><dd>Display printer fonts.</dd>
+</dl>
+
+<p>Printer and screen fonts can not be displayed at the same time.</p>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="font">font</A></code> - specifies the font that should be used to initialize the
+dialog box.  It is a string in the format:<br>
+
+<i>font_name,font_size, font_flags</i>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="font_size">font_size</A></code> - is the point size of the font.  <i>font_flags</i> is
+zero or constants ORed together.  The font flag constants are defined
+in "slick.sh" and have the prefix "F_" (ex. F_BOLD).
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">void show('_wfont_form', <i>options</i> , <i>font</i>)
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Forms.html">Forms</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_choose_font.html">_choose_font</a>, <a href="wfont.html">wfont</a></blockquote>
+</body>
+</html>

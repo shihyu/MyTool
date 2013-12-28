@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_xmlcfg_get_next_attribute</title>
+</head>
+<body>
+
+<h3><b>int _xmlcfg_get_next_attribute(int iHandle, int NodeIndex)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Gets the next attribute node index.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iHandle">iHandle</A></code> - Handle to an XMLCFG tree returned by _xmlcfg_open() ,_xmlcfg_create(), or _xmlcfg_open_from_buffer().</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NodeIndex">NodeIndex</A></code> - Tree node index.  Specify an element node to find the first
+                 attribute (child of the element node).  In subsequent calls, specified
+                 the previous value returned by this function to get the next attribute index.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the next attribute node index if successful.  Otherwise
+        a negative error code is returned.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+ProjectIndex=_xmlcfg_find_simple(handle,"/project");
+for (AttrIndex=ProjectIndex;AttrIndex>0;) {
+    AttrIndex=_xmlcfg_get_next_attribute(handle,AttrIndex);
+    if (AttrIndex<0) break;
+    say('Attribute name is '_xmlcfg_get_name(handle,AttrIndex));
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="XMLCFG_Functions.html">XMLCFG Functions</a></blockquote>
+</body>
+</html>

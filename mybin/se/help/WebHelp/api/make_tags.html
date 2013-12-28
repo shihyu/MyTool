@@ -1,0 +1,48 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>make_tags</title>
+</head>
+<body>
+
+<h3><b>_command int make_tags(_str params="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This command runs the external macro "maketags.e".<p>
+The make_tags command builds a file called "tags.vtg" (UNIX:
+"utags.vtg") which is a binary database file.  This information is used by the <b>push_tag</b> command to
+quickly find one of your procedures.  Multiple files with wild cards may be
+specified.<p>
+See "tags.e" for information on adding support for other
+languages.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="cmdline">cmdline</A></code> - a string with the following possible options
+
+<dl>
+<dt>-L</dt><dd>specifies list file</dd>
+<dt>@ [file]</dt><dd>specifies a file which contains a
+list of file names.  Use the <b>write_list</b>
+command to generate a list of file names.</b></dd>
+<dt>-R</dt><dd>Update tag file (checks dates)</dd>
+<dt>-D</dt><dd>delete tags</dd>
+<dt>-C</dt><dd>allow cancellation</dd>
+<dt>-O [filename]</dt><dd>specifies a output tag file,
+rather than using the default of tags.vtg (UNIX:
+utags.vtg)</dd>
+<dt>-X</dt><dd>build symbol cross-reference</dd>
+<dt>-N [desc]</dt><dd>Adds a description of the tag file</dd>
+<dt>-U [filename]</dt><dd>rebuild the specified tag file</dd>
+<dt>-P</dt><dd>report the time required to tag</dd>
+<dt>-B</dt><dd>use background thread if possible</dd>
+<dt>-T</dt><dd>find files recursively in subdirectories</dd>
+<dt>-Q</dt><dd>quiet</dd>
+<dt>-E [dir]</dt><dd>exclude files under directory</dd>
+</dl>
+
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="OutputFile">OutputFile</A></code> - ] [@]<i>file1</i>  [@]<i>file2 ...</i>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, nonzero on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+make-tags   -t *.c *.asm
+make-tags   @list1 *.pas
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="push_tag.html">push_tag</a>, <a href="gui_make_tags.html">gui_make_tags</a></blockquote>
+</body>
+</html>

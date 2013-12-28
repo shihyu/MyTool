@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_active_form</title>
+</head>
+<body>
+
+<h3><b>int p_active_form</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns the window id of the active form.   You can not use the name (p_name)
+of the form to access properties of the active form.  You must use the
+<b>p_active_form</b> property.  This property is not available when the form is not displayed.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+   defeventtab form1;
+   command1.lbutton_up()
+   {
+      // Close the active dialog box.
+      p_active_form._delete_window();
+   }
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">All Window Objects
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="All_Windows_Properties.html">All Windows Properties</a></blockquote>
+</body>
+</html>

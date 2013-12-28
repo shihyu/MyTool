@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsDeleteText</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsDeleteText(int wid, int DelLen, char option=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="DelLen">DelLen</A></code> - Number of characters to delete.   Specify -1
+to delete to end of line.  Specify -2 to delete
+to end of file.  When <i>DelLen</i> is
+greater than the number of characters left in
+the file, the text up to the end of file is
+deleted.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - Maybe 0 or 'C'.  Specify 'C' to indicate that
+<i>DelLen</i> is a positive imaginary count
+(as if tabs were expanded) of characters to
+delete in the current line.
+
+<p>If <i>option</i> is zero, number of characters specified by
+<i>DelLen</i> starting from the cursor location are deleted.  Each end
+of line character is treated as 1 character (as is).</p>
+
+<p>If <i>option</i> is 'C', the number of columns (as if tabs were
+expanded) specified by <i>DelLen</i> are deleted from the current
+line.   The end of line characters are not deleted.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsInsertText.html">vsInsertText</a></blockquote>
+</body>
+</html>

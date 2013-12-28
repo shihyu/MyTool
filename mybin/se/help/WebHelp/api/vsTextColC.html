@@ -1,0 +1,47 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTextColC</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTextColC(int wid, int col, char option='L')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">We use the term imaginary to describe column positions which
+correspond to a string as displayed on your screen.  Strings containing
+tab characters are expanded before displayed.  Hence, the need arises
+for a differentiation between physical and imaginary positions.  A
+physical position corresponds to a character in string.  The characters
+are number one to the length of string.  An imaginary position
+corresponds to a position in a string once tabs have been expanded.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="col">col</A></code> - Input imaginary or physical column
+depending on <i>option</i>.  See table
+below.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - See below.
+
+<p>Converts an imaginary column position to a physical string column
+position and visa versa.  The input and output values are described by
+the table below:</p>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - Input column, returned column
+
+<dl>
+<dt>'P'</dt><dd>Imaginary, Physical</dd>
+<dt>'T'</dt><dd>Imaginary, Physical.  Position is negated if the
+imaginary column input corresponds to the middle
+of a tab character.</dd>
+<dt>'L'</dt><dd>Doesn't matter, Imaginary length of string.</dd>
+<dt>'E'</dt><dd>Doesn't matter, Imaginary length of line where the
+<b>vsTruncQLineLength</b> is used.  This has the
+same effect as the 'L' option if the
+<B>VSP_TRUNCATELENGTH</B> property is
+0.</dd>
+<dt>'I'</dt><dd>Physical, Imaginary</dd>
+</dl>
+
+<p>The input column is returned if input column is less than or equal to
+zero and the third parameter is not 'L'.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="String_Functions.html">String Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsExpandTabsC.html">vsExpandTabsC</a>, <a href="vsExpandTabs.html">vsExpandTabs</a></blockquote>
+</body>
+</html>

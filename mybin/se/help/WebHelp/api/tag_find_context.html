@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_find_context</title>
+</head>
+<body>
+
+<h3><b>int tag_find_context(_str tag_name, boolean exact, boolean case_sensitive, boolean pass_through_anonymous=false, _str class_name=null)</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>Use tag_find_context_iterator(), which is re-entrant.
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Find the first context entry with the given tag prefix.  Use
+<a href="tag_get_context.html">tag_get_context</a> to extract defaults about the tag.
+<p>
+For synchronization, threads should perform a tag_lock_context(true)
+prior to invoking this function.  This is considered as a write operation
+because it uses an iterator to traverse the items in the context.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - Tag name or prefix of tag name</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="exact">exact</A></code> - Search for exact match or prefix match</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="case_sensitive">case_sensitive</A></code> - Case sensitive string comparison?</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pass_through_anonymous">pass_through_anonymous</A></code> - Pass through anonymous classes</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - Class to find item in
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns context ID of tag if found, <0 on error or not found.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_get_class.html">tag_get_class</a>, <a href="tag_next_class.html">tag_next_class</a></blockquote>
+</body>
+</html>

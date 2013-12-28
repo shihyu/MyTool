@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsBufSetBufferFlags</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsBufSetBufferFlags(int buf_id, int BufFlags)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Set the buffer flags for the given buffer.<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="buf_id">buf_id</A></code> - Buffer id returned by <b>vsPropGetI</b>(<i>wid</i>,VSP_BUF_ID),
+                  <b>vsBufEdit</b>, or <b>vsBufMatch</b>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="BufFlags">BufFlags</A></code> - Bitset of the following flags
+        <ul>
+        <li>VSBUFFLAG_HIDDEN -- hidden buffer, next buffer won't switch to this buffer.
+        <li>VSBUFFLAG_THROW_AWAY_CHANGES -- Allow quit without prompting on modified buffer
+        <li>VSBUFFLAG_KEEP_ON_QUIT -- Don't delete buffer on QUIT.
+        <li>VSBUFFLAG_REVERT_ON_THROW_AWAY -- Revert buffer
+        <li>VSBUFFLAG_PROMPT_REPLACE -- Prompt before replacing buffer contents
+        <li>VSBUFFLAG_DELETE_BUFFER_ON_CLOSE -- Indicates whether a list box
+        <li>VSBUFFLAG_FTP_UPLOAD_IN_PROGRESS -- Specifies that buffer is currently being uploaded via FTP
+        <li>VSBUFFLAG_FTP_BINARY -- Specifies that the FTP buffer should be transferred binary by default
+        </ul>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Attention:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+This function is thread-safe.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>batch_call_list</title>
+</head>
+<body>
+
+<h3><b>boolean batch_call_list(_str callback_name, typeless batch_arg=null, boolean forceCallbackOnTimer=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">In a frequently called event handler, sometimes you will want to
+group events together and handle them all in one shot using a more
+general refresh function instead of a piecemeal handler for the
+specific event.
+<p>
+Call this function to schedule a one-shot timer to invoke a general
+refresh function.  It only scedules the timer to call the refresh
+function after four singular events have passed.  This way the
+simple, faster, piecemeal handler can be used for isolated events
+and you only go to the general, more expensive refresh handler for
+larger updates.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="callback_name">callback_name</A></code> - name of general refresh callback to call_event</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="batch_arg">batch_arg</A></code> - argument to pass to refresh callback</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="forceCallbackOnTimer">forceCallbackOnTimer</A></code> - force callback, don't wait for threshold
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>boolean</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">The function returns 'true' if the threshold has been reached
+        and the rest of the event handler callback should be ignored.
+        Otherwise, it returns false, and the caller is responsible
+        for handling the event handler callback itself.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="call_list.html">call_list</a>, <a href="close_all.html">close_all</a></blockquote>
+</body>
+</html>

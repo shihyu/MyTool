@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>c_format</title>
+</head>
+<body>
+
+<h3><b>_command int c_format(int in_wid=0, int start_indent=0, boolean use_form_options=false, boolean quiet=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Beautifies the current buffer using the current options.  Use the
+C/C++/Java/JavaScript/C# Beautifier dialog box set beautifier options used by this command.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="in_wid">in_wid</A></code> - Input window id to format. If 0, then current window is formatted.
+              Defaults to 0.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="start_indent">start_indent</A></code> - Starting indent for formatted lines.
+                    Defaults to 0.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="use_form_options">use_form_options</A></code> - Set to true to use globally stored options filled in on form by</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="quiet">quiet</A></code> - (optional). Set to true if you do not want to see status messages or be
+              prompted for options (e.g. tab mismatch). More serious errors (e.g. failed to save
+              default options, etc.) will still be displayed loudly.
+              Defaults to false.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">a status value.  Return value=2 means there was an error beautifying and calling function should
+get the error message with vscf_iserror().
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="gui_beautify.html">gui_beautify</a>, <a href="c_beautify_selection.html">c_beautify_selection</a></blockquote>
+</body>
+</html>

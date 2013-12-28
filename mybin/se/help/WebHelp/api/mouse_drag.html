@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>mouse_drag</title>
+</head>
+<body>
+
+<h3><b>int mouse_drag(int(*move_callback)(int wid), _str move_picture='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This is a generic function for dragging the mouse within an
+editor control.  It can be used (for example) to move icons
+in the gutter.
+<p>
+The starting point for this function is typically in response
+to a lbutton_down event().  The mouse drag ends when we get
+a lbutton_up() event or the user hits escape.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="move_callback">move_callback</A></code> - callback for move animation events</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="move_picture">move_picture</A></code> - picture to show in gutter as mouse moves
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, COMMAND_CANCELLED_RC on cancel.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Mouse_Functions.html">Mouse Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="debug_mouse_drag_instruction_pointer.html">debug_mouse_drag_instruction_pointer()</a></blockquote>
+</body>
+</html>

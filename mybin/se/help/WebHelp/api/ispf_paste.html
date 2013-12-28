@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>ispf_paste</title>
+</head>
+<body>
+
+<h3><b>_command void ispf_paste(_str arglist="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">The paste command copies lines from the clipboard to the specified position
+in the buffer, or the current line.<p>
+<p>Syntax:<pre>
+   PASTE [ <i>clipboardname</i> ] [ AFTER <i>label</i> ] [BEFORE <i>label</i> ] [KEEP]
+</pre><p>
+Arguments:
+<dl compact style="margin-left:20pt">
+<dt>AFTER <i>label</i><dd style="margin-left:80pt">The destination for the data being pasted.  The label may be either an ISPF label or a line number.  The data will be inserted after the specified line.
+<dt>BEFORE <i>label</i><dd style="margin-left:80pt">The destination for the data being pasted.  The label may be either an ISPF label or a line number.  The data will be inserted after the specified line.
+<dt>KEEP<dd style="margin-left:80pt">Do not clear out the clipboard after doing a paste operation.
+</dl><p>
+<p>If neither AFTER nor BEFORE is specified, the default location to insert the
+data is after the current line (cursor position).  However, if there is an A or
+B line command in the prefix area, the data will be inserted at that point.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="ISPF_Primary_Commands.html">ISPF Primary Commands</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="ispf_cut.html">ispf_cut</a>, <a href="list_clipboards.html">list_clipboards</a>, <a href="paste.html">paste</a>, <a href="../ch13s10.htm#sect_usingispfandxedit_646A806A_0440">ISPF Line Command A</a></blockquote>
+</body>
+</html>

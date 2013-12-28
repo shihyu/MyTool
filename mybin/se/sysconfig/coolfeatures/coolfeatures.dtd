@@ -1,0 +1,14 @@
+<?xml encoding='UTF-8'?>
+<!ELEMENT CoolFeatures (TagLines, Features) >
+  <!ATTLIST CoolFeatures Version (11.0|11.0.1|12.0|13.0.0) #REQUIRED>
+<!ELEMENT TagLines (TagLine)*>
+<!ELEMENT TagLine (#PCDATA)>
+<!ELEMENT Features (Feature)*>
+<!ELEMENT Feature (#PCDATA)>
+  <!ATTLIST Feature Name CDATA #REQUIRED>
+  <!ATTLIST Feature Products CDATA #IMPLIED>
+  <!ATTLIST Feature Configure CDATA #IMPLIED>
+  <!ATTLIST Feature HelpTopic CDATA #IMPLIED>
+  <!ATTLIST Feature DemoURL CDATA #IMPLIED>
+  <!ATTLIST Feature PDemoURL CDATA #IMPLIED>
+  <!ATTLIST Feature New CDATA #IMPLIED>

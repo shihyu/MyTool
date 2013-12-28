@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>get_text</title>
+</head>
+<body>
+
+<h3><b>_str get_text(int count=1, int seek_pos=-3)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="count">count</A></code> - Specifies the number of bytes to get.  The following negative
+                numbers have special meaning:
+                <dl compact style="margin-left:20pt">
+                <dt>-1<dd>Get current unicode character or DBCS character
+                <dt>-2<dd>Get composite character or DBCS character
+                </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="seek_pos">seek_pos</A></code> - Specifies the byte offset in the file to get the bytes from.
+                 -3 specifies the cursor position.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns <i>count</i> characters from current buffer starting from
+        <i>seek_pos.</i>  <b>get_text</b> is a stream-oriented function which for
+        ASCII buffers will return line separation characters.  Use the
+        <b>get_text</b> function to retrieve strings found by a regular expression
+        search.  <i>count</i> defaults to 1 if not specified.  <i>seek_pos</i>
+        defaults to the physical character at the cursor position or the first
+        physical character to the left of the cursor.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit_Window, Editor_Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+        // This example works for files with tab characters.
+        status=search('{if|then|while}','rew');
+        if (status) {
+             message('Match not found');
+             return(status);
+        }
+        word=get_text(match_length('0'),match_length('S0'))
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>test_event</title>
+</head>
+<body>
+
+<h3><b>_str test_event(_str options="")</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>Use <a href="_IsKeyPending.html">_IsKeyPending</a> or <a href="_IsEventPending.html">_IsEventPending</a> instead.
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - defaults to '' and may be 'R' and/or 'K':
+
+<dl>
+<dt>'R'</dt><dd>Specifies no screen refresh.</dd>
+<dt>'K'</dt><dd>Return keys from physical keyboard and not
+keyboard macro that is being played back.</dd>
+<dt>'P'</dt><dd>UNIX only.  Causes all messages except keyboard
+messages to be dispatched before testing for a key
+or mouse event.  This is necessary because the
+UNIX version can only look at the top message on
+the message queue.  This option is ignored under
+non-UNIX platforms.</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Tests to see if a key or mouse message is available.  If a key is ready, a
+binary string representation of the key is returned.  If no key is
+available, '' is returned.    For ASCII keys a string of length 1 is
+returned.  For  extended keys, like Alt+L, and Backspace, a string of
+length 2 or 3 is returned.
+
+<p>If the 'R'  is not given, the screen is refreshed.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="get_event.html">get_event</a>, <a href="last_event.html">last_event</a>, <a href="call_key.html">call_key</a>, <a href="event2name.html">event2name</a>, <a href="event2index.html">event2index</a>, <a href="index2event.html">index2event</a>, <a href="list_bindings.html">list_bindings</a>, <a href="name2event.html">name2event</a>, <a href="eventtab_index.html">eventtab_index</a></blockquote>
+</body>
+</html>

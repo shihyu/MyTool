@@ -1,0 +1,86 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>dbg_translate_capability</title>
+</head>
+<body>
+
+<h3><b>int dbg_translate_capability(_str capability)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Convert the named debugger capability to an int in the
+capability enumeration type.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="capability">capability</A></code> - name of capability to look up
+       <ul>
+       <li><b>initialize             </b> -- initialize debugger connection
+       <li><b>finalize               </b> -- clean up debugger connection
+       <li><b>terminate              </b> -- stop debugging
+       <li><b>detach                 </b> -- detach from debugging session
+       <li><b>restart                </b> -- restart from start of program
+       <li><b>do_command             </b> -- perform debugger command
+       <li><b>error_message          </b> -- get last error message
+       <li><b>print_output           </b> -- print output to vsdebugio
+       <li><b>print_info             </b> -- send info to vsdebugio
+       <li><b>print_error            </b> -- send error message to vsdebugio
+       <li><b>send_direct_input      </b> -- send input to direct to debugee
+       <li><b>version                </b> -- get version of debugger
+       <li><b>test_version           </b> -- test version of debugger
+       <li><b>reload                 </b> -- reload module and continue
+       <li><b>get_paths              </b> -- get debugger paths
+       <li><b>resolve_path           </b> -- resolve source file path
+       <li><b>suspend                </b> -- suspend execution
+       <li><b>resume                 </b> -- resume execution
+       <li><b>interrupt              </b> -- send interrupt to thread
+       <li><b>step_into              </b> -- step into function
+       <li><b>step_over              </b> -- step over statement
+       <li><b>step_out               </b> -- step out of function
+       <li><b>step_into_runtimes     </b> -- step into runtime function
+       <li><b>step_instr             </b> -- step by instruction
+       <li><b>set_instruction_pointer</b> -- move instruction pointer
+       <li><b>disable_breakpoint     </b> -- disable breakpoint
+       <li><b>enable_breakpoint      </b> -- enable breakpoint
+       <li><b>probe_breakpoint       </b> -- test breakpoint
+       <li><b>disable_watchpoint     </b> -- disable watchpoint
+       <li><b>enable_watchpoint      </b> -- enable watchpoint
+       <li><b>disable_exception      </b> -- disable exception
+       <li><b>enable_exception       </b> -- enable exception
+       <li><b>handle_event           </b> -- poll for asynchronous event
+       <li><b>update_threads         </b> -- update thread list
+       <li><b>update_thread_groups   </b> -- update thread group tree
+       <li><b>update_thread_names    </b> -- update thread names
+       <li><b>update_thread_states   </b> -- update thread states
+       <li><b>update_stack           </b> -- update stack
+       <li><b>update_locals          </b> -- update local variables
+       <li><b>expand_local           </b> -- expand local variable
+       <li><b>modify_local           </b> -- modify local variable
+       <li><b>update_members         </b> -- update class members variables
+       <li><b>expand_member          </b> -- expand class member variable
+       <li><b>modify_member          </b> -- modify class member variable
+       <li><b>update_watches         </b> -- update user defined watches
+       <li><b>expand_watch           </b> -- expand watch variable
+       <li><b>modify_watch           </b> -- modify watch variable
+       <li><b>update_auto_watches    </b> -- update auto watch variables
+       <li><b>expand_auto_watch      </b> -- expand auto watch variable
+       <li><b>modify_auto_watch      </b> -- modify auto watch variable
+       <li><b>eval_condition         </b> -- evaluate condition
+       <li><b>eval_expression        </b> -- evaluate expression
+       <li><b>update_classes         </b> -- update classes
+       <li><b>expand_class           </b> -- expand class members
+       <li><b>expand_methods         </b> -- expand class methods
+       <li><b>expand_fields          </b> -- expand class fields
+       <li><b>expand_nested          </b> -- expand inner classes
+       <li><b>expand_parents         </b> -- expand class parents
+       <li><b>modify_field           </b> -- modify static class field
+       <li><b>update_registers       </b> -- update registers
+       <li><b>update_memory          </b> -- update memory contents
+       </ul>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">DEBUG_CAPABILITY_NOT_FOUND if no such capability exists,
+        otherwise, it returns the debugger capability index.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Since:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">10.0
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+To look up the capability ID for initialize
+<pre>
+   int cap = dbg_translate_capability("initialize");
+   return cap;
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Debugger_Functions.html">Debugger Functions</a></blockquote>
+</body>
+</html>

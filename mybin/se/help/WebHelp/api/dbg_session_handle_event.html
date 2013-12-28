@@ -1,0 +1,50 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>dbg_session_handle_event</title>
+</head>
+<body>
+
+<h3><b>int dbg_session_handle_event(int session_id, _str &event_kind, int &event_flags, int &event_thread, _str &event_class, int &breakpoint_id)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Handle the next event from this debugging session's event queue.
+This function returns '0' if the event was handled and disposed of.
+Otherwise, it will return '1', indicating that you need to
+handle the event yourself.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="session_id">session_id</A></code> - debugger session ID (1 .. max_session)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="event_kind">event_kind</A></code> - (reference) kind of event, including:
+                       <UL>
+                       <LI>"step"
+                       <LI>"breakpoint"
+                       <LI>"frame_pop"
+                       <LI>"exception"
+                       <LI>"user"
+                       <LI>"thread_start"
+                       <LI>"thread_stop"
+                       <LI>"class_prepare"
+                       <LI>"class_unload"
+                       <LI>"class_load"
+                       <LI>"field_access"
+                       <LI>"field_modify"
+                       <LI>"catch"
+                       <LI>"method_entry"
+                       <LI>"method_exit"
+                       <LI>"vm_start"
+                       <LI>"vm_stop"
+                       </UL></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="event_flags">event_flags</A></code> - (reference) Event handling flags,
+                       what needs updating?
+                       <UL>
+                       <LI>VSDEBUG_EVENT_SUSPEND_ALL
+                       <LI>VSDEBUG_EVENT_SUSPEND_THREAD
+                       <LI>VSDEBUG_EVENT_GOTOPC
+                       <LI>VSDEBUG_EVENT_CHANGE_THREAD
+                       <LI>VSDEBUG_EVENT_UPDATE_CLASSES
+                       <LI>VSDEBUG_EVENT_UPDATE_REGS
+                       <LI>VSDEBUG_EVENT_UPDATE_MEMORY
+                       <LI>VSDEBUG_EVENT_UPDATE_THREADS
+                       <LI>VSDEBUG_EVENT_UPDATE_STACK
+                       <LI>VSDEBUG_EVENT_UPDATE_VARS
+                       </UL></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="event_thread">event_thread</A></code> - (reference) ID of thread event occurred in</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="event_class">event_class</A></code> - (reference) Class that event occurred in</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="breakpoint_id">breakpoint_id</A></code> - (reference) ID of breakpoint for breakpoint events
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Since:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">10.0
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Debugger_Functions.html">Debugger Functions</a></blockquote>
+</body>
+</html>

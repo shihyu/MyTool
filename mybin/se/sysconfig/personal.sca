@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeAnnotationData version="1.0" productName="SlickEdit Tools" productVersion="2.0.0">
+  <AnnotationDef id="580f3fc2-4747-49a2-8b46-cb500ca28e31" name="Comment" markerColor="-14513374" author="SlickEdit" creationDate="1/31/2007" lastModifiedUser="SlickEdit" lastModifiedDate="1/31/2007" version="1">
+    <FieldDef name="Comment" type="Multiline Text Control" index="0">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+    </FieldDef>
+  </AnnotationDef>
+  <AnnotationDef id="07546835-9367-4c73-ad6d-9205f9445df1" name="Bug" markerColor="-2818048" author="SlickEdit" creationDate="1/31/2007" lastModifiedUser="SlickEdit" lastModifiedDate="1/31/2007" version="1">
+    <FieldDef name="Description" type="Multiline Text Control" index="0">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+    </FieldDef>
+    <FieldDef name="Status" type="Dropdown Control" index="1">
+      <PredefinedValue name="OPEN" index="0" />
+      <PredefinedValue name="PASSED" index="1" />
+      <PredefinedValue name="FAILED" index="2" />
+      <PredefinedValue name="DEFERRED" index="3" />
+      <PredefinedValue name="NOT A BUG" index="4" />
+      <DefaultValue><![CDATA[0]]></DefaultValue>
+    </FieldDef>
+  </AnnotationDef>
+  <AnnotationDef id="895365b3-530b-44a5-a62e-767730b25bc9" name="Review Comment" markerColor="-11534177" author="SlickEdit" creationDate="1/31/2007" lastModifiedUser="SlickEdit" lastModifiedDate="1/31/2007" version="1">
+    <FieldDef name="Issue" type="Multiline Text Control" index="0">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+    </FieldDef>
+    <FieldDef name="Resolution" type="Multiline Text Control" index="1">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+    </FieldDef>
+    <FieldDef name="Status" type="Dropdown Control" index="2">
+      <PredefinedValue name="OPEN" index="0" />
+      <PredefinedValue name="PASSED" index="1" />
+      <PredefinedValue name="FAILED" index="2" />
+      <PredefinedValue name="DEFERRED" index="3" />
+      <PredefinedValue name="NOT A BUG" index="4" />
+      <DefaultValue><![CDATA[0]]></DefaultValue>
+    </FieldDef>
+  </AnnotationDef>
+  <AnnotationDef id="f3ee22ce-2305-477d-9732-f23fe7feab94" name="Task" markerColor="-16101890" author="SlickEdit" creationDate="1/31/2007" lastModifiedUser="SlickEdit" lastModifiedDate="1/31/2007" version="1">
+    <FieldDef name="Description" type="Multiline Text Control" index="0">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+    </FieldDef>
+    <FieldDef name="Assigned to" type="Multiline Text Control" index="1">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+    </FieldDef>
+    <FieldDef name="Due date" type="Date Control" index="2">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+    </FieldDef>
+    <FieldDef name="Resolved" type="Checkbox Control" index="3">
+      <DefaultValue><![CDATA[false]]></DefaultValue>
+    </FieldDef>
+  </AnnotationDef>
+</CodeAnnotationData>

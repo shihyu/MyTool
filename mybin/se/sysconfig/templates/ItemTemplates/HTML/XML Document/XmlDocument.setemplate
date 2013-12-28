@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd">
+<SETemplate Version="1.0" Type="Item">
+
+  <TemplateDetails>
+    <Name>XML Document</Name>
+    <Description>Provides a skeleton XML Document structure</Description>
+    <SortOrder>0</SortOrder>
+    <DefaultName>Filename</DefaultName>
+  </TemplateDetails>
+  <TemplateContent>
+	<Parameters>
+        <Parameter Name="doctype" Value="root" Prompt="1" PromptString="DocumentType"/>
+		<Parameter Name="dtdurl" Value="filename.dtd" Prompt="1" PromptString="DTD URL"/>
+	</Parameters>
+    <Files>
+      <File TargetFilename="$fileinputname$.xml" ReplaceParameters="1">XmlDocument.xml</File>
+    </Files>
+  </TemplateContent>
+
+</SETemplate>

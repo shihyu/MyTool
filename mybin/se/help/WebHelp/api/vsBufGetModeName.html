@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsBufGetModeName</title>
+</head>
+<body>
+
+<h3><b>VSPSZ VSAPI vsBufGetModeName(int buf_id, char *pszModeName, int MaxModeName, int *pMaxModeNameLen=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="buf_id">buf_id</A></code> - Buffer id returned by <b>vsPropGetI</b>(<i>wid</i>,VSP_BUF_ID),
+                        <b>vsBufEdit</b>, or <b>vsBufMatch</b>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszModeName">pszModeName</A></code> - Name of language mode corresponding to <i>buf_id</i> specified.
+                        This can be NULL, in which case, only the length of
+                        the language mode name string will be set.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxModeName">MaxModeName</A></code> - Number of characters allocated to pszModeName.
+                        We recommend at least VSMAXMODENAME</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pMaxModeNameLen">pMaxModeNameLen</A></code> - If this is not 0, this is set to the number of
+                        characters needed to be allocated.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>VSPSZ</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns language mode name corresponding to
+        buffer id specified.  Returns <i>pszModeName</i>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Attention:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+This function is thread-safe.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a></blockquote>
+</body>
+</html>

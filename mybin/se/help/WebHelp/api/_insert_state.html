@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_insert_state</title>
+</head>
+<body>
+
+<h3><b>void _insert_state(_str mode="", _str set_default="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Each text box has its own insert state.  However, all edit windows and
+editor controls share the same insert state.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>void</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">When no parameters specified, returns '1' if insert mode on.
+Otherwise '0' is returned.
+
+<p>When <i>newValue</i> parameter is not "", the insert state is set to
+<i>newValue</i>.  <i>newValue </i>must be an integer.</p>
+
+<p>Specify "D" for <i>set_default</i> to set the initial insert state used
+when the editor is invoked.  The current insert state is not changed.  The
+current initial insert state is returned.  Specify "" for <i>newValue</i> and
+"D' for <i>set_default</i> to get the current initial insert state.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+         // Make the active object the command line
+         p_window_id=_cmdline;
+         // set insert mode on.
+         _insert_state(1);
+         keyin('insert these characters into the command line');
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control, Text Box, Combo Box
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Combo_Box_Methods.html">Combo Box Methods</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Text_Box_Methods.html">Text Box Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_insert_toggle.html">_insert_toggle</a></blockquote>
+</body>
+</html>

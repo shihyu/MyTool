@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Options SYSTEM "http://www.slickedit.com/dtd/vse/14.0/options.dtd">
+<PropertySheets Version="1.0" SlickEditVersion="15.0.0.0">
+    <PropertySheet Name="SpellCheck" Caption="Spell Check" SystemHelp="Spell Check Options">
+        <Text Caption="Common list" Key="commonList" SpellOption="C" DialogHelp="Specifies the default dictionary. The default dictionary list is named scommon.lst and is located in the SlickEdit installation directory." />
+        <Text Caption="User list 1" Key="userList1" SpellOption="1" DialogHelp="You can have up to two custom dictionaries. When a word is not found during a spell check and you add the word to User list 1 or 2, the word is added to the associated file specified in these fields. By default, the first time words are added, SlickEdit creates files named userdct1.lst and userdct2.lst in your config directory, so these file names are filled in for you. If you choose to create your own files, be sure to place them in the default config directory and add the file names here." />
+        <Text Caption="User list 2" Key="userList2" SpellOption="2" DialogHelp="You can have up to two custom dictionaries. When a word is not found during a spell check and you add the word to User list 1 or 2, the word is added to the associated file specified in these fields. By default, the first time words are added, SlickEdit creates files named userdct1.lst and userdct2.lst in your config directory, so these file names are filled in for you. If you choose to create your own files, be sure to place them in the default config directory and add the file names here." />
+        <Boolean Caption="Ignore all UPPERCASE words" Key="ignoreUpper" SpellOption="U" Type="int" DialogHelp="When set to True, all words in uppercase are ignored during a spell check operation. This applies to all spell check operations." />
+        <Boolean Caption="Detect repeated words" Key="detectRepeated" SpellOption="R" Type="int" DialogHelp="When set to True, words that are repeated twice in a row are detected during a spell check operation. This applies to all spell check operations." />
+    </PropertySheet>
+</PropertySheets>

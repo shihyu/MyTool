@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_getfield</title>
+</head>
+<body>
+
+<h3><b>typeless _getfield(_str indexOrName)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="indexOrName">indexOrName</A></code> - Name or position of field
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Return a reference to the given class field.
+        Fields may be specified either by name or by
+        index (see <a href="_fieldindex.html">_fieldindex</a>).
+        This function pays no attention to field
+        visibility (private or protected).
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+class AAAA { int x; int y; };
+class BBBB : AAAA { int z; };
+void testGetField() {
+   BBBB b;
+   b.x = 0;
+   b.y = 1;
+   b.z = 2;
+   int zero = b._getfield("x");
+   int one  = b._getfield(1);
+   int two  = b._getfield("z");
+   b._getfield(0) = 10;
+   int ten  = b._getfield("x");
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_fieldindex.html">_fieldindex</a>, <a href="_fieldname.html">_fieldname</a>, <a href="_length.html">_length</a>, <a href="_setfield.html">_setfield</a></blockquote>
+</body>
+</html>

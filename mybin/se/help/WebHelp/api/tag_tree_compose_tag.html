@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_tree_compose_tag</title>
+</head>
+<body>
+
+<h3><b>_str tag_tree_compose_tag(_str tag_name, _str class_name, _str type_name, int tag_flags=0, _str arguments="", _str return_type="", ...)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Encode the given tag as a string.  The format of the entire string is as follows:
+<pre>
+      <i>tag_name</i> ( <i>class_name</i> : <i>type_name</i> ) <i>tag_flags</i> ( <i>arguments</i> ) <i>return_type</i>
+</pre>
+<p>The class_name is optional, if not given the string may be encoded as follows, indicating that the tag is a global:
+<pre>
+      <i>tag_name</i> ( <i>type_name</i> ) <i>tag_flags</i> ( <i>arguments</i> ) <i>return_type</i>
+</pre><p>
+<p>The type_name, arguments, and return_type are also optional.  If both the arguments and return_type are omitted, the tag is encoded as follows:
+<pre>
+      <i>tag_name</i> ( <i>class_name</i> : <i>type_name</i> ) <i>tag_flags</i>
+</pre>
+<p>Furthermore, if tag_flags is 0, it is omitted.<p>
+<p>Note that the encoding format is not resilient against names that contain special characters, however, within the argument list, it is allowed to have parenthesis, as long as they are balanced.<p>
+<p>The extension specific procedure and local variable search functions (_[ext]_proc_search) return tags using the format described above.  This function may be used to easily and efficiently implement that part of a proc search function
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - Name of  tag (symbol) to encode.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - Name of class or package or other container that the tag belongs
+                  to.  See <a href="VS_TAGSEPARATOR_class.html">VS_TAGSEPARATOR_class</a> and <a href="VS_TAGSEPARATOR_package.html">VS_TAGSEPARATOR_package</a> for
+                  more details about constructing this value.  If the tag is not
+                  in a class scope, simple pass the empty string for this value.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_name">type_name</A></code> - Tag type name, see <a href="tag_get_type.html">tag_get_type</a> for standard tag types</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - Tag flags indicating symbol attributes, see
+                  <a href="tag_insert_simple.html">tag_insert_simple</a> for details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="arguments">arguments</A></code> - Arguments, such as function or template class parameters.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="return_type">return_type</A></code> - Return type of symbol or value of constant or both
+                  separated by <a href="VS_TAGSEPARATOR_equals.html">VS_TAGSEPARATOR_equals</a>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">String representation for the tag passed in.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_tree_decompose_tag.html">tag_tree_decompose_tag</a></blockquote>
+</body>
+</html>

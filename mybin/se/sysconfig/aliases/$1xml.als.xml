@@ -1,0 +1,12 @@
+<profile name="/language/xml/aliases">
+	<p n="=surround_with_tag">
+		<params>
+			<param n="tag" default="" prompt="Tag"/>
+		</params>
+		<text>
+			&lt;%(tag)%\c&gt;
+			%\m sur_text -indent%
+			&lt;/%(tag)&gt;
+		</text>
+	</p>
+</profile>

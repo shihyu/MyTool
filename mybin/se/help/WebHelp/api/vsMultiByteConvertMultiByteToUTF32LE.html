@@ -1,0 +1,51 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMultiByteConvertMultiByteToUTF32LE</title>
+</head>
+<body>
+
+<h3><b>char*VSAPI vsMultiByteConvertMultiByteToUTF32LE(int codePage, const char *pBuf, const char *pEndBuf, unsigned *pwDest, size_t wDestLen, unsigned *pNofCharsWritten=0, int *pstatus=0, VSUTF8_FILEINFO1 *pfile=0, int(VSAPI*pfnRead)(VSUTF8_FILEINFO1*pfile, const char*pCurrentPos)=0, int *pXlatError=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Converts multi-byte text to UTF-32 little endian.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pBuf">pBuf</A></code> - Buffer containing source multi-byte text.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pEndBuf">pEndBuf</A></code> - Pointer to end of buffer.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pwDest">pwDest</A></code> - Destination buffer for UTF-32 text.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="DestLen">DestLen</A></code> - Number of characters allocated to
+destination buffer. Specify uBufLen+2
+characters (BufLen*4+8 bytes) if you want
+all data converted.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pCharsWritten">pCharsWritten</A></code> - Receives number of characters written.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pstatus">pstatus</A></code> - Set to 0 if no error.  Otherwise, a negative
+return code.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pfnRead">pfnRead</A></code> - Callback function to read more data when
+<i>pBuf</i>>=<i>pEndBuf</i>.  This
+allows you to write more efficient code
+which processes data directly from any
+source without having to make a copy of the
+data.  Returns 0 if successful, 1 if no more
+data, and a negative error code for an error.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pXlatError">pXlatError</A></code> - Set to 1 if a translation error occurs while
+translating the data.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>char*VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns pointer to the next character to read.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<p>Sample callback function:</p>
+
+<pre>
+static char gTempBuffer[32768];
+
+static int VSAPI CallbackFileRead1(VSUTF8_FILEINFO1 *pfile,const
+char *pCurrentPos)
+{
+   if (pCurrentPos<pfile->pEndBuf) {
+      pfile->pBuf=(char *)pCurrentPos;
+      return(1);  // No more data
+   }
+   int status=readfh(pfile->fh,gTempBuffer,sizeof(gTempBuffer));
+   pfile->pBuf=(char *)gTempBuffer;
+   pfile->pEndBuf=(char *)(gTempBuffer+status);
+   return(status);  // 0 for success, negative number for error.
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Unicode_Functions.html">Unicode Functions</a></blockquote>
+</body>
+</html>

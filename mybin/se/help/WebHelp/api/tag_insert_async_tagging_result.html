@@ -1,0 +1,19 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_insert_async_tagging_result</title>
+</head>
+<body>
+
+<h3><b>int tag_insert_async_tagging_result(_str fileName, int taggingFlags, int bufferId)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Insert the tags which were gathered by the asynchronous parsing for this
+tagging job.  This applies to updating tag databse, the current context,
+or for updating local variables.  Note that becuase of embedded code
+sections, there may be more work still required after this method is
+complete if there are embedded code blocks which also require tagging
+work.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="fileName">fileName</A></code> - Name of file to update tagging results for</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="taggingFlags">taggingFlags</A></code> - tagging options flags (bitset of VSLTF_*)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="bufferId">bufferId</A></code> - ID of editor buffer to update tagging for
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

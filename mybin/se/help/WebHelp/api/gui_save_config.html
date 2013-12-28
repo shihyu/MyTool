@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>gui_save_config</title>
+</head>
+<body>
+
+<h3><b>_command typeless gui_save_config()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>You are prompted whether you wish to save the configuration changes.
+Source code representing your configuration changes is saved in the files
+"vusrdefs.e" (UNIX: "vunxdefs.e"), "vusrobjs.e" (UNIX: "vunxobjs.e"), and
+"vusrs<i>NNN</i>.e" (UNIX: "vusrs<i>NNN</i>.e") where <i>NNN</i> is unique
+characters for this version of SlickEdit.  The state file will be
+saved to "vslick.sta" (UNIX: "vslick.stu") if you loaded new macro modules.
+When the editor is invoked, the state file is loaded and then the source code
+representing your configuration changes are applied.</p><p>
+<p>The state file contains macro module(s), name table, dialog box
+templates, bitmaps, event table(s), global/static variable value(s), and
+editor options.  When the editor is invoked, it searches for the state file.
+First the directory from which the editor was loaded is searched and then the
+path directories are searched.  The editor will not search for a state file
+if the editor is invoked with the '-x' option in the command line.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common return codes are:
+<ul>
+<li>COMMAND_CANCELLED_RC</li>
+<li>ACCESS_DENIED_RC</li>
+<li>ERROR_OPENING_FILE_RC</li>
+<li>INSUFFICIENT_DISK_SPACE_RC</li>
+<li>ERROR_READING_FILE_RC</li>
+<li>ERROR_WRITING_FILE_RC</li>
+<li>DRIVE_NOT_READY_RC</li>
+<li>PATH_NOT_FOUND_RC</li>
+</ul>
+
+<p>On error, message box displayed.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="write_state.html">write_state</a>, <a href="save_config.html">save_config</a></blockquote>
+</body>
+</html>

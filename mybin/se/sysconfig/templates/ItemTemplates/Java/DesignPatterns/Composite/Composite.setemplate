@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd">
+<SETemplate Version="1.0" Type="Item">
+
+  <TemplateDetails>
+    <Name>Java Composite Pattern</Name>
+    <Description>Java implementation of the Composite design pattern</Description>
+    <SortOrder>0</SortOrder>
+    <DefaultName>CompositeName</DefaultName>
+  </TemplateDetails>
+  <TemplateContent>
+    <Files>
+      <File TargetFilename="$safeitemname$Component.java">Component.java</File>
+      <File TargetFilename="$safeitemname$Composite.java">Composite.java</File>
+      <File TargetFilename="$safeitemname$Leaf.java">Leaf.java</File>
+      <File TargetFilename="$safeitemname$CompositeTest.java">CompositeTest.java</File>
+    </Files>
+  </TemplateContent>
+
+</SETemplate>

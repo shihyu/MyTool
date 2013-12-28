@@ -1,0 +1,40 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMarkerTypeSetFlags</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsMarkerTypeSetFlags(int type, int MarkerTypeFlags)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sets the marker type flags for the marker type specified.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type">type</A></code> - Index of marker type.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MarkerTypeFlags">MarkerTypeFlags</A></code> - Marker flags may be one or more of the VSMARKERTYPEFLAG_* flags.
+See flags for details.
+
+<dl>
+<dt>VSMARKERTYPEFLAG_AUTO_REMOVE</dt><dd>
+Specifies that the marker be removed when
+all marker text is deleted.</dd>
+<dt>VSMARKERTYPEFLAG_DRAW_BOX</dt><dd>
+Specifies that a box be drawn around
+the text.  For line markers, the number of lines contained
+in the box is determined by the
+<i>NofLines</i> property of the line marker.
+</dd>
+<dt>VSMARKERTYPEFLAG_DRAW_FOCUS_RECT</dt><dd>
+Specifies that a focus rectangle be drawn around
+the text.  For line markers, the number of lines contained
+in the box is determined by the
+<i>NofLines</i> property of the line marker.
+</dd>
+<dt>VSMARKERTYPEFLAG_DRAW_SQUIGGLY</dt><dd>
+Specifies that a squiggly underline be drawn under
+the text.  For line markers, the number of lines contained
+in the box is determined by the
+<i>NofLines</i> property of the line marker.
+<dt>VSMARKERTYPEFLAG_DRAW_SCROLL_BAR_MARKER</dt><dd>
+</dd>
+
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Marker_Functions.html">Marker Functions</a></blockquote>
+</body>
+</html>

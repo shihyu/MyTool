@@ -1,0 +1,26 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_join_class_name</title>
+</head>
+<body>
+
+<h3><b>_str tag_join_class_name(_str class_name, _str outer_class, _str(&tag_files)[], boolean case_sensitive, boolean allow_anonymous=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Determine whether the class name and outer class name
+should be joined using a package separator or class
+separator and return the resulting string.  This involves
+searching for the outer class name as a package, if found,
+then use the package separator <a href="VS_TAGSEPARATOR_package.html">VS_TAGSEPARATOR_package</a>,
+otherwise use the class separator <a href="VS_TAGSEPARATOR_class.html">VS_TAGSEPARATOR_class</a>.
+The current object must be an editor control or current
+buffer.
+<p>
+For synchronization, threads should perform a tag_lock_context(false)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - name of class to join (inner_class)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="outer_class">outer_class</A></code> - name of outer class or package to join</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_files">tag_files</A></code> - (reference, read-only array of strings)
+                  list of tag files to search</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="case_sensitive">case_sensitive</A></code> - Specifies search case sensitivity.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="allow_anonymous">allow_anonymous</A></code> - Allow <i>class_name</i> to be an anonymous class.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns static string if <i>outer_class</i> :: <i>class_name</i> was found in
+        the context or tag database, otherwise returns '';
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_split_class_name.html">tag_split_class_name</a></blockquote>
+</body>
+</html>

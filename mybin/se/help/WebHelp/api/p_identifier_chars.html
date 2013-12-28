@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_identifier_chars</title>
+</head>
+<body>
+
+<h3><b>_str p_identifier_chars</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns a string containing two parts:
+<li>First is the identifier start characters --
+these are the valid leading characters for an identifier
+in the current language.<br>
+<li>Second is the additional identifier characters --
+these are other characters that are valid in
+identifiers in the current language.<p>
+Character ranges are separated by a dash (-), and
+special characters (e.g. dash) can be escaped using
+backslash (\).
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Note:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+   For many purposes, this property replaces
+   <a href="p_word_chars.html">p_word_chars</a> which may contain other
+   non-identifier characters.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+   For a typical language that allowed identifiers to
+   start with an alphabetic character and continue with
+   underscore or alphanumeric characters.
+   <pre>A-Za-z _0-9</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Editor Control, Edit Window</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Editor_Control_Properties.html">Editor Control Properties</a>, <a href="Edit_Window_Properties.html">Edit Window Properties</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_clex_identifier_re.html">_clex_identifier_re()</a>, <a href="_clex_identifier_notre.html">_clex_identifier_notre()</a>, <a href="_clex_identifier_chars.html">_clex_identifier_chars()</a>, <a href="_clex_is_identifier_char.html">_clex_is_identifier_char()</a>, <a href="cur_identifier.html">cur_identifier()</a>, <a href="p_word_chars.html">p_word_chars</a>, <a href="p_EmbeddedIdentifierChars.html">p_EmbeddedIdentifierChars</a></blockquote>
+</body>
+</html>

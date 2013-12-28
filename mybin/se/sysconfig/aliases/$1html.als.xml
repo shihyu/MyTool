@@ -1,0 +1,163 @@
+<profile name="/language/html/aliases">
+	<p n="=surround_with_underline">
+		<text>
+			&lt;u&gt;%\m sur_text -select%&lt;/u&gt;
+		</text>
+	</p>
+	<p n="=surround_with_blink">
+		<text>
+			&lt;blink&gt;%\m sur_text -select%&lt;/blink&gt;
+		</text>
+	</p>
+	<p n="=surround_with_unordered_list">
+		<text>
+			&lt;ul%\c&gt;
+			%\m sur_text -indent%
+			&lt;/ul&gt;
+		</text>
+	</p>
+	<p n="=surround_with_table_row">
+		<text>
+			&lt;tr%\c&gt;
+			%\m sur_text%
+			&lt;/tr&gt;
+		</text>
+	</p>
+	<p n="=surround_with_italic">
+		<text>
+			&lt;i&gt;%\m sur_text -select%&lt;/i&gt;
+		</text>
+	</p>
+	<p n="=surround_with_bold">
+		<text>
+			&lt;b&gt;%\m sur_text -select%&lt;/b&gt;
+		</text>
+	</p>
+	<p n="=surround_with_table_data">
+		<text>
+			&lt;td%\c&gt;%\m sur_text -select%&lt;/td&gt;
+		</text>
+	</p>
+	<p n="=surround_with_preformatted">
+		<text>
+			&lt;pre&gt;
+			%\m sur_text%
+			&lt;/pre&gt;
+		</text>
+	</p>
+	<p n="=surround_with_unordered_list_with_li">
+		<text>
+			&lt;ul&gt;
+			%\m sur_text -indent -begin &lt;li&gt; -end &lt;/li&gt;%
+			&lt;/ul&gt;
+		</text>
+	</p>
+	<p n="=surround_with_link">
+		<text>
+			&lt;a href="%\c"&gt;%\m sur_text%&lt;/a&gt;
+		</text>
+	</p>
+	<p n="=surround_with_ordered_list">
+		<text>
+			&lt;ol%\c&gt;
+			%\m sur_text -indent%
+			&lt;/ol&gt;
+		</text>
+	</p>
+	<p n="=surround_with_font">
+		<text>
+			&lt;font %\c&gt;%\m sur_text%&lt;/font&gt;
+		</text>
+	</p>
+	<p n="=surround_with_heading_1">
+		<text>
+			&lt;h1&gt;%\m sur_text%&lt;/h1&gt;
+		</text>
+	</p>
+	<p n="=surround_with_ordered_list_with_li">
+		<text>
+			&lt;ol%\c&gt;
+			%\m sur_text -indent -begin &lt;li&gt; -end &lt;/li&gt;%
+			&lt;/ol&gt;
+		</text>
+	</p>
+	<p n="=surround_with_heading_2">
+		<text>
+			&lt;h2&gt;%\m sur_text%&lt;/h2&gt;
+		</text>
+	</p>
+	<p n="=surround_with_definition_list_definition">
+		<text>
+			&lt;dd&gt;
+			%\m sur_text -indent%
+			&lt;/dd&gt;
+		</text>
+	</p>
+	<p n="=surround_with_heading_3">
+		<text>
+			&lt;h3&gt;%\m sur_text%&lt;/h3&gt;
+		</text>
+	</p>
+	<p n="=surround_with_heading_4">
+		<text>
+			&lt;h4&gt;%\m sur_text%&lt;/h4&gt;
+		</text>
+	</p>
+	<p n="=surround_with_paragraph">
+		<text>
+			&lt;p&gt;%\m sur_text%&lt;/p&gt;
+		</text>
+	</p>
+	<p n="=surround_with_list_item">
+		<text>
+			&lt;li&gt;%\m sur_text -select%&lt;/li&gt;
+		</text>
+	</p>
+	<p n="=surround_with_definition_list_term">
+		<text>
+			&lt;dt&gt;%\m sur_text%&lt;/dt&gt;
+		</text>
+	</p>
+	<p n="=surround_with_heading_5">
+		<text>
+			&lt;h5&gt;%\m sur_text%&lt;/h5&gt;
+		</text>
+	</p>
+	<p n="=surround_with_table">
+		<text>
+			&lt;table%\c&gt;
+			%\m sur_text -indent%
+			&lt;/table&gt;
+		</text>
+	</p>
+	<p n="=surround_with_heading_6">
+		<text>
+			&lt;h6&gt;%\m sur_text%&lt;/h6&gt;
+		</text>
+	</p>
+	<p n="=surround_with_anchor">
+		<text>
+			&lt;a name=%\c&gt;%\m sur_text -select%&lt;/a&gt;
+		</text>
+	</p>
+	<p n="=surround_with_general_tag">
+		<params>
+			<param n="tag" default="" prompt="Tag"/>
+		</params>
+		<text>
+			&lt;%(tag)%\c&gt;%\m sur_text%&lt;/%(tag)&gt;
+		</text>
+	</p>
+	<p n="=surround_with_definition_list">
+		<text>
+			&lt;dl&gt;
+			%\m sur_text -indent%
+			&lt;/dl&gt;
+		</text>
+	</p>
+	<p n="=surround_with_emphasis">
+		<text>
+			&lt;em&gt;%\m sur_text -select%&lt;/em&gt;
+		</text>
+	</p>
+</profile>

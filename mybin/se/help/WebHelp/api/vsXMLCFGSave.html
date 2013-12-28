@@ -1,0 +1,46 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsXMLCFGSave</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsXMLCFGSave(int iHandle, int iIndentAmount, int iFlags, const char *pszAlternateFilename=a, int encoding=-, int NodeIndex=a, PFNXMLCFGCFG_SAVE_CALLBACK pfnCallback=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Saves an XMLCFG tree to a XML file.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iHandle">iHandle</A></code> - Handle to an XMLCFG tree returned by vsXMLCFGOpen(), vsXMLCFGCreate(), or vsXMLCFGOpenFromBuffer().</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iIndentAmount">iIndentAmount</A></code> - Amount to indent for each level.  -1 to use tabs</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iFlags">iFlags</A></code> - Formatting flags.   flags may be zero or more of the following flags:
+
+                 <DL>
+                 <DT>VSXMLCFG_SAVE_ALL_ON_ONE_LINE</DT>
+                 <DD>Specifies that all attributes for a given element be written on the same line.</DD>
+                 <DT>VSXMLCFG_SAVE_ONE_LINE_IF_ONE_ATTR</DT>
+                 <DD>Specifies that attributes for a given element be written on the same line if there is only one attribute.</DD>
+                 <DT>VSXMLCFG_SAVE_DOS_EOL</DT>
+                 <DD>Specifies that carriage return and line feed characters separate each line.  This is the default under Windows.</DD>
+                 <DT>VSXMLCFG_SAVE_UNIX_EOL</DT>
+                 <DD>Specifies that a line feed character separate each line.  This is the default under UNIX.</DD>
+                 <DT>VSXMLCFG_SAVE_SPACE_AROUND_EQUAL</DT>
+                 <DD>Specifies that spaces be added before and after the '=' for attributes and their values.</DD>
+                 <DT>VSXMLCFG_SAVE_CLOSE_BRACE_ON_SEPARATE_LINE</DT>
+                 <DD>Specifies that the close brace be placed on a separate line.</DD>
+                 </DL></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszAlternateFilename">pszAlternateFilename</A></code> - When given, specifies filename to write to.  Otherwise, the filename
+                 used in the open or create call is used.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="encoding">encoding</A></code> - When -1 this parameter defaults to the value specified in the
+                 vsXMLCFGOpen() or vsXMLCFGCreate() call.  For Microsort .NET project files,
+                 this parameter should be VSCP_ACTIVE_CODEPAGE. encoding may be one of the
+                 following:
+
+                 <blockquote></pre>
+                 VSENCODING_UTF8
+                 VSENCODING_UTF8_WITH_SIGNATURE
+                 VSENCODING_UTF16LE
+                 VSENCODING_UTF16LE_WITH_SIGNATURE
+                 VSENCODING_UTF16BE
+                 VSENCODING_UTF16BE_WITH_SIGNATURE
+                 VSENCODING_UTF32LE
+                 VSENCODING_UTF32LE_WITH_SIGNATURE
+                 VSENCODING_UTF32BE
+                 VSENCODING_UTF32BE_WITH_SIGNATURE
+                 </PRE></blockquote></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NodeIndex">NodeIndex</A></code> - The children of this node are written.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pfnCallback">pfnCallback</A></code> - Allows the indent to be customized for the contenst of a specific node.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Otherwise a negative error code is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="XMLCFG_Functions.html">XMLCFG Functions</a></blockquote>
+</body>
+</html>

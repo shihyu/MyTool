@@ -1,0 +1,158 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_ok.on_create</title>
+</head>
+<body>
+
+<h3><b>void _ok.on_create(_str FormCaption, int Flags, _str TextBoxWidth, _str HelpItem, _str ButtonNCaptionList="", _str RetrieveName="", _str prompt1="", _str promptN="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Displays one or more text boxes or combo boxes.
+<p>
+If the TB_VIEWID_OUTPUT flag is given, the return value is a view
+id containing the response to each text box on separates lines.
+<p>
+If the TB_QUERY_COMPAT flag is specified the format of the
+buffer is compatible with the output of the QUERY command of
+Visual SlickEdit.  The view and buffer should be deleted with
+the <b>_delete_temp_view</b> function.
+<p>
+If the TB_VIEWID_OUTPUT flag is not given, the return value is the index
+of the button pressed (e.g. for buttons in order OK, Cancel -- 1=OK, 2=Cancel),
+and the _param1.._paramN global variables are set to the responses to
+text1..textN respectively.
+<p>
+The limit on the number of prompts/values is 9.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="FormCaption">FormCaption</A></code> - Title of dialog box.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Flags">Flags</A></code> - A combinations of the following flags defined in "slick.sh":
+
+                <dl compact>
+                <dt>TB_RETRIEVE
+                  <dd style="margin-left:120pt">Create combo boxes instead of text boxes.
+                  Fill in combo box list with previous response to combo box.  Be sure
+                  to specify the retrieve_name argument.
+                <dt>TB_RETRIEVE_INIT
+                  <dd style="margin-left:120pt">Same as TB_RETRIEVE.  In addition, combo box
+                  text is initialized to the previous responses unless the prompt string
+                  specifies an initial value.
+                <dt>TB_VIEWID_INPUT
+                  <dd style="margin-left:120pt">prompt1 is a view id and no arguments follow prompt1.
+                  The input view has Name:[Initial_Value] pairs, one-per-line.
+                <dt>TB_VIEWID_OUTPUT
+                  <dd style="margin-left:120pt">The return value will be a view id containing the responses.
+                  The output view has the Value of each item, one-per-line. IMPORTANT: The value of the button
+                  pressed (e.g. OK, Cancel, etc.) is not included in the output view. If you are including custom
+                  buttons, and you need to know which button was pressed by the user, then do NOT use the
+                  TB_VIEWID_OUTUT flag -- use _param1.._paramN global variables instead and check the return result
+                  for which button was pressed (1=first button, 2=second button, etc.).
+                <dt>TB_QUERY_COMPAT
+                  <dd style="margin-left:120pt">The return value will be a view id containing
+                  the responses in the format of the QUERY.
+                </dl>
+                Set to 0 for no flags.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="TextBoxWidth">TextBoxWidth</A></code> - Specifies width of the text box in twips. 1440 twips is 1 inch on the display.
+                Set to "" for the default text box width.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="HelpItem">HelpItem</A></code> - Specifies help displayed when F1 is pressed or the help
+                button is pressed.  If the help_item starts with a '?'
+                character, the characters that follow are displayed in a
+                message box.  The help string may also specify a unique
+                help index item listed in "vslickindex.xml"
+                In addition, you may specify a unique keyword for any windows
+                .chm help file by specifying a string in the format: <i>HelpIndexItem</i>:<i>help_filename</i>.
+                Set to "" for no help.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ButtonNCaptionList">ButtonNCaptionList</A></code> - ButtonNCaptionList in the following format:
+
+                <blockquote>
+                <code>
+                <i>ButtonList</i>[\t<i>Caption1</i>[\n<i>Caption2</i>[\n<i>CaptionN</i>]]]
+                </code>
+                </blockquote>
+
+                Where <i>ButtonList</i> is in the format:
+
+                <blockquote>
+                <code>
+                <<i>Caption</i>[:<i>controlName</i>]>[,...]
+                </code>
+                </blockquote>
+
+                Note: <br>
+                If you supply a button list, it is up to you to make your own cancel and
+                help buttons.  If you have a button with the control name '_cancel', it will
+                automatically be set up as the cancel button.  A button with the control name
+                '_help' will automatically be set up as the help button.
+                <p>
+                If the caption starts with "-html ", it will be
+                rendered as sunken HTML text.
+                <p>
+                The same _ok.lbutton_up function will run for all the buttons when they are
+                pressed, unless the control name is specified as _help or _cancel.
+                <p>
+                Specify "" for default OK, Cancel, Help buttons, and no captions.
+                Defaults to "".
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="RetrieveName">RetrieveName</A></code> - Specify the name of the command that called this function or a name for what is being prompted for.
+                Defaults to "".
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="prompt1">prompt1</A></code> - You may specify 1 or more prompt string arguments.
+                <p>
+                The prompt string argument are strings in the following format:
+                <blockquote>
+                <code>
+                <i>options</i> <i>label</i>[: <i>initial_value</i>]
+                </code>
+                </blockquote>
+                <i>options</i> may containing one of the following switches
+                <dl style="margin-left:20pt">
+                <dt>-r  <i>n1</i>,<i>n2</i>
+                  <dd>Value in text must be a valid floating pointer number in range <i>n1</i>..<i>n2</i>.
+                <dt>-e <i>callback_name</i> [:<i>arg2</i>]
+                  <dd>Name of global function to call to check input.  First argument to call back
+                  function is the text in the text box.  Second argument is <i>arg2</i> if specified.
+                <dt>-e1 <i>callback_name</i>[:<i>arg2</i>]
+                  <dd>Name of global function to call to check values in ALL text boxes.  First argument
+                  is "".  Second argument is <i>arg2</i> if specified.  The text boxes have the control
+                  names (p_name) text1..textN and are numbered from top to bottom.
+                <dt>-checkbox
+                  <dd>Prompt is a check box instead of a text box.
+                </dl>
+
+                <i>label</i> is the caption to appear to the left of the text box.<br>
+                <i>initial_value</i> is the initial value to appear in the text box. <br>
+                If -checkbox option is used to create a checkbox, then valid initial values are: <br>
+                0 (not checked), 1 (checked). Default initial value is 0. This style of checkbox
+                corresponds to a PSCH_AUTO2STATE style.<br>
+                If -checkbox3 or -checkbox3a option is used, then valid initial values are: <br>
+                0 (not checked), 1 (checked), 2 (grayed). Default initial value is 0. This style of checkbox
+                corresponds to a PSCH_AUTO3STATEA style where values cycle through: 0, 2, 1.<br>
+                If checkbox3b option is used, then valid initial values are: <br>
+                0 (not checked), 1 (checked), 2 (grayed). Default initial value is 0. This style of checkbox
+                corresponds to a PSCH_AUTO3STATEB style where values cycle through: 0, 1, 2.<br>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="promptN">promptN</A></code> - Specify 1 or more prompt arguments.  See prompt1.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>void</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">"" if the dialog box is cancelled. If ButtonNCaptionList!="", then return value is the number
+of the button that was pressed. Button numbers start at 1.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+ _str show("_textbox_form", <i>title</i> ,<i>flags</i>
+           ,<i>text_box_width</i> , <i>help_item</i> [, <i>ButtonNCaptionList</i>
+           [,<i>retrieve_name</i>
+           [,<i>prompt1</i> [,<i>prompt2</i>, ... <i>promptN</i> ]]]] )
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+   parse p_margins with left_ma right_ma new_para_ma
+   new_para_ma=strip(new_para_ma)
+   result = show("-modal _textbox_form",
+                 "Margins",     // Form caption
+                 0,             // Flags
+                 "",            // Use default textbox width
+                 'gui_margins', // Help item
+                 "",            // Buttons and captions
+                 "gui_margins", // Retrieve name
+                 "-E1 _check_margins Left Margin:"left_ma,
+                 "Right Margin:"right_ma,
+                 "New Paragraph Margin:"new_para_ma);
+   if (result=="") {
+      return(COMMAND_CANCELLED_RC);
+   }
+   p_margins=_param1' '_param2' '_param3
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Forms.html">Forms</a></blockquote>
+</body>
+</html>

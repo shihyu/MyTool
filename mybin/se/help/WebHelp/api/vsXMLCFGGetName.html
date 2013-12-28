@@ -1,0 +1,19 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsXMLCFGGetName</title>
+</head>
+<body>
+
+<h3><b>const char*VSAPI vsXMLCFGGetName(int iHandle, int NodeIndex, int *pNameLen=a)</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>Use vsXMLCFGGetNameString() instead whereever possible.
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Gets the node name
+<p>
+This function returns data from a static global, so it is not thread safe.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iHandle">iHandle</A></code> - Handle to an XMLCFG tree returned by vsXMLCFGOpen(),
+                  vsXMLCFGCreate(), or vsXMLCFGOpenFromBuffer().</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NodeIndex">NodeIndex</A></code> - Index of element</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pNameLen">pNameLen</A></code> - (optional) pointer to int to set name length to
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>const char*VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the name for the node specified.
+        The name returned is null for comment, attribute, CDATA, and PCDATA nodes.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="XMLCFG_Functions.html">XMLCFG Functions</a></blockquote>
+</body>
+</html>

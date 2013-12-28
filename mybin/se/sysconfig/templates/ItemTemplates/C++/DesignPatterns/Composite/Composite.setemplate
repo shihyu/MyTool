@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd">
+<SETemplate Version="1.0" Type="Item">
+  <TemplateDetails>
+    <Name>C++ Composite</Name>
+    <Description>C++ implementation of the Composite design pattern, using STL list</Description>
+    <SortOrder>0</SortOrder>
+    <DefaultName>CompositeName</DefaultName>
+  </TemplateDetails>
+  <TemplateContent>
+    <Parameters/>
+    <Files>
+      <File TargetFilename="$fileinputname$.h">Composite.h</File>
+      <File TargetFilename="$fileinputname$Component.cpp">Component.cpp</File>
+      <File TargetFilename="$fileinputname$Composite.cpp">Composite.cpp</File>
+    </Files>
+  </TemplateContent>
+
+</SETemplate>

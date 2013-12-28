@@ -1,0 +1,41 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_caption</title>
+</head>
+<body>
+
+<h3><b>_str p_caption</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Determines the title or text displayed.<p>
+<p><b>Menu, Menu Item</b> - Determines the title of a submenu or menu item.
+When menus are displayed, there is no instance handle.
+Menu and menu item properties can only be accessed in menu resources.
+The <a href="_menu_get_state.html">_menu_get_state</a> and <a href="_menu_set_state.html">_menu_set_state</a> function may be used to get and set
+menu properties of displayed menus.<p>
+<p>IMPORTANT:  For menu items, set the <b>p_caption</b>
+property to "-" if you want a line separating menu items which follow.<p>
+<p><b>Form, Frame</b> -  Determines the title of the window.<p>
+<p><b>Picture Box, Image</b> -  Determines the caption
+displayed depending on <a href="p_style.html">p_style</a> setting.<p>
+<p><b>Label, Command Button, Radio Button, Check Box</b> - Determines the text displayed in the window.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+   #include "slick.sh"
+   defmain()
+   {
+      // Find menu resource in names table
+      tindex=find_index("menu1",oi2type(  OI_MENU));
+      if (!tindex){
+           messageNwait("menu1 not found");
+           return('');
+      }
+      // Get resource handle to first child of this menu
+      // The first child of a menu designed to be a menu bar is typically the File menu
+      child=tindex.p_child;
+      // Display the caption of the first child of this menu.
+      messageNwait("caption="child.p_caption);
+   }
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Form, Label, Frame, Command Button, Radio Button, Check Box, Picture Box, Image</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Label_Properties.html">Label Properties</a>, <a href="Command_Button_Properties.html">Command Button Properties</a>, <a href="Picture_Box_Properties.html">Picture Box Properties</a>, <a href="Image_Properties.html">Image Properties</a></blockquote>
+</body>
+</html>

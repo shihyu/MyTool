@@ -1,0 +1,42 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>on_init_menu</title>
+</head>
+<body>
+
+<h3><b>event on_init_menu()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">The <b>on_init_menu</b> event is sent to a Form or MDI Window which has a
+menu bar just before the user activates the menu.  This event is typically
+used to gray out menu items just before the user sees the drop-menus.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include "slick.sh"
+// Create a form called form1 and set the border style to anything BUT
+// BDS_DIALOG BOX.  Windows does not allow forms with a dialog
+// box style border to have menu bars.
+defeventtab form1;
+form1.on_load()
+{
+    // Find index of SlickEdit MDI menu resource
+    index=find_index(def_mdi_menu,oi2type(OI_MENU));
+    // Load this menu resource
+    menu_handle=p_active_form._menu_load(index);
+    // _set_menu will fail if the form has a dialog box style border.
+    // Put a menu bar on this form.
+    _menu_set(menu_handle);
+    // You DO NOT need to call _menu_destroy.  This menu is destroyed when
+the form
+    // window is deleted.
+}
+form1.on_init_menu()
+{
+    // Gray out all menu items which are not allowed when there no child
+windows.
+    _menu_set_state(p_menu_handle,"!ncw",MF_GRAYED,'C');
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">MDI Window, Form
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Form_Events.html">Form Events</a>, <a href="MDI_Window_Events.html">MDI Window Events</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_menu_add_filehist.html">_menu_add_filehist</a>, <a href="_menu_add_hist.html">_menu_add_hist</a>, <a href="_menu_add_workspace_hist.html">_menu_add_workspace_hist</a>, <a href="_menu_destroy.html">_menu_destroy</a>, <a href="_menu_find.html">_menu_find</a>, <a href="_menu_get_state.html">_menu_get_state</a>, <a href="_menu_info.html">_menu_info</a>, <a href="_menu_insert.html">_menu_insert</a>, <a href="_menu_load.html">_menu_load</a>, <a href="_menu_match.html">_menu_match</a>, <a href="_menu_move.html">_menu_move</a>, <a href="_menu_set.html">_menu_set</a>, <a href="_menu_set_state.html">_menu_set_state</a>, <a href="_menu_show.html">_menu_show</a>, <a href="alt_menu.html">alt_menu</a>, <a href="insert_object.html">insert_object</a>, <a href="menu_mdi_bind_all.html">menu_mdi_bind_all</a>, <a href="mou_show_menu.html">mou_show_menu</a>, <a href="show.html">show</a></blockquote>
+</body>
+</html>

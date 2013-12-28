@@ -1,0 +1,236 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Configuration Variables</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch13.htm" title="Chapter 13.  Appendix"><link rel="prev" href="ch13s03.htm" title="Environment Variables"><link rel="next" href="ch13s05.htm" title="Configuration Directories and Files"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_configurationvariables_13930_73516"></a>
+    <a name="sect_configurationvariables_13930_1003756"></a>
+    <a class="indexterm" name="sect_configurationvariables_31B68372_D053"></a>Configuration Variables</h2></div></div></div><p class="NormalText">
+    SlickEdit® has many behaviors that are controlled through properties not exposed in the options dialogs. They are set through global configuration macro variables in Slick-C®, using the <span><strong class="command">set_var</strong></span> command. The most commonly used of these variables are listed in the table below. </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_configurationvariables_13930_1005138"></a>Viewing Configuration Variables</h3></div></div></div><p class="NormalText">To view the complete list of configuration variables, bring up the SlickEdit® command line and type
+      <span><strong class="command">set_var def-</strong></span> (note the hyphen). The completion list will provide the full list of 
+      available variables. Use the Help system to look up information on a variable by typing the name of the 
+      variable into the Index search field. You can also see a list of variables under 
+      <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category </strong></span> &#8594; <span><strong class="guimenuitem">Configuration Variables</strong></span>.</p><p class="NormalText">Alternatively, you can use the <a href="ch08s05.htm#sect_symbolbrowsing_12907_96273">Symbols Tool Window</a> to find where the variable is defined in the Slick-C® code. Expand the <span><strong class="guilabel">Slick-C</strong></span> folder and then expand the <span><strong class="guilabel">Global Variables</strong></span> folder. If Slick-C hasn't already been tagged, type <span><strong class="command">fp</strong></span> into the SlickEdit command line. This is an abbreviation of the <span><strong class="command">find_proc</strong></span> command, which will trigger tagging if it hasn't already been done.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_configurationvariables_13930_34957"></a>
+      <a name="sect_configurationvariables_13930_1005144"></a>Setting/Changing Configuration Variables</h3></div></div></div><p class="NormalText">There are two ways to set/change these macro variables:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">From the SlickEdit®
+          menu, click <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Set Macro Variable</strong></span> (or use the
+          <span><strong class="command">gui_set_var</strong></span> command) and enter the macro variable
+          in the <span><strong class="guilabel">Variable</strong></span> field. The current value of the
+          variable will be shown in the <span><strong class="guilabel">Value</strong></span> text box.
+          Click <span><strong class="guibutton">Edit</strong></span> to edit this variable, then click
+          <span><strong class="guibutton">OK</strong></span> to accept the change.  For more
+          information, see <a href="ch12s09.htm#sect_macro_menuanddialogs_13808_21262">Set Variable Dialog</a>.</p></li><li><p class="NormalText">From the SlickEdit command line, invoke the <span><strong class="command">set_var</strong></span> command with the macro variable name (for example, <span><strong class="command">set_var def_auto_linecomment</strong></span>), then press <span><strong class="keycap">Enter</strong></span> to view the current value. You can edit this value, then press <span><strong class="keycap">Enter</strong></span> to accept the change.</p></li></ul></div><p class="NormalText">See <a href="ch11s02.htm">Programmable Macros</a> for more information on loading macros and setting variables.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_configurationvariables_13930_1005155"></a>Table of Configuration Variables</h3></div></div></div><p class="NormalText">The table below provides a list of the most commonly used configuration variables.</p><div class="informaltable"><a name="table_98d4a791-3dc9-45e8-a2a4-6b18bda44445"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Configuration Variable</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_alias_case</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Controls whether alias identifier matching
+            is case-sensitive.  Set to <span class="bold"><strong>i</strong></span>
+            to make alias matching case-insensitive (default).  Set to
+            <span class="bold"><strong>e</strong></span> to turn on
+            case-sensitivity.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_auto_linecomment</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Change to <span class="bold"><strong>0</strong></span> to turn off automatic line comment insertion.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_binary_ext</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                  This variable is used for the Brief emulation, or in other emulations if 
+                  <span><strong class="command">def_list_binary_files</strong></span> is set to <span class="bold"><strong>false</strong></span>.
+                  The space-delimited extensions listed by this variable are filtered out by the 
+                  <span><strong class="command">edit</strong></span> command's completion. 
+                  The default is <span><strong class="command">.ex .obj .exe .lib</strong></span>. 
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_buflist</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Change this variable to find the initial file in Buffer List. The default is <span class="bold"><strong>3</strong></span>. This macro variable determines how the <span><strong class="command">list_buffers</strong></span> commands displays the buffer list. By default, the buffer list is sorted and path information is in a separate column to the right of the name. This macro variable is composed with the following flags:</p>
+              <p class="CellBody"></p>
+              <div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                    <span><strong class="command">SORT_BUFLIST_FLAG</strong></span> - <span class="bold"><strong>1</strong></span></p></li><li><p class="NormalText">
+                    <span><strong class="command">SEPARATE_PATH_FLAG</strong></span> - <span class="bold"><strong>2</strong></span></p></li></ul></div>
+              <p class="CellBody"></p>
+              <p class="CellBody">Add the flags together to select a configuration. Leaving out a flag removes the features. If the buffer list is not sorted, the list will be in the order of the buffer ring.</p>
+              <p class="CellBody"></p>
+              <p class="CellBody">If you set this variable to <span class="bold"><strong>1</strong></span>, it will show the full path, which you can order according to path. The default (<span class="bold"><strong>3</strong></span>) will show an alphabetical list of the files in the left column and the directories in the right column.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_ctags_flags</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">This variable is a safeguard against parsing past the end of a proc when the braces mismatch. To have SlickEdit® recognize the second <span><strong class="command">dd</strong></span>, set the value of this variable to <span class="bold"><strong>10</strong></span>.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_debug_logging</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">If you change this value to <span class="bold"><strong>1</strong></span>, then run the integrated debugger and let it time 
+                  out, a <code class="filename">vs.log</code> file will be created in your config 
+                  directory under the <code class="filename">logs</code> subdirectory.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_deselect_copy</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Set to <span class="bold"><strong>1</strong></span> in Brief emulation to deselect after a copy.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_do_block_mode_key</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Set this variable's value equal to <span class="bold"><strong>0</strong></span> to stop SlickEdit from inserting characters on every line of a block selection.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_error_re2</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Edit this variable to change from the SlickEdit regular expression used for compile/build errors.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_fast_auto_readonly</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">When set to <span><strong class="command">1</strong></span>, this option speeds up the <span><strong class="guilabel">Auto read only </strong></span>feature by only checking the attribute on disk (not opening every file). See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_26374">Load File Options</a> for more information.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_filelist_show_dotfiles</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Controls the global <span><strong class="guilabel">Show files beginning with a dot</strong></span> option (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Appearance </strong></span> &#8594; <span><strong class="guimenuitem">General</strong></span>). On Windows, the default value of this variable is <span class="bold"><strong>1</strong></span>; change to <span class="bold"><strong>0</strong></span> to view Dot files. On UNIX platforms, the default value is <span class="bold"><strong>0</strong></span>; change to <span class="bold"><strong>1</strong></span> to hide Dot files. (Dot files are files with names beginning with a dot character.)</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_from_cursor</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Default is <span class="bold"><strong>0</strong></span>. If non-zero, the commands <span><strong class="command">upcase_word</strong></span>, <span><strong class="command">lowcase_word</strong></span>, and <span><strong class="command">cap_word</strong></span> will start case change from the cursor position instead of the beginning of the current word.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_linewrap</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Default is set to <span class="bold"><strong>1</strong></span>. If you are at the end of a line that has whitespace only on the line below it (spaces or tabs) and you press <span><strong class="keycap">Delete</strong></span>, this will bring the whitespace below it up to the end of the line that you are on. When the value is set to <span class="bold"><strong>0</strong></span>, if you press <span><strong class="keycap">Delete</strong></span> while at the end of a line that has whitespace only on the line below it (spaces or tabs), the whitespace is removed entirely®acting as a line delete.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_linux1_shell</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">To use an alternate shell, set this variable to the shell that you want to run (for example, <span><strong class="command">/bin/bash -i</strong></span>). This will cause the editor to use your process shell.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="sect_configurationvariables_C95B37ED_61E8"></a>
+                  <a class="indexterm" name="sect_configurationvariables_F269F084_F6A2"></a>
+                  <a class="indexterm" name="sect_configurationvariables_5231B54D_DDBF"></a>
+                  <a class="indexterm" name="sect_configurationvariables_24D3B5A8_70B8"></a>def_max_filehist</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Increases the number of files displayed in the file history of the <span><strong class="guilabel">File</strong></span> menu. Enter the number of files you want to see in the history.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_max_mffind_output</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">This variable is set for performance reasons. You can increase the amount of information displayed in the Output tool window during a multi-file search by changing this to your desired setting.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="sect_configurationvariables_C2187BEA_9ECC"></a>
+                  <a class="indexterm" name="sect_configurationvariables_018B9D29_BA4A"></a>
+                  <a class="indexterm" name="sect_configurationvariables_0611E3A7_2A5B"></a>
+                  <a class="indexterm" name="sect_configurationvariables_C5626E20_5A89"></a>
+                  <a class="indexterm" name="sect_configurationvariables_258529C3_CCB7"></a>def_max_workspace_hist</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Increases the length of the Workspace history list in the <span><strong class="guilabel">Project</strong></span> menu. Enter the number of files you want to see in the history.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_modal_paste</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Default is <span class="bold"><strong>0</strong></span>. If non-zero, commands that insert a BLOCK-type clipboard will overwrite the destination text if the cursor is in Replace mode.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_plusminus_blocks</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">When the value is set to <span class="bold"><strong>1</strong></span>, the <span><strong class="command">plusminus</strong></span> command will try to find code blocks to expand or collapse if the cursor is on a line that does not have a <span><strong class="guibutton">Plus</strong></span> or <span><strong class="guibutton">Minus</strong></span> bitmap on it. The default is <span class="bold"><strong>1</strong></span>.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_preplace</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Default is <span class="bold"><strong>1</strong></span>. If the value is set to <span class="bold"><strong>0</strong></span>, the <span><strong class="command">save</strong></span> command will NOT prompt you if you are inadvertently overwriting a file. For example, if you invoke the command <span><strong class="command">save</strong></span><span><strong class="command"></strong></span><span class="emphasis"><em>xyz</em></span>, and an <span class="emphasis"><em>xyz</em></span> file already exists, and <span class="emphasis"><em>xyz</em></span> is not the name of the current buffer, you are prompted by default whether you wish to overwrite the file.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_rwprompt</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Default is <span class="bold"><strong>1</strong></span>. Change this to <span class="bold"><strong>0</strong></span> to suppress the pop-up that asks: <span><strong class="command">Do you want to update the read-only attribute of the file on disk?</strong></span></p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_save_macro</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Default is <span class="bold"><strong>1</strong></span>. Set this variable to <span class="bold"><strong>0</strong></span> if you do not want to be prompted with the Save Macro dialog box after ending macro recording.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_shift_updown_line_select</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Set this value to <span class="bold"><strong>1</strong></span> for <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Up</strong></span> or <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Down</strong></span> to select the current line.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_show_makefile_target_menu</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">This variable can be set to decrease the time that it takes for menus to open. Set to <span class="bold"><strong>0</strong></span> to disable all makefile submenus (such as the <span><strong class="guilabel">Build</strong></span> menu and the Projects tool window). Set to <span class="bold"><strong>1</strong></span> to enable all makefile submenus (this is the default). Set to <span class="bold"><strong>2</strong></span> to enable makefile submenus only in the Projects tool window (the <span><strong class="guilabel">Build</strong></span> menu makefile targets are disabled).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_switchbuf_cd </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Set this variable equal to <span class="bold"><strong>1</strong></span> to change the current working directory to the file that currently has focus in the editor. This variable is on by default in the GNU Emacs emulation, and off in all other emulations.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_top_bottom_push_bookmark</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Set this variable to <span class="bold"><strong>1</strong></span> to push a bookmark whenever you jump to the top or bottom of the buffer. Note that even when this variable is set, no bookmarks are pushed when using the current buffer as a build window (<code class="filename">.process</code> buffer). The default value is <span class="bold"><strong>0</strong></span>.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_undo_with_cursor </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Set this value to <span class="bold"><strong>1</strong></span> to enable the undo of each cursor movement.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_update_context_max_file_size</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">This variable increases the array size in bytes of a file that is too large. The default size of files that can be processed by Context Tagging® is 4 MB. The size can be lowered by changing this variable and setting it to equal the size that you want (in bytes).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_vc_advanced_options</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Set to this variable to <span class="bold"><strong>0</strong></span> to remove advanced options that decrease performance when using ClearCase version control.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">def_vtg_tornado</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Set this variable value to <span class="bold"><strong>0</strong></span> to prevent Context Tagging of Tornado files.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="sect_configurationvariables_CEDEB0E1_A0A8"></a>def_xml_no_schema_list</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">To prevent SlickEdit from accessing the Internet to validate and get color coding information from DTDs, add your XML extension to this variable. Set the value to a list of space-delimited extensions that you want excluded for actual schema validation. For example: <span class="bold"><strong>.xml .xsl .xsd</strong></span>. This will prevent SlickEdit from attempting to connect to the Internet for these extensions.</p>
+            </td></tr></tbody></table></div><p class="NormalText"></p></div></div></body></html>

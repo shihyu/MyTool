@@ -1,0 +1,203 @@
+<!ELEMENT VisualStudioProject>
+<!ATTLIST VisualStudioProject 
+       ProjectType  CDATA  #REQUIRED
+       Version        CDATA  #REQUIRED
+       Name            CDATA  #REQUIRED
+       Keyword            CDATA  #REQUIRED
+       ProjectGUID       CDATA  #REQUIRED
+	   RootNamespace    CDATA  #REQUIRED
+>
+<!ELEMENT Build>
+<!ELEMENT Settings>
+<!ELEMENT Platforms>
+<!ELEMENT Platform>
+<!ATTLIST Platform 
+       Name  CDATA  #REQUIRED
+>
+<!ELEMENT Configurations>
+<!ELEMENT Configuration>
+<!ATTLIST Configuration 
+       Name  CDATA  #REQUIRED
+       IntermediateDirectory  CDATA  #REQUIRED
+       OutputDirectory  CDATA  #REQUIRED
+       ConfigurationType  CDATA  #REQUIRED
+       UseOfMFC  CDATA  #REQUIRED
+       CharacterSet  CDATA  #REQUIRED
+	   ManagedExtensions CDATA #REQUIRED
+>
+<!ELEMENT Tool>
+<!ATTLIST Tool 
+    AdditionalInputs   CDATA  #REQUIRED
+    AdditionalIncludeDirectories   CDATA  #REQUIRED
+    AssemblerListingLocation   CDATA  #REQUIRED
+    AssemblerOutput   CDATA  #REQUIRED
+	AssemblyDebug   CDATA   #REQUIRED
+    BaseAddress   CDATA  #REQUIRED
+    BasicRuntimeChecks   CDATA  #REQUIRED
+    BrowseInformation   CDATA  #REQUIRED
+    BrowseInformationFile   CDATA  #REQUIRED
+    BufferSecurityCheck   CDATA  #REQUIRED
+    CallingConvention   CDATA  #REQUIRED
+    CharacterSet   CDATA  #REQUIRED
+    CommandLine   CDATA  #REQUIRED
+    CompileAs   CDATA  #REQUIRED
+    ConfigurationType   CDATA  #REQUIRED
+    ConfigureAsmListing   CDATA  #REQUIRED
+    ConformanceForScope   CDATA  #REQUIRED
+    CppOptions   CDATA  #REQUIRED
+    Culture   CDATA  #REQUIRED
+    DLLDataFileName   CDATA  #REQUIRED
+    DebugInformation   CDATA  #REQUIRED
+    DebugInformationFormat   CDATA  #REQUIRED
+    DefaultCharIsUnsigned   CDATA  #REQUIRED
+    DefaultCharType   CDATA  #REQUIRED
+    Defines   CDATA  #REQUIRED
+    DelayLoadDLLs   CDATA  #REQUIRED
+    DelayUnload   CDATA  #REQUIRED
+    Description   CDATA  #REQUIRED
+    Detect64BitPortabilityProblems   CDATA  #REQUIRED
+    DisableLanguageExtensions   CDATA  #REQUIRED
+    DisableSpecificWarnings   CDATA  #REQUIRED
+    EnableCOMDATFolding   CDATA  #REQUIRED
+    EnableErrorChecks   CDATA  #REQUIRED
+    EnableIntrinsicFunctions   CDATA  #REQUIRED
+    EnableFiberSafeOptimizations   CDATA  #REQUIRED
+    EnableFunctionLevelLinking   CDATA  #REQUIRED
+    EntryPointSymbol   CDATA  #REQUIRED
+    ErrorCheckAllocations   CDATA  #REQUIRED
+    ErrorCheckBounds   CDATA  #REQUIRED
+    ErrorCheckEnumRange   CDATA  #REQUIRED
+    ErrorCheckRefPointers   CDATA  #REQUIRED
+    ErrorCheckStubData   CDATA  #REQUIRED
+    ExceptionHandling   CDATA  #REQUIRED
+    ExcludeFromBuild   CDATA  #REQUIRED
+    ExpandAttributedSource   CDATA  #REQUIRED
+    FavorCodeGeneration   CDATA  #REQUIRED
+    FavorSizeOrSpeed   CDATA  #REQUIRED
+    ForceConformanceInForLoopScope  CDATA  #REQUIRED
+    ForcedIncludeFiles  CDATA  #REQUIRED
+    ForcedUsingFiles  CDATA  #REQUIRED
+    ForceSymbolReferences   CDATA  #REQUIRED
+    FramePointerOmission   CDATA  #REQUIRED
+    FullRuntimeChecks   CDATA  #REQUIRED
+    GenerateDebug   CDATA  #REQUIRED
+    GenerateDebugInformation   CDATA  #REQUIRED
+    GenerateMapFile   CDATA  #REQUIRED
+    GeneratePreprocessedFile CDATA  #REQUIRED
+    GenerateStublessProxies   CDATA  #REQUIRED
+    GenerateTypeLibrary   CDATA  #REQUIRED
+    GlobalOptimizations   CDATA  #REQUIRED
+    HeaderFileName   CDATA  #REQUIRED
+    HeapCommitSize   CDATA  #REQUIRED
+    HeapReserveSize   CDATA  #REQUIRED
+    IDLOutputFile   CDATA  #REQUIRED
+    IgnoreDefaultLibraries   CDATA  #REQUIRED
+    IgnoreDefaultLibraryNames   CDATA  #REQUIRED
+    IgnoreEmbeddedIDL   CDATA  #REQUIRED
+    IgnoreExportLibrary   CDATA  #REQUIRED
+    IgnoreStandardIncludePath   CDATA  #REQUIRED
+    ImportLibrary   CDATA  #REQUIRED
+    ImportNonAssemblyModule   CDATA  #REQUIRED
+    ImproveFloatingPointConsistency   CDATA  #REQUIRED
+    IncludePaths   CDATA  #REQUIRED
+    InlineFunctionExpansion   CDATA  #REQUIRED
+    Inputs   CDATA  #REQUIRED
+    InterfaceIdentifierFileName   CDATA  #REQUIRED
+    IntermediateDirectory   CDATA  #REQUIRED
+    KeepComments   CDATA  #REQUIRED
+    LargeAddressAware   CDATA  #REQUIRED
+    LibraryPaths   CDATA  #REQUIRED
+    LinkAssemblyResource   CDATA  #REQUIRED
+    LinkIncremental   CDATA  #REQUIRED
+    MapFileName   CDATA  #REQUIRED
+    MapInfoExports   CDATA  #REQUIRED
+    MapInfoLines   CDATA  #REQUIRED
+    MergeSections   CDATA  #REQUIRED
+    MidlCommandFile   CDATA  #REQUIRED
+    MinimalRebuild   CDATA  #REQUIRED
+    MkTypLibCompatibility   CDATA  #REQUIRED
+    MkTypLibCompatible   CDATA  #REQUIRED
+    ModuleDefinitionFile   CDATA  #REQUIRED
+    Name   CDATA  #REQUIRED
+    NoAssembly   CDATA  #REQUIRED
+    NoHRESULT   CDATA  #REQUIRED
+    ObjectFile   CDATA  #REQUIRED
+    OmitFramePointers   CDATA  #REQUIRED
+    Optimization   CDATA  #REQUIRED
+    OptimizeFolding   CDATA  #REQUIRED
+    OptimizeForProcessor CDATA  #REQUIRED
+    OptimizeForWindowsApplication   CDATA  #REQUIRED
+    OptimizeReferences   CDATA  #REQUIRED
+    OrderFunctions   CDATA  #REQUIRED
+    Output   CDATA  #REQUIRED
+    OutputDirectory   CDATA  #REQUIRED
+    OutputFile   CDATA  #REQUIRED
+    Outputs   CDATA  #REQUIRED
+    PackageFunctions   CDATA  #REQUIRED
+    PrecompiledHeaderFile   CDATA  #REQUIRED
+    PrecompiledHeaderThrough   CDATA  #REQUIRED
+    Preprocess   CDATA  #REQUIRED
+    PreprocessorDefinitions   CDATA  #REQUIRED
+    PrintProgress   CDATA  #REQUIRED
+    ProgramDataBaseFileName   CDATA  #REQUIRED
+    ProgramDatabaseFile   CDATA  #REQUIRED
+    ProxyFileName   CDATA  #REQUIRED
+    RedirectOutputAndErrors   CDATA  #REQUIRED
+    RegisterOutput   CDATA  #REQUIRED
+    ResFileName   CDATA  #REQUIRED
+    ResourceOnlyDLL   CDATA  #REQUIRED
+    RuntimeLibrary   CDATA  #REQUIRED
+    RuntimeTypeInfo   CDATA  #REQUIRED
+    SetChecksum   CDATA  #REQUIRED
+    ShowIncludes   CDATA  #REQUIRED
+    SmallerTypeCheck   CDATA  #REQUIRED
+    StackCommitSize   CDATA  #REQUIRED
+    StackFrameCheck   CDATA  #REQUIRED
+    StackReserveSize   CDATA  #REQUIRED
+    StringPooling   CDATA  #REQUIRED
+    StripPrivateSymbolsFromProgramDatabase   CDATA  #REQUIRED
+    StructMemberAlignment   CDATA  #REQUIRED
+    SubSystem   CDATA  #REQUIRED
+    SuppressStartupMessage   CDATA  #REQUIRED
+    SwapRunFromCD   CDATA  #REQUIRED
+    SwapRunFromNet   CDATA  #REQUIRED
+    TargetEnvironment   CDATA  #REQUIRED
+    TargetMachine   CDATA  #REQUIRED
+    TerminalServerAware   CDATA  #REQUIRED
+    TreatWChar_tAsBuiltInType   CDATA  #REQUIRED
+    TypeLibraryName   CDATA  #REQUIRED
+    TypeLibraryOutputFile   CDATA  #REQUIRED
+    TypeLibraryResourceID   CDATA  #REQUIRED
+    UndefineAllPreprocessorDefinitions   CDATA  #REQUIRED
+    UndefinePreprocessorDefinitions   CDATA  #REQUIRED
+    UninitializedVariableCheck   CDATA  #REQUIRED
+    UseManagedExtensions   CDATA  #REQUIRED
+    UseOfMFC   CDATA  #REQUIRED
+    UsePrecompiledHeader   CDATA  #REQUIRED
+    ValidateParameters   CDATA  #REQUIRED
+    Version   CDATA  #REQUIRED
+    WarnAsError   CDATA  #REQUIRED
+    WarnLevel   CDATA  #REQUIRED
+    WarningLevel   CDATA  #REQUIRED
+>
+<!ELEMENT Files>
+<!ELEMENT Filter>
+<!ATTLIST Filter
+       Name  CDATA  #REQUIRED
+       Filter        CDATA  #REQUIRED
+	   UniqueIdentifier   CDATA #REQUIRED
+>
+<!ELEMENT File>
+<!ATTLIST File 
+       RelativePath  CDATA  #REQUIRED
+>
+<!ELEMENT Globals>
+<!ELEMENT FileConfiguration>
+<!ATTLIST FileConfiguration
+Name
+>
+<!ELEMENT References>
+<!ELEMENT AssemblyReference>
+<!ATTLIST AssemblyReference
+	RelativePath
+>

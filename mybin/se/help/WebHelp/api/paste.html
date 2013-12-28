@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>paste</title>
+</head>
+<body>
+
+<h3><b>_command int paste(_str name='', boolean isClipboard=true)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>Inserts the clipboard at the cursor.  If <i>cbname</i> is given, then the
+internal clipboard with name <i>cbname</i> is inserted.  LINE type
+clipboards are inserted before or after the current line depending upon
+the <b>Line insert style</b>.  By default, they are inserted after the
+cursor.  By default, BLOCK type clipboards are inserted even when
+the cursor is in replace mode.  If you want BLOCK type clipboards to
+overwrite the destination text when your cursor is in replace mode,
+invoke the command "set-var def-modal-paste 1".</p><p>
+<p>IMPORTANT:  <i>cbname</i> needs to start with an alphabetic
+character (a-z).  numeric values for <i>cbname</i> are reserved for VI
+emulation.</p><p>
+<p>In ISPF emulation, this command is not called when invoked from the
+command line.  Instead ispf_paste is called.  Use ("Edit", "Paste") to
+explicitly invoke the paste command.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common return code is 1 (clipboard empty,
+or clipboard text too long for command line).  On error, message is
+displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control, Text Box, Combo Box
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Combo_Box_Methods.html">Combo Box Methods</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Selection_Functions.html">Selection Functions</a>, <a href="Text_Box_Methods.html">Text Box Methods</a></blockquote>
+</body>
+</html>

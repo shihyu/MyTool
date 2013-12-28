@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>dbg_create_new_session</title>
+</head>
+<body>
+
+<h3><b>int dbg_create_new_session(_str package_name, _str session_name, boolean copy_setup)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Create a new debugger session object handle.
+If successful, the new session will be made the active session.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="package_name">package_name</A></code> - name of debugger integration package
+                     (gdb, jdwp, dotnot, ...)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="session_name">session_name</A></code> - name of debugger session</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="copy_setup">copy_setup</A></code> - copy existing setup data for this session name?
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">session ID of the new debugger session
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Since:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">10.0
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+To create a GDB debugger session
+<pre>
+   int session_id = dbg_create_new_session("gdb", "myUnixApp");
+   if (session_id < 0) {
+      printf("could not create session object\n");
+   } else {
+      printf("new session ID = %d\n",session_id);
+   }
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Debugger_Functions.html">Debugger Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="dbg_get_num_sessions.html">dbg_get_num_sessions</a>, <a href="dbg_destroy_session.html">dbg_destroy_session</a></blockquote>
+</body>
+</html>

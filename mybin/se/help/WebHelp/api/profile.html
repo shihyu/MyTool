@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>profile</title>
+</head>
+<body>
+
+<h3><b>_command void profile(_str option="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This command is used to control the Slick-C&reg; performance profiler.
+<p>
+To activate the profiler, execute the command "profile on".
+To stop collecting profiling information, execute the command
+"profile off".  To view collected profiling data, execute the command
+"profile view".  This will also stop profiling data collection.
+To profile a single Slick-C&reg; command, just pass the command and
+it's arguments to the profile command.  For example "profile list-tags".
+<p>
+The profiler has no effect on performance when it is inactive and
+only a minimal effect on performance when it is collecting data.
+<p>
+Profiling data can be saved and viewed at a later time by using
+the "profile save" and "profile load" commands, respectively.
+<p>
+The profiler can also be used to profile executing the command tied to a
+specific key by using the "profile key" command.  It will prompt for a
+key and then execute the corresponding command and display the profiling
+results.
+<p>
+Profiling results are displayed in a multi-column non-modal tree
+dialog.  Each line in the tree represents one function, either a
+Slick-C&reg; or an exported DLL function, which was called while we were
+collecting profiling data.  All times are reported in milliseconds.
+The table columns represent the following information:
+<ul>
+<li><b>Function</b>  -- name of function called
+<li><b>Module</b>    -- the name of the module function comes from
+<li><b>Offset</b>    -- P-code offset of function within module
+<li><b>Calls</b>     -- number of calls to function
+<li><b>F+D Time</b>  -- total time in function and descendants
+<li><b>Percent</b>   -- percentage of total time spent in function and descendants
+<li><b>Avg F+D</b>   -- average time in function and descendants
+<li><b>Min F+D</b>   -- minimum time in function and descendants
+<li><b>Max F+D</b>   -- maximum time in function and descendants
+<li><b>Func Time</b> -- total time in function only
+<li><b>Percent</b>   -- percentage of total time spent in function
+<li><b>Avg Time</b>  -- average time in function
+<li><b>Min Time</b>  -- minimum time in function
+<li><b>Max Time</b>  -- maximum time in function
+</ul>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - [ on | off | view | load [file] | save [file] | &lt;command&gt; ]
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Macro_Programming_Functions.html">Macro Programming Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_SlickCProfiling.html">_SlickCProfiling</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Event-Driven Dialog Boxes</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s12.htm" title="Defining Events and Event Tables"><link rel="next" href="ch14s14.htm" title="Module Initializations"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_eventdrivendialogs_13400_53447"></a>
+    <a name="slick_c_eventdrivendialogs_13400_1025451"></a>
+    <a class="indexterm" name="slick-c_eventdrivendialogs_F7ED6AAC_3CCA"></a>
+    <a class="indexterm" name="slick-c_eventdrivendialogs_3F1B8362_E47C"></a>Event-Driven Dialog Boxes</h2></div></div></div><p class="NormalText">Event tables are for creating event-driven dialog boxes and inheritance. The event table definition code is automatically inserted by the dialog editor. To begin working with event tables, see <span class="bold"><strong><a href="ch14s19.htm">Creating Dialog Boxes</a></strong></span>. To attach an event table to a form (dialog box outer window) or form control, define an event table with the same name (<span><strong class="command">p_name</strong></span> property) as the form. Dot the form name with the control name if you want to specify inheritance for an event table that is attached to a control.</p><p class="NormalText">Example: </p><pre class="programlisting">
+    <span><strong class="command">
+    defeventtab form_name[.control_name] [_inherit [etab_name]];
+  </strong></span>
+  </pre><p class="NormalText">
+    <a class="indexterm" name="slick-c_eventdrivendialogs_D95AF720_83DC"></a>
+    <a name="slick_c_eventdrivendialogs_13400_1026278"></a>Using the <span><strong class="command">_inherit</strong></span> primitive, you can link one event table to another. This makes it possible to perform Clipboard Inheritance® (see <span class="bold"><strong></strong></span><a href="ch14s20.htm">Clipboard Inheritance®</a>). If no name follows the <span><strong class="command">_inherit</strong></span> keyword, the inheritance is unlinked. To add event handlers using the <span><strong class="command">def</strong></span> primitive or by defining an event handler function, use the following syntax:</p><pre class="programlisting">
+    <span><strong class="command">
+    [ReturnType] ctl_name.event [- event] [, event [- event]] ...( [ArgDecl1, ArgDecl2,...])
+    {
+    statements 
+    }
+  </strong></span>
+  </pre><p class="NormalText">If <span class="emphasis"><em>ctl_name</em></span> is the same name as the last event table form name (name before dot), the event handler is attached to an event table named <span class="emphasis"><em>form_name</em></span>. Otherwise, the event handler is attached to an event table named <span class="emphasis"><em>form_name.ctl_name</em></span>. </p><p class="NormalText">The word <span class="emphasis"><em>event</em></span> in the previous code can be any valid event name. Some event names do not need to be enclosed in quotes. It is a best practice to always enclose the event names in quotes.</p><p class="NormalText">The syntax for <span class="emphasis"><em>ArgDecls</em></span> is the same as is the syntax for declaring a variable except that the <span><strong class="command">static</strong></span> keyword may not be used. An ampersand (<span><strong class="command">&amp;</strong></span>) before the <span class="emphasis"><em>id</em></span> declares a call by references parameter. Call by reference array and hash table parameters require parentheses around the ampersand and <span class="emphasis"><em>id</em></span>.</p><p class="NormalText">The following is an example of a form with a text box and <span><strong class="guibutton">OK</strong></span> button:</p><pre class="programlisting">#include "slick.sh"
+// Define an event table for the dialog box window.
+defeventtab form1;
+ 
+// Since this is the first event handler defined for this control
+// and the name of this control does not match the last defined event, the
+// table, the Slick-C translator automatically defines the event table
+// form1.ctlcommand1 and defines the lbutton_up event handler within 
+// this new event table.
+void ctlcommand1.lbutton_up()
+{
+    // Set the p_text property of the text box control.
+    ctltext1.p_text="Hello World";
+}</pre><p class="NormalText">When the above code is loaded with the <span><strong class="command">load</strong></span> command (<span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Load Module</strong></span>), the editor attaches the <span><strong class="command">form1.ctlcommand1</strong></span> event table to a control named <span><strong class="command">ctlcommand1</strong></span> on <span><strong class="command">form1</strong></span>. A <span><strong class="command">form1</strong></span> event table is not created because an event handler for this event table was defined. When you save the configuration, event tables that are not used are deleted.</p><p class="NormalText"></p></div></body></html>

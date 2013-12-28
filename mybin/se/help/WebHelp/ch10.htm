@@ -1,0 +1,459 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 10.  Tools and Utilities</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="prev" href="ch09s10.htm" title="XML and HTML"><link rel="next" href="ch10s02.htm" title="Comparing and Merging"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="chapter_a1ba7a40-0da1-4f90-825f-a05a709bf938"></a>Chapter 10. 
+      <a name="chap_toolsutilities_13400_998401"></a>
+      <a name="chap_toolsutilities_13400_68098"></a>Tools and Utilities</h2></div></div></div><p class="NormalText">This chapter describes the tools and utilities provided by SlickEdit 
+  that help while coding.</p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_findreplace_12763_31678"></a>
+    <a name="sect_findreplace_12763_998341"></a>
+    <a class="indexterm" name="sect_findreplace_33F0A996_653D"></a>
+    <a class="indexterm" name="sect_findreplace_1E0ABE06_A616"></a>
+    <a class="indexterm" name="sect_findreplace_2A440B87_189A"></a>
+    <a class="indexterm" name="sect_findreplace_66A6D362_71F8"></a>
+    <a class="indexterm" name="sect_findreplace_38F653AC_973F"></a>
+    <a class="indexterm" name="sect_findreplace_031888B3_7D38"></a>
+    <a name="sect_findreplace_12763_1012842"></a>Find and Replace</h2></div></div></div><p class="NormalText">
+    SlickEdit® provides several different ways to search and replace:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">For the fastest method of searching and replacing, use Quick Search and Quick Replace (see <a href="ch10.htm#sect_findreplace_12763_38704">Quick Search and Replace</a> below).</p></li><li><p class="NormalText">To find and replace text "on the fly," or, as you type, use incremental searching (see <a href="ch10.htm#sect_findreplace_12763_78838">Incremental Searching</a> below).</p></li><li><p class="NormalText">If you are more comfortable with keystrokes, you may prefer command line searching with the find and replace commands (see <a href="ch10.htm#sect_findreplace_12763_54694">Find and Replace Commands</a>).</p></li><li><p class="NormalText">Use the Find and Replace tool window if you prefer working within an interface (see <a href="ch10.htm#sect_findreplace_12763_14426">Find and Replace Tool Window</a>).</p></li><li><p class="NormalText">To search for symbols, use the Find Symbol tool window (see <a href="ch10.htm#sect_findreplace_12763_20021">Find Symbol Tool Window</a>).</p></li></ul></div><p class="NormalText">Both the Find and Replace tool window and command line searching provide the same search and replace options for single or multiple files, and for searching and replacing text, wildcards and regular expressions, so you can choose which method works best for you. </p><p class="NormalText">This section also includes the topics <a href="ch10.htm#sect_findreplace_12763_53102">Find and Replace with Regular Expressions</a>, <a href="ch10.htm#sect_findreplace_12763_38727">Undoing/Redoing Replacements</a>, and <a href="ch10.htm#sect_findreplace_12763_15882">Match Highlighting</a>.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_findreplace_12763_72568"></a>
+      <a name="sect_findreplace_12763_1021256"></a>Default Search Options</h3></div></div></div><p class="NormalText">The behavior for all of the search mechanisms in SlickEdit® is controlled by the Search Options located in the Options dialog (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">Search</strong></span>). The options specified here are used each time a search is performed, except for the <a href="ch10.htm#sect_findreplace_12763_14426">Find and Replace Tool Window</a>, which has controls to override these settings.</p><p class="NormalText">The value of the settings in the Options dialog are used to initialize the corresponding controls in the Find and Replace tool window. Once the value is changed in the tool window it is remembered and used the next time the Find and Replace tool window is launched. So changing a value in the Search Options may not have any effect on the Find and Replace tool window. Changing a setting in the Find and Replace tool window will not change the settings in the Search Options. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_59155">Search Options</a> for more information.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_findreplace_12763_38704"></a>
+      <a name="sect_findreplace_12763_1003105"></a>Quick Search and Replace</h3></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_findreplace_12763_1003106"></a>
+        <a class="indexterm" name="sect_findreplace_EA030895_7D3D"></a>
+        <a class="indexterm" name="sect_findreplace_40329860_140B"></a>Quick Search</h4></div></div></div><p class="NormalText">The fastest way to search is by using Quick Search. Quick Search looks through the current buffer for the word or selection at the cursor. You can find the next occurrence of a search item by selecting a string in an existing buffer or Search Results window, then selecting <span><strong class="guimenu">Quick Search</strong></span> from the right-click menu (or by using the <span><strong class="command">quick_search</strong></span> command). The commands <span><strong class="command">find_next</strong></span> (<span><strong class="guimenu">Search </strong></span> &#8594; <span><strong class="guimenuitem">Next Occurrence</strong></span> or <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">G</strong></span>) and <span><strong class="command">find_prev</strong></span> (<span><strong class="guimenu">Search </strong></span> &#8594; <span><strong class="guimenuitem">Previous Occurrence</strong></span> or <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">G</strong></span>) will find the next and previous instances of the item, respectively. Quick Search always uses the default search options (see <a href="ch12s11.htm#sect_options_menuanddialogs_14207_59155">Search Options</a>.).</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_findreplace_12763_1010592"></a>
+        <a class="indexterm" name="sect_findreplace_920B4097_3C2A"></a>
+        <a class="indexterm" name="sect_findreplace_FE94E231_09AD"></a>Quick Replace</h4></div></div></div><p class="NormalText">Quick Replace gets the current word or selection at the cursor, prompts for replacement text on the command line, then highlights each occurrence of the word and prompts if you want to replace the text. Quick Replace always uses the default search options (see <a href="ch12s11.htm#sect_options_menuanddialogs_14207_59155">Search Options</a>).</p><p class="NormalText">To use Quick Replace, right-click on any word or selection and select <span><strong class="guimenu">Quick Replace</strong></span> (or use the <span><strong class="command">quick_replace</strong></span> command).</p><p class="NormalText">The <span><strong class="command">quick_replace</strong></span> command has a command line alias, <span><strong class="command">qr</strong></span>. The <span><strong class="command">qr</strong></span> command takes the replace string as an argument. For example, if the cursor is on the word "cat," the command <span><strong class="command">qr dog</strong></span> will prompt you to replace all the instances of "cat" with "dog" in the current buffer.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_findreplace_12763_78838"></a>
+      <a name="sect_findreplace_12763_1007011"></a>
+      <a class="indexterm" name="sect_findreplace_E8BA905A_87BB"></a>
+      <a class="indexterm" name="sect_findreplace_1EB4C03A_7782"></a>Incremental Searching</h3></div></div></div><p class="NormalText">During incremental searching, a string is searched for as it is typed. To start a forward incremental search using the command line, use the <span><strong class="command">i_search</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">I</strong></span>). To start a reverse incremental search, use the <span><strong class="command">reverse_i_search</strong></span> command (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">I</strong></span>). Incremental Search always uses the default search options (see <a href="ch12s11.htm#sect_options_menuanddialogs_14207_59155">Search Options</a>).</p><p class="NormalText">The following key combinations (based on the default CUA emulation) take on a different definition during an incremental search: </p><div class="informaltable"><a name="table_334d70e6-f861-4344-85af-780b2e6a27a6"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Keys</p>
+            </th><th>
+              <p class="CellHeading">Function</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">R</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Search in reverse for the next occurrence of the search string.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">S</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Search forward for the next occurrence of the search string.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">T </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Toggle regular expression pattern matching on/off.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">W</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Toggle word searching on and off. To change the word characters for a specific language, use the <span><strong class="guilabel">Word chars</strong></span> field on the language-specific <span><strong class="guilabel">General</strong></span> options screen (see <a href="ch12s11.htm#sect_options_menuanddialogs_14207_24528">Language-Specific General Options</a>).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">W</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Copy complete word at cursor to search string.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">C</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Toggle case sensitivity. The key bound to the Brief emulation command <span><strong class="command">case_toggle</strong></span> will also toggle the case sensitivity.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">M</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Toggle searching within selection.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">O</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Toggle incremental search mode.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Q</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Quote the next character typed. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">S</strong></span> or <span><strong class="keycap">F5</strong></span></p>
+            </td><td>
+              <p class="CellBody">(Brief emulation) Search forward for the next occurrence of the search string.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">R</strong></span> or <span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">F5</strong></span></p>
+            </td><td>
+              <p class="CellBody">(Brief emulation) Search in reverse for the next occurrence of the search string.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">W</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">(GNU Emacs emulation) Copy complete word at cursor to search string.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">W</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">(GNU Emacs emulation) Toggle word searching on and off.</p>
+            </td></tr></tbody></table></div><p class="NormalText">Incremental searching stops when you press a key that does not insert a character. You can press <span><strong class="keycap">Esc</strong></span> to terminate an incremental search (only during prompting). Press and hold <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">Shift</strong></span> to terminate a long search. </p><p class="NormalText">You can retrieve your previous search string by invoking the <span><strong class="command">i_search</strong></span> or <span><strong class="command">reverse_i_search</strong></span> command and pressing <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">S</strong></span> or <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">R</strong></span>, respectively, before entering a search string.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_findreplace_12763_54694"></a>
+      <a name="sect_findreplace_12763_1002285"></a>Find and Replace Commands</h3></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_findreplace_12763_12434"></a>
+        <a name="sect_findreplace_12763_1002296"></a>
+        <a class="indexterm" name="sect_findreplace_55C9B355_A625"></a>Find and Slash (/) Commands</h4></div></div></div><p class="NormalText">The command line is available for performing searches. You can use the forward slash (<span><strong class="command">/</strong></span>) or <span><strong class="command">find</strong></span> commands which provide the same functionality as the Find and Replace tool window. Press <span><strong class="keycap">Esc</strong></span> to toggle the cursor to the command line.</p><p class="NormalText">The syntax of the slash<span><strong class="command"></strong></span>(<span><strong class="command">/</strong></span>) command is:</p><pre class="programlisting">/string[/OptionCharacters]</pre><p class="NormalText">The syntax of the <span><strong class="command">find</strong></span> command is:</p><pre class="programlisting">find /string[/OptionCharacters]</pre><p class="NormalText">
+        <span class="emphasis"><em>OptionCharacters</em></span> is one or more of the following option characters:</p><div class="informaltable"><a name="table_0ef4437f-f1c8-4358-9267-c904b9f804a0"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Option Character(s)</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">E</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Exact case.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">I</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Ignore case.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">-</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Reverse search.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">M</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Limit search to selection.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">&lt;</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">If found, place cursor at beginning of word.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">&gt;</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">If found, place cursor at end of word.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">R</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Interpret search string as a SlickEdit® regular expression.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">U</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Interpret search string as UNIX regular expression.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">B</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Interpret string as a Brief regular expression.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">N</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Do not interpret search string as a regular expression.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">P</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Wrap to beginning/end when string not found.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">W</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Limit search to words. Used to search for variables. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">W=SlickEdit-regular-expression</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Specifies the valid characters in a word. The default value is [A-Za-z0-9_$]. To change the word characters for a specific language, use the <span><strong class="guilabel">Word chars</strong></span> field on the language-specific <span><strong class="guilabel">General</strong></span> options screen (see <a href="ch12s11.htm#sect_options_menuanddialogs_14207_24528">Language-Specific General Options</a>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">W:P</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Limit search to word prefix. For example, a search for "pre" matches "pre" and "prefix" but not "supreme" or "supre".</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">W:PS</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Limit search to strict word prefix. For example, a search for "pre" matches "prefix" but not "pre," "supreme" or "supre".</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">W:S</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Limit search to word suffix. For example, a search for "fix" matches "fix" and "suffix" but not "fixit".</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">W:SS</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Limit search to strict word suffix. For example, a search for "fix" matches "suffix" but not "fix" or "fixit".</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">H</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Allow finding search string in hidden lines.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">Y</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Binary search. This allows start positions in the middle of a DBCS or UTF-8 character. This option is useful when editing binary files (in SBCS/DBCS mode) which may contain characters which look like DBCS but are not. For example, if you search for the character "a", it will not be found as the second character of a DBCS sequence unless this option is specified.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">,</strong></span> (comma)</p>
+              </td><td>
+                <p class="CellBody">Delimiter to separate ambiguous options.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">X</strong></span>
+                  <span class="emphasis"><em>CCLetters</em></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Requires the first character of search string NOT be one of the color coding elements specified. For example, <span><strong class="command">X</strong></span><span class="emphasis"><em>CS</em></span> requires that the first character not be in a comment or string. <span class="emphasis"><em>CCLetters</em></span> is a string of one or more of the following color coding element letters:</p>
+                <p class="CellBody"></p>
+                <div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                      <span><strong class="command">O</strong></span> - Other</p></li><li><p class="NormalText">
+                      <span><strong class="command">K</strong></span> - Keyword</p></li><li><p class="NormalText">
+                      <span><strong class="command">N</strong></span> - Number</p></li><li><p class="NormalText">
+                      <span><strong class="command">S</strong></span> - String</p></li><li><p class="NormalText">
+                      <span><strong class="command">C</strong></span> - Comment</p></li><li><p class="NormalText">
+                      <span><strong class="command">P</strong></span> - Preprocessing</p></li><li><p class="NormalText">
+                      <span><strong class="command">L</strong></span> - Line number</p></li><li><p class="NormalText">
+                      <span><strong class="command">1</strong></span> - Symbol 1</p></li><li><p class="NormalText">
+                      <span><strong class="command">2</strong></span> - Symbol 2</p></li><li><p class="NormalText">
+                      <span><strong class="command">3</strong></span> - Symbol 3</p></li><li><p class="NormalText">
+                      <span><strong class="command">4</strong></span> - Symbol 4</p></li><li><p class="NormalText">
+                      <span><strong class="command">F</strong></span> - Function color</p></li><li><p class="NormalText">
+                      <span><strong class="command">V</strong></span> - No save line</p></li><li><p class="NormalText">
+                      <span><strong class="command">A</strong></span> - Attribute</p></li></ul></div>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">C</strong></span>
+                  <span class="emphasis"><em>CCLetters</em></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Requires the first character of search string to be one of the color coding elements specified. See <span class="emphasis"><em>CCLetters</em></span> above.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">*</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Used with the "Search hidden text" (<span><strong class="command">H</strong></span>) or "Highlight matches" (<span><strong class="command">#</strong></span>) options to find all matches and un-hide or highlight them.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">&amp;</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Use Wildcard regular expression syntax (<span><strong class="command">*</strong></span>, <span><strong class="command">?</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">#</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Highlight matched patterns with highlight color.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">V</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">(Replace commands only) Preserve case. When specified, each occurrence found is checked for all lowercase, all uppercase, first word capitalized, or mixed case. The replace string is converted to the same case as the occurrence found except when the occurrence found is mixed case (possibly multiple capitalized words). In this case, the replace string is used without modification. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">(Replace commands only) Replaced occurrences are highlighted with modified color.</p>
+              </td></tr></tbody></table></div><p class="NormalText">If you don't specify options when using the <span><strong class="command">find</strong></span> and (<span><strong class="command">/</strong></span>) commands, the default search options are applied. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_59155">Search Options</a> for more information. </p><p class="NormalText">If the "<span><strong class="command">*</strong></span>"option is not specified, you will be prompted with the message <span><strong class="command">Yes/No/Last/Go/Quit/Suspend?</strong></span> for each occurrence of the "Search for" string. </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_findreplace_12763_1006196"></a>
+        <a class="indexterm" name="sect_findreplace_D255B793_46BD"></a>Replace and c Commands</h4></div></div></div><p class="NormalText">The replace commands, <span><strong class="command">replace</strong></span> and <span><strong class="command">c</strong></span>, can be used in the command line. The syntax of these commands is:</p><pre class="programlisting">c /string1/string2[/options]</pre><p class="NormalText">or:</p><pre class="programlisting">replace /string1/string2[/options]</pre><p class="NormalText">The available options are the same as for the <span><strong class="command">find</strong></span> and slash<span><strong class="command"></strong></span>(<span><strong class="command">/</strong></span>)<span><strong class="command"></strong></span>commands (see <a href="ch10.htm#sect_findreplace_12763_12434">Find and Slash (/) Commands</a> above).</p><p class="NormalText">You can perform one of the following actions with the replace command (<span><strong class="command">c</strong></span>) by pressing the corresponding key:</p><div class="informaltable"><a name="table_a0330f67-d7c6-48ce-a069-6e4b983335f9"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Key</p>
+              </th><th>
+                <p class="CellHeading">Action</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Y</strong></span> or <span><strong class="keycap">Space</strong></span></p>
+              </td><td>
+                <p class="CellBody">Make change and continue searching.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">N</strong></span> or <span><strong class="keycap">Backspace</strong></span></p>
+              </td><td>
+                <p class="CellBody">No change and continue searching.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">L</strong></span> or <span><strong class="keycap">Dot</strong></span></p>
+              </td><td>
+                <p class="CellBody">Make change and stop searching.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">G</strong></span> or <span><strong class="keycap">!</strong></span></p>
+              </td><td>
+                <p class="CellBody">Make change and change the rest without prompting.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Q</strong></span> or <span><strong class="keycap">Esc</strong></span></p>
+              </td><td>
+                <p class="CellBody">Exit command. By default, the cursor is NOT restored to its original position. If you want the cursor restored to its original position, from the main menu click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">Search</strong></span> and set the <span><strong class="guilabel">Restore cursor after replace</strong></span> option to <span><strong class="guilabel">True</strong></span>.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">G</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Exit command and restore cursor to its original position.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">R</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Search in reverse for next occurrence of search string.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">S</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Search forward for next occurrence of search string.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">T</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Toggle regular expression pattern matching on/off. The key bound to the Brief emulation command <span><strong class="command">re_toggle</strong></span> will also toggle regular expression pattern matching.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">W</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Toggle word searching on/off. To change the word characters for a specific language, use the <span><strong class="guilabel">Word chars</strong></span> field on the language-specific <span><strong class="guilabel">General</strong></span> options screen (see <a href="ch12s11.htm#sect_options_menuanddialogs_14207_24528">Language-Specific General Options</a>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">C</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Toggle case-sensitivity. The key bound to the Brief emulation command <span><strong class="command">case_toggle</strong></span> will also toggle the case-sensitivity.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">M</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Toggle searching within selection.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">F1</strong></span> or <span><strong class="keycap">?</strong></span></p>
+              </td><td>
+                <p class="CellBody">Display Help on Find and Replace tool window.</p>
+              </td></tr></tbody></table></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_findreplace_12763_1003063"></a>Replace Command Search Examples</h5></div></div></div><p class="NormalText">The table below provides examples of using command line replace.</p><div class="informaltable"><a name="table_81629176-fe69-451f-8e61-76cbcedec0a4"></a><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                  <p class="CellHeading">Example</p>
+                </td><td>
+                  <p class="CellHeading">Description</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">c $/$\$</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Replace occurrences of forward slashes with back slashes.</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">c/x/y/m</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Replace occurrences of "x" in the selected area with "y" using default search case sensitivity.</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">c $x$y$m</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Replace occurrences of "x" in the selected area with "y" using default search case sensitivity. The string delimiter "$" has been used requiring a space character after the "c."</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">c/x/y/e*</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Replace lowercase occurrences of "x" with "y" without prompting.</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">c/i/something_more_meaningful/w</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Replace occurrences of the variable "i" with "something_more_meaningful."</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">c/i/j/w=[A-Za-z]</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Replace occurrences of the word "i" with "j" and specify valid characters in a word to be alphabetic characters.</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">replace/Test/TEMP/v</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Replace occurrences of the word "test" with the word "temp", with the case preserved. For example:</p>
+                  <div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Occurrences of "Test" are replaced with "Temp".</p></li><li><p class="NormalText">Occurrences of "test" are replaced with "temp".</p></li><li><p class="NormalText">Occurrences of "tesT" are replaced with "TEMP" (because a mixed case will retain the actual replacement that you typed).</p></li><li><p class="NormalText">Occurrences of "TEST" are replaced with "TEMP".</p></li></ul></div>
+                </td></tr></tbody></table></div></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_findreplace_12763_14426"></a>
+      <a name="sect_findreplace_12763_1002479"></a>
+      <a class="indexterm" name="sect_findreplace_522AE85E_D721"></a>
+      <a class="indexterm" name="sect_findreplace_9C22E3D3_5154"></a>Find and Replace Tool Window</h3></div></div></div><p class="NormalText">You can use the Find and Replace tool window (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">F</strong></span>, <span><strong class="guimenu">Search </strong></span> &#8594; <span><strong class="guimenuitem">Find</strong></span>, or <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Tool Windows </strong></span> &#8594; <span><strong class="guimenuitem">Find and Replace</strong></span>) to specify search and replace options and conduct search and replace operations on selections, single files, or multiple files.</p><div class="mediaobject"><img src="Resources/findandreplace_toolwindow_findtab.png"></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_findreplace_12763_1002482"></a>Docking the Tool Window</h4></div></div></div><p class="NormalText">Like other SlickEdit® tool windows, this tool window is dockable. Docking options can be accessed by right-clicking on the tool window's title bar. When the tool window is docked, invoking any find or replace command will bring the window to the front focus. When it is not docked, invoking these commands will cause the window to float display. Whether docked or floating, search and replace operations will not close the tool window by default.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_findreplace_12763_12898"></a>
+        <a name="sect_findreplace_12763_1006116"></a>Saving Search and Replace Values</h4></div></div></div><p class="NormalText">When the Find and Replace tool window is invoked, the options that were used for your last search are displayed, providing a way to repeat the last search. Options also persist when switching between the tabs. Pressing <span><strong class="keycap">F7</strong></span> and <span><strong class="keycap">F8</strong></span> retrieves previous and next responses, respectively.</p><p class="NormalText">Search and replace values can be saved as named operations. Saving preserves the values of all of the fields in the Find and Replace tool window so that the search and/or replace operation can be repeated in the future with the same results. To save the search/replace, right-click in the Find and Replace tool window. Select <span><strong class="guimenu">Saved Search Expressions</strong></span>, then select <span><strong class="guilabel">Save Search Expression</strong></span> from the sub-menu. You will be prompted to name the operation. To access a saved operation, select <span><strong class="guilabel">Saved List</strong></span> from the sub-menu, then pick the saved operation to load.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_findreplace_12763_65240"></a>
+        <a name="sect_findreplace_12763_1012756"></a>
+        <a class="indexterm" name="sect_findreplace_ACEBE373_11B3"></a>
+        <a class="indexterm" name="sect_findreplace_73A72FFC_FE13"></a>Syntax-Driven Searching</h4></div></div></div><p class="NormalText">To reduce the number of false positives in your searches, you can restrict the search based on program syntax. Click the <span><strong class="guibutton">Color</strong></span> button on the <span><strong class="guimenu">Find </strong></span>tab of the Find and Replace tool window to specify the syntactic elements for filtering. Each check box has three states:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span class="bold"><strong>Neutral (the default)</strong></span> - All check boxes start in the neutral state. These elements will be used in a search until cleared or until one or more other elements are selected. Putting a check in any check box essentially clears all non-checked boxes.</p></li><li><p class="NormalText">
+            <span class="bold"><strong>Selected</strong></span> - If the check box is selected, the search will be restricted to this element and any other selected elements. There is no need to clear any other elements if any elements are selected. If any elements are selected, only selected elements will be searched. For example, to search for the word "result" only in comments, put a check only in the <span><strong class="guilabel">Comment</strong></span> check box. All other syntactic elements will be ignored as part of this search.</p></li><li><p class="NormalText">
+            <span class="bold"><strong>Cleared</strong></span> - If the check box is clear, these elements will not be searched. For example, if you want to find the word "result" anywhere in your code except for in comments, clear the <span><strong class="guilabel">Comment</strong></span> check box.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_findreplace_12763_1007397"></a>Setting Options</h4></div></div></div><p class="NormalText">Options for individual search and replace operations are located on the Find and Replace tool window. Alternatively, you can set default options that are always used instead. To set the default options, right-click on the background of the tool window and select <span><strong class="guimenu">Configure Options</strong></span>. The default search options will always be used when the Find and Replace tool window is invoked, unless settings are changed on the Find and Replace tool window. If you change settings on the tool window and want to use the default options instead, right-click in the tool window and select <span><strong class="guimenu">Use Default Options</strong></span>. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_59155">Search Options</a> for more information. For information on the individual options on the Find and Replace tool window, see <a href="ch12s03.htm#sect_search_menuanddialogs_13987_91496">Search Dialogs and Tool Windows</a>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_findreplace_12763_85741"></a>
+        <a name="sect_findreplace_12763_1021030"></a>
+        <a class="indexterm" name="sect_findreplace_AE1BB7BC_E582"></a>Search Results Output</h4></div></div></div><p class="NormalText">You can specify that multi-file search results are displayed in a new editor window or in a new Search Results tool window.</p><p class="NormalText">To send the results to a new editor window, select the <span><strong class="guimenu">Find in Files </strong></span>tab, click the <span><strong class="guibutton">Result options</strong></span> button to expand the options, then select <span><strong class="guilabel">Output to editor window</strong></span>.</p><p class="NormalText">To send the results of a multi-file search to a specific Search Results tool window, select the <span><strong class="guimenu">Find in Files </strong></span>tab, click the <span><strong class="guibutton">Results options</strong></span><span><strong class="command"></strong></span>button to expand the options, then use the <span><strong class="guilabel">Search Results Window</strong></span> drop-down list to select the window to be used. These are labeled starting at <span><strong class="guilabel">Search&lt;0&gt;</strong></span>. A new results tool window can be added with the <span><strong class="guilabel">&lt;New&gt;</strong></span> option up to a pre-set limit of open Search Results windows. </p><p class="NormalText">If <span><strong class="guilabel">&lt;Auto Increment&gt;</strong></span> is selected from the <span><strong class="guilabel">Search Results Window</strong></span> drop-down list, the search results will cycle through all of the open Search Results tabs in the Search Results tool window with each new search. For example, if you have Search&lt;0&gt;, Search&lt;1&gt;, and Search&lt;2&gt; open, then for each search operation, the results will be displayed in this order: Search&lt;0&gt;, Search&lt;1&gt;, Search&lt;2&gt;, Search&lt;0&gt;, Search&lt;1&gt;, and so on. If you only have one Search Results tool window open, then all results will go into the only open search windows. You can open and close search results windows by right-clicking on the <span><strong class="guimenu">Search Results </strong></span>tab in the Search Results tool window.</p><p class="NormalText">Right-click in the Search Results window to access the following options:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Quick Search</strong></span> - Finds the next occurrence of the text selected.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Filter Search Results</strong></span> - Select this option to display the Filter Search Results dialog. From here, if a match is found, you can choose to keep or delete lines with additional searches, match case, limit to current default regular expression syntax and/or remove matches found on the same line number in the same file (this can also be accomplished by selecting <span><strong class="guilabel">List matching lines</strong></span> only from the <span><strong class="guimenu">Find in Files</strong></span> tab).</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Open as Editor window</strong></span> - Opens current search results in a new editor window.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Go to Line</strong></span> - Goes to the file/line number of the current line in the Search Results window.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Bookmark Line</strong></span> - Places a bookmark at the line in the file where the result was found.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Clear Window</strong></span> - Clears all results in the current Search Results window.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Align Columns</strong></span> - Aligns the line numbers and column numbers for all search results.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Collapse All</strong></span> - Collapses all Selective Display levels. See <a href="ch08s06.htm#sect_viewinganddisplaying_13437_24461">Selective Display</a> for more information.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Expand All</strong></span>
+            <span><strong class="command"></strong></span>- Expands all Selective Display levels. See <a href="ch08s06.htm#sect_viewinganddisplaying_13437_24461">Selective Display</a> for more information.</p></li></ul></div><p class="NormalText">See <a href="ch12s03.htm#sect_search_menuanddialogs_13987_59992">Find in Files Tab</a> for more information.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_findreplace_12763_20021"></a>
+      <a name="sect_findreplace_12763_1010093"></a>
+      <a class="indexterm" name="sect_findreplace_82C6158A_4341"></a>Find Symbol Tool Window</h3></div></div></div><p class="NormalText">The Find Symbol tool window (<span><strong class="guimenu">Search </strong></span> &#8594; <span><strong class="guimenuitem">Find Symbol</strong></span> or <span><strong class="command">gui_push_tag</strong></span> command) is used to locate symbols in your code. It allows you to search for symbols by name using either a regular expression, substring, or fast prefix match. </p><p class="NormalText">Searching for a symbol is faster than a normal text search because it is executed against the Context Tagging® database, rather than searching through your source files. Find Symbol also avoids false hits in comments or string literals. Though <a href="ch10.htm#sect_findreplace_12763_65240">Syntax-Driven Searching</a> in the regular <a href="ch12s03.htm#sect_search_menuanddialogs_13987_91496">Search Dialogs and Tool Windows</a> provides this same capability, it cannot match the speed of Find Symbol.</p><p class="NormalText">See <a href="ch12s03.htm#sect_search_menuanddialogs_13987_10669">Find Symbol Tool Window</a> for information about the options that are available.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_findreplace_12763_53102"></a>
+      <a name="sect_findreplace_12763_1002281"></a>
+      <a class="indexterm" name="sect_findreplace_99C881A9_4B7B"></a>
+      <a class="indexterm" name="sect_findreplace_C656BEDC_7384"></a>
+      <a class="indexterm" name="sect_findreplace_09115B94_B50B"></a>Find and Replace with Regular Expressions</h3></div></div></div><p class="NormalText">
+      SlickEdit® supports five types of regular expression syntax that you can use for finding and replacing when regular search and replace operations are too limiting:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Brief</p></li><li><p class="NormalText">Perl</p></li><li><p class="NormalText">SlickEdit</p></li><li><p class="NormalText">UNIX</p></li><li><p class="NormalText">Wildcards</p></li></ul></div><p class="NormalText">See <a href="ch10s08.htm">Regular Expressions</a> for more information.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_findreplace_12763_38727"></a>
+      <a name="sect_findreplace_12763_1007386"></a>
+      <a class="indexterm" name="sect_findreplace_A2D02564_D96D"></a>
+      <a class="indexterm" name="sect_findreplace_8ABD31B1_3F88"></a>
+      <a class="indexterm" name="sect_findreplace_2344C10B_25B9"></a>
+      <a class="indexterm" name="sect_findreplace_F21E2CD7_7BEB"></a>
+      <a class="indexterm" name="sect_findreplace_52880031_40BB"></a>
+      <a class="indexterm" name="sect_findreplace_37B8205A_4D99"></a>
+      <a class="indexterm" name="sect_findreplace_88878EE8_A6F7"></a>Undoing/Redoing Replacements</h3></div></div></div><p class="NormalText">To undo a replacement, click <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Undo</strong></span>, press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Z</strong></span>, or use the <span><strong class="command">undo</strong></span> command. To redo a replacement, click <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Redo</strong></span>, press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Y</strong></span>, or use the <span><strong class="command">redo</strong></span> command.</p><p class="NormalText">To undo replacements in multiple files, click <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Multi-File Undo</strong></span> or use the <span><strong class="command">mfundo</strong></span> command. To redo replacements in multiple files, click <span><strong class="guimenu">Edit </strong></span> &#8594; <span><strong class="guimenuitem">Multi-File Redo</strong></span> or use the <span><strong class="command">mfredo</strong></span> command.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_findreplace_12763_15882"></a>
+      <a name="sect_findreplace_12763_1020771"></a>
+      <a class="indexterm" name="sect_findreplace_2773BF29_E413"></a>Match Highlighting</h3></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_findreplace_12763_41710"></a>
+        <a name="sect_findreplace_12763_1020776"></a>
+        <a class="indexterm" name="sect_findreplace_3F85A94C_D489"></a>
+        <a class="indexterm" name="sect_findreplace_85165417_AF8C"></a>
+        <a class="indexterm" name="sect_findreplace_09BDA951_93C2"></a>Cursor on Symbol Shows All Uses in File</h4></div></div></div><p class="NormalText">
+        SlickEdit® can highlight all occurrences of the current symbol under the cursor. This makes it easy to see, at a glance, all uses of a symbol in a file. This option can be set on a language-specific basis. To enable it, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages</strong></span>, expand your language category and language, then select <span><strong class="guilabel">Context Tagging®</strong></span>. On the options screen, select <span><strong class="guilabel">Highlight matching symbols under cursor</strong></span>. </p><p class="NormalText">The highlight color is controlled by the <span><strong class="guilabel">Symbol Highlight</strong></span> screen element (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Appearance </strong></span> &#8594; <span><strong class="guimenuitem">Colors</strong></span>). To change the color, see <a href="ch04s06.htm#sect_fontsandcolors_13325_90477">Setting Colors for Screen Elements</a>. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_99210">Language-Specific Context Tagging® Options</a> for information about other options on the options screen.</p><p class="NormalText">This feature includes two advanced options that affect all languages that have <span><strong class="guilabel">Highlight matching symbols</strong></span> enabled. These can be set through configuration variables (<span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Set Macro Variable</strong></span>):</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="command">def_highlight_symbols_max_bufsize</strong></span> - This variable sets the maximum buffer size, in bytes, for symbol highlighting. If the buffer size is greater than the max size, highlighting is restricted to the visible lines.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">def_highlight_symbols_max_matches</strong></span> - This variable sets the maximum number of matching occurrences for symbol highlighting.</p></li></ul></div><p class="NormalText">See <a href="ch13s04.htm#sect_configurationvariables_13930_34957">Setting/Changing Configuration Variables</a> for more information.</p><p class="NormalText"></p></div></div></div></div></body></html>

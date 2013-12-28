@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_varformat</title>
+</head>
+<body>
+
+<h3><b>int _varformat()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+Returns VF_??? constant defined in "slick.sh" which indicates the
+current storage format of a variable (often not the same as declaration
+type).  We DO NOT recommend you use this function because its return
+values are likely to change with the next version of Slick-C&reg;.
+This function is currently only intended for use by the developers
+of SlickEdit and Slick-C&reg;.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+t=1;
+messageNwait("varformat="t._varformat());
+</PRE>
+
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_el.html">_el</a>, <a href="_makeempty.html">_makeempty</a>, <a href="_isempty.html">_isempty</a>, <a href="_deleteel.html">_deleteel</a>, <a href="_nextel.html">_nextel</a>, <a href="_indexin.html">_indexin</a>, <a href="_sort.html">_sort</a></blockquote>
+</body>
+</html>

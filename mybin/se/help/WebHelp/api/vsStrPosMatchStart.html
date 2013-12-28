@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsStrPosMatchStart</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsStrPosMatchStart(int MatchGroup)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="TaggedExpression">TaggedExpression</A></code> - Tagged expression number.  For
+SlickEdit and Brief regular expressions the
+first tagged expression is 0 and the last is 9.
+For UNIX, the first tagged expression is 1
+and the last is 0.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns start of tagged expression found for last search
+performed by vsStrPos, or vsStrLastPos.  Result is not defined if the
+tagged expression was not found.
+<p>
+For SlickEdit and Brief regular expressions the first tagged expression
+is 0 and the last is 9.  For UNIX and Perl, the first tagged
+expression is 1 and the last is 0.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">See <a href="vsStrPos.html">vsStrPos</a> for an example.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="String_Functions.html">String Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsStrPos.html">vsStrPos</a>, <a href="vsStrLastPos.html">vsStrLastPos</a>, <a href="vsStrPosMatchLength.html">vsStrPosMatchLength</a></blockquote>
+</body>
+</html>

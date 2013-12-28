@@ -1,0 +1,55 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_syshelp</title>
+</head>
+<body>
+
+<h3><b>int _syshelp(_str filename, _str keyword, int help_option=-1)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Displays help.  This function is not available in the UNIX version.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - may be one of the following constants defined in "slick.sh":
+
+<dl>
+<dt>HELP_FORCEFILE</dt><dd>Load
+<i>help_filename</i>
+specified.  If the help
+file is already loaded,
+the help window
+receives the focus.
+<i>help_item</i> is
+ignored.</dd>
+
+<dt>HELP_CONTENTS</dt><dd>Display table of contents
+help item of
+<i>help_filename</i>.
+<i>help_item</i> is
+ignored.</dd>
+
+<dt>HELP_KEY   Display help on
+<i>help_item</i> from
+help file
+<i>help_filename</i>.</dd>
+
+<dt>HELP_PARTIALKEY</dt><dd>Displays Search dialog
+box which lists help
+items and allows you to
+enter a help item.   This
+constant is supported by
+Windows only and is
+translated to
+HELP_KEY for X
+Windows.</dd>
+</dl>
+
+<p>Windows, Windows 95/98, and Windows NT help files have the
+extension ".HLP".  <i>help_filename</i> specifies one or more help
+files separated with plus signs.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// Windows example.  Display help on SetFocus function.
+_syshelp("win31wh.hlp+mscxx.hlp", "SetFocus");
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="wh.html">wh</a>, <a href="help.html">help</a></blockquote>
+</body>
+</html>

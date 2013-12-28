@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>on_scroll</title>
+</head>
+<body>
+
+<h3><b>event on_scroll()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">The <b>on_scroll</b> event is sent when you click and drag the thumb box
+of a scroll bar.  The <b>on_change</b> event is sent after dragging the thumb
+box is completed.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include 'slick.sh'
+
+defeventtab form1;
+hscroll1.on_scroll()
+{
+   message('on_scroll p_value='p_value);
+}
+hscroll1.on_change()
+{
+   message('on_change p_value='p_value);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Hscroll Bar, Vscroll Bar
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Hscroll_Bar_Events.html">Hscroll Bar Events</a>, <a href="Vscroll_Bar_Events.html">Vscroll Bar Events</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="on_change.html">on_change</a></blockquote>
+</body>
+</html>

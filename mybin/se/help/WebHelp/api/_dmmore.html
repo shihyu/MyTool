@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_dmmore</title>
+</head>
+<body>
+
+<h3><b>void _dmmore(_str moveRightEdge='', _str padAmount='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Increases the size of an expandable dialog box.  An expandable
+dialog is a dialog box which changes its size to show more or
+less controls when a command button is pressed.  To create an
+expandable dialog box, create a dialog box in the dialog editor
+that is the full size of the dialog box when expanded.  Then add
+a command button at the lower right hand corner of the dialog box
+when it is NOT expanded.  The <b>p_caption</b> of the button must
+end with ">>" characters.  By default, the bottom edge of the dialog
+box is moved down so that the controls below the current button are
+not seen.  Specify the 'H' option if you want the right edge of the
+dialog moved to the right so that the controls to the right of the
+current button are not seen.  The ">>" characters in the button
+caption are changed to "<<" characters.<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+expandbutton.on_create()
+{
+    // Don't display the controls below this button.
+     _dmless();
+}
+expandbutton.lbutton_up()
+{
+     // Toggle where the controls below this button are displayed.
+     old_caption=p_caption;
+     _dmmore();   // This function changes the >> to << in the caption
+     p_caption=old_caption;
+     p_enabled=0; // Disable this button so it can't be pressed.
+}
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Command Button</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Command_Button_Methods.html">Command Button Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_dmmore.html">_dmmore</a>, <a href="_dmmoreless.html">_dmmoreless</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_find_included_by</title>
+</head>
+<body>
+
+<h3><b>int tag_find_included_by(_str file_name, _str &included_by)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retreive the name of first the source file that included (directly
+or indirectly), the given file (expected to be an include file).
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - Full path of file that was included</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="included_by">included_by</A></code> - (Output) full path of source file
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, < 0 on error, BT_RECORD_NOT_FOUND_RC if not found.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_find_include_file.html">tag_find_include_file</a>, <a href="tag_set_date.html">tag_set_date</a>, <a href="tag_insert_tag.html">tag_insert_tag</a>, <a href="tag_next_include_file.html">tag_next_include_file</a>, <a href="tag_next_included_by.html">tag_next_included_by</a>, <a href="tag_reset_find_file.html">tag_reset_find_file</a></blockquote>
+</body>
+</html>

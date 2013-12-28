@@ -1,0 +1,122 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsRepeatSearch</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsRepeatSearch(int wid, const char *pszOptions=a, int StartCol=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Repeats a search initiated by <b>vsSearch</b>.  This will not repeat a
+search initiated with one of the Slick-C&reg; search commands
+<b>find</b>, or <b>replace</b> (see <b>find_next</b> command).
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszOptions">pszOptions</A></code> - String of zero or more of the following
+option letters:
+
+<dl>
+<dt>+</dt><dd>Forward search.</dd>
+<dt>-</dt><dd>Reverse search.</dd>
+<dt><</dt><dd>Place cursor at beginning of string found.</dd>
+<dt>></dt><dd>Place cursor after end of string found.</dd>
+<dt>E</dt><dd>Case sensitive search.</dd>
+<dt>I</dt><dd>Case insensitive search.</dd>
+<dt>M</dt><dd>Search within visible mark.</dd>
+<dt>R</dt><dd>Search for regular expression.  Syntax of regular
+expression is described in section "<b>SlickEdit
+Regular Expressions</b>".</dd>
+<dt>U</dt><dd>Interpret string as a UNIX regular expression.   See
+section <b>UNIX Regular Expressions</b>.</dd>
+<dt>B</dt><dd>Interpret string as a Brief regular expression.   See
+section <b>Brief Regular Expressions</b>.</dd>
+<dt>N</dt><dd>Do not interpret search string as a regular
+expression search string.</dd>
+<dt>@</dt><dd>No error message.</dd>
+<dt>W</dt><dd>Limits search to words.  Used to search and replace
+variable names.  The default word characters are
+[A-Za-z0-9_$].  To change the word characters for
+a specific extension, use the Extension Options
+dialog box ("Tools", "Options", "File Extension Setup...",
+select the Advanced tab).</dd>
+<dt>W=<i>SlickEdit-regular-expression</i></dt><dd>
+ Specifies a word search and sets the default word
+characters to those matched by the <i>SlickEdit-
+regular-expression</i> given.</dd>
+<dt>W:P</dt><dd>Limits search to word prefix.  For example,
+searching for "pre" matches "pre" and "prefix" but
+not "supreme" or "supre".</dd>
+<dt>W:PS</dt><dd>Limits search to strict word prefix.  For example,
+searching for "pre" matches "prefix" but not "pre",
+"supreme" or "supre".</dd>
+<dt>W:S</dt><dd>Limits search to word suffix.  For example,
+searching for "fix" matches "fix" and "sufix" but
+not "fixit".</dd>
+<dt>W:SS</dt><dd>Limits search to strict word suffix.  For example,
+searching for "fix" matches "sufix" but not "fix" or
+"fixit".</dd>
+<dt>Y</dt><dd>Binary search.  This allows start positions in the
+middle of a DBCS or UTF-8 character.  This option
+is useful when editing binary files (in SBCS/DBCS
+mode) which may contain characters which look
+like DBCS but are not.  For example, if you search
+for the character 'a', it will not be found as the
+second character of a DBCS sequence unless this
+option is specified.</dd>
+<dt>,</dt><dd>Delimiter to separate ambiguous options.</dd>
+<dt>X<i>CCLetters</i></dt><dd>Requires the first character of search string
+NOT be one of the color coding elements specified.
+For example, "XCS" requires that the first character
+not be in a comment or string. <i>CCLetters</i> is
+a string of one or more of the following color
+coding element letters:
+
+<dl>
+<dt>O</dt><dd>Other</dd>
+<dt>K</dt><dd>Keyword</dd>
+<dt>N</dt><dd>Number</dd>
+<dt>S</dt><dd>String</dd>
+<dt>C</dt><dd>Comment</dd>
+<dt>P</dt><dd>Preprocessing</dd>
+<dt>L</dt><dd>Line number</dd>
+<dt>1</dt><dd>Symbol 1</dd>
+<dt>2</dt><dd>Symbol 2</dd>
+<dt>3</dt><dd>Symbol 3</dd>
+<dt>4</dt><dd>Symbol 4</dd>
+<dt>F</dt><dd>Function color</dd>
+<dt>V</dt><dd>No save line</dd>
+</dl>
+</dd>
+
+<dt>C<i>CCLetters</i></dt><dd>Requires the first character of search string to
+be one of the color coding elements specified. See
+<i>CCLetters</i> above.</dd>
+</dl>
+
+Any search option not specified takes on the same value as the last
+search executed.  The exact start column of the search may be
+specified by <i>StartCol</i>.  If <i>StartCol</i> is not given,
+searching continues so that the string found by the last search
+command is not found again.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="StartCol">StartCol</A></code> - Optional column to start repeat search from.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Possible return codes are
+INVALID_OPTION_RC and STRING_NOT_FOUND_RC.  On error,
+message is displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+       // While we could use a regular expression to do what this loop
+does, this example
+       // is easy to understand.
+        int status;
+        status=vsSearch(0,"_command");
+        for (;;) {
+            if (status) break;
+            if (vsPropGetI(0,VSP_COL) ==1) {
+                status=0;break;   // Found _command in column 1
+            }
+            status=vsRepeatSearch (0);
+        }
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsMatchLength.html">vsMatchLength</a>, <a href="vsMatchStart.html">vsMatchStart</a>, <a href="vsMatchCursorLength.html">vsMatchCursorLength</a>, <a href="vsSelectMatch.html">vsSelectMatch</a>, <a href="vsSearch.html">vsSearch</a>, <a href="vsSearchReplace.html">vsSearchReplace</a>, <a href="vsSaveSearch.html">vsSaveSearch</a>, <a href="vsRestoreSearch.html">vsRestoreSearch</a></blockquote>
+</body>
+</html>

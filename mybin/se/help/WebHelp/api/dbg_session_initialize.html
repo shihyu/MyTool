@@ -1,0 +1,60 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>dbg_session_initialize</title>
+</head>
+<body>
+
+<h3><b>int dbg_session_initialize(int session_id, _str host_or_program, _str port_or_pid, _str arguments, int timeout, _str debugger_path, _str debugger_args, ...)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Initialize the connection to the debugger
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="session_id">session_id</A></code> - debugger session ID (1 .. max_session)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="host_or_program">host_or_program</A></code> - The usage of this argument may vary between
+                        debuggers and types of connections.
+                        For example:
+                        <ul>
+                        <li><i>host</i> -- Name of host to connect to.
+                            If the host name is the empty string,
+                            assume 'localhost'
+                        <li><i>program</i> -- Program to debug.
+                            If we are attaching to a port this
+                            parameter is still useful becuase it is
+                            needed for loading debugging information
+                        </ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="port_or_pid">port_or_pid</A></code> - The usage of this argument may vary between
+                        debuggers and types of connections.
+                        For example:
+                        <ul>
+                        <li><i>port</i> -- Port to connect to.
+                            This corresponds to the host parameter
+                            above.  Default is 8000
+                        <li><i>pid</i> -- Process ID to attach to
+                        </ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="arguments">arguments</A></code> - Command line arguments to pass to program
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="timeout">timeout</A></code> - Timeout for connection and debugger
+                        communication in milliseconds
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="debugger_path">debugger_path</A></code> - Path to debugger executable</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="debugger_args">debugger_args</A></code> - Additional arguments needed to invoke debugger</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="working_dir">working_dir</A></code> - Working directory to run program in
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Since:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">10.0
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<p>
+To connect to the local host on port 8000 with a 10 second timeout:
+</p>
+<pre>
+   int status = dbg_session_initialize(session_id, "", 8000, 10000, NULL, NULL);
+   if (status) {
+      return status;
+   }
+</pre>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<p>
+To debug the 'hellow" program and pass it arguments "1 2 3 4"
+with a 10 second timeout:
+<p>
+<pre>
+   int status = dbg_session_initialize(session_id, "hellow", 0, "1 2 3 4", 10000, NULL, NULL);
+   if (status) {
+      return status;
+   }
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Debugger_Functions.html">Debugger Functions</a></blockquote>
+</body>
+</html>

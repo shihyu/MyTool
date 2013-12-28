@@ -1,0 +1,198 @@
+/*
+   Copyright 2008 by SlickEdit Inc.
+   All rights reserved.
+
+   This software is the confidential and proprietary information
+   of SlickEdit Inc. You shall not disclose this information and
+   shall use it only with Visual SlickEdit.
+
+   You may modify this file to add new built-ins
+   for Visual SlickEdit's Context Tagging(TM).  Let us know about
+   new built-ins.  This way our installation/update will install the
+   most up-to-date version and you won't need to maintain a
+   backup.
+*/
+
+tag _G;
+tag _VERSION;
+
+function assert(v, message);
+function collectgarbage(opt, arg);
+function dofile(filename);
+function error(message, level);
+function getfenv(f);
+function getmetatable(object);
+function ipairs(t);
+function load(func, chunkname);
+function loadfile(filename);
+function loadstring(string, chunkname);
+function next(table, index);
+function pairs(t);
+function pcall(f, arg1, ...);
+function print(...);
+function rawequal(v1, v2);
+function rawget(table, index);
+function rawset(table, index, value);
+function select(index, ...);
+function setfenv(f, table);
+function setmetatable(table, metatable);
+function tonumber(e, base);
+function tostring(e);
+function type(v);
+function unpack(list, i, j);
+function xpcall(f, err);
+
+function module(name, ...);
+function require(modname);
+
+interface coroutine {
+   function create(f);
+   function resume(co, val1, ...);
+   function running();
+   function status(co);
+   function wrap(f);
+   function yield(...);
+}
+
+interface debug {
+   function debug();
+   function getfenv(o);
+   function gethook(thread);
+   function getinfo(thread, function, what);
+   function getlocal(thread, level, local);
+   function getmetatable(object);
+   function getregistry();
+   function getupvalue(func, up);
+   function setfenv(object, table);
+   function sethook(thread, hook, mask, count);
+   function setlocal(thread, level, local, value);
+   function setmetatable(object, table);
+   function setupvalue(func, up, value);
+   function traceback(thread, message, level);
+}
+
+interface file {
+   function close();
+   function flush();
+   function lines();
+   function read(...);
+   function seek(whence, offset);
+   function setvbuf(mode, size);
+   function write(...);
+}
+
+interface io {
+   function close(file);
+   function flush();
+   function input(file);
+   function lines(filename);
+   function open(filename, mode);
+   function output(file);
+   function popen(prog, mode);
+   function read(...);
+   function tmpfile();
+   function type(obj);
+   function write(...);
+}
+
+interface math {
+   function abs(x);
+   function acos(x);
+   function asin(x);
+   function atan2(x, y);
+   function atan(x);
+   function ceil(x);
+   function cosh(x);
+   function cos(x);
+   function deg(x);
+   function exp(x);
+   function floor(x);
+   function fmod(x, y);
+   function frexp(x);
+   function ldexp(m, e);
+   function log10(x);
+   function log(x, base);
+   function max(x, ...);
+   function min(x, ...);
+   function modf(x);
+   function pow(x, y);
+   function rad(x);
+   function random(m, n);
+   function randomseed(x);
+   function sinh(x);
+   function sin(x);
+   function sqrt(x);
+   function tanh(x);
+   function tan(x);
+   attr huge;
+   attr pi;
+}
+
+interface bit32 {
+   function arshift(x, disp);
+   function band(...);
+   function bnot(x);
+   function bor(...);
+   function btest(...);
+   function bxor(...);
+   function bextract(n, field, width);
+   function replace(n, v, field, width);
+   function lrotate(x, disp);
+   function lshift(x, disp);
+   function rrotate(x, disp);
+   function rshift(x, disp);
+}
+
+interface os {
+   function clock();
+   function date(format, time);
+   function difftime(t2, t1);
+   function execute(command);
+   function exit(code, close);
+   function getenv(varname);
+   function remove(filename);
+   function rename(oldname, newname);
+   function setlocale(locale, category);
+   function time(table);
+   function tmpname();
+}
+
+interface "package" {
+   attr config;
+   attr cpath;
+   attr loaded;
+   function loadlib(libname, funcname);
+   attr path;
+   attr preload;
+   attr searchers;
+   function searchpath(name, path, sep);
+   function seeall(module);
+}
+
+interface "string" {
+   function byte(s, i, j);
+   function char(...);
+   function dump(f);
+   function find(s, pattern, init, plain);
+   function format(formatstring, ...);
+   function gmatch(s, pattern);
+   function gsub(s, pattern, repl, n);
+   function len(s);
+   function lower(s);
+   function match(s, pattern, init);
+   function rep(s, n);
+   function reverse(s);
+   function sub(s, i, j);
+   function upper(s);
+}
+
+interface table {
+   function concat(table, sep, i, j);
+   function insert(table, pos, value);
+   function pack(...);
+   function maxn(table);
+   function remove(table, pos);
+   function sort(table, comp);
+   function unpack(list, i, j);
+}
+

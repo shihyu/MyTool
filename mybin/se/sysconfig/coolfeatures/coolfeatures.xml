@@ -1,0 +1,314 @@
+<!DOCTYPE CoolFeatures SYSTEM "coolfeatures.dtd">
+<CoolFeatures Version="13.0.0">
+  <TagLines>
+    <!--
+         There can be more than one marketing tag line;
+         a different one will come up each time.
+    -->
+    <TagLine>
+At SlickEdit we believe that there is only one thing
+cooler than our software&amp;mdash;&lt;em&gt;the developers who use it.&lt;/em&gt;
+To get the most out of SlickEdit&amp;reg;, check out these
+cool features.
+    </TagLine>
+  </TagLines>
+  <Features>
+    <Feature Name="Code Navigation"
+             Configure="showCoolFeaturesOptions C/C++ &gt; Context Tagging®"
+             HelpTopic="symbol navigation"
+             DemoURL="http://www.slickedit.com/demo/high/CodeNavigation/CodeNavigation.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/CodeNavigation/CodeNavigation.html">
+Use Ctrl+Dot to jump from a symbol to its definition.
+Use Ctrl+/ to list all of the references for the
+current symbol and optionally jump to the first
+reference.  These operations set a bookmark that can be
+popped to return you to the previous location (Ctrl+Comma).
+    </Feature>
+    <Feature Name="Preview Tool Window"
+             Configure=""
+             HelpTopic="Preview tool window"
+             DemoURL="http://www.slickedit.com/demo/high/PreviewToolWindow/PreviewToolWindow.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/PreviewToolWindow/PreviewToolWindow.html">
+Displays the definition of the current symbol and associated
+documentation in the editor window, allowing you to see the
+definition without having to open a separate buffer.  The Preview
+window also shows information for other windows, including
+the Class, Defs, References, and Symbols tool windows. By default,
+Preview is docked into a tab group along the bottom of the editor.
+It can also be displayed by selecting &lt;b&gt;View > Toolbars > Preview&lt;/b&gt;.
+    </Feature>
+    <Feature Name="References Tool Window"
+             Configure="showCoolFeaturesOptions Context Tagging®"
+             HelpTopic="References view"
+             DemoURL="http://www.slickedit.com/demo/high/ReferencesView/ReferencesView.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/ReferencesView/ReferencesView.html">
+Displays the list of references for a symbol.  Use
+Ctrl+/ to open the References window for the current
+symbol, or you can type or select a symbol in the
+&lt;b&gt;Symbol&lt;/b&gt; drop-down list.  Click on a reference to preview
+it.  Double-click to jump to it. By default,
+the References window is docked into a tab group along the bottom of the editor.
+It can also be displayed by selecting &lt;b&gt;View > Toolbars > References&lt;/b&gt;.
+    </Feature>
+    <Feature Name="Syntax Expansion"
+             Configure="setupext -indent"
+             HelpTopic="syntax expansion"
+             DemoURL="http://www.slickedit.com/demo/high/SyntaxExpansion/SyntaxExpansion.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/SyntaxExpansion/SyntaxExpansion.html">
+Expands common block structures (&lt;i&gt;if&lt;/i&gt;, &lt;i&gt;for&lt;/i&gt;, &lt;i&gt;try&lt;/i&gt;, etc.)
+when the initial keyword is typed. For example, when
+"if" is typed followed by a space, SlickEdit inserts
+the parentheses for the condition and the braces. You
+can define additional structures to be expanded.
+    </Feature>
+    <Feature Name="Dynamic Surround and Surround With"
+             Configure="setupext -indent"
+             HelpTopic="surrounding text"
+             DemoURL="http://www.slickedit.com/demo/high/SurroundWith/SurroundWith.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/SurroundWith/SurroundWith.html">
+Surround existing lines of code with block statements
+or tags. Dynamic Surround allows you to expand a block
+after syntax expansion, using the arrow keys to move the
+end of the block up or down. Surround With allows you to
+select lines and then choose a block structure or tag.
+    </Feature>
+    <Feature Name="Auto-Completions"
+             Configure="setupext -autocomplete"
+             HelpTopic="Auto-Complete"
+             DemoURL="http://www.slickedit.com/demo/high/AutoCompletions/AutoCompletions.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/AutoCompletions/AutoCompletions.html">
+Completions reduce keystrokes by automatically
+completing symbols as you type.  After typing the first
+few characters of a symbol, a brief pause will pop up a
+list of possible completions.  This list is comprised
+of matching symbols in the tag database and matching
+lines of code in the current buffer.  If a line match
+is selected you can add successively more text from
+that line using the &lt;b&gt;complete-more&lt;/b&gt; command
+(Ctrl+Shift+Space).
+    </Feature>
+    <Feature Name="Editable, Dynamic Differencing (DIFFzilla&amp;reg;)"
+             Configure="diff-options"
+             HelpTopic="DIFFzilla"
+             DemoURL="http://www.slickedit.com/demo/high/DIFFzilla/DIFFzilla.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/DIFFzilla/DIFFzilla.html">
+Use to compare directories and files.  When comparing
+files, the diff highlights the lines and characters
+that do not match.  You can edit the files in the
+diff view using many of the features available in the
+editor window.  The diff is automatically updated as
+you edit.
+    </Feature>
+    <Feature Name="Code Templates"
+             Configure="template-manager"
+             HelpTopic="Code Templates"
+             DemoURL="http://www.slickedit.com/demo/high/CodeTemplates/CodeTemplates.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/CodeTemplates/CodeTemplates.html">
+Define templates for commonly used code, like
+standard class definitions or design patterns.  You can
+create templates for whole files or multiple files.
+Add a template item to your current project by choosing
+&lt;b&gt;File > New Item from Template&lt;/b&gt; from the main menu.
+You are prompted for values to substitute in the new instance as needed.
+    </Feature>
+    <Feature Name="Aliases"
+             Configure="showCoolFeaturesOptions Global Aliases"
+             HelpTopic="aliases"
+             DemoURL="http://www.slickedit.com/demo/high/Aliases/Aliases.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/Aliases/Aliases.html">
+Define short names that can be expanded to
+insert text into a file or directory path in SlickEdit,
+using Ctrl+Space.  Aliases can automatically insert the
+date, time, cursor placement, or prompt for parameters.
+    </Feature>
+    <Feature Name="Comment Wrapping"
+             Configure="setupext -commentwrap"
+             HelpTopic="comment wrapping"
+             DemoURL="http://www.slickedit.com/demo/high/CommentWrapping/CommentWrapping.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/CommentWrapping/CommentWrapping.html">
+Formats block comments as you edit them, automatically
+wrapping based on your settings. Comment wrapping
+preserves comment border characters.
+    </Feature>
+    <Feature Name="XML/HTML Formatting"
+             Configure="xml_html_options3"
+             HelpTopic="xml/html formatting"
+             DemoURL="http://www.slickedit.com/demo/high/XMLHTMLFormatting/XMLHTMLFormatting.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/XMLHTMLFormatting/XMLHTMLFormatting.html">
+Content in XML and HTML files may be set to automatically
+      wrap and format as you edit according to user-defined formatting schemes. A formatting
+      scheme is comprised of any number of XML or HTML tags, each of which can be configured
+      individually for indent levels, wrapping, and tag structure. Multiple schemes can be
+      defined—for example, you may want one scheme for HTML files and another for XML files,
+      or perhaps you are required to code certain files to various standards. Schemes can be
+      saved and imported, so they can be shared with your team. Tags for each scheme can be
+      entered manually or you can import tags from the current file.
+    </Feature>
+    <Feature Name="Backup History"
+             Configure="showCoolFeaturesOptions Backup"
+             HelpTopic="Backup History"
+             DemoURL="http://www.slickedit.com/demo/high/BackupHistory/BackupHistory.html"
+             Products="SlickEdit,Tools">
+Each time a file is saved, the current version is added
+to the Backup History.  You can view the list of
+versions and compare the current version against a
+previous version or restore a previous version.  This
+creates a detailed history for versions
+that are not ready to be checked in.
+    </Feature>
+    <Feature Name="Smart Line Selections"
+             Configure="showCoolFeaturesOptions Editing &gt; General"
+             HelpTopic="Line insert style"
+             DemoURL="http://www.slickedit.com/demo/high/SmartLineSelections/SmartLineSelections.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/SmartLineSelections/SmartLineSelections.html">
+Line selections for single or multiple lines are pasted
+above or below the current line of code (depending upon your
+&lt;b&gt;Line insert style&lt;/b&gt; setting), saving you from tediously
+positioning the cursor at the beginning or end of a
+line prior to pasting the selected lines.
+    </Feature>
+    <Feature Name="SmartPaste&amp;reg;"
+             Configure="setupext -indent"
+             HelpTopic="SmartPaste"
+             DemoURL="http://www.slickedit.com/demo/high/SmartPaste/SmartPaste.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/SmartPaste/SmartPaste.html">
+Automatically formats line selections when pasted. The pasted
+code is formatted to match the indentation of the new location
+and the brace style adjusted to match your settings.
+    </Feature>
+    <Feature Name="Syntax-Driven Searching"
+             Configure="gui-find"
+             HelpTopic="syntax-driven search"
+             DemoURL="http://www.slickedit.com/demo/high/SyntaxDrivenSearching/SyntaxDrivenSearching.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/SyntaxDrivenSearching/SyntaxDrivenSearching.html">
+Use the Color Coding engine to reduce the number of false positives in your
+searches by restricting searches based on program
+syntax. For example, you can limit a search to find or
+omit comments, as well as restrict or omit string
+literals. Click the &lt;b&gt;Color&lt;/b&gt; button on the Find and Replace
+tool window to configure search options.
+    </Feature>
+    <Feature Name="Regex Evaluator"
+             Configure=""
+             HelpTopic="Regex Evaluator"
+             DemoURL="http://www.slickedit.com/demo/high/RegexEvaluator/RegexEvaluator.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/RegexEvaluator/RegexEvaluator.html">
+Allows you to type a regular expression and run it
+against test cases, highlighting matched expressions
+and groups. To use the Regex Evaluator, select &lt;b&gt;Tools > Regex Evaluator&lt;/b&gt;.
+    </Feature>
+    <Feature Name="Emulations"
+             Configure="showCoolFeaturesOptions emulation"
+             HelpTopic="Emulation Options"
+             DemoURL="http://www.slickedit.com/demo/high/Emulations/Emulations.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/Emulations/Emulations.html">
+Choose from 13 keyboard emulations, containing
+the key bindings and behaviors necessary to emulate other
+editors. Emulation charts are available in the &lt;i&gt;docs&lt;/i&gt;
+subdirectory of your SlickEdit installation.
+    </Feature>
+    <Feature Name="Recorded and Programmable Macros"
+             Configure=""
+             HelpTopic="recorded macros"
+             DemoURL="http://www.slickedit.com/demo/high/RecordedMacros/RecordedMacros.html"
+             PDemoURL="http://www.slickedit.com/demo-c/high/RecordedMacros/RecordedMacros.html">
+Use macros to automate frequently repeated tasks. 
+Recorded macros capture a sequence of operations as you
+apply them and can be replayed at a later time. 
+Programmable macros use SlickEdit's Slick-C&amp;reg; programming
+language to customize and extend the functionality of
+SlickEdit.
+    </Feature>
+    <Feature Name="Command Line"
+             Configure=""
+             HelpTopic="SlickEdit command line"
+             DemoURL="http://www.slickedit.com/demo/high/CommandLine/CommandLine.html"
+             Products="SlickEdit,Tools">
+The command line provides instant access to the most
+powerful SlickEdit commands without you ever having to touch the mouse.
+To activate the command line, press &lt;b&gt;Escape&lt;/b&gt;
+(&lt;b&gt;Ctrl+A&lt;/b&gt; in Vim emulation or
+&lt;b&gt;Alt+X&lt;/b&gt; in GNU Emacs emulation).
+Here is a top-25 list of SlickEdit commands:
+
+&lt;dl compact&gt;
+&lt;dt&gt;1. &lt;b&gt;e &lt;i&gt;file&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt; Edit a file
+
+&lt;dt&gt;2. &lt;b&gt;sa &lt;i&gt;file&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Save file as
+
+&lt;dt&gt;3. &lt;b&gt;q &lt;i&gt;file&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Close file(s)
+
+&lt;dt&gt;4. &lt;b&gt;close-all&lt;/b&gt; and &lt;b&gt;close-others&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Close all files or all files except for the current file
+
+&lt;dt&gt;5. &lt;b&gt;&lt;i&gt;number&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Go to line number
+
+&lt;dt&gt;6. &lt;b&gt;cursor-up/down &lt;i&gt;number&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Move the cursor up or down the specified number of lines.
+
+&lt;dt&gt;7. &lt;b&gt;f &lt;i&gt;symbol&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Find a symbol
+
+&lt;dt&gt;8. &lt;b&gt;/&lt;i&gt;search_string&lt;/i&gt;/&lt;i&gt;options&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Search for a string
+
+&lt;dt&gt;9. &lt;b&gt;c/&lt;i&gt;search&lt;/i&gt;/&lt;i&gt;replace&lt;/i&gt;/&lt;i&gt;options&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Replace a string
+
+&lt;dt&gt;10. &lt;b&gt;pf/&lt;i&gt;search_string&lt;/i&gt;/&lt;i&gt;options&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Search for a string in all files in the current project
+
+&lt;dt&gt;11. &lt;b&gt;wf/&lt;i&gt;search_string&lt;/i&gt;/&lt;i&gt;options&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Search for a string in all files in the current workspace
+
+&lt;dt&gt;12. &lt;b&gt;gt/&lt;i&gt;search&lt;/i&gt;/&lt;i&gt;options&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Substring search for a symbol (grep tag)
+
+&lt;dt&gt;13. &lt;b&gt;sb &lt;i&gt;name&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Set a bookmark
+
+&lt;dt&gt;14. &lt;b&gt;gb &lt;i&gt;name&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Jump to a bookmark
+
+&lt;dt&gt;15. &lt;b&gt;help &lt;i&gt;topic&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  View Help on topic
+
+&lt;dt&gt;16. &lt;b&gt;man &lt;i&gt;command&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Show UNIX man page
+
+&lt;dt&gt;17. &lt;b&gt;cd &lt;i&gt;directory&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Change directory
+
+&lt;dt&gt;18. &lt;b&gt;dir &lt;i&gt;directory&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt; Show directory in the file manager
+
+&lt;dt&gt;19. &lt;b&gt;list &lt;i&gt;wildcards&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Show directory tree in the file manager
+
+&lt;dt&gt;20. &lt;b&gt;del &lt;i&gt;filename&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Delete file
+
+&lt;dt&gt;21. &lt;b&gt;pushd &lt;i&gt;directory&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Push directory
+
+&lt;dt&gt;22. &lt;b&gt;popd&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Pop directory
+
+&lt;dt&gt;23. &lt;b&gt;set &lt;i&gt;env=value&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Set environment variable
+
+&lt;dt&gt;24. &lt;b&gt;dos &lt;i&gt;command&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Execute command outside of editor
+
+&lt;dt&gt;25. &lt;b&gt;math &lt;i&gt;expr&lt;/i&gt;&lt;/b&gt;
+&lt;dd style="marginleft:150pt"&gt;  Evaluate expression
+
+&lt;/dl&gt;
+    </Feature>
+  </Features>
+</CoolFeatures>
+

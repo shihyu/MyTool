@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_set_context_parents</title>
+</head>
+<body>
+
+<h3><b>int tag_set_context_parents(int context_id, _str parents)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Set the class inheritance for the given context tag.
+<p>
+For synchronization, macros should perform a tag_lock_context(true)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="context_id">context_id</A></code> - Context ID [ from 1 to <a href="tag_get_num_of_context.html">tag_get_num_of_context</a>() ] of
+                  context tag representing class or struct to set inheritance relationships for.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="parents">parents</A></code> - Delimited list of immediate class ancestors.  It is
+                  important to remember that for some languages, all classes
+                  have a default ancestor, such as <i>java.lang/Object</i> in Java.
+                  Otherwise, use the empty string to indicate that class_name
+                  is a base class.  See <a href="VS_TAGSEPARATOR_parents.html">VS_TAGSEPARATOR_parents</a> for
+                  more details on constructing this string.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_get_context.html">tag_get_context</a>, <a href="tag_get_detail2.html">tag_get_detail2</a>, <a href="tag_insert_context.html">tag_insert_context</a>, <a href="tag_set_inheritance.html">tag_set_inheritance</a></blockquote>
+</body>
+</html>

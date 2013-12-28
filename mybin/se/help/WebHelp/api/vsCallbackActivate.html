@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsCallbackActivate</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsCallbackActivate(int wid)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Updates global function pointer callbacks for message line and
+command line to those callbacks registered to the editor control
+specified.
+vsCallbackActivate forces immediate update of
+callbacks for the following:
+<DL>
+<LI>  VSCALLBACK_WIN_CMDLINE_FUNCTIONS
+<LI>  VSCALLBACK_WIN_MESSAGE
+<LI>  VSCALLBACK_WIN_GET_MESSAGE
+</DL><p>
+VSE's implementation of the above editor control callbacks
+require global callback data.  vsExecute updates the
+global callback data.  However if you use vsCallIndex
+you might want to activate the callbacks.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsCallbackSet.html">vsCallbackSet</a>, <a href="vsCallbackRemove.html">vsCallbackRemove</a></blockquote>
+</body>
+</html>

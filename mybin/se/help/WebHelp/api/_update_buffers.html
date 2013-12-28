@@ -1,0 +1,44 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_update_buffers</title>
+</head>
+<body>
+
+<h3><b>void _update_buffers(_str lang, typeless updates=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Updates language specific options you specify for all open files.<p>
+This function takes either a string or a hash table of field/value
+pairs. To use the old style string function, you can still call
+this function.  The ability to use a hash table was added because of
+the desire to include commas in values, which is not possible in a
+comma-delimited string.<p>
+This function does not change the default language specific options.
+Use <a href="_SetLanguageOption.html">_SetLanguageOption</a>, <a href="_SetLanguageSetupOptions.html">_SetLanguageSetupOptions</a>,
+<a href="_SetDefaultLanguageOptions.html">_SetDefaultLanguageOptions</a> function, or the LanguageSettings
+API to change language specific defaults.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="lang">lang</A></code> - Language ID (see <a href="p_LangId.html">p_LangId</a>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="updates">updates</A></code> - Either a hashtable of fieldName => values or a
+                     string of format "fieldName=value','...". Each
+                     field name corresponds to a buffer property
+                     which will be set with the associated value.
+                     Examples of field names are <FIELD>_UPDATE_KEY.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include "slick.sh"
+defmain()
+{
+   //Change the default margins for fundamental mode.
+   LanguageSettings.setMargins("fundamental", "1 70 1");
+
+   // Update buffers already being edited - using a string
+    _update_buffers("fundamental", MARGINS_UPDATE_KEY"=1 70 1");
+
+   // Update buffers using a hash table
+   _str table:[];
+   table:[MARGINS_UPDATE_KEY] = "1 70 1";
+    _update_buffers("fundamental", table);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_SetLanguageOption.html">_SetLanguageOption</a>, <a href="_SetDefaultLanguageOptions.html">_SetDefaultLanguageOptions</a>, <a href="_SetLanguageSetupOptions.html">_SetLanguageSetupOptions</a></blockquote>
+</body>
+</html>

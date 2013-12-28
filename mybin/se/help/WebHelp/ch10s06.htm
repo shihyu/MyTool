@@ -1,0 +1,73 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Sorting Text</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch10.htm" title="Chapter 10.  Tools and Utilities"><link rel="prev" href="ch10s05.htm" title="Spell Checking"><link rel="next" href="ch10s07.htm" title="FTP"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_sortingtext_12963_95328"></a>
+    <a name="sect_sortingtext_12963_1007523"></a>
+    <a class="indexterm" name="sect_sortingtext_9231A0B3_95D8"></a>
+    <a class="indexterm" name="sect_sortingtext_9AA07636_DCCB"></a>
+    <a class="indexterm" name="sect_sortingtext_E51B3CEF_D279"></a>Sorting Text</h2></div></div></div><p class="NormalText">
+    SlickEdit® uses a stable quicksort algorithm to sort text. It is recommended that at least half the text be in memory for best speed results. To sort text, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Sort</strong></span>. The Sort dialog box is displayed, as pictured below.</p><div class="mediaobject"><img src="Resources/sort_dialog.png"></div><p class="NormalText">The following options are available:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <span><strong class="guilabel">Type of sort</strong></span> - Choose the type of sort that you prefer from the following options:</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+            <span class="bold"><strong></strong></span>
+            <span><strong class="guilabel">
+              <a class="indexterm" name="sect_sortingtext_4768F5EC_A3DD"></a>Sort buffer</strong></span> - When this option is selected, the entire contents of the buffer that you are working in are sorted.</p></li><li><p class="NormalText">
+            <span class="bold"><strong></strong></span>
+            <span><strong class="guilabel">
+              <a class="indexterm" name="sect_sortingtext_E25E1EDB_ED5D"></a>Sort on selection</strong></span> - When this option is selected, each line intersecting with the selection is sorted based on the selected column. <span><strong class="guilabel">Sort on selection</strong></span> and <span><strong class="guilabel">Sort within selection</strong></span> have the same effect except when sorting a block or column selection.</p></li><li><p class="NormalText">
+            <span class="bold"><strong></strong></span>
+            <span><strong class="guilabel">
+              <a class="indexterm" name="sect_sortingtext_9F0F5E12_7140"></a>
+              <a class="indexterm" name="sect_sortingtext_00C26A40_BDF5"></a>Sort within selection</strong></span> - When this option is selected, the selected text is sorted. Text outside a block or column selection is not moved. The <span><strong class="guilabel">Sort on selection</strong></span> and <span><strong class="guilabel">Sort within selection</strong></span> options have the same effect except when sorting a block or column selection.</p></li></ul></div></li><li><p class="NormalText">
+        <span><strong class="guilabel">
+          <a class="indexterm" name="sect_sortingtext_D9C79F04_F840"></a>Order</strong></span> - Choose <span><strong class="guilabel">Ascending</strong></span> or <span><strong class="guilabel">Descending</strong></span>. In an ascending sort, the lowest text item sorted is placed at the top.</p></li><li><p class="NormalText">
+        <span><strong class="guilabel">
+          <a class="indexterm" name="sect_sortingtext_0A2CA6F0_36FD"></a>Numeric sort</strong></span> - When this option is selected, a numeric comparison is performed.</p></li><li><p class="NormalText">
+        <span><strong class="guilabel">
+          <a class="indexterm" name="sect_sortingtext_98329977_AFFB"></a>Remove duplicate lines</strong></span> - When this option is selected, it removes adjacent lines that are identical. This option does not fully support column selection (it always compares complete lines).</p></li><li><p class="NormalText">
+        <span><strong class="guilabel">
+          <a class="indexterm" name="sect_sortingtext_2BB2EC42_0573"></a>Case sensitive</strong></span> - When this option is selected, the sort is case-sensitive.</p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_sortingtext_12963_1007549"></a>
+      <a class="indexterm" name="sect_sortingtext_94D0BE2A_3A87"></a>
+      <a class="indexterm" name="sect_sortingtext_3BC08EE4_06AA"></a>Sort Commands</h3></div></div></div><p class="NormalText">To use the command line for sorting, first activate the command line by pressing <span><strong class="keycap">Esc</strong></span>. Sort command syntax is in the form <span class="emphasis"><em>SortCommand OptionLetter(s)</em></span>. The following sort commands are available:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="command">sort_buffer</strong></span> - Sorts the current buffer.</p></li><li><p class="NormalText">
+          <span><strong class="command">sort_within_selection</strong></span>
+          <span><strong class="command"> - </strong></span>Sorts text within a selected area. This command supports line and block selections only.</p></li><li><p class="NormalText">
+          <span><strong class="command">
+            <a class="indexterm" name="sect_sortingtext_17EC3CAE_F040"></a>sort_on_selection</strong></span>
+          <span><strong class="command"> - </strong></span>To sort on a column field, press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">B</strong></span> to select an area of text, then invoke the command <span><strong class="command">sort_on_selection</strong></span>. This command supports line and block selections only.</p></li></ul></div><p class="NormalText">The table below describes the <span class="emphasis"><em>OptionLetter(s)</em></span> that you can use with each command.</p><div class="informaltable"><a name="table_b0d30206-6e4e-44d5-a18b-2e5fa5427072"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Option</p>
+            </th><th>
+              <p class="CellHeading"> Meaning</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">A</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Sort in ascending order.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">D</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Sort in descending order.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">I</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Case insensitive sort (ignore case).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">E</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Case sensitive sort (exact case which is the default).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">-N</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Numeric sort. C-style floating point numbers with up to 32-digit mantissa are supported.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">-F</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">File name sort.</p>
+            </td></tr></tbody></table></div><p class="NormalText"></p></div></div></body></html>

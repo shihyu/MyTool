@@ -1,0 +1,336 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>String Functions</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s25.htm" title="Common Macro Dialog Boxes"><link rel="next" href="ch14s27.htm" title="Search Functions"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_stringfunctions_13386_61093"></a>
+    <a name="slick_c_stringfunctions_13386_1005721"></a>String Functions</h2></div></div></div><p class="NormalText">The table below describes commonly used string functions. See <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category </strong></span> &#8594; <span><strong class="guimenuitem">String Functions</strong></span> for a complete list.</p><p class="NormalText">See also documentation for the <a href="ch14s08.htm#slick_c_statements_12669_45530">parse Statement</a>.</p><div class="informaltable"><a name="table_4b10ded9-e79d-4e0a-9760-7f4223b2e7d6"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+            <p class="CellHeading">Function</p>
+          </th><th>
+            <p class="CellHeading">Description</p>
+          </th></tr></thead><tbody><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="slick-c_stringfunctions_A56B0325_230B"></a>_str center (_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command">,int width [,-str </strong></span>
+              <span class="emphasis"><em>pad_ch</em></span>
+              <span><strong class="command">])</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span class="emphasis"><em>string</em></span> padded evenly on left and right with spaces or a character you choose with the optional argument <span class="emphasis"><em>pad_ch</em></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_ dec2hex (long </strong></span>
+              <span class="emphasis"><em>number</em></span>
+              <span><strong class="command"> [,int </strong></span>
+              <span class="emphasis"><em>base</em></span>
+              <span><strong class="command">])</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span class="emphasis"><em>number</em></span> converted to <span class="emphasis"><em>base</em></span> specified.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str expand_tabs (_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command"> [,int </strong></span>
+              <span class="emphasis"><em>start</em></span>
+              <span><strong class="command"> [,int </strong></span>
+              <span class="emphasis"><em>count</em></span>
+              <span><strong class="command"> [,_str </strong></span>
+              <span class="emphasis"><em>option</em></span>
+              <span><strong class="command">]]])</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Very similar to <span><strong class="command">substr</strong></span> function except that this function supports tab characters very well.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str field(_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command">,int </strong></span>
+              <span class="emphasis"><em>width</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span class="emphasis"><em>string</em></span> padded with trailing spaces to <span class="emphasis"><em>width</em></span> characters.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">long hex2dec(_str </strong></span>
+              <span class="emphasis"><em>number</em></span>
+              <span><strong class="command"> [,int </strong></span>
+              <span class="emphasis"><em>base</em></span>
+              <span><strong class="command">])</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span class="emphasis"><em>number</em></span> converted to <span class="emphasis"><em>base</em></span> specified.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str indent_string(int </strong></span>
+              <span class="emphasis"><em>width</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">If indent with tabs is on, a string of tabs of length <span class="emphasis"><em>width</em></span> is returned. Otherwise, a string of spaces of length <span class="emphasis"><em>width</em></span> is returned.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">boolean isalnum(_str </strong></span>
+              <span class="emphasis"><em>ch</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns non-zero value if <span class="emphasis"><em>ch</em></span> is a numeric or alphabetic character.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">boolean isalpha(_str </strong></span>
+              <span class="emphasis"><em>ch</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns non-zero value if <span class="emphasis"><em>ch</em></span> is an alphabetic character.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">boolean isdigit(_str </strong></span>
+              <span class="emphasis"><em>ch</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns non-zero value if <span class="emphasis"><em>ch</em></span> is a numeric character.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">boolean isinteger(_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns non-zero value if <span class="emphasis"><em>string</em></span> is a valid <span><strong class="command">int</strong></span>. If <span class="emphasis"><em>string</em></span> is floating point number, <span><strong class="command">0</strong></span> is returned.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">boolean isnumber(_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns non-zero value if <span class="emphasis"><em>string</em></span> is a valid <span><strong class="command">double</strong></span> (floating pointer number).</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str last_char(_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns last character of <span class="emphasis"><em>string</em></span>. If <span class="emphasis"><em>string</em></span> is null, the space character is returned.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">int lastpos(_str </strong></span>
+              <span class="emphasis"><em>needle</em></span>
+              <span><strong class="command"> [,_str </strong></span>
+              <span class="emphasis"><em>haystack</em></span>
+              <span><strong class="command"> [,int </strong></span>
+              <span class="emphasis"><em>start</em></span>
+              <span><strong class="command"> [,_str </strong></span>
+              <span class="emphasis"><em>options</em></span>
+              <span><strong class="command">]]])</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns the position <span><strong class="command">(1..length(</strong></span><span class="emphasis"><em>haystack</em></span><span><strong class="command">))</strong></span> of the last occurrence of <span class="emphasis"><em>needle</em></span> in <span class="emphasis"><em>haystack</em></span>. If <span class="emphasis"><em>needle</em></span> is not found, <span><strong class="command">0</strong></span> is returned. Regular expressions are supported.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">int length(_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns the number of characters in <span class="emphasis"><em>string</em></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str lowcase(_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span class="emphasis"><em>string</em></span> converted to lowercase.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str number2onoff(_str </strong></span>
+              <span class="emphasis"><em>number</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span><strong class="command">off</strong></span> if <span class="emphasis"><em>number</em></span><span><strong class="command">==0</strong></span>. Otherwise <span><strong class="command">on</strong></span> is returned.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str number2yesno(_str </strong></span>
+              <span class="emphasis"><em>number</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span><strong class="command">N</strong></span> if <span class="emphasis"><em>number</em></span><span><strong class="command">==0</strong></span>. Otherwise <span><strong class="command">Y</strong></span> is returned.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">parse </strong></span>
+              <span class="emphasis"><em>expr</em></span>
+              <span><strong class="command"> with </strong></span>
+              <span class="emphasis"><em>template</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Breaks apart the expression <span class="emphasis"><em>expr</em></span> given into variables that appear in <span class="emphasis"><em>template</em></span>, and much more. See <a href="ch14s08.htm#slick_c_statements_12669_45530">parse Statement</a> for more information.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">boolean parseoption(_str &amp;</strong></span>
+              <span class="emphasis"><em>cmdline</em></span>
+              <span><strong class="command"> ,_str </strong></span>
+              <span class="emphasis"><em>option_ch</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Strips + or - option from <span class="emphasis"><em>cmdline</em></span>. Returns non-zero number if <span class="emphasis"><em>option_ch</em></span> was found.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">int pos(_str </strong></span>
+              <span class="emphasis"><em>needle</em></span>
+              <span><strong class="command"> [,_str </strong></span>
+              <span class="emphasis"><em>haystack</em></span>
+              <span><strong class="command"> [,int </strong></span>
+              <span class="emphasis"><em>start</em></span>
+              <span><strong class="command"> [,_str </strong></span>
+              <span class="emphasis"><em>options</em></span>
+              <span><strong class="command">]]])</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns the position <span><strong class="command">(1..length(</strong></span><span class="emphasis"><em>haystack</em></span><span><strong class="command">))</strong></span> of the first occurrence of <span class="emphasis"><em>needle</em></span> in <span class="emphasis"><em>haystack</em></span>. If <span class="emphasis"><em>needle</em></span> is not found, <span><strong class="command">0</strong></span> is returned. Regular expressions are supported.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">boolean setonoff(_str &amp;</strong></span>
+              <span class="emphasis"><em>name</em></span>
+              <span><strong class="command">,_str </strong></span>
+              <span class="emphasis"><em>value</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Sets <span class="emphasis"><em>name</em></span> to <span><strong class="command">1</strong></span> or <span><strong class="command">0</strong></span> corresponding to <span class="emphasis"><em>value</em></span><span><strong class="command">=on</strong></span> or <span class="emphasis"><em>value</em></span><span><strong class="command">=off</strong></span>. Returns <span><strong class="command">0</strong></span> if input value is valid. Displays message if <span class="emphasis"><em>value</em></span> is not on or off.	</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">boolean setyesno(int &amp;</strong></span>
+              <span class="emphasis"><em>name</em></span>
+              <span><strong class="command">,_str </strong></span>
+              <span class="emphasis"><em>value</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Sets <span class="emphasis"><em>name</em></span> to <span><strong class="command">1</strong></span> or <span><strong class="command">0</strong></span> corresponding to <span class="emphasis"><em>value</em></span><span><strong class="command">=Y</strong></span>,Yes or <span class="emphasis"><em>value</em></span><span><strong class="command">=N</strong></span>,No. Returns <span><strong class="command">0</strong></span> if input value is valid. Displays message if <span class="emphasis"><em>value</em></span> is not <span><strong class="command">Y</strong></span> or <span><strong class="command">Yes</strong></span>, <span><strong class="command">N</strong></span> or <span><strong class="command">No</strong></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str stranslate(_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command">, _str </strong></span>
+              <span class="emphasis"><em>replace_string</em></span>
+              <span><strong class="command">,_str </strong></span>
+              <span class="emphasis"><em>search_string</em></span>
+              <span><strong class="command">, _str </strong></span>
+              <span class="emphasis"><em>search_options</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span class="emphasis"><em>string</em></span> with all occurrences of <span class="emphasis"><em>search_string</em></span> replaced with <span class="emphasis"><em>replace_string</em></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str strieq(_str </strong></span>
+              <span class="emphasis"><em>string1</em></span>
+              <span><strong class="command"> ,_str </strong></span>
+              <span class="emphasis"><em>string2</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns true if <span class="emphasis"><em>string1</em></span> matches <span class="emphasis"><em>string2</em></span> when case is ignored.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str strip(_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command"> ,_str </strong></span>
+              <span class="emphasis"><em>ltb</em></span>
+              <span><strong class="command"> [,_str </strong></span>
+              <span class="emphasis"><em>strip_char</em></span>
+              <span><strong class="command">])</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span class="emphasis"><em>string</em></span> stripped of leading and/or trailing <span class="emphasis"><em>strip_char</em></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str strip_filename(_str </strong></span>
+              <span class="emphasis"><em>filename</em></span>
+              <span><strong class="command">, 'P'|'D'|'E'|'N')</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span class="emphasis"><em>filename</em></span> with part stripped. P=Path, D=Drive, E=Extension, N=Name.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str strip_last_word(_str &amp;</strong></span>
+              <span class="emphasis"><em>line</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns the last space delimited word in <span class="emphasis"><em>line</em></span>.   The last word and trailing spaces are deleted from <span class="emphasis"><em>line</em></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str strip_options(_str </strong></span>
+              <span class="emphasis"><em>cmdline</em></span>
+              <span><strong class="command"> ,_str &amp;</strong></span>
+              <span class="emphasis"><em>options</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span class="emphasis"><em>cmdline</em></span> without words that start with the characters <span><strong class="command">-</strong></span>, <span><strong class="command">+</strong></span>, or <span><strong class="command">[</strong></span>. <span class="emphasis"><em>options</em></span> variable is set to stripped option words.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str substr(_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command"> ,int </strong></span>
+              <span class="emphasis"><em>start</em></span>
+              <span><strong class="command"> [,int </strong></span>
+              <span class="emphasis"><em>length</em></span>
+              <span><strong class="command"> [,_str </strong></span>
+              <span class="emphasis"><em>pad</em></span>
+              <span><strong class="command">]])</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span class="emphasis"><em>length</em></span> characters of <span class="emphasis"><em>string</em></span> beginning at <span class="emphasis"><em>start</em></span>. By default, <span class="emphasis"><em>length</em></span> defaults to rest of <span class="emphasis"><em>string</em></span>. If <span class="emphasis"><em>length</em></span> is greater than length of <span class="emphasis"><em>string</em></span>, the return string is padded with blanks or <span class="emphasis"><em>pad</em></span> character if specified.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str translate(_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command"> [,_str </strong></span>
+              <span class="emphasis"><em>output_table</em></span>
+              <span><strong class="command"> [,_str </strong></span>
+              <span class="emphasis"><em>input_table</em></span>
+              <span><strong class="command"> [,_str </strong></span>
+              <span class="emphasis"><em>pad</em></span>
+              <span><strong class="command">]]])</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span class="emphasis"><em>string</em></span> with characters translated according to arguments.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str upcase(_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns <span class="emphasis"><em>string</em></span> converted to uppercase.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">int verify(_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command">, _str </strong></span>
+              <span class="emphasis"><em>reference</em></span>
+              <span><strong class="command"> [, M| [,int </strong></span>
+              <span class="emphasis"><em>start</em></span>
+              <span><strong class="command">]])</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns the position <span><strong class="command">(1..length(</strong></span><span class="emphasis"><em>string</em></span><span><strong class="command">))</strong></span><span><strong class="command"></strong></span>of first character not matching or matching a character in <span class="emphasis"><em>reference</em></span>. <span><strong class="command">0</strong></span> is returned on failure.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_str word(_str </strong></span>
+              <span class="emphasis"><em>string</em></span>
+              <span><strong class="command">,int </strong></span>
+              <span class="emphasis"><em>Nth</em></span>
+              <span><strong class="command">)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns the <span class="emphasis"><em>Nth</em></span> space or tab-delimited word in <span class="emphasis"><em>string</em></span>. Is returned if the <span class="emphasis"><em>Nth</em></span> word does not exist.</p>
+          </td></tr></tbody></table></div><p class="NormalText"></p></div></body></html>

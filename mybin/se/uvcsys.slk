@@ -1,0 +1,152 @@
+[GNU RCS]
+checkin_new=ci -q %L %n%e <%c
+checkout=co -l -q %L %n%e
+checkin=ci -q %L %n%e <%c
+checkout_read_only=co -q %L %n%e
+checkin_discard=rcs -u -q %L %n%e
+archive_filespec=*.*
+styles=comment_file,error_redir
+
+[SCCS]
+checkin_new=sccs create %f
+checkout=sccs edit %f
+checkin=sccs deledit %f <%c
+checkout_read_only=sccs get %f
+checkin_discard=sccs unedit %f
+archive_filespec=*.*
+styles=one_line_comment,comment_file,error_redir
+
+
+[SoftBench CM]
+checkin_new=sbcm VERSION-INITIALIZE %f
+checkout=sbcm VERSION-CHECK-OUT %f - - CO-LOCK
+checkin=sbcm VERSION-CHECK-IN %f
+checkout_read_only=sbcm VERSION-CHECK-OUT %f - - CO
+checkin_discard=sbcm VERSION-CHECK-IN %f - - CANCEL
+archive_filespec=*.*
+styles=always_edits,internal_cmd_lookup,always_prompts
+
+[ClearCase]
+checkin_new=cleartool mkelem -cfile %c %f
+checkout=cleartool co -unreserved -c "%c" %f
+checkin=cleartool ci %f
+checkout_read_only=
+;checkin_discard=cleartool unco -keep %f
+checkin_discard=cleartool unco -rm %f
+archive_filespec=*.*
+styles=comment_file,error_redir
+
+
+[CMVC]
+vcsproject=
+styles=error_redir
+manager=
+properties=
+difference=
+history=Report  -raw  -view ChangeView -family #f -where "pathName in ('%f') and releaseName in ('#r') order by levelName ,versionSID "
+remove=File -delete %f -release #r -defect #d -common #r -force  -family #f -verbose 
+lock=File -lock %f -release #r -family #f -verbose
+checkin_new=File -create %f -release #r -family #f -component #c -defect #d -relative %p -verbose 
+checkin_discard=File -unlock %f -release #r -family #f -relative %p -verbose 
+checkin=File -checkin %f -release #r -relative %p -defect #d -family #f -verbose 
+checkout=File -checkout %f -release #r -relative %p -family #f -verbose 
+checkout_read_only=File  -extract %f -release #r -family #f -relative c:\temp -verbose 
+
+[OS/390 CA-LIBRARIAN]
+checkin_new=calib_add [/HFS/ADD_JCL_TEMPLATE]
+checkout=calib_checkout [/HFS/CHECKOUT_JCL_TEMPLATE]
+checkin=calib_checkin [/HFS/CHECKIN_JCL_TEMPLATE]
+checkin_discard=calib_noop
+checkout_read_only=calib_noop
+archive_filespec=*.??v
+styles=comment_file,dosrc,internal_cmd_lookup
+lock=
+remove=
+history=
+difference=
+properties=
+manager=
+vcsproject=
+
+[CVS]
+checkin_new=cvs add %f
+checkout=cvs checkout %rn
+checkin=cvs commit -m "%c" %f
+checkin_discard=cvs release %rn
+checkout_read_only=
+archive_filespec=*.??v
+styles=error_redir,dosrc,always_show_output,cdtofile
+commit=cvs commit
+lock=
+remove=cvs remove %f
+history=cvs history
+difference=cvs diff %f
+properties=
+manager=
+vcsproject=
+
+[Perforce]
+checkin_new=p4 add %f
+checkout=p4 edit %f
+checkin=p4 submit %f
+checkin_discard=[UNLOCK COMMAND HERE]
+checkout_read_only=[GET COMMAND HERE]
+archive_filespec=*.??v
+styles=error_redir,comment_file,dosrc
+lock=
+remove=
+history=p4 filelog %f
+difference=
+properties=
+manager=
+vcsproject=
+
+[Subversion]
+checkin_new=cvs add %n%e
+checkout=cvs checkout %rn
+checkin=cvs commit -m "%c" %n%e
+checkin_discard=cvs release %rn
+checkout_read_only=
+archive_filespec=*.??v
+styles=error_redir,dosrc,always_show_output,cdtofile
+commit=cvs commit
+lock=
+remove=cvs remove %n%e
+history=cvs log %n%e
+difference=cvs diff %n%e
+properties=
+manager=
+vcsproject=
+
+[Git]
+checkin_new=cvs add %n%e
+checkout=cvs checkout %rn
+checkin=cvs commit -m "%c" %n%e
+checkin_discard=cvs release %rn
+checkout_read_only=
+archive_filespec=*.??v
+styles=error_redir,dosrc,always_show_output,cdtofile
+commit=cvs commit
+lock=
+remove=cvs remove %n%e
+history=cvs log %n%e
+difference=cvs diff %n%e
+properties=
+manager=
+vcsproject=
+[Mercurial]
+checkin_new=hg add %n%e
+checkout=hg checkout %rn
+checkin=hg commit -m "%c" %n%e
+checkin_discard=hg release %rn
+checkout_read_only=
+archive_filespec=*.??v
+styles=error_redir,dosrc,always_show_output,cdtofile
+commit=hg commit
+lock=
+remove=hg remove %n%e
+history=hg log %n%e
+difference=hg diff %n%e
+properties=
+manager=
+vcsproject=

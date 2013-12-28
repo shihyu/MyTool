@@ -1,0 +1,22 @@
+<profile name="/language/c/aliases">
+	<p n="=surround_with_if_condition">
+		<text>
+			if (%\m sur_text -stripend ;%) {
+			%\i%\c
+			}
+		</text>
+	</p>
+	<p n="=surround_with_new_cpp_file">
+		<text>
+			#include &lt;iostream&gt;
+			%\l
+			using namespace std;
+			%\l
+			int main (int argc, char *argv[])
+			{
+			%\m sur_text -indent%
+			%\ireturn(0);
+			}
+		</text>
+	</p>
+</profile>

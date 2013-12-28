@@ -1,0 +1,46 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsCallbackAdd</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsCallbackAdd(int id, VSCALLBACK_AR vscallback, void *pfn, int reserved1=a, int reserved2=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Adds a callback function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="id">id</A></code> - Buffer id for VSCALLBACK_BUF_???
+callbacks.
+ Window id for VSCALLBACK_WIN_???
+callbacks.
+ Ignored for all other callbacks.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="vscallback">vscallback</A></code> - One of the following constants which
+* correspond to a callback function:
+
+<ul>
+<li><B>VSCALLBACK_AR_BUF_LINES_INSERTED</B></li>
+<li><B>VSCALLBACK_AR_BUF_LINES_DELETED</B></li>
+<li><B>VSCALLBACK_AR_BUF_DELETE_TEXT</B></li>
+<li><B>VSCALLBACK_AR_BUF_INSERT_TEXT</B></li>
+<li><B>VSCALLBACK_AR_BUF_REPLACE_TEXT</B></li>
+<li><B>VSCALLBACK_AR_BUF_LINES_INSERTED2</B></li>
+<li><B>VSCALLBACK_AR_BUF_LINES_DELETED2</B></li>
+<li><B>VSCALLBACK_AR_BUF_TEXT_CHANGE</B></li>
+<li><B>VSCALLBACK_AR_BUF_DRAW_LINE</B></li>
+<li><B>VSCALLBACK_AR_APP_DELETE_BUFFER</B></li>
+<li><B>VSCALLBACK_AR_APP_SELECT_MODE</B></li>
+<li><B>VSCALLBACK_AR_APP_ADD_BUFFER</B></li>
+<li><B>VSCALLBACK_AR_APP_RENAME_BUFFER</B></li>
+<li><B>VSCALLBACK_AR_APP_RENAME_DOCUMENT</B></li>
+</ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pfn">pfn</A></code> - Pointer to callback function.  Make sure you
+remove your callback function with
+<b>vsCallbackRemove</b> if you unload a
+DLL which contains your callback function.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Otherwise NOT_ENOUGH_MEMORY_RC
+is returned.  The break point manager defines
+VSCALLBACK_AR_BUF_LINES_INSERTED,
+VSCALLBACK_AR_BUF_LINES_DELETED, and
+VSCALLBACK_AR_APP_DELETE_BUFFER.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsCallbackSet.html">vsCallbackSet</a>, <a href="vsCallbackRemove.html">vsCallbackRemove</a></blockquote>
+</body>
+</html>

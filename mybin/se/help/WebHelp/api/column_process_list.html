@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>column_process_list</title>
+</head>
+<body>
+
+<h3><b>_str column_process_list(int first_col, int col_width, _str search_string, _str action_fun, _str search_opts='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Generic column list processing function.
+For each line in the current buffer containing an occurrence of string
+<i>search_string</i> within the columns specified by <i>first_col</i> and
+<i>col_width</i>, <i>action_fun</i> is executed with that line as the current
+line.  The cursor is placed on the last line with a match.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="first_col">first_col</A></code> - Start column of area to be searched within.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="col_width">col_width</A></code> - Width of area to be searched.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="search_string">search_string</A></code> - String to search for in area specified.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="action_fun">action_fun</A></code> - Name of procedure which operates on lines found by search.
+Use a pre-existing action function such as zap_line or _fselect_line if possible.
+The zap_line procedure deletes the current line.  The _fselect_line procedure
+replaces the first character of the current line with '>'.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="search_options">search_options</A></code> - Optionally specifies that search_string is a regular
+expression.  Specify 'r' for regular expression.  See <b>Regular Expressions</b>
+for more information.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Otherwise TOO_MANY_SELECTIONS_RC is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Search_Functions.html">Search Functions</a></blockquote>
+</body>
+</html>

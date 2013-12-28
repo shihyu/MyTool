@@ -1,0 +1,26 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_kbd_add_callback</title>
+</head>
+<body>
+
+<h3><b>void _kbd_add_callback(int callback_index, _str(&keyList)[], _str options=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Add an extensions specific keyboard
+callback
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="callback_index">callback_index</A></code> - Index into names table of command or function to call.  Signature
+                       is boolean mycallback(). Return true if no further processing of
+                       this key is necessary.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="keyList">keyList</A></code> - Array of keys that may be handled by this callback.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - options may contain one or more of the following option letters:
+   'K' - All keys
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><pre>
+boolean _on_key_my_callback() {
+    say('key='last_event());
+    return(false);
+}
+// Note that these callbacks typically use the naming convention _on_key_&lt;p_LangId&gt;
+_str keyList[];
+keyList[0]='(';keyList[1]=')';
+_kbd_add_callback(find_index("_on_key_my_callback",PROC_TYPE),keyList);
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_kbd_remove_callback.html">_kbd_remove_callback</a>, <a href="_kbd_try_callbacks.html">_kbd_try_callbacks</a></blockquote>
+</body>
+</html>

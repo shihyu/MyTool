@@ -1,0 +1,74 @@
+<profile>
+	<p n="vs">
+		<text>
+			"%VSROOT%
+		</text>
+	</p>
+	<p n="bin">
+		<text>
+			"%VSLICKBIN1%
+		</text>
+	</p>
+	<p n="ma">
+		<text>
+			"%VSROOT%macros%\g
+		</text>
+	</p>
+	<p n="config">
+		<text>
+			"%\M_config_path%
+		</text>
+	</p>
+	<p n="functioncomment">
+		<params>
+			<param n="fname" default="" prompt="Function Name:"/>
+		</params>
+		<text>
+			/*
+			 *Function Name:%(fname)
+			 *
+			 *Parameters:%\c
+			 *
+			 *Description:
+			 *
+			 *Returns:
+			 *
+			 */
+		</text>
+	</p>
+	<p n="filecomment">
+		<text>
+			/*******************************************************************
+			 *
+			 *    DESCRIPTION:%\c
+			 *
+			 *    AUTHOR:
+			 *
+			 *    HISTORY:
+			 *
+			 *    DATE:%\d
+			 *
+			 *******************************************************************/
+
+			/** include files **/
+
+			/** local definitions **/
+
+			/* default settings */
+
+			/** external functions **/
+
+			/** external data **/
+
+			/** internal functions **/
+
+			/** public data **/
+
+			/** private data **/
+
+			/** public functions **/
+
+			/** private functions **/
+		</text>
+	</p>
+</profile>

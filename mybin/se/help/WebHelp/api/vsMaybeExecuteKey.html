@@ -1,0 +1,15 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMaybeExecuteKey</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsMaybeExecuteKey(int wid, int event, int checkCtrlAlt)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Execute the command bound to the specified event (key) if one exists.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of window that should perform the command for the specified key</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="event">event</A></code> - Key or key combination to use to find the command bound to that key.  The values
+              come from vsevents.h</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="checkCtrlAlt">checkCtrlAlt</A></code> - Flag: 1 to also check for CONTROL and/or ALT modifier keys being pressed before the key is executed, 0 to ignore the modifier keys
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 if no command for the specified key or key sequence.  -1 if command found
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsPosSetPointer</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsPosSetPointer(unsigned char *p)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>You must call <b>vsPosInit</b> before calling this function.  Once
+you use a non vsPosXXX function which accesses buffer data you
+MUST call <b>vsPosInit</b> again to avoid crashing the editor.  Only
+use this function if you want your searching to be as fast as possible.</p><p>
+<p>Sets the Pos cursor to a position inside the contiguous buffer segment
+returned by <b>vsPosGetPointers</b> or
+<b>vsPosGetLinePointers</b>.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="p">p</A></code> - New position for Pos cursor.  Where
+<i>pBeginBuf</i>>=<i>p</i><<i>pEndBuf
+</i>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+vsPosInit(0);
+unsigned char *p,*pEndLine,*pEndBuf);
+vsPosGetPointers(&p,&pEndLine,&pEndBuf);
+if (p+1<pEndBuf) {
+    vsPosSetPointer(p+1);
+    if (vsPosIsEOL(0)) {
+        ...
+    }
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsPosInit.html">vsPosInit</a>, <a href="vsPosGetLinePointers.html">vsPosGetLinePointers</a>, <a href="vsPosIsEOL.html">vsPosIsEOL</a>, <a href="vsPosRelPGoTo.html">vsPosRelPGoTo</a>, <a href="vsPosNextBOL.html">vsPosNextBOL</a>, <a href="vsPosSave.html">vsPosSave</a>, <a href="vsPosRestore.html">vsPosRestore</a>, <a href="vsPosIsEOR.html">vsPosIsEOR</a>, <a href="vsPosGetPointers.html">vsPosGetPointers</a>, <a href="vsPosSetCurLine.html">vsPosSetCurLine</a>, <a href="vsPosQCol.html">vsPosQCol</a></blockquote>
+</body>
+</html>

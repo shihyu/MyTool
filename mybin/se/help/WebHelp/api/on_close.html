@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>on_close</title>
+</head>
+<body>
+
+<h3><b>event on_close()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Occurs when dialog box is closed via the system menu of the form or when
+the user cancels the dialog box (ESC or Alt+F4).  When this event falls
+through to the dialog manager, the dialog manager looks to see if the form
+has this event.  If the form has a handler for this event, the form
+<b>on_close</b> is called.  If the form does not have an <b>on_close</b>
+event, the dialog manager executes the <b>lbutton_up</b> event handler for
+the command button with the <b>p_cancel</b> property set to <b>true</b>.  If
+no such button exists, the dialog managers closes the dialog box.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Form
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Form_Events.html">Form Events</a></blockquote>
+</body>
+</html>

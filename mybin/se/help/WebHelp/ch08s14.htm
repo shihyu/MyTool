@@ -1,0 +1,121 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Surrounding and Unsurrounding</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch08.htm" title="Chapter 8.  Editing Features"><link rel="prev" href="ch08s13.htm" title="Quick Brace/Unbrace"><link rel="next" href="ch08s15.htm" title="Bookmarks"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_surroundwith_13231_83092"></a>
+    <a name="sect_surroundwith_13231_1006222"></a>
+    <a class="indexterm" name="sect_surroundwith_86A99A90_B914"></a>
+    <a class="indexterm" name="sect_surroundwith_42176_17486"></a>
+    Surrounding and Unsurrounding</h2></div></div></div><p class="NormalText">
+    SlickEdit® provides two features that allow you to surround existing text with 
+    new text. <a href="ch08s14.htm#sect_surroundwith_13231_29648">Dynamic Surround</a> lets you selectively include more or 
+    fewer lines in a block structure, like an <span><strong class="command">if</strong></span> statement. <a href="ch08s14.htm#sect_surroundwith_13231_83116">Surround With</a> lets you surround any selected text with text predefined 
+    in one of the <a href="ch08s14.htm#sect_surroundwith_13231_1006298">Surround With Aliases</a>. In addition, <a href="ch08s14.htm#sect_surroundwith_13231_48650">Unsurround</a> can be used to remove code block structures.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_surroundwith_13231_29648"></a>
+      <a name="sect_surroundwith_13231_1006234"></a>
+      <a class="indexterm" name="sect_surroundwith_9A5810AD_A12C"></a>
+      <a class="indexterm" name="sect_surroundwith_36A9AC17_D3E6"></a>Dynamic Surround</h3></div></div></div><p class="NormalText">Dynamic Surround provides a convenient way to surround a group of statements 
+      with a block statement, indented to the correct levels according to your preferences. This feature 
+      works in conjunction with the syntax expansion and alias expansion features (see <a href="ch08s11.htm">Syntax Expansion</a> and <a href="ch08s10.htm#sect_aliases_12052_80032">Language-Specific Aliases</a>). It 
+      is designed to help you keep your hands on the keyboard, thereby improving your speed and 
+      efficiency. 
+      </p><p class="NormalText">Dynamic Surround is supported for any language that uses block statements. 
+      By default, Dynamic Surround is turned on for all supported langauges. To turn it off, select 
+      <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages</strong></span>, expand your language category and language, then click 
+      <span><strong class="guilabel">Indent</strong></span> and uncheck <span><strong class="guilabel">Use Dynamic Surround</strong></span>.</p><p class="NormalText">
+      SlickEdit® enters Dynamic Surround mode automatically immediately after you 
+      expand a block statement (for instance, by typing <span><strong class="command">if</strong></span> then pressing 
+      <span><strong class="keycap">Space</strong></span>). After expanding the statement, a box is drawn around it as a visual guide, 
+      and you can pull the subsequent lines of code or whole statements into the block by using the 
+      <span><strong class="keycap">Up</strong></span>, <span><strong class="keycap">Down</strong></span>, <span><strong class="keycap">PgUp</strong></span>, or <span><strong class="keycap">PgDn</strong></span> keys. 
+      </p><p class="NormalText">Dynamic Surround stays active until you press <span><strong class="keycap">ESC</strong></span>. 
+      During that time auto-completions and symbol preview are unavailable. </p><p class="NormalText">You can also invoke Dynamic Surround on an existing block structure 
+      using the <span><strong class="command">dynamic-surround</strong></span> command. Put the cursor on the line containing the 
+      block structure keyword, like an "if" or a "for", press <span><strong class="keycap">ESC 
+      </strong></span> to open the SlickEdit command line, then type <span><strong class="command">dynamic-surround</strong></span>. If 
+      SlickEdit recognizes the block structure, the box will be drawn and you will be able to expand or 
+      contract the structure using the <span><strong class="keycap">Up</strong></span>, <span><strong class="keycap">Down</strong></span>, <span><strong class="keycap">PgUp</strong></span>, 
+      or <span><strong class="keycap">PgDn</strong></span> keys. By default, this command is not associated with a key binding. See 
+      <a href="ch04s03.htm#sect_keymousebindings_13007_84952">Creating Bindings</a> for information on creating your own.</p><p class="NormalText">The following screen shot shows the Syntax Expansion menu that appears after typing "if" in a C++ file:</p><div class="mediaobject"><img src="Resources/dynamicsurround_example1.png"></div><p class="NormalText">After pressing <span><strong class="keycap">Space</strong></span> to expand the statement, Dynamic 
+      Surround is activated, with a blue rectangle drawn around the expanded statement, as shown 
+      below:</p><div class="mediaobject"><img src="Resources/dynamicsurround_example2.png"></div><p class="NormalText">Pressing the <span><strong class="keycap">Down</strong></span> arrow key pulls the code block into the statement, indented to the correct levels, as shown below:</p><div class="mediaobject"><img src="Resources/dynamicsurround_example3.png"></div><p class="NormalText">The finished code is shown below:</p><div class="mediaobject"><img src="Resources/dynamicsurround_example4.png"></div><p class="NormalText">Statements that are pulled into the block are indented according to your indent settings (see <a href="ch08s07.htm#sect_syntaxindentsmartpaste_14409_73638">Syntax Indent</a>). The color of the rectangle box guide is controlled by the <span><strong class="guilabel">Block Matching</strong></span> screen element (see <a href="ch04s06.htm#sect_colors_66606_03601">Colors</a>).</p><p class="NormalText">Syntax Expansion must be on for Dynamic Surround to work. Both options are on 
+      by default. To turn off either of these options, from the main menu, select 
+      <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages</strong></span>, expand your language category and language, then select 
+      <span><strong class="guimenu">Indent</strong></span>. Clear the option(s) <span><strong class="guilabel">Use Dynamic 
+      Surround</strong></span> and/or <span><strong class="guilabel">Syntax expansion</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_surroundwith_13231_83116"></a>
+      <a name="sect_surroundwith_13231_1006284"></a>
+      <a class="indexterm" name="sect_surroundwith_5294F4D5_559C"></a>
+      <a class="indexterm" name="sect_surroundwith_BB56E3C2_8E6E"></a>Surround With</h3></div></div></div><p class="NormalText">Surround With makes it fast and easy to wrap existing lines of code in a new block structure. Surround With is supported for the languages C, C++, C#, HTML, Java, JavaScript, and XML. Highlight the lines to surround, right-click, and select <span><strong class="guimenu">Surround Selection With</strong></span>, or use the <span><strong class="command">surround_with</strong></span> command. The Surround With dialog appears, with a pre-defined list of structures based on the current file extension.</p><div class="mediaobject"><img src="Resources/surroundwith_dialog.png"></div><p class="NormalText">Select the structure you wish to surround with, then click <span><strong class="guibutton">OK</strong></span>.</p><p class="NormalText">
+      <a class="indexterm" name="sect_surroundwith_DDC3290E_C6E2"></a>If there is no selection and you activate Surround With, the current line or code block will be automatically highlighted for surrounding (the same function performed by the <span><strong class="command">select_code_block</strong></span> command).</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"> The <span><strong class="command">surround_with</strong></span> command has a button available for toolbar customization. See <a href="ch03s02.htm#sect_toolwindowstoolbars_13309_48378">Customizing Toolbars</a> for more information about creating your own custom toolbars.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_surroundwith_13231_1006298"></a>
+        <a class="indexterm" name="sect_surroundwith_5D918D1E_AA86"></a>
+        <a class="indexterm" name="sect_surroundwith_34462_36798"></a>
+        Surround With Aliases
+      </h4></div></div></div><p class="NormalText">Surround With aliases are created and modified the same way as other 
+        aliases, with the addition of the <span><strong class="command">%\m sur_text%</strong></span> escape sequence. This sequence 
+        indicates where the selected text should be placed, and can be used multiple times within a 
+        single Surround With alias. See <a href="ch08s14.htm#sect_surroundwith_13231_20799">Surround With Commands</a> for more 
+        information on <span><strong class="command">sur_text</strong></span>.</p><p class="NormalText">To view or modify the Surround With aliases, use the 
+        <span><strong class="command">surround_with</strong></span> command to display the Surround With dialog, then click the 
+        <span><strong class="guibutton">Customize</strong></span> button. This will display the language-specific Alias options 
+        page. As an example, the C/C++ Alias options page is shown below.
+      </p><div class="mediaobject"><img src="Resources/options_languages_c_aliases.png"></div><p class="NormalText">The list of Surround With structures for the chosen language is shown in the list box on the left. To modify one of the Surround With structures, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Select the structure that you wish to modify. Notice the alias for the 
+            structure appears in the text box on the right.</p></li><li><p class="NormalText">Modify the alias to suit your needs. For a list of escape sequences and 
+            examples, see <a href="ch08s10.htm#sect_aliases_12052_14617">Alias Escape Sequences</a>. For more information about using 
+            the Alias options page, see <a href="ch08s10.htm#sect_aliases_12052_12687">Creating a Language-Specific Alias</a>.</p></li><li><p class="NormalText">When you are finished, click <span><strong class="guibutton">OK</strong></span> on the Alias options page.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span> on the Surround With dialog.</p></li></ol></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_surroundwith_13231_20799"></a>
+        <a name="sect_surroundwith_13231_1006320"></a>
+        <a class="indexterm" name="sect_surroundwith_C3EE8EB5_2A5C"></a>Surround With Commands</h4></div></div></div><p class="NormalText">There are three commands available for working with Surround With:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="command">surround_with</strong></span> - This command is used to display the Surround With dialog, 
+            allowing you to pick a structure to surround selected text with. This command can be bound to 
+            a key, see <a href="ch04s03.htm#sect_keymousebindings_13007_84952">Creating Bindings</a> for more information.</p></li><li><p class="NormalText">
+            <span><strong class="command">sur_text</strong></span> - This is a Slick-C® function that can only be used inside of a 
+            Surround With alias. It is used to indicate where the selected text should be placed and can 
+            be used multiple times within a single Surround With alias. <span><strong class="command">sur_text</strong></span> can 
+            take several parameters, which can appear in any order. The available parameters are:</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="command">-beautify</strong></span> - This is the default for C, Java, and others. It beautifies the 
+                  results of the alias expansion.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="command">-begin </strong></span>
+                  <span class="emphasis"><em>text</em></span> - Prefixes each line of the selection with <span class="emphasis"><em>text</em></span>.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="command">-deselect</strong></span> - This is the default parameter. It specifies to leave the text deselected.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="command">-end </strong></span>
+                  <span class="emphasis"><em>text</em></span> - Suffixes each line of the selection with <span class="emphasis"><em>text</em></span>.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="command">-ignore </strong></span>
+                  <span class="emphasis"><em>chars</em></span> - The <span><strong class="command">-begin</strong></span>, <span><strong class="command">-indent</strong></span>, and <span><strong class="command">-stripbegin</strong></span> options will ignore any <span class="emphasis"><em>chars</em></span> when finding the beginning of the selected line.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="command">-indent</strong></span> - Indents each line of the selection.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="command">-nobeautify</strong></span> - This is the default for HTML, XML, and others. It specifies 
+                  that the editor should not attempt to beautify the results of the alias expansion.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="command">-notext</strong></span> - Specifies that no text should be pasted.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="command">-select</strong></span> - Leaves the text selected.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="command">-stripbegin </strong></span>
+                  <span class="emphasis"><em>text</em></span>
+                  <span><strong class="command"></strong></span>- If any line begins with <span class="emphasis"><em>text</em></span>, <span class="emphasis"><em>text</em></span> is removed from the line. This option is applied before <span><strong class="command">-begin</strong></span>.</p></li><li><p class="NormalText">
+                  <span class="bold"><strong></strong></span>
+                  <span><strong class="command">-stripend </strong></span>
+                  <span class="emphasis"><em>text</em></span> - If any line ends with <span class="emphasis"><em>text</em></span>, <span class="emphasis"><em>text</em></span> is removed from the line. This option is applied before <span><strong class="command">-end</strong></span>.</p></li></ul></div></li><li><p class="NormalText">
+            <span><strong class="command">surround_with_if</strong></span> - This is a wrapper command that expands the 
+            <span><strong class="command">if</strong></span> alias for the selected text. This command can be bound to a key, see 
+            <a href="ch04s03.htm#sect_keymousebindings_13007_84952">Creating Bindings</a> for more information.</p></li></ul></div><p class="NormalText">The use of Surround With can be streamlined by using wrapper commands and key bindings. You can create your own wrapper commands. The following example is the definition of <span><strong class="command">surround_with_if _command void surround_with_if() name_info(','</strong></span>:</p><pre class="programlisting">VSARG2_REQUIRES_EDITORCTL | VSARG2_MARK | VSARG2_REQUIRES_AB_SELECTION)
+{
+   surround_with('if');
+}</pre><p class="NormalText">You must change the name of the command and the argument passed to 
+        <span><strong class="command">surround_with</strong></span>. The argument does not have to be an exact match with the alias 
+        name. For instance, calling <span><strong class="command">surround_with('i')</strong></span> will prompt you to select the 
+        <span><strong class="command">if</strong></span>, <span><strong class="command">if...else</strong></span>, or <span><strong class="command">include once</strong></span> alias. If 
+        there is an exact match, that alias will be used. In the case of
+        <span><strong class="command">surround_with_if</strong></span>, "if" matches the beginning of both the <span><strong class="command">if</strong></span> 
+        and <span><strong class="command">if...else</strong></span> aliases, but the <span><strong class="command">if</strong></span> alias is used because it 
+        is an exact match.</p><p class="NormalText">After you create your wrapper command, you can bind it a key or invoke it from the command line.</p><p class="NormalText">For more information on working with commands, see the <span class="emphasis"><em>Slick-C® Macro Programming Guide</em></span><span><strong class="command">.</strong></span></p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_surroundwith_13231_48650"></a>
+      <a name="sect_surroundwith_13231_1006354"></a>
+      <a class="indexterm" name="sect_surroundwith_3BDBEF34_A120"></a>
+      <a class="indexterm" name="sect_surroundwith_48162_41674"></a>
+      Unsurround</h3></div></div></div><p class="NormalText">Unsurround is a feature that lets you remove the surrounding text from a code block. This is particularly effective when used with Dynamic Surround. Unsurround is supported for the following languages: ActionScript, AWK, C#, C++, CFML, HTML, Java, JavaScript, Perl, PHP, Slick-C®, Tcl, and XML.</p><p class="NormalText">To use Unsurround, right-click on a selected code block and select 
+      <span><strong class="guimenu">Unsurround</strong></span>, or use the <span><strong class="command">unsurround</strong></span> 
+      command. By default, the unsurround command is bound to <span><strong class="keycap">Ctrl 
+      </strong></span>+<span><strong class="keycap">Shift </strong></span>+<span><strong class="keycap">Del</strong></span>.</p><p class="NormalText">For example, to remove the <span><strong class="command">if</strong></span> statement structure from a code block, select the code block or part of the code block, then right-click and select <span><strong class="guimenu">Unsurround</strong></span> (or use the <span><strong class="command">unsurround</strong></span> command). The entire code block under the cursor is automatically highlighted and a dialog prompt appears to confirm the unsurround operation. Click <span><strong class="guibutton">OK</strong></span>, and the <span><strong class="command">if</strong></span> line of the code block as well as the line containing the closing brace are removed. The remaining code is unindented to the correct level.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"> The <span><strong class="command">unsurround</strong></span> command has a button available for toolbar customization. See <a href="ch03s02.htm#sect_toolwindowstoolbars_13309_48378">Customizing Toolbars</a> for more information about creating your own custom toolbars.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_surroundwith_13231_58347"></a>
+        <a name="sect_surroundwith_13231_1006365"></a>
+        <a class="indexterm" name="sect_surroundwith_F9132035_70F0"></a>
+        <a class="indexterm" name="sect_surroundwith_53031786_8EF7"></a>Deleting Code Blocks</h4></div></div></div><p class="NormalText">Unsurround is also associated with the <span><strong class="command">cut_line</strong></span> (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Backspace</strong></span>) and <span><strong class="command">delete_line</strong></span> (<span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Del</strong></span>) commands. When one of these commands is invoked while the cursor is on the first line of a block statement, the Delete Code Block dialog appears, from which you can choose to delete the line, delete the entire block, or unsurround the block.</p><div class="mediaobject"><img src="Resources/deletecodeblock_dialog.png"></div><p class="NormalText">Each of these operations copies the removed text to the clipboard. This is useful if you want to paste the structure into a different location, because as soon as the text is pasted, SlickEdit® enters Dynamic Surround mode, allowing you to pull statements into the pasted block.</p><p class="NormalText">The Delete Code Block dialog also contains an option to <span><strong class="guilabel">Always just delete line</strong></span> when <span><strong class="command">cut_line</strong></span> or <span><strong class="command">delete_line</strong></span> operations are invoked. Selecting this option will prevent the dialog from appearing when these operations are used. To see the dialog again, use the <span><strong class="command">cut_code_block</strong></span> command.</p><p class="NormalText"></p></div></div></div></body></html>

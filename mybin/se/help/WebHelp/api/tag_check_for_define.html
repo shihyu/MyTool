@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_check_for_define</title>
+</head>
+<body>
+
+<h3><b>int tag_check_for_define(_str tag_name, int line_no, _str(&tag_files)[], _str &id_defined_to, ...)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Look up <i>tag_name</i> and see if it is a macro preprocessing symbol (#define).
+If so, return the value of symbol in <i>alt_tag_name</i>.  Note that this function
+does not normally support complex macros, that is, macros having arguments or
+defined to something more complicated than a simple identifier or empty string.
+However, if the 'arglist' variable is passed in, then it will return more complex
+macro definitions if one is found.
+<p>
+For synchronization, threads should perform a tag_lock_context(false)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - Tag name to check if it is a macro define.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="line_no">line_no</A></code> - If found in current context, define must be before 'line'</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_files">tag_files</A></code> - (onput) Tag files to search</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="id_defined_to">id_defined_to</A></code> - (output) Returns value of #define macro.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="arglist">arglist</A></code> - (output) Returns the argument list of the #define macro
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the number of matches was found, 0 of none found.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_check_for_package.html">tag_check_for_package</a>, <a href="tag_check_for_template.html">tag_check_for_template</a>, <a href="tag_check_for_enum.html">tag_check_for_enum</a>, <a href="tag_check_for_typedef.html">tag_check_for_typedef</a></blockquote>
+</body>
+</html>

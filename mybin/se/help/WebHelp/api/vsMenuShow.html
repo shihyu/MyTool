@@ -1,0 +1,60 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMenuShow</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsMenuShow(int wid, int menu_handle, int vpm_flags, int x, int y)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Displays/runs menu as pop-up.  All menu items should be
+grayed/checked before calling this function.  This function does not
+return until the menu is closed.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="menu_handle">menu_handle</A></code> - Handle of loaded menu returned by
+<b>vsMenuLoad</b>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="vpm_flags">vpm_flags</A></code> - Defaults to
+VPM_LEFTBUTTON|VPM_LEFTALIGN.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="vpm_flags">vpm_flags</A></code> - may be zero or more of
+the following flags defined in "slick.sh":
+
+<dl>
+<dt>VSVPM_LEFTBUTTON</dt><dd>
+ Track menu items with left mouse button.</dd>
+<dt>VSVPM_RIGHTBUTTON</dt><dd>
+ Track menu items with right mouse button.</dd>
+<dt>VSVPM_LEFTALIGN</dt><dd>
+ <i>x</i> coordinate represents left most
+corner of menu.</dd>
+<dt>VSVPM_CENTERALIGN</dt><dd>
+ <i>x</i> coordinate represents horizontal
+center of menu</dd>
+<dt>VSVPM_RIGHTALIGN</dt><dd>
+ <i>x</i> coordinate represents right side of
+menu.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="x">x</A></code> - x coordinate of left side of menu.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="y">y</A></code> - y coordinate of top of menu.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include "slick.sh"
+defmain()
+{
+   // Low-level code to display SlickEdit menu bar as pop-
+up.
+   // Could just use show or mou_show_menu function.
+   index=vsFindIndex("_mdi_menu",vsoi2type(OI_MENU))
+   if (!index) {
+       vsMessage("Can't find _mdi_menu");
+   }
+   int menu_handle;
+   menu_handle=vsMenuLoad(VSWID_MDI,index,'P');
+   // Display this menu at top left of screen.
+   int flags;
+   flags=VSVPM_CENTERALIGN|VSVPM_LEFTBUTTON;
+   vsMenuShow(menu_handle,flags,0,0)
+   vsMenuDestroy(menu_handle);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Menu_Functions.html">Menu Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsMenuDelete.html">vsMenuDelete</a>, <a href="vsMenuDestroy.html">vsMenuDestroy</a>, <a href="vsMenuFind.html">vsMenuFind</a>, <a href="vsMenuGetState.html">vsMenuGetState</a>, <a href="vsMenuInsert.html">vsMenuInsert</a>, <a href="vsMenuLoad.html">vsMenuLoad</a>, <a href="vsMenuQInfo.html">vsMenuQInfo</a>, <a href="vsMenuSet.html">vsMenuSet</a>, <a href="vsMenuSetState.html">vsMenuSetState</a>, <a href="vsMenuShow.html">vsMenuShow</a></blockquote>
+</body>
+</html>

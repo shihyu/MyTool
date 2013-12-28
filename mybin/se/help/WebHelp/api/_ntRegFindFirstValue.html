@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_ntRegFindFirstValue</title>
+</head>
+<body>
+
+<h3><b>int _ntRegFindFirstValue(int root, _str _strSubKeyName, _str &hvarValName, _str &hvarValVal, int findFirst)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieves a name/value pair from a subkey.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="root">root</A></code> - one of the HKEY_* constants</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="_strSubKeyName">_strSubKeyName</A></code> - name of subkey</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="hvarValName">hvarValName</A></code> - (by-ref) name</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="hvarValVal">hvarValVal</A></code> - (by-ref) value</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="FindFirst">FindFirst</A></code> - 1 to find the first pair, 0 to find the next
+                                 pair, -1 to close the key
+
+Note that after opening a subkey to look at its data, you must call this
+function with FindFirst set to -1 to close the key and clean up after
+yourself.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">int                      0 on success, 1 on error, 2 if no more keys
+                                 can be found
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

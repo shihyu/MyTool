@@ -1,0 +1,16 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_tree_decompose_tag</title>
+</head>
+<body>
+
+<h3><b>void tag_tree_decompose_tag(_str proc_name, _str &tag_name, _str &class_name, _str &type_name, int &tag_flags, _str &arguments=null, _str &return_type=null, _str &template_args=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Decode the given proc_name into the components of the tag.  See
+<a href="tag_tree_compose_tag.html">tag_tree_compose_tag</a> for details about how tags are encoded as strings.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="proc_name">proc_name</A></code> - Encoded tag from <a href="tag_tree_compose_tag.html">tag_tree_compose_tag</a> on an extension specific tag search function.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - (Output) the name of the tag</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - (Output) class/container the tag belongs to</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_name">type_name</A></code> - (Output) Tag type name.  See <a href="tag_get_type.html">tag_get_type</a> for a list of all standard tag types.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - (Output) Tag flags indicating symbol attributes, see
+                  (Output) <a href="tag_insert_simple.html">tag_insert_simple</a> for details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="arguments">arguments</A></code> - Arguments, such as function or template class parameters.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="return_type">return_type</A></code> - (Output) Return type of symbol or value of constant or both,
+                  separated by <a href="VS_TAGSEPARATOR_equals.html">VS_TAGSEPARATOR_equals</a>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_tree_compose_tag.html">tag_tree_compose_tag</a></blockquote>
+</body>
+</html>

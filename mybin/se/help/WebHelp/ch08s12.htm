@@ -1,0 +1,714 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Code Templates</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch08.htm" title="Chapter 8.  Editing Features"><link rel="prev" href="ch08s11.htm" title="Syntax Expansion"><link rel="next" href="ch08s13.htm" title="Quick Brace/Unbrace"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_usingcodetemplates_13591_76591"></a>
+    <a name="sect_usingcodetemplates_13591_998341"></a>
+    <a class="indexterm" name="sect_usingcodetemplates_B6E18E8F_FEA9"></a>Code Templates</h2></div></div></div><p class="NormalText">Code templates are pre-defined units of code that you can use to automate the 
+    creation of common code elements, like a standard class implementation or design patterns. You can 
+    create templates for a whole file or multiple files. Templates can contain substitution parameters 
+    that are replaced when the template is instantiated when a new element is created from that template. 
+    Some parameters are replaced with calculated or pre-defined values, like date or author. If a value 
+    is not known, you will be prompted for a value when the template is instantiated.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">Code Templates are for creating new files. To insert code into an 
+      existing file, use SlickEdit <a href="ch08s10.htm">Aliases</a>.</p></div><p class="NormalText">Code templates are composed of one or more template source files and a metadata file providing additional information, like the name of the template, a description of the template, prompts for substitution parameters, and default values for substitution parameters. The following is an example of a single file source template. The items surrounded by dollar signs, "$", are the substitution parameters.</p><pre class="programlisting">/*
+ * $copyright$
+ */</pre><pre class="programlisting">package $package$;</pre><pre class="programlisting">/**
+ * @author $author$
+ * @version $version$
+ */
+public class $safeitemname$ {
+     /**
+     * Default constructor.
+     */
+    public $safeitemname$(){
+    }
+}</pre><p class="NormalText">Templates can be organized into Categories to make them easier to manage. The 
+    templates shipped with SlickEdit® are listed under <span><strong class="guilabel">Installed 
+    Templates</strong></span> and are organized into categories by language and then by purpose. The 
+    <span><strong class="guilabel">Template Manager</strong></span> dialog will not allow you to add, edit, or delete Installed 
+    Templates. Use the Template Manager dialog to add, edit, and delete templates under <span><strong class="guilabel">User 
+    Templates</strong></span>. The Template Manager dialog is accessed by clicking
+    <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Template Manager</strong></span>.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcodetemplates_13591_1003503"></a>Instantiating a Template</h3></div></div></div><p class="NormalText">You can add an item to your current project by clicking <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">Add New Item from Template</strong></span>. If you want to create a new item from a template without adding it to your current project, then click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">New Item from Template</strong></span>. The Add New Item dialog box is shown below.</p><div class="mediaobject"><img src="Resources/codetemp_addnewitem_dialog.png"></div><p class="NormalText">We call the process of creating new files from a template "instantiating a template". When a template is instantiated, you are prompted for the name of the new item. This name is often used heavily in the template. For a class template, the name will likely be the class name or a part of the class name. In the sample template, <span><strong class="command">$safeitemname$</strong></span> is a form of this name that strips out any spaces, making it safe to use as part of an identifier. This value can even be used as part of the file name when the template is instantiated.</p><p class="NormalText">If any of the values in the template are not known at instantiation time, the Parameter Entry dialog box, shown below, will prompt you for values.</p><div class="mediaobject"><img src="Resources/parameterentry11.jpg"></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcodetemplates_13591_1003518"></a>
+      <a class="indexterm" name="sect_usingcodetemplates_329792EE_278D"></a>Creating Templates</h3></div></div></div><p class="NormalText">Creating templates is very much like writing code. To create a new code template, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Create the template source files.</p></li><li><p class="NormalText">Insert substitution parameters into the template files.</p></li><li><p class="NormalText">Use the Template Manager to create a new template.</p></li><li><p class="NormalText">Add the template files to the newly-defined template.</p></li></ol></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003525"></a>Create the Template Source Files</h4></div></div></div><p class="NormalText">This is the same process as writing any source file. Use SlickEdit® to write a file from scratch or to modify an existing file. Make sure your file is syntactically correct to minimize compile errors after it is instantiated.</p><p class="NormalText">In many languages, the <span><strong class="command">$name$</strong></span> syntax used by SlickEdit Code Templates is legal for identifiers, so you will be able to compile and run your template source files prior to instantiating them. In other languages, you will have to use temporary identifier names while writing the templates, and then put in the substitution parameters once you are sure the source is correct.</p><p class="NormalText">You can store these source files in any directory and copy them to the templates directory during Step 4.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003531"></a>Insert Substitution Parameters into the Template Files</h4></div></div></div><p class="NormalText">Use substitution parameters for any part of the source code that can differ from instantiation to instantiation. This includes class names, author names (if several people are sharing the same template files), or creation dates.</p><p class="NormalText">In our sample, we put in a substitution for copyright statement. See <a href="ch08s12.htm#sect_usingcodetemplates_13591_68003">Substitution Parameters</a> for more details.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003538"></a>Use the Template Manager to Create a New Template</h4></div></div></div><p class="NormalText">Click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Template Manager</strong></span> to bring up the Template Manager. Select the <span class="bold"><strong>User Template</strong></span> folder in the tree, and right-click in either the <span><strong class="guilabel">Categories</strong></span> pane or the <span><strong class="guilabel">Templates</strong></span> pane to create a new template.</p><p class="NormalText">There are different operations based on whether you want to create a new category or not. You will be prompted for the name of the new template. Fill in a name and click <span><strong class="guibutton">OK</strong></span>. Now you can use the Template Manager to enter a description, add files, or set values for Custom Parameters.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003542"></a>Add the Template Files to the Newly-Defined Template</h4></div></div></div><p class="NormalText">Select the <span><strong class="guimenu">Files </strong></span>tab on the Code Template Manager dialog and click the <span><strong class="guibutton">Plus</strong></span> (+) button to add the files you created in Step 1 to this template. You will have the option to link to the source in its current location or copy it to the template directory. You will also be prompted for a target file name. If you want the name of the instantiated template to appear in the file name, you should use a substitution variable in the name, like "<span><strong class="command">My$safeitemname$Class.java</strong></span>".</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcodetemplates_13591_68003"></a>
+      <a name="sect_usingcodetemplates_13591_1003546"></a>
+      <a class="indexterm" name="sect_usingcodetemplates_F4E2C37B_E802"></a>Substitution Parameters</h3></div></div></div><p class="NormalText">Substitution parameters provide the real power in Code Templates. Without them, you would simply be making copies of static files. You can use substitution parameters to replace any text in the template's source code. You can also use substitution parameters in file names, which is useful in Java where a class must be defined in a file by the same name.</p><p class="NormalText">Substitution parameters are written as identifiers surrounded by a delimiter. The default delimiter is <span><strong class="command">$</strong></span>. Use a double delimiter to represent the delimiter character in a template source file, <span><strong class="command">$$</strong></span>. You can specify a different character to use as the delimiter. Click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Template Manager</strong></span> and click on the <span><strong class="guimenu">Custom Parameters </strong></span>tab to change the value for the <span><strong class="guilabel">Delimiter</strong></span> field.</p><p class="NormalText">We provide a set of predefined substitution parameters for items related to item name, project name, directories, date, and time. We can determine the value for these items rather than having to prompt for them. See the list at the end of this section for all the predefined substitution parameters.</p><p class="NormalText">You can define substitution parameters that are common to all templates. For example, you might want to define an "author" parameter where the parameter value is your name. You could then create code templates that fill in a header comment with the author's (your) name. You would only have to define the substitution parameter once. To define these parameters, open the Template Manager and select the <span><strong class="guimenu">Custom Parameters </strong></span>tab.</p><p class="NormalText">If no value is provided for a substitution parameter, you will be prompted for one when the template is instantiated. This is useful for things like class name or other values that are different each time the template is instantiated.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_77783"></a>
+        <a name="sect_usingcodetemplates_13591_1003558"></a>
+        <a class="indexterm" name="sect_usingcodetemplates_1666BBAB_7A7E"></a>Predefined Substitution Parameters</h4></div></div></div><p class="NormalText">The following substitution parameter names and values are pre-defined for use in an item template. The default delimiter "<span><strong class="command">$</strong></span>" is used:</p><div class="informaltable"><a name="table_149903db-3c75-4b86-87c1-12f84223e57d"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Parameter Name</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$itemname$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Name of item entered, as on the Add New Item dialog.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$fileinputname$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Name of item entered, as on the Add New Item dialog, without file extension.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$safeitemname$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Name of item entered, as on the Add New Item dialog, with all unsafe characters replaced with safe characters. For example, if the item name was <span><strong class="command">My Custom Class</strong></span>, then the <span><strong class="command">$safeitemname$</strong></span> would evaluate to <span><strong class="command">My_Custom_Class</strong></span> for a C++ source code file.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$upcasesafeitemname$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Same as <span><strong class="command">$safeitemname$</strong></span> with all characters uppercased.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$lowcasesafeitemname$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Same as <span><strong class="command">$safeitemname$</strong></span> with all characters lowercased.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$tempdir$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Location of operating system temp directory. No trailing file separator.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$rootnamespace$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Root namespace or package for the current project. This is typically used for C# and Java projects to find the namespace containing <span><strong class="command">Main()</strong></span> (or <span><strong class="command">main()</strong></span> in the case of Java).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$ampmtime$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Time of day in the form <span class="emphasis"><em>hh</em></span><span><strong class="command">:</strong></span><span class="emphasis"><em>mm</em></span><span><strong class="command">[am|pm]</strong></span>. Example: 11:34pm</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$localtime$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Time of day in locale-specific format.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$time$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Time of day in the form <span class="emphasis"><em>hh</em></span><span><strong class="command">:</strong></span><span class="emphasis"><em>mm</em></span><span><strong class="command">:</strong></span><span class="emphasis"><em>ss</em></span>.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$localdate$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Current date in locale-specific format.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$date$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Current date in the form <span class="emphasis"><em>mm</em></span><span><strong class="command">/</strong></span><span class="emphasis"><em>dd</em></span><span><strong class="command">/</strong></span><span class="emphasis"><em>yyyy</em></span>.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$projectname$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Current project name (no path, no extension).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$safeprojectname$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Current project name (no path, no extension), with all unsafe characters replaced with safe characters. For example, if the project name was: <code class="filename">My Project.vpj</code>, then <span><strong class="command">$safeprojectname$</strong></span> would evaluate to <span><strong class="command">My_Project</strong></span> for a C++ source code file.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$workspacename$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Current workspace name (no path, no extension).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$safeworkspacename$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Current workspace name (no path, no extension), with all unsafe characters replaced with safe characters. For example, if the workspace name was: <code class="filename">My Workspace.vpw</code>, then <span><strong class="command">$safeworkspacename$</strong></span> would evaluate to <span><strong class="command">My_Workspace</strong></span> for a C++ source code file.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$projectworkingdir$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Current project working directory. No trailing file separator.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$projectbuilddir$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Current project build (output) directory. No trailing file separator.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$projectconfigname$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Current project configuration name.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$workspaceconfigname$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Current workspace configuration name. This will be the same as <span><strong class="command">$projectconfigname$</strong></span> except for MS Visual Studio workspace which will have a separate workspace/solution configuration name.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$projectdir$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Location of current project file. No trailing file separator.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$workspacedir$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Location of current workspace file. No trailing file separator.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">$username$</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Operating system login name.</p>
+              </td></tr></tbody></table></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcodetemplates_13591_83486"></a>
+      <a name="sect_usingcodetemplates_13591_1003660"></a>
+      <a class="indexterm" name="sect_usingcodetemplates_5F0C99E5_DD73"></a>Organizing Templates</h3></div></div></div><p class="NormalText">Templates are organized into category hierarchies as shown on the Add New Item dialog. These category hierarchies map exactly to the directory structure under the locations for installed and user templates.</p><p class="NormalText">To create a new template item category:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Create a new folder under the user templates directory. For example, if 
+          you wanted to create a Dialogs category for Java project items, you would create the following 
+          directory:</p><pre class="programlisting">[ConfigDir]/templates/ItemTemplates/Java/Dialogs/</pre></li><li><p class="NormalText">Place all templates for the category under this directory.</p></li><li><p class="NormalText">Create a new project or open an existing one.</p></li><li><p class="NormalText">From the main menu click <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">Add New Item</strong></span>.</p></li><li><p class="NormalText">Verify that your new category appears in the <span><strong class="guilabel">Categories</strong></span> list on the Add New Item dialog box.</p></li></ol></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Caution</h3><p class="CellBody"> The <span><strong class="guilabel">Template Manager</strong></span> dialog will not allow you to 
+        create new categories or re-organize categories under <span><strong class="guilabel">Installed Templates</strong></span> 
+        since the next patch or upgrade would overwrite any customizations you have made. If you want to 
+        customize an installed template, then we suggest you copy it to the <span><strong class="guilabel">User 
+        Templates</strong></span> directory and perform your customization on the copy. For information about 
+        the location of shipped templates, see <a href="ch08s12.htm#sect_usingcodetemplates_13591_1003798">Locating Templates</a>.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcodetemplates_13591_1003675"></a>
+      <a class="indexterm" name="sect_usingcodetemplates_E6B01E9C_49FB"></a>
+      <a class="indexterm" name="sect_usingcodetemplates_565D618A_1DF8"></a>Template Manager Operations</h3></div></div></div><p class="NormalText">Use the Template Manager dialog to add, edit, and delete templates. You can show this dialog by clicking <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Template Manager</strong></span>. Use the <span><strong class="guilabel">Categories</strong></span> list to select a category. Selecting a category populates the <span><strong class="guilabel">Templates</strong></span> list with templates for that category. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">You can only add, edit, and delete templates under the 
+        <span><strong class="guilabel">User Templates</strong></span> node in the <span><strong class="guilabel">Template Manager</strong></span> dialog. If 
+        you want to modify a template shipped with SlickEdit, copy it to the 
+        <code class="filename">ItemTemplate</code> subdirectory in your config. See <a href="ch08s12.htm#sect_usingcodetemplates_13591_1003798">Locating Templates</a>.
+        </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003678"></a>
+        <a class="indexterm" name="sect_usingcodetemplates_6C7C7340_CB16"></a>Creating a New Category</h4></div></div></div><p class="NormalText">To create a new category under the selected category, right-click in the <span><strong class="guilabel">Categories</strong></span> tree and select <span><strong class="guimenu">New Category</strong></span>. You will be prompted for a category name. After clicking <span><strong class="guibutton">OK</strong></span>, you can add templates in the new category.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003681"></a>
+        <a class="indexterm" name="sect_usingcodetemplates_521F144D_3E72"></a>Creating a New Template</h4></div></div></div><p class="NormalText">To create a new template, select the category in which to create the template, then right-click in the <span><strong class="guilabel">Templates</strong></span> list and select <span><strong class="guimenu">New Template</strong></span>. You will be prompted for a template name which is used to create the new template file. After clicking <span><strong class="guibutton">OK</strong></span>, you can edit the new template the lower half of the dialog.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003684"></a>
+        <a class="indexterm" name="sect_usingcodetemplates_1DFE2043_A87D"></a>Editing an Existing Template</h4></div></div></div><p class="NormalText">To edit an existing template, select a template from the <span><strong class="guilabel">Templates</strong></span> list, and edit its properties in the lower half of the dialog.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003687"></a>
+        <a class="indexterm" name="sect_usingcodetemplates_FBF34710_3D43"></a>Deleting a Template</h4></div></div></div><p class="NormalText">To delete a template, select the template you want to delete from the <span><strong class="guilabel">Templates</strong></span> list, right-click and select <span><strong class="guimenu">Delete Template</strong></span> from the context menu.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcodetemplates_13591_44659"></a>
+      <a name="sect_usingcodetemplates_13591_1016631"></a>Template Manager Dialog</h3></div></div></div><p class="NormalText">The Template Manager dialog is made up of the following elements:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a class="indexterm" name="sect_usingcodetemplates_EFEDFEE8_AFE1"></a>
+          <span><strong class="guilabel">Categories</strong></span> - Lists a hierarchy of item categories
+           for installed and user template items.
+        </p></li></ul></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+        <span><strong class="command"></strong></span>Installed templates can be viewed but not modified.</p></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_726FD0A6_CB24"></a>Templates</strong></span> - Lists the templates for the currently selected category. When you select a template, you are able to edit its properties in the lower half of the dialog.</p></li><li><p class="NormalText">
+          <a class="indexterm" name="sect_usingcodetemplates_0D484AF4_7FEB"></a>
+          <span><strong class="guilabel">Template file</strong></span> - File name of the currently selected template.
+        </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003700"></a>
+        <a class="indexterm" name="sect_usingcodetemplates_C1E1415D_6D2A"></a>Details Tab</h4></div></div></div><p class="NormalText">The <span><strong class="guimenu">Details</strong></span> tab of the Template Manager dialog contains the following:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="guilabel">Name</strong></span> - Specifies the name for the template item. The name is used in the <span><strong class="guilabel">Templates</strong></span> list of the Add New Item dialog.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Description</strong></span> - Specifies the description for the template item. The description is displayed on the Add New Item dialog when the template is selected.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Default name</strong></span> - Specifies the default item name when using the Add New Item dialog box.</p></li><li><p class="NormalText">
+            <span><strong class="guilabel">Sort order</strong></span> - Specifies an order number that is used to sort the template item in relation to other template items in a list. Used to sort template items in a category on the Add New Item dialog box. Lower sort orders are placed ahead of higher sort order values in a sorted list.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003710"></a>
+        <a class="indexterm" name="sect_usingcodetemplates_55393B3F_5048"></a>Files Tab</h4></div></div></div><p class="NormalText">Use the <span><strong class="guimenu">Files</strong></span> tab of the Template Manager dialog to add, edit, order, and delete files in a template. Files are created from a template when using the Add New Item dialog, as when adding an item template to a project.</p><p class="NormalText">Add, Edit, Order, and Delete operations are accessible from the buttons on the right side or from the context menu inside the list of files.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003715"></a>
+        <a class="indexterm" name="sect_usingcodetemplates_3F7FBDC6_84F7"></a>Custom Parameters Tab</h4></div></div></div><p class="NormalText">Use the <span><strong class="guimenu">Custom Parameters</strong></span> tab of the Template Manager dialog to add, edit, and delete substitution parameters in a template. Substitution parameters are used to replace parameter names in the content of files created from a template with a pre-defined value. Substitution parameters can also be used to form target file names (<span><strong class="guimenu">Files</strong></span> tab).</p><p class="NormalText">Add, Edit, and Delete operations are accessible from the buttons on the right side or from the context menu inside the list of parameters.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcodetemplates_13591_1003720"></a>
+      <a class="indexterm" name="sect_usingcodetemplates_4E9140F9_5761"></a>Template Options Dialog </h3></div></div></div><p class="NormalText">Use this dialog to edit options that are common to all templates. You can launch this dialog from the Template Manager dialog by clicking the <span><strong class="guibutton">Options</strong></span> button.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003723"></a>
+        <a class="indexterm" name="sect_usingcodetemplates_97AEC1DA_C6C4"></a>Global Substitution Parameters</h4></div></div></div><p class="NormalText">The <span><strong class="guilabel">Global substitution parameters</strong></span> area on the Template Options dialog lists the substitution parameters that are common to all templates. A common substitution parameter, for example, could be "author" where the parameter value is your name. You could then create code templates that automatically fill in a header comment with the author's (your) name.</p><p class="NormalText">Add, Edit, and Delete operations are accessible from the buttons on the right side or from the context menu inside the list of parameters.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcodetemplates_13591_1003728"></a>
+      <a class="indexterm" name="sect_usingcodetemplates_8BF67455_A9CF"></a>Add File Dialog </h3></div></div></div><p class="NormalText">Used to add a file to a template. To launch this dialog, right-click on a file in the <span><strong class="guimenu">Files </strong></span>tab of the Template Manager dialog, and select <span><strong class="guimenu">Add File</strong></span>, or use the <span><strong class="guibutton">Add File</strong></span> button. The dialog contains the following:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_5B8FD482_F496"></a>Source file name</strong></span> - When a file is created from a template, as when adding an item template from the Add New Item dialog, it is created from the source file with this file name.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_8803EE34_9E4D"></a>Copy source file to template directory</strong></span> - Check this option to place a copy of the file in the current template's directory and change the source file name to point to the new file in the template. The file is not copied until you click <span><strong class="guibutton">OK</strong></span>.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_0790D08A_D0A5"></a>Target file name</strong></span> - When a file is created from a template, as when adding an item template from the Add New Item dialog, the file name of the file that is created on disk is formed from the target file name in the location you specify. Use the menu button to the right of this field to insert common pre-defined substitution parameters. For example, <span><strong class="command">$fileinputname$</strong></span> is the item name provided on the Add New Item dialog when adding an item template to your project.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_5994AD32_66AA"></a>Replace parameters in target file content</strong></span> - Check this option if you want substitution parameters embedded in the content of the target file to be replaced when the file is created from the template, as when adding an item template to your project from the Add New Item dialog.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_85C8D7CE_FBB7"></a>Preview</strong></span> - Previews how the file would be copied when creating the file from a template as if the source file name and target file name were fully resolved.</p></li></ul></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcodetemplates_13591_1003749"></a>
+      <a class="indexterm" name="sect_usingcodetemplates_1F232E67_03F4"></a>Add Parameter Dialog </h3></div></div></div><p class="NormalText">Used to add a custom substitution parameter to a template. This dialog is launched when performing an Add operation from the <span><strong class="guimenu">Custom Parameters</strong></span> tab of the <a href="ch08s12.htm#sect_usingcodetemplates_13591_44659">Template Manager Dialog</a>. When files are created from a template, as when adding an item template to your project from the Add New Item dialog box, you can configure your template to replace all substitution parameters with values. For a list of pre-defined substitution parameters, see <a href="ch08s12.htm#sect_usingcodetemplates_13591_77783">Predefined Substitution Parameters</a>.</p><p class="NormalText">The Add Parameter dialog contains the following:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_C205E854_F57B"></a>Name</strong></span> - This is the name of the substitution parameter WITHOUT delimiters. For example, if the delimiter is "<span><strong class="command">$</strong></span>" (the default), then a substitution parameter that inserts a copyright string would have a name of "copyright" and NOT "$copyright$". Do not use quotes in the name. Valid characters for a parameter name are: A-Za-z0-9_</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_6F2F6D8E_40AA"></a>Value</strong></span> - This is the value that the substitution parameter evaluates to when a string or file is created from the template and has its substitution parameters replaced with values.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_92F0241F_7A11"></a>Prompt for value</strong></span> - Check this option if you always want to be prompted for the value of a substitution parameter. When set, the <span><strong class="guilabel">Value</strong></span> field becomes a default value field and is used to pre-populate the value when you are prompted.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_EE7F8EFA_9FFD"></a>Prompt string</strong></span> - Specifies the prompt string to display when being prompted for a substitution parameter value.</p></li></ul></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcodetemplates_13591_1003772"></a>
+      <a class="indexterm" name="sect_usingcodetemplates_615DF526_BDDF"></a>
+      <a class="indexterm" name="sect_usingcodetemplates_E45982BA_CEDC"></a>Add New Item Dialog </h3></div></div></div><p class="NormalText">Used to add an item to your current project, the Add New Item dialog is displayed when you click <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">Add New Item</strong></span> or <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">New Item from Template</strong></span>. </p><p class="NormalText">Use the <span><strong class="guilabel">Categories</strong></span> list to select a category. Selecting a category populates the <span><strong class="guilabel">Templates</strong></span> list with template items for that category. You can then select an item from the <span><strong class="guilabel">Templates</strong></span> list, enter a unique <span><strong class="guilabel">Name</strong></span> for the item, and enter a <span><strong class="guilabel">Location</strong></span>. Click <span><strong class="guibutton">Add</strong></span> to instantiate the template with the name and location you provided.</p><p class="NormalText">You can manage your templates from the Template Manager dialog box by choosing <span><strong class="command">File &gt; Template Manager</strong></span>.</p><p class="NormalText">The Add New Item dialog contains the following:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a class="indexterm" name="sect_usingcodetemplates_CFD1F74C_BC6A"></a>
+          <span><strong class="guilabel">Categories</strong></span> - Lists a hierarchy of item categories for installed and user template items.
+        </p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_35C22232_8AE2"></a>Templates</strong></span> - Lists the template items for the currently selected category. When you select a template item, a brief description for that item is displayed just above the <span><strong class="guilabel">Name</strong></span> field.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_0408F31E_4C23"></a>Name</strong></span> - Enter the name of the file you want to create.</p></li></ul></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+        <span><strong class="command"></strong></span>For single file templates (templates that create a single file) this is the name of the file. Multi-file templates use the name of the item entered to form names of files in the template. For more information about creating multi-file templates, see <a href="ch08s12.htm#sect_usingcodetemplates_13591_65220">Creating a Multi-file Template</a>.</p></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_B205B2BA_0D28"></a>Location</strong></span> - Enter the location to which to save the item.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Add to current project</strong></span> - When selected, the new item is added to the current project.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingcodetemplates_BED8E875_782A"></a>Add</strong></span> - After you have selected a template item, provided a name and a location, click <span><strong class="guilabel">Add</strong></span> to instantiate the template item.</p></li></ul></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcodetemplates_13591_1003798"></a>
+      <a class="indexterm" name="sect_usingcodetemplates_112F4629_0BC0"></a>Locating Templates</h3></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003800"></a>
+        <a class="indexterm" name="sect_usingcodetemplates_9AC8C788_3D7F"></a>
+        <a class="indexterm" name="sect_usingcodetemplates_F9D80352_987D"></a>
+        Installed Templates</h4></div></div></div><p class="NormalText">Templates that are installed with the product are located at:</p><pre class="programlisting">[SlickEditInstallDir]/sysconfig/templates/ItemTemplates/</pre><p class="NormalText">For example, the following directory under Windows contains item templates for the C++ language:</p><pre class="programlisting">[My Documents]\My SlickEdit Core Config\[VERSION]\templates\ItemTemplates\C++</pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003809"></a>
+        <a class="indexterm" name="sect_usingcodetemplates_C76AAB89_85FD"></a>User Templates</h4></div></div></div><p class="NormalText">User templates are templates that the user creates and are located at:</p><pre class="programlisting">[ConfigDir]/templates/ItemTemplates/</pre><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"> You can locate your Configuration Directory from the main menu by clicking <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">About SlickEdit</strong></span>.</p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcodetemplates_13591_34815"></a>
+      <a name="sect_usingcodetemplates_13591_1003816"></a>
+      <a class="indexterm" name="sect_usingcodetemplates_A469ECF2_2B4C"></a>Manually Creating a Template</h3></div></div></div><p class="NormalText">
+      SlickEdit® Code Templates are represented as files stored in specific directories. A template is composed of the source file or files for the template and a metadata template file that provides additional information. Since these are just files, you can write them using SlickEdit.</p><p class="NormalText">To manually create an item template: </p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Choose a category folder under the user templates directory. Your user templates directory is at:</p><pre class="programlisting">[ConfigDir]/templates/ItemTemplates/</pre><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody">
+            You can locate your Configuration Directory from the main menu by clicking <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">About SlickEdit</strong></span>.</p></div><p class="NormalText">All files will be created relative to the folder you choose. For more information about how templates are organized, see <a href="ch08s12.htm#sect_usingcodetemplates_13591_83486">Organizing Templates</a>.</p></li><li><p class="NormalText">Create or edit a code file (e.g. <code class="filename">*.cpp</code>, <code class="filename">*.java</code>, etc.). Replace occurrences of substitutable text with substitution parameter names. For example, you might want to make the name of a C++ or Java class into a substitution parameter, in which case you could use the <span><strong class="command">$safeitemname$</strong></span> substitution parameter. For more information on substitution parameters, see <a href="ch08s12.htm#sect_usingcodetemplates_13591_68003">Substitution Parameters</a>.</p></li><li><p class="NormalText">Create an XML file and give it an extension of <code class="filename">.setemplate</code>.</p></li><li><p class="NormalText">Insert template metadata into the <code class="filename">.setemplate</code> file. See the example below. For more information on template metadata elements, see <a href="ch08s12.htm#sect_usingcodetemplates_13591_76995">Code Template Metadata File Reference</a>.</p></li><li><p class="NormalText">Create a new project or open an existing one.</p></li><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">Add New Item</strong></span>.</p></li><li><p class="NormalText">Verify that your new template item appears in the <span><strong class="guilabel">Templates</strong></span> list on the Add New Item dialog box.</p></li></ol></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_1003842"></a>Example</h4></div></div></div><p class="NormalText">The following example illustrates the metadata for an item template for a custom Java class, along with the content of the Java source code file.</p><p class="NormalText">From the Add New Item dialog box, if the user entered <code class="filename">Foo.java</code> for the item name, then <span><strong class="command">$fileinputname$</strong></span> would be replaced with "Foo" in the file name of the file created, and <span><strong class="command">$safeitemname$</strong></span> would be replaced with "Foo" in the Java source code file.</p><p class="NormalText">
+        <code class="filename">MyClass.setemplate</code>:</p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd"&gt;
+&lt;SETemplate Version="1.0" Type="Item"&gt;
+ 
+  &lt;TemplateDetails&gt;
+    &lt;Name&gt;My Java Class&lt;/Name&gt;
+    &lt;Description&gt;My custom Java class&lt;/Description&gt;
+    &lt;DefaultName&gt;MyClass.java&lt;/DefaultName&gt;
+  &lt;/TemplateDetails&gt;
+  &lt;TemplateContent&gt;
+    &lt;Files&gt;
+      &lt;File TargetFilename="$fileinputname$.java"&gt;MyClass.java&lt;/File&gt;
+    &lt;/Files&gt;
+  &lt;/TemplateContent&gt;
+ 
+&lt;/SETemplate&gt;</pre><p class="NormalText">
+        <code class="filename">MyClass.java</code>:</p><pre class="programlisting">class $safeitemname$ {
+};</pre><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingcodetemplates_13591_65220"></a>
+          <a name="sect_usingcodetemplates_13591_1003876"></a>
+          <a class="indexterm" name="sect_usingcodetemplates_EC81A754_704A"></a>Creating a Multi-file Template</h5></div></div></div><p class="NormalText">A multi-file template is a template item that creates more than one file.</p><p class="NormalText">Multi-file templates require the use of substitution parameters to ensure that file name and extension parts are used when creating each file of the template item. For example, a C++ class typically consists of:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">A <code class="filename">.h</code> file that contains the class definition.</p></li><li><p class="NormalText">A <code class="filename">.cpp</code> file that contains the class implementation.</p></li></ul></div><p class="NormalText">Since you can only enter one name into the <span><strong class="guilabel">Name</strong></span> field on the Add New Item dialog box, you need a way to specify the target file name for each file created by the multi-file template. In the C++ class example below, the <code class="filename">.h</code> and <code class="filename">.cpp</code> files are created with the name you provide, while their extensions are preserved.</p><p class="NormalText">To create a multi-file item template from the Template Manager dialog, click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Template Manager</strong></span>. </p><p class="NormalText">To manually create a multi-file item template:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Create the item template the same way a single file template would be created. For more information on manually creating a template item, see <a href="ch08s12.htm#sect_usingcodetemplates_13591_34815">Manually Creating a Template</a>.</p></li><li><p class="NormalText">Add TargetFilename attributes to each of the File elements in your template metadata file (<code class="filename">.setemplate</code>). Set the value of each TargetFilename attribute to <span><strong class="command">$fileinputname$.[</strong></span><span class="emphasis"><em>extension</em></span><span><strong class="command">]</strong></span>, where <span><strong class="command">[</strong></span><span class="emphasis"><em>extension</em></span><span><strong class="command">]</strong></span> is the file extension of the target file name being created. When the files are created, their names will be based on the name you entered in the <span><strong class="guilabel">Name</strong></span> field of the Add New Item dialog box. See the example below.</p></li></ol></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="sect_usingcodetemplates_13591_1003895"></a>Example</h6></div></div></div><p class="NormalText">The following example demonstrates a multi-file item template <code class="filename">.setemplate</code> file. The item creates C++ class header (<code class="filename">.h</code>) and implementation (<code class="filename">.cpp</code>) files.</p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd"&gt;
+&lt;SETemplate Version="1.0" Type="Item"&gt;
+ 
+  &lt;TemplateDetails&gt;
+    &lt;Name&gt;My C++ Class&lt;/Name&gt;
+    &lt;Description&gt;My complete C++ class header and implementation&lt;/Description&gt;
+    &lt;DefaultName&gt;MyClass.cpp&lt;/DefaultName&gt;
+  &lt;/TemplateDetails&gt;
+  &lt;TemplateContent&gt;
+    &lt;Files&gt;
+      &lt;File TargetFilename="$fileinputname$.cpp"&gt;MyClass.cpp&lt;/File&gt;
+      &lt;File TargetFilename="$fileinputname$.h"&gt;MyClass.h&lt;/File&gt;
+    &lt;/Files&gt;
+  &lt;/TemplateContent&gt;
+ 
+&lt;/SETemplate&gt;</pre></div></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcodetemplates_13591_76995"></a>
+      <a name="sect_usingcodetemplates_13591_1003919"></a>
+      <a class="indexterm" name="sect_usingcodetemplates_616328AA_092B"></a>Code Template Metadata File Reference </h3></div></div></div><p class="NormalText">Template metadata describes the template item, its files, and how to create the template. Template metadata files have a <code class="filename">.setemplate</code> extension.</p><p class="NormalText">The <span><strong class="command">SETemplate</strong></span> element is the root element of a template file.</p><p class="NormalText">Summary of metadata elements:</p><div class="informaltable"><a name="table_421a6b10-9380-4592-b156-4fd1650dac0a"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Element</p>
+            </th><th>
+              <p class="CellHeading">Child Elements</p>
+            </th><th>
+              <p class="CellHeading">Attributes</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <a href="ch08s12.htm#sect_usingcodetemplates_13591_29710">Elements</a>
+              </p>
+            </td><td>
+              <p class="CellBody">-</p>
+            </td><td>
+              <p class="CellBody">-</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <a href="ch08s12.htm#sect_usingcodetemplates_13591_72701">Description</a>
+              </p>
+            </td><td>
+              <p class="CellBody">-</p>
+            </td><td>
+              <p class="CellBody">-</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <a href="ch08s12.htm#sect_usingcodetemplates_13591_16401">File</a>
+              </p>
+            </td><td>
+              <p class="CellBody">-</p>
+            </td><td>
+              <p class="CellBody">ReplaceParameters,TargetFilename</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <a href="ch08s12.htm#sect_usingcodetemplates_13591_48028">Files</a>
+              </p>
+            </td><td>
+              <p class="CellBody">File</p>
+            </td><td>
+              <p class="CellBody">-</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <a href="ch08s12.htm#sect_usingcodetemplates_13591_32970">Name</a>
+              </p>
+            </td><td>
+              <p class="CellBody">-</p>
+            </td><td>
+              <p class="CellBody">-</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <a href="ch08s12.htm#sect_usingcodetemplates_13591_94500">Parameter</a>
+              </p>
+            </td><td>
+              <p class="CellBody">-</p>
+            </td><td>
+              <p class="CellBody">Name,Value</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <a href="ch08s12.htm#sect_usingcodetemplates_13591_98053">Parameters</a>
+              </p>
+            </td><td>
+              <p class="CellBody">Parameter</p>
+            </td><td>
+              <p class="CellBody">-</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <a href="ch08s12.htm#sect_usingcodetemplates_13591_70883">SETemplate</a>
+              </p>
+            </td><td>
+              <p class="CellBody">TemplateContent,TemplateDetails</p>
+            </td><td>
+              <p class="CellBody">Type,Version</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <a href="ch08s12.htm#sect_usingcodetemplates_13591_48538">SortOrder</a>
+              </p>
+            </td><td>
+              <p class="CellBody">-</p>
+            </td><td>
+              <p class="CellBody">-</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <a href="ch08s12.htm#sect_usingcodetemplates_13591_39762">Template Content</a>
+              </p>
+            </td><td>
+              <p class="CellBody">Files,Parameters</p>
+            </td><td>
+              <p class="CellBody">Delimiter</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <a href="ch08s12.htm#sect_usingcodetemplates_13591_35093">TemplateDetails</a>
+              </p>
+            </td><td>
+              <p class="CellBody">DefaultName,Description,Name,SortOrder</p>
+            </td><td>
+              <p class="CellBody">-</p>
+            </td></tr></tbody></table></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcodetemplates_13591_29710"></a>
+        <a name="sect_usingcodetemplates_13591_1004094"></a>
+        <a class="indexterm" name="sect_usingcodetemplates_6C96447D_8FF5"></a>Elements</h4></div></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingcodetemplates_13591_1004097"></a>
+          <a class="indexterm" name="sect_usingcodetemplates_0E943297_4AE9"></a>DefaultName</h5></div></div></div><p class="NormalText">
+          <span><strong class="command">DefaultName</strong></span> is an optional child element of <span><strong class="command">TemplateDetails</strong></span>. Specifies the default item name when using the Add New Item dialog box. This element becomes more important in multi-file templates where you need to specify a <span><strong class="command">DefaultName</strong></span> element in order to create file names from parts of the input item name. See the example below.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Attributes</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Child elements</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Parent elements</strong></span> - <span><strong class="command">TemplateDetails</strong></span>.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Value</strong></span> - Text value is required. The text value specifies the default name of the template item. Used to populate the name field with an initial value on the Add New Item dialog box.</p></li></ul></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_cdb63c12-b73e-4af8-aacd-aac14ce62d9a"></a>Example</h6></div></div></div><p class="NormalText">The following example illustrates the metadata for an item template for a C++ class that creates a header file (<code class="filename">.h</code>) and implementation file (<code class="filename">.cpp</code>).</p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd"&gt;
+&lt;SETemplate Version="1.0" Type="Item"&gt;
+ 
+  &lt;TemplateDetails&gt;
+    &lt;Name&gt;My C++ Class&lt;/Name&gt;
+    &lt;Description&gt;My complete C++ class header and implementation&lt;/Description&gt;
+    &lt;DefaultName&gt;MyClass.cpp&lt;/DefaultName&gt;
+  &lt;/TemplateDetails&gt;
+  &lt;TemplateContent&gt;
+    &lt;Files&gt;
+      &lt;File TargetFilename="$fileinputname$.cpp"&gt;MyClass.cpp&lt;/File&gt;
+      &lt;File TargetFilename="$fileinputname$.h"&gt;MyClass.h&lt;/File&gt;
+    &lt;/Files&gt;
+  &lt;/TemplateContent&gt;
+ 
+&lt;/SETemplate&gt;</pre></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingcodetemplates_13591_72701"></a>
+          <a name="sect_usingcodetemplates_13591_1004135"></a>
+          <a class="indexterm" name="sect_usingcodetemplates_E05369E9_3E9B"></a>Description</h5></div></div></div><p class="NormalText">
+          <span><strong class="command">Description</strong></span> is a required child element of <span><strong class="command">TemplateDetails</strong></span>. Specifies the description for the template item. See the example below.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Attributes</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Child elements</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Parent elements</strong></span> - <span><strong class="command">TemplateDetails</strong></span>.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Value</strong></span> - Text value is required. The text value specifies the description of the template item. The description is shown on the Add New Item dialog box.</p></li></ul></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_2001fa61-36e3-4505-ba68-d6b75f8cd472"></a>Example</h6></div></div></div><p class="NormalText">The following example illustrates the metadata for an item template for a custom Java class.</p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd"&gt;
+&lt;SETemplate Version="1.0" Type="Item"&gt;
+ 
+  &lt;TemplateDetails&gt;
+    &lt;Name&gt;My Java Class&lt;/Name&gt;
+    &lt;Description&gt;My custom Java class&lt;/Description&gt;
+    &lt;DefaultName&gt;MyClass.java&lt;/DefaultName&gt;
+  &lt;/TemplateDetails&gt;
+  &lt;TemplateContent&gt;
+    &lt;Files&gt;
+      &lt;File&gt;MyClass.java&lt;/File&gt;
+    &lt;/Files&gt;
+  &lt;/TemplateContent&gt;
+ 
+&lt;/SETemplate&gt;</pre></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingcodetemplates_13591_16401"></a>
+          <a name="sect_usingcodetemplates_13591_1004172"></a>
+          <a class="indexterm" name="sect_usingcodetemplates_F4FE4526_A519"></a>File</h5></div></div></div><p class="NormalText">
+          <span><strong class="command">File</strong></span> is an optional child element of <span><strong class="command">Files</strong></span>. Specifies a file for the template item. See the example below.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Attributes</strong></span>
+            </p><div class="informaltable"><a name="table_3474e6c9-7d7c-4eb5-a9d3-be8a1c6864cd"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                      <p class="CellHeading">Attribute</p>
+                    </th><th>
+                      <p class="CellHeading">Description</p>
+                    </th></tr></thead><tbody><tr><td>
+                      <p class="CellBody">
+                        <span><strong class="command">ReplaceParameters</strong></span>
+                      </p>
+                    </td><td>
+                      <p class="CellBody">Optional.</p>
+                      <p class="CellBody">Specifies whether parameter substitution takes place on the file contents when the file is created from the template. Note that parameter substitution always takes place on the <span><strong class="command">TargetFilename</strong></span> attribute value (example: </p>
+                      <p class="CellBody">
+                        <span><strong class="command">TargetFilename="$fileinputname$.cpp"</strong></span>).</p>
+                      <p class="CellBody">Possible values are "1" (true) or "0" (false).</p>
+                      <p class="CellBody">Defaults to "1" (true).</p>
+                    </td></tr><tr><td>
+                      <p class="CellBody">
+                        <span><strong class="command">TargetFilename</strong></span>
+                      </p>
+                    </td><td>
+                      <p class="CellBody">Optional.</p>
+                      <p class="CellBody">Specifies the actual name of the item that is created from the template.</p>
+                      <p class="CellBody">This attribute is especially useful when creating a multi-file template where file names of files created from the template are assembled by parameter substitution.</p>
+                    </td></tr></tbody></table></div></li></ul></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Child elements</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Parent elements</strong></span> - <span><strong class="command">TemplateContent</strong></span>.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Value</strong></span> - Text value is required. Value is the path of a file in the template item.</p></li></ul></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_06270fc4-9e8a-4319-805d-9c52aa94b872"></a>Example</h6></div></div></div><p class="NormalText">The following example illustrates the metadata for an item template for a C++ class that creates a header file (<code class="filename">.h</code>) and implementation file (<code class="filename">.cpp</code>).</p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd"&gt;
+&lt;SETemplate Version="1.0" Type="Item"&gt;
+ 
+  &lt;TemplateDetails&gt;
+    &lt;Name&gt;My C++ Class&lt;/Name&gt;
+    &lt;Description&gt;My complete C++ class header and implementation&lt;/Description&gt;
+    &lt;DefaultName&gt;MyClass.cpp&lt;/DefaultName&gt;
+  &lt;/TemplateDetails&gt;
+  &lt;TemplateContent&gt;
+    &lt;Files&gt;
+      &lt;File TargetFilename="$fileinputname$.cpp"&gt;MyClass.cpp&lt;/File&gt;
+      &lt;File TargetFilename="$fileinputname$.h"&gt;MyClass.h&lt;/File&gt;
+    &lt;/Files&gt;
+  &lt;/TemplateContent&gt;
+ 
+&lt;/SETemplate&gt;</pre></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingcodetemplates_13591_48028"></a>
+          <a name="sect_usingcodetemplates_13591_1004228"></a>
+          <a class="indexterm" name="sect_usingcodetemplates_BB81A273_749D"></a>Files</h5></div></div></div><p class="NormalText">
+          <span><strong class="command">Files</strong></span> is a required child element of <span><strong class="command">TemplateContent</strong></span>. Specifies files for the template item. See the example below.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Attributes</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Child elements</strong></span> - File.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Parent elements</strong></span> - <span><strong class="command">TemplateContent</strong></span>.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Value</strong></span> - N/A</p></li></ul></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_0c099e96-404b-4a14-94e1-2fddabd4ea84"></a>Example</h6></div></div></div><p class="NormalText">The following example illustrates the metadata for an item template for a C++ class that creates a header file (<code class="filename">.h</code>) and implementation file (<code class="filename">.cpp</code>).</p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd"&gt;
+&lt;SETemplate Version="1.0" Type="Item"&gt;
+ 
+  &lt;TemplateDetails&gt;
+    &lt;Name&gt;My C++ Class&lt;/Name&gt;
+    &lt;Description&gt;My complete C++ class header and implementation&lt;/Description&gt;
+    &lt;DefaultName&gt;MyClass.cpp&lt;/DefaultName&gt;
+  &lt;/TemplateDetails&gt;
+  &lt;TemplateContent&gt;
+    &lt;Files&gt;
+      &lt;File TargetFilename="$fileinputname$.cpp"&gt;MyClass.cpp&lt;/File&gt;
+      &lt;File TargetFilename="$fileinputname$.h"&gt;MyClass.h&lt;/File&gt;
+    &lt;/Files&gt;
+  &lt;/TemplateContent&gt;
+ 
+&lt;/SETemplate&gt;</pre></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingcodetemplates_13591_32970"></a>
+          <a name="sect_usingcodetemplates_13591_1004264"></a>
+          <a class="indexterm" name="sect_usingcodetemplates_2910004C_8E39"></a>Name</h5></div></div></div><p class="NormalText">
+          <span><strong class="command">Name</strong></span> is a required child element of <span><strong class="command">TemplateDetails</strong></span>. Specifies the name for the template item. See the example below.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Attributes</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Child elements</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Parent elements</strong></span> - TemplateDetails.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Value</strong></span> - Text value is required. The text value specifies the name of the template item. The name is shown in the <span><strong class="guilabel">Templates</strong></span> list on the Add New Item dialog box.</p></li></ul></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_cd3ac63c-efc4-4d9a-aea0-60ad00b4f4c3"></a>Example</h6></div></div></div><p class="NormalText">The following example illustrates the metadata for an item template for a custom Java class.</p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd"&gt;
+&lt;SETemplate Version="1.0" Type="Item"&gt;
+ 
+  &lt;TemplateDetails&gt;
+    &lt;Name&gt;My Java Class&lt;/Name&gt;
+    &lt;Description&gt;My custom Java class&lt;/Description&gt;
+    &lt;DefaultName&gt;MyClass.java&lt;/DefaultName&gt;
+  &lt;/TemplateDetails&gt;
+  &lt;TemplateContent&gt;
+    &lt;Files&gt;
+      &lt;File&gt;MyClass.java&lt;/File&gt;
+    &lt;/Files&gt;
+  &lt;/TemplateContent&gt;
+ 
+&lt;/SETemplate&gt;</pre></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingcodetemplates_13591_94500"></a>
+          <a name="sect_usingcodetemplates_13591_1004301"></a>
+          <a class="indexterm" name="sect_usingcodetemplates_DAF07027_5540"></a>Parameter</h5></div></div></div><p class="NormalText">
+          <span><strong class="command">Parameter</strong></span> is an optional child element of <span><strong class="command">Parameters</strong></span>. Specifies a custom substitution parameter for the template item. For a list of pre-defined substitution parameters, see <a href="ch08s12.htm#sect_usingcodetemplates_13591_77783">Predefined Substitution Parameters</a>.</p><p class="NormalText">See the example below.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Attributes</strong></span>
+            </p><div class="informaltable"><a name="table_48db5921-3356-4d7f-81cb-0c82b7280e5c"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                      <p class="CellHeading">Attribute</p>
+                    </th><th>
+                      <p class="CellHeading">Description</p>
+                    </th></tr></thead><tbody><tr><td>
+                      <p class="CellBody">
+                        <span><strong class="command">Name</strong></span>
+                      </p>
+                    </td><td>
+                      <p class="CellBody">Parameter name. This is the name of the substitution parameter WITHOUT delimiters. For example, if the delimiter is "$" (the default), then a substitution parameter that inserts a copyright string would be defined as "copyright" and NOT as</p>
+                      <p class="CellBody">
+                        <span><strong class="command">"$copyright$"</strong></span>.</p>
+                    </td></tr><tr><td>
+                      <p class="CellBody">
+                        <span><strong class="command">Value</strong></span>
+                      </p>
+                    </td><td>
+                      <p class="CellBody">Parameter value. This is the value that the substitution parameter evaluates to when a string or File is created from the template.</p>
+                    </td></tr></tbody></table></div></li></ul></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Child elements</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Parent elements</strong></span> - <span><strong class="command">Parameters</strong></span>.</p></li><li><p class="NormalText">
+              <span><strong class="command">Value</strong></span> - N/A</p></li></ul></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_d949379e-3f6e-4321-98bf-1a2f9a516d0d"></a>Example</h6></div></div></div><p class="NormalText">The following example illustrates the metadata for an item template for a custom Java class.</p><p class="NormalText">When <code class="filename">MyClass.java</code> is used to create the file from the template, all occurrences of <span><strong class="command">$copyright$</strong></span> in the created file will be replaced with "(c)2005-2006".</p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd"&gt;
+&lt;SETemplate Version="1.0" Type="Item"&gt;
+ 
+  &lt;TemplateDetails&gt;
+    &lt;Name&gt;My Java Class&lt;/Name&gt;
+    &lt;Description&gt;My custom Java class&lt;/Description&gt;
+    &lt;DefaultName&gt;MyClass.java&lt;/DefaultName&gt;
+  &lt;/TemplateDetails&gt;
+  &lt;TemplateContent&gt;
+    &lt;Parameters&gt;
+      &lt;Parameter Name="copyright" Value="(c)2005-2006" /&gt;
+    &lt;Parameters&gt;
+    &lt;Files&gt;
+      &lt;File&gt;MyClass.java&lt;/File&gt;
+    &lt;/Files&gt;
+  &lt;/TemplateContent&gt;
+ 
+&lt;/SETemplate&gt;</pre></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingcodetemplates_13591_98053"></a>
+          <a name="sect_usingcodetemplates_13591_1004359"></a>
+          <a class="indexterm" name="sect_usingcodetemplates_0D117D27_D1B9"></a>Parameters</h5></div></div></div><p class="NormalText">
+          <span><strong class="command">Parameters</strong></span> is a required child element of <span><strong class="command">TemplateContent</strong></span>. Specifies custom substitution parameters for the template item. For a list of pre-defined substitution parameters, see <a href="ch08s12.htm#sect_usingcodetemplates_13591_77783">Predefined Substitution Parameters</a>.</p><p class="NormalText">See the example below.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Attributes</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Child elements</strong></span> - <span><strong class="command">Parameter</strong></span>.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Parent elements</strong></span> - <span><strong class="command">TemplateContent</strong></span>.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Value</strong></span> - N/A</p></li></ul></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_a31a5fb1-2e35-48e5-9002-5af9c74e2d2d"></a>Example</h6></div></div></div><p class="NormalText">The following example illustrates the metadata for an item template for a custom Java class.</p><p class="NormalText">When <code class="filename">MyClass.java</code> is used to create the file from the template, all occurrences of <span><strong class="command">$copyright$</strong></span> in the created file will be replaced with "(c)2005-2006".</p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd"&gt;
+&lt;SETemplate Version="1.0" Type="Item"&gt;
+ 
+  &lt;TemplateDetails&gt;
+    &lt;Name&gt;My Java Class&lt;/Name&gt;
+    &lt;Description&gt;My custom Java class&lt;/Description&gt;
+    &lt;DefaultName&gt;MyClass.java&lt;/DefaultName&gt;
+  &lt;/TemplateDetails&gt;
+  &lt;TemplateContent&gt;
+    &lt;Parameters&gt;
+      &lt;Parameter Name="copyright" Value="(c)2005-2006" /&gt;
+    &lt;Parameters&gt;
+    &lt;Files&gt;
+      &lt;File&gt;MyClass.java&lt;/File&gt;
+    &lt;/Files&gt;
+  &lt;/TemplateContent&gt;
+ 
+&lt;/SETemplate&gt;</pre></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingcodetemplates_13591_70883"></a>
+          <a name="sect_usingcodetemplates_13591_1004404"></a>
+          <a class="indexterm" name="sect_usingcodetemplates_FA1D46F8_0825"></a>SETemplate</h5></div></div></div><p class="NormalText">Root element. Contains all metadata about template item.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Attributes</strong></span>
+            </p><div class="informaltable"><a name="table_8382970f-73e8-4743-b624-b43a42ce1aee"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                      <p class="CellHeading">Attribute</p>
+                    </th><th>
+                      <p class="CellHeading">Description</p>
+                    </th></tr></thead><tbody><tr><td>
+                      <p class="CellBody">
+                        <span><strong class="command">Version</strong></span>
+                      </p>
+                    </td><td>
+                      <p class="CellBody">Template version number. The current version is "1.0".</p>
+                    </td></tr><tr><td>
+                      <p class="CellBody">
+                        <span><strong class="command">Type</strong></span>
+                      </p>
+                    </td><td>
+                      <p class="CellBody">Template type. Valid types are: "Item".</p>
+                    </td></tr></tbody></table></div></li></ul></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Child elements</strong></span> - <span><strong class="command">TemplateDetails</strong></span>, <span><strong class="command">TemplateContent</strong></span>.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Parent elements</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Value</strong></span> - N/A</p></li></ul></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_da342eea-a098-4a26-8399-d0fdb83d70ab"></a>Example</h6></div></div></div><p class="NormalText">The following example illustrates the metadata for an item template for a custom Java class.</p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd"&gt;
+&lt;SETemplate Version="1.0" Type="Item"&gt;
+ 
+  &lt;TemplateDetails&gt;
+    &lt;Name&gt;My Java Class&lt;/Name&gt;
+    &lt;Description&gt;My custom Java class&lt;/Description&gt;
+    &lt;DefaultName&gt;MyClass.java&lt;/DefaultName&gt;
+  &lt;/TemplateDetails&gt;
+  &lt;TemplateContent&gt;
+    &lt;Files&gt;
+      &lt;File&gt;MyClass.java&lt;/File&gt;
+    &lt;/Files&gt;
+  &lt;/TemplateContent&gt;
+ 
+&lt;/SETemplate&gt;</pre></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingcodetemplates_13591_48538"></a>
+          <a name="sect_usingcodetemplates_13591_1004451"></a>
+          <a class="indexterm" name="sect_usingcodetemplates_BB3C6331_505C"></a>SortOrder</h5></div></div></div><p class="NormalText">
+          <span><strong class="command">SortOrder</strong></span> is an optional child element of <span><strong class="command">TemplateDetails</strong></span>. Specifies an order number that is used to sort the template item in relation to other template items in a list. Used to sort template items in a category on the Add New Item dialog box.</p><p class="NormalText">If no <span><strong class="command">SortOrder</strong></span> is specified for a template item, then the <span><strong class="command">SortOrder</strong></span> value defaults to "0".</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Attributes</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Child elements</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Parent elements</strong></span> - <span><strong class="command">TemplateDetails</strong></span>.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Value</strong></span> - Text value is required. An integer that is greater than or equal to "0". When sorting in relation to other template items, low <span><strong class="command">SortOrder</strong></span> values are placed ahead of higher values in a sorted list.</p></li></ul></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_92c107ec-d2f7-4efc-b22d-da6765e3f971"></a>Example</h6></div></div></div><p class="NormalText">The following example illustrates the metadata for an item template for a custom Java class.</p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd"&gt;
+&lt;SETemplate Version="1.0" Type="Item"&gt;
+ 
+  &lt;TemplateDetails&gt;
+    &lt;Name&gt;My Java Class&lt;/Name&gt;
+    &lt;Description&gt;My custom Java class&lt;/Description&gt;
+    &lt;DefaultName&gt;MyClass.java&lt;/DefaultName&gt;
+    &lt;SortOrder&gt;100&lt;/SortOrder&gt;
+  &lt;/TemplateDetails&gt;
+  &lt;TemplateContent&gt;
+    &lt;Files&gt;
+      &lt;File&gt;MyClass.java&lt;/File&gt;
+    &lt;/Files&gt;
+  &lt;/TemplateContent&gt;
+ 
+&lt;/SETemplate&gt;</pre></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingcodetemplates_13591_39762"></a>
+          <a name="sect_usingcodetemplates_13591_1004491"></a>
+          <a class="indexterm" name="sect_usingcodetemplates_796E7586_EB3C"></a>TemplateContent</h5></div></div></div><p class="NormalText">
+          <span><strong class="command">TemplateContent</strong></span> is a required child element of <span><strong class="command">SETemplate</strong></span>. Specifies the contents of a template item.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Attributes</strong></span>
+            </p><div class="informaltable"><a name="table_d42761c8-bd90-418e-9052-b596975a143f"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                      <p class="CellHeading">Attribute</p>
+                    </th><th>
+                      <p class="CellHeading">Description</p>
+                    </th></tr></thead><tbody><tr><td>
+                      <p class="CellBody">
+                        <span><strong class="command">Delimiter</strong></span>
+                      </p>
+                    </td><td>
+                      <p class="CellBody">Optional. </p>
+                      <p class="CellBody">Delimiter used when replacing substitution parameters in content. </p>
+                      <p class="CellBody">Defaults to "$".</p>
+                    </td></tr></tbody></table></div></li></ul></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Child elements</strong></span> - <span><strong class="command">Files</strong></span>, <span><strong class="command">Parameters</strong></span>.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Parent elements</strong></span> - <span><strong class="command">SETemplate</strong></span>.</p></li><li><p class="NormalText">
+              <span><strong class="command">Value</strong></span> - N/A</p></li></ul></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_d8955da4-5e15-48d6-a102-6d9ac7faf4c8"></a>Example</h6></div></div></div><p class="NormalText">The following example illustrates the metadata for an item template for a custom Java class.</p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd"&gt;
+&lt;SETemplate Version="1.0" Type="Item"&gt;
+ 
+  &lt;TemplateDetails&gt;
+    &lt;Name&gt;My Java Class&lt;/Name&gt;
+    &lt;Description&gt;My custom Java class&lt;/Description&gt;
+    &lt;DefaultName&gt;MyClass.java&lt;/DefaultName&gt;
+  &lt;/TemplateDetails&gt;
+  &lt;TemplateContent&gt;
+    &lt;Files&gt;
+      &lt;File&gt;MyClass.java&lt;/File&gt;
+    &lt;/Files&gt;
+  &lt;/TemplateContent&gt;
+ 
+&lt;/SETemplate&gt;</pre></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingcodetemplates_13591_35093"></a>
+          <a name="sect_usingcodetemplates_13591_1004537"></a>
+          <a class="indexterm" name="sect_usingcodetemplates_A9A9CF7C_9FB3"></a>TemplateDetails</h5></div></div></div><p class="NormalText">
+          <span><strong class="command">TemplateDetails</strong></span> is a required child element of <span><strong class="command">SETemplate</strong></span>. Describes the template item. Details are used to display the template item on the Add New Item dialog box.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span class="bold"><strong>Attributes</strong></span> - None.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Child elements</strong></span> - <span><strong class="command">DefaultName</strong></span>, <span><strong class="command">Description</strong></span>, <span><strong class="command">Name</strong></span>, <span><strong class="command">SortOrder</strong></span>.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Parent elements</strong></span> - <span><strong class="command">SETemplate</strong></span>.</p></li><li><p class="NormalText">
+              <span class="bold"><strong>Value</strong></span> - N/A</p></li></ul></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_5bc0bbe6-7255-47ef-8744-29be09e7310e"></a>Example</h6></div></div></div><p class="NormalText">The following example illustrates the metadata for an item template for a custom Java class.</p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd"&gt;
+&lt;SETemplate Version="1.0" Type="Item"&gt;
+ 
+  &lt;TemplateDetails&gt;
+    &lt;Name&gt;My Java Class&lt;/Name&gt;
+    &lt;Description&gt;My custom Java class&lt;/Description&gt;
+    &lt;DefaultName&gt;MyClass.java&lt;/DefaultName&gt;
+  &lt;/TemplateDetails&gt;
+  &lt;TemplateContent&gt;
+    &lt;Files&gt;
+      &lt;File&gt;MyClass.java&lt;/File&gt;
+    &lt;/Files&gt;
+  &lt;/TemplateContent&gt;
+ 
+&lt;/SETemplate&gt;</pre><p class="NormalText"></p></div></div></div></div></div></body></html>

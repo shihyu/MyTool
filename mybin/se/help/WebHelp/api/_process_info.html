@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_process_info</title>
+</head>
+<body>
+
+<h3><b>int _process_info(_str option="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This function returns information about the process running depending
+upon the input given as follows:<p>
+<dl>
+<dt>""</dt><dd>Returns 1 if the build window
+(concurrent process buffer) is running.
+Otherwise 0.</dd>
+<dt>'C'</dt><dd>Returns start column of process request for input.
+If the current line is not reading input for a
+concurrent process, 0 is returned.</dd>
+<dt>'B'</dt><dd>Returns 1 if the current buffer has the build window.
+Otherwise 0 is returned.</dd>
+<dt>'R'</dt><dd>Returns 1 if the build window is running.
+Otherwise 0 is returned.  A delay is performed and
+pending build window output is read into the
+build window.</dd>
+<dt>'X'</dt><dd>Returns 1 if the command shell running in
+the build window has exited.
+Otherwise 0 is returned.  A delay is performed and
+pending build window output is read into the
+build window.</dd>
+</dl>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="concur_shell.html">concur_shell</a>, <a href="_stop_process.html">_stop_process</a></blockquote>
+</body>
+</html>

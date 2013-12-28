@@ -1,0 +1,2832 @@
+/**
+ * This documentation is pasted from the W3C Schema Definition.
+ * <p>
+ * The original document may be found at:
+ * <a href="http://www.w3.org/TR/xmlschema-0/">http://www.w3.org/TR/xmlschema-0/</a>.
+ * <p>
+ * The current version as of this writing was last revised May, 5, 2001
+ * and may be found at:
+ * <a href="http://www.w3.org/TR/2001/REC-xmlschema-0-20010502/">http://www.w3.org/TR/2001/REC-xmlschema-0-20010502/</a>.
+ * <p>
+ * The document is editoed by: David C. Fallside (IBM) fallside@us.ibm.com
+ * <p>
+ * Copyright &copy;2001 W3C&reg; (MIT, INRIA, Keio), All Rights Reserved.
+ * W3C liability, trademark, document use and software licensing rules apply.
+ */
+private xsd_copyright;
+
+//////////////////////////////////////////////////////////////////////////
+// PSUEDO TAGS, COMMON ATTRIBUTES
+//
+
+// tag with abstract attribute
+private tag withAbstractBlock {
+   /**
+    * XML Schema provides a mechanism to force substitution for a
+    * particular element or type.  When an element or type is declared to
+    * be "abstract", it cannot be used in an instance document.  When an
+    * element is declared to be abstract, a member of that element's
+    * substitution group must appear in the instance document.  When an
+    * element's corresponding type definition is declared as abstract, all
+    * instances of that element must use xsi:type to indicate a derived
+    * type that is not abstract.
+    * <p>
+    * Declaring an element as abstract requires the use of a substitution
+    * group.  Declaring a type as abstract simply requires the use of a
+    * type derived from it (and identified by the xsi:type attribute) in
+    * the instance document.
+    */
+   attr abstract { false, true }
+   /**
+    * A set corresponding to the actual value of the block [attribute], if
+    * present, otherwise on the actual value of the blockDefault
+    * [attribute] of the ancestor <code>schema</code> element information
+    * item, if present, otherwise on the empty string.  Call this the EBV
+    * (for effective block value).  Then the value of this property is the
+    * appropriate case among the following:
+    * <ol>
+    * <li>If the EBV is the empty string, then the empty set;
+    * <li>If the EBV is #all, then {extension, restriction};
+    * <li>otherwise a set with members drawn from the set above, each being
+    * present or absent depending on whether the ·actual value· (which is
+    * a list) contains an equivalently named item.
+    * </ol>
+    * <p>
+    * NOTE: Although the <code>blockDefault</code> attribute of
+    * <code>schema</code> may include values other than restriction or
+    * extension, those values are ignored in the determination of
+    * {prohibited substitutions} for complex type definitions (they are
+    * used elsewhere).
+    */
+   attr block;
+}
+
+// tag with final attribute
+private tag withFinal {
+   /**
+    * The restriction value of the final attribute prevents derivations by
+    * restriction.  Preventing derivations at all, or by extension, are
+    * indicated by the values #all and extension respectively.  Moreover,
+    * there exists an optional finalDefault attribute on the schema
+    * element whose value can be one of the values allowed for the final
+    * attribute.  The effect of specifying the finalDefault attribute is
+    * equivalent to specifying a final attribute on every type definition
+    * and element declaration in the schema.
+    */
+   attr final;
+}
+
+// tag with base attribute
+private tag withBase {
+   /**
+    * A type definition used as the basis for an extension or restriction.
+    */
+   attr QName base;
+}
+
+// tag with default attribute
+private tag withDefaultOrFixed {
+   /**
+    * The schema processor treats defaulted elements slightly differently.
+    * When an element is declared with a default value, the value of the
+    * element is whatever value appears as the element's content in the
+    * instance document; if the element appears without any content, the
+    * schema processor provides the element with a value equal to that of
+    * the default attribute.  However, if the element does not appear in
+    * the instance document, the schema processor does not provide the
+    * element at all.  In summary, the differences between element and
+    * attribute defaults can be stated as: Default attribute values apply
+    * when attributes are missing, and default element values apply when
+    * elements are empty.
+    */
+   attr default;
+   /**
+    * The <code>fixed</code> attribute is used in both attribute and
+    * element declarations to ensure that the attributes and elements are
+    * set to particular values.  Note that the concepts of a fixed value
+    * and a default value are mutually exclusive, and so it is an error
+    * for a declaration to contain both fixed and default attributes.
+    */
+   attr fixed;
+}
+
+// tag with fixed attribute for value specification
+private tag withFixedValue {
+   /**
+    * When a simple type is defined, the fixed attribute may be applied to
+    * any of its facets to prevent a derivation of that type from
+    * modifying the value of the fixed facets.
+    */
+   attr fixed { false, true }
+   /**
+    * The value for this constraint.
+    */
+   attr nonNegativeInteger value;
+}
+
+// tag with mixed attribute
+private tag withMixed {
+   /**
+    * XML Schema provide for the construction of schemas where character
+    * data can appear alongside subelements, and character data is not
+    * confined to the deepest subelements.
+    * <p>
+    * To enable character data to appear between the child-elements of
+    * an element, the mixed attribute on the type definition is set to
+    * true.
+    * <p>
+    * Note that the mixed model in XML Schema differs fundamentally from
+    * the mixed model in XML 1.0.  Under the XML Schema mixed model, the
+    * order and number of child elements appearing in an instance must
+    * agree with the order and number of child elements specified in the
+    * model.  In contrast, under the XML 1.0 mixed model, the order and
+    * number of child elements appearing in an instance cannot be
+    * constrained.  In summary, XML Schema provides full validation of
+    * mixed models in contrast to the partial schema validation provided
+    * by XML 1.0.
+    */
+   attr mixed { false, true }
+}
+// tag with ID attribute
+private tag withID {
+   /**
+    * ID represents the ID attribute type from XML 1.0 (Second Edition).
+    * <p>
+    * An NCName is a name with no colon, as defined in [XML-Namespaces].
+    */
+   attr NCName id;
+}
+
+// tag with name attribute
+private tag withName {
+   /**
+    * Specifies the name for this object.
+    */
+   attr name;
+}
+
+// tag with ref attribute
+private tag withRef {
+   /**
+    * Global elements, and global attributes, are created by declarations
+    * that appear as the children of the schema element.  Once declared, a
+    * global element or a global attribute can be referenced in one or
+    * more declarations using the <code>ref</code> attribute as described
+    * above.  A declaration that references a global element enables the
+    * referenced element to appear in the instance document in the context
+    * of the referencing declaration.
+    * <p>
+    * The declaration of a global element also enables the element to
+    * appear at the top-level of an instance document.
+    * <p>
+    * There are a number of caveats concerning the use of global elements
+    * and attributes.  One caveat is that global declarations cannot
+    * contain references; global declarations must identify simple and
+    * complex types directly.  Put concretely, global declarations cannot
+    * contain the ref attribute, they must use the <code>type</code>
+    * attribute (or, as we describe shortly, be followed by an anonymous
+    * type definition).  A second caveat is that cardinality constraints
+    * cannot be placed on global declarations, although they can be placed
+    * on local declarations that reference global declarations.  In other
+    * words, global declarations cannot contain the attributes minOccurs,
+    * maxOccurs, or use.
+    */
+   attr ref;
+}
+
+// tag with XPath specification
+private tag withXPath {
+   /**
+    * XPath expression used to identify a node or attribute instance.
+    * <p>
+    * In order to reduce the burden on implementers, in particular
+    * implementers of streaming processors, only restricted subsets of XPath
+    * expressions are allowed in {selector} and {fields}.
+    */
+   attr xpath;
+}
+// tag with minOccurs and maxOccurs
+private tag withMinMaxOccurs {
+   /**
+    * The number of times that an element is required to appear.
+    */
+   attr nonNegativeInteger minOccurs { 0, 1}
+   /**
+    * The maximum number of times that an element is allowed to appear.
+    */
+   attr nonNegativeInteger maxOccurs { 0, 1, unbounded }
+}
+
+// tag with namespace attribute
+private tag withNamespace {
+   /**
+    * Namespaces may be used to permit and forbid element content in
+    * various ways depending upon the value of the namespace attribute, as
+    * shown below:
+    * <ul>
+    * <li><b>any</b> have any namespace or are not namespace qualified
+    * <li><b>not and a namespace name</b> have any namespace other than
+    *     the specified namespace name, or are not namespace qualified;
+    * <li><b>not and -absent-</b> are namespace qualified;
+    * <li><b>a set whose members are either namespace names or -absent-</b>
+    *     have any of the specified namespaces and/or, if -absent- is
+    *     included in the set, are unqualified.
+    * </ul>
+    */
+   attr namespace;
+}
+
+// tag with schemaLocationAttribute
+private tag withSchemaLocation {
+   /**
+    * The actual value of the schemaLocation, if present, gives a hint as
+    * to where a serialization of a schema document with declarations and
+    * definitions for that namespace (or none) may be found.  When no
+    * <code>schemaLocation</code> attribute is present, the schema author
+    * is leaving the identification of that schema to the instance,
+    * application or user, via the mechanisms described below in Layer 3:
+    * Schema Document Access and Web-interoperability (4.3).  When a
+    * <code>schemaLocation</code> is present, it must contain a single URI
+    * reference which the schema author warrants will resolve to a
+    * serialization of a schema document containing the component(s) in
+    * the <import>ed namespace referred to elsewhere in the containing
+    * schema document.
+    */
+   attr anyURI schemaLocation;
+}
+
+// tag with processContents attribute
+private tag withProcessContents {
+   /**
+    * Controls the impact on -assessment- of the information items
+    * allowed by wildcards.
+    */
+   attr processContents {
+      /**
+       * If the item, or any items among its [children] if it's an element
+       * information item, has a uniquely determined declaration
+       * available, it must be -valid- with respect to that definition,
+       * that is, -validate- where you can, don't worry when you can't.
+       */
+      lax,
+      /**
+       * No constraints at all: the item must simply be well-formed XML.
+       */
+      skip,
+      /**
+       * There must be a top-level declaration for the item available, or
+       * the item must have an xsi:type, and the item must be -valid- as
+       * appropriate.
+       */
+      strict
+   };
+}
+
+// tag with the "source" attribute
+private tag withSource {
+   /**
+    * User information is intended for human consumption.  Application
+    * information for automatic processing.  In both cases, provision is
+    * made for an optional URI reference to supplement the local
+    * information, as the value of the <code>source</code> attribute of
+    * the respective element information items.  Validation does not
+    * involve dereferencing these URIs, when present.  In the case of
+    * {user information}, indication should be given as to the identity of
+    * the (human) language used in the contents, using the xml:lang
+    * attribute.
+    */
+   attr anyURI source;
+}
+
+// tag with xml:lang attribute
+private tag withXMLLang {
+   /**
+    * The language that the corresponding source attribute is in.
+    * <p>
+    * We recommend you use the xml:lang attribute * with any documentation
+    * elements to indicate the language of the information.
+    */
+   attr "xml:lang";
+}
+
+//////////////////////////////////////////////////////////////////////////
+// ACTUAL TAGS
+//
+
+/**
+ * The XML representation for a model group schema component is either an
+ * <code>all</code>, a <code>choice</code> or a <code>sequence</code>
+ * element information item.
+ */
+tag "xsd:all" ( annotation?, element* ) : withID, withMinMaxOccurs {
+}
+
+/**
+ * Annotation of schemas and schema components, with material for human or
+ * computer consumption, is provided for by allowing application
+ * information and human information at the beginning of most major schema
+ * elements, and anywhere at the top level of schemas.
+ * <p>
+ * The annotation component corresponding to the <code>annotation</code>
+ * element in the example above will have one element item in each of its
+ * {user information} and {application information} and one attribute item
+ * in its {attributes}.
+ */
+tag "xsd:annotation" ( appinfo | documentation ) : withID {
+}
+
+/**
+ * The XML representation for a wildcard schema component is an <any> or
+ * <code>anyAttribute</code> element information item.
+ * <p>
+ * Wildcards are subject to the same ambiguity constraints (Unique
+ * Particle Attribution (§3.8.6)) as other content model particles: If an
+ * instance element could match either an explicit particle and a
+ * wildcard, or one of two wildcards, within the content model of a type,
+ * that model is in error.
+ */
+tag "xsd:any" ( annotation? ) : withID, withMinMaxOccurs, withNamespace, withProcessContents {
+}
+
+/**
+ * The XML representation for a wildcard schema component is an <any> or
+ * <code>anyAttribute</code> element information item.
+ * <p>
+ * In addition to the <code>any</code> element which enables element
+ * content according to namespaces, there is a corresponding
+ * <code>anyAttribute</code> element which enables attributes to appear in
+ * elements.  For example, we can permit any HTML attribute to appear as
+ * part of the <code>htmlExample</code> element by adding anyAttribute to
+ * its declaration:
+ */
+tag "xsd:anyAttribute" ( annotation? ) : withNamespace, withProcessContents {
+}
+
+/**
+ * The <code>appInfo</code> element can be used to provide information for
+ * tools, * stylesheets and other applications.
+ * <p>
+ * Both documentation and appInfo appear as subelements of annotation,
+ * which * may itself appear at the beginning of most schema
+ * constructions.
+ */
+tag "xsd:appInfo" : withSource {
+}
+
+/**
+ * The XML representation for an attribute declaration schema component is
+ * an <code>attribute</code> element information item.  It specifies a
+ * simple type definition for an attribute either by reference or
+ * explicitly, and may provide default information.
+ */
+tag "xsd:attribute" (annotation?, SimpleType?) : withID, withDefaultOrFixed, withName, withRef {
+   /**
+    * If form is present and its actual value is qualified, or
+    * if form is absent and the actual value of attributeFormDefault on
+    * the schema ancestor is qualified, then the actual value of the
+    * targetNamespace [attribute] of the parent schema element
+    * information item, or -absent- if there is none, otherwise -absent-.
+    */
+   attr form { qualified, unqualified }
+   /**
+    * The simple type definition corresponding to the
+    * <code>simpleType</code> element information item in the children,
+    * if present, otherwise the simple type definition resolved to by
+    * the -actual value- of the type attribute, if present, otherwise
+    * the simple ur-type definition.
+    */
+   attr type;
+   /**
+    * Attributes may appear once or not at all, but no other number of
+    * times, and so the syntax for specifying occurrences of attributes is
+    * different than the syntax for elements.  In particular, attributes
+    * can be declared with a <code>use</code> attribute to indicate
+    * whether the attribute is required, optional, or even prohibited.
+    */
+   attr use { optional, prohibited, required }
+}
+
+/**
+ * The XML representation for an attribute group definition schema
+ * component is an <code>attributeGroup</code> element information item.
+ * It provides for naming a group of attribute declarations and an
+ * attribute wildcard for use by reference in the XML representation of
+ * complex type definitions and other attribute group definitions.  The
+ * correspondences between the properties of the information item and
+ * properties of the component it corresponds to are as follows:
+ * <p>
+ * When an <code>attributeGroup</code> appears as a daughter of
+ * <code>schema</code> or <code>redefine</code>, it corresponds to an
+ * attribute group definition as below.  When it appears as a daughter of
+ * <code>complexType</code> or <code>attributeGroup</code>, it does not
+ * correspond to any component as such.
+ */
+tag "xsd:attributeGroup" ( annotation?, ((attribute | attributeGroup)*, anyAttribute?) ) : withID, withName, withRef {
+}
+
+/**
+ * The <code>choice</code> element allows only one of its children to
+ * appear in an instance.
+ * <p>
+ *
+ */
+tag "xsd:choice" ( annotation?, (element | group | choice | sequence | any)* ) : withID, withMinMaxOccurs  {
+}
+
+/**
+ * The <code>complexContent</code> element signals that we intend to
+ * restrict or extend the content model of a complex type, and the
+ * restriction of anyType declares two attributes but does not introduce
+ * any element content.
+ * <p>
+ * The XML representation for a complex type definition schema component
+ * is a <complexType> element information item.
+ */
+tag "xsd:complexContent" ( annotation?, (restriction | extension) ) : withID, withMixed {
+}
+
+/**
+ * New complex types are defined using the complexType element and such
+ * definitions typically contain a set of element declarations, element
+ * references, and attribute declarations.  The declarations are not
+ * themselves types, but rather an association between a name and the
+ * constraints which govern the appearance of that name in documents
+ * governed by the associated schema.  Elements are declared using the
+ * <code>element</code> element, and attributes are declared using the
+ * <code>attribute</code> element.
+ * <p>
+ */
+tag "xsd:complexType" ( annotation?, (simpleContent | complexContent | ((group | all | choice | sequence)?, ((attribute | attributeGroup)*, anyAttribute?))) ) : withAbstractBlock, withFinal, withID, withName, withMixed {
+}
+
+/**
+ * XML Schema provides three elements for annotating schemas for the
+ * benefit of both human readers and applications.
+ * <p>
+ * The <code>documentation</code> element appears as subelements of
+ * annotation, which may itself appear at the beginning of most schema
+ * constructions.
+ */
+tag "xsd:documentation" : withSource, withXMLLang {
+}
+
+/**
+ * The XML representation for an element declaration schema component is
+ * an <code>element</code> element information item.  It specifies a type
+ * definition for an element either by reference or explicitly, and may
+ * provide occurrence and default information.
+ */
+tag "xsd:element" (annotation?, ((simpleType | complexType)?, (unique | key | keyref)*) ) : withAbstractBlockFInal, withDefaultOrFixed, withID, withName, withMinMaxOccurs, withRef,  {
+   /**
+    * If form is present and its actual value is qualified, or if form is
+    * absent and the actual value of elementFormDefault on the
+    * <code>schema</code> ancestor is qualified, then the actual value of
+    * the <code>targetNamespace</code> attribute of the parent
+    * <code>schema</code> element information item, or -absent- if there
+    * is none, otherwise -absent-.
+    */
+   attr form { qualified, unqualified }
+   /**
+    * The type definition corresponding to the <code>simpleType</code> or
+    * <code>complexType</code> element information item in the [children],
+    * if either is present, otherwise the type definition resolved to by
+    * the actual value of the type [attribute], otherwise the {type
+    * definition} of the element declaration resolved to by the actual
+    * value of the <code>substitutionGroup</group> attribute, if present,
+    * otherwise the ur-type definition.
+    */
+   attr type;
+   /**
+    * If <code>nillable</code> is true, then an element may also be valid
+    * if it carries the namespace qualified attribute with local name nil
+    * from namespace http://www.w3.org/2001/XMLSchema-instance and value
+    * true even if it has no text or element content despite a {content
+    * type} which would otherwise require content.
+    */
+   attr nillable { false, true }
+   /**
+    * XML Schema provides a mechanism, called substitution groups, that
+    * allows elements to be substituted for other elements.  More
+    * specifically, elements can be assigned to a special group of
+    * elements that are said to be substitutable for a particular named
+    * element called the head element.  (Note that the head element must
+    * be declared as a global element.) Elements in a substitution group
+    * must have the same type as the head element, or they can have a type
+    * that has been derived from the head element's type.
+    * <p>
+    * Note that when an instance document contains element substitutions
+    * whose types are derived from those of their head elements, it is not
+    * necessary to identify the derived types using the xsi:type
+    * construction that we described in Section 4.3.
+    * <p>
+    * The existence of a substitution group does not require any of the
+    * elements in that class to be used, nor does it preclude use of the
+    * head element.  It simply provides a mechanism for allowing elements
+    * to be used interchangeably.
+    */
+   attr QName substitutionGroup;
+}
+
+/**
+ * The enumeration facet limits a simple type to a set of distinct values.
+ */
+tag "xsd:enumeration" ( annotation? ) : withID {
+   /**
+    * The value of this item in the enumeration set.
+    */
+   attr value;
+}
+
+/**
+ * A complex type definition which allows element or attribute content in
+ * addition to that allowed by another specified type definition is said
+ * to be an extension.
+ */
+tag "xsd:extension" ( annotation?, (group | all | choice | sequence)?, ((attribute | attributeGroup)*, anyAttribute?) ) : withID, withBase {
+}
+
+/**
+ * The <code>field</code> list specifies XPath expressions relative to
+ * each element selected by a selector.  This must identify a single node
+ * (element or attribute) whose content or value, which must be of a
+ * simple type, is used in the constraint.  It is possible to specify an
+ * ordered list of {fields}s, to cater to multi-field keys, keyrefs, and
+ * uniqueness constraints.
+ * <p>
+ * In order to reduce the burden on implementers, in particular
+ * implementers of streaming processors, only restricted subsets of XPath
+ * expressions are allowed in selector and fields.
+ */
+tag "xsd:field" ( annotation? ) : withID, withXPath {
+}
+
+/**
+ * <code>fractionDigits</code> is the maximum number of digits in the
+ * fractional part of values of datatypes derived from decimal.  The value
+ * of <code>fractionDigits</code> <em>must</em> be a
+ * <code>nonNegativeInteger</code>.
+ * <p>
+ * <code>fractionDigits</code> provides for constraining a value space to
+ * values with a specific maximum number of decimal digits in the
+ * fractional part.
+ */
+tag "xsd:fractionDigits" ( annotation? ) : withID, withFixedValue {
+}
+
+/**
+ * The XML representation for a model group definition schema component is
+ * a <group> element information item.  It provides for naming a model
+ * group for use by reference in the XML representation of complex type
+ * definitions and model groups.
+ */
+tag "xsd:group" ( annotation?, (all | choice | sequence) ) : withName {
+}
+
+/**
+ * The <code>import</code> element information item identifies namespaces
+ * used in external references, i.e.  those whose QName identifies them as
+ * coming from a different namespace (or none) than the enclosing schema
+ * document's targetNamespace.  The actual value of its
+ * <code>namespace</code> attribute indicates that the containing schema
+ * document may contain qualified references to schema components in that
+ * namespace (via one or more prefixes declared with namespace
+ * declarations in the normal way).  If that attribute is absent, then the
+ * import allows unqualified reference to components with no target
+ * namespace.  Note that components to be imported need not be in the form
+ * of a schema document; the processor is free to access or construct
+ * components using means of its own choosing.
+ * <p>
+ * NOTE: Since both the namespace and schemaLocation [attribute] are
+ * optional, a bare <import/> information item is allowed.  This simply
+ * allows unqualified reference to foreign components with no target
+ * namespace without giving any hints as to where to find them.
+ */
+tag "xsd:import" ( annotation? ) : withID, withNamespace, withSchemaLocation {
+}
+
+/**
+ * Schema components for a single target namespace can be assembled from
+ * several ·schema documents·, that is several <code>schema</code> element
+ * information items.
+ * <p>
+ * A <code>schema</code> information item may contain any number of
+ * <code>include</code> elements.  Their <code>schemaLocation</code>
+ * attributes, consisting of a URI reference, identify other schema
+ * documents.
+ * <p>
+ * The XML Schema corresponding to <code>schema</code> contains not only
+ * the components corresponding to its definition and declaration
+ * children, but also all the components of all the XML Schemas
+ * corresponding to any included schema documents.  Such included schema
+ * documents must either (a) have the same <code>targetNamespace</code> as
+ * the including schema document, or (b) no <code>targetNamespace</code>
+ * at all, in which case the included schema document is converted to the
+ * including schema document's <code>targetNamespace</code>.
+ */
+tag "xsd:include" ( annotation? ) withID, withSchemaLocation {
+}
+
+/**
+ * The XML representation for an identity-constraint definition schema
+ * component is either a <code>key</code>, a <code>keyref</code> or a
+ * <code>unique</code> element information item.
+ */
+tag "xsd:key" ( annotation?, (selector, field+) ) : withID, withName {
+}
+
+/**
+ * The XML representation for an identity-constraint definition schema
+ * component is either a <code>key</code>, a <code>keyref</code> or a
+ * <code>unique</code> element information item.
+ */
+tag "xsd:keyref" ( annotation?, (selector, field+) ) : withID, withName {
+   /**
+    * Name of key being referred to.
+    */
+   attr QName refer;
+}
+
+/**
+ * <code>length</code> is the number of units of length, where units of
+ * length varies depending on the type that is being ·derived· from.  The
+ * value of length <em>must</em> be a nonNegativeInteger.
+ * <p>
+ * For string and datatypes derived from string, length is measured in
+ * units of characters as defined in [XML 1.0 (Second Edition)].  For
+ * anyURI, length is measured in units of characters (as for string).  For
+ * hexBinary and base64Binary and datatypes ·derived· from them, length is
+ * measured in octets (8 bits) of binary data.  For datatypes derived by
+ * list, length is measured in number of list items.
+ * <p>
+ * NOTE: For string and datatypes derived from string, length will not
+ * always coincide with "string length" as perceived by some users or with
+ * the number of storage units in some digital representation.  Therefore,
+ * care should be taken when specifying a value for length and in
+ * attempting to infer storage requirements from a given value for length.
+ * <p>
+ * <code>length</code> provides for constraining a value space to values
+ * with a specific number of units of length, where units of length varies
+ * depending on {base type definition}.
+ * <p>
+ * It is an ·error· for both length and either of minLength or maxLength
+ * to be members of {facets}.
+ */
+tag "xsd:length" ( annotation? ) : withID, withFixedValue {
+}
+
+/**
+ * A <code>list</code> datatype must be derived from an atomic or a
+ * union datatype, known as the <code>itemType</code> of the
+ * <code>list</code> datatype.  This yields a datatype whose value
+ * space is composed of finite-length sequences of values from the
+ * value space of the <code>itemType</code> and whose lexical space is
+ * composed of white space separated lists of literals of the
+ * <code>itemType</code>.
+ * <p>
+ * Note that it is possible to derive a list type from the atomic type
+ * string.  However, a string may contain white space, and white space
+ * delimits the items in a list type, so you should be careful using list
+ * types whose base type is string.
+ */
+tag "xsd:list" ( annotation?, simpleType? ) : withID {
+   /**
+    * XML Schema has the concept of a list type, in addition to the
+    * so-called atomic types that constitute most of the types listed in
+    * Table 2.  (Atomic types, list types, and the union types described
+    * in the next section are collectively called simple types.) The value
+    * of an atomic type is indivisible from XML Schema's perspective.  For
+    * example, the NMTOKEN value US is indivisible in the sense that no
+    * part of US, such as the character "S", has any meaning by itself.
+    * In contrast, list types are comprised of sequences of atomic types
+    * and consequently the parts of a sequence (the "atoms") themselves
+    * are meaningful.  For example, NMTOKENS is a list type, and an
+    * element of this type would be a white-space delimited list of
+    * NMTOKEN's, such as "US UK FR".  XML Schema has three built-in list
+    * types, they are NMTOKENS, IDREFS, and ENTITIES.
+    * <p>
+    * In addition to using the built-in list types, you can create new
+    * list types by derivation from existing atomic types.  (You cannot
+    * create list types from existing list types, nor from complex types.)
+    */
+   attr QName itemType {
+      string,
+      normalizedString,
+      token,
+      byte,
+      unsignedByte,
+      base64Binary,
+      hexBinary,
+      integer,
+      positiveInteger,
+      negativeInteger,
+      nonNegativeInteger,
+      nonPositiveInteger,
+      int,
+      unsignedInt,
+      long,
+      unsignedLong,
+      short,
+      unsignedShort,
+      decimal,
+      float,
+      double,
+      boolean,
+      time,
+      dateTime,
+      duration,
+      date,
+      gMonth,
+      gYear,
+      gYearMonth,
+      gDay,
+      gMonthDay,
+      Name,
+      QName,
+      NCName,
+      anyURI,
+      language,
+      ID,
+      IDREF,
+      IDREFS,
+      ENTITY,
+      ENTITIES,
+      NOTATION,
+      NMTOKEN,
+      MNTOKENS,
+      "xsd:string",
+      "xsd:normalizedString",
+      "xsd:token",
+      "xsd:byte",
+      "xsd:unsignedByte",
+      "xsd:base64Binary",
+      "xsd:hexBinary",
+      "xsd:integer",
+      "xsd:positiveInteger",
+      "xsd:negativeInteger",
+      "xsd:nonNegativeInteger",
+      "xsd:nonPositiveInteger",
+      "xsd:int",
+      "xsd:unsignedInt",
+      "xsd:long",
+      "xsd:unsignedLong",
+      "xsd:short",
+      "xsd:unsignedShort",
+      "xsd:decimal",
+      "xsd:float",
+      "xsd:double",
+      "xsd:boolean",
+      "xsd:time",
+      "xsd:dateTime",
+      "xsd:duration",
+      "xsd:date",
+      "xsd:gMonth",
+      "xsd:gYear",
+      "xsd:gYearMonth",
+      "xsd:gDay",
+      "xsd:gMonthDay",
+      "xsd:Name",
+      "xsd:QName",
+      "xsd:NCName",
+      "xsd:anyURI",
+      "xsd:language",
+      "xsd:ID",
+      "xsd:IDREF",
+      "xsd:IDREFS",
+      "xsd:ENTITY",
+      "xsd:ENTITIES",
+      "xsd:NOTATION",
+      "xsd:NMTOKEN",
+      "xsd:MNTOKENS"
+   }
+}
+
+/**
+ * <code>maxExclusive</code> is the exclusive upper bound of the value
+ * space for a datatype with the ordered property.  The value of
+ * <code>maxExclusive</code> must be in the value space of the base type.
+ * <p>
+ * <code>maxExclusive</code> provides for constraining a value space to
+ * values with a specific exclusive upper bound.
+ */
+tag "xsd:maxExclusive" ( annotation? ) : withID, withFixedValue {
+}
+
+/**
+ * <code>maxInclusive</code> is the inclusive upper bound of the value
+ * space for a datatype with the ordered property.  The value of
+ * <code>maxInclusive</code> must be in the value space of the base type.
+ * <p>
+ * <code>maxInclusive</code> provides for constraining a value space to
+ * values with a specific inclusive upper bound.
+ */
+tag "xsd:maxInclusive" ( annotation? ) : withID, withFixedValue {
+}
+
+/**
+ * <code>maxLength</code> is the maximum number of units of length, where
+ * units of length varies depending on the type that is being derived
+ * from.  The value of <code>maxLength</code> <em>must</em> be a
+ * <code>nonNegativeInteger</code>.
+ * <p>
+ * For string and datatypes derived from string, <code>maxLength</code> is
+ * measured in units of characters as defined in [XML 1.0 (Second
+ * Edition)].  For <code>hexBinary</code> and <code>base64Binary</code>
+ * and datatypes derived from them, <code>maxLength</code> is measured in
+ * octets (8 bits) of binary data.  For datatypes derived by
+ * <code>list</code>, <code>maxLength</code> is measured in number of list
+ * items.
+ * <p>
+ * NOTE: For string and datatypes derived from string,
+ * <code>maxLength</code> will not always coincide with "string length" as
+ * perceived by some users or with the number of storage units in some
+ * digital representation.  Therefore, care should be taken when
+ * specifying a value for <code>maxLength</code> and in attempting to
+ * infer storage requirements from a given value for
+ * <code>maxLength</code>.
+ * <p>
+ * <code>maxLength</code> provides for constraining a value space to
+ * values with at most a specific number of units of length, where units
+ * of length varies depending on {base type definition}.
+ */
+tag "xsd:maxLength" ( annotation? ) : withID, withFixedValue {
+}
+
+/**
+ * <code>minExclusive</code> is the exclusive lower bound of the value
+ * space for a datatype with the ordered property.  The value of
+ * <code>minExclusive</code> <em>must</em> be in the value space of the
+ * base type.
+ * <p>
+ * <code>minExclusive</code> provides for constraining a value space to
+ * values with a specific exclusive lower bound.
+ */
+tag "xsd:minExclusive" ( annotation? ) : withID, withFixedValue {
+}
+
+/**
+ * <code>minInclusive</code> is the inclusive lower bound of the value
+ * space for a datatype with the ordered property.  The value of
+ * <code>minInclusive</code> <em>must</em> be in the value space of the
+ * base type.
+ * <p>
+ * <code>minInclusive</code> provides for constraining a value space to
+ * values with a specific inclusive lower bound.
+ */
+tag "xsd:minInclusive" ( annotation? ) : withID, withFixedValue {
+}
+
+/**
+ * <code>minLength</code> is the minimum number of units of length, where
+ * units of length varies depending on the type that is being derived
+ * from.  The value of <code>minLength</code> <em>must</em> be a
+ * <code>nonNegativeInteger</code>.
+ * <p>
+ * For string and datatypes derived from string, <code>minLength</code> is
+ * measured in units of characters as defined in [XML 1.0 (Second
+ * Edition)].  For <code>hexBinary</code> and <code>base64Binary</code>
+ * and datatypes derived from them, <code>minLength</code> is measured in
+ * octets (8 bits) of binary data.  For datatypes derived by
+ * <code>list</code>, <code>minLength</code> is measured in number of list
+ * items.
+ * <p>
+ * NOTE: For string and datatypes derived from string,
+ * <code>minLength</code> will not always coincide with "string length" as
+ * perceived by some users or with the number of storage units in some
+ * digital representation.  Therefore, care should be taken when
+ * specifying a value for <code>minLength</code> and in attempting to
+ * infer storage requirements from a given value for
+ * <code>minLength</code>.
+ * <p>
+ * <code>minLength</code> provides for constraining a value space to
+ * values with at most a specific number of units of length, where units
+ * of length varies depending on {base type definition}.
+ */
+tag "xsd:minLength" ( annotation? ) : withID, withFixedValue {
+}
+
+/**
+ * The XML representation of a notation declaration.
+ * <p>
+ * Notation declarations do not participate in validation as such.  They
+ * are referenced in the course of validating strings as members of the
+ * NOTATION simple type.
+ */
+tag "xsd:notation" ( annotation? ) : withID, withName {
+   /**
+    * A URI reference.
+    */
+   attr anyURI public;
+   /**
+    * A public identifier, as defined in [XML 1.0 (Second Edition)].
+    */
+   attr anyURI system;
+}
+
+/**
+ * <code>pattern</code> is a constraint on the value space of a datatype
+ * which is achieved by constraining the lexical space to literals which
+ * match a specific pattern.  The value of pattern <em>must</em> be a regular
+ * expression.
+ * <p>
+ * <code>pattern</code> provides for constraining a value space to
+ * values that are denoted by literals which match a specific regular
+ * expression.
+ */
+tag "xsd:pattern" ( annotation? ) : withID {
+   /**
+    * A regular expression.
+    */
+   attr string value;
+}
+
+/**
+ * A <code>schema</code> information item may contain any number of <code>redefine</code>
+ * elements.  Their <code>schemaLocation</code> attributes, consisting of a URI
+ * reference, identify other schema documents, that is <code>schema</code>
+ * information items.
+ * <p>
+ * The XML Schema corresponding to <code>schema</code> contains not only the
+ * components corresponding to its definition and declaration [children],
+ * but also all the components of all the XML Schemas corresponding to
+ * any redefined schema documents.  Such schema documents must either
+ * (a) have the same <code>targetNamespace</code> as the redefining schema document,
+ * or (b) no <code>targetNamespace</code> at all, in which case the redefined schema
+ * document is converted to the redefining schema document's
+ * <code>targetNamespace</code>.
+ * <p>
+ * The definitions within the <code>redefine</code> element itself are restricted to
+ * be redefinitions of components from the redefined schema document, in
+ * terms of themselves.  That is,
+ * <ul>
+ * <li>Type definitions must use themselves as their base type definition;
+ * <li>Attribute group definitions and model group definitions must be
+ * supersets or subsets of their original definitions, either by including
+ * exactly one reference to themselves or by containing only (possibly
+ * restricted) components which appear in a corresponding way in their
+ * redefined selves.
+ * <p>
+ * Not all the components of the redefined schema document need be
+ * redefined.
+ * <p>
+ * This mechanism is intended to provide a declarative and modular
+ * approach to schema modification, with functionality no different except
+ * in scope from what would be achieved by wholesale text copying and
+ * redefinition by editing.  In particular redefining a type is not
+ * guaranteed to be side-effect free: it may have unexpected impacts on
+ * other type definitions which are based on the redefined one, even to
+ * the extent that some such definitions become ill-formed.
+ * <p>
+ * NOTE: The pervasive impact of redefinition reinforces the need for
+ * implementations to adopt some form of lazy or 'just-in-time' approach
+ * to component construction, which is also called for in order to avoid
+ * inappropriate dependencies on the order in which definitions and
+ * references appear in (collections of) schema documents.
+ */
+tag "xsd:redefine" ( (annotation | (simpleType | complexType | group | attributeGroup))* ) : withID, withSchemaLocation {
+}
+
+/**
+ * A derived datatype can be derived from a primitive datatype or
+ * another derived datatype by one of three means: by restriction, by
+ * list or by union.
+ */
+tag "xsd:restriction" ( annotation?, (simpleType?, (minExclusive | minInclusive | maxExclusive | maxInclusive | totalDigits | fractionDigits | length | minLength | maxLength | enumeration | whiteSpace | pattern)* ) ) : withID, withBase {
+}
+
+/**
+ * A schema is represented in XML by one or more schema documents, that
+ * is, one or more <code>schema</code> element information items.  A schema
+ * document contains representations for a collection of schema
+ * components, e.g.  type definitions and element declarations, which have
+ * a common target namespace.  A schema document· which has one or more
+ * <code>import</code> element information items corresponds to a schema with
+ * components with more than one target namespace.
+ * <p>
+ * Note that none of the attribute information items displayed above
+ * correspond directly to properties of schemas.  The
+ * <code>blockDefault</code>, <code>finalDefault</code>,
+ * <code>attributeFormDefault</code>, </code>elementFormDefault</code> and
+ * <code>targetNamespace</code> attributes are appealed to in the
+ * sub-sections above, as they provide global information applicable to
+ * many representation/component correspondences.  The other attributes
+ * (id and version) are for user convenience, and this specification
+ * defines no semantics for them.
+ * <p>
+ * The definition of the schema abstract data model in XML Schema Abstract
+ * Data Model (2.2) makes clear that most components have a target
+ * namespace.  Most components corresponding to representations within a
+ * given <code>schema</code> element information item will have a target
+ * namespace which corresponds to the <code>targetNamespace</code>
+ * attribute.
+ * <p>
+ * Since the empty string is not a legal namespace name, supplying an
+ * empty string for <code>targetNamespace</code> is incoherent, and is not
+ * the same as not specifying it at all.  The appropriate form of schema
+ * document corresponding to a schema whose components have no target
+ * namespace is one which has no targetNamespace attribute specified at
+ * all.
+ * <p>
+ * NOTE: The XML namespaces Recommendation discusses only instance
+ * document syntax for elements and attributes; it therefore provides no
+ * direct framework for managing the names of type definitions, attribute
+ * group definitions, and so on.  Nevertheless, the specification applies
+ * the target namespace facility uniformly to all schema components, i.e.
+ * not only declarations but also definitions have a {target namespace}.
+ * <p>
+ * Although the example schema at the beginning of this section might be a
+ * complete XML document, <code>schema</code> need not be the document
+ * element, but can appear within other documents.  Indeed there is no
+ * requirement that a schema correspond to a (text) document at all: it
+ * could correspond to an element information item constructed 'by hand',
+ * for instance via a DOM-conformant API.
+ * <p>
+ * Aside from <code>include</code> and <code>import</code>, which do not
+ * correspond directly to any schema component at all, each of the element
+ * information items which may appear in the content of
+ * <code>schema</code> corresponds to a schema component, and all except
+ * <code>annotation</code> are named.
+ */
+tag "xsd:schema" ((include | import | redefine | annotation)*, (((simpleType | complexType | group | attributeGroup) | element | attribute | notation), annotation*)*) : withID, withXMLLang {
+   /**
+    * Qualification of attributes can be globally specified by
+    * <code>attributeFormDefault</code> on the schema element, or can be
+    * specified separately for each local declaration using the form
+    * attribute.  All such attributes' values may each be set to
+    * unqualified or qualified, to indicate whether or not locally
+    * declared attributes must be unqualified.
+    */
+   attr attributeFormDefault { qualified, unqualified }
+   /**
+    * Preventing replacement by derivations at all, or by
+    * derivations-by-extension, are indicated by the values #all and
+    * extension respectively.  As with <code>final</code>, there exists an
+    * optional <code>blockDefault</code> attribute on the
+    * <code>schema</code> element whose value can be one of the values
+    * allowed for the <code>block</code> attribute.  The effect of
+    * specifying the <code>blockDefault</code> attribute is equivalent to
+    * specifying a <code>block</code> attribute on every type definition
+    * and element declaration in the schema.
+    */
+   attr blockDefault;
+   /**
+    * Qualification of local elements and can be globally specified by
+    * <code>elementFormDefault</code> on the schema element, or can be
+    * specified separately for each local declaration using the form
+    * attribute.  All such attributes' values may each be set to
+    * unqualified or qualified, to indicate whether or not locally
+    * declared elements must be unqualified.
+    */
+   attr elementFormDefault { qualified, unqualified }
+   /**
+    * The restriction value of the <code>final</code> attribute prevents
+    * derivations by restriction.  Preventing derivations at all, or by
+    * extension, are indicated by the values #all and extension
+    * respectively.  Moreover, there exists an optional
+    * <code>finalDefault</code> attribute on the schema element whose
+    * value can be one of the values allowed for the <code>final</code>
+    * attribute.  The effect of specifying the <code>finalDefault</code>
+    * attribute is equivalent to specifying a <code>final</code> attribute
+    * on every type definition and element declaration in the schema.
+    */
+   attr finalDefault;
+   /**
+    * A schema can be viewed as a collection (vocabulary) of type
+    * definitions and element declarations whose names belong to a
+    * particular namespace called a target namespace.  Target namespaces
+    * enable us to distinguish between definitions and declarations from
+    * different vocabularies.  For example, target namespaces would enable
+    * us to distinguish between the declaration for element in the XML
+    * Schema language vocabulary, and a declaration for element in a
+    * hypothetical chemistry language vocabulary.  The former is part of
+    * the http://www.w3.org/2001/XMLSchema target namespace, and the
+    * latter is part of another target namespace.
+    * <p>
+    * When we want to check that an instance document conforms to one or
+    * more schemas (through a process called schema validation), we need
+    * to identify which element and attribute declarations and type
+    * definitions in the schemas should be used to check which elements
+    * and attributes in the instance document.  The target namespace plays
+    * an important role in the identification process.
+    */
+   attr anyURI targetNamespace;
+   /**
+    * Version of this schema definition.  Not checked.
+    */
+   attr version;
+}
+
+/**
+ * <code>selector</code> specifies a restricted XPath expression relative
+ * to instances of the element being declared.  This must identify a node
+ * set of subordinate elements (i.e.  contained within the declared
+ * element) to which the constraint applies.
+ * <p>
+ * In order to reduce the burden on implementers, in particular
+ * implementers of streaming processors, only restricted subsets of XPath
+ * expressions are allowed in selector and fields.
+ */
+tag "xsd:selector" ( annotation? ) : withID, withXPath {
+}
+
+/**
+ * The <code>sequence</code> element specifies that each of of its children to
+ * appear in an instance, in the order specified.
+ */
+tag "xsd:sequence" ( annotation?, (element | group | choice | sequence | any)* ) : withID, withMinMaxOccurs {
+}
+
+/**
+ * To indicate that the content model of the new type contains only
+ * character data and no elements, we use a simpleContent element.
+ */
+tag "xsd:simpleContent" ( annotation?, (restriction | extension) ) : withID {
+}
+
+/**
+ * <code>simpleType</code> definitions provide for:
+ * <ul>
+ * <li>Establishing the value space and lexical space of a datatype,
+ * through the combined set of constraining facets specified in the
+ * definition;
+ * <li>Attaching a unique name (actually a QName) to the value space
+ * and lexical space.
+ * </ul>
+ */
+tag "xsd:simpleType" ( annotation?, (restriction | list | union) ) : withID, withName, withFinal {
+}
+
+/**
+ * <code>totalDigits</code> is the maximum number of digits in values of
+ * datatypes derived from decimal.  The value of <code>totalDigits</code>
+ * <em>must</em> be a <code>positiveInteger</code>.
+ * <p>
+ * <code>totalDigits</code> provides for constraining a value space to
+ * values with a specific maximum number of decimal digits (#x30-#x39).
+ */
+tag "xsd:totalDigits" ( annotation? ) : withID, withFixedValue {
+}
+
+/**
+ * A <code>union</code> datatype can be derived from one or more atomic, list
+ * or other union datatypes, known as the <code>memberTypes</code> of that union
+ * datatype.
+ * <p>
+ * When a datatype is derived from a <code>union</code> datatype, the only following constraining
+ * facets can be used:
+ * <ul>
+ * <li>pattern
+ * <li>enumeration
+ * </ul>
+ * <p>
+ * regardless of the constraining facets that are applicable to the
+ * datatypes that participate in the union.
+ */
+tag "xsd:union" ( annotation?, simpleType* ) : withID {
+   /**
+    * The datatypes that participate in the definition of a
+    * <code>union</code> datatype are known as the
+    * <code>memberTypes</code> of that <code>union</code> datatype.
+    * <p>
+    * The order in which the <code>memberTypes</code> are specified in the
+    * definition (that is, the order of the <code>simpleType</code>
+    * children of the <code>union</code> element, or the order of the
+    * QNames in the <code>memberTypes</code> attribute) is significant.
+    * During validation, an element or attribute's value is validated
+    * against the <code>memberTypes</code> in the order in which they
+    * appear in the definition until a match is found.  The evaluation
+    * order can be overridden with the use of <code>xsi:type</code>.
+    */
+   attr memberTypes;
+}
+
+/**
+ * This identity-constraint definition asserts uniqueness, with respect to
+ * the content identified by <code>selector</code>, of the tuples
+ * resulting from evaluation of the <code>fields</code> XPath
+ * expression(s).
+ */
+tag "xsd:unique" (annotation?, (selector, field+)) : withID, withName {
+}
+
+/**
+ * <code>whiteSpace</code> constrains the ·value space· of types derived
+ * from string such that the various behaviors specified in Attribute
+ * Value Normalization in [XML 1.0 (Second Edition)] are realized.  The
+ * value of <code>whiteSpace</code> must be one of {<code>preserve</code>,
+ * <code>replace</code>, <code>collapse</code>}.
+ * <p>
+ * <code>whiteSpace</code> is applicable to all atomic and list datatypes.
+ * For all atomic datatypes other than string (and types derived by
+ * restriction from it) the value of <code>whiteSpace</code> is
+ * <code>collapse</code> and cannot be changed by a schema author; for
+ * string the value of <code>whiteSpace</code> is <code>preserve</code>;
+ * for any type derived by restriction from string the value of
+ * <code>whiteSpace</code> can be any of the three legal values.  For all
+ * datatypes derived by list the value of <code>whiteSpace</code> is
+ * collapse and cannot be changed by a schema author.  For all datatypes
+ * derived by union whiteSpace does not apply directly; however, the
+ * normalization behavior of union types is controlled by the value of
+ * <code>whiteSpace</code> on that one of the memberTypes against which
+ * the union is successfully validated.
+ * <p>
+ * <code>whiteSpace</code> provides for constraining a value space
+ * according to the white space normalization rules.
+ */
+tag "xsd:whiteSpace" ( annotation? ) : withID {
+   /**
+    * When a simple type is defined, the fixed attribute may be applied
+    * to any of its facets to prevent a derivation of that type from
+    * modifying the value of the fixed facets.
+    */
+   attr fixed { false, true }
+   /**
+    * The value for this constraint.
+    */
+   attr value {
+      /**
+       * No normalization is done, the value is not changed (this is
+       * the behavior required by [XML 1.0 (Second Edition)] for
+       * element content)
+       */
+      preserve,
+      /**
+       * All occurrences of #x9 (tab), #xA (line feed) and #xD
+       * (carriage return) are replaced with #x20 (space)
+       */
+      replace,
+      /**
+       * After the processing implied by replace, contiguous sequences
+       * of #x20's are collapsed to a single #x20, and leading and
+       * trailing #x20's are removed.
+       */
+      collapse
+   }
+}
+
+
+/**
+ * The <code>string</code> datatype represents character strings in XML.
+ * The value space of <code>string</code> is the set of finite-length
+ * sequences of characters (as defined in [XML 1.0 (Second Edition)]) that
+ * match the Char production from [XML 1.0 (Second Edition)].  A character
+ * is an atomic unit of communication; it is not further specified except
+ * to note that every character has a corresponding Universal Character
+ * Set code point, which is an integer.
+ * <p>
+ * NOTE: Many human languages have writing systems that require child
+ * elements for control of aspects such as bidirectional formating or ruby
+ * annotation (see [Ruby] and Section 8.2.4 Overriding the bidirectional
+ * algorithm: the BDO element of [HTML 4.01]).  Thus, <code>string</code>,
+ * as a simple type that can contain only characters but not child
+ * elements, is often not suitable for representing text.  In such
+ * situations, a complex type that allows mixed content should be
+ * considered.  For more information, see Section 5.5 Any Element, Any
+ * Attribute of [XML Schema Language: Part 2 Primer].
+ * <p>
+ * NOTE: As noted in ordered, the fact that this specification does not
+ * specify an ·order-relation· for <code>string</code> does not preclude
+ * other applications from treating strings as being ordered.
+ * <p>
+ * <code>string</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ * <p>
+ * The following built-in datatypes are derived from <code>string</code>:
+ * <ul>
+ * <li>normalizedString
+ * </ul>
+ */
+property "xsd:string";
+/**
+ * <code>normalizedString</code> represents white space normalized
+ * strings.  The ·value space· of <code>normalizedString</code> is the set
+ * of strings that do not contain the carriage return (#xD), line feed
+ * (#xA) nor tab (#x9) characters.  The lexical space of
+ * <code>normalizedString</code> is the set of strings that do not contain
+ * the carriage return (#xD) nor tab (#x9) characters.  The base type of
+ * <code>normalizedString</code> is string.
+ * <p>
+ * <code>normalizedString</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ * <p>
+ * The following ·built-in· datatypes are ·derived· from normalizedString:
+ * <ul>
+ * <li>token
+ * </ul>
+ */
+property "xsd:normalizedString";
+/**
+ * <code>token</code> represents tokenized strings.  The value space of
+ * <code>token</code> is the set of strings that do not contain the line
+ * feed (#xA) nor tab (#x9) characters, that have no leading or trailing
+ * spaces (#x20) and that have no internal sequences of two or more
+ * spaces.  The lexical space of <code>token</code> is the set of strings
+ * that do not contain the line feed (#xA) nor tab (#x9) characters, that
+ * have no leading or trailing spaces (#x20) and that have no internal
+ * sequences of two or more spaces.  The base type of <code>token</code>
+ * is <code>normalizedString</code>.
+ * <p>
+ * <code>token</code> has the following constraining facets:
+ * <p>
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ * <p>
+ * The following built-in datatypes are derived from token:
+ * <p>
+ * <ul>
+ * <li>language
+ * <li>NMTOKEN
+ * <li>Name
+ * </ul>
+ */
+property "xsd:token";
+/**
+ * <code>byte</code> is derived from <code>short</code> by setting the
+ * value of <code>maxInclusive</code> to be 127 and
+ * <code>minInclusive</code> to be -128.  The base type of
+ * <code>byte</code> is <code>short</code>.
+ * <p>
+ * <code>byte</code> has a lexical representation consisting of an
+ * optional sign followed by a finite-length sequence of decimal digits
+ * (#x30-#x39).  If the sign is omitted, "+" is assumed.  For example: -1,
+ * 0, 126, +100.
+ * <p>
+ * The canonical representation for <code>byte</code> is defined by
+ * prohibiting certain options from the Lexical representation
+ * (§3.3.19.1).  Specifically, the the optional "+" sign is prohibited and
+ * leading zeroes are prohibited.
+ * <p>
+ * <code>byte</code> has the following constraining facets:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:byte";
+/**
+ * <code>unsignedByte</code> is derived from <code>unsignedShort</code> by
+ * setting the value of <code>maxInclusive</code> to be 255.  The base
+ * type of <code>unsignedByte</code> is <code>unsignedShort</code>.
+ * <p>
+ * <code>unsignedByte</code> has a lexical representation consisting of a
+ * finite-length sequence of decimal digits (#x30-#x39).  For example: 0,
+ * 126, 100.
+ * <p>
+ * The canonical representation for <code>unsignedByte</code> is defined
+ * by prohibiting certain options from the Lexical representation
+ * (§3.3.24.1).  Specifically, leading zeroes are prohibited.
+ * <p>
+ * <code>unsignedByte</code> has the following constraining facets:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:unsignedByte";
+/**
+ * <code>base64Binary</code> represents Base64-encoded arbitrary binary
+ * data.  The ·value space· of <code>base64Binary</code> is the set of
+ * finite-length sequences of binary octets.  For
+ * <code>base64Binary</code> data the entire binary stream is encoded
+ * using the Base64 Content-Transfer-Encoding defined in Section 6.8 of
+ * [RFC 2045].
+ * <p>
+ * <code>base64Binary</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ */
+property "xsd:base64Binary";
+/**
+ * <code>hexBinary</code> represents arbitrary hex-encoded binary data.  The value
+ * space of <code>hexBinary</code> is the set of finite-length sequences of binary
+ * octets.
+ * <p>
+ * <code>hexBinary</code> has a lexical representation where each binary octet is
+ * encoded as a character tuple, consisting of two hexadecimal digits
+ * ([0-9a-fA-F]) representing the octet code.  For example, "0FB7" is a
+ * hex encoding for the 16-bit integer 4023 (whose binary representation
+ * is 111110110111).
+ * <p>
+ * The canonical representation for <code>hexBinary</code> is defined by prohibiting
+ * certain options from the Lexical Representation (§3.2.15.1).
+ * Specifically, the lower case hexadecimal digits ([a-f]) are not
+ * allowed.
+ * <p>
+ * <code>hexBinary</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ */
+property "xsd:hexBinary";
+/**
+ * <code>integer</code> is derived from decimal by fixing the value of
+ * ·ractionDigits to be 0.  This results in the standard mathematical
+ * concept of the integer numbers.  The value space of <code>integer</code> is the
+ * infinite set {...,-2,-1,0,1,2,...}.  The base type of <code>integer</code> is
+ * <code>decimal</code>.
+ * <p>
+ * <code>integer</code> has a lexical representation consisting of a finite-length
+ * sequence of decimal digits (#x30-#x39) with an optional leading sign.
+ * If the sign is omitted, "+" is assumed.  For example: -1, 0,
+ * 12678967543233, +100000.
+ * <p>
+ * The canonical representation for <code>integer</code> is defined by prohibiting
+ * certain options from the Lexical representation (§3.3.13.1).
+ * Specifically, the preceding optional "+" sign is prohibited and leading
+ * zeroes are prohibited.
+ * <p>
+ * <code>integer</code> has the following constraining facets:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ * <p>
+ * The following built-in datatypes are derived from <code>integer</code>:
+ * <ul>
+ * <li>nonPositiveInteger
+ * <li>long
+ * <li>nonNegativeInteger
+ * </ul>
+ */
+property "xsd:integer";
+/**
+ * <code>positiveInteger</code> is derived from
+ * <code>nonNegativeInteger</code> by setting the value of
+ * <code>minInclusive</code> to be 1.  This results in the standard
+ * mathematical concept of the positive integer numbers.  The value space
+ * of <code>positiveInteger</code> is the infinite set {1,2,...}.  The
+ * base type of <code>positiveInteger</code> is
+ * <code>nonNegativeInteger</code>.
+ * <p>
+ * <code>positiveInteger</code> has a lexical representation consisting of
+ * an optional positive sign ("+") followed by a finite-length sequence of
+ * decimal digits (#x30-#x39).  For example: 1, 12678967543233, +100000.
+ * <p>
+ * The canonical representation for <code>positiveInteger</code> is
+ * defined by prohibiting certain options from the Lexical representation
+ * (§3.3.25.1).  Specifically, the optional "+" sign is prohibited and
+ * leading zeroes are prohibited.
+ * <p>
+ * <code>positiveInteger</code> has the following constraining facets:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:positiveInteger";
+/**
+ * <code>negativeInteger</code> is derived from
+ * <code>nonPositiveInteger</code> by setting the value of
+ * <code>maxInclusive</code> to be -1.  This results in the standard
+ * mathematical concept of the negative integers.  The value space of
+ * <code>negativeInteger</code> is the infinite set {...,-2,-1}.  The base
+ * type of <code>negativeInteger</code> is
+ * <code>nonPositiveInteger</code>.
+ * <p>
+ * <code>negativeInteger</code> has a lexical representation consisting of
+ * a negative sign ("-") followed by a finite-length sequence of decimal
+ * digits (#x30-#x39).  For example: -1, -12678967543233, -100000.
+ * <p>
+ * The canonical representation for <code>negativeInteger</code> is
+ * defined by prohibiting certain options from the Lexical representation
+ * (§3.3.15.1).  Specifically, leading zeroes are prohibited.
+ * <p>
+ * <code>negativeInteger</code> has the following constrainin facets·:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:negativeInteger";
+/**
+ * <code>nonNegativeInteger</code> is derived from <code>integer</code> by
+ * setting the value of <code>minInclusive</code> to be 0.  This results
+ * in the standard mathematical concept of the non-negative integers.  The
+ * value space of <code>nonNegativeInteger</code> is the infinite set
+ * {0,1,2,...}.  The base type of <code>nonNegativeInteger</code> is
+ * <code>integer</code>.
+ * <p>
+ * <code>nonNegativeInteger</code> has a lexical representation consisting
+ * of an optional sign followed by a finite-length sequence of decimal
+ * digits (#x30-#x39).  If the sign is omitted, "+" is assumed.  For
+ * example: 1, 0, 12678967543233, +100000.
+ * <p>
+ * The canonical representation for <code>nonNegativeInteger</code> is
+ * defined by prohibiting certain options from the Lexical representation
+ * (§3.3.20.1).  Specifically, the the optional "+" sign is prohibited and
+ * leading zeroes are prohibited.
+ * <p>
+ * <code>nonNegativeInteger</code> has the following constraining facets:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ * <p>
+ * The following ·built-in· datatypes are derived from
+ * <code>nonNegativeInteger</code>:
+ * <ul>
+ * <li>unsignedLong
+ * <li>positiveInteger
+ * </ul>
+ */
+property "xsd:nonNegativeInteger";
+/**
+ * <code>nonPositiveInteger</code> is derived from <code>integer</code> by
+ * setting the value of <code>maxInclusive</code> to be 0.  This results
+ * in the standard mathematical concept of the non-positive integers.  The
+ * value space of <code>nonPositiveInteger</code> is the infinite set
+ * {...,-2,-1,0}.  The base type of <code>nonPositiveInteger</code> is
+ * <code>integer</code>.
+ * <p>
+ * <code>nonPositiveInteger</code> has a lexical representation consisting
+ * of a negative sign ("-") followed by a finite-length sequence of
+ * decimal digits (#x30-#x39).  If the sequence of digits consists of all
+ * zeros then the sign is optional.  For example: -1, 0, -12678967543233,
+ * -100000.
+ * <p>
+ * The canonical representation for <code>nonPositiveInteger</code> is
+ * defined by prohibiting certain options from the Lexical representation
+ * (§3.3.14.1).  Specifically, the negative sign ("-") is required with
+ * the token "0" and leading zeroes are prohibited.
+ * <p>
+ * <code>nonPositiveInteger</code> has the following constraining facets:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ * <p>
+ * The following built-in datatypes are derived from
+ * <code>nonPositiveInteger</code>:
+ * <ul>
+ * <li>negativeInteger
+ * </ul>
+ */
+property "xsd:nonPositiveInteger";
+/**
+ * <code>int</code> is derived from <code>long</code> by setting the value
+ * of <code>maxInclusive</code> to be 2147483647 and
+ * <code>minInclusive</code> to be -2147483648.  The base type of
+ * <code>int</code> is <code>long</code>.
+ * <p>
+ * <code>int</code> has a lexical representation consisting of an optional
+ * sign followed by a finite-length sequence of decimal digits
+ * (#x30-#x39).  If the sign is omitted, "+" is assumed.  For example: -1,
+ * 0, 126789675, +100000.
+ * <p>
+ * The canonical representation for <code>int</code> is defined by
+ * prohibiting certain options from the Lexical representation
+ * (§3.3.17.1).  Specifically, the the optional "+" sign is prohibited and
+ * leading zeroes are prohibited.
+ * <p>
+ * <code>int</code> has the following constraining facets:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ * <p>
+ * The following built-in datatypes are derived from <code>int</code>:
+ * <ul>
+ * <li>short
+ * </ul>
+ */
+property "xsd:int";
+/**
+ * <code>unsignedInt</code> is derived from <code>unsignedLong</code> by
+ * setting the value of <code>maxInclusive</code> to be 4294967295.  The
+ * base type of <code>unsignedInt</code> is <code>unsignedLong</code>.
+ * <p>
+ * <code>unsignedInt</code> has a lexical representation consisting of a
+ * finite-length sequence of decimal digits (#x30-#x39).  For example: 0,
+ * 1267896754, 100000.
+ * <p>
+ * The canonical representation for <code>unsignedInt</code> is defined by
+ * prohibiting certain options from the Lexical representation
+ * (§3.3.22.1).  Specifically, leading zeroes are prohibited.
+ * <p>
+ * <code>unsignedInt</code> has the following constraining facets:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ * <p>
+ * The following built-in datatypes are derived from
+ * <code>unsignedInt</code>:
+ * <ul>
+ * <li>unsignedShort
+ * </ul>
+ */
+property "xsd:unsignedInt";
+/**
+ * <code>long</code> is derived from <code>integer</code> by setting the
+ * value of <code>maxInclusive</code> to be 9223372036854775807 and
+ * <code>minInclusive</code> to be -9223372036854775808.  The base type of
+ * <code>long</code> is <code>integer</code>.
+ * <p>
+ * <code>long</code> has a lexical representation consisting of an
+ * optional sign followed by a finite-length sequence of decimal digits
+ * (#x30-#x39).  If the sign is omitted, "+" is assumed.  For example: -1,
+ * 0, 12678967543233, +100000.
+ * <p>
+ * The canonical representation for <code>long</code> is defined by
+ * prohibiting certain options from the Lexical representation
+ * (§3.3.16.1).  Specifically, the the optional "+" sign is prohibited and
+ * leading zeroes are prohibited.
+ * <p>
+ * <code>long</code> has the following constraining facets:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ * <p>
+ * The following built-in datatypes are derived from <code>long</code>:
+ * <ul>
+ * <li>int
+ * </ul>
+ */
+property "xsd:long";
+/**
+ * <code>unsignedLong</code> is derived from
+ * <code>nonNegativeInteger</code> by setting the value of
+ * <code>maxInclusive</code> to be 18446744073709551615.  The base type of
+ * <code>unsignedLong</code> is <code>nonNegativeInteger</code>.
+ * <p>
+ * <code>unsignedLong</code> has a lexical representation consisting of a
+ * finite-length sequence of decimal digits (#x30-#x39).  For example: 0,
+ * 12678967543233, 100000.
+ * <p>
+ * The canonical representation for <code>unsignedLong</code> is defined
+ * by prohibiting certain options from the Lexical representation
+ * (§3.3.21.1).  Specifically, leading zeroes are prohibited.
+ * <p>
+ * <code>unsignedLong</code> has the following constraining facets:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ * The following built-in datatypes are ·derived· from
+ * <code>unsignedLong</code>:
+ * <ul>
+ * <li>unsignedInt
+ * </ul>
+ */
+property "xsd:unsignedLong";
+/**
+ * <code>short</code> is derived from <code>int</code> by setting the
+ * value of <code>maxInclusive</code> to be 32767 and
+ * <code>minInclusive</code> to be -32768.  The base type of
+ * <code>short</code> is <code>int</code>.
+ * <p>
+ * <code>short</code> has a lexical representation consisting of an
+ * optional sign followed by a finite-length sequence of decimal digits
+ * (#x30-#x39).  If the sign is omitted, "+" is assumed.  For example: -1,
+ * 0, 12678, +10000.
+ * <p>
+ * The canonical representation for <code>short</code> is defined by
+ * prohibiting certain options from the Lexical representation
+ * (§3.3.18.1).  Specifically, the the optional "+" sign is prohibited and
+ * leading zeroes are prohibited.
+ * <p>
+ * <code>short</code> has the following constraining facets:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ * <p>
+ * The following built-in datatypes are derived from <code>short</code>:
+ * <ul>
+ * <li>byte
+ * </ul>
+ */
+property "xsd:short";
+/**
+ * <code>unsignedShort</code> is derived·from <code>unsignedInt</code> by
+ * setting the value of <code>maxInclusive</code> to be 65535.  The base
+ * type of <code>unsignedShort</code> is <code>unsignedInt</code>.
+ * <p>
+ * <code>unsignedShort</code> has a lexical representation consisting of a
+ * finite-length sequence of decimal digits (#x30-#x39).  For example: 0,
+ * 12678, 10000.
+ * <p>
+ * The canonical representation for <code>unsignedShort</code> is defined
+ * by prohibiting certain options from the Lexical representation
+ * (§3.3.23.1).  Specifically, the leading zeroes are prohibited.
+ * <p>
+ * <code>unsignedShort</code> has the following constraining facets:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ * <p>
+ * The following built-in datatypes are derived from
+ * <code>unsignedShort</code>:
+ * <ul>
+ * <li>unsignedByte
+ * </ul>
+ */
+property "xsd:unsignedShort";
+/**
+ * <code>decimal</code> represents arbitrary precision decimal numbers.
+ * The value space of <code>decimal</code> is the set of the values
+ * <code>i × 10^-n</code>, where <code>i</code> and <code>n</code> are
+ * integers such that <code>n >= 0</code>.  The order-relation on
+ * <code>decimal</code> is: <code>x < y</code> iff <code>y - x</code> is
+ * positive.
+ * <p>
+ * [Definition:] The value space of types derived from
+ * <code>decimal</code> with a value for <code>totalDigits</code> of p is
+ * the set of values <code>i × 10^-n</code>, where <code>n</code> and
+ * <code>i</code> are integers such that <code>p >= n >= 0</code> and the
+ * number of significant decimal digits in <code>i</code> is less than or
+ * equal to <code>p</code>.
+ * <p>
+ * [Definition:] The value space of types derived from decimal with a
+ * value for <code>fractionDigits</code> of <code>s</code> is the set of
+ * values <code>i × 10^-n</code>, where <code>i</code> and <code>n</code>
+ * are integers such that <code>0 <= n <= s</code>.
+ * <p>
+ * NOTE: All minimally conforming processors <em>must</em> support decimal
+ * numbers with a minimum of 18 decimal digits (i.e., with a
+ * <code>totalDigits</code> of 18).  However, minimally conforming
+ * processors <em>may</em> set an application-defined limit on the maximum
+ * number of decimal digits they are prepared to support, in which case
+ * that application-defined maximum number <em>must</em> be clearly
+ * documented.
+ * <p>
+ * <code>decimal</code> has a lexical representation consisting of a
+ * finite-length sequence of decimal digits (#x30-#x39) separated by a
+ * period as a decimal indicator.  If <code>totalDigits</code> is
+ * specified, the number of digits must be less than or equal to
+ * <code>totalDigits</code>.  If <code>fractionDigits</code> is specified,
+ * the number of digits following the decimal point must be less than or
+ * equal to the <code>fractionDigits</code>.  An optional leading sign is
+ * allowed.  If the sign is omitted, "+" is assumed.  Leading and trailing
+ * zeroes are optional.  If the fractional part is zero, the period and
+ * following zero(es) can be omitted.  For example: -1.23,
+ * 12678967.543233, +100000.00, 210.
+ * <p>
+ * The canonical representation for <code>decimal</code> is defined by
+ * prohibiting certain options from the Lexical representation (§3.2.3.1).
+ * Specifically, the preceding optional "+" sign is prohibited.  The
+ * decimal point is required.  Leading and trailing zeroes are prohibited
+ * subject to the following: there must be at least one digit to the right
+ * and to the left of the decimal point which may be a zero.
+ * <p>
+ * <code>decimal</code> has the following constraining facets:
+ * <ul>
+ * <li>totalDigits
+ * <li>fractionDigits
+ * <li>pattern
+ * <li>whiteSpace
+ * <li>enumeration
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ * <p>
+ * The following built-in datatypes are derived from decimal:
+ * <ul>
+ * <li>integer
+ * </ul>
+ */
+property "xsd:decimal";
+/**
+ * <code>float</code> corresponds to the IEEE single-precision 32-bit
+ * floating point type [IEEE 754-1985].  The basic ·value space· of
+ * <code>float</code> consists of the values m × 2^e, where m is an
+ * integer whose absolute value is less than 2^24, and e is an integer
+ * between -149 and 104, inclusive.  In addition to the basic ·value
+ * space· described above, the ·value space· of <code>float</code> also
+ * contains the following special values: positive and negative zero,
+ * positive and negative infinity and not-a-number.  The ·order-relation·
+ * on <code>float is: <code>x < y</code> iff <code>y - x</code> is
+ * positive.  Positive zero is greater than negative zero.  Not-a-number
+ * equals itself and is greater than all <code>float</code> values
+ * including positive infinity.
+ * <p>
+ * A literal in the ·lexical space· representing a decimal number d maps
+ * to the normalized value in the ·value space· of <code>float</code> that
+ * is closest to d in the sense defined by [Clinger, WD (1990)]; if d is
+ * exactly halfway between two such values then the even value is chosen.
+ * <p>
+ * <code>float</code> values have a lexical representation consisting of a
+ * mantissa followed, optionally, by the character "E" or "e", followed by
+ * an exponent.  The exponent ·must· be an integer.  The mantissa must be
+ * a decimal number.  The representations for exponent and mantissa must
+ * follow the lexical rules for integer and decimal.  If the "E" or "e"
+ * and the following exponent are omitted, an exponent value of 0 is
+ * assumed.
+ * <p>
+ * The special values positive and negative zero, positive and negative
+ * infinity and not-a-number have lexical representations 0, -0, INF, -INF
+ * and NaN, respectively.
+ * <p>
+ * For example, -1E4, 1267.43233E12, 12.78e-2, 12 and INF are all legal
+ * literals for <code>float</code>.
+ * <p>
+ * The canonical representation for <code>float</code> is defined by
+ * prohibiting certain options from the Lexical representation (§3.2.4.1).
+ * Specifically, the exponent must be indicated by "E".  Leading zeroes
+ * and the preceding optional "+" sign are prohibited in the exponent.
+ * For the mantissa, the preceding optional "+" sign is prohibited and the
+ * decimal point is required.  For the exponent, the preceding optional
+ * "+" sign is prohibited.  Leading and trailing zeroes are prohibited
+ * subject to the following: number representations must be normalized
+ * such that there is a single digit to the left of the decimal point and
+ * at least a single digit to the right of the decimal point.
+ * <p>
+ * <code>float</code> has the following constraining facets:
+ * <ul>
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:float";
+/**
+ * The <code>double<code> datatype corresponds to IEEE double-precision
+ * 64-bit floating point type [IEEE 754-1985].  The basic ·value space· of
+ * <code>double</code> consists of the values <code>m × 2^e</code>, where
+ * <code>m</code> is an integer whose absolute value is less than
+ * <code>2^53</code>, and <code>e</code> is an integer between -1075 and
+ * 970, inclusive.  In addition to the basic value space described above,
+ * the value space of <code>double</code> also contains the following
+ * special values: positive and negative zero, positive and negative
+ * infinity and not-a-number.  The order-relation on <code>double</code>
+ * is: <code>x < y</code> iff <code>y - x</code> is positive.  Positive
+ * zero is greater than negative zero.  Not-a-number equals itself and is
+ * greater than all <code>double</code> values including positive
+ * infinity.
+ * <p>
+ * A literal in the lexical space representing a decimal number
+ * <code>d</code> maps to the normalized value in the value space of
+ * <code>double</code> that is closest to d; if d is exactly halfway
+ * between two such values then the even value is chosen.  This is the
+ * best approximation of <code>d</code> ([Clinger, WD (1990)], [Gay, DM
+ * (1990)]), which is more accurate than the mapping required by [IEEE
+ * 754-1985].
+ * <p>
+ * <code>double</code> values have a lexical representation consisting of
+ * a mantissa followed, optionally, by the character "E" or "e", followed
+ * by an exponent.  The exponent ·must· be an integer.  The mantissa must
+ * be a decimal number.  The representations for exponent and mantissa
+ * must follow the lexical rules for integer and decimal.  If the "E" or
+ * "e" and the following exponent are omitted, an exponent value of 0 is
+ * assumed.
+ * <p>
+ * The special values positive and negative zero, positive and negative
+ * infinity and not-a-number have lexical representations 0, -0, INF, -INF
+ * and <code>NaN</code>, respectively.
+ * <p>
+ * For example, -1E4, 1267.43233E12, 12.78e-2, 12 and INF are all legal
+ * literals for <code>double</code>.
+ * <p>
+ * The canonical representation for <code>double</code> is defined by
+ * prohibiting certain options from the Lexical representation (§3.2.5.1).
+ * Specifically, the exponent must be indicated by "E".  Leading zeroes
+ * and the preceding optional "+" sign are prohibited in the exponent.
+ * For the mantissa, the preceding optional "+" sign is prohibited and the
+ * decimal point is required.  For the exponent, the preceding optional
+ * "+" sign is prohibited.  Leading and trailing zeroes are prohibited
+ * subject to the following: number representations must be normalized
+ * such that there is a single digit to the left of the decimal point and
+ * at least a single digit to the right of the decimal point.
+ * <p>
+ * <code>double</code> has the following ·constraining facets·:
+ * <ul>
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:double";
+/**
+ * <code>boolean</code> has the value space required to support the
+ * mathematical concept of binary-valued logic: {true, false}.
+ * <p>
+ * An instance of a datatype that is defined as boolean can have the
+ * following legal literals {true, false, 1, 0}.
+ * <p>
+ * The canonical representation for <code>boolean</code> is the set of
+ * literals {<code>true</code>, <code>false</code>}.
+ * <p>
+ * <code>boolean</code> has the following constraining facets:
+ * <ul>
+ * <li>pattern
+ * <li>whiteSpace
+ * </ul>
+ */
+property "xsd:boolean";
+/**
+ * <code>time</code> represents an instant of <code>time</code> that
+ * recurs every day.  The value space of <code>time</code> is the space of
+ * <code>time</code> of day values as defined in § 5.3 of [ISO 8601].
+ * Specifically, it is a set of zero-duration daily <code>time</code>
+ * instances.
+ * <p>
+ * Since the lexical representation allows an optional <code>time</code>
+ * zone indicator, <code>time</code> values are partially ordered because
+ * it may not be able to determine the order of two values one of which
+ * has a time zone and the other does not.  The order relation on
+ * <code>time</code> values is the Order relation on dateTime (§3.2.7.3)
+ * using an arbitrary date.  See also Adding durations to dateTimes (§E).
+ * Pairs of <code>time</code> values with or without time zone indicators
+ * are totally ordered.
+ * <p>
+ * The lexical representation for <code>time</code> is the left truncated
+ * lexical representation for <code>dateTime</code>:
+ * <code>hh:mm:ss.sss</code> with optional following time zone indicator.
+ * For example, to indicate 1:20 pm for Eastern Standard Time which is 5
+ * hours behind Coordinated Universal Time (UTC), one would write:
+ * 13:20:00-05:00.  See also ISO 8601 Date and Time Formats (§D).
+ * <p>
+ * The canonical representation for <code>time</code> is defined by
+ * prohibiting certain options from the Lexical representation (§3.2.8.1).
+ * Specifically, either the time zone must be omitted or, if present, the
+ * time zone must be Coordinated Universal Time (UTC) indicated by a "Z".
+ * Additionally, the canonical representation for midnight is 00:00:00.
+ * <p>
+ * <code>time</code> has the following constraining facets:
+ * <ul>
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:time";
+/**
+ * <code>dateTime</code> represents a specific instant of time.  The
+ * ·value space· of <code>dateTime</code> is the space of Combinations of
+ * date and time of day values as defined in § 5.4 of [ISO 8601].
+ * <p>
+ * A single lexical representation, which is a subset of the lexical
+ * representations allowed by [ISO 8601], is allowed for
+ * <code>dateTime</code>.  This lexical representation is the [ISO 8601]
+ * extended format CCYY-MM-DDThh:mm:ss where "CC" represents the century,
+ * "YY" the year, "MM" the month and "DD" the day, preceded by an optional
+ * leading "-" sign to indicate a negative number.  If the sign is
+ * omitted, "+" is assumed.  The letter "T" is the date/time separator and
+ * "hh", "mm", "ss" represent hour, minute and second respectively.
+ * Additional digits can be used to increase the precision of fractional
+ * seconds if desired i.e the format ss.ss...  with any number of digits
+ * after the decimal point is supported.  The fractional seconds part is
+ * optional; other parts of the lexical form are not optional.  To
+ * accommodate year values greater than 9999 additional digits can be
+ * added to the left of this representation.  Leading zeros are required
+ * if the year value would otherwise have fewer than four digits;
+ * otherwise they are forbidden.  The year 0000 is prohibited.
+ * <p>
+ * The CCYY field must have at least four digits, the <code>MM, DD, SS,
+ * hh, mm and ss</code> fields exactly two digits each (not counting
+ * fractional seconds); leading zeroes must be used if the field would
+ * otherwise have too few digits.
+ * <p>
+ * This representation may be immediately followed by a "Z" to indicate
+ * Coordinated Universal Time (UTC) or, to indicate the time zone, i.e.
+ * the difference between the local time and Coordinated Universal Time,
+ * immediately followed by a sign, + or -, followed by the difference from
+ * UTC represented as hh:mm (note: the minutes part is required).  See ISO
+ * 8601 Date and Time Formats (§D) for details about legal values in the
+ * various fields.  If the time zone is included, both hours and minutes
+ * must be present.
+ * <p>
+ * For example, to indicate 1:20 pm on May the 31st, 1999 for Eastern
+ * Standard Time which is 5 hours behind Coordinated Universal Time (UTC),
+ * one would write: <code>1999-05-31T13:20:00-05:00</code>.
+ * <p>
+ * The canonical representation for <code>dateTime</code> is defined by
+ * prohibiting certain options from the Lexical representation (§3.2.7.1).
+ * Specifically, either the time zone must be omitted or, if present, the
+ * time zone must be Coordinated Universal Time (UTC) indicated by a "Z".
+ * <p>
+ * <code>dateTime</code> has the following constraining facets:
+ * <ul>
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:dateTime";
+/**
+ * <code>duration</code> represents a duration of time.  The value space
+ * of <code>duration</code> is a six-dimensional space where the
+ * coordinates designate the Gregorian year, month, day, hour, minute, and
+ * second components defined in § 5.5.3.2 of [ISO 8601], respectively.
+ * These components are ordered in their significance by their order of
+ * appearance i.e.  as year, month, day, hour, minute, and second.
+ * <p>
+ * The lexical representation for <code>duration</code> is the [ISO 8601]
+ * extended format PnYn MnDTnH nMnS, where nY represents the number of
+ * years, nM the number of months, nD the number of days, 'T' is the
+ * date/time separator, nH the number of hours, nM the number of minutes
+ * and nS the number of seconds.  The number of seconds can include
+ * decimal digits to arbitrary precision.
+ * <p>
+ * The values of the Year, Month, Day, Hour and Minutes components are not
+ * restricted but allow an arbitrary integer.  Similarly, the value of the
+ * Seconds component allows an arbitrary decimal.  Thus, the lexical
+ * representation of <code>duration</code> does not follow the alternative
+ * format of § 5.5.3.2.1 of [ISO 8601].
+ * <p>
+ * An optional preceding minus sign ('-') is allowed, to indicate a
+ * negative <code>duration</code>.  If the sign is omitted a positive
+ * <code>duration</code> is indicated.  See also ISO 8601 Date and Time
+ * Formats (§D).
+ * <p>
+ * For example, to indicate a <code>duration</code> of 1 year, 2 months, 3
+ * days, 10 hours, and 30 minutes, one would write: P1Y2M3DT10H30M.  One
+ * could also indicate a <code>duration</code> of minus 120 days as:
+ * -P120D.
+ * <p>
+ * Reduced precision and truncated representations of this format are
+ * allowed provided they conform to the following:
+ * <ul>
+ * <li>If the number of years, months, days, hours, minutes, or seconds in
+ * any expression equals zero, the number and its corresponding designator
+ * <em>may</em> be omitted.  However, at least one number and its designator
+ * <em>must</em> be present.
+ * <li>The seconds part <em>may</em> have a decimal fraction.
+ * <li>The designator 'T' shall be absent if all of the time items are
+ * absent.  The designator 'P' must always be present.
+ * </ul>
+ * <p>
+ * For example, <code>P1347Y, P1347M and P1Y2MT2H</code> are all allowed;
+ * <code>P0Y1347M</code> and <code>P0Y1347M0D</code> are allowed.
+ * <code>P-1347M</code> is not allowed although <code>-P1347M</code> is
+ * allowed.  <code>P1Y2MT</code> is not allowed.
+ * <p>
+ * <code>duration</code> has the following constraining facets:
+ * <ul>
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:duration";
+/**
+ * <code>date</code> represents a calendar date.  The value space of
+ * <code>date</code> is the set of Gregorian calendar dates as defined in
+ * § 5.2.1 of [ISO 8601].  Specifically, it is a set of one-day long,
+ * non-periodic instances e.g.  lexical 1999-10-26 to represent the
+ * calendar date 1999-10-26, independent of how many hours this day has.
+ * <p>
+ * Since the lexical representation allows an optional time zone
+ * indicator, <code>date</code> values are partially ordered because it
+ * may not be possible to unequivocally determine the order of two values
+ * one of which has a time zone and the other does not.  If
+ * <code>date</code> values are considered as periods of time, the order
+ * relation on <code>date</code> values is the order relation on their
+ * starting instants.  This is discussed in Order relation on dateTime
+ * (§3.2.7.3).  See also Adding durations to dateTimes (§E).  Pairs of
+ * <code>date</code> values with or without time zone indicators are
+ * totally ordered.
+ * <p>
+ * The lexical representation for <code>date</code> is the reduced (right
+ * truncated) lexical representation for <code>dateTime</code>:
+ * <code>CCYY-MM-DD</code>.  No left truncation is allowed.  An optional
+ * following time zone qualifier is allowed as for dateTime.  To
+ * accommodate year values outside the range from 0001 to 9999, additional
+ * digits can be added to the left of this representation and a preceding
+ * "-" sign is allowed.
+ * <p>
+ * For example, to indicate May the 31st, 1999, one would write:
+ * 1999-05-31.  See also ISO 8601 Date and Time Formats (§D).
+ * <p>
+ * <code>date</code> has the following ·constraining facets·:
+ * <ul>
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:date";
+/**
+ * <code>gMonth</code> is a gregorian month that recurs every year.  The
+ * value space of <code>gMonth</code> is the space of a set of calendar
+ * months as defined in § 3 of [ISO 8601].  Specifically, it is a set of
+ * one-month long, yearly periodic instances.
+ * <p>
+ * This datatype can be used to represent a specific month.  To say, for
+ * example, that Thanksgiving falls in the month of November.
+ * <p>
+ * Since the lexical representation allows an optional time zone
+ * indicator, <code>gMonth</code> values are partially ordered because it
+ * may not be possible to unequivocally determine the order of two values
+ * one of which has a time zone and the other does not.  If
+ * <code>gMonth</code> values are considered as periods of time, the order
+ * relation on <code>gMonth</code> is the order relation on their starting
+ * instants.  This is discussed in Order relation on dateTime (§3.2.7.3).
+ * See also Adding durations to dateTimes (§E).  Pairs of
+ * <code>gMonth</code> values with or without time zone indicators are
+ * totally ordered.
+ * <p>
+ * NOTE: Because months in one calendar only rarely correspond to months
+ * in other calendars, values of this type do not, in general, have any
+ * straightforward or intuitive representation in terms of most other
+ * calendars.  This type should therefore be used with caution in contexts
+ * where conversion to other calendars is desired.
+ * <p>
+ * The lexical representation for <code>gMonth</code> is the left and
+ * right truncated lexical representation for date: --MM--.  An optional
+ * following time zone qualifier is allowed as for date.  No preceding
+ * sign is allowed.  No other formats are allowed.  See also ISO 8601 Date
+ * and Time Formats (§D).
+ * <p>
+ * <code>gMonth</code> has the following constraining facets:
+ * <ul>
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:gMonth";
+/**
+ * <code>gYear</code> represents a gregorian calendar year.  The value
+ * space of <code>gYear</code> is the set of Gregorian calendar years as
+ * defined in § 5.2.1 of [ISO 8601].  Specifically, it is a set of
+ * one-year long, non-periodic instances e.g.  lexical 1999 to represent
+ * the whole year 1999, independent of how many months and days this year
+ * has.
+ * <p>
+ * Since the lexical representation allows an optional time zone
+ * indicator, <code>gYear</code> values are partially ordered because it
+ * may not be possible to unequivocally determine the order of two values
+ * one of which has a time zone and the other does not.  If
+ * <code>gYear</code> values are considered as periods of time, the order
+ * relation on <code>gYear</code> values is the order relation on their
+ * starting instants.  This is discussed in Order relation on dateTime
+ * (§3.2.7.3).  See also Adding durations to dateTimes (§E).  Pairs of
+ * <code>gYear</code> values with or without time zone indicators are
+ * totally ordered.
+ * <p>
+ * NOTE: Because years in one calendar only rarely correspond to years in
+ * other calendars, values of this type are not, in general, convertible
+ * to simple values corresponding to years in other calendars.  This type
+ * should therefore be used with caution in contexts where conversion to
+ * other calendars is desired.
+ * <p>
+ * The lexical representation for <code>gYear</code> is the reduced (right
+ * truncated) lexical representation for dateTime: CCYY.  No left
+ * truncation is allowed.  An optional following time zone qualifier is
+ * allowed as for dateTime.  To accommodate year values outside the range
+ * from 0001 to 9999, additional digits can be added to the left of this
+ * representation and a preceding "-" sign is allowed.
+ * <p>
+ * For example, to indicate 1999, one would write: 1999.  See also ISO
+ * 8601 Date and Time Formats (§D).
+ * <p>
+ * <code>gYear</code> has the following constraining facets:
+ * <ul>
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:gYear";
+/**
+ * <code>gYearMonth</code> represents a specific gregorian month in a
+ * specific gregorian year.  The ·value space· of <code>gYearMonth</code>
+ * is the set of Gregorian calendar months as defined in § 5.2.1 of [ISO
+ * 8601].  Specifically, it is a set of one-month long, non-periodic
+ * instances e.g.  1999-10 to represent the whole month of 1999-10,
+ * independent of how many days this month has.
+ * <p>
+ * Since the lexical representation allows an optional time zone
+ * indicator, <code>gYearMonth</code> values are partially ordered because
+ * it may not be possible to unequivocally determine the order of two
+ * values one of which has a time zone and the other does not.  If
+ * <code>gYearMonth</code> values are considered as periods of time, the
+ * order relation on <code>gYearMonth</code> values is the order relation
+ * on their starting instants.  This is discussed in Order relation on
+ * dateTime (§3.2.7.3).  See also Adding durations to dateTimes (§E).
+ * Pairs of <code>gYearMonth</code> values with or without time zone
+ * indicators are totally ordered.
+ * <p>
+ * NOTE: Because month/year combinations in one calendar only rarely
+ * correspond to month/year combinations in other calendars, values of
+ * this type are not, in general, convertible to simple values
+ * corresponding to month/year combinations in other calendars.  This type
+ * should therefore be used with caution in contexts where conversion to
+ * other calendars is desired.
+ * <p>
+ * The lexical representation for <code>gYearMonth</code> is the reduced
+ * (right truncated) lexical representation for dateTime:
+ * <code>CCYY-MM</code>.  No left truncation is allowed.  An optional
+ * following time zone qualifier is allowed.  To accommodate year values
+ * outside the range from 0001 to 9999, additional digits can be added to
+ * the left of this representation and a preceding "-" sign is allowed.
+ * <p>
+ * For example, to indicate the month of May 1999, one would write:
+ * 1999-05.  See also ISO 8601 Date and Time Formats (§D).
+ * <p>
+ * <code>gYearMonth</code> has the following constraining facets:
+ * <ul>
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:gYearMonth";
+/**
+ * <code>gDay</code> is a gregorian day that recurs, specifically a day of
+ * the month such as the 5th of the month.  Arbitrary recurring days are
+ * not supported by this datatype.  The ·value space· of <code>gDay</code>
+ * is the space of a set of calendar dates as defined in § 3 of [ISO
+ * 8601].  Specifically, it is a set of one-day long, monthly periodic
+ * instances.
+ * <p>
+ * This datatype can be used to represent a specific day of the month.  To
+ * say, for example, that I get my paycheck on the 15th of each month.
+ * <p>
+ * Since the lexical representation allows an optional time zone
+ * indicator, <code>gDay</code> values are partially ordered because it
+ * may not be possible to unequivocally determine the order of two values
+ * one of which has a time zone and the other does not.  If
+ * <code>gDay</code> values are considered as periods of time, the order
+ * relation on <code>gDay</code> values is the order relation on their
+ * starting instants.  This is discussed in Order relation on dateTime
+ * (§3.2.7.3).  See also Adding durations to dateTimes (§E).  Pairs of
+ * <code>gDay</code> values with or without time zone indicators are
+ * totally ordered.
+ * <p>
+ * NOTE: Because days in one calendar only rarely correspond to days in
+ * other calendars, values of this type do not, in general, have any
+ * straightforward or intuitive representation in terms of most other
+ * calendars.  This type should therefore be used with caution in contexts
+ * where conversion to other calendars is desired.
+ * <p>
+ * The lexical representation for <code>gDay</code> is the left truncated
+ * lexical representation for date: ---DD .  An optional following time
+ * zone qualifier is allowed as for date.  No preceding sign is allowed.
+ * No other formats are allowed.  See also ISO 8601 Date and Time Formats
+ * (§D).
+ * <p>
+ * <code>gDay</code> has the following constraining facets:
+ * <ul>
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:gDay";
+/**
+ * <code>gMonthDay</code> is a gregorian date that recurs, specifically a
+ * day of the year such as the third of May.  Arbitrary recurring dates
+ * are not supported by this datatype.  The ·value space· of
+ * <code>gMonthDay</code> is the set of calendar dates, as defined in § 3
+ * of [ISO 8601].  Specifically, it is a set of one-day long, annually
+ * periodic instances.
+ * <p>
+ * Since the lexical representation allows an optional time zone
+ * indicator, <code>gMonthDay</code> values are partially ordered because
+ * it may not be possible to unequivocally determine the order of two
+ * values one of which has a time zone and the other does not.  If
+ * <code>gMonthDay</code> values are considered as periods of time, the
+ * order relation on <code>gMonthDay</code> values is the order relation
+ * on their starting instants.  This is discussed in Order relation on
+ * <code>dateTime</code> (§3.2.7.3).  See also Adding durations to
+ * dateTimes (§E).  Pairs of <code>gMonthDay</code> values with or without
+ * time zone indicators are totally ordered.
+ * <p>
+ * NOTE: Because day/month combinations in one calendar only rarely
+ * correspond to day/month combinations in other calendars, values of this
+ * type do not, in general, have any straightforward or intuitive
+ * representation in terms of most other calendars.  This type should
+ * therefore be used with caution in contexts where conversion to other
+ * calendars is desired.
+ * <p>
+ * The lexical representation for <code>gMonthDay</code> is the left
+ * truncated lexical representation for date: <code>--MM-DD</code>.  An
+ * optional following time zone qualifier is allowed as for date.  No
+ * preceding sign is allowed.  No other formats are allowed.  See also ISO
+ * 8601 Date and Time Formats (§D).
+ * <p>
+ * This datatype can be used to represent a specific day in a month.  To
+ * say, for example, that my birthday occurs on the 14th of September ever
+ * year.
+ * <p>
+ * <code>gMonthDay</code> has the following constraining facets:
+ * <ul>
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * <li>maxInclusive
+ * <li>maxExclusive
+ * <li>minInclusive
+ * <li>minExclusive
+ * </ul>
+ */
+property "xsd:gMonthDay";
+/**
+ * <code>Name</code> represents XML Names.  The value space of
+ * <code>Name</code> is the set of all strings which match the
+ * <code>Name</code> production of [XML 1.0 (Second Edition)].  The
+ * lexical space of <code>Name</code> is the set of all strings which
+ * match the Name production of [XML 1.0 (Second Edition)].  The base type
+ * of <code>Name</code> is <code>token</code>.
+ * <p>
+ * <code>Name</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ * <p>
+ * The following built-in datatypes are derived from <code>Name</code>:
+ * <ul>
+ * <li>NCName
+ * </ul>
+ */
+property "xsd:Name";
+/**
+ * <code>QName</code> represents XML qualified names.  The ·value space·
+ * of <code>QName</code> is the set of tuples {namespace name, local
+ * part}, where namespace name is an <code>anyURI</code> and local part is
+ * an <code>NCName</code>.  The lexical space of <code>QName</code> is the
+ * set of strings that ·match· the <code>QName</code> production of
+ * [Namespaces in XML].
+ * <p>
+ * NOTE: The mapping between literals in the ·lexical space· and values in
+ * the ·value space· of <code>QName</code> requires a namespace
+ * declaration to be in scope for the context in which <code>QName</code>
+ * is used.
+ * <p>
+ * <code>QName</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ */
+property "xsd:QName";
+/**
+ * <code>NCName</code> represents XML "non-colonized" Names.  The value
+ * space of <code>NCName</code> is the set of all strings which match the
+ * <code>NCName</code> production of [Namespaces in XML].  The lexical
+ * space of <code>NCName</code> is the set of all strings which match the
+ * <code>NCName</code> production of [Namespaces in XML].  The base type
+ * of <code>NCName</code> is <code>Name</code>.
+ * <p>
+ * <code>NCName</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ * <p>
+ * The following built-in datatypes are derived from <code>NCName</code>:
+ * <ul>
+ * <li>ID
+ * <li>IDREF
+ * <lI>ENTITY
+ * </ul>
+ */
+property "xsd:NCName";
+/**
+ * <code>anyURI</code> represents a Uniform Resource Identifier Reference
+ * (URI).  An <code>anyURI</code> value can be absolute or relative, and
+ * may have an optional fragment identifier (i.e., it may be a URI
+ * Reference).  This type should be used to specify the intention that the
+ * value fulfills the role of a URI as defined by [RFC 2396], as amended
+ * by [RFC 2732].
+ * <p>
+ * The mapping from <code>anyURI</code> values to URIs is as defined in
+ * Section 5.4 Locator Attribute of [XML Linking Language] (see also
+ * Section 8 Character Encoding in URI References of [Character Model]).
+ * This means that a wide range of internationalized resource identifiers
+ * can be specified when an <code>anyURI</code> is called for, and still
+ * be understood as URIs per [RFC 2396], as amended by [RFC 2732], where
+ * appropriate to identify resources.
+ * <p>
+ * NOTE: Each URI scheme imposes specialized syntax rules for URIs in that
+ * scheme, including restrictions on the syntax of allowed fragement
+ * identifiers.  Because it is impractical for processors to check that a
+ * value is a context-appropriate URI reference, this specification
+ * follows the lead of [RFC 2396] (as amended by [RFC 2732]) in this
+ * matter: such rules and restrictions are not part of type validity and
+ * are not checked by ·minimally conforming· processors.  Thus in practice
+ * the above definition imposes only very modest obligations on ·minimally
+ * conforming· processors.
+ * <p>
+ * The lexical space of <code>anyURI</code> is finite-length character
+ * sequences which, when the algorithm defined in Section 5.4 of [XML
+ * Linking Language] is applied to them, result in strings which are legal
+ * URIs according to [RFC 2396], as amended by [RFC 2732].
+ * <p>
+ * NOTE: Spaces are, in principle, allowed in the lexical space of
+ * <code>anyURI</code>, however, their use is highly discouraged (unless
+ * they are encoded by %20).
+ * <p>
+ * <code>anyURI</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ */
+property "xsd:anyURI";
+/**
+ * <code>language</code> represents natural language identifiers as defined by [RFC
+ * 1766].  The value space of <code>language</code> is the set of all strings that
+ * are valid language identifiers as defined in the language
+ * identification section of [XML 1.0 (Second Edition)].  The lexical
+ * space of <code>language</code> is the set of all strings that are valid language
+ * identifiers as defined in the language identification section of [XML
+ * 1.0 (Second Edition)].  The base type of <code>language</code> is <code>token</code>.
+ * <p>
+ * <code>language</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ */
+property "xsd:language";
+/**
+ * <code>ID</code> represents the <code>ID</code> attribute type from [XML
+ * 1.0 (Second Edition)].  The value space of ID is the set of all strings
+ * that match the <code>NCName</code> production in [Namespaces in XML].
+ * The lexical space of <code>ID</code> is the set of all strings that
+ * match the <code>NCName</code> production in [Namespaces in XML].  The
+ * base type of <code>ID</code> is <code>NCName</code>.
+ * <p>
+ * For compatibility (see Terminology (§1.4)) <code>ID</code> should be
+ * used only on attributes.
+ * <p>
+ * ID has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ */
+property "xsd:ID";
+/**
+ * <code>IDREF</code> represents the <code>IDREF</code> attribute type
+ * from [XML 1.0 (Second Edition)].  The value space of <code>IDREF</code>
+ * is the set of all strings that match the <code>NCName</code> production
+ * in [Namespaces in XML].  The lexical space of <code>IDREF</code> is the
+ * set of strings that match the <code>NCName</code> production in
+ * [Namespaces in XML].  The base type of <code>IDREF</code> is
+ * <code>NCName</code>.
+ * <p>
+ * For compatibility (see Terminology (§1.4)) this datatype should be used
+ * only on attributes.
+ * <p>
+ * <code>IDREF</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ * <p>
+ * The following built-in datatypes are ·derived· from <code>IDREF</code>:
+ * <ul>
+ * <li>IDREFS
+ * </ul>
+ */
+property "xsd:IDREF";
+/**
+ * <code>IDREFS</code> represents the <code>IDREFS</code> attribute type
+ * from [XML 1.0 (Second Edition)].  The value space of
+ * <code>IDREFS</code> is the set of finite, non-zero-length sequences of
+ * <code>IDREF</code>s.  The lexical space of <code>IDREFS</code> is the
+ * set of white space separated lists of tokens, of which each token is in
+ * the lexical space of <code>IDREF</code>.  The <code>itemType</code> of
+ * <code>IDREFS</code> is <code>IDREF</code>.
+ * <p>
+ * For compatibility (see Terminology (§1.4)) <code>IDREFS</code> should
+ * be used only on attributes.
+ * <p>
+ * <code>IDREFS</code> has the following ·constraining facets·:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ */
+property "xsd:IDREFS";
+/**
+ * <code>ENTITY</code> represents the <code>ENTITY</code> attribute type
+ * from [XML 1.0 (Second Edition)].  The value space of
+ * <code>ENTITY</code> is the set of all strings that match the
+ * <code>NCName</code> production in [Namespaces in XML] and have been
+ * declared as an unparsed entity in a document type definition.  The
+ * lexical space of <code>ENTITY</code> is the set of all strings that
+ * match the <code>NCName</code> production in [Namespaces in XML].  The
+ * base type of <code>ENTITY</code> is <code>NCName</code>.
+ * <p>
+ * NOTE: The value space of <code>ENTITY</code> is scoped to a specific
+ * instance document.
+ * <p>
+ * For compatibility (see Terminology (§1.4)) <code>ENTITY</code> should
+ * be used only on attributes.
+ * <p>
+ * <code>ENTITY</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ * The following built-in datatypes are derived from <code>ENTITY</code>:
+ * <ul>
+ * <li>ENTITIES
+ * </ul>
+ */
+property "xsd:ENTITY";
+/**
+ * <code>ENTITIES</code> represents the <code>ENTITIES</code> attribute
+ * type from [XML 1.0 (Second Edition)].  The value space of
+ * <code>ENTITIES</code> is the set of finite, non-zero-length sequences
+ * of <code>ENTITY</code>s that have been declared as unparsed entities in
+ * a document type definition.  The lexical space of <code>ENTITIES</code>
+ * is the set of white space separated lists of tokens, of which each
+ * token is in the lexical space of <code>ENTITY</code>.  The
+ * <code>itemType</code> of <code>ENTITIES</code> is <code>ENTITY</code>.
+ * <p>
+ * NOTE: The ·value space· of <code>ENTITIES</code> is scoped to a
+ * specific instance document.
+ * <p>
+ * For compatibility (see Terminology (§1.4)) <code>ENTITIES</code> should
+ * be used only on attributes.
+ * <p>
+ * <code>ENTITIES</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ */
+property "xsd:ENTITIES";
+/**
+ * <code>NOTATION</code> represents the <code>NOTATION</code> attribute
+ * type from [XML 1.0 (Second Edition)].  The ·value space· of
+ * <code>NOTATION</code> is the set QNames.  The lexical space of
+ * <code>NOTATION</code> is the set of all names of notations declared in
+ * the current schema.
+ * <p>
+ * Schema Component Constraint: enumeration facet value required for
+ * <code>NOTATION</code>
+ * <blockquote>
+ * It is an <b>error</b> for <code>NOTATION</code> to be used directly in
+ * a schema.  Only datatypes that are ·derived· from <code>NOTATION</code>
+ * by specifying a value for ·enumeration· can be used in a schema.
+ * </blockquote>
+ * <p>
+ * For compatibility (see Terminology (§1.4)) <code>NOTATION</code> should
+ * be used only on attributes.
+ * <p>
+ * <code>NOTATION</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ */
+property "xsd:NOTATION";
+/**
+ * <code>NMTOKEN</code> represents the <code>NMTOKEN</code> attribute type
+ * from [XML 1.0 (Second Edition)].  The value space of
+ * <code>NMTOKEN</code> is the set of tokens that <em>match</em> the
+ * <code>Nmtoken</code> production in [XML 1.0 (Second Edition)].  The
+ * lexical space of <code>NMTOKEN</code> is the set of strings that
+ * <em>match</em> the <code>Nmtoken</code> production in [XML 1.0 (Second
+ * Edition)].  The base type of <code>NMTOKEN</code> is
+ * <code>token</code>.
+ * <p>
+ * For compatibility (see Terminology (§1.4)) <code>NMTOKEN</code> should
+ * be used only on attributes.
+ * <p>
+ * <code>NMTOKEN</code> has the following constraining facets:
+ * <p>
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>pattern
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ * <p>
+ * The following built-in datatypes are derived from <code>NMTOKEN</code>:
+ * <ul>
+ * <li>NMTOKENS
+ * </ul>
+ */
+property "xsd:NMTOKEN";
+/**
+ * <code>NMTOKENS</code> represents the <code>NMTOKENS</code> attribute
+ * type from [XML 1.0 (Second Edition)].  The value space of
+ * <code>NMTOKENS</code> is the set of finite, non-zero-length sequences
+ * of <code>NMTOKEN</code>s.  The lexical space of <code>NMTOKENS</code>
+ * is the set of white space separated lists of tokens, of which each
+ * token is in the lexical space of <code>NMTOKEN</code>.  The
+ * <code>itemType</code> of <code>NMTOKENS</code> is <code>NMTOKEN</code>.
+ * <p>
+ * For compatibility (see Terminology (§1.4)) <code>NMTOKENS</code> should
+ * be used only on attributes.
+ * <p>
+ * <code>NMTOKENS</code> has the following constraining facets:
+ * <ul>
+ * <li>length
+ * <li>minLength
+ * <li>maxLength
+ * <li>enumeration
+ * <li>whiteSpace
+ * </ul>
+ */
+property "xsd:MNTOKENS";
+
+

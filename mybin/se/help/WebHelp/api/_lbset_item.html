@@ -1,0 +1,64 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_lbset_item</title>
+</head>
+<body>
+
+<h3><b>void _lbset_item(_str text, _str indent="", _str picture_index="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Replaces the current item in a list box.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="item">item</A></code> - Text of item to be added to the list box.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="indent">indent</A></code> - Indent in twips before picture.  If this parameter is
+given, you must specify the <i>picture_index</i> parameter.  1440 twips are
+one inch on the display.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="picture_index">picture_index</A></code> - Index into names table of a picture to display.
+Currently only bitmap pictures are supported.  The _update_picture function
+may be used to load a picture and return an index.  In addition, there are
+several global picture index variables defined in "slick.sh" (look for
+_pic_??? variables).
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include 'slick.sh'
+
+#define PIC_LSPACE_Y 60    // Extra line spacing for list box.
+#define PIC_LINDENT_X 60   // Indent for list box bitmap.
+
+defeventtab form1;
+list1.on_create()
+{
+   _insert_drive_list();
+   p_pic_space_y=PIC_LSPACE_Y;
+   _lbtop();_lbup();
+   for (;;) {
+      if (_lbdown()) break;
+      line=_lbget_text();
+      dt=_drive_type(line);
+      if (dt==DRIVE_NOROOTDIR) {
+         status=_lbdelete_item();
+         // If deleted last line
+         if (status) break;
+         _lbup();
+         continue;
+      } else if (dt==DRIVE_FIXED) {
+         picture=_pic_drfixed;
+      } else if (dt==DRIVE_CDROM){
+         picture=_pic_drcdrom;
+      } else {
+         picture=_pic_drremov;
+      }
+      _lbset_item(line,PIC_LINDENT_X,picture);
+   }
+   // The p_picture property must be set to indicate that this list box is
+displaying pictures
+   // and to provide a scaling picture for the p_pic_point_scale property.
+   // The p_pic_point_scale property allows the picture to be resized for
+fonts larger or
+   // smaller than the value of the p_pic_point_scale point size.
+   p_picture=picture;
+   p_pic_point_scale=8;
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">List Box
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="List_Box_Methods.html">List Box Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_lbget_text.html">_lbget_text</a>, <a href="_lbget_seltext.html">_lbget_seltext</a>, <a href="_lbget_item.html">_lbget_item</a>, <a href="_lbadd_item.html">_lbadd_item</a></blockquote>
+</body>
+</html>

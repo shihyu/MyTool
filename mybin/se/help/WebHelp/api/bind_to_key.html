@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>bind_to_key</title>
+</head>
+<body>
+
+<h3><b>_command typeless bind_to_key(_str commandName='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"> <p>
+Binds <i>command</i> specified to key(s) you type.<p>
+<p>
+Prefix and cancel keys may only be bound by specifying the <i>max_keystrokes</i> parameter.
+<i>max_keystrokes</i> is a positive number representing the maximum number of keystrokes that will be pressed.
+The <i>max_keystrokes</i> parameter allows prefix keys to be rebound.<p>
+
+<p>
+Use the create_prefix_key command to create a new prefix key for a multiple key sequence key binding.
+The -r and -m options may be used to select key bindings to the root or mode key table.  If you don't
+quite understand what root and mode key tables are, you should not specify the -r or -m option.<p>
+<pre>
+Here are the reasons for selecting each option:
+   -r You want this key binding to be active in all modes.
+   -m You want this key binding to be active only in the current mode.
+</pre><p>
+<p>
+If the current mode is fundamental, the -r and -m options have no effect.  Keys bound while in
+fundamental mode will be active in all modes unless there is a mode key binding.<p>
+
+<p>
+In VI emulation, the -r option effects all modes and the -m option effects the current mode
+only which can be insert or command mode.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Possible return values are 1 (command not found) and COMMAND_CANCELLED_RC.  On error, message is displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+
+cmdline is a string in the format: [-<i>max_keystrokes</i>] [-r | -m] <i>command</i>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="unbind_key.html">unbind_key</a>, <a href="list_keydefs.html">list_keydefs</a>, <a href="create_prefix_key.html">create_prefix_key</a></blockquote>
+</body>
+</html>

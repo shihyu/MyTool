@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>strip</title>
+</head>
+<body>
+
+<h3><b>_str strip(_str string, _str ltb="B", _str strip_char=" \t")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="string">string</A></code> - input string</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ltb">ltb</A></code> - leading, trailing, or both</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="strip_char">strip_char</A></code> - character to strip
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+Returns string stripped of leading and/or trailing
+<i>strip_char</i>. 'ltb' may be one of 3 values with the
+following meaning:
+<ol>
+<li>'L' -- Remove leading <i>strip_char</i>
+<li>'T' -- Remove trailing <i>strip_char</i>
+<li>'B' -- (Default) Remove both leading and trailing
+<i>strip_char</i>
+</ol>
+<p>
+If <i>strip_char</i> is omitted, both tabs and spaces are
+stripped.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+   strip(' abc ') :== 'abc'
+   strip(' abc ','L')   :== 'abc '
+   strip(' abc ','T')   :== ' abc'
+   strip('  '\t'abc '\t,'B',' ') :== \t'abc '\t
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="String_Functions.html">String Functions</a></blockquote>
+</body>
+</html>

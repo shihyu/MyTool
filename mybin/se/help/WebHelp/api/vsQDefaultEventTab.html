@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsQDefaultEventTab</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsQDefaultEventTab()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns names table index of default event table.  This is typically
+used to get and set key bindings global to all modes for the current
+emulation.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+   int index;
+
+index=vsFindIndex("gui_open",VSTYPE_PROC|VSTYPE_COM
+MAND);
+   if (index) {
+      // Bind this function to a F12
+       vsSetEventTabIndex(vsQDefaultEventTab(),
+                          vsEvent2Index(VS_OFFSET_FKEYS+11),
+                          index);
+
+   }
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote>
+</body>
+</html>

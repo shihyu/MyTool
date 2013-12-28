@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsUTF8ToUTF16</title>
+</head>
+<body>
+
+<h3><b>unsigned short*VSAPI vsUTF8ToUTF16(const char *pBuf, int BufLen=-1, int *pDestLen=0, int i=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Converts a UTF-8 text to UTF-16.  To free the memory allocated by
+this function, specify 0 for <i>pBuf</i>, -1 for <i>BufLen</i>,
+anything for <i>DestLen</i>, and the correct destination temp buffer.
+There is typically no need to free the memory allocated by this
+function unless you converted a very large amount of data.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pBuf">pBuf</A></code> - Input UTF-8 buffer.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="BufLen">BufLen</A></code> - Length of buffer.  Specify -1 to compute
+length from a null terminated buffer.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="DestLen">DestLen</A></code> - Length of resulting UTF-16 string.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="i">i</A></code> - Destination temp buffer index where
+0&lt;=i&lt;=9.  This allows you to call this
+function multiple times without the previous
+result being overwritten by the new result.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>unsigned short*VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns pointer to null terminated UTF-16 string.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Unicode_Functions.html">Unicode Functions</a></blockquote>
+</body>
+</html>

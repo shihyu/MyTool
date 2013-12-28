@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>ispf_renumber</title>
+</head>
+<body>
+
+<h3><b>_command void ispf_renumber(_str arglist="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">The renumber command immediately updates the line numbers in a file.<p>
+<p>Syntax:<pre>
+   RENUMBER [ ON ] [ STD ] [ COBOL ]
+</pre><p>
+<dl compact style="margin-left:20pt">
+<dt>ON<dd style="margin-left:95pt">Renumber lines as configured for the current file type.
+<dt>STD or STANDARD<dd style="margin-left:95pt">Line numbers are in the standard sequence columns (73-80).
+<dt>COB or COBOL<dd style="margin-left:95pt">Line numbers are as in COBOL, columns 1-6.
+</dl><p>
+Note:  Make sure that the line number columns (1-6 for COBOL or 73-80) do not have data in them before renumbering the file.  Otherwise, data may be overwritten with line numbers.  Normally, this is detectable and you will be warned that data was overwritten, but if the data was numeric, you will not be warned.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="ISPF_Primary_Commands.html">ISPF Primary Commands</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="ispf_nonumber.html">ispf_nonumber</a>, <a href="ispf_number.html">ispf_number</a>, <a href="ispf_unnumber.html">ispf_unnumber</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>select_tree</title>
+</head>
+<body>
+
+<h3><b>_str select_tree(_str(&cap_array)[]=null, _str(&key_array)[]=null, int(&pic_array_non)[]=null, int(&pic_array_cur)[]=null, boolean(&select_array)[]=null, typeless callback=null, typeless user_data=null, _str caption=null, int sl_flags=0, _str col_names=null, _str col_flags=null, boolean modal=true, _str help_item=null, _str retrieve_name=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Displays a selection list in a tree control.
+<p>
+<b>Syntax:</b>
+<pre>
+   _str result=select_tree(captions_array, key_array,
+                           non_current_pic_array, current_pic_array,
+                           callback_function, user_data,
+                           dialog_caption, flags,
+                           column_names, column_flags, modal);
+</pre>
+<p>
+<b>Flags:</b>  The selection tree supports the following
+               flags defined in "slick.sh":
+<ul>
+<li><b>SL_ALLOWMULTISELECT</b>
+   Allow multiple items to be selected.  Multiple items are
+   separated with newline (\n) characters.  Currently this function
+   does not support items which contain newline characters.
+<li><b>SL_NOTOP</b>
+   Don't position cursor at top of list.
+<li><b>SL_SELECTCLINE</b>
+   Select the current line in the list box when initializing.
+<li><b>SL_MATCHCASE</b>
+   Case sensitive incremental searching in list box.
+   Has no effect if SL_NOISEARCH flag is given.
+<li><b>SL_INVERT</b>
+   Display Invert button
+<li><b>SL_SELECTALL</b>
+   Display Select All button.
+<li><b>SL_DELETEBUTTON</b>
+   Display Delete button.
+<li><b>SL_DEFAULTCALLBACK</b>
+   Call the callback routine when default button invoked.
+<li><b>SL_COMBO</b>
+   Display combo box above tree control
+<li><b>SL_MUSTEXIST</b>
+   Selected item must exist.
+<li><b>SL_DESELECTALL</b>
+   Deselect all items in list box when initializing.
+<li><b>SL_NORETRIEVEPREV</b>
+   Don't retrieve last combo box value.
+   By default, last combo box value
+   is restored when initial_value not given.
+   Has no effect if SL_COMBO not given
+<li><b>SL_COLWIDTH</b>
+   Compute column width settings and set up 'n' columns.
+   Applies only if column_names are given
+<li><b>SL_SELECTPREFIXMATCH</b>
+   Effects SL_COMBO only.  When typing in the combo box
+   and text is a prefix match of the text in the list box,
+   list box line is selected.  If not given, it will do
+   a match for any substring (can be overridden by "prefix" checkbox.
+<li><b>SL_CLOSEBUTTON</b>
+   Use Close instead of Cancel button
+<li><b>SL_CHECKLIST</b>
+   Use checkmarks for bitmaps.  If bitmap arrays are specified, they will
+   be overridden.  If a select_array is specified, the selected items will
+   be checked.
+<li><b>SL_XY_WIDTH_HEIGHT</b>
+   Save and retrieve the size and position of the form for
+   next time use.  To distinguish between uses of the
+   _select_tree_form, use the retrieve_name argument.
+</ul>
+<p>
+The following selection list flags are not supported by the
+selection tree dialog:
+<code>SL_VIEWID, SL_FILENAME, SL_BUFID, SL_NOISEARCH,
+SL_NODELETELIST, SL_HELPCALLBACK</code>
+</ul>
+<p>
+<b>Callback:</b>
+See example below for more information about call back function.
+The prototype for the callback function is as follows:
+<pre>
+   _str select_tree_cb(int sl_event, typeless user_data, typeless info=null);
+</pre>
+The <code>callback_name</code> argument specifies the address of
+a callback function to call for the following events.
+For backward compatibility, this parameter can be a global function name.
+Specify null or "" to specify no call back function.
+<p>
+Since there may be new call back events in the future, make sure you
+test for the correct call back event.  The following are possible
+values for sl_event:
+<ul>
+<li><b>SL_ONINITFIRST</b>
+     First Dialog initialized callback, before autosizing
+<li><b>SL_ONCLOSE</b>
+     Dialog is about to be closed
+<li><b>SL_ONINIT</b>
+      Dialog box being initialized or reinitialized (loading items)
+<li><b>SL_ONDEFAULT</b>
+      Enter pressed and SL_DEFAULTCALLBACK flag was specified
+<li><b>SL_ONLISTKEY</b>
+      not supported
+<li><b>SL_ONDELKEY</b>
+      The Delete key was pressed in the list box,
+      or they pressed the Delete button.
+<li><b>SL_ONUSERBUTTON</b>
+      not supported
+<li><b>SL_ONSELECT</b>
+    Selected item(s) changed.  'info' is the index of selected item.
+</ul>
+<p>
+For any sl_event, the form is closed if result!=''.
+When this occurs, the return value of selection list is the
+return value of the callback.  If the return value from the
+callback is <code>null</code>, the normal processing for that
+event is short-circuited.
+<p>
+<b>Controls:</b>
+<ul>
+<li>The control name of the tree control is "ctl_tree".
+<li>The control name for the combo box is "ctl_search".
+<li>The control name for the default button is always "ctl_ok".
+<li>The control name for the message label is "ctl_message".
+<li>The control name for the prefix checkbox is "ctl_prefix".
+<li>The control name for the bottom panel is "ctl_bottom_pic"
+</ul>
+<p>
+You can add controls to the bottom of ths form dynamically
+through the callbacks.  For SL_ONINITFIRST, add the controls
+to ctl_bottom_pic, and set it's height.  The resize will take
+care of the rest.  Catch SL_ONCLOSE to handle settings for
+the dynamic controls.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="cap_array">cap_array</A></code> - Array of strings for item captions
+                 to insert into tree control</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="key_array">key_array</A></code> - Parallel array of keys to be stored
+                 in user-data for each item in tree</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pic_array_non">pic_array_non</A></code> - Parallel array of bitmaps to use for the
+                 non-current bitmap for each item in tree</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pic_array_cur">pic_array_cur</A></code> - Parallel array of bitmaps to use for the
+                 current bitmap for each item in tree</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="select_array">select_array</A></code> - Parallel array of bitmaps to use for selecting
+                 nodes in the tree.  If (sl_flags&SL_CHECKLIST), these
+                 nodes will be checked.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="callback">callback</A></code> - Callback function, see callback details above</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="user_data">user_data</A></code> - User data to pass along to callback function</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="caption">caption</A></code> - Dialog caption</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="sl_flags">sl_flags</A></code> - bitset of SL_* selection list flags (see above)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="col_names">col_names</A></code> - Comma delimited list of column names for tree</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="col_flags">col_flags</A></code> - Comma delimited list of column flags for tree</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="modal">modal</A></code> - (default true) Display modal dialog?</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="help_item">help_item</A></code> - Specifies help (<a href="p_help.html">p_help</a>) displayed when
+                 F1 is pressed or the help button is pressed.
+                 If the help_item starts with a '?' character,
+                 the characters that follow are displayed in
+                 a message box.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="retrieve_name">retrieve_name</A></code> - Usually the name of the command which invoked this
+                 function or the type of item being prompted for.
+                 May be ''. Useful if the combo box is
+                 displayed or if the SL_XY_WIDTH_HEIGHT flag
+                 is used to save the size and position.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns COMMAND_CANCELLED_RC if the dialog box is cancelled. If a key
+        array was given, return the key(s) corresponding to the selections
+        made, otherwise, return the item caption(s) separated by newline (\n)
+        characters. Returns an empty string if nothing was selected.  If the
+        callback handles SL_DEFAULT, return whatever the user-defined
+        callback returns.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">This example simply displays a list of tag files.
+<pre>
+   result = select_tree(tags_filenamea());
+</pre>
+<p>
+This is a more sophisticated example that displays a list of tags
+in the project tag file starting with the prefix 'b' and allows
+you to select multiple items from a multi-column tree control,
+sorting items by the columns of your choice.
+<pre>
+   _command void test_select_tree()
+   {
+      _str captions[];
+      _str keys[];
+      int bitmaps[];
+      int status=tag_read_db(_GetWorkspaceTagsFilename());
+      if (status) {
+         return;
+      }
+      status = tag_find_prefix("");
+      while (!status && captions._length()<1000) {
+         _str tag_name,tag_class,tag_type;
+         _str file_id,file_name;
+         int tag_flags,file_line;
+         tag_get_info(tag_name,tag_type,file_name,file_line,tag_class,tag_flags);
+         tag_get_detail(VS_TAGDETAIL_file_id,file_id);
+
+         int leaf_flag=0;
+         int pic_member=0;
+         int i_access,i_type;
+         tag_tree_filter_member(0,tag_type,(tag_class!='')?1:0,tag_flags,i_access,i_type);
+         tag_tree_select_bitmap(i_access,i_type,leaf_flag,pic_member);
+         keys[keys._length()]=(int)file_id*10000+(int)file_line;
+         bitmaps[bitmaps._length()]=pic_member;
+
+         captions[captions._length()]=tag_name"\t"tag_type"\t"tag_class"\t"file_name"\t"file_line;
+         status = tag_next_prefix("");
+      }
+
+      _str result = select_tree(captions, keys, bitmaps, null,
+                                test_select_cb, "Hello, world",
+                                "This is a test, select something",
+                                SL_COMBO
+                                 | SL_CLOSEBUTTON
+                                 | SL_SELECTCLINE
+                                 | SL_DESELECTALL
+                                 | SL_ALLOWMULTISELECT
+                                 | SL_COLWIDTH
+                                 | SL_SELECTPREFIXMATCH
+                                 | SL_INVERT
+                                 | SL_SELECTALL
+                                 | SL_MUSTEXIST,
+                                "Tag,Type,Class,File,Line",
+                                (TREE_BUTTON_PUSHBUTTON|TREE_BUTTON_SORT)',' :+
+                                (TREE_BUTTON_PUSHBUTTON|TREE_BUTTON_SORT)',' :+
+                                (TREE_BUTTON_PUSHBUTTON|TREE_BUTTON_SORT)',' :+
+                                (TREE_BUTTON_PUSHBUTTON|TREE_BUTTON_SORT_FILENAME)',' :+
+                                (TREE_BUTTON_PUSHBUTTON|TREE_BUTTON_SORT_NUMBERS|TREE_BUTTON_AL_RIGHT),
+                                false,
+                                "?This is the help message");
+   }
+</pre>
+<p>
+This is an example callback function.
+<pre>
+   static _str test_select_cb(int reason, typeless user_data, typeless info=null)
+   {
+      switch (reason) {
+      case SL_ONDEFAULT:
+         select_tree_message("Default message");
+         break;
+      case SL_ONINIT:
+         select_tree_message("Filtering...");
+         break;
+      case SL_ONINITFIRST:
+         select_tree_message(user_data);
+         break;
+      case SL_ONSELECT:
+         _str caption=ctl_tree._TreeGetCaption(info);
+         parse caption with caption "\t" .;
+         select_tree_message(caption);
+         break;
+      }
+      return '';
+   }
+</pre>
+<p>
+This is an example of a callback function that adds custom controls.
+<pre>
+   static _str test_select_option_cb(int reason, typeless user_data, typeless info=null)
+   {
+      switch (reason) {
+      case SL_ONINITFIRST:
+         if ( def_ask_a_question) {
+            bottom_wid := _find_control("ctl_bottom_pic");
+            checkb_wid := _create_window(OI_CHECK_BOX, bottom_wid, "Do not show these options again", 0, 30, bottom_wid.p_width, 270, CW_CHILD);
+            bottom_wid.p_height = 300;
+            bottom_wid.p_visible = bottom_wid.p_enabled = true;
+            checkb_wid.p_name = "ctlhideoptions";
+         }
+         break;
+      case SL_ONCLOSE:
+         wid := p_active_form._find_control('ctlhideoptions');
+         if (wid && wid.p_value) {
+            def_ask_a_question = false;
+            _config_modify_flags(CFGMODIFY_DEFVAR)
+         }
+         break;
+      }
+      return '';
+   }
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Forms.html">Forms</a></blockquote>
+</body>
+</html>

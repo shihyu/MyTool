@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsUTF8CharRead2</title>
+</head>
+<body>
+
+<h3><b>VSSTATIC char* vsUTF8CharRead2(const char *pBuf, const char *pEndBuf, unsigned &uch)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Reads a multi-byte UTF-8 sequence.  The current byte MUST
+be >=0x80 and must be readable (i.e. pBuf<pEndBuf).  This
+function is intended to be used to speed up reading
+UTF-8 characters.  See example.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pBuf">pBuf</A></code> - Pointer to UTF-8 string</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pEndBuf">pEndBuf</A></code> - Pointer past end of UTF-8 string</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="uch">uch</A></code> - Ouput character index.  Set to -1 if character
+               sequence is truncated (premature end of buffer).</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>VSSTATIC char*</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns pointer to next character to read.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+
+<PRE>
+void printUTF8String(const char *p,int len)
+{
+   const char *pend=p+len;
+   while (p<pend) {
+      unsigned uch;
+      if ((unsigned char)*p<=0x7f) {
+         uch=(unsigned char)*p;
+         ++p;
+      } else {
+         p=vsUTF8CharRead2(p,pend,uch);
+      }
+      printf("uch=%d\n",uch);
+   }
+}</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Unicode_Functions.html">Unicode Functions</a></blockquote>
+</body>
+</html>

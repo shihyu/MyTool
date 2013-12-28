@@ -1,0 +1,165 @@
+<profile name="/language/cob74/aliases">
+	<p n="functioncomment">
+		<params>
+			<param n="fname" default="" prompt="Enter procedure name:"/>
+		</params>
+		<text>
+			%\x7*
+			%\x7*PROCEDURE NAME: %(fname)
+			%\x7*
+			%\x7*PARAMETERS: %\c
+			%\x7*
+			%\x7*DESCRIPTION:
+			%\x7*
+			%\x7*RETURNS:
+			%\x7*
+			%\x7*
+		</text>
+	</p>
+	<p n="l01">
+		<params>
+			<param n="fname" default="FILLER" prompt="Enter GROUP LEVEL 01 Name"/>
+			<param n="pic" default="X(16)" prompt="and PIC value"/>
+			<param n="val" default="BEGIN" prompt="and VALUE (without quotes)"/>
+		</params>
+		<text>
+			%\x8,01  %(fname) %\x40PIC %(pic)
+			%\x16VALUE '%(val)'.
+			%\S
+		</text>
+	</p>
+	<p n="para">
+		<params>
+			<param n="paraname" default="" prompt="Enter Paragraph Name"/>
+		</params>
+		<text>
+			%\x12.
+			%\x8%(paraname).
+			%\X12MOVE '%(PARANAME)' TO WS-DEBUG-FIELD.
+			%\c
+		</text>
+	</p>
+	<p n="inline">
+		<params>
+			<param n="cond" default="" prompt="Enter inline PERFORM UNTIL condition"/>
+		</params>
+		<text>
+			PERFORM UNTIL %(cond)
+			%\i%\c
+			END-PERFORM
+		</text>
+	</p>
+	<p n="dummysubrtn">
+		<params>
+			<param n="pgm" default="" prompt="Enter Subroutine Name"/>
+			<param n="CPYMBR" default="" prompt="Enter common area copybook name"/>
+			<param n="p1" default="" prompt="Enter first data element to be passed"/>
+			<param n="p2" default="" prompt="Enter second data element to be passed"/>
+			<param n="p3" default="" prompt="Enter third data element to be passed"/>
+			<param n="p4" default="" prompt="Enter fourth data element to be passed"/>
+		</params>
+		<text>
+			%\X7*
+			%\x8IDENTIFICATION DIVISION.
+			%\x8PROGRAM-ID. %(pgm).
+			%\x7* This is a dummy subroutine designed to provide
+			%\X7*a module to be used to build a subroutine tag file
+			%\X7*for Visual SlickEdit.  This module should not be %\S
+			%\X7*compiled.  Include the COBOL copybook that is the %\S
+			%\X7*common area between the calling program and this %\S
+			%\X7*subroutine.  On the PROCEDURE DIVISION include the %\S
+			%\X7*field names that should be used on the %\S
+			%\X7*CALL ... USING %\S
+			%\x7*
+			%\X8DATA DIVISION.
+			%\x8WORKING-STORAGE SECTION.
+			%\X8,01  COMMON-AREA.
+			%\X12COPY %(cpymbr).
+			%\X8PROCEDURE DIVISION USING %(P1) %(P2) %(P3) %(P4).
+			%\X8,0100-MAINLINE.
+			%\X8GOBACK
+		</text>
+	</p>
+	<p n="L88">
+		<params>
+			<param n="condname" default="" prompt="Enter Condition Name"/>
+			<param n="value" default="YES" prompt="and Condition Value (excluding quotes)"/>
+		</params>
+		<text>
+			%\i88  %(condname)%\x40VALUE '%(value)'.
+			%\S
+		</text>
+	</p>
+	<p n="per">
+		<params>
+			<param n="Target" default="" prompt="Enter Paragraph to PERFORM THRU"/>
+		</params>
+		<text>
+			PERFORM %(target) THRU %(target)-EXIT
+		</text>
+	</p>
+	<p n="filecomment">
+		<text>
+			%\x7*****************************************************
+			%\x7*
+			%\x7*    DESCRIPTION: %\c
+			%\x7*
+			%\x7*    AUTHOR:
+			%\x7*
+			%\x7*    HISTORY:
+			%\x7*
+			%\x7*    DATE: %\d
+			%\x7*
+			%\x7*****************************************************
+		</text>
+	</p>
+	<p n="l05">
+		<params>
+			<param n="fname" default="FILLER" prompt="Enter Level 05 Field Name"/>
+			<param n="pic" default="" prompt="and PIC value"/>
+			<param n="val" default="" prompt="and VALUE (with quotes)"/>
+		</params>
+		<text>
+			%\x12,05  %(fname)  PIC %(pic)
+			%\x16VALUE %(val).
+			%\S
+			%\S
+		</text>
+	</p>
+	<p n="sel">
+		<params>
+			<param n="fname" default="" prompt="Enter file-name"/>
+			<param n="assgn" default="" prompt="and DDNAME"/>
+			<param n="fs" default="" prompt="and File Status field name."/>
+		</params>
+		<text>
+			%\x12SELECT %(fname) %\S
+			%\x16ASSIGN TO %(assgn) %\S
+			%\x16FILE STATUS IS %(fs)
+			%\S
+		</text>
+	</p>
+	<p n="id">
+		<params>
+			<param n="PGM" default="" prompt="Enter Program Name"/>
+		</params>
+		<text>
+			%\x8IDENTIFICATION DIVISION.
+			%\x8PROGRAM-ID. %(pgm).
+			%\x7*AUTHOR.
+			%\X7*INSTALLATION.
+			%\X7*DATE-WRITTEN.
+			%\X7*DATE-COMPILED.
+			%\x7*
+			%\x8ENVIRONMENT DIVISION.
+			%\x8INPUT-OUTPUT SECTION.
+			%\x8FILE-CONTROL.
+			%\S
+		</text>
+	</p>
+	<p n="call">
+		<text>
+			CALL %\c USING %\S
+		</text>
+	</p>
+</profile>

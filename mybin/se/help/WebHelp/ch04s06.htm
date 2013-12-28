@@ -1,0 +1,519 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Colors, Color Coding, and Symbol Colors</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch04.htm" title="Chapter 4.  User Preferences"><link rel="prev" href="ch04s05.htm" title="Fonts"><link rel="next" href="ch04s07.htm" title="Restoring Settings on Startup"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_colors_62023_82713"></a>
+    <a class="indexterm" name="sect_colors_40201_95954"></a>
+    <a class="indexterm" name="sect_colors_46668_37687"></a>
+    <a class="indexterm" name="sect_colors_60009_43955"></a>
+    <a class="indexterm" name="sect_colors_73803_37165"></a>
+    Colors, Color Coding, and Symbol Colors
+  </h2></div></div></div><p class="NormalText">
+    SlickEdit provides a great deal of control over the colors in the editor, using two 
+    complimentary coloring systems. With Color Coding you can color your code based on syntactic 
+    information about the elements: keywords, strings, operators, etc. Using Symbol Coloring, you can 
+    definie rules to color symbols based on scope, visibility, and other detailed properties. Symbol 
+    Coloring provides more detailed information for identifiers that would otherwise be colored the same 
+    using Color Coding.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">Colors for the SlickEdit application window are controlled by the 
+      operating system. This includes the font and background color for tool windows and dialogs. The 
+      colors in editor windows are controlled by SlickEdit.</p></div><p class="NormalText">This section is divided into the following subsections:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch04s06.htm#sect_colors_66606_03601">Colors</a> - describes how to set the 
+        colors for various entities in the editor window. These colors are applied to items 
+        identified by the Color Coding engine. 
+        </p></li><li><p class="NormalText">
+        <a href="ch04s06.htm#sect_colors_74438_07811">Symbol Coloring</a> - describes how to define rules 
+        to color symbols based on scope, visibility, etc.</p></li><li><p class="NormalText">
+        <a href="ch04s06.htm#sect_colors_75657_62785">Color Coding</a> - provides information about 
+        the Color Coding engine.</p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_colors_66606_03601"></a>
+      <a name="sect_fontsandcolors_13325_1005020"></a>
+      <a class="indexterm" name="sect_fontsandcolors_DC2AD59E_073C"></a>
+      <a class="indexterm" name="sect_fontsandcolors_7FBD6FAE_D4E0"></a>
+      Colors 
+    </h3></div></div></div><p class="NormalText">
+      Use the Colors option screen (
+      <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Appearance </strong></span> &#8594; <span><strong class="guimenuitem">Colors</strong></span>
+      or the <span><strong class="command">color</strong></span> command) to set the color for 
+      different screen elements in SlickEdit. 
+      This includes syntactic elements in the editor window, 
+      like keywords, comments, strings, etc. as well as other user interface 
+      elements like the message area or the status line. 
+      Window colors and backgrounds are set using the facilities provided by the 
+      operating system.
+    </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_fontsandcolors_13325_90477"></a>
+        <a name="sect_fontsandcolors_13325_1005027"></a>
+          Setting Colors for Screen Elements
+        </h4></div></div></div><p class="NormalText">
+        Colors can be set either individually or by editing a scheme. To change the default colors, 
+        complete the following steps:
+      </p><div class="orderedlist"><ol type="1"><li><p class="NormalText">
+            From the main menu, click 
+            <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Appearance </strong></span> &#8594; <span><strong class="guimenuitem">Colors</strong></span> 
+            (or use the <span><strong class="command">color</strong></span> command).
+            The Colors option screen is displayed.
+          </p><div class="mediaobject"><img src="Resources/options_appearance_colors.png"></div></li><li><p class="NormalText">
+            Select the element you want to change from the list of customizable items. 
+            The items are categorized by their purpose.  
+            For descriptions of the individual color elements, see
+            <a href="ch12s11.htm#sect_options_menuanddialogs_14207_65927">Color Options</a>).
+          </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody">The element selected in the list matches the symbol at the 
+              cursor position when this screen was opened. You can use this to determine what kind of 
+              symbol SlickEdit thinks it is. If you're not sure which screen element to pick, close 
+              the options screen and put the cursor in the symbol you want to color, and then reopen the 
+              options screen.  </p></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> 
+              If you have chosen the <span><strong class="guilabel">Selection</strong></span> or 
+              <span><strong class="guilabel">Current line</strong></span> screen element, note that 
+              SlickEdit will attempt to render the text using your normal color 
+              settings for the <span><strong class="guilabel">Foreground</strong></span> color.  The 
+              selected foreground color will only be used if there is not enough 
+              contrast between the foreground color for the underlying text 
+              element and selected background color to be readable. It is best 
+              to specify a <span><strong class="guilabel">Background</strong></span> color for selections 
+              that is as close as possible to your normal background color, 
+              ensuring that the color-coded text is still easy to read.
+            </p></div></li><li><p class="NormalText">
+            <a class="indexterm" name="sect_fontsandcolors_C7B74432_45AA"></a>
+            Set the <span><strong class="guilabel">Foreground</strong></span> and 
+            <span><strong class="guilabel">Background</strong></span> colors by clicking on the color 
+            squares. The Color Picker dialog is displayed, allowing you to pick 
+            a color from the palette, or set your own custom color using RGB 
+            values.
+          </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+              <a class="indexterm" name="sect_fontsandcolors_2032300B_11BE"></a> 
+              Several colors for syntactic screen elements such as comments, keywords, 
+              and numbers inherit their background color information from the 
+              <span><strong class="guilabel">Window Text</strong></span> color.  This allows you to change the
+              background color for an entire color scheme merely by changing the
+              background color for <span><strong class="guilabel">Window Text</strong></span>.
+            </p></div><p class="NormalText">
+              </p><div class="mediaobject"><img src="Resources/color_picker_dialog.png"></div><p class="NormalText">
+          </p></li><li><p class="NormalText">
+            If you want, choose a <span><strong class="guilabel">Font Style</strong></span> for the text.
+          </p></li></ol></div><p class="NormalText">
+        For a complete list of all of the options available, 
+        see <a href="ch12s11.htm#sect_options_menuanddialogs_14207_65927">Color Options</a>.
+      </p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_fontsandcolors_13325_75307"></a>
+          <a name="sect_fontsandcolors_13325_1005047"></a>
+          <a class="indexterm" name="sect_fontsandcolors_D491E40C_C890"></a>
+          <a class="indexterm" name="sect_fontsandcolors_8A477ECB_C745"></a>
+          Using Color Schemes
+        </h5></div></div></div><p class="NormalText">
+          Color schemes store the settings for all screen elements, 
+          allowing you to quickly change the look of your editing environment.
+          Several predefined color schemes are provided, and you can create your own.
+        </p><p class="NormalText">
+          To use a color scheme, from the <span><strong class="guilabel">Scheme</strong></span> drop-down, select a color scheme 
+          and click <span><strong class="guibutton">Apply</strong></span> or <span><strong class="guibutton">OK</strong></span>. 
+        </p><p class="NormalText">
+          To define a new color scheme, set your colors for the various screen elements 
+          and click <span><strong class="guibutton">Save Scheme</strong></span>. User-defined color schemes are 
+          stored in the <code class="filename">uscheme.ini</code> file located in your configuration directory. 
+          You can change the name of a scheme by clicking <span><strong class="guibutton">Rename Scheme</strong></span>.
+        </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_fontsandcolors_13325_1005053"></a>
+          <a class="indexterm" name="sect_fontsandcolors_F74C1946_F0EC"></a>
+          <a class="indexterm" name="sect_fontsandcolors_16F252B5_5013"></a>
+          Setting an Embedded Language Color
+        </h5></div></div></div><p class="NormalText">
+          Colors for editor screen elements also have an embedded background color.
+          This color is used as the background when in embedded code.
+          It is best to select an embedded background color that is only a slight
+          tint from your standard background color.  This makes it easier to select
+          common foreground colors that will display with enough contrast in both
+          embedded and normal code.
+        </p><p class="NormalText">
+          Embedded Language color is used when a file of one type embeds a 
+          language of another type within it, like HTML files containing JavaScript. 
+          For HTML, the syntax color coding recognizes the 
+          <code class="filename">&lt;script language="???"&gt;</code> tag and uses 
+          embedded language colors for the new language. 
+          In addition, for Perl and UNIX shell scripts, 
+          you can prefix your here-document terminator with one of the color coding 
+          lexer names to get embedded language color coding. 
+          The following is an example for Perl:
+        </p><div class="mediaobject"><img src="Resources/embedded_perlhtml.png"></div></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_colors_74438_07811"></a>
+      <a name="sect_colors_89920_36798"></a>
+      <a class="indexterm" name="sect_colors_07904_17486"></a>
+      <a class="indexterm" name="sect_colors_44904_45555"></a>
+      Symbol Coloring
+    </h3></div></div></div><p class="NormalText">
+      Use the Symbol Coloring options screen 
+      (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Appearance </strong></span> &#8594; <span><strong class="guimenuitem">Symbol Coloring</strong></span> 
+       to set the color for symbols identified by Context Tagging®.  
+       This includes function declarations, function definitions, variables, 
+       class names, package names, type names, defines, enumerated types, 
+       constants, as well as undefined symbol names.
+    </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+        Symbol Coloring is turned off by default.  
+        Symbol Coloring can be enabled on a per-language basis by going to 
+        <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">[Language Category] </strong></span> &#8594; <span><strong class="guimenuitem">[Language] </strong></span> &#8594; <span><strong class="guimenuitem">View</strong></span>
+        and checking <span><strong class="guilabel">Symbol Coloring</strong></span>.
+        You can also enable Symbol Coloring for a specific file by selecting
+        <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Symbol Coloring </strong></span> &#8594; <span><strong class="guimenuitem">Enable Symbol Coloring</strong></span>. This will override the language specific setting, 
+        but only for the current file.
+      </p></div><p class="NormalText">
+      Symbol Coloring is different from Color and Color Coding.  
+      The base color scheme, along with the Color Coding lexer, 
+      are used to identify and color lexical elements found in source code, 
+      such as comments, strings, numbers and keywords.  
+      Symbol coloring augments the base coloring by overlaying additional 
+      color information for identifiers based on the corresponding 
+      symbol's name, type, and attributes.  
+      This allows you to define symbol coloring rule sets for focusing in on 
+      certain symbols or groups of symbols.  It also makes it easier to 
+      distinguish between different symbol types, 
+      such as local variables and constants.   
+      See <a href="ch04s06.htm#sect_colors_75657_62785">Color Coding</a>
+      and <a href="ch04s06.htm#sect_colors_66606_03601">Colors</a> 
+          for more information about lexical color coding and color configuration.
+    </p><p class="NormalText">When you point at a symbol with the mouse cursor, SlickEdit 
+      displays a pop-up that includes information from Symbol Coloring about what rule was applied. If 
+      that symbol is not colored by Symbol Coloring, no information about the symbol color will be 
+      displayed in the pop-up.</p><div class="mediaobject"><img src="Resources/symbol_coloring_mouse_over.png"></div><p class="NormalText">Symbol Coloring under some circumstances can 
+      cause SlickEdit to pause momentarily while you type. If you experience 
+      these pauses, please turn off Symbol Coloring by unchecking 
+      <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Symbol Coloring </strong></span> &#8594; <span><strong class="guimenuitem">Enable Symbol Coloring</strong></span>
+      which will turn off symbol coloring for the current file. If these pauses happen in all files for 
+      that language, you can turn Symbol Coloring off for that language by going to <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">[Language Category] </strong></span> &#8594; <span><strong class="guimenuitem">[Language] </strong></span> &#8594; <span><strong class="guimenuitem">View</strong></span> and unchecking <span><strong class="guilabel">Symbol Coloring</strong></span>. 
+    </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+        The standard symbol coloring schemes shipped with SlickEdit® are
+        very thorough and attempt to assign a color to nearly every symbol type.
+        While this is useful, it may be more information that is necessary.
+        The schemes are this way because it is easier to edit or remove rules 
+        than it is to add new rules or create a new scheme from scratch.
+        You can use the standard symbol coloring schemes as templates that you
+        prune down to create your own, more focused, symbol coloring schemes
+        suiting your specific needs.
+      </p></div><p class="NormalText">Symbol Coloring can be used to highlight unidentified symbols. These 
+      are symbols for which the SlickEdit Context Tagging engine can not find a definition. If you are 
+      working without a workspace or your libraries are not fully tagged, you would see a lot of 
+      unidentified symbols. Because of this, the capability to highlight unidentified symbols is turned 
+      off by default, even if you enable Symbol Coloring. To enable highlighting of unidentified 
+      symbols, select <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">[Language Category] </strong></span> &#8594; <span><strong class="guimenuitem">[Language] </strong></span> &#8594; <span><strong class="guimenuitem">View</strong></span> and put a check in <span><strong class="guilabel">Highlight unidentified symbols</strong></span>. The 
+      <span><strong class="guilabel">Symbol coloring</strong></span> checkbox must be checked for this control to become 
+      active.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_colors_89701_40630"></a>Symbol Coloring Schemes</h4></div></div></div><p class="NormalText">
+        <a class="indexterm" name="sect_colors_16013_41674"></a>
+        A symbol coloring scheme is a set of rules defining what color to assign to a symbol with a specific name,
+        type, and attributes.  You can think of a scheme as a colored lens for looking at your code that 
+        highlights the specific symbols you are interested in.  Since you can quickly switch symbol 
+        coloring schemes, it is very easy to use a special lens for specific tasks, like refactoring
+        out global variables or identifying where your code uses preprocessing.   
+      </p><p class="NormalText">
+        <a class="indexterm" name="sect_colors_34638_32723"></a>
+        <a class="indexterm" name="sect_colors_12659_13122"></a>
+        A symbol coloring rule consists of the following elements:
+        </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">A <span><strong class="guilabel">Rule name</strong></span>.</p></li><li><p class="NormalText"><span><strong class="guilabel">Symbol types</strong></span> -- 
+              A matching symbol's type must be one of the specified types.  
+              The special <span><strong class="guilabel">*SYMBOL NOT FOUND*</strong></span> type is used to 
+              identify symbols which Context Tagging® can not locate. 
+              See <a href="ch12s11.htm#sect_options_menuanddialogs_67030_35014">Symbol types</a> 
+              for detailed descriptions of each symbol type. 
+            </p></li><li><p class="NormalText"><span><strong class="guilabel">Symbol attributes</strong></span> -- 
+              The attributes can be either required, ignored, or disallowed.
+              A matching symbol must have all the required attributes, and
+              none of the disallowed attributes.
+              See <a href="ch12s11.htm#sect_options_menuanddialogs_76405_78890">Symbol attributes</a> 
+              for detailed descriptions of each symbol attribute. 
+            </p></li><li><p class="NormalText"><span><strong class="guilabel">Class name</strong></span> -- 
+              A matching symbol must belong to a class matching the regular expression.
+            </p></li><li><p class="NormalText"><span><strong class="guilabel">Symbol name</strong></span> -- 
+              A matching symbol's name must match the regular expression.
+            </p></li><li><p class="NormalText"><span><strong class="guilabel">Color and font attributes</strong></span> --
+              The color definition includes foreground color, background color, 
+              and font attributes.  This is the color the symbol will be
+              highlighted using.  A color definition can base it's color on
+              another rule, for example, in order to inherit background color
+              and font attributes for consistency.
+            </p></li></ul></div><p class="NormalText">
+        Symbol coloring rules are matched in order from the top to bottom
+        of the list of rules in the symbol coloring scheme.
+        For a symbol to match a rule, it must be the first rule in the
+        symbol coloring scheme that matches all of the requirements above.
+      </p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_colors_10528_36798"></a>
+          <a class="indexterm" name="sect_colors_39152_17486"></a>
+          <a class="indexterm" name="sect_colors_52793_40630"></a>Unidentified Symbols</h5></div></div></div><p class="NormalText">An unidentified symbol is one for which the context tagging engine 
+          cannot locate the type information. This could be because the code is incomplete, the source 
+          file for that definition has not been tagged or is out of date, or the definition wasn't 
+          located before a specified timeout or limit was hit. We use the term "unidentified" instead of 
+          "undefined" because the symbol may be defined even though the tagging engine doesn't know it. 
+          Unidentified symbols are found using the <span><strong class="guilabel">*SYMBOL NOT FOUND*</strong></span> symbol type.
+          </p><p class="NormalText">Symbol Coloring contains a scheme, Unidentified Symbols Only, that can be 
+          used to spot these symbols. You can select that scheme via the Symbol Coloring options page, 
+          <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Appearance </strong></span> &#8594; <span><strong class="guimenuitem">Symbol Coloring</strong></span>. You can also select that scheme from the View menu, <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Symbol Coloring </strong></span> &#8594; <span><strong class="guimenuitem">Unidentified Symbols Only</strong></span>. Lastly, you can toggle the view of unidentified symbols 
+          from the view menu using <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Symbol Coloring </strong></span> &#8594; <span><strong class="guimenuitem">Highlight Unidentified Symbols</strong></span> This will work with 
+          any scheme, even if it doesn't contain a rule for unidentified symbols.
+          </p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_colors_51888_00679"></a>Color Scheme Compatibility</h4></div></div></div><p class="NormalText">
+        Symbol coloring augments the standard lexical color coding for keywords,
+        comments, strings, numbers, and other items.  Since the symbol colors will
+        be overlayed and typically inherit background color information from the
+        base color scheme, it is important for the selected foreground color to be chosen such that the 
+        symbol name is still visible and readable against the editor window background. 
+      </p><p class="NormalText">
+        The standard symbol coloring schemes shipped with SlickEdit are marked
+        with the standard base color schemes they are compatible with.
+        Some schemes, such as <span><strong class="guilabel">Protected and Private</strong></span> are
+        compatible with all color schemes.  Others are fine-tuned to work best
+        against a dark background, a light background, or a specific color scheme.
+        User-defined color schemes can specify which base color schemes they
+        work best with. 
+      </p><p class="NormalText">
+        In addition, each base color scheme has a designated, default symbol
+        coloring scheme preferred for that scheme.  This allows you to switch
+        color schemes and automatically get a corresponding symbol coloring
+        scheme which is compatible.
+        See <a href="ch04s06.htm#sect_colors_66606_03601">Colors</a> for more information.
+      </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_colors_80373_35014"></a>Selecting a Symbol Coloring Scheme</h4></div></div></div><p class="NormalText">
+        Symbol coloring rules can be set either individually or by editing a scheme. To change the 
+        default symbol coloring scheme, complete the following steps:
+        </p><div class="orderedlist"><ol type="1"><li><p class="NormalText">
+              From the main menu, click 
+              <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Appearance </strong></span> &#8594; <span><strong class="guimenuitem">Symbol Coloring</strong></span>. 
+              The Symbol Coloring options screen is displayed.
+            </p><div class="mediaobject"><img src="Resources/options_appearance_symbol_coloring.png"></div></li><li><p class="NormalText">
+              Using the <span><strong class="guilabel">Scheme</strong></span> combo box, select a scheme name.
+              If your current scheme is modified, those modifications will be automatically 
+              saved to that scheme.  If you select a scheme which is incompatible with your current base
+              color scheme, you will be prompted to confirm that you really want
+              to use the selected color scheme.  
+              See <a href="ch04s06.htm#sect_colors_51888_00679">Color Scheme Compatibility</a> 
+              for more information.
+            </p></li><li><p class="NormalText">
+              The list of rules will be shown for the selected symbol coloring scheme.
+              You can get a quick overview of the scheme from the list and see
+              detailed information about each rule by selecting the rule.
+            </p></li><li><p class="NormalText">
+              Press <span><strong class="guilabel">OK</strong></span> or <span><strong class="guilabel">Apply</strong></span> to
+              commit the changes.  The change will be applied to all open files 
+              using the default symbol coloring scheme.
+            </p></li></ol></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_colors_11998_78890"></a>Editing a Symbol Coloring Scheme</h4></div></div></div><p class="NormalText">
+        To edit the current symbol coloring scheme, from the main menu, click 
+        <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Appearance </strong></span> &#8594; <span><strong class="guimenuitem">Symbol Coloring</strong></span>. 
+        The Symbol Coloring options screen is displayed.
+      </p><p class="NormalText">
+        Select a rule from the list of rules.
+        Note that the rule list not only displays the name of the rule, but
+        also a brief summary of the rule settings.  
+        You can add a new rule after the currently selected rule by clicking on
+        the plus icon.  Likewise, you can remove the current rule by clicking on the
+        delete icon.  Rules can be moved up or down in the rule order by clicking
+        on the up or down arrows. 
+      </p><p class="NormalText">
+        See <a href="ch12s11.htm#sect_options_menuanddialogs_54639_00679">Color Rules</a> 
+        for detailed descriptions of each of the standard symbol coloring
+        rules shipped with SlickEdit®. 
+      </p><p class="NormalText">
+        The current rule can be renamed by clicking in the text box under
+        <span><strong class="guilabel">Rule name</strong></span>, modifying the name, then hitting 
+        <span><strong class="keycap">Enter </strong></span>.
+      </p><p class="NormalText">
+        The display color and font choices for a rule allow you to inherit
+        color and font information from another rule or from certain items
+        from the base color scheme.  By default a rule will inherit from the
+        <span><strong class="guilabel">Window Text</strong></span> color defined in your base color scheme.
+      </p><p class="NormalText">
+        Set the <span><strong class="guilabel">Foreground</strong></span> and <span><strong class="guilabel">Background</strong></span> 
+        colors by clicking on the color squares. The <span><strong class="guilabel">Color Picker</strong></span> dialog is 
+        displayed, allowing you to pick a color from the palette, or set your own custom color using RGB 
+        values.  You can also select <span><strong class="guilabel">Inherit</strong></span> in order to specify that the rule use 
+        the same color as it's parent rule.  Set the font attributes by clicking on 
+        <span><strong class="guilabel">Normal</strong></span>, <span><strong class="guilabel">Bold</strong></span>, <span><strong class="guilabel">Italic</strong></span>, or 
+        <span><strong class="guilabel">Underline</strong></span>.  
+        Select <span><strong class="guilabel">Inherit Font</strong></span> to specify that the rule should
+        use the same font attributes as it's parent rule.
+      </p><p class="NormalText">
+        Select a set of symbol types from the list of symbol types supported by
+        the Context Tagging® engine.  A symbol must be one of the selected symbol
+        types in order to match the rule.  You can select as many symbol types
+        as you want.  Select the special <span><strong class="guilabel">*SYMBOL NOT FOUND*</strong></span>
+        symbol type to define a rule for what to do with symbols that could
+        not be found using Context Tagging®.
+        </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Caution</h3><p class="NormalText">Not all symbol types apply to every language.</p></div><p class="NormalText">
+        Symbol attributes can have three states.  The default state is a grayed
+        state which says we don't care if this attribute is set or not for
+        this rule.  If an attribute is checked, it must be set in the matching
+        symbol.  
+        </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+            If an attribute is unchecked, it must not be set.  Some attributes,
+            such as <span><strong class="guilabel">Public</strong></span>, <span><strong class="guilabel">Protected</strong></span>,
+            and <span><strong class="guilabel">Private</strong></span>, are mutually exclusive by nature.
+            If you configure a rule that checks both <span><strong class="guilabel">Public</strong></span>
+            and <span><strong class="guilabel">Private</strong></span>, that rule will never be matched.
+            You should instead either define two rules, or one rule with
+            <span><strong class="guilabel">Protected</strong></span> and <span><strong class="guilabel">Package</strong></span> unchecked.
+          </p></div><p class="NormalText">
+        In addition to the symbol type and attribute specifications, you can
+        further refine a symbol coloring rule by adding a 
+        <span><strong class="guilabel">Class name</strong></span> or <span><strong class="guilabel">Symbol name</strong></span>
+        regular expression, using the regular expression syntax of your choice.
+        The class name regular expression is matched against the name of the
+        scope (class, package, struct) which a symbol is defined in.  
+        Do not confuse this with the name of the scope in which the symbol is used.
+        The symbol name regular expression is matched against the name of the
+        symbol.  For example, a Wildcards expression of "vs*" would match all
+        symbols starting with the characters "vs".  
+        Case sensitivity for the regular expression matching is regulated 
+        by the language's case-sensitivity.
+        See <a href="ch04s06.htm#sect_colors_75657_62785">Color Coding</a> for more information.
+      </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_colors_28107_02686"></a>Creating a New Symbol Coloring Scheme</h4></div></div></div><p class="NormalText">
+        New symbol coloring schemes can be created by selecting an existing scheme
+        and adding or subtracting rules, then saving the scheme under a new name.
+        To create a new symbol coloring scheme from scratch, start with the
+        <span><strong class="guilabel">None</strong></span> scheme and then add your own custom rules.
+      </p><div class="mediaobject"><img src="Resources/save_symbol_coloring_prompt.png"></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_colors_44076_39837"></a>Selecting a Symbol Coloring Scheme for the Current File</h4></div></div></div><p class="NormalText">
+        From the main menu, click
+        <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Symbol Coloring</strong></span>
+        This will bring up the Symbol Coloring view menu.
+      </p><p class="NormalText">
+        The menu will list only symbol coloring schemes known to be compatible
+        with the current base color scheme.  Select a scheme to switch to that
+        scheme for the current file.  Select the <span><strong class="guilabel">(None)</strong></span>
+        scheme to disable symbol coloring for the current file.
+      </p><p class="NormalText">
+        Selecting a specific scheme for the current file will not change the
+        symbol coloring scheme for any other files, nor will it change the
+        default symbol coloring scheme.  The selected symbol coloring scheme
+        will be saved in your file history so that the next time you open that
+        file, it will return to using the same symbol coloring scheme you
+        selected, as long as your base color scheme does not change.
+      </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_colors_62451_91274"></a>Language-Specific Symbol Coloring Settings</h4></div></div></div><p class="NormalText">
+        Certain Symbol Coloring features can be disabled on a per-language basis.
+        To edit language-specific symbol coloring options, from the main menu, click 
+        <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">[Language Category] </strong></span> &#8594; <span><strong class="guimenuitem">[Language] </strong></span> &#8594; <span><strong class="guimenuitem">View</strong></span>. 
+        The Language View options are displayed.
+      </p><div class="mediaobject"><img src="Resources/options_languages_c_view.png"></div><p class="NormalText">
+        From this dialog, you can configure the following on a per-language basis.
+        </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              Turn off Symbol Coloring entirely for the language.  This would be
+              a good idea if symbol analysis was particularly slow or ineffective
+              for a language, such that symbol coloring was only slowing you down.
+            </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+                Symbol coloring is automatically disabled for HTML and other XML
+                variants.  It is also automatically disabled in all modes which
+                do not have any Context Tagging® implemented.  Finally,
+                Symbol Coloring is disabled in all embedded language contexts.
+                This means that Symbol Coloring is disabled for all PHP code, 
+                since PHP is always embedded in an HTML or XML processing
+                instruction ( &lt;?php ).
+              </p></div></li><li><p class="NormalText">
+              By default, Symbol Coloring will bold the name part of symbol declarations and definitions. 
+              This is particularly useful for languages which allow implicit local variable declarations. 
+              It is also helpful when the declaration syntax is not always visually 
+              distinct from the rest of the code.  This bolding behavior can be turned off by unchecking 
+              <span><strong class="guilabel">Use bold for symbol names in definitions and declarations</strong></span>. 
+            </p></li><li><p class="NormalText">
+              Symbol Coloring is able to select the 
+              <span><strong class="guilabel">Symbol not found</strong></span> rule for symbols with are not
+              found by Context Tagging®.  This can serve effective as a live
+              error checker with respect to spelling and capitalization of symbols.
+            </p><p class="NormalText">
+              However, in certain languages, especially scripting languages that allow
+              variables to be declared implicitly, Context Tagging® can be rather
+              ineffective, simply because the code can not be analyzed statically.
+              In this case, you might see an unusually large number of symbols
+              highlighted as unidentified symbols.  This can also happen if you
+              do not have Context Tagging® configured correctly for the code
+              and libraries you are working with.
+            </p><p class="NormalText">
+              For this reason, this feature is <span class="emphasis"><em>disabled</em></span>
+              by default.  You can enable highlighting of unidentified symbols by 
+              checking <span><strong class="guilabel">Highlight unidentified symbols</strong></span>.
+            </p></li><li><p class="NormalText">
+              By default, Symbol Coloring uses fairly strict language specific
+              symbol lookups in order to identify symbols.  In some languages,
+              it is necessary to relax the rules in order to find symbol
+              definitions.  This can, for example, be useful in heavily templated
+              or preprocessed C++ code which is too complex for Context Tagging®. 
+              Selecting <span><strong class="guilabel">Use relaxed symbol lookups</strong></span> instead of 
+              the default of <span><strong class="guilabel">Use strict symbol lookups</strong></span> will tell 
+              Symbol Coloring to revert to a more flexible symbol lookup, ignoring 
+              scope and visibility rules, if the strict symbol lookup does not yield results.
+              In other larger, more complex code bases, the strict symbol lookup algorithm 
+              may require too much time to be practical to use.  Sometimes a more 
+              simplistic approach of looking up the symbol based on the symbol's 
+              name alone, ignoring context, usage, and scope is adaquate.  
+              Select <span><strong class="guilabel">Use simplistic symbol lookups</strong></span> to enable the fast, 
+              simple symbol lookup algorithm.  Note that using the simplistic symbol lookup 
+              algorithm can drastically decreases the accuracy of Symbol Coloring, 
+              especially with respect to detecting misspelled symbols.
+            </p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_colors_75576_14137"></a>Symbol Coloring Performance Settings</h4></div></div></div><p class="NormalText">
+        Symbol Coloring requires the editor to do symbol lookup and analysis for
+        every symbol visible on the current page of the current file.
+        This can be expensive, especially for extremely large files or large,
+        complex code bases.  Because of this, it attempts to only color the symbols
+        which are currently visible, not the entire file.  Furthermore, instead
+        of immediately painting like basic syntax driven color coding does,
+        symbol coloring works on a delay timer.  This way you should never have to
+        wait for symbol coloring to finish working except under extreme 
+        circumstances.  Besides coloring the current page, symbol coloring will
+        also look ahead slightly to surrounding lines.  This makes it possible,
+        in the typical case, to page up one page and not have to wait for
+        symbol coloring to draw because the information was already prefetched.
+      </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">
+        The most effective way to increase Symbol Coloring 
+        performance is to tune your workspace and tag files configuration so that 
+        you tag everything you need and do not tag a lot of extra code.
+        </p><p class="CellBody">
+        The second best way to increase Symbol Coloring performance is to make use 
+        of the <span><strong class="guilabel">Use simplistic symbol lookup </strong></span> option. 
+        See <a href="ch04s06.htm#sect_colors_62451_91274">Language-Specific Symbol Coloring Settings</a> for more information.
+        </p></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Caution</h3><p class="CellBody">
+          For typical users, the default performance settings will be good enough.
+          Tinkering with these settings without regard to the implications
+          could result in very poor performance and/or annoying drawing behavior.
+        </p></div><p class="NormalText">
+        Symbol Coloring performance can be fine-tuned through the user interface.
+        To edit symbol coloring performance options, from the main menu, click 
+        <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Editing </strong></span> &#8594; <span><strong class="guimenuitem">Context Tagging</strong></span>. The Context Tagging® options are displayed. 
+      </p><div class="mediaobject"><img src="Resources/options_editing_symbolcoloring.png"></div><p class="NormalText">
+        From this dialog, you can configure the following settings.
+        </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText"><span><strong class="guilabel">Update after (ms) idle</strong></span> -- 
+              This is the amount of idle delay symbol coloring should wait
+              before updating the Symbol Coloring for the current page.
+              Increasing this value can prevent interruptions to your normal
+              typing due to symbol coloring updating, however, it will cause
+              symbol coloring updates to lag further behind your editing.
+              Decreasing this value too much can have the effect of making
+              symbol coloring updates behave nearly synchronously and can
+              create very bad editor response times.
+              A good setting is four times your average keypress gap, which you 
+              can estimate by looking at how many words per minute you type 
+              when coding.  
+            </p></li><li><p class="NormalText"><span><strong class="guilabel">Timeout after (ms)</strong></span> --
+              This the maximum amount of time that symbol coloring should spend
+              trying to do symbol analysis before giving up and trying to
+              finish in the next pass.
+              Increasing this time can cause increased intrusiveness.
+              Decreasing this time too much can cause symbol coloring to not
+              have enough time to paint the entire page.  As a result, you would
+              see lines get colored as symbol coloring makes subsequent passes
+              to finish coloring the page.
+            </p></li><li><p class="NormalText"><span><strong class="guilabel">Number of lines to color above and below the current page</strong></span> --
+              This is the amount of prefetch symbol coloring should do for pages
+              surrounding the current visible page of code.  Setting this very
+              high can have the effect of forcing symbol coloring to color the
+              entire file in one shot.  Setting it to 0 will force symbol coloring
+              to only color the visible page and not do any prefetch at all.  
+            </p></li><li><p class="NormalText"><span><strong class="guilabel">Number of off-page lines to color per pass (chunk size)</strong></span> --
+              When prefetching symbol coloring for off-page lines, this is the number of lines to prefetch 
+              per pass.  Setting this to a large number can make symbol coloring performance more 
+              intrusive.  Setting this to a small number, such as 1, will force symbol coloring to make 
+              many passes before it can color all the off-page lines it is supposed to. As a result, a 
+              <span><strong class="keycap">Page Up </strong></span>might 
+              reveal a page which is only partially colored.
+            </p></li></ul></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_colors_75657_62785"></a>
+      <a class="indexterm" name="sect_colorcoding_729CD56F_E9FE"></a>
+      Color Coding
+    </h3></div></div></div><p class="NormalText">For information on how to set up colors for various entities in the 
+      editor, see <a href="ch04s06.htm#sect_colors_66606_03601">Colors</a> This section describes how to configure the 
+      Color Coding engine, which identifies entities to color.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_colorcoding_12066_1004299"></a>
+        <a class="indexterm" name="sect_colorcoding_238B39B9_82F5"></a>Adding Color Coding Keywords to Supported Languages</h4></div></div></div><p class="NormalText">To add color-coded keywords to 
+      a supported language, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages</strong></span>, expand your language category and language, then select <span><strong class="guimenu">Color Coding</strong></span>.</p></li><li><p class="NormalText">Click <span><strong class="guilabel">New</strong></span>.</p></li><li><p class="NormalText">Enter the new keywords separated with a space character.</p></li><li><p class="NormalText">Click <span><strong class="guilabel">OK</strong></span>.</p></li><li><p class="NormalText">Click <span><strong class="guilabel">OK</strong></span> on the Color Coding options screen.</p></li></ol></div><p class="NormalText">For more information, see <a href="ch04s06.htm#sect_colorcoding_12066_17239">Color Coding Configuration</a>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_colorcoding_12066_23971"></a>
+        <a name="sect_colorcoding_12066_1004308"></a>
+        <a class="indexterm" name="sect_colorcoding_97EECB64_2FE0"></a>
+        <a class="indexterm" name="sect_colorcoding_F3943783_3718"></a>Creating Color Coding for a New Language</h4></div></div></div><p class="NormalText">To create color coding support for your language, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages</strong></span>, expand your language category and language, then select <span><strong class="guimenu">Color Coding</strong></span>.</p></li><li><p class="NormalText">Select the <a href="ch12s11.htm#sect_options_menuanddialogs_14207_73838">Color Coding Tokens Tab </a>, then click <span><strong class="guibutton">New</strong></span>. The Enter New Keywords dialog box is displayed.</p></li><li><p class="NormalText">Enter the new lexer name. Usually this is a language name such as <span class="bold"><strong>C</strong></span> or <span class="bold"><strong>Java</strong></span>. Click <span><strong class="guibutton">OK</strong></span>.</p></li><li><p class="NormalText">On the <span><strong class="guimenu">Tokens </strong></span>tab, make sure the new keyword is selected, then correct the <span><strong class="guilabel">ID start characters</strong></span>. These are valid characters which can be the start of an identifier.</p></li><li><p class="NormalText">Correct the <span><strong class="guilabel">ID follow characters</strong></span>. These are additional characters which are valid after the start ID character. For example, digits are usually allowed in identifiers, but not as the first character of an identifier.</p></li><li><p class="NormalText">Select the <a href="ch12s11.htm#sect_options_menuanddialogs_14207_39045">Color Coding Comments Tab </a>. This lists the comments currently defined and allows you to define new multi-line and line comments. For each comment, click <span><strong class="guibutton">New</strong></span> to add a line or multi-line comment.</p></li><li><p class="NormalText">Select the <a href="ch12s11.htm#sect_options_menuanddialogs_14207_27464">Color Coding Numbers Tab </a> to display various numeric style options.</p></li><li><p class="NormalText">Select the <a href="ch12s11.htm#sect_options_menuanddialogs_14207_1066289">Color Coding Strings Tab</a> to display various string literal options.</p></li><li><p class="NormalText">If you have not found all the options you need, click the <a href="ch12s11.htm#sect_options_menuanddialogs_14207_31203">Color Coding Language Tab</a>. This displays even more advanced language-specific options.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span> on the Color Coding options screen.</p></li></ol></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_colorcoding_12066_17239"></a>
+        <a name="sect_colorcoding_12066_1005058"></a>
+        <a class="indexterm" name="sect_colorcoding_B8FD1E3D_A3A4"></a>Color Coding Configuration</h4></div></div></div><p class="NormalText">To configure color coding, from the main menu, click 
+      <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages</strong></span>, expand your language category and language, then select 
+      <span><strong class="guimenu">Color Coding</strong></span>. This screen lets you change the list of 
+      tokens and other information that is color coded in the editor. The options on each tab are 
+      described in the section, <a href="ch12s11.htm#sect_options_menuanddialogs_14207_28494">Language-Specific Color Coding Options</a>.</p><p class="NormalText"> Click <span><strong class="guibutton">Colors</strong></span> at the bottom of the dialog to display 
+      the Color Settings dialog, which allows you to specify the color for color coding elements and 
+      other editor elements (see <a href="ch04s06.htm#sect_fontsandcolors_13325_90477">Setting Colors for Screen Elements</a>).</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_colorcoding_12066_1010596"></a>
+        <a class="indexterm" name="sect_colorcoding_E000C407_05F9"></a>
+      Advanced Color Coding Configuration
+    </h4></div></div></div><p class="NormalText">The <code class="filename">vslick.vlx</code> file defines language-specific coloring 
+      support. For information about modifying this file, and how to create a new lexer name, see <a href="ch13s08.htm">VLX File and Color Coding</a>.</p><p class="NormalText"></p></div></div></div></body></html>

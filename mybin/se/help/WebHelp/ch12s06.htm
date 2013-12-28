@@ -1,0 +1,142 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Build</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch12.htm" title="Chapter 12.  Menus, Dialogs, and Tool Windows"><link rel="prev" href="ch12s05.htm" title="Project"><link rel="next" href="ch12s07.htm" title="Debug"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_build_menuanddialogs_13760_77194"></a>
+    <a name="sect_build_menuanddialogs_13760_998341"></a>Build</h2></div></div></div><p class="NormalText">This section describes items on the <span><strong class="guimenu">Build</strong></span> menu. Currently, the section <a href="ch07.htm#sect_buildingandcompiling_14399_80556">Building and Compiling</a> contains all of the information about building and the dialogs and options that are available.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_build_menuanddialogs_13760_1019946"></a>
+      <a class="indexterm" name="sect_build_menuanddialogs_6F4DFACA_E755"></a>Build Menu</h3></div></div></div><p class="NormalText">The <span><strong class="guimenu">Build</strong></span> menu is language-specific and can have alternate options depending on the language in which the project is written.</p><div class="informaltable"><a name="table_ffe33942-d187-4bf4-9a1f-3578a20fc047"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Build Menu Item</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th><th>
+              <p class="CellHeading">Command</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Compile</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Compiles the current file.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">project_compile</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Build</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Builds the active project, typically compiling only the files that 
+                have 
+                changed.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">project_build</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Rebuild</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Rebuilds the active project, typically compiling all files in the 
+                project.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">project_rebuild</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Execute</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Executes the built program associated with the active project.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">project_execute</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Add new build tool...</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Launches the <a href="ch12s05.htm#sect_project_menuanddialogs_40631_13122">New Project Tool Wizard</a>.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">project_tool_wizard</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Next Error</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Processes the next compiler error message.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">next_error</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Previous Error</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Processes the previous compiler error message.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">prev_error</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Go to Error or Include</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Parses the error message or file name at the cursor and places cursor in file.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">cursor_error</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Clear All Error Markers</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Removes all error markers in all files.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">clear_all_error_markers</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Configure Error Parsing</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Configures regular expressions used to search for compiler messages. See <a href="ch07.htm#sect_buildingandcompiling_14399_19878">Parsing Errors with Regular Expressions</a>.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">configure_error_regex</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Stop Build</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Sends break signal to the Build tool window.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">stop_process</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Show Build</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Starts or activates the Build tool window.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">start_process</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Build Automatically on Save</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">When enabled, the project is built each time the workspace is saved.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">project_toggle_auto_build</strong></span>
+              </p>
+            </td></tr></tbody></table></div><p class="NormalText"></p></div></div></body></html>

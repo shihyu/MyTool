@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsKeyin</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsKeyin(int wid, const char *pBuf, int BufLen)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Inserts or overwrites string specified into the command line or text
+area depending on the insert state and the cursor position.  If BufLen is
+-1, then <i>pBuf</i> must point to a null terminated string.  This
+function is slow because it performs word wrap.  Use
+<b>vsInsertLine</b> or <b>vsInsertText</b> function for better
+performance.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of object.  0 specifies the current
+object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pBuf">pBuf</A></code> - Text to insert.  May contain line separator
+characters.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="BufLen">BufLen</A></code> - Number of characters in <i>pBuf</i>.  -1
+specifies that <i>pBuf</i> is null terminate
+and length can be determined from it.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Text Box, Combo Box, Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Combo_Box_Methods.html">Combo Box Methods</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Text_Box_Methods.html">Text Box Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsQInsertState.html">vsQInsertState</a>, <a href="vsSetInsertState.html">vsSetInsertState</a></blockquote>
+</body>
+</html>

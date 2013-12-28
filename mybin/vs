@@ -1,0 +1,6 @@
+#!/bin/bash
+
+VSEXEC=$HOME/.bin/se/bin/vs
+unset XMODIFIERS
+$VSEXEC +new $@
+

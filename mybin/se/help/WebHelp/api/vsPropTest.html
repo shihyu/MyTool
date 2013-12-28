@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsPropTest</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsPropTest(int wid, int prop_id, int object_id=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of object or index to resource
+returned by <b>vsFindIndex</b>,
+<b>vsNameMatch</b>,
+<B>VSP_CHILD</B>, or
+<B>VSP_NEXT</B>.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="prop_id">prop_id</A></code> - One of the VSP_??? constants in "vs.h".
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="object_id">object_id</A></code> - One of the VSOI_??? constants in "vs.h"
+                   Ignored unless window_id==0
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Test if the given property is safe to get for the
+        given window ID without causing the interpreter to
+        throw an error.  Returns 0 if ok, <0 if not safe.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+     int col;
+       col=vsPropTest(0,VSP_COL);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">All Window Objects
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsPropGetB.html">vsPropGetB</a>, <a href="vsPropGetZ.html">vsPropGetZ</a>, <a href="vsPropSetZ.html">vsPropSetZ</a>, <a href="vsPropSetB.html">vsPropSetB</a>, <a href="vsPropGetI.html">vsPropGetI</a>, <a href="vsPropGetI64.html">vsPropGetI64</a>, <a href="vsPropSetI.html">vsPropSetI</a>, <a href="vsPropSetI64.html">vsPropSetI64</a>, <a href="vsPropGetL.html">vsPropGetL</a>, <a href="vsPropSetL.html">vsPropSetL</a></blockquote>
+</body>
+</html>

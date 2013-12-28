@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_expand_tabsc</title>
+</head>
+<body>
+
+<h3><b>_str _expand_tabsc(int start=1, int count=-1, _str option="E")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns a sub-string of current line containing tab characters.  The
+start and count specification correspond to the current line as if tab
+characters were expanded according to the current buffers tab settings.
+We call this type of text position or count imaginary (or column).
+Strings containing tab characters are expanded before displayed.  Hence,
+the need arises for a differentiation between physical and imaginary
+positions.  A physical position corresponds to a character in string.  The
+characters are numbered one to the length of string.  An imaginary
+position corresponds to a position in a string once tabs have been
+expanded.
+<P>
+By default, the tab characters in the current line specified by start and
+count are expanded to spaces according to the current buffer's tab
+settings.  option may be 'E' or 'S'.  If the 'S' option is given, only
+bisected tab characters are expanded to the appropriate number of spaces.
+If count extends past the imaginary length of string, the result is padded
+with blank characters.  A count of -1 specifies the rest of the line
+starting from the imaginary column start.  The start parameter must be
+greater than zero.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="String_Functions.html">String Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_text_colc.html">_text_colc</a>, <a href="text_col.html">text_col</a>, <a href="expand_tabs.html">expand_tabs</a></blockquote>
+</body>
+</html>

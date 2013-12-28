@@ -1,0 +1,120 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>save</title>
+</head>
+<body>
+
+<h3><b>_command int save(_str cmdline='', int flags=-1)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Writes contents of the active buffer to the file name specified.  If no
+file name is specified, the current buffer is used.  The File Options
+set default options for the save command.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="command_line">command_line</A></code> - may contain an output filename and any of the
+following switches:
+
+<dl>
+<dt>+ or -O</dt><dd>Overwrite destination switch (no backup).  Useful
+for writing a file to a device such as the printer.
+Default is off.</dd>
+
+<dt>+ or -R</dt><dd>UNIX only.  Save to read only file and keep file
+read only.</dd>
+
+<dt>+ or -Z</dt><dd>Add end of file marker Ctrl+Z.  Default is on.</dd>
+
+<dt>+ or -T</dt><dd>Compress saved file with tabs.  Quoted strings are
+left unchanged.  Always uses tab increments of 8.
+Default is off.</dd>
+
+<dt>+ or -E</dt><dd>Turn on/off expand tabs to spaces switch.  Default
+is off.</dd>
+
+<dt>+ or -B</dt><dd>Binary.  Save file without carriage return, line
+feeds, or end of file marker.  Defaults to off.</dd>
+
+<dt>+ or -A</dt><dd>Convert destination filename to absolute.  Default
+is on.  This option is used to write files to device
+names such as PRN.  For example, "save +o -a prn"
+sends the current buffer non-laser printer.</dd>
+
+<dt>+DB, -DB, +D,-D,+DK,-DK</dt><dd>
+   These options specify the backup style.  The default
+backup style is +D.  The backup styles are:</dd>
+
+<dl>
+<dt>+DB, -DB</dt><dd>Write backup files into the same directory as the
+destination file but change extension to ".bak".</dd>
+
+<dt>+D</dt><dd>When on, backup files are placed in a single
+directory.  The default backup directory is
+"\vslick\backup\" (UNIX:
+"$HOME/.vslick/backup") . You may define an
+alternate backup directory by defining an
+environment variable called VSLICKBACKUP.
+The VSLICKBACKUP environment variable may
+contain a drive specifier. The backup file gets the
+same name part as the destination file.  For
+example, given the destination file
+"c:\project\test.c" (UNIX: "/project/test.c") , the
+backup  file will be "c:\vslick\backup\test.c"
+(UNIX: "$HOME/.vslick/backup/test.c").<br><br>
+
+Non-UNIX platforms: For a network, you may
+need to create the backup directory with appropriate
+access rights manually before saving a file.</dd>
+
+<dt>-D</dt><dd>When on, backup file directories are derived from
+concatenating a backup directory with the path and
+name of the destination file.  The default backup
+directory is "\vslick\backup\" (UNIX:
+"$HOME/.vslick").  You may define an alternate
+backup directory by defining an environment
+variable called VSLICKBACKUP.  The
+VSLICKBACKUP environment variable may
+contain a drive specifier.  For example, given the
+destination file "c:\project\test.c", the backup file
+will be "c:\vslick\backup\project\test.c" (UNIX:
+"$HOME/.vslick/backup/project/test.c").<br><br>
+
+Non-UNIX platforms: For a network, you may
+need to create the backup directory with appropriate
+access rights manually before saving a file.</dd>
+
+<dt>+DK,-DK</dt><dd>When on, backup files are placed in a directory off
+the same directory as the destination file.  For
+example, given the destination file
+"c:\project\test.c" (UNIX: "$HOME/.vslick"), the
+backup file will be "c:\project\backup\test.c"
+(UNIX: "/project/backup/test.c").  This option
+works well on networks.</dd>
+
+<dt>+DD</dt><dd>When on, back up files using the backup history system.
+Delta backup files are derived from concatenating a backup directory with
+the path and same of the destination file and the .vsdelta extension.
+The default backup directory is the "vsdelta" subdirectory of your
+configuration directory.</dd>
+</dl>
+</dl>
+
+<p>The internal variable <b>p_modify</b> is turned off if the output
+filename is the same as the current file name.  If no filename is
+specified the current buffer name is used.</p>
+
+<p>Command line example:</p>
+
+<dl>
+<dt>save +O</dt><dd>Save this file but don't create a backup this one
+time</dd>
+
+<dt>save +O -A +E PRN</dt><dd>Save a tabbed file to the
+printer</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common return codes are:
+INVALID_OPTION_RC, ACCESS_DENIED_RC,
+ERROR_OPENING_FILE_RC, ERROR_WRITING_FILE_RC,
+PATH_NOT_FOUND_RC, INSUFFICIENT_DISK_SPACE_RC, and
+DRIVE_NOT_READY_RC.  On error, message is displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="file.html">file</a>, <a href="print.html">print</a>, <a href="save_as.html">save_as</a></blockquote>
+</body>
+</html>

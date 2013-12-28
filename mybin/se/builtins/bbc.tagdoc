@@ -1,0 +1,544 @@
+
+const ":)"     // Smiley
+const ";)"     // Wink  
+const ":D"     // Cheesy  
+const ";D"     // Grin  
+const ">:("    // Angry  
+const ":("     // Sad  
+const ":o"     // Shocked  
+const "8)"     // Cool  
+const "???"    // Huh  
+const "::)"    // Roll Eyes  
+const ":P"     // Tongue  
+const ":-["    // Embarrassed  
+const ":-X"    // Lips Sealed  
+const ":-\\"   // Undecided  
+const ":-*"    // Kiss  
+const ":'("    // Cry 
+
+
+/**
+ * Bold text
+ * @example
+ * <b>This is bold.</b>
+ */
+tag b {
+}
+
+/**
+ * Italicized text
+ * @example
+ * <i>This is in italics.</i>
+ */
+tag i {
+}
+
+/**
+ * Underlined text
+ * @example
+ * <u>This line is underlined.</u>
+ */
+tag u {
+}
+/**
+ * Strikethrough text
+ * @example
+ * <strike>This line should be striked through.</strike>
+ */
+tag s {
+}
+/**
+ * Glowing text
+ * <p>
+ * The three attributes (eg red, 2, 50) in the 'glow' tag are color, 
+ * strength and width respectively.
+ * </p>
+ * @example
+ * <pre>
+ * [glow=red,2,50]glow[/glow]
+ * </pre>
+ */
+tag glow {
+   attr color;
+   attr strength;
+   attr width;
+}
+/**
+ * Shadow text
+ * <p>
+ * The two attributes (eg red, left) in the 'shadow' tag are 
+ * color and direction respectively.
+ * @example
+ * <pre>
+ * [shadow=red,left]shadow[/shadow]
+ */
+tag shadow {
+   attr color;
+   attr direction;
+}
+/**
+ * Marquee text
+ * <p>
+ * Not valid XHTML, but can also be used for images!
+ * @example
+ * <pre>
+ * [move]move[/move]
+ */
+tag move {
+}
+/**
+ * Preformatted text
+ * <p>
+ * Preserves critical text formatting, rendered in a monospace font.
+ * @example
+ * <pre>
+ * [pre]
+ *    Simple
+ *       Machines
+ *          Forum[/pre]
+ * </pre>
+ * This might be rendered as follows:
+ * <pre>
+ *    Simple
+ *       Machines
+ *          Forum
+ * <pre>
+ */
+tag pre {
+}
+/**
+ * Left-aligned text
+ * @example
+ * <pre>
+ * [left]left align[/left]
+ * </pre>
+ */
+tag left {
+}
+/**
+ * Centered text
+ * @example
+ * <pre>
+ * [center]centered[/center]
+ */
+tag center {
+}
+/**
+ * Right-aligned text
+ * @example
+ * <pre>
+ * [right]right align[/right]
+ * </pre>
+ */
+tag right {
+}
+/**
+ * Right to left text
+ * <p>
+ * Typical usage would be to post Arabic or Hebrew in an English document.
+ * @example
+ * <pre>
+ * [rtl]right to left[/rtl]
+ * <P>
+ */
+tag rtl {
+}
+/**
+ * Left to right text
+ * <p>
+ * Typical usage would be to post English in an Arabic or Hebrew document.
+ * @example
+ * <pre>
+ * [ltr]left to right[/ltr]
+ * <P>
+ */
+tag ltr {
+}
+/**
+ * Horizontal rule
+ * @example
+ * <pre>
+ * [hr]
+ * </pre>
+ */
+tag hr(empty) {
+}
+/**
+ * Font size
+ * @example
+ * <pre>
+ * [size=10pt]font size[/size]
+ */
+tag size {
+}
+/**
+ * Font type face
+ * <p>
+ * Only fonts installed on the user's computer will be displayed, 
+ * so use with caution!
+ * </p>
+ * @example
+ * <pre>
+ * [font=Verdana]font face[/font]
+ * </pre>
+ */
+tag font {
+   attr face;
+}
+/**
+ * Font color
+ * @example
+ * <pre>
+ * [color=Red]red[/color]
+ * </pre>
+ * This might be rendered as follows:
+ * <P>
+ * <font color=red>red</font>
+ * <P>
+ */
+tag color {
+}
+/**
+ * Insert flash animation
+ * <p>
+ * Please note that, if embedded Flash has been disabled by the forum 
+ * administrator(s), the Flash file will appear as a straight hyperlink as 
+ * shown here. The two attributes in the 'flash' tag (where relevant) are 
+ * width and height respectively.
+ * </p>
+ * @example
+ * <pre>
+ * [flash=200,200]http://somesite/somefile.swf[/flash]
+ * </pre>
+ */
+tag flash {
+   attr width;
+   attr height;
+}
+/**
+ * Insert image
+ * <p>
+ * Use the width and height attributes to resize the image.
+ * </p>
+ * @example
+ * <pre>
+ * [img width=48 height=48]http://somesite/image.gif[/img]
+ * </pre>
+ */
+tag img {
+   attr width;
+   attr height;
+}
+/**
+ * Insert hyperlink.
+ * <p>
+ * The 'url' tag opens in a new window, 
+ * but you can type 'iurl' tags to open in the same window.
+ * </p>
+ * @example
+ * <pre>
+ * [url]http://somesite/[/url]
+ * </pre>
+ * This might be rendered as follows:
+ * <P>
+ * <a href="http://somesite/">http://somesite/</a>
+ */
+tag url {
+}
+/**
+ * Insert hyperlink.
+ * <p>
+ * The 'url' tag opens in a new window, 
+ * but you can type 'iurl' tags to open in the same window.
+ * </p>
+ * @example
+ * <pre>
+ * [iurl]http://somesite/[/iurl]
+ * </pre>
+ * This might be rendered as follows:
+ * <P>
+ * <a href="http://somesite/">http://somesite/</a>
+ */
+tag iurl {
+}
+/**
+ * Insert email
+ * @example
+ * <pre>
+ * [email]someone@somesite[/email]
+ * </pre>
+ * This might be rendered as follows:
+ * <P>
+ * <a href="mailto:someone@somesite">someone@somesite</a>
+ */
+tag email {
+}
+/**
+ * Insert FTP link
+ * @example
+ * <pre>
+ * [ftp]ftp://somesite/somefile[/ftp]
+ * </pre>
+ * <pre>
+ * [ftp=ftp://somesite/somefile]descriptive link[/ftp]
+ * </pre>
+ */
+tag ftp {
+}
+/**
+ * Insert table
+ * <p>
+ * Note, there is no meaningful output from the 'table' tags alone.
+ * </p>
+ * @example
+ * <pre>
+ * [table][/table]
+ * </pre>
+ */
+tag tr {
+}
+/**
+ * Insert table column
+ * <p>
+ * Note the correct nesting of the tags, 
+ * so the 'table' tags contain the 'tr' tags, 
+ * which each contain an equal number of 'td' tags! 
+ * </p>
+ * @example
+ * <pre>
+ * [table][tr][td]SMF[/td]
+ * [td]Bulletin[/td][/tr]
+ * [tr][td]Board[/td]
+ * [td]Code[/td][/tr][/table 
+ * </pre> 
+ */
+tag td {
+}
+/**
+ * Superscript text
+ * @example
+ * <pre>
+ * [sup]superscript[/sup]
+ * </pre>
+ * <p>
+ * This might be rendered as follows: 
+ * <sup>superscript</sup>
+ */
+tag sup {
+}
+/**
+ * Subscript text
+ * @example
+ * <pre>
+ * [sub]subscript[/sub]
+ * </pre>
+ * <p>
+ * This might be rendered as follows: 
+ * <sub>subscript</sub>
+ */
+tag sub {
+}
+/**
+ * Teletype (monospace or typewriter) text
+ * @example
+ * <pre>
+ * [tt]teletype[/tt]
+ * </pre>
+ * This might be rendered as follows:
+ * <P>
+ * <tt>teletype</tt>
+ */
+tag tt {
+}
+/**
+ * Insert Code
+ * <p>
+ * Always use to preserve formatting of code and avoid parsing as 
+ * BBC and/or smileys!
+ * @example
+ * <pre>
+ * [code]<?php phpinfo(); ?>[/code]
+ * </pre>
+ */
+tag code {
+}
+/**
+ * Insert block quote text
+ * <p>
+ * Note the optional 'author' attribute.
+ * @example
+ * <pre>
+ * [quote]quote[/quote]
+ * </pre>
+ */
+tag quote {
+   attr author;
+}
+/**
+ * Insert list
+ * <p>
+ * While you can add as many items as you wish, 
+ * each item must be contained by the correct opening and closing tags. 
+ * You can also style your list item bullets with special opening tags 
+ * and no closing tags, but this option doesn't currently output valid XHTML
+ * </p>
+ * @example
+ * <pre>
+ * [list]
+ * [li]SMF[/li]
+ * [li]YaBB SE[/li]
+ * [/list]
+ * </pre>
+ * This might be rendered as follows:
+ * <ul>
+ * <li>SMF
+ * <li>YaBB SE
+ * </ul>
+ */
+tag list {
+}
+/**
+ * Insert generic list item (bullet)
+ * @example
+ * <pre>
+ * [li]item[/li]
+ * </pre>
+ * This might be rendered as follows:
+ * <ul>
+ * <li>item
+ * </ul>
+ */
+tag li {
+}
+/**
+ * Insert list item (circle)
+ * @example
+ * <pre>
+ * [o]circle[/o]
+ * </pre>
+ * This might be rendered as follows:
+ * <ul>
+ * <li type=circle>circle
+ * </ul>
+ */
+tag o {
+}
+/**
+ * Insert list item (circle)
+ * @example
+ * <pre>
+ * [O]circle[/O]
+ * </pre>
+ * This might be rendered as follows:
+ * <ul>
+ * <li type=circle>circle
+ * </ul>
+ */
+tag O {
+}
+/**
+ * Insert list item (circle)
+ * @example
+ * <pre>
+ * [0]circle[/0]
+ * </pre>
+ * This might be rendered as follows:
+ * <ul>
+ * <li type=circle>circle
+ * </ul>
+ */
+tag "0" {
+}
+/**
+ * Insert list item (disc)
+ * @example
+ * <pre>
+ * [*]item[/*]
+ * </pre>
+ * This might be rendered as follows:
+ * <ul>
+ * <li type=disc>disc
+ * </ul>
+ */
+tag "*" {
+}
+/**
+ * Insert list item (disc)
+ * @example
+ * <pre>
+ * [@]item[/@]
+ * </pre>
+ * This might be rendered as follows:
+ * <ul>
+ * <li type=disc>disc
+ * </ul>
+ */
+tag "@" {
+}
+/**
+ * Insert list item (square)
+ * @example
+ * <pre>
+ * [+]item[/+]
+ * </pre>
+ * This might be rendered as follows:
+ * <ul>
+ * <li type=square>square
+ * </ul>
+ */
+tag "+" {
+}
+/**
+ * Insert list item (square)
+ * @example
+ * <pre>
+ * [#]item[/#]
+ * </pre>
+ * This might be rendered as follows:
+ * <ul>
+ * <li type=square>square
+ * </ul>
+ */
+tag "#" {
+}
+/**
+ * Insert list item (square)
+ * @example
+ * <pre>
+ * [x]item[/x]
+ * </pre>
+ * This might be rendered as follows:
+ * <ul>
+ * <li type=square>square
+ * </ul>
+ */
+tag x {
+}
+/**
+ * Abbreviation
+ * <p>
+ * Displays the full expression for the abbreviation on mouseover.
+ * </p>
+ * @example
+ * <pre>
+ * [abbr=exemlpi gratia]eg[/abbr]
+ * </pre>
+ * This might be rendered as follows:
+ * <abbrev title="exemlpi gratia">eg</abbrev>
+ */
+tag abbr {
+}
+/**
+ * Acronym
+ * <p>
+ * Displays the full expression for the acronym on mouseover.
+ * </p>
+ * @example
+ * <pre>
+ * [acronym=Simple Machines Forum]SMF[/acronym]
+ * </pre>
+ * This might be rendered as follows:
+ * <abbrev title="Simple Machines Forum">SMF</abbrev>
+ */
+tag acronym {
+}

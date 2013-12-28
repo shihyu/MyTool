@@ -1,0 +1,156 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>qreplace</title>
+</head>
+<body>
+
+<h3><b>int qreplace(_str search_string, _str replace_string, typeless options, typeless search_mark="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Searches from cursor position for <i>search_string</i> and replaces
+matches with <i>replace_string</i>.  This procedure supports the
+same options as the <b>replace</b> command.  Unlike the
+<b>replace</b> command, this procedure does not use any default
+options not specified by the <i>options </i>parameter and requires the
+<i>search_string</i>, <i>replace_string</i>, and <i>options</i>
+parameters to be given.  The <i>options</i> argument is a string of
+one or more of the following:<p>
+<dl>
+<dt>E</dt><dd>Exact case.</dd><p>
+<dt>I</dt><dd>Ignore case.</dd><p>
+<dt>-</dt><dd>Reverse search.</dd><p>
+<dt>M</dt><dd>Limit search to marked area.</dd><p>
+<dt>V</dt><dd>Preserve case. When specified, each occurrence
+found is checked for all lower case, all upper case,
+first word capitalized or mixed case.  The replace
+string is converted to the same case as the
+occurrence found excepted when the occurrence
+found is mixed case (possibly mulltiple capitalized
+words).  In this case, the replace string is used
+without modification.</dd><p>
+<dt><</dt><dd>If found, position cursor at beginning of word.</dd><p>
+<dt>></dt><dd>If found, position cursor at end of word.</dd><p>
+<dt>*</dt><dd>Make changes without prompting.</dd><p>
+<dt>R</dt><dd>Interprets <i>string1</i> to be a SlickEdit regular
+expression.  <i>String2</i> may specify tagged
+expressions with a pound followed by a group
+number 0-9.  Count the left braces '{' to determine a
+group number.  The first tagged expression is "#0".
+See <b>SlickEdit Regular Expressions</b>.</dd><p>
+<dt>U</dt><dd>Interpret string as a UNIX regular expression.   See
+section <b>UNIX Regular Expressions</b>.
+<i>String2</i> may specify tagged expressions
+with a backslash followed by a group number 0-9.
+Count the left parenthesis '(' to determine a group
+number.  The first tagged expression is "\1" and the
+last tagged expression is "\9".  See <b>UNIX
+Regular Expressions</b>.</dd><p>
+<dt>B</dt><dd>Interpret string as a Brief regular expression.   See
+section <b>Brief Regular Expressions</b>.
+<i>String2</i> may specify tagged expressions
+with a backslash followed by a group number 0-9.
+Count the left braces '{' to determine a group
+number.  The first tagged expression is "\0".  See
+<b>Brief Regular Expressions</b>.</dd><p>
+<dt>H</dt><dd>Search through hidden lines.</dd><p>
+<dt>N</dt><dd>Do not interpret search string as a regular search
+string.</dd><p>
+<dt>P</dt><dd>Wrap to beginning/end when string not found.</dd><p>
+<dt>W</dt><dd>Limits search to words.  Used to search and replace
+variable names.</dd><p>
+<dt>W=<i>SlickEdit-regular-expression</i></dt><dd>
+   Specifies the valid characters in a word.  The
+default value is [A-Za-z0-9_$]</dd><p>
+<dt>W:P</dt><dd>Limits search to word prefix.  For example,
+searching for "pre" matches "pre" and "prefix" but
+not "supreme" or "supre".</dd><p>
+<dt>W:PS</dt><dd>Limits search to strict word prefix.  For example,
+searching for "pre" matches "prefix" but not "pre",
+"supreme" or "supre".</dd><p>
+<dt>W:S</dt><dd>Limits search to word suffix.  For example,
+searching for "fix" matches "fix" and "sufix" but
+not "fixit".</dd><p>
+<dt>W:SS</dt><dd>Limits search to strict word suffix.  For example,
+searching for "fix" matches "sufix" but not "fix" or
+"fixit".</dd><p>
+<dt>Y</dt><dd>Binary search.  This allows start positions in the
+middle of a DBCS or UTF-8 character.  This option
+is useful when editing binary files (in SBCS/DBCS
+mode) which may contain characters which look
+like DBCS but are not.  For example, if you search
+for the character 'a', it will not be found as the
+second character of a DBCS sequence unless this
+option is specified.</dd><p>
+<dt>,</dt><dd>Delimiter to separate ambiguous options.</dd><p>
+<dt>X<i>CCLetters</i></dt><dd>Requires the first character of search string
+NOT be one of the color coding elements specified.
+For example, "XCS" requires that the first character
+not be in a comment or string. <i>CCLetters</i> is
+a string of one or more of the following color
+coding element letters:</dd><p>
+<dl>
+<dt>O</dt><dd>Other</dd>
+<dt>K</dt><dd>Keyword</dd>
+<dt>N</dt><dd>Number</dd>
+<dt>S</dt><dd>String</dd>
+<dt>C</dt><dd>Comment</dd>
+<dt>P</dt><dd> Preprocessing</dd>
+<dt>L</dt><dd>Line number</dd>
+<dt>1</dt><dd>Symbol 1</dd>
+<dt>2</dt><dd>Symbol 2</dd>
+<dt>3</dt><dd>Symbol 3</dd>
+<dt>4</dt><dd>Symbol 4</dd>
+<dt>F</dt><dd>Function color</dd>
+<dt>V</dt><dd>No save line</dd>
+</dl><p>
+<dt>C<i>CCLetters</i></dt><dd>Requires the first character of search string to
+be one of the color coding elements specified. See
+<i>CCLetters</i> above.</dd>
+</dl><p>
+<p>If the '*' option is not specified, you will be prompted with the
+message "Yes/No/Last/Go/Quit?" for each occurrence of
+<i>string1</i>.   Press one of the following keys to take an action:</p><p>
+<dl>
+<dt>'Y' or SPACE</dt><dd>Make change and continue searching.</dd>
+<dt>'N' or BACKSPACE</dt><dd>No change and continue searching.</dd>
+<dt>'L' or .</dt><dd>Make change and stop searching.</dd>
+<dt>'G' or !</dt><dd>Make change and change the rest without
+prompting.</dd>
+<dt>'Q' or ESC</dt><dd>Exits command.  By default, the cursor is
+NOT restored to its original position.  If you
+want the cursor restored to its original
+position, invoke the command "<b>set-var
+def-restore-cursor 1</b>" and save the
+configuration.  Quit searching.</dd>
+<dt>Ctrl+G</dt><dd>Exits command and restores cursor to its
+original position.</dd>
+<dt>Ctrl+R</dt><dd>Searches in reverse for next occurrence of
+search string.</dd>
+<dt>Ctrl+S</dt><dd>Searches forward for next occurrence of
+search string.</dd>
+<dt>Ctrl+T</dt><dd>Toggles regular expression pattern matching
+on/off.  The key bound to the BRIEF
+emulation command <b>re_toggle</b> will
+also toggle regular expression pattern
+matching.  See section <b>Regular
+Expressions</b> for more information.
+<dt>Ctrl+W</dt><dd>Toggles word searching on/off.</dd>
+<dt>Ctrl+C</dt><dd>Toggles case sensitivity.  The key bound to
+the BRIEF emulation command
+CASE_TOGGLE will also toggle the case
+sensitivity.</dd>
+<dt>Ctrl+M</dt><dd>Toggles searching within mark.</dd>
+<dt>F1 or '?'</dt><dd>Displays help on C command.</dd>
+</dl><p>
+<p>The optional <i>orig_cursor_pos_mark</i> argument is a selection
+handle which specifies the text position where the cursor position
+should be restored if Ctrl+G is pressed to terminate the search.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if search string found and search & replace not cancelled.
+Common return codes are COMMAND_CANCELLED_RC,
+STRING_NOT_FOUND_RC, TOO_MANY_SELECTIONS_RC,
+INVALID_REGULAR_EXPRESSION_RC, and
+INVALID_OPTION_RC.  On error, message displayed.  The global
+variable "_Nofchanges" is set to the number of occurrences changed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="qsearch.html">qsearch</a>, <a href="find.html">find</a>, <a href="replace.html">replace</a>, <a href="gui_find.html">gui_find</a>, <a href="gui_replace.html">gui_replace</a>, <a href="find_next.html">find_next</a>, <a href="find_prev.html">find_prev</a></blockquote>
+</body>
+</html>

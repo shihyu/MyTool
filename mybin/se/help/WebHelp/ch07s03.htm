@@ -1,0 +1,22 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Working With Google Web Toolkit Projects</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch07.htm" title="Chapter 7.  Building, Running, and Debugging"><link rel="prev" href="ch07s02.htm" title="Running and Debugging"><link rel="next" href="ch07s04.htm" title="Working With Android Projects"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_workingwithgwt_14180_78681"></a>
+    <a name="sect_workingwithgwt_14180_998341"></a>
+    <a class="indexterm" name="sect_workingwithgwt_C01E9C1F_B3AA"></a>
+    <a class="indexterm" name="sect_workingwithgwt_7778303D_0CB7"></a>Working With Google Web Toolkit Projects</h2></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithgwt_14180_1001592"></a>
+      <a class="indexterm" name="sect_workingwithgwt_3B7E4269_6949"></a>Getting Started</h3></div></div></div><p class="NormalText">
+        Create a new Google&#8482; Web Toolkit (GWT) Application project at <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">New </strong></span> &#8594; <span><strong class="guimenuitem">Java </strong></span> &#8594; <span><strong class="guimenuitem">Java - GWT Application</strong></span>
+        or <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">New </strong></span> &#8594; <span><strong class="guimenuitem">Python </strong></span> &#8594; <span><strong class="guimenuitem">Python - GWT Application</strong></span>.  This creates an empty workspace and project to which you can add 
+        files. The project contains commands to build, debug, and deploy a GWT application. To create a 
+        SlickEdit project and workspace from an existing Java GWT Application source tree, select 
+        <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">Open Other Workspace </strong></span> &#8594; <span><strong class="guimenuitem">Ant XML Build File</strong></span>, and browse to the main Ant build file for your application.
+    </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithgwt_14180_1001593"></a>
+      <a class="indexterm" name="sect_workingwithgwt_3B7E4269_6943"></a>Debugging (Java Only)</h3></div></div></div><p class="NormalText">
+        By default, the <span><strong class="guilabel">Debug</strong></span> command for Java GWT projects uses the Java Debug Wire Protocol (JDWP) 
+        with a transport address of 8000.  See the <span><strong class="guilabel">debug</strong></span> Ant target in the build.xml file for the 
+        project in order to customize this command.
+    </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_workingwithgwt_14180_1001594"></a>
+      <a class="indexterm" name="sect_workingwithgwt_3B7E4269_6944"></a>Deploying to the Google App Engine</h3></div></div></div><p class="NormalText">
+        To deploy an application to the Google&#8482; App Engine, use the <span><strong class="guilabel">Deploy Project</strong></span> command, 
+        found at <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Deploy Project</strong></span>.  After entering your e-mail address, a command 
+        prompt will be launched and your application will be uploaded.  If this is the first time 
+        deploying this project, you will be prompted for your password in the command prompt.
+    </p><div class="mediaobject"><img src="Resources/gwt_deploy.png"></div></div></div></body></html>

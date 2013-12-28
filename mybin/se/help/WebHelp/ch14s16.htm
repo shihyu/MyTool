@@ -1,0 +1,92 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Debugging Macros</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s15.htm" title="Compiling and Loading Macros"><link rel="next" href="ch14s17.htm" title="Error Handling and the rc Variable"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_debuggingmacros_13086_22948"></a>
+    <a name="slick_c_debuggingmacros_13086_1003543"></a>Debugging Macros</h2></div></div></div><p class="NormalText">The Slick-C® translator <span><strong class="command">vstw.exe</strong></span> (UNIX: <span><strong class="command">vstw</strong></span>) enables debug messages to be inserted into the code and compiled. Use the <span><strong class="command">messageNwait</strong></span> function to display a message and wait until a key is pressed. The <span><strong class="command">_message_box</strong></span> function can be used to display a dialog box with a message and wait until you press <span><strong class="command">Enter</strong></span> to proceed. Useful defs tab <span><strong class="command">.e</strong></span> extension aliases are listed in the table below.</p><div class="informaltable"><a name="table_0d0fd71a-c06b-494a-bfb7-23ab7f51d6c3"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+            <p class="CellHeading">Alias Name</p>
+          </th><th>
+            <p class="CellHeading">Value</p>
+          </th></tr></thead><tbody><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">m</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">messageNwait(%\n: %\c);</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">mb</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">_message_box(%\n: %\c);</strong></span>
+            </p>
+          </td></tr></tbody></table></div><p class="NormalText">The following sections will help you debug and work on Slick-C macros: </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s16.htm#slick_c_debuggingmacros_13086_71577">Finding Procedures</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s16.htm#slick_c_debuggingmacros_13086_86617">Finding Run-Time Errors</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s16.htm#slick_c_debuggingmacros_13086_53850">Performance Profiling</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s16.htm#slick_c_debuggingmacros_13086_53294">Slick-C® Debugger</a>
+      </p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_debuggingmacros_13086_71577"></a>
+      <a name="slick_c_debuggingmacros_13086_1024284"></a>
+      <a class="indexterm" name="slick-c_debuggingmacros_5463903F_C3C9"></a>Finding Procedures</h3></div></div></div><p class="NormalText">The <span><strong class="command">find_proc</strong></span> command (<span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Go to Slick-C Definition</strong></span>) finds Slick-C® source code or Help for a Slick-C symbol name that you specify. Use this function if you are browsing a macro and you want to find out more about a function. You can find the procedure at the cursor by pressing <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Dot</strong></span>. The syntax of the <span><strong class="command">find_proc</strong></span> command is:</p><pre class="programlisting">
+      <span><strong class="command"> 
+    find_proc proc_name
+    </strong></span>
+    </pre><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"> Instead of <span><strong class="command">find_proc</strong></span>, use the command <span><strong class="command">fp</strong></span>, which is a shortcut. It functions exactly the same as <span><strong class="command">find_proc</strong></span>.</p></div><p class="NormalText">The table below shows some examples of using <span><strong class="command">find_proc</strong></span> on the command line.</p><div class="informaltable"><a name="table_0b4a3f26-0546-487c-a233-673fcec01802"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Command</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">find_proc find_proc</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Finds the source code for <span><strong class="command">find_proc</strong></span>.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">find_proc cursor_up</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Finds the source code for <span><strong class="command">cursor_up</strong></span>.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">find_proc substr</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Displays Help on <span><strong class="command">substr</strong></span> built-in.</p>
+            </td></tr></tbody></table></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_debuggingmacros_13086_86617"></a>
+      <a name="slick_c_debuggingmacros_13086_1025226"></a>
+      <a class="indexterm" name="slick-c_debuggingmacros_9CA52EE0_55C2"></a>
+      <a class="indexterm" name="slick-c_debuggingmacros_B1DB95D5_0D01"></a>Finding Run-Time Errors</h3></div></div></div><p class="NormalText">When a Slick-C® error occurs, a dialog box with the title "Slick-C Error" is displayed. Usually the Slick-C Stack tool window is displayed listing the call stack at the time of the error. Double-click in this tool window to view source for a call stack entry. The <span><strong class="command">find_error</strong></span> command (<span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Find Slick-C Error</strong></span>) finds the last Slick-C interpreter run-time error. The module with the error is loaded and the cursor is placed on the line causing the error.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_debuggingmacros_13086_53850"></a>
+      <a name="slick_c_debuggingmacros_13086_1025634"></a>
+      <a class="indexterm" name="slick-c_debuggingmacros_3DF94441_B543"></a>
+      <a class="indexterm" name="slick-c_debuggingmacros_9EE79852_04C7"></a>
+      <a class="indexterm" name="slick-c_debuggingmacros_11A9CF2A_2A3C"></a>Performance Profiling</h3></div></div></div><p class="NormalText">The Slick-C® interpreter supports performance profiling. This is useful to identify bottlenecks or other inefficiencies in Slick-C code. The profiler does not affect performance when it is inactive, and there is only a minimal effect on performance when it is collecting data.</p><p class="NormalText">To use this feature, invoke the <span><strong class="command">profile</strong></span> command on the SlickEdit® command line with the following options:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="command">profile on</strong></span> - Starts profiling data collection (also resets counters).</p></li><li><p class="NormalText">
+          <span><strong class="command">profile off </strong></span>- Stops profiling data collection.</p></li><li><p class="NormalText">
+          <span><strong class="command">profile view</strong></span> - Displays profiling data (also stops collection).</p></li><li><p class="NormalText">
+          <span><strong class="command">profile command args</strong></span> - Executes the specified Slick-C command with the specified arguments, then displays the profiling data. For example, to profile a CVS update, type 
+<span><strong class="command">profile cvs-gui-mfupdate</strong></span>.</p></li><li><p class="NormalText">
+          <span><strong class="command">profile save</strong></span> - Saves the profiling data for loading/viewing at a later time.</p></li><li><p class="NormalText">
+          <span><strong class="command">profile load</strong></span> - Loads previously saved profiling data for viewing.</p></li></ul></div><p class="NormalText">Prior to displaying the profiling data, the applicable Slick-C source files are scanned in order to resolve the names of static functions. Then the Slick-C Profiler dialog is displayed showing the data in multi-column, non-modal tree format. Each line represents one function, which is either a Slick-C function or an exported DLL function, depending on what was called when the profiling data was collected. All times are displayed in milliseconds.</p><div class="mediaobject"><img src="Resources/slick-cprofiler_dialog.png"></div><p class="NormalText">The profiling data can be sorted by clicking any sortable column. Double-click on any function to open the associated file in SlickEdit, with the cursor at the function location.</p><p class="NormalText">The Slick-C Profiler displays the following columns:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="guilabel">Function</strong></span> - Name of the function called.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Module</strong></span> - Name of the module from which the function comes.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Offset</strong></span> - The P-code offset of the function within the module.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Calls</strong></span> - Number of calls to the function.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">F+D Time</strong></span> - Total time spent in the function and its descendants.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Percent</strong></span> - Percentage of the total time spent in the function and its descendants.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Avg F+D</strong></span> - Average time spent in the function and its descendants.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Min F+D</strong></span> - Minimum time spent in the function and its descendants.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Max F+D</strong></span> - Maximum time spent in the function and its descendants.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Func Time</strong></span> - Total time spent in the function only.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Percent</strong></span> - Percentage of the total time spent in the function.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Avg Time</strong></span> - Average time spent in the function.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Min Time</strong></span> - Minimum time spent in the function.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Max Time</strong></span> - Maximum time spent in the function.</p></li></ul></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_debuggingmacros_13086_53294"></a>
+      <a name="slick_c_debuggingmacros_13086_1026599"></a>
+      <a class="indexterm" name="slick-c_debuggingmacros_7A2330E1_F6DA"></a>
+      <a class="indexterm" name="slick-c_debuggingmacros_E423ACD9_8FBD"></a>Slick-C® Debugger</h3></div></div></div><p class="NormalText">The Slick-C Debugger helps you trace Slick-C code. The debugger has no effect on performance when it is inactive, and only a minimal effect on performance when it is running.</p><p class="NormalText">To activate the Slick-C Debugger, from the main menu, click <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Start Slick-C® Debugger</strong></span>, or use the <span><strong class="command">slickc_debug_start</strong></span> command on the SlickEdit® command line.</p><p class="NormalText">When you start the debugger, a separate instance of SlickEdit launches in debug mode (the "debugger instance") and attaches to the original instance of SlickEdit (the "debuggee"). In the debugger instance, you can set breakpoints, step through code, inspect globals and properties, and more. </p><p class="NormalText">Use the Debug menu items or key bindings to perform debug operations. See "debugging" in the Help system (<span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Index</strong></span>) for more information about how to use the debugger in SlickEdit and other options that are available.</p><p class="NormalText">You can also use the <span><strong class="command">slickc_debug</strong></span> command on the SlickEdit command line to perform various actions:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span class="bold"><strong>Step into commands</strong></span> - Use <span><strong class="command">slickc_debug </strong></span><span class="emphasis"><em>command</em></span>, where <span class="emphasis"><em>command</em></span> is the SlickEdit command you want to step into. The debugger terminates when the command completes. For example, use <span><strong class="command">slickc_debug list_tags</strong></span> to launch the debugger and step into the <span><strong class="command">list_tags</strong></span> command, which scans the current buffer for tags and displays them in a selection list.</p></li><li><p class="NormalText">
+          <span class="bold"><strong>Debug batch macros</strong></span> - Use <span><strong class="command">slickc_debug </strong></span><span class="emphasis"><em>PathToBatchMacro</em></span> to activate the debugger for the specified batch macro. For example, use <span><strong class="command">slickc_debug C:TEMP\bm164.e</strong></span> to open the batch macro file <code class="filename">bm164.e</code> in the editor and start the debug session.</p></li><li><p class="NormalText">
+          <span class="bold"><strong>Enable remote attachment</strong></span> - Use <span><strong class="command">slickc_debug on</strong></span> to enable debugging so that someone else can attach to your instance of SlickEdit remotely. Use the <span><strong class="command">slickc_debug off</strong></span> to disable debugging.</p></li></ul></div><p class="NormalText">To stop the debugging session, from the debug instance main menu, click <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Stop Debugging</strong></span>. This detaches the debugger instance and closes it.</p><p class="NormalText">The debugger instance connects to the debuggee using a lightly extended version of JDWP (Java Debug Wire Protocol), although there is no JVM (Java Virtual Machine) involved. By default, it attaches to port 8003.</p><p class="NormalText">In order to run in a safe, clean environment, the Slick-C Debugger creates and uses its own configuration directory, named <code class="filename">SCDebug</code>, located in the user config. Additionally, an empty workspace is created and stored in the debug config which is used thereafter each time the debugger is run. This workspace, <code class="filename">SCDebug.vpw</code>, is used to store breakpoints that you set in the debug instance. It also stores the list of open files and watch expressions.</p><p class="NormalText">The Loaded Classes tool window is a useful tool for examining the state of the debuggee with respect to Slick-C. It shows all the loaded modules and loaded classes, all global variables, all MISC_TYPE variables, and loaded event tables. Many of these items are found under the imaginary "sc.lang.*" namespaces. The Loaded Classes tool window is not active by default in debugging mode. To display it, from the main menu, click <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Windows </strong></span> &#8594; <span><strong class="guimenuitem">Loaded Classes</strong></span>. See "Loaded Classes tool window" in the Help system (<span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Index</strong></span>) for more information.</p><p class="NormalText"></p></div></div></body></html>

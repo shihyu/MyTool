@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsPosIsEOR</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsPosIsEOR(int offset)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">You must call <b>vsPosInit</b> before calling this function.  Once
+you use a non vsPosXXX function which accesses buffer data you
+MUST call <b>vsPosInit</b> again to avoid crashing the editor.  Only
+use this function if you want your searching to be as fast as possible.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Offset">Offset</A></code> - Specifies offset from Pos cursor.  Must be
+>=0.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns information about where Pos cursor + <i>Offset</i> is in
+relation to the end of the record as follows:
+
+<dl>
+<dt>1</dt><dd>End of record which is past the last end of line
+character.</dd>
+<dt>0</dt><dd>Position is not at the start of the end of line
+sequence.</dd>
+<dt>RE_EOF_RC</dt><dd>Position is past the end of the file+1.</dd>
+<dt>Other</dt><dd>File I/O error</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsPosInit.html">vsPosInit</a>, <a href="vsPosGetLinePointers.html">vsPosGetLinePointers</a>, <a href="vsPosIsEOL.html">vsPosIsEOL</a>, <a href="vsPosSetPointer.html">vsPosSetPointer</a>, <a href="vsPosRelPGoTo.html">vsPosRelPGoTo</a>, <a href="vsPosNextBOL.html">vsPosNextBOL</a>, <a href="vsPosSave.html">vsPosSave</a>, <a href="vsPosGetPointers.html">vsPosGetPointers</a>, <a href="vsPosSetCurLine.html">vsPosSetCurLine</a>, <a href="vsPosQCol.html">vsPosQCol</a></blockquote>
+</body>
+</html>

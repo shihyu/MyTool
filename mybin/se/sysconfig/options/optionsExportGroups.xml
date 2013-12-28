@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ExportGroups>
+	<ExportGroup Name="Personal">
+		<ExportRanges>
+			<ExportRange StartPath="Appearance" EndPath="Languages &gt; Application Languages &gt; Language=ada &gt; General" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ada &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Application Languages &gt; Language=ada &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ada &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ada &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Application Languages &gt; Language=ada &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ada &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Application Languages &gt; Language=ada &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; General" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=bas &gt; General" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=bas &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Application Languages &gt; Language=bas &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=bas &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=bas &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Application Languages &gt; Language=bas &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=bas &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Application Languages &gt; Language=bas &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; General" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Application Languages &gt; Language=c &gt; Indent &gt; Use Dynamic Surround" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; View" EndPath="Languages &gt; Application Languages &gt; Language=c &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; Extensionless C++ Files" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Application Languages &gt; Language=c &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Application Languages &gt; Language=c &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=cs &gt; General" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=cs &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Application Languages &gt; Language=cs &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=cs &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=cs &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=cs &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=cs &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Application Languages &gt; Language=cs &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=cs &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Application Languages &gt; Language=cs &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=d &gt; General" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=d &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Application Languages &gt; Language=d &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=d &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=d &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=d &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=d &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Application Languages &gt; Language=d &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=d &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Application Languages &gt; Language=d &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=gl &gt; General" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=gl &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Application Languages &gt; Language=gl &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=gl &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=gl &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Application Languages &gt; Language=gl &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=gl &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Application Languages &gt; Language=gl &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; General" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Application Languages &gt; Language=java &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Organize Imports &gt; Package explicit limit before using wildcard (.*)" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Organize Imports &gt; Automatically add import during code help for Java" EndPath="Languages &gt; Application Languages &gt; Language=java &gt; Organize Imports &gt; Automatically add import during code help for JSP" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Application Languages &gt; Language=java &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Application Languages &gt; Language=java &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=jsl &gt; General" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=m &gt; General" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=m &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Application Languages &gt; Language=m &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=m &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=m &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=m &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=m &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Application Languages &gt; Language=m &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=m &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Application Languages &gt; Language=m &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=mod &gt; General" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=mod &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Application Languages &gt; Language=mod &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=mod &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=mod &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Application Languages &gt; Language=mod &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=mod &gt; Auto-Complete" EndPath="Languages &gt; Application Languages &gt; Language=mod &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=pas &gt; General" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=pas &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Application Languages &gt; Language=pas &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=pas &gt; Formatting &gt; Begin/end style &gt; Insert begin/end pairs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=pas &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=pas &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Application Languages &gt; Language=pas &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=pas &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Application Languages &gt; Language=pas &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=properties &gt; General" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=properties &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Application Languages &gt; Language=properties &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=properties &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=properties &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Application Languages &gt; Language=properties &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=properties &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Application Languages &gt; Language=properties &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=py &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Auto-Complete" EndPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; General" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; General" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; General" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Auto-Complete" EndPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; General" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Auto-Complete" EndPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; General" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; General" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Auto-Complete" EndPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; General" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Comment Wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; General" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; General" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; General" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Auto-Complete" EndPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; General" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; General" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Formatting &gt; Auto validate on open" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Auto-Complete" EndPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; General" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Options" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; General" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Formatting &gt; Auto validate on open" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; General" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; General" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; General" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Formatting &gt; Auto validate on open" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; General" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; General" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Formatting &gt; Auto validate on open" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=db2 &gt; General" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=plsql &gt; General" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=prg &gt; General" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=prg &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Database Languages &gt; Language=prg &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=prg &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=prg &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Database Languages &gt; Language=prg &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=prg &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Database Languages &gt; Language=prg &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; General" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; General" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; General" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; General" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; General" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; General" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; General" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; General" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; General" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; General" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; General" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; General" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; General" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Formatting &gt; DO/END style &gt; Insert DO/END immediately" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; General" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; General" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; General" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; General" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; General" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; General" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; General" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; General" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; General" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Formatting &gt; Begin/end style &gt; Quick brace/unbrace one line statements" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; General" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; General" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; General" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; General" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; General" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; General" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; General" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; General" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; General" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; General" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; General" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=fundamental &gt; General" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=fundamental &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; General" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Formatting &gt; Begin/end style &gt; Insert braces immediately" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; General" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; General" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; General" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; General" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; General" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Color Coding" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; General" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Indent &gt; Insert real indent (all extensions)" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Adaptive Formatting" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Word Wrap &gt; Margins &gt; Indicator color" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Word Wrap &gt; Soft wrap &gt; Enable soft wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Aliases" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Comments &gt; Comment editing &gt; Split line comments" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Color Coding" />
+			<ExportRange StartPath="File Options &gt; Open" EndPath="File Options &gt; Load &gt; Show EOF character" />
+			<ExportRange StartPath="File Options &gt; Load &gt; Reinsert after current" EndPath="File Options &gt; Load &gt; Auto reload &gt; Reload on switch buffer" />
+			<ExportRange StartPath="File Options &gt; Save &gt; Save files on loss of focus" EndPath="Tools &gt; Spell Check" />
+			<ExportRange StartPath="Tools &gt; Configure Error Parsing" EndPath="Help Options" />
+		</ExportRanges>
+		<Protections/>
+	</ExportGroup>
+	<ExportGroup Name="Team">
+		<ExportRanges>
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ada &gt; Indent &gt; Indent style" EndPath="Languages &gt; Application Languages &gt; Language=ada &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ada &gt; Formatting" EndPath="Languages &gt; Application Languages &gt; Language=ada &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ada &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ada &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Application Languages &gt; Language=ada &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ada &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Indent &gt; Indent style" EndPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; Application Languages &gt; Language=ansic &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Formatting &gt; Indentation &gt; Insert padding between parentheses" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Application Languages &gt; Language=ansic &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=ansic &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=bas &gt; Indent &gt; Indent style" EndPath="Languages &gt; Application Languages &gt; Language=bas &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=bas &gt; Formatting" EndPath="Languages &gt; Application Languages &gt; Language=bas &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=bas &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=bas &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Application Languages &gt; Language=bas &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=bas &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; Indent &gt; Indent style" EndPath="Languages &gt; Application Languages &gt; Language=c &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" EndPath="Languages &gt; Application Languages &gt; Language=c &gt; Formatting &gt; Begin/end style &gt; Apply to function braces" />
+			<ExportRange StartPath='Languages &gt; Application Languages &gt; Language=c &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Application Languages &gt; Language=c &gt; Formatting &gt; Main style &gt; Main style" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Application Languages &gt; Language=c &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Application Languages &gt; Language=c &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Application Languages &gt; Language=c &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=c &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=cs &gt; Indent &gt; Indent style" EndPath="Languages &gt; Application Languages &gt; Language=cs &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=cs &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=cs &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; Application Languages &gt; Language=cs &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Application Languages &gt; Language=cs &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=cs &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Application Languages &gt; Language=cs &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=cs &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Application Languages &gt; Language=cs &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=cs &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=d &gt; Indent &gt; Indent style" EndPath="Languages &gt; Application Languages &gt; Language=d &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=d &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=d &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; Application Languages &gt; Language=d &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Application Languages &gt; Language=d &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=d &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=d &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Application Languages &gt; Language=d &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=d &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=gl &gt; Indent &gt; Indent style" EndPath="Languages &gt; Application Languages &gt; Language=gl &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=gl &gt; Formatting" EndPath="Languages &gt; Application Languages &gt; Language=gl &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=gl &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Application Languages &gt; Language=gl &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=gl &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Application Languages &gt; Language=gl &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=gl &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Indent &gt; Indent style" EndPath="Languages &gt; Application Languages &gt; Language=java &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; Application Languages &gt; Language=java &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Application Languages &gt; Language=java &gt; Formatting &gt; Indentation &gt; Insert padding between parentheses" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Organize Imports &gt; Add blank line between groups of imports" EndPath="Languages &gt; Application Languages &gt; Language=java &gt; Organize Imports &gt; Number of package nesting levels to group imports by" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Organize Imports &gt; Package sort order" EndPath="Languages &gt; Application Languages &gt; Language=java &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Application Languages &gt; Language=java &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Application Languages &gt; Language=java &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=java &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Indent &gt; Indent style" EndPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; Application Languages &gt; Language=jsl &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Application Languages &gt; Language=jsl &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=jsl &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=m &gt; Indent &gt; Indent style" EndPath="Languages &gt; Application Languages &gt; Language=m &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=m &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=m &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; Application Languages &gt; Language=m &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Application Languages &gt; Language=m &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=m &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Application Languages &gt; Language=m &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=m &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Application Languages &gt; Language=m &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=m &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=mod &gt; Indent &gt; Indent style" EndPath="Languages &gt; Application Languages &gt; Language=mod &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=mod &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Application Languages &gt; Language=mod &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=mod &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Application Languages &gt; Language=mod &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=mod &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=mod &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=pas &gt; Indent &gt; Indent style" EndPath="Languages &gt; Application Languages &gt; Language=pas &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=pas &gt; Formatting &gt; Keyword case" EndPath="Languages &gt; Application Languages &gt; Language=pas &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=pas &gt; Formatting &gt; Begin/end style &gt; Begin/end comments" EndPath="Languages &gt; Application Languages &gt; Language=pas &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=pas &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Application Languages &gt; Language=pas &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=pas &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Application Languages &gt; Language=pas &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=pas &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=properties &gt; Indent &gt; Indent style" EndPath="Languages &gt; Application Languages &gt; Language=properties &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=properties &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Application Languages &gt; Language=properties &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=properties &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Application Languages &gt; Language=properties &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=properties &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Application Languages &gt; Language=properties &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Application Languages &gt; Language=properties &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=applescript &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; Scripting Languages &gt; Language=awk &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=awk &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bat &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=bourneshell &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; Scripting Languages &gt; Language=ch &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ch &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=csh &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=lua &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; Scripting Languages &gt; Language=pl &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=pl &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Formatting" EndPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=powershell &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Formatting" EndPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Scripting Languages &gt; Language=py &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=py &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Formatting" EndPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=ruby &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Formatting" EndPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=rul &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=sas &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Indent &gt; Indent style" EndPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" EndPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Scripting Languages &gt; Language=tcl &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Indent &gt; Indent style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; Web Authoring Languages &gt; Language=as &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=as &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Indent &gt; Indent style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=bbc &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Indent &gt; Indent style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Formatting &gt; Auto formatting options &gt; Default formatting scheme" EndPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfml &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Indent &gt; Indent style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=cfscript &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Indent &gt; Indent style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=css &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Indent &gt; Indent style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Formatting &gt; Auto symbol translation" EndPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=html &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Indent &gt; Indent style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; Web Authoring Languages &gt; Language=js &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=js &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Indent &gt; Indent style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=phpscript &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Indent &gt; Indent style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Formatting" EndPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=tld &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Indent &gt; Indent style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Formatting" EndPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=vbs &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Indent &gt; Indent style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Formatting &gt; Auto formatting options &gt; Default formatting scheme" EndPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Web Authoring Languages &gt; Language=xhtml &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Indent &gt; Indent style" EndPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Word Wrap &gt; Margins &gt; Left margin" EndPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=ant &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Indent &gt; Indent style" EndPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Formatting &gt; Auto formatting options &gt; Default formatting scheme" EndPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=docbook &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Indent &gt; Indent style" EndPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=dtd &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Indent &gt; Indent style" EndPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=tex &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Indent &gt; Indent style" EndPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Formatting &gt; Auto formatting options &gt; Default formatting scheme" EndPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xml &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Indent &gt; Indent style" EndPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Word Wrap &gt; Margins &gt; Left margin" EndPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xmldoc &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Indent &gt; Indent style" EndPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Word Wrap &gt; Margins &gt; Left margin" EndPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; XML/Text Languages &gt; Language=xsd &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Indent &gt; Indent style" EndPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Database Languages &gt; Language=db2 &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=db2 &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Indent &gt; Indent style" EndPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Formatting" EndPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Database Languages &gt; Language=plsql &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=plsql &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=prg &gt; Indent &gt; Indent style" EndPath="Languages &gt; Database Languages &gt; Language=prg &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=prg &gt; Formatting" EndPath="Languages &gt; Database Languages &gt; Language=prg &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=prg &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Database Languages &gt; Language=prg &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=prg &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Database Languages &gt; Language=prg &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=prg &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Indent &gt; Indent style" EndPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Formatting" EndPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Database Languages &gt; Language=sqlserver &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Indent &gt; Indent style" EndPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Formatting" EndPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=asm390 &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Indent &gt; Indent style" EndPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=masm &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Indent &gt; Indent style" EndPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=npasm &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Indent &gt; Indent style" EndPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Assembly Languages &gt; Language=unixasm &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Indent &gt; Indent style" EndPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Formatting" EndPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cics &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Indent &gt; Indent style" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Formatting &gt; Keyword case &gt; Keyword case" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Formatting &gt; Syntax &gt; Cobol syntax" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Formatting &gt; Line numbering &gt; COBOL style (columns 1-6)" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob2000 &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Indent &gt; Indent style" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Formatting &gt; Keyword case &gt; Keyword case" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Formatting &gt; Syntax &gt; Cobol syntax" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Formatting &gt; Line numbering &gt; COBOL style (columns 1-6)" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob74 &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Indent &gt; Indent style" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Formatting &gt; Keyword case &gt; Keyword case" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Formatting &gt; Syntax &gt; Cobol syntax" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Formatting &gt; Line numbering &gt; COBOL style (columns 1-6)" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=cob &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Indent &gt; Indent style" EndPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Formatting" EndPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=for &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Indent &gt; Indent style" EndPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Formatting" EndPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=jcl &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Indent &gt; Indent style" EndPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=model204 &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Indent &gt; Indent style" EndPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Formatting &gt; SPF style numbering (columns 73-80)" EndPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Formatting &gt; DO/END style &gt; DO/END style" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Formatting &gt; DO/END style &gt; Insert blank line between DO/END" EndPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=pl1 &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; Indent &gt; Indent style" EndPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; Formatting" EndPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Mainframe Languages &gt; Language=rexx &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Indent &gt; Indent style" EndPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=systemverilog &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Indent &gt; Indent style" EndPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Formatting &gt; Indentation &gt; Indent first level of code" EndPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vera &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Indent &gt; Indent style" EndPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=verilog &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Indent &gt; Indent style" EndPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Formatting" EndPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Hardware Description Languages &gt; Language=vhd &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Indent &gt; Indent style" EndPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Formatting" EndPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=erlang &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Indent &gt; Indent style" EndPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Formatting" EndPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=fsharp &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Indent &gt; Indent style" EndPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Formatting" EndPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Functional Languages &gt; Language=haskell &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Indent &gt; Indent style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" />
+			<ExportRange StartPath='Languages &gt; SlickEdit Languages &gt; Language=e &gt; Formatting &gt; Begin/end style &gt; Place "else" on same line as "}"' EndPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=e &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Indent &gt; Indent style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=fileman &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Indent &gt; Indent style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=grep &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Indent &gt; Indent style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=process &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Indent &gt; Indent style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=tagdoc &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Indent &gt; Indent style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vlx &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; Indent &gt; Indent style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; Word Wrap &gt; Margins &gt; Left margin" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vpj &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Indent &gt; Indent style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; SlickEdit Languages &gt; Language=vsm &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Indent &gt; Indent style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=antlr &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; Indent &gt; Indent style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=binary &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Indent &gt; Indent style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=conf &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Indent &gt; Indent style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=def &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=fundamental &gt; Indent &gt; Indent style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=fundamental &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=fundamental &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=fundamental &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=fundamental &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=fundamental &gt; Comments" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=fundamental &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Indent &gt; Indent style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Formatting &gt; Begin/end style &gt; Begin/end style" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Formatting &gt; Begin/end style &gt; Insert blank line between braces" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=idl &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Indent &gt; Indent style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=imakefile &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Indent &gt; Indent style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=ini &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Indent &gt; Indent style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=lex &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Indent &gt; Indent style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Word Wrap &gt; Justify style &gt; Justify style" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=mak &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Indent &gt; Indent style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=rc &gt; File Options" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Indent &gt; Indent style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Indent &gt; Indent with tabs" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Word Wrap &gt; Word wrap" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Word Wrap &gt; Margins &gt; New paragraph" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Word Wrap &gt; Justify style &gt; Justify style" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Word Wrap &gt; Justify style &gt; One space after period" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Comments &gt; Comment block &gt; First line is top" EndPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; Comments &gt; Comment line &gt; Location" />
+			<ExportRange StartPath="Languages &gt; Miscellaneous Languages &gt; Language=yacc &gt; File Options" />
+			<ExportRange StartPath="File Options &gt; Load &gt; Expand tabs to spaces" EndPath="File Options &gt; Load &gt; File locking" />
+			<ExportRange StartPath="File Options &gt; Save &gt; Append EOF character" EndPath="File Options &gt; Save &gt; Strip trailing spaces" />
+			<ExportRange StartPath="Tools &gt; Version Control" />
+		</ExportRanges>
+		<Protections/>
+	</ExportGroup>
+</ExportGroups>

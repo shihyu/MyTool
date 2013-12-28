@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_nearest_context</title>
+</head>
+<body>
+
+<h3><b>int tag_nearest_context(int linenum, int filter_flags=VS_TAGFILTER_ANYTHING, boolean find_tag_below=false, boolean filter_by_types=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Return the index of the nearest context item.
+<p>
+For synchronization, threads should perform a tag_lock_context(false)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="linenum">linenum</A></code> - line number to check context on</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filter_flags">filter_flags</A></code> - Tag filter flags.
+               See <a href="tag_filter_type.html">tag_filter_type</a> for more details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="find_tag_below">find_tag_below</A></code> - find the nearest context item <i>below</i>
+                       the current line</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filter_by_types">filter_by_types</A></code> - filter out symbols turned off by
+                       'def_cb_filter_by_types'
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Return the index of the context tag starting closest
+        to the given line number.  This differs from the current
+        context because the nearest context is not necessarily
+        the context that you are currently inside.  For example,
+        if the given <i>linenum</i> falls between two class members,
+        the current context would be the class, but the nearest
+        context would be the second class member.
+        Returns <0 on error or 0 if no current context.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_check_cached_context.html">tag_check_cached_context</a>, <a href="tag_current_context.html">tag_current_context</a>, <a href="tag_get_context.html">tag_get_context</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>sur_text</title>
+</head>
+<body>
+
+<h3><b>void sur_text(_str options='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><tt>sur_text</tt> is a Slick-C&reg; function that can only be used
+inside of a <a href="surround_with.html">surround-with</a> template.
+<tt>sur_text</tt> is used to indicate where the selected text
+should be placed and can be used multiple times within a single
+surround-with template.  sur_text can take several parameters,
+which can appear in any order.  The available parameters are:
+<ul>
+   <li><b>-beautify</b>    -- (Default for C, Java, and others)
+                              Beautify the results of the template expansion.
+   <li><b>-nobeautify</b>  -- (Default for HTML, XML and others)
+                              Do not attempt to beautify the results of the
+                              template expansion.
+   <li><b>-deselect</b>    -- (Default) Do not leave the text selected/
+   <li><b>-begin &lt;text&gt;</b>-- Prefix each line of the selection with <i>text</i></dd>.
+   <li><b>-end &lt;text&gt;</b>  -- Suffix each line of the selection with <i>text</i>.
+   <li><b>-ignore</b>      -- The -begin, -indent, -lowcase, -stripbegin and
+                              -upcase options will ignore any <i>chars</i>.
+                              when finding the beginning of the selected line.
+   <li><b>-lowcase</b>     -- Convert each line of the selection to upper case
+   <li><b>-upcase</b>      -- Convert each line of the selection to lower case
+   <li><b>-indent</b>      -- Indent each line of selection.
+   <li><b>-notext</b>      -- Do not paste any text.
+   <li><b>-select</b>      -- Leave the text selected
+   <li><b>-stripbegin &lt;text&gt;</b> -- If any line begins with <i>text</i>,
+                                    <i>text</i> will be removed from the line.
+                                    This option is applied before -begin.
+   <li><b>-stripend &lt;text&gt;</b>   -- If any line ends with <i>text</i>,
+                                    <i>text</i> will be removedm the line.
+                                    This option is applied before -end.
+</ul>
+<p>
+This function can also be used during alias expansion to indicate
+where the surrounding text should be inserted in order to invoke
+dynamic surround immediately after expanding an alias.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="surround_with.html">surround_with</a>, <a href="expand_alias.html">expand_alias</a></blockquote>
+</body>
+</html>

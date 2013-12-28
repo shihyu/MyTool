@@ -1,0 +1,377 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Creating Dialog Boxes</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s18.htm" title="Dialog Editor"><link rel="next" href="ch14s20.htm" title="Clipboard Inheritance®"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_creatingdialogs_13492_58122"></a>
+    <a name="slick_c_creatingdialogs_13492_1003649"></a>Creating Dialog Boxes</h2></div></div></div><p class="NormalText">This chapter contains the following topics:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_48669">Dialog Editor Summary</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_84010">Adding and Deleting Controls</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_70260">Setting Properties</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_59040">Aligning Controls</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_75456">Sizing Controls</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_57139">Moving Controls</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_35343">Miscellaneous Assignments When the Form is Active</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_50300">Miscellaneous Menu Items</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_13743">Creating a Form</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_56321">Saving a Form</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_24094">Adding Event Handlers</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_53320">Inherited Code Found Dialog Box</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_79589">Loading and Running the Form</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_23728">Modal and Modeless Dialog Boxes</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm#slick_c_creatingdialogs_13492_68799">Dialog Box Parent Window</a>
+      </p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_48669"></a>
+      <a name="slick_c_creatingdialogs_13492_1003651"></a>
+      <a class="indexterm" name="slick-c_creatingdialogs_AFBC424E_40AE"></a>Dialog Editor Summary</h3></div></div></div><p class="NormalText">To edit a dialog box that is being run, press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Space</strong></span> or right-click on the top of a form and select <span><strong class="guilabel">Edit</strong></span>. If you press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Space</strong></span> while the Properties dialog box is active, you edit the Properties dialog box. Double-click the system menu to close the edited Properties form. Some UNIX window managers do not close windows when you double-click on the system menu.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_84010"></a>
+      <a name="slick_c_creatingdialogs_13492_1030344"></a>
+      <a class="indexterm" name="slick-c_creatingdialogs_4DDAD03A_0063"></a>Adding and Deleting Controls</h3></div></div></div><p class="NormalText">The bitmaps on the left of the Properties dialog box are used to create controls. Hover over a bitmap to display the function of a bitmap. There are two methods for creating a control. The first method is to double-click the left mouse button on the bitmap of the control that you want to create. This places a new control in the middle of the selected form.</p><p class="NormalText">The <span><strong class="guilabel">Picture Box</strong></span> and <span><strong class="guilabel">Frame</strong></span> controls enable you to place controls inside of them. To do so, select <span><strong class="guimenu">Window </strong></span> &#8594; <span><strong class="guimenuitem">Properties</strong></span> or, use the <span><strong class="command">show_properties</strong></span> command.<a class="indexterm" name="slick-c_creatingdialogs_5A4EC7B3_7BE0"></a><a class="indexterm" name="slick-c_creatingdialogs_F5817AFE_0BFE"></a></p><div class="mediaobject"><img src="Resources/addingcontrols.jpg"></div><p class="NormalText">To use the other method for creating a control, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Single-click on the <span><strong class="guibutton">Text Box</strong></span> bitmap.</p></li><li><p class="NormalText">Move your mouse so that it appears on top of the form that you are editing. If you cannot see the form that you are editing, display it by selecting <span><strong class="guimenu">Window </strong></span> &#8594; <span><strong class="guimenuitem">Selected Form</strong></span>.</p></li><li><p class="NormalText">To create the text box control, click the left mouse button, and, while holding it down, move the mouse pointer to the right to create a dotted rectangle. When you release the mouse, the text box control is displayed within the rectangle.</p></li></ol></div><p class="NormalText">To delete a control, select the control(s) to remove, then press <span><strong class="keycap">Backspace</strong></span> or <span><strong class="keycap">Delete</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_70260"></a>
+      <a name="slick_c_creatingdialogs_13492_1003684"></a>
+      <a class="indexterm" name="slick-c_creatingdialogs_E8B73BBD_F5A2"></a>Setting Properties</h3></div></div></div><p class="NormalText">To set properties, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Select the control. Left-click the mouse button on the property in <span><strong class="guilabel">Properties</strong></span> list box.</p></li><li><p class="NormalText">Type the new value in <span><strong class="guilabel">Properties</strong></span> combo box. Press <span><strong class="keycap">Enter</strong></span> when the <span><strong class="guilabel">Properties</strong></span> list box is active to set the property.</p></li><li><p class="NormalText">Select the control. Double-click the left mouse button on the property in the <span><strong class="guilabel">Properties</strong></span> list box to go to the next value of the property. For <span><strong class="command">color</strong></span> and <span><strong class="command">picture</strong></span> properties, a dialog box is displayed.</p></li></ol></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_59040"></a>
+      <a name="slick_c_creatingdialogs_13492_1003689"></a>
+      <a class="indexterm" name="slick-c_creatingdialogs_04927D4A_79C5"></a>Aligning Controls</h3></div></div></div><p class="NormalText">Select the control with which you want to align the other controls. Select the other controls with <span><strong class="guimenu">Shift+ LButton</strong></span>. Double-click the left mouse button on one of the properties <span><strong class="command">x</strong></span> or <span><strong class="command">y</strong></span> to align the controls in the <span><strong class="command">x</strong></span> or <span><strong class="command">y</strong></span> direction. Press <span><strong class="keycap">Enter</strong></span> on the value in the <span><strong class="guilabel">Properties</strong></span> combo box.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_75456"></a>
+      <a name="slick_c_creatingdialogs_13492_1003692"></a>
+      <a class="indexterm" name="slick-c_creatingdialogs_4D979DDF_0D87"></a>Sizing Controls</h3></div></div></div><p class="NormalText">To size controls, use one of the following methods:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">To size a single control, select the control and click and drag one of the selection handles with the left mouse button.</p></li><li><p class="NormalText">To size multiple controls, select the controls and set the <span><strong class="command">width</strong></span> or <span><strong class="command">height</strong></span> property.</p></li><li><p class="NormalText">To size multiple controls, select the controls and press <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Left</strong></span>, <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Right</strong></span>, <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Up</strong></span>, or <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Down</strong></span> to move the lower right corner of the selected controls by one pixel.</p></li></ul></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_57139"></a>
+      <a name="slick_c_creatingdialogs_13492_1030533"></a>
+      <a class="indexterm" name="slick-c_creatingdialogs_EC9920D4_EED7"></a>Moving Controls</h3></div></div></div><p class="NormalText">To move controls, use one of the following methods:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Select the control(s), then click and drag with the left mouse button.</p></li><li><p class="NormalText">Select the control(s), then set the <span><strong class="command">x</strong></span> or <span><strong class="command">y</strong></span> property.</p></li><li><p class="NormalText">Select the control(s), then press the <span><strong class="keycap">Left</strong></span>, <span><strong class="keycap">Right</strong></span>, <span><strong class="keycap">Up</strong></span>, or <span><strong class="keycap">Down</strong></span> arrow key to move the selected controls by one pixel.</p></li></ul></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_35343"></a>
+      <a name="slick_c_creatingdialogs_13492_1030539"></a>Miscellaneous Assignments When the Form is Active</h3></div></div></div><p class="NormalText">The table below shows a list of miscellaneous button and key assignments that can be used when the form is active.</p><div class="informaltable"><a name="table_54f68710-474a-4bdf-926b-07d2ffeed61a"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">
+                <span class="bold"><strong>Assignment</strong></span>
+              </p>
+            </th><th>
+              <p class="CellHeading">
+                <span class="bold"><strong>Action</strong></span>
+              </p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Right mouse click</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Displays menu with various dialog editor commands.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Space</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Loads form and Slick-C® code. Runs dialog box. If you accidentally press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Space</strong></span> when in the Properties dialog box, you will be editing the Properties dialog box. Double-click on the system menu to close the edited Properties form. Some UNIX window managers do not close windows when you double-click on the system menu.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">S</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Loads form and saves into state file. Under UNIX, this may just list source for the form that can be executed.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">L</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Loads form.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">C</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Copies selected controls.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">V</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Pastes controls from the clipboard.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">X</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Cuts selected controls.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">A</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Selects all controls with same parent as the already selected control(s).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Tab</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Deselects all controls and selects next control in tab order (<span><strong class="command">p_tab_index</strong></span>).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Tab</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Deselects all controls and selects previous control in tab order.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Left mouse click</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Double-click (on control) displays Select an Event Function dialog box for adding or modifying event handlers.</p>
+            </td></tr></tbody></table></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_50300"></a>
+      <a name="slick_c_creatingdialogs_13492_1024209"></a>Miscellaneous Menu Items</h3></div></div></div><p class="NormalText">The table below shows the miscellaneous menu items.</p><div class="informaltable"><a name="table_cde7ce50-e453-4834-bad9-2fbb286ab4ea"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Menu Item</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="guilabel">System Box</strong></span> of form, <span><strong class="guimenu">Show Properties</strong></span></p>
+            </td><td>
+              <p class="CellBody">Display Properties dialog box.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Window </strong></span> &#8594; <span><strong class="guimenuitem">Properties</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Display Properties dialog box.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Window </strong></span> &#8594; <span><strong class="guimenuitem">Selected Form</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Display selected form (form being edited).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">New Form</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Creates a new dialog box with a default name.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Open Form</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Open existing dialog box or create new dialog box.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Grid</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Sets the distances between the dots on edited form.</p>
+            </td></tr></tbody></table></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_13743"></a>
+      <a name="slick_c_creatingdialogs_13492_1003790"></a>
+      <a class="indexterm" name="slick-c_creatingdialogs_C9D23527_801E"></a>Creating a Form</h3></div></div></div><p class="NormalText">A form is the outer window of a dialog box. The objects within the dialog box are called controls. The form also refers to the entire dialog box. A new form can be created by using one of the following methods:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Use the <span><strong class="guimenu">New Form</strong></span> menu item (<span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">New Form</strong></span>).</p></li></ul></div><p class="NormalText">OR </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Use the <span><strong class="guimenu">Open Form</strong></span> menu item (<span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Open Form</strong></span>) and specify the name of a new form.</p></li></ul></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_56321"></a>
+      <a name="slick_c_creatingdialogs_13492_1003795"></a>Saving a Form</h3></div></div></div><p class="NormalText">Click on the form being edited and press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">S</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick-c_creatingdialogs_70708_57777"></a>Inserting a Form</h3></div></div></div><a class="indexterm" name="slick-c_creatingdialogs_14708_50501"></a><p class="NormalText">You can insert a form's definition into a
+      file by using the <span><strong class="guilabel">Insert Form or Menu Source...</strong></span> menu
+  item (<span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Insert Form or Menu Source...</strong></span>).  Select the dialog you want
+  to insert, and the selected item's source will be inserted into the current
+  file.  This command inserts the dialog source only, which defines the object's
+  properties.  It will not insert any event tables that have been defined for
+  the object.  You do not need to insert the source into a file to use the
+  dialog, as it is automatically saved in your configuration.  This command is
+  useful when you want to share your dialog with another user.
+    </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_24094"></a>
+      <a name="slick_c_creatingdialogs_13492_1003823"></a>Adding Event Handlers</h3></div></div></div><p class="NormalText">Set the form name and the control names (<span><strong class="command">name</strong></span> property in <span><strong class="guilabel">Properties</strong></span> list box) before adding code to the dialog box because these names are referenced in the code. Prefix your control names using the letters <span><strong class="command">ctl</strong></span> so that they are easily recognizable. To add an event handler, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Double-click on the control in the dialog box for which you want to add code (not the bitmap in the Properties dialog box). The Select An Event dialog box is displayed.</p></li><li><p class="NormalText">Select an event and click <span><strong class="guibutton">OK</strong></span>. If this is the first event handler for this dialog box, you will be prompted with an Open dialog box for a new file to contain the source code for this dialog box.</p></li><li><p class="NormalText">Type a unique file name. Usually this file name is derived from the name of the dialog box you are creating, such as <code class="filename">form1.e</code>.</p></li></ol></div><p class="NormalText">After performing the above steps, the dialog editor inserts an event function definition into your source file and places your cursor in the function.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_53320"></a>
+      <a name="slick_c_creatingdialogs_13492_1025513"></a>
+      <a class="indexterm" name="slick-c_creatingdialogs_9853F2C4_0AD7"></a>Inherited Code Found Dialog Box</h3></div></div></div><p class="NormalText">This dialog box is displayed when there is no code for the event you have chosen and the control is using an inherited event table. You will see this dialog box if you copy a control with existing code, paste elsewhere and then double-click on the new instance of the control.</p><p class="NormalText">The following options are available on the dialog:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="guilabel">Inherit code</strong></span> - When this option is selected, a statement which links a new event event table to an inherited event table (event table not belonging to the control and possible copied through the clipboard).  This afffects user level 1 inheritance code (<span><strong class="command">p_eventtab</strong></span>) only.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Go to inherited code</strong></span> - When this option is selected, no code is inserted. The cursor is placed on the existing inherited event handling code.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">Don't inherit code</strong></span> - Select this option when you do not want to inherit the existing user level 1 inheritance code (<span><strong class="command">p_eventtab</strong></span>). Sometimes when you copy a control with existing code to the clipboard, you will not want to inherit the existing event handlers.</p></li></ul></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_79589"></a>
+      <a name="slick_c_creatingdialogs_13492_1003842"></a>Loading and Running the Form</h3></div></div></div><p class="NormalText">To run the current dialog box that you are editing, click <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Load and Run Form</strong></span> or use the <span><strong class="command">run_selected</strong></span> command. This loads the code, loads the dialog box, and runs the dialog box. To close the dialog box, double-click on the system menu (some UNIX window managers do not close windows when you double-click on the system menu) or press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Space</strong></span> (in the running version of your dialog box and not the edited copy). Press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Space</strong></span> when any dialog box is running to edit it (this includes the Properties dialog box).</p><p class="NormalText">Display the dialog box from the command line by typing <span><strong class="command">show </strong></span><span class="emphasis"><em>&lt;FormName&gt;</em></span>. To display the dialog box modally enter <span><strong class="command">show -modal </strong></span><span class="emphasis"><em>&lt;FormName&gt;</em></span> on the command line. For more information about this command, see <span class="bold"><strong><a href="ch14s19.htm#slick_c_creatingdialogs_13492_40690">Displaying Dialog Boxes</a></strong></span>. Dialog box templates and compiled macros are stored in the state file <code class="filename">vslick.sta</code> (UNIX: <code class="filename">vslick.stu</code>). </p><p class="NormalText">The example code below shows how to write a command that displays a dialog box. This is used when binding a command to a key that displays a dialog box.</p><pre class="programlisting">#include "slick.sh"
+_command void run_form1()
+{
+    // The -modal option displays other windows while the dialog box
+    // is displayed.
+    show("-modal form1");
+}</pre><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_creatingdialogs_13492_1003886"></a>Adding a Cancel Button</h4></div></div></div><p class="NormalText">To add a <span><strong class="guibutton">Cancel</strong></span> button, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">
+            <a class="indexterm" name="slick-c_creatingdialogs_515DAFF5_6B80"></a>Double-click <span><strong class="guibutton">Insert Button Control</strong></span>.</p></li><li><p class="NormalText">Set the <span><strong class="command">caption</strong></span> property to <span><strong class="command">Cancel</strong></span>.</p></li><li><p class="NormalText">Set the <span><strong class="command">cancel</strong></span> property to <span><strong class="command">TRUE</strong></span> by double-clicking the left mouse button on the <span><strong class="command">cancel</strong></span> property in the <span><strong class="guilabel">Properties</strong></span> list box.</p></li><li><p class="NormalText">Set the <span><strong class="command">name</strong></span> property of a control (never the form) to <span><strong class="command">""</strong></span> if you are not going to reference the control by name.</p></li><li><p class="NormalText">Clicking <span><strong class="guibutton">Cancel</strong></span> when your dialog box is running will close the dialog box even though you have not written any code. If you do add code to your <span><strong class="guibutton">Cancel</strong></span> button, you must close the dialog box by typing the following in the command line: <span><strong class="command">p_active_form._delete_window();</strong></span></p></li></ol></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_creatingdialogs_13492_1003908"></a>
+        <a class="indexterm" name="slick-c_creatingdialogs_D07D7B85_53BD"></a>
+        <a class="indexterm" name="slick-c_creatingdialogs_BE3EEAD8_F7C9"></a>Adding an OK Button and Closing a Dialog Box</h4></div></div></div><p class="NormalText">To add an <span><strong class="guibutton">OK</strong></span> button and close a dialog box, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Create a command button control by double-clicking <span><strong class="guibutton">Insert Button Control</strong></span> in the Properties dialog box.</p></li><li><p class="NormalText">Set the <span><strong class="command">caption</strong></span> property to <span><strong class="command">OK</strong></span>, set the <span><strong class="command">default</strong></span> property to <span><strong class="command">TRUE</strong></span>, and set the <span><strong class="command">name</strong></span> property to <span><strong class="command">ctlok</strong></span>.</p></li><li><p class="NormalText">Double-click on the command button control in the dialog box for which you want to add code (not the bitmap in the Properties dialog box). The Select An Event dialog box is displayed.</p></li><li><p class="NormalText">Choose the <span><strong class="command">lbutton_up</strong></span> event and click <span><strong class="guibutton">OK</strong></span>.</p></li><li><p class="NormalText">If this is the first event handler for this dialog box, the Open dialog box for a new file to contain the source code for this dialog box is displayed. Type a unique file name. Usually this file name is derived from the name of the dialog box that you are creating, such as <code class="filename">form1.e</code>.</p></li></ol></div><p class="NormalText">After completing the previous steps, the dialog editor inserts an event function definition into your source file and places your cursor in the function. Add the code as shown in the following example:</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1
+// Code for OK button.
+ctlok.lbutton_up()
+{
+    // Close the dialog box and return a value. The _delete_window 
+    // function allows modal dialog boxes to return a value. For
+    // more information, see "Displaying Dialog Boxes"  below. Each object 
+    // in the dialog box will receive an on_destroy event.
+    // NOTE: If "" is a valid return value. Return 1 here and store
+    // your results in the global _param1 variable.
+    p_active_form._delete_window("return value");
+    // Statements after closing a dialog box are executed.
+}</pre><p class="NormalText">Before closing a dialog box, review the following information: </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">First, if a modal dialog box returns a value, the value <span><strong class="command">""</strong></span> (zero length string) MUST be returned to indicate that the dialog box has been canceled. This convention is used so that when running a dialog box, you can press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Space</strong></span> to safely cancel and edit the dialog box.</p></li><li><p class="NormalText">Use the global container variables<span><strong class="command"></strong></span><span><strong class="command">_param1.._param10</strong></span> to return multiple strings. Alternately, you can make an array or structure and place it in <span><strong class="command">_param1</strong></span>. If you do place your string results in the global variables <span><strong class="command">_param1.._param10</strong></span>, make sure your dialog box returns <span><strong class="command">1</strong></span> (or any value other than <span><strong class="command">""</strong></span>) to indicate that the dialog box was not canceled.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_creatingdialogs_13492_40690"></a>
+        <a name="slick_c_creatingdialogs_13492_1003938"></a>
+        <a class="indexterm" name="slick-c_creatingdialogs_C9A56DBD_1EA1"></a>Displaying Dialog Boxes</h4></div></div></div><p class="NormalText">The <span><strong class="command">show</strong></span> command is called in function-style syntax from within a macro. It can also be invoked from the command line or a menu item.</p><p class="NormalText">The command line call syntax is:</p><pre class="programlisting">
+        <span><strong class="command">
+    show cmdline 
+      </strong></span>
+      </pre><p class="NormalText">The function call syntax is:</p><pre class="programlisting">
+        <span><strong class="command">
+    show (cmdline [,arg1 [,arg2 ... [argN]]])
+      </strong></span>
+      </pre><p class="NormalText">
+        <span class="emphasis"><em>cmdline</em></span> is a string in the format: </p><pre class="programlisting">
+        <span><strong class="command">
+    [option] form_name
+      </strong></span>
+      </pre><p class="NormalText">
+        <span class="emphasis"><em>option</em></span> can be one of the options in the table below.</p><div class="informaltable"><a name="table_a4d0f3d3-07ed-43ac-a727-e45799320e68"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Option</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">-mdi</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Keep the form on top of the MDI window.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">-app</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Keep the form on top of the SlickEdit® application window. This  allows the MDI window to be displayed on top of the form.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">-xy</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Restore the previous <span><strong class="command">x,y</strong></span> position of the dialog box. If the old   position cannot be found, the dialog box is centered. When the dialog box is closed, the <span><strong class="command">x,y</strong></span> position is automatically saved (the dialog manager calls <span><strong class="command">_save_form_xy</strong></span>).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">-hidden</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Do not make the form visible. Run the form modally. All other forms are disabled. Control returns to the caller when the form window is deleted with <span><strong class="command">_delete_window</strong></span>. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">-nocenter</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Do not center the form. </p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">-new</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Normally, when a form is already displayed, the existing form is given focus. This option allows for multiple instances of a form to be displayed.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">-reinit</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">(UNIX only) This option causes the <span><strong class="command">_delete_window</strong></span> function to make the form invisible instead of deleting the form. The destroy events are dispatched even though no windows are actually destroyed. Next time show is called for the same dialog box, the invisible dialog box is made visible, some properties are reinitialized, and the create events are sent. Be careful when using this option. Not all dialog boxes can use this option without minor modifications. The <span><strong class="command">form_parent()</strong></span> function does not work because the next time the form is used, the parent is not changed to the new parent specified.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">-hideondel</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">(UNIX only) This option is the same as the <span><strong class="command">-reinit</strong></span> option except no properties are reinitialized when the invisible dialog box is shown again.</p>
+              </td></tr></tbody></table></div><p class="NormalText">
+        <span class="emphasis"><em>form_name</em></span> specifies a form or menu resource. If it is an integer, it must be a valid index into the names table of a form or menu. Otherwise, it should be the name of an existing form or menu that can be found in the names table.</p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="slick_c_creatingdialogs_13492_1003982"></a>on_create and on_load Events</h5></div></div></div><p class="NormalText">The array of args (<span class="emphasis"><em>arg1...argN</em></span>) is passed to <span><strong class="command">on_create</strong></span>.<span class="emphasis"><em></em></span>When a dialog box and all its objects are created, each object receives an <span><strong class="command">on_create</strong></span> event. The <span><strong class="command">on_create</strong></span> event receives the <span class="emphasis"><em>arg1</em></span>, <span class="emphasis"><em>arg2</em></span>,...,<span class="emphasis"><em>argN</em></span> arguments given to the <span><strong class="command">show</strong></span> function. After the <span><strong class="command">on_create</strong></span> events are sent, the form receives an <span><strong class="command">on_load</strong></span> event. You CANNOT set the final focus in an <span><strong class="command">on_create</strong></span> event. Use the <span><strong class="command">_set_focus</strong></span> function during the <span><strong class="command">on_load</strong></span> event to set the initial focus to a control other than the control with lowest tab index (<span><strong class="command">p_tab_index</strong></span>) that is enabled and visible.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="slick_c_creatingdialogs_13492_1003986"></a>Return Value of show</h5></div></div></div><p class="NormalText">If the <span><strong class="command">-modal</strong></span> option is given, the return value given to <span><strong class="command">_delete_window</strong></span> is returned. <span><strong class="command">""</strong></span> is returned if the dialog box is edited or destroyed during an <span><strong class="command">on_create</strong></span> event. Use the global variables <span><strong class="command">_param1</strong></span>...<span><strong class="command">_param10</strong></span> to return more than one string value. Alternately, you can make an array or structure and place it in <span><strong class="command">_param1</strong></span> for non-string return types.</p><p class="NormalText">If the <span><strong class="command">-modal</strong></span><span><strong class="command"></strong></span>option is not given, the form window <span class="emphasis"><em>id</em></span> is returned if successful. Otherwise, a negative error code is returned.</p><p class="NormalText">Example:</p><pre class="programlisting">// This example requires that you create a form called form1 with a 
+// command button and load this file.
+#include "slick.sh"
+_command mytest()
+{
+    result=show("-modal form1");
+    if (result=="") {
+       return(COMMAND_CANCELLED_RC);
+    }
+    message("_param1="_param1" _param2="_param2);
+}
+ 
+defeventtab form1
+ctlcommand1.on_create()
+{
+    // Global variable _param1.._param10 are defined in "slick.sh" to
+    // allow for multiple strings to be returned in separate variables.
+    // Alternatively, if the return strings do not contain spaces, you
+    // could concatenate them together with a space and use the parse 
+    // built-in to easily separate them.
+    _param1="string1";
+    _param2="string2";
+    // Close the dialog box and indicate that the dialog box was not canceled.
+    // Each object in the dialog box will receive an on_destroy event.
+    p_active_form._delete_window(1);
+}</pre><p class="NormalText">Example:</p><pre class="programlisting">// This example requires that you create a form called form1 with a
+// command button and load this file.
+#include "slick.sh"
+_command void mytest()
+{
+    show("-modal form1","param1 to on_create", "param2 to on_create");
+}
+ 
+defeventtab form1
+ctlcommand1.on_create(_str arg1="", _str arg2="")
+{
+    _str tmpArg1 , tmpArg2;
+   tmpArg1=arg(1);
+   tmpArg2=arg(2);
+   _message_box("arg1="arg1" arg2="arg2);
+   _message_box("tmpArg1="tmpArg1" tmpArg2="tmpArg2);
+}</pre><p class="NormalText">Example:</p><pre class="programlisting">#include "slick.sh"
+defmain()
+{
+    index=find_index("form1",oi2type(OI_FORM));
+    if (!index) {
+       messageNwait("form1 not found");
+       return(1);
+    }
+    // Can specify name table index instead of name. When show is called
+    // without the "-modal" option, the positive window id (instance handle)
+    // of the form created is returned.
+    form_wid=show("-hidden -nocenter "index);
+    if (form_wid&lt;0) {
+       return(1);
+    }
+    // Place the form at the top left corner of the display.
+    form_wid.p_x=form_wid.p_y=0;
+    // Make the form visible.
+    form_wid.p_visible=1;
+    return(0);
+}</pre></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_23728"></a>
+      <a name="slick_c_creatingdialogs_13492_1004067"></a>
+      <a class="indexterm" name="slick-c_creatingdialogs_AB0B7432_CD26"></a>Modal and Modeless Dialog Boxes</h3></div></div></div><p class="NormalText">If you do not want the MDI window or any other form to get focus when your dialog box is displayed, specify the <span><strong class="command">-modal</strong></span><span><strong class="command"></strong></span>option to the <span><strong class="command">show</strong></span> command (see <a href="ch14s19.htm#slick_c_creatingdialogs_13492_40690">Displaying Dialog Boxes</a>). When the <span><strong class="command">-modal</strong></span> option is given, other forms, including the MDI window, are disabled (<span><strong class="command">p_enabled=0</strong></span>) until the form is closed. In addition, the <span><strong class="command">_delete_window</strong></span> function can be used to return a value (see the previous example).</p><p class="NormalText">Modeless example:</p><pre class="programlisting">#include "slick.sh"
+defmain()
+{
+    // When show is called without the "-modal" option, the positive
+    // window id (instance handle) of the form created is returned.
+    form_wid=show("-hidden -nocenter form1");
+    if (form_wid&lt;0) {
+       return(1);
+    }
+    // Place the form at the top left corner of the display.
+    form_wid.p_x=form_wid.p_y=0;
+    // Make the form visible.
+    form_wid.p_visible=1;
+    return(0);
+}</pre><p class="NormalText">If you need to display a status dialog box during processing, you might require a modeless dialog box so control is returned to you.  However, it is a best practice to disable all other dialog boxes including the MDI window during processing.</p><p class="NormalText">Advanced modeless example:</p><pre class="programlisting">#include "slick.sh"
+static typeless gcancel;
+_command void test()
+{
+    // Show the form modeless so there is no modal wait.
+    form1_wid=show("form1");
+    // Disable all forms by the one with p_window_id==form_wid. A space-
+    // delimited string of disabled form window ids is returned.
+    disabled_wid_list=_enable_non_modal_forms(0,form_wid);
+    gcancel=0;
+    for (;;) {
+       // Read mouse, key, and all other events until none are left
+       // or until the variable gcancel becomes true.
+       process_events(gcancel);
+       if (gcancel) break;
+       // Do your processing here.
+    }
+    // Enable the forms that were disabled.
+    enable_non_modal_forms(1,0,disabled_wid_list);
+    form1_wid._delete_window();
+}
+defeventtab form1;
+ctlcancel.lbutton_up()
+{
+    gcancel=1;
+}</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_creatingdialogs_13492_68799"></a>
+      <a name="slick_c_creatingdialogs_13492_1004125"></a>Dialog Box Parent Window</h3></div></div></div><p class="NormalText">The parent window of a dialog box form has two uses. First, the dialog box remains on top of the parent window. Use the <span><strong class="command">show</strong></span> command and specify the <span><strong class="command">-app</strong></span> option if you want to allow a modeless dialog box be displayed behind the MDI window.  The <span><strong class="command">-mdi</strong></span> option of the <span><strong class="command">show</strong></span> command can be used to make sure a dialog box stays on top of the MDI window.</p><p class="NormalText">Command line examples:</p><pre class="programlisting">
+      <span><strong class="command">
+    show -app _calc_form
+    show -mdi -new _calc_form
+    </strong></span>
+    </pre><p class="NormalText">Second, the parent window is used by some dialog boxes (such as the Print and Spelling dialog boxes) to determine on which buffer to operate. This permits the dialog boxes to support the editor control. To do this, they call the <span><strong class="command">_form_parent</strong></span> function during an <span><strong class="command">on_create</strong></span> event to get the window <span class="emphasis"><em>id</em></span> of the window which contains the buffer to be operated on. These dialog boxes only support certain parent windows. For example, the Print dialog box will not run correctly if the <span><strong class="command">-app</strong></span> option of the <span><strong class="command">show</strong></span> command is used.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_creatingdialogs_13492_1004133"></a>Remembering a Dialog Box's Previous Position</h4></div></div></div><p class="NormalText">The <span><strong class="command">show</strong></span> command centers the dialog box to the current form or MDI window. Usually this is fine, but sometimes it is helpful for a dialog box to reappear in the same position that it was in when the user closed the dialog box. To do this, specify the <span><strong class="command">-xy</strong></span> option to the <span><strong class="command">show</strong></span> command. This adds the <span><strong class="command">IS_SAVE_XY</strong></span> flag to the <span><strong class="command">p_init_style</strong></span> property. When the dialog box is closed, the <span><strong class="command">x</strong></span> and <span><strong class="command">y</strong></span> position of the dialog box is stored and later saved in the auto restore file (<code class="filename">vrestore.slk</code> by default) when you exit the editor. The form is centered if the old <span><strong class="command">x,y</strong></span> position information cannot be found.</p><p class="NormalText"></p></div></div></div></body></html>

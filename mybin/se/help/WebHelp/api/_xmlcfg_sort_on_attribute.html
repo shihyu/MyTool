@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_xmlcfg_sort_on_attribute</title>
+</head>
+<body>
+
+<h3><b>void _xmlcfg_sort_on_attribute(int iHandle, int ParentNodeIndex, _str PrimaryAttrName, _str PrimaryOptions, _str PrimaryFolderElementName=null, _str SecondaryAttrName=null, _str SecondaryOptions=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sorts nodes that are children of a specified node.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iHandle">iHandle</A></code> - XMLCFG tree handle returned from _xmlcfg_open, _xmlcfg_open_from_buffer, or _xmlcfg_create</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ParentNodeIndex">ParentNodeIndex</A></code> - Children of this node are sorted</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="PrimaryAttrName">PrimaryAttrName</A></code> - Name of primary attribute to sort on.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="PrimaryOptions">PrimaryOptions</A></code> - String of one or more of the following options:
+
+
+               <dl compact>
+               <dt><b>F</b><dd>Sort filenames
+               <dt><b>N</b><dd>Sort numbers
+               <dt><b>I</b><dd>Case insensitive sort.  Sort is case sensitive if this option is not specified.
+               <dt><b>D</b><dd>Descending.  Sort is ascending if this option is not specified.
+               <dt><b>P</b><dd>Place parent nodes at the top after sort.  Here we consider a parent nodes with name PrimaryFolderElementName.
+               <dt><b>2</b><dd>Specialized filename sort.  Sort case insensitive on name without path, then case sensitive on name without path, then case insensitive on path.
+               </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="PrimaryFolderElementName">PrimaryFolderElementName</A></code> - Only used if <b>P</b> option specified in <i>PrimaryOptions</i>. Indicates the
+               element of a folder.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="SecondaryAttrName">SecondaryAttrName</A></code> - Secondary attribute name to sort on</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="SecondaryOptions">SecondaryOptions</A></code> - Specifies secondary sort options.  See primary options for more information.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">// Sort the project files in the workspace
+<pre>
+int ProjectsNode=_WorkspaceGet_ProjectsNode(handle);
+if (ProjectsNode>=0) {
+   _xmlcfg_sort_on_attribute(handle,ProjectsNode,'File','2');
+}
+
+// Sort a folder node and place sub folders at the top.
+// Note that it is OK that <Folder> nodes have no "N"
+// attribute but do have a "Name" attribute.
+_xmlcfg_sort_on_attribute(handle,FolderNode,"N",
+   "Folder",
+   "Name",
+   "2P");
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="XMLCFG_Functions.html">XMLCFG Functions</a></blockquote>
+</body>
+</html>

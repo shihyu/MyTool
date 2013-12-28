@@ -1,0 +1,95 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>C and C++</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch09.htm" title="Chapter 9.  Language-Specific Editing"><link rel="prev" href="ch09s03.htm" title="Ant"><link rel="next" href="ch09s05.htm" title="COBOL"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_candcpp_11652_52060"></a>
+    <a name="sect_candcpp_11652_998341"></a>C and C++</h2></div></div></div><p class="NormalText">This section describes some of the advanced features and options that are available in SlickEdit® for C and C++, including language-specific formatting options, the C/C++ Beautifier, compiler settings, and preprocessing.</p><p class="NormalText">
+    SlickEdit's default editing mode for C and C++ allows for programming in either language. If you are coding to strict ANSI C standards, you should configure the value of the macro variable <span><strong class="command">def_ansic_exts</strong></span> to contain a space-delimited list of extensions for files you want interpreted as ANSI C. To set the macro variable, press <span><strong class="keycap">Esc</strong></span> to bring up the SlickEdit command line, then type <span><strong class="command">set-var def_ansic_exts "</strong></span><span class="emphasis"><em>&lt;extensions&gt;</em></span><span><strong class="command">"</strong></span>, where <span class="emphasis"><em>&lt;extensions&gt;</em></span> is the space-delimited list of extensions.</p><p class="NormalText">For example:</p><pre class="programlisting">set-var def_ansic_exts "c h"</pre><p class="NormalText">Please note that if you also code in C++ and any of these extensions are used for C++, they will be interpreted as ANSI C.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_candcpp_11652_56903"></a>
+      <a name="sect_candcpp_11652_1003067"></a>
+      <a class="indexterm" name="sect_candcpp_2FAC4DC6_25B9"></a>C/C++ Beautifier</h3></div></div></div><p class="NormalText">In SlickEdit 2012, the beautifiers for C++ and
+   Objective-C have been updated to allow more control over source formatting
+   details, and to allow formatting settings to be grouped into profiles for
+   easier management over multiple projects.</p><p class="NormalText">You can use the commands <span><strong class="command">beautify</strong></span> or <span><strong class="command">beautify_selection</strong></span> to instantly beautify the file or the selection according to the settings on the Beautifier dialog.</p><p class="NormalText">In addition to being an on-command
+      beautifier, the updated beautifiers can also format your text as your
+      type.  You can control when the beautifier will be automatically invoked
+      as you code by setting the beautifier-related options found on the <a href="ch12s11.htm#sect_options_menuanddialogs_14207_24528">Language-Specific General Options</a>.  See <a href="ch12s11.htm#sect_options_menuanddialogs_57597_39745">General Beautify Options</a> for more information.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_candcpp_11535_94437"></a>Beautifier Profiles</h4></div></div></div><p class="NormalText"></p><p class="NormalText">The C++ Formatting options allow you to pick
+        which formatting profile you want to be in effect, edit or delete existing profiles, and create new profiles.
+      To access the C++ Beautifier settings, go to <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">Application Languages </strong></span> &#8594; <span><strong class="guimenuitem">C/C++ </strong></span> &#8594; <span><strong class="guimenuitem">Formatting</strong></span>.</p><div class="mediaobject"><img src="Resources/snips_c_language_formatting.png"></div><p class="NormalText">The C++ Formatting page has the following
+        controls:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guibutton">
+                <a class="indexterm" name="sect_candcpp_4E51F81D_4919"></a>Profile Combo Box</strong></span> - allows you to
+                select which
+           beautifier profile is in effect.  The preview window below the combo
+           box will show how the profile would beautify a snippet of code.  Once
+           you've selected a profile, and hit OK, the profile's settings are used
+           for both formatting as you're editing code, and as the default profile
+           to use for the language if you beautify the source using the
+           <span><strong class="command">beautify</strong></span> command, or by going to <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Beautify</strong></span>.</p></li><li><p class="NormalText">
+              <span><strong class="guibutton">
+                <a class="indexterm" name="sect_candcpp_E025BD3F_0904"></a>Edit</strong></span> - Allows you to edit the
+                settings of an existing profile.  Profiles
+           that shipped with the system are read-only, but will allow you to save
+           modified versions under a different name.  Clicking this button will
+           take you to the <a href="ch09s04.htm#sect_candcpp_91507_11362">Beautifier Profile Editor</a>.</p></li><li><p class="NormalText">
+              <span><strong class="guibutton">
+                <a class="indexterm" name="sect_candcpp_47BEF7FB_783C"></a>Create Copy </strong></span> - Creates a copy of the
+                currently selected profile, after prompting
+           you for a name.  This is how you create new profiles, by selecting a profile
+           that's closest to the formatting that you want, and creating a copy of it that
+           you can modify.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">
+                <a class="indexterm" name="sect_candcpp_B3C8246B_7C4C"></a>Delete</strong></span> - Deletes a profile.  Profiles that
+                shipped with the product can not
+           be deleted.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">
+                <a class="indexterm" name="sect_candcpp_7F32F270_8014"></a>Load File</strong></span> - loads a different file as the
+                example code snippet in the preview window.  </p></li><li><p class="NormalText"><span><strong class="guilabel">Reset Preview</strong></span> - Resets
+          the contents of the preview window back to the default code
+          snippet.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_candcpp_91507_11362"></a>Beautifier Profile Editor</h4></div></div></div><p class="NormalText">The profile editor allows you to change the formatting options for a beautifier profile.
+   Every editor page has a preview window that allows you to see the effects of your changes
+   on source code snippets.</p><div class="mediaobject"><img src="Resources/beautifier_profile_editor.png"></div><p class="NormalText">Most options have an <span><strong class="guilabel">Enabled</strong></span>
+   checkbox to the left of the option description.  If the checkbox is cleared,
+   the option is disabled, which means the beautifier will leave the source code
+   normally targetted by the option unchanged.  As an example, there's an option
+   for padding the parenthesis of an 'if' statement.  Assuming it's enabled, it
+   will either force padding in all 'if' statements, or removes the padding from
+   all if statements.  If you disable it by clearing the checkbox, then the
+   padding for if statements will be left alone, leaving whatever type of
+   padding that already exists in the original source.</p><p class="NormalText">The following controls are available on the
+        Beautifier Profile Editor:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText"><span><strong class="guilabel">Search</strong></span> - Like the
+                                    options dialog, there are
+          a lot of settings, the search box allows you to type in search terms
+          to only show options that match the search term.
+          </p></li><li><p class="NormalText"><span><strong class="guilabel">Load File </strong></span> - Allows you
+            to load a different example file into preview window.</p></li><li><p class="NormalText"><span><strong class="guilabel">Reset Preview</strong></span> - Resets
+            the preview window back to the default example code snippet.</p></li><li><p class="NormalText"><span><strong class="guilabel"> Beautify</strong></span> - This button
+            will only appear if the profile editor was launched from a menu or
+            button.  Clicking this button will beautify the active buffer in the
+            editor with the settings from the profile
+         editor.</p></li></ul></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_candcpp_11652_89789"></a>
+      <a name="sect_candcpp_11652_1019043"></a>
+      <a class="indexterm" name="sect_candcpp_1140FE68_FA51"></a>C/C++ Compiler Settings</h3></div></div></div><p class="NormalText">In order to correctly perform full preprocessing, parsing, symbol analysis, and cross-referencing, SlickEdit® needs to emulate the implementation-specific parsing behavior of your compiler, including built-in functions, preset #defines, and include directories. </p><p class="NormalText">These properties can be specified using the C/C++ Compiler Properties 
+      options screen or the C/C++ Compiler Properties dialog. The interfaces 
+      contain the same fields and options so you can make changes using the one you 
+      prefer:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">Application Languages </strong></span> &#8594; <span><strong class="guimenuitem">C/C++ </strong></span> &#8594; <span><strong class="guimenuitem">Compiler Properties</strong></span>.
+        </p></li><li><p class="NormalText">With a C/C++ project open, from the main menu, click <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">Project Properties</strong></span>. Select the <span><strong class="guilabel">Compile/Link</strong></span> tab, then click the <span><strong class="guibutton">Ellipsis</strong></span> button to the right of the <span><strong class="guilabel">Compiler</strong></span> combo box. The 
+C/C++ Properties dialog is displayed.</p></li></ul></div><div class="mediaobject"><img src="Resources/c-cppcompilerproperties_dialog.png"></div><p class="NormalText">The interface shows the default compiler and its associated header file and include directories, known collectively as a "configuration". Configurations can be created and modified as needed.</p><p class="NormalText">In the <span><strong class="guilabel">Compiler Name</strong></span> drop-down list, select the compiler you wish to use. If this is to be the global default compiler for all projects, click the <span><strong class="guibutton">Set Default</strong></span> button. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> It is possible to select other compilers for individual projects. In those cases, the project-specific compiler is used and overrides the global default. </p></div><p class="NormalText">
+      SlickEdit ships with header files for each compiler, and the correct header file will appear in the <span><strong class="guilabel">Header File</strong></span> field. The header file configures the parser to emulate the compiler that is chosen in the <span><strong class="guilabel">Compiler Name</strong></span> field.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_candcpp_11652_1019060"></a>
+        <a class="indexterm" name="sect_candcpp_3A531B31_1571"></a>
+        <a class="indexterm" name="sect_candcpp_13F0DCC2_578F"></a>Creating New Configurations</h4></div></div></div><p class="NormalText">There are two ways to begin a new configuration. In both cases, a dialog box will be invoked, prompting for the name of the new configuration.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Click <span><strong class="guibutton">Copy</strong></span><span><strong class="command"></strong></span> to copy the selected 
+            compiler configuration. This can be used as a template for creating a new configuration and 
+            makes the process of creating similar configurations more convenient.</p></li><li><p class="NormalText">Or, click <span><strong class="guibutton">Add</strong></span> to create a configuration from scratch or to add a newly installed compiler.</p></li></ul></div><p class="NormalText">If you wish to remove the selected compiler and associated configuration from the list, click <span><strong class="guibutton">Delete</strong></span>. This does not delete any files from disk.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_candcpp_11652_1019067"></a>
+        <a class="indexterm" name="sect_candcpp_52592D69_E3D4"></a>
+        <a class="indexterm" name="sect_candcpp_26F1996A_E11B"></a>Building the Tag File</h4></div></div></div><p class="NormalText">The <span><strong class="guibutton">Build tag file</strong></span> button on the C/C++ Compiler Properties dialog is used to build tag files from the header file found in the include directories for the selected compiler configuration. This is especially useful when new configurations are created. If you do not build the tag file here manually, it will be built on demand.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_candcpp_11652_43883"></a>
+      <a name="sect_candcpp_11652_1003059"></a>
+      <a class="indexterm" name="sect_candcpp_5D8F05B8_FE4F"></a>
+      <a class="indexterm" name="sect_candcpp_88DD40D5_2859"></a>
+      <a class="indexterm" name="sect_candcpp_D8C080DE_F70A"></a>C/C++ Preprocessing</h3></div></div></div><p class="NormalText">Typically your source code base will include preprocessor macros that you use in your code for portability or convenience. For performance considerations, Context Tagging® does not do full preprocessing, so macros that interfere with normal C++ syntax can cause the parser to miss symbols. For example:</p><pre class="programlisting">   MYNAMESPACEDECL(my)
+   struct MYPACKEDMACRO BinaryTree {
+      MYTYPELESS data;
+      MYPOINTER(BinaryTree) next;
+      MYPOINTER(BinaryTree) prev;
+   };
+   MYPOINTER(BinaryTree) proot = MYNULL;
+   MYENDNAMESPACE</pre><p class="NormalText">This example uses the following preprocessor macros:</p><pre class="programlisting">   #define MYNAMESPACEDECL(name)  namespace name {
+   #define MYPACKEDMACRO          __packed
+   #define MTYPELESS              void*
+   #define MYPOINTER(t)           t*
+   #define MYNULL                 ((void*)0)
+   #define MYENDNAMESPACE         }</pre><p class="NormalText">Among them, the only two that are harmless are MYTYPELESS and MYNULL, because they just create name aliases for types or constants. However, the other four are troublesome and cause the entire code snippet to be unparsable unless you configure SlickEdit® to be aware of these preprocessor macros. To do so, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages</strong></span> and expand the <span><strong class="guilabel">Application Languages</strong></span> node in the tree.</p></li><li><p class="NormalText">Depending on your language, select <span><strong class="guilabel">ANSI-C</strong></span> or <span><strong class="guilabel">C/C++</strong></span> in the tree, then click <span><strong class="guilabel">C/C++ Preprocessing</strong></span>.</p><div class="mediaobject"><img src="Resources/snips_c_language_preprocessing.png"></div></li><li><p class="NormalText">Click <span><strong class="guibutton">New</strong></span> to add new preprocessing macros. Arguments are allowed; for example, <span><strong class="command">mymacro(a,b,c)</strong></span></p></li><li><p class="NormalText">When finished, click <span><strong class="guibutton">OK</strong></span>.</p></li><li><p class="NormalText">A prompt appears asking whether to rebuild your workspace tag file. Click <span><strong class="guibutton">Yes</strong></span>.</p></li></ol></div><p class="NormalText">Preprocessor macros are stored in <code class="filename">usercpp.h</code>, located in your configuration directory. Rather than using the dialog, you can add large numbers of #defines directly to this file. You may want to make sure that your entire development team has an up-to-date copy of this configuration file once you have added all of your local preprocessor macros.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> The <code class="filename">usercpp.h</code> file should only be used for #defines and #undefs® not #includes.</p></div><p class="NormalText"></p></div></div></body></html>

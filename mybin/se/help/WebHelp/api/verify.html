@@ -1,0 +1,26 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>verify</title>
+</head>
+<body>
+
+<h3><b>_str verify(_str string, _str reference, _str option="", int start=1)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>If <i>option</i> =='', this function returns the first character position
+in <i>string</i> which is not one of the characters in
+<i>reference</i>.  If <i>string</i> is only composed of characters
+from <i>reference</i>, then 0 is returned.</p><p>
+<p>If <i>option</i> == 'M' , this function returns the first character
+position in <i>string</i> which matches one of the characters in
+<i>reference</i>.  If no characters in <i>reference</i> match a
+character in <i>string</i>, 0 is returned.</p><p>
+<p>If <i>start </i>is specified, the searching begins at <i>start</i>.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+verify("test.*","*?",'M')  ==6
+verify("?*st.*","*?",'M',3)   ==6
+verify("?*st.*","*?")   ==3
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="String_Functions.html">String Functions</a></blockquote>
+</body>
+</html>

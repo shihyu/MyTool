@@ -1,0 +1,47 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_select_type</title>
+</head>
+<body>
+
+<h3><b>int _select_type(_str markid="", _str option='T', _str newValue=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mark_id">mark_id</A></code> - is a selection handle allocated by the
+<b>_alloc_selection</b> built-in.  A <i>mark_id</i> of '' specifies the
+active selection or selection showing and is always allocated.  The
+third parameter is only supported by the 'T' option.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - may be 'T', 'S', 'P', 'I', or 'U'.
+
+<p>If a value of 'T' is specified for <i>option</i>, one of the selection
+types "BLOCK", "CHAR", "LINE" or "" is returned.  If the third
+parameter is specified, the selection style is set to <i>new_type</i>
+which must be "BLOCK", "CHAR", or "LINE".  A null string is
+returned if the selection specified has not been set.</p>
+
+<p>When a value of 'S' is specified for <i>option</i>, the select style is
+returned.  Select styles are 'C' or 'E' which correspond to cut/paste
+(selection extends as the cursor moves) or begin/end respectively.  A
+null string is returned if the selection specified has not been set.</p>
+
+<p>If a value of 'P' is specified for <i>option</i>, selection anchor (pivot
+point) information is returned.  The selection anchor information is a
+two letter string and is used to determine how the selected area moves
+as the cursor moves.  This option is only useful for cut/paste style
+selections which extend the selection as the cursor moves.  The first
+letter is 'B' if the begin mark is the line anchor or 'E' if it is not.  The
+second letter is 'B' if the begin mark is the column anchor or 'E' if it is
+not.  The null string is returned if the selection specified has not been
+set.</p>
+
+<p>If a value of 'I' is specified for <i>option</i>, a '1' is returned if the
+selection specified is an inclusive selection.  A '0' is returned if the
+selection specified is non-inclusive.  A null string is returned if the
+selection specified has not been set.  Currently this style affects only
+character selections.</p>
+
+<p>When a value of 'U' is specified for <i>option</i>, a 'P' is returned if
+the selection specified is a persistent mark.  Otherwise, '' is returned.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the type or style information about the selection specified.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Selection_Functions.html">Selection Functions</a></blockquote>
+</body>
+</html>

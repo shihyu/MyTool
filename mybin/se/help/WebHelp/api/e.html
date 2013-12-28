@@ -1,0 +1,94 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>e</title>
+</head>
+<body>
+
+<h3><b>_command typeless e(_str filenameArg='', typeless a2_flags='', _str auto_create_firstw_arg='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Command line version of the <b>gui_open</b> command.  Edits the file(s)
+specified.  <i>filespec</i> may have wild card characters (
+or ?  for DOS).  edit Command options can be set globally or
+per extension.  The edit mode of each file loaded is set
+based on file extension.
+<p>
+The useful edit options are listed below.  For a complete list of options, see <b>load_files</b>.  A few options are only useful in SlickEdit macros.
+<DL compact style="margin-left:20pt;">
+  <DT>+#<i>command</i>  <DD>Execute <i>command</i> on active buffer.  For example, "s test.c +#100" places the cursor on line 100 of test.c.
+  <DT>+ or -L[C|Z]   <DD>Turn on/off load entire file switch.  The optional C suffix count the number of lines in the file.  The Z suffix counts the number of lines in the file and truncates the file if an EOF character is found in the middle of the file.
+  <DT>+ or -LF <DD>+LF turns off loading entire file and turns on fast line count.  This is the fastest way for SlickEdit to count the number of lines in a file.  -LF turns off fast line counting.
+  <DT>+ or -LB <DD>Turns on/off binary loading.  All edit/save options which performed translations are ignored.   For example, tab expansion or tab compression options are ignored.  This allows "safe" editing of binary files even when edit/save file translation are on.
+  <DT>+ or -LE <DD>Turns on/off show EOF option.  When on, EOF characters at the end of DOS files are not stripped.  This option is not supported when the +LZ option is given.
+  <DT>+ or -LN <DD>Turns on/off show new line characters option.  When on, new line characters are initially visible.
+  <DT>+ or -W     <DD>If the file or buffer is not already displayed in a window, insert a window for displaying the file or buffer.
+  <DT>+ or -S     <DD>Turn on/off unmodified block swapping to spill file.
+  <DT>+<i>nnn</i> <DD>Load binary file(s) that follow in record width <i>nnn</i>.
+  <DT>+T [<i>buf_name</i>] <DD>Start a default operating system format temp buffer with name <i>buf_name</i>.
+  <DT>+TU [<i>buf_name</i>]   <DD>Start a UNIX format temp buffer with name <i>buf_name</i>.
+  <DT>+TM [<i>buf_name</i>]   <DD>Start a MACINTOSH format temp buffer with name <i>buf_name</i>.
+  <DT>+TD [<i>buf_name</i>]   <DD>Start a DOS format temp buffer with name <i>buf_name</i>.
+  <DT>+T<i>nnn </i>     <DD>Start a temp buffer where <i>nnn</i> is the decimal value of the character to be used as the line separator character.
+  <DT>+FU [<i>buf_name</i>]   <DD>Force SlickEdit to interpret a file in UNIX format.
+  <DT>+FM [<i>buf_name</i>]   <DD>Force SlickEdit to interpret a file in MAC format.
+  <DT>+FD [<i>buf_name</i>]   <DD>Force SlickEdit to interpret a file in DOS format.
+  <DT>+F<i>nnn</i>   <DD>Force SlickEdit to use <i>nnn</i> as the decimal value of the line separator character.
+  <DT>+FTEXT   <DD>SBCS/DBCS mode.  Open SBCS/DBCS file.  This is the default mode when no mode (either SBCS/DBCS or Unicode) is specified.
+  <DT>+FEBCDIC <DD>SBCS/DBCS mode.  Open EBCDIC file.
+  <DT>+FUTF8   <DD>Unicode mode.  Open UTF-8 file with or without signature.
+  <DT>+FUTF8S  <DD>Unicode mode.  Open UTF-8 file with or without signature.
+  <DT>+FUTF16LE   <DD>Unicode mode.  Open UTF-16 little endian file with or without signature.
+  <DT>+FUTF16LES  <DD>Unicode mode.  Open UTF-16 little endian file with or without signature.
+  <DT>+FUTF16BE   <DD>Unicode mode.  Open UTF-16 little endian file with or without signature.
+  <DT>+FUTF16BES  <DD>Unicode mode.  Open UTF-16 big endian file with or without signature.
+  <DT>+FUTF32LE   <DD>Unicode mode.  Open UTF-32 little endian file with or without signature.
+  <DT>+FUTF32LES  <DD>Unicode mode.  Open UTF-32 little endian file with or without signature.
+  <DT>+FUTF32BE   <DD>Unicode mode.  Open UTF-32 little endian file with or without signature.
+  <DT>+FUTF32BES  <DD>Unicode mode.  Open UTF-32 big endian file with or without signature.
+  <DT>+FCP<i>ddd</i> <DD>Unicode mode.  Open code page file specified by <i>ddd</i>.  Under windows, this can be any valid code page or one of the VSCP_* constants defined in "slick.sh."
+  <DT>+FACP <DD>Unicode mode.  Open active code page file.  Under windows, this can be any valid code page or one of the VSCP_* constants defined in "slick.sh."
+  <DT>+FAUTOXML   <DD>Unicode mode.  Open XML file.  The encoding is determined based on the encoding specified by the "?xml" tag.  If the encoding is not specified by the "?xml", the file data is assumed to be UTF-8 data which is consistent with XML standards.  We applied some modifications to the standard XML encoding determination to allow for some user error.  If the file has a standard Unicode signature, the Unicode signature is assumed to be correct and the encoding defined by the "?xml" tag is ignored.
+  <DT>+FAUTOUNICODE
+      <DD>If the file has a standard Unicode signature, open the file as a Unicode file.  Otherwise, the file is loaded as SBCS/DBCS data.
+  <DT>+FAUTOUNICODE2
+      <DD>If the file has a standard Unicode signature or "looks" like a Unicode file, open the file as a Unicode file.  Otherwise, the file is loaded as SBCS/DBCS data.  This option is NOT full proof and may give incorrect results.
+  <DT>+FAUTOEBCDIC
+      <DD>If the file "looks" like an EBCDIC file, open the file as an EBCDIC file.  Otherwise, the file is loaded as SBCS/DBCS data.  This option is NOT full proof and may give incorrect results.  We have attempted to make this option support binary EBCDIC files.
+  <DT>+FAUTOEBCDIC,UNICODE
+      <DD>This option is a combination of "+FAUTOEBCDIC" and "+FAUTOUNICODE" options.
+  <DT>+FAUTOEBCDIC,UNICODE2
+      <DD>This option is a combination of "+FAUTOEBCDIC" and "+FAUTOUNICODE2" options.
+  <DT>+ or -E  <DD>Turn on/off expand tabs to spaces switch.  Default is off.
+  Tab increments of 8 are the default if not otherwise specified in the
+  language setup for this file type.
+  <DT>+ or -D  <DD>Turn on/off memory buffer name search.  Disk file search.
+  <DT>+B <i>buf_name</i>   <DD>Look in memory only for buffer
+  with name <i>buf_name</i>.  This MUST specify the
+  exact contents of p_buf_name or p_DocumentName.  DO
+  NOT put quotes around buffer names with spaces.  Use
+  absolute() if necessary when searching for a fully
+  qualified filename.
+  <DT>+N or -N <DD>Network support switch.  When on, SlickEdit will detect when another application has the same file open and automatically select "Read only" mode.  This option requires an extra file handle open to the original file.
+</DL>
+The options above that only show a plus sign will also take a minus sign.
+However their function will remain the same.
+<p>
+If you need to edit a file whose name contains space characters, place double
+quotes around the name.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common return codes are FILE_NOT_FOUND_RC (occurs when wild card specification matches no files), NEW_FILE_RC (empty buffer created with filename specified because file did not exist), PATH_NOT_FOUND_RC, TOO_MANY_FILES_RC, and TOO_MANY_SELECTIONS_RC.  On error, message is displayed.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<DL compact style="margin-left:20pt;">
+<DT><b>e +l test</b><DD>  Loads all of the file test and frees the file handle.  If test is already loaded, its buffer is activated.
+
+<DT><b>e "this is.c"</b><DD> Edit a file whose name contains a space character.
+
+<DT><b>e +d test</b><DD>  Loads the file test from disk regardless if a copy already exists in memory.
+
+<DT><b>e +w test</b><DD>  (One file per window option) Display file test in its own window.  If file test is already displayed in a window, the window is activated.
+
+<DT><b>e +b test</b><DD>  Activates the buffer test if it exists.
+
+<DT><b>e +t test</b><DD>  Starts a new buffer called test.
+
+<DT><b>e +40 +d test</b><DD> Loads the binary file test from disk in 40 character line width.  File may be edited and saved.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="gui_open.html">gui_open</a></blockquote>
+</body>
+</html>

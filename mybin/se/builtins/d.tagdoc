@@ -1,0 +1,661 @@
+/**
+ * String literal of the date of compilation "mmm dd yyyy" 
+ */
+__DATE__;
+
+/**
+ * String literal of the time of compilation "hh:mm:ss" 
+ */
+__TIME__;
+
+/**
+ * String literal of the date and time of compilation "www mmm dd hh:mm:ss yyyy" 
+ */
+__TIMESTAMP__;
+
+/**
+ * Compiler vendor string, such as "Digital Mars D" 
+ */
+__VENDOR__;
+ 
+/**
+ * Compiler version as an integer, such as 2001
+ */
+__VERSION__;
+
+/**
+ * String literal of the current file path being parsed
+ */
+__FILE__;
+
+/**
+ * Integer literal of the current line number being parsed
+ */
+__LINE__;
+
+
+// Named Character Entities Name Value Symbol
+; 
+const "\&quot;" = 34;
+const "\&amp = 38;
+const "\&lt = 60;
+const "\&gt = 62;
+const "\&OElig = 338;
+const "\&oelig = 339;
+const "\&Scaron = 352;
+const "\&scaron = 353;
+const "\&Yuml = 376;
+const "\&circ = 710;
+const "\&tilde = 732;
+const "\&ensp = 8194;
+const "\&emsp = 8195;
+const "\&thinsp = 8201;
+const "\&zwnj = 8204;
+const "\&zwj = 8205;
+const "\&lrm = 8206;
+const "\&rlm = 8207;
+const "\&ndash = 8211;
+const "\&mdash = 8212;
+const "\&lsquo = 8216;
+const "\&rsquo = 8217;
+const "\&sbquo = 8218;
+const "\&ldquo = 8220;
+const "\&rdquo = 8221;
+const "\&bdquo = 8222;
+const "\&dagger = 8224;
+const "\&Dagger = 8225;
+const "\&permil = 8240;
+const "\&lsaquo = 8249;
+const "\&rsaquo = 8250;
+const "\&euro = 8364;
+;
+//Latin-1 (ISO-8859-1) Entities 
+; 
+const "\&nbsp;" = 160;
+const "\&iexcl;" = 161;
+const "\&cent;" = 162;
+const "\&pound;" = 163;
+const "\&curren;" = 164;
+const "\&yen;" = 165;
+const "\&brvbar;" = 166;
+const "\&sect;" = 167;
+const "\&uml;" = 168;
+const "\&copy;" = 169;
+const "\&ordf;" = 170;
+const "\&laquo;" = 171;
+const "\&not;" = 172;
+const "\&shy;" = 173;
+const "\&reg;" = 174;
+const "\&macr;" = 175;
+const "\&deg;" = 176;
+const "\&plusmn;" = 177;
+const "\&sup2;" = 178;
+const "\&sup3;" = 179;
+const "\&acute;" = 180;
+const "\&micro;" = 181;
+const "\&para;" = 182;
+const "\&middot;" = 183;
+const "\&cedil;" = 184;
+const "\&sup1;" = 185;
+const "\&ordm;" = 186;
+const "\&raquo;" = 187;
+const "\&frac14;" = 188;
+const "\&frac12;" = 189;
+const "\&frac34;" = 190;
+const "\&iquest;" = 191;
+const "\&Agrave;" = 192;
+const "\&Aacute;" = 193;
+const "\&Acirc;" = 194;
+const "\&Atilde;" = 195;
+const "\&Auml;" = 196;
+const "\&Aring;" = 197;
+const "\&AElig;" = 198;
+const "\&Ccedil;" = 199;
+const "\&Egrave;" = 200;
+const "\&Eacute;" = 201;
+const "\&Ecirc;" = 202;
+const "\&Euml;" = 203;
+const "\&Igrave;" = 204;
+const "\&Iacute;" = 205;
+const "\&Icirc;" = 206;
+const "\&Iuml;" = 207;
+const "\&ETH;" = 208;
+const "\&Ntilde;" = 209;
+const "\&Ograve;" = 210;
+const "\&Oacute;" = 211;
+const "\&Ocirc;" = 212;
+const "\&Otilde;" = 213;
+const "\&Ouml;" = 214;
+const "\&times;" = 215;
+const "\&Oslash;" = 216;
+const "\&Ugrave;" = 217;
+const "\&Uacute;" = 218;
+const "\&Ucirc;" = 219;
+const "\&Uuml;" = 220;
+const "\&Yacute;" = 221;
+const "\&THORN;" = 222;
+const "\&szlig;" = 223;
+const "\&agrave;" = 224;
+const "\&aacute;" = 225;
+const "\&acirc;" = 226;
+const "\&atilde;" = 227;
+const "\&auml;" = 228;
+const "\&aring;" = 229;
+const "\&aelig;" = 230;
+const "\&ccedil;" = 231;
+const "\&egrave;" = 232;
+const "\&eacute;" = 233;
+const "\&ecirc;" = 234;
+const "\&euml;" = 235;
+const "\&igrave;" = 236;
+const "\&iacute;" = 237;
+const "\&icirc;" = 238;
+const "\&iuml;" = 239;
+const "\&eth;" = 240;
+const "\&ntilde;" = 241;
+const "\&ograve;" = 242;
+const "\&oacute;" = 243;
+const "\&ocirc;" = 244;
+const "\&otilde;" = 245;
+const "\&ouml;" = 246;
+const "\&divide;" = 247;
+const "\&oslash;" = 248;
+const "\&ugrave;" = 249;
+const "\&uacute;" = 250;
+const "\&ucirc;" = 251;
+const "\&uuml;" = 252;
+const "\&yacute;" = 253;
+const "\&thorn;" = 254;
+const "\&yuml;" = 255;
+;
+// Symbols and Greek letter entities
+; 
+const "\&fnof;" = 402;
+const "\&Alpha;" = 913;
+const "\&Beta;" = 914;
+const "\&Gamma;" = 915;
+const "\&Delta;" = 916;
+const "\&Epsilon;" = 917;
+const "\&Zeta;" = 918;
+const "\&Eta;" = 919;
+const "\&Theta;" = 920;
+const "\&Iota;" = 921;
+const "\&Kappa;" = 922;
+const "\&Lambda;" = 923;
+const "\&Mu;" = 924;
+const "\&Nu;" = 925;
+const "\&Xi;" = 926;
+const "\&Omicron;" = 927;
+const "\&Pi;" = 928;
+const "\&Rho;" = 929;
+const "\&Sigma;" = 931;
+const "\&Tau;" = 932;
+const "\&Upsilon;" = 933;
+const "\&Phi;" = 934;
+const "\&Chi;" = 935;
+const "\&Psi;" = 936;
+const "\&Omega;" = 937;
+const "\&alpha;" = 945;
+const "\&beta;" = 946;
+const "\&gamma;" = 947;
+const "\&delta;" = 948;
+const "\&epsilon;" = 949;
+const "\&zeta;" = 950;
+const "\&eta;" = 951;
+const "\&theta;" = 952;
+const "\&iota;" = 953;
+const "\&kappa;" = 954;
+const "\&lambda;" = 955;
+const "\&mu;" = 956;
+const "\&nu;" = 957;
+const "\&xi;" = 958;
+const "\&omicron;" = 959;
+const "\&pi;" = 960;
+const "\&rho;" = 961;
+const "\&sigmaf;" = 962;
+const "\&sigma;" = 963;
+const "\&tau;" = 964;
+const "\&upsilon;" = 965;
+const "\&phi;" = 966;
+const "\&chi;" = 967;
+const "\&psi;" = 968;
+const "\&omega;" = 969;
+const "\&thetasym;" = 977;
+const "\&upsih;" = 978;
+const "\&piv;" = 982;
+const "\&bull;" = 8226;
+const "\&hellip;" = 8230;
+const "\&prime;" = 8242;
+const "\&Prime;" = 8243;
+const "\&oline;" = 8254;
+const "\&frasl;" = 8260;
+const "\&weierp;" = 8472;
+const "\&image;" = 8465;
+const "\&real;" = 8476;
+const "\&trade;" = 8482;
+const "\&alefsym;" = 8501;
+const "\&larr;" = 8592;
+const "\&uarr;" = 8593;
+const "\&rarr;" = 8594;
+const "\&darr;" = 8595;
+const "\&harr;" = 8596;
+const "\&crarr;" = 8629;
+const "\&lArr;" = 8656;
+const "\&uArr;" = 8657;
+const "\&rArr;" = 8658;
+const "\&dArr;" = 8659;
+const "\&hArr;" = 8660;
+const "\&forall;" = 8704;
+const "\&part;" = 8706;
+const "\&exist;" = 8707;
+const "\&empty;" = 8709;
+const "\&nabla;" = 8711;
+const "\&isin;" = 8712;
+const "\&notin;" = 8713;
+const "\&ni;" = 8715;
+const "\&prod;" = 8719;
+const "\&sum;" = 8721;
+const "\&minus;" = 8722;
+const "\&lowast;" = 8727;
+const "\&radic;" = 8730;
+const "\&prop;" = 8733;
+const "\&infin;" = 8734;
+const "\&ang;" = 8736;
+const "\&and;" = 8743;
+const "\&or;" = 8744;
+const "\&cap;" = 8745;
+const "\&cup;" = 8746;
+const "\&int;" = 8747;
+const "\&there4;" = 8756;
+const "\&sim;" = 8764;
+const "\&cong;" = 8773;
+const "\&asymp;" = 8776;
+const "\&ne;" = 8800;
+const "\&equiv;" = 8801;
+const "\&le;" = 8804;
+const "\&ge;" = 8805;
+const "\&sub;" = 8834;
+const "\&sup;" = 8835;
+const "\&nsub;" = 8836;
+const "\&sube;" = 8838;
+const "\&supe;" = 8839;
+const "\&oplus;" = 8853;
+const "\&otimes;" = 8855;
+const "\&perp;" = 8869;
+const "\&sdot;" = 8901;
+const "\&lceil;" = 8968;
+const "\&rceil;" = 8969;
+const "\&lfloor;" = 8970;
+const "\&rfloor;" = 8971;
+const "\&lang;" = 9001;
+const "\&rang;" = 9002;
+const "\&loz;" = 9674;
+const "\&spades;" = 9824;
+const "\&clubs;" = 9827;
+const "\&hearts;" = 9829;
+const "\&diams;" = 9830;
+
+
+/**
+ * Properties for All Types
+ */
+interface __ANY_TYPE {
+   /**
+    * Initializer value.
+    *
+    * <B>.init</B> produces a constant expression that is the default initializer. 
+    * If applied to a type, it is the default initializer for that type. 
+    * If applied to a variable or field, it is the default initializer for that 
+    * variable or field. For example:
+    *
+    * <PRE>
+    *     int a;
+    *     int b = 1;
+    *     typedef int t = 2;
+    *     t c;
+    *     t d = cast(t)3;
+    *
+    *     int.init <font color=orange>// is 0</font>
+    *     a.init   <font color=orange>// is 0</font>
+    *     b.init   <font color=orange>// is 1</font>
+    *     t.init   <font color=orange>// is 2</font>
+    *     c.init   <font color=orange>// is 2</font>
+    *     d.init   <font color=orange>// is 3</font>
+
+    *     struct Foo
+    *     {
+    *       int a;
+    *       int b = 7;
+    *     }
+
+    *     Foo.a.init <font color=orange>// is 0</font>
+    *     Foo.b.init <font color=orange>// is 7</font>
+    * </PRE>    
+    */
+   property init;
+   /**
+    * size in bytes (equivalent to C's sizeof(type))
+    */
+   property uint sizeof;
+   /**
+    * alignment size
+    */
+   property uint alignof;
+   /**
+    * string representing the 'mangled' representation of the type
+    */
+   property string mangleeof;
+   /**
+    * Offset in bytes of field from beginning of struct
+    */
+   property uint offsetof;
+}
+
+/**
+ * Properties for Integral Types
+ */
+interface __INTEGRAL_TYPE : __ANY_TYPE {
+   /**
+    * maximum value 
+    */
+   property max;
+   /**
+    * minimum value
+    */
+   property min;
+}
+
+/**
+ * Properties of Enumerated Types
+ */
+interface __ENUMERATED_TYPE : __INTEGRAL_TYPE {
+   // no additional properties
+}
+
+/**
+ * Properties for Floating Point Types
+ */
+interface __FLOATING_POINT_TYPE : __INTEGRAL_TYPE {
+   /**
+    * NaN (not a number) value 
+    */
+   property nan;
+   /**
+    * Smallest increment to the value 1 
+    */
+   property epsilon;
+   /**
+    * infinity value 
+    */
+   property infinity;
+   /**
+    * number of decimal digits of precision 
+    */
+   property uint dig;
+   /**
+    * number of bits in mantissa 
+    */
+   property uint mant_dig;
+   /**
+    * maximum int value such that 10<SUP>max_10_exp</SUP> is representable
+    */
+   property int max_10_exp;
+   /**
+    * maximum int value such that 2<SUP>max_exp-1</SUP> is representable
+    */
+   property int max_exp;
+   /**
+    * minimum int value such that 10<SUP>min_10_exp</SUP> 
+    * is representable as a normalized value
+    */
+   property int min_10_exp;
+   /**
+    * minimum int value such that 2<SUP>min_exp-1</SUP> is 
+    * representable as a normalized value
+    */
+   property int min_exp;
+   /**
+    * largest representable value that's not infinity
+    */
+   property max;
+   /**
+    * smallest representable normalized value that's not 0
+    */
+   property min;
+}
+
+/**
+ * Properties for Imaginary types (ifloat, idouble)
+ */
+interface __IMAGINARY_TYPE : __FLOATING_POINT_TYPE {
+   /**
+    * real part 
+    */
+   property re;
+   /**
+    * imaginary part
+    */
+   property im;
+}
+
+/**
+ * Properties for Array and Associative array types.
+ */
+interface __ARRAY_TYPE : __ANY_TYPE {
+   /**
+    * Returns the number of elements in the array. 
+    * This is a fixed quantity for static arrays.
+    * <p>
+    * For dynamic arrays, length may be used to set
+    * set the number of elements in the array.
+    * <p>
+    * For associative arrays, the length property is read-only.
+    */
+   property int length;
+   /**
+    * Returns the array length multiplied by the 
+    * number of bytes per array element.
+    * <p> 
+    * For dynamic arrays and associative arrays, sizeof returns the size of the 
+    * dynamic/associative array reference, which is 8 on 32 bit machines.
+    */
+   property int sizeof;
+   /**
+    * Returns a pointer to the first element of the array.
+    */
+   property ptr;
+   /**
+    * Create a dynamic array of the same size and 
+    * copy the contents of the array into it.
+    */
+   property __ARRAY_TYPE dup;
+   /**
+    * Reverses in place the order of the elements in the array. 
+    * Returns the array.
+    */
+   property __ARRAY_TYPE reverse;
+   /**
+    * Sorts in place the order of the elements in the array. 
+    * Returns the array.
+    */
+   property __ARRAY_TYPE sort;
+
+   /**
+    * This method applies only to associative arrays.
+    * Returns dynamic array, the elements of which are the keys
+    * in the associative array.
+    */
+   property __ARRAY_TYPE keys;
+   /**
+    * This method applies only to associative arrays.
+    * Returns dynamic array, the elements of which are the values 
+    * in the associative array.
+    */
+   property __ARRAY_TYPE values;
+   /**
+    * This method applies only to associative arrays.
+    * Reorganizes the associative array in place so that lookups are
+    * more efficient. rehash is effective when, for example, the program
+    * is done loading up a symbol table and now needs fast lookups in it. 
+    * Returns a reference to the reorganized array.
+    */ 
+   property __ARRAY_TYPE rehash;
+}
+
+/**
+ * Properties for struct types.
+ */
+interface __STRUCT_TYPE : __ANY_TYPE {
+   /**
+    * Size in bytes of struct
+    */
+   property int sizeof;
+   /**
+    * Size boundary struct needs to be aligned on
+    */
+   property int alignof;
+   /**
+    * Gets type tuple of fields
+    */
+   property tupleof;
+}
+
+/**
+ * Properties for struct and class field types.
+ */
+interface __CLASS_TYPE : __ANY_TYPE {
+   /**
+    * The .tupleof property returns an ExpressionTuple of
+    * all the fields in the class, excluding the hidden
+    * fields and the fields in the base class.
+    */
+   property ExpressionTuple tupleof;
+}
+
+/**
+ * Built-in identifiers used in "version" conditions
+ */
+enum __VERSION_IDENTIFIERS {
+   DigitalMars,      // Digital Mars is the compiler vendor
+   X86,              // Intel and AMD 32 bit processors
+   X86_64,           // AMD and Intel 64 bit processors
+   Windows,          // Microsoft Windows systems
+   Win32,            // Microsoft 32 bit Windows systems
+   Win64,            // Microsoft 64 bit Windows systems
+   linux,            // All linux systems
+   LittleEndian,     // Byte order, least significant first
+   BigEndian,        // Byte order, most significant first
+   D_Coverage,       // Coverage analyser is implemented and the -cov switch is thrown
+   D_InlineAsm_X86,  // Inline assembler for X86 is implemented
+   none,             // Never defined; used to just disable a section of code
+   all,              // Always defined; used as the opposite of none
+}
+
+/**
+ * Versions enable multiple versions of a module to be implemented with a
+ * single source file.
+ * 
+ *    VersionCondition:
+ *        version ( Integer )
+ *        version ( Identifier )
+ *
+ * The VersionCondition is satisfied if the Integer is greater than or equal
+ * to the current version level, or if Identifier matches a version identifier.
+ * The version level and version identifier can be set on the command line by
+ * the -version switch or in the module itself with a VersionSpecification, 
+ * or they can be predefined by the compiler.  Version identifiers are in their
+ * own unique name space, they do not conflict with debug identifiers
+ * or other symbols in the module. Version identifiers defined in one module 
+ * have no influence over other imported modules.
+ */
+function version(__VERSION_IDENTIFIERS id);
+
+/**
+ * Two versions of programs are commonly built, a release build and a debug build.
+ * The debug build includes extra error checking code, test harnesses, 
+ * pretty-printing code, etc. The debug statement conditionally compiles in its
+ * statement body. It is D's way of what in C is done with #ifdef DEBUG #endif pairs.
+ *
+ *    DebugCondition:
+ *       debug
+ *       debug ( Integer )
+ *       debug ( Identifier )
+ *
+ * The debug condition is satisfied when the -debug switch is thrown on the compiler.
+ * The debug ( Integer ) condition is satisfied when the debug level is >= Integer.
+ * The debug ( Identifier ) condition is satisfied when the debug identifier 
+ * matches Identifier.
+ */
+function debug(Integer_or_Identifier);
+
+/**
+ * @return Returns an instance of class TypeInfo corresponding to Type.
+ * @param Type
+ */
+function TypeInfo typeid(Type);
+
+/**
+ * Typeof is a way to specify a type based on the type of an expression.
+ * <p>
+ * The expression is not evaluated, just the type of it is generated.
+ * There are two special cases: typeof(this) will generate the type of 
+ * what this would be in a nonstatic member function, even if not in a 
+ * member function. Analogously, typeof(super) will generate
+ * the type of what super would be in a non-static member function.
+ * <p>
+ * Typeof is most useful is in writing generic template code.
+ *
+ * @param Expr
+ */
+function typeof(Expr);
+
+/**
+ * Asserts evaluate the expression.
+ * 
+ * If the result is false, an AssertError is thrown. If the result is true,
+ * then no exception is thrown. It is an error if the expression contains 
+ * any side effects that the program depends on. The compiler may optionally 
+ * not evaluate assert expressions at all. The result type of an assert 
+ * expression is void. Asserts are a fundamental part of the Contract Programming
+ * support in D.
+ * <p>
+ * The expression assert(0) is a special case; 
+ * it signifies that it is unreachable code. Either AssertError is thrown at 
+ * runtime if it is reachable, or the execution is halted (on the x86 processor,
+ * a HLT instruction can be used to halt execution). The optimization and code 
+ * generation phases of compilation may assume that it is unreachable code.
+ * <p>
+ * The second Expression, if present, must be implicitly convertible to type 
+ * char[]. It is evaluated if the result is false, and the string result is 
+ * appended to the AssertError's message.
+ * <p>
+ * In a <b>static assert</b> expression, the AssignExpression is evaluated at
+ * compile time, and converted to a boolean value.
+ * If the value is true, the static assert is ignored. If the value is false, an
+ * error diagnostic is issued and the compile fails.  Unlike AssertExpressions,
+ * StaticAsserts are always checked and evaluated by the compiler unless they
+ * appear in an unsatisfied conditional.
+ * <p>
+ * StaticAssert is useful tool for drawing attention to conditional configurations
+ * not supported in the code.
+ * <p>
+ * @example
+ * <pre>
+ *    void foo()
+ *    {
+ *       if (0)
+ *       {
+ *          assert(0); // never trips
+ *          static assert(0); // always trips
+ *       }
+ *       version (BAR)
+ *       {
+ *       }
+ *       else
+ *       {
+ *          static assert(0); // trips when version BAR is not defined
+ *       }
+ *    }
+ * </pre>
+ */
+function assert(Expr, Description=null);

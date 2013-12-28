@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_insert_match_fast</title>
+</head>
+<body>
+
+<h3><b>int tag_insert_match_fast(int match_type, int local_or_context_id)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Add a tag to the match set.  The tag database allows you to maintain a list of
+tags very efficiently through the match set.  This is useful when searching
+for specific tags.  Many of the Context Tagging&reg; functions are designed to
+insert directly into the match set and use this function to do so for efficiency.
+<p>
+For synchronization, macros should perform a tag_lock_matches(true) and
+tag_lock_context(false) prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="match_type">match_type</A></code> - Specifies where the tag to insert comes from:
+                  <dl compact>
+                  <dt>VS_TAGMATCH_tag<dd style="margin-left:120pt">     current tag from database
+                  <dt>VS_TAGMATCH_context<dd style="margin-left:120pt"> item in current context (buffer)
+                  <dt>VS_TAGMATCH_local<dd style="margin-left:120pt">      item in local variable set (function)
+                  <dt>VS_TAGMATCH_match<dd style="margin-left:120pt">   item in match set
+                  </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="local_or_context_id">local_or_context_id</A></code> - 0 if inserting current tag from database, otherwise, specifies the
+                  unique integer ID of the item from the context, locals, or match
+                  set, as specified by match_type.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">sequence number (match_id) of matching tag on success, or <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_clear_matches.html">tag_clear_matches</a>, <a href="tag_get_match.html">tag_get_match</a>, <a href="tag_get_detail2.html">tag_get_detail2</a>, <a href="tag_get_num_of_matches.html">tag_get_num_of_matches</a>, <a href="tag_insert_context.html">tag_insert_context</a>, <a href="tag_insert_local2.html">tag_insert_local2</a>, <a href="tag_insert_match.html">tag_insert_match</a>, <a href="tag_insert_tag.html">tag_insert_tag</a>, <a href="tag_list_any_symbols.html">tag_list_any_symbols</a>, <a href="tag_list_class_context.html">tag_list_class_context</a>, <a href="tag_list_class_locals.html">tag_list_class_locals</a>, <a href="tag_list_class_tags.html">tag_list_class_tags</a>, <a href="tag_list_context_globals.html">tag_list_context_globals</a>, <a href="tag_list_context_packages.html">tag_list_context_packages</a>, <a href="tag_list_globals_of_type.html">tag_list_globals_of_type</a>, <a href="tag_list_in_file.html">tag_list_in_file</a></blockquote>
+</body>
+</html>

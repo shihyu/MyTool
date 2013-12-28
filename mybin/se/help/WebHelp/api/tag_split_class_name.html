@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_split_class_name</title>
+</head>
+<body>
+
+<h3><b>void tag_split_class_name(_str class_name, var inner_name, var outer_name, boolean outer_first_only=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Decompose a class name into its outer component and
+inner class name only.  This is strictly a string function,
+no file I/O or searching is involved.
+<p>
+For synchronization, threads should perform a tag_lock_context(false)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - Class name to split.  See <a href="VS_TAGSEPARATOR_class.html">VS_TAGSEPARATOR_class</a> and
+                  <a href="VS_TAGSEPARATOR_package.html">VS_TAGSEPARATOR_package</a> for more details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="inner_name">inner_name</A></code> - (Output) 'inner' class name (class name only)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="outer_name">outer_name</A></code> - (Output) 'outer' class name (class_name - inner_name)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="outer_first_only">outer_first_only</A></code> - When <b>true</b>, set outer_name to just the name of the outer class
+                         rather than the qualified class name.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_join_class_name.html">tag_join_class_name</a></blockquote>
+</body>
+</html>

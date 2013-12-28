@@ -1,0 +1,68 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>process_list</title>
+</head>
+<body>
+
+<h3><b>_str process_list(_str search_fun, _str search_string, _str search_options, _str repeat_search_fun, _str action_fun)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><b>process_list</b> is a generic list processing function.  The file manager
+uses this function to delete or select entries from the file list.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="search_fun">search_fun</A></code> - Name of procedure to perform first search. The call looks like this:
+
+<p>The call looks like this:</p>
+
+<p><i>search_fun</i>(<i>search_string</i>,
+<i>search_options</i>)</p>
+
+<p>Search function must return non-zero status if
+string is not found.  Use a pre-existing search
+function such as "psearch" if possible.</p>
+
+<dl>
+<dt><i>search_string</i></dt><dd>Search string given as argument to
+<i>search_fun</i> and <i>repeat_search_fun</i>.</dd>
+
+<dt><i>search_options</i></dt><dd>Options given as argument to
+<i>search_fun</i> and <i>repeat_search_fun</i>.  The character 'm'
+must mean searching within a marked area.  The character '*' means perform action
+without prompting.  By default, the user is prompted with "Yes/No/Last/Go/Quit?"
+before the action is performed.</dd>
+
+<dt><i>repeat_search_fun</i></dt><dd>Name of procedure to perform
+subsequent searching.  The call looks like this:</dd>
+</dl>
+
+<p><i>repeat_search_fun</i>(<i>search_string</
+i>, <i>search_options</i>)</p>
+
+<p>Search function must return non-zero status if
+string is not found.  Use a pre-existing search
+function such as "psearch" or
+"prepeat_search" if possible.</p>
+
+<dl>
+<dt><i>action_fun</i></dt><dd>Name of procedure which operates on lines
+found by search functions.  Use a pre-existing
+action function such as "zap_line" or
+"_fselect_line" if possible.</dd>
+</dl>
+
+<p>The cursor position is left at the position after the last call to the
+<i>action_fun</i> or <i>repeat_search_fun</i>.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Otherwise a non-zero value is returned.  On
+error, message is displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+          defmain()
+          {
+             // Remove all lines in the current buffer containing the word
+             //  junk in any case without prompting.
+             top();
+             process_list('psearch','junk','I*','prepeat_search','zap_line');
+          }
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Search_Functions.html">Search Functions</a></blockquote>
+</body>
+</html>

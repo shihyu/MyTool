@@ -1,0 +1,117 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_mfreplace</title>
+</head>
+<body>
+
+<h3><b>_str _mfreplace(_str search_string, _str replace_string, _str options, _str files, _str notused_atbuflist, boolean searchProjectFiles=false, boolean searchWorkspaceFiles=false, _str wildcards='', _str file_exclude='', boolean files_delimited_with_pathsep=false, int mfflags=0, int grep_id=0, boolean show_diff=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Performs a search and replace on the files and buffers specified.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="search_string">search_string</A></code> - String to search for.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="replace_string">replace_string</A></code> - String to replace search string with.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - A string of zero or more of the following search options:
+
+<dl>
+<dt>*</dt><dd>Perform search and replace without prompting for replace or save.</dd>
+
+<dt>E</dt><dd>Exact case.</dd>
+
+<dt>I</dt><dd>Ignore case.</dd>
+
+<dt>-</dt><dd>Reverse search.</dd>
+
+<dt>M</dt><dd>Limit search to marked area.</dd>
+
+<dt>V</dt><dd>Preserve case. When specified, each occurrence found is checked for all
+lower case, all upper case, first word capitalized or mixed case.  The
+replace string is converted to the same case as the occurrence found excepted
+when the occurrence found is mixed case (possibly mulltiple capitalized
+words).  In this case, the replace string is used without modification.</dd>
+
+<dt><</dt><dd>If found, place cursor at beginning of word.</dd>
+
+<dt>></dt><dd>If found, place cursor at end of word.</dd>
+
+<dt>R</dt><dd>Interprets <i>search_string</i> to be a SlickEdit regular expression.
+In addition, the characters \ and # take on new meaning in the replace
+string.  See <b>SlickEdit Regular Expressions</b>.</dd>
+
+<dt>U</dt><dd>Interpret string as a UNIX regular expression.   See section <b>UNIX
+Regular Expressions</b>.</dd>
+
+<dt>B</dt><dd>Interpret string as a Brief regular expression.   See section <b>Brief
+Regular Expressions</b>.</dd>
+
+<dt>H</dt><dd>Search through hidden lines.</dd>
+
+<dt>N</dt><dd>Do not interpret search string as a regular-expression search string.</dd>
+
+<dt>P</dt><dd>Ignored.</dd>
+
+<dt>W</dt><dd>Limits search to words.  Used to search for variables.</dd>
+
+<dt>W=<i>SlickEdit-regular-expression</i></dt><dd>Specifies the valid characters
+in a word.  The default value is [A-Za-z0-9_$].</dd>
+
+<dt>W:P</dt><dd>Limits search to word prefix.  For example, searching for "pre"
+matches "pre" and "prefix" but not "supreme" or "supre".</dd>
+
+<dt>W:PS</dt><dd>Limits search to strict word prefix.  For example, searching for
+"pre" matches "prefix" but not "pre", "supreme" or "supre".</dd>
+
+<dt>W:S</dt><dd>Limits search to word suffix.  For example, searching for "fix"
+matches "fix" and "sufix" but not "fixit".</dd>
+
+<dt>W:SS</dt><dd> Limits search to strict word suffix.  For example, searching for
+"fix" matches "sufix" but not "fix" or "fixit".</dd>
+
+<dt>Y</dt><dd> Binary search.  This allows start positions in the middle of a DBCS or
+UTF-8 character.  This option is useful when editing binary files (in
+SBCS/DBCS mode) which may contain characters which look like DBCS but are
+not.  For example, if you search for the character 'a', it will not be found
+as the second character of a DBCS sequence unless this option is specified.</dd>
+
+<dt>,</dt><dd>Delimiter to separate ambiguous options.</dd>
+
+<dt>X<i>CCLetters</i></dt><dd>Requires the first character of search string NOT
+be one of the color coding elements specified. For example, "XCS" requires that the first
+character not be in a comment or string. <i>CCLetters</i> is a string of one
+or more of the following color coding element letters:</dd>
+
+<dl>
+<dt>O</dt><dd>Other</dd>
+<dt>K</dt><dd>Keyword</dd>
+<dt>N</dt><dd>Number</dd>
+<dt>S</dt><dd>String</dd>
+<dt>C</dt><dd>Comment</dd>
+<dt>P</dt><dd>Preprocessing</dd>
+<dt>L</dt><dd>Line number</dd>
+<dt>1</dt><dd>Symbol 1</dd>
+<dt>2</dt><dd>Symbol 2</dd>
+<dt>3</dt><dd>Symbol 3</dd>
+<dt>4</dt><dd>Symbol 4</dd>
+<dt>F</dt><dd>Function color</dd>
+<dt>V</dt><dd>No save line</dd>
+</dl>
+
+<dt>C<i>CCLetters</i></dt><dd>Requires the first character of search string to be one of the color
+coding elements specified. See <i>CCLetters</i> above.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="files">files</A></code> - Zero or more space delimited files which may contain wild
+cards.  '+T' and '-T' switches may be embedded between files specifications
+to turn subdirectory (tree) searching on or off.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="atbuflist">atbuflist</A></code> - Zero or more space delimited buffer names.  If a
+buffer name starts with a '@' character, it is assumed to be a buffer which
+contains a list of buffer names to search.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if a search and replace proceeds through all files and
+no errors occur.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// Case sensitive word search for "list"  through all c and h files in or
+below the current
+// directory.  Replace with better_name_list.
+_mfreplace('list', 'better_name_list', 'ew', '+t *.c *.h','');
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_mffind.html">_mffind</a></blockquote>
+</body>
+</html>

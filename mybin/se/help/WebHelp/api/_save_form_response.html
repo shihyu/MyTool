@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_save_form_response</title>
+</head>
+<body>
+
+<h3><b>void _save_form_response()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Saves the response to check boxes, radio buttons, text boxes, and
+combo boxes, for the active form.  Values are placed in the
+".command" buffer which is saved in the auto restore file
+("vrestore.slk" by default) when you exit the editor with auto restore
+turned on.  Call the <b>_retrieve_prev_form</b> function during the
+on_create event to initialize the form to the users previous response.
+This function is used to perform dialog box retrieval.  The dialog
+manager automatically calls the <b>_retrieve_prev_form</b> and
+<b>_retrieve_next_form</b> function when you press F7 and F8
+respectively.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include "slick.sh"
+// Create a text box with an OK command button on the form for
+this example
+defeventtab form1;
+ok.on_create()
+{
+   _retrieve_prev_form();
+}
+ok.lbutton_up()
+{
+   _save_form_response();
+   p_active_form._delete_window(0);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Form
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Form_Methods.html">Form Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_retrieve_next_form.html">_retrieve_next_form</a>, <a href="_retrieve_prev_form.html">_retrieve_prev_form</a></blockquote>
+</body>
+</html>

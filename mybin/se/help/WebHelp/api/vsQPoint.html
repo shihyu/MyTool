@@ -1,0 +1,37 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsQPoint</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsQPoint(int wid, seSeekPos *pPoint, seSeekPos *pDownCount, char Option='P')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pPoint">pPoint</A></code> - If <i>option</i>=='P',<i> </i>ouput for seek
+position to beginning of line.  Otherwise,
+output for current line number.  -1 indicates
+current line number is unknown.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pDownCount">pDownCount</A></code> - Ouput for number of lines to cursor down to
+get to the current line.  This is non-zero in
+rare cases such as when editing record files
+(p_buf_width!=0) which have no end of line
+characters and blank lines are inserted.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - 'P' or 'L'.
+
+<dl>
+<dt>'P'</dt><dd>Sets <i>pPoint</i> to the seek position to the beginning
+of the current line.  Sets <i>pDownCount</i> to the number of lines to
+cursor down to get to the current line when starting from the seek
+position to the beginning of line.  It is unusual for
+<i>pDownCount</i> to be non-zero.  This can only occur for record
+files (<b>p_buf_width</b>!=0) when a line has 0 bytes INCLUDING
+the end of line characters.  Lines of record files have no end of line
+characters.</dd>
+
+<dt>'L'</dt><dd>Sets <i>pPoint</i> to current line number.  If the current
+line number is not known, <i>pPoint</i> is set to -1.</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote>
+</body>
+</html>

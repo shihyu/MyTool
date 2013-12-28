@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMarkerTypeSetCallbackFreeUserData</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsMarkerTypeSetCallbackFreeUserData(int type, void(VSAPI*pfnMarkerFreeUserData)(int MarkerIndex, int BMIndex, int Type, void*pUserData, int BufId))</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sets the FreeUserData callback for the marker type specified.  You may need to
+define this callback if you want support for Undo or Copy/Paste.<p>
+<p>This callback is called just before a marker is about to
+be deleted including when you call vsLineMarkerRemove.  Free your user data here if necessary.
+Do not free the user data in the
+vsMarkerTypeSetCallbackLinesDeleted() callback if you
+free the user data here.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type">type</A></code> - Type returned from vsMarkerTypeAlloc()</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pfnMarkerFreeUserData">pfnMarkerFreeUserData</A></code> - Callback function.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if the marker type is valid.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Marker_Functions.html">Marker Functions</a></blockquote>
+</body>
+</html>

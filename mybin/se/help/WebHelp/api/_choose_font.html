@@ -1,0 +1,45 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_choose_font</title>
+</head>
+<body>
+
+<h3><b>_str _choose_font(int cf_flags=CF_SCREENFONTS, _str font_string=",10,,")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Displays the operating system specific <b>Font dialog box</b>.  We also have our
+own Font dialog box  (<b>_font_form</b>).  The <i>cf_flags</i> and <i>font</i>
+parameters determine the font that is initially displayed by the dialog box.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="cf_flags">cf_flags</A></code> - is a combination of the following flags defined in "slick.sh":
+   CF_SCREENFONTS Display screen fonts.
+   CF_PRINTERFONTS   Display printer fonts.
+   CF_EFFECTS  Allows color and strike out and underline selection.
+   CF_FIXEDPITCHONLY Display fixed pitch fonts only.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="font">font</A></code> - is a string in the format: <i>font_name</i>, <i>font_size</i>, <i>font_flags</i> [,]</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="font_size">font_size</A></code> - is a font point size.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="font_flags">font_flags</A></code> - is a combination of the following flags defined in "slick.sh":
+   F_BOLD
+   F_ITALIC
+   F_STRIKE_THRU
+   F_UNDERLINE
+
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns '' if user selects cancel.  Otherwise, a font string is
+returned in the same format as the <i>font</i> argument.  The <i>rgb_color</i>
+is appended only if the CF_EFFECTS flag is specified.  However, a ',' will still
+follow the <i>font_flags</i>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+defmain()
+{
+    font="Helvetica,10,"(F_BOLD|F_ITALIC)
+    // You can use the _font_param function to build the above string like this
+    //     font=_font_param("Helvetica", 10, F_BOLD|ITALIC);
+    result=_choose_font(CF_PRINTERFONTS, font);
+    if (result==''){
+         message("User has cancelled");
+    } else {
+         parse result with font_name' ,' font_size ',' font_flags ',';
+         message("Name="font_name" Size="font_size" Flags="font_flags);
+    }
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_font_form.html">_font_form</a>, <a href="_font_param.html">_font_param</a></blockquote>
+</body>
+</html>

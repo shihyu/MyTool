@@ -1,0 +1,298 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>SlickEdit® Command Line</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch03.htm" title="Chapter 3.  User Interface"><link rel="prev" href="ch03s03.htm" title="Menus"><link rel="next" href="ch03s05.htm" title="Screen Management"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_usingcommandline_13192_81409"></a>
+    <a name="sect_usingcommandline_13192_998341"></a>
+    <a class="indexterm" name="sect_usingcommandline_0E10C92B_1DAA"></a>
+    <a class="indexterm" name="sect_usingcommandline_D2D5C574_675D"></a>
+    <a class="indexterm" name="sect_usingcommandline_53B33025_8902"></a>SlickEdit® Command Line</h2></div></div></div><p class="NormalText">
+    SlickEdit provides a command line as a means to execute most SlickEdit operations without taking your hands off of the keyboard. This is useful for less frequently used operations that may not warrant a key binding, or complex commands that require arguments. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="NormalText">For information about passing arguments to SlickEdit from the 
+        operating system command line, see <a href="ch01s06.htm#sect_startingexiting_55651_41674">Invocation Options</a>.</p></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">SlickEdit® commands that contain two or more 
+        words are written throughout our documentation with underscore separators: for example, 
+        <span><strong class="command">cursor_down</strong></span>. Note that in the user interface, however, these commands are displayed 
+        with hyphen separators: for example, <span><strong class="command">cursor-down</strong></span>. Both of these forms work in 
+        SlickEdit, so you can use whichever style you prefer.</p></li></ul></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcommandline_13192_44198"></a>
+      <a name="sect_usingcommandline_13192_999963"></a>
+      <a class="indexterm" name="sect_usingcommandline_A0433F5D_DEC8"></a>Activating the Command Line</h3></div></div></div><p class="NormalText">To activate or toggle the SlickEdit® command line in any emulation, click on the message line with the mouse. Key bindings are also provided for toggling the cursor to the command line, based on your emulation: </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">BBEdit - <span><strong class="keycap">Esc</strong></span></p></li><li><p class="NormalText">Brief - <span><strong class="keycap">Esc</strong></span></p></li><li><p class="NormalText">CodeWarrior - <span><strong class="keycap">Esc</strong></span></p></li><li><p class="NormalText">CodeWright - <span><strong class="keycap">F9</strong></span></p></li><li><p class="NormalText">CUA (SlickEdit's default emulation) - <span><strong class="keycap">Esc</strong></span></p></li><li><p class="NormalText">Epsilon - <span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">X</strong></span> or <span><strong class="keycap">F2</strong></span></p></li><li><p class="NormalText">GNU Emacs - <span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">X</strong></span> or <span><strong class="keycap">F2</strong></span></p></li><li><p class="NormalText">ISPF - <span><strong class="keycap">Esc</strong></span></p></li><li><p class="NormalText">SlickEdit (Text Mode edition) - <span><strong class="keycap">Esc</strong></span></p></li><li><p class="NormalText">Vim - <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">A</strong></span></p></li><li><p class="NormalText">Visual C++ - <span><strong class="keycap">Esc</strong></span></p></li><li><p class="NormalText">Visual Studio default - <span><strong class="keycap">Esc</strong></span></p></li><li><p class="NormalText">Xcode - <span><strong class="keycap">Esc</strong></span></p></li><li><p class="NormalText">Eclipse - <span><strong class="keycap">Esc</strong></span></p></li></ul></div><p class="NormalText">See <a href="ch04s02.htm">Emulations</a> for more information.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcommandline_13192_999637"></a>
+      <a class="indexterm" name="sect_usingcommandline_4D48DC6A_C046"></a>Command Line History</h3></div></div></div><p class="NormalText">The SlickEdit® command line
+      maintains a command history, allowing you to quickly reuse previously
+      entered commands. Once the command line is open, use the arrow keys to
+      scroll up and down in the command history.  This history is stored in
+      <span><strong class="guilabel">vrestore.slk</strong></span>, under your configuration directory.
+       For more information about configuration files, see <a href="ch13s05.htm">Configuration Directories and Files</a>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcommandline_13192_10728"></a>
+      <a name="sect_usingcommandline_13192_999639"></a>Command Line Completion</h3></div></div></div><p class="NormalText">As you type a command on the SlickEdit® command line, a list of matching completions is displayed, including any command line arguments used in a previous command. Use <span><strong class="keycap">Tab</strong></span> or the <span><strong class="keycap">Down</strong></span> arrow to move to the next command in the list, and <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">Tab</strong></span> or the <span><strong class="keycap">Up</strong></span> arrow to move to the previous command. Press the <span><strong class="keycap">Enter</strong></span> key to select the current command.</p><p class="NormalText">Some commands, like <span><strong class="command">set_var</strong></span>, prompt for arguments. SlickEdit maintains a history of arguments used for each command. Use the same completion and history mechanism as described above for commands to complete arguments. Typically, the most recent argument you typed is automatically displayed.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"> Command completions are useful for discovering operations in SlickEdit. For instance, to find all operations that begin with "find", type <span><strong class="command">find</strong></span> in the command line, and SlickEdit will display a list of those commands. Some search commands do not begin with "find", like <span><strong class="command">gui_find</strong></span>, so you may not discover all related commands this way. To find all commands containing the word "find," use the Key Bindings options page (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Keyboard and Mouse </strong></span> &#8594; <span><strong class="guimenuitem">Key Bindings</strong></span> or <span><strong class="command">gui_keybindings</strong></span> command). See <a href="ch04s03.htm">Key and Mouse Bindings</a> for more information.</p></div><p class="NormalText">For information about other items that can be automatically completed, see <a href="ch08s09.htm">Completions</a>.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcommandline_13192_1000479"></a>Disabling Command Line Completions</h4></div></div></div><p class="NormalText">To disable command line completions, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Appearance </strong></span> &#8594; <span><strong class="guimenuitem">General</strong></span> and set the option <span><strong class="guilabel">List command line completions</strong></span> to <span><strong class="guilabel">False</strong></span>. Note that this option does not apply to the Vim command line.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcommandline_13192_1004198"></a>
+      <a class="indexterm" name="sect_usingcommandline_A39FD6E2_EDB4"></a>Using Shortcuts Inside the Command Line</h3></div></div></div><p class="NormalText">The SlickEdit® command line is a text box control just like the text boxes that appear in various dialog boxes. For a list of key shortcuts that can be used inside the command line and other text boxes within SlickEdit, see <a href="ch03s06.htm#sect_usingmousekeyboard_13675_76181">Key Shortcuts in Text Boxes</a>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcommandline_13192_93627"></a>
+      <a name="sect_usingcommandline_13192_1004204"></a>Using the Command Line to View Key Binding Associations</h3></div></div></div><p class="NormalText">You can use the SlickEdit® command line to determine what keys are associated with what commands, and vice-versa. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"> Alternatively, you can use the Key Bindings options page (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Keyboard and Mouse </strong></span> &#8594; <span><strong class="guimenuitem">Key Bindings</strong></span> or <span><strong class="command">gui_keybindings</strong></span> command) to see a list of command/key binding associations. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_84921">Key Binding Options</a> for more information.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcommandline_13192_50975"></a>
+        <a name="sect_usingcommandline_13192_1004216"></a>
+        <a class="indexterm" name="sect_usingcommandline_10BDD581_13CD"></a>
+        <a class="indexterm" name="sect_usingcommandline_F48DBF6F_1573"></a>
+        <a class="indexterm" name="sect_usingcommandline_63F9D3B6_1CB5"></a>Determining the Command of a Key Binding</h4></div></div></div><p class="NormalText">To determine the function of a key or key binding, use the <span><strong class="command">what_is</strong></span> command (<span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">What Is Key</strong></span>). For example:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Click <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">What Is Key</strong></span>, or activate the SlickEdit® command line (by pressing <span><strong class="keycap">Esc</strong></span>) and type <span><strong class="command">what_is</strong></span> (or type <span><strong class="command">what</strong></span> and press the spacebar for auto-completion), then press <span><strong class="keycap">Enter</strong></span>.</p></li><li><p class="NormalText">The command line will prompt with the text <span><strong class="command">What is key</strong></span>. Enter the key sequence in question. A message box will be displayed with the information. If the key or key sequence is not bound to a command, no message will appear.</p></li></ol></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingcommandline_13192_83990"></a>
+        <a name="sect_usingcommandline_13192_1004223"></a>
+        <a class="indexterm" name="sect_usingcommandline_625F2878_B88D"></a>
+        <a class="indexterm" name="sect_usingcommandline_2D2A698A_4F82"></a>Determining the Key Binding of a Command</h4></div></div></div><p class="NormalText">To determine the key to which a command is bound, use the <span><strong class="command">where_is</strong></span> command (<span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Where Is Command</strong></span>). For example:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Click <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Where Is Command</strong></span>, or activate the command line and type <span><strong class="command">where_is</strong></span>, then press <span><strong class="keycap">Enter</strong></span>.</p></li><li><p class="NormalText">The command line will prompt with the text <span><strong class="command">Where is command</strong></span>. Enter the command in question. The status line will display the key binding or state that the command is not bound to a key.</p></li></ol></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcommandline_13192_83175"></a>
+      <a name="sect_usingcommandline_13192_1010051"></a>
+      <a class="indexterm" name="sect_usingcommandline_8C69595D_D80B"></a>Command Line Switches</h3></div></div></div><p class="NormalText">In addition to setting options through the graphical interface, you can specify or override some options on the SlickEdit® command line for immediate, one-time use. This way, you don't need to constantly open the Options dialog to change an option every time you want to enable or disable it. For example, when using the <span><strong class="command">save</strong></span> or <span><strong class="command">save_as</strong></span> command, you can specify many of the <a href="ch12s11.htm#sect_options_menuanddialogs_14207_12512">Save File Options</a>, such as <span><strong class="guilabel">Expand tabs to spaces</strong></span>, for just this one operation.</p><p class="NormalText">Switches are described in the documentation when the switch is helpful or applicable. To use a switch, type it between the command and file name. Depending on whether you want to enable or disable the option, type a plus (<span><strong class="command">+</strong></span>) or minus (<span><strong class="command">-</strong></span>) sign before the switch character. No matter the default setting, the specified switch will be used.</p><p class="NormalText">For example, perhaps you have the Save File Option <span><strong class="guilabel">Expand tabs to spaces</strong></span> set to <span><strong class="command">False</strong></span>. This means that when you save a file, tabs are not expanded to spaces. However, you may want to quickly save a file with tabs expanded. To enable the option just this once, use the <span><strong class="command">save</strong></span> command with the <span><strong class="command">E</strong></span> switch, as follows:</p><pre class="programlisting">
+      <span><strong class="command">save +E</strong></span>
+    </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcommandline_13192_1001028"></a>
+      <a class="indexterm" name="sect_usingcommandline_07F35E9C_4484"></a>
+      <a class="indexterm" name="sect_usingcommandline_378665EF_F9A9"></a>Starting a Program from the Command Line (Shelling)</h3></div></div></div><p class="NormalText">You can use the SlickEdit® command line to start a program. Click on the command line or press <span><strong class="keycap">Esc</strong></span> to toggle the cursor to the command line. Type the program name and arguments and press <span><strong class="keycap">Enter</strong></span>. When entering a command that the editor does not recognize as an internal command, a path search is performed to find an external program to execute. To use a program whose name contains space characters, enclose the name in double quotes. For example, "this is" will start a program named <code class="filename">this is.exe</code> if it exists. </p><p class="NormalText">Executing the command <span><strong class="command">dir</strong></span> (or <span><strong class="command">ls</strong></span>) from the command line will invoke the SlickEdit File Manager. To bypass an internal command, prefix the command with "dos". To execute the <span><strong class="command">dos dir</strong></span> command, type
+<span><strong class="command">dos -w dir</strong></span> and press <span><strong class="keycap">Enter</strong></span>. </p><p class="NormalText">
+      <a class="indexterm" name="sect_usingcommandline_C7260B9C_2612"></a>
+      <a class="indexterm" name="sect_usingcommandline_03CB1295_1A95"></a>To get an operating system prompt, type the command <span><strong class="command">dos</strong></span> with no arguments or from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">OS Shell</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcommandline_13192_29647"></a>
+      <a name="sect_usingcommandline_13192_1000408"></a>
+      <a class="indexterm" name="sect_usingcommandline_DA23AE35_AFF6"></a>Command Line Prompting</h3></div></div></div><p class="NormalText">Many commands that display dialog boxes have equivalent commands that prompt for arguments on the SlickEdit® command line. For example, the <span><strong class="command">gui_open</strong></span> command (<span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Open</strong></span> or <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">O</strong></span>), which displays the Open file dialog, corresponds to the <span><strong class="command">edit</strong></span> command, which is used to open files via the SlickEdit command line. If you frequently use key bindings to open dialogs, a faster method of entering arguments is to use Command Line Prompting. When this feature is enabled, you are prompted on the command line for arguments that you would otherwise select as options on a dialog. For example, instead of displaying the Open file dialog when you press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">O</strong></span>, the SlickEdit command line is invoked, so you can type the name of the file to open and any other desired arguments. To enable Command Line Prompting, from the main menu, select <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Keyboard and Mouse </strong></span> &#8594; <span><strong class="guimenuitem">Advanced</strong></span> and set the <span><strong class="guilabel">Command line prompting</strong></span> option to <span><strong class="guilabel">True</strong></span>.</p><p class="NormalText">The following table contains a partial list of user interface commands and their command line counterparts.</p><div class="informaltable"><a name="table_49619fc9-d640-4c42-a0b5-bff8908d3f3d"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Graphical Command</p>
+            </th><th>
+              <p class="CellHeading">Command Line Version</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">gui_open</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">edit</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">gui_find</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">find</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">gui_replace</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">replace</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">gui_write_selection</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">put</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">gui_append_selection</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">append</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">gui_margins</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">margins</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">gui_tabs</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">tabs</strong></span>
+              </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">gui_find_proc</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">find_proc</strong></span>
+              </p>
+            </td></tr></tbody></table></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingcommandline_13192_999647"></a>
+      <a class="indexterm" name="sect_usingcommandline_229C034B_A95A"></a>
+      <a class="indexterm" name="sect_usingcommandline_7F9A358D_80FD"></a>Common SlickEdit® Commands</h3></div></div></div><p class="NormalText">Commands are essentially the names of functions. The Help system contains a 
+      list of macro functions, organized into categories (see <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Contents</strong></span><span class="bold"><strong>Macro Functions by Category</strong></span>). The following is a list of commands that we 
+      use frequently in our own work, which you may also find useful. </p><div class="informaltable"><a name="table_a0614e55-6eb6-4ed4-85b4-0e44ce222766"></a><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+              <p class="CellBody">1.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">e </strong></span>
+                <span class="emphasis"><em>file</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Edit a file</p>
+            </td></tr><tr><td>
+              <p class="CellBody">2.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">sa</strong></span>
+                <span class="emphasis"><em>file</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Save file as</p>
+            </td></tr><tr><td>
+              <p class="CellBody">3.</p>
+            </td><td>
+              <p class="CellBody">
+                <span class="emphasis"><em>number</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Go to line number</p>
+            </td></tr><tr><td>
+              <p class="CellBody">4.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">f </strong></span>
+                <span class="emphasis"><em>symbol</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Find a symbol</p>
+            </td></tr><tr><td>
+              <p class="CellBody">5.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">/</strong></span>
+                <span class="emphasis"><em>search_string</em></span>
+                <span><strong class="command">/</strong></span>
+                <span class="emphasis"><em>options</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Search for a string</p>
+            </td></tr><tr><td>
+              <p class="CellBody">6.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">c/</strong></span>
+                <span class="emphasis"><em>search</em></span>
+                <span><strong class="command">/</strong></span>
+                <span class="emphasis"><em>replace</em></span>
+                <span><strong class="command">/</strong></span>
+                <span class="emphasis"><em>options</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Replace a string</p>
+            </td></tr><tr><td>
+              <p class="CellBody">7.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">gt/</strong></span>
+                <span class="emphasis"><em>search</em></span>
+                <span><strong class="command">/</strong></span>
+                <span class="emphasis"><em>options</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Substring search for a symbol</p>
+            </td></tr><tr><td>
+              <p class="CellBody">8.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">sb</strong></span>
+                <span class="emphasis"><em>name</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Set a bookmark</p>
+            </td></tr><tr><td>
+              <p class="CellBody">9.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">gb</strong></span>
+                <span class="emphasis"><em>name</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Jump to a bookmark</p>
+            </td></tr><tr><td>
+              <p class="CellBody">10.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">help</strong></span>
+                <span class="emphasis"><em>topic</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">View Help on topic</p>
+            </td></tr><tr><td>
+              <p class="CellBody">11.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">man</strong></span>
+                <span class="emphasis"><em>command</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Show UNIX man page</p>
+            </td></tr><tr><td>
+              <p class="CellBody">12.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">cd</strong></span>
+                <span class="emphasis"><em>directory</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Change directory</p>
+            </td></tr><tr><td>
+              <p class="CellBody">13.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">dir</strong></span>
+                <span class="emphasis"><em>directory</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Show directory in the File Manager</p>
+            </td></tr><tr><td>
+              <p class="CellBody">14.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">list</strong></span>
+                <span class="emphasis"><em>wildcards</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Show directory tree in the File Manager</p>
+            </td></tr><tr><td>
+              <p class="CellBody">15.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">del</strong></span>
+                <span class="emphasis"><em>filename</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Delete file</p>
+            </td></tr><tr><td>
+              <p class="CellBody">16.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">pushd</strong></span>
+                <span class="emphasis"><em>directory</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Push directory</p>
+            </td></tr><tr><td>
+              <p class="CellBody">17.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">popd</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Pop directory</p>
+            </td></tr><tr><td>
+              <p class="CellBody">18.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">set</strong></span>
+                <span class="emphasis"><em>env=value</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Set environment variable</p>
+            </td></tr><tr><td>
+              <p class="CellBody">19.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">dos</strong></span>
+                <span class="emphasis"><em>command</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Execute command outside of editor</p>
+            </td></tr><tr><td>
+              <p class="CellBody">20.</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">math</strong></span>
+                <span class="emphasis"><em>expr</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Evaluate expression</p>
+            </td></tr></tbody></table></div><p class="NormalText"></p></div></div></body></html>

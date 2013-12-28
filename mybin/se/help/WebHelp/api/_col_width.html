@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_col_width</title>
+</head>
+<body>
+
+<h3><b>int _col_width(int column, int width=-3)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Gets and optionally sets a column width of a list box.  This function is
+used to create the column grid look of the dialog editor properties list box.
+<P>
+Each line in the list box should separate each column with a tab character.<p>
+Starting in version 17.0, do not use this on the Tree_View,
+use _TreeColWidth
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="column">column</A></code> - column is a number between 0 and 199.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="width">width</A></code> - if specified, sets the width of the column.
+                  new_width is specified in the  scale mode (p_xyscale_mode)
+                  of the list box parent.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns width of column requested in the list box scale mode (p_scale_mode).
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+   defeventtab form1;
+   list1.on_create()
+   {
+        // Assume list box parent scale mode is in twips.  1440 twips make up an inch on the
+        // display.
+        // In the future, we will allow the scale mode to be modified.
+        _col_width(0,1000);
+        _col_width(1,1000);
+        _lbadd_item("style\t"p_style);
+        _lbadd_item("width\t"p_width);
+        _lbtop();
+   }
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">List Box</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="List_Box_Methods.html">List Box Methods</a></blockquote>
+</body>
+</html>

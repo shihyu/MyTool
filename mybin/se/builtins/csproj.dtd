@@ -1,0 +1,80 @@
+<!ELEMENT VisualStudioProject>
+<!ELEMENT VisualBasic>
+<!ATTLIST VisualBasic
+    ProjectType CDATA  #REQUIRED 
+    ProductVersion CDATA #REQUIRED
+    SchemaVersion CDATA #REQUIRED
+    ProjectGuid CDATA #REQUIRED
+>
+<!ATTLIST CSHARP
+    ProjectType CDATA #REQUIRED
+    ProductVersion CDATA #REQUIRED
+    SchemaVersion CDATA #REQUIRED
+    ProjectGuid CDATA #REQUIRED
+>
+ 
+<!ELEMENT Build>
+<!ELEMENT Settings>
+<!ATTLIST Settings 
+    ApplicationIcon CDATA  #REQUIRED 
+    ApplicationRoot CDATA  #REQUIRED 
+    AssemblyBuildNumber CDATA  #REQUIRED 
+    AssemblyCompany  CDATA #REQUIRED
+    AssemblyCopyright  CDATA #REQUIRED
+    AssemblyDescription  CDATA #REQUIRED
+    AssemblyKeyContainerName  CDATA #REQUIRED
+    AssemblyMajorVersion  CDATA #REQUIRED
+    AssemblyMinorVersion  CDATA #REQUIRED
+    AssemblyName  CDATA #REQUIRED
+    AssemblyOriginatorKeyFile  CDATA #REQUIRED
+    AssemblyOriginatorKeyMode  CDATA #REQUIRED
+    AssemblyProduct  CDATA #REQUIRED
+    AssemblyRevisionNumber  CDATA #REQUIRED
+    AssemblyTitle  CDATA #REQUIRED
+    AssemblyTrademark  CDATA #REQUIRED
+    CLSCompliant  CDATA #REQUIRED
+    DefaultClientScript  CDATA #REQUIRED
+    DefaultDTCPlatform  CDATA #REQUIRED
+    DefaultHTMLPageLayout  CDATA #REQUIRED
+    DefaultTargetSchema  CDATA #REQUIRED
+    DefaultServerScript  CDATA #REQUIRED
+    DefaultSessionState  CDATA #REQUIRED
+    GenerateRevisionNumber  CDATA #REQUIRED
+    OutputType  CDATA #REQUIRED
+    OptionCompare  CDATA #REQUIRED
+    OptionExplicit  CDATA #REQUIRED
+    OptionStrict  CDATA #REQUIRED
+    _RootNamespace  CDATA #REQUIRED
+    StartupObject  CDATA #REQUIRED
+>
+<!ELEMENT Config>
+<!ATTLIST Config
+    Name  CDATA #REQUIRED
+    BaseAddress  CDATA #REQUIRED
+    DefineConstants  CDATA #REQUIRED
+    DefineDebug  CDATA #REQUIRED
+    DefineTrace  CDATA #REQUIRED
+    DebugSymbols  CDATA #REQUIRED
+    OutputPath  CDATA #REQUIRED
+    RemoveIntegerChecks  CDATA #REQUIRED
+    TreatWarningsAsErrors  CDATA #REQUIRED
+    WarningLevel  CDATA #REQUIRED
+> 
+<!ELEMENT References>
+<!ELEMENT Reference>
+<!ATTLIST Reference
+    Name  CDATA #REQUIRED
+>
+<!ELEMENT Imports>
+<!ELEMENT Import>
+<!ATTLIST Import
+    Namespace  CDATA #REQUIRED
+>
+<!ELEMENT Files>
+<!ELEMENT Include>
+<!ELEMENT File>
+<!ATTLIST File
+    RelPath  CDATA #REQUIRED
+    SubType  CDATA #REQUIRED
+    BuildAction  CDATA #REQUIRED
+>

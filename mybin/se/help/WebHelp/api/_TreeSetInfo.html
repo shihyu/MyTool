@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_TreeSetInfo</title>
+</head>
+<body>
+
+<h3><b>void _TreeSetInfo(int ItemIndex, int ShowChildren, int NonCurrentBMIndex=-1, int CurrentBMIndex=-1, int moreFlags=0, int setCurrentNodeIfHidden=1, int flagMask=-1)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Modifies some tree item properties.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ItemIndex">ItemIndex</A></code> - Specifies a tree item.  The root of the tree can't
+                           be deleted and always has an item index of 0.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ShowChildren">ShowChildren</A></code> - Indicates whether to show the children of this node.
+                           TREE_NODE_COLLAPSED specifies not to show the
+                           children. Specify TREE_NODE_EXPANDED to initially
+                           show children of this node. Set this to
+                           TREE_NODE_LEAF for leaf items.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NonCurrentBMIndex">NonCurrentBMIndex</A></code> - Names table index to a picture which gets displayed
+                           to the left of the caption text when this node is not
+                           the current node.  We recommend you specify the same
+                           values for NonCurrentBMIndex and CurrentBMIndex
+                           for leaf items.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="CurrentBMIndex">CurrentBMIndex</A></code> - Names table index to a picture which gets displayed
+                           to the left of the caption text when this node is the current node.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="moreFlags">moreFlags</A></code> - Combination of TREENODE_* flags.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="setCurrentNodeIfHidden">setCurrentNodeIfHidden</A></code> - Set this to 0 for performance
+                              if you are hiding a lot of
+                              nodes and will set the current
+                              node yourself when finished.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flagMask">flagMask</A></code> - Mask indicating which TREENODE_* flags to set
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Tree View
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tree_View_Methods.html">Tree View Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_TreeSetCaption.html">_TreeSetCaption</a>, <a href="_TreeGetCaption.html">_TreeGetCaption</a>, <a href="_TreeGetInfo.html">_TreeGetInfo</a>, <a href="_TreeSetUserInfo.html">_TreeSetUserInfo</a>, <a href="_TreeGetUserInfo.html">_TreeGetUserInfo</a></blockquote>
+</body>
+</html>

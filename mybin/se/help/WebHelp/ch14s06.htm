@@ -1,0 +1,467 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Mathematical Operators</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s05.htm" title="Types"><link rel="next" href="ch14s07.htm" title="Declarations"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_mathoperators_13078_86883"></a>
+    <a name="slick_c_mathoperators_13078_1029961"></a>
+    <a class="indexterm" name="slick-c_mathoperators_A188C34D_BF68"></a>
+    <a class="indexterm" name="slick-c_mathoperators_0334E35F_3D06"></a>
+    <a class="indexterm" name="slick-c_mathoperators_118DD3F7_FA65"></a>Mathematical Operators</h2></div></div></div><p class="NormalText">Slick-C® uses the operator precedence of C. The table below contains the unary operators that an expression can use.</p><div class="informaltable"><a name="table_d0eba95b-abb7-4a50-a9f7-5bbf971c0334"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+            <p class="CellHeading">Operator</p>
+          </th><th>
+            <p class="CellHeading">Description</p>
+          </th></tr></thead><tbody><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">!</strong></span>
+              <span class="emphasis"><em>e1</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Logical NOT. Result is <span><strong class="command">1</strong></span> if <span class="emphasis"><em>e1</em></span> evaluates to <span><strong class="command">0</strong></span>. Otherwise the result is <span><strong class="command">0</strong></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">~</strong></span>
+              <span class="emphasis"><em>e1</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Bitwise complement.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-</strong></span>
+              <span class="emphasis"><em>e1</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Negation.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">+</strong></span>
+              <span class="emphasis"><em>e1</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">No change.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">++</strong></span>
+              <span class="emphasis"><em>v1</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Increments the variable <span class="emphasis"><em>v1</em></span> and returns the result.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span class="emphasis"><em>v1</em></span>
+              <span><strong class="command">++</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns the value of <span class="emphasis"><em>v1</em></span> and then increments the variable <span class="emphasis"><em>v1</em></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">--</strong></span>
+              <span class="emphasis"><em>v1</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Decrements the variable <span class="emphasis"><em>v1</em></span> and returns the result.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span class="emphasis"><em>v1</em></span>
+              <span><strong class="command">--</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Returns the value of <span class="emphasis"><em>v1</em></span> and then decrements the variable <span class="emphasis"><em>v1</em></span>.</p>
+          </td></tr></tbody></table></div><p class="NormalText">The binary and ternary operators for the Slick-C language are listed in the table below. In addition to the operators listed in the previous table, string concatenation is implied. If a binary operator does not exist between two unary expressions, concatenation is automatically performed.</p><p class="NormalText">All numeric operators, except bitwise operators, support floating point numbers. Bitwise operators support 32-bit integers for all platforms.</p><div class="informaltable"><a name="table_679be01c-96fb-411e-a321-9e6d13347747"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+            <p class="CellHeading">Operator</p>
+          </th><th>
+            <p class="CellHeading">Description</p>
+          </th></tr></thead><tbody><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Assign right operand to left operand.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">:= </p>
+          </td><td>
+            <p class="CellBody">Declare new variable with type matching right operand and assign it the value of the right operand.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">+=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Add left operand to right operand and assign to left operand.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Subtract right operand from left operand and assign to left operand.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">/=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Divide left operand by right operand and assign to left operand.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">*=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Multiply left operand with right operand and assign to left operand.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">|=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Bitwise OR left operand with right operand and assign to left operand.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">^=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Bitwise XOR left operand with right operand and assign to left operand.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">&amp;=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Bitwise AND left operand with right operand and assign to left operand.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span class="emphasis"><em>e1</em></span>
+              <span><strong class="command">?</strong></span>
+              <span class="emphasis"><em>e2</em></span>
+              <span><strong class="command">:</strong></span>
+              <span class="emphasis"><em>e3</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">If expression <span class="emphasis"><em>e1</em></span> is TRUE (not the string 0), expression <span class="emphasis"><em>e2</em></span> is returned. Otherwise, expression <span class="emphasis"><em>e3</em></span> is returned.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">&amp;&amp;</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <a class="indexterm" name="slick-c_mathoperators_24F79138_1ED9"></a>Logical AND. If left hand expression is false, right-hand expression is not evaluated.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">||</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <a class="indexterm" name="slick-c_mathoperators_4EAA1475_657A"></a>Logical OR. If left hand expression is true, right-hand expression is not evaluated.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">| </strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <a class="indexterm" name="slick-c_mathoperators_2C19ACC6_E81A"></a>Bitwise OR.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">^</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <a class="indexterm" name="slick-c_mathoperators_9DDAC732_9DE1"></a>Bitwise XOR.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">&amp;</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <a class="indexterm" name="slick-c_mathoperators_3E747854_6FE7"></a>Bitwise AND.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">==</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Equal. Performs a numeric or string comparison depending on the operands. This function is NOT identical to the C <span><strong class="command">strcmp</strong></span> function (see <span><strong class="command">:==</strong></span> operator below). If both operands are numbers, a numeric comparison is performed. Otherwise a string comparison is performed. In any case, leading and trailing spaces and tabs are stripped before the comparison is performed.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">&gt;</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Greater than. Performs a numeric or string comparison depending on the operands. See <span><strong class="command">==</strong></span> operator.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">&gt;=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Greater than or equal. Performs a numeric or string comparison depending on the operands. See <span><strong class="command">==</strong></span> operator.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">&lt; </strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Less than. Performs a numeric or string comparison depending on the operands. See <span><strong class="command">==</strong></span> operator.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">&lt;=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Less than or equal. Performs a numeric or string comparison depending on the operands. See <span><strong class="command">==</strong></span> operator.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">!=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Not equal. Performs a numeric or string comparison depending on the operands. See <span><strong class="command">==</strong></span> operator.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">:==</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Exactly equal. Always performs string comparison. This is equivalent to the C expression: <span><strong class="command">(strcmp(a,b)==0)</strong></span></p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">:!=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Not exactly equal. Always performs string comparison.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">:&lt;=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Exactly less than or equal. Always performs string comparison.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">:&lt;</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Exactly less than. Always performs string comparison.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">:&gt;=</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Exactly greater than or equal. Always performs string comparison.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">:&gt;</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Exactly greater than. Always performs string comparison.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">instanceof </p>
+          </td><td>
+            <p class="CellBody">Can be used to test if a class instance derives from a specific class or interface. It can be used in two ways: <span class="emphasis"><em>x</em></span><span><strong class="command"> instanceof MYCLASS</strong></span>, or 
+	<span class="emphasis"><em>x</em></span><span><strong class="command"> instanceof "MYCLASS"</strong></span>. <span><strong class="command">"MYCLASS"</strong></span> does not need to be a constant string, and <span class="emphasis"><em>x</em></span> may be a typeless container variable. Slick-C's <span><strong class="command">instanceof</strong></span> is slightly more powerful than Java's, since the right operand can be a string value rather than just a class name. Otherwise, it is essentially the same concept.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">:+</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <a class="indexterm" name="slick-c_mathoperators_3C3E18D3_9CF8"></a>
+              <a class="indexterm" name="slick-c_mathoperators_9205A50E_F9C6"></a>Concatenation.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">:+= </p>
+          </td><td>
+            <p class="CellBody">Append right operand (string) to the end of the left operand (string) and assign to the left operand.  This is similar to the built-in <span><strong class="command">strappend()</strong></span> function, but more convenient to use.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">&lt;&lt;</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Bitwise shift left.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">&gt;&gt;</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Bitwise shift right.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">+ </strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Addition.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Subtraction.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">/</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Division with possible floating point result.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">intdiv</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Division with integer result.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">*</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Multiplication.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">%</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Modulo (integer remainder).</p>
+          </td></tr></tbody></table></div><p class="NormalText">Two sets of comparison operators exist. The operators <span><strong class="command">&lt;</strong></span>, <span><strong class="command">&gt;</strong></span>, <span><strong class="command">=</strong></span>, <span><strong class="command">!=</strong></span>, <span><strong class="command">&lt;=</strong></span>, and <span><strong class="command">&gt;=</strong></span> perform a numeric comparison if both string expressions are valid numbers. The operators <span><strong class="command">:&lt;</strong></span>, <span><strong class="command">:&gt;</strong></span>, <span><strong class="command">:==</strong></span>, <span><strong class="command">:!=</strong></span>, <span><strong class="command">:&lt;=</strong></span>, and <span><strong class="command">:&gt;=</strong></span> always perform a string comparison. </p><p class="NormalText">Select the appropriate comparison operator for performing a string or numeric comparison. Expressions may extend across line boundaries if the line ends in a binary operator or if the line ends with a backslash.</p><p class="NormalText">The table below shows examples of math operators in Slick-C. </p><div class="informaltable"><a name="table_59652fb3-c990-43e3-bab6-100b740914fc"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+            <p class="CellHeading">Example</p>
+          </th><th>
+            <p class="CellHeading">Operator</p>
+          </th></tr></thead><tbody><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">(1.0==1)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">== true</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">(1e2==100)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">== true</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">(1e2:==100)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">== false</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">("  abc  "=="abc")</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">== true</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">("  abc  ":=="abc")</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">== false</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">("  abc  ":!="abc")</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">== true</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">("  1    "==1)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">== true</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">("  1    ":==1)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">== false</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">("abc":&lt;"def")</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">== true</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">1   2</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">:=="12"</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">1 ( 2)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">:=="12"</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">pow(4,2)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">==16</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">5%2</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">==1</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">5/2</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">==2</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">5/2.0</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">==2.5</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">5 intdiv 2.0</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">==2</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">5&amp;2</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">==0</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">5|2</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">==7</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">(10&lt;7)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">== false</strong></span>
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">(10:&lt;7)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span><strong class="command">== true</strong></span>
+            </p>
+          </td></tr></tbody></table></div><p class="NormalText"></p></div></body></html>

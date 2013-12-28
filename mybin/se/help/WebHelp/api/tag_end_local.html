@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_end_local</title>
+</head>
+<body>
+
+<h3><b>int tag_end_local(int context_id, int end_line_no, int end_seekpos)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Set the end positions of the local with the given local ID.
+<p>
+For synchronization, macros should perform a tag_lock_context(true)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="local_id">local_id</A></code> - Local ID [ from 1 to <a href="tag_get_num_of_locals.html">tag_get_num_of_locals</a>() ] of
+                        local tag to set end position of.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="end_line_no">end_line_no</A></code> - ending line number of tag within file</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="end_seekpos">end_seekpos</A></code> - seek position where the tag ends.  Technically, this is the
+                        seek position of the last character in the tag.  Using a
+                        C local variable, "int a;" for example, this is the seek
+                        position of the of the semicolon.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_insert_local.html">tag_insert_local</a>, <a href="tag_insert_local2.html">tag_insert_local2</a></blockquote>
+</body>
+</html>

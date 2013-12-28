@@ -1,0 +1,119 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_message_box</title>
+</head>
+<body>
+
+<h3><b>_str _message_box(_str string, _str title="SlickEdit", int mb_flags=MB_OK | MB_ICONEXCLAMATION, int default_button=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Creates a modal dialog box and displays <i>string</i> message and various
+buttons.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="string">string</A></code> - may contain carriage return characters to break a
+                string message into multiple lines.  By default, <i>string</i> is broken into
+                multiple lines on word boundaries if necessary.  The title of the dialog box
+                is set to <i>title</i> if given.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="title">title</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mb_flags">mb_flags</A></code> - is a combination of zero or more ID
+                button flags and MB_* flags:
+
+                <p>Note: The MB_OK, MB_OKCANCEL, MB_ABORTRETRYIGNORE,
+                MB_YESNOCANCEL, MB_RETRYCANCEL are combinations of the ID
+                button flags (ex. MB_OKCANCEL is IDOK|IDCANCEL)
+                <dl>
+                <dt>IDOK</dt><dd>Display an OK button</dd>
+                <dt>IDSAVE</dt><dd>Display a Save button</dd>
+                <dt>IDSAVEALL</dt><dd>Display a Save All button</dd>
+                <dt>IDOPEN</dt><dd>Display an Open button</dd>
+                <dt>IDYES</dt><dd>Display a Yes button</dd>
+                <dt>IDYESTOALL</dt><dd>Display a Yes to All button</dd>
+                <dt>IDNO</dt><dd>Display a No button</dd>
+                <dt>IDNOTOALL</dt><dd>Display a No to All button</dd>
+                <dt>IDABORT</dt><dd>Display an Abort button</dd>
+                <dt>IDRETRY</dt><dd>Display a Retry button</dd>
+                <dt>IDIGNORE</dt><dd>Display an Ignore button</dd>
+                <dt>IDCLOSE</dt><dd>Display a Close button</dd>
+                <dt>IDCANCEL</dt><dd>Display a Cancel button</dd>
+                <dt>IDDISCARD</dt><dd>Display a Discard button</dd>
+                <dt>IDHELP</dt><dd>Display a Help button</dd>
+                <dt>IDAPPLY</dt><dd>Display an Apply button</dd>
+                <dt>IDRESET</dt><dd>Display a Reset button</dd>
+                <dt>IDRESTOREDEFAULTS</dt><dd>Display Restore
+                Defaults button</dd>
+                <dt>MB_OK</dt><dd>Display an OK button.</dd>
+                <dt>MB_OKCANCEL</dt><dd>Display an OK and Cancel button.</dd>
+                <dt>MB_ABORTRETRYIGNORE</dt><dd>Display  Abort, Retry, Ignore buttons.
+                Not supported on UNIX.</dd>
+                <dt>MB_YESNOCANCEL</dt><dd> Display Yes, No, and Cancel buttons.</dd>
+                <dt>MB_YESNO</dt><dd>Display Yes, and No buttons.</dd>
+                <dt>MB_RETRYCANCEL</dt><dd>Display a Retry and Cancel button.
+                Not supported on UNIX.</dd>
+                <dt>MB_ICONHAND</dt><dd>Display a stop sign picture to the left of the message.</dd>
+                <dt>MB_ICONQUESTION</dt><dd>Display a question picture to the left of the
+                message.</dd>
+                <dt>MB_ICONEXCLAMATION</dt><dd>Display an exclamation point picture to the
+                left of the message.</dd>
+                <dt>MB_ICONINFORMATION</dt><dd>Display an 'i' picture to the left of the message.</dd>
+                <dt>MB_ICONSTOP</dt><dd>Display a stop sign picture to the left of the message.</dd>
+                </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="default_button">default_button</A></code> - If specified, determines which of the
+                       buttons is the default button. One of
+                       the following button constants:
+
+        <ul>
+        <li>IDOK</li>
+        <li>IDSAVE</li>
+        <li>IDSAVEALL</li>
+        <li>IDOPEN</li>
+        <li>IDYES</li>
+        <li>IDYESTOALL</li>
+        <li>IDNO</li>
+        <li>IDNOTOALL</li>
+        <li>IDABORT</li>
+        <li>IDRETRY</li>
+        <li>IDIGNORE</li>
+        <li>IDCLOSE</li>
+        <li>IDCANCEL</li>
+        <li>IDDISCARD</li>
+        <li>IDHELP</li>
+        <li>IDAPPLY</li>
+        <li>IDRESET</li>
+        <li>IDRESTOREDEFAULTS</li>
+        </ul>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the button id of the button pressed which closed the
+        dialog box.  One of the following constants is returned:
+
+<ul>
+<li>IDOK</li>
+<li>IDSAVE</li>
+<li>IDSAVEALL</li>
+<li>IDOPEN</li>
+<li>IDYES</li>
+<li>IDYESTOALL</li>
+<li>IDNO</li>
+<li>IDNOTOALL</li>
+<li>IDABORT</li>
+<li>IDRETRY</li>
+<li>IDIGNORE</li>
+<li>IDCLOSE</li>
+<li>IDCANCEL</li>
+<li>IDDISCARD</li>
+<li>IDHELP</li>
+<li>IDAPPLY</li>
+<li>IDRESET</li>
+<li>IDRESTOREDEFAULTS</li>
+</ul></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+result=_message_box("Save changes?", '', MB_YESNO|MB_ICONQUESTION);
+if (result==IDYES) {
+    // save the file
+} else {
+    // Don't save it
+}
+// Same as above but using ID button flags instead of MB_OK.
+// Also change the default button
+result=_message_box("Save changes?", '', IDYES|IDNO|MB_ICONQUESTION,IDNO);
+if (result==IDYES) {
+    // save the file
+} else {
+    // Don't save it
+}
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="sticky_message.html">sticky_message</a>, <a href="message.html">message</a></blockquote>
+</body>
+</html>

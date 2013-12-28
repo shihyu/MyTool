@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_default_font</title>
+</head>
+<body>
+
+<h3><b>_str _default_font(int fieldnum, _str font="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Gets and optionally sets an editor default font.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="fieldnum">fieldnum</A></code> - is one of the following constants defined in "slick.sh":
+<UL>
+   <LI>CFG_CMDLINE
+   <LI>CFG_MESSAGE
+   <LI>CFG_STATUS
+   <LI>CFG_WINDOW_TEXT
+</UL></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="font">font</A></code> - is a string in the format: <i>font_name</i>, <i>font_size</i>, <i>font_flags</i></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="font_size">font_size</A></code> - is a font point size.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="font_flags">font_flags</A></code> - is a combination of the following flags defined in "slick.sh":
+<UL>
+   <LI>F_BOLD
+   <LI>F_ITALIC
+   <LI>F_STRIKE_THRU
+   <LI>F_UNDERLINE
+</UL></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the current font string value in the same format as the <i>font</i> argument.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// Set the default command line.
+font="Courier,10,"(F_BOLD|F_ITALIC)
+_default_font(CFG_CMDLINE, font);
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

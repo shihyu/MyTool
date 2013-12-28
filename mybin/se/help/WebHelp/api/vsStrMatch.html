@@ -1,0 +1,65 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsStrMatch</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsStrMatch(const char *pSearchFor, size_t SearchForLen, const char *pBuf, size_t BufLen, int start, int SearchFlags, int direction, str_match_t *match_p=0, size_t *ppos=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Thread-safe alternative to vsStrPos/vsStrLastPos.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pSearchFor">pSearchFor</A></code> - String to search for.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="SearchForLen">SearchForLen</A></code> - Number of bytes in <i>pSearchFor</i>.
+You can specify -1 if pSearchFor is NULL
+terminated.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pBuf">pBuf</A></code> - Buffer to search in.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="BufLen">BufLen</A></code> - Number of bytes in <i>pBuf</i>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="start">start</A></code> - Character position to start searching from
+1..<i>BufLen</i>.  Specify 1 to start search
+from firstcharacter.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="SearchFlags">SearchFlags</A></code> - One or more of the following flags:
+
+<dl>
+<dt>VSSTRPOSFLAG_IGNORE_CASE</dt><dd>
+ Case insensitive search.</dd>
+<dt>VSSTRPOSFLAG_RE</dt><dd>
+ SlickEdit regular expression search.  See
+<b>SlickEdit Regular Expressions</b>.</dd>
+<dt>VSSTRPOSFLAG_WORD</dt><dd>
+ Reserved for future used.</dd>
+<dt>VSSTRPOSFLAG_UNIXRE</dt><dd>
+ UNIX regular expression search.  See
+<b>UNIX Regular Expressions</b>.</dd>
+<dt>VSSTRPOSFLAG_BINARY</dt><dd>
+ Binary search.  This allows start positions in
+the middle of a DBCS or UTF-8 character.
+This option is useful when editing binary
+files (in SBCS/DBCS mode) which may
+contain characters which look like DBCS
+but are not.  For example, if you search for
+the character 'a', it will not be found as the
+second character of a DBCS sequence unless
+this option is specified.</dd>
+<dt>VSSTRPOSFLAG_ACP </dt><dd>
+ Specifies that pSearchFor and pBuf contain
+active code page data and that an
+SBCS/DBCS mode search should be
+performed.  This flag is ignored if Unicode
+support is not active. </dd>
+<dt>VSSTRPOSFLAG_BRIEFRE</dt><dd>
+ Brief regular expression search.  See
+<b>Brief Regular Expressions</b>.</dd>
+<dt>VSSTRPOSFLAG_WILDCARDS</dt><dd>
+ Wildcards expression search.
+ See <b>Wildcard Expressions</b>.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="direction">direction</A></code> - Search forward or backward (direction==1 for
+                 forward, else backward).
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="match_p">match_p</A></code> - (OPTIONAL) Store match length, start, and
+                regex match groups.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Searches specified direction from start position
+specified for string given.  If string is found, the position
+of the string found is returned.  First character of string
+is 1. Returns 0 if the string is not found.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="String_Functions.html">String Functions</a></blockquote>
+</body>
+</html>

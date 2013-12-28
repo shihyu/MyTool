@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tags_filenamea</title>
+</head>
+<body>
+
+<h3><b>STRARRAY tags_filenamea(_str ext="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Return the array tag files associated with the given (optional) extension.
+If the extension given is the empty string, and the current object is an
+editor control, get the extension from the p_LangId property.
+If the current object is not an editor control, retrieve all tag files
+and project tag files, reguarless of extension relationship.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ext">ext</A></code> - (optional) file extension (language) to get tags for
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>STRARRAY</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">array of strings containing each tag file path.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+typeless tag_files = tags_filenamea();
+int i=0;
+for(;;) {
+   _str tf = next_tag_filea(tag_files,i,false,true);
+   if (tf=='') break;
+   messageNwait("tag file: "tf);
+}
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tags_filename.html">tags_filename</a>, <a href="next_tag_filea.html">next_tag_filea</a></blockquote>
+</body>
+</html>

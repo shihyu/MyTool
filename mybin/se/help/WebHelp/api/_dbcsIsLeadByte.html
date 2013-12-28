@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_dbcsIsLeadByte</title>
+</head>
+<body>
+
+<h3><b>boolean _dbcsIsLeadByte(_str ch)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>boolean</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns <b>true</b> if the 1 byte length string <i>ch</i> is a
+valid first character of a double byte character (DBCS).  Always return
+<b>false</b>, if the operating system is not in Japanese mode.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+        // IF there are at least two bytes left in the current line and the first byte is
+        // a dbcs lead byte.
+        if (<b>p_col</b><<b>_text_colc</b>() && _dbcsIsLeadByte(get_text())) {
+             p_col+=2;  // Move cursor over double byte character
+        } else {
+             p_col+=1;  // Move cursor over single byte character
+        }
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="String_Functions.html">String Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_dbcs.html">_dbcs</a>, <a href="_dbcsStartOfDBCS.html">_dbcsStartOfDBCS</a>, <a href="_dbcsSubstr.html">_dbcsSubstr</a></blockquote>
+</body>
+</html>

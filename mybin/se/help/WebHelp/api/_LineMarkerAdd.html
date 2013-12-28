@@ -1,0 +1,59 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_LineMarkerAdd</title>
+</head>
+<body>
+
+<h3><b>int _LineMarkerAdd(int wid, int RealLineNum, boolean isRealLineNum, int NofLines, int BMIndex, int type, _str Message)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Adds a new line marker.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="RealLineNum">RealLineNum</A></code> - Line number or real line number (not
+counting no save lines).
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="isRealLineNum">isRealLineNum</A></code> - Indicates whether <i>RealLineNum</i> is a
+real line number or not.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NofLines">NofLines</A></code> - Number of lines in this item.  Specify zero if
+the marker type you are using does not have the
+VSMARKERTYPEFLAG_DRAW_BOX flag set.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="BMIndex">BMIndex</A></code> - Bitmap to display at the line specified.
+Specify 0 for no bitmap.  The following are
+names of bitmaps used for debugging:
+
+<dl>
+<dt>_breakpt.bmp</dt><dd>Indicates a line with an enabled breakpoint.</dd>
+<dt>_breakpn.bmp</dt><dd>Indicates a line with a disabled breakpoint.</dd>
+<dt>_execpt.bmp</dt><dd>Indicates current execution line.</dd>
+<dt>_stackex.bmp</dt><dd>Indicates a line on the execution call stack.</dd>
+<dt>_watchpt.bmp</dt><dd>Indicates a line with an enabled watchpoint.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type">type</A></code> - Type allocated by
+<b>_MarkerTypeAlloc</b>().
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Message">Message</A></code> - HTML message displayed when mouse is
+over bitmap.  Only a subset of HTML
+supported by our mini-HTML control is
+supported.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns index of new line marker.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// Add debug bitmap to give the visual effect of a
+// break point.
+int type=_MarkerTypeAlloc();
+int LineMarkerIndex=_LineMarkerAdd(p_window_id,p_line,
+      0,4, find_index("_breakpt.bmp", PICTURE_TYPE),
+      type,"");
+
+// Add a line marker which draws a box
+int type=_MarkerTypeAlloc();
+int LineMarkerIndex=_LineMarkerAdd(p_window_id,p_line,
+      0,4,find_index('_edplus.bmp',PICTURE_TYPE),
+      type,"line 1<br>line2");
+_LineMarkerSetMousePointer(LineMarkerIndex,MP_CROSS);
+_LineMarkerSetStyleColor(LineMarkerIndex,0xff0000);
+_MarkerTypeSetFlags(type,VSMARKERTYPEFLAG_DRAW_BOX|VSMARKERTYPEFLAG_AUTO_
+REMOVE);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Marker_Functions.html">Marker Functions</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,103 @@
+
+/**
+ * The !DOCTYPE element sets the root document element and
+ * specifies where to find the DTD.
+ * <pre>
+ * Syntax:
+ *   &lt;!DOCTYPE <i>rootElement</i> SYSTEM "<i>URI</i>" &gt;
+ *                  OR
+ *   &lt;!DOCTYPE <i>rootElement</i> PUBLIC "<i>URI</i>" "<i>URI</i>" &gt;
+ *                  OR
+ *   &lt;!DOCTYPE <i>rootElement</i> [<i>DTD_text</i>] &gt;
+ * </pre>
+ * <p>You may also combine the SYSTEM or PUBLIC specification with
+ * the inline form ([DTD_text]) but the SYSTEM or PUBLIC specification must
+ * be first.
+ *
+ * @example 
+ * <PRE>
+ * &lt;!DOCTYPE document SYSTEM "latin1.dtd" [
+ *   &lt;!ELEMENT document (#PCDATA) &gt;
+ * ]&gt;
+ * &lt;!DOCTYPE document SYSTEM "latin1.dtd"&gt;
+ * &lt;!DOCTYPE document SYSTEM "file:///c:/temp/latin1.dtd"&gt;
+ * &lt;!DOCTYPE document PUBLIC "ISO 8879-1986//Added Latin 1//XML"
+ *      "latin1.dtd">
+ * &gt;
+ * &lt;!DOCTYPE document [
+ *   &lt;!ELEMENT document (#PCDATA) &gt;
+ * ]&gt;
+ * </PRE>
+ */
+tag "!DOCTYPE" (empty) {
+
+}
+
+/**
+ * XML comment
+ */
+tag "!--" (empty) {
+}
+
+const lt;  // Less than symbol
+const gt;  // Greater than symbol
+const amp; // Ampersand
+const quot; // Double quote symbol
+const apos; // Single quote symbol
+
+tag "?xml-stylesheet" (empty) {
+   /**
+    * Selects the type of style sheet
+    */
+   attr type {
+      "text/css"
+   }
+   /**
+    * This attribute specifies the location of a Web resource for the style
+    * sheet
+    */
+   attr href;
+}
+
+
+tag "?xml" (empty) {
+   /**
+    * Specifies the version of this XML document
+    * 
+    */
+   attr version {
+      "1.0"
+   }
+   attr encoding {
+      "UTF-8"
+      "UTF-16"
+      "ISO-10646-UCS-2"
+      "ISO-10646-UCS-4" 
+      "ISO-8859-"
+      "ISO-8859-1"
+      "ISO-8859-2"
+      "ISO-8859-3"
+      "ISO-8859-4"
+      "ISO-8859-5"
+      "ISO-8859-6"
+      "ISO-8859-7"
+      "ISO-8859-8"
+      "ISO-8859-9"
+      "ISO-8859-10"
+      "ISO-2022-JP"
+      "Shift_JIS"
+      "EUC-JP"
+      "windows-1252"
+   }
+   /**
+    * This attribute specifies the location of a Web resource for the style
+    * sheet
+    */
+   attr standalone {
+      "yes"
+      "no"
+   }
+}
+
+tag "![CDATA[" (empty) {
+}

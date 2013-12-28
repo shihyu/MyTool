@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsPropGetB</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsPropGetB(int wid, int prop_id, void *pBuf, int BufLen, int *pBufLen=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Copies string value of property into <i>pBuf</i>.  No more than
+<i>BufLen</i> bytes are copied.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of object or index to resource
+returned by <b>vsFindIndex</b>,
+<b>vsNameMatch</b>,
+<B>VSP_CHILD</B>, or
+<B>VSP_NEXT</B>.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="prop_id">prop_id</A></code> - One of the VSP_??? constants in "vs.h".
+<i>pBuf</i>  Output buffer for string value.  Buffer is not
+null terminated.  This can be 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="BufLen">BufLen</A></code> - Number of bytes allocated to <i>pBuf</i>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pBufLen">pBufLen</A></code> - If this is not 0, this is set to the number of
+characters you need to allocate to
+<i>pBuf</i>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns number of bytes copied
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+     int len;
+     char bufname[100];
+
+     len=vsPropGetB(0,VSP_BUFNAME,bufname,100);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">All Window Objects
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsPropGetB.html">vsPropGetB</a>, <a href="vsPropGetZ.html">vsPropGetZ</a>, <a href="vsPropSetZ.html">vsPropSetZ</a>, <a href="vsPropSetB.html">vsPropSetB</a>, <a href="vsPropGetI.html">vsPropGetI</a>, <a href="vsPropGetI64.html">vsPropGetI64</a>, <a href="vsPropSetI.html">vsPropSetI</a>, <a href="vsPropSetI64.html">vsPropSetI64</a>, <a href="vsPropGetL.html">vsPropGetL</a>, <a href="vsPropSetL.html">vsPropSetL</a></blockquote>
+</body>
+</html>

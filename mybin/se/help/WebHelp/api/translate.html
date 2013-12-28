@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>translate</title>
+</head>
+<body>
+
+<h3><b>_str translate(_str string, _str output_table, _str input_table, _str pad="", int compliment=0, boolean binary=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="string">string</A></code> - Input string</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="output_table">output_table</A></code> - table of characters to replace matches with</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="input_table">input_table</A></code> - table of characters to look for</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pad">pad</A></code> - pad character if length(output_table) < length(input_table)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="compliment">compliment</A></code> - Replace char with 'pad' character if it matches input table</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="binary">binary</A></code> - When true, input string is treated as an
+                       array of bytes (dbcs or utf8 characters are not
+                       special).
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns string with characters translated according to tables.
+Characters that are in the input_table are translated to the
+corresponding character in the output table.  If the length of
+input_table is greater than the length of output_table, output_table is
+padded with the pad character given.  Pad character defaults to ''.
+If output_table is not given, string is converted to upper case.
+<p>
+If 'compliment' is given and not zero, characters matching the
+input table will be preserved, and all *other* characters will
+be replaced with the pad character.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+   translate('bottom_of_window','-','_')  =='bottom-of-window'
+   translate('bottom_of_window','','_','*')  =='bottom*of*window'
+   translate('bottom_of_window') =='BOTTOM_OF_WINDOW'
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="String_Functions.html">String Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="stranslate.html">stranslate</a></blockquote>
+</body>
+</html>

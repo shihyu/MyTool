@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsRefactorCExtractMethod</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsRefactorCExtractMethod(int handle, const char *filename, const char *symbolName, int &createMethodCall, seSeekPos startSeekPos, seSeekPos endSeekPos, char *returnType, int returnTypeMaxLength, char *paramInfo, int paramInfoMaxLength, int flags, int syntaxIndent)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Analyze what is necessary to do in order to extract the code between
+'startSeekPos' and 'endSeekPos' into a separate function and replace
+the code with a call to the mew function.
+<p>
+Each line of parameter inforomation is a string of the form:
+<pre>
+   name [tab] return_type [tab] reference [tab] required [newline]
+</pre>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="handle">handle</A></code> - Handle to transaction</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filename">filename</A></code> - Filename to find symbol in</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="symbolName">symbolName</A></code> - Name of symbol to extract method from</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="createMethodCall">createMethodCall</A></code> - [output] < 0 if there is a problem creating a function call, 0 otherwise</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="startSeekPos">startSeekPos</A></code> - Seek position to begin extraction at</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="endSeekPos">endSeekPos</A></code> - Seek position to end extraction at</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="returnType">returnType</A></code> - [output] set to return type of function</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="returnTypeMaxLength">returnTypeMaxLength</A></code> - number of bytes allocated to returnType</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="paramInfo">paramInfo</A></code> - [output] set to list of function parameters</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="paramInfoMaxLength">paramInfoMaxLength</A></code> - number of bytes allocated to paramInfo</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flags">flags</A></code> - Optional flags, bitset of VSREFACTOR_FORMAT_* (above)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="syntaxIndent">syntaxIndent</A></code> - Syntax indent amount
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+        If paramInfoLen is not long enough, this method will return
+        INSUFFICIENT_MEMORY_RC, you should allocate at least 4K to paramInfoLen.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Refactoring_Functions.html">Refactoring Functions</a></blockquote>
+</body>
+</html>

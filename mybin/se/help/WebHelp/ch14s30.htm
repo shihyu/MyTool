@@ -1,0 +1,106 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Unicode and SBCS or DBCS Macro Programming</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s29.htm" title="Writing Selection Filters"><link rel="next" href="ch14s31.htm" title="Shelling Programs from a Slick-C® Macro"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_unicodeandsbcs_12908_75677"></a>
+    <a name="slick_c_unicodeandsbcs_12908_1006023"></a>Unicode and SBCS or DBCS Macro Programming</h2></div></div></div><p class="NormalText">The following information applies for Unicode users only. When the code editor is running in UTF-8 mode (by default, <code class="filename">vs.exe</code> for Windows runs in this mode), buffers can contain either SBCS/DBCS data or UTF-8 data depending on how a buffer is loaded. To make it easier for macros to support these two buffer data formats, almost all macro functions accept and return UTF-8 strings. This allows most macros to automatically work. Macros that use or set column positions often do not work correctly for both buffer data formats. The solution is to call raw functions.</p><p class="NormalText">Example:</p><pre class="programlisting">    // This will not work if the current buffer is an SBCS/DBCS buffer,
+    // word is a UTF-8 string (that this example assumes), and word
+    // contains characters above 127.
+    p_col=p_col+length(word);
+    // This will work.
+    p_col=p_col+_rawLength(word);
+    // This works too.
+    word=_rawText(word);
+    p_col=p_col+length(word);</pre><p class="NormalText">Example:</p><pre class="programlisting">    // This will not work if the current buffer is an SBCS/DBCS buffer and
+    // the current line contains characters above 127.
+    get_line(line);
+ 
+    string=expand_tabs(line,p_col);
+    // This works.
+    get_line_raw(line);
+ 
+    string=expand_tabs(line,p_col);
+    // This works too, but is less efficient if all operations on line
+    // can support raw data.
+    get_line(line);
+    string=expand_tabs(_rawText(line),p_col);</pre><p class="NormalText">The <span><strong class="command">_UTF8()</strong></span> macro function indicates if the code editor is in UTF-8 mode. The <span><strong class="command">p_UTF8</strong></span> property tells you whether the current buffer contains UTF-8 data. The <span><strong class="command">p_encoding</strong></span> property indicates what format the buffer will be saved in by default.</p><p class="NormalText">Like typical programming languages (Java, C++), Slick-C® source files are code page dependant. Strings are converted from the current code page to UTF-8. This is important if you enter characters above 127. All of the macro functions and properties accept and return UTF-8. The Slick-C functions in the table below DO NOT accept or return UTF-8 data.</p><div class="informaltable"><a name="table_6d5c48d5-458a-4554-9ef4-c821d08a342e"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+            <p class="CellHeading">
+              <span class="bold"><strong>Function</strong></span>
+            </p>
+          </th><th>
+            <p class="CellHeading">
+              <span class="bold"><strong>Definition</strong></span>
+            </p>
+          </th></tr></thead><tbody><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_default_option(VSOPTIONZ_SPECIAL_CHAR_XLAT_TAB)</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">All other options for this function are UTF-8.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">All seek functions:<span><strong class="command"> goto_point()</strong></span>,<span><strong class="command"> _QROffset()</strong></span>, <span><strong class="command">_GoToROffset</strong></span>, <span><strong class="command">_nrseek()</strong></span>, <span><strong class="command">point()</strong></span>, and <span><strong class="command">seek()</strong></span></p>
+          </td><td>
+            <p class="CellBody">All seeking is done on raw data. Buffers need to be loaded in the same raw format so that seek functions work.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">All <span><strong class="command">_rawXXX()</strong></span> or <span><strong class="command">XXX_raw()</strong></span> functions</p>
+          </td><td>
+            <p class="CellBody">Unlike the C API, the Slick-C functions <span><strong class="command">get_text()</strong></span> and <span><strong class="command">_expand_tabsc()</strong></span> return UTF-8 data. </p>
+          </td></tr></tbody></table></div><p class="NormalText">The <span><strong class="command">p_display_xlat</strong></span> Slick-C property DOES NOT accept or return UTF-8 data.</p><p class="NormalText">The following are the Slick-C raw functions:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <span><strong class="command">_expand_tabsc_raw()</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">get_line_raw()</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">get_text_raw()</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">insert_line_raw()</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_insert_text_raw()</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">replace_line_raw()</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_rawLength()</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_rawSubstr()</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_rawText()</strong></span>
+      </p></li></ul></div><p class="NormalText">The table below shows the raw functions that optionally support raw data.  </p><div class="informaltable"><a name="table_fbd59df1-852c-426c-ac24-a3d1516ca962"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+            <p class="CellHeading">Function</p>
+          </th><th>
+            <p class="CellHeading">Description</p>
+          </th></tr></thead><tbody><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">pos()</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">When <span><strong class="command">p_rawpos</strong></span> appended to <span class="emphasis"><em>options</em></span> argument.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">lastpos()</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">When <span><strong class="command">p_rawpos</strong></span> appended to <span class="emphasis"><em>options</em></span> argument.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">upcase()</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">When <span><strong class="command">p_UTF8</strong></span> property given as second argument.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">lowcase()</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">When <span><strong class="command">p_UTF8</strong></span> property given as second argument.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">parse</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">When <span><strong class="command">p_rawpos</strong></span> appended to <span class="emphasis"><em>options</em></span> of search argument.</p>
+          </td></tr></tbody></table></div><p class="NormalText">The following are the Slick-C new UTF-8 functions: </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <span><strong class="command">_MultiByteToUTF8()</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_UTF8()</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_UTF8Asc()</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_UTF8Chr()</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_UTF8ToMultiByte()</strong></span>
+      </p></li></ul></div><p class="NormalText">The following C API functions DO NOT accept or return UTF-8 data:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">The functions <span><strong class="command">vsGetText()</strong></span>, <span><strong class="command">vsGetRText()</strong></span>, <span><strong class="command">vsExpandTabsC()</strong></span>, <span><strong class="command">vsQSelectedTextLength()</strong></span>, <span><strong class="command">vsGetSelectedText()</strong></span> - These functions always return raw data. Use the <span><strong class="command">vsUTF8</strong></span><span><strong class="command">()</strong></span> function or check the <span><strong class="command">VSP_XLAT</strong></span> property to determine if you need to translate the buffer data. Since these API functions assume that the maximum buffer length is the same as the read length, it would be useless for these functions to return translated data.</p></li><li><p class="NormalText">All seek functions (<span><strong class="command">vsQOffset</strong></span>, <span><strong class="command">vsQROffset</strong></span>, <span><strong class="command">vsGoToPoint</strong></span>, and <span><strong class="command">vsGoToROffset</strong></span>) - All seeking is done on raw data. Since the Context Tagging® database stores seek positions, buffers need to be loaded in the same raw format so that seek works.</p></li><li><p class="NormalText">All <span><strong class="command">vsXXXRaw()</strong></span> functions.</p></li></ul></div><p class="NormalText"></p></div></body></html>

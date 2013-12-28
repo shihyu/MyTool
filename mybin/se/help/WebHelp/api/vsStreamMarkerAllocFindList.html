@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsStreamMarkerAllocFindList</title>
+</head>
+<body>
+
+<h3><b>int*VSAPI vsStreamMarkerAllocFindList(int wid, int *pNofItems, seSeekPos StartOffset, seSeekPos Length, seSeekPos SearchStartOffset=(seSeekPos) VSNULLSEEK, int type=0, int internalStartBlock=-1, seSeekPos internalStartBlockPos_l=(seSeekPos) 0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Lists stream markers
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+                 current object.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pNofItems">pNofItems</A></code> - (output only, optional) Set to number of items in list.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="StartOffset">StartOffset</A></code> - Stream markers that intersect with StartOffset,StartOffset+Length are listed.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Length">Length</A></code> - Stream markers that intersect with StartOffset,StartOffset+Length are listed.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="SearchStartOffset">SearchStartOffset</A></code> - For performance reasons, only Stream markers that start after
+                 SearchStartOffset are listed. By default, StartOffset-8000 is used.
+                 If performance is not a problem, you can
+                 specify 0. However, if there are 1 million stream markers, then each call
+                 requires 1 million stream markers to be checked and this can be SLOW.  This optimization works
+                 well since it is reasonable to assume that this is less than one stream marker
+                 per byte in the file.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type">type</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="internalStartBlockP1">internalStartBlockP1</A></code> - Editor block+1 or 0 to indicate
+    null.  This is offset by one for backward compatibility.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int*VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns list of stream markers indexes that intersect with StartOffset,StartOffset+Length.
+        -1 is appended to the end of the list to indicate the end of the list.  0 is returned if no matches are found.
+        Call vsFree to free the list.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Marker_Functions.html">Marker Functions</a></blockquote>
+</body>
+</html>

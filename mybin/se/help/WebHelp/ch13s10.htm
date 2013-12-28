@@ -1,0 +1,940 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Using the ISPF and XEDIT Emulations</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch13.htm" title="Chapter 13.  Appendix"><link rel="prev" href="ch13s09.htm" title="Editing the Key Binding Source"><link rel="next" href="ch13s11.htm" title="Menu Editing"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_usingispfandxedit_13644_28037"></a>
+    <a name="sect_usingispfandxedit_13644_998341"></a>
+    <a class="indexterm" name="sect_usingispfandxedit_833B408B_863C"></a>Using the ISPF and XEDIT Emulations</h2></div></div></div><p class="NormalText">This section describes the features of the ISPF editor emulation and outlines some XEDIT line commands.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingispfandxedit_13644_1002899"></a>
+      <a class="indexterm" name="sect_usingispfandxedit_2EED002D_A279"></a>ISPF Options</h3></div></div></div><p class="NormalText">The ISPF Emulation options screen is used to tune various ISPF emulation behaviors. To access these options, SlickEdit must be in ISPF emulation mode. Then, from the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options</strong></span>, expand <span><strong class="guilabel">Keyboard</strong></span>, and select <span><strong class="guilabel">ISPF Emulation</strong></span>. </p><div class="mediaobject"><img src="Resources/options_keyboard_ispf.png"></div><p class="NormalText">The following settings are available:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingispfandxedit_259C0959_A54E"></a>Prefix area width</strong></span> - The number of characters to display in the prefix 
+            area (default is <span class="bold"><strong>6</strong></span>). Note that some line commands require 
+            four characters (e.g. <span><strong class="command">BNDS</strong></span>, <span><strong class="command">TABS</strong></span>, 
+            <span><strong class="command">COLS</strong></span>, <span><strong class="command">MASK</strong></span>). To completely remove the prefix area, set 
+            the prefix area width to <span class="bold"><strong>0</strong></span>.</p></li><li><p class="NormalText"><span><strong class="guilabel">Display prefix area for readonly files</strong></span> - The 
+          prefix area is used to enter commands. By default, the prefix area is not displayed for 
+          read-only files since most of the commands cannot be used. When set to 
+          <span><strong class="guilabel">True</strong></span> the following line commands are allowed in read-only mode:</p><p class="NormalText"></p><div class="informaltable"><a name="table_91f3813d-20c7-4eef-8a7e-1d9e5b90b603"></a><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                  <p class="CellHeading">Command</p>
+                </td><td>
+                  <p class="CellHeading">Description</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">ISPF Line Labels</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Define a label.</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">ISPF Line Command BNDS	</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Insert a column boundary ruler line.</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">ISPF Line Command COLS</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Insert a column ruler line.</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">ISPF Line Command First</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Expose one or more lines at the beginning of a block of excluded lines.</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">ISPF Line Command Last</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Expose one or more lines at the beginning of a block of excluded lines.</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">ISPF Line Command Show</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Expose one or more lines having the leftmost indentation level in a block of excluded lines.</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">ISPF Line Command TABS	</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Displays the tab definition line.</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">ISPF Line Command Exclude</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Specifies one or more lines to be hidden (excluded).</p>
+                </td></tr><tr><td>
+                  <p class="CellBody">
+                    <span><strong class="command">ISPF Line Command Select</strong></span>
+                  </p>
+                </td><td>
+                  <p class="CellBody">Select a block of lines.</p>
+                </td></tr></tbody></table></div></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingispfandxedit_E3B69591_40F3"></a>Enter places cursor in prefix area</strong></span> - When this check box is selected, the <span><strong class="keycap">Enter</strong></span> key places the cursor in the prefix area of the next line. When this check box is cleared, the <span><strong class="keycap">Enter</strong></span> key places the cursor in column 1 of the next line.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingispfandxedit_6304A57B_C0ED"></a>Right CTRL = Enter/Send</strong></span> - When this check box is selected, the <span><strong class="keycap">Enter</strong></span> key places the cursor at the beginning of the next line, and the <span><strong class="keycap">Right Ctrl</strong></span> key is used to execute line commands. When this check box is cleared, the <span><strong class="keycap">Right Ctrl</strong></span> key acts like a normal control key and the <span><strong class="keycap">Enter</strong></span> key is used to execute line commands.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingispfandxedit_9EF8C71E_3E36"></a>Cursor page up/down</strong></span> - When this check box is selected, the display is scrolled up/down until the line the cursor is on becomes the last/first line displayed, respectively. If the cursor is already on the top/bottom display line, the display is scrolled one page. When this check box is cleared, page up/down always scrolls one page.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingispfandxedit_58FDF5AD_8CC3"></a>END command saves the file</strong></span> - When this check box is selected, changes to the buffer are saved automatically when the <span><strong class="command">ispf_end</strong></span> (<span><strong class="keycap">F3</strong></span>) command is performed. Otherwise, you will be prompted if you want to save changes before closing the file.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingispfandxedit_91B36D49_D367"></a>XEDIT line commands</strong></span> - When this check box is selected, the prefix area will support XEDIT-style line commands.</p></li><li><p class="NormalText">
+          <span><strong class="guilabel">
+            <a class="indexterm" name="sect_usingispfandxedit_F8A7CB80_1693"></a>Home places cursor on command line</strong></span> - When this check box is selected, the <span><strong class="keycap">Home</strong></span> key places the cursor on the command line. By default, this option is off, and the <span><strong class="keycap">Home</strong></span> key simply moves the cursor to the beginning of the line.</p></li></ul></div><p class="NormalText">More ISPF-related options are available on the language-specific <span><strong class="guilabel">General</strong></span> options screen (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">[Language Category] </strong></span> &#8594; <span><strong class="guimenuitem">[Language] </strong></span> &#8594; <span><strong class="guimenuitem">General</strong></span>). These options include <span><strong class="guilabel">Auto CAPS</strong></span> mode and editing of boundaries and the truncation column. The <span><strong class="guilabel"><a class="indexterm" name="sect_usingispfandxedit_7D35443C_8822"></a>Bounds</strong></span> setting is unique to ISPF. It controls column bounds for specific ISPF commands that operate on column ranges. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_24528">Language-Specific General Options</a> for more information.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingispfandxedit_13644_1002957"></a>ISPF Primary Commands</h3></div></div></div><p class="NormalText">The following table of standard ISPF primary commands are supported in the ISPF emulation mode. Primary commands are entered by placing the cursor on the command line (see <a href="ch13s12.htm#sect_emulationtables_12984_13576">ISPF Command Line and Text Box Editing</a> for details about command line editing features).</p><p class="NormalText">To place the cursor on the command line, either press the <span><strong class="keycap">Esc</strong></span> key, click on the message line, or use <span><strong class="command">ispf_retrieve</strong></span> (<span><strong class="keycap">F12</strong></span>). If configured to do so, the <span><strong class="keycap">Home</strong></span> key will also place the cursor on the command line. Once on the command line, you may use the cursor <span><strong class="keycap">Up</strong></span>/<span><strong class="keycap">Down</strong></span> keys to retrieve the previous/last command entered, respectively.</p><p class="NormalText">Though primary commands may be typed at the command line explicitly, for convenience you can simply type the last part of the command name in the command line and it will automatically be mapped to the ISPF-specific command. For example, to execute the ISPF <span><strong class="command">reset</strong></span> command, simply type <span><strong class="command">reset</strong></span> at the command line instead of <span><strong class="command">ispf_reset</strong></span>.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> Some standard built-in commands conflict with ISPF emulation commands. These conflicts include <span><strong class="command">copy</strong></span>, <span><strong class="command">cut</strong></span>, <span><strong class="command">delete</strong></span>, <span><strong class="command">find</strong></span>, <span><strong class="command">hex</strong></span>, <span><strong class="command">move</strong></span>, and <span><strong class="command">paste</strong></span>. To access the built-in command, you may be able to use a menu option or consult the Help for that command for specific instructions.</p></div><p class="NormalText"></p><div class="informaltable"><a name="table_06da49a2-5bec-41d9-ad14-e7fda4df48af"></a><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+              <p class="CellHeading">Command</p>
+            </td><td>
+              <p class="CellHeading">Description</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_autosave</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Turn on or off prompting to save changes.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_bounds</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Set or reset the left and right edit boundaries.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_bnds</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Set or reset the left and right edit boundaries</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_browse </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Browse a data set or member.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_cancel</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Closes the current file or PDS member without saving changes.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_caps</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Turn on or off automatic capitalization mode.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_change</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Replace one string with another within the current buffer.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_chg</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Replace one string with another within the current buffer.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_compare</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Compare the file you are editing with another file.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_copy</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Insert the contents of a file.  This command requires a full path, and will 
+              not work with only a PDS member name specified.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_create</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Create a new file or PDS member containing the contents of the buffer.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_cut</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Cut lines out of the current buffer and place them in the clipboard.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_delete</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Delete lines in the given line range, or the entire buffer.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_edit</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">This command is identical to the built-in <span><strong class="command">edit</strong></span> command.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_end</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Close the current file.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_exclude</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Hide (exclude) lines that match the given search string.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_find</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Find occurrences of the given search string in the current buffer.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_flip</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Reverse the exclude status of lines.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_hex </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Toggle display of the document in Hexadecimal mode.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_hilite</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Specify the use of color-coding in the editor. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_locate </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Find lines with a specific line prefix.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_move</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Move the contents of a file or PDS member into the buffer.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_nonumber</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Turn off numbering mode. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_number</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Controls line numbering mode. Unlike ISPF, this command does affect how lines are inserted.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_paste</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Copy lines from the clipboard to the buffer.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_preserve</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Controls saving of trailing blanks.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_rchange</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Repeat the change requested by the most recent change command.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_renumber</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Immediately update the line numbers in a file.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_replace</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Save the contents of the current buffer to an existing file.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_reset</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Reset the contents of the line prefix area.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_return</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Close the current file.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_rfind</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Repeat the last find operation requested.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_save</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">This command is identical to the built-in <span><strong class="command">save</strong></span> command.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_sort</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Sort lines of data in a specified order.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_submit </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Submit the contents of the current buffer for batch processing.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_swap </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Switch to the next buffer.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_tabs</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Define logical tab positions.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_unnumber </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Blank out the line numbers in a file.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ispf_undo </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">This command is identical to the <span><strong class="command">undo</strong></span> command.</p>
+            </td></tr></tbody></table></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_usingispfandxedit_13644_1003124"></a>ISPF Line Commands </h3></div></div></div><p class="NormalText">The table below shows ISPF edit line commands that are supported in the ISPF emulation mode.</p><p class="NormalText">Enter line commands by typing over the prefix area (on the left-hand side of the editor control) which contains either <span class="bold"><strong>======</strong></span> or the line number. To place the cursor in the prefix area, click there, or move the cursor left or backspace until the cursor in is in the prefix area. In addition, <span><strong class="keycap">Enter</strong></span> will place the cursor in the prefix area of the next line, unless an insert or text entry command is executed.</p><p class="NormalText">Edit line commands operate on either a single line or a block of lines. The commands that operate on blocks require you to place the command on both the first and last lines of the block.</p><p class="NormalText">Line commands are processed using the <span><strong class="command">ispf_do_lc</strong></span> command when you press <span><strong class="keycap">Enter</strong></span>, <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Enter</strong></span> or the <span><strong class="keycap">Right Control</strong></span> key, depending on your preferences. Several commands or line labels can be entered and then processed at one time. The <span><strong class="command">ispf_reset</strong></span> command is used to clear the prefix area. </p><div class="informaltable"><a name="table_df7e6abc-c186-4ba3-8408-b33357f51788"></a><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+              <p class="CellHeading">Command</p>
+            </td><td>
+              <p class="CellHeading">Description</p>
+            </td></tr><tr><td>
+              <p class="NormalText">
+                <span><strong class="command">ISPF Line Labels </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Define a label.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command Shift </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Shift data left or right.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="sect_usingispfandxedit_646A806A_0440"></a>ISPF Line Command A</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Identify a line after which lines are to be inserted.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="sect_usingispfandxedit_15D8D38A_A80B"></a>ISPF Line Command B</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Identify a line before which lines are to be inserted.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command BNDS</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Insert a column boundary ruler line.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command Copy S</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Specify lines to be copied to another location.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command COL</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Insert a column ruler line.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="sect_usingispfandxedit_460CED9A_7A8B"></a>ISPF Line Command Delete</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Delete one or more lines.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="sect_usingispfandxedit_AB954A58_17F5"></a>ISPF Line Command First</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Expose one or more lines at the beginning of a block of excluded lines.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line CommandI</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Insert one or more blank data entry lines.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command Lowercase </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Convert all uppercase letter alphabetic characters in one or more lines to lowercase.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command Last </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Expose one or more lines at the beginning of a block of excluded lines.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command Move</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Specify lines to be moved to another location.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command MASK </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Display the contents of the mask used with the insert (<span><strong class="command">I</strong></span>) and text entry (<span><strong class="command">TE</strong></span>) line commands.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command Make Data</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Convert one or more no-save lines to data so that they may be saved when the buffer is saved.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command Overlay</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Identify one or more lines over which the copy or move block is to be overlaid.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command Repeat </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Specify lines to be repeated immediately following this line or block.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command Show </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Expose one or more lines having the left-most indentation level in a block of excluded lines.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command TABS</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Display the tab definition line.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command TE</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Insert one or more blank lines to allow power typing for text entry.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command TF </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Reflow paragraphs according to the current column boundary settings.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command TJ </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Join this line with the next line.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="sect_usingispfandxedit_1FD114B6_5B7C"></a>ISPF Line Command TS</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Divide a line so that data can be added.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="sect_usingispfandxedit_2C20161A_BEE4"></a>ISPF Line Command Uppercase</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Convert all lowercase letter alphabetic characters in one or more lines to uppercase.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">
+                  <a class="indexterm" name="sect_usingispfandxedit_67115577_BA25"></a>ISPF Line Command Exclude </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Specify one or more lines to be hidden (excluded).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ISPF Line Command Select </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Select a block of lines.</p>
+            </td></tr></tbody></table></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingispfandxedit_13644_1003246"></a>ISPF Line Command Documentation</h4></div></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1014861"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_3AFDD344_C040"></a>ISPF Line Labels .label</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_4e45d890-717b-425a-bd9c-230eb2ec592e"></a>Usage</h6></div></div></div><p class="NormalText">
+            <span class="emphasis"><em>.label</em></span>, where <span class="emphasis"><em>label</em></span> does not start with a <span><strong class="keycap">z</strong></span></p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_a6b962f0-c9c4-4beb-b718-c2ae3b2a4a0d"></a>Remarks</h6></div></div></div><p class="NormalText">Define a label to be used as a marker to identify the given line. Labels are used to specify a particular line, such as in the <span><strong class="command">ispf_locate</strong></span> command, or to specify a range of lines for an primary command to operate on. The following labels are built in to the ISPF emulation:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">.zfirst</strong></span> - The first line in the buffer (abbreviated <span><strong class="command">.</strong></span><span><strong class="command">zf</strong></span>).</p></li><li><p class="NormalText">
+                <span><strong class="command">.zlast</strong></span> - The last line in the buffer (abbreviated <span><strong class="command">.zl</strong></span>).</p></li><li><p class="NormalText">
+                <span><strong class="command">.zcsr</strong></span> - The current line the cursor is on (abbreviated <span><strong class="command">.zc</strong></span>).</p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_4f09c4af-ed8c-4d73-bbf0-b24d4a0bdedf"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_change</strong></span>, <span><strong class="command">ispf_copy</strong></span>, <span><strong class="command">ispf_delete</strong></span>, <span><strong class="command">ispf_exclude</strong></span>, <span><strong class="command">ispf_find</strong></span>, <span><strong class="command">ispf_flip</strong></span>, <span><strong class="command">ispf_locate</strong></span>, <span><strong class="command">ispf_paste</strong></span>, <span><strong class="command">ispf_reset</strong></span>, <span><strong class="command">ispf_sort</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003268"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_3B94C2A7_EB6D"></a>ISPF Shift Lines Left or Right</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_e4913598-3756-4554-a9ff-30200ecc2ccf"></a>Usage </h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">( [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span>
+                <span><strong class="command"> - </strong></span>Shift the current line <span class="emphasis"><em>n</em></span> columns left, default <span class="bold"><strong>2</strong></span></p></li><li><p class="NormalText">
+                <span><strong class="command">(( [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span> - Shift the block of lines <span class="emphasis"><em>n</em></span> columns left, default <span class="bold"><strong>2</strong></span></p></li><li><p class="NormalText">
+                <span><strong class="command">) [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span> - Shift the current line <span class="emphasis"><em>n</em></span> columns right, default <span class="bold"><strong>2</strong></span></p></li><li><p class="NormalText">
+                <span><strong class="command">)) [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span> - Shift the block of lines <span class="emphasis"><em>n</em></span> columns right, default <span class="bold"><strong>2</strong></span></p></li><li><p class="NormalText">
+                <span><strong class="command">&lt; [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span> - Data shift the current line <span class="emphasis"><em>n</em></span> columns left, default <span class="bold"><strong>2</strong></span></p></li><li><p class="NormalText">
+                <span><strong class="command">&lt;&lt; [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span> - Data shift the block of lines <span class="emphasis"><em>n</em></span> columns left, default <span class="bold"><strong>2</strong></span></p></li><li><p class="NormalText">
+                <span><strong class="command">&gt; [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span> - Data shift the current line <span class="emphasis"><em>n</em></span> columns right, default <span class="bold"><strong>2</strong></span></p></li><li><p class="NormalText">
+                <span><strong class="command">&gt;&gt; [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span> - Data shift the block of lines <span class="emphasis"><em>n</em></span> columns right, default <span class="bold"><strong>2</strong></span></p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_4bca5528-2038-4b56-8412-a3b634fab67a"></a>Remarks </h6></div></div></div><p class="NormalText">This set of commands is used for shifting data left or right. The versions using parenthesis shift text literally, while the other versions attempt to intelligently shift text without disturbing line numbers or comments. In all cases, the default number of columns that the text is shifted is two.</p><p class="NormalText">There are two forms to these commands. The single character forms <span><strong class="command">(</strong></span>, <span><strong class="command">)</strong></span>, <span><strong class="command">&lt;</strong></span>, or <span><strong class="command">&gt;</strong></span> specifies that the line and the subsequent <span class="emphasis"><em>n-1</em></span> lines are to be shifted. The two-character block forms are placed on the first and last lines of the block to be shifted.</p><p class="NormalText">Data is shifted only within the columns defined by the current bounds, or if bounds is turned off, but there is a truncation column, between column 1 and the truncation column. If the shift operation results in data moving beyond the right or left margins, it is truncated and there is no warning message.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_c18d7fda-3cdc-4778-8764-0cff056a6f60"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_bounds</strong></span>
+          </p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003310"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_FC5AE043_3308"></a>ISPF Insert After A</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_0a4e9c08-917d-4bdf-83e0-ceac80fe6743"></a>Usage </h6></div></div></div><p class="NormalText">
+            <span><strong class="command">A [</strong></span>
+            <span class="emphasis"><em>n</em></span>
+            <span><strong class="command">]</strong></span>
+          </p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_918b8993-659a-4889-8fc9-3cd652d43f2b"></a>Remarks</h6></div></div></div><p class="NormalText">Identifies a line after which copied or moved lines are to be inserted <span class="emphasis"><em>n</em></span> times. You are allowed to specify multiple <span><strong class="command">A</strong></span>, <span><strong class="command">B</strong></span>, or <span><strong class="command">O</strong></span> line commands to have the same copy or move block inserted in multiple places.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_1205543e-7c08-44db-b7ec-3163bfd8bcda"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_copy</strong></span>, <span><strong class="command">ispf_paste</strong></span>, <span><strong class="command">ISPF Line Command B</strong></span>, <span><strong class="command">ISPF Line Command Copy</strong></span>, <span><strong class="command">ISPF Line Command Move</strong></span>, <span><strong class="command">ISPF Line Command Overlay</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003318"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_575FE84A_1A3E"></a>ISPF Insert Before B</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_f032624a-9dbe-48e3-82eb-1b4d9c1776b7"></a>Usage</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">B [</strong></span>
+            <span class="emphasis"><em>n</em></span>
+            <span><strong class="command">]</strong></span>
+          </p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_4a5ecbf6-dac0-430e-adef-8ec432edcd83"></a>Remarks </h6></div></div></div><p class="NormalText">Identifies a line before which copied or moved lines are to be inserted <span class="emphasis"><em>n</em></span><span><strong class="command"></strong></span>times. You are allowed to specify multiple <span><strong class="command">A</strong></span>, <span><strong class="command">B</strong></span>, or <span><strong class="command">O</strong></span> line commands to have the same copy or move block inserted in multiple places.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_3690a1a3-eae8-48de-8f84-61c88a2d5b57"></a>See Also </h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_copy</strong></span>, <span><strong class="command">ispf_paste</strong></span>, <span><strong class="command">ISPF Line Command B</strong></span>, <span><strong class="command">ISPF Line Command Copy</strong></span>, <span><strong class="command">ISPF Line Command Move</strong></span>, <span><strong class="command">ISPF Line Command Overlay</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003326"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_55E5609C_02EC"></a>ISPF Insert Bounds Ruler BNDS</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_b6f4f4a1-1713-486d-a008-a78297917820"></a>Usage</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">BNDS</strong></span>
+          </p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_3b837dd3-1cd5-4173-a6ae-073444f0eb2d"></a>Remarks </h6></div></div></div><p class="NormalText">Insert a column boundary ruler line. After this line is inserted, the <span><strong class="keycap">&lt;</strong></span> and <span><strong class="keycap">&gt;</strong></span> marks may be moved in order to adjust the column boundaries. Note that if you have multiple bounds lines, and you change one, the subsequent bounds lines will also be changed.</p><p class="NormalText">A column boundary line with one <span><strong class="keycap">&lt;</strong></span> sign indicates a left boundary and no right boundary (unbounded). A column boundary with one <span><strong class="keycap">&gt;</strong></span> sign indicates a single column boundary (left and right bounds are same).</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_70413d46-d902-4cc2-91e1-ae2b6eed4747"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_bounds</strong></span>, <span><strong class="command">ISPF Line Command Shift</strong></span>, <span><strong class="command">ISPF Line Command Overlay</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003336"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_CF324110_A014"></a>ISPF Copy Lines C and CC for blocks</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_5905b272-6188-42e9-ab4a-47a68700d6f2"></a>Usage</h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">C [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span>
+                <span><strong class="command"> - </strong></span>Copy <span class="emphasis"><em>n</em></span> lines starting with the line with the command.</p></li><li><p class="NormalText">
+                <span><strong class="command">CC</strong></span>
+                <span><strong class="command"> - </strong></span>Copy a block of lines, must match another <span><strong class="command">CC</strong></span><span><strong class="command">.</strong></span></p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_5ef0f4c3-95df-475b-9408-f14ecc9270f9"></a>Remarks </h6></div></div></div><p class="NormalText">Specify lines to be copied to another location. There are two forms to this command. The first form (<span><strong class="command">C [</strong></span><span class="emphasis"><em>n</em></span><span><strong class="command">]</strong></span>) specifies that the line and the subsequent <span class="emphasis"><em>n-1</em></span> lines are to be copied. The second (block) form (<span><strong class="command">CC</strong></span>) is placed on the first and last lines of the block to be copied. There can be only one copy block specified. Furthermore, you can not have both a move block and a copy block specified at the same time.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_75600865-53a6-46b9-b391-d83006367c80"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ISPF Line Command A</strong></span>, <span><strong class="command">ISPF Line Command B</strong></span>, <span><strong class="command">ISPF Line Command Move</strong></span>, <span><strong class="command">ISPF Line Command Overlay</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003345"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_7C6343A7_AEE9"></a>ISPF Insert Columns Ruler COLS or SCALE</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_04db29c4-045c-4782-9f1e-c4708ec729cb"></a>Usage</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">COLS</strong></span>
+          </p><p class="NormalText">
+            <span><strong class="command">SCALE</strong></span>
+          </p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_98a0e3a6-eb09-4049-8042-2eec8dc40e15"></a>Remarks </h6></div></div></div><p class="NormalText">Insert a column ruler line. The column ruler line is read-only.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_820c32a8-e9b2-4069-96a3-4893fd044f6f"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_bounds</strong></span>, <span><strong class="command">ispf_tabs</strong></span>, <span><strong class="command">ISPF Line Command BNDS</strong></span>, <span><strong class="command">ISPF Line Command TABS</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003354"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_899454BB_D3DA"></a>ISPF Delete Lines D and DD for blocks</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_597debff-a652-4270-aa5a-f9cce8356c0b"></a>Usage</h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">D [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span> - Delete <span class="emphasis"><em>n</em></span> lines starting with the line with the command.</p></li><li><p class="NormalText">
+                <span><strong class="command">DD</strong></span>
+                <span><strong class="command"> - </strong></span>Delete a block of lines, must match another <span><strong class="command">DD</strong></span>.</p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_d97e6dad-abcb-41c0-8942-e976dd01d186"></a>Remarks </h6></div></div></div><p class="NormalText">Deletes one or more lines. There are two forms to this command. The first form (<span><strong class="command">D [</strong></span><span class="emphasis"><em>n</em></span><span><strong class="command">]</strong></span>) specifies that the line and the subsequent <span class="emphasis"><em>n-1</em></span> lines are to be deleted. The second (block) form (<span><strong class="command">DD</strong></span>) is placed on the first and last lines of the block to be deleted.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_bc5c9785-2d29-432e-ae8e-ab01a540d88e"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_delete</strong></span>
+          </p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003363"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_BED6117B_218D"></a>ISPF Expose First Lines F and FF</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_62ac3535-aa44-40b8-930a-0800e741bf74"></a>Usage</h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">F [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span>
+                <span><strong class="command"> - </strong></span>Unexclude (expose) the first <span class="emphasis"><em>n</em></span> lines of an excluded block.</p></li><li><p class="NormalText">
+                <span><strong class="command">FF</strong></span>
+                <span><strong class="command"> - </strong></span>Unexclude (expose) an entire excluded block.</p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_91450167-2f6a-42bc-9889-2b7f3f044c13"></a>Remarks </h6></div></div></div><p class="NormalText">Expose one or more lines at the beginning of a block of excluded lines. The <span><strong class="command">FF</strong></span> line command exposes the entire block of lines and is to <span><strong class="command">F[</strong></span><span class="emphasis"><em>m</em></span><span><strong class="command">]</strong></span> where <span class="emphasis"><em>m</em></span> is the number of lines in the block of excluded lines.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_7908abdc-5cce-42e7-a6c8-7b81daa3c4dc"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_exclude</strong></span>, <span><strong class="command">ispf_reset</strong></span>, <span><strong class="command">ISPF Line Command Last</strong></span>, <span><strong class="command">ISPF Line Command Show</strong></span>, <span><strong class="command">ISPF Line Command Exclude</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003372"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_515583E3_886D"></a>ISPF Insert Lines </h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_8fa71f93-4f56-402f-89bf-afa88733af83"></a>Usage</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">I [</strong></span>
+            <span class="emphasis"><em>n</em></span>
+            <span><strong class="command">]</strong></span>
+          </p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_65407de9-d6c7-417c-9a19-5d62c2a67d47"></a>Remarks </h6></div></div></div><p class="NormalText">Insert one or more blank data entry lines.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_c200a2f0-79f3-4763-be9f-b399349d2afb"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_enter</strong></span>, <span><strong class="command">ISPF Line Command TE</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003380"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_BB56817D_4BEE"></a>ISPF Lowercase Lines LC, LCC and LCLC for blocks</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_7ab360fe-6793-47e5-a53c-47c19c7973dd"></a>Usage</h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">LC [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span>
+                <span><strong class="command"> - </strong></span>Lowercase <span class="emphasis"><em>n</em></span> lines starting with the line with the command.</p></li><li><p class="NormalText">
+                <span><strong class="command">LCC</strong></span>
+                <span><strong class="command"> - </strong></span>Lowercase a block of lines, must match another <span><strong class="command">LCC</strong></span><span><strong class="command"></strong></span>or <span><strong class="command">LCLC</strong></span>.</p></li><li><p class="NormalText">
+                <span><strong class="command">LCLC</strong></span>
+                <span><strong class="command"> - </strong></span>Lowercase a block of lines, must match another <span><strong class="command">LCC</strong></span><span><strong class="command"></strong></span>or<span><strong class="command"></strong></span><span><strong class="command">LCLC</strong></span>.</p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_91b5cc31-f641-4880-8411-51f232edea7d"></a>Remarks </h6></div></div></div><p class="NormalText">Converts all uppercase letter alphabetic characters in one or more lines to lowercase. This command only operates on text within the edit boundary columns. There are two forms to this command. The first form (<span><strong class="command">LC [</strong></span><span class="emphasis"><em>n</em></span><span><strong class="command">]</strong></span>) specifies that the line and the subsequent <span class="emphasis"><em>n-1</em></span> lines are to be converted. The second (block) form (<span><strong class="command">LCLC</strong></span><span><strong class="command"></strong></span>or <span><strong class="command">LCC</strong></span>) is placed on the first and last lines of the block to be converted.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_4bf45250-426a-41f3-8e5c-6e31dfd7c69c"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_caps</strong></span>, <span><strong class="command">ISPF Line Command Uppercase</strong></span>, <span><strong class="command">lowcase</strong></span>, <span><strong class="command">upcase</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003390"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_012E3CBF_05A2"></a>ISPF Expose Last Lines L and LL</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_9c7cebd7-4b28-4783-9f44-3252953388b6"></a>Usage</h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">L [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span>
+                <span><strong class="command"> - </strong></span>Unexclude (expose) the last <span class="emphasis"><em>n</em></span> lines of an excluded block.</p></li><li><p class="NormalText">
+                <span><strong class="command">LL</strong></span>
+                <span><strong class="command"> - </strong></span>Unexclude (expose) an entire excluded block (identical to <span><strong class="command">FF</strong></span>).</p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_97107408-61b2-4253-a66a-f55938183f53"></a>Remarks </h6></div></div></div><p class="NormalText">Expose one or more lines at the end of a block of excluded lines. The <span><strong class="command">LL</strong></span> line command exposes the entire block of lines and is to <span><strong class="command">L[</strong></span><span class="emphasis"><em>m</em></span><span><strong class="command">]</strong></span> where <span class="emphasis"><em>m</em></span> is the number of lines in the block of excluded lines.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_b809ead5-f86b-431d-8aba-895d82f391d1"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_exclude</strong></span>, <span><strong class="command">ispf_reset</strong></span>, <span><strong class="command">ISPF Line Command First</strong></span>, <span><strong class="command">ISPF Line Command Show</strong></span>, <span><strong class="command">ISPF Line Command Exclude</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003399"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_13B7D544_ACBB"></a>ISPF Move Lines M and MM for blocks</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_4dd7097f-9c3d-4e4d-8cc1-b21c5fc31c97"></a>Usage</h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">M [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span>
+                <span><strong class="command"> - </strong></span>Move <span class="emphasis"><em>n</em></span> lines starting with the line with the command.</p></li><li><p class="NormalText">
+                <span><strong class="command">MM</strong></span>
+                <span><strong class="command"> - </strong></span>Move a block of lines, must match another <span><strong class="command">MM</strong></span>.</p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_7cca3200-0311-4be9-8804-c7ddd0ae3a77"></a>Remarks </h6></div></div></div><p class="NormalText">Specify lines to be moved to another location. There are two forms to this command. The first form (<span><strong class="command">M [</strong></span><span class="emphasis"><em>n</em></span><span><strong class="command">]</strong></span>) specifies that the line and the subsequent <span><strong class="command">n-1</strong></span> lines are to be moved. The second (block) form (<span><strong class="command">MM</strong></span>) is placed on the first and last lines of the block to be moved. There can be only one move block specified. Furthermore, you cannot have both a move block and a copy block specified at the same time.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_0dc81dd2-2815-4fc3-8104-ff8c3c21f15b"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ISPF Line Command A</strong></span>, <span><strong class="command">ISPF Line Command B</strong></span>, <span><strong class="command">ISPF Line Command Copy</strong></span>, <span><strong class="command">ISPF Line Command Overlay</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003408"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_74C72B35_CD5F"></a>ISPF Insert Mask Line MASK</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_bf1a5907-7500-4884-9579-3e6483c97d9e"></a>Usage</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">MASK</strong></span>
+          </p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_18aab7e6-b00e-4150-b813-c878c0832c91"></a>Remarks </h6></div></div></div><p class="NormalText">Displays the contents of the mask used with the insert (<span><strong class="command">I</strong></span>) and text entry (<span><strong class="command">TE</strong></span>) line commands. Normally, when a line is inserted, the line is initially blank. By specifying an insert mask, you can insert a block of lines with a particular template. The <span><strong class="command">MASK</strong></span> line is editable. Note that if you specify multiple masks in one file, only the first mask is used.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_1ee74f62-8d36-4eb3-ba19-df38e39f4726"></a>See Also </h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ISPF Line Command I</strong></span>, <span><strong class="command">ISPF Line Command TE</strong></span>, <span><strong class="command">ISPF Line Command TS</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003416"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_2952AB66_7884"></a>ISPF Make Data Lines MD, MDD and MDMD for blocks</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_ccac408f-0dfd-4417-94ef-142e5e67ea0e"></a>Usage</h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">MD [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span>
+                <span><strong class="command"> - </strong></span>Make <span class="emphasis"><em>n</em></span> data lines starting with the line with the command.</p></li><li><p class="NormalText">
+                <span><strong class="command">MDD</strong></span>
+                <span><strong class="command"> - </strong></span>Make a block of lines data, must match another <span><strong class="command">MDD</strong></span><span><strong class="command"></strong></span>or <span><strong class="command">MDMD</strong></span>.</p></li><li><p class="NormalText">
+                <span><strong class="command">MDMD - </strong></span>Make a block of lines data, must match another <span><strong class="command">MDD</strong></span><span><strong class="command"></strong></span>or<span><strong class="command"></strong></span><span><strong class="command">MDMD</strong></span>.</p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_97a07e3b-07b2-4a43-9c0c-d573e35d4e47"></a>Remarks </h6></div></div></div><p class="NormalText">Converts one or more no-save lines to data so that they may be saved when the buffer is saved. There are two forms to this command. The first form (<span><strong class="command">MD [</strong></span><span class="emphasis"><em>n</em></span><span><strong class="command">]</strong></span>) specifies that the line and the subsequent <span><strong class="command">n-1</strong></span> lines are to be converted. The second (block) form (<span><strong class="command">MDMD</strong></span><span><strong class="command"></strong></span>or <span><strong class="command">MDD</strong></span>) is placed on the first and last lines of the block to be converted.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_52e0b9f3-88ba-4e82-97b3-cc2d87cfb466"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ISPF Line Commands</strong></span>, <span><strong class="command">ISPF Line Command COLS</strong></span>, <span><strong class="command">ISPF Line Command BNDS</strong></span>, <span><strong class="command">ISPF Line Command MASK</strong></span>, <span><strong class="command">ISPF Line Command TABS</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003426"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_4F9EE420_7C77"></a>ISPF Overlay Lines O and OO for blocks</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_8adca227-01aa-4777-929b-20a456518924"></a>Usage</h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">O [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span>
+                <span><strong class="command"> - </strong></span>Overlay <span class="emphasis"><em>n</em></span> lines starting with the line with the command.</p></li><li><p class="NormalText">
+                <span><strong class="command">OO</strong></span>
+                <span><strong class="command"> - </strong></span>Overlay a block of lines, must match another <span><strong class="command">OO</strong></span><span><strong class="command">.</strong></span></p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_f755463d-f4ee-44e3-89d5-485e64b34e3f"></a>Remarks </h6></div></div></div><p class="NormalText">Identifies one or more lines over which the copy or move block is to be overlaid. Text is only overlaid within the column boundaries. If the copy or move block has less lines than the overlay, it is repeated until it fills the entire overlay block.</p><p class="NormalText">There are two forms to this command. The first form (<span><strong class="command">O [</strong></span><span class="emphasis"><em>n</em></span><span><strong class="command">]</strong></span>) specifies that the line and the subsequent <span class="emphasis"><em>n-1</em></span> lines are to be overlaid. The second (block) form (<span><strong class="command">OO</strong></span>) is placed on the first and last lines of the block to be overlaid.</p><p class="NormalText">You are allowed to specify multiple <span><strong class="command">A</strong></span>, <span><strong class="command">B</strong></span>, or <span><strong class="command">O</strong></span> line commands to have the same copy or move block inserted or overlaid in multiple places.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_579f36d3-23d5-4259-acd9-b979638b0ff9"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_copy</strong></span>, <span><strong class="command">ispf_paste</strong></span>, <span><strong class="command">ISPF Line Command A</strong></span>, <span><strong class="command">ISPF Line Command B</strong></span>, <span><strong class="command">ISPF Line Command Copy</strong></span>, <span><strong class="command">ISPF Line Command Move</strong></span>, <span><strong class="command">ISPF Line Command Overlay</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003439"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_A6A216D1_C843"></a>ISPF Repeat Lines</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_aad29411-0348-486e-9792-9d0a4c531595"></a>Usage</h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">R [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span>
+                <span><strong class="command"> - </strong></span>Repeat the line with the command <span class="emphasis"><em>n</em></span> times.</p></li><li><p class="NormalText">
+                <span><strong class="command">RR [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span>
+                <span><strong class="command"> - </strong></span>Repeat the block <span class="emphasis"><em>n</em></span> times, must match another <span><strong class="command">RR</strong></span><span><strong class="command">.</strong></span></p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_46dffe4b-4cf7-4762-b707-7105a70e9e43"></a>Remarks </h6></div></div></div><p class="NormalText">Specify lines to be repeated immediately following this line or block. There are two forms to this command. The first form (<span><strong class="command">R[</strong></span><span class="emphasis"><em>n</em></span><span><strong class="command">]</strong></span>) specifies that the line is to be repeated <span class="emphasis"><em>n</em></span> times. The second (block) form (<span><strong class="command">RR[</strong></span><span class="emphasis"><em>n</em></span><span><strong class="command">]</strong></span>) is placed on the first and last lines of the block to be repeated <span class="emphasis"><em>n</em></span> times.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_dde8079b-8674-4490-ba6e-1985643e4aae"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ISPF Line Command A</strong></span>, <span><strong class="command">ISPF Line Command B</strong></span>, <span><strong class="command">ISPF Line Command Copy</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003448"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_D6B8BB76_FD2D"></a>ISPF Expose Next Level of Code S and SS</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_97417085-c3d8-491c-8aac-f7a5736c1d06"></a>Usage</h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">S [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span>
+                <span><strong class="command"> - </strong></span>Unexclude (expose) the first <span class="emphasis"><em>n</em></span> lines of an excluded block.</p></li><li><p class="NormalText">
+                <span><strong class="command">SS</strong></span>
+                <span><strong class="command"> - </strong></span>Unexclude (expose) an entire excluded block.</p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_ce4fe760-b903-4acb-bf32-f36fd6b5600e"></a>Remarks</h6></div></div></div><p class="NormalText">Expose one or more lines having the leftmost indentation level in a block of excluded lines. The <span><strong class="command">SS</strong></span> line command exposes the entire block of lines and is to <span><strong class="command">S[</strong></span><span class="emphasis"><em>m</em></span><span><strong class="command">]</strong></span> where <span class="emphasis"><em>m</em></span> is the number of lines in the block of excluded lines.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_f5682ef4-4789-4c7d-8b1c-dd63c9f91f54"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_exclude</strong></span>, <span><strong class="command">ispf_reset</strong></span>, <span><strong class="command">ISPF Line Command First</strong></span>, <span><strong class="command">ISPF Line Command Last</strong></span>, <span><strong class="command">ISPF Line Command Exclude</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003457"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_A41E2756_DE48"></a>ISPF Insert Tabs Ruler TABS or TABL</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_1804ed99-7886-4420-9f01-c5835cb7f5a0"></a>Usage</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">TABS</strong></span>
+          </p><p class="NormalText">
+            <span><strong class="command">TABL</strong></span>
+          </p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_5c84c073-505f-46a9-8055-73c6280d0966"></a>Remarks </h6></div></div></div><p class="NormalText">Displays the tab definition line. After this line is inserted, the <span><strong class="keycap">*</strong></span> marks may be moved in order to adjust the tab positions. Note that if you have multiple tabs lines, and you change one, the subsequent tabs lines will also be changed.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_81db987b-af49-4560-9acb-53dc7859ba2d"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_tabs</strong></span>, <span><strong class="command">tabs</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003466"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_83863EBA_393B"></a>ISPF Insert Text TE</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_e26533b2-b78e-45fb-a014-8ae20280a29e"></a>Usage </h6></div></div></div><p class="NormalText">
+            <span><strong class="command">TE [</strong></span>
+            <span class="emphasis"><em>n</em></span>
+            <span><strong class="command">]</strong></span>
+          </p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_48aafe0d-287d-4fc6-8051-01f2d48cf01e"></a>Remarks </h6></div></div></div><p class="NormalText">Inserts one or more blank lines to allow power typing for text entry. This command is identical to the insert (<span><strong class="command">I</strong></span>) command, except that it switches the mode to wrap lines.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_c3a2c96c-b03f-40fe-ab8f-2ac0492cc71b"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_enter</strong></span>, <span><strong class="command">ISPF Line Command I</strong></span>, <span><strong class="command">ISPF Line Command MASK</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003474"></a>
+          <a name="sect_usingispfandxedit_13644_1003473"></a>ISPF Insert Lines TF</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_697fac33-bd76-406b-8d84-6549fe7a88de"></a>Usage</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">TF</strong></span>
+          </p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_08682326-5303-4771-a732-af37ee840cfd"></a>Remarks </h6></div></div></div><p class="NormalText">Reflows paragraphs according to the current column boundary settings.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_2934d43f-a1f6-40bb-ac5d-53267d804d74"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">reflow_paragraph</strong></span>
+          </p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003482"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_AB93DF17_0B66"></a>ISPF Join Lines TJ</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_4d20e47d-b22f-41f2-89ea-47f3bcbf2e59"></a>Usage </h6></div></div></div><p class="NormalText">
+            <span><strong class="command">TJ</strong></span>
+          </p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_22b6ff43-b8fb-47cd-a126-eec069b3f484"></a>Remarks </h6></div></div></div><p class="NormalText">Join this line with the next line.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_a7b884be-8e87-4e0b-9e53-3c840a7d1391"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ISPF Line Command TS</strong></span>, <span><strong class="command">join_line</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003490"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_D5BD3C06_99EF"></a>ISPF Split Line TS</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_253a4370-442a-4b5d-995d-e9da7b489856"></a>Usage </h6></div></div></div><p class="NormalText">
+            <span><strong class="command">TS</strong></span>
+          </p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_04990c59-d214-4eac-958b-6bfb3b90f262"></a>Remarks </h6></div></div></div><p class="NormalText">Divides a line so that data can be added. The line is split at the column in which the cursor is in when you press <span><strong class="keycap">Enter</strong></span>. This command does not support multiple lines.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_9f53ea33-2f45-4a48-8b88-115920b5d6d1"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ISPF Line Command TJ</strong></span>, <span><strong class="command">split_insert_line</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003498"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_FCBE4DD5_56A0"></a>ISPF Uppercase Lines UC, UCC and UCUC for blocks</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_d2de212d-ec32-4a17-b5ff-808a61c5fb0f"></a>Usage</h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">UC [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span>
+                <span><strong class="command"> - </strong></span>Uppercase <span class="emphasis"><em>n</em></span> lines starting with the line with the command.</p></li><li><p class="NormalText">
+                <span><strong class="command">UCC</strong></span>
+                <span><strong class="command"> - </strong></span>Uppercase a block of lines, must match another <span><strong class="command">UCC</strong></span><span><strong class="command"></strong></span>or <span><strong class="command">UCC</strong></span>.</p></li><li><p class="NormalText">
+                <span><strong class="command">UCUC</strong></span>
+                <span><strong class="command"> - </strong></span>Uppercase a block of lines, must match another <span><strong class="command">UCC</strong></span><span><strong class="command"></strong></span>or<span><strong class="command"></strong></span><span><strong class="command">UCUC</strong></span>.</p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_d1da9a31-996b-4ff9-889d-ba5764a00082"></a>Remarks </h6></div></div></div><p class="NormalText">Converts all lowercase letter alphabetic characters in one or more lines to uppercase. This command only operates on text within the edit boundary columns. There are two forms to this command. The first form (<span><strong class="command">UC [</strong></span><span class="emphasis"><em>n</em></span><span><strong class="command">]</strong></span>) specifies that the line and the subsequent <span><strong class="command">n-1</strong></span> lines are to be converted. The second (block) form (<span><strong class="command">UCUC</strong></span><span><strong class="command"></strong></span>or <span><strong class="command">UCC</strong></span>) is placed on the first and last lines of the block to be converted.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_1019dec0-9d30-4a6a-b07c-30d1edd72c6c"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_caps</strong></span>, <span><strong class="command">ISPF Line Command Lowercase</strong></span>, <span><strong class="command">lowcase</strong></span>, <span><strong class="command">upcase</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003508"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_53244794_FE6C"></a>ISPF Exclude Lines X and XX for blocks</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_bd220550-f2e2-4c0b-aa0f-bbfc37fb3fdd"></a>Usage</h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">X [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span>
+                <span><strong class="command"> - </strong></span>Exclude <span class="emphasis"><em>n</em></span> lines starting with the line with the command.</p></li><li><p class="NormalText">
+                <span><strong class="command">XX</strong></span>
+                <span><strong class="command"> - </strong></span>Exclude a block of lines, must match another <span><strong class="command">XX</strong></span>.</p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_0ac1d4cf-522a-4e16-bad1-c7c3c9b93025"></a>Remarks </h6></div></div></div><p class="NormalText">Specifies one or more lines to be hidden (excluded). There are two forms to this command. The first form (<span><strong class="command">X [</strong></span><span class="emphasis"><em>n</em></span><span><strong class="command">]</strong></span>) specifies that the line and the subsequent <span class="emphasis"><em>n-1</em></span> lines are to be excluded. The second (block) form (<span><strong class="command">XX</strong></span>) is placed on the first and last lines of the block to be excluded.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_d19a2520-55c4-4887-8dad-84d873fbec02"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_exclude</strong></span>, <span><strong class="command">ispf_reset</strong></span>, <span><strong class="command">ISPF Line Command First</strong></span>, <span><strong class="command">ISPF Line Command Last</strong></span>, <span><strong class="command">ISPF Line Command Show</strong></span></p></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_usingispfandxedit_13644_1003517"></a>
+          <a class="indexterm" name="sect_usingispfandxedit_9ECC35EA_175F"></a>ISPF Select Lines Z and ZZ for blocks</h5></div></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_6d5e0d7f-1bc7-48e4-84e3-683b858fe2cf"></a>Usage</h6></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                <span><strong class="command">Z [</strong></span>
+                <span class="emphasis"><em>n</em></span>
+                <span><strong class="command">]</strong></span> - Select <span class="emphasis"><em>n</em></span> lines starting with the line with the command.</p></li><li><p class="NormalText">
+                <span><strong class="command">ZZ</strong></span>
+                <span><strong class="command"> - </strong></span>Select a block of lines, must match another <span><strong class="command">ZZ</strong></span><span><strong class="command">.</strong></span></p></li></ul></div></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_997c7fbf-7b50-43b5-bfca-305a70a8ed1e"></a>Remarks </h6></div></div></div><p class="NormalText">Select a block of lines. There are two forms to this command. The first form (<span><strong class="command">Z [</strong></span><span class="emphasis"><em>n</em></span><span><strong class="command">]</strong></span>) specifies that the line and the subsequent <span class="emphasis"><em>n-1</em></span> lines are to be selected. The second (block) form (<span><strong class="command">ZZ</strong></span>) is placed on the first and last lines of the block to be selected.</p></div><div class="sect5" lang="en"><div class="titlepage"><div><div><h6 class="title"><a name="section_b5f63faa-709e-461e-b73b-bff52cc439db"></a>See Also</h6></div></div></div><p class="NormalText">
+            <span><strong class="command">ispf_cut</strong></span>, <span><strong class="command">ispf_paste</strong></span></p></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingispfandxedit_13644_1003527"></a>
+        <a class="indexterm" name="sect_usingispfandxedit_C48A26BB_8F9C"></a>XEDIT Line Commands</h4></div></div></div><p class="NormalText">The following XEDIT line commands are supported and override the like-named ISPF commands when there is a conflict. XEDIT commands can be enabled using the ISPF Options dialog box (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">ISPF Options</strong></span>).</p><div class="informaltable"><a name="table_57167fd1-bafe-4571-b83b-03d6619349db"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">XEDIT</p>
+              </th><th>
+                <p class="CellHeading">ISPF</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">/</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">
+                  <span><strong class="command">R</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Repeat the marked line.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">F</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">
+                  <span><strong class="command">A</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Paste text following line.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">A</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">
+                  <span><strong class="command">I</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Add (insert) line(s).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">P</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">
+                  <span><strong class="command">B</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Paste text before line.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">L</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">
+                  <span><strong class="command">LC</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Make line lowercase.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">LL</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">
+                  <span><strong class="command">LCC</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Make block lowercase.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">U</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">
+                  <span><strong class="command">UC</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Make line uppercase.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">UU</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">
+                  <span><strong class="command">UCC</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Make block uppercase.</p>
+              </td></tr></tbody></table></div><p class="NormalText">Note the following conflicts with standard ISPF edit line commands:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="command">F</strong></span> conflicts with unexclude first (<span><strong class="command">F</strong></span>).</p></li><li><p class="NormalText">
+            <span><strong class="command">A</strong></span> conflicts with paste after (<span><strong class="command">A</strong></span>).</p></li><li><p class="NormalText">
+            <span><strong class="command">L</strong></span> conflicts with unexclude last (<span><strong class="command">L</strong></span>).</p></li><li><p class="NormalText">
+            <span><strong class="command">LL</strong></span> conflicts with unexclude block (<span><strong class="command">LL</strong></span>).</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_usingispfandxedit_13644_1003598"></a>
+        <a class="indexterm" name="sect_usingispfandxedit_ACA325BF_1C2A"></a>ISPF Unsupported Primary Commands</h4></div></div></div><p class="NormalText">The table below shows ISPF primary commands that are not supported in the ISPF emulation mode. The unsupported commands fall into two categories. First, some ISPF commands are made obsolete by more powerful features, such as <span><strong class="command">recovery</strong></span>, <span><strong class="command">profile</strong></span>, and <span><strong class="command">setundo</strong></span>. Second, some commands reflect features that we chose not to implement for the emulation, such as ISPF macros, PDF statistics, model, and pack.</p><div class="informaltable"><a name="table_05cd6eff-daf6-4c98-8829-8d04e7a7cc1e"></a><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                <p class="CellHeading">Unsupported Command</p>
+              </td><td>
+                <p class="CellHeading">Description</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">autolist</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Control the automatic printing of data to the ISPF list data set.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">builtin</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Process a built-in command, even if overloaded by a macro.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">define</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Define a name as an alias or macro.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">imacro</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Save the name of an initial macro in the edit profile.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">level</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Set the modification level number in PDF library statistics.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">model</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Copy a model into the buffer or defines a model class.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">notes</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Control whether the MODEL command display notes or not.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">nulls</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Control null spaces.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">pack</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Control whether data is to be stored compressed or not.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">profile</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Display edit profile.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">recovery</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Specify edit recovery options.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">rmacro</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Save a recovery macro in the edit profile.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">setundo</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Control the UNDO mode.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">stats</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Generate library statistics.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">version</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Set the version number in the PDF library statistics.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">view</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Save as browse command but prompts on save.</p>
+              </td></tr></tbody></table></div><p class="NormalText">The following commands <span class="emphasis"><em>are</em></span> supported in ISPF emulation mode.</p><div class="informaltable"><a name="table_226afe2b-c2c1-4821-a545-4a787913826f"></a><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                <p class="CellHeading">Supported Command</p>
+              </td><td>
+                <p class="CellHeading">Description</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">ispf_bottom</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Move cursor to the end of the buffer.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">ispf_down</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Move cursor to next page of text.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">ispf_enter</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Handle the <span><strong class="keycap">Enter</strong></span> key or <span><strong class="keycap">Right Control</strong></span> key in ISPF emulation.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">ispf_home</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Place the focus on the command line in ISPF emulation.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">ispf_retrieve</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Does command line retrieval, getting the next command line from the list.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">ispf_retrieve_back</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Identical to the <span><strong class="command">ispf_retrieve back</strong></span> command.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">ispf_top</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Move cursor up to the top of the buffer.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">ispf_up</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Move cursor up to the previous page of text.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">ispf_do_lc</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Immediately process all commands found in the line prefix area.</p>
+              </td></tr></tbody></table></div><p class="NormalText"></p></div></div></div></body></html>

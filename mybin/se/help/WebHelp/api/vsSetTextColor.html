@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsSetTextColor</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsSetTextColor(int wid, VSCOLORINDEX ColorIndex, seSeekPos ColorLen, bool replacePreviousColor=true)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Copies color indexes for ColorLen characters of text starting from the
+cursor.  A 0 color index indicates a null color.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ColorIndex">ColorIndex</A></code> - Valid color indexes are any of the
+VSCFG_??? constants or a color index
+allocated by <b>vsAllocColor</b>.  0
+indicates a NULL color.  Use the NULL
+color to get our built-in color coding.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ColorLen">ColorLen</A></code> - Repeat the specified color for this many bytes.
+abs(<i>ColorLen</i>) times.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsAllocColor.html">vsAllocColor</a>, <a href="vsFreeColor.html">vsFreeColor</a>, <a href="vsSetDefaultColor.html">vsSetDefaultColor</a>, <a href="vsGetDefaultColor.html">vsGetDefaultColor</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Search Functions</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s26.htm" title="String Functions"><link rel="next" href="ch14s28.htm" title="Selection Functions"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_searchfunctions_13216_55831"></a>
+    <a name="slick_c_searchfunctions_13216_1005790"></a>Search Functions</h2></div></div></div><p class="NormalText">Two levels of search functions exist: high level functions that provide user interfacing and multiple file searching, and built-in functions that are used without affecting the high level search commands such as the <span><strong class="command">find_next</strong></span> command. The built-in functions are not affected by the global editor search options.</p><p class="NormalText">The table below shows a list of commonly used search functions. For a complete list, see <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category </strong></span> &#8594; <span><strong class="guimenuitem">Search Functions</strong></span>. </p><div class="informaltable"><a name="table_29db429f-5add-4f57-bfef-8f6be26be21c"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+            <p class="CellHeading">Function</p>
+          </th><th>
+            <p class="CellHeading">Description</p>
+          </th></tr></thead><tbody><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">gui_find</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Displays Find and Replace tool window open to the Find tab, and performs search using the <span><strong class="command">find</strong></span> or <span><strong class="command">_mffind</strong></span> functions.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">gui_replace</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Displays Find and Replace tool window open to the Replace tab, and performs search using <span><strong class="command">gui_replace2</strong></span> or <span><strong class="command">_mfreplace</strong></span> functions.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">gui_replace2</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Performs a search and replace based on arguments given. This function is very similar to the <span><strong class="command">replace</strong></span> function, except that this function uses a dialog box to prompt the user where to replace.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">find_next</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Searches for next occurrence of search string used by any of these high-level search functions. This function is not affected by previous searches done with low-level built-in functions.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">find</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Performs search based on arguments given.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">replace</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Performs a replace based on arguments given. The user is prompted where to replace through the message line.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_mffind</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Performs a multiple file and buffer search based on the arguments given.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">_mfreplace</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Performs a multiple file and buffer search based on the arguments given.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">search</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Performs a search, or search and replace, based on arguments given. Does not support wrapping to top or bottom of file. When performing a replace, the user is not prompted at all.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">repeat_search</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Searches for the next occurrence of search string used by last call to the <span><strong class="command">search</strong></span> built-in.</p>
+          </td></tr></tbody></table></div><p class="NormalText">The following example searches for lines that contain a particular search string and places the lines in another window and buffer:</p><pre class="programlisting">defmain()
+
+{
+
+    orig_wid=p_window_id;
+
+    // The +w option forces a new window to be created. The +t options
+
+    // force a new buffer to be created.
+
+    status=edit("+w +t");
+
+    if (status) {
+
+       _message_box("Unable to create temp window and buffer\n\n":+
+
+                    get_message(status));
+
+    }
+
+    delete_line();            // Delete the blank line.
+
+    output_wid=p_window_id;
+
+ 
+
+    p_window_id=orig_wid;
+
+    top();                // Place the cursor at the top in column 1.
+
+ 
+
+    status=search("if","w@");  // Case-insensitive word search for if @ specifies
+
+                               // no string not found message.
+
+    for (;;)
+
+    {
+
+       if (status) {
+
+          break;
+
+       }
+
+       get_line(line);       // Place the cursor at the end of the line so no
+
+                             // more occurrences can be found on this line.
+
+       _end_line();
+
+       output_wid.insert_line(line);
+
+       status=repeat_search();
+
+    }
+
+    // Make the output window active so we can see the results.
+
+    p_window_id=output_wid;
+
+}</pre><p class="NormalText">The next example is very similar to the example above except that the output data is placed in a view and buffer. The only advantage in using a view and buffer is that the output can be displayed in a list box without the user having to see a new window created.</p><pre class="programlisting">#include "slick.sh"
+
+defmain()
+
+{
+
+    // Create a temporary view and buffer within the current window.
+
+    // Each window can store multiple cursor positions (views) to any buffer.
+
+    orig_view_id=_create_temp_view(temp_view_id);
+
+ 
+
+    if (orig_view_id=="") {
+
+       return("");
+
+    }
+
+ 
+
+    activate_view(orig_view_id);
+
+    top(); // Place the cursor at the top in column 1.
+
+    status=search("if","w");   // Case sensitive word search for if.
+
+    for (;;) {
+
+       if (status) {
+
+          // Clear the pending message caused by built-in search failing.
+
+          clear_message();
+
+          break;
+
+       }
+
+       get_line(line);
+
+       // Place the cursor at the end of the line so no more occurrences
+
+       // can be found on this line.
+
+ 
+
+       _end_line();
+
+       activate_view(temp_view_id);
+
+       insert_line(' 'line);   // Insert a space at the beginning of the line 
+
+                               // because this will be inserted into a listbox.
+
+       activate_view(orig_view_id);
+
+       status=repeat_search();
+
+    }
+
+    // Display the buffer in a list box.
+
+    // The _sellist_form dialog box will delete the temp view and buffer.
+
+    // The original view must be activated before showing the _sellist_form or
+
+    // the dialog box will operate strangely.
+
+    activate_view(orig_view_id);
+
+    result=show("_sellist_form -mdi -modal",
+
+ 
+
+              "Sample Selection List",
+
+              // Indicate next argument is view_id.
+
+              SL_VIEWID|SL_SELECTCLINE,  
+
+              temp_view_id,
+
+              "OK",
+
+              "", // Help item.
+
+              "", // Use default font.
+
+              ""  // Call back function.
+
+              );
+
+    if (result) {
+
+       message("Selection list cancelled");
+
+    } else {
+
+       message("Item selected is "result);
+
+    }
+
+}</pre><p class="NormalText"></p></div></body></html>

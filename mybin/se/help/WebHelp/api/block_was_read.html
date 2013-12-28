@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>block_was_read</title>
+</head>
+<body>
+
+<h3><b>int block_was_read(int newValue=-1)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Determines whether a block was read from a file.  o set the current value, specify
+the <i>number</i> argument.  The purpose of this function is to allow macros to flush
+the keyboard buffer when the editor is not keeping up with the key strokes.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="newValue">newValue</A></code> -  </blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns a non-zero number if the editor has read a block from a file.  Otherwise zero is returned.  T</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+ // This macro allows the user to hold a key down which
+ // invokes this macro repeatedly to scroll down a file which is
+ // only partially loaded.  No sudden screen jumps will occur.
+ if (block_was_read() ) {
+     block_was_read(0);
+     flush_keyboard();
+ }
+ down();
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="File_Functions.html">File Functions</a></blockquote>
+</body>
+</html>

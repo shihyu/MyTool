@@ -1,0 +1,4 @@
+namespace Util
+{
+int *someGlobal;
+};

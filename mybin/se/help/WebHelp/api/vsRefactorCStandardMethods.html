@@ -1,0 +1,16 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsRefactorCStandardMethods</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsRefactorCStandardMethods(int handle, const char *filename, const char *symbolName, seSeekPos startSeekPos, seSeekPos endSeekPos, char **className, int &existingClassMethods)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Analyzes a symbol to determine it's class and determine which of the standard methods
+are already implemented for that class.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="handle">handle</A></code> - Handle to transaction</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filename">filename</A></code> - Filename to find symbol in</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="symbolName">symbolName</A></code> - Name selected symbol</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="startSeekPos">startSeekPos</A></code> - Start seek position of symbol</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="endSeekPos">endSeekPos</A></code> - End seek position of symbol</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="className">className</A></code> - Returns the name of the class that symbolName refers to</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="existingClassMethods">existingClassMethods</A></code> - Returns flags indicating which methods are already implemented in the class. Uses
+                              bitset of VSREFACTOR_METHOD_* (above)
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Refactoring_Functions.html">Refactoring Functions</a></blockquote>
+</body>
+</html>

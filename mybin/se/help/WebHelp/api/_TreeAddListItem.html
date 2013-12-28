@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_TreeAddListItem</title>
+</head>
+<body>
+
+<h3><b>int _TreeAddListItem(_str ItemText, int Flags=0, int Index=TREE_ROOT_INDEX, int ShowChildren=TREE_NODE_LEAF, typeless userInfo=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Used to a list style treeview(treeview control
+with column buttons turned on).  Easier to use
+because index defaults to TREE_ROOT_INDEX, and
+TREE_ADD_AS_CHILD is always or'd into the flags.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ItemText">ItemText</A></code> - Text for this line.  Use a tab character to start a new column.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Flags">Flags</A></code> - Flags to add this item.  TREE_ADD_AS_CHILD will always be or'd in.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Index">Index</A></code> - Index to add item under.  Defaults to TREE_ROOT_NODE.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ShowChildren">ShowChildren</A></code> - This is the same as the ShowChildren state on _TreeAddItem.  Set to 1 or 0
+                if you wish to have children show.  It defaults to TREE_NODE_LEAF because
+                you don't normally want children in this style of tree.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="userInfo">userInfo</A></code> - Allows you to specify per-node user data.
+                 See <a href="_TreeSetUserInfo.html">_TreeSetUserInfo</a>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the index of the new tree item.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Tree View
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tree_View_Methods.html">Tree View Methods</a></blockquote>
+</body>
+</html>

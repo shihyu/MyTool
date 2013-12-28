@@ -1,0 +1,19 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>SETagOccurrencesEnd</title>
+</head>
+<body>
+
+<h3><b>int VSAPI SETagOccurrencesEnd(int dbHandle, const slickedit::SEString &file_name, slickedit::SEHashTable<int, slickedit::SEStringSet>&occurHashTable)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Clean up after inserting a series of occurrencess from a single
+file for update.  Doing this allows the tag database engine to
+remove any occurrences from the database that are no longer valid.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="dbHandle">dbHandle</A></code> - database handle</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - full path of file</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="occurHashTable">occurHashTable</A></code> - hash table mapping file names to a
+                        hash set of symbol names
+                        this is used to cache results and avoid
+                        inserting the same symbol twice.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

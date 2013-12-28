@@ -1,0 +1,115 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>search</title>
+</head>
+<body>
+
+<h3><b>int search(_str searchString, _str options="E", _str replaceString=null, int &Nofchanges=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Searches for <i>search_string</i> specified.  If <i>replace_string</i>
+is specified, a search and replace without prompting is performed.
+The number of changes is returned in the optional <i>Nofchanges</i>
+variable.  Press and hold Ctrl+Alt+Shift to terminate a long search.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="searchString">searchString</A></code> - String to search for</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - A string of options having the following meaning:
+
+                  <dl compact style="margin-left:20pt">
+                  <dt>'+'</dt><dd>(Default) Forward search.</dd>
+                  <dt>'-'</dt><dd>Reverse search.</dd>
+                  <dt>'&lt;'</dt><dd>(Default) Place cursor at beginning of string found.</dd>
+                  <dt>'>'</dt><dd>Place cursor after end of string found.</dd>
+                  <dt>'E'</dt><dd>(Default) Case sensitive search.</dd>
+                  <dt>'I'</dt><dd>Case insensitive search.</dd>
+                  <dt>'M'</dt><dd> Search within visible mark.</dd>
+                  <dt>'H'</dt><dd> Find text in hidden lines.   Only the line contain the
+                  first character of the search string is checked.</dd>
+                  <dt>'R'</dt><dd>Search for SlickEdit regular expression.  See
+                  SlickEdit Regular Expressions.</dd>
+                  <dt>'U'</dt><dd>Interpret string as a UNIX regular expression.   See
+                  section UNIX Regular Expressions.</dd>
+                  <dt>'B'</dt><dd>Interpret string as a Brief regular expression.   See
+                  section Brief Regular Expressions.</dd>
+                  <dt>'L'</dt><dd>Interpret string as a Perl regular expression.   See
+                  section Brief Regular Expressions.</dd>
+                  <dt>'&'</dt><dd>Interpret string as a wildcard
+                  expression. See section Wildcard Expressions.</dd>
+                  <dt>'N'</dt><dd>(Default) Do not interpret search string as a regular
+                  search string.</dd>
+                  <dt>'P'</dt><dd>Wrap to beginning/end when string not found.  Flag
+                  is set.  However, this option has no effect on this
+                  function.</dd>
+                  <dt>'@'</dt><dd>No error message.</dd>
+                  <dt>'*'</dt><dd>This option is ignored.</dd>
+                  <dt>'W'</dt><dd>Limits search to words.  Used to search and replace
+                  variable names.  The default word characters are
+                  [A-Za-z0-9_$].</dd>
+                  <dt>'W=<i>SlickEdit-regular-expression</i>'</dt><dd>
+                  Specifies a word search and sets the default word
+                  characters to those matched by the <i>SlickEdit-
+                  regular-expression</i> given.</dd>
+                  <dt>W:P</dt><dd>Limits search to word prefix.  For example,
+                  searching for "pre" matches "pre" and "prefix" but
+                  not "supreme" or "supre".</dd>
+                  <dt>W:PS</dt><dd>Limits search to strict word prefix.  For example,
+                  searching for "pre" matches "prefix" but not "pre",
+                  "supreme" or "supre".</dd>
+                  <dt>W:S</dt><dd>Limits search to word suffix.  For example,
+                  searching for "fix" matches "fix" and "sufix" but
+                  not "fixit".</dd>
+                  <dt>W:SS</dt><dd>Limits search to strict word suffix.  For example,
+                  searching for "fix" matches "sufix" but not "fix" or
+                  "fixit".</dd>
+                  <dt>Y</dt><dd>Binary search.  This allows start positions in the
+                  middle of a DBCS or UTF-8 character.  This option
+                  is useful when editing binary files (in SBCS/DBCS
+                  mode) which may contain characters which look
+                  like DBCS but are not.  For example, if you search
+                  for the character 'a', it will not be found as the
+                  second character of a DBCS sequence unless this
+                  option is specified.</dd>
+                  <dt>','</dt><dd>Delimiter to separate ambiguous options.
+                  <dt>'&'</dt><dd>Interpret string as wildcard syntax (*,?) for searches.
+                  <dt>'#'</dt><dd>Highlight matched occurances with highlight color.
+                  <dt>'%'</dt><dd>Add scroll markup for matches.
+                  <dt>'$'</dt><dd>Highlight replaced text with modified line color.
+                  <dt>'X<i>CCLetters</i>'</dt><dd>
+                  Requires the first character of search string
+                  NOT be one of the color coding elements specified.
+                  For example, "XCS" requires that the first character
+                  not be in a comment or string. <i>CCLetters</i> is
+                  a string of one or more of the following color
+                  coding element letters:
+
+                  <dl compact style="margin-left:20pt">
+                  <dt>O</dt><dd>Other
+                  <dt>K</dt><dd>Keyword
+                  <dt>N</dt><dd>Number
+                  <dt>S</dt><dd>String
+                  <dt>C</dt><dd>Comment
+                  <dt>P</dt><dd>Preprocessing
+                  <dt>L</dt><dd>Line number
+                  <dt>1</dt><dd>Symbol 1
+                  <dt>2</dt><dd>Symbol 2
+                  <dt>3</dt><dd>Symbol 3
+                  <dt>4</dt><dd>Symbol 4
+                  <dt>F</dt><dd>Function color
+                  <dt>V</dt><dd>No save line
+                  </dl></dd>
+
+                  <dt>'C<i>CCLetters</i>'</dt><dd>Requires the first character of search string to
+                  be one of the color coding elements specified. See
+                  <i>CCLetters</i> above.</dd>
+                  </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="replaceString">replaceString</A></code> - Optional string to replace search string with.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Nofchanges">Nofchanges</A></code> - Count of number of replaces.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if the search specified is found.  Common return codes are
+        STRING_NOT_FOUND_RC, INVALID_OPTION_RC, and
+        INVALID_REGULAR_EXPRESSION_RC.  On error, message is
+        displayed.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// Search and replace without prompting.
+search( 'pathsearch', '*', 'path_search', Nofchanges);
+messageNwait(Nofchanges' changes');
+// Search and replace without prompting within the marked area.
+search('pathsearch', '*M', 'path_search');
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="qreplace.html">qreplace</a>, <a href="repeat_search.html">repeat_search</a>, <a href="_select_match.html">_select_match</a>, <a href="match_length.html">match_length</a>, <a href="search_replace.html">search_replace</a>, <a href="save_search.html">save_search</a>, <a href="restore_search.html">restore_search</a>, <a href="_search_case.html">_search_case</a>, <a href="_SearchInitSkipped.html">_SearchInitSkipped</a>, <a href="_SearchQSkipped.html">_SearchQSkipped</a>, <a href="_SearchQNofSkipped.html">_SearchQNofSkipped</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,700 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Running and Debugging</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch07.htm" title="Chapter 7.  Building, Running, and Debugging"><link rel="prev" href="ch07.htm" title="Chapter 7.  Building, Running, and Debugging"><link rel="next" href="ch07s03.htm" title="Working With Google Web Toolkit Projects"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_runninganddebugging_14180_78681"></a>
+    <a name="sect_runninganddebugging_14180_998341"></a>
+    <a class="indexterm" name="sect_runninganddebugging_C01E9C1F_B3AA"></a>
+    <a class="indexterm" name="sect_runninganddebugging_7778303D_0CB7"></a>Running and Debugging</h2></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_runninganddebugging_14180_1001592"></a>
+      <a class="indexterm" name="sect_runninganddebugging_3B7E4269_6949"></a>Running a Program</h3></div></div></div><p class="NormalText">To run a program, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Execute</strong></span>.</p></li><li><p class="NormalText">If there is more than one main program you are prompted to select the one to run.</p></li></ol></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_runninganddebugging_14180_76753"></a>
+      <a name="sect_runninganddebugging_14180_1001489"></a>
+      <a class="indexterm" name="sect_runninganddebugging_09150667_86E6"></a>Debugging</h3></div></div></div><p class="NormalText">SlickEdit® provides debugging capabilities when working with the following. 
+      Other programs will result in SlickEdit launching an external debugger.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">GNU C/C++</p></li><li><p class="NormalText">Microsoft Visual Studio C++ programs using WinDbg</p></li><li><p class="NormalText">Java</p></li><li><p class="NormalText">Python</p></li><li><p class="NormalText">PHP</p></li><li><p class="NormalText">Ruby</p></li><li><p class="NormalText">Perl</p></li></ul></div><p class="NormalText">Use one of the following methods for debugging your code: </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Start</strong></span> executes the 
+          program and will stop when a breakpoint is reached.</p></li><li><p class="NormalText">
+          <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Step Into</strong></span> places 
+          you on the first executable line of the program.</p></li><li><p class="NormalText">
+          <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Restart</strong></span> stops the 
+          current debugger session if necessary and then places you on the first executable line of the 
+          program (like <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Step Into</strong></span>).</p></li><li><p class="NormalText">
+          <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Run to Cursor</strong></span> will 
+          execute the program and will stop when the line under the cursor is reached.</p></li></ul></div><p class="NormalText">Additional debug operations can be accessed through the Debug toolbar (<span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Toolbars </strong></span> &#8594; <span><strong class="guimenuitem">Debug</strong></span>).</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_43762_36798"></a>64-bit Versus 32-bit Programs</h4></div></div></div><p class="NormalText">On Windows and Linux, SlickEdit is available in both 64-bit and 
+    32-bit versions. You must use the version that matches the code you are debugging. To debug 64-bit 
+    programs, you need to use the 64-bit version of SlickEdit. To debug 32-bit programs, use the 
+    32-bit version.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_14180_1003244"></a>
+        <a class="indexterm" name="sect_runninganddebugging_E9040344_0C45"></a>
+        <a class="indexterm" name="sect_runninganddebugging_6A768A8B_0050"></a>Mixed Mode View in Debugger</h4></div></div></div><p class="NormalText">When debugging, you can view your source code with the disassembled code displayed between each line of source. In this mode you can step execution at the assembly language level for greater control over debugging. The buffer is changed to read-only so that the SlickEdit® product can maintain synchronization between source and disassembled code. To view mixed mode, use the Debug toolbar (<span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Toolbars </strong></span> &#8594; <span><strong class="guimenuitem">Debug</strong></span>) and click the button <span><strong class="guibutton">Toggle Display of Disassembly</strong></span>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_14180_1001831"></a>
+        <a class="indexterm" name="sect_runninganddebugging_979AC742_B933"></a>
+        <a class="indexterm" name="sect_runninganddebugging_65BF36D8_254B"></a>Debug Key Bindings</h4></div></div></div><p class="NormalText">The table below shows the key bindings that are available for Debug functions.</p><div class="informaltable"><a name="table_f26e3828-13c1-43c4-b99c-bbde126b2bb3"></a><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                <p class="CellHeading">Key</p>
+              </td><td>
+                <p class="CellHeading">Function</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">F5</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Start/continue debugging</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">F5</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Stop debugging</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">F5</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Restart debugging</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">F9</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Toggle breakpoint </p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">F9</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Toggle breakpoint enable </p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">F9</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Clear all breakpoints</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">F10</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Step over</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">F11</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Step into</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">F10</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Run to cursor</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">PadStar</strong></span> (* on the numeric keypad)</p>
+              </td><td>
+                <p class="CellBody">Show next statement</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">B</strong></span> or <span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">F9</strong></span></p>
+              </td><td>
+                <p class="CellBody">Activate breakpoints window</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">3</strong></span> or <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">W</strong></span></p>
+              </td><td>
+                <p class="CellBody">Activate watch window</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">4</strong></span> or <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">V</strong></span></p>
+              </td><td>
+                <p class="CellBody">Activate variables window</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">7</strong></span> or <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">C</strong></span></p>
+              </td><td>
+                <p class="CellBody">Activate call stack</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">H</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Activate threads window</p>
+              </td></tr></tbody></table></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_14180_42019"></a>
+        <a name="sect_runninganddebugging_14180_1003199"></a>
+        <a class="indexterm" name="sect_runninganddebugging_0466D060_190F"></a>
+        <a class="indexterm" name="sect_runninganddebugging_82678844_13E9"></a>
+        <a class="indexterm" name="sect_runninganddebugging_539EA603_6EAB"></a>Multiple Session Debugging</h4></div></div></div><p class="NormalText">Multiple session debugging provides the ability to start more than one 
+        debugging session within a single instance of SlickEdit®. For example, you can have one session 
+        debugging using GDB, and one using Java at the same time.</p><p class="NormalText">To create an additional debugger session, use any of the menu items 
+        under the <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Attach Debugger</strong></span> menu.</p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_14180_1001939"></a>
+          <a class="indexterm" name="sect_runninganddebugging_1DC3D8D4_0D13"></a>
+          <a class="indexterm" name="sect_runninganddebugging_A4CFA1B1_86FB"></a>Named Sessions</h5></div></div></div><p class="NormalText">The main debugging session always acquires the name of the current project. (Additional sessions can be created by typing <span><strong class="command">debug_new_create_session</strong></span>.) This name is to be numeric or derived from the executable name. The setup information and invocation information for each named session are stored in the workspace history file (<code class="filename">.vpwhist</code>). When you create a new session, you can reuse a named session to save time setting up a remote session. You must also confirm the process ID with each session. </p><p class="NormalText">A named session can be associated with a project in such a way that it will always be started when the project is debugged. The named session can be debugged using the Create New dialog.</p><p class="NormalText">If you detach from the main session, all sessions are stopped and you exit the debugging mode. If you detach from any other session, it simply detaches and control is assumed by another session.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_14180_1001985"></a>
+          <a class="indexterm" name="sect_runninganddebugging_406FBA99_CBB0"></a>
+          <a class="indexterm" name="sect_runninganddebugging_9E186D33_7D56"></a>Attaching to a Running Process (GNU C++ only)</h5></div></div></div><p class="NormalText">To attach to a running process, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Click <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Attach Debugger </strong></span> &#8594; <span><strong class="guimenuitem">Attach to Running Process</strong></span>, then select a process to debug.</p></li><li><p class="NormalText">Enter the path to the executable (to pick up debug symbols).</p></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span>.</p></li></ol></div><p class="NormalText">To detach from a running process, click <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Attach Debugger </strong></span> &#8594; <span><strong class="guimenuitem">Detach from Process</strong></span>.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_14180_1001992"></a>
+          <a class="indexterm" name="sect_runninganddebugging_915FEEEC_0F30"></a>
+          <a class="indexterm" name="sect_runninganddebugging_6F962A97_56FB"></a>
+          <a class="indexterm" name="sect_runninganddebugging_2640C6AA_CA58"></a>
+          <a class="indexterm" name="sect_runninganddebugging_A730C7C2_0D11"></a>
+          <a class="indexterm" name="sect_runninganddebugging_942DBCE1_8556"></a>
+          <a class="indexterm" name="sect_runninganddebugging_90BB473A_1340"></a>Attaching to a Remote Process (GNU C++ only)</h5></div></div></div><p class="NormalText">To attach to a remote GDB server or GDB stub process, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Click <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Attach Debugger </strong></span> &#8594; <span><strong class="guimenuitem">Attach to Remote Process</strong></span>.</p></li><li><p class="NormalText">Enter the path to the executable (to pick up debug symbols).</p></li><li><p class="NormalText">Choose the attach method (socket or device).</p></li><li><p class="NormalText">Select the <span><strong class="guilabel">Remote Options</strong></span> tab to adjust remote debugging options.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span>.</p></li></ol></div><p class="NormalText">To detach from a remote debugging session, click <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Attach Debugger </strong></span> &#8594; <span><strong class="guimenuitem">Detach from Process</strong></span>.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_14180_1002000"></a>
+          <a class="indexterm" name="sect_runninganddebugging_A6DD96B8_9004"></a>
+          <a class="indexterm" name="sect_runninganddebugging_9C92BEBD_CD28"></a>
+          <a class="indexterm" name="sect_runninganddebugging_1834FF2F_C5B6"></a>Attaching to a Core File (GNU C++, UNIX only)</h5></div></div></div><p class="NormalText">To attach to a core file, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Click <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Attach Debugger </strong></span> &#8594; <span><strong class="guimenuitem">Analyze Core File</strong></span>.</p></li><li><p class="NormalText">Type the path to the core file.</p></li><li><p class="NormalText">Type the path to the executable (to pick up debug symbols).</p></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span>.</p></li></ol></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_14180_1002007"></a>
+          <a class="indexterm" name="sect_runninganddebugging_B0CCCA5A_EF07"></a>
+          <a class="indexterm" name="sect_runninganddebugging_6AECE98A_BCEE"></a>
+          <a class="indexterm" name="sect_runninganddebugging_C83DFCF0_3365"></a>
+          <a class="indexterm" name="sect_runninganddebugging_1A400E93_77DD"></a>Attaching to a Remote VM (Java only)</h5></div></div></div><p class="NormalText">To attach to a remote VM, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Start the remote VM with command arguments similar to the following example:</p><pre class="programlisting">Java -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,
+suspend=y,address=8000 MainClass Arg1 Arg2</pre></li><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Choose Attach to Remote VM</strong></span>.</p></li></ol></div><p class="NormalText">To detach from a remote debugging session, click <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Detach from VM</strong></span>.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_14180_53649"></a>
+        <a name="sect_runninganddebugging_14180_1001846"></a>
+        <a class="indexterm" name="sect_runninganddebugging_A4926B3E_BDA4"></a>
+        <a class="indexterm" name="sect_runninganddebugging_E11C6C38_BE06"></a>Setting Breakpoints </h4></div></div></div><p class="NormalText">A new breakpoint can be set using any of the following methods:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Pressing <span><strong class="keycap">F9</strong></span> - Toggles a breakpoint on the current 
+            line. This is the fastest way to set or clear a breakpoint. This runs the 
+            <span><strong class="command">debug_toggle_breakpoint</strong></span> command. You can bind this command to another key 
+            if you like.
+            </p></li><li><p class="NormalText">Double-clicking in the left margin. This sets or clears a 
+            breakpoint on the associated line. Once a breakpoint is set, click once to disable it or 
+            double-click to remove it.</p></li><li><p class="NormalText">Selecting <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Toggle Breakpoint</strong></span> from the main menu.</p></li><li><p class="NormalText">Selecting <span><strong class="guilabel">Set Breakpoint</strong></span> from the context 
+            menu. This menu entry is only available when no selection has been made. </p></li><li><p class="NormalText">Clicking on <span><strong class="guilabel">Toggle Breakpoint</strong></span> button in the 
+            <span><strong class="guilabel">Debug Toolbar</strong></span>(<span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Toolbars </strong></span> &#8594; <span><strong class="guimenuitem">Debug</strong></span>).</p></li><li><p class="NormalText">Executing the <span><strong class="command">debug_toggle_breakpoint</strong></span> 
+            command from the SlickEdit command line.</p></li></ul></div><p class="NormalText">Breakpoints can be disabled so that their location is preserved but 
+        they no longer stop execution in the debugger. To disable a breakpoint, you can click on the 
+        breakpoint icon in the window left margin or right-click in the editor on the associated line of 
+        code and select <span><strong class="guilabel">Disable breakpoint</strong></span>. Breakpoints can be reenabled in a 
+        similar manner.</p><p class="NormalText">A Breakpoints toolbar (<span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Windows </strong></span> &#8594; <span><strong class="guimenuitem">Breakpoints</strong></span>) is also available that displays all of the breakpoints and lets you easily add, remove, and activate breakpoints.</p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_14180_1002999"></a>
+          <a class="indexterm" name="sect_runninganddebugging_D20E921D_C25C"></a>
+          <a class="indexterm" name="sect_runninganddebugging_B5C03E50_9A07"></a>
+          <a class="indexterm" name="sect_runninganddebugging_E2F4DE37_FB08"></a>Setting Conditional Breakpoints</h5></div></div></div><p class="NormalText">To set a conditional breakpoint, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Set a breakpoint.</p></li><li><p class="NormalText">Select the <span><strong class="guimenu">Breakpoints </strong></span>tab on the Breakpoints toolbar.</p></li><li><p class="NormalText">Double-click on the breakpoint for which you want to set a conditional breakpoint.</p></li><li><p class="NormalText">Set the <span><strong class="guilabel">Expression</strong></span> to be evaluated or the <span><strong class="guilabel">Number of times to skip before stopping</strong></span>.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span>.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">Close</strong></span>.</p></li></ol></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_68871_00679"></a>
+          <a class="indexterm" name="sect_runninganddebugging_51786_35014"></a> 
+          <a class="indexterm" name="sect_runninganddebugging_66990_78890"></a>
+          Watches and Watchpoints</h5></div></div></div><p class="NormalText">Watchpoints interrupt the debugger when a variable is read, modified, or 
+          accessed. To add a watchpoint, select a variable, right-click and select <span><strong class="guilabel">Set
+          Watchpoint</strong></span> from the context menu or select <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Set Watchpoint</strong></span> from the 
+          main menu. A green circle will be displayed in the editor left margin, indicating the line 
+          where the watchpoint is created. An entry will be created in the Breakpoints tool window 
+          listing the watchpoint. Watchpoints do not interrupt debugging at a particular line; they 
+          interrupt it when the variable is read, modified, or accessed. So, these markers are used just 
+          to manage the watchpoint.</p><p class="NormalText"></p><p class="NormalText">Once you have created a watchpoint, you can control it using the 
+          <span><strong class="guilabel">Watchpoint properties</strong></span> dialog. To view that, open the 
+          <span><strong class="guilabel">Breakpoints tool window</strong></span>, right-click on the watchpoint and select 
+          <span><strong class="guilabel">Properties</strong></span>.</p><div class="mediaobject"><img src="Resources/watchpoint_properties_dialog.png"></div><p class="NormalText">Setting a watch, adds an expression to the <span><strong class="guilabel">Watch tool 
+          window</strong></span> in the debugger view. These expressions are evaluated any time execution 
+          stops and the resulting 
+          value is displayed. They do not cause the debugger to stop running.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_14180_1001660"></a>
+          <a class="indexterm" name="sect_runninganddebugging_F78E081A_53BF"></a>
+          <a class="indexterm" name="sect_runninganddebugging_4E69437C_1C07"></a>Setting Java Exception Breakpoints</h5></div></div></div><p class="NormalText">To set a breakpoint when an exception occurs, complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Select the <span><strong class="guilabel">Exceptions</strong></span> tab on the Breakpoint toolbar.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">Add</strong></span> and select one or more exceptions from the list.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">OK</strong></span>.</p></li></ol></div><p class="NormalText">Once an exception breakpoint is added, double-click on it to display the exception properties dialog. This dialog allows you to specify an expression, number of times to skip before stopping, and a specific thread. </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_FE8ECAC7-15EF-40E2-8EFC-FCA166E4BD77"></a>
+          <a class="indexterm" name="sect_runninganddebugging_BCE4573A-0400-4F69-A294-BF1D8883179E"></a>Relocatable Code Markers</h5></div></div></div><p class="NormalText">Breakpoints use relocatable code markers to
+store their location within the source code. This allows SlickEdit to find the
+new location if someone makes changes to the file externally, like modifying the
+file with a different editor. The next time you open the file, SlickEdit checks
+the location of each code marker and verifies that it is still correct. If 
+necessary, SlickEdit uses stored information to locate the correct line of code 
+for this breakpoint. If the code has changed too much, SlickEdit may not be able
+to find the new location. Instead, the breakpoint will be placed at the line
+number where it is was last known to be.
+        </p><p class="NormalText">
+          SlickEdit does not attempt to relocate breakpoints during debugging sessions
+while the external debugger is in control of placing and tracking breakpoints.
+Note that if multiple debug sessions each have breakpoints in a common file,
+this will cause the relocatable marker information for all sessions to be
+cleared when the debugger enters that file.
+        </p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_14180_1008065"></a>
+        <a class="indexterm" name="sect_runninganddebugging_5AB36CAA_4B46"></a>
+        <a class="indexterm" name="sect_runninganddebugging_20205AA5_314D"></a>Generate Debug</h4></div></div></div><p class="NormalText">This feature supports C#, C++, Java, and Slick-C®. Place the cursor on a function name, then click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Generate Debug</strong></span> to generate a statement that dumps the name of the current function and the value of the parameter(s) passed in. Place the cursor on a variable name, then click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Generate Debug</strong></span> to generate a statement that dumps the contents of that variable. The results are as follows:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">In C#, this will generate a <span><strong class="command">System.Diagnostics.Trace.WriteLine()</strong></span> statement.</p></li><li><p class="NormalText">In C++, this will generate a <span><strong class="command">printf</strong></span> statement.</p></li><li><p class="NormalText">In Java, this will generate a <span><strong class="command">System.out.println</strong></span> statement.</p></li><li><p class="NormalText">In Slick-C, this will generate a <span><strong class="command">say</strong></span> statement.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_14180_88238"></a>
+        <a name="sect_runninganddebugging_14180_1016735"></a>
+        <a class="indexterm" name="sect_runninganddebugging_4FC5A415_BC6C"></a>
+        <a class="indexterm" name="sect_runninganddebugging_ADD025AF_5281"></a>
+        Viewing Debugger Info and Setting Options</h4></div></div></div><p class="NormalText">To view the properties of the underlying debugger system, including a general description retrieved from the debugger, version number, run-time version, and debugger name, make sure you're in debug mode, then from the main menu, click <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Debugger Information</strong></span> (or use the <span><strong class="command">debug_props</strong></span> command). </p><div class="mediaobject"><img src="Resources/debuggeroptions_dialog.png"></div><p class="NormalText">Click the <span><strong class="guilabel">Options</strong></span> button to tune the run-time performance of the integrated debugger, examine the properties of the underlying debugger system, set class filters, and/or control the directories searched for source files. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_83857">Debugging Options</a> for more information.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_14180_18335"></a>
+        <a name="sect_runninganddebugging_14180_1001673"></a>
+        <a class="indexterm" name="sect_runninganddebugging_4E44EA0E_CA40"></a>Debugger Tool Windows</h4></div></div></div><p class="NormalText">The toolbars and tool windows that can be used during debugging are listed in the section <a href="ch03s02.htm#sect_toolwindowstoolbars_13309_70931">Available Toolbars and Tool Windows</a>. These can be accessed from the menu items <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Toolbars</strong></span> or <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Windows</strong></span> when the editor is in debug mode.</p><p class="NormalText"></p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_runninganddebugging_47573_36798"></a>Debugging GNU C/C++</h3></div></div></div><p class="NormalText">Debugging for GNU C/C++ programs uses a customized version of GDB. Please 
+    refer to the release notes for specific version information. You can download the customized source 
+    from <a href="http://www.slickedit.com/gdb" target="_blank"> 
+    <em class="citetitle">www.slickedit.com/gdb</em></a>. 
+    </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> The GDB shipped with SlickEdit on Windows is based on Cygwin. If you don't want to use Cygwin for GDB, you can download and install the MinGW-based version of GDB from <a href="http://www.mingw.org/download.shtml" target="_blank"><em class="citetitle">www.mingw.org/download.shtml</em></a>. This version of GDB is known to work with SlickEdit and does not depend on <code class="filename">cygwin1.dll</code>. Use the <span><strong class="guimenu">Configurations </strong></span>tab on the Debugger Options dialog (<span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Debugger Options</strong></span> or <span><strong class="command">debug_props</strong></span> command) to make it the default native GDB debugger configuration.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_runninganddebugging_51745_02686"></a>Debugging Microsoft Visual Studio C++ Programs Using WinDbg</h3></div></div></div><p class="NormalText">When debugging C++ projects in a Visual Studio solution, you have the option 
+      to use the integrated SlickEdit debugger with WinDbg or to use Visual Studio for debugging. 
+      By default, you are prompted to select the method for debugging (see image, below).  There is an 
+      option to never show the prompt again, in which case it will always use the selected method for 
+      debugging.  This option is specified in configuration variable 
+      <span><strong class="command">def_vcproj_debug_prefs</strong></span>.  Setting this configuration macro variable to blank (the 
+      default) will prompt always, a value of 1 prefers using the Visual Studio and a value of 2 prefers 
+      using the integrated debugger. </p><div class="mediaobject"><img src="Resources/windbg_debugger_selectdebugger.png"></div><p class="NormalText">WinDbg is available from Microsoft as part of their Debugging Tools 
+      for Windows. To download WinDbg and read more about it, visit Microsoft's website. </p><p class="NormalText">SlickEdit requires x86 (32-bit) dbgeng.dll and dbghelp.dll 
+      for debugging. By default, it will search for the dlls in the default dynamic-link library search 
+      paths (SlickEdit directory, Windows directory, Windows system directory, directories under 
+      PATH environment variable).  You can also specify a path with a configuration macro variable 
+      <span><strong class="command">def_windbg_path</strong></span>.  Set it using the SlickEdit command-line (set-var 
+      def_windbg_path) or Macro &gt; Set Macro Variable.
+    </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">SlickEdit does not support debugging x64 (64-bit) executables.</p></div><p class="NormalText">To debug, WinDbg needs the path to the executable image and the path to 
+      the symbol information. The path to the executable image specifies the location of the .exe and 
+      .dll files that are being debugged. The path to the symbol information specifies the location of 
+      symbol files (.pdb), which contain debugging information. They are generated by the compiler and 
+      linker. SlickEdit may be able to determine these paths. If it can't you can specify these 
+      paths in the dialogs that launch the debugger. See the <span><strong class="guilabel">Debug executable</strong></span> 
+      dialog, below. You can enter multiple paths, separating each with
+      semicolons.</p><div class="mediaobject"><img src="Resources/windbg_debugger_debug_executable.png"></div><p class="NormalText">WinDbg integration supports controlling target processes, stepping through 
+    source code, setting breakpoints, and accessing memory and registers. Locals and member variables are 
+    automatically generated based on the current thread and stack scope.  Watches can be set for any 
+    symbol name or a C++ expression, evaluated by the current thread and stack scope.  A symbol 
+    name can be qualified by its module name using an exclamation mark (!) separating the module name 
+    from the symbol name.  Specifying the module name in the expression will usually result in faster 
+    evaluations and resolves any symbol ambiguity, such as if the symbol name could be interpreted as a 
+    hexadecimal number.  To restrict to local scope only, prefix a dollar sign and exclamation point ($!) 
+    to the symbol name. </p><p class="NormalText">Use the WinDbg debugger by selecting any of the
+      following from the main menu:
+    </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText"><span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Start</strong></span> - You will be 
+          prompted which debugger to use.</p></li><li><p class="NormalText">
+          <a class="indexterm" name="sect_runninganddebugging_69549_51490"></a><span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Attach Debugger </strong></span> &#8594; <span><strong class="guimenuitem">WinDbg </strong></span> &#8594; <span><strong class="guimenuitem">Attach Process</strong></span> - Attaches the
+          debugger to a running process by process ID.
+        </p><div class="mediaobject"><img src="Resources/windbg_debugger_attach_process.png"></div></li><li><p class="NormalText"><span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Attach Debugger </strong></span> &#8594; <span><strong class="guimenuitem">WinDbg </strong></span> &#8594; <span><strong class="guimenuitem">Debug Executable</strong></span> - Debugs an executable 
+          outside the current project.</p><div class="mediaobject"><img src="Resources/windbg_debugger_debug_executable.png"></div></li><li><p class="NormalText"><span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Attach Debugger </strong></span> &#8594; <span><strong class="guimenuitem">WinDbg </strong></span> &#8594; <span><strong class="guimenuitem">Open Dump File</strong></span> - Opens the debugger on a 
+          core dump file.</p><div class="mediaobject"><img src="Resources/windbg_debugger_open_dumpfile.png"></div></li></ul></div><p class="NormalText">The following Debugging tool windows and operations are supported for 
+      WinDbg:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Call Stack</p></li><li><p class="NormalText">Threads</p></li><li><p class="NormalText">Registers</p></li><li><p class="NormalText">Breakpoints</p></li><li><p class="NormalText">Members</p></li><li><p class="NormalText">Locals</p></li><li><p class="NormalText">Watch</p></li><li><p class="NormalText">Memory</p></li><li><p class="NormalText">Show Disassembly</p></li><li><p class="NormalText">Step into, Step out, Step over, Continue, Break</p></li></ul></div><p class="NormalText">The following commands are available on the SlickEdit command 
+      line:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText"><span><strong class="command">windbg_write_dumpfile</strong></span> - Write current debugging 
+          session to a dump file.</p></li><li><p class="NormalText"><span><strong class="command">windbg_list_modules</strong></span> - List the currently loaded exe 
+          and DLL&#8217;s.  It also lists the base memory address of the loaded module, the image name (name 
+          and extension), and the symbol file type (if any).</p><div class="mediaobject"><img src="Resources/windbg_debugger_list_modules.png"></div></li><li><p class="NormalText"><span><strong class="command">windbg_update_symbols_path</strong></span> - List and update currently 
+          loaded Symbol paths for the current debug session. Use this command to update the symbols path 
+          during debugging in case you need to add a path to a PDB file after launching the debugger. 
+          Symbols are automatically reloaded when you update the symbols path.</p><div class="mediaobject"><img src="Resources/windbg_debugger_symbol_paths.png"></div></li><li><p class="NormalText"><span><strong class="command">windbg_update_image_path</strong></span> - List and update currently 
+          loaded Image paths for the current debug session. Use this command to update the image path 
+          during debugging in case you need to add a path after launching the debugger. 
+          Images are automatically reloaded when you update the image path.</p><div class="mediaobject"><img src="Resources/windbg_debugger_image_paths.png"></div></li><li><p class="NormalText"><span><strong class="command">vcproj_debug_options</strong></span> - Option to set executable name 
+          and path and Symbols paths for current Visual Studio project. By default, SlickEdit will try to 
+          determine the location of the output Executable file name and the location of the program 
+          database symbols file (PDB) directly from the Visual Studio C++ project file.  If you need to 
+          specify a custom location for the output filename or SlickEdit cannot correctly evaluate 
+          the correct location from the Visual Studio project file, you can specify the path name here. 
+          Or if you need to specify multiple paths for symbol files, you can do that here.  
+          If left blank, then either field it will fall back to the Visual Studio project file settings.  
+          The WinDbg path is the global setting for <span><strong class="command">def_windbg_path</strong></span>.</p><div class="mediaobject"><img src="Resources/windbg_debugger_vcproj_options.png"></div></li></ul></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_debuggingphp_14180_1103000"></a>
+      <a class="indexterm" name="sect_runninganddebugging_14933_36798"></a>
+      <a class="indexterm" name="sect_debuggingphp_14180_1103001"></a>Running and Debugging PHP</h3></div></div></div><p class="NormalText">To run a PHP script you need: </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">PHP 5.x or later. 
+                </p></li><li><p class="NormalText">A PHP project. </p></li></ul></div><p class="NormalText">Additionally, to debug a PHP script you need: 
+      </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">The Xdebug plugin 2.0.2 or later for PHP 
+      installed on your PHP server. You can obtain the Xdebug plugin from 
+      http://xdebug.org.
+                </p></li></ul></div><p class="NormalText">After installing the Xdebug plugin and creating a 
+      PHP project you can debug local or remote scripts and web pages. </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_installingxdebug_14180_1101000"></a>
+        <a class="indexterm" name="sect_installingxdebug_14180_1101001"></a>Installing Xdebug</h4></div></div></div><p class="NormalText">PHP projects support debugging with the Xdebug plugin for PHP. You 
+        can download the plugin from http://xdebug.org. </p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Extract the Xdebug dll/lib to your PHP 
+            extension directory. Windows users can use the Windows installer 
+            package provided on the xdebug.org site. Linux users may be able to 
+            install the Xdebug plugin from their package manager. <span class="emphasis"><em>Make sure you 
+            are using Xdebug 2.0.2 or later.</em></span></p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">Set up a test page that prints out results of 
+              phpinfo() to determine PHP settings, including where your 
+              extension directory and 'php.ini' config file resides. A test page 
+              looks like: 
+            </p><pre class="programlisting">
+&lt;!-- phpinfo.php --&gt;
+&lt;?php
+echo phpinfo();
+?&gt;
+</pre></div></li><li><p class="NormalText">Add the following section to your 'php.ini' config file (see 
+    note above if you do not know the location of your 'php.ini' file):</p><pre class="programlisting">
+; Xdebug debugger extension
+[Xdebug]
+; Xdebug plugin installed via Windows pre-built binaries: Use thread-safe zend_extension_ts="..."
+; Xdebug plugin installed via PECL (typically UNIX): Use non-thread-safe zend_extension="..."
+; Xdebug plugin built from source: Follow directions from xdebug.org site
+zend_extension_ts="c:/php5/ext/php_xdebug-2.0.3-5.2.5.dll" 
+xdebug.remote_enable=1
+xdebug.remote_handler=dbgp
+xdebug.remote_mode=req
+xdebug.idekey=slickedit
+xdebug.remote_host=127.0.0.1  ; for remote debugging
+xdebug.remote_port=9000 </pre><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Warning</h3><p class="CellBody">Comment out any preexisting Zend optimizer and 
+            debugger extensions. Zend optimizer and debugger extensions are not 
+            compatible with Xdebug. 
+            </p></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Warning</h3><p class="CellBody">Windows users can install pre-compiled 
+              modules downloaded from xdebug.org. These modules are thread-safe 
+              and should therefore be installed using zend_extension_ts="..." 
+              as outlined in the example above. 
+            </p><p class="CellBody">UNIX users that install from PECL or a 
+              package manager will typically be installing the non-thread-safe 
+              version of the Xdebug plugin and should therefore be using 
+              zend_extension="..." instead of zend_extension_ts="...".
+            </p></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">You must change the zend_extension[_ts] line 
+  to match the path you extracted the dll/lib to in step #1. 
+            </p><p class="CellBody">For the xdebug.remote_host line: if your web server resides on your 
+  local machine, then no changes need to be made. If your web server is remote, then use the IP address 
+  that SlickEdit will be listening on for a connection from Xdebug. 
+            </p></div></li><li><p class="NormalText">Restart your web server.</p></li><li><p class="NormalText">Test that Xdebug is installed successfully by creating a test page that echoes
+  'phpinfo()' (see example in step #1).</p><p class="NormalText">You should see a banner similar to the 
+            following indicating that the PHP server is using Xdebug: 
+          </p><div class="mediaobject"><img src="Resources/xdebug_banner.png"></div><p class="NormalText">Alternatively, if you are debugging 
+            standalone scripts, you can issue the following command from a 
+            console and look for the Xdebug line:
+          </p><pre class="programlisting">
+&gt; php -v
+PHP 5.2.6 (cli) (built: May  2 2008 18:02:07)
+Copyright (c) 1997-2008 The PHP Group
+Zend Engine v2.2.0, Copyright (c) 1998-2008 Zend Technologies
+with Xdebug v2.0.3, Copyright (c) 2002-2007, by Derick Rethans </pre></li><li><p class="NormalText">Once Xdebug is installed and working, verify that the remote_host and remote_port
+            settings in your 'php.ini' config file match those set up for your PHP project 
+            (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">PHP</strong></span>).</p></li></ol></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_debuggingphp_14180_1103003"></a>
+        <a class="indexterm" name="sect_runninganddebugging_70969_17486"></a>
+        Setting Up a PHP Project
+      </h4></div></div></div><p class="NormalText">A PHP project lets you run and debug your PHP web pages and scripts.</p><p class="NormalText">To create a PHP project, run the Create PHP Project wizard by selecting
+        <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">New</strong></span> from the main 
+        menu. For PHP, you only have one choice: "PHP". Fill in the project name and location for the new project, and click 
+        <span><strong class="guibutton">OK</strong></span>. For more information on projects, project types, and creating 
+        projects, see 
+        <a href="ch05.htm#sect_workingwithworkspacesandprojects_15038_78367">Managing Projects</a>.</p><div class="mediaobject"><img src="Resources/create_php_project_wizard.png"></div><p class="NormalText">SlickEdit will display the <span><strong class="guilabel">Create PHP Project</strong></span> wizard, 
+        which will walk you through steps to configure the PHP project, including:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Where your PHP files reside on your local file system.</p></li><li><p class="NormalText">How your local files map onto a web page URL (for the case of web projects).</p></li><li><p class="NormalText">How a PHP file on a remote server maps to a local PHP file (for the case of debugging remote web projects).</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">Your PHP project must contain local copies of all files being 
+              debugged.</p></div></li></ol></div><p class="NormalText">Select <span><strong class="guimenu">Project </strong></span> &#8594; <span><strong class="guimenuitem">Project Properties</strong></span> to add local files to your project. After you have 
+        created your PHP project, select <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">PHP Options</strong></span> to make changes to file mappings and debugger settings.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_settingupphpproject14180_1103005"></a>Executing and Debugging a Web Page</h4></div></div></div><p class="NormalText">For web-based projects, local files in your project map to web page URLs on your
+web server. To launch a web page in your web browser, open a PHP file from your 
+project and execute it (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Execute</strong></span>).</p><p class="NormalText">Debugging requires the Xdebug PHP plugin be 
+        installed on your web server. If you have not installed and verified 
+        your Xdebug installation, then please read <a href="ch07s02.htm#sect_installingxdebug_14180_1101000">Installing Xdebug</a>. 
+        Verify that your project's Xdebug server settings (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">PHP Options</strong></span>, <span><strong class="guilabel">Debug</strong></span> tab) match the 
+        Xdebug host:port you configured for your web server.</p><p class="NormalText">There are two ways to start a debug session: </p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Debugging a local file -  Open a local PHP file in your project and 
+            start the debugger (<span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Start</strong></span>). The File-to-URL mapping you set up when you created the 
+            project will be used to map the local file onto a web page URL and launch a browser to start 
+            debugging.</p></li><li><p class="NormalText">Listening for Xdebug connection - You can start a debug session from 
+            your browser by appending an XDEBUG_SESSION_START argument to the URL:</p><p class="NormalText">
+            </p><pre class="synopsis">http://localhost/index.php?XDEBUG_SESSION_START=slickedit</pre><p class="NormalText">
+          </p><p class="NormalText">The web server will then attempt to connect back to your project and start a
+      debug session. Make sure your project is listening for the connection by toggling
+      <span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Xdebug Listen in Background</strong></span>.</p><p class="NormalText">You can stop a debug session started from your browser by appending the XDEBUG_SESSION_STOP
+      argument to the URL:</p><p class="NormalText">
+            </p><pre class="synopsis">http://localhost/index.php?XDEBUG_SESSION_STOP</pre><p class="NormalText">
+          </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">If you use Firefox, then there is a great Firefox add-on 
+              called Xdebug Helper. You can get it from <a href="http://addons.mozilla.org" target="_blank"><em class="citetitle">http://addons.mozilla.org</em></a>. It allows you to toggle 
+              start/stop an Xdebug session from Firefox without messing with URL arguments. You toggle 
+              from Xdebug Helper icon in the Firefox tray (lower-right).</p></div></li></ol></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_settingupphpproject14180_1103010"></a>Executing and Debugging a Local 
+        Script</h4></div></div></div><p class="NormalText">Local scripts are PHP scripts that you run from a console. If 
+your project was set up to run as a local script (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">PHP Options</strong></span>, Run tab, Run as), then 
+execute your script by selecting Execute from the Build menu <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Execute</strong></span>.</p><p class="NormalText">Debugging requires the Xdebug PHP plugin be 
+        installed. If you have not installed and verified your Xdebug 
+        installation yet, then please read <a href="ch07s02.htm#sect_installingxdebug_14180_1101000">Installing Xdebug</a>.</p><p class="NormalText">Verify that your project's Xdebug server settings 
+        (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">PHP Options</strong></span>, Debug tab) match the Xdebug host:port you 
+        configured in your php.ini configuration file.</p><p class="NormalText">Debug your script by selecting Start from the 
+    Debug menu (<span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Start</strong></span>).</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_settingupphpproject14180_1103020"></a>PHP Options</h4></div></div></div><p class="NormalText"> You can set a number of options to control the execution and 
+        debugging of PHP scripts. You can access PHP options by selecting <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">PHP Options</strong></span> from the main menu. This menu 
+        entry is only available if the active project is a PHP project. Options are broken into two 
+        groups, each with its own tab:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <a href="ch07s02.htm#sect_runninganddebugging_75186_00679">Run Options</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch07s02.htm#sect_runninganddebugging_13586_35014">Debug Options</a>
+          </p></li></ul></div><p class="NormalText">At the top of the PHP Options dialog, you can pick the configuration 
+        that these settings apply to. The default is <span><strong class="guilabel">All Configurations</strong></span>. However, 
+        you can define different settings for separate Run and Debug configurations if you choose.</p><p class="NormalText">At the bottom of the dialog you can set the <span><strong class="guilabel">PHP 
+        interpreter</strong></span>. This is the path to the PHP interpreter to use. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">The path entered for the PHP interpreter affects all projects 
+          and configurations. SlickEdit currently cannot use different interpreters for different 
+          projects. 
+          </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_75186_00679"></a>Run Options</h5></div></div></div><p class="NormalText">The Run options control the execution of PHP scripts both in and 
+          out of the debugger. </p><div class="mediaobject"><img src="Resources/php_debugger_options_dialog_run_tab.png"></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Run as</strong></span> - determines how this script will 
+              be run. Pick one of the following:</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                  <span><strong class="guilabel">Local web server (launches in 
+                  browser)</strong></span> - runs the script using a web server on this machine.</p></li><li><p class="NormalText">
+                  <span><strong class="guilabel">Local script (command line)</strong></span> - runs 
+                  the script from the command line.</p></li><li><p class="NormalText">
+                  <span><strong class="guilabel">Remote web server (launches in 
+                  browser)</strong></span> - runs the script on a remote web server.</p></li></ul></div></li><li><p class="NormalText">
+              <span><strong class="guilabel">Default file</strong></span> - identifies the file to use 
+              to start the execution.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Script arguments</strong></span> - arguments to be 
+              passed to the script.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Interpreter arguments</strong></span> - arguments to be 
+              passed to the PHP interpreter.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">File mappings</strong></span> - File mappings are very important when debugging 
+          remote scripts (usually web pages). They are used to:</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">Map a local file to a web page URL in order to 
+                  execute a web page</p></li><li><p class="NormalText">Map a remote file to a local file when 
+                  debugging. </p></li></ul></div></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_13586_35014"></a>Debug Options</h5></div></div></div><p class="NormalText">The debug options set values that are used to control the 
+          debugger.</p><div class="mediaobject"><img src="Resources/php_debugger_options_dialog_debug_tab.png"></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Local host</strong></span> - the IP address on your local 
+              machine that Xdebug will connect to when initiating a debugger session. This value needs 
+              to be the same as set in the <code class="filename">php.ini</code> file for Xdebug. See <a href="ch07s02.htm#sect_installingxdebug_14180_1101000">Installing Xdebug</a> for more information. 
+              </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Local port</strong></span> - the port on your machine that 
+              Xdebug will connect to when initiating a debugger session. This goes with the Local host 
+              value, above.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Listen for debugger connection on startup</strong></span> 
+              - when checked, SlickEdit will begin listening for a connection when you start the 
+              debugger. </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">When a debugger connection is requested</strong></span> - 
+              describes how to handle a request for a debugger connection. Select one of the following: 
+              </p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                  <span><strong class="guilabel">Prompt me to accept</strong></span> - prompts each 
+                  time a debugger connection is requested.</p></li><li><p class="NormalText">
+                  <span><strong class="guilabel">Always accept</strong></span> - silently accepts all 
+                  debugger connections.</p></li><li><p class="NormalText">
+                  <span><strong class="guilabel">Never accept</strong></span> - silently refuses all 
+                  debugger connections.</p></li></ul></div></li><li><p class="NormalText">
+              <span><strong class="guilabel">Break in a new debugger session</strong></span> - defines 
+              when to break for a new debugger session. Select one of the following:</p><div class="itemizedlist"><ul type="circle"><li><p class="NormalText">
+                  <span><strong class="guilabel">Break on first line of script</strong></span>
+                </p></li><li><p class="NormalText">
+                  <span><strong class="guilabel">Run to first breakpoint</strong></span>
+                </p></li></ul></div></li><li><p class="NormalText">
+              <span><strong class="guilabel">Stay in debugger</strong></span> - Set this option when you do 
+              not want to exit the debugging session when a script has completed. This is especially 
+              useful when debugging a website and you will be jumping in and out of pages as you 
+              navigate the site.</p></li></ul></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_settingupphpproject14180_1103025"></a>Using an SSH Tunnel to Debug a Remote Web Page</h4></div></div></div><p class="NormalText">If your web server resides on a host that 
+        supports ssh, then it is very convenient to set up an ssh tunnel to 
+        tunnel debugger connections from your remote server back to your local 
+        machine. As an example, if your remote web server is called 'myhost.com' 
+        and you are using the default debugger connection settings of 127.0.0.1 
+        on port 9000 both locally and on the remote server, then start an ssh 
+        tunnel with the following command:
+      </p><pre class="programlisting">
+        ssh username@myhost.com -R 9000:127.0.0.1:9000 </pre><p class="NormalText">This saves you the hassle of having to ensure you 
+        have picked the correct interface on which to listen for debugger 
+        connections from the remote server. 
+      </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_runninganddebugging_40085_36798000"></a>
+      <a class="indexterm" name="sect_runninganddebugging_43069_45929"></a>
+      <a class="indexterm" name="sect_runninganddebugging_17847_36798001"></a>Running and Debugging Python</h3></div></div></div><p class="NormalText">To run or debug a Python script you need: </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          Python 2.5 and higher. 
+        </p></li><li><p class="NormalText">A Python project. </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_36072_17486000"></a>Executing and Debugging a Local 
+        Script</h4></div></div></div><p class="NormalText">Execute your script by selecting Execute from the 
+        Build menu <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Execute</strong></span>.</p><p class="NormalText">Debug your script by selecting Start from the 
+        Debug menu (<span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Start</strong></span>).</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_36072_17486010"></a>Debugging a Remote Script</h4></div></div></div><p class="NormalText">If your script will run on a remote host, 
+        then you will need to copy the pydbgp debugger to the remote host in 
+        order to make the debugger connection back to your local host possible. 
+        The pydbgp debugger folder is located under the application folder in 
+        resource/tools/pydbgp-x.x.x/. Copy the entire folder to your remote 
+        host.</p><p class="NormalText">Before attempting to initiate a debug 
+        session from the remote host, you must make sure you are listening 
+        for a debugger connection on a local interface that can 
+        accept connections from the remote host (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Python Options</strong></span>, 
+        Debug tab). Verify that you are listening by setting Listen in 
+        Background (<span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">pydbgp Listen in Background</strong></span>). Note the host:port 
+        that you are listening on by hovering over the listener icon in the lower, right-hand 
+        corner of the application window. You should see something like:</p><pre class="programlisting">
+        Listening for pydbgp connection on 192.168.0.101:52030 </pre><p class="NormalText">Where the host is 192.168.0.101 and the port is 
+        52030.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">If your remote host supports ssh, then 
+        see <a href="ch07s02.htm#sect_runninganddebugging_36072_17486015">Using an SSH Tunnel to Debug a Remote Script</a> 
+        for a convenient way to tunnel remote debugger connections back 
+        to your local host.</p></div><p class="NormalText">From the remote host, issue pydbgp.py 
+        command that will initiate a debugger connection back to your local 
+        machine:</p><pre class="programlisting">
+        pydbgp-1.1.0/bin$ python -S ./pydbgp.py -d 192.168.0.101:52030 -k slickedit path/to/script-to-debug.py
+      </pre><p class="NormalText">If everything was set up correctly, then 
+        you should get a connection request on your local machine to start a 
+        debugging session.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_36072_17486015"></a>Using an SSH Tunnel to Debug a Remote 
+        Script</h4></div></div></div><p class="NormalText">If your script will run on a remote host that 
+        supports ssh, then it is very convenient to set up an ssh tunnel to 
+        tunnel debugger connections from your remote server back to your local 
+        machine. As an example, if your remote server is called 'myhost.com' 
+        and you are listening for a debugger connection at 127.0.0.1 
+        on port 52030, then start an ssh tunnel with the following command: 
+      </p><pre class="programlisting">
+        ssh username@myhost.com -R 52030:127.0.0.1:52030 </pre><p class="NormalText">This saves you the hassle of having to ensure you 
+        have picked the correct interface on which to listen for debugger 
+        connections from the remote server. 
+      </p><p class="NormalText">Follow directions for starting a debugger 
+        connection from the remote host as described in <a href="ch07s02.htm#sect_runninganddebugging_36072_17486010">Debugging a Remote Script</a>. 
+      </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_36072_17486005"></a>Python Options</h4></div></div></div><p class="NormalText"></p><p class="NormalText"> You can set a number of options to control the execution and 
+        debugging of PYTHON scripts. access Python options by selecting <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Python Options</strong></span> from the main menu. This menu 
+        entry is only available if the active project is a Python project. Options are broken into three 
+        groups, each with its own tab:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <a href="ch07s02.htm#sect_runninganddebugging_65236_78890">Run Options</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch07s02.htm#sect_runninganddebugging_72970_02686">Debug Options</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch07s02.htm#sect_runninganddebugging_82469_39837">Remote Mappings</a>
+          </p></li></ul></div><p class="NormalText">At the top of the Python Options dialog, you can pick the configuration 
+        that these settings apply to. The default is <span><strong class="guilabel">All Configurations</strong></span>. However, 
+        you can define different settings for separate Run and Debug configurations if you choose.</p><p class="NormalText">At the bottom of the dialog you can set the <span><strong class="guilabel">Python 
+        interpreter</strong></span>. This is the path to the Python interpreter to use. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">The path entered for the Python interpreter affects all projects and 
+          configurations. SlickEdit currently cannot use different interpreters for different projects. 
+          </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_65236_78890"></a>Run Options</h5></div></div></div><p class="NormalText"></p><div class="mediaobject"><img src="Resources/python_debugger_options_dialog_run_tab.png"></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Interpreter arguments</strong></span> - arguments to be 
+              passed to the Python interpreter.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Default script</strong></span> - identifies the file to use 
+              to start the execution.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Script arguments</strong></span> - arguments to be 
+              passed to the script.</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_72970_02686"></a>Debug Options</h5></div></div></div><p class="NormalText">The <span><strong class="guilabel">Debug</strong></span> tab contains options that pertain to 
+          debugging Python scripts.</p><div class="mediaobject"><img src="Resources/python_debugger_options_dialog_debug_tab.png"></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Show private variable</strong></span> - Set this option if you want to show private 
+              Python variables (example: '__doc__' or '_myValue') in the debugger.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Local host</strong></span> - Set the local host that pydbgp will 
+              connect to when initiating a debugger session. The default is 127.0.0.1.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Port provided by system</strong></span> - Use a port that 
+              is automatically assigned by the system. pydbgp will connect to 
+              this port when initiating a debugger session.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Specific port</strong></span> - Use 
+              this to specify a port for pydbgp to connect to when initiating a 
+              debugger session.
+            </p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Listen for debugger connection on startup</strong></span> - Set 
+              this option if you want to listen for a debugger connection in the background when the project 
+              is opened.</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_82469_39837"></a>Remote Mappings</h5></div></div></div><p class="NormalText">Remote Mappings allow you to define 
+          remote-to-local directory mappings. This allows the debugger to 
+          automatically resolve the remote file being debugged to a local file. 
+        </p><div class="mediaobject"><img src="Resources/python_debugger_options_dialog_mappings_tab.png"></div><p class="NormalText">Click <span><strong class="guibutton">Add</strong></span> or <span><strong class="guibutton">Remove</strong></span> 
+          to manage the list of mappings.</p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_runninganddebugging_24381_41674000"></a>
+      <a class="indexterm" name="sect_runninganddebugging_16571_40670"></a>
+      <a class="indexterm" name="sect_runninganddebugging_24381_41674001"></a>Running and Debugging Perl</h3></div></div></div><p class="NormalText">To run or debug a Perl script you need: </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          Perl 5 
+        </p></li><li><p class="NormalText">A Perl project </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_60677_32723000"></a>Executing and Debugging a Local 
+        Script</h4></div></div></div><p class="NormalText">Execute your script by selecting Execute from the 
+        Build menu <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Execute</strong></span>.</p><p class="NormalText">Debug your script by selecting Start from the 
+        Debug menu (<span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Start</strong></span>).</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_07322_83205"></a>Debugging a Remote Script</h4></div></div></div><p class="NormalText">If your script will run on a remote host, 
+        then you will need to copy the perl5db debugger to the remote host in 
+        order to make the debugger connection back to your local host possible. 
+        The perl5db debugger folder is located under the application folder in 
+        resource/tools/perl5db-x.x/. Copy the entire folder to your remote 
+        host.</p><p class="NormalText">Before attempting to initiate a debug 
+        session from the remote host, you must make sure you are listening 
+        for a debugger connection on a local interface that can 
+        accept connections from the remote host (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Perl Options</strong></span>, 
+        Debug tab). Verify that you are listening by setting Listen in 
+        Background (<span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">perl5db Listen in Background</strong></span>). Note the host:port 
+        that you are listening on by hovering over the listener icon in the lower, right-hand 
+        corner of the application window. You should see something like:</p><pre class="programlisting">
+        Listening for perl5db connection on 192.168.0.101:52030 </pre><p class="NormalText">Where the host is 192.168.0.101 and the port is 
+        52030.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">If your remote host supports ssh, then 
+        see <a href="ch07s02.htm#sect_runninganddebugging_24321_48331">Using an SSH Tunnel to Debug a Remote Script</a> 
+        for a convenient way to tunnel remote debugger connections back 
+        to your local host.</p></div><p class="NormalText">From the remote host, set up the environment 
+        and issue the perl5db command in order to initiate a debugger connection 
+        back to your local machine:
+      </p><pre class="programlisting">
+        $ export PERL5DB=BEGIN { require 'perl5db.pl'; }
+        $ export PERL5LIB=/path/to/perl5db-0.30 
+        $ export PERLDB_OPTS=RemotePort=192.168.0.101:52030
+        $ perl -d  path/to/script-to-debug.pl 
+      </pre><p class="NormalText">If everything was set up correctly, then 
+        you should get a connection request on your local machine to start a 
+        debugging session.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_24321_48331"></a>Using an SSH Tunnel to Debug a Remote 
+        Script</h4></div></div></div><p class="NormalText">If your script will run on a remote host that 
+        supports ssh, then it is very convenient to set up an ssh tunnel to 
+        tunnel debugger connections from your remote server back to your local 
+        machine. As an example, if your remote server is called 'myhost.com' 
+        and you are listening for a debugger connection at 127.0.0.1 
+        on port 52030, then start an ssh tunnel with the following command: 
+      </p><pre class="programlisting">
+        ssh username@myhost.com -R 52030:127.0.0.1:52030 </pre><p class="NormalText">This saves you the hassle of having to ensure you 
+        have picked the correct interface on which to listen for debugger 
+        connections from the remote server. 
+      </p><p class="NormalText">Follow directions for starting a debugger 
+        connection from the remote host as described in <a href="ch07s02.htm#sect_runninganddebugging_07322_83205">Debugging a Remote Script</a>. 
+      </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_83614_40609"></a>Perl Options</h4></div></div></div><p class="NormalText"></p><p class="NormalText"> You can set a number of options to control the execution and 
+        debugging of Perl scripts. Access Perl options by selecting <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Perl Options</strong></span> from the main menu. This menu 
+        entry is only available if the active project is a Perl project. Options are broken into three 
+        groups, each with its own tab:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <a href="ch07s02.htm#sect_runninganddebugging_95113_10849">Run Options</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch07s02.htm#sect_runninganddebugging_04425_74721">Debug Options</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch07s02.htm#sect_runninganddebugging_87253_59735">Remote Mappings</a>
+          </p></li></ul></div><p class="NormalText">At the top of the Perl Options dialog, you can pick the configuration that 
+        these settings apply to. The default is <span><strong class="guilabel">All Configurations</strong></span>. However, 
+        you can define different settings for separate Run and Debug configurations if you choose.</p><p class="NormalText">At the bottom of the dialog you can set the <span><strong class="guilabel">Perl 
+        interpreter</strong></span>. This is the path to the Perl interpreter to use. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">The path entered for the Perl interpreter affects all projects and 
+          configurations. SlickEdit currently cannot use different interpreters for different projects. 
+          </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_95113_10849"></a>Run Options</h5></div></div></div><p class="NormalText"></p><div class="mediaobject"><img src="Resources/perl_debugger_options_dialog_run_tab.png"></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Interpreter arguments</strong></span> - arguments to be 
+              passed to the Perl interpreter.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Default script</strong></span> - identifies the file to use 
+              to start the execution.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Script arguments</strong></span> - arguments to be 
+              passed to the script.</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_04425_74721"></a>Debug Options</h5></div></div></div><p class="NormalText">The <span><strong class="guilabel">Debug</strong></span> tab contains options that pertain to 
+          debugging Perl scripts.</p><div class="mediaobject"><img src="Resources/perl_debugger_options_dialog_debug_tab.png"></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Show private variable</strong></span> - Set this option if you want to show private 
+              variables in the debugger.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Local host</strong></span> - Set the local host and port that pydbgp will 
+              connect to when initiating a debugger session. The default is 127.0.0.1 on an automatically 
+              assigned port.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Port provided by system</strong></span> - Use a port that 
+              is automatically assigned by the system.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Specific port</strong></span> - use this to specify a 
+              port to connect to.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Listen for debugger connection on startup</strong></span> - Set 
+              this option if you want to listen for a debugger connection in the background when the project 
+              is opened.</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_87253_59735"></a>Remote Mappings</h5></div></div></div><p class="NormalText">Remote Mappings allow you to define remote-to-local directory 
+          mappings. This allows the debugger to automatically resolve the remote file being 
+          debugged to a local file. 
+        </p><div class="mediaobject"><img src="Resources/perl_debugger_options_dialog_mappings_tab.png"></div><p class="NormalText">Click <span><strong class="guibutton">Add</strong></span> or <span><strong class="guibutton">Remove</strong></span> 
+          to manage the list of mappings.</p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_runninganddebugging_91779_36798"></a>
+      <a class="indexterm" name="sect_runninganddebugging_21683_17486"></a>
+      <a class="indexterm" name="sect_runninganddebugging_20034_40630"></a>Running and Debugging Ruby</h3></div></div></div><p class="NormalText">To run or debug a Ruby script you need: </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">A Ruby project </p></li><li><p class="NormalText">
+          Ruby 1.8 (1.8.4 or higher for debugging) 
+        </p></li><li><p class="NormalText">
+          ruby-debug-base 0.9.1 or higher (for debugging)
+        </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">Use the Ruby 'gem' package manager to install the 
+            'ruby-debug-base' gem package:</p><pre class="programlisting">
+            gem install ruby-debug-base 
+          </pre></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Warning</h3><p class="CellBody">If you used a MinGW RubyInstaller installer to install Ruby on 
+            Windows (very likely), then you will need to download and extract the Ruby-DevKit 
+            from rubyinstaller.org and perform the gem install from the msys console by running 
+            'msys.bat':
+          </p><pre class="programlisting">
+            $ cd /c/Ruby187/bin 
+            $ gem install ruby-debug-base 
+          </pre></div></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_35235_41674"></a>Executing and Debugging a Local 
+        Script</h4></div></div></div><p class="NormalText">Execute your script by selecting Execute from the 
+        Build menu <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Execute</strong></span>.</p><p class="NormalText">Debug your script by selecting Start from the 
+        Debug menu (<span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">Start</strong></span>).</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_87650_32723"></a>Debugging a Remote Script</h4></div></div></div><p class="NormalText">If your script will run on a remote host, 
+        then you will need to copy the rdbgp debugger to the remote host in 
+        order to make the debugger connection back to your local host possible. 
+        The rdbgp debugger folder is located under the application folder in 
+        resource/tools/rdbgp-x.x/. Copy the entire folder to your remote 
+        host.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Warning</h3><p class="CellBody">From the remote host, make sure you have installed the 
+          ruby-debug-base gem package described at the beginning of this section. If you do 
+          not install the ruby-debug-base package, then you will see an error like the 
+          following in the <span><strong class="guilabel">Build</strong></span> window:
+        </p><pre class="programlisting">
+          Error: no such file to load -- ruby-debug-base </pre></div><p class="NormalText">Before attempting to initiate a debug 
+        session from the remote host, you must make sure you are listening 
+        for a debugger connection on a local interface that can 
+        accept connections from the remote host (<span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Ruby Options</strong></span>, 
+        Debug tab). Verify that you are listening by setting Listen in 
+        Background (<span><strong class="guimenu">Debug </strong></span> &#8594; <span><strong class="guimenuitem">rdbgp Listen in Background</strong></span>). Note the host:port 
+        that you are listening on by hovering over the listener icon in the lower, right-hand 
+        corner of the application window. You should see something like:</p><pre class="programlisting">
+        Listening for rdbgp connection on 192.168.0.101:52030 </pre><p class="NormalText">Where the host is 192.168.0.101 and the port is 
+        52030.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">If your remote host supports ssh, then 
+        see <a href="ch07s02.htm#sect_runninganddebugging_36050_00679">Using an SSH Tunnel to Debug a Remote Script</a> 
+        for a convenient way to tunnel remote debugger connections back 
+        to your local host.</p></div><p class="NormalText">From the remote host, set up the environment 
+        and issue the rdbgp command in order to initiate a debugger connection 
+        back to your local machine:
+      </p><pre class="programlisting">
+        $ export RUBYDB_LIB=/path/to/rdbgp-2.0 
+        $ export RUBYDB_OPTS=HOST=192.168.0.101 PORT=52030
+        $ ruby -I $RUBYDB_LIB -r $RUBYDB_LIB/rdbgp.rb  path/to/script-to-debug.rb 
+      </pre><p class="NormalText">If everything was set up correctly, then 
+        you should get a connection request on your local machine to start a 
+        debugging session.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_36050_00679"></a>Using an SSH Tunnel to Debug a Remote 
+        Script</h4></div></div></div><p class="NormalText">If your script will run on a remote host that 
+        supports ssh, then it is very convenient to set up an ssh tunnel to 
+        tunnel debugger connections from your remote server back to your local 
+        machine. As an example, if your remote server is called 'myhost.com' 
+        and you are listening for a debugger connection at 127.0.0.1 
+        on port 52030, then start an ssh tunnel with the following command: 
+      </p><pre class="programlisting">
+        ssh username@myhost.com -R 52030:127.0.0.1:52030 </pre><p class="NormalText">This saves you the hassle of having to ensure you 
+        have picked the correct interface on which to listen for debugger 
+        connections from the remote server. 
+      </p><p class="NormalText">Follow directions for starting a debugger 
+        connection from the remote host as described in <a href="ch07s02.htm#sect_runninganddebugging_87650_32723">Debugging a Remote Script</a>. 
+      </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_runninganddebugging_49875_35014"></a>Ruby Options</h4></div></div></div><p class="NormalText"></p><p class="NormalText"> You can set a number of options to control the execution and 
+        debugging of Ruby scripts. Access Ruby options by selecting <span><strong class="guimenu">Build </strong></span> &#8594; <span><strong class="guimenuitem">Ruby Options</strong></span> 
+        from the main menu. This menu entry is only available if the active project is a Ruby 
+        project. Options are broken into three groups, each with its own tab:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <a href="ch07s02.htm#sect_runninganddebugging_16098_78890">Run Options</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch07s02.htm#sect_runninganddebugging_39875_02686">Debug Options</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch07s02.htm#sect_runninganddebugging_97571_39837">Remote Mappings</a>
+          </p></li></ul></div><p class="NormalText">At the top of the Ruby Options dialog, you can pick the configuration that 
+        these settings apply to. The default is <span><strong class="guilabel">All Configurations</strong></span>. However, 
+        you can define different settings for separate Run and Debug configurations if you choose.</p><p class="NormalText">At the bottom of the dialog you can set the <span><strong class="guilabel">Ruby 
+        interpreter</strong></span>. This is the path to the Ruby interpreter to use. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody">The path entered for the Ruby interpreter affects all projects and 
+          configurations. SlickEdit currently cannot use different interpreters for different projects. 
+          </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_16098_78890"></a>Run Options</h5></div></div></div><p class="NormalText"></p><div class="mediaobject"><img src="Resources/ruby_debugger_options_dialog_run_tab.png"></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Interpreter arguments</strong></span> - arguments to be 
+              passed to the Ruby interpreter.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Default script</strong></span> - identifies the file to use 
+              to start the execution.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Script arguments</strong></span> - arguments to be 
+              passed to the script.</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_39875_02686"></a>Debug Options</h5></div></div></div><p class="NormalText">The <span><strong class="guilabel">Debug</strong></span> tab contains options that pertain to 
+          debugging Ruby scripts.</p><div class="mediaobject"><img src="Resources/ruby_debugger_options_dialog_debug_tab.png"></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="guilabel">Local host</strong></span> - Set the local host and port that rdbgp will 
+              connect to when initiating a debugger session. The default is 127.0.0.1 on an automatically 
+              assigned port.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Port provided by system</strong></span> - Use a port that 
+              is automatically assigned by the system.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Specific port</strong></span> - use this to specify a 
+              port to connect to.</p></li><li><p class="NormalText">
+              <span><strong class="guilabel">Listen for debugger connection on startup</strong></span> - Set 
+              this option if you want to listen for a debugger connection in the background when the project 
+              is opened.</p></li></ul></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="sect_runninganddebugging_97571_39837"></a>Remote Mappings</h5></div></div></div><p class="NormalText">Remote Mappings allow you to define remote-to-local directory 
+          mappings. This allows the debugger to automatically resolve the remote file being 
+          debugged to a local file. 
+        </p><div class="mediaobject"><img src="Resources/ruby_debugger_options_dialog_mappings_tab.png"></div><p class="NormalText">Click <span><strong class="guibutton">Add</strong></span> or <span><strong class="guibutton">Remove</strong></span> 
+          to manage the list of mappings.</p></div></div></div></div></body></html>

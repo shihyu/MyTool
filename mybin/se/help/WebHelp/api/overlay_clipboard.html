@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>overlay_clipboard</title>
+</head>
+<body>
+
+<h3><b>_command int overlay_clipboard(_str name='', boolean isClipboard=true)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>Overlays the contents of the clipboard at the cursor.
+If <i>cbname</i> is given, then the
+internal clipboard with name <i>cbname</i> is inserted.
+The behavior is similar to overlays in ISPF.
+<p>
+IMPORTANT:  <i>cbname</i> needs to start with an alphabetic
+character (a-z).  numeric values for <i>cbname</i> are reserved for VI
+emulation.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common return code is 1 (clipboard empty,
+or clipboard text too long for command line).  On error, message is
+displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control, Text Box, Combo Box
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Combo_Box_Methods.html">Combo Box Methods</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Selection_Functions.html">Selection Functions</a>, <a href="Text_Box_Methods.html">Text Box Methods</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,773 @@
+/* REXX Builtin Documentation */
+/**
+ * ABBREV Indicates if <b>str2</b> is an abbreviation of <b>str1</b>.
+ * Compare is <b>str2</b> to <b>str1</b> starting at beginning of
+ * each string for length <b>nbr2</b> or length of str2.
+ * @return 1 if str2 matches str1, otherwise 0
+ * @param str1 String to be compared to str2
+ * @param str2 Possible abbreviation of str1
+ * @param nbr1 minimum length of str2 that should match str1 to be an
+ * abbreviation.  Defaults to length of str2
+ * @example
+ * <code>if abbrev('This string','This',4) then say "This is true"</code>
+ */
+procedure nbr ABBREV (str1,str2,[nbr1]) ;
+/**
+ * ABS determines the absolute value of a numeric string
+ * @return The absolute value of <b>nbr1</b>
+ * @see Numeric_digits
+ * @param nbr1 Number to be converted
+ * @example <code>absnbr = abs(nbr1)</code>
+ */
+procedure nbr ABS (nbr1) ;
+/**
+ * ADDRESS provides the current environment name
+ * @return The environment name set by the ADDRESS instruction
+ * @example <code>say "The current environment is " address()</code>
+ */
+procedure str ADDRESS () ;
+/**
+ * ARG provides the number of arguments passed to the current internal
+ * or external procedure
+ * @return The number of arguments passed into the function
+ * @example <code>do while arg() > 1 ...</code>
+ */
+procedure nbr ARG () ;
+/**
+ * ARG (nbr) provides the contents of a specific argument.
+ * <br>
+ * @return The value of the specified argument
+ * @param nbr An argument number
+ * @example <code>firstname = arg(1)</code>
+ */
+procedure str ARG (nbr) ;
+/**
+ * ARG (nbr, str) tests for the existance of argument specified
+ * @return 1 (true) or 0 (false) based on the opt
+ * @param nbr An argument number to test the existance or omission of
+ * @param str 'E' to test if the argument exists, 'O' to test if the
+ * argument was omitted
+ * @example <code>if arg(1,'E') then say "First name is " arg(1)</code>
+ */
+procedure str ARG (nbr, str) ;
+/**
+ * BITAND Logically AND's the bits of <b>str1</b> and <b>str2</b>.
+ * The shorter string
+ * is extended with <b>str3</b>.
+ * @return A binary string whose bits are on if the corresponding bits of
+ * <b>str1</b> and <b>str2</b> are both on.
+ * @param str1 First string of AND operation
+ * @param str2 Second string, default is null string
+ * @param str3 Pad character, default is 'ff'x
+ * @example <code>null_string = bitand('10101010'x, '01010101'x)</code>
+ */
+procedure str BITAND (str1,[str2],[str3]) ;
+/**
+ * BITOR Logically OR's the bits of <b>str1</b> and <b>str2</b>.
+ * The shorter string is
+ * extended with <b>str3</b>.
+ * @return A binary string whose bits are on if either corresponding
+ * bit of <b>str1</b> or <b>str2</b> is on.
+ * @param str1 First string of the OR operation
+ * @param str2 Second string, default is a null string
+ * @param str3 Pad character for shorter string, default is '00'x
+ * @example <code>turn_on = bitor('f0f0f0f0'x, '0f0f0f0f')</code>
+ */
+procedure str BITOR (str1, [str2], [str3]) ;
+/**
+ * BITXOR Logically XOR's the bits of <b>str1</b> and <b>str2</b>.
+ * The shorter string is
+ * extended with <b>str3</b>.
+ * @return A binary string whose bits are on if one but not both of the
+ * corresponding bits of <b>str1</b> or <b>str2</b> are on.
+ * @param str1 First string of the XOR operation
+ * @param str2 Second string, default is a null string
+ * @param str3 Pad character for shorter string, default is '00'x
+ * @example <code>either_not_both = bitxor('ff00ff00'x, 'f0f0f0f0'x)</code>
+ */
+procedure str BITXOR (str1, [str2], [str3]) ;
+/**
+ * B2X Convert <b>Binary string</b> to Hexadecimal.
+ * @return The hexadecimal representation of the binary string
+ * @param binary_str Only 0's and 1's allowed, do not specify string type
+ * @example <code>say 'Hex value of 11110001 is ' b2x('11110001')</code>
+ */
+procedure str B2X (binary_str) ;
+/**
+ * CENTER Pad <b>str1</b> with spaces at each end
+ * to center it in a field of specified <b>length</b>
+ * @return A string of specified width with string centered
+ * within it.
+ * @param str1 The string to be centered
+ * @param length The number of character to be in the result string
+ * @param pad The single character used to extend str1 to width,
+ * defaults to space
+ * @example <code>line = center('title',20,'-')</code>
+ */
+procedure str CENTER (str1,length,[pad])
+/**
+ * CHARIN Get characters from specified input stream
+ * @return The number of characters specified
+ * @param str Name of input stream, defaults to standard input
+ * @param nbr1 Starting position within the input stream to start
+ * retrieving data, default to 1st character in stream or character
+ * following last retrieved
+ * @param nbr2 Number of characters to get from input stream, default to 1
+ * @example <code>in_data = charin(,,20)</code>
+ */
+procedure str CHARIN ([str],[nbr1],[nbr2]) ;
+/**
+ * CHAROUT Puts <b>str</b> to output stream.
+ * If <b>str2</b> and <b>nbr</b> are omitted
+ * stream is closed.
+ * @return Number of character that could not be written
+ * @param str1 Name of output stream
+ * @param str2 String of characters to be output
+ * @param nbr Location within output stream to begin writing
+ * @example <code>error_cnt = charout(,'output string')</code>
+ */
+procedure nbr CHAROUT ([str1],[str2],[nbr])
+/**
+ * CHARS Provides the number of characters to be read from
+ * an input stream
+ * @return The number of characters remaining to be read from
+ * the input stream
+ * @param str The name of the input stream, defaults to the
+ * standard input stream.
+ * @example <code>input_available = chars()</code>
+ */
+procedure nbr CHARS ([str]) ;
+/**
+ * COMPARE Compares two strings
+ * @return The position within the string where the first mismatch
+ * occurs.  If the strings are equal, 0 is returned.
+ * @param str1 The first string to be compared
+ * @param str2 The second string to be compared
+ * @param str3 The pad character used to make the strings the same length
+ * @example <code>if compare('string1', 'string2') = 0 then nop else say 'Not equal'</code>
+ */
+procedure nbr COMPARE (str1,str2,[str3]) ;
+/**
+ * CONDITION Provide information about a trapped condition
+ * @return Depends on input option.
+ * <br>For 'C' the name of the trapped condition
+ * <br>For 'D' descriptive information about the trapped condition
+ * <br>For 'I' the instruction the invoked the condition
+ * <br>For 'S' the state of handling for the condition
+ * <br>A null string if no condition currenlty raised
+ * @param str One of the options specified in the Returns section.
+ * @example <code>say "Condition details:" condition('D')</code>
+ */
+procedure str CONDITION ([str]) ;
+/**
+ * COPIES Create a string with <b>nbr</b> copies of <b>str</b>
+ * concatenated together.
+ * @return A string.  A null string is returned if nbr is 0
+ * @param str The string to replicate
+ * @param nbr The number of times to replicate str
+ * @example <code>out_line = copies('- - ',20)</code>
+ */
+procedure str COPIES (str, nbr) ;
+/**
+ * C2D Convert the contents of <b>length</b> bytes of storage
+ * to a decimal value.
+ * Highly dependant on platform.  ASCII platform and
+ * EBCDIC platform will return differnt values for a character
+ * string.
+ * @return A decimal number
+ * @param data string or variable name
+ * @param length limits the conversion to the right-most length
+ * characters
+ * @example On an ASCII platform, <code>C2D('123',2)</code> returns 12851, the
+ * decimal value of '3233'x (value for ASCII characters 2 & 3)
+ */
+procedure nbr C2D (data, [length]) ;
+/**
+ * C2X The characters of <b>str</b> are translated into a hexadecimal
+ * string for the current platform.
+ * @return A string of hexadecimal characters (with A-F uppercased)
+ * representing the platform specific values of <b>str</b>.
+ * @param str A character string or variable
+ * @example <code>say "EBCDIC hex values for 'ABC'" C2X('ABC')</code>
+ */
+procedure str C2X (str) ;
+/**
+ * DATATYPE Indicates the type of string specified.  Alternately,
+ * indicates true or false if the string matches the type specified
+ * @return A string value indicating the type of string
+ * provided (NUM or CHAR).
+ * Alternately, 1 (true) or 0 (false) if the string matches the
+ * type specified.
+ * @param str The string in question.
+ * @param type A letter indicating the type of string to test
+ * str for.
+ * <dl compact>
+ * <dt>'A'
+ * <dd>Alphanumeric string (contains a-z, A-Z, or 0-9)
+ * <dt>'B'
+ * <dd>Binary string (contains 0 or 1)
+ * <dt>'L'
+ * <dd>Lowercase characters (contains a-z)
+ * <dt>'M'
+ * <dd>Mixed case string (contains a-z, or A-Z)
+ * <dt>'N'
+ * <dd>A valid REXX number
+ * <dt>'S'
+ * <dd>Contains valid REXX symbol characters
+ * <dt>'U'
+ * <dd>Upper case characters (contains A-Z)
+ * <dt>'W'
+ * <dd>Whole number
+ * <dt>'X'
+ * <dd>Hexadecimal character string (contains 0-9, a-f or A-F)
+ * </dl>
+ * @example
+ * <code>if datatype('abcDEF123',"A") then say 'Alphanumeric string'</code>
+ */
+procedure str DATATYPE (str, [type]) ;
+/**
+ * DATE Provides the current date in specified format
+ * @return Date in format ## MMM YYYY unless overridden
+ * as specified in the parameter list
+ * @param option Single character string specifing the desired
+ * output format.
+ * <dl compact>
+ * <dt>'B'
+ * <dd>Base date, number of days since January 1, 0001
+ * <dt>'D'
+ * <dd>Day number within the current year.  January 1 = 1
+ * <dt>'E'
+ * <dd>European Format date (dd/mm/yy)
+ * <dt>'M'
+ * <dd>Current month spelled out
+ * <dt>'N'
+ * <dd>Default format
+ * <dt>'O'
+ * <dd>Orderable format (yy/mm/dd)
+ * <dt>'S'
+ * <dd>Date in Standard format (yyyymmdd)
+ * <dt>'U'
+ * <dd>Date in US format (mm/dd/yy)
+ * <dt>'W'
+ * <dd>Day of the week spelled out
+ * </dl>
+ * @example <code>say "Today is" date('U')</code>
+ */
+procedure str DATE ([option]) ;
+/**
+ * DELSTR Removes the specified number of characters from a string.
+ * @param str The starting string to be modified
+ * @param start The starting location within the string to remove
+ * the substring
+ * @param length The length of the substring to remove
+ * @example <code>chopped = delstr('this is (cut this out) the string',9,15)</code>
+ */
+procedure str DELSTR (str, start, [length]) ;
+/**
+ * DELWORD Used to delete a specified number of words (delimited by spaces)
+ * from a string
+ * @param str The string to be processed
+ * @param start The word number of the first word to be removed
+ * @param length The number of words to be removed
+ * @example <code>chopped = delword('this is (cut this out) the string',3,3)</code>
+ */
+procedure str DELWORD (str, start, [length]) ;
+/**
+ * @return The current value of the NUMERIC DIGITS setting
+ */
+procedure nbr DIGITS () ;
+/**
+ * D2C Converts a decimal number to the display character for the
+ * current platform (ASCII or EBCIDC)
+ * @param nbr The decimal value to be converted
+ * @param length After conversion to the hexadecimal value, length controls
+ * how may characters of the results is returned.
+ * @example <code>say 'This should print AB on an ASCII machine' d2c(16706,2)</code>
+ */
+procedure str D2C (nbr, [length]) ;
+/**
+ * D2X Converts a decimal number into the hexadecimal representation
+ * for the current platform (ASCII or EBCDIC)
+ * @param nbr The decimal value to be converted
+ * @param length The number of hexadecimal characters to be returned
+ * @example <code>say 'This should print 142 (of 4142) on an ASCII machine' d2x(16706,3)</code>
+ * @see X2D
+ */
+procedure str D2X (nbr, [length]) ;
+/**
+ * ERRORTEXT
+ * @return The message text of the message associated with error nbr
+ * @param nbr The number of the error additional information is
+ * required for
+ * @example <code>say ERRORTEXT(2)</code>
+ */
+procedure str ERRORTEXT (nbr) ;
+/**
+ * @return The current value of NUMERIC FORM
+ * @example <code>say 'NUMERIC FORM is' FORM()</code>
+ */
+procedure str FORM () ;
+/**
+ * FORMAT Formats a number with <b>m</b> digits before the decimal
+ * point and <b>n</b> digits following the decimal point.
+ * @param nbr The number to be formated
+ * @param m The number of digits to the left of the decimal point.
+ * <b>m</b> must be greater than length of nbr.  Short numbers
+ * are padded to the left with spaces.
+ * @param n The number of digits to follow the decimal point.
+ * Trialing zeros are added as necessary
+ * @param exp1 The number of digits to the right of the decimal point
+ * when formatting in exponential notation.
+ * @param exp2 The number of digits required to trigger formatting
+ * into exponential notation.
+ * @example <code>say format(123456,10,2) 'should display as 123456.00 (with leading spaces)'</code>
+ */
+procedure str FORMAT (nbr, [m], [n], [exp1], [exp2]) ;
+/**
+ * @return The current value of NUMERIC FUZZ
+ */
+procedure str FUZZ () ;
+/**
+ * INSERT Insert <b>str1</b> into <b>str2</b> at position <b>pos</b>.
+ * @return New expanded string
+ * @param str1 String to be inserted into <b>str2</b>
+ * @param str2 String to be expanded
+ * @param pos Number representing position in <b>str2</b> where <b>str1</b>
+ * will be inserted.  Default 0, before the first character of <b>str2</b>.
+ * @param length Length <b>str1</b> is extended to before being
+ * inserted.  Default is length of <b>str1</b>
+ * @param pad Character that is used to extend <b>str1</b>
+ * @see OVERLAY
+ * @example <code>alpha = insert('bcdef','aghij',1)</code>
+ */
+procedure str INSERT (str1, str2, [pos], [length], [pad]) ;
+/**
+ * LASTPOS Find the starting position of the last occurence of <b>target</b>
+ * within <b>str</b>.
+ * The search starts at the end of <b>str</b> (or the <b>start</b> value) and
+ * moves toward the begining of <b>str</b> (leftward).
+ * @return The location within <b>str</b> of <b>target</b> or 0 if not found
+ * @param target A string to be searched for.
+ * @param str A string to be searched.
+ * @param start The starting position within <b>str</b> to begin the search.
+ * Defaults to the end of the string.
+ * @see POS
+ * @example <code>last = lastpos(' yada','yada yada yada')</code>
+ */
+procedure nbr LASTPOS (target, str, [start]) ;
+/**
+ * LEFT Extract the left-most portion of a string
+ * @return The left most portion of <b>str</b> for a length of <b>length</b>
+ * @param str The original string to be parsed
+ * @param length The number of characters to be extracted
+ * @param pad The character to pad the resulting string if the
+ * original string is less than <b>length</b>
+ * @example <code>say "Print first 7 characters:" left('of this string',7)
+ * </code>
+ */
+procedure str LEFT (str, length, [pad]) ;
+/**
+ * LENGTH - Provides the length of <b>str</b>
+ * @param str A character sting to determine the length for.
+ * @return nbr The length or number of characters, including trailing
+ * spaces, in <b>str</b>
+ * @example <code>say "Is length 9 or 10?" length('123456789 ')</code>
+ *
+ */
+procedure nbr LENGTH (str) ;
+/**
+ * LINEIN Returns a record (terminated by a new line character) from
+ * the specified input stream.
+ * @return The string read from the input stream
+ * @param stream The input stream.  Defaults to standard input.
+ * @param position Relative line number within the stream.
+ * Defaults to record following previous LINEIN
+ * @param count The number of whole lines to be read.  0 or 1 only.
+ * Defaults to 1.
+ * @example <code>rec = linein(,,1)</code>
+ */
+procedure str LINEIN ([stream], [position], [count]) ;
+/**
+ * LINEOUT Writes <b>str</b> to <b>stream</b>.
+ * Closes output stream if <b>str</b> and <b>position</b> are both
+ * omitted.
+ * @return The number of strings (0 or 1) that could not be written
+ * @param stream The output stream, defaults to standard out
+ * @param str The output string to be written
+ * @param position Location within the output stream to write the string
+ * @example <code>error = lineout(,out_rec)</code>
+ */
+procedure nbr LINEOUT ([stream], [str], [position]) ;
+/**
+ * Lines Provides the number of lines available to be read
+ * from <b>stream</b>
+ * @param stream Input stream, defaults to standard input
+ * @example <code>records_avail = lines()</code>
+ */
+procedure nbr LINES ([stream]) ;
+/**
+ * MAX Determines the largest of a series of numbers
+ * @return nbr The largest numeric value within the list
+ * @param nbrx A number to be compared to other numbers in the list
+ * @example <code>biggest = max(3,10,8,5,2)</code>
+ */
+procedure nbr MAX (nbr1, [nbr2], ...) ;
+/**
+ * MIN Determines the smallest of a series of numbers
+ * @return nbr The smallest numeric value within the list
+ * @param nbrx A number to be compared to other numbers in the list
+ * @example <code>smallest = min(3,10,8,5,2)</code>
+ */
+procedure nbr MIN (nbr1, [nbr2], ...) ;
+/**
+ * OVERLAY Replaces characters in <b>str2</b> with <b>str1</b>
+ * starting at <b>pos</b>.
+ * @return A new string
+ * @param str1 The string to overlay <b>str2</b>
+ * @param str2 The original string to be overlaid
+ * @param pos The starting position within <b>str2</b> where the
+ * overlay begins.
+ * @param length The length <b>str1</b> is extended to or truncated to
+ * prior to overlaying <b>str2</b>
+ * @param pad The character to extend str1 if necessary
+ * @see INSERT
+ * @example <code>new_str = overlay('abcd','1wxyz2',2)</code>
+ */
+procedure str OVERLAY (str1, str2, [pos], [length], [pad]) ;
+/**
+ * POS Returns the first location of <b>target</b> within <b>str</b>.
+ * @return 0 if <b>target</b> is null or not found within <b>str</b>.
+ * @param target The string being searched for
+ * @param str The string searched
+ * @param start The location of <b>str</b> to start the search from,
+ * defaults to 1
+ * @see LASTPOS
+ * @example <code>say pos("four score and seven years ago","r") "should return 4"</code>
+ */
+procedure nbr POS (target, str, [start]) ;
+/**
+ * QUEUED provides the number of lines contained in the external
+ * data queue
+ */
+procedure nbr QUEUED () ;
+/**
+ * RANDOM Retuns a quasi-random whole number. Minimum number is 0.
+ * @param max The maximum whole number that will be returned
+ * @example <code>say "A 2 digit random number" random(99)</code>
+ */
+procedure nbr RANDOM (max) ;
+/**
+ * RANDOM Retuns a quasi-random whole number.
+ * @param min The minimum whole number that will be returned
+ * @param max The maximum whole number that will be returned
+ * @param seed A whole number which is used to generate the first
+ * of a repeatable sequence.
+ * @example <code>say "A random number between 50 and 500" random(50,500)</code>
+ */
+procedure nbr RANDOM ([min], [max], [seed]) ;
+/**
+ * REVERSE Flips the character strig end for end
+ * @param str A string to be reversed
+ * @example <code>say "ABCD reversed is " reverse("ABCD")</code>
+ */
+procedure str REVERSE (str) ;
+/**
+ * Right Provides a substring of <b>str</b> from the right end
+ * of the original string
+ * @param str The string to parse
+ * @param length The number of character to extract
+ * @param pad The character to extend the result string if the original
+ * string is less than length long.
+ * @example <code>say right('The quick brown fox',3)||"trot"</code>
+ */
+procedure str RIGHT (str, length, [pad]) ;
+/**
+ * RXFUNCADD Makes an external function, written in a different language,
+ * available for use.
+ * @param REXXname The name the function will be know as with REXX
+ * @param DLLname The file or Dynamic Link Library where the function resides
+ * @param FUNCTIONname The real name of the function
+ * @return Numeric code for results
+ * <dl compact>
+ * <dt>0<dd>Function available to be called
+ * <dt>10<dd>REXXname already in use
+ * <dt>20<dd>Insufficent memory
+ * <dt>40<dd>DLLname could not be found
+ * <dt>50<dd>FUNCTIONname does not exist within the DLL
+ * </dl>
+ * @example <code>result = RXFUNCADD('get','c:\utilities.dll','read1')</code>
+ */
+procedure nbr RXFUNCADD (REXXname, DLLname, FUNCTIONname) ;
+/**
+ * RXFUNCDROP Makes an external function unavailable for use.
+ * @param REXXname The name the function know to REXX
+ * @return Numeric code for results
+ * <dl compact>
+ * <dt>0<dd>Function available to be called
+ * <dt>30<dd>REXXname is not in use
+ * </dl>
+ * @example <code>result = RXFUNCDROP('get')</code>
+ */
+procedure nbr RXFUNCDROP (REXXname) ;
+/**
+ * RXFUNCQUERY Check to see if a function is available for use.
+ * @param REXXname The name the function know to REXX
+ * @return Numeric code for results
+ * <dl compact>
+ * <dt>0<dd>Function is available to be called
+ * <dt>30<dd>The fucntion is being registered or has been dropped
+ * <dt>40<dd>REXXname is not available
+ * </dl>
+ * @example <code>result = RXFUNCQUERY('get')</code>
+ */
+procedure nbr RXFUNCQUERY (REXXname) ;
+/**
+ * RXFUNCERRMSG Returns the error message for the last error of RXFUNCADD()
+ * @example <code>msg = RXFUNCERRMSG()</code>
+ */
+procedure str RXFUNCERRMSG () ;
+/**
+ * SIGN indicates the sign of a number
+ * @param nbr A value with unknown sign
+ * @return -1 for negative numbers, 1 for positive numbers, 0 for 0
+ * @example <code>if sign(42) then say "Positive number"</code>
+ */
+procedure nbr SIGN (nbr) ;
+/**
+ * SOURCELINE Provides the number of lines in the source file
+ * @example <code>say "This program has" sourceline() "lines in it!"</code>
+ */
+procedure nbr SOURCELINE () ;
+/**
+ * SOURCELINE Makes the specified line of the source file available.
+ * @param nbr The line number of th esource file to return
+ * @example <code>say "The 5th line of this program is" sourceline(5) </code>
+ *
+ */
+procedure str SOURCELINE (nbr) ;
+/**
+ * SPACE Replaces the spaces within <b>str</b> with <b>count</b>
+ * occurrences of character <b>pad</b>.
+ * @param str Input string including space delimited words
+ * @param count the number of <b>pad</b> characters to be inserted
+ * into the resulting string in place of each string of spaces
+ * @param pad The character to be used to replace the spaces within
+ * the original string
+ * @example <code>result = space('the quick brown fox',2,'-')</code>
+ */
+procedure str SPACE (str, [count], [pad]) ;
+/**
+ * STREAM Performs an implementation specific <b>command</b> on <b>stream</b>
+ * @param stream The I/O stream to act upon
+ * @param 'C' perform <b>command</b>
+ * @param command The implementation specific command to be performed
+ * @return Results are implementation specific
+ *
+ */
+procedure str STREAM (stream, 'C', command) ;
+/**
+ * STREAM Provides information about <b>stream</b>
+ * @param stream The I/O stream to act upon
+ * @param 'S' Requesting status of <b>stream</b>
+ * @return A string "ERROR", "NOTREADY", "READY", "UNKNOWN"
+ *
+ */
+procedure str STREAM (stream, 'S', command) ;
+/**
+ * STREAM Provides detailed information about <b>stream</b>
+ * @param stream The I/O stream to act upon
+ * @param 'D' Requests detail stream information
+ * @return Results are implementation specific
+ *
+ */
+procedure str STREAM (stream, 'D') ;
+/**
+ * STRIP Returns <b>str</b> with leading and/or trailing
+ * <b>character</b> removed.
+ * @param str The string to be acted upon
+ * @param option Indicates wether the <b>L</b>eading, <b>T</b>railing,
+ * or <b>B</b>oth string of characters should be removed.  Default if B.
+ * @param character The character to be stripped from <b>str</b>.  Default
+ * is space
+ * @example <code>cleaned = strip('  Clean this up!   ",'L'</code>
+ */
+procedure str STRIP (str, [option], [character]) ;
+/**
+ * SUBSTR extracts a substring starting at position <b>start</b> for a length
+ * of <b>length</b>.
+ * @param str The original string to be processed
+ * @param start The starting position, relative to 1, to begin the
+ * extract
+ * @param length The number of characters to extract, defaults to the end of
+ * the string
+ * @parm pad The character used to extend the substring if <b>length</b> is
+ * longer that the available characters in <b>str</b>.
+ * @example <code>middle = substr(full_name,pos(full_name,' '),lastpos(full_name,' ')-pos(full_name,' '),' ')</code>
+ * @see SUBSTR
+ */
+procedure str SUBSTR (str, start, [length], [pad]) ;
+/**
+ * SUB extracts a substring of blank delimited words from <b>str</b>.
+ * @param str The original string to be processed
+ * @param start The beginning position of <b>str</b> where the extraction is
+ * to begin.
+ * @param length The number of word to be extracted from <b>str</b>
+ * @example <code>middle = subword('Four score and twenty years ago',3,2)</code>
+ * @see SUBSTR
+ */
+procedure str SUBWORD (str, start, [length]) ;
+/**
+ * Symbol determines if <b>name</b> (a string) is a valid symbol and if so if
+ * it currently has a value.
+ * @param name Represents a string that is possibly a symbol name
+ * @return 'BAD' if name does not contain a valid symbol name.  'VAR' if name
+ * contains a symbol that has a value.  'LIT' if name contains an uninitialized
+ * but valid symbol name.
+ */
+procedure str SYMBOL (name) ;
+/**
+ * TIME
+ * <br>Returns the current time in the format specified by <b>str</b>
+ * @param <b>C</b>ivil: time returned as hh:mmXM (X = A or P)
+ * <br> <b>E</b>lapsed: number of seconds since timer reset with
+ * <b>R</b> option.
+ * <br> <b>H</b>ours: number of hours since midnight
+ * <br> <b>L</b>ong: long time in format hh:mm:ss.uuuuuu
+ * <br> <b>M</b>inutes: number of minutes since midnight
+ * <br> <b>S</b>econds: number of seconds since midnight
+ * <br> <b>N</b>ormal: time in 24 hour clock format (hh:mm:ss)
+ * <br> <b>R</b>: reset timer for elapsed (E) option
+ * @example <code>now = time('C')  /* returns 10:35PM </code>
+ */
+procedure str TIME ([str]) ;
+/**
+ * TRACE Indicates and changes the current trace settings.
+ * @param type New trace setting in the same form as the TRACE command.
+ */
+procedure str TRACE ([type]) ;
+/**
+ * TRANSLATE Converts <b>str</b> characters from <b>input</b> to <b>output</b>.
+ * If neither input not output table is specified then lower case characters
+ * are converted to upper case characters.
+ * @param str The character string to be translated
+ * @param output The characters <b>str</b> will be translated to.  If this string
+ * is shorter than <b>input</b> it is extended by <b>pad</b> character.
+ * @param input The characters in <b>str</b> that will be translated.
+ * Default is XRANGE('00'x,'ff'x)
+ * @param pad The character that will be used to extend string <b>output</b>
+ * if it is shorter than <b>input</b>.
+ * @example <code>new_str = translate('a-b-c-d-e',' ','-')</code>
+ */
+procedure str TRANSLATE (str, [output], [input], [pad]) ;
+/**
+ * TRUNC Extends or truncates <b>nbr</b> to contain a specified number
+ * of digits following the decimal point.
+ * @param nbr The number to be formatted
+ * @param digits The number of character to be placed to the right of the decimal.
+ * Defaults to 0, no decimal
+ * @example <code>int = trunc(25.5,0)</code>
+ */
+procedure str TRUNC (nbr, [digits]) ;
+/**
+ * VALUE Determines if <b>name</b> is a variable and returns the value
+ * associated with it.  Can also be used to change the value.
+ * @param name The string that to be tested to determein if it is a variable.
+ * @param value The new value for the variable
+ * @param type System-dependent type or class of variable
+ * @see INTERPRET
+ */
+procedure str VALUE (name, [value]) ;
+/**
+ * VERIFY Determines if characters of <b>search</b> are within <b>str</b> or
+ * not within <b>str</b>.
+ * @param str The string to be searched
+ * @param search A string of characters that are searched for within <b>str</b>
+ * @param option Controls if nomatch ('N') or match ('M').  Default to 'N'
+ * @param start The starting position within <b>str</b> of the search.
+ * Defaults to 1
+ * @return 0 if <b>str/b> is entirely composed of characters in <b>search</b>
+ * (option 'N'), if <b>str</b> is entirely composed of characters not in <b>search</b>
+ * (option'M'), if <b>str</b> is null, or if <b>start</b> is greater than the
+ * length of <b>str</b>.
+ */
+procedure str VERIFY (str, search, [option], [start]) ;
+/**
+ * WORD Returns the <b>nbr</b>th blank-delimited word from <b>str</b>.
+ * @param str The string to be processed
+ * @param nbr The number of the word selected from <b>str</b>
+ * @return A null string if there are fewer than <b>nbr</b> words in <b>str</b>.
+ * @example <code>second_word = word('Four score and ...',2)</code>
+ */
+procedure str WORD (str, nbr) ;
+/**
+ * WORDINDEX Determines the character position of the <b>nbr</b>th blank-delimited
+ * word within <b>str</b>.
+ * @param str The string to be processed
+ * @param nbr The number of the blank-delimited word to be indexed.
+ * @example <code>six = wordindex('Four score and ...',2)</code>
+ * @return 0 if ther are fewer than <b>nbr</b> words in <b>str</b>.
+ */
+procedure nbr WORDINDEX (str, nbr) ;
+/**
+ * WORDLENGTH Determines the length of the <b>nbr</b>th blank-delimited
+ * word within <b>str</b>.
+ * @param str The string to be processed.
+ * @param nbr The word to be processed.
+ * @example <code>five = wordlength('Four score and...',2)</code>
+ * @return 0 if there are fewer than <b>nbr</b> words within <b>str</b>.
+ */
+procedure nbr WORDLENGTH (str, nbr) ;
+/**
+ * WORDPOS Determines the word position within <b>str</b> of <b>phrase</b>.
+ * Excessive spaces within <b>phrase</b> and <b>str</b> are ignored.
+ * @param phrase A string of character being searched for
+ * @param str The string being searched
+ * @param start The starting position within <b>str</b>.  Defaults to 1
+ * @return 0 if <b>phrase</b> is null or is not found.
+ * @example <code>two = wordpos('Four score and ...','score')</code>
+ */
+procedure str WORDPOS (phrase, str, [start]) ;
+/**
+ * WORDS Determines the number of blank-delimited words in <b>str</b>.
+ * @param str The string to be processed.
+ * @example <code>seven = words('How many words make up this sentence?')</code>
+ */
+procedure nbr WORDS (str) ;
+/**
+ * XRANGE Returns a string of display characters for each hex-value within
+ * the range <b>first</b> to <b>last</b>.  If <b>first</b> has a higher value
+ * than <b>last</b> the characters wrap from x'ff' to x'00'.
+ * @param first The first character in the range.  Defaults to x'00'
+ * @param last The last character in the range.  Defaults to x'ff'
+ * @example <code>ascii_alphabet = xrange('41'x,'5a'x)</code>
+ */
+procedure str XRANGE ([first], [last]) ;
+/**
+ * X2B Converts a base 16 input string to base 2 string
+ * @param hex-str The hexadecimal vlaue to be converted
+ * @example <code>say "This should print 00001010: " x2b('0a')</code>
+ */
+procedure str X2B (hex-str) ;
+/**
+ * X2C Converts a base 16 chracter string into display characters
+ * @param hex-str A string of base 16 characters to be converted
+ * @return The display characters that correspond to the hexadecimal string
+ * @example <code>say 'This should print the letters AB: " X2C('4142')</code>
+ */
+procedure str X2C (hex-str) ;
+/**
+ * X2D Converts a base 16 string into decimal values.
+ * @param hex-str The hex string whose deciaml representation is required
+ * @param length the rightmost number of hex digits to be converted
+ * @example <code>say 'Hex 0e is equal to decimal" x2d(0e)</code>
+ * @see D2X
+ */
+procedure str X2D (hex-str, [length]) ;
+/**
+ * WRITEFILE is a method from Michael Lueck
+ * @param str Name of file to be written
+ * @return logical
+ * @example <code>obejct~WRITEFILE(THISFile)</code>
+ *
+ */
+procedure logical WRITEFILE (filename) ;

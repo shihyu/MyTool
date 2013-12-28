@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<notificationconfig>
+	<alertgroup id="0" name="Feature Notifications" alerttype="0" command="showNotificationsToolbar" enabled="1" showpopups="1">
+		<alert id="0" name="Auto-Close File" command="" help="Automatically Closing Visited Files" imagefilename="_alert_editing_toast.ico" configpath="Editing &gt; Bookmarks" configoption="N" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="1" name="Go To Definition" command="" help="symbol navigation" imagefilename="_alert_editing_toast.ico" configpath=" &gt; Context Tagging®" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="2" name="Adaptive Formatting" command="" help="Adaptive Formatting" imagefilename="_alert_editing_toast.ico" configpath="Adaptive Formatting" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="3" name="Delete Code Block" command="" help="Delete Code Block dialog" imagefilename="_alert_editing_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="4" name="Unsurround the selected block" command="" help="Unsurround Block" imagefilename="_alert_editing_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="5" name="Source Diff" command="" help="Source Diff" imagefilename="_alert_editing_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="6" name="Reload Files" command="" help="reload prompt" imagefilename="_alert_editing_toast.ico" configpath="File Options &gt; Load" configoption="N" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="7" name="Debugger" command="" help="debug (see also debugging)" imagefilename="_alert_editing_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="8" name="Macro Errors" command="" help="" imagefilename="_alert_editing_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="9" name="Auto-Alias Expansion" command="" help="Language-Specific Aliases" imagefilename="_alert_editing_toast.ico" configpath="Aliases" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="10" name="Auto Symbol Translation" command="" help="Auto Symbol Translation" imagefilename="_alert_editing_toast.ico" configpath="Formatting" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="11" name="Comment Wrap" command="" help="Comment Wrapping" imagefilename="_alert_editing_toast.ico" configpath="Comment Wrap" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="12" name="Doc Comment Expansion" command="" help="Doc Comments" imagefilename="_alert_editing_toast.ico" configpath="Comments" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="13" name="Dynamic Surround" command="" help="Dynamic Surround" imagefilename="_alert_editing_toast.ico" configpath="Indent" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="14" name="XML/HTML Formatting" command="" help="XML/HTML Formatting" imagefilename="_alert_editing_toast.ico" configpath="Formatting" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="15" name="Auto-Insert Right Bracket" command="" help="" imagefilename="_alert_editing_toast.ico" configpath="Formatting" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="16" name="Auto-Insert Matching Parameters" command="" help="Context Tagging Options (Language-Specific)" imagefilename="_alert_editing_toast.ico" configpath="Context Tagging®" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="17" name="SmartPaste" command="" help="SmartPaste" imagefilename="_alert_editing_toast.ico" configpath="Indent" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="18" name="Syntax Expansion" command="" help="Syntax Expansion" imagefilename="_alert_editing_toast.ico" configpath="Indent" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="19" name="Auto-Close Completion" command="" help="Auto-Close Options (Language-Specific)" imagefilename="_alert_editing_toast.ico" configpath="Auto-Close" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="20" name="Auto Case Keywords" command="" help="Auto Case Keywords" imagefilename="_alert_editing_toast.ico" configpath="Formatting" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="21" name="Auto-List Members" command="" help="Auto-list members" imagefilename="_alert_editing_toast.ico" configpath="Context Tagging®" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="22" name="Auto-Display Parameter Information" command="" help="Auto-display parameter" imagefilename="_alert_editing_toast.ico" configpath="Context Tagging®" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="23" name="Auto-List Compatible Parameters" command="" help="Auto-list compatible params" imagefilename="_alert_editing_toast.ico" configpath="Context Tagging®" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="24" name="Auto-List Compatible Values" command="" help="Auto-list compatible values" imagefilename="_alert_editing_toast.ico" configpath="Auto-Complete" configoption="L" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="25" name="Large File Editing" command="" help="General Editing Options" imagefilename="_alert_editing_toast.ico" configpath="Editing > General" configoption="" maxshows="10" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<inactiveimage filename="_alert_editing_inactive.png" />
+		<activeimage filename="_alert_editing_active.png" />
+	</alertgroup>
+	<alertgroup id="1" name="Background Processes" alerttype="1" command="showAlertGroupInProcessItems" enabled="1" showpopups="1">
+		<alert id="0" name="Background Tagging" command="" help="Context Tagging Options" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="1" name="SVN Cache Sync" command="" help="SVN History Dialog" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="2" name="FTP Publish" command="" help="FTP" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="3" name="Product Improvement Program" command="" help="Product Improvement Program" imagefilename="_alert_background_toast.ico" configpath="Application Options &gt; Product Improvement Program" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="4" name="Background Tagging" command="" help="Context Tagging Options" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="5" name="Background Tagging" command="" help="Context Tagging Options" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="6" name="Background Tagging" command="" help="Context Tagging Options" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="7" name="Background Tagging" command="" help="Context Tagging Options" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="8" name="Background Tagging" command="" help="Context Tagging Options" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="9" name="Background Tagging" command="" help="Context Tagging Options" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="10" name="Background Tagging" command="" help="Context Tagging Options" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="11" name="Background Tagging" command="" help="Context Tagging Options" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="12" name="Background Tagging" command="" help="Context Tagging Options" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="13" name="Background Tagging" command="" help="Context Tagging Options" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="14" name="Background Tagging" command="" help="Context Tagging Options" imagefilename="_alert_background_toast.ico" configpath="" configoption="" maxshows="5" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<inactiveimage filename="_alert_background_inactive.png" />
+		<activeimage filename="_alert_background_active.png" />
+	</alertgroup>
+	<alertgroup id="2" name="Debug Listener" alerttype="1" command="" enabled="1" showpopups="1">
+		<alert id="0" name="Started" command="" help="" imagefilename="_alert_debug_listener_toast.ico" configpath="" configoption="L" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="1" name="Connected" command="" help="" imagefilename="_alert_debug_listener_toast.ico" configpath="" configoption="L" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<alert id="2" name="Disconnected" command="" help="" imagefilename="_alert_debug_listener_toast.ico" configpath="" configoption="L" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+		<inactiveimage filename="_alert_debug_listener_inactive.png" />
+		<activeimage filename="_alert_debug_listener_active1.png" />
+	</alertgroup>
+    <alertgroup id="3" name="Warning" alerttype="0" command="" enabled="1" showpopups="1">
+        <alert id="0" name="HTTP Load Error" command="" help="" imagefilename="_alert_warning_toast.ico" configpath="" configoption="L" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="1" name="DTD Error" command="" help="dtd caching" imagefilename="_alert_warning_toast.ico" configpath="Network &amp; Internet Options > URL Mappings" configoption="N" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="2" name="Debugger" command="" help="Debug" imagefilename="_alert_warning_toast.ico" configpath="Debugging > Settings" configoption="N" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="3" name="Schema Error" command="" help="xml" imagefilename="_alert_warning_toast.ico" configpath="Network &amp; Internet Options > URL Mappings" configoption="N" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="4" name="Context Tagging®" command="" help="Context Tagging" imagefilename="_alert_warning_toast.ico" configpath="Editing > Context Tagging®" configoption="N" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="5" name="File Open Error" command="" help="" imagefilename="_alert_warning_toast.ico" configpath="" configoption="" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="6" name="Tagging Error" command="" help="" imagefilename="_alert_warning_toast.ico" configpath="" configoption="" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="7" name="Projects" command="" help="" imagefilename="_alert_warning_toast.ico" configpath="" configoption="" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="8" name="Memory" command="" help="" imagefilename="_alert_warning_toast.ico" configpath="" configoption="" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <inactiveimage filename="_alert_warning_inactive.png" />
+        <activeimage filename="_alert_warning_active.png" />
+    </alertgroup>
+    <alertgroup id="4" name="Updates" alerttype="0" command="" enabled="1" showpopups="1">
+        <alert id="0" name="Auto Hot Fix" command="" help="auto hot fix loader" imagefilename="_alert_updates_toast.ico" configpath="" configoption="" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <alert id="1" name="Update Manager" command="" help="update manager" imagefilename="_alert_updates_toast.ico" configpath="" configoption="" maxshows="0" priority="1" enabled="1" showpopups="1" timesshown="0" />
+        <inactiveimage filename="_alert_updates_inactive.png" />
+        <activeimage filename="_alert_updates_active.png" />
+    </alertgroup>
+</notificationconfig>

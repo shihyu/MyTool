@@ -1,0 +1,48 @@
+<profile name="/language/doccomment/aliases">
+	<p n="///">
+		<text>
+			/// &lt;summary&gt;
+			/// %\c
+			/// &lt;/summary&gt;
+			/// &lt;param name="%\p"&gt;%\c&lt;/param&gt;
+			/// &lt;returns&gt;%\c&lt;/returns&gt;
+		</text>
+	</p>
+	<p n="/**">
+		<text>
+			/**
+			 * %\c
+			 * %\S
+			 * @author %\a (%\d)
+			 * %\u
+			 * @param %\p %\c
+			 * %\v
+			 * @return %\r %\c%\v
+			 */
+		</text>
+	</p>
+	<p n="/*!">
+		<text>
+			/*!
+			 * %\c
+			 * %\S
+			 * \author %\a (%\d)
+			 * %\u
+			 * \param %\p %\c
+			 * %\v
+			 * \return %\r %\c%\v
+			 */
+		</text>
+	</p>
+	<p n="//!">
+		<text>
+			//! %\c
+			//! %\S
+			//! \author %\a (%\d)
+			//! %\u
+			//! \param %\p %\c
+			//! %\v
+			//! \return %\r %\c%\v
+		</text>
+	</p>
+</profile>

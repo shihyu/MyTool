@@ -1,0 +1,96 @@
+//
+// Copyright 1998-2002 by SlickEdit Inc.
+// All rights reserved.
+//
+// This software is the confidential and proprietary information
+// of SlickEdit Inc. You shall not disclose this information and
+// shall use it only with Visual SlickEdit.
+//
+// You may modify this file to add new built-ins
+// for Visual SlickEdit's Context Tagging(TM).  Let us know about
+// new built-ins.  This way our installation/update will install the
+// most up-to-date version and you won't need to maintain a
+// backup.
+//
+struct copyright;
+
+// Completion status code for standard exceptions
+enum completion_status {
+   // The object implementation has completed processing
+   // prior to the exception being raised.
+   COMPLETED_YES,
+   // The object implementation was never initiated
+   // prior to the exception being raised.
+   COMPLETED_NO,
+   // The status of implementation completion is indeterminate.
+   COMPLETED_MAYBE
+}
+
+// exception levels
+enum exception_type {
+   // not an exception
+   NO_EXCEPTION,
+   // user-level exception
+   USER_EXCEPTION,
+   // system-level exception
+   SYSTEM_EXCEPTION
+}
+
+// the unknown exception
+exception UNKNOWN {unsigned long minor;completion_status completed;}
+// an invalid parameter was passed
+exception BAD_PARAM {unsigned long minor;completion_status completed;}
+// dynamic memory allocation failure
+exception NO_MEMORY {unsigned long minor;completion_status completed;}
+// violated implementation limit
+exception IMP_LIMIT {unsigned long minor;completion_status completed;}
+// communication failure
+exception COMM_FAILURE {unsigned long minor;completion_status completed;}
+// invalid object reference
+exception INV_OBJREF {unsigned long minor;completion_status completed;}
+// no permission for attempted operation
+exception NO_PERMISSION {unsigned long minor;completion_status completed;}
+// ORB internal error
+exception INTERNAL {unsigned long minor;completion_status completed;}
+// error marshalling param/result
+exception MARSHAL {unsigned long minor;completion_status completed;}
+// ORB initialization failure
+exception INITIALIZE {unsigned long minor;completion_status completed;}
+// operation implementation unavailable
+exception NO_IMPLEMENT {unsigned long minor;completion_status completed;}
+// bad typecode
+exception BAD_TYPECODE {unsigned long minor;completion_status completed;}
+// invalid operation
+exception BAD_OPERATION {unsigned long minor;completion_status completed;}
+// insufficient resources for request
+exception NO_RESOURCES {unsigned long minor;completion_status completed;}
+// response to request not yet available
+exception NO_RESPONSE {unsigned long minor;completion_status completed;}
+// persistent storage failure
+exception PERSIST_STORE {unsigned long minor;completion_status completed;}
+// routine invocations out of order
+exception BAD_INV_ORDER {unsigned long minor;completion_status completed;}
+// transient failure - reissue request
+exception TRANSIENT {unsigned long minor;completion_status completed;}
+// cannot free memory
+exception FREE_MEM {unsigned long minor;completion_status completed;}
+// invalid identifier syntax
+exception INV_IDENT {unsigned long minor;completion_status completed;}
+// invalid flag was specified
+exception INV_FLAG {unsigned long minor;completion_status completed;}
+// error accessing interface repository
+exception INTF_REPOS {unsigned long minor;completion_status completed;}
+// error processing context object
+exception BAD_CONTEXT {unsigned long minor;completion_status completed;}
+// failure detected by object adapter
+exception OBJ_ADAPTER {unsigned long minor;completion_status completed;}
+// data conversion error
+exception DATA_CONVERSION {unsigned long minor;completion_status completed;}
+// non-existent object, delete reference
+exception OBJECT_NOT_EXIST {unsigned long minor;completion_status completed;}
+// transaction required
+exception TRANSACTION_REQUIRED {unsigned long minor;completion_status completed;}
+// trasaction rolled back
+exception TRANSACTION_ROLLEDBACK {unsigned long minor;completion_status completed;}
+// invalid transaction
+exception INVALID_TRANSACTION {unsigned long minor;completion_status completed;}

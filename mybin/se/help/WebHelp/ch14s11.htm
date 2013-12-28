@@ -1,0 +1,68 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Defining Controls</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s10.htm" title="Preprocessing"><link rel="next" href="ch14s12.htm" title="Defining Events and Event Tables"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_definingcontrols_13444_92765"></a>
+    <a name="slick_c_definingcontrols_13444_1003301"></a>Defining Controls</h2></div></div></div><p class="NormalText">Usually, you do not need to communicate with the compiler about a control to which you refer; however there are a couple of cases in which you must declare a control. This can happen when the compiler cannot safely assume that you are referring to a control, or when the compiler cannot find the location of the dialog box of the control that you are trying to access. The compiler needs to tell the linker which dialog box is supposed to contain your control. The syntax for declaring a control variable is:</p><pre class="programlisting"><span><strong class="command">
+    [_nocheck] ObjectName ControlName;
+  </strong></span></pre><p class="NormalText">Or you can use:</p><pre class="programlisting"><span><strong class="command">
+    [_nocheck] _control ControlName;
+  </strong></span></pre><p class="NormalText">
+    <span class="emphasis"><em>ObjectName</em></span> can be one of the following:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <span><strong class="command">_check_box</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_combo_box</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_command_button</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_gauge</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_hscroll</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_image</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_label</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_list_box</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_picture_box</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_radio_button</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_text_box</strong></span>
+      </p></li><li><p class="NormalText">
+        <span><strong class="command">_vscroll</strong></span>
+      </p></li></ul></div><p class="NormalText">The <span><strong class="command">_nocheck</strong></span> keyword tells the compiler not to check if the control exists on the current dialog box.</p><p class="NormalText">The <span><strong class="command">[_nocheck] </strong></span><span class="emphasis"><em>ObjectName</em></span><span><strong class="command"></strong></span><span class="emphasis"><em>ControlName</em></span><span><strong class="command">;</strong></span> declaration is only permitted outside the scope of a function. The <span><strong class="command">[_nocheck] _control </strong></span><span class="emphasis"><em>ControlName</em></span><span><strong class="command">; </strong></span>declaration already supports local procedure scope.</p><p class="NormalText">Example:</p><pre class="programlisting">// Create a form with a command button named ctlcancel, and gauge named ctlgauge1.
+// Set the cancel and default properties of the command button to true.
+//
+#include "slick.sh"
+static boolean gcancel;
+_command test()
+{
+    // Need to tell compiler ctlgauge1 is a control because
+    // the form1_wid.ctlgauge1 is too ambiguous.
+    _control ctlgauge1;
+ 
+    // Show the form modeless so there is no modal wait.
+    form1_wid=show("form1");
+    // Disable all forms except form1_wid.
+ 
+    disabled_wid_list=_enable_non_modal_forms(0,form1_wid);
+    gcancel=0;
+    for (i=1;i&lt;=100;++i) {
+       // Read mouse, key, and all other events until none are left or
+       // until the variable gcancel becomes true.
+       process_events(gcancel);
+       if (gcancel) {
+          break;
+       }
+       // Do work here. Replace the delay below with the operation you want to do.
+       delay(10);
+ 
+       form1_wid.ctlgauge1.p_value=i;
+    }
+    // Enable all forms that were disabled.
+    _enable_non_modal_forms(1,0,disabled_wid_list);
+    form1_wid._delete_window();
+}
+defeventtab form1;
+ctlcancel.lbutton_up()
+{
+    gcancel=1;
+}</pre><p class="NormalText"></p></div></body></html>

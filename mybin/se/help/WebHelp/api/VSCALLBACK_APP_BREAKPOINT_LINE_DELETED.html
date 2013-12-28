@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>VSCALLBACK_APP_BREAKPOINT_LINE_DELETED</title>
+</head>
+<body>
+
+<h3><b>34 VSCALLBACK_APP_BREAKPOINT_LINE_DELETED</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><PRE>int (VSAPI * vspfnBreakPointLinedDeleted)(int BreakPointIndex, int flags, void *puserdata);</PRE>
+This callback gets called when the line that any kind a break point is
+on is deleted.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="BreakPointIndex">BreakPointIndex</A></code> - Index of break point being deleted.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flags">flags</A></code> - Flags for this break point.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="puserdata">puserdata</A></code> - Pointer to user data for this break point.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>34</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Return 0 to delete the break point.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+static int VSAPI CallbackBreakPointLineDeleted(int BreakPointIndex, int
+flags, void *puserdata)
+{
+     if (! (flags &
+            (VSBPFLAG_BREAKPOINT|VSBPFLAG_BREAKPOINTDISABLED) ) ) {
+            // Don't delete this because it is an execution or
+            // stack executing break point.
+            return(1);
+     }
+     ..
+     return(0);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Editor_Control_Callback_Functions.html">Editor Control Callback Functions</a></blockquote>
+</body>
+</html>

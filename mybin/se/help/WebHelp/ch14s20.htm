@@ -1,0 +1,70 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Clipboard Inheritance®</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s19.htm" title="Creating Dialog Boxes"><link rel="next" href="ch14s21.htm" title="Objects and Instances"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_clipboardinheritance_13696_92586"></a>
+    <a name="slick_c_clipboardinheritance_13696_1004152"></a>
+    <a class="indexterm" name="slick-c_clipboardinheritance_97207896_2FC3"></a>
+    <a class="indexterm" name="slick-c_clipboardinheritance_38A3C62F_9EEC"></a>Clipboard Inheritance®</h2></div></div></div><p class="NormalText">This section contains the following topics:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s20.htm#slick_c_clipboardinheritance_13696_74745">Clipboard Inheritance® Overview</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s20.htm#slick_c_clipboardinheritance_13696_74569">Clipboard Inheritance® Example </a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s20.htm#slick_c_clipboardinheritance_13696_94534">Dialog Box Inheritance Order</a>
+      </p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_clipboardinheritance_13696_74745"></a>
+      <a name="slick_c_clipboardinheritance_13696_1027054"></a>Clipboard Inheritance® Overview</h3></div></div></div><p class="NormalText">Clipboard Inheritance enables the transferring of objects from one place to another using the clipboard to create new instances that inherit the code of the original objects. Code for the new instances can be added that affects only the new instances, and code of the original instances can be modified, affecting both instances. </p><p class="NormalText">For example, you may want to create a group of controls that are needed by the SlickEdit® File Open dialog to allow the user to specify the various supported file formats. SlickEdit supports the following file formats:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span class="bold"><strong>DOS</strong></span> - Each line is separated with a carriage return, followed by linefeed.</p></li><li><p class="NormalText">
+          <span class="bold"><strong>Macintosh®</strong></span> - Each line is separated with a carriage return only.</p></li><li><p class="NormalText">
+          <span class="bold"><strong>UNIX</strong></span> - Each line is separated with a linefeed only.</p></li><li><p class="NormalText">
+          <span class="bold"><strong>Record width</strong></span> - A user-specified number of bytes placed in each line.</p></li><li><p class="NormalText">
+          <span class="bold"><strong>Separator character</strong></span> - A single user-specified line separator character.</p></li></ul></div><p class="NormalText">The following partial dialog box can be used to handle the file formats of SlickEdit.</p><div class="mediaobject"><img src="Resources/form1.jpg"></div><p class="NormalText">Example:</p><pre class="programlisting">// The names of the controls do not need to be declared.
+ 
+// The names of the radio button controls are ctlopendos, ctlopenmac, ctlopenunix,
+// ctlopenauto.
+ 
+// The first text box is named ctlopenlinesep and the text box below it is named
+// ctlopenwidth.
+ 
+defeventtab form1;
+ 
+// Define the lbutton_up event for the DOS radio button. This function will
+// get called when any of the radio buttons get turned on. The event
+// table automatically created here is called form1.ctlopendos.
+ctlopendos.lbutton_up()
+{
+    // Set the text displayed in both text boxes to nothing so the users
+    // knows that the radio button format has been chosen.
+    ctlopenlinesep.p_text='';
+    ctlopenwidth.p_text='';
+}
+ 
+static zap_radio_buttons()
+{
+    ctlopendos.p_value=0;
+    ctlopenmac.p_value=0;
+    ctlopenunix.p_value=0;
+    ctlopenauto.p_value=0;
+ 
+}
+ 
+// Define the on_change event for the first text box. For a text box, the 
+// on_change event gets called when the user modifies the text in the text box.
+// The event table automatically created here is form1.ctlopenlinesep.
+ctlopenlinesep.on_change()
+{
+    if (p_text!='') {
+       ctlopenwidth.p_text=''; // Clear out the other text boxes text.
+       zap_radio_buttons();    // Turn off all the radio buttons.
+    }
+}
+// Define the on_change event for the second text box. The event table
+// automatically created here is form1.ctlopenwidth.
+ctlopenwidth.on_change()
+{
+    if (p_text!='') {
+       ctlopenlinesep.p_text=''; // Clear out the other text boxes text.
+       zap_radio_buttons();      // Turn off all the radio buttons.
+    }
+}</pre><p class="NormalText">Only the first radio button <span><strong class="command">ctlopendos</strong></span> has an event handler defined. The other radio buttons use the <span><strong class="command">form1.ctlopendos</strong></span> event table. This can be accomplished in the dialog editor using Clipboard Inheritance or, if the radio buttons are already created, you can set the <span><strong class="command">p_eventtab</strong></span> property of the other radio buttons to <span><strong class="command">form1.ctlopendos</strong></span>. </p><p class="NormalText">To use Clipboard Inheritance:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Write the <span><strong class="command">lbutton_up</strong></span> event code for the DOS radio button.</p></li><li><p class="NormalText">Copy the DOS radio button to the clipboard.</p></li><li><p class="NormalText">Paste it back onto the dialog box within the frame.</p></li><li><p class="NormalText">Set the <span><strong class="command">p_caption</strong></span> property for the new radio button to <span><strong class="command">MAC</strong></span>.</p></li></ol></div><p class="NormalText">Either of these methods can be used to fill an event table. When the <span><strong class="command">ctlopendos.lbutton_up()</strong></span> function gets called, it gets and sets the properties of controls that exist on this dialog box.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_clipboardinheritance_13696_74569"></a>
+      <a name="slick_c_clipboardinheritance_13696_1004220"></a>Clipboard Inheritance® Example </h3></div></div></div><p class="NormalText">For the Open dialog, Clipboard Inheritance® was created by copying controls to the clipboard and pasting them.</p><div class="mediaobject"><img src="Resources/openwindows_dialog.png"></div><p class="NormalText">The Open File dialog box has the form name <span><strong class="command">_edit_form</strong></span>. This dialog box is created by copying the <span><strong class="command">_open_form</strong></span> dialog box (code links and all) to the clipboard, pasting it, and then adding the <span><strong class="guibutton">Find File</strong></span> button and the advanced controls. The <span><strong class="command">_open_file</strong></span> form can be thought of as the base File Open dialog box class. It is used for all other File Open and Save As operations except for opening files for editing which requires additional controls. The inherited code from the base class File Open dialog required no changes except for the <span><strong class="guibutton">OK</strong></span> button. For this, the <span><strong class="guibutton">OK</strong></span> button code was replaced with new code. The Find File displays a dialog box which has all of the same advanced controls. The advanced controls were taken from the Open File dialog box (<span><strong class="command">_edit_form</strong></span>) and all its related controls, and copied onto the Find File dialog box. The only additional code required was for the <span><strong class="guibutton">OK</strong></span> button, which was needed to return the results of the advanced options to the caller.</p><p class="NormalText">The following statement highlights the syntax for linking one event table to another: </p><pre class="programlisting">
+      <span><strong class="command">
+    defeventtab dlgbox2.textbox1 _inherit dlgbox1.textbox1
+    </strong></span>
+    </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_clipboardinheritance_13696_94534"></a>
+      <a name="slick_c_clipboardinheritance_13696_1025664"></a>Dialog Box Inheritance Order</h3></div></div></div><p class="NormalText">Each control in Slick-C® has two properties, called <span><strong class="command">p_eventtab</strong></span> and <span><strong class="command">p_eventtab2</strong></span>. The <span><strong class="command">p_eventtab</strong></span> property defines the user level 1 inheritance. User level 1 inheritance permits the modification of the event handlers for one specific instance of a control without affecting any other (except when Clipboard Inheritance® is used). The dialog editor automatically inserts the necessary function declaration code so that you need to only add statements within the function. After you write the event handler and load the new code, the <span><strong class="command">p_eventtab</strong></span> property displayed in the <span><strong class="guilabel">Properties</strong></span> list box is updated to reflect that you have defined a user level 1 event table. </p><p class="NormalText">The <span><strong class="command">p_eventtab2</strong></span> property defines the user level 2 inheritance. User level 2 inheritance is typically used to affect all controls of a specific type. Normally, the dialog editor sets these properties for you when a control is created. For example, when you create a combo box control with the dialog editor, the <span><strong class="command">p_eventtab2</strong></span> property is automatically set to <span><strong class="command">_ul2_combobx</strong></span>. The <span><strong class="command">_ul2_combobx</strong></span> event table defines the default processing used by every combo box. The user level 1 event handler receives an <span><strong class="command">on_change</strong></span> event (sent from the user level 2 code) when the text in the combo box changes.</p><p class="NormalText">SlickEdit® uses a pre-defined inheritance order called Dialog Box Inheritance Order. When a control receives an event, the following search begins to determine which event handler should get control:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">IF and ONLY if the event SlickEdit® is searching for is a key event, check the dialog box user level 1 inheritance on the frame of the dialog box.</p></li><li><p class="NormalText">Check current control's user level 1 inheritance.</p></li><li><p class="NormalText">Check current control's user level 2 inheritance.</p></li><li><p class="NormalText">Check automatic inheritance. Only the text box, combo box, and editor window can have any automatic inheritance. This is how your emulation is supported in these controls.</p></li><li><p class="NormalText">Check the dialog box frame user level 1 inheritance.</p></li><li><p class="NormalText">Check the dialog box frame user level 2 inheritance.</p></li><li><p class="NormalText">Check dialog manager inheritance.</p></li></ol></div><p class="NormalText">As soon as an event handler is found, the search stops and the event handler is executed. Each inheritance level can have up to 20 linked event tables. This limit is only to avoid infinite event table link loops. At run time it is possible, but unusual, to change all inheritance links and event tables for any object. The <span><strong class="command">eventtab_inherit</strong></span> function can be used to get or set an event table inheritance link.</p><p class="NormalText"></p></div></div></body></html>

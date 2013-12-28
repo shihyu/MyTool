@@ -1,0 +1,15 @@
+### Backup git working status
+#  Backup modified and untracked files without ignored ones in any git working directory. The destination is required and will be created automatically if not exists.
+#
+#  Usage:
+#       ./git-backup [destination path]
+#  Ex:
+#       ./git-backup ~/backup20130101
+###
+
+# create destination if not exists
+(test -d "$1" || mkdir -p "$1") &&
+# list modified and untracked files without ignored ones
+(git ls-files --modified --others --exclude-standard) |
+# copy files to destination with original folder structure
+(xargs -i csh -c "test -f {} && cp -v {} --parents $1")

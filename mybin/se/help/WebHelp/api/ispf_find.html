@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>ispf_find</title>
+</head>
+<body>
+
+<h3><b>_command int ispf_find(_str arglist="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This command finds occurrences of the given search string or ISPF regular expression in
+the current buffer.  If an occurrence is found in an excluded line, the line will be
+unexcluded.  Find takes the following common searching arguments (also used in the
+change, exclude, and locate commands):<p>
+<p>Syntax:<pre>
+   <i>string</i> [ <i>range</i> ] [NEXT | ALL | FIRST | LAST | PREV | CHARS | SUFFIX | WORD | X | NX | QUIET] [<i>col1</i> [<i>col2</i> ]]
+</pre><p>
+<dl compact style="margin-left:20pt">
+<dt><i>string</i><dd style="margin-left:60pt">The string or regular expression to search for.
+<dt><i>line</i><dd style="margin-left:60pt">range  Two numbers or labels, specifying the starting and ending lines to search within, inclusive.
+<dt>NEXT<dd style="margin-left:60pt">Find the next occurrence starting from the cursor.
+<dt>ALL<dd style="margin-left:60pt">Find all matches in the specified range.
+<dt>FIRST<dd style="margin-left:60pt">Find only the first occurrence in the specified range.
+<dt>LAST<dd style="margin-left:60pt">Find only the last occurrence in the specified range.
+<dt>PREV<dd style="margin-left:60pt">Find the previous occurrence starting from the cursor.
+<dt>CHARS<dd style="margin-left:60pt">(default) Locate match anywhere.
+<dt>PREFIX<dd style="margin-left:60pt">Only find matches at the beginning of a word.
+<dt>SUFFIX<dd style="margin-left:60pt">Only find matches at the end of a word.
+<dt>WORD<dd style="margin-left:60pt">Only find matches for the entire word.
+<dt>X<dd style="margin-left:60pt">Look for matches only in excluded lines.
+<dt>NX<dd style="margin-left:60pt">Do not report matches in excluded lines.
+<dt><i>col1</i><dd style="margin-left:60pt"> Starting column boundary to search within.
+<dt><i>col2</i><dd style="margin-left:60pt"> Ending column boundary to search within.
+<dt>QUIET<dd style="margin-left:60pt"> Do not display messages.
+</dl><p>
+The ISPF find command supports ISPF regular expressions (known as picture strings).  The
+following table shows the specific picture string characters supported, as well as how
+they may be expressed as <a href="../ch10s08.htm#sect_regularexpressions_12D63A8D_B329">SlickEdit Regular Expressions</a><p>
+<blockquote><pre>
+=  <b>?</b>          any character.
+^  <b>[^ \t]</b>     non-blank character.
+.  <b>[0-9]</b>      non-ASCII character (0x20..0x7E)
+#  <b>[0-9]</b>      any single decimal digit.
+-  <b>[^0-9]</b>     non-numeric character.
+@  <b>[a-zA-Z]</b>   alphabetic character (case-insensitive).
+&lt;  <b>[a-z]</b>      lowercase alphabetic character.
+&gt;  <b>[A-Z]</b>      uppercase alphabetic character.
+$  <b>[~ \ta-zA-Z0-9]</b>  punctuation (not alphabetic, digit, or blank).
+</pre></blockquote>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if the search string specified is found.  Common return codes are
+        STRING_NOT_FOUND_RC, INVALID_OPTION_RC and INVALID_REGULAR_EXPRESSION_RC.
+        On error, a message is displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="ISPF_Primary_Commands.html">ISPF Primary Commands</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="ispf_change.html">ispf_change</a>, <a href="ispf_locate.html">ispf_locate</a>, <a href="ispf_exclude.html">ispf_exclude</a>, <a href="ispf_hilite.html">ispf_hilite</a>, <a href="ispf_flip.html">ispf_flip</a></blockquote>
+</body>
+</html>

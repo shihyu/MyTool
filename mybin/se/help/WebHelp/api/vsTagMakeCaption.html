@@ -1,0 +1,46 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagMakeCaption</title>
+</head>
+<body>
+
+<h3><b>const char*VSAPI vsTagMakeCaption(const char *pszTagName, const char *pszTypeName, const char *pszClassName, int tag_flags, const char *pszArguments=a, int include_tab=a, const char *pszFileName=a, const char *pszTemplateArgs=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Create a caption for the tag, given the following tag information
+and specifications about the caption style.
+The output string is generally formatted as follows:
+   <PRE>
+   member_name[(arguments)] ['in' class_name]
+   </PRE>
+   Parenthesis are added only for function types (proc, proto,
+   constr, destr, func) and parameterized classes.  The result is
+   returned as a pointer to a static character array.<p>
+   Example:  for the C++ class member prototype
+   <PRE>
+     static void MyClass::myMember(int a, bool x);
+   </PRE>
+   the function would be invoked as follows:
+   <PRE>
+     tag_tree_make_caption(myMember, func, MyClass,
+         VS_TAGFLAG_static, int a, bool x, include_tab);
+   </PRE>
+   producing the following caption if include_tab is true:
+   <PRE>
+     myMember(int a, bool x) in MyClass
+   </PRE>
+   and the following if include_tab is false.
+   <PRE>
+     MyClass::myMember(int a, bool x)
+   </PRE><p>
+Caption formatted in standard form as normally presented in class browser.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszTagName">pszTagName</A></code> - Name of  tag (symbol).</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszTypeName">pszTypeName</A></code> - Tag type, corresponding to VS_TAGTYPE_</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszClassName">pszClassName</A></code> - (Optional) Name of class or package or other container
+                        that the tag belongs to.  See VS_TAGSEPARATOR_class
+                        and VS_TAGSEPARATOR_package for more details about
+                        constructing this value.  If the tag is not in a class
+                        scope, simple pass the empty string for this value.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - Set of tag attribute flags, VS_TAGFLAG_*.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszArguments">pszArguments</A></code> - (Optional) Arguments, such as function or template class parameters.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="include_tab">include_tab</A></code> - append class name after signature if 1,
+                        prepend class name with :: if 0</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFileName">pszFileName</A></code> - Path to tag, this is needed for packages</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszTemplateArgs">pszTemplateArgs</A></code> - Tempalte signature
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>const char*VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the resulting tree caption as a NULL terminated string.
+        Note the result is returned is a statically allocated string.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

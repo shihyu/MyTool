@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_ini_get_hashtable_values</title>
+</head>
+<body>
+
+<h3><b>int _ini_get_hashtable_values(_str filename, _str section_name, _str(&fieldValueTable):[])</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Gets all name=value pairs from a section and stores them in
+the hash table <i>fieldValueTable</i> as name=&gt;value. The
+start of a section is identified by a section name in square
+brackets. All name=value pairs until the next section or end
+of file are copied.<p>
+<p><p>
+If there is no value (i.e. no '=value' part) for a particular
+item in the section, then only the hash table key will be set
+and the hash table value will be null.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filename">filename</A></code> - ini file to get section from.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="section_name">section_name</A></code> - Section to load into <i>data</i>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="fieldValueTable">fieldValueTable</A></code> - Hash table that will receive data
+                        from section specified in the ini
+                        file.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a>, <a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

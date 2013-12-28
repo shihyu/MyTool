@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd">
+<SETemplate Version="1.0" Type="Item">
+
+  <TemplateDetails>
+    <Name>Java Servlet</Name>
+    <Description>J2EE Basic Servlet</Description>
+    <SortOrder>0</SortOrder>
+    <DefaultName>ClassName</DefaultName>
+  </TemplateDetails>
+  <TemplateContent>
+    <Parameters>
+      <Parameter Name="packagename" Value="PackageName" Prompt="1" PromptString="Package Name (NO SPACES)"/>
+    </Parameters>
+    <Files>
+      <File TargetFilename="$safeitemname$.java" ReplaceParameters="1">Servlet.java</File>
+    </Files>
+  </TemplateContent>
+
+</SETemplate>

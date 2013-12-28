@@ -1,0 +1,40 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_undo</title>
+</head>
+<body>
+
+<h3><b>void _undo(_str option="U")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Undo the last operation performed by the editor control.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - letter defaults to 'U' and may be one of the following:
+   <DL compact>
+   <DT>'U'
+   <DD>If the current buffer allows more than 0 undoable steps, the last
+   operation is undone.  Otherwise, the current line is restored to its
+   original value before the cursor moved onto it.
+   <DT>'C'
+   <DD>Same 'U' option except when the current buffer has more than 0
+   undoable steps.  Consecutive cursor motion is undone as one step.
+   <DT>'R'
+   <DD>If the current buffer has more than 0 undoable steps, the last undo
+   operation is redone.  Otherwise, this function has no affect.
+   <DT>'S'
+   <DD>Starts a new level of undo.
+   </DL>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>void</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">On successful, completion, a number greater than or equal to zero is
+   returned which is composed of the flags below (defined in "slick.sh"):
+   <UL>
+   <LI>LINE_DELETES_UNDONE
+   <LI>CURSOR_MOVEMENT_UNDONE
+   <LI>MARK_CHANGE_UNDONE
+   <LI>TEXT_CHANGE_UNDONE
+   <LI>LINE_INSERTS_UNDONE
+   <LI>MODIFY_FLAG_UNDONE
+   </UL>
+   If not successful, NOTHING_TO_UNDO_RC or NOTHING_TO_REDO_RC is returned.
+
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="undo_msg.html">undo_msg</a></blockquote>
+</body>
+</html>

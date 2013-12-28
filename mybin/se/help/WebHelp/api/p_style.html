@@ -1,0 +1,154 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_style</title>
+</head>
+<body>
+
+<h3><b>int p_style</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>Determines the style of an object.</p><p>
+<p><b>Check Box</b> - Style may be one of the following constants defined in
+"slick.sh":</p><p>
+<dl>
+<dt>PSCH_AUTO2STATE</dt><dd>Two state check box.</dd>
+<dt>PSCH_AUTO3STATEA</dt><dd>Three state check box.
+Gray, check, unchecked.</dd>
+<dt>PSCH_AUTO3STATEB</dt><dd>Three state check box.
+Gray, unchecked, check.</dd>
+</dl><p>
+<p><b>Combo Box</b> - Style may be one of the following constants defined in
+"slick.sh":</p><p>
+<dl>
+<dt>PSCBO_EDIT</dt><dd>Standard.  List drops down.</dd>
+<dt>PSCBO_LIST_ALWAYS</dt><dd>List is always present.
+Can edit.</dd>
+<dt>PSCBO_NOEDIT</dt><dd>Must select item from
+list box. Can't edit.</dd>
+</dl><p>
+<p><b>Gauge</b> - Style may be one of the following constants defined in
+"slick.sh":</p><p>
+<dl>
+<dt>PSGA_HORZ_WITH_PERCENT</dt><dd>Fill gauge from left to
+right and show percentage of completion.</dd>
+<dt>PSGA_VERT_WITH_PERCENT</dt><dd>Fill gauge from bottom
+to top and show percentage of completion.</dd>
+<dt>PSGA_HORIZONTAL</dt><dd>Fill gauge from left to
+right.</dd>
+<dt>PSGA_VERTICAL</dt><dd>Fill gauge from bottom
+to top.</dd>
+</dl><p>
+<p><b>Image</b> - Style may be one of the following constants defined in
+"slick.sh":</p><p>
+<dl>
+<dt>PSPIC_DEFAULT</dt><dd>No default handling for
+<b>lbutton_down</b> event. Uses p_border_style.</dd>
+<dt>PSPIC_FLAT_BUTTON</dt><dd>Tool-button style. Set the
+<b>p_picture</b> property to a 1 state picture without a
+border to get a 3 state toolbar button (0-normal, 1-pushed,
+2-mouse over button).  This style
+supports the <b>p_enabled</b> property on all platforms.
+<b>lbutton_down</b> event calls <b>lbutton_up</b> event or executes
+command in <b>p_command</b> property.  <b>p_value</b>
+property is restored to its original value.</dd>
+<dt>PSPIC_FLAT_MONO_BUTTON</dt><dd>Tool-button style. Set the
+<b>p_picture</b> property to a 1 state picture without a
+border to get a 3 state toolbar button (0-normal, 1-pushed,
+2-mouse over button). The picture should be a 1-bit mask and
+is used, along with <b>p_forecolor</b>, to fill the mask with
+the foreground color. This style supports the
+<b>p_enabled</b> property on all platforms.
+<b>lbutton_down</b> event calls <b>lbutton_up</b> event or
+executes command in <b>p_command</b> property. <b>p_value</b>
+property is restored to its original value.</dd>
+<dt>PSPIC_HIGHLIGHTED_BUTTON</dt><dd>Tool-button style. Set
+the <b>p_picture</b> property to a 1 state picture without a
+border to get a 3 state toolbar button (0-normal, 1-pushed,
+2-mouse over button).  This style
+supports the <b>p_enabled</b> property on all platforms.
+<b>lbutton_down</b> event calls <b>lbutton_up</b> event or executes
+command in <b>p_command</b> property.  <b>p_value</b>
+property is restored to its original value.</dd>
+<dt>PSPIC_BUTTON</dt><dd>Tool-button style. Set the
+<b>p_picture</b> property to a 1 state picture without a
+border to get a 2 state push
+button. This style supports the <b>p_enabled</b> property on all
+platforms.  If you set the <b>p_picture</b> or
+<b>p_caption</b> property, the control will
+display and act like a tool-button.  <b>lbutton_down</b>
+event calls <b>lbutton_up</b> event or executes command in
+<b>p_command</b> property.  <b>p_value</b> property is restored
+to its original value.</dd>
+<dt>PSPIC_AUTO_BUTTON</dt><dd>Set the <b>p_picture</b>
+property to a 1 state picture without a border to get a 2 state push
+button.  <b>lbutton_down</b> event calls <b>lbutton_up</b>
+event or executes command in <b>p_command</b>
+property.  <b>p_value</b> property is restored to its
+original value.</dd>
+<dt>PSPIC_AUTO_CHECK</dt><dd>Picture is a 2 or more
+state picture.  <b>lbutton_down</b> event calls <b>lbutton_up</b> after
+<b>p_value</b> property has be incremented (or set to 0
+if past last state).</dd>
+<dt>PSPIC_SIZEVERT</dt><dd>Draws a thick vertical
+line which is grabbed when sizing a docked toolbar.</dd>
+<dt>PSPIC_SIZEHORZ</dt><dd>Draws a thick horizontal
+line which is grabbed when sizing a docked toolbar.</dd>
+<dt>PSPIC_GRABBARVERT</dt><dd>Draws two thick vertical
+lines which are used to grab and dock/undock a toolbar.</dd>
+<dt>PSPIC_GRABBARHORZ</dt><dd>Draws two thick
+horizontal lines which are used to grab and dock/undock a toolbar.</dd>
+<dt>PSPIC_TOOLBAR_DIVIDER_VERT</dt><dd>Draws a vertical toolbar
+divider line.</dd>
+<dt>PSPIC_TOOLBAR_DIVIDER_HORZ</dt><dd>Draws a horizontal
+toolbar divider line.</dd>
+</dl><p>
+<p><b>Picture Box</b> - Style may be one of the following constants defined in
+"slick.sh":</p><p>
+<dl>
+<dt>PSPIC_DEFAULT</dt><dd>No default handling for
+<b>lbutton_down</b> event.</dd>
+<dt>PSPIC_PUSH_BUTTON</dt><dd>Push-button style. Picture
+is a 1 state picture which needs button up and down borders
+drawn around it.
+The <b>lbutton_down</b> event calls the <b>lbutton_up</b>
+event or executes the command in the <b>p_command</b>
+property.  The <b>p_value</b> property is restored to its
+original value.</dd>
+<dt>PSPIC_SPLIT_PUSH_BUTTON</dt><dd>Push-button style with
+drop-down indicator arrow on right. Picture is a 1 state
+picture which needs button up and down borders drawn around
+it. The <b>lbutton_down</b> event calls the <b>lbutton_up</b>
+event or executes the command in the <b>p_command</b>
+property.  The <b>p_value</b> property is restored to its
+original value. A reason of <b>CHANGE_SPLIT_BUTTON</b>
+is passed to lbutton_down/lbutton_up event if user
+clicks on the drop-down indicator part of the button.</dd>
+<dt>PSPIC_AUTO_BUTTON</dt><dd>Set the
+<b>p_picture</b> property to a 2 or more state picture and set the
+<b>p_Nofstates</b> property to indicate the number of picture states.
+<b>lbutton_down</b> event calls <b>lbutton_up</b> event or executes
+command in <b>p_command</b> property.  <b>p_value</b> property
+is restored to its original value.</dd>
+<dt>PSPIC_AUTO_CHECK</dt><dd>Picture is a 2 or more
+state picture.  <b>lbutton_down</b> event calls <b>lbutton_up</b> after
+<b>p_value</b> property has be incremented (or set to 0
+if past last state).</dd>
+<dt>PSPIC_FILL_GRADIENT_HORIZONTAL</dt><dd>Gradient
+fill left to right with
+<b>p_backcolor</b> to <b>p_forecolor</b>.</dd>
+<dt>PSPIC_FILL_GRADIENT_VERTICAL</dt><dd>Gradient fill top to
+bottom with <b>p_backcolor</b> to <b>p_forecolor</b>.</dd>
+<dt>PSPIC_FILL_GRADIENT_DIAGONAL</dt><dd>Gradient
+fill top-left to bottom-right with
+<b>p_backcolor</b> to <b>p_forecolor</b>.</dd>
+</dl><p>
+<p><b>SSTab</b> - Style may be one of the following constants
+defined in "slick.sh":</p><p>
+<dl>
+<dt>PSSSTAB_DEFAULT</dt><dd>Default style.</dd>
+<dt>PSSSTAB_DOCUMENT_TABS</dt><dd>Mac only. Document tabs
+style. Used by File Tabs tool-window.</dd>
+</dl>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Check Box, Combo Box, Gauge, Picture Box, Image, SSTab
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Check_Box_Properties.html">Check Box Properties</a>, <a href="Combo_Box_Properties.html">Combo Box Properties</a>, <a href="Gauge_Properties.html">Gauge Properties</a>, <a href="Image_Properties.html">Image Properties</a>, <a href="Picture_Box_Properties.html">Picture Box Properties</a>, <a href="SSTab_Properties.html">SSTab Properties</a></blockquote>
+</body>
+</html>

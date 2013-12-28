@@ -1,0 +1,4262 @@
+<!DOCTYPE Templates SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpt.dtd">
+<Templates
+	Version="10.0"
+	VendorName="SlickEdit">
+	<Template
+		ShowOnMenu="0"
+		Name="Tornado for Windows &gt;= 3.0"
+		Platforms='"Windows"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="tornadomake -f %rpMakefile -C %rp %b default %n.o"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="tornadomake -f %rpMakefile -C %rp %b default"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="tornadomake -f %rpMakefile -C %rp %b rclean"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					ShowOnMenu="HideIfNoCmdLine"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					ShowOnMenu="HideIfNoCmdLine"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Tornado for Windows"
+		Platforms='"Windows"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="tornadomake -f ..\Makefile %b %n.o"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="tornadomake -f ..\Makefile %b %bt"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="tornadorebuild"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					ShowOnMenu="HideIfNoCmdLine"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					ShowOnMenu="HideIfNoCmdLine"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Tornado for UNIX"
+		Platforms='"Unix"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="tornadomake -f ../Makefile %b %n.o"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="tornadomake -f ../Makefile %b %bt"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="tornadorebuild"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					ShowOnMenu="HideIfNoCmdLine"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					ShowOnMenu="HideIfNoCmdLine"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Borland C++ for 16 bit Windows"
+		Platforms='"Windows"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine="make %n.obj"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="make"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="make /B"/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					RunFromDir="%rw">
+					<Exec CmdLine='tdw "%&lt;e.exe"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%&lt;e.exe"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					RunFromDir="%rw">
+					<Exec CmdLine="workshop"/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Borland C++ for 32 bit Windows"
+		Platforms='"Windows"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine="make %n.obj"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="make"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="make /B"/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%&lt;e.exe"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='td32 "%&lt;e.exe"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="workshop"/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="1" 
+		Name="Microsoft Visual Studio 2003/2005/2008" 
+		Platforms='"Windows"'>
+		<Config	
+			Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /rebuild "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='mdbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="devenv"/>
+				</Target>
+				<Target
+					Name="Build Solution"
+					MenuCaption="Build Solution"
+					ShowOnMenu="HideIfNoCmdLine"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%b"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual C++ for 32 bit Windows"
+		Platforms='"Windows"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='nmake /F "%rn.mak" %b "%bd%n.obj"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='nmake /F "%rn.mak" "%b"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='nmake /A /F "%rn.mak" %b'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='msdev "%bd%&lt;e.exe"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%bd%&lt;e.exe"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="msdev"/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual C++ for 32 bit Windows &gt;= 6.0"
+		Platforms='"Windows"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='nmake /F "%rn.mak" "%b" "%bd%n.obj"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='msdev "%rn.dsp" /make "%bn"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='msdev "%rn.dsp" /make "%bn" /rebuild'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					RunFromDir="%rw">
+					<Exec CmdLine='msdev "%bd%&lt;e.exe"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%bd%&lt;e.exe"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="msdev"/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual Studio  &gt;= 7.0 VC++"
+		Platforms='"Windows"'>
+		<Config 
+			Name="Release"
+			Type="vcproj"
+			DebugCallbackName="windbg">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='vstudiocompile'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn" /project "%rm" /projectconfig "%b"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /rebuild "%bn" /project "%rm" /projectconfig "%b"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="vcproj_visual_studio_debug"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="DebugVisualStudio"
+					MenuCaption="Debug - Visual Studio"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w"'/>
+				</Target>
+				<Target
+					Name="DebugWinDbg"
+					MenuCaption="Debug - WinDbg"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="vcproj_windbg_debug"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="devenv"/>
+				</Target>
+				<Target
+					Name="Build Solution"
+					MenuCaption="Build Solution"
+					ShowOnMenu="HideIfNoCmdLine"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%b"'/>
+				</Target>
+				<Target
+					Name="Clean Solution"
+					MenuCaption="Clean Solution"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /clean "%b"'/>
+				</Target>
+				<Target
+					Name="Clean Project"
+					MenuCaption="Clean Project"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /clean "%bn" /project "%rm" /projectconfig "%b"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual Studio Express  &gt;= 2008 VC++"
+		Platforms='"Windows"'>
+		<Config 
+			Name="Release"
+			Type="vcproj"
+			DebugCallbackName="windbg">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='vstudiocompile'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<!--Exec CmdLine='devenv "%w" /build "%bn" /project "%rm" /projectconfig "%b"'/-->
+					<Exec CmdLine='msbuild "%w" "/t:%rn" "/p:Configuration=%bn" "/p:Platform=%bp" /v:m'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<!--Exec CmdLine='devenv "%w" /rebuild "%bn" /project "%rm" /projectconfig "%b"'/-->
+					<Exec CmdLine='msbuild "%w" "/t:%rn:Rebuild" "/p:Configuration=%bn" "/p:Platform=%bp" /v:m'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="vcproj_visual_studio_debug"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="DebugVisualStudio"
+					MenuCaption="Debug - Visual Studio"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='vcexpress "%w"'/>
+				</Target>
+				<Target
+					Name="DebugWinDbg"
+					MenuCaption="Debug - WinDbg"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="vcproj_windbg_debug"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="vcexpress"/>
+				</Target>
+				<Target
+					Name="Build Solution"
+					MenuCaption="Build Solution"
+					ShowOnMenu="HideIfNoCmdLine"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='msbuild "%w" "/t:build" "/p:Configuration=%bn" "/p:Platform=%bp" /v:m'/>
+					<!--Exec CmdLine='devenv "%w" /build "%bn"'/-->
+				</Target>
+				<Target
+					Name="Clean Solution"
+					MenuCaption="Clean Solution"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='msbuild "%w" "/t:clean" "/p:Configuration=%bn" "/p:Platform=%bp" /v:m'/>
+					<!--Exec CmdLine='devenv "%w" /clean "%bn"'/-->
+				</Target>
+				<Target
+					Name="Clean Project"
+					MenuCaption="Clean Project"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='msbuild "%w" "/t:%rn:Clean" "/p:Configuration=%bn" "/p:Platform=%bp" /v:m'/>
+					<!--Exec CmdLine='devenv "%w" /clean "%bn" /project "%rm" /projectconfig "%b"'/-->
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual Studio  &gt;= 7.0 Visual Basic"
+		Platforms='"Windows"'>
+		<Config
+			Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /rebuild "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='mdbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="devenv"/>
+				</Target>
+				<Target
+					Name="Build Solution"
+					MenuCaption="Build Solution"
+					ShowOnMenu="HideIfNoCmdLine"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual Studio Express  &gt;= 2008 Visual Basic"
+		Platforms='"Windows"'>
+		<Config
+			Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<!--Exec CmdLine='devenv "%w" /build "%bn" /project "%rm"'/-->
+					<Exec CmdLine='msbuild "%w" "/t:%rn" "/p:Configuration=%bn" /v:m'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<!--Exec CmdLine='devenv "%w" /rebuild "%bn" /project "%rm"'/-->
+					<Exec CmdLine='msbuild "%w" "/t:%rn:Rebuild" "/p:Configuration=%bn" /v:m'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='vbexpress "%w"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="vbexpress"/>
+				</Target>
+				<Target
+					Name="Build Solution"
+					MenuCaption="Build Solution"
+					ShowOnMenu="HideIfNoCmdLine"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='msbuild "%w" "/t:build" "/p:Configuration=%bn" /v:m'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual Studio  &gt;= 7.0 C#"
+		Platforms='"Windows"'>
+		<Config
+			Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /rebuild "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='mdbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="devenv"/>
+				</Target>
+				<Target
+					Name="Build Solution"
+					MenuCaption="Build Solution"
+					ShowOnMenu="HideIfNoCmdLine"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual Studio Express  &gt;= 2008 C#"
+		Platforms='"Windows"'>
+		<Config
+			Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<!--Exec CmdLine='devenv "%w" /build "%bn" /project "%rm"'/-->
+					<Exec CmdLine='msbuild "%w" "/t:%rn" "/p:Configuration=%bn" /v:m'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<!--Exec CmdLine='devenv "%w" /rebuild "%bn" /project "%rm"'/-->
+					<Exec CmdLine='msbuild "%w" "/t:%rn:Rebuild" "/p:Configuration=%bn" /v:m'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='vcsexpress "%w"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="vcsexpress"/>
+				</Target>
+				<Target
+					Name="Build Solution"
+					MenuCaption="Build Solution"
+					ShowOnMenu="HideIfNoCmdLine"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='msbuild "%w" "/t:build" "/p:Configuration=%bn" /v:m'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual Studio  &gt;= 7.0 Visual Basic Device"
+		Platforms='"Windows"'>
+		<Config
+			Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /rebuild "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='mdbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="devenv"/>
+				</Target>
+				<Target
+					Name="Build Solution"
+					MenuCaption="Build Solution"
+					ShowOnMenu="HideIfNoCmdLine"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0" 
+		Name="Microsoft Visual Studio  &gt;= 7.0 C# Device"
+		Platforms='"Windows"'>
+		<Config
+			Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /rebuild "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='mdbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="devenv"/>
+				</Target>
+				<Target
+					Name="Build Solution"
+					MenuCaption="Build Solution"
+					ShowOnMenu="HideIfNoCmdLine"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual Studio  &gt;= 7.0 J#"
+		Platforms='"Windows"'>
+		<Config
+			Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /rebuild "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='mdbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="devenv"/>
+				</Target>
+				<Target
+					Name="Build Solution"
+					MenuCaption="Build Solution"
+					ShowOnMenu="HideIfNoCmdLine"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual Studio  &gt;= 7.0 F#"
+		Platforms='"Windows"'>
+		<Config
+			Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /rebuild "%bn" /project "%rm"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='mdbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="devenv"/>
+				</Target>
+				<Target
+					Name="Build Solution"
+					MenuCaption="Build Solution"
+					ShowOnMenu="HideIfNoCmdLine"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='devenv "%w" /build "%bn"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual Studio  &gt;= 7.0 Enterprise Template"
+		Platforms='"Windows"'>
+		<Config Name="Release">
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual Studio  &gt;= 7.0 Database"
+		Platforms='"Windows"'>
+		<Config Name="Release">
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Borland Delphi for Windows"
+		Platforms='"Windows"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine="&lt;path to delphi\bin&gt;dcc -$D+ %n"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="&lt;path to delphi\bin&gt;dcc [Delphi project name]"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='&lt;path to delphi\bin&gt;delphi "%&lt;e.exe"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%&lt;e.exe"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<TemplateData Name="JavaCommonTargets">
+		<Target
+			Name="Build"
+			MenuCaption="&amp;Build"
+			Dialog="_java_options_form Compiler"
+			CaptureOutputWith="ProcessBuffer"
+			Deletable="0"
+			SaveOption="SaveWorkspaceFiles"
+			RunFromDir="%rw">
+			<Exec CmdLine="javamake"/>
+		</Target>
+		<Target
+			Name="Rebuild"
+			MenuCaption="&amp;Rebuild"
+			Dialog="_java_options_form Compiler"
+			CaptureOutputWith="ProcessBuffer"
+			Deletable="0"
+			SaveOption="SaveWorkspaceFiles"
+			RunFromDir="%rw">
+			<Exec CmdLine="javarebuild"/>
+		</Target>
+		<Target
+			Name="Debug"
+			MenuCaption="&amp;Debug"
+			Dialog="_java_options_form Debugger"
+			BuildFirst="1"
+			Deletable="0"
+			CaptureOutputWith="ProcessBuffer"
+			RunFromDir="%rw">
+			<Exec CmdLine="java -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 %cp ."/>
+		</Target>
+		<Target
+			Name="Execute"
+			MenuCaption="E&amp;xecute"
+			Dialog="_java_options_form Interpreter"
+			BuildFirst="1"
+			Deletable="0"
+			CaptureOutputWith="ProcessBuffer"
+			RunFromDir="%rw">
+			<Exec CmdLine="java %cp"/>
+		</Target>
+		<Target
+			Name="UnitTest"
+			MenuCaption="Unit Test"
+			ShowOnMenu="Never"
+			Dialog=""
+			BuildFirst="1"
+			Deletable="0"
+			CaptureOutputWith="ProcessBuffer"
+			PreMacro="unittest_pre_build"
+			PostMacro="unittest_post_build"
+			RunFromDir="%rw">
+			<Exec CmdLine="java %cp org.junit.runner.JUnitCore"/>
+		</Target>
+		<Target
+			Name="dash"
+			MenuCaption="-">
+			<Exec/>
+		</Target>
+		<Target
+			Name="View Javadoc"
+			MenuCaption="&amp;View Javadoc"
+			ShowOnMenu="HideIfNoCmdLine"
+			Dialog="_java_options_form javadoc"
+			Deletable="0"
+			SaveOption="SaveCurrent"
+			RunFromDir="%rw">
+			<Exec
+				CmdLine="javaviewdoc"
+				Type="Slick-C"/>
+		</Target>
+		<Target
+			Name="Javadoc All"
+			MenuCaption="Javadoc All"
+			ShowOnMenu="HideIfNoCmdLine"
+			Dialog="_java_options_form javadoc"
+			CaptureOutputWith="ProcessBuffer"
+			Deletable="0"
+			SaveOption="SaveWorkspaceFiles"
+			RunFromDir="%rw">
+			<Exec CmdLine="javamakedoc javadoc -d docs %cp %{*.java}"/>
+		</Target>
+		<Target
+			Name="dash2"
+			MenuCaption="-">
+			<Exec/>
+		</Target>
+		<Target
+			Name="Make Jar"
+			MenuCaption="Make &amp;Jar"
+			ShowOnMenu="HideIfNoCmdLine"
+			Dialog="_java_options_form jar"
+			CaptureOutputWith="ProcessBuffer"
+			BuildFirst="1"
+			Deletable="0"
+			SaveOption="SaveWorkspaceFiles"
+			RunFromDir="%rw">
+			<Exec CmdLine='javamakejar jar cvf "%&lt;e.jar" %{*}'/>
+		</Target>
+		<Target
+			Name="Java Options"
+			MenuCaption="Java &amp;Options"
+			ShowOnMenu="HideIfNoCmdLine"
+			Deletable="0">
+			<Exec
+				CmdLine="javaoptions"
+				Type="Slick-C"/>
+		</Target>
+	</TemplateData>
+	<TemplateData Name="JavaCommonAppTypes">
+		<AppTypeTargets Name="Debug">
+			<AppTypeTarget
+				MenuCaption="&amp;Debug"
+				Dialog="_java_options_form Appletviewer"
+				BuildFirst="1"
+				Deletable="0"
+				AppType="applet"
+				RunFromDir="%rw">
+				<Exec CmdLine="appletviewer -J-Xdebug -J-Xnoagent -J-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 %h"/>
+			</AppTypeTarget>
+			<AppTypeTarget
+				MenuCaption="&amp;Debug"
+				BuildFirst="1"
+				Deletable="0"
+				AppType="custom"
+				RunFromDir="%rw">
+				<Exec CmdLine="jdb %cp %&lt;e"/>
+			</AppTypeTarget>
+		</AppTypeTargets>
+		<AppTypeTargets Name="Execute">
+			<AppTypeTarget
+				MenuCaption="E&amp;xecute"
+				Dialog="_java_options_form Appletviewer"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveWorkspaceFiles"
+				AppletClass="%&lt;e"
+				Deletable="0"
+				AppType="applet"
+				RunFromDir="%rw">
+				<Exec CmdLine="appletviewer %h"/>
+			</AppTypeTarget>
+			<AppTypeTarget
+				MenuCaption="E&amp;xecute"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveWorkspaceFiles"
+				Deletable="0"
+				AppType="custom"
+				RunFromDir="%rw">
+				<Exec CmdLine="java %cp %&lt;e"/>
+			</AppTypeTarget>
+		</AppTypeTargets>
+	</TemplateData>
+	<TemplateData Name="JavaConfigs">
+		<Config
+			Name="Debug"
+			Type="java"
+			AppTypeList="application,applet,j2me,custom"
+			DebugCallbackName="jdwp"
+			ObjectDir="classes"
+			AppType="application"
+			Version="7">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					Dialog="_java_options_form Compiler"
+					EnableBuildFirst="0"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='javac -g %jbd %cp "%f"'/>
+				</Target>
+				<CopyChildren From="/Templates/TemplateData[@Name='JavaCommonTargets']"/>
+			</Menu>
+			<CopyChildren From="/Templates/TemplateData[@Name='JavaCommonAppTypes']"/>
+		</Config>
+		<Config
+			Name="Release"
+			Type="java"
+			AppTypeList="application,applet,custom"
+			DebugCallbackName="jdwp"
+			ObjectDir="classes"
+			AppType="application"
+			Version="7">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					Dialog="_java_options_form Compiler"
+					EnableBuildFirst="0"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='javac %jbd %cp "%f"'/>
+				</Target>
+				<CopyChildren From="/Templates/TemplateData[@Name='JavaCommonTargets']"/>
+			</Menu>
+			<CopyChildren From="/Templates/TemplateData[@Name='JavaCommonAppTypes']"/>
+		</Config>
+	</TemplateData>
+	<Template Name="Java - Empty Project">
+		<CopyChildren From="/Templates/TemplateData[@Name='JavaConfigs']"/>
+		<CustomFolders>
+			<Folder
+				Name="Source Files"
+				Filters="*.java;*.c;*.cpp;*.cxx;*.hxx;*.prg;*.pas;*.dpr;*.asm;*.bas;*.sc;*.e"/>
+			<Folder
+				Name="Bitmaps"
+				Filters="*.jpg;*.gif;*.bmp"/>
+			<Folder
+				Name="Other Files"
+				Filters=""/>
+		</CustomFolders>
+		<Files AutoFolders="PackageView">
+		</Files>
+	</Template>
+	<Template Name="Java - Ant">
+		<CopyChildren From="/Templates/TemplateData[@Name='JavaConfigs']"/>
+		<CustomFolders>
+			<Folder
+				Name="Source Files"
+				Filters="*.java;*.c;*.cpp;*.cxx;*.hxx;*.prg;*.pas;*.dpr;*.asm;*.bas;*.sc;*.e"/>
+			<Folder
+				Name="Ant XML Build Files"
+				Filters="*.xml"/>
+			<Folder
+				Name="Bitmaps"
+				Filters="*.jpg;*.gif;*.bmp"/>
+			<Folder
+				Name="Other Files"
+				Filters=""/>
+		</CustomFolders>
+		<Files AutoFolders="PackageView">
+		</Files>
+	</Template>
+        <Template
+		Name="Maven"
+        ShowOnMenu="0"
+		WorkingDir=".">
+		<Files AutoFolders="PackageView">
+            <Folder
+            Name="(default package)"
+            Type="Package">
+            <F
+                N="*.java"
+                Recurse="1"
+                Excludes=""/>
+            
+            </Folder>
+            <F
+                N="pom.xml"/>
+		</Files>
+        <CustomFolders>
+			<Folder
+				Name="Source Files"
+				Filters="*.java;*.c;*.cpp;*.cxx;*.hxx;*.prg;*.pas;*.dpr;*.asm;*.bas;*.sc;*.e"/>
+			<Folder
+				Name="Build Files"
+				Filters="">
+                <F
+                N="pom.xml"/>
+            </Folder>
+			<Folder
+				Name="Bitmaps"
+				Filters="*.jpg;*.gif;*.bmp"/>
+			<Folder
+				Name="Other Files"
+				Filters=""/>
+		</CustomFolders>
+		<Config Name="target"
+            Type="Java"
+            AppTypeList="application,applet,custom"
+			DebugCallbackName="jdwp"
+			ObjectDir="classes"
+			AppType="application"
+			Version="7">
+			<Menu>
+                <Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="mvn compile"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="mvn package"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+                    RunFromDir="%rw">
+                    <Exec CmdLine="mvn clean package"/>
+				</Target>
+                <Target
+					Name="Clean"
+					MenuCaption="&amp;Clean"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+                    RunFromDir="%rw">
+                    <Exec CmdLine="mvn clean"/>
+				</Target>
+                <Target
+					Name="Execute"
+					MenuCaption="&amp;Execute"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+                    RunFromDir="%rw/target">
+                    <Exec CmdLine="java %cp ."/>
+				</Target>
+                <Target
+                    Name="Debug"
+                    MenuCaption="&amp;Debug"
+                    BuildFirst="1"
+                    Deletable="0"
+                    CaptureOutputWith="ProcessBuffer"
+                    RunFromDir="%rw/target">
+                    <Exec CmdLine="java -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 %cp ."/>
+                </Target>
+                <Target
+					Name="Test"
+					MenuCaption="&amp;Test"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="mvn test"/>
+				</Target>
+                <Target
+					Name="Site"
+					MenuCaption="&amp;Site"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+                    RunFromDir="%rw">
+                    <Exec CmdLine="mvn site"/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="Java - GWT Application"
+		InitMacro="new_gwt_application">
+		<CopyChildren From="/Templates/Template[@Name='Java - Ant']"/>
+		<SetAppType AppType="gwt"/>
+	</Template>
+	<Template
+		Name="Java - Android Application"
+		InitMacro="new_android_application">
+		<CopyChildren From="/Templates/Template[@Name='Java - Ant']"/>
+		<SetAppType AppType="android"/>
+	</Template>
+	<Template
+		Name="Java - AWT Applet"
+		InitMacro="awt_applet_wizard">
+		<CopyChildren From="/Templates/Template[@Name='Java - Empty Project']"/>
+		<SetAppType AppType="applet"/>
+	</Template>
+	<Template
+		Name="Java - With main()"
+		InitMacro="java_with_main_wizard">
+		<CopyChildren From="/Templates/Template[@Name='Java - Empty Project']"/>
+	</Template>
+	<Template
+		Name="Java - JFC Applet"
+		InitMacro="jfc_applet_wizard">
+		<CopyChildren From="/Templates/Template[@Name='Java - Empty Project']"/>
+		<SetAppType AppType="applet"/>
+	</Template>
+	<Template
+		Name="Java - AWT Application"
+		InitMacro="awt_app_wizard">
+		<CopyChildren From="/Templates/Template[@Name='Java - Empty Project']"/>
+	</Template>
+	<Template
+		Name="Java - JavaBean"
+		InitMacro="javabean_wizard">
+		<CopyChildren From="/Templates/Template[@Name='Java - Empty Project']"/>
+	</Template>
+	<Template
+		Name="Java - EJB"
+		InitMacro="ejb_wizard">
+		<CopyChildren From="/Templates/Template[@Name='Java - Empty Project']"/>
+	</Template>
+	<Template
+		Name="Java - JFC Application"
+		InitMacro="jfc_app_wizard">
+		<CopyChildren From="/Templates/Template[@Name='Java - Empty Project']"/>
+	</Template>
+	<Template
+		Name="Java - J2ME MIDlet"
+		InitMacro="j2me_app_wizard">
+		<CopyChildren From="/Templates/Template[@Name='Java - Empty Project']"/>
+	</Template>
+	<Template
+		Name="Java - Borland JBuilder"
+		ShowOnMenu="0">
+		<Config
+			Name="Release"
+			Type="java"
+			DebugCallbackName="jdwp"
+			ObjectDir="classes"
+			AppType="application"
+			Version="7">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					Dialog="_java_options_form Compiler"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='bmj %xup %cp %jbd "%f"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='jbuilder -build "%rp%rn.jpx" make'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='jbuilder -build "%rp%rn.jpx" rebuild'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					Dialog="_java_options_form Debugger"
+					BuildFirst="1"
+					Deletable="0"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw">
+					<Exec CmdLine="java -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 %cp ."/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					Dialog="_java_options_form Interpreter"
+					BuildFirst="1"
+					Deletable="0"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw">
+					<Exec CmdLine="java %cp"/>
+				</Target>
+				<Target
+					Name="dash"
+					MenuCaption="-">
+					<Exec/>
+				</Target>
+				<Target
+					Name="View Javadoc"
+					MenuCaption="&amp;View Javadoc"
+					ShowOnMenu="HideIfNoCmdLine"
+					Dialog="_java_options_form javadoc"
+					Deletable="0"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine="javaviewdoc"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Javadoc All"
+					MenuCaption="Javadoc All"
+					ShowOnMenu="HideIfNoCmdLine"
+					Dialog="_java_options_form javadoc"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="javamakedoc javadoc -d docs %cp %{*.java}"/>
+				</Target>
+				<Target
+					Name="dash2"
+					MenuCaption="-">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Make Jar"
+					MenuCaption="Make &amp;Jar"
+					ShowOnMenu="HideIfNoCmdLine"
+					Dialog="_java_options_form jar"
+					CaptureOutputWith="ProcessBuffer"
+					BuildFirst="1"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='javamakejar jar cvf "%&lt;e.jar" %{*}'/>
+				</Target>
+				<Target
+					Name="Java Options"
+					MenuCaption="Java &amp;Options"
+					ShowOnMenu="HideIfNoCmdLine"
+					Deletable="0">
+					<Exec
+						CmdLine="javaoptions"
+						Type="Slick-C"/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Symantec C++ (Win32) for Windows"
+		Platforms='"Windows"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine="smake %n.obj"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="smake"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='scw32 "%&lt;e.exe"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%&lt;e.exe"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template Name="(Other)"
+		InitMacro="show_project_properties_files_tab">
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%&lt;e.exe"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template Name="Makefile"
+		InitMacro="MI_showNewMakefileProjectOptions">
+		<Config Name="Release"
+				Type="Makefile">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%&lt;e.exe"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template Name="Other C/C++"
+		InitMacro="show_project_properties_files_tab">
+		<Config 
+			Name="Debug"
+			Type="cpp"
+			DebugCallbackName="gdb"
+			OutputFile="%bd%&lt;e">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					OutputExts="*.o"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+                    <Exec CmdLine='cc -c -g %i %defd -o "%bd%n.o" "%f"'/>
+				</Target>
+				<Target
+					Name="Link"
+					MenuCaption="&amp;Link">
+                    <Exec CmdLine='cc -g -o "%o" %f %libs'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+                    <Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw">
+					<Exec CmdLine='vsdebugio -prog "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+			</Menu>
+		</Config>
+		<Config 
+			Name="Release"
+			Type="cpp"
+			DebugCallbackName="gdb"
+			OutputFile="%bd%&lt;e">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					OutputExts="*.o"
+					RunFromDir="%rw">
+                    <Exec CmdLine='cc -c -O %i %defd -o "%bd%n.o" "%f"'/>
+				</Target>
+				<Target
+					Name="Link"
+					MenuCaption="&amp;Link">
+                    <Exec CmdLine='cc -O -o "%o" %f %libs'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+                    <Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw">
+					<Exec CmdLine='vsdebugio -prog "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+			</Menu>
+		</Config>
+		<Rules Name="Compile">
+			<Rule
+				InputExts="*.s"
+				OutputExts="*.o"
+				LinkObject="1">
+				<Exec CmdLine='as -o "%bd%n.o" "%f"'/>
+			</Rule>
+		</Rules>
+	</Template>
+	<Template
+		Name="VHDL: Model Technology ModelSim"
+		Platforms='"Windows"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine="vcom %p%n%e"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="nmake"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="nmake /A"/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="vsim"/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="vsim"/>
+				</Target>
+			</Menu>
+		</Config>
+		<Files>
+			<Folder
+				Name="Source Files"
+				Filters="*.vhd;*.vhdl"/>
+			<Folder
+				Name="Other Files"
+				Filters=""/>
+		</Files>
+	</Template>
+	<Template
+		Name="VHDL: Model Technology ModelSim"
+		Platforms='"Unix"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine="vcom %p%n%e"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="make"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="vsim"/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="vsim"/>
+				</Target>
+			</Menu>
+		</Config>
+		<Files>
+			<Folder
+				Name="Source Files"
+				Filters="*.vhd;*.vhdl">
+			</Folder>
+			<Folder
+				Name="Other Files"
+				Filters="">
+			</Folder>
+		</Files>
+	</Template>
+	<Template
+		Name="Verilog: Model Technology ModelSim"
+		Platforms='"Windows"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine="vlog %p%n%e"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="nmake"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="nmake /A"/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="vsim"/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="vsim"/>
+				</Target>
+			</Menu>
+		</Config>
+		<Files>
+			<Folder
+				Name="Source Files"
+				Filters="*.v;*.verilog"/>
+			<Folder
+				Name="Other Files"
+				Filters=""/>
+		</Files>
+	</Template>
+	<Template
+		Name="Verilog: Model Technology ModelSim"
+		Platforms='"Unix"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine="vlog %p%n%e"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="make"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="vsim"/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="vsim"/>
+				</Target>
+			</Menu>
+		</Config>
+		<Files>
+			<Folder
+				Name="Source Files"
+				Filters="*.v;*.verilog"/>
+			<Folder
+				Name="Other Files"
+				Filters=""/>
+		</Files>
+	</Template>	
+	<Template Name="Vera / OpenVera">
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="CompileStandalone"
+					MenuCaption="&amp;Compile Standalone"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine="vera -cmp -cs %rn.vr"/>
+				</Target>
+				<Target
+					Name="BuildRunInVCS"
+					MenuCaption="&amp;ampRun in Testbench (VCS)"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="vcs -ntb %f -R"/>
+				</Target>
+				<Target
+					Name="ExecuteStandalone"
+					MenuCaption="E&amp;xecute Standalone"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="vera_cs %rn.vro"/>
+				</Target>
+			</Menu>
+		</Config>
+		<Files>
+			<Folder
+				Name="Vera Source"
+				Filters="*.vr"/>
+			<Folder
+				Name="Vera Headers"
+				Filters="*.vrh;*.vri"/>
+			<Folder	Name="Hardware Model Source"
+				Filters="*.v;*.v2k;*.vhd;*.vhdl"/>
+			<Folder
+				Name="Other Files"
+				Filters=""/>
+		</Files>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Embedded Tools for 32 bit Windows &gt;= 6.0"
+		Platforms='"Windows"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='nmake /F "%rn.mak" "%b" "%bd%n.obj"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='msdev "%rn.vcp" /make "%bn"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='msdev "%rn.vcp" /make "%bn" /rebuild'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='msdev "%bd%&lt;e.exe"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%bd%&lt;e.exe"'/>
+				</Target>
+				<Target
+					Name="Resource Editor"
+					MenuCaption="Resource Editor"
+					ShowOnMenu="HideIfNoCmdLine"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="msdev"/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<TemplateData Name="GNUCCommonTargets">
+		<Target
+			Name="Build"
+			MenuCaption="&amp;Build"
+			Dialog="_gnuc_options_form Compile"
+			CaptureOutputWith="ProcessBuffer"
+			Deletable="0"
+			SaveOption="SaveWorkspaceFiles"
+			RunFromDir="%rw">
+			<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t build'/>
+		</Target>
+		<Target
+			Name="Rebuild"
+			MenuCaption="&amp;Rebuild"
+			Dialog="_gnuc_options_form Compile"
+			CaptureOutputWith="ProcessBuffer"
+			Deletable="0"
+			SaveOption="SaveWorkspaceFiles"
+			RunFromDir="%rw">
+			<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t rebuild'/>
+		</Target>
+		<Target
+			Name="Debug"
+			MenuCaption="&amp;Debug"
+			Dialog="_gnuc_options_form Run/Debug"
+			BuildFirst="1"
+			CaptureOutputWith="ProcessBuffer"
+			Deletable="0"
+			SaveOption="SaveNone"
+			RunFromDir="%rw">
+			<Exec CmdLine='vsdebugio -prog "%o"'/>
+		</Target>
+		<Target
+			Name="Execute"
+			MenuCaption="E&amp;xecute"
+			Dialog="_gnuc_options_form Run/Debug"
+			BuildFirst="1"
+			CaptureOutputWith="ProcessBuffer"
+			Deletable="0"
+			SaveOption="SaveWorkspaceFiles"
+			RunFromDir="%rw">
+			<Exec CmdLine='"%o"'/>
+		</Target>
+		<Target
+			Name="dash"
+			MenuCaption="-"
+			Deletable="0">
+			<Exec/>
+		</Target>
+		<Target
+			Name="GNU C Options"
+			MenuCaption="GNU C &amp;Options..."
+			ShowOnMenu="HideIfNoCmdLine"
+			Deletable="0"
+			SaveOption="SaveNone">
+			<Exec
+				CmdLine="gnucoptions"
+				Type="Slick-C"/>
+		</Target>
+	</TemplateData>
+	<Template
+		Name="GNU C/C++"
+		InitMacro="gnuc_wizard">
+		<Config
+			Name="Debug"
+			Type="gnuc"
+			DebugCallbackName="gdb"
+			Version="1"
+			OutputFile="%bd%&lt;e">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					Dialog="_gnuc_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					OutputExts="*.o"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='g++ -c %xup  %defd -g -o "%bd%n%oe" %i "%f"'/>
+				</Target>
+				<Target
+					Name="Link"
+					MenuCaption="&amp;Link"
+					ShowOnMenu="Never"
+					Dialog="_gnuc_options_form Link"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='g++ %xup -g -o "%o" %f %libs'/>
+				</Target>
+				<CopyChildren From="/Templates/TemplateData[@Name='GNUCCommonTargets']"/>
+			</Menu>
+		</Config>
+		<Config
+			Name="Release"
+			Type="gnuc"
+			DebugCallbackName="gdb"
+			Version="1"
+			OutputFile="%bd%&lt;e">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					Dialog="_gnuc_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					OutputExts="*.o"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='g++ -c %xup %defd -o "%bd%n%oe" %i "%f"'/>
+				</Target>
+				<Target
+					Name="Link"
+					MenuCaption="&amp;Link"
+					ShowOnMenu="Never"
+					Dialog="_gnuc_options_form Link"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='g++ %xup -o "%o" %f %libs'/>
+				</Target>
+				<CopyChildren From="/Templates/TemplateData[@Name='GNUCCommonTargets']"/>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual C++ Toolkit Wizard"
+		Platforms='"Windows"'
+		InitMacro="vcpp_wizard">
+		<Config
+			Name="Debug"
+			Type="vcpp"
+			Version="1"
+			OutputFile="%bd%&lt;e">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					OutputExts="*.o"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VCTOOLKITINSTALLDIR)bin\cl" /c %defs /W3 /GB /Ob0 /Gd /GS %~other /Fo"%bd%n%oe" %i "%f"'
+						  OtherOptions='/nologo'/>
+				</Target>
+				<Target
+					Name="Link"
+					MenuCaption="&amp;Link"
+					ShowOnMenu="Never"
+					Dialog="_vcpp_options_form Link"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VCTOOLKITINSTALLDIR)bin\link" %~other /INCREMENTAL /LIBPATH:"%(VCTOOLKITINSTALLDIR)lib" /OUT:"%o" %f %libs'
+						OtherOptions='/NOLOGO'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t build'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t rebuild'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					Dialog="_vcpp_options_form Run/Debug"
+					Deletable="0"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='mdbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					Dialog="_vcpp_options_form Run/Debug"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="dash"
+					MenuCaption="-"
+					Deletable="0">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Visual C++ Toolkit Options"
+					MenuCaption="Visual C++ Toolkit &amp;Options..."
+					ShowOnMenu="HideIfNoCmdLine"
+					Deletable="0"
+					SaveOption="SaveNone">
+					<Exec
+						CmdLine="vcppoptions"
+						Type="Slick-C"/>
+				</Target>
+			</Menu>
+			<Includes>
+				<Include Dir="%(VCTOOLKITINSTALLDIR)include/"/>
+			</Includes>
+		</Config>
+		<Config
+			Name="Release"
+			Type="vcpp"
+			Version="1"
+			OutputFile="%bd%&lt;e">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					OutputExts="*.o"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VCTOOLKITINSTALLDIR)bin\cl" /c %defs /W3 /GB /Ob0 /Gd /GS %~other /Fo"%bd%n%oe" %i "%f"'
+						  OtherOptions='/nologo'/>
+				</Target>
+				<Target
+					Name="Link"
+					MenuCaption="&amp;Link"
+					ShowOnMenu="Never"
+					Dialog="_vcpp_options_form Link"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VCTOOLKITINSTALLDIR)bin\link" %~other /INCREMENTAL /LIBPATH:"%(VCTOOLKITINSTALLDIR)lib" /OUT:"%o" %f %libs'
+						OtherOptions='/NOLOGO'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t build'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t rebuild'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					Dialog="_vcpp_options_form Run/Debug"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="dash"
+					MenuCaption="-"
+					Deletable="0">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Visual C++ Toolkit Options"
+					MenuCaption="Visual C++ Toolkit &amp;Options..."
+					ShowOnMenu="HideIfNoCmdLine"
+					Deletable="0"
+					SaveOption="SaveNone">
+					<Exec
+						CmdLine="vcppoptions"
+						Type="Slick-C"/>
+				</Target>
+			</Menu>
+			<Includes>
+				<Include Dir="%(VCTOOLKITINSTALLDIR)include/"/>
+			</Includes>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft Visual C++ X64 Platform SDK Wizard"
+		Platforms='"Windows"'
+		InitMacro="vcpp_wizard_x64">
+		<Config
+			Name="Debug"
+			Type="vcpp"
+			DebugCallbackName=""
+			Version="1"
+			OutputFile="%bd%&lt;e">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					OutputExts="*.o"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VCTOOLKITINSTALLDIR)bin\cl" /c %defs /W3 /Ob0 /Gd /GS %~other /Fo"%bd%n%oe" %i "%f"'
+						  OtherOptions='/nologo'/>
+				</Target>
+				<Target
+					Name="Link"
+					MenuCaption="&amp;Link"
+					ShowOnMenu="Never"
+					Dialog="_vcpp_options_form Link"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VCTOOLKITINSTALLDIR)bin\link" %~other /INCREMENTAL /LIBPATH:"%(VCTOOLKITINSTALLDIR)lib" /OUT:"%o" %f %libs'
+						OtherOptions='/NOLOGO'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t build'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t rebuild'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					Dialog="_vcpp_options_form Run/Debug"
+					Deletable="0"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='mdbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					Dialog="_vcpp_options_form Run/Debug"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="dash"
+					MenuCaption="-"
+					Deletable="0">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Visual C++ X64 Platform SDK Options"
+					MenuCaption="Visual C++ X64 Platform SDK &amp;Options..."
+					ShowOnMenu="HideIfNoCmdLine"
+					Deletable="0"
+					SaveOption="SaveNone">
+					<Exec
+						CmdLine="vcppoptions"
+						Type="Slick-C"/>
+				</Target>
+			</Menu>
+			<Includes>
+				<Include Dir="%(VCTOOLKITINSTALLDIR)include/"/>
+			</Includes>
+		</Config>
+		<Config
+			Name="Release"
+			Type="vcpp"
+			Version="1"
+			OutputFile="%bd%&lt;e">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					OutputExts="*.o"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VCTOOLKITINSTALLDIR)bin\cl" /c %defs /W3 /Ob0 /Gd /GS %~other /Fo"%bd%n%oe" %i "%f"'
+						  OtherOptions='/nologo'/>
+				</Target>
+				<Target
+					Name="Link"
+					MenuCaption="&amp;Link"
+					ShowOnMenu="Never"
+					Dialog="_vcpp_options_form Link"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VCTOOLKITINSTALLDIR)bin\link" %~other /INCREMENTAL /LIBPATH:"%(VCTOOLKITINSTALLDIR)lib" /OUT:"%o" %f %libs'
+						OtherOptions='/NOLOGO'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t build'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t rebuild'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					Dialog="_vcpp_options_form Run/Debug"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+				<Target
+					Name="dash"
+					MenuCaption="-"
+					Deletable="0">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Visual C++ X64 Platform SDK Options"
+					MenuCaption="Visual C++ X64 Platform SDK &amp;Options..."
+					ShowOnMenu="HideIfNoCmdLine"
+					Deletable="0"
+					SaveOption="SaveNone">
+					<Exec
+						CmdLine="vcppoptions"
+						Type="Slick-C"/>
+				</Target>
+			</Menu>
+			<Includes>
+				<Include Dir="%(VCTOOLKITINSTALLDIR)include/"/>
+			</Includes>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft .NET SDK (C#)"
+		Platforms='"Windows"'>
+		<Config
+			Name="Debug"
+			Version="1"
+			OutputFile="%bd%&lt;e.exe">
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(FRAMEWORKDIR)\%(FRAMEWORKVERSION)\csc.exe" /debug+ /out:"%o" %{*.cs}'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					Deletable="0"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='mdbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+			</Menu>
+			<PreBuildCommands StopOnError="0">
+				<Exec CmdLine="mkdir %bd"/>
+			</PreBuildCommands>
+		</Config>
+		<Config
+			Name="Release"
+			Version="1"
+			OutputFile="%bd%&lt;e.exe">
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(FRAMEWORKDIR)\%(FRAMEWORKVERSION)\csc.exe" /debug- /out:"%o" %{*.cs}'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					Deletable="0"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='mdbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+			</Menu>
+			<PreBuildCommands StopOnError="0">
+				<Exec CmdLine="mkdir %bd"/>
+			</PreBuildCommands>
+		</Config>
+	</Template>
+	<Template
+		ShowOnMenu="0"
+		Name="Microsoft .NET SDK (Visual Basic)"
+		Platforms='"Windows"'>
+		<Config
+			Name="Debug"
+			Version="1"
+			OutputFile="%bd%&lt;e.exe">
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(FRAMEWORKDIR)\%(FRAMEWORKVERSION)\vbc.exe" /t:exe /debug+ /optionstrict+ /out:"%o" %{*.vb}'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					Deletable="0"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='mdbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					Dialog="_vcpp_options_form Run/Debug"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+			</Menu>
+			<PreBuildCommands StopOnError="0">
+				<Exec CmdLine="mkdir %bd"/>
+			</PreBuildCommands>
+		</Config>
+		<Config
+			Name="Release"
+			Version="1"
+			OutputFile="%bd%&lt;e.exe">
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					Dialog="_vcpp_options_form Compile"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(FRAMEWORKDIR)\%(FRAMEWORKVERSION)\vbc.exe" /t:exe /debug- /optionstrict+ /out:"%o" %{*.vb}'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					Deletable="0"
+					SaveOption="SaveNone"
+					EnableBuildFirst="0"
+					RunFromDir="%rw">
+					<Exec CmdLine='mdbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					Dialog="_vcpp_options_form Run/Debug"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					Deletable="0"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+			</Menu>
+			<PreBuildCommands StopOnError="0">
+				<Exec CmdLine="mkdir %bd"/>
+			</PreBuildCommands>
+		</Config>
+	</Template>
+	<Template
+		Name="SAS"
+		Platforms='"Unix"'>
+		<Files>
+			<Folder
+				Name="Source Files"
+				Filters="*.sas"/>
+			<Folder
+				Name="Other Files"
+				Filters=""/>
+		</Files>
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="Submit to SAS"
+					MenuCaption="&amp;Submit to SAS"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine='sassubmit sas -nosplash -sysin "%f" log="%p%n.log"'
+						Type="Slick-C"/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="SAS"
+		Platforms='"Windows"'>
+		<Files>
+			<Folder
+				Name="Source Files"
+				Filters="*.sas"/>
+			<Folder
+				Name="Other Files"
+				Filters=""/>
+		</Files>
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="Submit to SAS"
+					MenuCaption="&amp;Submit to SAS"
+					RunFromDir="%rw">
+					<Exec
+						CmdLine='sassubmit sas.exe -nosplash -sysin "%f" log="%p%n.log"'
+						Type="Slick-C"/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template 
+		ShowOnMenu="0"
+		Name="IBM PowerNP">
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					ShowOnMenu="Never"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='npasm %in -elf -o %&lt;e @"%lf"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" make "%w" "%r" -cppmake'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					ShowOnMenu="Never"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="npscope"/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine=""/>
+				</Target>
+				<Target
+					Name="Generate Test Case"
+					MenuCaption="&amp;Generate Test Case"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw">
+					<Exec CmdLine='nptest -f "%f"'/>
+				</Target>
+				<Target
+					Name="Profile"
+					MenuCaption="&amp;Profile"
+					RunFromDir="%rw">
+					<Exec CmdLine="npprofile.bat"/>
+				</Target>
+				<Target
+					Name="Syntax Check"
+					MenuCaption="&amp;Syntax Check"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw">
+					<Exec CmdLine='npasm %in "%f"'/>
+				</Target>
+				<Target
+					Name="Link"
+					MenuCaption="&amp;Link"
+					ShowOnMenu="Never"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw"/>
+			</Menu>
+		</Config>
+		<Config Name="Debug">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					ShowOnMenu="Never"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='npasm %in -elf -l -g -o %&lt;e @"%lf"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" make "%w" "%r" -cppmake'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					ShowOnMenu="Never"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="npscope"/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine=""/>
+				</Target>
+				<Target
+					Name="Generate Test Case"
+					MenuCaption="&amp;Generate Test Case"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw">
+					<Exec CmdLine='nptest -f "%f"'/>
+				</Target>
+				<Target
+					Name="Profile"
+					MenuCaption="&amp;Profile"
+					RunFromDir="%rw">
+					<Exec CmdLine="npprofile.bat"/>
+				</Target>
+				<Target
+					Name="Syntax Check"
+					MenuCaption="&amp;Syntax Check"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw">
+					<Exec CmdLine='npasm %in "%f"'/>
+				</Target>
+				<Target
+					Name="Link"
+					MenuCaption="&amp;Link"
+					ShowOnMenu="Never"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw"/>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="OS/390 UNIX C"
+		Platforms='"Unix"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine="c89 -o %n.o -c %n.c"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="make"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="%(VSLICKBIN)/vadbg %&lt;e"/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%&lt;e"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="OS/390 UNIX C++"
+		Platforms='"Unix"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='c++ -+ -o %n.output -c "%f"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="make"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="%(VSLICKBIN)/vadbg %&lt;e"/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%&lt;e"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="OS/390 UNIX Assembler"
+		Platforms='"Unix"'>
+		<Config Name="Release">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine="c89 -o %n.o -c %n.asm"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="make"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine="%(VSLICKBIN)/vadbg %&lt;e"/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%&lt;e"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="OS/390 VS COBOL II"
+		Platforms='"Unix"'>
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='%(VSLICKBIN)/vscomp.rexx vscob2 %df "%ds1.obj(%dm)"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="OS/390 MVS C"
+		Platforms='"Unix"'>
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='%(VSLICKBIN)/vscomp.rexx mvscc %df "%ds1.obj(%dm)"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="OS/390 MVS C++"
+		Platforms='"Unix"'>
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='%(VSLICKBIN)/vscomp.rexx mvscxx %df "%ds1.obj(%dm)"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="OS/390 C/370"
+		Platforms='"Unix"'>
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='%(VSLICKBIN)/vscomp.rexx c370 %df "%ds1.obj(%dm)"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="OS/390 PL/I Optimizing"
+		Platforms='"Unix"'>
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='%(VSLICKBIN)/vscomp.rexx pl1opt %df "%ds1.obj(%dm)"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="OS/390 MVS High Level Assembler"
+		Platforms='"Unix"'>
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='%(VSLICKBIN)/vscomp.rexx hlasm %df "%ds1.obj(%dm)"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="OS/390 VS Fortran"
+		Platforms='"Unix"'>
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine='%(VSLICKBIN)/vscomp.rexx vsfor %df "%ds1.obj(%dm)"'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="DigitalMars D" WorkingDir=".">
+		<Files>
+			<Folder
+				Name="Source Files"	Filters="*.d;*.di;*.c;*.cpp"/>
+			<Folder	Name="Header Files"
+				Filters="*.h"/>
+			<Folder
+				Name="Resource Files"
+				Filters="*.def;*.res"/>
+			<Folder
+				Name="Bitmaps"
+				Filters=""/>
+			<Folder
+				Name="Other Files" 
+				Filters="*.dd"/>
+		</Files>
+		<Config 
+			Name="Debug"
+			Type="cpp"
+			DebugCallbackName="gdb"
+			OutputFile="%&lt;e">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+                    <Exec CmdLine='dmd -c -g -debug %i -of"%bd%n.obj" "%f"'/>
+				</Target>
+				<Target
+					Name="Link"
+					MenuCaption="&amp;Link">
+                    <Exec CmdLine='dmd -g -debug -of"%o" %f %libs'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+                    <Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					BuildFirst="1"
+					RunFromDir="%rw">
+					<Exec CmdLine='Ddbg "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+			</Menu>
+			<Rules Name="Compile">
+				<Rule
+					InputExts="*.d" 
+					OutputExts="*.obj" 
+					LinkObject="1">
+					<Exec CmdLine='dmd -c -g -debug -of"%bd%n.obj" "%f"'/>
+				</Rule>
+			</Rules>
+		</Config>
+		<Config	
+			Name="Release"
+			Type="cpp"
+			DebugCallbackName="gdb"
+			OutputFile="%&lt;e">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+                    <Exec CmdLine='dmd -c %i -of"%bd%n.obj" "%f"'/>
+				</Target>
+				<Target
+					Name="Link"
+					MenuCaption="&amp;Link">
+                    <Exec CmdLine='dmd -of"%o" %f %libs'/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+                    <Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					BuildFirst="1"
+					CaptureOutputWith="ProcessBuffer"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+			</Menu>
+			<Rules Name="Compile">
+				<Rule
+					InputExts="*.d" 
+					OutputExts="*.obj" 
+					LinkObject="1">
+					<Exec CmdLine='dmd -c -of"%bd%n.obj" "%f"'/>
+				</Rule>
+			</Rules>
+		</Config>
+	</Template>
+	<Template
+		Name="Ch"
+		WorkingDir=".">
+		<Files>
+			<Folder
+				Name="Source Files"
+				Filters="*.ch;*.chs;*.chf;*.cpp"/>
+			<Folder
+				Name="Header Files"
+				Filters="*.h"/>
+			<Folder
+				Name="Resource Files"
+				Filters=""/>
+			<Folder
+				Name="Bitmaps"
+				Filters=""/>
+			<Folder
+				Name="Other Files"
+				Filters=""/>
+		</Files>
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="Compile"
+					MenuCaption="&amp;Compile"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveCurrent"
+					RunFromDir="%rw">
+					<Exec CmdLine="ch -n %n%e"/>
+				</Target>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="ch -n %n%e"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					SaveOption="SaveNone"
+					RunFromDir="%rw"
+					CaptureOutputWith="ProcessBuffer">
+					<Exec CmdLine="ch %n%e"/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="Apple Xcode"
+		ShowOnMenu="0">
+		<Config Name="Release"
+			DebugCallbackName="gdb"
+			Type="gnuc">
+			<Includes>
+				<Include Dir="%(INCLUDE)"/>
+			</Includes>
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='xcodebuild -project "%ap" -target "%bxt" -configuration "%bxc"  %bxk build'/>
+				</Target>
+				<Target
+					Name="Clean"
+					MenuCaption="&amp;Clean"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='xcodebuild -project "%ap" -target "%bxt" -configuration "%bxc" %bxk clean'/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='xcodebuild -project "%ap" -target "%bxt" -configuration "%bxc" %bxk clean build'/>
+				</Target>
+				<Target
+					Name="BuildAll" MenuCaption="Build All" CaptureOutputWith="ProcessBuffer" 
+					SaveOption="SaveWorkspaceFiles"	RunFromDir="%rw"> 
+					<Exec CmdLine='xcodebuild -project "%ap" -alltargets -configuration "%bxc" %bxk build'/>
+				</Target>
+				<Target
+					Name="RebuildAll" MenuCaption="Rebuild All" 
+					CaptureOutputWith="ProcessBuffer" SaveOption="SaveWorkspaceFiles"	
+					RunFromDir="%rw"> 
+					<Exec CmdLine='xcodebuild -project "%ap" -alltargets -configuration "%bxc" %bxk clean build'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='vsdebugio -prog "%o"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='open -a "%o"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="Macromedia Flash"
+		ShowOnMenu="0">
+		<Config 
+			Name="Release"
+			OutputFile="%&lt;e.swf">
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(FLASHIDE)" "%rppublish.jsfl"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%(FLASHIDE)" "%rptest.jsfl"'/>
+				</Target>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw">
+					<Exec CmdLine='"%o"'/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+	<Template
+		Name="NAnt"
+		WorkingDir=".">
+		<Files>
+			<Folder
+				Name="Build Files"
+				Filters="*.build"/>
+			<Folder
+				Name="Other Files"
+				Filters=""/>
+		</Files>
+		<Config Name="Release">
+			<Menu>
+				<Target
+					Name="Build"
+					MenuCaption="&amp;Build"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec CmdLine="ch -n %n%e"/>
+				</Target>
+				<Target
+					Name="Rebuild"
+					MenuCaption="&amp;Rebuild"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveWorkspaceFiles"
+					RunFromDir="%rw">
+					<Exec/>
+				</Target>
+			</Menu>
+		</Config>
+	</Template>
+
+	<Template
+		Name="PHP"
+		InitMacro="php_project_wizard">
+		<Files AutoFolders="DirectoryView">
+			<Folder
+				Name="Source Files"
+				Filters="*.htm;*.html;*.shtml;*.asp;*.jsp;*.php;*.php3;*.rhtml"/>
+			<Folder	Name="Other Files"
+				Filters=""/>
+		</Files>
+		<Config
+			Name="Debug"
+			DebugCallbackName="xdebug"
+			Type="php"
+			OutputFile="">
+			<Menu>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					Dialog="_php_options_form Run"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw"
+					Deletable="0">
+					<Exec
+						CmdLine="php_execute %(SLICKEDIT_PHP_EXECUTE_ARGS)"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					Dialog="_php_options_form Debug"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw"
+					Deletable="0">
+					<Exec
+						CmdLine="php_debug"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="PHP Options"
+					MenuCaption="PHP &amp;Options"
+					ShowOnMenu="HideIfNoCmdLine"
+					Deletable="0">
+					<Exec
+						CmdLine="phpoptions"
+						Type="Slick-C"/>
+				</Target>
+			</Menu>
+			<List Name="PHP Options">
+				<Item
+					Name="AppType"
+					Value="script-local"/> 
+				<Item
+					Name="DefaultFile" 
+					Value=""/>
+			</List>
+			<List Name="Xdebug Options">
+				<Item
+					Name="ServerHost"
+					Value="127.0.0.1"/>
+				<Item
+					Name="ServerPort"
+					Value="9000"/>
+				<Item
+					Name="ListenInBackground"
+					Value="0"/> 
+				<Item
+					Name="StayInDebugger"
+					Value="0"/> 
+				<Item
+					Name="AcceptConnections"
+					Value="prompt"/> 
+			</List>
+		</Config>
+	</Template>
+	<Template
+		Name="Python - Empty Project"
+		InitMacro=""> 
+		<Files>
+			<Folder
+				Name="Source Files"
+				Filters="*.py"/>
+			<Folder	Name="Other Files"
+				Filters=""/>
+		</Files>
+		<Config
+			Name="Debug"
+			DebugCallbackName="pydbgp"
+			Type="python"
+			OutputFile=""
+			AppType="python">
+			<Menu>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					Dialog="_python_options_form Run"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw"
+					Deletable="0">
+					<Exec CmdLine='python %(SLICKEDIT_PYTHON_EXECUTE_ARGS) "%f"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					Dialog="_python_options_form Debug"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw"
+					Deletable="0">
+					<Exec CmdLine="python_debug"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Python Options"
+					MenuCaption="Python &amp;Options"
+					ShowOnMenu="HideIfNoCmdLine"
+					Deletable="0">
+					<Exec
+						CmdLine="pythonoptions"
+						Type="Slick-C"/>
+				</Target>
+			</Menu>
+			<List Name="Python Options">
+				<Item
+					Name="DefaultFile" 
+					Value=""/>
+			</List>
+			<List Name="pydbgp Options">
+				<Item
+					Name="ServerHost"
+					Value="127.0.0.1"/>
+				<Item
+					Name="ServerPort"
+					Value="0"/>
+				<Item
+					Name="ListenInBackground"
+					Value="1"/> 
+				<Item
+					Name="show_hidden"
+					Value="0"/>
+			</List>
+		</Config>
+	</Template>
+	<Template
+		Name="Python - GWT Application"
+		InitMacro="new_gwt_python_application">
+		<CopyChildren From="/Templates/Template[@Name='Python - Empty Project']"/>
+		<SetAppType AppType="gwt"/>
+	</Template>
+	<Template
+		Name="Perl"
+		InitMacro=""> 
+		<Files>
+			<Folder
+				Name="Source Files"
+				Filters="*.pl;*.pm;*.perl;*.plx"/>
+			<Folder	Name="Other Files"
+				Filters=""/>
+		</Files>
+		<Config
+			Name="Debug"
+			DebugCallbackName="perl5db"
+			Type="perl"
+			OutputFile="">
+			<Menu>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					Dialog="_perl_options_form Run"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw"
+					Deletable="0">
+					<Exec CmdLine='perl %(SLICKEDIT_PERL_EXECUTE_ARGS) "%f"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					Dialog="_perl_options_form Debug"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw"
+					Deletable="0">
+					<Exec CmdLine="perl_debug"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Perl Options"
+					MenuCaption="Perl &amp;Options"
+					ShowOnMenu="HideIfNoCmdLine"
+					Deletable="0">
+					<Exec
+						CmdLine="perloptions"
+						Type="Slick-C"/>
+				</Target>
+			</Menu>
+			<List Name="Perl Options">
+				<Item
+					Name="DefaultFile" 
+					Value=""/>
+			</List>
+			<List Name="perl5db Options">
+				<Item
+					Name="ServerHost"
+					Value="127.0.0.1"/>
+				<Item
+					Name="ServerPort"
+					Value="0"/>
+				<Item
+					Name="ListenInBackground"
+					Value="1"/> 
+			</List>
+		</Config>
+	</Template>
+	<Template
+		Name="Ruby"
+		InitMacro=""> 
+		<Files>
+			<Folder
+				Name="Source Files"
+				Filters="*.rb;*.rby"/>
+			<Folder	Name="Other Files"
+				Filters=""/>
+		</Files>
+		<Config
+			Name="Debug"
+			DebugCallbackName="rdbgp"
+			Type="ruby"
+			OutputFile="">
+			<Menu>
+				<Target
+					Name="Execute"
+					MenuCaption="E&amp;xecute"
+					Dialog="_ruby_options_form Run"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw"
+					Deletable="0">
+					<Exec CmdLine='ruby %(SLICKEDIT_RUBY_EXECUTE_ARGS) "%f"'/>
+				</Target>
+				<Target
+					Name="Debug"
+					MenuCaption="&amp;Debug"
+					Dialog="_ruby_options_form Debug"
+					CaptureOutputWith="ProcessBuffer"
+					SaveOption="SaveNone"
+					RunFromDir="%rw"
+					Deletable="0">
+					<Exec CmdLine="ruby_debug"
+						Type="Slick-C"/>
+				</Target>
+				<Target
+					Name="Ruby Options"
+					MenuCaption="Ruby &amp;Options"
+					ShowOnMenu="HideIfNoCmdLine"
+					Deletable="0">
+					<Exec
+						CmdLine="rubyoptions"
+						Type="Slick-C"/>
+				</Target>
+			</Menu>
+			<List Name="Ruby Options">
+				<Item
+					Name="DefaultFile" 
+					Value=""/>
+			</List>
+			<List Name="rdbgp Options">
+				<Item
+					Name="ServerHost"
+					Value="127.0.0.1"/>
+				<Item
+					Name="ServerPort"
+					Value="0"/>
+				<Item
+					Name="ListenInBackground"
+					Value="1"/> 
+			</List>
+		</Config>
+	</Template>
+
+</Templates>

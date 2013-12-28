@@ -1,0 +1,361 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Functions</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s08.htm" title="Statements"><link rel="next" href="ch14s10.htm" title="Preprocessing"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_functions_12256_44430"></a>
+    <a name="slick_c_functions_12256_1002809"></a>
+    <a class="indexterm" name="slick-c_functions_EFD0D64D_1E25"></a>
+    <a class="indexterm" name="slick-c_functions_48A86F5D_04D2"></a>Functions</h2></div></div></div><p class="NormalText">A function can be called from the macro language. Slick-C® has five kinds of functions: procedures, commands, class methods, library functions, and built-ins. These are described in the following sections:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s09.htm#slick_c_functions_12256_35295">Defining a Procedure</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s09.htm#slick_c_functions_12256_65892">Defining a Command</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s09.htm#slick_c_functions_12256_29020">Class Methods</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s09.htm#slick_c_functions_12256_51832">Function Prototypes</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s09.htm#slick_c_functions_12256_72889">Differences Between Commands, Built-ins, and Defs</a>
+      </p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_functions_12256_35295"></a>
+      <a name="slick_c_functions_12256_1002813"></a>
+      <a class="indexterm" name="slick-c_functions_69A3A053_B82B"></a>
+      <a class="indexterm" name="slick-c_functions_15AEBEBB_111A"></a>Defining a Procedure</h3></div></div></div><p class="NormalText">Procedures and functions are the basic building blocks for most modern, imperative languages. Slick-C® procedures cannot be bound to keys. A procedure name must be a valid Slick-C identifier (same as C identifier). Use the following syntax to define a procedure:</p><pre class="programlisting">
+      <span><strong class="command">
+    [static] [TypeName] id(TypeName1 [&amp;] id1, TypeName2 [&amp;] id2, ...]) 
+    {
+    statement1; 
+    statement2; 
+    ... 
+    }
+    </strong></span>
+    </pre><p class="NormalText">
+      <span class="emphasis"><em>TypeName</em></span> specifies the return type of the function. For more information, see <a href="ch14s05.htm">Types</a>. If the return type is not specified, the function will return <span><strong class="command">typeless</strong></span>. When the <span><strong class="command">void</strong></span> type is used, a value cannot be specified to the return statement. The return statement is used to specify the result of the function call and exit the function.</p><p class="NormalText">The optional <span><strong class="command">static</strong></span> keyword is used to limit the scope of a procedure to the module in which it is defined.  By default, procedures are global and can be accessed by any module. Procedures are called by  specifying the name followed by comma delimited arguments, if any, in parentheses.</p><pre class="programlisting">
+      <span><strong class="command">
+    [ result =] id( expr1, expr2, ... );
+    </strong></span>
+    </pre><p class="NormalText">In the above example, <span><strong class="command">expr1</strong></span> matches the type of <span><strong class="command">id1</strong></span> and <span><strong class="command">expr2</strong></span> matches the type of <span><strong class="command">id2</strong></span>, etc.</p><p class="NormalText">Example:</p><pre class="programlisting">int increment(int x)
+{
+   return x+1;
+}
+boolean proc(int &amp;p1, _str p2, _str (&amp;list)[], int (*pfn)(int))
+{
+   return(true)
+}
+void defmain()
+{
+   p1 := 0;
+   p2 = "Hello world";
+   if ( proc(p1, p2, auto list, increment) ) {
+      // ...
+   }
+}</pre><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> The <span><strong class="command">list</strong></span> and <span><strong class="command">p1</strong></span> parameters are call by reference parameters. Like C++, <span><strong class="command">list</strong></span> parameter requires parentheses around the <span><strong class="command">&amp;</strong></span> reference operator and the name, because the <span><strong class="command">[]</strong></span> operator would otherwise be processed first. The <span><strong class="command">pfn</strong></span> parameter is a pointer to a function.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_functions_12256_1002829"></a>
+        <a class="indexterm" name="slick-c_functions_17F9B268_6A3D"></a>Argument Declarations</h4></div></div></div><p class="NormalText">The syntax for an argument declaration is the same as for declaring a variable, except that the <span><strong class="command">static</strong></span> keyword cannot be used. An ampersand (<span><strong class="command">&amp;</strong></span>) before the <span class="emphasis"><em>id</em></span> declares a call by reference parameter. Call by reference array and hash table parameters require parentheses around the <span><strong class="command">&amp;</strong></span> and <span class="emphasis"><em>id</em></span>. </p><p class="NormalText">The last argument in the declaration list may be an ellipsis to indicate that the function accepts more arguments of any type. Use the <span><strong class="command">arg</strong></span> function to access these optional arguments.</p><p class="NormalText">
+        <a class="indexterm" name="slick-c_functions_13147522_D304"></a>
+        <span class="emphasis"><em>TypeName</em></span> specifies the return type of the function. For more information, see <span class="bold"><strong><a href="ch14s05.htm">Types</a></strong></span>. If the return type is not specified, the function will return <span><strong class="command">typeless</strong></span>. When the <span><strong class="command">void</strong></span> type is used, a value cannot be specified to the return statement. The return statement is used to specify the result of the function call and exit the function.</p><p class="NormalText">The optional <span><strong class="command">static</strong></span> keyword is used to limit the scope of a procedure to the module in which it is defined. By default, procedures are global and can be accessed by any module. Procedures are called by specifying the name followed by comma delimited arguments, if any, in parentheses. </p><p class="NormalText">Example: </p><pre class="programlisting">boolean proc(int &amp;p1,_str p2,_str (&amp;list)[],int (*&amp;pfn)(int))
+{
+    return(true)
+}</pre><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> The <span><strong class="command">list</strong></span>, <span><strong class="command">p1</strong></span>, and <span><strong class="command">pfn</strong></span> parameters are call by reference parameters. Like C++, the <span><strong class="command">list</strong></span> parameter requires parentheses around the <span><strong class="command">&amp;</strong></span> reference operator and the name, because the <span><strong class="command">[]</strong></span> operator would otherwise be processed first. This avoids deviating much from C++ syntax. The command <span><strong class="command">pfn</strong></span> is a reference to a pointer to a function. </p></div><p class="NormalText">
+        <span><strong class="command">
+          <a class="indexterm" name="slick-c_functions_D87529BF_59B1"></a>
+        </strong></span>Procedures can have up to 15 arguments defined. The procedure can be called with more arguments than defined by the procedure declaration. These extra arguments and the arguments defined in the procedure declaration can be retrieved by the <span><strong class="command">arg</strong></span> function. Calling the <span><strong class="command">arg</strong></span> function with no parameters returns the number of parameters with which the function was called. The minimum number of arguments with which the procedure may be called is defined by the procedure heading. A parameter of type <span><strong class="command">var</strong></span> specifies a typeless variable passed by reference.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_functions_12256_1002850"></a>
+        <a class="indexterm" name="slick-c_functions_A1C964B5_52FB"></a>Default Arguments</h4></div></div></div><p class="NormalText">Defining arguments with default values instead of using the <span><strong class="command">arg</strong></span> function makes your code more understandable. The assignment operator has special meaning in an argument declaration. It defines a default value for an argument. The default value is used if the caller does not specify the parameter. Default arguments must always be specified in the function definition. Unlike C++, default arguments in prototypes do not have an effect on the compiled code. </p><p class="NormalText">Example:</p><pre class="programlisting">static int proc2()
+{
+    return("before");
+}
+int proc(_str p1=proc2():+"after",int p2=2)
+{
+    return(p1+p2);
+}
+defmain()
+{
+    proc();           // Use defaults ("beforeafter" ,2).
+    proc("param1");   // Use the second default value. 
+    proc("param1",3); // Specify both values.
+    proc(,3);         // This is not allowed.
+}</pre></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_functions_12256_65892"></a>
+      <a name="slick_c_functions_12256_1030506"></a>
+      <a class="indexterm" name="slick-c_functions_A87E2D71_9924"></a>Defining a Command</h3></div></div></div><p class="NormalText">
+      <a class="indexterm" name="slick-c_functions_04865032_8E65"></a>The <span><strong class="command">_command</strong></span> primitive is used to define a new command with argument completion. A command can be invoked by typing its name on the SlickEdit® command line, selecting it from a menu item definition, pressing a key, calling it in a Slick-C® function, or typing its name followed by arguments in parentheses in a Slick-C expression. Command procedures always have global scope and can be bound to a key with the Key Bindings option screen (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Keyboard and Mouse </strong></span> &#8594; <span><strong class="guimenuitem">Key Bindings</strong></span>).</p><p class="NormalText">The syntax for defining a command is: </p><pre class="programlisting">
+      <span><strong class="command">
+    _command [TypeName | void] name1[,name2 [,name3... ]( [ArgDecl1, ArgDecl2, ...] ) 
+    [name_info(const_exp)] 
+    {
+    statements
+    }
+    </strong></span>
+    </pre><p class="NormalText">
+      <a name="slick_c_functions_12256_1029764"></a>
+      <span class="emphasis"><em>TypeName</em></span> specifies the return type of the command (see <span class="bold"><strong><a href="ch14s05.htm">Types</a></strong></span>). If <span class="emphasis"><em>TypeName</em></span> or <span><strong class="command">void</strong></span> is not specified, the return type is <span><strong class="command">typeless</strong></span>. When the <span><strong class="command">void</strong></span> type is used, a value cannot be specified to the return statement. The return statement is used to specify the result of the function call and exit the function.</p><p class="NormalText">The syntax for <span class="emphasis"><em>ArgDecls</em></span> is the same as for declaring a variable, except that the <span><strong class="command">static</strong></span> keyword may not be used. In addition, an <span><strong class="command">&amp;</strong></span> before the <span class="emphasis"><em>id</em></span> declares a call by references parameter. Call by reference array and hash table parameters require parentheses around the <span><strong class="command">&amp;</strong></span> and the <span class="emphasis"><em>id</em></span>. However, all typed or named arguments must have a default value.</p><p class="NormalText">The last argument in the declaration list can be an ellipsis to indicate that the function accepts more arguments of any type. Use the <span><strong class="command">arg</strong></span> function to access these optional arguments.</p><p class="NormalText">The name of a command may be a valid Slick-C identifier, or a string constant of a length of one, such as 
+"<span><strong class="command">/</strong></span>". SlickEdit uses the slash to define a search command.</p><p class="NormalText">Example:</p><pre class="programlisting">// Allow command in read only mode.
+// Use ellipsis because this accesses arguments.
+_command int goto_line(...) name_info(','VSARG2_READ_ONLY|VSARG2_REQUIRES_EDITORCTL)
+{ 
+    param=arg(1);
+    if (param=="" || ! isinteger(param)) {
+       message('Please specify line number');
+       return(1);
+    }
+    p_line=param;
+    return(0);
+}
+_commmand void mycommand(_str filename="") name_info(FILE_ARG)
+{
+    if (filename=="") {
+       _message_box("No filename specified");
+    }
+    message("filename="filename);
+}</pre><p class="NormalText">Commands receive unnamed command line arguments by calling the <span><strong class="command">arg</strong></span> function. When a command is invoked from the command line, the expression <span><strong class="command">arg(1)</strong></span> contains the rest of the command line after the name with leading spaces removed. For example, invoking the edit command <span><strong class="command">e </strong></span><span class="emphasis"><em>file1</em></span><span><strong class="command"></strong></span><span class="emphasis"><em>file2</em></span> calls the <span><strong class="command">e</strong></span> command with <span class="emphasis"><em>file1 file2</em></span> in <span><strong class="command">arg(1)</strong></span>. The <span><strong class="command">parse</strong></span> built-in is an excellent function for parsing a command line string (see the Help system for more information on parsing). When another macro calls a command, more than one argument string can be passed. Calling the <span><strong class="command">arg</strong></span> function with no parameters returns the number of parameters with which the command or procedure was called.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_functions_12256_1030523"></a>
+        <a class="indexterm" name="slick-c_functions_B5392BA2_1A35"></a>name_info Attributes</h4></div></div></div><p class="NormalText">
+        <a class="indexterm" name="slick-c_functions_EB75A7A6_5BE9"></a>
+        <a class="indexterm" name="slick-c_functions_3295262B_8D87"></a>The optional <span><strong class="command">name_info</strong></span> expression is used to specify command argument completion rules and restricts when the command may be executed.</p><p class="NormalText">
+        <span class="emphasis"><em>const_exp</em></span> is a single constant expression. A comma (<span><strong class="command">,</strong></span>) character in the string indicates the end of an argument.</p><p class="NormalText">The first argument in <span class="emphasis"><em>const_exp</em></span> indicates the type of word arguments the command accepts and is used for argument completion purposes. For a list of already defined argument types, look in the <code class="filename">slick.sh</code> file for constants that end in <span><strong class="command">_ARG</strong></span>. <span class="emphasis"><em>const_exp</em></span> may contain one or more of the <span><strong class="command">_ARG</strong></span> constants. Separate each <span><strong class="command">_ARG</strong></span> constant with a space. An asterisk (<span><strong class="command">*</strong></span>) character may be appended to the end of a completion constant to indicate that one or more of the arguments may be entered. The second argument (after the quoted comma) specifies when the command should be or disabled. One or more of the flags in the table below can be specified and ORed together with the bitwise OR (<span><strong class="command">|</strong></span>) operator.</p><div class="informaltable"><a name="table_e45c9887-2877-4fab-b313-2205505c76c9"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">
+                  <span class="bold"><strong>Flag</strong></span>
+                </p>
+              </th><th>
+                <p class="CellHeading">
+                  <span class="bold"><strong>Description</strong></span>
+                </p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_CMDLINE</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command supports the command line. <span><strong class="command">VSARG2_CMDLINE</strong></span> allows a fundamental mode key binding to be inherited by the command line.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_MARK </strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">
+                  <span><strong class="command">ON_SELECT</strong></span> event should pass control on to this command and not deselect text first. Ignored if command does not require an editor control.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_QUOTE</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Indicates that this command must be quoted when called during macro recording. Needed only if command name is an invalid identifier or keyword.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_LASTKEY</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command requires <span><strong class="command">last_event</strong></span> value to be set when called during macro recording.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_MACRO</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">This is a recorded macro command. Used for completion.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_TEXT_BOX</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command supports any text box control. <span><strong class="command">VSARG2_TEXT_BOX</strong></span> allows a fundamental mode key binding to be inherited by a text box.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_NOEXIT_SCROLL</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Do not exit scroll caused by using scroll bars. Ignored if command does not require an editor control.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_EDITORCTL</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command allowed in editor control. <span><strong class="command">VSARG2_EDITORCTL</strong></span> allows a fundamental mode. Key binding to be inherited by a non-MDI editor control.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_NOUNDOS</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Do not automatically call <span><strong class="command">_undo('s')</strong></span>. Require macro to call <span><strong class="command">_undo('s')</strong></span> to start a new level of undo.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_READ_ONLY</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command allowed when editor control is in strict read only mode. Ignored if command does not require an editor control</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_ICON</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command allowed when editor control window is iconized. Ignored if command does not require an editor control.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_REQUIRES_EDITORCTL</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command requires an editor control.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_REQUIRES_MDI_EDITORCTL</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command requires MDI editor control.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_REQUIRES_AB_SELECTION</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command requires selection in active buffer.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_REQUIRES_BLOCK_SELECTION</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command requires block/column selection in any buffer.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_REQUIRES_CLIPBOARD</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command requires <span><strong class="command">editorctl</strong></span> clipboard.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_REQUIRES_FILEMAN_MODE</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command requires active buffer to be in fileman mode.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_REQUIRES_TAGGING</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command requires <span><strong class="command">&lt;ext&gt;_proc_search/find-tag</strong></span> support.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_REQUIRES_SELECTION</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command requires a selection in any buffer.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">VSARG2_REQUIRES_MDI</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command requires MDI interface maybe because it opens a new file or uses <span><strong class="command">_mdi</strong></span> object. Commands with this attribute are removed from pop-up menus in which the MDI interface is not available (editor control OEMs).</p>
+              </td></tr></tbody></table></div><p class="NormalText">Example:</p><pre class="programlisting">#include "slick.sh"
+// This command supports completion where the first argument
+// is a filename and the second argument is an environment variable.
+_command test1(...) name_info(FILE_ARG" "ENV_ARG)
+{
+    parse arg(1) with file_name env_name;
+    message("file_name="file_name" env_name="env_name);
+}
+// This command is enabled only when the target is an editor control
+// which has a selection.
+_command void gui_enumerate() 
+       name_info(','VSARG2_REQUIRES_EDITORCTL|VSARG2_REQUIRES_AB_SELECTION)
+{
+    ...
+}
+// This commmand supports completion on multiple filenames.
+_command e,edit(...) name_info(FILE_ARG'*,'VSARG2_CMDLINE|VSARG2_REQUIRES_MDI)
+{
+    ...</pre><p class="NormalText">The <span><strong class="command">edit</strong></span> command allows any number of file name arguments to be given. When the user is presented with a selection list of file names, many files may be selected with the spacebar key. If an asterisk (<span><strong class="command">*</strong></span>) is appended to the end of a completion constant, that command must support a space-delimited list of strings. Double quotes are placed around arguments with embedded spaces.</p><p class="NormalText">The value of <span class="emphasis"><em>const_exp</em></span> may be retrieved by the built-in function <span><strong class="command">name_info</strong></span>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_functions_12256_1030636"></a>OnUpdate Functions</h4></div></div></div><p class="NormalText">A Slick-C® command can have a corresponding <span><strong class="command">_OnUpdate_</strong></span><span class="emphasis"><em>commandname</em></span> function. This function is used to provide more precise control over the enabling and disabling of a command than the <span><strong class="command">name_info</strong></span> command can provide.</p><p class="NormalText">Example:</p><pre class="programlisting">int _OnUpdate_linehex(CMDUI &amp;cmdui,int target_wid,_str  command)
+{
+    if ( !target_wid || !target_wid._isEditorCtl()) {
+       return(MF_GRAYED);
+    }
+    if (p_UTF8) {
+       return(MF_UNCHECKED|MF_GRAYED);
+    }
+    if (p_hex_mode==2) {
+       return(MF_CHECKED|MF_ENABLED);
+    }
+    return(MF_UNCHECKED|MF_ENABLED);
+}</pre></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_functions_12256_29020"></a>
+      <a name="slick_c_functions_12256_1030215"></a>Class Methods</h3></div></div></div><p class="NormalText">Slick-C® classes can contain methods which implement the class behaviors. Slick-C supports static class methods. These methods may be called without having an instance of the class available. Like Java, all other Slick-C class methods are virtual. Unlike Java and C++, Slick-C class methods do not support overloading. A class method may have up to 14 arguments. Like Java and C++, the first argument is hidden and contains the class instance (this) for virtual methods.</p><p class="NormalText">Example:</p><pre class="programlisting">namespace outer;
+ 
+interface IShape {
+   double area();
+   void draw();
+};
+class Rectangle : IShape {
+   int m_w=0;
+   int m_h=0;
+   double area() {
+      return m_w*m_h;
+   }
+   void draw() {
+      // Draw box.
+   }
+};
+class Circle : IShape {
+   int m_r=0;
+   double area() {
+      return m_r*m_r*3.1459;
+   }
+   void draw() {
+      // Draw round thing.
+   }
+};
+class Factory {
+   static IShape makeShape(int x, int y, _str type, ...)
+   {
+      switch ( type ) {
+      case "Rectangle":
+         // ...
+      case "Circle":
+         // ...
+      }
+      return null;
+   }
+};
+namespace default;
+void draw_car()
+{
+   body := outer.Factory.makeShape(  0, 10, "Rectangle", 40, 10); 
+   cab  := outer.Factory.makeShape(10, 10, "Rectangle", 20, 10);
+   axl1 := outer.Factory.makeShape( 5, 5, "Circle", 5);
+   axl2 := outer.Factory.makeShape(30, 5, "Circle", 5);
+ 
+   outer.IShape car[];
+   car[car._length()] = body;
+   car[car._length()] = cab;
+   car[car._length()] = axl1;
+   car[car._length()] = axl2;
+   double area = 0.0;
+   foreach ( auto s in car ) {
+      area += s.area();
+   }
+   foreach ( s in car ) {
+      s.draw();
+   }
+}</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_functions_12256_51832"></a>
+      <a name="slick_c_functions_12256_1003098"></a>
+      <a class="indexterm" name="slick-c_functions_3EDED930_8E4D"></a>
+      <a class="indexterm" name="slick-c_functions_29DD6EDB_A9E6"></a>Function Prototypes</h3></div></div></div><p class="NormalText">Function prototypes provide the compiler with type information about a function without providing any code. Slick-C® reduces the need for prototypes by performing some argument checks at link time. When the linker finds an uninitialized variable error, it recommends that you add a function prototype to your source so the compiler can find your error. You might need a function prototype if you want to use the function address in an expression. Prototypes are not allowed for event functions.</p><p class="NormalText">The syntax for defining a function prototype is identical to defining a function except that a semicolon (<span><strong class="command">;</strong></span>) is placed after the closing parentheses of the parameter list. Unlike C++, default arguments in prototypes have no effect on the compiled code. No code or <span><strong class="command">name_info</strong></span> is given.</p><p class="NormalText">The need for function prototypes is also mitigated in Slick-C because of the <span><strong class="command">#import</strong></span> directive which allows the compiler to import declarations from another Slick-C module. This is more convenient than C++, where you need to put declarations in a header file to support calling functions across modules. It is also more convenient that Java, because <span><strong class="command">#import</strong></span> gets declarations directly from the source code, so the imported module does not need to be compiled to be imported. This simplifies compiling modules with circular dependencies.</p><p class="NormalText">Example:</p><pre class="programlisting">    int proc(_str s,_str list[]);         // Function prototype.
+    int (*pfn)(_str s,_str list[])=proc;  // Pointer to function.
+    _command void command1(...);          // Function prototype.
+    _command void command1(...) {         // Must have ... here to match prototype.
+                                          // Use arg function here to get or set
+                                          // arguments.
+    }</pre><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_functions_12256_1003111"></a>Library Functions</h4></div></div></div><p class="NormalText">A library function is a function that was implemented in a dynamically loaded library and was not written in the Slick-C® language. A library function must follow Slick-C calling conventions and be registered with the interpreter. Prototypes for library functions should use the <span><strong class="command">extern</strong></span> keyword to indicate that they are implemented outside of Slick-C code.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_functions_12256_1003116"></a>
+        <a class="indexterm" name="slick-c_functions_8C3312D1_7449"></a>Built-in Functions</h4></div></div></div><p class="NormalText">A built-in function is a function that was implemented in the interpreter and was not written in the Slick-C® language.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_functions_12256_1003121"></a>
+        <a class="indexterm" name="slick-c_functions_C8928802_1A52"></a>Finding Functions</h4></div></div></div><p class="NormalText">There are over 1200 documented functions and 200 properties. There are two 
+        ways to find the function that you seek. First, you can use the menu item <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>, which displays smaller lists of these functions by 
+        category. Second, you can view source code for existing commands. If you do not know the name of 
+        the command but you do know the key that invokes the command, use the <span><strong class="command">what_is</strong></span> 
+        command or <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">What Is Key</strong></span> to find the name of the command that is executed. Then, 
+        use the <span><strong class="command">find_proc</strong></span> command or <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Find Slick-C Proc</strong></span> to display the 
+        macro source code. </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_functions_12256_72889"></a>
+      <a name="slick_c_functions_12256_1003128"></a>
+      <a class="indexterm" name="slick-c_functions_CABE25FA_9077"></a>Differences Between Commands, Built-ins, and Defs</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">A command definition looks like a procedure that starts with the <span><strong class="command">_command</strong></span> primitive, and has an optional <span><strong class="command">name_info</strong></span> construct after the arguments. Built-ins are not defined.</p></li><li><p class="NormalText">Commands always have global or namespace scope. Built-ins always have global scope.  Procedures can have static (module), global scope, or namespace scope.</p></li><li><p class="NormalText">Commands can be bound to keys. Built-ins and procedures cannot.</p></li><li><p class="NormalText">Commands can be invoked from the command line or the <span><strong class="command">execute</strong></span> function. Built-ins and procedures cannot.</p></li><li><p class="NormalText">A command may be given the same name as a built-in. However, this limits how the command may be called within a macro (use the <span><strong class="command">execute</strong></span> function). None of the commands have the same name as a built-in so you can call any command just like any other function.</p></li><li><p class="NormalText">Only commands may be given non-alphanumeric single character names such as +, =, !, @, #, $, etc. However, this limits how the command can be called within a macro (place the command in quotes or use the <span><strong class="command">execute</strong></span> function).</p></li></ul></div><p class="NormalText">There are several differences between defining a procedure and defining a command with the <span><strong class="command">_command</strong></span> primitive:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">The scope of a procedure can be limited to a module.</p></li><li><p class="NormalText">Command functions are invoked by typing the name on the SlickEdit® command line, from a menu item definition, by using the <span><strong class="command">execute</strong></span> function, or by typing the command name followed by arguments in parentheses in a Slick-C® expression. Procedures can only be called by the latter method and cannot be bound to keys.</p></li><li><p class="NormalText">A procedure name must be a valid Slick-C identifier (same as C identifier). The name of a command can be a string constant containing a single character such as "<span><strong class="command">/</strong></span>" (SlickEdit uses the slash to define a search command).</p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_functions_12256_78599"></a>
+        <a name="slick_c_functions_12256_1003151"></a>
+        <a class="indexterm" name="slick-c_functions_DA50C073_E5DA"></a>
+        <a class="indexterm" name="slick-c_functions_09E39110_A10A"></a>defmain: Writing Slick-C® Batch Files</h4></div></div></div><p class="NormalText">A batch macro contains a special function named <span><strong class="command">defmain</strong></span>. Slick-C batch files have the extension <code class="filename">.e</code>. Batch macros can be invoked by typing the name (extension not required) followed by arguments on the SlickEdit® command line, quoting the name in a macro, or by using the <span><strong class="command">execute</strong></span> function. If the batch macro needs to be recompiled, the Slick-C translator is invoked before the batch macro is executed. Do not use the <span><strong class="command">load</strong></span> command to load a batch program, because <span><strong class="command">defmain</strong></span> is not invoked and an error will result. If you load a batch program that you do not want, use the <span><strong class="command">unload</strong></span> command to unload it. When a batch program is executed, the <span><strong class="command">defmain</strong></span> procedure is called after the procedure <span><strong class="command">definit</strong></span> is called. For more information, see <span class="bold"><strong></strong></span><a href="ch14s14.htm">Module Initializations</a>. </p><p class="NormalText">The syntax of the <span><strong class="command">defmain</strong></span> function is:</p><pre class="programlisting">
+        <span><strong class="command">
+    [TypeName | void] defmain()
+    {
+    statement
+    statement
+    ...
+    }
+      </strong></span>
+      </pre><p class="NormalText">
+        <span class="emphasis"><em>TypeName</em></span> specifies the return type of the function. If <span class="emphasis"><em>TypeName</em></span> or <span><strong class="command">void</strong></span> is not specified, the return type is typeless. When the <span><strong class="command">void</strong></span> type is used, a value cannot be specified to the return statement. The return value of <span><strong class="command">defmain</strong></span> is placed in the predefined <span><strong class="command">rc</strong></span> global variable.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> The <span><strong class="command">execute</strong></span> function only supports returning an <span><strong class="command">int</strong></span> type. Check the global <span><strong class="command">rc</strong></span> variable for other types.</p></div><p class="NormalText">The <span><strong class="command">arg</strong></span> function is used to retrieve the command line arguments passed to the <span><strong class="command">defmain</strong></span> procedure. All of the command line arguments will be in <span><strong class="command">arg(1)</strong></span>. Use the <span><strong class="command">parse</strong></span> statement to easily parse multiple space delimited arguments.</p><p class="NormalText">The following example displays the arguments given to the macro on the SlickEdit message line. If you define a procedure in a batch program, use the <span><strong class="command">static</strong></span> keyword to conserve memory. SlickEdit stores the names of global procedures and variables in a names table. </p><pre class="programlisting">defmain()
+{
+    messageNwait("Arguments given: "arg(1));
+    parse arg(1) with word1 word2 .;
+    messageNwait("word1="word1" word2="word2);
+    return(0);
+}</pre><p class="NormalText">Extending the editor with a batch macro has the advantage of conserving memory and reducing the size of the state file. Also, batch macros can be easily shared between multiple users. The editor keeps the batch macro loaded only while it is executing. External batch macro names and arguments are not supported by completion. To provide completion, you must define a command with the <span><strong class="command">_command</strong></span> primitive and have it call the external batch program. If you name the command the same name as the batch program (without the extension), use the <span><strong class="command"><a class="indexterm" name="slick-c_functions_83EF6CA2_879E"></a>xcom</strong></span> command to bypass internal command searching. There are two ways to invoke a Slick-C batch macro:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Type the name of the module followed by arguments on the SlickEdit command line.</p></li><li><p class="NormalText">Type <span><strong class="command">vs -p </strong></span><span class="emphasis"><em>program</em></span> at the shell prompt, where <span class="emphasis"><em>program</em></span> is the name of the batch program and <span><strong class="command">vs</strong></span> is the name of the editor. Alternatively, you may use the <span><strong class="command">-r</strong></span> option to have SlickEdit remain resident after the batch program completes.</p></li></ul></div><p class="NormalText">For the above methods, SlickEdit invokes the translator to compile the source code file if the source code file exists and its date is later than the date of the <code class="filename">.ex</code> file.</p><p class="NormalText"></p></div></div></div></body></html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_ModifyFlags</title>
+</head>
+<body>
+
+<h3><b>int p_ModifyFlags</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Determines whether the current buffer is modified and provides additional bits you can
+use to track whether a change has been made to a buffer since the last time you processed
+the buffer.  Any time a modification is made to a buffer this property is set to 1 which
+clears all high bits.  The p_modify property is equivalent to setting the p_ModifyFlags
+to 0 or 1. Make sure the high bit you use isn't already being used by another macro
+feature like AutoSave. Currently, the modify flags are stored as 32 bits.<p>
+<p><p>
+<b>IMPORTANT:</b><br>
+SlickEdit now reserves all 32 bits for its own internal use. Users wanting to track
+buffer modifications in their own macros should use the <a href="p_LastModified.html">p_LastModified</a> property
+instead.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// This code would be executed within a timer call back.  See <a href="_set_timer.html">_set_timer</a>.
+
+// IF the current buffer is modified AND some edits have been performed since the
+// the last time we autosaved this file.
+if (p_modify && !(pModifyFlags & MODIFYFLAG_AUTOSAVE_DONE)) {
+    AutoSaveCurrentBuffer();
+    p_ModifyFlags |= MODIFYFLAG_AUTOSAVE_DONE;
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Editor Control, Edit Window</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Editor_Control_Properties.html">Editor Control Properties</a>, <a href="Edit_Window_Properties.html">Edit Window Properties</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="p_modify.html">p_modify</a>, <a href="p_LastModified.html">p_LastModified</a></blockquote>
+</body>
+</html>

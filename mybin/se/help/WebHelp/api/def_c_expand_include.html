@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>def_c_expand_include</title>
+</head>
+<body>
+
+<h3><b>int def_c_expand_include</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">By default, when you type a space after a #include, we will not
+do anything special.  Set this value to
+AC_POUND_INCLUDE_QUOTED_ON_SPACE to list quoted include files
+after typing "#include<space>".  To list include files (no
+quotes) after typing "#include "" or "#include <", set this
+value to AC_POUND_INCLUDE_ON_QUOTELT.<p>
+This variable only applies to C/C++.  It is best to access
+this by calling the LanguageSettings API for the language you
+are interested in
+(LanguageSettings.getAutoCompletePoundIncludeOption(p_LangId)).
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Default:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Configuration_Variables.html">Configuration Variables</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_delete_selection</title>
+</head>
+<body>
+
+<h3><b>int _delete_selection(_str mark_id="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Deletes the marked text specified.  No clipboard is created.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mark_id">mark_id</A></code> - is a handle to a selection returned by one of
+               the built-ins <b>_alloc_selection</b> or <b>_duplicate_selection</b>.
+               A <i>mark_id</i> of '' or no <i>mark_id</i> parameter identifies the
+               active selection.  This function performs a "binary" delete when in
+               hex mode (<b>p_hex_mode</b>==<b>true</b>).  A binary delete allows
+               bisecting of end of line pairs like CR,LF.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Otherwise TEXT_NOT_SELECTED_RC is
+        returned. On error, message is displayed.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Selection_Functions.html">Selection Functions</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>on_change</title>
+</head>
+<body>
+
+<h3><b>event on_change(int reason, int index=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p><b>Text Box</b> - Occurs when the <b>p_text</b> property changes.</p><p>
+<p><b>Combo Box</b> - Occurs when the <b>p_text</b> property changes.
+The <b>on_change</b> event is called with a <i>reason</i> argument which may
+be one the following constants defined in "slick.sh":</p><p>
+<dl>
+<dt>CHANGE_OTHER</dt><dd>Change probably caused by typing.</dd><p>
+<dt>CHANGE_CLINE</dt><dd>Change occurred because selected line in list box changed
+and the list was visible.</dd><p>
+<dt>CHANGE_CLINE_NOTVIS</dt><dd>Change occurred  because a key was pressed
+which scrolls the list (Up, Down, PgUp, PgDn) while the list was invisible.</dd><p>
+<dt>CHANGE_CLINE_NOTVIS2</dt><dd>Same as CHANGE_CLINE_NOTVIS.  Sent
+to user level 2 inheritance only. User level 2 inheritance will receive the
+CHANGE_CLINE_NOTVIS reason as well if the user level 1 inheritance does not
+catch the <b>on_change</b> event.</dd>
+</dl><p>
+<p><b>List Box</b> - The <b>on_change</b> event is called with a
+<i>reason</i> argument set to CHANGE_SELECTED.  Occurs when items are
+selected or deselected because of a key press or mouse event.  None of the
+_lb??? functions cause a list box on_change event.</p><p>
+<p><b>Directory List Box</b> - The <b>on_change</b> event is called
+with a <i>reason</i> argument which may be one of the following <i>reason</i>
+constants defined in "slick.sh":</p><p>
+<dl>
+<dt>CHANGE_SELECTED</dt><dd>
+Occurs when items are selected or deselected because of a key press or
+mouse event.  None of the _lb??? functions cause an on_change event.
+CHANGE_PATH <b>_dlpath</b> function was called which changed the
+directory displayed.</dd>
+</dl><p>
+<p><b>File List Box</b> - The <b>on_change</b> event is called with a
+<i>reason</i> argument which may be one of the following <i>reason</i>
+constants defined in "slick.sh":</p><p>
+<dl>
+<dt>CHANGE_SELECTED</dt><dd>
+Occurs when items are selected or deselected because of a key press or
+mouse event.  None of the _lb??? functions cause an on_change event.</dd><p>
+<dt>CHANGE_FILENAME</dt><dd>
+<b>_flfilename</b> function was called which changed the file names
+listed.</dd>
+</dl><p>
+<p><b>Drive List -</b>  The <b>on_change</b> event is called with a
+<i>reason</i> argument which may be one the following constants defined in
+"slick.sh":</p><p>
+<dl>
+<dt>CHANGE_OTHER</dt><dd><b>p_text</b> property changed probably because of key
+press.</dd><p>
+<dt>CHANGE_CLINE</dt><dd><b>p_text</b> property changed because selected line in
+list box changed and the list was visible.</dd><p>
+<dt>CHANGE_CLINE_NOTVIS
+</dt><dd><b>p_text</b> property changed because a key was pressed which scrolls
+the list (Up, Down, PgUp, PgDn) while the list was invisible.</dd><p>
+<dt>CHANGE_CLINE_NOTVIS2</dt><dd>
+Same as CHANGE_CLINE_NOTVIS.  Sent to user level 2 inheritance only.
+Use level 2 inheritance will receive the CHANGE_CLINE_NOTVIS reason as well
+if the user level 1 inheritance does not catch the on_change event.</dd><p>
+<dt>CHANGE_DRIVE</dt><dd>The drive changed by selecting a different drive from the
+combo list box.</dd>
+</dl><p>
+<p><b>Vscroll Bar, Hscroll Bar</b> - Sent after dragging the thumb box is
+completed.  The <b>p_value</b> property has the new scroll position.</p><p>
+<p><b>Spin -</b>  The <b>on_change</b> event is called with a
+<i>reason</i> set to CHANGE_NEW_FOCUS.  This event occurs before an
+<b>on_spin_up</b> or <b>on_spin_down</b> event to allow you to return the
+window id of the control you want to get focus after spinning is completed.
+Return '' if you don't care.</p><p>
+<p><b>Tree View -</b>  The <b>on_change</b> event is called with a
+<i>reason</i> argument which may be one the following constants defined in
+"slick.sh":</p><p>
+<dl>
+<dt>CHANGE_EXPANDED</dt><dd>
+Occurs when you expand a level of the tree.  During this event you can
+fill in the children at this level of the tree. arg(2) is the tree item
+index.</dd><p>
+<dt>CHANGE_COLLAPSED</dt><dd>
+Occurs when you collapse a level of the tree. arg(2) is the tree item
+index.</dd><p>
+<dt>CHANGE_LEAF_ENTER</dt><dd>
+User pressed Enter key while on leaf tree item.  arg(2) is the tree
+item index.</dd>
+</dl>
+Will usually be called with the index of the item changing as the second
+argument<p>
+<p><b>SSTab -</b>  The <b>on_change</b> event is called with a
+<i>reason</i> argument which may be one the following constants defined in
+"slick.sh":</p><p>
+<dl>
+<dt>CHANGE_TABACTIVATED</dt><dd>
+Occurs when a different tab is activated.  arg(2) is the tab order
+(p_ActiveTab).</dd><p>
+<dt>CHANGE_TABDEACTIVATED</dt><dd>
+Occurs before a different tab is activated. arg(2) is the tab order
+(p_ActiveTab).</dd><p>
+<dt>CHANGE_TAB_DROP_DOWN_CLICK</dt><dd>
+The drop-down list was clicked.</dd><p>
+<dt>CHANGE_TABMOVED</dt><dd>
+Tab was moved from <code>from-index</code> to
+<code>to-index</code>, where arg(2) is from-index, arg(3) is
+to-index.</dd>
+</dl>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="reason">reason</A></code> - change event reason, one of CHANGE_</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="index">index</A></code> - identifies the item being changed
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Text Box, Combo Box, List Box,  Directory List Box, File List Box, Drive List, Vscroll Bar, Hscroll Bar, Spin, Tree View, SSTab</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Combo_Box_Events.html">Combo Box Events</a>, <a href="Directory_List_Box_Events.html">Directory List Box Events</a>, <a href="Drive_List_Events.html">Drive List Events</a>, <a href="File_List_Box_Events.html">File List Box Events</a>, <a href="Hscroll_Bar_Events.html">Hscroll Bar Events</a>, <a href="List_Box_Events.html">List Box Events</a>, <a href="Spin_Events.html">Spin Events</a>, <a href="Text_Box_Events.html">Text Box Events</a>, <a href="Tree_View_Events.html">Tree View Events</a>, <a href="Vscroll_Bar_Events.html">Vscroll Bar Events</a></blockquote>
+</body>
+</html>

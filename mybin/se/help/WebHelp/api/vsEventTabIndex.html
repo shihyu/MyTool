@@ -1,0 +1,56 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsEventTabIndex</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsEventTabIndex(int root_keytab_index, int mode_keytab_index, int key_index, int return_used_keytab=a, int version=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="root_keytab_index">root_keytab_index</A></code> - Index into names table of root event
+table.  When checking for key bindings this
+is usually the event table returned by
+<b>vsQDefaultEventTab</b>().
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mode_keytab_index">mode_keytab_index</A></code> - Index into names table of mode
+event table.  This is either the same as
+<i>root_keytab_index</i> or the value of
+the VSP_MODEEVENTTAB property.
+Note that the mode event table is defined so
+that each language can override keys like
+<ENTER>,  <Space Bar>, etc. for smarter
+support.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="key_index">key_index</A></code> - The event index in range
+1..VS_NUMKEYS-1.  Use
+<b>vsEvent2Index</b> to convert an event
+constant to an index.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="return_used_keytab">return_used_keytab</A></code> - When non-zero, the index of the
+event table which has this key binding is
+returned (i.e. either root_keytab_index,
+mode_keytab_index, or 0 if there is not
+binding).
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns key binding information.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+int root_etab;
+root_etab=vsQDefaultEventTab();
+int index;
+// Check key binding for Alt+F4
+index= vsEventTabIndex(
+       root_etab,
+       root_etab,
+       vsEvent2Index(VS_A_FKEYS_OFFSET+ 4));
+if( vsNameType(index) & VSTYPE_COMMAND) {
+     // Display the command bound to this key.
+     vsMessage(vsNameName(index));
+} else if (vsNameType(index) & VSTYPE_EVENTTAB) {
+     // This key is a prefix key.  Display name of event table.
+     vsMessage(vsNameName(index));
+} else {
+     // This could be a global function (not a command)
+     // This could be an event function   "text1.A_F4() {   }" but this
+is unlikely for
+     // the default event table.
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsEvent2Name.html">vsEvent2Name</a>, <a href="vsIndex2Event.html">vsIndex2Event</a>, <a href="vsSetEventTabIndex.html">vsSetEventTabIndex</a>, <a href="vsEvent2Index.html">vsEvent2Index</a>, <a href="vsQDefaultEventTab.html">vsQDefaultEventTab</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsLibExport</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsLibExport(const char *func_proto_p, const char *name_info_p, int arg2, void *pfn)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>Registers a native command or function that can be called from Slick-
+C.  Commands may be invoked from the command line or bound to a
+key.</p><p>
+<p>The syntax for <i>pszFuncProto</i> is:<br><p>
+[_command] [<i>return-type</i>] <i>func-
+name</i>([<i>type</i> [<i>var-name</i>] [, <i>type</i> [<i>var-
+name</i>]]...])</p><p>
+<p>If the _command keyword is specified, the DLL function may be
+bound to a key or executed from the command line.  Otherwise, the
+only way to call the function is to call it from a Slick-C&reg; macro.</p><p>
+<p>Performance considerations:  For best performance, use the VSHVAR
+or VSREFVAR parameter type when operating on long strings instead
+of VSPSZ or VSPLSTR.  Then use the <b>vsHvarGetLstr</b>
+function to return a pointer to the interpreter variable. WARNING:
+Pointers to interpreter variables returned by the
+<b>vsHvarGetLstr</b> function are NOT VALID after any interpreter
+variable is set.  Be sure to reset any pointer after setting other
+interpreter variables or calling other macros. You may modify the
+contents of the VSPLSTR pointer returned by <b>vsHvarGetLstr</b>
+so long as you do not make the string any longer.  We suspect that
+using the int and long parameter types are no slower than using the
+VSHVAR type and converting the parameter yourself.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="func-name">func-name</A></code> - is the name of the DLL function to be registered.
+Currently the function names are case insensitive.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type">type</A></code> - may be one of the following:
+
+<dl>
+<dt>VSPSZ</dt><dd>NULL terminated string</dd>
+<dt>VSPLSTR</dt><dd>See typedef in "vsapi.h".</dd>
+<dt>int</dt>
+<dt>long</dt>
+<dt>VSHVAR</dt><dd>Handle to interpreter variable</dd>
+<dt>VSHREFVAR</dt><dd>Call by reference handle to interpreter
+variable.  This type can be used as input to
+functions which accept VSHVAR parameters.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszNameInfo">pszNameInfo</A></code> - specifies completion for arguments to a
+command.  A '*' character may be appended to the end of a completion
+constant to indicate that one or more of the arguments may be entered.
+One or more of the follow string completion constants separated with
+spaces may be specified:
+
+<dl>
+<dt>VSARG_FILE</dt><dd>One filename</dd>
+<dt>VSARG_MULTI_FILE</dt><dd>Multiple filenames</dd>
+<dt>VSARG_BUFFER</dt><dd>Buffer name</dd>
+<dt>VSARG_COMMAND</dt><dd>Slick-C&reg; command
+function</dd>
+<dt>VSARG_PICTURE</dt><dd>Already loaded picture</dd>
+<dt>VSARG_FORM</dt><dd>Dialog box template</dd>
+<dt>VSARG_MODULE</dt><dd>Loaded Slick-C&reg; module</dd>
+<dt>VSARG_MACRO</dt><dd>User recorded Slick-C&reg;
+command function</dd>
+<dt>VSARG_MACROTAG</dt><dd>Slick-C&reg; tag name</dd>
+<dt>VSARG_VAR</dt><dd>Slick-C&reg; global variable</dd>
+<dt>VSARG_ENV</dt><dd>Environment variable</dd>
+<dt>VSARG_MENU</dt><dd>Menu name</dd>
+<dt>VSARG_TAG</dt><dd>Tag name</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="arg2">arg2</A></code> - is zero or more of the following flags which specify when the
+command should be enabled/disabled and a few other things:
+
+<dl>
+<dt>VSARG2_CMDLINE</dt><dd>Command supports the command
+line.</dd>
+
+<dt>VSARG2_CMDLINE</dt><dd>allows a
+fundamental mode key binding to
+be inherited by the command line</dd>
+
+<dt>VSARG2_MARK ON_SELECT</dt><dd>event should pass
+control on to this command and
+not deselect text first.
+Ignored if command does not require an editor control</dd>
+
+<dt>VSARG2_QUOTE</dt><dd>Indicates that this command must
+be quoted when called during
+macro recording.  Needed only if
+command name is an invalid
+identifier or keyword.</dd>
+
+<dt>VSARG2_LASTKEY</dt><dd>Command requires last_event
+value to be set when called during
+macro recording.</dd>
+
+<dt>VSARG2_MACRO</dt><dd>This is a recorded macro
+command. Used for completion.</dd>
+
+<dt>VSARG2_TEXT_BOX</dt><dd>Command supports any text box
+control. VSARG2_TEXT_BOX
+allows a fundamental mode  key
+binding to be inherited by a text
+box</dd>
+
+<dt>VSARG2_NOEXIT_SCROLL</dt><dd>Do not exit scroll caused by using
+scroll bars. Ignored if command
+does not require an editor control.</dd>
+
+<dt>VSARG2_EDITORCTL</dt><dd>Command allowed in editor
+control. VSARG2_EDITORCTL
+allows a fundamental mode key
+binding to be inherited by a non-
+MDI editor control</dd>
+
+<dt>VSARG2_NOUNDOS</dt><dd>Do not automatically call
+_undo('s').  Require macro to call
+_undo('s') to start a new level of
+undo.</dd>
+
+<dt>VSARG2_READ_ONLY</dt><dd>Command allowed when editor
+control is in strict read only mode.
+Ignored if command does not
+require an editor control</dd>
+
+<dt>VSARG2_ICON</dt><dd>Command allowed when editor
+control window is iconized.
+Ignored if command does not
+require an editor control</dd>
+
+<dt>VSARG2_REQUIRES_EDITORCTL</dt><dd>Command requires an editor
+control.</dd>
+
+<dt>VSARG2_REQUIRES_MDI_EDITORCTL</dt><dd>
+ Command requires MDI editor
+control</dd>
+
+<dt>VSARG2_REQUIRES_AB_SELECTION</dt><dd>
+ Command requires selection in
+active buffer.</dd>
+
+<dt>VSARG2_REQUIRES_BLOCK_SELECTION</dt><dd>
+ Command requires block/column
+selection in any buffer</dd>
+
+<dt>VSARG2_REQUIRES_CLIPBOARD</dt><dd>Command requires editor control
+clipboard</dd>
+
+<dt>VSARG2_REQUIRES_FILEMAN_MODE</dt><dd>
+ Command requires active buffer
+to be in fileman mode.</dd>
+
+<dt>VSARG2_REQUIRES_TAGGING</dt><dd>Command requires
+<ext>_proc_search/find-tag
+support.</dd>
+
+<dt>VSARG2_REQUIRES_SELECTION</dt><dd>Command requires a selection in
+any buffer.</dd>
+
+<dt>VSARG2_REQUIRES_MDI</dt><dd>Command requires MDI interface
+may be because it opens a new
+file or uses _mdi object.
+Commands with this attribute are
+removed from pop-up menus
+which the MDI interface is not
+available (editor control OEMs).</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pfn">pfn</A></code> - (optional) Pointer to function.
+For DLL functions, this is optional if the real function
+name is the same as the exported function name.
+This is required for functions that are not exported
+by your DLL or for functions in vsapi.dll.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Otherwise a non-zero error code is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+     static int VSAPI MyCommand()
+     {
+           vsMessageBox("Got here");
+     }
+
+     extern "C" int VSAPI vsDllInit()
+     {
+         vsLibExport("_command int MyCommand()",
+                 VSARG_MULTI_FILE,0,
+                                     MyCommand);
+          // Bind this command to F12
+          vsSetEventTabIndex(
+                 vsQDefaultEventTab(),
+                 vsEvent2Index(VS_OFFSET_FKEYS +11)  // F12,
+                 vsFindIndex("MyCommand", VSTYPE_COMMAND));
+
+     }
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Macro_Programming_Functions.html">Macro Programming Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsDllExport.html">vsDllExport</a></blockquote>
+</body>
+</html>

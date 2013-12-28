@@ -1,0 +1,148 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMergeFiles</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsMergeFiles(const char *pszBaseFilename="", int iBaseBufferId=-, int iBaseWindowId=a, const char *pszRev1Filename="", int iRev1BufferId=-, int iRev1WindowId=a, const char *pszRev2Filename="", int iRev2BufferId=-, int iRev2WindowId=a, const char *pszOutputFilename="", int iOutputBufferId=-, int iOutputWindowId=a, int iFlags=a, const char *pszCopy1Caption="", const char *pszCopy2Caption="", const char *pszCopy1AllCaption="", const char *pszCopy2AllCaption="", const char *pszImaginaryLineCaption=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Performs a three way merge and displays the results interleave or in a
+merge dialog.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszBaseFilename">pszBaseFilename</A></code> - Name of the base file.  This will be loaded
+from disk.  If there is a buffer by this name
+in memory, it will be used.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iBaseBufferId">iBaseBufferId</A></code> - Buffer index for the base buffer.  If you use
+this, be sure to specify "" for
+pszBaseFilename, and 0 for iBaseWindowId.
+Specify -1 to have this parameter ignored.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iBaseWindowId">iBaseWindowId</A></code> - Window Index for the first buffer.  If you use
+this, be sure to specify "" for
+pszBaseFilename, and -1 for iBuf1Index.
+Specify 0 to have this parameter ignored.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszRev1Filename">pszRev1Filename</A></code> - Name of the revision 1 file.  This will be
+loaded from disk.  If there is a buffer by this
+name in memory, it will be used.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iRev1BufferId">iRev1BufferId</A></code> - Buffer index for the revision 1 buffer.  If
+you use this, be sure to specify "" for
+<i>pszRev1Filename</i>, and 0 for
+<i>iRev1WindowId</i>.  Specify -1 to have
+this parameter ignored.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iRev1WindowId">iRev1WindowId</A></code> - Window Index for the revision 1 buffer.  If you
+use this, be sure to specify "" for
+<i>pszRev1Filename</i>, and -1 for
+<i>iBuf1Index</i>.  Specify 0 to have this
+parameter ignored.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszRev2Filename">pszRev2Filename</A></code> - Name of the revision 2 file.  This will be
+loaded from disk.  If there is a buffer by this
+name in memory, it will be used.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iRev2BufferId">iRev2BufferId</A></code> - Buffer index for the revision 2 buffer.  If
+you use this, be sure to specify "" for
+<i>pszRev2Filename</i>, and 0 for
+<i>iRev2WindowId</i>.  Specify -1 to have
+this parameter ignored.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iRev2WindowId">iRev2WindowId</A></code> - Window Index for the revision 2 buffer.  If you
+use this, be sure to specify "" for
+<i>pszRev2Filename</i>, and -1 for
+<i>iBuf2Index</i>.  Specify 0 to have this
+parameter ignored.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszOutputFilename">pszOutputFilename</A></code> - Name of the output 2 file.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iOutputBufferId">iOutputBufferId</A></code> - Buffer index for the output buffer.  If you
+use this, be sure to specify "" for
+<i>pszOutputFilename</i>, and 0 for
+<i>iOutputWindowId</i>.  If you specify
+<i>iOutputBufferId</i> or
+<i>iOutputWindowId</i>, the output will be
+left open after merge terminates(if there are
+conflicts) so that you can deal with the
+output.  Specify -1 to have this parameter
+ignored.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iOutputWindowId">iOutputWindowId</A></code> - Window Id for the output buffer.  If you use
+this, be sure to specify "" for
+<i>pszOutputFilename</i>, and -1 for
+<i>iOutputBufferId</i>.  If you specify
+<i>iOutputBufferId</i> or
+<i>iOutputWindowId</i>, the output will be
+left open after merge terminates (if there are
+conflicts) so that you can deal with the
+output.  Specify 0 to have this parameter
+ignored.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iFlags">iFlags</A></code> - Combination of the following flags:
+
+<dl>
+<dt>VSMERGE_OPT_BASE_BUFFER</dt><dd>
+<i>pszBaseFilename</i> is a buffer name and not a relative
+filename which needs the path to be fully resolved.</dd>
+
+<dt>VSMERGE_OPT_REV1_BUFFER</dt><dd>
+<i>pszRev1Filename</i> is a buffer name and not a relative
+filename which needs the path to be fully resolved.</dd>
+
+<dt>VSMERGE_OPT_REV2_BUFFER</dt><dd>
+<i>pszRev2Filename</i> is a buffer name and not a relative
+filename which needs the path to be fully resolved.</dd>
+
+<dt>VSMERGE_OPT_OUTPUT_BUFFER</dt><dd>
+<i>pszRev2Filename</i> is a buffer name and not a relative
+filename which needs the path to be fully resolved.  Buffer is
+left open after merge for user to deal with.</dd>
+
+<dt>VSMERGE_OPT_SMART</dt><dd>
+Feeds some conflict pieces back to diff in order to try to
+resolve conflicts.  In many cases, will not make a difference  IF
+YOU WANT YOUR USERS TO MAKE MOST OF THE
+DECISIONS WITH CONFLICTS, THIS OPTION IS NOT
+FOR YOU.</dd>
+
+<dt>VSMERGE_OPT_INTERLEAVED</dt><dd>
+Gives the output in a single buffer with collisions labeled
+rather than in an interactive dialog.</dd>
+
+<dt>VSMERGE_OPT_QUIET</dt><dd>
+Quiet option.  Shuts off "Merge complete x conflicts" message.</dd>
+
+<dt>VSMERGE_OPT_CALLERSAVES</dt><dd>
+When the user is prompted to save the file on close, does not
+actually save.</dd>
+
+<dt>VSMERGE_OPT_FORCECONFLICT</dt><dd>
+Merge will never automatically copy a change/delete into the
+output.  Instead, a conflict will be generated.</dd>
+
+<dt>VSMERGE_OPT_SHOWCHANGES</dt><dd>
+In cases where merge automatically copies lines into the
+output, the lines are still colored with the color of the file that
+they came from so the user can see what happened.</dd>
+
+<dt>VSMERGE_OPT_INDIVIDUALCONFLICTUNDO</dt><dd>
+Rather than use SlickEdit's buffer undo, when the undo
+button is pressed, the current conflict region is returned to its
+original state.</dd>
+
+<dt>VSMERGE_OPT_IGNORESPACES</dt><dd>
+Does not force conflicts because of lines that differ in spacing.
+In cases where  this happens, lines copied to output will always
+come from the base file for consistency.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszCopy1Caption">pszCopy1Caption</A></code> - This is the caption of the "Copy 1>>"
+button.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszCopy2Caption">pszCopy2Caption</A></code> - This is the caption of the "Copy 2>>"
+button.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszCopy1AllCaption">pszCopy1AllCaption</A></code> - This is the caption of the "Copy 1
+All>>" button.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszCopy2AllCaption">pszCopy2AllCaption</A></code> - This is the caption of the "Copy 2
+All>>" button/.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszImaginaryLineCaption">pszImaginaryLineCaption</A></code> - This is the text used for
+imaginary lines. Note that this parameter is a
+global setting and will effect other diffs
+currently in progress.  For this reason, you
+must make sure that this parameter is the
+same for all calls to vsDiffFiles and
+vsMergeFiles.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful and there are no conflicts.  1 if there are
+conflicts and the user chooses to save the file.  2 if there are conflicts
+and the user chooses not to save the file.  A negative return code is
+returned and a error message box is diplayed if a file I/O error occurs
+or a file does not exist.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote>
+</body>
+</html>

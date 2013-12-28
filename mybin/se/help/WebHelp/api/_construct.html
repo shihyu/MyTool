@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_construct</title>
+</head>
+<body>
+
+<h3><b>void _construct(_str className, ...)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Construct an instance of the specified type and pass the
+given arguments to it's constructor.  Will make the
+instance 'null', like _makeempty(), if <code>className</code>
+is not a known Slick-C class type.
+<p>
+This class is useful for dynamically creating class instances.
+It does not actually allocate memory, it just initializes the
+variable it operates on.  On account of this, Slick-C has no
+need for a "delete" or _destruct() operator.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="className">className</A></code> - Name of class to construct</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="argument1">argument1</A></code> - first argument for constructor</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="argument2">argument2</A></code> - second argument for constructor
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+class AAAA {
+   int x; int y;
+   AAAA(int ax=0, int ay=0) {
+      x=ax;
+      y=ay;
+   }
+};
+AAAA AFactory(int x, int y) {
+   AAAA r = null;
+   r._construct("AAAA", x, y);
+   return r;
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_typename.html">_typename</a>, <a href="_instanceof.html">_instanceof</a>, <a href="_makeempty.html">_makeempty</a></blockquote>
+</body>
+</html>

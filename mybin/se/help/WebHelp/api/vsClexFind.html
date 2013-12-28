@@ -1,0 +1,105 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsClexFind</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsClexFind(int wid, int clexflags, char option='O', int direction=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Searches for language specific symbols or returns information about the
+symbol at the cursor.  This function returns 0 if the p_lexer_name
+property has not be set.
+</P>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="clexflags">clexflags</A></code> - Determines the language elements to search or to test for.
+                 May be one or more of the following flags, which are defined
+                 in "slick.sh."  Use the OR operator to specify more than one flag.
+                 <UL>
+                 <LI>VSCLEXFLAG_OTHER
+                 <LI>VSCLEXFLAG_KEYWORD
+                 <LI>VSCLEXFLAG_NUMBER
+                 <LI>VSCLEXFLAG_STRING
+                 <LI>VSCLEXFLAG_COMMENT
+                 <LI>VSCLEXFLAG_PPKEYWORD
+                 <LI>VSCLEXFLAG_LINENUM
+                 <LI>VSCLEXFLAG_SYMBOL1
+                 <LI>VSCLEXFLAG_SYMBOL2
+                 <LI>VSCLEXFLAG_SYMBOL3
+                 <LI>VSCLEXFLAG_SYMBOL4
+                 <LI>VSCLEXFLAG_FUNCTION
+                 </UL>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - options may be one of the following:
+                 <DL compact>
+                 <DT>O<DD>(Default) Find any of the language
+                 elements specified.  Returns 0 and places cursor on first character of
+                 symbol if it is found.  Otherwise, STRING_NOT_FOUND_RC is returned.
+
+                 <DT>N<DD>Find language elements specified which
+                 are NOT any of the language elements specified in clexflags.  Returns 0
+                 and placed cursor on first character of symbol if it is found.  Otherwise,
+                 STRING_NOT_FOUND_RC is returned.
+
+                 <DT>T<DD>Test if symbol under cursor is any of
+                 the language elements specified in clexflags.  Returns non-zero value if
+                 cursor is on one of the language elements specified.
+
+                 <DT>G<DD>Return the color constant (NOT CLEXFLAG)
+                 which corresponds to the symbol under the cursor.  The clexflags argument
+                 is ignored.  Color constants are defined in "slick.sh" and may be one of
+                 the following:
+                 <UL>
+                 <LI>VSCFG_WINDOW_TEXT
+                 <LI>VSCFG_MODIFIED_LINE
+                 <LI>VSCFG_INSERTED_LINE
+                 <LI>VSCFG_KEYWORD
+                 <LI>VSCFG_LINENUM
+                 <LI>VSCFG_NUMBER
+                 <LI>VSCFG_STRING
+                 <LI>VSCFG_COMMENT
+                 <LI>VSCFG_PPKEYWORD
+                 <LI>VSCFG_PUNCTUATION
+                 <LI>VSCFG_LIBRARY_SYMBOL
+                 <LI>VSCFG_OPERATOR
+                 <LI>VSCFG_USER_DEFINED
+                 </UL>
+
+                 <DT>D<DD>Return the detailed color constant (NOT CLEXFLAG)
+                 which corresponds to the symbol under the cursor.  The clexflags argument
+                 is ignored.  This option is very similar to the 'G' option above,
+                 except that it also recognizes the following specialized colors:
+                 <UL>
+                 <LI>VSCFG_LINE_COMMENT
+                 <LI>VSCFG_DOCUMENTATION
+                 <LI>VSCFG_IDENTIFIER
+                 </UL>
+
+                 <DT>E<DD>Searches for embedded source.  Returns 0
+                 if succesful.  Otherwise, STRING_NOT_FOUND_RC is returned.  The clexflags
+                 argument is ignored.
+
+                 <DT>S<DD>Searches for non-embedded source.
+                 Returns 0 if succesful.  Otherwise, STRING_NOT_FOUND_RC is returned.  The
+                 clexflags argument is ignored.
+                 </DL>
+                 <P>
+                 The option parameter may include a '-' (dash) character to enable the 'O'
+                 and 'N' options to search backwards.
+                 </P>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+// Find start of comment or string
+status = vsClexFind(0,VSCLEXFLAG_COMMENT|VSCLEXFLAG_STRING);
+if (status) {
+   return status;
+}
+color = vsClexFind(0,0,'G');
+if (color==VSCFG_COMMENT) {
+   ...
+}
+// Assuming already in comment, find non-comment character
+status = vsClexFind(0,VSCLEXFLAG_COMMENT,'N');
+// Assuming already in comment, find non-comment character backwards
+status = vsClexFind(0,VSCLEXFLAG_COMMENT,'N',-1);
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsClexSkipBlanks.html">vsClexSkipBlanks</a></blockquote>
+</body>
+</html>

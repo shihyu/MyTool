@@ -1,0 +1,109 @@
+/**
+ * The request triggering the service invocation.
+ */
+request(javax.servlet.http.HttpServletRequest);
+/**
+ * The response to the request. page
+ */
+response(javax.servlet.http.HttpServletResponse);
+/**
+ * The page context for this JSP page.
+ * <p>
+ * A PageContext provides an object that encapsulates
+ * implementation-dependent features and provides convenience methods.
+ * A JSP page implementation class can use a PageContext to run
+ * unmodified in any compliant JSP container while taking advantage of
+ * implementation-specific improvements like high performance
+ * JspWriters. Generating such an implementation is not a requirement
+ * of JSP 1.1 compliant containers, although providing
+ * the pageContext implicit object is.
+ */
+pageContext(javax.servlet.jsp.PageContext);
+/**
+ * The session object created for the requesting client (if any).
+ * This variable is only valid for Http protocols.
+ */
+session(javax.servlet.http.HttpSession);
+/**
+ * The servlet context obtained from the servlet configuration
+ * object (as in the call getServletConfig().getContext() )
+ */
+application(javax.servlet.ServletContext);
+/**
+ * An object that writes into the output stream.
+ */
+out(javax.servlet.jsp.JspWriter);
+/**
+ * The ServletConfig for this JSP page.
+ */
+config(javax.servlet.ServletConfig);
+/**
+ * The instance of this page's implementation class processing
+ * the current request.
+ * <p>
+ * NOTE: When the scripting language is 'java' then 'page' is
+ * a synonym for 'this' in the body of the page.
+ */
+page(java.lang.Object);
+/**
+ * The uncaught Throwable that resulted in the error page being invoked.
+ */
+exception(java.lang.Throwable);
+
+/**
+ * a Map that maps session-scoped attribute names to their values.
+ */
+sessionScope();
+
+/**
+ * a Map that maps page-scoped attribute names to their values.
+ */
+pageScope();
+
+/**
+ * a Map that maps application-scoped attribute names to their values.
+ */
+applicationScope();
+
+/**
+ * a Map that maps parameter names to a single String parameter value
+ * (obtained by calling ServletRequest.getParameter(String name))
+ */
+param();
+
+/**
+ * a Map that maps parameter names to a String[] of all values for
+ * that parameter (obtained by calling ServletRequest.getParameterValues(String
+ * name))
+ */
+paramValues();
+
+/**
+ * a Map that maps header names to a single String header value (obtained
+ * by calling ServletRequest.getHeader(String name))
+ */
+header();
+
+/**
+ * a Map that maps header names to a String[] of all values for
+ * that header (obtained by calling ServletRequest.getHeaders(String))
+ */
+headerValues();
+
+/**
+ * a Map that maps cookie names to a single Cookie object. Cookies are
+ * retrieved according to the semantics of HttpServletRequest.getCookies(). If the
+ * same name is shared by multiple cookies, an implementation must use the
+ * first one encountered in the array of Cookie objects returned by the getCookies()
+ * method. However, users of the cookie implicit object must be aware that
+ * the ordering of cookies is currently unspecified in the servlet specification.
+ */
+cookie();
+
+/**
+ * a Map that maps context initialization parameter names to their
+ * String parameter value (obtained by calling ServletContext.getInitParameter(
+ * String name))
+ */
+initParam();
+

@@ -1,0 +1,32 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Command Line Interface</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s32.htm" title="Interfacing With Other Languages (DLL)"><link rel="next" href="ch14s34.htm" title="Hooking Startup and Exit"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_commandlineinterface_13946_24259"></a>
+    <a name="slick_c_commandlineinterface_13946_1006153"></a>
+    <a class="indexterm" name="slick-c_commandlineinterface_CD035ED4_C491"></a>
+    <a class="indexterm" name="slick-c_commandlineinterface_1F48A7E1_3B33"></a>Command Line Interface</h2></div></div></div><p class="NormalText">This section describes how to write macros using the command line interface.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_commandlineinterface_13946_1006174"></a>Command Line Arguments</h3></div></div></div><p class="NormalText">When a command is invoked, the expression <span><strong class="command">arg(1)</strong></span> contains the rest of the command line after the name with leading spaces removed. Alternatively, the command can declare a named argument whose value is the same as <span><strong class="command">arg(1)</strong></span>. For example, invoking the edit command <span><strong class="command">e file1 file2</strong></span> calls the <span><strong class="command">e</strong></span> command with <span><strong class="command">file1 file2</strong></span> in <span><strong class="command">arg(1)</strong></span>. The <span><strong class="command">parse</strong></span> built-in is an excellent function for parsing a command line string. When another macro calls a command, more than one argument string can be passed. Calling the <span><strong class="command">arg</strong></span> function with no parameters returns the number of parameters with which the command or procedure was called.</p><p class="NormalText">Example:</p><pre class="programlisting">#include "slick.sh"
+// This command supports completion on a filename followed by an
+// environment variable argument.
+_command test1() name_info(FILE_ARG","ENV_ARG)
+{
+    parse arg(1) with file_name env_name;
+    message("file_name="file_name" env_name="env_name);
+}</pre><p class="NormalText">The string constant expression given to the <span><strong class="command">name_info</strong></span> keyword is used for argument completion, restricting when the command can be executed, and a few other options.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_commandlineinterface_13946_1026579"></a>
+      <a class="indexterm" name="slick-c_commandlineinterface_5D161FBE_CA67"></a>get_string Procedure</h3></div></div></div><p class="NormalText">The <span><strong class="command">get_string</strong></span> procedure reads a single argument from the user. </p><p class="NormalText">Example:</p><pre class="programlisting">#include "slick.sh"
+_command test2()
+{
+    if (get_string(file_name,"Filename: ",FILE_ARG";Help message")) {
+       return(1); // Cancel key pressed.
+    }
+    if (get_string(env_name,"Environment variable name: ",
+                ENV_ARG";Help message","PATH") ) {
+       return(1); // Cancel key pressed.
+    }
+    message("file_name="file_name" env_name="env_name);
+}</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_commandlineinterface_13946_1006220"></a>
+      <a class="indexterm" name="slick-c_commandlineinterface_BCD217D6_7829"></a>Single Argument Prompting with Support for Prompt Style</h3></div></div></div><p class="NormalText">Use the <span><strong class="command">prompt</strong></span> procedure to write a command that accepts one command line argument, or prompts for the argument if it is not given. If the user presses <span><strong class="keycap">Esc</strong></span> while being prompted for the argument, file execution does not continue. </p><p class="NormalText">Example:</p><pre class="programlisting">// This command supports completion on an environment variable argument.
+ 
+#include "slick.sh"
+_command test3() name_info(ENV_ARG)
+{
+    // If the user selects to abort, the prompt procedure stops execution.
+    env_name=prompt(arg(1),"Environment variable name: ");
+    message("env_name="env_name);
+}</pre><p class="NormalText"></p></div></div></body></html>

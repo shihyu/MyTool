@@ -1,0 +1,333 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Startup and Exit</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch01.htm" title="Chapter 1.  Introduction"><link rel="prev" href="ch01s05.htm" title="Installation"><link rel="next" href="ch01s07.htm" title="Product Support"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_startingexiting_13343_39038"></a>
+    <a name="sect_startingexiting_13343_998341"></a>Startup and Exit</h2></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_startingexiting_13343_21284"></a>
+      <a name="sect_startingexiting_13343_1002279"></a>
+      <a class="indexterm" name="sect_startingexiting_743EEAFC_0E04"></a>
+      <a class="indexterm" name="sect_startingexiting_29639_36798"></a>
+      Running SlickEdit</h3></div></div></div><p class="NormalText">You can launch SlickEdit in a variety of ways, depending on the 
+      operating system you are using:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText"><span class="bold"><strong>Desktop Icon</strong></span> - On Microsoft Windows and 
+          Mac OS X operating systems, use the <span><strong class="guibutton">SlickEdit</strong></span> icon displayed on your 
+          desktop. On Windows, you can customize the command used by the icon to set <a href="ch01s06.htm#sect_startingexiting_55651_41674">Invocation Options</a>. </p></li><li><p class="NormalText"><span class="bold"><strong>Start Menu</strong></span> - Some operating systems, 
+          including Microsoft Windows, provide a menu for launching installed applications.</p></li><li><p class="NormalText"><span class="bold"><strong>Command Line</strong></span> - Use the operating 
+          system command line to invoke the <span><strong class="command">vs</strong></span> binary. This is the primary method for 
+          launching SlickEdit on Linux and UNIX. The command line accepts <a href="ch01s06.htm#sect_startingexiting_55651_41674">Invocation Options</a> that can be used to change the behavior of 
+          SlickEdit.</p></li></ul></div><p class="NormalText">The <span><strong class="command">vs</strong></span> executable is stored in the 
+      <code class="filename">win</code> subdirectory of your SlickEdit installation on Windows and the 
+      <code class="filename">bin</code> subdirectory on Linux/UNIX/Mac.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"></p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">You can make settings so that certain items such as files, clipboards, and Selective Display are restored each time SlickEdit is started. See <a href="ch04s07.htm">Restoring Settings on Startup</a> for more information.</p></li><li><p class="NormalText">You can also set a macro to be run upon startup. See the section "Hooking Exit and Other Events" in the <span class="emphasis"><em>Slick-C® Macro Programming Guide</em></span> for more information.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_startingexiting_13343_1002439"></a>
+         Running SlickEdit for the First Time</h4></div></div></div><p class="NormalText">The first time SlickEdit is started after an installation, several dialog boxes may be automatically launched that require action:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">If SlickEdit cannot locate a valid license for this version, the 
+        License Manager will run. It provides options to install or download a license file. For more 
+        information, see <a href="ch01s05.htm#sect_installation_70305_17486">License Manager</a></p></li><li><p class="NormalText">The Quick Start Configuration Wizard will guide you through the 
+            steps of setting up the most common options. It also allows you to view the release notes 
+            and other useful information. For more information, see <a href="ch02.htm#master_02501_40630">Quick Start Configuration Wizard</a>.</p></li></ul></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> For Mac OS X, SlickEdit requires a one-time background caching of the font list. This will take a few minutes, after which SlickEdit will start normally.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_startingexiting_13343_1000937"></a>
+        <a class="indexterm" name="sect_startingexiting_82D54F64_47A5"></a>
+        <a class="indexterm" name="sect_startingexiting_64AF809D_0E39"></a>Running Multiple Instances</h4></div></div></div><p class="NormalText">You can run multiple instances of SlickEdit® 
+        at the same time. On Windows or Mac OS X, right-click on the 
+        <span><strong class="guibutton">SlickEdit</strong></span> icon displayed on the desktop. In the 
+        <span><strong class="guilabel">Target</strong></span> field, append the text 
+        <span><strong class="command">+new</strong></span> to the end of the existing text. </p><p class="NormalText">When launching SlickEdit from the operating system command line, append 
+        <span><strong class="command">+new</strong></span> to the invocation command (for example, <span><strong class="command">vs 
+        +new</strong></span>).</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Caution</h3><p class="CellBody">
+          SlickEdit cannot save configuration changes when another instance is running. If you attempt to close an instance that contains configuration changes, while another instance is running, a save-failed message is displayed, then a prompt asks whether or not to exit anyway.</p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_startingexiting_55651_41674"></a>
+      <a class="indexterm" name="sect_startingexiting_01459_40630"></a> 
+      <a class="indexterm" name="sect_startingexiting_17170_13122"></a>
+      <a class="indexterm" name="sect_startingexiting_84231_41674"></a>
+      <a class="indexterm" name="sect_startingexiting_61441_36798"></a> Invocation Options</h3></div></div></div><p class="NormalText">SlickEdit can be invoked with a variety of options to control 
+    key editor behaviors. This allows you to specify things like a file or multiple files to edit and a 
+    different location for your SlickEdit configuration. A full list of invocation options is 
+    listed in the table, below.</p><p class="NormalText">The command line syntax for invoking SlickEdit is as follows:</p><pre class="programlisting">
+    <span><strong class="command">vs {options} file1 {options} file2</strong></span> 
+  </pre><p class="NormalText">The <span><strong class="command">vs</strong></span> executable is stored in the <code class="filename">win</code> 
+  subdirectory on Windows and the <code class="filename">bin</code> directory on Linux/UNIX/Mac.</p><p class="NormalText">Invocation options can also be stored in the <span><strong class="command">VSLICK</strong></span> 
+    environment variable. When SlickEdit is invoked, it inserts the value of this variable before 
+    the options typed on the command line. See <a href="ch13s03.htm">Environment Variables</a> for a list of variables you can use with SlickEdit.</p><p class="NormalText">The table below shows a list of available invocation options.</p><div class="informaltable"><a name="table_e025d20b-23ee-4313-8662-0ffb3d9d6b56"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+            <p class="CellHeading">Invocation Option</p>
+          </th><th>
+            <p class="CellHeading">Description</p>
+          </th></tr></thead><tbody><tr><td>
+            <p class="CellBody"><span><strong class="command">-?</strong></span> (Windows) or <span><strong class="command">-h[elp]</strong></span> (UNIX)</p>
+          </td><td>
+            <p class="CellBody">Display a summary of command line switches and their usage.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">+</strong></span> or <span><strong class="command">-new</strong></span></p>
+          </td><td>
+            <p class="CellBody">Indicates whether a new instance of the editor should be created or if the existing instance should process the command line parameters. <span><strong class="command">+new</strong></span> creates a new instance. Default is <span><strong class="command">-new</strong></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-sc</strong></span>
+              <span class="emphasis"><em>config_path</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Specifies the configuration directory. This directory will be used to find and save configuration files. Sets the <span><strong class="command">SLICKEDITCONFIG</strong></span> environment variable to <span class="emphasis"><em>config_path</em></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-migrate</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+               If there is no matching version-specific configuration directory,
+               create a new, default configuration instead of migrating settings
+               from an earlier version's configuration directory.
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-supf</strong></span>
+              <span class="emphasis"><em>kbdfile</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">(UNIX only) Specifies a keyboard file for mapping the keyboard at the X (modmap) level. Some UNIX systems have keyboard mappings that need to be modified so that keys like <span><strong class="keycap">Backspace</strong></span> and <span><strong class="keycap">Delete</strong></span> (and sometimes others) function properly. Use the <span><strong class="command">xmapkeys</strong></span> program to generate the keyboard file.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-sr</strong></span>
+              <span class="emphasis"><em>restore_path</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Specifies the directory containing auto-restore files. Sets the <span><strong class="command">VSLICKRESTORE</strong></span> environment variable to <span class="emphasis"><em>restore_path</em></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-snoconfig</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+               Do not write any files into the configuration directory.
+               This option is needed for utilities which run the editor with the main
+               window hidden which we do not want to save any state information.
+             </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-snorestore</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+               Do not read vrestore.slk on editor invocation.
+               This option is used to simplify starting the editor
+                when you have a corrupt vrestore.slk, and is also used
+                by utility programs that launch the editor and do not require
+                any saved state, like vsmktags.
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-q[uiet]</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+               Do not display the standard version message on editor starup.
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-mdihide</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+               Specifies that the main window should be hidden on startup.
+               This is normally used with the -p <span class="emphasis"><em>macro_name</em></span> 
+               option when running a utility macro under the editor.  
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-si</strong></span>
+              <span class="emphasis"><em>kmax_var_space max_Nofvars</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+              <span class="emphasis"><em>kmax_var_space</em></span> specifies the amount of memory in kilobytes allocated for storing the contents of interpreter variables (default is 1000 kilobits). <span class="emphasis"><em>max_Nofvars</em></span> specifies the maximum number of local, static, and global variables there may be (default is 10000).</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_invocationoptions_D4F2F838_B89B"></a>
+                <a class="indexterm" name="sect_invocationoptions_E2E3AADD_5E1C"></a>-st</strong></span>
+              <span class="emphasis"><em>state_ksize</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Specifies the maximum amount of swappable state file data in <code class="filename">vslick.sta</code> (UNIX: <code class="filename">vslick.stu</code>) to be kept in memory, in kilobytes. <span class="bold"><strong>-1</strong></span> specifies no limit. <span class="bold"><strong>0</strong></span> specifies that the editor preload all state file data. The default is 200 K.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-sm</strong></span>
+              <span class="emphasis"><em>max_file_size</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Specifies the maximum amount of buffer text (in megabytes) that may be edited at one time. Additional memory will automatically be allocated to allow for the editing of up to 2 GB of files. Choosing this option will provide you with better performance.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-sallowopenrw</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">
+               Specifies that files may only be opened in the editor read-only.
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_invocationoptions_D738213E_12D4"></a>-suxft</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">(Linux only) Disables Xft font support. Use this option only if you 
+              have problems with fonts under Linux and would like to use non-Xft fonts, like previous 
+              versions of SlickEdit.</p> 
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-supty</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">(Unix only) Disables PTY support in the Build window.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-sumotif -sucde -sukde -suwindows</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">(Unix only) Use Motif, CDE, KDE, or Windows style widgets.
+                                               The default is to use KDE style (Qt Plastique style) widgets. 
+            </p> 
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-display</strong></span>
+              <span class="emphasis"><em>hostname:display_id</em></span>  (Unix only)
+            </p>
+          </td><td>
+            <p class="CellBody">
+               Specifies the X-Windows display to redirect the editor to.
+            </p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_invocationoptions_8485D1F9_EB94"></a>-summ "[</strong></span>
+              <span class="emphasis"><em>x_1 y_1</em></span>
+              <span><strong class="command">] </strong></span>
+              <span class="emphasis"><em>width_1 height_1</em></span>
+              <span><strong class="command">,</strong></span>
+            </p>
+            <p class="CellBody">
+              <span><strong class="command">[</strong></span>
+              <span class="emphasis"><em>x_2 y_2</em></span>
+              <span><strong class="command">] </strong></span>
+              <span class="emphasis"><em>width_2 height_2</em></span>
+              <span><strong class="command">"</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">(UNIX only) Specifies multiple monitor configuration. You must specify at least two monitors. By default, SlickEdit tries to automatically detect if you have two monitors. However, this only works if your monitors have the same width, height, and y values. In a left-to-right monitor configuration, <span class="emphasis"><em>x</em></span> and <span class="emphasis"><em>y</em></span> are not necessary. The following two examples are equivalent because the monitors are in a left-to-right configuration:</p>
+            <p class="CellBody"></p>
+            <div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                  <span><strong class="command">-summ "1024 768,1024 768"</strong></span>
+                </p></li><li><p class="NormalText">
+                  <span><strong class="command">-summ "0 0 1024 768,1024 0 1024 768"</strong></span>
+                </p></li></ul></div>
+            <p class="CellBody"></p>
+            <p class="CellBody">Specifying the <span><strong class="command">-summ</strong></span> option in the previous example would not be necessary because it would be automatically detected correctly. However, the following monitor configurations would not be detected correctly:</p>
+            <p class="CellBody"></p>
+            <div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+                  <span><strong class="command">-summ "1600 1200,1024 768"</strong></span>
+                </p></li><li><p class="NormalText">
+                  <span><strong class="command">-summ "0 0 1024 768,0 768 1024 768"</strong></span>
+                </p></li><li><p class="NormalText">
+                  <span><strong class="command">-summ "1024 768,1024 768,1024 768"</strong></span>
+                </p></li></ul></div>
+            <p class="CellBody"></p>
+            <p class="CellBody">The above examples represent the following configurations: left-to-right, 2 monitors; top-to-bottom, 2 monitors; left-to-right, 3 monitors.</p>
+            <p class="CellBody"></p>
+            <p class="CellBody">Note that you can specify this option in the <span><strong class="command">VSLICK</strong></span> environment variable and set it in your <code class="filename">vslick.ini</code> file so you don't need to specify this for every invocation. For more information, see <a href="ch13s03.htm#sect_environmentvariables_14642_setting_environ_variables">Setting Environment Variables in vslick.ini</a>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-sul</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Disables the byte-range file locking that SlickEdit normally performs. Enable this option when receiving an "access denied" error with remote files.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_invocationoptions_9A4F15D0_29E1"></a>-x</strong></span>
+              <span class="emphasis"><em>pcode_name</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Alternate state file (<code class="filename">.sta</code>) or pcode file (<code class="filename">.ex</code>).</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-m</strong></span>
+              <span class="emphasis"><em>menu_file</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Name of menu resource to use for the SlickEdit menu bar.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-p</strong></span>
+              <span class="emphasis"><em>cmdline</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Execute command with arguments given and exit. No other options or file names can be specified after this option since the rest of the command line is assumed to be the program name and space-delimited arguments for this option.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">-r</strong></span>
+              <span class="emphasis"><em>cmdline</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Execute command with arguments given and remain resident. No other options or file names can be specified after this option since the rest of the command line is assumed to be the program name and space-delimited arguments for this option.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span class="emphasis"><em>file1 file2</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Files to edit. File names may contain wildcard characters (<span><strong class="keycap">*</strong></span> and <span><strong class="keycap">?</strong></span>).</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span class="emphasis"><em>-#command</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Execute command on active buffer. For example, 
+	<span><strong class="command">vs test.c -#bottom-of-buffer</strong></span> places the cursor at the end of <code class="filename">test.c</code>. Use double quotes if the command has spaces 
+	(<span><strong class="command">vs test.c "-#goto-col 50"</strong></span>).</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">+ </strong></span>or <span><strong class="command">-L[C]</strong></span></p>
+          </td><td>
+            <p class="CellBody">Turn on/off load entire file switch. The optional <span><strong class="command">C</strong></span> suffix specifies counting the number of lines in the file.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">+</strong></span>
+              <span class="emphasis"><em>nnn</em></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Load binary file(s) that follow with a record width <span class="emphasis"><em>nnn</em></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">+T [</strong></span>
+              <span class="emphasis"><em>buf_name</em></span>
+              <span><strong class="command">]</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Start a default operating system format temporary buffer with name <span class="emphasis"><em>buf_name</em></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">+TU [</strong></span>
+              <span class="emphasis"><em>buf_name</em></span>
+              <span><strong class="command">]</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Start a UNIX format temporary buffer with name <span class="emphasis"><em>buf_name</em></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">
+                <a class="indexterm" name="sect_invocationoptions_B9DBF6A2_BBCF"></a>+TM [</strong></span>
+              <span class="emphasis"><em>buf_name</em></span>
+              <span><strong class="command">]</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Start a Macintosh format temporary buffer with name <span class="emphasis"><em>buf_name</em></span>. Classic Mac line endings are a single carriage return (ASCII 13).</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">+TD [</strong></span>
+              <span class="emphasis"><em>buf_name</em></span>
+              <span><strong class="command">]</strong></span>
+            </p>
+          </td><td>
+            <p class="CellBody">Start a DOS format temporary buffer with name <span class="emphasis"><em>buf_name</em></span>.</p>
+          </td></tr><tr><td>
+            <p class="CellBody">
+              <span><strong class="command">+</strong></span> or <span><strong class="command">-E</strong></span></p>
+          </td><td>
+            <p class="CellBody">Turn on/off expand tabs to spaces when loading file. Default is off.</p>
+          </td></tr></tbody></table></div><p class="NormalText"></p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_startingexiting_13343_21117"></a>
+      <a name="sect_startingexiting_13343_1002472"></a>
+      <a class="indexterm" name="sect_startingexiting_712126CA_CC88"></a>
+      <a class="indexterm" name="sect_startingexiting_74F4F263_623E"></a>
+      <a class="indexterm" name="sect_startingexiting_C8BCC011_7CEE"></a>Exiting the Program</h3></div></div></div><p class="NormalText">To safely exit SlickEdit®, from the menu, click <span><strong class="guimenu">File </strong></span> &#8594; <span><strong class="guimenuitem">Exit</strong></span> (<span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">F4</strong></span>). You can also use the SlickEdit command line to exit. Activate the command line by pressing the Escape key or by clicking on the message line with the mouse, then type<span><strong class="command"></strong></span><span><strong class="command">safe_exit</strong></span>. If files have not been saved or closed upon exit, you will be prompted with a dialog to save or discard any changes. </p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"></p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">You can make settings so that certain items such as files, clipboards, and Selective Display are restored each time SlickEdit is started. See <a href="ch04s07.htm">Restoring Settings on Startup</a> for more information.</p></li><li><p class="NormalText">You can also set a macro to be run upon exit. See the section "Hooking Exit and Other Events" in the <span class="emphasis"><em>Slick-C® Macro Programming Guide</em></span> for more information.</p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_startingexiting_13343_1000978"></a>
+        <a class="indexterm" name="sect_startingexiting_864F145C_EB41"></a>
+        <a class="indexterm" name="sect_startingexiting_A7AE1E05_668F"></a>Exiting with Modified Buffers</h4></div></div></div><p class="NormalText">If files have not been saved or closed upon exit, you will be prompted with a dialog to save or discard any changes. The buffer names in the list box are buffers which have not been saved. See <a href="ch12.htm#sect_file_menuanddialogs_13343_94382">Exiting with Modified Buffers Dialog</a> for option descriptions. See also <a href="ch05s02.htm#sect_workingwithfiles_13027_97698">Saving Files</a>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_startingexiting_13343_1001356"></a>
+        <a class="indexterm" name="sect_startingexiting_7260F809_73BE"></a>Default Exit Options</h4></div></div></div><p class="NormalText">To access default options for saving configuration changes, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Application Options </strong></span> &#8594; <span><strong class="guimenuitem">Exit</strong></span>. See <a href="ch12s11.htm#sect_options_menuanddialogs_14207_52513">Exit Options</a> for descriptions of these options.</p><p class="NormalText"></p></div></div></div></body></html>

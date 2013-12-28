@@ -1,0 +1,165 @@
+<profile name="/language/d/aliases">
+	<p n="=surround_with_while">
+		<text>
+			while (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_try">
+		<text>
+			try {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_catch">
+		<text>
+			catch (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_do...while">
+		<text>
+			do {
+			%\m sur_text -indent%
+			} while (%\c);
+		</text>
+	</p>
+	<p n="=surround_with_if">
+		<text>
+			if (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_template">
+		<text>
+			template %\c( ) {
+			   %\m sur_text -indent%
+			   };
+		</text>
+	</p>
+	<p n="=surround_with_default">
+		<text>
+			default:
+			%\m sur_text -indent%
+		</text>
+	</p>
+	<p n="=surround_with_case">
+		<text>
+			case %\c:
+			%\m sur_text -indent%
+			break;
+		</text>
+	</p>
+	<p n="=surround_with_static_if...else">
+		<text>
+			static if (%\c) {
+			%\m sur_text%
+			} else {
+			%\m sur_text%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_switch">
+		<text>
+			switch (%\c) {
+			%\m sur_text%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_if...else">
+		<text>
+			if (%\c) {
+			%\m sur_text -indent%
+			} else {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_version...else">
+		<text>
+			version (%\c) {
+			%\m sur_text -indent%
+			} else {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_finally">
+		<text>
+			finally {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_for">
+		<text>
+			for (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_foreach">
+		<text>
+			foreach (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_foreach_reverse">
+		<text>
+			foreach_reverse (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_with">
+		<text>
+			with (%\c in ) {
+			   %\m sur_text -indent%
+			   }
+		</text>
+	</p>
+	<p n="=surround_with_version">
+		<text>
+			version (%\c in ) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_try...catch">
+		<text>
+			try {
+			%\m sur_text -indent%
+			} catch (%\c) {
+			}
+		</text>
+	</p>
+	<p n="=surround_with_try...catch...finally">
+		<text>
+			try {
+			%\m sur_text -indent%
+			} catch (%\c) {
+			} finally {
+			}
+		</text>
+	</p>
+	<p n="=surround_with_try...finally">
+		<text>
+			try {
+			%\m sur_text -indent%
+			} finally {%\c
+			}
+		</text>
+	</p>
+	<p n="=surround_with_braces">
+		<text>
+			{
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+</profile>

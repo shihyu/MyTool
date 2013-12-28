@@ -1,0 +1,305 @@
+()|,
+
+
+
+C Runtimes
+abortvoid00
+absint00tbintnint n	/* Integer value */
+acceptint00tbint sockfdsockfdint sockfd,	// Sockettbstruct sockaddr *addrstruct sockaddr *addr,tbint *addrlenint *addrlen
+accessint00tbconst char *pathconst char *path,	/* File or directory path */xbint R_OKW_OKX_OKF_OKint mode	/* Permission setting */
+acosdouble00tbdoublexdouble x	/* Value whose arccosine is to be calculated */
+alarmlong00tblong secondssecondslong seconds
+asctimechar *00tbconst struct tm *tmconst struct tm *timeptr	/* Time/date structure */
+asindouble00tbdoublexdouble x	/* Value whose arcsine is to be calculated */
+atandouble00tbdouble xdouble x	/* Any number */
+atan2double00tbdouble xdouble x,	/* Any number */tbdoubleydouble y	/* Any number */
+atexitint00tbvoid (*)(void)void (*pfn)(void)	//Exit function to register
+atofdouble00tbconst char *stringconst char *string	/* String to be converted */
+atoiint00tbconst char *stringconst char *string	/* String to be converted */
+atollong00tbconst char *stringconst char *string	/* String to be converted */
+bind00tbint sockfdint sockfd,tbstruct  sockaddr  *my_addrstruct  sockaddr  *my_addr,tbint addrlenint addrlen
+brkint00tbvoid *enddsenddsvoid *endds
+callocvoid *00tbsize_t numsize_t num,	/* Number of elements */tbsize_tsizesize_t size	/* Length in bytes of each element */
+ceildouble00tbdouble xdouble x	/* Floating-point value */
+chdirint00tbconst char *dirnameconst char *dirname	/* Path of new working directory */
+chmodint00tbconst char *filenameconst char *filename,	/* Name of existing file */xbintS_ISUIDS_ISGIDS_ISVTXS_IRUSRS_IWUSRS_IXUSRS_IRGRPS_IWGRPS_IXGRPS_IROTHS_IWOTHS_IXOTHint pmode	/* Permission setting for file */
+chownint00tbconst char *pathpathconst char *path,tbuid_t owneruid_t owner,tbgid_t groupgid_t group
+chrootint00tbconst char *pathpath
+chsizeint00tbint handleint handle,	/* Handle referring to open file */tblong sizelong size	/* New length of file in bytes */
+clearerrvoid00tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+clockclock_t00
+closeint00tbint handleint handle	/* Handle referring to open file */
+connect00tbint sockfdsockfdint sockfd,tbstruct sockaddr *serv_addrserv_addrstruct sockaddr *serv_addr,tbint addrlenaddrlenint addrlen
+cosdouble00tbdoubledoubledouble x	/* Angle in radians */
+coshdouble00tbdouble xdouble x	/* Angle in radians */
+creatint00tbconst char *filenameconst char *filename,	/* Name of new file */xbint S_ISUIDS_ISGIDS_ISVTXS_IRUSRS_IWUSRS_IXUSRS_IRGRPS_IWGRPS_IXGRPS_IROTHS_IWOTHS_IXOTHint pmode	/* Permission setting */
+ctimechar *00tbconst time_t *timerconst time_t *timer	/* Pointer to stored time */
+difftimedouble00tbtime_ttimer1time_t timer1	/* Ending time */tbtime_ttimer0time_t timer0	/* Beginning time */
+divdiv_t00tbint numerint numer,	/* Numerator */tbint denomint denom	/* Denominator */
+dupint00tbint handleint handle	/* Handle referring to open file */
+dup2int00tbint oldfhhandleint oldfh,	/* Handle referring to open file */tbint newfhhandleint newfh	/* Any handle */
+ecvtchar *00tbdouble valuedouble value,	/* Number to be converted */tbint ndigitsint ndigits,	/* Number of digits stored */tbint *decint *dec,	/* Stored decimal-point position */tbint *signint *sign	/* Sign of converted number */
+eofint00tbint fhint fh	/* Handle referring to open file */
+execveint00tbconst char *filenamefilenameconst char *filename,tbconst char *argv[]argvconst char *argv[]tbconst char *argp[]argpconst char *argp[]
+exitvoid00tbintstatusint status	/* Exit status */
+expdouble00tbdouble xdouble x	/* Floating-point value */
+fabsdouble00tbdoublexdouble x	/* Floating-point value */
+fchdirint00tbint fhfhint fh
+fchmodint00tbint fhfhint fh,rbmode_t modeS_ISUIDS_ISGIDS_ISVTXS_IRUSRS_IWUSRS_IXUSRS_IRGRPS_IWGRPS_IXGRPS_IROTHS_IWOTHS_IXOTHmode_t mode
+fchownint00tbint fhfhint fh,tbuid_t ownerowneruid_t owner,tbgid_t groupgroupgid_t group
+fcloseint00tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+fcntlint00tbint fhfhint fh,cbint cmdF_DUPFDF_GETFDF_SETFDF_GETFLF_SETFLF_GETLKF_SETLKF_SETLKWF_GETOWNF_SETOWNint cmd
+fcvtchar *00tbdouble vauedouble value,	/* Number to be converted */tbintndigitsint ndigits,	/* Number of digits after the decimal point */tbint *decptint *decpt,	/* Pointer to stored decimal-point position */tbint *signint *sign	/* Pointer to stored sign indicator */
+fdopenFILE *00tbint fhint fh,	/* Handle referring to open file */rbconst char *rr+ww+aa+const char *mode	/* Type of access permitted */
+feofint00tbFILE *streamFILE * stream	/* Pointer to FILE structure */
+ferrorint00tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+fflushint00tbFILE * streamFILE *stream	/* Pointer to FILE structure */
+fgetcint00tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+fgetposint00tbFILE *streamFILE *stream,	/* Target stream */tbfpos_t *posfpos_t *pos	/* Position-indicator storage */
+fgetschar *00tbchar *stringchar *string,	/* Storage location for data */tbint nint n,	/* Maximum number of characters to read */tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+filenoint00tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+flockint00tbint fhint fh,cbint operationLOCK_SHLOCK_EXLOCK_UNLOCK_NBint operation
+floordouble00tbdoublexdouble x	/* Floating-point value */
+fmoddouble00tbdoublexdouble x,	/* Floating point value */tbdouble ydouble y	/* Floating-point value */
+fopenFILE *00tbconst char *filenameconst char *filename,	/* Filename */tbconst char *modeconst char *mode	/* Type of access permitted */
+forkpid_t00
+fprintfint00tbFILE *streamFILE *stream,	/* Pointer to FILE structure*/tbconst char *formatconst char *format,	/* Format-control string */tb/* Other arguments *//* Other arguments */
+fputcint00tbintcint c,	/* Character to be written */tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+fputsint00tbconst char *stringconst char *string,	/* String to be output */tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+freadsize_t00tbvoid *buffervoid *buffer,	/* Storage location for data */tbsize_tsizesize_t size,	/* Item size in bytes */tbsize_tcountsize_t count,	/* Maximum number of items to be read */tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+freevoid00tbvoid *memblockvoid *memblock	/* Allocated memory block*/
+freopenFILE *00tbconst char *filenameconst char *filename,	/* Path of new file */cbconst char *rr+ww+aa+const char *mode,	/* Type of access permitted */tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+frexpdouble00tbdoublexdouble x,	/* Floating-point value */tbint *expptrint *expptr	/* Pointer to stored integer exponent */
+fscanfint00tbFILE *streamFILE *stream,	/* Pointer to FILE structure */tbconst char *formatconst char *format,	/* Format-control string */tb/* Other arguments *//* Other arguments */
+fseekint00tbFILE *streamFILE *stream,	/* Pointer to FILE structure */tblong offsetlong offset,	/* Number of bytes from origin */tbint originint origin	/* Initial position */
+fsetposint00tbFILE *streamFILE *stream,	/* Target stream */tbconst fpos_t *posconst fpos_t *pos	/* Position-indicator storage */
+fstatint00tbintfhint fh,	/* Handle of open file */tbstruct _stat *bufferstruct _stat *buffer	/* Pointer to structure to store results */
+fstatfsint00tbint fhfhint fh,tbstruct statfs *bufbufstruct statfs *buf
+fsync00tbint fhfhint fh
+ftelllong00tbFILE *streamFILE *stream	/* Target FILE structure */
+ftimevoid00tbstruct _timeb *timeptrstruct _timeb *timeptr	/* Pointer to structure defined in SYS\TIMEB.H */
+ftruncateint00tbint fhfhint fh,tbsize_t lengthlengthsize_t length
+fwritesize_t00tbconst char *bufferconst char *buffer,	/* Pointer to data to be written */tbsize_tsizesize_t size,	/* Item size in bytes */tbsize_tcountsize_t count,	/* Maximum number of items to be written */tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+gcvtchar *00tbdouble valuedouble value,	/* Value to be converted */tbintndigitsint ndigits,	/* Number of significant digits stored */tbchar *bufferchar *buffer	/* Storage location for result */
+getcint00tbFILE *streamFILE *stream	/* Current stream */
+getcharint00
+getcwdchar *00tbchar *bufferchar *buffer,	/* Storage location for path */tbintmaxlenint maxlen	/* Maximum length of path */
+getdomainnameint00tbchar *namenamechar *name,tbsize_t lenlensize_t len
+getegidgid_t00
+getenvchar *00tbconst char *varnameconst char *varname	/* Name of environment variable */
+geteuiduid_t00
+getgidgid_t00
+getgroupsint00tbsize_t sizesizesize_t size,tbgid_t list[]listgid_t list[]
+gethostidlong00
+gethostnameint00tbchar *namenamechar *name,tbsize_t lensize_t len
+getitimerint00tbint whichwhichint which,tbstruct itimerval *valuevaluestruct itimerval *value
+getpagesizeint00
+getpeernameint00tbint sockfdsockfdint sockfd,tbstruct sockaddr *namenamestruct sockaddr *name,tbsize_t *namelennamelensize_t *namelen
+getpgidpid_t00tbpid_t pidpidpid_t pid
+getpgrppid_t00
+getpidpid_t00
+getppidpid_t00
+getpriorityint00tbint whichwhichint which,tbint whowhoint who
+getrlimitint00tbint resourceresourceint resource,tbconst struct rlimit *rlprlpconst struct rlimit *rlp
+getrusageint00tbint whowhoint who,tbstruct rusage *rusagerusagestruct rusage *rusage
+getschar *00tbchar *bufferchar *buffer	/* Storage location for input string */
+getsocknameint00tbint sockfdsockfdint sockfd,tbstruct  sockaddr *namestruct  sockaddr *name,tbint *namelenint *namelen
+getsockoptint00tbint sockfdsockfdint sockfd,tbint levellevelint level,tbint optnameint optname,tbint optvalint optval,tbint *optlenint *optlen
+gettimeofdayint00tbstruct timeval *tvtvstruct timeval *tv,tbstruct timezone *tztzstruct timezone *tz
+getuiduid_t00
+getwint00tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+gmtimestruct tm *00tbconst time_t *timerconst time_t *timer	/* Pointer to stored time */
+hypotdouble00tbdoublexdouble x,	/* Floating-point value */tbdoubleydouble y	/* Floating-point value */
+ioctlint00tbint fhfhint fh,tbint requestint request
+isalnumint00tbintcint c	/* Integer to be tested */
+isalphaint00tbintcint c	/* Integer to be tested */
+isattyint00tbint handleint handle	/* Handle referring to device to be tested */
+iscntrlint00tbint cint c	/* Integer to be tested */
+isdigitint00tbintcint c	/* Integer to be tested */
+isgraphint00tbint cint c	/* Integer to be tested */
+islowerint00tbint cint c	/* Integer to be tested */
+isprintint00tbintcint c	/* Integer to be tested */
+ispunctint00tbintc~int c	/* Integer to be tested */
+isspaceint00tbint cint c	/* Integer to be tested */
+isupperint00tbintcint c	/* Integer to be tested */
+isxdigitint00tbwint_tcwint_t c	/* Integer to be tested */
+j0double00tbdoublexdouble x	/* Floating point integer */
+j1double00tbdoublexdouble x	/* Floating-point value */
+jndouble00tbint nint n,	/* Integer order */tbdoublexdouble x	/* Floating-point value */
+killint00tbpid_t pidpidpid_t pid,cbint sigSIGHUPSIGINTSIGQUITSIGILLSIGTRAPSIGABRTSIGIOTSIGBUSSIGFPESIGKILLSIGUSR1SIGSEGVSIGUSR2SIGPIPESIGALRMSIGTERMSIGSTKFLTSIGCHLDSIGCONTSIGSTOPSIGTSTPSIGTTINSIGTTOUSIGURGSIGXCPUSIGXFSZSIGVTALRMSIGPROFSIGWINCHSIGIOSIGPOLLSIGLOSTSIGPWRint sig
+killpgint00tbint pgrppgrpint pgrp,cbint sigSIGHUPSIGINTSIGQUITSIGILLSIGTRAPSIGABRTSIGIOTSIGBUSSIGFPESIGKILLSIGUSR1SIGSEGVSIGUSR2SIGPIPESIGALRMSIGTERMSIGSTKFLTSIGCHLDSIGCONTSIGSTOPSIGTSTPSIGTTINSIGTTOUSIGURGSIGXCPUSIGXFSZSIGVTALRMSIGPROFSIGWINCHSIGIOSIGPOLLSIGLOSTSIGPWRint sig
+labslong00tblonglonglong n	/* Long-integer value */
+ldexpdouble00tbdouble xdouble x,	/* Floating-point value */tbint expint exp	/* Integer exponent */
+ldivldiv_t00tblong intnumberlong int numer,	/* Numerator */tblong int denolong int denom	/* Denominator */
+linkint00tbconst char *oldpathconst char *oldpath,tbconst char *newpathconst char *newpath
+listenint00tbint sockfdint sockfd,tbint backlogint backlog
+localeconvstruct lconv *00
+localtimestruct tm *00tbconst time_t *timerconst time_t *timer	/* Pointer to stored time */
+lockint00tbint flagflagint flag
+lockingint00tbinthandleint handle,	/* File handle */tbintmodeint mode,	/* File-locking mode */tblongnbyteslong nbytes	/* Number of bytes to lock */
+logdouble00tbdoublexdouble x	/* Value whose logarithm is to be found */
+log10double00tbdoublexdouble x	/* Value whose logarithm is to be found */
+lseeklong00tbint fhint fh,	/* Handle referring to open file */tblongoffsetlong offset,	/* Number of bytes from origin */rbint SEEK_SETSEEK_CURSEEK_ENDint origin	/* Initial position */
+lstatint00tbconst char *filenamefilenameconst char *filename,tbstruct stat *bufbufstruct stat *buf
+ltoachar *00tblongvaluelong value,	/* Number to be converted */tbchar *stringchar *string,	/* String result */tbintradixint radix	/* Base of value */
+mallocvoid *00tbsize_t sizesize_t size	/* Bytes to allocate */
+mblenint00tbconst char * mbstrconst char * mbstr,	/* The address of a sequence of bytes (a multibyte character) */tbsize_tcountsize_t count	/* The number of bytes to check */
+mbstowcssize_t00tbwchar_t *wcstrwchar_t *wcstr,	/* The address of a sequence of wide characters */tbconst char *mbstrconst char *mbstr,	/* The address of a sequence of multibyte characters */tbsize_tcountsize_t count	/* The number of multibyte characters to convert */
+mbtowcint00tbwchar_t *wcharwchar_t *wchar,	/* The address of a wide character (type wchar_t) */tbconst char *mbcharconst char *mbchar,	/* The address of a wide character (type wchar_t) */tbsize_t countsize_t count	/* The number of bytes to check */
+memccpyvoid *00tbvoid *destvoid *dest,	/* Pointer to destination*/tbvoid *srcvoid *src,	/* Pointer to source */tbintcint c,	/* Last character to copy */tbunsigned intcountunsigned int count	/* Number of characters */
+memchrvoid *00tbconst void * bufconst void * buf,	/* Pointer to buffer */tbint cint c,	/* Character to look for */tbsize_tcountsize_t count	/* Number of characters */
+memcmpint00tbconst char *buf1const char *buf1,	/* First buffer */tbconst char *buf2const char *buf2,	/* Second buffer */tbsize_tcountsize_t count	/* Number of characters */
+memcpyvoid *00tbvoid *destvoid *dest,	/* New buffer */tbconst void *srcconst void *src,	/* Buffer to copy from */tbsize_t countsize_t count	/* Number of characters to copy */
+memmovevoid *00tbvoid *destvoid *dest,	/* Destination object */tbconst void *srcconst void *src,	/* Source object */tbsize_tcountsize_t count	/* Number of characters to copy */
+memsetvoid *00tbvoid *destvoid *dest,	/* Pointer to destination */tbintcint c,	/* Character to set */tbsize_t countsize_t count	/* Number of characters */
+mkdirint00tbconst char *dirnameconst char *dirname,	/* Path for new directory*/xbmode_t modeS_ISUIDS_ISGIDS_ISVTXS_IRUSRS_IWUSRS_IXUSRS_IRGRPS_IWGRPS_IXGRPS_IROTHS_IWOTHS_IXOTHmode_t mode
+mknodint00tbconst char *pathnamepathnameconst char *pathname,xbmode_t modeS_ISUIDS_ISGIDS_ISVTXS_IRUSRS_IWUSRS_IXUSRS_IRGRPS_IWGRPS_IXGRPS_IROTHS_IWOTHS_IXOTHmode_t mode,tbdev_t devdevdev_t dev
+mktempchar *00tbchar *templatechar *template	/* Filename pattern */
+mktimetime_t00tbstruct tm *tmstruct tm *timeptr	/* Pointer to time structure */
+mlockint00tbconst void *addraddrconst void *addr,tbsize_t lenlensize_t len
+mlockint00tbcaddr_t addraddrcaddr_t addr,tbsize_t lenlensize_t len
+mlockallint00xbint flagsMCL_CURRENTMCL_FUTUREint flags
+mmapcaddr_t00tbcaddr_t addraddrcaddr_t addr,tbsize_t lenlensize_t len,xbint protPROT_READPROT_WRITEPROT_EXECPROT_NONEint prot,xbint flagsMAP_SHAREDMAP_PRIVATEMAP_FIXEDint flags,tbint fhfhint fh,tboff_t offoffoff_t off
+modfdouble00tbdouble xdouble x,	/* Floating-point value */tbdouble *inptrdouble *inptr	/* Pointer to stored integer portion */
+msgctlint00tbint msqidmsqidint msqid,tbint cmdcmdint cmd,tbstruct msqid_ds *bufbufstruct msqid_ds *buf
+msggetint00cbkey_t keykeyIPC_PRIVATEkey_t key,cbint msgflgmsgflgIPC_CREATEIPC_EXCLIPC_NOWAITint msgflg
+msgrcvint00tbint msqidmsqidint msqid,tbstruct msgbuf *msgpmsgpstruct msgbuf *msgp,tbint msgszmsgszint msgsz,tblong msgtypmsgtyplong msgtyp,xbint msgflgIPC_CREATIPC_EXCLIPC_NOWAITMSG_NOERRORMSG_EXCEPTint msgflg
+msgsndint00tbint msqidmsqidint msqid,tbstruct msgbuf *msgpmsgpstruct msgbuf *msgp,tbint msgszmsgszint msgsz,tblong msgtypmsgtyplong msgtyp,tbint msgflgmsgflgint msgflg
+munlockint00tbcaddr_t addraddrcaddr_t addr,tbsize_t lenlensize_t len
+munlockallint00
+munmapint00tbcaddr_t addraddrcaddr_t addr,tbsize_t lenlensize_t len
+niceint00tbint incincint inc,
+openint00tbconst char *filenameconst char *filename,	/* Filename */xbint O_CREATO_EXCLO_NOCTTYO_TRUNCO_APPENDO_NONBLOCKO_SYNCint oflag,	/* Type of operations allowed */xbint S_ISUIDS_ISGIDS_ISVTXS_IRUSRS_IWUSRS_IXUSRS_IRGRPS_IWGRPS_IXGRPS_IROTHS_IWOTHS_IXOTHint pmode	/* Permission mode */
+pauseint00
+perrorvoid00tbconst char *stringconst char *string	/* String message to print */
+pipeint00tbint listfh[2]listfhint listfh[2],
+powdouble00tbdouble xdouble x,	/* Number to be raised */tbdoubleydouble y	/* Power of x */
+printfint00tbconst char *formatconst char *format,	/* Format control string */tb/* Other arguments *//* Other arguments */
+putcint00tbint cint c,	/* Character to be written */tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+putcharint00tbint cint c	/* Pointer to FILE structure */
+putenvint00tbconst char *envstringconst char *envstring	/* Environment-string definition */
+putsint00tbconst char *stringconst char *string	/* String to be output */
+putwint00tbintbinintint binint,	/* Binary integet to be output */tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+randint00
+readint00tbint handleint handle,	/* Handle referring to open file */tbvoid *buffervoid *buffer,	/* Storage location for data */tbunsigned int countunsigned int count	/* Maximum number of bytes */
+readdirint00tbDIR *pdirpdirDIR *pdir
+readlinkint00tbconst char *pathpathconst char *path,tbchar *bufchar *buf,tbsize_t bufsizsize_t bufsiz
+reallocvoid *00tbvoid *memblockvoid *memblock,	/* Pointer to previously allocated memory block*/tbsize_tsizesize_t size	/* New size in bytes */
+recvint00tbint sockfdsockfdint sockfd,tbvoid *bufvoid *buf,tbint lenint len,xbunsigned flagsMSG_OOBMSG_PEEKMSG_WAITALLunsigned flags
+recvssize_t00tbint sockfdsockfdint sockfd,tbvoid *bufbufvoid *buftbsize_t lenlensize_t len,tbint flagsflagsint flags
+recvfromint00tbint sockfdsockfdint sockfd,tbvoid *bufvoid *buf,tbint lenint len,tbunsigned flagsflagsunsigned flags,tbstruct sockaddr *fromstruct sockaddr *from,tbint *fromlenint *fromlen
+recvmsgint00tbint sockfdsockfdint sockfd,tbstruct msghdr *msgmsgstruct msghdr *msg,tbunsigned flagsflagsunsigned flags
+removeint00tbconst char *pathconst char *path	/* Path of file to be removed */
+renameint00tbconst char *oldnameconst char *oldname,	/* Pointer to old name */tbconst char *newnameconst char *newname	/* Pointer to new name */
+rewindvoid00tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+rmdirint00tbconst char *filename const char *filename	/* Path of directory to be removed */
+sbrkvoid *00tbint incrincrint incr
+scanfint00tbconst char *formatconst char *format,	/* Format control string */tb/* Other arguments *//* Other arguments */
+selectint00tbint highestfdplus1,int highestfdplus1,  // Highest file descriptor plus 1tbfd_set *readfdsreadfdsfd_set *readfds,tbfd_set *writefdswritefdsfd_set *writefds,tbfd_set *exceptfdsexceptsfdsfd_set *exceptfds,tbstruct timeval *timeouttimeoutstruct timeval *timeout
+semctlint00tbint semidsemidint semid,tbint semnumsemnumint semnum,rbint cmdGETPIDGETVALGETALLGETNCNTGETZCNTSETVALSETALLint cmd,
+semgetint00cbkey_t keykeyIPC_PRIVATEkey_t key,tbint nsemsnsemsint nsems,tbint semflgsemflgint semflg
+sendint00tbint sockfdsockfdint sockfd,tbconst void *msgmsgconst void *msg,tbint lenlenint len,tbunsigned flagsflagsunsigned flags
+sendtoint00tbint sockfdsockfdint sockfd,tbconst void *msgmsgconst void *msg,tbint lenlenint len,tbunsigned flagsflagsunsigned flags,tbconst struct sockaddr *totoconst struct sockaddr *to,tbint tolentolenint tolen
+sendmsgint00tbint sockfdsockfdint sockfd,tbconst struct msghdr *msgmsgconst struct msghdr *msg,tbunsigned flagsflagsunsigned flags
+setbufvoid00tbFILE *streamzFILE *stream,	/* Pointer to FILE structure */tbchar *bufferchar *buffer	/* User-allocated buffer */
+setdomainnameint00tbconst char *namenameconst char *name,tbsize_t lenlensize_t len
+setegidint00tbgid_t egidegidgid_t egid
+seteuidint00tbuid_t euideuiduid_t euid
+setgidint00tbgid_t gidgidgid_t gid
+setgroupsint00tbsize_t sizesizesize_t size,tbconst gid_t *gidlistgidlistconst gid_t *gidlist
+sethostidint00tblong hostidhostidlong hostid
+sethostnameint00tbchar *namenamechar *name,tbsize_t lenlensize_t len
+setitimerint00tbint whichwhichint which,tbconst  struct  itimerval  *valuevalueconst  struct  itimerval  *value,tbstruct itimerval *ovalueovaluestruct itimerval *ovalue
+setlocalechar *00xbint LC_ALLLC_COLLATELC_CTYPELC_MONETARYLC_NUMERICLC_TIMEint category,	/* Category affected by locale */tbconst char *localeconst char *locale	/* Name of the locale that will control the specified category */
+setpgidint00tbpid_t pidpidpid_t pid,tbpid_t pgidpgidpid_t pgid
+setpgrpint00
+setpriorityint00tbint whichwhichint which,tbint whowhoint who,tbint prioPRIO_PROCESSPRIO_PGRPPRIO_USERint prio
+setregidint00tbgid_t rgidrgidgid_t rgid
+setreuidint00tbuid_t ruidruiduid_t ruid,tbuid_t euideuiduid_t euid
+setrlimitint00tbint resourceresourceint resource,tbconst struct rlimit *rlprlpconst struct rlimit *rlp
+setsidpid_t00
+setsockoptint00tbint sockfdsockfdint sockfd,tbint levellevelint level,tbint optnameoptnameint optname,tbconst void *optvaloptvalconst void *optval,tbint optlenoptlenint optlen
+settimeofdayint00tbconst struct timeval *tvtvconst struct timeval *tv,tbconst  struct timezone *tztzconst  struct timezone *tz
+setuidint00tbuid_t uiduiduid_t uid
+setvbufint00tbFILE *streamFILE *stream	/* Pointer to FILE structure */tbchar *bufferchar *buffer,	/* User-allocated buffer */rbint _IOFBF - Full buffering_IOLBF - Line buffering_IONBF - No bufferint mode,	/* Mode of buffering */tbsize_tsizesize_t size	/* Size of buffer */
+shmatchar *00tbint shmidshmidint shmid,tbchar *shmaddrshmaddrchar *shmaddr,xbint shmflagsSHM_RDONLYSHM_RNDSHM_REMAPint shmflags
+shmctlint00tbint shmidshmidint shmid,xbint cmdIPC_STATIPC_SETIPC_RMIDSHM_LOCKSHM_UNLOCKint cmd,
+shmdtint00tbconst void *shmaddrshmaddrconst void *shmaddr
+shmgetint00cbkey_t keykeyIPC_PRIVATEkey_t key,tbint sizesizeint size,cbint shmflagsPRIO_PROCESSPRIO_PGRPPRIO_USERint shmflags
+sigblockint00tbint maskmaskint mask
+sigholdint00cbint signumSIGHUPSIGINTSIGQUITSIGILLSIGTRAPSIGABRTSIGIOTSIGBUSSIGFPESIGKILLSIGUSR1SIGSEGVSIGUSR2SIGPIPESIGALRMSIGTERMSIGSTKFLTSIGCHLDSIGCONTSIGSTOPSIGTSTPSIGTTINSIGTTOUSIGURGSIGXCPUSIGXFSZSIGVTALRMSIGPROFSIGWINCHSIGIOSIGPOLLSIGLOSTSIGPWRint signum
+sigignoreint00tbint signumSIGHUPSIGINTSIGQUITSIGILLSIGTRAPSIGABRTSIGIOTSIGBUSSIGFPESIGKILLSIGUSR1SIGSEGVSIGUSR2SIGPIPESIGALRMSIGTERMSIGSTKFLTSIGCHLDSIGCONTSIGSTOPSIGTSTPSIGTTINSIGTTOUSIGURGSIGXCPUSIGXFSZSIGVTALRMSIGPROFSIGWINCHSIGIOSIGPOLLSIGLOSTSIGPWRint signum
+sigmaskint00cbint signumSIGHUPSIGINTSIGQUITSIGILLSIGTRAPSIGABRTSIGIOTSIGBUSSIGFPESIGKILLSIGUSR1SIGSEGVSIGUSR2SIGPIPESIGALRMSIGTERMSIGSTKFLTSIGCHLDSIGCONTSIGSTOPSIGTSTPSIGTTINSIGTTOUSIGURGSIGXCPUSIGXFSZSIGVTALRMSIGPROFSIGWINCHSIGIOSIGPOLLSIGLOSTSIGPWRint signum
+signalvoid (*)(int)00cbint signumSIGHUPSIGINTSIGQUITSIGILLSIGTRAPSIGABRTSIGIOTSIGBUSSIGFPESIGKILLSIGUSR1SIGSEGVSIGUSR2SIGPIPESIGALRMSIGTERMSIGSTKFLTSIGCHLDSIGCONTSIGSTOPSIGTSTPSIGTTINSIGTTOUSIGURGSIGXCPUSIGXFSZSIGVTALRMSIGPROFSIGWINCHSIGIOSIGPOLLSIGLOSTSIGPWRint signum,tbvoid (*handler)(int)handlervoid (*handler)(int)
+sigpauseint00cbint signumSIGHUPSIGINTSIGQUITSIGILLSIGTRAPSIGABRTSIGIOTSIGBUSSIGFPESIGKILLSIGUSR1SIGSEGVSIGUSR2SIGPIPESIGALRMSIGTERMSIGSTKFLTSIGCHLDSIGCONTSIGSTOPSIGTSTPSIGTTINSIGTTOUSIGURGSIGXCPUSIGXFSZSIGVTALRMSIGPROFSIGWINCHSIGIOSIGPOLLSIGLOSTSIGPWRint signum
+sigprocmaskint00tbint howhowint how,tbconst sigset_t *setsetconst sigset_t *set,tbsigset_t *osetosetsigset_t *oset
+sigrelseint00cbint signumSIGHUPSIGINTSIGQUITSIGILLSIGTRAPSIGABRTSIGIOTSIGBUSSIGFPESIGKILLSIGUSR1SIGSEGVSIGUSR2SIGPIPESIGALRMSIGTERMSIGSTKFLTSIGCHLDSIGCONTSIGSTOPSIGTSTPSIGTTINSIGTTOUSIGURGSIGXCPUSIGXFSZSIGVTALRMSIGPROFSIGWINCHSIGIOSIGPOLLSIGLOSTSIGPWRint signum
+sigsetmaskint00tbint maskmaskint mask
+sigsuspendint00tbconst sigset_t *setsetconst sigset_t *set
+sigvecint00cbint signumSIGHUPSIGINTSIGQUITSIGILLSIGTRAPSIGABRTSIGIOTSIGBUSSIGFPESIGKILLSIGUSR1SIGSEGVSIGUSR2SIGPIPESIGALRMSIGTERMSIGSTKFLTSIGCHLDSIGCONTSIGSTOPSIGTSTPSIGTTINSIGTTOUSIGURGSIGXCPUSIGXFSZSIGVTALRMSIGPROFSIGWINCHSIGIOSIGPOLLSIGLOSTSIGPWRint signum,tbstruct sigvec *vecvecstruct sigvec *vec,tbstruct sigvec *ovecovecstruct sigvec *ovec
+sindouble00tbdouble xdouble x	/* Angle in radians */
+sinhdouble00tbdouble xdouble x	/* Angle in radians */
+socketint00cbint domainAF_UNIXAF_INETAF_ISOAF_NSAF_IMPLINKint domain,tbint type SOCK_STREAM SOCK_DGRAM SOCK_RAW SOCK_SEQPACKET SOCK_RDMint type,tbint protocolprotocolint protocol
+socketpairint00tbint sockfdsockfdint sockfd,tbint typetypeint type,tbint protocolprotocolint protocol,tbint svlist[2]svlistint svlist[2]
+sprintfint00tbchar *bufferchar *buffer,	/* Storage location for output */tbconst char * formatconst char * format,	/* Format-control string */tb/* Other arguments *//* Other arguments */
+sqrtdouble00tbdouble xdouble x	/* Nonnegative floating-point value */
+srandvoid00tbunsigned seedunsigned seed	/* Seed for random-number generation */
+sscanfint00tbconst char *bufferconst char *buffer,	/* Stored data */tbconst char *formatconst char *format,	/* Format-control string */tb/* Other arguments *//* Other arguments */
+statint00tbconst char *pathconst char *path,	/* Path of existing file */tbstruct _stat *bufferstruct _stat *buffer	/* Pointer to structure that receives results */
+statfsint00tbconst char *pathpathconst char *path,tbstruct statfs *bufbufstruct statfs *buf
+stimeint00tbtime_t *tttime_t *t
+strcatchar *00tbchar *string1char *string1,	/* Destination string */tbconst char *string2const char *string2	/* Source string */
+strchrchar *00tbconst char *strintgconst char *string,	/* Source string */tbint cint c	/* Character to be located */
+strcmpint00tbconst char *string1const char *string1,	/* String to compare */tbconst char *string2const char *string2	/* String to compare */
+strcollint00tbconst char *string1const char *string1,	/* String to compare */tbconst char *string2const char *string2	/* String to compare */
+strcpychar *00tbchar *string1char *string1,	/* Destination string */tbconst char *string2const char *string2	/* Source string */
+strcspn00tbconst char *string1const char *string1,	/* Source string */tbconst char *string2const char *string2	/* Character set */
+strdupchar *00tbconst char *stringconst char *string	/* Source string */
+strerrorchar *00tbint errnumint errnum	/* Error number */
+strlensize_t00tbconst char *strlenconst char *strlen	/* Null-terminated string */
+strncatchar *00tbchar *string1char *string1,	/* Destination string */tbconst char *string2const char *string2,	/* Source string */tbsize_t countsize_t count	/* Number of characters appended */
+strncmpint00tbconst char *string1const char *string1,	/* String to compare */tbconst char *string2const char *string2,	/* String to compare */tbsize_tcountsize_t count	/* Number of characters compared */
+strncpychar *00tbchar *string1char *string1,	/* Destination string */tbconst char *string2const char *string2,	/* Source string */tbsize_tcountsize_t count	/* Number of characters copied */
+strpbrk00tbconst char *string1const char *string1,	/* Source string */tbconst char *string2const char *string2	/* Character set */
+strrchrchar *00tbconst char *stringconst char * string,	/* Searched string */tbint cint c	/* Character to be located */
+strspnsize_t00tbconst char *string1const char *string1,	/* Searched string */tbconst char *string2const char *string2	/* Character set */
+strstrchar *00tbconst char *string1const char *string1,	/* Searched string */tbconst char *string2const char *string2	/* String to search for */
+strtoddouble00tbconst char *nptrconst char *nptr,	/* String to convert */tbchar **endptrchar **endptr	/* Pointer to character that stops scan */
+strtokchar *00tbchar *string1char *string1,	 /* String containing token(s) */tbconst char *string2const char *string2	/* Set of delimiter characters */
+strtollong00tbconst char *nptrconst char *nptr,	/* String to convert */tbchar **endptrchar **endptr,	/* Pointer to character that stops scan */tbintbaseint base	/* Number base to use */
+strtoullong00tbconst char *nptrconst char *nptr,	/* String to convert */tbchar **endptrchar **endptr,	/* Pointer to character that stops scan */tbintbaseint base	/* Number base to use */
+strxfrmsize_t00tbchar *string1char *string1,	/* String to which transformed version of string2 is returned */tbconst char *string2const char *string2,	/* String to transform */tbsize_tcountsize_t count	/* Maximum number of characters to be placed in string1 */
+swabvoid00tbchar *srcchar *src,	/* Data to be copied and swapped */tbchar *destchar *dest,	/* Storage location for swapped data */tbint nint n	/* Number of bytes to be copied and swapped */
+symlinkint00tbconst char *oldpatholdpathconst char *oldpath,tbconst char *newpathnewpathconst char *newpath
+syncint00
+sysfsint00rbint option123int option
+systemint00tbconst char *commandconst char *command	/* Command to be executed */
+tandouble00tbdouble xdouble x	/* Angle in radians */
+tanhdouble00tbdouble xdouble x	/* Angle in radians */
+telllong00tbint handleint handle	/* Handle referring to open file */
+tempnamchar *00tbchar *stringchar *string	/* Pointer to temporary name */
+timetime_t00tbtime_t *timertime_t *timer	/* Storage location for time */
+timesclock_t00tbstruct tms *bufbufstruct tms *buf
+tmpfileFILE *00
+tmpnamchar *00tbchar *stringchar *string	/* Pointer to temporary name */
+tolowerint00tbintcint c	/* Character to be converted */
+toupperint00tbintcint c	/* Character to be converted */
+truncateint00tbconst char *pathpathconst char *path,tbsize_t lengthlengthsize_t length
+tzsetvoid00
+ulimitlong00cbint cmdUL_SFILLIMUL_GFILLIMUL_GMEMLIMUL_GDESLIMint cmd
+umaskint00tbint pmodeint pmode	/* Default permission setting */
+umaskint00tbint maskmaskint mask
+umountint00tbconst char *specialfilespecialfileconst char *specialfile
+unameint00tbstruct utsname *bufbufstruct utsname *buf
+ungetcint00tbintcint c,	/* Character to be pushed */tbFILE *streamFILE *stream	/* Pointer to FILE structure */
+unlinkint00tbconst char *filenameconst char *filename	/* Name of file to remove */
+ustatint00tbdev_t devdevdev_t dev,tbstruct ustat *ubufubufstruct ustat *ubuf
+utimeint00tbconst char *filenameconst char *filename,	/* Filename */tbstruct _utimbuf *timesstruct _utimbuf *times	/* Pointer to stored time values */
+utimesint00tbchar *filenamefilenamechar *filenametbstruct timeval *tvptvpstruct timeval *tvp
+waitpid_t00tbint *statusstatusint *status
+wait3int00tbunion wait *statuspstatuspunion wait *statusp,tbint optionsoptionsint options,tbstruct rusage *rusagerusagestruct rusage *rusage
+waitpidpid_t00tbpid_t pidpidpid_t pid,tbint *statusstatusint *status,xbint flagsWNOHANGWUNTRACEDint flags
+writeint00tbint handleint handle,	/* A wide character */tbvoid *buffervoid *buffer,	/* Data to be written */tbunsigned int countunsigned int count	/* Number of bytes */
+y0long00tbdoublexdouble x	/* Floating point value */
+y1double00tbdouble xdouble x	/* Floating point number */
+yndouble00tbint nint n,	/* Integer order */tbdouble xdouble x	/* Floating-point value */

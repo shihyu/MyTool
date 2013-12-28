@@ -1,0 +1,17 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagWriteLockDB</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTagWriteLockDB(int dbHandle, int ms=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Lock the given database to prevent other threads from accessing it.
+This will obtain a write lock on the database, blocking all other
+reader and writer threads until it is released().
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="dbHandle">dbHandle</A></code> - database handle returned from vsTagOpenDB()</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ms">ms</A></code> - millisecond timeout to wait before giving
+                         up on obtaining the write lock.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsTagOpenDB.html">vsTagOpenDB()</a>, <a href="vsTagCloseDB.html">vsTagCloseDB()</a>, <a href="vsTagWriteLockDB.html">vsTagWriteLockDB()</a>, <a href="vsTagReadLockDB.html">vsTagReadLockDB()</a>, <a href="vsTagUnlockDB.html">vsTagUnlockDB()</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>prompt</title>
+</head>
+<body>
+
+<h3><b>_str prompt(_str arg1='', _str msg='', ...)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><dl>
+<dt>immed_return_value</dt><dd>Defaults to ''</dd>
+<dt>msg</dt><dd>Defaults to the name of the last command
+(_command) called</dd>
+<dt>default_value</dt><dd>Defaults to ''</dd>
+<dt>cursor_placement</dt><dd>Defaults to ''</dd>
+</dl><p>
+<p>If the value of the macro variable "def_prompt" is not 0, this function
+displays msg and prompts for a single argument to a command.
+<i>default_value</i> may be specified as the user's default input
+response.  The users response is returned.  If the user has selected to
+abort, execution is stopped unless a menu is currently displayed on
+screen.  If <i>immed_return_value</i> is given and not '', its value is
+immediately returned.</p><p>
+<p>If the value of the macro variable "def_prompt" is 0, this function
+places msg followed by <i>default_value</i> on the command line
+and stops.  If <i>immed_return_value</i> is given and not '', its value
+is immediately returned.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="letter_prompt.html">letter_prompt</a>, <a href="get_string.html">get_string</a></blockquote>
+</body>
+</html>

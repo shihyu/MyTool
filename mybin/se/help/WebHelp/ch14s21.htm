@@ -1,0 +1,46 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Objects and Instances</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s20.htm" title="Clipboard Inheritance®"><link rel="next" href="ch14s22.htm" title="Using Functions as Methods"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_objectsandinstances_13885_40183"></a>
+    <a name="slick_c_objectsandinstances_13885_1004255"></a>
+    <a class="indexterm" name="slick-c_objectsandinstances_74F111D9_D66F"></a>
+    <a class="indexterm" name="slick-c_objectsandinstances_09D30071_F490"></a>Objects and Instances</h2></div></div></div><p class="NormalText">Every object instance can be uniquely identified by a window id (also called instance handle). Slick-C® treats objects and windows the same. However, some objects, such as image control, have a window id but do not allocate an operating system resource known as a window.</p><p class="NormalText">Topics in this section are:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s21.htm#slick_c_objectsandinstances_13885_53931">Active Object</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s21.htm#slick_c_objectsandinstances_13885_17321">Active Form</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s21.htm#slick_c_objectsandinstances_13885_20192">Instance Expressions</a>
+      </p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_objectsandinstances_13885_53931"></a>
+      <a name="slick_c_objectsandinstances_13885_1004260"></a>
+      <a class="indexterm" name="slick-c_objectsandinstances_48048551_7F0F"></a>Active Object</h3></div></div></div><p class="NormalText">When an object receives an event, that object is the active object. More specifically, the <span><strong class="command">p_window_id</strong></span> property is set to the instance handle of that object. You can change the active object by setting the <span><strong class="command">p_window_id</strong></span> property to the window id of another object. Accessing a property without specifying a control name or instance handle accesses the property of the active object and not the active form.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> Changing the active object does NOT change the focus. Use the <span><strong class="command">_set_focus</strong></span> method to change the focus.</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_objectsandinstances_13885_17321"></a>
+      <a name="slick_c_objectsandinstances_13885_1025392"></a>
+      <a class="indexterm" name="slick-c_objectsandinstances_079A4842_D12B"></a>Active Form</h3></div></div></div><p class="NormalText">Slick-C® has a <span><strong class="command">p_active_form</strong></span> property that returns an instance handle to the current form. The Slick-C interpreter actually does not keep track of what form is active. The active form is found by traversing through the parents (<span><strong class="command">p_parent</strong></span>) of the active object until the form is reached.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_objectsandinstances_13885_20192"></a>
+      <a name="slick_c_objectsandinstances_13885_1004284"></a>
+      <a class="indexterm" name="slick-c_objectsandinstances_7DCCC744_8F08"></a>
+      <a class="indexterm" name="slick-c_objectsandinstances_439265EB_AE50"></a>Instance Expressions</h3></div></div></div><p class="NormalText">The examples below display common instance expressions.</p><pre class="programlisting">ctltext1.p_text="test"; // Assuming ctltext1 has been declared globally or locally,
+                        // lookup the ctltext1 control of the active form to get 
+                        // the window id, and set the p_text property.
+x=_control ctltext1;    // Put the window id of the "ctltext1" control of the active
+                        // form in the variable x.
+                        // The variable x does not have to be declared. There are
+                        // cases where the control keyword is not needed. It is 
+                        // better to always use it so you don't have to worry.
+x.p_text="test";        // Set the p_text property of the object referenced by the
+                        // instance expression x.
+(x+1-1).p_text="test";  // Same as previous statement. This shows that any valid
+                        // Slick-C language expression may be used to get the
+                        // window id.
+x.(x+1-1).x.p_text="test";
+                        // Same as the previous statement but wastes more
+                        // code space.
+                        // This shows that multiple dots (".") may be used in an
+                        // instance expression.
+form_wid=p_active_form; // Get the window id of the active form.
+form_wid.ctltext1.p_text="test";
+                        // Lookup ctltext1 as if the object referred to by the
+                        // variable form_wid was the active object.
+p_next.p_next.p_prev.p_prev.p_text="test";
+                        // Waste some code space and access the p_text property of
+                        // the active object.
+p_window_id=_control ctltext1;
+                        // Make the ctltext1 control the active object.
+p_text="test";          // Access the p_text property of the active object.
+_cmdline.p_text="test"; // _cmdline is a constant window id defined in "slick.sh".
+                        // Set the command line p_text property to "test". Cool!!</pre><p class="NormalText"></p></div></div></body></html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsOpenTempView</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsOpenTempView(const char *pszFilename, int *pTempWindowId, int *pOrigWindowId=a, const char *pszLoadOption=a, const char *pszOpenOption=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>This function creates an editor window which is linked to an existing or
+new buffer.  Use this function when you want to do editor processing
+on a file but you do not want a visible window created.  Use the
+<b>vsActiveWindow</b> and/or the VSP_WINDOWID property to switch
+windows.  The call <b>vsPropGetI</b>(0,VSP_WINDOWID) returns the
+current window id.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFilename">pszFilename</A></code> - Name of file to process.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pTempWindowId">pTempWindowId</A></code> - Set to newly created window id.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pOrigWindowId">pOrigWindowId</A></code> - Set to current window id.  There is always a
+valid current window id.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszLoadOption">pszLoadOption</A></code> - File load options
+<dl compact>
+<dt>""</dt><dd>Display existing buffer or read
+<i>pszFilename</i> from disk.</dd>
+
+<dt>"+bi <i>buf_id></i>"</dt><dd>Ignore <i>pszFilename</i> and
+create new window of buffer corresponding to
+<i>buf_id</i>.</dd>
+
+<dt>"+d"</dt><dd>Always read <i>pszFilename</i> from disk
+even if this file is already loaded in the
+editor.</dd>
+
+<dt>"+b"</dt><dd>Only succeed if a buffer already exists of the
+name <i>pszFilename</i>.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszOpenOption">pszOpenOption</A></code> - File open options
+<dl compact>
+<dt>C</dt><dd>Clear the buffer.</dd>
+<dt>M</dt><dd>Select the editing mode for this file.</dd>
+<dt>X</dt><dd>If the file is not found, a new file is created.
+<dt>L</dt><dd>Specifies that select edit mode will be called later,
+                     but the file should have the correct load options initialized.
+<dt>T</dt><dd>Throw away changes when temp view is closed.
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If successful, returns 0 and the temp window/buffer is active.
+Otherwise a negative error code is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsDeleteTempView.html">vsDeleteTempView</a>, <a href="vsCreateTempView.html">vsCreateTempView</a></blockquote>
+</body>
+</html>

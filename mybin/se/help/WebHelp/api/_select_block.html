@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_select_block</title>
+</head>
+<body>
+
+<h3><b>int _select_block(_str markid="", _str options='E')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Starts or extends the block selection specified.  Used for processing
+columns of text.  The first _select_block becomes the pivot point.
+Subsequent _select_block calls will select the area between the pivot
+point and the cursor.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mark_id">mark_id</A></code> - mark_id is a selection handle allocated by the _alloc_selection built-in.
+   A mark_id of '' specifies the active selection or selection showing and is always allocated.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - options is a string of zero or more of the following:
+<DL compact>
+<DT>'C'<DD> Specifies that the selection extend as the cursor moves.
+<DT>'E'<DD> (Default) Requires that _select_block be executed to end the text selection.
+<DT>'P'<DD> specifies a persistent select style.  Macros use this to help determine if a selection should be unhighlighted when the cursor moves.
+</DL>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Possible returns are TEXT_NOT_SELECT_RC.  and TEXT_ALREADY_SELECTED_RC.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Selection_Functions.html">Selection Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_select_char.html">_select_char</a>, <a href="_select_line.html">_select_line</a>, <a href="_show_selection.html">_show_selection</a></blockquote>
+</body>
+</html>

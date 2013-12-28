@@ -1,0 +1,31 @@
+<?xml encoding='UTF-8'?>
+<!ELEMENT member ANY>
+<!ATTLIST member name CDATA #REQUIRED>
+<!ELEMENT assembly (name)>
+<!ELEMENT typeparam ANY>
+<!ATTLIST typeparam name CDATA #REQUIRED>
+<!ELEMENT exception ANY>
+<!ATTLIST exception cref CDATA #REQUIRED>
+<!ELEMENT PermissionSet ((IPermission)|(IPermission+))>
+<!ELEMENT IPermission EMPTY>
+<!ATTLIST IPermission PublicKeyBlob CDATA #IMPLIED
+                      Read CDATA #IMPLIED
+                      Flags CDATA #IMPLIED
+                      version CDATA #REQUIRED
+                      Name CDATA #IMPLIED
+                      Unrestricted CDATA #IMPLIED
+                      Window CDATA #IMPLIED
+                      PathDiscovery CDATA #IMPLIED
+                      class CDATA #REQUIRED>
+<!ELEMENT paramref EMPTY>
+<!ATTLIST paramref name CDATA #REQUIRED>
+<!ELEMENT summary ANY>
+<!ELEMENT returns ANY>
+<!ELEMENT param ANY>
+<!ATTLIST param name CDATA #REQUIRED>
+<!ELEMENT filterpriority (#PCDATA)>
+<!ELEMENT doc (assembly,members)>
+<!ELEMENT members (member+)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT see EMPTY>
+<!ATTLIST see cref CDATA #REQUIRED>

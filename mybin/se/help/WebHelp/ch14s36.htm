@@ -1,0 +1,171 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Windows Data Structure</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s35.htm" title="State File Caching"><link rel="next" href="ch14s37.htm" title="Tutorials"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_windowsdatastruct_12974_79270"></a>
+    <a name="slick_c_windowsdatastruct_12974_1006300"></a>Windows Data Structure</h2></div></div></div><p class="NormalText">The following diagram shows startup with two files loaded (buffers b2 and b3) and two windows (w1 and w2) viewing those files:</p><div class="mediaobject"><img src="Resources/diagram.jpg"></div><p class="NormalText">The extra window, w0, is a hidden window used to allow quick switching to system buffers such as <span><strong class="command">.command</strong></span> and <span><strong class="command">.killed</strong></span>. If you attempt to leave the hidden window active, another window is made active when the editor refreshes the screen. Since window w1 is active, you currently see window w1 of buffer b2. You might be able to see window w2 of buffer b3 if the window w1 does not overlap window w2.</p><p class="NormalText">A ring of buffers and a ring of windows are maintained, where each window may contain a ring of views. However, by convention, all windows except the hidden window contain one view. Some macros temporarily create extra views in other windows, but they delete them before they terminate. </p><p class="NormalText">The tables in the following sections show some of the buffer and windowing built-ins that are available.</p><p class="NormalText">The built-ins <span><strong class="command">_next_buffer</strong></span> and <span><strong class="command">_prev_buffer</strong></span> activate the next and previous buffers. <span><strong class="command">_next_window</strong></span> and <span><strong class="command">_prev_window</strong></span> move around the window ring. <span><strong class="command">_next_view</strong></span> and <span><strong class="command">_prev_view</strong></span> move around the active view ring. The built-in function <span><strong class="command">load_files</strong></span> inserts views, windows, and/or buffers. The command <span><strong class="command">_delete_buffer</strong></span> removes the active buffer from the buffer ring and activates the previous non-hidden buffer. <span><strong class="command">_quit_view</strong></span> removes the active view from the active windows view ring. The previous view becomes the new active view. When <span><strong class="command">_quit_view</strong></span> is executed and only one view exists in the active window, the window is removed and the previous window becomes active. The hidden window cannot be deleted.</p><p class="NormalText">A view holds the information necessary for the editor to remember the location and scroll position in a buffer. A view also contains a window id and a buffer id. Activating a view with the <span><strong class="command">activate_view</strong></span> built-in activates the window and buffer specified by the view as well as selecting the cursor location/scroll position.</p><p class="NormalText">Each buffer maintains a non-active view. When a buffer is activated by one of the built-ins <span><strong class="command">_next_buffer</strong></span>, <span><strong class="command">_prev_buffer</strong></span>, <span><strong class="command">_delete_buffer</strong></span> or <span><strong class="command">load_files</strong></span> (assuming you do not use an option that overrides this), the active view information is saved in the non-active view of the buffer, and the buffer's new non-active view information is copied into the active view.</p><p class="NormalText">The following sections describe the contents of each structure.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_windowsdatastruct_12974_1027578"></a>Window Properties</h3></div></div></div><div class="informaltable"><a name="table_48283a8c-75e9-43fe-8409-7a9fd73a511b"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Window Property</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_window_x</strong></span>,<span><strong class="command"> p_window_y</strong></span></p>
+            </td><td>
+              <p class="CellBody">Top left coordinates of window.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_tile_id</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Indicates that windows are part of a tile window group and whether a window is zoomed. Windows of a tiled window group have the same <span><strong class="command">tile_id</strong></span>. A zoomed window has a negative <span><strong class="command">tile_id</strong></span>.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_x</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">The top left <span><strong class="command">x</strong></span> position of window.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_y</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">The top left <span><strong class="command">y</strong></span> position of window.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_height</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Window height.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_width</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Window width.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_view_id</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Pointer to active view.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_next (_next_window)</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Window id of next window. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_prev (_prev_window)</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Window id of previous window.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_child</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Window id of child window.</p>
+            </td></tr></tbody></table></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_windowsdatastruct_12974_1027616"></a>View Properties </h3></div></div></div><div class="informaltable"><a name="table_48488b08-0f42-4999-8737-31c08c755782"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">
+                <span class="bold"><strong>View Property</strong></span>
+              </p>
+            </th><th>
+              <p class="CellHeading">
+                <span class="bold"><strong>Description</strong></span>
+              </p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">block,line within block</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Accessible via <span><strong class="command">point</strong></span> and <span><strong class="command">goto_point</strong></span>.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_line</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Line number of current line.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_col</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Column position within current line (1..2 billion).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_left_edge</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Column scroll position.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_cursor_x</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Text cursor <span><strong class="command">x</strong></span> position.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_cursor_y</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Text cursor <span><strong class="command">y</strong></span> position.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_window_id</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Window id.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_buf_id</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Buffer id.</p>
+            </td></tr></tbody></table></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_windowsdatastruct_12974_1027650"></a>Buffer Properties </h3></div></div></div><div class="informaltable"><a name="table_1cf93c51-b576-4353-abf4-863fde51c1d4"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">
+                <span class="bold"><strong>Buffer Property</strong></span>
+              </p>
+            </th><th>
+              <p class="CellHeading">
+                <span class="bold"><strong>Description</strong></span>
+              </p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_buf_name</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Name of buffer.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_buf_flags</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Indicates whether a buffer is hidden and may specify other buffer options. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_Noflines</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Number of lines in file.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_modify</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Non-zero indicates buffer has been modified.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_margins</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">String containing left, right, and new paragraph margins (1..2 billion).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_tabs</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">String containing up to 2 billion tab stops.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">p_mode_name</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Name of current mode.</p>
+            </td></tr></tbody></table></div><p class="NormalText"></p></div></div></body></html>

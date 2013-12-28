@@ -1,0 +1,40 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>list_matches</title>
+</head>
+<body>
+
+<h3><b>_str list_matches(_str name, typeless match_fun_index, _str title='', int multi_select=0, _str help_proc='', boolean auto_select_if_one_match=false, boolean doAddToAutoCompletion=false, typeless &words=null, boolean doAddToArgumentCompletion=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Creates a pop-up selection list of items that are a prefix match of name.
+Returns line selected or '' to indicate that nothing was selected.
+<i>match_fun_name </i>is a prefix name or index of a completion function.
+"_match" is appended to <i>match_fun_name</i> to determine the complete
+function name.  The following are completion functions tag_match, b_match,
+c_match, _pic_match, _form_match, mt_match, e_match, f_match, _menu_match,
+m_match, pcb_match, pc_match, and v_match.  New completion functions may be
+defined (see comment in module "complete.e" for more information).  The
+selection list window title is set to <i>title</i> if given.    The
+<i>help_fun_name</i> argument is the name of a help procedure.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="name">name</A></code> - Prefix string to match</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="match_fun_index">match_fun_index</A></code> - One ????_ARG constants defined in slick.sh
+         OR index of find first/next function</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="title">title</A></code> - Title of popup-window</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="multi_select">multi_select</A></code> - If Not '', allow multiple selections
+         This argument is here for backward compatibility</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="help_proc">help_proc</A></code> - Name of help function to call</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="auto_select_if_one_match">auto_select_if_one_match</A></code> - Auto select if 1 match
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If <i>allow_multi_select</i> is not '', multiple lines in the
+selection list may be selected with the space- bar key.   <b>list_matches</b>
+returns each selected line separated with a space or if there are too many, a
+list file specification is returned.  A list file specification starts with
+the character '@'.  If <i>allow_multi_selection</i> is not given or '', line
+selected is returned.  '' is returned to indicate user pressed cancel key,
+list is null, or error.  On error message is displayed and user is prompted
+to press a key.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+       file_name=list_matches('','f');
+       if (file_name=='' ) {
+            return(1)  // Cancel key pressed or list null.
+       }
+       message('file_name='file_name);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Completion_Functions.html">Completion Functions</a></blockquote>
+</body>
+</html>

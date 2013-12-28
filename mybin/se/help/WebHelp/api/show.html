@@ -1,0 +1,140 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>show</title>
+</head>
+<body>
+
+<h3><b>_command typeless show(_str cmdline="", ...)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Displays a dialog box or menu you specify.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="cmdline">cmdline</A></code> - is a string in the format: [<i>option</i>] <i>object_name</i>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - may be one of following:
+
+<dl>
+<dt>-mdi</dt><dd>Keep the form on top of the MDI Window.</dd>
+
+<dt>-app</dt><dd>Keep the form on top of the SlickEdit
+Application Window.  This allows the MDI
+Window to be displayed on top of the form.</dd>
+
+<dt>-desktop</dt><dd>Use the desktop as the form's parent.
+This allows the MDI Window to be displayed on top of the form.</dd>
+
+<dt>-xy</dt><dd>Restore the previous x, y position, width,
+and height of the dialog box.  If the old position can not be
+found, the dialog box is centered.  When the dialog box is
+closed, the x, y position is automatically saved (the dialog
+manager calls <b>_save_form_xy</b>).</dd>
+
+<dt>-wh</dt><dd>Restore the previous width and height of the
+dialog box.  This option is implied when you use
+the <tt>-xy</tt> option.</dd>
+
+<dt>-span</dt><dd>When restoring the width and height of the
+dialog box, allow the dialog to span across the adjacent
+monitor to the right or below the originating monitor./dd>
+
+<dt>-hidden</dt><dd>Do not make the form visible.</dd>
+
+<dt>-modal</dt><dd>Run the form modally.  All other forms are
+disabled.  Control returns to the caller when
+the form window is deleted with
+<b>_delete_window</b>.</dd>
+
+<dt>-nocenter</dt><dd>Do not center the form.</dd>
+
+<dt>-new</dt><dd>Normally when a form is already displayed,
+the existing form is given focus.  This option
+allows for multiple instances of a form to be
+displayed.</dd>
+
+<dt>-reinit</dt><dd><b>UNIX only</b>. Ignored by other
+platforms.  Causes <b>_delete_window</b>
+function to make the form invisible instead of
+deleting the form.  The destroy events are
+dispatched even though no windows are
+actually destroyed.  Next time show is called
+for the same dialog box, the invisible dialog
+box is made visible, some properties are
+reinitialized, and the create events are sent.
+Be careful when using this option.  Not all
+dialog boxes can use this option without
+minor modifications.  The form_parent()
+function will not work because the next time
+the form is used, the parent is not changed to
+the new parent specified.</dd>
+
+<dt>-hideondel</dt><dd><b>UNIX only</b>.  Same as -reinit option
+except no properties are reinitialized when the
+invisible dialog box is shown again.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="object_name">object_name</A></code> - specifies a form or menu resource.  If it is an integer,
+it must be a valid index into the names table of a form or menu.
+Otherwise, it should be the name of an existing form or menu that can
+be found in the names table.
+
+<p>Currently, all <i>cmdline</i> arguments except <i>object_name</i>
+are ignored if <i>object_name</i> corresponds to a menu.</p>
+
+<p>When a dialog box and all its objects are created, each object receives
+an <b>on_create</b> event.  The <b>on_create</b> event receives the
+<i>arg1, arg2...argN</i> arguments given to this function.  After the
+<b>on_create</b> events are sent, the form receives an
+<b>on_load</b> event.  You CAN NOT set the initial focus in an
+<b>on_create</b> event.  Use the <b>on_load</b> event to set the
+initial focus to a control other than the control with lowest tab index
+(<b>p_tab_index</b>) that is enabled and visible.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If the -modal option is given, the return value given to
+<b>_delete_window</b> is returned.  '' is returned if the dialog box is
+edited or destroyed during an <b>on_create</b> event.
+
+<p>If the -modal option is not given, the <b>int</b> form window id is
+returned if successful.  Otherwise, a negative error code is returned.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// This example requires that you create a form called form1
+// with a command button and load this file.
+#include "slick.sh"
+_command mytest()
+{
+    show('-modal form1',
+         'param1 to on_create',
+         'param2 to on_create');
+}
+
+defeventtab form1;
+command1.on_create(_str arg1="", _str arg2="")
+{
+    // Could get the arguments with the arg built-in
+    //arg1=arg(1);
+    //arg2=arg(2);
+    messageNwait('arg1='arg1' arg2='arg2);
+}
+</pre>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include "slick.sh"
+defmain()
+{
+    index=find_index('form1',oi2type(OI_FORM));
+    if (!index) {
+         messageNwait("form1 not found");
+         return(1);
+    }
+    form_wid=show('-hidden -nocenter form1',
+                  'param1 to on_create',
+                  'param2 to on_create');
+    if (form_wid<0) {
+         return(1);
+    }
+    // Place the form at the top left corner of the
+display.
+    form_wid.p_x=form_wid.p_y=0;
+    // Make the form visible
+    form_wid.p_visible=1;
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">All Window Objects
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Form_Functions.html">Form Functions</a>, <a href="Menu_Functions.html">Menu Functions</a></blockquote>
+</body>
+</html>

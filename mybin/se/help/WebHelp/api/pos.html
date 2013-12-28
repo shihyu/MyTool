@@ -1,0 +1,79 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>pos</title>
+</head>
+<body>
+
+<h3><b>int pos(_str needle, _str haystack="", int start=1, _str options="", _str wordchars=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="needle">needle</A></code> - string to search for.  If this is the only parameter
+                      it retrieves tagged expression information. (see example).</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="haystack">haystack</A></code> - (optional) string to search within</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="start">start</A></code> - (optional, default=1) specifies the position at which the
+                      search should begin.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - (optional) Multiple options may be specified with the
+                      following meaning:</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wordchars">wordchars</A></code> - (optional) Define the word characters
+                      set for the string, for use when you
+                      need to use regular expressions with
+                      word boundaries (example
+                      "[A-Za-z0-9]").
+<dl>
+<dt>'I'</dt><dd>Ignore case.</dd>
+<dt>'R'</dt><dd>Interpret search string needle as a regular
+expression.  See section SlickEdit Regular
+Expressions for syntax of regular expressions.</dd>
+<dt>'U'</dt><dd>Interpret search string as a UNIX regular
+expression.  See UNIX Regular Expressions.</dd>
+<dt>'B'</dt><dd>Interpret string as a Brief regular expression.
+See section Brief Regular Expressions.</dd>
+<dt>'L'</dt><dd>Interpret string as a Perl regular expression.
+See section Perl Regular Expressions.</dd>
+<dt>'&'</dt><dd>Interpret string as a wildcard expression.
+See section Wildcard Expressions.</dd>
+<dt>Y</dt><dd>Binary search.  This allows start positions in the
+middle of a DBCS or UTF-8 character.  This option
+is useful when editing binary files (in SBCS/DBCS
+mode) which may contain characters which look
+like DBCS but are not.  For example, if you search
+for the character 'a', it will not be found as the
+second character of a DBCS sequence unless this
+option is specified.</dd>
+<dt>A</dt><dd>Specifies an SBCS/DBCS active code page search.
+<i>needle</i> and <i>haystack</i> must be
+SBCS/DBCS active code page data and not UTF-8.
+This option has no effect unless SlickEdit is
+running in Unicode support mode.  See "Unicode
+and SBCS/DBCS Macro Programming."</dd>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the position of <i>needle</i> in <i>haystack</i>.  If
+<i>needle</i> is not found, 0 is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+pos('a','zzz') == 0
+pos('a','zzza')   == 4
+pos('a,'zzzA',1,'I') == 4
+pos('a','zzza',5) == 0
+pos('[a-z]','%$?a',1,'R')  == 4
+</pre>
+
+<p>Calling the pos function with one parameter allows you to retrieve
+tagged expression information.  Specifying 'S' followed by a tagged
+expression number 0-9 (i.e. 'S0') will return the start position of that
+tagged expression.  1 is returned if that tagged expression was not
+found.  If 'S' is not followed by a number, the start position of the
+entire string found is returned.  Specifying a tagged expression number
+0-9 will return the match length of the group.  For 'R' and 'B' option
+regular expressions, the first tagged expression is 0 and the last is 9.
+For 'U' option regular expressions, the first tagged expression is 1 and
+the last is 0.  0 is returned if that tagged expression was not found.  A
+value of '' will return the match length of the entire string found.</p>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+       get_line(line);
+       word_sep='([~a-zA-Z0-9_$]|^|$)';
+       i=pos(word_sep'{if|then|while}'word_sep,line,1,'r');
+       if (!i ) {
+           message('Match not found');
+           return(1);
+       }
+       word=substr(line,pos('S0'),pos('0'));
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="String_Functions.html">String Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="substr.html">substr</a>, <a href="lastpos.html">lastpos</a></blockquote>
+</body>
+</html>

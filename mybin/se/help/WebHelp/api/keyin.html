@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>keyin</title>
+</head>
+<body>
+
+<h3><b>void keyin(_str string)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="string">string</A></code> - character sequence to key in
+
+Inserts or overwrites string into the command line or text area
+depending on the insert state and the cursor position.  This function
+performs word wrap.  Use the _insert_text or insert_line function for
+better speed.
+
+Don't use keyin() unless you absolutely want word wrap
+support.  keyin was and always will be MUCH SLOWER than
+_insert_text().  The new word wrap in comment feature added a
+lot more overhead to this already slow function.  The
+performance of keyin can't be improved that much.  Worse yet,
+keyin will overwrite characters when in replace mode.  This
+is rarely what you want in any macros you write.
+
+Note that when you record a macro you get a lot of keyin()
+calls.  This is the correct code generation but it is
+recommended that you translate the keyin calls to
+_insert_text() if you are unhappy with the performance.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Text Box, Combo Box, Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Combo_Box_Methods.html">Combo Box Methods</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Text_Box_Methods.html">Text Box Methods</a></blockquote>
+</body>
+</html>

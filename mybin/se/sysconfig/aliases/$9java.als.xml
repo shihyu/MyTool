@@ -1,0 +1,28 @@
+<profile name="/language/java/aliases">
+	<p n="=surround_with_try...catch">
+		<text>
+			try {
+			%\m sur_text -indent%
+			} catch (%\c) { %\S
+			}
+		</text>
+	</p>
+	<p n="=surround_with_try...catch...finally">
+		<text>
+			try {
+			%\m sur_text -indent%
+			} catch (%\c) { %\S
+			} finally {
+			}
+		</text>
+	</p>
+	<p n="=surround_with_try...finally">
+		<text>
+			try {
+			%\m sur_text -indent%
+			} finally {
+			%\i%\c
+			}
+		</text>
+	</p>
+</profile>

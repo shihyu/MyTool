@@ -1,0 +1,55 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>name_match</title>
+</head>
+<body>
+
+<h3><b>int name_match(_str name_prefix, int find_first, int name_type_flags=~0 &~IGNORECASE_TYPE)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="name_prefix">name_prefix</A></code> - Symbol name prefix to search for</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="find_first">find_first</A></code> - Find first match (true) or next match?</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="name_type_flags">name_type_flags</A></code> - The name type flags are listed in the file "slick.sh".
+       <DL compact>
+       <DT>PROC_TYPE      <DD style="marginleft:90pt">Matches global function
+       <DT>VAR_TYPE       <DD style="marginleft:90pt">Matches global variable
+       <DT>EVENTTAB_TYPE  <DD style="marginleft:90pt">Matches event table
+       <DT>COMMAND_TYPE   <DD style="marginleft:90pt">Matches command
+       <DT>CLASS_TYPE     <DD style="marginleft:90pt">Matches class name
+       <DT>INTERFACE_TYPE <DD style="marginleft:90pt">Matches interface name
+       <DT>STRUCT_TYPE    <DD style="marginleft:90pt">Matches struct name
+       <DT>CONST_TYPE     <DD style="marginleft:90pt">Matches const name
+       <DT>ENUM_TYPE      <DD style="marginleft:90pt">Matches enumerated type
+       <DT>MODULE_TYPE    <DD style="marginleft:90pt">Matches module
+       <DT>PICTURE_TYPE   <DD style="marginleft:90pt">Matches picture.
+       <DT>BUFFER_TYPE    <DD style="marginleft:90pt">Matches buffer scope variable
+       <DT>OBJECT_TYPE    <DD style="marginleft:90pt">Matches any type of dialog box template.
+       Use the oi2type to build the correct object flags.  See example below.
+       <DT>MISC_TYPE      <DD style="marginleft:90pt">Matches miscellaneous.
+       <DT>IGNORECASE_TYPE<DD style="marginleft:90pt">Perform case insensitive search.
+       </DL>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns name table index of the name with prefix matching
+        name_prefix and where (name_t & name_type(index)) is true.
+        A non-zero value for find_first, begins a new search.  If
+        find_first is zero, the next matching index is returned.
+        0 is returned if no match is found.  Search is case sensitive
+        unless one of the flags MODULE_TYPE, PICTURE_TYPE, or
+        IGNORECASE_TYPE is given.  When one of the flags MODULE_TYPE
+        or PICTURE_TYPE is given, search is case sensitive for file
+        systems like UNIX which is case sensitive.  The search is
+        always case insensitive when the IGNORECASE_TYPE flag is given.
+        Underscores in name_prefix are translated to dashes before
+        search takes place.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+// COMMAND_TYPE is defined in "slick.sh"
+name_t= COMMAND_TYPE;
+name_prefix='p';           // Find names that start with p
+index= name_match(name_prefix,1,name_t);   // Find first
+// Press Ctrl+Break to break a macro during a messageNwait
+for (;;) {
+    if (!index ) break;
+    messageNwait(''name found='name_name(index));
+    index= name_match(name_prefix,0,name_t) // Find next
+}
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Names_Table_Functions.html">Names Table Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="find_index.html">find_index</a>, <a href="buf_match.html">buf_match</a>, <a href="file_match.html">file_match</a></blockquote>
+</body>
+</html>

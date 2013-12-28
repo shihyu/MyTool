@@ -1,0 +1,995 @@
+<CodeSamples>
+<Sample Language="JavaScript">
+/*
+ * This is a block comment
+ */
+// first, count to 10, then say 'hi'
+for (i = 1; i &lt;= 10; i++) {
+	document.write(i + "&lt;br/&gt;")
+}
+document.write("Hello, World!&lt;br /&gt;")
+</Sample>
+<Sample Language="Java Properties">
+# You are reading the ".properties" entry.
+! The exclamation mark can also mark text as comments.
+website = http://en.wikipedia.org
+language = English
+message = Welcome to Java properties
+maxusers = 32768
+</Sample>
+<Sample Language="CFScript">
+/**
+ * Return a power of 10
+ */
+function OrderOfMagnitude(exponent) {
+    // this is a line comment
+    WriteOutput( "OrderOfMagnitude:" );
+    return 10^exponent; 
+}
+</Sample>
+<Sample Language="PHP">
+/**
+ * This is a block comment.
+ */
+for($i=0; $i&lt;=10; $i++) {
+    echo "$i\n";
+}
+echo "Hello World\n";
+</Sample>
+<Sample Language="IDL">
+#pragma prefix "example.com"
+interface Simple{
+     //Convert a string to lower case (return a new string)
+     string to_lower(in string val);
+     //Convert a string to upper case (in place)
+     void to_upper(inout string val);
+};
+/*
+ * This is a block comment
+ */
+interface SimpleFactory {
+    Simple find_simple();
+};
+</Sample>
+<Sample Language="SlickEdit Tag Docs">
+/**
+ * Returns the absolute value of a Decimal number.
+ * @param value     A number in the range MinValue = value = MaxValue.
+ * @return     A Decimal, x, such that 0 = x = MaxValue.
+ */
+function Decimal Abs(Byval value As Decimal);
+</Sample>
+<Sample Language="Batch">
+rem  This batch file gets a character or word of user input and 
+rem  returns it in the environment variable VALUE.
+echo This is a test. Please enter "y" or "n"
+fc con nul /lb1 /n | date | find "1:" &gt; en#er.bat
+echo set value=%%5&gt; enter.bat
+call en#er.bat
+del en?er.bat &gt; nul
+if "%value%"=="n" echo You entered "n"
+if "%value%"=="y" echo You entered "y"
+set value=
+</Sample>
+<Sample Language="INI">
+[c]
+boxchars=tlc=/*  brc=*/
+nonboxchars=left=//
+comment_col=0
+</Sample>
+<Sample Language="Config">
+[c]
+boxchars=tlc=/*  brc=*/
+nonboxchars=left=//
+comment_col=0
+</Sample>
+<Sample Language="Makefile">
+# build the hello world program
+all: hello
+hello: main.o hello.o
+	g++ main.o hello.o -o hello
+main.o: main.cpp
+	g++ -c main.cpp
+hello.o: hello.cpp
+	g++ -c hello.cpp
+# clean up temporary files
+clean:
+	rm -f *o
+</Sample>
+<Sample Language="Imakefile">
+XCOMM
+XCOMM 'hellow' is built from 'hello.c' and 'main.c'
+XCOMM 
+
+HELLO_SRCS = hello.c main.c
+HELLO_OBJS = hello.o main.o
+
+AllTarget(hellow)
+NormalProgramTarget(hellow,$(HELLO_OBJS),NullParameter,NullParameter,NullParameter)
+</Sample>
+<Sample Language="Plain Text">
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+</Sample>
+<Sample Language="Binary">
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+</Sample>
+<Sample Language="Process">
+echo "This is a string"
+del c:\temp\defect
+mkdir c:\temp\bugfix
+cd c:\temp\bugfix
+</Sample>
+<Sample Language="Fileman">
+       5720   6-10-2008  10:21a ----A  c:\temp\fpu_top.v
+       9697   5-02-2007   3:09p ----A  c:\temp\test_test_416.v
+</Sample>
+<Sample Language="C/C++">
+#include "stdio.h"
+/* A classic C program. */
+void main(int argc, char *argv[])
+{
+    // first, a moment of suspense, then say 'hi' to everyone
+    usleep(2500);
+    for (int i=1; i&lt;argc; i++) {
+        printf("Hello, %s!", argv[i]);
+    }
+}
+</Sample>
+<Sample Language="Objective-C">
+/* 
+ * Compile with gnu's gcc:  gcc hello.m -lobjc
+ */
+#include 
+@interface Control:Object
+{
+}
+- world;
+void main();
+@end
+
+@implementation Control
+- world
+{
+  printf("Hello, World!\n");
+}
+
+void main()
+{
+  id hello;
+  hello=[Control new];
+  for(;;)
+    [hello world];
+}
+@end
+</Sample>
+<Sample Language="Applescript">
+(*
+ This is a block comment.
+*)
+tell application "Finder"
+	display dialog "Hello World"
+end tell
+</Sample>
+<Sample Language="C#">
+/* This is a block comment */
+class HelloWorld
+{
+    /// This is a documentation comment.
+    static void Main()
+    {
+        // write a message to the console
+        System.Console.WriteLine("Hello world!");
+    }
+}
+</Sample>
+<Sample Language="Pascal">
+program HelloWorld;
+(* This program demonstrates the text output function of the 
+   Pascal programming language by displaying the message "Hello World!".
+*) 
+begin
+  writeln('Hello World');
+end.
+</Sample>
+<Sample Language="Slick-C">
+/*
+ * Simple Slick-C command
+ */
+_command configure_my_colors()
+{
+   // a moment of suspense
+   message("Configuring colors...");
+   delay(500);
+   config("_color_form", "D");
+}
+</Sample>
+<Sample Language="Java">
+/**
+ * This is a block comment.
+ */
+class MyFirstJavaProgram
+{  
+    public static void main(String args[]) {
+       // this is a line comment
+       System.out.println("Hello World!");
+    }
+}
+</Sample>
+<Sample Language="J#">
+/**
+ * This is a block comment.
+ */
+class MyFirstJavaProgram
+{  
+    public static void main(String args[]) {
+       // this is a line comment
+       System.out.println("Hello World!");
+    }
+}
+</Sample>
+<Sample Language="HTML">
+&lt;!-- This is a comment. --&gt;
+&lt;HTML&gt;
+   &lt;HEAD&gt;
+   HTML Document&lt;/TITLE&gt;&lt;/HEAD&gt;
+   &lt;BODY&gt;
+      &lt;A Href="http://www.slickedit.com"&gt;
+      Click Here.
+      &lt;/A&gt;
+   &lt;/BODY&gt;
+&lt;/HTML&gt;
+</Sample>
+<Sample Language="CFML">
+&lt;!-- This is a comment. --&gt;
+&lt;HTML&gt;
+   &lt;HEAD&gt;
+   HTML Document&lt;/TITLE&gt;&lt;/HEAD&gt;
+   &lt;BODY&gt;
+      &lt;A Href="http://www.slickedit.com"&gt;
+      Click Here.
+      &lt;/A&gt;
+   &lt;/BODY&gt;
+&lt;/HTML&gt;
+</Sample>
+<Sample Language="Bulletin Board Code">
+[b]This is bold[/b]
+[i]This is italic[/i]
+</Sample>
+<Sample Language="TeX">
+% A '%' character causes TeX to ignore all remaining text 
+% on the line, and is used for comments, like this one. 
+\documentclass{article}
+\begin{document}
+\begin{center}
+\Huge{HELLO WORLD}
+\end{center}
+\end{document}
+</Sample>
+<Sample Language="DTD">
+&lt;?xml encoding='UTF-8'?&gt;
+&lt;!ELEMENT Color (#PCDATA)&gt;
+&lt;!ATTLIST Color font CDATA #IMPLIED
+                   fg CDATA #IMPLIED
+                   bg CDATA #IMPLIED
+                   name CDATA #REQUIRED&gt;
+&lt;!ELEMENT Scheme (Color*)&gt;
+&lt;!ATTLIST Scheme name CDATA #REQUIRED&gt;
+</Sample>
+<Sample Language="DocBook">
+&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" 
+      "../../docs/src/docbkx412/docbookx.dtd"&gt;
+&lt;book&gt;
+    &lt;title&gt;
+        &lt;anchor id="chap_welcome_443_443" /&gt;Greetings
+    &lt;/title&gt;
+    &lt;bookinfo&gt;
+    &lt;legalnotice&gt;
+       &lt;literallayout role="NormalText"&gt;
+           Hello World
+        &lt;/literallayout&gt;
+    &lt;/legalnotice&gt;
+    &lt;/bookinfo&gt;
+&lt;/book&gt;
+</Sample>
+<Sample Language="XML">
+&lt;!-- This is a comment. --&gt;
+&lt;Scheme&gt;
+    &lt;Color name="Text" fg="black" bg="white"&gt;
+    &lt;Color name="Selection" fg="black" bg="lightblue"&gt;
+    &lt;Color name="Number" fg="darkblue" bg="white"&gt;
+    &lt;Color name="Comment" fg="orange" bg="white" font="italic"&gt;
+&lt;/Scheme&gt;
+</Sample>
+<Sample Language="VPJ">
+&lt;!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd"&gt;
+&lt;Project
+	Version="10.0"
+	VendorName="SlickEdit"
+	WorkingDir="."&gt;
+	&lt;Config
+		Name="WinDebug"
+		Type="vcpp"&gt;
+    ...
+    &lt;/Config&gt;
+&lt;/Project&gt;
+</Sample>
+<Sample Language="XSD">
+&lt;!-- This is a comment. --&gt;
+&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xsd:element name="order" type="OrderType"/&gt;
+  &lt;xsd:complexType name="OrderType"&gt;
+    &lt;xsd:sequence&gt;
+      &lt;xsd:element name="items" type="ItemsType"/&gt;
+    &lt;/xsd:sequence&gt;
+  &lt;/xsd:complexType&gt;
+  &lt;xsd:complexType name="ItemsType"&gt;
+    &lt;xsd:sequence&gt;
+      &lt;xsd:element ref="prod:product" maxOccurs="unbounded"/&gt;
+    &lt;/xsd:sequence&gt;
+  &lt;/xsd:complexType&gt;
+&lt;/xsd:schema&gt;
+</Sample>
+<Sample Language="DOCBOOK">
+&lt;!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"&gt;
+&lt;article&gt;
+&lt;articleinfo&gt;
+&lt;title&gt;XML rules the world!&lt;/title&gt;
+&lt;/articleinfo&gt;
+&lt;section&gt;
+&lt;title&gt;XML and DocBook do it together&lt;/title&gt;
+&lt;para&gt;DocBook and XML are like peas and carrots!&lt;/para&gt;
+&lt;/section&gt;
+&lt;/article&gt;
+</Sample>
+<Sample Language="XHTML">
+&lt;!-- This is a comment. --&gt;
+&lt;HTML&gt;
+   &lt;HEAD&gt;
+   HTML Document&lt;/TITLE&gt;&lt;/HEAD&gt;
+   &lt;BODY&gt;
+      &lt;A Href="http://www.slickedit.com"&gt;
+      Click Here.
+      &lt;/A&gt;
+   &lt;/BODY&gt;
+&lt;/HTML&gt;
+</Sample>
+<Sample Language="XMLDOC">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!-- This is a comment. --&gt;
+&lt;doc&gt;
+	&lt;assembly&gt;
+		&lt;name&gt;office&lt;/name&gt;
+	&lt;/assembly&gt;
+	&lt;members&gt;
+        &lt;member name="M:Microsoft.Office.Core.AnswerWizard.ClearFileList"&gt;
+            &lt;summary&gt;Clears the list of files for the current AnswerWizard, including the default list of files for the Microsoft Office host application.&lt;/summary&gt;
+        &lt;/member&gt;
+        &lt;member name="M:Microsoft.Office.Core.AnswerWizard.ResetFileList"&gt;
+            &lt;summary&gt;Resets the list of files for the current AnswerWizard to the default list of files for the Microsoft Office host application.&lt;/summary&gt;
+        &lt;/member&gt;
+	&lt;/members&gt;
+&lt;/doc&gt;
+</Sample>
+<Sample Language="JSP TagLib">
+&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd"&gt;
+&lt;taglib&gt;
+    &lt;tlibversion&gt;1.0&lt;/tlibversion&gt;
+    &lt;jspversion&gt;1.1&lt;/jspversion&gt;
+    &lt;shortname&gt;mt&lt;/shortname&gt;
+    &lt;uri&gt;http://www.whatever.com/tutorials/mytags.jar&lt;/uri&gt;
+    &lt;info&gt;My first Tag library&lt;/info&gt;
+    &lt;tag&gt;
+        &lt;name&gt;helloWorld&lt;/name&gt;
+        &lt;tagclass&gt;com.acme.tag.HelloWorldTag&lt;/tagclass&gt;
+        &lt;bodycontent&gt;empty&lt;/bodycontent&gt;
+        &lt;info&gt;A Hello World tag&lt;/info&gt;
+    &lt;/tag&gt;
+&lt;/taglib&gt;
+</Sample>
+<Sample Language="Bourne Shell">
+#!/bin/sh
+# repeat forever saying hello
+while (/bin/true) do
+  echo "Hello, World\!"
+done
+</Sample>
+<Sample Language="C Shell">
+#!/bin/csh
+# repeat forever saying hello
+while (/bin/true) do
+  echo "Hello, World\!"
+done
+</Sample>
+<Sample Language="SlickEdit Color Coding">
+[GL]
+idchars=a-zA-Z_$ 0-9\-
+case-sensitive=n
+styles=squote dquote
+keywords=case when otherwise end continue
+keywords=declare define for to step foreach into
+keywords=function exit globals goto if then else
+keywords=label let main menu input prompt report while
+linecomment=//
+mlcomment=/* */
+</Sample>
+<Sample Language="SlickEdit Message File">
+HFORMAT
+-700 HFERROR_GENERAL_ERROR_RC
+"General error"
+-701 HFERROR_EOF_UNEXPECTED_RC
+"Unexpected end-of-file"
+</Sample>
+<Sample Language="DB2">
+/* This is a block comment */
+SELECT SUM(quantity*price)
+  FROM shipped, product
+    WHERE product=product.id
+    AND badguy='C001'
+    AND prodprice&lt;1000.00
+    AND sdate=DATE '1998-07-23'
+-- this the end of the query
+</Sample>
+<Sample Language="JCL">
+//HELLO    JOB (T043JM,JM00,1,0,0,0),'HELLO WORLD - JRM',CLASS=R,
+//             MSGCLASS=X,MSGLEVEL=1,NOTIFY=S0JM
+//*
+//* PRINT "HELLO WORLD" ON JOB OUTPUT
+//*
+//* NOTE THAT THE EXCLAMATION POINT IS INVALID EBCDIC FOR JCL
+//*   AND WILL CAUSE A JCL ERROR
+//*
+//STEP0001 EXEC PGM=IEBGENER
+//SYSIN    DD DUMMY
+//SYSPRINT DD SYSOUT=*
+//SYSUT1   DD *
+HELLO, WORLD
+/*
+//SYSUT2   DD SYSOUT=*
+//
+</Sample>
+<Sample Language="Grep">
+Find all "sql", Subfolders, "E:\14.0.0\slickedit\macros\", "*.e;*.sh"
+File E:\14.0.0\slickedit\macros\adaptiveformatting.e
+  493 12:   case "plsql":
+  497 10:   case "sqlserver":
+File E:\14.0.0\slickedit\macros\addons.e
+  174 20:  makeNload(path'plsql');
+  181 18:  makeNload(path'sqlservr');
+</Sample>
+<Sample Language="Module-Definition File">
+; This is a comment
+DESCRIPTION 'API Sample DLL'
+EXPORTS
+        dllproc     @100
+        dllproc2    @101
+</Sample>
+<Sample Language="Model 204">
+*Comment
+BEGIN
+DECLARE %S IS STRING LEN 1 COMMON
+FOR %TIMES FROM 100 TO 0 BY -1
+  PRINT 'Hello World.'
+END FOR
+</Sample>
+<Sample Language="ActionScript">
+/* Hello world in ActionScript */
+package com.example
+{
+	import flash.text.TextField;
+	import flash.display.Sprite;
+ 	public class Greeter extends Sprite {
+		public function Greeter() {
+            // and they said it couldn't be done...
+			var txtHello:TextField = new TextField();
+			txtHello.text = "Hello World";
+			addChild(txtHello);
+		}
+	}
+}
+</Sample>
+<Sample Language="Ada">
+(* This is a block comment *)
+with Text_To; use Text_To
+  -- this is a line comment
+  procedure hello is
+    begin
+    put("Hello World");
+  end hello 
+</Sample>
+<Sample Language="ANSI-C">
+#include "stdio.h"
+/* A classic C program. */
+void main(int argc, char *argv[])
+{
+    // first, a moment of suspense, then say 'hi' to everyone
+    usleep(2500);
+    for (int i=1; i&lt;argc; i++) {
+        printf("Hello, %s!", argv[i]);
+    }
+}
+</Sample>
+<Sample Language="Ant">
+&lt;?xml version="1.0" ?&gt;
+&lt;project name="build" basedir="." default="hello"&gt;
+    &lt;taskdef resource="net/sf/antcontrib/antlib.xml"/&gt;
+    &lt;target name="hello"&gt;
+    	&lt;echo message="Hello World!"/&gt;
+    &lt;/target&gt;
+&lt;/project&gt;
+</Sample>
+<Sample Language="ANTLR">
+/**
+ * This is a block comment.
+ */
+class VerilogParser extends Parser;
+options {
+   k = 2;                        // two token lookahead
+   exportVocab = Verilog;        // Call its vocabulary "Verilog"
+   buildAST=false;
+   defaultErrorHandler = true;
+}
+/**
+ * Verilog data type declarations
+ */
+vl_data_declaration[antlrContext context] :
+   vl_reg_declaration[context]         |
+   vl_time_declaration[context]        |
+   vl_integer_declaration[context]     |
+   vl_real_declaration[context]        |
+   vl_specparam_declaration[context]   |
+   vl_event_declaration[context]
+   ;
+</Sample>
+<Sample Language="Lex">
+/* Parse numbers and words */
+%{
+#include &lt;stdio.h&gt;
+%}
+%%
+[0123456789]+           printf("NUMBER\n"); return NUMBER;
+[a-zA-Z][a-zA-Z0-9]*    printf("WORD\n");   return WORD;
+%%
+</Sample>
+<Sample Language="Yacc">
+%{
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+ 
+void yyerror(const char *str) 
+{
+    fprintf(stderr,"error: %s\n",str);
+}
+int yywrap()
+{
+    return 1;
+} 
+main()
+{
+    yyparse();
+} 
+%}
+%token NUMBER WORD
+</Sample>
+<Sample Language="Awk">
+/*
+ * Here is the ubiquitous "Hello world program" program written in AWK.
+ */
+BEGIN 
+{ 
+    print "Hello, world!" 
+}
+</Sample>
+<Sample Language="Ch">
+#include "stdio.h"
+/* A classic C program. */
+void main(int argc, char *argv[])
+{
+    // first, a moment of suspense, then say 'hi' to everyone
+    usleep(2500);
+    for (int i=1; i&lt;argc; i++) {
+        printf("Hello, %s!", argv[i]);
+    }
+}
+</Sample>
+<Sample Language="Cobol">
+000100 IDENTIFICATION DIVISION.
+000200 PROGRAM-ID.     HELLOWORLD.
+000300
+000400* This program demonstrates COBOL text output.
+000500 ENVIRONMENT DIVISION.
+000600 CONFIGURATION SECTION.
+000700 SOURCE-COMPUTER. RM-COBOL.
+000800 OBJECT-COMPUTER. RM-COBOL.
+000900
+001000 DATA DIVISION.
+001100 FILE SECTION.
+001200
+100000 PROCEDURE DIVISION.
+100100
+100200 MAIN-LOGIC SECTION.
+100300 BEGIN.
+100400     DISPLAY " " LINE 1 POSITION 1 ERASE EOS.
+100500     DISPLAY "Hello world!" LINE 15 POSITION 10.
+100600     STOP RUN.
+100700 MAIN-LOGIC-EXIT.
+100800     EXIT.
+</Sample>
+<Sample Language="D">
+/* Hello World in D
+   To compile: dmd hello.d
+*/
+import std.stdio;
+void main(string[] args)
+{
+    writefln("Hello World, Reloaded");
+    // auto type inference and built-in foreach
+    foreach (argc, argv; args) {
+        writefln(" arg: %d: %s", argc, argv);
+    }
+}
+</Sample>
+<Sample Language="Fortran">
+! This is a comment.
+program hello
+    print *,"Hello World!"
+end program hello
+</Sample>
+<Sample Language="Modula">
+(* This is a comment. *)
+MODULE hello;
+FROM InOut IMPORT writestring, writeln;
+
+begin
+  WriteString("Hello, world!");
+  Writeln;
+end hello.
+</Sample>
+<Sample Language="Visual Basic">
+' Allow easy reference to the System namespace classes.
+Imports System
+
+' This module houses the application's entry point.
+Public Module modmain
+   ' Main is the application's entry point.
+   Sub Main()
+     ' Write text to the console.
+     Console.WriteLine ("Hello World using Visual Basic!")
+   End Sub
+End Module
+</Sample>
+<Sample Language="Perl">
+#!/usr/local/bin/perl
+# hello world as a CGI
+print "Content-type: text/html\n\n";
+print "&lt;H1&gt;Hello World&lt;/H1&gt;\n";
+</Sample>
+<Sample Language="PL/I">
+HELLO:   PROCEDURE OPTIONS (MAIN);
+             /* A PROGRAM TO OUTPUT HELLO WORLD */
+             FLAG = 0;
+
+LOOP:     DO WHILE (FLAG = 0);        
+             PUT SKIP DATA('HELLO WORLD!');
+          END LOOP;
+
+END HELLO;
+</Sample>
+<Sample Language="PL/SQL">
+/* This is a block comment */
+SELECT SUM(quantity*price)
+  FROM shipped, product
+    WHERE product=product.id
+    AND badguy='C001'
+    AND prodprice&lt;1000.00
+    AND sdate=DATE '1998-07-23'
+-- this the end of the query
+</Sample>
+<Sample Language="dBASE">
+*  HELLO1.PRG
+*   Sample program that clears the screen,
+*   and writes "Hello World" at the screen 
+*   coordinates: row, column (10, 10).
+row = 10
+column = 10
+clear
+@ row, column SAY "Hello World!"
+</Sample>
+<Sample Language="Python">
+# Scream hello world to 300 people in Python
+def hello(i): 
+     string = "hello " + i 
+     return string 
+def caps(word): 
+     value = string.capitalize(word) 
+for i in range(1, 300):
+    caps(hello(i)) 
+</Sample>
+<Sample Language="REXX">
+/* This is a comment */
+Say "Hello, World!"
+</Sample>
+<Sample Language="Ruby">
+class HelloWorld
+  def greet()
+     print "Hello, World!");
+  end
+  def printFirstTenIntegers()
+    for i in 1..10
+        puts i
+     end
+  end
+end
+hw = HelloWorld.new
+hw.printFirstTenIntegers
+hw.greet
+</Sample>
+<Sample Language="InstallScript">
+// Constant Definitions
+#define PRODUCT "InstallShield"
+#define LIMIT   100
+// Variable Declarations
+NUMBER nVal;
+STRING szName;
+// Function Declarations
+prototype DisplayMsg(NUMBER,STRING);
+prototype GetName(BYREF STRING);
+/* This is a comment. */
+program
+    nVal = LIMIT;
+    szName = PRODUCT;
+    DisplayMsg("Hello, World!");
+endprogram
+</Sample>
+<Sample Language="SAS">
+/**
+ * SAS code for HelloWorld Demonstration
+ **/
+
+/* section 0, header section: setting global options */
+options linesize=80;
+title 'HelloWorld;
+
+/* section 1, data definition section: the data we are going to manipulate*/
+data helloWorldData;
+    input y @@;  
+    datalines;   
+        17.9 18.4 14.1 15.8
+    ;
+/* section 2: data manipulation section: processing the data defined above */
+proc means data=helloWorldData all; 
+    var y; 
+/* if you programmed BASIC a littile bit in the old days, 
+   you'll know this means go ahead and do it */
+run;
+   
+/* this is optional, this tells SAS to end here */
+quit;  
+</Sample>
+<Sample Language="SQL Server">
+/* This is a block comment */
+SELECT SUM(quantity*price)
+  FROM shipped, product
+    WHERE product=product.id
+    AND badguy='C001'
+    AND prodprice&lt;1000.00
+    AND sdate=DATE '1998-07-23'
+-- this the end of the query
+</Sample>
+<Sample Language="Tcl">
+#!/usr/bin/env tclsh
+puts "Hello, World!"
+</Sample>
+<Sample Language="VBScript">
+dim myVal, btnPressed 
+myVal = msgBox ("Hello World!", vbokcancel, "Hello") 
+select case myVal 
+case 1 btnPressed="OK" 
+case 2 btnPressed="Cancel" 
+case else btnPressed="Error!" 
+end select 
+  
+document.write ("&lt;H1&gt;You selected the " &amp; btnPressed &amp; " button.&lt;/H1&gt;") 
+</Sample>
+<Sample Language="Verilog">
+//-----------------------------------------------------
+// This program will print 'hello world'
+//-----------------------------------------------------
+module hello_world ;
+initial begin
+  $display ("Hello World");
+  $finish;
+end
+endmodule // End of Module hello_world
+</Sample>
+<Sample Language="VHDL">
+ENTITY hello IS
+-- No ports
+END hello;
+
+ARCHITECTURE bhv OF hello IS
+BEGIN
+   ASSERT FALSE
+   REPORT "Hello, World"
+   SEVERITY NOTE; 
+END bhv;
+</Sample>
+<Sample Language="Lua">
+--[[  Multi-line strings &amp; comments are
+      adorned with double square brackets ]]
+print([[Hello, world!]])
+</Sample>
+<Sample Language="CSS">
+body
+{ 
+    background-image: 
+    url('bgdesert.jpg');
+    background-repeat: repeat-y
+}
+</Sample>
+<Sample Language="SystemVerilog">
+// Filename : hello.sv
+module hello_wrld;
+'include "ovm.svh"
+class Random extends ovm_transaction;
+   rand int num;
+   constraint c { num &gt;= 0 &amp;&amp; num &lt; 50; }
+   function new(string name);
+      super.new(name);
+   endfunction
+endclass
+Random r;
+initial begin
+   r = new("Hello World");
+   r.print();
+end
+endmodule
+// End of file hello_ovm.sv
+</Sample>
+<Sample Language="Vera">
+#include "vera_defines.vrh"
+program hello {
+    // Write to testbench console
+    printf("Hello World!\n");
+}
+</Sample>
+<Sample Language="Windows PowerShell">
+# PowerShell Hello World Window
+[System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+
+$b = new-object System.Windows.Forms.Button
+$b.Text = "Press Me"
+
+$l = new-object System.Windows.Forms.Label
+$l.Text = "A label:"
+$l.Size = new-object System.Drawing.Size(50,20)
+$l.TextAlign = [System.Drawing.ContentAlignment]::BottomLeft
+
+$p = new-object System.Windows.Forms.FlowLayoutPanel
+$p.Controls.Add($l)
+$p.Controls.Add($b)
+
+$f = new-object System.Windows.Forms.Form
+$f.Text = "Hello World"
+$f.Size = new-object System.Drawing.Size(160,70)
+$f.Controls.Add($p)
+$f.ShowDialog()
+</Sample>
+<Sample Language="Windows Resource File">
+#include "resource.h"
+#define APSTUDIO_READONLY_SYMBOLS
+// English (U.S.) resources
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+/////////////////////////////////
+// Menu
+IDC_SEUSB MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Hello World",        IDM_HELLO
+    END
+END
+</Sample>
+<Sample Language="AutoHotKey">
+MsgBox, Hello World
+; Example #1:
+Colors = red,green,blue
+Loop, parse, Colors, `,
+{
+    MsgBox, Color number %A_Index% is %A_LoopField%.
+}
+</Sample>
+<Sample Language="PV-WAVE">
+OPENW, 1, ’hello.dat’
+; Open LUN 1 for hello.dat with write access.
+PRINTF, 1, ’Hello World.’
+; Insert the string “Hello World.” into the file hello.dat.
+CLOSE, 1
+; You're done with the file, so close it.
+</Sample>
+<Sample Language="Logo">
+print [Hello, world!]
+</Sample>
+<Sample Language="IBM HLASM">
+HELLOPRT START 0                  IN THE BEGINNING...
+         PRINT NOGEN              SPARE US THE MACRO EXPANSIONS
+BEGIN    SAVE  (14,12)            SAVE INPUT REGISTERS
+         LR    12,15              WHERE ARE WE?
+         USING HELLOPRT,12        RIGHT HERE
+         ST    13,SAVE+4          SAVE OLD SAVE AREA ADDRESS
+         LA    11,SAVE            POINT TO NEW SAVE AREA
+         ST    11,8(13)           IN OLD SAVE AREA
+         LR    13,11              MOVE SAVE AREA ADDRESS
+*
+* WRITE "HELLO, WORLD!" ON WHATEVER HAS BEEN SET UP AS SYSPRINT IN
+*  THE INVOKING JCL (NO, UNIX DOESN'T HAVE A MONOPOLY ON DEVICE-
+*  INDEPENDENT I/O!)
+*
+DOPUT    EQU   *
+         PUT   SYSPRINT,HELLOMSG  WRITE THE MESSAGE
+         B     DOPUT              FOREVER...
+*
+* THIS CODE WILL NEVER BE REACHED, BUT IS INCLUDED FOR COMPLETENESS
+*
+         L     13,SAVE+4          GET OLD SAVE AREA BACK
+         RETURN (14,12),RC=0      TO THE OPERATING SYSTEM
+*
+* FILE AND WORK AREA DEFINITIONS
+*
+SAVE     DS    18F                LOCAL SAVE AREA
+HELLOMSG DC    C' HELLO, WORLD!'
+SYSPRINT DCB   DSORG=PS,MACRF=PM,DDNAME=SYSPRINT,                      X
+               RECFM=FA,LRECL=133,BLKSIZE=133
+         END   BEGIN
+</Sample>
+<Sample Language="Intel Assembly">
+section .data
+msg	db	"Hello World!",0x0a
+'This code calculates the length of msg, and stores it in len. 
+len	equ	$-msg
+section .text
+	global _start
+_start:
+'We use the write system call to output the text string on
+'standard output. This call takes 3 arguments: file descriptor,
+'pointer to buffer, length of buffer. The registers ebx, ecx and
+'edx are used to store these arguments. We store the system call
+'number 4 for write in eax. System calls are invoked with int 0x80. 
+	mov	ebx,0x01
+	mov	ecx,msg
+	mov	edx,len
+	mov	eax,0x04
+	int	0x80
+</Sample>
+<Sample Language="Unix Assembly">
+section .data
+msg	db	"Hello World!",0x0a
+'This code calculates the length of msg, and stores it in len. 
+len	equ	$-msg
+section .text
+	global _start
+_start:
+	push	dword len
+	push 	dword msg
+	push	dword 0x01
+	mov	eax,0x04
+	push	dword eax
+	int	0x80
+	push	dword 0x00
+	mov	eax,0x01
+	push	dword eax
+	int	0x80
+</Sample>
+</CodeSamples>
+

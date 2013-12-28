@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_get_local2</title>
+</head>
+<body>
+
+<h3><b>int tag_get_local2(int local_id, _str &tag_name, _str &type_name, _str &file_name, int &start_line_no, int &start_seekpos, int &scope_line_no, int &scope_seekpos, int &end_line_no, int &end_seekpos, _str &class_name, int &tag_flags, _str &signature, _str &return_type)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve complete information about the given local ID.
+<p>
+For synchronization, threads should perform a tag_lock_context(false)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="local_id">local_id</A></code> - local ID to look up (from tag_insert_local)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - (Output) tag string (native case)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_name">type_name</A></code> - (Output) Tag type name, see <a href="tag_get_type.html">tag_get_type</a>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - (Output) full path of file the tag is located in</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="start_linenum">start_linenum</A></code> - (Output) start line number of tag within file</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="start_seekpos">start_seekpos</A></code> - (Output) start seek position of tag within file</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="scope_linenum">scope_linenum</A></code> - (Output) Line number where the scope of the tag begins in
+                        <i>file_name</i>.  For example, this is the line on which
+                        opening brace is found in a C function.  For tags where scope
+                        is not applicable, simply the same value as <i>start_linenum</i>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="scope_seekpos">scope_seekpos</A></code> - (Output) Seek position where the scope of the tag begins in
+                        <i>file_name</i>.  See explanation above.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="end_linenum">end_linenum</A></code> - (Output) ending line number of tag within file</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="end_seekpos">end_seekpos</A></code> - (Output) Line number where the tag ends in file_name.  Technically,
+                        this is the seek position of the last character in the tag.
+                        Using a C function for example, this is the seek position of
+                        the close brace ending the function body.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - (Output) Name of class or package or other container that
+                        the tag belongs to.  See <a href="VS_TAGSEPARATOR_class.html">VS_TAGSEPARATOR_class</a> and
+                        <a href="VS_TAGSEPARATOR_package.html">VS_TAGSEPARATOR_package</a> for more details about constructing
+                        this value.  If the tag is not in a class scope, pass the
+                        empty string for this value.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - (Output) Tag flags indicating symbol attributes, see
+                        <a href="tag_insert_simple.html">tag_insert_simple</a> for details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="signature">signature</A></code> - (Output) arguments or formal parameters</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="return_type">return_type</A></code> - (Output) Return type and/or value of symbol or
+                        constant.  See <a href="VS_TAGSEPARATOR_equals.html">VS_TAGSEPARATOR_equals</a> for more details.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_clear_locals.html">tag_clear_locals</a>, <a href="tag_current_local.html">tag_current_local</a>, <a href="tag_find_local.html">tag_find_local</a>, <a href="tag_get_detail2.html">tag_get_detail2</a>, <a href="tag_get_num_of_locals.html">tag_get_num_of_locals</a>, <a href="tag_next_local.html">tag_next_local</a></blockquote>
+</body>
+</html>

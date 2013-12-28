@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>chmod</title>
+</head>
+<body>
+
+<h3><b>_command typeless chmod(_str files='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">NOTE: Under UNIX this function operates like the chmod command.
+See man page for this command for syntax of arguments.
+<pre>
+<i>cmdline</i> is a string in the format: [+|-][R][H][S][A] <i>filename</i><p>
+ Changes the attributes of the <i>filename</i> specified.  + adds the attribute and - removes the attribute.  The attributes have the following meaning:
+   R        Read-only
+   H        Hidden
+   S        System
+   A        Archive
+</pre>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common return codes are FILE_NOT_FOUND_RC, PATH_NOT_FOUND_RC, ERROR_WRITING_FILE_RC, and INVALID_OPTION_RC.  On error, message is displayed.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote>
+</body>
+</html>

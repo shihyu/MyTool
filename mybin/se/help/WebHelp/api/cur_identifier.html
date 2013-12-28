@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>cur_identifier</title>
+</head>
+<body>
+
+<h3><b>_str cur_identifier(int &start_col, int option=VSCURWORD_WHOLE_WORD)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns the current identifier.
+"" is returned if there is no identifier at the cursor.
+<i>start_col</i> is set to the physical position within the current
+line of the word returned.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="start_col">start_col</A></code> - (output) start column for identifier.
+                        The start column is returned as imaginary
+                        columns, not physical columns.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - one of the following: <ul>
+   <li>VSCURWORD_WHOLE_WORD - get the entire identifier
+   <li>VSCURWORD_FROM_CURSOR - get part of identifier before cursor
+   <li>VSCURWORD_BEFORE_CURSOR - get part of identifier after cursor
+   <li>VSCURWORD_AT_END_USE_PREV - not supported
+</ul>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the current word.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote>
+</body>
+</html>

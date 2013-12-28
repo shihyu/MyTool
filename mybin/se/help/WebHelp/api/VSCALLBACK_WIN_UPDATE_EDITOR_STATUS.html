@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>VSCALLBACK_WIN_UPDATE_EDITOR_STATUS</title>
+</head>
+<body>
+
+<h3><b>0 VSCALLBACK_WIN_UPDATE_EDITOR_STATUS</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><PRE>
+void (VSAPI *VSPFNUPDATEEDITORSTATUS)(int wid,int RefreshFlags,seSeekPos linenum,
+                                      int col,const char *pModeName,
+                                      int ModeNameLen,int StatusFlags,
+                                      int reserved);</PRE>
+The UPDATEEDITORSTATUS callback function is called when the
+editor control status indicators have changed.  This allows the user to
+display a line number, column, and other editor status information
+anywhere they want.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="RefreshFlags">RefreshFlags</A></code> - Flags indicating what has changed.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="linenum">linenum</A></code> - Line number (VSP_RLINE). Update only if
+(RefreshFlags & VSREFRESH_LINE).  Not
+valid if ~(RefreshFlags &
+VSREFRESH_LINE).  If <i>linenum</i> is
+less than 0, this means VSE does not know
+the current line number.  This happens (by
+default) when you load a file larger than
+500k than has no color coding defined.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="col">col</A></code> - Column. Update only if (RefreshFlags &
+VSREFRESH_COL).
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pModeName">pModeName</A></code> - Mode name. Update only if (RefreshFlags &
+VSREFRESH_OTHER).
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ModeNameLen">ModeNameLen</A></code> - Number of bytes in pModeName.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="StatusFlags">StatusFlags</A></code> - See VSSTATUSFLAG_???? defines.
+Update only if (RefreshFlags &
+CorrespondingRefreshFlag)
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Editor_Control_Callback_Functions.html">Editor Control Callback Functions</a></blockquote>
+</body>
+</html>

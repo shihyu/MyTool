@@ -1,0 +1,43 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_macro</title>
+</head>
+<body>
+
+<h3><b>typeless _macro(_str option='M', _str new_value=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Performs many macro recording related functions.  There are two kinds of
+macros.  Source code macros and keyboard macros.  If you have a slow
+machine, source code macros take a little bit more time to define but run
+faster.  Only one keyboard macro may be defined and it is not saved
+between edit sessions.  Currently we only use keyboard macros in VI
+emulation.
+<P>
+When one command calls another command, recording output is turned off.
+The original command can turn recording output back on with the statement
+"_macro('m', _macro('s'));".  If your command calls the show command or
+another command, you may need to turn recording output back on.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - option defaults to 'M' when not given.
+                 <DL compact>
+                 <DT>Option<DD>Description
+                 <DT>'M'<DD>  Temporarily turns recording output on or off.  If the second parameter is specified, recording output is set to new_value.  Returns current recording output value.  A non-zero value indicates macro actions should be recorded.
+                 <DT>'S'<DD>  Returns non-zero value if macro recording is on.  Second parameter is ignored.
+                 <DT>'B'<DD>  Turns on macro recording.  Output for recording is to the current file.  Returns 0.  Second parameter is ignored.
+                 <DT>'E'<DD>  Turns off macro recording.  Returns 0.  Second parameter is ignored.
+                 <DT>'R'<DD>  Indicates that a recording macro is running.  The editor needs to know when a recorded macro is being executed to correctly handle special cases.  For example, when in BRIEF emulation, after performing a search the delay function gets called to wait for 4 seconds or until a key is pressed to temporarily show a highlight on the text that was found.  When running a recorded macro, the delay function will return immediately.
+                 <DT>'KB'<DD> Begin recording keyboard macro.
+                 <DT>'KE'<DD> End recording keyboard macro.
+                 <DT>'KD'<DD> End recording keyboard macro but delete the last key sequence in the recording since it is the key sequence which executed the command to end recording.
+                 <DT>'KR'<DD> Query if a keyboard macro is being played back.  new_value argument is ignored.
+                 <DT>'KP'<DD> Terminate if necessary and play
+                 the last recorded keyboard macro. new_value
+                 optionally specifies a list of keys.
+                 </DL>
+                 <P>
+                 The 'M' option allows macro recording to be on, but no recorded actions to
+                 be output.  This allows for the editor and macros, which output recording
+                 information, to temporarily stop outputting Slick-C&reg; source code without
+                 turning off macro recording.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="new_value">new_value</A></code> -  </blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If 'S' is specified, this return an int.  If 'KE'
+        or 'KD' specified, this returns a list keys.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Macro_Programming_Functions.html">Macro Programming Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="start_recording.html">start_recording</a>, <a href="end_recording.html">end_recording</a>, <a href="record_macro_toggle.html">record_macro_toggle</a>, <a href="record_macro_end_execute.html">record_macro_end_execute</a>, <a href="list_macros.html">list_macros</a>, <a href="gui_save_macro.html">gui_save_macro</a>, <a href="save_macro.html">save_macro</a>, <a href="_macro.html">_macro</a></blockquote>
+</body>
+</html>

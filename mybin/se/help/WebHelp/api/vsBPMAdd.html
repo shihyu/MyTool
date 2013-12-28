@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsBPMAdd</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsBPMAdd(int wid, seSeekPos RealLineNum, int flags, void *puserdata=a)</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>Use vsLineMarker* functions
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Adds a break point.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="RealLineNum">RealLineNum</A></code> - Real line number (<B>VSP_RLINE</B>).
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flags">flags</A></code> - One of the flags below:
+
+<ul>
+<li>VSBPFLAG_BREAKPOINT</li>
+<li>VSBPFLAG_EXEC</li>
+<li>VSBPFLAG_STACKEXEC</li>
+<li>VSBPFLAG_BREAKPOINTDISABLED</li>
+</ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="puserdata">puserdata</A></code> - Optional pointer to user data.  Use this to
+store debugger specific information.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns an index to a break point which is valid input to
+<b>vsBPMGet</b>().
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Deprecated_Breakpoint_Functions.html">Deprecated Breakpoint Functions</a></blockquote>
+</body>
+</html>

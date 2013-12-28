@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsQSelectType</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsQSelectType(int wid, int markid=-1, char option='T')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="markid">markid</A></code> - <i>mark_id</i> is a selection handle
+allocated by the <b>vsAllocSelection</b> or
+<b>vsDuplicateSelection</b> function.  A
+<i>mark_id</i> of -1 specifies the active
+selection or selection showing and is always
+allocated.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - See below.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If a value of 'T' is specified for the second parameter, one of the
+selection types VSSELECT_BLOCK, VSSELECT_CHAR, or
+VSSELECT_LINE is returned. 0 is returned if the selection specified
+has not been set.
+
+<p>When a value of 'S' is specified for the second parameter, the select
+style is returned.  Select styles are VSSELECT_CURSOREXTENDS
+or 0 which correspond to cut/paste (selection extends as the cursor
+moves) or begin/end respectively.  0 is returned if the selection
+specified has not been set.</p>
+
+<p>If a value of 'I' is specified for the second parameter, 1 is returned if
+the selection specified is an inclusive selection.  Otherwise 0 is
+returned.</p>
+
+<p>When a value of 'U' is specified for the second parameter, a
+VSSELECT_PERSISTENT is returned if the selection specified is a
+persistent mark.  Otherwise, 0 is returned.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Selection_Functions.html">Selection Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsSetSelectType.html">vsSetSelectType</a></blockquote>
+</body>
+</html>

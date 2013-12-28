@@ -1,0 +1,75 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsTagGetDetailI</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsTagGetDetailI(int detail_id, int item_id, int &iValue)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve specific integer information about the given tag, context item or
+local variable.  This function complements vsTagGetTagInfo(),
+vsTagGetContextInfo() and vsTagGetLocalInfo(), but is capable of getting
+much more specific information about the given tag.
+<p>
+For synchronization, macros should perform a tag_lock_context(false)
+or tag_lock_matches(false) prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="detail_id">detail_id</A></code> - ID of detail to extract, one of:
+<PRE>
+      VS_TAGDETAIL_type_id                (int) unique id for tag type.
+      VS_TAGDETAIL_file_line              (int) line number of tag within file
+      VS_TAGDETAIL_file_id                (int) unique id for file the tag is located in
+      VS_TAGDETAIL_class_id               (int) unique id for class tag belongs to
+      VS_TAGDETAIL_flags                  (int) tag flags, see tag_insert_simple
+      VS_TAGDETAIL_num_tags               (int) number of tags in database
+      VS_TAGDETAIL_num_classes            (int) number of classes in database
+      VS_TAGDETAIL_num_files              (int) number of files in database
+      VS_TAGDETAIL_num_types              (int) number of types in database
+      VS_TAGDETAIL_num_refs               (int) number of references in database
+      VS_TAGDETAIL_tag_id                 (int) unique ID for tag instance
+      VS_TAGDETAIL_context_id             (int) returns same result as tag_current_context()
+      VS_TAGDETAIL_local_id               (int) returns same result as tag_current_local
+      VS_TAGDETAIL_current_file           (int) returns name of file in current context
+
+      VS_TAGDETAIL_context_line           (int) start line number of tag.
+      VS_TAGDETAIL_context_start_linenum  (int) same as *_line, above.
+      VS_TAGDETAIL_context_start_seekpos  (int) seek position tag starts at
+      VS_TAGDETAIL_context_name_linenum   (int) line number symbol name is on
+      VS_TAGDETAIL_context_name_seekpos   (int) seek position of symbol name
+      VS_TAGDETAIL_context_scope_linenum  (int) line number body starts at.
+      VS_TAGDETAIL_context_scope_seekpos  (int) seek position body starts at.
+      VS_TAGDETAIL_context_end_linenum    (int) line number tag ends on.
+      VS_TAGDETAIL_context_end_seekpos    (int) seek position tag ends at.
+      VS_TAGDETAIL_context_flags          (int) tag attribute flags.
+      VS_TAGDETAIL_context_outer          (int) ID of first enclosing tag.
+
+      VS_TAGDETAIL_local_line             (int) start line number of tag.
+      VS_TAGDETAIL_local_start_linenum    (int) same as *_line, above.
+      VS_TAGDETAIL_local_start_seekpos    (int) seek position tag starts at
+      VS_TAGDETAIL_local_name_linenum   (int) line number symbol name is on
+      VS_TAGDETAIL_local_name_seekpos   (int) seek position of symbol name
+      VS_TAGDETAIL_local_scope_linenum    (int) line number body starts at.
+      VS_TAGDETAIL_local_scope_seekpos    (int) seek position body starts at.
+      VS_TAGDETAIL_local_end_linenum      (int) line number tag ends on.
+      VS_TAGDETAIL_local_end_seekpos      (int) seek position tag ends at.
+      VS_TAGDETAIL_local_flags            (int) tag attribute flags.
+      VS_TAGDETAIL_local_outer            (int) ID of first enclosing tag.
+
+      VS_TAGDETAIL_match_line             (int) start line number of tag.
+      VS_TAGDETAIL_match_start_linenum    (int) same as *_line, above.
+      VS_TAGDETAIL_match_start_seekpos    (int) seek position tag starts at
+      VS_TAGDETAIL_match_name_linenum   (int) line number symbol name is on
+      VS_TAGDETAIL_match_name_seekpos   (int) seek position of symbol name
+      VS_TAGDETAIL_match_scope_linenum    (int) line number body starts at.
+      VS_TAGDETAIL_match_scope_seekpos    (int) seek position body starts at.
+      VS_TAGDETAIL_match_end_linenum      (int) line number tag ends on.
+      VS_TAGDETAIL_match_end_seekpos      (int) seek position tag ends at.
+      VS_TAGDETAIL_match_flags            (int) tag attribute flags.
+      VS_TAGDETAIL_match_outer            (int) ID of first enclosing tag.
+</PRE></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="item_id">item_id</A></code> - ID of local variable, context item to get
+                        information about, ignored if the detail is
+                        for the current tag in the tag database.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iValue">iValue</A></code> - (Output) Set to tag detail value.  If the given
+                        tag does not exist, this will be set to 0.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

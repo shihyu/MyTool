@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="content-script-type" content="text/javascript; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="search.css"/>
+		<script type="text/javascript" src="util.js"></script>
+		<script type="text/javascript" src="search.js"></script>
+		<title>Search SlickEdit Help</title>
+	</head>
+	<body>
+		<form action="result.html" onsubmit="Search.start(); return false;">
+			<p>
+				<span style="border: 0px solid grey; padding: 0px; position:absolute; left: 5px; top:5px;">
+				<label>Keyword(s):</label><br/>
+				<input type="text" id="search_query" value="" size="50" style="top: 45px"/> 
+				<button onclick="Search.start();" id="search_button">Search</button>
+				</span>
+			<span style="border: 1px solid grey; padding: 3px; position:absolute; left: 5px; top:50px;">
+				<label>
+					<input type="radio" name="search_operator" id="search_operator_and" value="and" checked="checked" /> AND
+				</label>
+				<label>
+					<input type="radio" name="search_operator" id="search_operator_or" value="or" /> OR
+				</label>
+			</span>
+			<span style="border: 1px solid grey; padding: 3px; position:absolute; left: 130px; top:50px;">
+				<label>
+					<input type="radio" name="search_mode" id="search_mode_prefix" value="prefix" checked="checked" /> Prefix
+				</label>
+				<label>
+					<input type="radio" name="search_mode" id="search_mode_whole_words" value="whole_words" /> Whole words
+				</label>
+			</span>
+			</p>
+		</form>
+		
+		<div id="search_result" style="border: 0px padding: 0px; position:absolute; left: 5px; top:80px;"></div>
+	</body>
+</html>

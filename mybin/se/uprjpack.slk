@@ -1,0 +1,261 @@
+[.GLOBAL]
+version=6.0
+
+[Tornado]
+INCLUDEDIRS=%(INCLUDE)
+COMPILE=copts: savecurrent|disablecapoutputcmd: tornadomake -f ../Makefile %b %n.o
+MAKE=copts: saveworkspacefiles|disablecapoutputcmd: tornadomake -f ../Makefile %b %bt
+REBUILD=copts: saveworkspacefiles|disablecapoutput|hide|menu: Rebuild:&Rebuildcmd: tornadorebuild
+DEBUG=copts: hide|menu: Debug:&Debug
+EXECUTE=copts: hide|menu: Execute:E&xecute
+
+[Java - Empty Project;.GLOBAL]
+FILTERNAME=Source Files\nBitmaps\nOther Files\n
+FILTERPATTERN=*.java;*.c;*.cpp;*.cxx;*.hxx;*.prg;*.pas;*.dpr;*.asm;*.bas;*.sc;*.e\n*.jpg;*.gif;*.bmp\n*\n
+FILTERAPPCOMMAND=\n\n\n
+FILTERASSOCIATEFILETYPES=0 1 0
+macro_switchconfig=_on_switchconfig_java
+app_type_list=application,applet,custom
+packtype=java
+DebugCallbackName=jdwp
+
+[Java - Empty Project;Debug]
+app_type=application
+packver=5
+compile=copts: savecurrent|concur|capture|dialog:_java_options_form:Compiler|readonly|menu: Compile:&Compilecmd: javac -g %jbd %cp "%f"otheropts:
+make=copts: saveworkspacefiles|concur|capture|dialog:_java_options_form:Compiler|readonly|menu: Build:&Buildcmd: javamakeotheropts:
+rebuild=copts: saveworkspacefiles|concur|capture|dialog:_java_options_form:Compiler|readonly|menu: Rebuild:&Rebuildcmd: javarebuildotheropts:
+debug=@
+apptool_debug_application=copts: concur|capture|buildfirst|dialog:_java_options_form:Debugger|readonly|menu: Debug:&Debugcmd: java -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 %cp . otheropts:
+apptool_debug_applet=copts: buildfirst|dialog:_java_options_form:Appletviewer|readonlymenu: Debug:&Debugcmd: appletviewer -J-Xdebug -J-Xnoagent -J-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 %hotheropts:
+apptool_debug_custom=copts: buildfirst|menu: Debug:&Debugcmd: jdb %cp %<eotheropts:
+execute=@
+apptool_execute_application=copts: buildfirst|saveworkspacefiles|dialog:_java_options_form:Interpreter|readonly|concur|capture|menu: Execute:E&xecutecmd: java %cpotheropts:
+apptool_execute_applet=copts: buildfirst|saveworkspacefiles|dialog:_java_options_form:Appletviewer|readonly|concur|capture|menu: Execute:E&xecutecmd: appletviewer %hotheropts: appletclass: %<e
+apptool_execute_custom=copts: buildfirst|saveworkspacefiles|concur|capture|menu: Execute:E&xecutecmd: java %cp %<e otheropts:
+usertool_dash=copts: |savenone|menu: dash:-cmd: otheropts:
+usertool_view_javadoc=copts: |hide|savecurrent|readonly|disablecapoutput|dialog:_java_options_form:javadocmenu: view javadoc:&View Javadoccmd: javaviewdocotheropts:
+usertool_javadoc_all=copts: saveworkspacefiles|concur|capture|hide|dialog:_java_options_form:javadoc|readonly|menu: javadoc all:Javadoc Allcmd: javamakedoc javadoc -d docs %cp '%{*.java}'otheropts:
+usertool_dash2=copts: |savenone|menu: dash2:-cmd: otheropts:
+usertool_make_jar=copts: saveworkspacefiles|concur|capture|readonly|hide|dialog:_java_options_form:jar|menu: make jar:Make &Jarcmd: javamakejar jar cvf "%<e.jar" '%{*}'otheropts:
+usertool_java_options=copts: readonly|hide|savenone|nochangedir|disablecapoutput|menu: java options:Java &Options...cmd: javaoptionsotheropts:
+user1=copts: |hide|menu: User 1:User 1cmd: otheropts:
+user2=copts: |hide|menu: User 2:User 2cmd: otheropts:
+includedirs=
+reffile=
+defaultbuilddir=classes
+
+[Java - Empty Project;Release]
+copy_from=Java - Empty Project;Debug
+compile=copts: savecurrent|concur|capture|dialog:_java_options_form:Compiler|readonly|menu: Compile:&Compilecmd: javac %jbd %cp "%f"otheropts:
+
+[Java - AWT Applet;.GLOBAL]
+copy_from=Java - Empty Project;.GLOBAL
+initmacro=awt_applet_wizard
+
+[Java - AWT Applet;Debug]
+copy_from=Java - Empty Project;Debug
+app_type=applet
+
+[Java - AWT Applet;Release]
+copy_from=Java - Empty Project;Release
+app_type=applet
+
+[Java - With main();.GLOBAL]
+copy_from=Java - Empty Project;.GLOBAL
+initmacro=java_with_main_wizard
+
+[Java - With main();Debug]
+app_type=application
+copy_from=Java - Empty Project;Debug
+
+[Java - With main();Release]
+copy_from=Java - Empty Project;Release
+app_type=application
+
+[Java - JFC Applet;.GLOBAL]
+copy_from=Java - Empty Project;.GLOBAL
+initmacro=jfc_applet_wizard
+
+[Java - JFC Applet;Debug]
+copy_from=Java - Empty Project;Debug
+app_type=applet
+
+[Java - JFC Applet;Release]
+copy_from=Java - Empty Project;Release
+app_type=applet
+
+[Java - AWT Application;.GLOBAL]
+copy_from=Java - Empty Project;.GLOBAL
+initmacro=awt_app_wizard
+
+[Java - AWT Application;Debug]
+copy_from=Java - Empty Project;Debug
+
+[Java - AWT Application;Release]
+copy_from=Java - Empty Project;Release
+
+[Java - JavaBean;.GLOBAL]
+copy_from=Java - Empty Project;.GLOBAL
+initmacro=javabean_wizard
+
+[Java - JavaBean;Debug]
+copy_from=Java - Empty Project;Debug
+
+[Java - JavaBean;Release]
+copy_from=Java - Empty Project;Release
+
+[Java - EJB;.GLOBAL]
+copy_from=Java - Empty Project;.GLOBAL
+initmacro=ejb_wizard
+
+[Java - EJB;Debug]
+copy_from=Java - Empty Project;Debug
+compile=copts: savecurrent|concur|capture|dialog:_java_options_form:Compiler|readonly|menu: Compile:&Compilecmd: javac -g %jbd %cp "%f"otheropts:
+
+[Java - EJB;Release]
+copy_from=Java - Empty Project;Release
+compile=copts: savecurrent|concur|capture|dialog:_java_options_form:Compiler|readonly|menu: Compile:&Compilecmd: javac %jbd %cp "%f"otheropts:
+
+[Java - JFC Application;.GLOBAL]
+copy_from=Java - Empty Project;.GLOBAL
+initmacro=jfc_app_wizard
+
+[Java - JFC Application;Debug]
+copy_from=Java - Empty Project;Debug
+
+[Java - JFC Application;Release]
+copy_from=Java - Empty Project;Release
+
+[Custom makefile, any compiler]
+INCLUDEDIRS=%(INCLUDE)
+compile=copts: savecurrent|concur|capturemenu: Compile:&Compilecmd: make %n.ootheropts:
+make=copts: concur|capture|saveworkspacefiles|menu: Build:&Buildcmd: makeotheropts:
+rebuild=
+debug=copts: concur|capture|buildfirst|xterm|menu: Debug:&Debugcmd: gdb %bd%ootheropts:
+execute=copts: saveworkspacefiles|concur|capture|buildfirst|menu: Execute:E&xecutecmd: %<eotheropts:
+
+[GNU C/C++ Wizard;.GLOBAL]
+initmacro=gnuc_wizard
+packtype=gnuc
+DebugCallbackName=gdb
+
+[GNU C/C++ Wizard;Debug]
+compile=copts: savecurrent|concur|capture|dialog:_gnuc_options_form:Compilemenu: Compile:&Compilecmd: g++ -c %xup -g -o "%bd%n%oe" %i "%f"otheropts: outputext: .o
+link=copts: savecurrent|concur|nevershow|capture|dialog:_gnuc_options_form:Linkmenu: Link:&Linkcmd: g++ %xup -g -o "%bd%o" %f %libsotheropts:
+make=copts: concur|capture|dialog:_gnuc_options_form:Compile|saveworkspacefiles|menu: Build:&Buildcmd: "%(VSLICKBIN1)vsbuild" make "%w" "%r" -cppmakeotheropts:
+rebuild=copts: concur|capture|dialog:_gnuc_options_form:Compile|saveworkspacefiles|menu: Rebuild:&Rebuildcmd: "%(VSLICKBIN1)vsbuild" rebuild "%w" "%r" -cpprebuildotheropts:
+debug=copts: concur|capture|buildfirst|dialog:_gnuc_options_form:Run/Debug|menu: Debug:&Debugcmd: vsdebugio -prog %bd%ootheropts:
+execute=copts: saveworkspacefiles|concur|capture|buildfirst|dialog:_gnuc_options_form:Run/Debug|menu: Execute:E&xecutecmd: %bd%ootheropts:
+usertool_dash=copts: |savenone|menu: dash:-cmd: otheropts:
+usertool_gnu_c_options=copts: readonly|hide|savenone|nochangedir|disablecapoutput|menu: GNU C Options:GNU C &Options...cmd: gnucoptionsotheropts:
+outputfile=%<e
+
+[GNU C/C++ Wizard;Release]
+copy_from=GNU C/C++ Wizard;Debug
+compile=copts: savecurrent|concur|capture|dialog:_gnuc_options_form:Compilemenu: Compile:&Compilecmd: g++ -c %xup -o "%bd%n%oe" %i "%f"otheropts: outputext: .o
+link=copts: savecurrent|concur|nevershow|capture|dialog:_gnuc_options_form:Linkmenu: Link:&Linkcmd: g++ %xup -o "%bd%o" %f %libsotheropts:
+
+[(None)]
+INCLUDEDIRS=
+COMPILE=copts: savecurrent|concur|capturecmd:
+MAKE=copts: saveworkspacefiles|concur|capturecmd:
+REBUILD=copts: saveworkspacefiles|concur|capturecmd:
+debug=copts: menu: :cmd:
+execute=copts: menu: :cmd: %<e
+
+[OS/390 UNIX C]
+INCLUDEDIRS=%(INCLUDE)
+compile=copts: savecurrent|concur|capturemenu: :cmd: c89 -o %n.o -c %n.c
+make=copts: saveworkspacefiles|concur|capturemenu: :cmd: make
+rebuild=
+debug=copts: menu: :cmd: %(VSLICKBIN)/vadbg %<e
+execute=copts: c89 menu: :cmd: %<e
+
+[OS/390 UNIX C++]
+INCLUDEDIRS=%(INCLUDE)
+compile=copts: savecurrent|concur|capturemenu: :cmd: c++ -+ -o %n.output -c %f
+make=copts: saveworkspacefiles|concur|capturemenu: :cmd: make
+rebuild=
+debug=copts: menu: :cmd: %(VSLICKBIN)/vadbg %<e
+execute=copts: menu: :cmd: %<e
+
+[OS/390 UNIX Assembler]
+INCLUDEDIRS=%(INCLUDE)
+compile=copts: savecurrent|concur|capturemenu: :cmd: c89 -o %n.o -c %n.asm
+make=copts: saveworkspacefiles|concur|capturemenu: :cmd: make
+rebuild=
+debug=copts: menu: :cmd: %(VSLICKBIN)/vadbg %<e
+execute=copts: menu: :cmd: %<e
+
+[OS/390 VS COBOL II]
+INCLUDEDIRS=
+compile=copts: savecurrent|concur|capturemenu: :cmd: %(VSLICKBIN)/vscomp.rexx vscob2 %df "%ds1.obj(%dm)"
+make=copts: saveworkspacefiles|concur|capturemenu: :cmd:
+rebuild=copts: menu: :cmd:
+debug=copts: concur|capturemenu: :cmd:
+execute=copts: concur|capturemenu: :cmd:
+
+[OS/390 MVS C]
+INCLUDEDIRS=
+compile=copts: savecurrent|concur|capturemenu: :cmd: %(VSLICKBIN)/vscomp.rexx mvscc %df "%ds1.obj(%dm)"
+make=copts: saveworkspacefiles|concur|capturemenu: :cmd:
+rebuild=copts: menu: :cmd:
+debug=copts: concur|capturemenu: :cmd:
+execute=copts: concur|capturemenu: :cmd:
+
+[OS/390 MVS C++]
+INCLUDEDIRS=
+compile=copts: savecurrent|concur|capturemenu: :cmd: %(VSLICKBIN)/vscomp.rexx mvscxx %df "%ds1.obj(%dm)"
+make=copts: saveworkspacefiles|concur|capturemenu: :cmd:
+rebuild=copts: menu: :cmd:
+debug=copts: concur|capturemenu: :cmd:
+execute=copts: concur|capturemenu: :cmd:
+
+[OS/390 C/370]
+INCLUDEDIRS=
+compile=copts: savecurrent|concur|capturemenu: :cmd: %(VSLICKBIN)/vscomp.rexx c370 %df "%ds1.obj(%dm)"
+make=copts: saveworkspacefiles|concur|capturemenu: :cmd:
+rebuild=copts: menu: :cmd:
+debug=copts: concur|capturemenu: :cmd:
+execute=copts: concur|capturemenu: :cmd:
+
+[OS/390 PL/I Optimizing]
+INCLUDEDIRS=
+compile=copts: savecurrent|concur|capturemenu: :cmd: %(VSLICKBIN)/vscomp.rexx pl1opt %df "%ds1.obj(%dm)"
+make=copts: saveworkspacefiles|concur|capturemenu: :cmd:
+rebuild=copts: menu: :cmd:
+debug=copts: concur|capturemenu: :cmd:
+execute=copts: concur|capturemenu: :cmd:
+
+[OS/390 MVS High Level Assembler]
+INCLUDEDIRS=
+compile=copts: savecurrent|concur|capturemenu: :cmd: %(VSLICKBIN)/vscomp.rexx hlasm %df "%ds1.obj(%dm)"
+make=copts: saveworkspacefiles|concur|capturemenu: :cmd:
+rebuild=copts: menu: :cmd:
+debug=copts: concur|capturemenu: :cmd:
+execute=copts: concur|capturemenu: :cmd:
+
+[OS/390 VS Fortran]
+INCLUDEDIRS=
+compile=copts: savecurrent|concur|capturemenu: :cmd: %(VSLICKBIN)/vscomp.rexx vsfor %df "%ds1.obj(%dm)"
+make=copts: saveworkspacefiles|concur|capturemenu: :cmd:
+rebuild=copts: menu: :cmd:
+debug=copts: concur|capturemenu: :cmd:
+execute=copts: concur|capturemenu: :cmd:
+
+[VHDL: Model Technology ModelSim;.GLOBAL]
+FILTERNAME=Source Files\nOther Files\n
+FILTERPATTERN=*.vhd;*.vhdl\n*.*\n
+FILTERAPPCOMMAND=\n\n
+FILTERASSOCIATEFILETYPES=0 0
+
+[VHDL: Model Technology ModelSim;Release]
+INCLUDEDIRS=%(INCLUDE)
+COMPILE=copts: savecurrent|concur|capturecmd: vcom %p%n%e
+MAKE=copts: saveworkspacefiles|concur|capturecmd: make
+REBUILD=copts: saveworkspacefiles|concur|capturecmd:
+DEBUG=cmd: vsim
+EXECUTE=cmd: vsim
+
+

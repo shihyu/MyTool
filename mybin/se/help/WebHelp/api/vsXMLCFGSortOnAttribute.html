@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsXMLCFGSortOnAttribute</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsXMLCFGSortOnAttribute(int iHandle, int iParentNode, const char *pszPrimaryAttrName, const char *pszPrimaryOptions, const char *pszPrimaryFolderElementName=0, const char *pszSecondaryAttrName=0, const char *pszSecondaryOptions=0, void *reserved=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sorts nodes that are children of a specified node.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iHandle">iHandle</A></code> - Handle to an XMLCFG tree returned by vsXMLCFGOpen(), vsXMLCFGCreate(), or vsXMLCFGOpenFromBuffer().</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iParentNode">iParentNode</A></code> - of this node are sorted.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszPrimaryAttrName">pszPrimaryAttrName</A></code> - Name of primary attribute to sort on.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszPrimaryOptions">pszPrimaryOptions</A></code> - String of one or more of the following options:
+
+
+                <dl compact>
+                <dt><b>F</b><dd>Sort filenames
+                <dt><b>N</b><dd>Sort numbers
+                <dt><b>I</b><dd>Case insensitive sort.  Sort is case sensitive if this option is not specified.
+                <dt><b>D</b><dd>Descending.  Sort is ascending if this option is not specified.
+                <dt><b>P</b><dd>Place parent nodes at the top after sort.  Here we consider a parent nodes with name PrimaryFolderElementName.
+                <dt><b>2</b><dd>Specialized filename sort.  Sort case insensitive on name without path, then case sensitive on name without path, then case insensitive on path.
+                </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszPrimaryFolderElementName">pszPrimaryFolderElementName</A></code> - Only used if <b>P</b> option specified in <i>pszPrimaryOptions</i>. Indicates the
+                element of a folder.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszSecondaryAttrName">pszSecondaryAttrName</A></code> - Secondary attribute name to sort on</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszSecondaryOptions">pszSecondaryOptions</A></code> - Specifies secondary sort options.  See primary options for more information.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="reserved">reserved</A></code> -  </blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><pre>
+// Sort a folder node and place sub folders at the top.
+// Note that it is OK that <Folder> nodes have no "N"
+// attribute but do have a "Name" attribute.
+vsXMLCFGSortOnAttribute(handle,FolderNode,"N",
+   "Folder",
+   "Name",
+   "2P");
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="XMLCFG_Functions.html">XMLCFG Functions</a></blockquote>
+</body>
+</html>

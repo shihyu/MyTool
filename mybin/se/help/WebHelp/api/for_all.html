@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>for_all</title>
+</head>
+<body>
+
+<h3><b>_command typeless for_all(_str commandArg='', _str shell_wait='', _str echo_command='', typeless command_view_id='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Executes <i>command</i> specified on all the lines of the current buffer.
+Parts of the line being executed are inserted into the <i>command</i>
+specified according to the following specifications:
+<DL compact style="margin-left:20pt;">
+   <DT>%E   <DD>File extension with dot (Directory buffers only)
+   <DT>%F   <DD>Filename  (Directory buffers only)
+   <DT>%N   <DD>Name without extension (Directory buffers only)
+   <DT>%L   <DD>Entire line
+   <DT>%R   <DD>Current project
+   <DT>%V   <DD>Drive with : (Directory buffers only).  This is not very useful under
+UNIX.
+   <DT>%<i>nnn</i>   <DD>Nth word is inserted
+   <DT>%(<i>envvar</i>) <DD>Value of environment variable <i>envvar</i>
+   <DT>%%   <DD>percent character
+</DL><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<DL>
+        <DT>for-all fmsay %L <DD>Displays all lines of the current buffer
+</DL></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

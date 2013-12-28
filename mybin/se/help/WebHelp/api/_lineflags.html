@@ -1,0 +1,55 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_lineflags</title>
+</head>
+<body>
+
+<h3><b>int _lineflags(int newflags=0, int mask=newflags)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Gets or sets the line status flags for the current line.  If the flags
+argument is given, the line status flags for the current line are
+modified.  mask defaults to the same value as flags if it is not
+specified.  The mask indicates which bits will be set according to flags.
+<DL compact>
+<DT>MLCOMMENTINDEX_LF<DD style="marginleft:120pt">Indicates which multi-line comment.
+   Only two are allowed. Must know which multi-line comment we are in so we know
+   what will terminate it.
+<DT>MLCOMMENTLEVEL_LF<DD style="marginleft:120pt">Indicates multi-line comment nest level.
+<DT>NOSAVE_LF<DD style="marginleft:90pt">Used by Difference Editor and Merge Editor.
+Lines with the NOSAVE_LF flag set are not saved in the file.
+<DT>VIMARK_LF<DD style="marginleft:90pt">Used by VI emulation to mark lines.
+<DT>MODIFY_LF<DD style="marginleft:90pt">Line has been modified.
+<DT>INSERTED_LINE_LF<DD style="marginleft:90pt">Line was inserted.
+<DT>HIDDEN_LF<DD style="marginleft:90pt">Indicates that this line should not be displayed.
+<DT>PLUSBITMAP_LF<DD style="marginleft:90pt">Display "+" bitmap to left of this line.
+<DT>MINUSBITMAP_LF<DD style="marginleft:90pt">Display "-" bitmap to left of this line.
+<DT>CURLINEBITMAP_LF<DD style="marginleft:90pt">Display current line bitmap.
+<DT>LEVEL_LF<DD style="marginleft:90pt">Bits used to store selective display nest level.
+</DL>
+<P>
+The MLCOMMENT flags can not be modified.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">The new current line status flags for the current line.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+   if (_lineflags() & INSERTED_LINE_LF) {
+       messageNwait("This line was inserted");
+   }
+   if (_lineflags() & MODIFY_LF) {
+       messageNwait("This line was modified");
+   }
+   // Turn on hidden flag
+   _lineflags(HIDDEN_LF,HIDDEN_LF);
+   if (_lineflags() & HIDDEN_LF) {
+       messageNwait("HIDDEN flag is on");
+
+  }
+   // Turn off HIDDEN flag
+   _lineflags(0,HIDDEN_LF);
+   if (!(_lineflags() & HIDDEN_LF)) {
+       messageNwait("hidden flag is off");
+   }
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="CursorMovement_Functions.html">CursorMovement Functions</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote>
+</body>
+</html>

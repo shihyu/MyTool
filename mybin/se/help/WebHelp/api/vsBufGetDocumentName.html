@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsBufGetDocumentName</title>
+</head>
+<body>
+
+<h3><b>char*VSAPI vsBufGetDocumentName(int buf_id, char *pszDocumentName, int MaxDocumentName, int *pMaxDocumentNameLen=a, int defaultToBufferName=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Gets the document name to be displayed to the user.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="buf_id">buf_id</A></code> - Buffer id returned by
+<b>vsPropGetI</b>(<i>wid</i>,VSP_BUF_
+ID),  <b>vsBufEdit</b>, or vsBufMatch.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszDocumentName">pszDocumentName</A></code> - Set to document name
+(VSP_DOCUMENTNAME).  If
+<i>defaultToBufferName</i> is non-zero
+and the document name is "" then this
+parameter is set to the buffer name
+(VSP_BUFNAME).
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxDocumentName">MaxDocumentName</A></code> - Number of characters allocated to
+<i>pszDocumentName</i>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="defaultToBufferName">defaultToBufferName</A></code> - Indicates that the
+<i>pszDocumentName</i> parameter
+should be set to the buffer name if the
+document is "".
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>char*VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns <i>pszDocumentName</i>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Attention:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+This function is thread-safe.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a></blockquote>
+</body>
+</html>

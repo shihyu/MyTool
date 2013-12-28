@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_ini_replace_section</title>
+</head>
+<body>
+
+<h3><b>int _ini_replace_section(_str filename, _str section_name, int temp_view_id)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">For each <i>field_name</i>=<i>value</i> line in buffer
+corresponding in <i>temp_view_id</i>, the <i>field_name</i> value is replaced
+or inserted into <i>section</i>.  In addition, the <i>temp_view_id</i> is
+deleted.  Unlike the <b>_ini_put_section</b> function, fields which are not
+defined are NOT deleted.  This allows more than one user to replace multiple
+field values in one call without deleting field names defined by someone
+else.  This function is slower than the <b>_ini_put_section</b> function
+which replaces the entire section with the buffer corresponding to
+<i>temp_view_id</i>.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 if successful
+
+<pre>
+     ".ini" File Syntax:
+         [<i>section1</i>]
+         <i>field_name1</i>=<i>value1</i>
+         <i>field_name2=value2</i>
+         ...
+         [<i>section2</i>]
+         <i>field_name1=value1</i>
+         field_name2=<i>value2</i>
+         ...
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a>, <a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

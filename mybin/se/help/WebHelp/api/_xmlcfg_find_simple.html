@@ -1,0 +1,66 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_xmlcfg_find_simple</title>
+</head>
+<body>
+
+<h3><b>int _xmlcfg_find_simple(int iHandle, _str QueryStr, int NodeIndex=TREE_ROOT_INDEX)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Searches for the first occurrence of a node.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iHandle">iHandle</A></code> - Handle to an XMLCFG tree returned by _xmlcfg_open() ,_xmlcfg_create(), or _xmlcfg_open_from_buffer().</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="QueryStr">QueryStr</A></code> - This is a small subset of an XPath expression.  Do not add white space since
+                 it is not fully supported.  In the future, functions will be available which
+                 fully support XPath.  The following forms of XPath are supported:
+
+                 <DL>
+                 <DT><code>file</code></DT>
+                 <DD>Find "file" element nodes that are children of the node specified.</DD>
+                 <DT><code>@name</code></DT>
+                 <DD>Find attribute nodes with name "name" that are children of  the node specified.</DD>
+                 <DT><code>//file</code></DT>
+                 <DD>Find "file" element nodes that are anywhere beneath the node specified.  For example, if the node specified is TREE_ROOT_INDEX ("/"), this matches "/project/file" and "/file".</DD>
+                 <DT><code>/project/file</code></DT>
+                 <DD>Find "file" element nodes under the "project" element nodes which are under the root.  If NodeIndex is not the root or the tree, searching starts at the root.</DD>
+                 <DT><code>/project//file</code></DT>
+                 <DD>Find "file" element nodes anywhere (no just a child) under the "project" element nodes which are under the root.  If NodeIndex is not the root or the tree, searching starts at the root.</DD>
+
+                 <DT><code>/project/file[@name='main.c']</code></DT>
+                 <DD>Find "file" element nodes with a "name" attribute value of "main.c" under "project" element nodes which are under the root.  The expression between the square braces is called the predicate expression.  It tests for a codition starting from the context node but does not change the context node.</DD>
+
+                 <DT><code>/project/file[@name='main.c'][@option="debug"]</code></DT>
+                 <dd>Find "file" element nodes with a "name" attribute value of "main.c" and option attribute value of "debug" under "project" element nodes which are under the root.  This is a form of and expression.  There is currently no way to perform an "OR" operation.</dd>
+                 <DT><code>/project/file/@name[file-eq(.,'main.c')]</code></DT>
+                 <DD>Find "name" attribute nodes of "file" element nodes with a "name" attribute value of "main.c" under "project" element nodes which are under the root.  The file-eq() function (the only supported function) performs a case insensitive compare under file systems which are case insensitive.  The first argument to the file-eq() function is a period.  This specifies the value of the current node.  Note that specifying "@name" as the first argument to the file-eq() function would not work because the context node is already on the "name" attribute node and there are no attributes below attribute nodes.</DD>
+                 <DT><code>//file[contains(@config,'"WinDebug"','I')]/@name</code></DT>
+                 <DD>Find "name" attribute nodes of "file" element nodes with a "config" attribute which contains "WinDebug" in any case.  The third argument to contains() is optional and is a string of zero or more of the following option letters:
+                 <dl compact style="margin-left:20pt">
+                 <DT>I</dt>   <dd>Specifies case insensitive search.</dd>
+                 <DT>E</DT>   <dd>(default) Specifies case sensitive search.   See Regular Expressions in the on-line help.</dd>
+                 <dt>R</dt>   <dd>Specifies SlickEdit regular expression</dd>
+                 <dt>U</dt>   <dd>Specifies Unix regular expression which is should be compatible with the XML spec.</dd>
+                 <dt>B</dt>   <dd>Specifies Brief regular expression.</dd>
+                 <dt>L</dt>   <dd>Specifies Perl regular expression.</dd>
+                 </dl>
+
+                 We would have preferred not to extend the XML specification for the contains function but we needed case insensitive and regular expression searching which are not yet defined in the XML specification.
+                 <DT><code>//@config[contains(.,"'WinDebug'",
+                 'I')]</code></DT>
+                 <DD>Find "config" attribute nodes with
+                 values that contain "WinDebug" of any case.
+                 <DT><code>//file[not(@config)]/@name</code></DT>
+                 <DD>Find "name" attribute nodes of "file" element nodes which do not have a config attribute.  No other forms of the not() function are supported yet.
+                 </DL></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NodeIndex">NodeIndex</A></code> - Tree node index to start search from.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns node index (>=0) found if successful.  Otherwise a negative
+        error code is returned.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><PRE>
+// Find the first file element node under /project with name equal to
+// "main.c"
+FileIndex=_xmlcfg_find_simple(handle,
+    "/project/file[file-eq(@name,'main.c')]");
+
+// Find the attribute node under /project/file with name equal
+// to "main.c"
+AttrIndex=_xmlcfg_find_simple(handle,
+    "/project/file/@name[file-eq(.,'main.c')]");
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="XMLCFG_Functions.html">XMLCFG Functions</a></blockquote>
+</body>
+</html>

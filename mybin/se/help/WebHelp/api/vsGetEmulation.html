@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsGetEmulation</title>
+</head>
+<body>
+
+<h3><b>char*VSAPI vsGetEmulation(char *pszResult, int MaxResult, int *pMaxResultLen=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszResult">pszResult</A></code> - Ouput buffer for current emulation string.
+Currently supported emulations are ""
+(SlickEdit), "brief-keys", "emacs-keys", "vi-
+keys", "gnuemacs-keys", "vcpp-keys"
+(Visual C++), "ispf-keys" and "windows-
+keys" (CUA).  This can be 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxResult">MaxResult</A></code> - Number of characters allocated to
+<i>pszResult</i>.  We recommend
+VSMAXEMULATION.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pMaxResult">pMaxResult</A></code> - If this is not 0, this is set to the number of
+characters you need to allocated.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>char*VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns <i>pszResult</i>.  To set the emulation, call
+<b>vsExecute</b> with the command "emulate <i>emu_mode</i>",
+where <i>emu_mode</i> is one of the following value, for example,
+"emulate vi" switches the editor into vi emulation.
+
+<dl>
+<dt>Value</dt><dd>Emulation Mode</dd>
+<dt>windows</dt><dd>Windows CUA</dt><dd>
+<dt>emacs</dt><dd>Emacs (Epsilon)</dt><dd>
+<dt>gnu</dt><dd>GNU Emacs</dt><dd>
+<dt>brief</dt><dd>Brief</dt><dd>
+<dt>vi</dt><dd>Unix VI</dt><dd>
+<dt>slick</dt><dd>SlickEdit</dt><dd>
+<dt>ispf</dt><dd>OS/390 ISPF</dt><dd>
+<dt>vcpp</dt><dd>Visual C++</dt><dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote>
+</body>
+</html>

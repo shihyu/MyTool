@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>concur_command</title>
+</head>
+<body>
+
+<h3><b>_command typeless concur_command(_str command="", boolean leave_active=false, boolean quiet=false, boolean uniconize=true, boolean addErrorInfo=true)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Inserts command at end of ".process" buffer.  If last line contains the read
+point, text after the read point is replaced with command.
+The build window is started if necessary.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="command">command</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="leave_active">leave_active</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="quiet">quiet</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="uniconize">uniconize</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="addErrorInfo">addErrorInfo</A></code> -  </blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if command queued successfully.  However, this does not
+        mean that the command will execute successfully.  A non-zero return code
+        means that the build window was not created.  Common error
+        codes are: TOO_MANY_FILES_RC, TOO_MANY_SELECTIONS_RC, CANT_FIND_INIT_PROGRAM_RC,
+        ERROR_CREATING_SEMAPHORE_RC, TOO_MANY_OPEN_FILES_RC, NOT_ENOUGH_MEMORY_RC,
+        ERROR_CREATING_QUEUE_RC, INSUFFICIENT_MEMORY_RC,  and ERROR_CREATING_THREAD_RC.
+        On error, message is displayed.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote>
+</body>
+</html>

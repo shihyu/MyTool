@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_redraw</title>
+</head>
+<body>
+
+<h3><b>boolean p_redraw</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Determines whether updating font and picture properties immediately
+cause the control to be redrawn.  This property can only be accessed
+when the control is displayed.  Use this property only when you are
+trying to update several properties at once and want to the control to
+be redrawn only once.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+command1.lbutton_up()
+{
+  // Change the font of a text box control and redraw the control
+only once.
+   text1.p_redraw=0;  // Don't redraw the control
+   text1.p_font_name="Courier";
+   text1.p_font_size=10;
+   text1.p_redraw=1;  // Redraw the control now
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Label, Text Box, Edit Window, Editor Control, Frame, Drive List,
+Command Button, Radio Button, Check Box, Combo Box, List Box,
+File List Box, Directory List Box, Picture Box, Image
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Check_Box_Properties.html">Check Box Properties</a>, <a href="Combo_Box_Properties.html">Combo Box Properties</a>, <a href="Command_Button_Properties.html">Command Button Properties</a>, <a href="Directory_List_Box_Properties.html">Directory List Box Properties</a>, <a href="Drive_List_Properties.html">Drive List Properties</a>, <a href="Edit_Window_Properties.html">Edit Window Properties</a>, <a href="Editor_Control_Properties.html">Editor Control Properties</a>, <a href="File_List_Box_Properties.html">File List Box Properties</a>, <a href="Frame_Properties.html">Frame Properties</a>, <a href="Image_Properties.html">Image Properties</a>, <a href="Label_Properties.html">Label Properties</a>, <a href="List_Box_Properties.html">List Box Properties</a>, <a href="Picture_Box_Properties.html">Picture Box Properties</a>, <a href="Radio_Button_Properties.html">Radio Button Properties</a>, <a href="Text_Box_Properties.html">Text Box Properties</a></blockquote>
+</body>
+</html>

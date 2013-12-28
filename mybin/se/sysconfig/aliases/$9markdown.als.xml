@@ -1,0 +1,57 @@
+<profile name="/language/markdown/aliases">
+	<p n="=surround_with_h1">
+		<text>
+			#%\m sur_text%#
+		</text>
+	</p>
+	<p n="=surround_with_h2">
+		<text>
+			##%\m sur_text%##
+		</text>
+	</p>
+	<p n="=surround_with_h3">
+		<text>
+			###%\m sur_text%###
+		</text>
+	</p>
+	<p n="=surround_with_h4">
+		<text>
+			####%\m sur_text%####
+		</text>
+	</p>
+	<p n="=surround_with_h5">
+		<text>
+			#####%\m sur_text%#####
+		</text>
+	</p>
+	<p n="=surround_with_h6">
+		<text>
+			######%\m sur_text%######
+		</text>
+	</p>
+	<p n="=surround_with_tick">
+		<text>
+			`%\m sur_text%`
+		</text>
+	</p>
+	<p n="=surround_with_asterisk">
+		<text>
+			*%\m sur_text%*
+		</text>
+	</p>
+	<p n="=surround_with_asteriskasterisk">
+		<text>
+			**%\m sur_text%**
+		</text>
+	</p>
+	<p n="=surround_with_underscore">
+		<text>
+			_%\m sur_text%_
+		</text>
+	</p>
+	<p n="=surround_with_underscoreunderscore">
+		<text>
+			__%\m sur_text%__
+		</text>
+	</p>
+</profile>

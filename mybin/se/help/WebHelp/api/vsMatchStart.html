@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMatchStart</title>
+</head>
+<body>
+
+<h3><b>seSeekPosRet VSAPI vsMatchStart(int TaggedExpression=-)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="TaggedExpression">TaggedExpression</A></code> - Tagged expression number. Specify
+a <i>MatchGroup</i> of -1 to get the length
+of the entire string matched.   For SlickEdit
+and Brief regular expressions the first tagged
+expression is 0 and the last is 9.  For UNIX,
+the first tagged expression is 1 and the last is
+0.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>seSeekPosRet</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the character offset from the beginning of the buffer to the last
+match or tagged expression found by the last <b>vsSearch</b> or
+<b>vsRepeatSearch</b>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+int status;
+status=vsSearch(0,"this|that",-1,"r");
+if (!status ){
+    char temps[100];
+    // Get the word matched
+    vsGetText(0,vsMatchLength(),vsMatchStart(),temps);
+    vsMessage(temps);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsMatchLength.html">vsMatchLength</a>, <a href="vsMatchCursorLength.html">vsMatchCursorLength</a>, <a href="vsSelectMatch.html">vsSelectMatch</a>, <a href="vsSearch.html">vsSearch</a>, <a href="vsRepeatSearch.html">vsRepeatSearch</a>, <a href="vsSearchReplace.html">vsSearchReplace</a>, <a href="vsSaveSearch.html">vsSaveSearch</a>, <a href="vsRestoreSearch.html">vsRestoreSearch</a></blockquote>
+</body>
+</html>

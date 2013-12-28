@@ -1,0 +1,113 @@
+<profile name="/language/pl/aliases">
+	<p n="unless">
+		<text>
+			unless (%\c) {
+			}
+		</text>
+	</p>
+	<p n="do-block">
+		<text>
+			do { };
+		</text>
+	</p>
+	<p n="eval-if">
+		<text>
+			eval { %\c };
+			warn() if &amp;@;
+		</text>
+	</p>
+	<p n="do...until">
+		<text>
+			do {
+			} until (%\c);
+		</text>
+	</p>
+	<p n="until">
+		<text>
+			until (%\c) {
+			}
+		</text>
+	</p>
+	<p n="do...while">
+		<text>
+			do {
+			} while (%\c);
+		</text>
+	</p>
+	<p n="=surround_with_while">
+		<text>
+			while (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_do">
+		<text>
+			do { %\m sur_text -indent% };
+		</text>
+	</p>
+	<p n="=surround_with_eval">
+		<text>
+			eval { %\m sur_text -indent% };
+			warn() if &amp;@;
+		</text>
+	</p>
+	<p n="=surround_with_do...until">
+		<text>
+			do {
+			%\m sur_text -indent%
+			} until (%\c);
+		</text>
+	</p>
+	<p n="=surround_with_do...while">
+		<text>
+			do {
+			%\m sur_text -indent%
+			} while (%\c);
+		</text>
+	</p>
+	<p n="=surround_with_if">
+		<text>
+			if (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_if...else">
+		<text>
+			if (%\c) {
+			%\m sur_text -indent%
+			} else {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_for">
+		<text>
+			for (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_unless">
+		<text>
+			unless (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_until">
+		<text>
+			until (%\c) {
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+	<p n="=surround_with_braces">
+		<text>
+			{
+			%\m sur_text -indent%
+			}
+		</text>
+	</p>
+</profile>

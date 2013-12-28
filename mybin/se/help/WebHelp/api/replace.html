@@ -1,0 +1,196 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>replace</title>
+</head>
+<body>
+
+<h3><b>_command int replace(_str string1='', _str string2=null, _str options=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>In ISPF emulation, the <b>replace</b> or <b>c </b>command is not
+called when invoked from the command line.  Instead
+<b>ispf_replace</b> or <b>ispf_c</b> (short for
+<b>ispf_change</b>) command is invoked, respectively.  Use ("Edit",
+"Replace...") to explicitly invoke the<b> replace</b> or <b>c
+</b>command.</p><p>
+<p>The <b>replace</b> or <b>c</b> command changes occurrences of
+<i>string1</i> with <i>string2</i>.  If no parameters are specified,
+you are prompted for the <i>string1</i> and <i>string2</i>
+parameters.  From a macro, the <i>string1</i>, <i>string2</i>, and
+<i>options</i> parameters may be passed as separate arguments which
+do not require any delimiters.  While you enter the <i>string1</i>
+parameter the following keys take on a new meaning:</p><p>
+<dl>
+<dt>Ctrl+R</dt><dd>Searches in reverse for the next occurrence of the
+search string.</dd><p>
+<dt>Ctrl+S</dt><dd>Searches forward for the next occurrence of the
+search string.</dd><p>
+<dt>Ctrl+T</dt><dd>Toggles regular expression pattern matching on/off.
+See section <b>Regular Expressions</b> for
+information on regular expressions.  The key bound
+to the BRIEF emulation command
+<b>re_toggle</b> will also toggle regular
+expression pattern matching.</dd><p>
+<dt>Ctrl+W</dt><dd>Toggles word searching on/off.</dd><p>
+<dt>Ctrl+C</dt><dd>Toggles case sensitivity.  The key bound to the
+BRIEF emulation command <b>case_toggle</b>
+will also toggle the case sensitivity.</dd><p>
+<dt>Ctrl+M</dt><dd>Toggles searching within mark.</dd>
+<dt>Ctrl+O</dt><dd>Toggles incremental search mode.</dd>
+<dt>Ctrl+Q</dt><dd>Quotes the next character typed.</dd>
+</dl><p>
+<p>The First non blank character is used as the delimiter.  The
+<i>options</i> argument is a string of one or more of the following:</p><p>
+<dl>
+<dt>E</dt><dd>Exact case.</dd>
+<dt>I</dt><dd>Ignore case.</dd>
+<dt>-</dt><dd>Reverse search.</dd>
+<dt>M</dt><dd>Limit search to marked area.</dd><p>
+<dt>V</dt><dd>Preserve case. When specified, each occurrence
+found is checked for all lower case, all upper case,
+first word capitalized or mixed case.  The replace
+string is converted to the same case as the
+occurrence found excepted when the occurrence
+found is mixed case (possibly mulltiple capitalized
+words).  In this case, the replace string is used
+without modification.</dd><p>
+<dt>$</dt><dd>Replaced occurrences are highlighted with modified color.</dd><p>
+<dt><</dt><dd>If found, position cursor at beginning of word.</dd>
+<dt>></dt><dd>If found, position cursor at end of word.</dd>
+<dt>*</dt><dd>Make changes without prompting.</dd><p>
+<dt>R</dt><dd>Interprets <i>string1</i> to be a SlickEdit regular
+expression.  In addition, the characters \ and # take
+on new meaning in the replace string.  See
+<b>SlickEdit Regular Expressions</b>.</dd><p>
+<dt>U</dt><dd>Interpret string as a UNIX regular expression.   See
+section <b>UNIX Regular Expressions</b>.</dd>
+<dt>B</dt><dd>Interpret string as a Brief regular expression.   See
+section <b>Brief Regular Expressions</b>.</dd>
+<dt>H</dt><dd>Search through hidden lines.</dd>
+<dt>N</dt><dd>Do not interpret search string as a regular search
+string.</dd>
+<dt>P</dt><dd>Wrap to beginning/end when string not found.</dd>
+<dt>W</dt><dd>Limits search to words.  Used to search and replace
+variable names.</dd><p>
+<dt>W=<i>SlickEdit-regular-expression</i></dt><dd>
+   Specifies the valid characters in a word.  The
+default value is [A-Za-z0-9_$]</dd><p>
+<dt>W:P</dt><dd>Limits search to word prefix.  For example,
+searching for "pre" matches "pre" and "prefix" but
+not "supreme" or "supre".</dd><p>
+<dt>W:PS</dt><dd>Limits search to strict word prefix.  For example,
+searching for "pre" matches "prefix" but not "pre",
+"supreme" or "supre".</dd><p>
+<dt>W:S</dt><dd>Limits search to word suffix.  For example,
+searching for "fix" matches "fix" and "sufix" but
+not "fixit".</dd><p>
+<dt>W:SS</dt><dd>Limits search to strict word suffix.  For example,
+searching for "fix" matches "sufix" but not "fix" or
+"fixit".</dd><p>
+<dt>Y</dt><dd>Binary search.  This allows start positions in the
+middle of a DBCS or UTF-8 character.  This option
+is useful when editing binary files (in SBCS/DBCS
+mode) which may contain characters which look
+like DBCS but are not.  For example, if you search
+for the character 'a', it will not be found as the
+second character of a DBCS sequence unless this
+option is specified.</dd><p>
+<dt>,</dt><dd>Delimiter to separate ambiguous options.</dd><p>
+<dt>X<i>CCLetters</i></dt><dd>Requires the first character of search string
+NOT be one of the color coding elements specified.
+For example, "XCS" requires that the first character
+not be in a comment or string. <i>CCLetters</i> is
+a string of one or more of the following color
+coding element letters:</dd><p>
+<dl>
+<dt>O</dt><dd>Other</dd>
+<dt>K</dt><dd>Keyword</dd>
+<dt>N</dt><dd>Number</dd>
+<dt>S</dt><dd>String</dd>
+<dt>C</dt><dd>Comment</dd>
+<dt>P</dt><dd>Preprocessing</dd>
+<dt>L</dt><dd>Line number</dd>
+<dt>1</dt><dd>Symbol 1</dd>
+<dt>2</dt><dd>Symbol 2</dd>
+<dt>3</dt><dd>Symbol 3</dd>
+<dt>4</dt><dd>Symbol 4</dd>
+<dt>F</dt><dd>Function color</dd>
+<dt>V</dt><dd>No save line</dd>
+</dl><p>
+<dt>C<i>CCLetters</i></dt><dd>Requires the first character of search string to
+be one of the color coding elements specified. See
+<i>CCLetters</i> above.</dd>
+</dl><p>
+<p>If the '*' option is not specified, you will be prompted with the
+message "Yes/No/Last/Go/Quit?" for each occurrence of
+<i>string1</i>.   Press one of the following keys to take an action:</p><p>
+<dl>
+<dt>'Y' or SPACE</dt><dd>Make change and continue searching.</dd><p>
+<dt>'N' or BACKSPACE</dt><dd>
+   No change and continue searching.</dd><p>
+<dt>'L' or .</dt><dd>Make change and stop searching.</dd><p>
+<dt>'G' or !</dt><dd>Make change and change the rest without
+prompting.</dd><p>
+<dt>'Q' or ESC</dt><dd>Exits command.  By default, the cursor is NOT
+restored to its original position.  If you want the
+cursor restored to its original position, invoke the
+command "<b>set-var def-restore-cursor 1</b>"
+and save the configuration.</dd><p>
+<dt>Ctrl+G</dt><dd>Exits command and restores cursor to its original
+position.</dd><p>
+<dt>Ctrl+R</dt><dd>Searches in reverse for next occurrence of search
+string.</dd><p>
+<dt>Ctrl+S</dt><dd>Searches forward for next occurrence of search
+string.</dd><p>
+<dt>Ctrl+T</dt><dd>Toggles regular expression pattern matching on/off.
+The key bound to the BRIEF emulation command
+<b>re_toggle</b> will also toggle regular
+expression pattern matching.  See section
+<b>Regular Expressions</b> for more information.</dd><p>
+<dt>Ctrl+W</dt><dd>Toggles word searching on/off.</dd><p>
+<dt>Ctrl+C</dt><dd>Toggles case sensitivity.  The key bound to the
+BRIEF emulation command <b>case_toggle</b>
+will also toggle the case sensitivity.</dd><p>
+<dt>Ctrl+M</dt><dd>Toggles searching within mark.</dd><p>
+<dt>F1 or '?'</dt><dd>Displays help on <b>replace</b> command.</dd>
+</dl><p>
+<p>No space character is needed between the 'C' and the '/' delimiter
+UNLESS you use a delimiter other than '/'.  You may use any character
+except space as the delimiter.  For example, "c $/$\$" replaces
+occurrences of forward slashes to back slashes.</p><p>
+<p>Command line examples:</p><p>
+<dl>
+<dt><b>c/x/y/m</b></dt><dd>Replace occurrences of x in the marked area
+with y using default search case sensitivity.</dd><p>
+<dt><b>c $x$y$m</b></dt><dd>Replace occurrences of x in the marked area
+with y using default search case sensitivity.
+The string delimiter $ has been used requiring
+a space character after the C.</dd><p>
+<dt><b>c/x/y/e*</b></dt><dd>Replace lower case occurrences of x with y
+without prompting.</dd><p>
+<dt><b>c/i/something_more_meaningful/w</b></dt><dd>
+   Replace occurrences of the variable i with
+something_more_meaningful</dd><p>
+<dt><b>c/i/j/w=[A-Za-z]</b></dt><dd>Replace occurrences of the word i
+with j and specify valid characters in a word
+to be alphabetic.</dd><p>
+<dt><b>c/{if|while}/x\0y\1/r </b></dt><dd>Replaces occurrences of if and while with
+xify and xwhiley.  Unmatched groups are
+null.  Note the \1 is replaced with null.</dd><p>
+<dt><b>c $/$\\$r</b></dt><dd>Replace forward slash with backslash.  Two
+backslashes represent single backslash for
+regular expression search and replace.</dd>
+</dl>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if search string and replace not cancelled.   Common return
+codes are COMMAND_CANCELLED_RC,
+STRING_NOT_FOUND_RC, TOO_MANY_SELECTIONS_RC,
+INVALID_REGULAR_EXPRESSION_RC, and
+INVALID_OPTION_RC.  On error, message is displayed.  The
+universal scope variable "_Nofchanges" is set to the number of
+occurrences changed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+c/<i>string1</i>/<i>string2</i>[/<i>options</i>] or replace
+/<i>string1</i>/<i>string2</i>[/<i>options</i>]
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="i_search.html">i_search</a>, <a href="reverse_i_search.html">reverse_i_search</a>, <a href="gui_replace.html">gui_replace</a>, <a href="gui_find.html">gui_find</a>, <a href="find.html">find</a></blockquote>
+</body>
+</html>

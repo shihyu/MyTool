@@ -1,0 +1,82 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_xmlcfg_open</title>
+</head>
+<body>
+
+<h3><b>int _xmlcfg_open(_str Filename, int &status, int OpenFlags=0, int iEncoding=VSENCODING_AUTOXML)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Opens an XML file and loads it into a tree.
+returns a handle to the tree
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Filename">Filename</A></code> - Name of the XML file to open</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="status">status</A></code> - Set to 0 if succesful. Otherwise this is set to
+                 negative error code.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="OpenFlags">OpenFlags</A></code> - zero or more of the following flags:
+
+                 <DL>
+                 <DT>VSXMLCFG_OPEN_ADD_PCDATA</dt><DD>
+                 When specified, PCDATA (text between tags including white space) nodes
+                 are added to tree.  CDATA (&lt;![CDATA[ ... ]]>) nodes are always added to
+                 the tree.
+                 </DD>
+                 <DT>VSXMLCFG_OPEN_RETURN_TREE_ON_ERROR</dt><DD>
+                 When specified, a valid tree handle is returned even if the
+                 XML document is not well formed.
+                 <p>One useful
+                 purpose for this option is to determine the namespaces
+                 for the current element. Unless
+                 the VSRC_XMLCFG_INPUT_ENDED_BEFORE_ALL_TAGS_WERE_TERMINATED is
+                 returned, you can't be sure if the XML tree was parsed up to the
+                 the current element.  Therefore, when determining the current
+                 namespaces, truncate the buffer before the '&lt;' for the current element
+
+                 <P>If a unrecoverable error occurs like "out of memory", a
+                 negative error code is returned.
+
+                 <P>By default, negative error code is returned.
+
+                 <P><B>Note</B>: this function DOES NOT perform a
+                 thorough well formness check.
+                 <DT>VSXMLCFG_OPEN_REFCOUNT</dt><DD>
+                 When specified, a search is preformed in the XMLCFG open file cache
+                 for a filename which already has the name given to open.  If it is
+                 found, the reference count is incremented and the same XMLCFG
+                 handle is returned.  _xmlcfg_close always decrements the reference
+                 count and closes the file when the reference count is 0.
+
+                 </DD>
+                 </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iEncoding">iEncoding</A></code> - For standard XML files, this parameter should be VSENCODING_AUTOXML.  For Microsort .NET project files, this parameter should be VSCP_ACTIVE_CODEPAGE.
+
+<P>encoding may be one of the following:
+
+<BLOCKQUOTE><PRE>VSCP_ACTIVE_CODEPAGE
+VSCP_EBCDIC
+VSCP_CYRILLIC_KOI8_R
+VSCP_ISO_8859_1
+VSCP_ISO_8859_2
+VSCP_ISO_8859_3
+VSCP_ISO_8859_4
+VSCP_ISO_8859_5
+VSCP_ISO_8859_6
+VSCP_ISO_8859_7
+VSCP_ISO_8859_8
+VSCP_ISO_8859_9
+VSCP_ISO_8859_10
+Any valid Windows code page
+VSENCODING_AUTOUNICODE
+VSENCODING_AUTOXML
+VSENCODING_UTF8
+VSENCODING_UTF8_WITH_SIGNATURE
+VSENCODING_UTF16LE
+VSENCODING_UTF16LE_WITH_SIGNATURE
+VSENCODING_UTF16BE
+VSENCODING_UTF16BE_WITH_SIGNATURE
+VSENCODING_UTF32LE
+
+VSENCODING_UTF32LE_WITH_SIGNATURE
+VSENCODING_UTF32BE
+VSENCODING_UTF32BE_WITH_SIGNATURE
+</PRE></BLOCKQUOTE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">handle to the tree if succesful ( >=0 ).  Otherwise a
+        negative error code is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="XMLCFG_Functions.html">XMLCFG Functions</a></blockquote>
+</body>
+</html>

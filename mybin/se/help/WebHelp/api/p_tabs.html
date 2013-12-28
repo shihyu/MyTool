@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_tabs</title>
+</head>
+<body>
+
+<h3><b>_str p_tabs</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Determines the tabs for the current buffer.  This property is available
+only when the control is displayed.  <b>p_tabs</b> is a string in the
+format: <i>t1 t2 t3 ... tN</i>.  Where <i>t1... tN</i> represent tab
+stop column positions in increasing order.  When setting this property,
+you may specify a string of the format "+<i>number</i>" to set tab
+stops in increments of a number.  Tab stops continue past the last tab
+stop by repeating the difference of the last two tab stop values.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+p_tabs="+3";  // Set the tab stops in increments of 3.  "1 4 "
+parse p_tabs with t1 t2
+message('t1='t1' t2='t2);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Properties.html">Edit Window Properties</a>, <a href="Editor_Control_Properties.html">Editor Control Properties</a></blockquote>
+</body>
+</html>

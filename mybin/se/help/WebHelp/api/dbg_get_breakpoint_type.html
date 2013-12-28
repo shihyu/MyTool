@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>dbg_get_breakpoint_type</title>
+</head>
+<body>
+
+<h3><b>int dbg_get_breakpoint_type(int breakpoint_id, int &breakpoint_flags)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Get the type of a breakpoint (line, method, or watch)
+<ul>
+   <li>VSDEBUG_BREAKPOINT_LINE -- file/line oriented breakpoint
+   <li>VSDEBUG_BREAKPOINT_METHOD -- class/method breakpoint
+   <li>VSDEBUG_BREAKPOINT_ADDRESS -- address within a function
+   <li>VSDEBUG_WATCHPOINT_READ -- read access on breakpoint condition
+   <li>VSDEBUG_WATCHPOINT_WRITE -- write access on breakpoint condition
+   <li>VSDEBUG_WATCHPOINT_ANY -- any access on breakpoint condition
+   <li>VSDEBUG_WATCHPOINT_INSTANCE_READ -- read access on breakpoint condition
+   <li>VSDEBUG_WATCHPOINT_INSTANCE_WRITE -- write access on breakpoint condition
+   <li>VSDEBUG_WATCHPOINT_INSTANCE_ANY -- any access on breakpoint condition
+</ul>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="breakpoint_id">breakpoint_id</A></code> - index of variable in list of breakpoints</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="breakpoint_flags">breakpoint_flags</A></code> - (reference) set to bitset of VSDEBUG_WATCHPOINT_FLAG_
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Debugger_Functions.html">Debugger Functions</a></blockquote>
+</body>
+</html>

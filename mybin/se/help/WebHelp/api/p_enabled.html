@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_enabled</title>
+</head>
+<body>
+
+<h3><b>boolean p_enabled</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Determines whether the object is enabled.  When an object is disabled
+(p_enabled=0), the object can not receive focus.  The font foreground
+color for a Label, Text Box, and Combo Box is gray (the system disabled
+color) when the control is disabled.  Objects may receive focus when
+disabled if they are being edited (<a href="p_edit.html">p_edit</a>!=0).
+</P><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+// This example illustrates how to disable a list box and make the items in the list box
+// appear grayed (not so obvious)
+#include "slick.sh"
+defeventtab form1;
+list1.on_create()
+{
+   _lbadd_item('item1');
+   _lbadd_item('item2');
+   p_no_select_color=1;
+   p_enabled=0;
+   p_forecolor=_rgb(80,80,80);
+}
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">All Window Objects</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="All_Windows_Properties.html">All Windows Properties</a></blockquote>
+</body>
+</html>

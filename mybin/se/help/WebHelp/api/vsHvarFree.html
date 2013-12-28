@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsHvarFree</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsHvarFree(VSHVAR hVar)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if the variable specified is valid.  This function frees a
+variable allocated by the <b>vsHvarAlloc</b> function.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+   int index;
+   index=vsFindIndex("popup_message",VSTYPE_COMMAND);
+   if (!index) {
+       vsMessage("popup_message not found");
+       return;
+   }
+   // Note that we could call the popup_message method by using
+   // VSARG_PSZ instead of allocating a Slick-C&reg; variable.
+   VSHVAR hVar;
+   hVar=vsHvarAlloc(0);
+   vsHvarSetZ(hVar,"this is a message");
+   VSARGTYPE ArgList[1];
+   ArgList[0].kind=VSARGTYPE_HVAR;ArgList[0].u.hVar=hVar;
+   vsCallIndex(0,index,1,ArgList);
+   vsHvarFree(hVar);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsHvarGetI.html">vsHvarGetI</a>, <a href="vsHvarGetI64.html">vsHvarGetI64</a>, <a href="vsHvarSetI.html">vsHvarSetI</a>, <a href="vsHvarSetI64.html">vsHvarSetI64</a>, <a href="vsHvarSetB.html">vsHvarSetB</a>, <a href="vsHvarSetZ.html">vsHvarSetZ</a>, <a href="vsHvarGetZ.html">vsHvarGetZ</a>, <a href="vsHvarGetLstr.html">vsHvarGetLstr</a>, <a href="vsGetVar.html">vsGetVar</a>, <a href="vsArg.html">vsArg</a>, <a href="vsHvarHashtabEl.html">vsHvarHashtabEl</a>, <a href="vsHvarArrayEl.html">vsHvarArrayEl</a>, <a href="vsHvarAlloc.html">vsHvarAlloc</a></blockquote>
+</body>
+</html>

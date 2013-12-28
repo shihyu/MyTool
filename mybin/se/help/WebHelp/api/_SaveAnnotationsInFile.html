@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_SaveAnnotationsInFile</title>
+</head>
+<body>
+
+<h3><b>void _SaveAnnotationsInFile(AnnotationSaveInfo(&annoSaves)[], int startRLine=0, int endRLine=0, boolean relocatable=true)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Save the annotations in the current file, optionally restricting
+to a range of lines, and saving relocation information.
+<p>
+This function is used to save annotation information before we do
+something that heavily  modifies a buffer, such as refactoring,
+beautification, or auto-reload.  It uses the relocatable marker
+information to attempt to restore the annotations back to their
+original line, even if the actual line number has changed because
+lines were inserted or deleted.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="annoSaves">annoSaves</A></code> - Saved annotations</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="startRLine">startRLine</A></code> - First line in region to save</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="endRLine">endRLine</A></code> - Last line in region to save</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="relocatable">relocatable</A></code> - Save relocation marker information?
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Annotation_Functions.html">Annotation Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_RestoreAnnotationsInFile.html">_RestoreAnnotationsInFile</a></blockquote>
+</body>
+</html>

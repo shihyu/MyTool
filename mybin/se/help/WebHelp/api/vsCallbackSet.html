@@ -1,0 +1,61 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsCallbackSet</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsCallbackSet(int id, VSCALLBACK vscallback, void *pfn)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sets a callback function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="id">id</A></code> - Buffer id for VSCALLBACK_BUF_???
+callbacks.  Window id for
+VSCALLBACK_WIN_??? callbacks.
+ Ignored for all other callbacks.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="vscallback">vscallback</A></code> - One of the following constants which
+correspond to a callback function:
+
+<ul>
+<li><B>VSCALLBACK_WIN_UPDATE_EDITOR_STATUS</B></li>
+<li><B>VSCALLBACK_WIN_GOTFOCUS</B></li>
+<li><B>VSCALLBACK_WIN_LOSTFOCUS</B></li>
+<li><B>VSCALLBACK_WIN_CMDLINE_FUNCTIONS</B></li>
+<li><B>VSCALLBACK_WIN_MESSAGE</B></li>
+<li><B>VSCALLBACK_WIN_GET_MESSAGE</B></li>
+<li><B>VSCALLBACK_WIN_FONT_CHANGE</B></li>
+<li><B>VSCALLBACK_APP_QUERY_END_SESSION</B></li>
+<li><B>VSCALLBACK_APP_MENU_ADD_FILE_HISTORY</B></li>
+<li><B>VSCALLBACK_APP_MENU_ADD_WORKSPACE_HISTORY</B></li>
+<li><B>VSCALLBACK_APP_POPUP_MENU</B></li>
+<li><B>VSCALLBACK_APP_POPUP_MENU2</B></li>
+<li><B>VSCALLBACK_APP_ADD_BUFFER</B></li>
+<li><B>VSCALLBACK_APP_RENAME_BUFFER</B></li>
+<li><B>VSCALLBACK_BUF_QDEBUGBITMAP</B></li>
+<li><B>VSCALLBACK_BUF_SET_LINE_COLOR</B></li>
+<li><B>VSCALLBACK_APP_READ_ONLY_ERROR</B></li>
+<li><B>VSCALLBACK_APP_KEY_OR_MOUSE_EVENT_READ</B></li>
+<li><B>VSCALLBACK_APP_BPMQ_DEFAULT_BITMAP</B></li>
+<li><B>VSCALLBACK_APP_MESSAGEBOX</B></li>
+<li><B>VSCALLBACK_APP_DISPATCH_MESSAGE</B></li>
+<li><B>VSCALLBACK_APP_MODAL_WAIT</B></li>
+<li><B>VSCALLBACK_APP_TAG_FILE_REFRESH</B></li>
+<li><B>VSCALLBACK_APP_TAG_FILE_ADD_REMOVE</B></li>
+<li><B>VSCALLBACK_APP_TAG_FILE_MODIFIED</B></li>
+<li><B>VSCALLBACK_APP_MFFIND_ACTIVATE_TOOLBAR_
+AND_SEARCH_TAB</B></li>
+<li><B>VSCALLBACK_APP_MFFIND_IS_TOOLBAR_VISIBLE</B></li>
+<li><B>VSCALLBACK_APP_MFFIND_QEDITOR_CTL_WID</B></li>
+<li><B>VSCALLBACK_APP_MFFIND_CLOSE_TOOLBAR</B></li>
+<li><B>VSCALLBACK_APP_DELETE_WINDOW</B></li>
+<li><B>VSCALLBACK_APP_REFRESH_BREAKPOINTS</B></li>
+<li><B>VSCALLBACK_APP_BREAKPOINT_LINE_DELETED</B></li>
+</ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pfn">pfn</A></code> - Pointer to callback function or 0 to remove
+callback function.  Make sure you remove
+your callback function with
+vsCallbackSet(id,vscallback,0) if you unload
+a DLL which contains your callback
+function.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsCallbackAdd.html">vsCallbackAdd</a>, <a href="vsCallbackRemove.html">vsCallbackRemove</a></blockquote>
+</body>
+</html>

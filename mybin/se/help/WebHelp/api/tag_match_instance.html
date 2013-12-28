@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_match_instance</title>
+</head>
+<body>
+
+<h3><b>int tag_match_instance(_str inst_name, _str inst_type, int inst_flags, _str inst_class, _str inst_args, _str file_name, int line_no, int case_sensitive)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Locate the tag instance matching the given parameters.
+Instances are matched by tag name first (which must match),
+then class, type, flags, arguments, and finally file and
+line proximity.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="inst_name">inst_name</A></code> - Name of tag (symbol) instance (case insensitive)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="inst_type">inst_type</A></code> - Tag type name.  See <a href="tag_get_type.html">tag_get_type</a> for a list of all
+                  standard tag types.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="inst_flags">inst_flags</A></code> - Set of the following instance attribute flags, as
+                  applicable.  See <a href="tag_insert_instance.html">tag_insert_instance</a> for more
+                  information.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="inst_class">inst_class</A></code> - Name of class or package or other container that the
+                  tag belongs to.  See <a href="VS_TAGSEPARATOR_class.html">VS_TAGSEPARATOR_class</a> and
+                  <a href="VS_TAGSEPARATOR_package.html">VS_TAGSEPARATOR_package</a> for more details about
+                  constructing this value.  If the tag is not in a
+                  class scope, simple pass the empty string for this value.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="inst_args">inst_args</A></code> - Arguments associated with tag (eg. function args)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - Name of file where tag instance is located</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="line_no">line_no</A></code> - line which tag instace is on</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="case_sensitive">case_sensitive</A></code> - Specifies search case sensitivity.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">The ID of the the most exact match available, or <0 on error.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_find_refer_by.html">tag_find_refer_by</a>, <a href="tag_insert_instance.html">tag_insert_instance</a>, <a href="tag_next_refer_by.html">tag_next_refer_by</a>, <a href="tag_next_refer_to.html">tag_next_refer_to</a></blockquote>
+</body>
+</html>

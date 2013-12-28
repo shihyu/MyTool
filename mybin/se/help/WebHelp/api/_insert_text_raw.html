@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_insert_text_raw</title>
+</head>
+<body>
+
+<h3><b>void _insert_text_raw(_str string, boolean binary=false, _str newlineChars="\r\n")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="binary">binary</A></code> - defaults to false.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NewLineChars">NewLineChars</A></code> - defaults to "\r\n".
+
+<p>Insert <i>string</i> at cursor position.  Specify <b>true</b> for the
+<i>binary</i> option if you want to allow splitting of newline characters
+(i.e. CR&lt;insert here&gt;LF).  You may use this function to insert multiple lines
+of text.  The <i>NewLineChars</i> string specifies a 1 or two byte sequence
+which indicates the line separation characters for the <i>string</i>
+argument.  The <i>NewLineChars</i> argument is ignored if the binary option
+is <b>true</b>.</p>
+
+<p>When you use this function on a record file (p_buf_width!=0) and the
+<i>binary</i> option is <b>true</b>, all data is inserted into current line
+and not broken up into multiple lines.</p>
+
+<p>NOTE: If you are inserting at the end of a file and the last character
+of <i>string</i> is a new line, you can end up with a blank line that has no
+new line characters in it.  You can test for this condition by calling
+<b>_line_length</b>(1) which will return 0.  Use <b>delete_line</b>() to
+delete the line.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote>
+</body>
+</html>

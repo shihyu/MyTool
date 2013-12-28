@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsGoToOldLineNumber</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsGoToOldLineNumber(int wid, seSeekPos OldLineNum, int Reserved=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Searches for the <i>OldLineNumber</i> specified and places the
+cursor on the line with that old line number or the closest old line
+number.  If no lines have an old line number set, then the cursor is
+placed on the real line (<b>p_RLine</b>) number given.  The "real
+line number" does not count non-savable lines (that is lines with the
+VSLF_ NOSAVE flag).  Use the <b>vsSetAllOldLineNumbers</b>
+function to set the old line numbers.  Note that the Slick-C&reg;
+<b>save</b> command takes an option to set the old line numbers on
+save.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="OldLineNumber">OldLineNumber</A></code> - Indicates the old line number to find.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsSetAllOldLineNumbers.html">vsSetAllOldLineNumbers</a></blockquote>
+</body>
+</html>

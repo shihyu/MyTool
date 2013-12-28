@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd">
+<SETemplate Version="1.0" Type="Item">
+
+  <TemplateDetails>
+    <Name>Java AWT Applet</Name>
+    <Description>Java Applet implemented using AWT</Description>
+    <SortOrder>0</SortOrder>
+    <DefaultName>AppletName</DefaultName>
+  </TemplateDetails>
+  <TemplateContent>
+    <Files>
+      <File TargetFilename="$safeitemname$.java" ReplaceParameters="1">AwtApplet.java</File>
+      <File TargetFilename="$safeitemname$.html" ReplaceParameters="1">AwtApplet.html</File>
+    </Files>
+  </TemplateContent>
+
+</SETemplate>

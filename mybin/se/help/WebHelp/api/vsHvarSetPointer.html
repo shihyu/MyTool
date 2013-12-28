@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsHvarSetPointer</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsHvarSetPointer(HVAR hvar, HVAR src)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sets value of interpreter variable specified to be a pointer
+to the given interpreter variable.<p>
+NOTE:  As always with pointer types, use with care, because
+interpreter variables are not reference counted.  If the
+<code>src</code> variable goes out of scope, it will be
+destructed, leaving this pointer dangling.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="hvar">hvar</A></code> - interpreter variable (destination)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="src">src</A></code> - interpreter variable (source)
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsHvarFree.html">vsHvarFree</a>, <a href="vsHvarAlloc.html">vsHvarAlloc</a>, <a href="vsHvarMakeEmpty.html">vsHvarMakeEmpty</a>, <a href="vsHvarArrayEl.html">vsHvarArrayEl</a>, <a href="vsHvarSetI.html">vsHvarSetI</a>, <a href="vsHvarSetI64.html">vsHvarSetI64</a>, <a href="vsHvarSetZ.html">vsHvarSetZ</a></blockquote>
+</body>
+</html>

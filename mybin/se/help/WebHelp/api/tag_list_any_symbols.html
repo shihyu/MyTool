@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_list_any_symbols</title>
+</head>
+<body>
+
+<h3><b>int tag_list_any_symbols(int tree_wid, int tree_index, _str tag_name, _str(&tag_files)[], int filter_flags, int context_flags, var vnum_matches, int max_matches, boolean exact_match, boolean case_sensitive)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">List any symbols, reguardless of context or scope (excluding locals)
+matching the given prefix expression.
+<p>
+For synchronization, macros should perform a tag_lock_matches(true)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_wid">tree_wid</A></code> - Window ID of the tree control to insert into, if 0,
+                  insert tags into the match set, see <a href="tag_insert_match.html">tag_insert_match</a>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_index">tree_index</A></code> - Parent tree node index to insert item under, ignored if
+                  <i>tree_wid</i> is zero.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - Tag name or prefix of tag name to search for.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_files">tag_files</A></code> - (Input) tag files to search</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filter_flags">filter_flags</A></code> - Tag filter flags, only insert tags passing this filter.
+                  See <a href="tag_filter_type.html">tag_filter_type</a> for more details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="context_flags">context_flags</A></code> - Context flags representing what to allow or restrict to.
+                  See <a href="tag_check_context_flags.html">tag_check_context_flags</a> for more details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="vnum_matches">vnum_matches</A></code> - (Input, Output) number of matches</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="max_matches">max_matches</A></code> - Maximum number of matches allowed</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="exact_match">exact_match</A></code> - Specifies exact match or prefix match</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="case_sensitive">case_sensitive</A></code> - Specifies search case sensitivity
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_insert_match.html">tag_insert_match</a>, <a href="tag_tree_insert_tag.html">tag_tree_insert_tag</a>, <a href="tag_tree_prepare_expand.html">tag_tree_prepare_expand</a></blockquote>
+</body>
+</html>

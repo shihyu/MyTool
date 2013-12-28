@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>seek</title>
+</head>
+<body>
+
+<h3><b>_command int seek(...)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>The <b>seek</b> command places the cursor on the seek position
+given or displays the current seek position.  A seek position is a
+character position relative to the beginning of the file.  The first
+character of the file is seek position 0.  If an expression is given, the
+cursor is placed on the seek position given.  Otherwise, the current
+seek position is displayed in hex and decimal.  Any expression
+accepted by the <b>math</b> command may be specified.  See
+<b>math</b> command for syntax of expression.</p><p>
+<p>If a seek position is given, it can not be past the end of the file.
+Negative seek positions are possible due to SlickEdit's
+implementation of line 0.</p><p>
+<p>You may use the <b>seek</b> command to determine the number of
+bytes in a file.  However, keep in mind that if your load options are set
+to expand tabs when loading, the seek file size will not match the disk
+file size.  In addition, for ASCII files, SlickEdit strips the EOF
+(character 27) if there is one at the end of the file.</p><p>
+<p>Command line examples:</p><p>
+<dl>
+<dt>seek x1000</dt><dd>Go to seek position
+1000 hex</dd>
+<dt>seek xff+xff</dt><dd>Go to seek position 1fe
+hex</dd>
+</dl>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="gui_seek.html">gui_seek</a>, <a href="_QROffset.html">_QROffset</a>, <a href="_GoToROffset.html">_GoToROffset</a></blockquote>
+</body>
+</html>

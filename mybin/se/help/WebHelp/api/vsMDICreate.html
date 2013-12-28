@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMDICreate</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsMDICreate(VSSYSHWND hwndframe, VSSYSHWND hwnd, VSSYSHWND hwndmdiclient)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This function registers some MDI window handles.  Currently, only
+one MDI window is supported.  SlickEdit will automically
+disable the <i>hwndframe</i> window when a modal dialog box is
+displayed.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="hwndframe">hwndframe</A></code> - System window handle to outer most MDI
+frame window.  For Windows, this is always
+the same as <i>hwnd</i>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="hwnd">hwnd</A></code> - System window handle MDI frame client
+window.  The <i>hwndmdiclient</i>
+window is inside this window.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="hwndmdiclient">hwndmdiclient</A></code> - System window handle of MDI client
+window.  In a Windows MDI, this is the
+parent window for all MDI child windows.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns MDI window instance handle.
+
+<p>See our MDI sample program for an example.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

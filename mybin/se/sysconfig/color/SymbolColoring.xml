@@ -1,0 +1,2870 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE SymbolColoring SYSTEM "http://www.slickedit.com/dtd/vse/14.0/SymbolColoring.dtd">
+<SymbolColoring
+	version="1.0"
+	productName="SlickEdit"
+	productVersion="14.0.0.0">
+	<Scheme
+		name="All symbols - Silver"
+		compatibleWith="Crispy;Eggshell;Grayscale;Harvest;Pumpkin;Silver;Wintergreen">
+		<Rule
+			name="Local variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="lvar"
+			attributesOn=""
+			attributesOff="static"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xA000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static local variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="lvar"
+			attributesOn="static"
+			attributesOff=""
+			parentColor="Local variable"
+			fg="0x60A000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Parameter"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="param"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Local variable"
+			fg="0xA060"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="inclass|public"
+			attributesOff="static|protected|private|package"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x8000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="package"
+			attributesOff="static|protected|private|public"
+			parentColor="Public member variable"
+			fg="0x8040"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="protected"
+			attributesOff="static|private|public|package"
+			parentColor="Package member variable"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="private"
+			attributesOff="static|protected|public|package"
+			parentColor="Protected member variable"
+			fg="0xA040"
+			fontFlags="F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="Public member variable"
+			fg="0x608000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|package"
+			attributesOff="protected|private|public"
+			parentColor="Public static member variable"
+			fg="0x408040"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|protected"
+			attributesOff="private|public|package"
+			parentColor="Package static member variable"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|private"
+			attributesOff="protected|public|package"
+			parentColor="Protected static member variable"
+			fg="0x60A040"
+			fontFlags="F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Global variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="gvar"
+			attributesOn=""
+			attributesOff="static"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x6000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static global variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="gvar"
+			attributesOn="static"
+			attributesOff=""
+			parentColor="Global variable"
+			fg="0x606000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Global function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="subproc,proc,func,subfunc,procproto,proto"
+			attributesOn=""
+			attributesOff="static|inclass"
+			parentColor="*CFG_FUNCTION*"
+			fg="0x60D0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static global function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="subproc,proc,func,subfunc,procproto,proto"
+			attributesOn="static"
+			attributesOff="inclass"
+			parentColor="Global function"
+			fg="0x6060D0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class constructor"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="constr,proc,func,destr,procproto,proto"
+			attributesOn="constructor"
+			attributesOff="destructor"
+			parentColor="Global function"
+			fg="0x800000"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class destructor"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="constr,proc,func,destr,procproto,proto"
+			attributesOn="destructor"
+			attributesOff="constructor"
+			parentColor="Class constructor"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Public member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="inclass|public"
+			attributesOff="static|protected|private|operator|constructor|destructor|package"
+			parentColor="Global function"
+			fg="0x80D0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="inclass|package"
+			attributesOff="static|protected|private|public"
+			parentColor="Public member function"
+			fg="0x80E0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,subfunc,procproto,proto"
+			attributesOn="protected|inclass"
+			attributesOff="static|private|public|package"
+			parentColor="Package member function"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="private|inclass"
+			attributesOff="static|protected|public|package"
+			parentColor="Protected member function"
+			fg="0x80FF"
+			fontFlags="F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="Public member function"
+			fg="0x4060C0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|inclass|package"
+			attributesOff="protected|private|public"
+			parentColor="Public static member function"
+			fg="0x6060C0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|protected|inclass"
+			attributesOff="private|public|package"
+			parentColor="Package static member function"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|private|inclass"
+			attributesOff="protected|public|package"
+			parentColor="Protected static member function"
+			fg="0x4060E0"
+			fontFlags="F_BOLD|F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x808000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="package"
+			attributesOff="protected|private|public"
+			parentColor="Public class property"
+			fg="0x808040"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="protected"
+			attributesOff="private|public|package"
+			parentColor="Package class property"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="private"
+			attributesOff="protected|public|package"
+			parentColor="Protected class property"
+			fg="0x808060"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn=""
+			attributesOff="abstract|template"
+			parentColor="Class constructor"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Template class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn="template"
+			attributesOff=""
+			parentColor="Class"
+			fg="0x800040"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Abstract class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn="abstract"
+			attributesOff=""
+			parentColor="Class"
+			fg="0xC00000"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Interface class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="interface"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFF0000"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Struct"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="struct"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0x808000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Union or variant type"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="union"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xA0A0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Type definition or alias"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="typedef"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x404080"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Preprocessor macro"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="define"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_PPKEYWORD*"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Package or namespace"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="package,prog,lib"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x2080"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbolic constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="const"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x606060"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Enumerated type or constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="enumc,enum"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x808000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Statement label"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="label"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x600000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbol not found"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="UNKNOWN"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFF"
+			fontFlags="F_INHERIT_BG_COLOR">
+		</Rule>
+	</Scheme>
+	<Scheme
+		name="All symbols - Light background"
+		compatibleWith="Crispy;Eggshell;Grayscale;Harvest;Pumpkin;Wintergreen">
+		<Rule
+			name="Local variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="lvar"
+			attributesOn=""
+			attributesOff="static"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xA000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static local variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="lvar"
+			attributesOn="static"
+			attributesOff=""
+			parentColor="Local variable"
+			fg="0x60A000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Parameter"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="param"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Local variable"
+			fg="0xA060"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="inclass|public"
+			attributesOff="static|protected|private|package"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x8000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="package"
+			attributesOff="static|protected|private|public"
+			parentColor="Public member variable"
+			fg="0x8040"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="protected"
+			attributesOff="static|private|public|package"
+			parentColor="Package member variable"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="private"
+			attributesOff="static|protected|public|package"
+			parentColor="Protected member variable"
+			fg="0xA040"
+			fontFlags="F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="Public member variable"
+			fg="0x608000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|package"
+			attributesOff="protected|private|public"
+			parentColor="Public static member variable"
+			fg="0x408040"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|protected"
+			attributesOff="private|public|package"
+			parentColor="Package static member variable"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|private"
+			attributesOff="protected|public|package"
+			parentColor="Protected static member variable"
+			fg="0x60A040"
+			fontFlags="F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Global variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="gvar"
+			attributesOn=""
+			attributesOff="static"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x6000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static global variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="gvar"
+			attributesOn="static"
+			attributesOff=""
+			parentColor="Global variable"
+			fg="0x606000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Global function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="subproc,proc,func,subfunc,procproto,proto"
+			attributesOn=""
+			attributesOff="static|inclass"
+			parentColor="*CFG_FUNCTION*"
+			fg="0x600060"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static global function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="subproc,proc,func,subfunc,procproto,proto"
+			attributesOn="static"
+			attributesOff="inclass"
+			parentColor="Global function"
+			fg="0xA00060"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class constructor"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="constr,proc,func,destr,procproto,proto"
+			attributesOn="constructor"
+			attributesOff="destructor"
+			parentColor="Global function"
+			fg="0x800000"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class destructor"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="constr,proc,func,destr,procproto,proto"
+			attributesOn="destructor"
+			attributesOff="constructor"
+			parentColor="Class constructor"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Public member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="inclass|public"
+			attributesOff="static|protected|private|operator|constructor|destructor|package"
+			parentColor="Global function"
+			fg="0x800080"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="inclass|package"
+			attributesOff="static|protected|private|public"
+			parentColor="Public member function"
+			fg="0x8000A0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,subfunc,procproto,proto"
+			attributesOn="protected|inclass"
+			attributesOff="static|private|public|package"
+			parentColor="Package member function"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="private|inclass"
+			attributesOff="static|protected|public|package"
+			parentColor="Protected member function"
+			fg="0xA000E0"
+			fontFlags="F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="Public member function"
+			fg="0xC00080"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|inclass|package"
+			attributesOff="protected|private|public"
+			parentColor="Public static member function"
+			fg="0xC000A0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|protected|inclass"
+			attributesOff="private|public|package"
+			parentColor="Package static member function"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|private|inclass"
+			attributesOff="protected|public|package"
+			parentColor="Protected static member function"
+			fg="0xE000C0"
+			fontFlags="F_BOLD|F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x808000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="package"
+			attributesOff="protected|private|public"
+			parentColor="Public class property"
+			fg="0x808040"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="protected"
+			attributesOff="private|public|package"
+			parentColor="Package class property"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="private"
+			attributesOff="protected|public|package"
+			parentColor="Protected class property"
+			fg="0x808060"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn=""
+			attributesOff="abstract|template"
+			parentColor="Class constructor"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Template class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn="template"
+			attributesOff=""
+			parentColor="Class"
+			fg="0x800040"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Abstract class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn="abstract"
+			attributesOff=""
+			parentColor="Class"
+			fg="0xC00000"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Interface class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="interface"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFF0000"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Struct"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="struct"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0x808000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Union or variant type"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="union"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xA0A0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Type definition or alias"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="typedef"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x404080"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Preprocessor macro"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="define"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_PPKEYWORD*"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Package or namespace"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="package,prog,lib"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x2080"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbolic constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="const"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x606060"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Enumerated type or constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="enumc,enum"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x808000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Statement label"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="label"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x600000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbol not found"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="UNKNOWN"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFF"
+			fontFlags="F_INHERIT_BG_COLOR">
+		</Rule>
+	</Scheme>
+	<Scheme
+		name="All symbols - Default"
+		compatibleWith="Default;Eggshell;Grayscale;Harvest;Wintergreen">
+		<Rule
+			name="Local variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="lvar"
+			attributesOn=""
+			attributesOff="static"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x4060"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static local variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="lvar"
+			attributesOn="static"
+			attributesOff=""
+			parentColor="Local variable"
+			fg="0x604060"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Parameter"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="param"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Local variable"
+			fg="0x4040"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="inclass|public"
+			attributesOff="static|protected|private|package"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x40"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="package"
+			attributesOff="static|protected|private|public"
+			parentColor="Public member variable"
+			fg="0x60"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="protected"
+			attributesOff="static|private|public|package"
+			parentColor="Package member variable"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="private"
+			attributesOff="static|protected|public|package"
+			parentColor="Protected member variable"
+			fg="0x80"
+			fontFlags="F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="Public member variable"
+			fg="0x400040"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|package"
+			attributesOff="protected|private|public"
+			parentColor="Public static member variable"
+			fg="0x400060"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|protected"
+			attributesOff="private|public|package"
+			parentColor="Package static member variable"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|private"
+			attributesOff="protected|public|package"
+			parentColor="Protected static member variable"
+			fg="0x400080"
+			fontFlags="F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Global variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="gvar"
+			attributesOn=""
+			attributesOff="static"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x2020"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static global variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="gvar"
+			attributesOn="static"
+			attributesOff=""
+			parentColor="Global variable"
+			fg="0x402020"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Global function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="subproc,proc,func,subfunc,procproto,proto"
+			attributesOn=""
+			attributesOff="static|inclass"
+			parentColor="*CFG_FUNCTION*"
+			fg="0x60D0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static global function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="subproc,proc,func,subfunc,procproto,proto"
+			attributesOn="static"
+			attributesOff="inclass"
+			parentColor="Global function"
+			fg="0x6060D0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class constructor"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="constr,proc,func,destr,procproto,proto"
+			attributesOn="constructor"
+			attributesOff="destructor"
+			parentColor="Global function"
+			fg="0x800000"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class destructor"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="constr,proc,func,destr,procproto,proto"
+			attributesOn="destructor"
+			attributesOff="constructor"
+			parentColor="Class constructor"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Public member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="inclass|public"
+			attributesOff="static|protected|private|operator|constructor|destructor|package"
+			parentColor="Global function"
+			fg="0x80D0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="inclass|package"
+			attributesOff="static|protected|private|public"
+			parentColor="Public member function"
+			fg="0x80E0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,subfunc,procproto,proto"
+			attributesOn="protected|inclass"
+			attributesOff="static|private|public|package"
+			parentColor="Package member function"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="private|inclass"
+			attributesOff="static|protected|public|package"
+			parentColor="Protected member function"
+			fg="0x80FF"
+			fontFlags="F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="Public member function"
+			fg="0x4060C0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|inclass|package"
+			attributesOff="protected|private|public"
+			parentColor="Public static member function"
+			fg="0x6060C0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|protected|inclass"
+			attributesOff="private|public|package"
+			parentColor="Package static member function"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|private|inclass"
+			attributesOff="protected|public|package"
+			parentColor="Protected static member function"
+			fg="0x4060E0"
+			fontFlags="F_BOLD|F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x808000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="package"
+			attributesOff="protected|private|public"
+			parentColor="Public class property"
+			fg="0x808040"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="protected"
+			attributesOff="private|public|package"
+			parentColor="Package class property"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="private"
+			attributesOff="protected|public|package"
+			parentColor="Protected class property"
+			fg="0x808060"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn=""
+			attributesOff="abstract|template"
+			parentColor="Class constructor"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Template class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn="template"
+			attributesOff=""
+			parentColor="Class"
+			fg="0x800040"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Abstract class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn="abstract"
+			attributesOff=""
+			parentColor="Class"
+			fg="0xC00000"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Interface class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="interface"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFF0000"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Struct"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="struct"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0x808000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Union or variant type"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="union"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xA0A0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Type definition or alias"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="typedef"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x404080"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Preprocessor macro"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="define"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_PPKEYWORD*"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Package or namespace"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="package,prog,lib"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x2080"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbolic constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="const"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x606060"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Enumerated type or constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="enumc,enum"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x808000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Statement label"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="label"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x600000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbol not found"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="UNKNOWN"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFF"
+			fontFlags="F_INHERIT_BG_COLOR">
+		</Rule>
+	</Scheme>
+	<Scheme
+		name="All symbols - Iceberg"
+		compatibleWith="Iceberg;Mocha;Rainbow;Spearmint">
+		<Rule
+			name="Local variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="lvar"
+			attributesOn=""
+			attributesOff="static"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFF00"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static local variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="lvar"
+			attributesOn="static"
+			attributesOff=""
+			parentColor="Local variable"
+			fg="0xA0FF00"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Parameter"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="param"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Local variable"
+			fg="0xFF80"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="inclass|public"
+			attributesOff="static|protected|private|package"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x80FF80"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="package"
+			attributesOff="static|protected|private|public"
+			parentColor="Public member variable"
+			fg="0x80FFC0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="protected"
+			attributesOff="static|private|public|package"
+			parentColor="Package member variable"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="private"
+			attributesOff="static|protected|public|package"
+			parentColor="Protected member variable"
+			fg="0x80FFE0"
+			fontFlags="F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="Public member variable"
+			fg="0xC0FF80"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|package"
+			attributesOff="protected|private|public"
+			parentColor="Public static member variable"
+			fg="0xC0FFA0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|protected"
+			attributesOff="private|public|package"
+			parentColor="Package static member variable"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|private"
+			attributesOff="protected|public|package"
+			parentColor="Protected static member variable"
+			fg="0xC0FFE0"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Global variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="gvar"
+			attributesOn=""
+			attributesOff="static"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xE000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static global variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="gvar"
+			attributesOn="static"
+			attributesOff=""
+			parentColor="Global variable"
+			fg="0x80E000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Global function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,subproc,func,subfunc,procproto,proto"
+			attributesOn=""
+			attributesOff="static|inclass"
+			parentColor="*CFG_FUNCTION*"
+			fg="0xC000C0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static global function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,subproc,func,subfunc,procproto,proto"
+			attributesOn="static"
+			attributesOff="inclass"
+			parentColor="Global function"
+			fg="0xFF00C0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class constructor"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="constr,proc,func,destr,procproto,proto"
+			attributesOn="constructor"
+			attributesOff="destructor"
+			parentColor="Global function"
+			fg="0xFF6060"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class destructor"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="constr,proc,func,destr,procproto,proto"
+			attributesOn="destructor"
+			attributesOff="constructor"
+			parentColor="Class constructor"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Public member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="inclass|public"
+			attributesOff="static|protected|private|operator|constructor|destructor|package"
+			parentColor="Global function"
+			fg="0xC000C0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="inclass|package"
+			attributesOff="static|protected|private|public"
+			parentColor="Public member function"
+			fg="0x8000A0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,subfunc,procproto,proto"
+			attributesOn="protected|inclass"
+			attributesOff="static|private|public|package"
+			parentColor="Package member function"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="private|inclass"
+			attributesOff="static|protected|public|package"
+			parentColor="Protected member function"
+			fg="0xC000FF"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="Public member function"
+			fg="0xFF00C0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|inclass|package"
+			attributesOff="protected|private|public"
+			parentColor="Public static member function"
+			fg="0xFF00E0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|protected|inclass"
+			attributesOff="private|public|package"
+			parentColor="Package static member function"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|private|inclass"
+			attributesOff="protected|public|package"
+			parentColor="Public static member function"
+			fg="0xFF00FF"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xC0C000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="package"
+			attributesOff="protected|private|public"
+			parentColor="Public class property"
+			fg="0xC0C060"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="protected"
+			attributesOff="private|public|package"
+			parentColor="Package class property"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="private"
+			attributesOff="protected|public|package"
+			parentColor="Public class property"
+			fg="0xC0C080"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="struct,class"
+			attributesOn=""
+			attributesOff="abstract|template"
+			parentColor="Class constructor"
+			fontFlags="F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Template class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="struct,class"
+			attributesOn=""
+			attributesOff="abstract"
+			parentColor="Class"
+			fg="0xFF60A0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Abstract class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="struct,class"
+			attributesOn="abstract"
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFFA0A0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Interface class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="interface"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFFA0A0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Struct"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="struct"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFFC060"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Union or variant type"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="union"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFFFF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Type definition or alias"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="typedef"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xA0A0FF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Preprocessor macro"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="define"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_PPKEYWORD*"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Package or namespace"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="package,prog,lib"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x6060FF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbolic constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="const"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xC0C0C0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Enumerated type or constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="enumc,enum"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFFFF00"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Statement label"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="label"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xE00000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbol not found"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="UNKNOWN"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFF"
+			fontFlags="F_INHERIT_BG_COLOR">
+		</Rule>
+	</Scheme>
+	<Scheme
+		name="All symbols - Dark background"
+		compatibleWith="Black;Chalkboard;Mocha;Rainbow;Spearmint">
+		<Rule
+			name="Local variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="lvar"
+			attributesOn=""
+			attributesOff="static"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x80FF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static local variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="lvar"
+			attributesOn="static"
+			attributesOff=""
+			parentColor="Local variable"
+			fg="0x6080FF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Parameter"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="param"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Local variable"
+			fg="0x60C0FF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="inclass|public"
+			attributesOff="static|protected|private|package"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xA0FF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="package"
+			attributesOff="static|protected|private|public"
+			parentColor="Public member variable"
+			fg="0xC0FF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="protected"
+			attributesOff="static|private|public|package"
+			parentColor="Package member variable"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="private"
+			attributesOff="static|protected|public|package"
+			parentColor="Protected member variable"
+			fg="0xE0FF"
+			fontFlags="F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="Public member variable"
+			fg="0x60C0FF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|package"
+			attributesOff="protected|private|public"
+			parentColor="Public static member variable"
+			fg="0x60E0FF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|protected"
+			attributesOff="private|public|package"
+			parentColor="Package static member variable"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private static member variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="var,group"
+			attributesOn="static|private"
+			attributesOff="protected|public|package"
+			parentColor="Protected static member variable"
+			fg="0x80F0FF"
+			fontFlags="F_ITALIC|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Global variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="gvar"
+			attributesOn=""
+			attributesOff="static"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x80E0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static global variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="gvar"
+			attributesOn="static"
+			attributesOff=""
+			parentColor="Global variable"
+			fg="0x8080E0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Global function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,subproc,func,subfunc,procproto,proto"
+			attributesOn=""
+			attributesOff="static|inclass"
+			parentColor="*CFG_FUNCTION*"
+			fg="0x8000FF"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static global function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,subproc,func,subfunc,procproto,proto"
+			attributesOn="static"
+			attributesOff="inclass"
+			parentColor="Global function"
+			fg="0xFF00FF"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class constructor"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="constr,proc,func,destr,procproto,proto"
+			attributesOn="constructor"
+			attributesOff="destructor"
+			parentColor="Global function"
+			fg="0xFFA0A0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class destructor"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="constr,proc,func,destr,procproto,proto"
+			attributesOn="destructor"
+			attributesOff="constructor"
+			parentColor="Class constructor"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Public member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="inclass|public"
+			attributesOff="static|protected|private|operator|constructor|destructor|package"
+			parentColor="Global function"
+			fg="0xC040FF"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="inclass|package"
+			attributesOff="static|protected|private|public"
+			parentColor="Public member function"
+			fg="0xC080FF"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,subfunc,procproto,proto"
+			attributesOn="protected|inclass"
+			attributesOff="static|private|public|package"
+			parentColor="Package member function"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="private|inclass"
+			attributesOff="static|protected|public|package"
+			parentColor="Protected member function"
+			fg="0xC0A0FF"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="Public member function"
+			fg="0xFF00FF"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|inclass|package"
+			attributesOff="protected|private|public"
+			parentColor="Public static member function"
+			fg="0xFF60FF"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|protected|inclass"
+			attributesOff="private|public|package"
+			parentColor="Package static member function"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private static member function"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="proc,func,procproto,proto,subfunc,subproc"
+			attributesOn="static|private|inclass"
+			attributesOff="protected|public|package"
+			parentColor="Public static member function"
+			fg="0xFFA0FF"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Public class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="inclass|public"
+			attributesOff="protected|private|package"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFFFF00"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="package"
+			attributesOff="protected|private|public"
+			parentColor="Public class property"
+			fg="0xFFFF60"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Protected class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="protected"
+			attributesOff="private|public|package"
+			parentColor="Package class property"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private class property"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="prop"
+			attributesOn="private"
+			attributesOff="protected|public|package"
+			parentColor="Public class property"
+			fg="0xFFFFA0"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="struct,class"
+			attributesOn=""
+			attributesOff="abstract|template"
+			parentColor="Class constructor"
+			fontFlags="F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Template class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="struct,class"
+			attributesOn=""
+			attributesOff="abstract"
+			parentColor="Class"
+			fg="0xFF60A0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Abstract class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="struct,class"
+			attributesOn="abstract"
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFFA0A0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Interface class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="interface"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFFA0A0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Struct"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="struct"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFFC060"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Union or variant type"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="union"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFFFF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Type definition or alias"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="typedef"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xA0A0FF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Preprocessor macro"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="define"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_PPKEYWORD*"
+			fg="0xC0C0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Package or namespace"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="package,prog,lib"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x6060FF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbolic constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="const"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xC0C0C0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Enumerated type or constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="enumc,enum"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFFFF00"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Statement label"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="label"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xE00000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbol not found"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="UNKNOWN"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFF"
+			fontFlags="F_INHERIT_BG_COLOR">
+		</Rule>
+	</Scheme>
+	<Scheme
+		name="Classes and Types - Light background"
+		compatibleWith="Crispy;Eggshell;Grayscale;Harvest;Pumpkin;Wintergreen">
+		<Rule
+			name="Class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn=""
+			attributesOff="abstract|template"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFF0000"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Template class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn="template"
+			attributesOff=""
+			parentColor="Class"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Abstract class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn="abstract"
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFF4040"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Interface class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="interface"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFF4040"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Struct"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="struct"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0x408040"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Union or variant type"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="union"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xA0A0"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Type definition or alias"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="typedef"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x404080"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Preprocessor macro"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="define"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_PPKEYWORD*"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Package or namespace"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="package,prog,lib"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x2080"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbolic constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="const"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x606060"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Enumerated type or constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="enumc,enum"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x808000"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbol not found"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="UNKNOWN"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFF"
+			fontFlags="F_INHERIT_BG_COLOR">
+		</Rule>
+	</Scheme>
+	<Scheme
+		name="Classes and Types - Dark background"
+		compatibleWith="Black;Chalkboard;Mocha;Rainbow;Spearmint">
+		<Rule
+			name="Class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn=""
+			attributesOff="abstract|template"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFF8080"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Template class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn="template"
+			attributesOff=""
+			parentColor="Class"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Abstract class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="class"
+			attributesOn="abstract"
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFFC1C1"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Interface class"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="interface"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xFFC1C1"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Struct"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="struct"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0x80C080"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Union or variant type"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="union"
+			attributesOn=""
+			attributesOff=""
+			parentColor="Class"
+			fg="0xE1E1"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Type definition or alias"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="typedef"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x8080C0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Preprocessor macro"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="define"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_PPKEYWORD*"
+			fontFlags="F_BOLD|F_INHERIT_STYLE|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Package or namespace"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="package,prog,lib"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0x40FF"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbolic constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="const"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xC0C0C0"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Enumerated type or constant"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="enumc,enum"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xE1E100"
+			fontFlags="F_INHERIT_STYLE|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Symbol not found"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="UNKNOWN"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFF"
+			fontFlags="F_INHERIT_BG_COLOR">
+		</Rule>
+	</Scheme>
+	<Scheme
+		name="Global Variables"
+		compatibleWith="">
+		<Rule
+			name="Global variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="gvar"
+			attributesOn=""
+			attributesOff="static"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFF"
+			fontFlags="F_BOLD|F_INHERIT_BG_COLOR">
+		</Rule>
+		<Rule
+			name="Static global variable"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="gvar"
+			attributesOn="static"
+			attributesOff=""
+			parentColor="Global variable"
+			fg="0xFF8000"
+			fontFlags="F_BOLD|F_INHERIT_BG_COLOR">
+		</Rule>
+	</Scheme>
+	<Scheme
+		name="Protected and Private"
+		compatibleWith="">
+		<Rule
+			name="Protected"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="lvar,gvar,func,interface,table,trigger,include,param,group,var,const,constr,eventtab,enumc,proc,import,prog,prop,define,proto,database,label,column,mixin,class,file,package,typedef,view,subfunc,menu,block,procproto,cursor,subproc,struct,friend,annotype,index,form,annotation,lib,destr,taguse,tag,task,control,enum,union"
+			attributesOn="protected"
+			attributesOff="static|private|public|package"
+			parentColor="*CFG_WINDOW_TEXT*"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+		<Rule
+			name="Private"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="lvar,gvar,func,interface,table,trigger,include,param,group,var,const,constr,eventtab,enumc,proc,import,prog,prop,define,proto,database,label,column,mixin,class,file,package,typedef,view,subfunc,menu,block,procproto,cursor,subproc,struct,friend,annotype,index,form,annotation,lib,destr,taguse,tag,task,control,enum,union"
+			attributesOn="private"
+			attributesOff="static|protected|public|package"
+			parentColor="Protected"
+			fontFlags="F_ITALIC|F_INHERIT_BG_COLOR|F_INHERIT_FG_COLOR">
+		</Rule>
+	</Scheme>
+	<Scheme
+		name="Unidentified Symbols Only"
+		compatibleWith="">
+		<Rule
+			name="Symbol not found"
+			regexType=""
+			classRE=""
+			nameRE=""
+			kinds="UNKNOWN"
+			attributesOn=""
+			attributesOff=""
+			parentColor="*CFG_WINDOW_TEXT*"
+			fg="0xFF"
+			fontFlags="F_INHERIT_BG_COLOR">
+		</Rule>
+	</Scheme>
+</SymbolColoring>

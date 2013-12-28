@@ -1,0 +1,50 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_mfmore.on_create</title>
+</head>
+<body>
+
+<h3><b>typeless _mfmore.on_create()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Displays the <b>Replace dialog box</b>.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns '' if dialog box is cancelled.   Otherwise, 1 is returned
+and the global variables _param1-_param5 are set as follows:
+
+<dl>
+<dt>_param1</dt><dd>Search string.</dd>
+<dt> _param2</dt><dd>Replace string.</dd>
+<dt>_param3</dt><dd>Search options.</dd>
+<dt>_param4</dt><dd>Files to search through.</dd>
+<dt>_param5</dt><dd>Buffers to search through.</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">_str show('-modal _replace_form')
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+_command gui_replace()
+        name_info(','VSARG2_ EDITORCTL)
+{
+   _macro_delete_line()
+   result=show('-modal _replace_form',arg(1))
+   if (result=='') {
+      return(COMMAND_CANCELLED_RC);
+   }
+   _macro('m',_macro('s'))
+   if (_param4=='' && _param5=='') {
+      _macro_call('replace2', _param1, _param2, _param3)
+      return(gui_replace2(_param1, _param2, _param3))
+   } else {
+      if (substr(_param5,1,1)=='@' && _macro()) {
+         _message_box(nls("Sorry, can't generate macro code for this
+operation."));
+      } else {
+         _macro_call('_mfreplace', _param1, _param2, _param3,
+_param4, _param5)
+      }
+      return(_mfreplace(_param1, _param2, _param3, _param4,
+_param5));
+   }
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Forms.html">Forms</a></blockquote>
+</body>
+</html>

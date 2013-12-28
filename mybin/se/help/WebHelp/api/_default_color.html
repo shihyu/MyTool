@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_default_color</title>
+</head>
+<body>
+
+<h3><b>_str _default_color(int ColorIndex, int fg_color=-1, int bg_color=-1, int font_flags=-1, int ParentIndex=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sets the screen element corresponding to <i>ColorIndex</i> to the foreground
+and background colors given. The <i>fg_color</i> and <i>bg_color</i> parameters
+specify an RGB color.  Use the <b>_rgb</b> function to build these colors.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ColorIndex">ColorIndex</A></code> - is one of the following constants defined in "slick.sh":
+                  <UL>
+                  <LI>CFG_CLINE
+                  <LI>CFG_CURSOR
+                  <LI>CFG_SELECTION
+                  <LI>CFG_SELECTED_CLINE
+                  <LI>CFG_MESSAGE
+                  <LI>CFG_STATUS
+                  <LI>CFG_WINDOW_TEXT
+                  </UL></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="fg_color">fg_color</A></code> - foreground color (RGB)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="bg_color">bg_color</A></code> - background color (RGB)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="font_flags">font_flags</A></code> - is one of the following font flags:
+                  <UL>
+                  <LI>F_BOLD
+                  <LI>F_ITALIC
+                  <LI>F_STRIKE_THRU
+                  <LI>F_UNDERLINE
+                  <LI>F_INHERIT_STYLE
+                  </UL></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ParentIndex">ParentIndex</A></code> - parent color index to inherit color or font
+                   attributes from.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the current foreground, background, and font flags
+setting for the field specified each separated with a space.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_AllocColor.html">_AllocColor</a>, <a href="_rgb.html">_rgb</a></blockquote>
+</body>
+</html>

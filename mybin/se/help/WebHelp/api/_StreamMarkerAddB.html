@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_StreamMarkerAddB</title>
+</head>
+<body>
+
+<h3><b>int _StreamMarkerAddB(_str BufName, long StartOffset, long Length, boolean isRealOffset, int BMIndex, int type, _str pszMessage)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Adds a new stream marker.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="BufName">BufName</A></code> - Name of buffer to add marker to.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="RealLineNum">RealLineNum</A></code> - Line number or real line number (not
+counting no save lines).
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="isRealLineNum">isRealLineNum</A></code> - Indicates whether <i>RealLineNum</i> is a
+real line number or not.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NofLines">NofLines</A></code> - Number of lines in this item.  Specify zero if
+the type you are using does not have the
+VSMARKERTYPEFLAG_DRAW_BOX flag set.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="BMIndex">BMIndex</A></code> - Bitmap to display at the line specified.
+Specify 0 for no bitmap.  The following are
+names of bitmaps used for debugging:
+
+<dl>
+<dt>_breakpt.bmp</dt><dd>Indicates a line with an enabled breakpoint.</dd>
+<dt>_breakpn.bmp</dt><dd>Indicates a line with a disabled breakpoint.</dd>
+<dt>_execpt.bmp</dt><dd>Indicates current execution line.</dd>
+<dt>_stackex.bmp</dt><dd>Indicates a line on the execution call stack.</dd>
+<dt>_watchpt.bmp</dt><dd>Indicates a line with an enabled watchpoint.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type">type</A></code> - Type allocated by
+<b>_MarkerTypeAlloc</b>().
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Message">Message</A></code> - HTML message displayed when mouse is
+over bitmap.  Only a subset of HTML
+supported by our mini-HTML control is
+supported.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns index of new stream marker.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Marker_Functions.html">Marker Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_StreamMarkerAdd.html">_StreamMarkerAdd</a></blockquote>
+</body>
+</html>

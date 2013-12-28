@@ -1,0 +1,97 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Using the Calculator and Math Commands</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch10.htm" title="Chapter 10.  Tools and Utilities"><link rel="prev" href="ch10s08.htm" title="Regular Expressions"><link rel="next" href="ch10s10.htm" title="OS File Browser"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_calculator_12100_39371"></a>
+    <a name="sect_calculator_12100_998341"></a>
+    <a class="indexterm" name="sect_calculator_7823937E_E975"></a>
+    <a class="indexterm" name="sect_calculator_1E21A7BE_8A1D"></a>
+    <a class="indexterm" name="sect_calculator_8E7C8016_78B4"></a>Using the Calculator and Math Commands</h2></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_calculator_12100_1003466"></a>
+      <a class="indexterm" name="sect_calculator_C333C622_22D0"></a>
+      <a class="indexterm" name="sect_calculator_94C31B60_5700"></a>The Calculator</h3></div></div></div><p class="NormalText">To access the calculator, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Calculator</strong></span>, or use the <span><strong class="command">calculator</strong></span> command.</p><div class="mediaobject"><img src="Resources/calculator_dialog.png"></div><p class="NormalText">You can use the calculator in various ways. Type in mathematical expressions from the keyboard or by clicking buttons, including parentheses. Almost all the editing keys including undo, next word, and previous word are supported. The calculator uses a slightly enhanced C expression syntax. The calculator supports specifying binary numbers and allows just an <span><strong class="keycap">x</strong></span> prefix when specifying hexadecimal numbers. </p><p class="NormalText">For example, to add the decimal numbers 135 and 288, type <span class="bold"><strong>135+288=</strong></span>. Press the <span><strong class="keycap">=</strong></span> character to evaluate the expression and place the result on the next line. To see the result in a different base, click <span><strong class="guilabel">Hex</strong></span>, <span><strong class="guilabel">Dec</strong></span>, <span><strong class="guilabel">Oct</strong></span>, or <span><strong class="guilabel">Bin</strong></span>. </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_calculator_12100_1004744"></a>
+        <a class="indexterm" name="sect_calculator_EB28BE29_FD45"></a>Calculating Expressions with Mixed Bases</h4></div></div></div><p class="NormalText">To add hex FF with octal 77 with binary 111 with decimal 99, complete the following steps: </p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Click <span><strong class="guibutton">Hex</strong></span> then type or click <span class="bold"><strong>FF</strong></span>.</p></li><li><p class="NormalText">Click <span><strong class="guilabel">+</strong></span>.</p></li><li><p class="NormalText">Click <span><strong class="guilabel">Octal</strong></span>, and type or click <span class="bold"><strong>77</strong></span>.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">+</strong></span>.</p></li><li><p class="NormalText">Click <span><strong class="guilabel">Bin</strong></span>, and type or click <span class="bold"><strong>111</strong></span>.</p></li><li><p class="NormalText">Click <span><strong class="guilabel">+</strong></span>.</p></li><li><p class="NormalText">Click <span><strong class="guilabel">Dec</strong></span>, and type or click <span class="bold"><strong>99</strong></span>.</p></li><li><p class="NormalText">Select the output base by clicking one of the base buttons and type or click <span><strong class="guibutton">=</strong></span><span><strong class="command"></strong></span>to compute the result.</p></li></ol></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_calculator_12100_1003588"></a>
+      <a class="indexterm" name="sect_calculator_137E6DE2_F0EE"></a>Math Commands</h3></div></div></div><p class="NormalText">Evaluate mathematical expressions by selecting expressions in a buffer and executing the <span><strong class="command">add</strong></span> command or by executing one of the math commands on the command line followed by an expression. </p><p class="NormalText">These commands support the same expression input. The syntax of the <span><strong class="command">math</strong></span> command is:</p><pre class="programlisting">math [expression]</pre><p class="NormalText">The <span><strong class="command">math</strong></span> command evaluates the Slick-C® language expression given and places the results in the message line. You can specify octal numbers by prefixing the number with a zero and specify binary numbers by prefixing the number with the character <span><strong class="keycap">b</strong></span>. If no operator is specified between two unary expressions, addition is assumed. The characters <span><strong class="keycap">$</strong></span> and comma (<span><strong class="keycap">,</strong></span>) are stripped from the expression before it is evaluated. The <span><strong class="command">mathx</strong></span>, <span><strong class="command">matho</strong></span>, and <span><strong class="command">mathb</strong></span> commands evaluate the Slick-C language expression given and places the result in the message line in hexadecimal, octal, and binary respectively. The <span class="emphasis"><em>expression</em></span> can have the following unary operators:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <span><strong class="command">~</strong></span> bitwise complement</p></li><li><p class="NormalText">
+          <span><strong class="command">-</strong></span> negation</p></li><li><p class="NormalText">
+          <span><strong class="command">+</strong></span> no change</p></li></ul></div><p class="NormalText">The available binary operators are listed below, from lowest to highest precedence. A comma after the operator indicates that the next operator is of the same precedence.</p><div class="informaltable"><a name="table_a566a6c9-fc0f-43f1-bf37-0d8490444764"></a><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+              <p class="CellHeading">Operator</p>
+            </td><td>
+              <p class="CellHeading">Meaning</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">&amp;</strong></span>, <span><strong class="keycap">|</strong></span></p>
+            </td><td>
+              <p class="CellBody">bitwise AND, bitwise OR</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">^</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">
+                <a class="indexterm" name="sect_calculator_80D9AEEC_6124"></a>xor</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">+</strong></span>, <span><strong class="keycap">blank(s)</strong></span>, <span><strong class="keycap">-</strong></span></p>
+            </td><td>
+              <p class="CellBody">addition, implied addition, subtraction</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">*</strong></span>, <span><strong class="keycap">/</strong></span>, <span><strong class="keycap">%</strong></span></p>
+            </td><td>
+              <p class="CellBody">multiplication, division, remainder</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="keycap">**</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">power</p>
+            </td></tr></tbody></table></div><p class="NormalText">Hexadecimal numbers are prefixed with the characters <span class="bold"><strong>0x</strong></span> or just <span><strong class="keycap">x</strong></span>. Octal numbers are prefixed with the character <span><strong class="keycap">O</strong></span> or digit <span><strong class="keycap">0</strong></span>.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Note</h3><p class="CellBody"> Not all Slick-C language operators are supported.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_calculator_12100_1003532"></a>
+        <a class="indexterm" name="sect_calculator_59FB0E2A_99C1"></a>Math Command Examples</h4></div></div></div><p class="NormalText">The following table shows some examples of math commands:</p><div class="informaltable"><a name="table_e212de98-d99d-48cb-bca5-158c98207d13"></a><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                <p class="CellHeading">Example</p>
+              </td><td>
+                <p class="CellHeading">Description</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">math 2.5*2</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Multiplies 2.5 times 2</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">math 5/2</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Divides 5 by 2</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">mathx 255</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Converts 255 to hexadecimal</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">math xFF</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Converts hexadecimal FF to decimal</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">math o77</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Converts octal 77 to decimal</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">matho 255</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Converts 255 to octal</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">math 077+0xff+10</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Adds octal 77, hex FF, and 10</p>
+              </td></tr></tbody></table></div><p class="NormalText"></p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_calculator_12100_1003486"></a>
+        <a class="indexterm" name="sect_calculator_63C1AF7D_37E4"></a>
+        <a class="indexterm" name="sect_calculator_C01ADDC3_5AD2"></a>Overflow/Underflow</h4></div></div></div><p class="NormalText">If overflow or underflow occurs, the message <span><strong class="command">Numeric overflow or underflow</strong></span> is displayed on the message line. Floating point numbers may have up to a 32-digit mantissa and a 9-digit exponent.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_calculator_12100_1003505"></a>
+        <a class="indexterm" name="sect_calculator_62D7470C_0262"></a>
+        <a class="indexterm" name="sect_calculator_E349D62A_7DC9"></a>Document Math</h4></div></div></div><p class="NormalText">Type mathematical expressions into a buffer and evaluate them with the <span><strong class="command">add</strong></span> command. This feature is called document math. The <span><strong class="command">add</strong></span> command adds selected text and inserts the result below the last line of the selection. If no operator exists between two adjacent numbers on the same line, addition is assumed. The result of each adjacent line is added. </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_calculator_12100_1004654"></a>
+        <a class="indexterm" name="sect_calculator_925DBDEC_A109"></a>
+        <a class="indexterm" name="sect_calculator_11DFE8BD_58E1"></a>Prime Numbers</h4></div></div></div><p class="NormalText">Prime numbers are often useful for sizing hash tables. The <span><strong class="command">isprime</strong></span> command (used from the command line) takes a decimal number as an argument and tells you if it is prime, and if not, its first divisor. The <span><strong class="command">nextprime</strong></span> command takes a decimal number as an argument and finds the next greater prime number.</p><p class="NormalText"></p></div></div></div></body></html>

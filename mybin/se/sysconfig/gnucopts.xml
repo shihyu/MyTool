@@ -1,0 +1,449 @@
+<!DOCTYPE GNUCOptions SYSTEM "gnucopts.dtd">
+
+<!-- NOTE: The options that are commented out are either configurable via a control elsewhere in the
+           dialog, are handled automatically (ex: -c, -I, -l), or they require more
+           information than a simple checkbox (ex: -Wid-clash-LEN where LEN is a number) -->
+
+<GNUCOptions Version="8.0" GCCVersion="2.96">
+	<OptionSet Type="Warning">
+		<!-- Option Name="-fsyntax-only" Description="Check the code for syntax errors, but don't do anything beyond that."/ -->
+		<!-- Option Name="-pedantic" Description="Issue all the warnings demanded by strict ISO C/C++."/ -->
+		<Option Name="-pedantic-errors" Description="Like -pedantic, but errors are produced instead of warnings."/>
+		<!-- Option Name="-w" Description="Inhibit all warning messages"/ -->
+		<Option Name="-W" Description="Print extra warning messages for several events."/>
+		<Option Name="-Waggregate-return" Description="Warn if any functions that return structures or unions are defined or called."/>
+		<!-- Option Name="-Wall" Description="All of the typical '-W' options combined. (-Wimplicit-int -Wimplicit-function-declaration -Wimplicit -Wmain -Wreturn-type -Wunused-function -Wunused-label -Wunused-parameter -Wunused-variable -Wunused-value -Wunused -Wswitch -Wcomment -Wtrigraphs -Wformat -Wchar-subscripts -Wuninitialized -Wparentheses)"/ -->
+		<Option Name="-Wbad-function-cast" Description="Warn whenever a function call is cast to a non-matching type."/>
+		<Option Name="-Wcast-align" Description="Warn whenever a pointer is cast such that the required alignment of the target is increased."/>
+		<Option Name="-Wcast-qual" Description="Warn whenever a pointer is cast so as to remove a type qualifier from the target type."/>
+		<Option Name="-Wchar-subscripts" Description="Warn if an array subscript has type 'char'"/>
+		<Option Name="-Wcomment" Description="Warn whenever a comment-start sequence '/*' appears in a '/*' comment, or whenever a backslash-newline appears in a '//' comment."/>
+		<Option Name="-Wconversion" Description="Warn if a prototype causes a type conversion that is different from what would happen to the same argument in the absence of a prototype."/>
+		<!-- Option Name="-Werror" Description="Make all warnings into errors."/ -->
+		<Option Name="-Werror-implicit-function-declaration" Description="Give an error whenever a function is used before being declared."/>
+		<Option Name="-Wfloat-equal" Description="Warn if floating point values are used in equality comparisons."/>
+		<Option Name="-Wformat" Description="Check calls to 'printf' and 'scanf', etc., to make sure that the arguments supplied have the appropriate types."/>
+		<!-- Option Name="-Wid-clash-LEN" Description="Warn whenever two distinct identifiers match in the first LEN characters."/ -->
+		<Option Name="-Wimplicit-int" Description="Warn when a declaration does not specify a type."/>
+		<Option Name="-Wimplicit-function-declaration" Description="Give a warning whenever a function is used before being declared."/>
+		<Option Name="-Wimplicit" Description="Same as '-Wimplicit-int' and '-Wimplicit-function-declaration'."/>
+		<Option Name="-Winline" Description="Warn if a function can not be inlined and it was declared as inline."/>
+		<!-- Option Name="-Wlarger-than-LEN" Description="Warn whenever an object of larger than LEN bytes is defined."/ -->
+		<Option Name="-Wlong-long" Description="Warn if 'long long' type is used."/>
+		<Option Name="-Wmain" Description="Warn if the type of 'main' is suspicious."/>
+		<Option Name="-Wmissing-declarations" Description="Warn if a global function is defined without a previous declaration."/>
+		<Option Name="-Wmissing-noreturn" Description="Warn about functions which might be candidates for attribute 'noreturn'."/>
+		<Option Name="-Wmissing-prototypes" Description="Warn if a global function is defined without a previous prototype declaration."/>
+		<Option Name="-Wmultichar" Description="Warn if a multicharacter constant is used."/>
+		<Option Name="-Wnested-externs" Description="Warn if an 'extern' declaration is encountered within a function."/>
+		<Option Name="-Wno-import" Description="Inhibit warning messages about the use of 'import'"/>
+		<Option Name="-Wpacked" Description="Warn if a structure is given the packed attribute, but the packed attribute has no effect on the layout or size of the structure."/>
+		<Option Name="-Wpadded" Description="Warn if padding is included in a structure, either to align an element of the structure or to align the whole structure."/>
+		<Option Name="-Wparentheses" Description="Warn if parentheses are omitted in certain contexts."/>
+		<Option Name="-Wpointer-arith" Description="Warn about anything that depends on the 'size of' a function type or of 'void'."/>
+		<Option Name="-Wredundant-decls" Description="Warn if anything is declared more than once in the same scope."/>
+		<Option Name="-Wreorder" Description="Warn when the order of member initializers given in the code does not match the order in which they must be executed."/>
+		<Option Name="-Wreturn-type" Description="Warn whenever a function is defined with a return-type that defaults to 'int'.  Also warn about non-void functions that have no return value."/>
+		<Option Name="-Wshadow" Description="Warn whenever a local variable shadows another local variable, parameter, or global variable."/>
+		<Option Name="-Wsign-compare" Description="Warn when a comparison between signed and unsigned values could produce an incorrect result when the signed value is converted to unsigned."/>
+		<Option Name="-Wstrict-prototypes" Description="Warn if a function is declared or defined without specifying the argument types."/>
+		<Option Name="-Wswitch" Description="Warn whenever a 'switch' statement has an index of enumeral type and lacks a 'case' for one or more of the named codes of that enumeration."/>
+		<Option Name="-Wtraditional" Description="Warn about certain constructs that behave differently in traditional and ANSI C."/>
+		<Option Name="-Wtrigraphs" Description="Warn if any trigraphs are encountered."/>
+		<Option Name="-Wundef" Description="Warn if an undefined identifier is evaluated in an '#if' directive."/>
+		<Option Name="-Wunreachable-code" Description="Warn if the compiler detects that code will never be executed."/>
+		<Option Name="-Wunused-function" Description="Warn whenever a static function is declared but not defined or a non-inline static function is unused."/>
+		<Option Name="-Wunused-label" Description="Warn whenever a label is declared buy not used."/>
+		<Option Name="-Wunused-parameter" Description="Warn whenever a function parameter is unused aside from its declaration."/>
+		<Option Name="-Wunused-variable" Description="Warn whenever a local variable or non-constant static variable is unused aside from its declaration."/>
+		<Option Name="-Wunused-value" Description="Warn whenever a statement computes a result that is explicitly not used."/>
+		<Option Name="-Wunused" Description="All the above '-Wunused' options combined."/>
+		<Option Name="-Wuninitialized" Description="Warn if an automatic variable is used without first being initialized."/>
+		<Option Name="-Wunknown-pragmas" Description="Warn when a #pragma directive is encountered which is not understood by GCC."/>
+		<Option Name="-Wwrite-strings" Description="Give string constants the type 'const char[LENGTH]' so that copying the address of one into a non-'const' 'char *' will get a warning."/>
+	</OptionSet>
+
+	<OptionSet Type="Overall">
+		<!-- Option Name="-x language" Description="Specify explicitly the language for the following input files."/ -->
+		<Option Name="-x none" Description="Turn off any specification of a language, so that subsequent files are handled according to their file name suffixes."/>
+		<!-- Option Name="-c" Description="Compile or assemble the source files, but do not link. The compiler output is an object file corresponding to each source file."/ -->
+		<Option Name="-S" Description="Stop after the stage of compilation proper; do not assemble. The output is an assembler code file for each non-assembler input file specified."/>
+		<Option Name="-E" Description="Stop after the preprocessing stage; do not run the compiler proper. The output is preprocessed source code, which is sent to the standard output."/>
+		<!-- Option Name="-o file" Description="Place output in file file. This applies regardless to whatever sort of output GCC is producing."/ -->
+		<!-- Option Name="-v" Description="Print (on standard error output) the commands executed to run the stages of compilation."/ -->
+		<!-- Option Name="-pipe" Description="Use pipes rather than temporary files for communication between the various stages of compilation."/ -->
+	</OptionSet>
+
+	<OptionSet Type="Language">
+		<!-- Option Name="-ansi" Description="Support all ANSI standard C programs."/ -->
+		<Option Name="-fno-asm" Description="Do not recognize asm, inline or typeof as a keyword. These words may then be used as identifiers."/>
+		<Option Name="-fno-builtin" Description="Don't recognize built-in functions that do not begin with two leading underscores."/>
+		<Option Name="-fhosted" Description="Compile for a hosted environment; this implies the `-fbuiltin' option, and implies that suspicious declarations of main should be warned about."/>
+		<Option Name="-ffreestanding" Description="Compile for a freestanding environment; this implies the `-fno-builtin' option, and implies that main has no special requirements."/>
+		<Option Name="-fno-strict-prototype" Description="Treat a function declaration with no arguments, such as `int foo ();', as C would treat it."/>
+		<Option Name="-trigraphs" Description="Support ANSI C trigraphs. The `-ansi' option implies `-trigraphs'."/>
+		<!-- Option Name="-traditional" Description="Attempt to support some aspects of traditional C compilers."/ -->
+		<Option Name="-traditional-cpp" Description="Attempt to support some aspects of traditional C preprocessors."/>
+		<Option Name="-fdollars-in-identifiers" Description="Permit the use of `$' in identifiers (C++ only)."/>
+		<Option Name="-fexternal-templates" Description="Produce smaller code for template declarations, by generating only a single copy of each template function where it is defined (C++ only)."/>
+		<Option Name="-fcond-mismatch" Description="Allow conditional expressions with mismatched types in the second and third arguments. The value of such an expression is void."/>
+		<Option Name="-funsigned-char" Description="Let the type char be unsigned, like unsigned char."/>
+		<Option Name="-fsigned-char" Description="Let the type char be signed, like signed char."/>
+		<Option Name="-fsigned-bitfields" Description="These options control whether a bitfield is signed or unsigned, when declared with no explicit `signed' or `unsigned' qualifier."/>
+		<Option Name="-funsigned-bitfields" Description="These options control whether a bitfield is signed or unsigned, when declared with no explicit `signed' or `unsigned' qualifier."/>
+		<Option Name="-fno-signed-bitfields" Description="These options control whether a bitfield is signed or unsigned, when declared with no explicit `signed' or `unsigned' qualifier."/>
+		<Option Name="-fno-unsigned-bitfields" Description="These options control whether a bitfield is signed or unsigned, when declared with no explicit `signed' or `unsigned' qualifier."/>
+		<Option Name="-fwritable-strings" Description="Store string constants in the writable data segment and don't uniquize them."/>
+	</OptionSet>
+
+	<OptionSet Type="Preprocessor">
+		<Option Name="-C" Description="Tell the preprocessor not to discard comments. Used with the `-E' option."/>
+		<!-- Option Name="-dD" Description="Tell the preprocessor to pass all macro definitions into the output, in their proper sequence in the rest of the output."/ -->
+		<!-- Option Name="-dM" Description="Tell the preprocessor to output only a list of the macro definitions that are in effect at the end of preprocessing. Used with the `-E' option."/ -->
+		<!-- Option Name="-Dmacro" Description="Define macro macro with the string `1' as its definition."/ -->
+		<!-- Option Name="-Dmacro=defn" Description="Define macro macro as defn."/ -->
+		<!-- Option Name="-Umacro" Description="Undefine macro macro."/ -->
+		<!-- Option Name="-dN" Description="Like `-dD' except that the macro arguments and contents are omitted. Only `#define name' is included in the output."/ -->
+		<Option Name="-E" Description="Run only the C preprocessor."/>
+		<Option Name="-H" Description="Print the name of each header file used, in addition to other normal activities."/>
+		<!-- Option Name="-idirafter dir" Description="Add the directory dir to the second include path."/ -->
+		<!-- Option Name="-imacros file" Description="Process file as input, discarding the resulting output, before processing the regular input file."/ -->
+		<!-- Option Name="-include file" Description="Process file as input before processing the regular input file."/ -->
+		<!-- Option Name="-iprefix prefix" Description="Specify prefix as the prefix for subsequent `-iwithprefix' options."/ -->
+		<!-- Option Name="-iwithprefix dir" Description="Add a directory to the second include path. The directory's name is made by concatenating prefix and dir, where prefix was specified previously with `-iprefix'."/ -->
+		<!-- Option Name="-M [ -MG ]" Description="Tell the preprocessor to output a rule suitable for make describing the dependencies of each object file."/ -->
+		<!-- Option Name="-MM [ -MG ]" Description="Like `-M' but the output mentions only the user header files included with `#include file'."/ -->
+		<!-- Option Name="-MD" Description="Like `-M' but the dependency information is written to files with names made by replacing `.o' with `.d' at the end of the output file names."/ -->
+		<!-- Option Name="-MMD" Description="Like `-MD' except mention only user header files, not system header files."/ -->
+		<Option Name="-nostdinc" Description="Do not search the standard system directories for header files."/>
+		<Option Name="-nostdinc++" Description="Do not search for header files in the C++-specific standard directories, but do still search the other standard directories."/>
+		<Option Name="-P" Description="Tell the preprocessor not to generate `#line' commands. Used with the `-E' option."/>
+	</OptionSet>
+
+<!--
+	<OptionSet Type="Assembler">
+		<Option Name="-Wa,option" Description="Pass option as an option to the assembler. If option contains commas, it is split into multiple options at the commas."/>
+	</OptionSet>
+
+	<OptionSet Type="Linker">
+		<Option Name="-llibrary" Description="Use the library named library when linking."/>
+		<Option Name="-lobjc" Description="You need this special case of the -l option in order to link an Objective C program."/>
+		<Option Name="-nostartfiles" Description="Do not use the standard system startup files when linking. The standard libraries are used normally."/>
+		<Option Name="-nostdlib" Description="Don't use the standard system libraries and startup files when linking. Only the files you specify will be passed to the linker."/>
+		<Option Name="-static" Description="On systems that support dynamic linking, this prevents linking with the shared libraries."/>
+		<Option Name="-shared" Description="Produce a shared object which can then be linked with other objects to form an executable."/>
+		<Option Name="-symbolic" Description="Bind references to global symbols when building a shared object."/>
+		<Option Name="-Xlinker option" Description="Pass option as an option to the linker."/>
+		<Option Name="-Wl,option" Description="Pass option as an option to the linker. If option contains commas, it is split into multiple options at the commas."/>
+		<Option Name="-u symbol" Description="Pretend the symbol symbol is undefined, to force linking of library modules to define it."/>
+	</OptionSet>
+
+	<OptionSet Type="Directory">
+		<Option Name="-Idir" Description="Append directory dir to the list of directories searched for include files."/>
+		<Option Name="-I-" Description="Any directories you specify with `-I' options before the `-I-' option are searched only for the case of user includes, not system includes."/>
+		<Option Name="-Ldir" Description="Add directory dir to the list of directories to be searched for `-l'."/>
+		<Option Name="-Bprefix" Description="This option specifies where to find the executables, libraries and data files of the compiler itself."/>
+	</OptionSet>
+-->
+
+	<OptionSet Type="Debug">
+		<Option Name="-a" Description="Generate extra code to write profile information for basic blocks, which will record the number of times each basic block is executed."/>
+		<Option Name="-ax" Description="Generate extra code to read basic block profiling parameters from file `bb.in' and write profiling results to file `bb.out'. `bb.in' contains a list of functions."/>
+		<Option Name="-da" Description="Produce all the dumps listed above."/>
+		<Option Name="-dc" Description="Dump after instruction combination, to `file.combine'."/>
+		<Option Name="-dd" Description="Dump after delayed branch scheduling, to `file.dbr'."/>
+		<Option Name="-dD" Description="Dump all macro definitions, at the end of preprocessing, in addition to normal output."/>
+		<Option Name="-df" Description="Dump after flow analysis, to `file.flow'."/>
+		<Option Name="-dg" Description="Dump after global register allocation, to `file.greg'."/>
+		<Option Name="-dj" Description="Dump after first jump optimization, to `file.jump'."/>
+		<Option Name="-dJ" Description="Dump after last jump optimization, to `file.jump2'."/>
+		<Option Name="-dk" Description="Dump after conversion from registers to stack, to `file.stack'."/>
+		<Option Name="-dl" Description="Dump after local register allocation, to `file.lreg'."/>
+		<Option Name="-dL" Description="Dump after loop optimization, to `file.loop'."/>
+		<!-- Option Name="-dletters" Description="Says to make debugging dumps during compilation at times specified by letters. This is used for debugging the compiler."/ -->
+		<Option Name="-dm" Description="Print statistics on memory usage, at the end of the run, to standard error."/>
+		<Option Name="-dM" Description="Dump all macro definitions, at the end of preprocessing, and write no output."/>
+		<Option Name="-dN" Description="Dump all macro names, at the end of preprocessing."/>
+		<Option Name="-dp" Description="Annotate the assembler output with a comment indicating which pattern and alternative was used."/>
+		<Option Name="-dr" Description="Dump after RTL generation, to `file.rtl'."/>
+		<Option Name="-dR" Description="Dump after the second instruction scheduling pass, to `file.sched2'."/>
+		<Option Name="-ds" Description="Dump after CSE (including the jump optimization that sometimes follows CSE), to `file.cse'."/>
+		<Option Name="-dS" Description="Dump after the first instruction scheduling pass, to `file.sched'."/>
+		<Option Name="-dt" Description="Dump after the second CSE pass (including the jump optimization that sometimes follows CSE), to `file.cse2'."/>
+		<Option Name="-dx" Description="Just generate RTL for a function instead of compiling it. Usually used with `r'."/>
+		<Option Name="-dy" Description="Dump debugging information during parsing, to standard error."/>
+		<Option Name="-fpretend-float" Description="When running a cross-compiler, pretend that the target machine uses the same floating point format as the host machine."/>
+		<!-- Option Name="-g" Description="Produce debugging information in the operating system's native format (stabs, COFF, XCOFF, or DWARF)."/ -->
+		<Option Name="-gcoff" Description="Produce debugging information in COFF format. This is the format used by SDB on most System V systems prior to System V Release 4."/>
+		<!-- Option Name="-gcofflevel" Description=""/ -->
+		<Option Name="-gdwarf" Description="Produce debugging information in DWARF format. This is the format used by SDB on most System V Release 4 systems."/>
+		<Option Name="-gdwarf+" Description="Produce debugging information in DWARF format, using GNU extensions understood only by the GNU debugger (GDB)."/>
+		<!-- Option Name="-gdwarflevel" Description="Request debugging information and also use level to specify how much information. The default level is 2."/ -->
+		<!-- Option Name="-ggdb" Description="Produce debugging information in the native format, including GDB extensions if at all possible."/ -->
+		<!-- Option Name="-ggdblevel" Description=""/ -->
+		<!-- Option Name="-glevel" Description=""/ -->
+		<Option Name="-gstabs" Description="Produce debugging information in stabs format, without GDB extensions. This is the format used by DBX on most BSD systems."/>
+		<Option Name="-gstabs+" Description="Produce debugging information in stabs format, using GNU extensions understood only by the GNU debugger (GDB)."/>
+		<!-- Option Name="-gstabslevel" Description=""/ -->
+		<Option Name="-gxcoff" Description="Produce debugging information in XCOFF format. This is the format used by the DBX debugger on IBM RS/6000 systems."/>
+		<Option Name="-gxcoff+" Description="Produce debugging information in XCOFF format, using GNU extensions understood only by the GNU debugger (GDB)."/>
+		<!-- Option Name="-p" Description="Generate extra code to write profile information suitable for the analysis program prof."/ -->
+		<!-- Option Name="-pg" Description="Generate extra code to write profile information suitable for the analysis program gprof."/ -->
+		<!-- Option Name="-print-file-name=library" Description="Print the full absolute name of the library file library that would be used when linking."/ -->
+		<Option Name="-print-libgcc-file-name" Description="Same as `-print-file-name=libgcc.a'."/>
+		<!-- Option Name="-print-prog-name=program" Description="Like `-print-file-name', but searches for a program such as `cpp'."/ -->
+		<!-- Option Name="-save-temps" Description="Store the usual 'temporary' intermediate files permanently; place them in the current directory and name them based on the source file."/ -->
+	</OptionSet>
+
+	<OptionSet Type="Optimization">
+		<Option Name="-ffloat-store" Description="Do not store floating point variables in registers."/>
+		<Option Name="-fcaller-saves" Description="Enable values to be allocated in registers that will be clobbered by function calls, by emitting extra instructions to save and restore the registers around such calls."/>
+		<Option Name="-fcse-follow-jumps" Description="In common subexpression elimination, scan through jump instructions when the target of the jump is not reached by any other path."/>
+		<Option Name="-fcse-skip-blocks" Description="This is similar to `-fcse-follow-jumps', but causes CSE to follow jumps which conditionally skip over blocks."/>
+		<Option Name="-fdelayed-branch" Description="If supported for the target machine, attempt to reorder instructions to exploit instruction slots available after delayed branch instructions."/>
+		<Option Name="-felide-constructors" Description="Elide constructors when this seems plausible (C++ only)."/>
+		<Option Name="-fexpensive-optimizations" Description="Perform a number of minor optimizations that are relatively expensive."/>
+		<Option Name="-ffast-math" Description="This option allows GCC to violate some ANSI or IEEE rules/specifications in the interest of optimizing code for speed."/>
+		<Option Name="-fforce-addr" Description="Force memory address constants to be copied into registers before doing arithmetic on them."/>
+		<Option Name="-fforce-mem" Description="Force memory operands to be copied into registers before doing arithmetic on them."/>
+		<Option Name="-finline-functions" Description="Integrate all simple functions into their callers."/>
+		<Option Name="-fno-inline" Description="Inhibit all inlining, even inlining that is requested by the inline keyword in the source code."/>
+		<Option Name="-fkeep-inline-functions" Description="Even if all calls to a given function are integrated, and the function is declared static, nevertheless output a separate run-time callable version of the function."/>
+		<Option Name="-fmemoize-lookups" Description=""/>
+		<Option Name="-fno-default-inline" Description="Don't make member functions inline by default merely because they are defined inside the class scope (C++ only)."/>
+		<Option Name="-fno-defer-pop" Description="Always pop the arguments to each function call as soon as that function returns."/>
+		<Option Name="-fno-function-cse" Description="Do not put function addresses in registers; make each instruction that calls a constant function contain the function's address explicitly."/>
+		<Option Name="-fno-peephole" Description="Disable any machine-specific peephole optimizations."/>
+		<Option Name="-fomit-frame-pointer" Description="Don't keep the frame pointer in a register for functions that don't need one."/>
+		<Option Name="-frerun-cse-after-loop" Description="Re-run common subexpression elimination after loop optimizations has been performed."/>
+		<Option Name="-fsave-memoized" Description="Use heuristics to compile faster (C++ only)."/>
+		<Option Name="-fschedule-insns" Description="If supported for the target machine, attempt to reorder instructions to eliminate execution stalls due to required data being unavailable."/>
+		<Option Name="-fschedule-insns2" Description="Similar to `-fschedule-insns', but requests an additional pass of instruction scheduling after register allocation has been done."/>
+		<Option Name="-fstrength-reduce" Description="Perform the optimizations of loop strength reduction and elimination of iteration variables."/>
+		<Option Name="-fthread-jumps" Description="Perform optimizations where we check to see if a jump branches to a location where another comparison subsumed by the first is found."/>
+		<Option Name="-funroll-all-loops" Description="Perform the optimization of loop unrolling."/>
+		<Option Name="-funroll-loops" Description="Perform the optimization of loop unrolling."/>
+		<!-- Option Name="-O" Description=""/ -->
+		<!-- Option Name="-O0" Description="Do not optimize."/ -->
+		<!-- Option Name="-O1" Description="Optimize. Optimizing compilation takes somewhat more time, and a lot more memory for a large function."/ -->
+		<!-- Option Name="-O2" Description="Optimize even more. Nearly all supported optimizations that do not involve a space-speed tradeoff are performed."/ -->
+		<!-- Option Name="-O3" Description="Optimize yet more. This turns on everything -O2 does, along with also turning on -finline-functions."/ -->
+	</OptionSet>
+
+	<OptionSet Type="CodeGeneration">
+		<!-- Option Name="-fcall-saved-reg" Description="Treat the register named reg as an allocable register saved by functions."/ -->
+		<!-- Option Name="-fcall-used-reg" Description="Treat the register named reg as an allocable register that is clobbered by function calls."/ -->
+		<!-- Option Name="-ffixed-reg" Description="Treat the register named reg as a fixed register; generated code should never refer to it (except perhaps as a stack pointer, frame pointer or in some other fixed role)."/ -->
+		<Option Name="-finhibit-size-directive" Description="Don't output a size assembler directive, or anything else that would cause trouble if the function is split in the middle, and the two halves are placed at locations far apart in memory."/>
+		<Option Name="-fno-common" Description="Allocate even uninitialized global variables in the bss section of the object file, rather than generating them as common blocks."/>
+		<Option Name="-fno-gnu-linker" Description="Do not output global initializations (such as C++ constructors and destructors) in the form used by the GNU linker."/>
+		<Option Name="-fno-ident" Description="Ignore the `#ident' directive."/>
+		<Option Name="-fnonnull-objects" Description="Assume that objects reached through references are not null (C++ only)."/>
+		<Option Name="-fpcc-struct-return" Description="Use the same convention for returning struct and union values that is used by the usual C compiler on your system."/>
+		<Option Name="-fPIC" Description="If supported for the target machine, emit position-independent code, suitable for dynamic linking, even if branches need large displacements."/>
+		<Option Name="-fpic" Description="If supported for the target machines, generate position-independent code, suitable for use in a shared library."/>
+		<Option Name="-freg-struct-return" Description="Use the convention that struct and union values are returned in registers when possible."/>
+		<Option Name="-fshared-data" Description="Requests that the data and non-const variables of this compilation be shared data rather than private data."/>
+		<Option Name="-fshort-double" Description="Use the same size for double as for float."/>
+		<Option Name="-fshort-enums" Description="Allocate to an enum type only as many bytes as it needs for the declared range of possible values."/>
+		<Option Name="-fverbose-asm" Description="Put extra commentary information in the generated assembly code to make it more readable."/>
+		<Option Name="-fvolatile" Description="Consider all memory references through pointers to be volatile."/>
+		<Option Name="-fvolatile-global" Description="Consider all memory references to extern and global data items to be volatile."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="M680x0">
+		<Option Name="-m68000" Description="Generate output for a 68000. This is the default when the compiler is configured for 68000-based systems."/>
+		<Option Name="-mc68000" Description="Generate output for a 68000. This is the default when the compiler is configured for 68000-based systems."/>
+		<Option Name="-m68020" Description="Generate output for a 68020 (rather than a 68000). This is the default when the compiler is configured for 68020-based systems."/>
+		<Option Name="-mc68020" Description="Generate output for a 68020 (rather than a 68000). This is the default when the compiler is configured for 68020-based systems."/>
+		<Option Name="-m68881" Description="Generate output containing 68881 instructions for floating point. This is the default for most 68020-based systems unless -nfp was specified when the compiler was configured."/>
+		<Option Name="-m68030" Description="Generate output for a 68030. This is the default when the compiler is configured for 68030-based systems."/>
+		<Option Name="-m68040" Description="Generate output for a 68040. This is the default when the compiler is configured for 68040-based systems."/>
+		<Option Name="-m68020-40" Description="Generate output for a 68040, without using any of the new instructions. This results in code which can run relatively efficiently on either a 68020/68881 or a 68030 or a 68040."/>
+		<Option Name="-mfpa" Description="Generate output containing Sun FPA instructions for floating point."/>
+		<Option Name="-msoft-float" Description="Generate output containing library calls for floating point."/>
+		<Option Name="-mshort" Description="Consider type int to be 16 bits wide, like short int."/>
+		<Option Name="-mnobitfield" Description="Do not use the bit-field instructions. `-m68000' implies `-mnobitfield'."/>
+		<Option Name="-mbitfield" Description="Do use the bit-field instructions. `-m68020' implies `-mbitfield'. This is the default if you use the unmodified sources."/>
+		<Option Name="-mrtd" Description="Use a different function-calling convention, in which functions that take a fixed number of arguments return with the rtd instruction, which pops their arguments while returning."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="VAX">
+		<Option Name="-munix" Description="Do not output certain jump instructions (aobleq and so on) that the Unix assembler for the Vax cannot handle across long ranges."/>
+		<Option Name="-mgnu" Description="Do output those jump instructions, on the assumption that you will assemble with the GNU assembler."/>
+		<Option Name="-mg" Description="Output code for g-format floating point numbers instead of d-format."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="SPARC">
+		<Option Name="-mfpu" Description=""/>
+		<Option Name="-mno-fpu" Description=""/>
+		<Option Name="-mhard-float" Description="Generate output containing floating point instructions."/>
+		<Option Name="-msoft-float" Description="Generate output containing library calls for floating point."/>
+		<Option Name="-mno-epilogue" Description="With -mno-epilogue, the compiler tries to emit exit code inline at every function exit."/>
+		<Option Name="-mepilogue" Description="With -mepilogue (the default), the compiler always emits code for function exit at the end of each function. Any function exit in the middle of the function will generate a jump to the exit code at the end of the function."/>
+		<Option Name="-mno-v8" Description="These three options select variations on the SPARC architecture."/>
+		<Option Name="-mv8" Description="Generate SPARC v8 code. The only difference from v7 code is that the compiler emits the integer multiply and integer divide instructions which exist in SPARC v8 but not in SPARC v7."/>
+		<Option Name="-msparclite" Description="Generate SPARClite code. This adds the integer multiply, integer divide step and scan (ffs) instructions which exist in SPARClite but not in SPARC v7."/>
+		<Option Name="-mcypress" Description="Optimize code for the Cypress CY7C602 chip, as used in the SparcStation/SparcServer 3xx series. This is also appropriate for the older SparcStation 1, 2, IPX etc."/>
+		<Option Name="-msupersparc" Description="Optimize code for the SuperSparc cpu, as used in the SparcStation 10, 1000 and 2000 series. This flag also enables use of the full SPARC v8 instruction set."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="Convex">
+		<Option Name="-mc1" Description="Generate output for a C1. This is the default when the compiler is configured for a C1."/>
+		<Option Name="-mc2" Description="Generate output for a C2. This is the default when the compiler is configured for a C2."/>
+		<Option Name="-margcount" Description="Generate code which puts an argument count in the word preceding each argument list. Some non-portable Convex and Vax programs need this word."/>
+		<Option Name="-mnoargcount" Description="Omit the argument count word. This is the default if you use the unmodified sources."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="AMD29K">
+		<Option Name="-mdw" Description="Generate code that assumes the DW bit is set, i.e., that byte and halfword operations are directly supported by the hardware. This is the default."/>
+		<Option Name="-mnodw" Description="Generate code that assumes the DW bit is not set."/>
+		<Option Name="-mbw" Description="Generate code that assumes the system supports byte and halfword write operations. This is the default."/>
+		<Option Name="-mnbw" Description="Generate code that assumes the systems does not support byte and halfword write operations. This implies `-mnodw'."/>
+		<Option Name="-msmall" Description="Use a small memory model that assumes that all function addresses are either within a single 256 KB segment or at an absolute address of less than 256K. This allows the call instruction to be used instead of a const, consth, calli sequence."/>
+		<Option Name="-mlarge" Description="Do not assume that the call instruction can be used; this is the default."/>
+		<Option Name="-m29050" Description="Generate code for the Am29050."/>
+		<Option Name="-m29000" Description="Generate code for the Am29000. This is the default."/>
+		<Option Name="-mkernel-registers" Description="Generate references to registers gr64-gr95 instead of gr96-gr127. This option can be used when compiling kernel code that wants a set of global registers disjoint from that used by user-mode code."/>
+		<Option Name="-muser-registers" Description="Use the normal set of global registers, gr96-gr127. This is the default."/>
+		<Option Name="-mstack-check" Description="Insert a call to __msp_check after each stack adjustment. This is often used for kernel code."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="M88K">
+		<Option Name="-m88000" Description="Generate code that works well on both the m88100 and the m88110."/>
+		<Option Name="-m88100" Description="Generate code that works best for the m88100, but that also runs on the m88110."/>
+		<Option Name="-m88110" Description="Generate code that works best for the m88110, and may not run on the m88100."/>
+		<Option Name="-midentify-revision" Description="Include an ident directive in the assembler output recording the source file name, compiler name and version, timestamp, and compilation flags used."/>
+		<Option Name="-mno-underscores" Description="In assembler output, emit symbol names without adding an underscore character at the beginning of each name. The default is to use an underscore as prefix on each name."/>
+		<Option Name="-mno-check-zero-division" Description="Avoid including additional code to detect division by zero and signal an exception."/>
+		<Option Name="-mcheck-zero-division" Description="Explicitly include additional code to detect division by zero and signal an exception. This is the default."/>
+		<Option Name="-mocs-debug-info" Description="Include additional debugging information (about registers used in each stack frame) as specified in the 88Open Object Compatibility Standard, 'OCS'."/>
+		<Option Name="-mno-ocs-debug-info" Description="Omit additional debugging information (about registers used in each stack frame) as specified in the 88Open Object Compatibility Standard, 'OCS'."/>
+		<Option Name="-mocs-frame-position" Description="Force register values to be stored in a particular place in stack frames, as specified in OCS."/>
+		<Option Name="-mno-ocs-frame-position" Description="Do not require register values to be stored in a particular place in stack frames, as specified in OCS."/>
+		<Option Name="-moptimize-arg-area" Description="Control how to store function arguments in stack frames. `-moptimize-arg-area' saves space, but may break some debuggers (not GDB). `-mno-optimize-arg-area' conforms better to standards."/>
+		<Option Name="-mno-optimize-arg-area" Description="Control how to store function arguments in stack frames. `-moptimize-arg-area' saves space, but may break some debuggers (not GDB). `-mno-optimize-arg-area' conforms better to standards."/>
+		<!-- Option Name="-mshort-data-num" Description="Generate smaller data references by making them relative to r0, which allows loading a value using a single instruction (rather than the usual two). You control which data references are affected by specifying num with this option."/ -->
+		<Option Name="-mserialize-volatile" Description="Generate code to guarantee sequential consistency of volatile memory references."/>
+		<Option Name="-mno-serialize-volatile" Description="Do not generate code to guarantee sequential consistency of volatile memory references."/>
+		<Option Name="-msvr4" Description="Turn on compiler extensions related to System V release 4 (SVr4)."/>
+		<Option Name="-msvr3" Description="Turn off compiler extensions related to System V release 4 (SVr4)."/>
+		<Option Name="-mtrap-large-shift" Description="Include code to detect bit-shifts of more than 31 bits; respectively, trap such shifts or emit code to handle them properly. By default GCC makes no special provision for large bit shifts."/>
+		<Option Name="-mhandle-large-shift" Description="Include code to detect bit-shifts of more than 31 bits; respectively, trap such shifts or emit code to handle them properly. By default GCC makes no special provision for large bit shifts."/>
+		<Option Name="-muse-div-instruction" Description="Very early models of the 88K architecture didn't have a divide instruction, so GCC avoids that instruction by default. Use this option to specify that it's safe to use the divide instruction."/>
+		<Option Name="-mversion-03.00" Description="In the DG/UX configuration, there are two flavors of SVr4. This option modifies -msvr4 to select whether the hybrid-COFF or real-ELF flavor is used. All other configurations ignore this option."/>
+		<Option Name="-mwarn-passed-structs" Description="Warn when a function passes a struct as an argument or result. Structure-passing conventions have changed during the evolution of the C language, and are often the source of portability problems."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="RS6000">
+		<Option Name="-mfp-in-toc" Description="Put floating-point constants in the Table of Contents (TOC), a table of all global variable and function addresses. By default GCC puts floating-point constants there."/>
+		<Option Name="-mno-fp-in-toc" Description="Do not put floating-point constants in the Table of Contents (TOC), a table of all global variable and function addresses. By default GCC puts floating-point constants there."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="RT">
+		<Option Name="-min-line-mul" Description="Use an inline code sequence for integer multiplies. This is the default."/>
+		<Option Name="-mcall-lib-mul" Description="Call lmul$$ for integer multiples."/>
+		<Option Name="-mfull-fp-blocks" Description="Generate full-size floating point data blocks, including the minimum amount of scratch space recommended by IBM. This is the default."/>
+		<Option Name="-mminimum-fp-blocks" Description="Do not include extra scratch space in floating point data blocks. This results in smaller code, but slower execution, since scratch space must be allocated dynamically."/>
+		<Option Name="-mfp-arg-in-fpregs" Description="Use a calling sequence incompatible with the IBM calling convention in which floating point arguments are passed in floating point registers."/>
+		<Option Name="-mfp-arg-in-gregs" Description="Use the normal calling convention for floating point arguments. This is the default."/>
+		<Option Name="-mhc-struct-return" Description="Return structures of more than one word in memory, rather than in a register. This provides compatibility with the MetaWare HighC (hc) compiler. Use `-fpcc-struct-return' for compatibility with the Portable C Compiler (pcc)."/>
+		<Option Name="-mnohc-struct-return" Description="Return some structures of more than one word in registers, when convenient. This is the default. For compatibility with the IBM-supplied compilers, use either `-fpcc-struct-return' or `-mhc-struct-return'."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="MIPS">
+		<!-- Option Name="-mcpu=cpu-type" Description="Assume the defaults for the machine type cpu-type when scheduling instructions. The default cpu-type is default, which picks the longest cycles times for any of the machines, in order that the code run at reasonable rates on all MIPS cpu's. Other choices for cpu-type are r2000, r3000, r4000, and r6000."/ -->
+		<Option Name="-mcpu=r2000" Description="Assume the defaults for the machine type r2000 when scheduling instructions. The default cpu-type is default, which picks the longest cycles times for any of the machines, in order that the code run at reasonable rates on all MIPS cpu's."/>
+		<Option Name="-mcpu=r3000" Description="Assume the defaults for the machine type r3000 when scheduling instructions. The default cpu-type is default, which picks the longest cycles times for any of the machines, in order that the code run at reasonable rates on all MIPS cpu's."/>
+		<Option Name="-mcpu=r4000" Description="Assume the defaults for the machine type r4000 when scheduling instructions. The default cpu-type is default, which picks the longest cycles times for any of the machines, in order that the code run at reasonable rates on all MIPS cpu's."/>
+		<Option Name="-mcpu=r6000" Description="Assume the defaults for the machine type r6000 when scheduling instructions. The default cpu-type is default, which picks the longest cycles times for any of the machines, in order that the code run at reasonable rates on all MIPS cpu's."/>
+		<Option Name="-mips2" Description="Issue instructions from level 2 of the MIPS ISA (branch likely, square root instructions). The -mcpu=r4000 or -mcpu=r6000 switch must be used in conjunction with -mips2."/>
+		<Option Name="-mips3" Description="Issue instructions from level 3 of the MIPS ISA (64 bit instructions). The -mcpu=r4000 switch must be used in conjunction with -mips3."/>
+		<!-- Option Name="-mint64" Description="These options don't work at present."/ -->
+		<!-- Option Name="-mlong64" Description="These options don't work at present."/ -->
+		<!-- Option Name="-mlonglong128" Description="These options don't work at present."/ -->
+		<Option Name="-mmips-as" Description="Generate code for the MIPS assembler, and invoke mips-tfile to add normal debug information. This is the default for all platforms except for the OSF/1 reference platform, using the OSF/rose object format."/>
+		<Option Name="-mgas" Description="Generate code for the GNU assembler. This is the default on the OSF/1 reference platform, using the OSF/rose object format."/>
+		<Option Name="-mrnames" Description="Output code using the MIPS software names for the registers, instead of the hardware names (ie, a0 instead of $4). The GNU assembler does not support the -mrnames switch, and the MIPS assembler will be instructed to run the MIPS C preprocessor over the source file."/>
+		<Option Name="-mno-rnames" Description="Do not output code using the MIPS software names for the registers, instead of the hardware names (ie, a0 instead of $4). This is the default"/>
+		<Option Name="-mgpopt" Description="Write all of the data declarations before the instructions in the text section, to all the MIPS assembler to generate one word memory references instead of using two words for short global or static data items. This is on by default if optimization is selected."/>
+		<Option Name="-mno-gpopt" Description="Do not write all of the data declarations before the instructions in the text section, to all the MIPS assembler to generate one word memory references instead of using two words for short global or static data items."/>
+		<Option Name="-mstats" Description="For each non-inline function processed, emit one line to the standard error file to print statistics about the program (number of registers saved, stack size, etc.)."/>
+		<Option Name="-mno-stats" Description="Do not emit one line to the standard error file to print statistics about the program (number of registers saved, stack size, etc.)."/>
+		<Option Name="-mmemcpy" Description="The -mmemcpy switch makes all block moves call the appropriate string function (memcpy or bcopy) instead of possibly generating inline code."/>
+		<Option Name="-mno-memcpy" Description="The -mmemcpy switch makes all block moves call the appropriate string function (memcpy or bcopy) instead of possibly generating inline code."/>
+		<Option Name="-mmips-tfile" Description="Postprocess the object file with the mips-tfile program, after the MIPS assembler has generated it to add debug support. If mips-tfile is not run, then no local variables will be available to the debugger."/>
+		<Option Name="-mno-mips-tfile" Description="Do not postprocess the object file with the mips-tfile program, after the MIPS assembler has generated it to add debug support."/>
+		<Option Name="-msoft-float" Description="Generate output containing library calls for floating point."/>
+		<Option Name="-mhard-float" Description="Generate output containing floating point instructions."/>
+		<Option Name="-mfp64" Description="Assume that the FR bit in the status word is on, and that there are 32 64-bit floating point registers, instead of 32 32-bit floating point registers. You must also specify the -mcpu=r4000 and -mips3 switches."/>
+		<Option Name="-mfp32" Description="Assume that there are 32 32-bit floating point registers. This is the default."/>
+		<Option Name="-mabicalls" Description="Emit the .abicalls, .cpload, and .cprestore pseudo operations that some System V.4 ports use for position independent code."/>
+		<Option Name="-mno-abicalls" Description="Do not emit the .abicalls, .cpload, and .cprestore pseudo operations that some System V.4 ports use for position independent code."/>
+		<!-- Option Name="-mhalf-pic" Description="Put pointers to extern references into the data section and load them up, rather than put the references in the text section. This option does not work at present."/ -->
+		<Option Name="-mno-half-pic" Description="Do not put pointers to extern references into the data section and load them up, rather than put the references in the text section. This option does not work at present."/>
+		<!-- Option Name="-Gnum" Description="Put global and static items less than or equal to num bytes into the small data or bss sections instead of the normal data or bss section."/ -->
+		<Option Name="-nocpp" Description="Tell the MIPS assembler to not run its preprocessor over user assembler files (with a `.s' suffix) when assembling them."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="i386">
+		<Option Name="-m486" Description="Optimize code for a 486 instead of an 386. Code generated for a 486 will run on a 386 and vice versa."/>
+		<Option Name="-mno-486" Description="Do not optimize code for a 486 instead of an 386. Code generated for a 486 will run on a 386 and vice versa."/>
+		<Option Name="-msoft-float" Description="Generate output containing library calls for floating point."/>
+		<Option Name="-mno-fp-ret-in-387" Description="Do not use the FPU registers for return values of functions."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="HPPA">
+		<Option Name="-mpa-risc-1-0" Description="Generate code for a PA 1.0 processor."/>
+		<Option Name="-mpa-risc-1-1" Description="Generate code for a PA 1.1 processor."/>
+		<Option Name="-mkernel" Description="Generate code which is suitable for use in kernels. Specifically, avoid add instructions in which one of the arguments is the DP register; generate addil instructions instead. This avoids a rather serious bug in the HP-UX linker."/>
+		<Option Name="-mlong-calls" Description="Generate code which allows calls to functions greater than 256K away from the caller when the caller and callee are in the same source file. Do not turn this option on unless code refuses to link with branch out of range errors from the linker."/>
+		<Option Name="-mdisable-fpregs" Description="Prevent floating point registers from being used in any manner. This is necessary for compiling kernels which perform lazy context switching of floating point registers. If you use this option and attempt to perform floating point operations, the compiler will abort."/>
+		<Option Name="-mdisable-indexing" Description="Prevent the compiler from using indexing address modes. This avoids some rather obscure problems when compiling MIG generated code under MACH."/>
+		<Option Name="-mtrailing-colon" Description="Add a colon to the end of label definitions (for ELF assemblers)."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="i960">
+		<!-- Option Name="-mcpu-type" Description="Assume the defaults for the machine type cpu-type for instruction and addressing-mode availability and alignment. The default cpu-type is kb; other choices are ka, mc, ca, cf, sa, and sb."/ -->
+		<Option Name="-mka" Description="Assume the defaults for the machine type ka for instruction and addressing-mode availability and alignment. The default cpu-type is kb."/>
+		<Option Name="-mmc" Description="Assume the defaults for the machine type mc for instruction and addressing-mode availability and alignment. The default cpu-type is kb."/>
+		<Option Name="-mca" Description="Assume the defaults for the machine type ca for instruction and addressing-mode availability and alignment. The default cpu-type is kb."/>
+		<Option Name="-mcf" Description="Assume the defaults for the machine type cf for instruction and addressing-mode availability and alignment. The default cpu-type is kb."/>
+		<Option Name="-msa" Description="Assume the defaults for the machine type sa for instruction and addressing-mode availability and alignment. The default cpu-type is kb."/>
+		<Option Name="-msb" Description="Assume the defaults for the machine type sb for instruction and addressing-mode availability and alignment. The default cpu-type is kb."/>
+		<Option Name="-mnumerics" Description="Indicate that the processor does support floating-point instructions."/>
+		<Option Name="-msoft-float" Description="Indicate that floating-point support should not be assumed."/>
+		<Option Name="-mleaf-procedures" Description="Attempt to alter leaf procedures to be callable with the bal instruction as well as call."/>
+		<Option Name="-mno-leaf-procedures" Description="Do not attempt to alter leaf procedures to be callable with the bal instruction as well as call."/>
+		<Option Name="-mtail-call" Description="Make additional attempts (beyond those of the machine-independent portions of the compiler) to optimize tail-recursive calls into branches."/>
+		<Option Name="-mno-tail-call" Description="Do not make additional attempts (beyond those of the machine-independent portions of the compiler) to optimize tail-recursive calls into branches."/>
+		<Option Name="-mcomplex-addr" Description="Assume that the use of a complex addressing mode is a win on this implementation of the i960. Complex addressing modes may not be worthwhile on the K-series, but they definitely are on the C-series. The default is currently -mcomplex-addr for all processors except the CB and CC."/>
+		<Option Name="-mno-complex-addr" Description="Do not assume that the use of a complex addressing mode is a win on this implementation of the i960. Complex addressing modes may not be worthwhile on the K-series, but they definitely are on the C-series. The default is currently -mcomplex-addr for all processors except the CB and CC."/>
+		<Option Name="-mcode-align" Description="Align code to 8-byte boundaries for faster fetching (or don't bother). Currently turned on by default for C-series implementations only."/>
+		<Option Name="-mno-code-align" Description="Do not align code to 8-byte boundaries for faster fetching (or don't bother). Currently turned off by default for C-series implementations only."/>
+		<Option Name="-mic-compat" Description="Enable compatibility with iC960 v2.0 or v3.0."/>
+		<Option Name="-mic2.0-compat" Description="Enable compatibility with iC960 v2.0."/>
+		<Option Name="-mic3.0-compat" Description="Enable compatibility with iC960 v3.0."/>
+		<Option Name="-masm-compat" Description="Enable compatibility with the iC960 assembler."/>
+		<Option Name="-mintel-asm" Description="Enable compatibility with the iC960 assembler."/>
+		<Option Name="-mstrict-align" Description="Do permit unaligned accesses."/>
+		<Option Name="-mno-strict-align" Description="Do not permit unaligned accesses."/>
+		<Option Name="-mold-align" Description="Enable structure-alignment compatibility with Intel's gcc release version 1.3 (based on gcc 1.37)."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="DEC">
+		<Option Name="-mno-soft-float" Description="Do not use the hardware floating-point instructions for floating-point operations."/>
+		<Option Name="-msoft-float" Description="Use the hardware floating-point instructions for floating-point operations."/>
+		<Option Name="-mfp-reg" Description="Generate code that uses the floating-point register set. -mno-fp-regs implies -msoft-float."/>
+		<Option Name="-mno-fp-regs" Description="Generate code that does not use the floating-point register set. -mno-fp-regs implies -msoft-float."/>
+	</OptionSet>
+
+	<OptionSet Type="Machine" Architecture="System V">
+		<Option Name="-G" Description="On SVr4 systems, gcc accepts the option `-G' (and passes it to the system linker), for compatibility with other compilers. However, we suggest you use `-symbolic' or `-shared' as appropriate, instead of supplying linker options on the gcc command line."/>
+		<Option Name="-Qy" Description="Identify the versions of each tool used by the compiler, in a .ident assembler directive in the output."/>
+		<Option Name="-Qn" Description="Refrain from adding .ident directives to the output file (this is the default)."/>
+		<!-- Option Name="-YP,dirs" Description="Search the directories dirs, and no others, for libraries specified with `-l'. You can separate directory entries in dirs from one another with colons."/ -->
+		<!-- Option Name="-Ym,dir" Description="Look in the directory dir to find the M4 preprocessor. The assembler uses this option."/ -->
+	</OptionSet>
+</GNUCOptions>
+

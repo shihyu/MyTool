@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_get_next_argument</title>
+</head>
+<body>
+
+<h3><b>int tag_get_next_argument(_str params, int &arg_pos, _str &argument, _str ext=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Disect the next argument (starting at 'arg_pos') from the
+given parameter list (params).  Place the result in 'argument'.
+This is designed to handle both C/C++ style, comma separated argument
+lists, and Pascal/Ada semicolon separated argument lists.
+<p>
+If you do not know the number of bytes to allocate to 'argument',
+call this with 'argument' as NULL, and calculate ('arg_pos' - 'orig_pos' + 1).
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="params">params</A></code> - complete parameter list to parse</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="arg_pos">arg_pos</A></code> - current position in argument list
+                     use 0 to find first argument</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="argument">argument</A></code> - [output] set to the next argument in the argument list</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ext">ext</A></code> - current file extension
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the position where the argument begins in 'params'.
+        Note, this may differ from the original value of 'arg_pos'
+        if there are leading spaces.  Returns STRING_NOT_FOUND_RC
+        and sets 'argument' to the empty string if there are no more
+        arguments in the parameter list.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

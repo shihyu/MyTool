@@ -1,0 +1,132 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMessageBox</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsMessageBox(const char *pszMessage, const char *pszTitle=a, int vsmb_flags=VSMB_OK, int default_button=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Creates a modal dialog box and displays <i>pszMessage</i> and
+various buttons.  <i>pszMessage</i> may contain carriage return
+characters to break a string message into multiple lines.  By default,
+<i>pszMessage</i> is broken into multiple lines on word boundaries
+if necessary.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszMessage">pszMessage</A></code> - Message to display.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszTitle">pszTitle</A></code> - Title for message box.  If 0, the default
+application title is used.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="vsVSMB_flags">vsVSMB_flags</A></code> - is a coVSMBination of zero or more VSID
+                button flags and VSMB_* flags:
+
+                <p>Note: The VSMB_OK, VSMB_OKCANCEL, VSMB_ABORTRETRYIGNORE,
+                VSMB_YESNOCANCEL, VSMB_RETRYCANCEL are coVSMBinations of the VSID
+                button flags (ex. VSMB_OKCANCEL is VSIDOK|VSIDCANCEL)
+                <dl>
+                <dt>VSIDOK</dt><dd>Display an OK button</dd>
+                <dt>VSIDSAVE</dt><dd>Display a Save button</dd>
+                <dt>VSIDSAVEALL</dt><dd>Display a Save All button</dd>
+                <dt>VSIDOPEN</dt><dd>Display an Open button</dd>
+                <dt>VSIDYES</dt><dd>Display a Yes button</dd>
+                <dt>VSIDYESTOALL</dt><dd>Display a Yes to All button</dd>
+                <dt>VSIDNO</dt><dd>Display a No button</dd>
+                <dt>VSIDNOTOALL</dt><dd>Display a No to All button</dd>
+                <dt>VSIDABORT</dt><dd>Display an Abort button</dd>
+                <dt>VSIDRETRY</dt><dd>Display a Retry button</dd>
+                <dt>VSIDIGNORE</dt><dd>Display an Ignore button</dd>
+                <dt>VSIDCLOSE</dt><dd>Display a Close button</dd>
+                <dt>VSIDCANCEL</dt><dd>Display a Cancel button</dd>
+                <dt>VSIDDISCARD</dt><dd>Display a Discard button</dd>
+                <dt>VSIDHELP</dt><dd>Display a Help button</dd>
+                <dt>VSIDAPPLY</dt><dd>Display an Apply button</dd>
+                <dt>VSIDRESET</dt><dd>Display a Reset button</dd>
+                <dt>VSIDRESTOREDEFAULTS</dt><dd>Display Restore
+                Defaults button</dd>
+                <dt>VSMB_OK</dt><dd>Display an OK button.</dd>
+                <dt>VSMB_OKCANCEL</dt><dd>Display an OK and Cancel button.</dd>
+                <dt>VSMB_ABORTRETRYIGNORE</dt><dd>Display  Abort, Retry, Ignore buttons.
+                Not supported on UNIX.</dd>
+                <dt>VSMB_YESNOCANCEL</dt><dd> Display Yes, No, and Cancel buttons.</dd>
+                <dt>VSMB_YESNO</dt><dd>Display Yes, and No buttons.</dd>
+                <dt>VSMB_RETRYCANCEL</dt><dd>Display a Retry and Cancel button.
+                Not supported on UNIX.</dd>
+                <dt>VSMB_ICONHAND</dt><dd>Display a stop sign picture to the left of the message.</dd>
+                <dt>VSMB_ICONQUESTION</dt><dd>Display a question picture to the left of the
+                message.</dd>
+                <dt>VSMB_ICONEXCLAMATION</dt><dd>Display an exclamation point picture to the
+                left of the message.</dd>
+                <dt>VSMB_ICONINFORMATION</dt><dd>Display an 'i' picture to the left of the message.</dd>
+                <dt>VSMB_ICONSTOP</dt><dd>Display a stop sign picture to the left of the message.</dd>
+                </dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="default_button">default_button</A></code> - If specified, determines which of the
+                       buttons is the default button. One of
+                       the following button constants:
+
+        <ul>
+        <li>VSIDOK</li>
+        <li>VSIDSAVE</li>
+        <li>VSIDSAVEALL</li>
+        <li>VSIDOPEN</li>
+        <li>VSIDYES</li>
+        <li>VSIDYESTOALL</li>
+        <li>VSIDNO</li>
+        <li>VSIDNOTOALL</li>
+        <li>VSIDABORT</li>
+        <li>VSIDRETRY</li>
+        <li>VSIDIGNORE</li>
+        <li>VSIDCLOSE</li>
+        <li>VSIDCANCEL</li>
+        <li>VSIDDISCARD</li>
+        <li>VSIDHELP</li>
+        <li>VSIDAPPLY</li>
+        <li>VSIDRESET</li>
+        <li>VSIDRESTOREDEFAULTS</li>
+        </ul>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the button id of the button pressed which closed the dialog
+box.  One of the following constants is returned:
+
+<ul>
+<li>VSIDOK</li>
+<li>VSIDSAVE</li>
+<li>VSIDSAVEALL</li>
+<li>VSIDOPEN</li>
+<li>VSIDYES</li>
+<li>VSIDYESTOALL</li>
+<li>VSIDNO</li>
+<li>VSIDNOTOALL</li>
+<li>VSIDABORT</li>
+<li>VSIDRETRY</li>
+<li>VSIDIGNORE</li>
+<li>VSIDCLOSE</li>
+<li>VSIDCANCEL</li>
+<li>VSIDDISCARD</li>
+<li>VSIDHELP</li>
+<li>VSIDAPPLY</li>
+<li>VSIDRESET</li>
+<li>VSIDRESTOREDEFAULTS</li>
+</ul>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+result=vsMessageBox(
+              "Save changes?",
+              "",
+              VSMB_YESNO|VSMB_ICONQUESTION);
+if (result==VSIDYES) {
+    // save the file
+} else {
+    // Don't save it
+}
+// Same as above but using VSID button flags instead of MB_OK.
+// Also change the default button
+result=vsMessageBox(
+              "Save changes?",
+              "",
+              VSIDYES|VSIDNO|VSMB_ICONQUESTION,
+              VSIDNO);
+if (result==VSIDYES) {
+    // save the file
+} else {
+    // Don't save it
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsStickyMessage.html">vsStickyMessage</a>, <a href="vsMessage.html">vsMessage</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Declarations</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s06.htm" title="Mathematical Operators"><link rel="next" href="ch14s08.htm" title="Statements"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_declarations_12678_31977"></a>
+    <a name="slick_c_declarations_12678_1002477"></a>Declarations</h2></div></div></div><p class="NormalText">Variables and functions are declared in Slick-C® the same way they are defined in C. </p><p class="NormalText">This section contains the following topics:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s07.htm#slick_c_declarations_12678_96100">Scoping and Declaring Variables</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s07.htm#slick_c_declarations_12678_76571">Simple Variables</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s07.htm#slick_c_declarations_12678_10160">Implicit Local Variables</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s07.htm#slick_c_declarations_12678_35541">Declaring Local Variables With :=</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s07.htm#slick_c_declarations_12678_25592">Declaring Variables With auto</a>
+      </p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_declarations_12678_96100"></a>
+      <a name="slick_c_declarations_12678_1002492"></a>
+      <a class="indexterm" name="slick-c_declarations_FCACF9F9_617A"></a>Scoping and Declaring Variables</h3></div></div></div><p class="NormalText">The Slick-C® language supports global, namespace, static (module), and local scope variables. Global variables can be accessed by any module. The scope of static and local variables are limited to the module in which they are defined. Variables are declared the same way that they are defined in C++. See <a href="ch14s05.htm">Types</a> for a list of types available in Slick-C.</p><p class="NormalText">Namespace level variables are visible within the current namespace but can be accessed from another namespace if they are qualified with the namespace name or imported with the <span><strong class="command">using</strong></span> directive.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_declarations_12678_76571"></a>
+      <a name="slick_c_declarations_12678_1002519"></a>
+      <a class="indexterm" name="slick-c_declarations_F6B2610E_0EB7"></a>Simple Variables</h3></div></div></div><p class="NormalText">The syntax for defining a simple variable is:</p><pre class="programlisting"><span><strong class="command">
+    [static] TypeName variable1[=expression1] , variable2[=expression2] ...;
+    </strong></span></pre><p class="NormalText">The comma is used to declare more than one variable of the same type. Local variables do not have to be defined. Using a variable not already defined as global or constant declares the variable to be a local typeless variable. However, you should declare variables within the scope of a function to ensure that the variable will be local even if the name is declared elsewhere as a global or constant.</p><p class="NormalText">Example:</p><pre class="programlisting">// Declare a global integer.
+int gi=1;
+// Declare a module scope integer.
+static int   si=2+4;
+// Declare some global string variables.
+_str   gstring1="Value1", gstring2="Value2";
+// Declare a global large floating point variable.
+double gd=1.4;
+// Declare a global typeless variable.
+typeless  gt="xyz";
+defmain( )
+{
+    _str s="ess";
+    // Declare a local string variable and initialize it to "ess".
+    t=gi; 
+    // Copy gi into local container variable t.
+    message("t="t"s="s);
+}</pre><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_declarations_12678_1002552"></a>
+        <a class="indexterm" name="slick-c_declarations_AB61D79E_3025"></a>
+        <a class="indexterm" name="slick-c_declarations_60732275_3642"></a>Details About Variable Initializations</h4></div></div></div><p class="NormalText">The following are some details about variable initializations:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Global and static numeric variables, which include <span><strong class="command">boolean</strong></span>, <span><strong class="command">int</strong></span>, <span><strong class="command">long</strong></span>, <span><strong class="command">double</strong></span>, and enumerated types, are initialized to <span><strong class="command">0</strong></span> when there is no specified value provided. Local variables of any type are not initialized.</p></li><li><p class="NormalText">Global and static variables declared as <span><strong class="command">typeless</strong></span> or <span><strong class="command">_str</strong></span> are initialized with <span><strong class="command">""</strong></span> (a zero length string) when there is no initialization value provided.</p></li><li><p class="NormalText">Global, static, and local variables declared as array, hash tables, and structure types are initialized as empty when there is no initialization value provided.</p></li><li><p class="NormalText">Global, static, and local variables of class type are initialized by running their constructor with default arguments. Global, static, and local variables of interface type are initialized to <span><strong class="command">null</strong></span>.</p></li><li><p class="NormalText">Local numeric, string, enumerated, and typeless variables require initialization.</p></li></ul></div><p class="NormalText">Example:</p><pre class="programlisting">boolean     globalboolean=true;
+int         globalint;
+double      globaldouble;
+defmain()
+{
+    // Will print message "globalboolean=1 globalint=0 globaldouble=0".
+    message("boolean="globalboolean" "globalint" "globaldouble);
+}</pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_declarations_12678_1002583"></a>
+        <a class="indexterm" name="slick-c_declarations_54D8FDD6_310A"></a>
+        <a class="indexterm" name="slick-c_declarations_8E141E2A_EBF4"></a>Type Casting</h4></div></div></div><p class="NormalText">Slick-C® enforces string type checking on everything except typeless variables. However, there are times when you need to convert an expression from its actual type to another. Type casting helps communicate that to the compiler. Note that some type conversions can change the value of an expression. The syntax for type casting is as follows:</p><pre class="programlisting"><span><strong class="command">
+    (TypeName) expression
+      </strong></span></pre><p class="NormalText">Some casts are not permitted in Slick-C. For example, you cannot cast a struct type to another struct type. Also, Slick-C does not support the C++ function style cast mechanism, and does not permit pointer types to be cast.</p><p class="NormalText">Example:</p><pre class="programlisting">defmain()
+{
+    int i;
+    double d;
+    d=1.2;
+    i=(int)d; // i gets the value 1, NOT 1.2
+    typeless t;
+    t=1.2;
+    i=t;      // Here i gets 1.2 BUT 
+    boolean b;
+    b= i!=0;  // Can't use cast here.
+    i=(int)b; // Need cast here.
+}</pre></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_declarations_12678_10160"></a>
+      <a name="slick_c_declarations_12678_1027562"></a>Implicit Local Variables</h3></div></div></div><p class="NormalText">Local variables do not have to be declared. Using a variable not already declared as global or constant declares the variable to be a local typeless variable. However, you should declare variables within the scope of a function to ensure that the variable will be local even if the name is declared elsewhere as a global or constant. Turning on any of the compiler pragmas <span><strong class="command">autodeclvars</strong></span>, <span><strong class="command">strict</strong></span>, or <span><strong class="command">pedantic</strong></span> will flag implicit local variables as errors. </p><p class="NormalText">Example:</p><pre class="programlisting">_str cheese1 = "provolone";
+_str cheese2 = "cheddar"; 
+   temp = cheese2;  // Same as typeless temp = cheese2;
+   cheese2 = cheese1;
+   cheese1 = temp;  </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_declarations_12678_35541"></a>
+      <a name="slick_c_declarations_12678_1027565"></a>Declaring Local Variables With :=</h3></div></div></div><p class="NormalText">Slick-C® supports type inference using the <span><strong class="command">:=</strong></span> operator, which both declares, and initializes a local variable with inferred type. This syntax provides you with the syntactic convenience of implicit local variables without sacrificing strong type checking.</p><p class="NormalText">In the following statement, <span class="emphasis"><em>id</em></span> is declared as a local variable with the same type as <span class="emphasis"><em>expr</em></span>:</p><pre class="programlisting"><span><strong class="command">
+    id := expr;
+    </strong></span></pre><p class="NormalText">Examples:</p><pre class="programlisting">b := false;                   // boolean b = false;
+i := 0;                       // int i = 0;
+j := i;                       // int j = i;
+s := "test";                  // _str s = "test";
+p := &amp;s;                      // _str *p = &amp;s;
+c := _process_comment(line);  // COMMENT_TYPE c=_process_comment(line);
+p := &amp;obj;                    // Object *p = &amp;obj;
+fp := func;                   // int (*fp)() = func;
+x := y := 0;                  // int x=0; int y=0;
+for (a:=1; a&lt;10; ++a);        // count to 10</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_declarations_12678_25592"></a>
+      <a name="slick_c_declarations_12678_1026151"></a>Declaring Variables With auto</h3></div></div></div><p class="NormalText">Slick-C® supports type inference using the <span><strong class="command">auto</strong></span> keyword. The syntax for auto variable declarations is:</p><pre class="programlisting"><span><strong class="command">
+    [static] auto variable1[=expression1] , variable2[=expression2] ...;
+    </strong></span></pre><p class="NormalText">Like the <span><strong class="command">:=</strong></span> operator, <span><strong class="command">auto</strong></span> variable declarations use type inference to assign a type to the variable being declared and initializes the variable with the specified expression. Auto declarations are allowed in both local and global scopes, whereas <span><strong class="command">:=</strong></span> can only be used inside functions for local declarations.</p><p class="NormalText">Examples:</p><pre class="programlisting">auto b=false;         // boolean b=false;
+auto x=0, y=1;        // int x=0; int y=0;
+auto i=x+1, s="test"; // int i=x+1; _str s="test"; </pre><p class="NormalText">You can also use <span><strong class="command">auto</strong></span> to introduce a new local variable when calling a function that takes an "out" argument by reference, or with the <span><strong class="command">parse</strong></span> statement. You can think of this identical to using implicitly declared variables, except that you prefix the variable with the <span><strong class="command">auto</strong></span> keyword to introduce it. The type of the variable will be inferred from the point of use. In a parse statement, it will become a string type. In a function call, it will acquire the type of the formal argument from the function prototype. The advantage of using <span><strong class="command">auto</strong></span> for output-only pass by reference variables is that, when coding a function call, you do not have to backtrack to declare the variable, you can just introduce it at its point of use and keep coding.</p><p class="NormalText">Examples:</p><pre class="programlisting">struct Position {
+   double x,y,z;
+   // ...
+};
+struct SpaceTimeContinuum {
+   _str timeVal;
+   // ...
+};
+void warp(SpaceTimeContinuum &amp;stc)
+{
+   // ...
+}
+void travelFast(Position destinations[])
+{
+   warp(auto stc);
+   parse stc.timeVal with auto realPart'+'auto imaginaryPart;
+   // ...
+   foreach (auto p in destinations) {
+      // ...
+   }
+}</pre><p class="NormalText"></p></div></div></body></html>

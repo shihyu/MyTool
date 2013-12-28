@@ -1,0 +1,56 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_tprint_format</title>
+</head>
+<body>
+
+<h3><b>void _tprint_format(int output_view_id, _str filename="", _str options="", _str print_cheader="", _str print_cfooter="", _str print_lheader="", _str print_lfooter="", _str print_rheader="", _str print_rfooter="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>This function is only supported by the UNIX version.  Prints the
+contents of the current buffer according to the options given.</p><p>
+<p>It is much easier to create input parameters to this function by using
+macro recording.  Use the <b>Text Mode Print dialog box</b> to set
+your options.  Then print a document while macro recording is on.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="output_window_id">output_window_id</A></code> - specifies the window/buffer to get the
+formatted text.  Usually the <b>_create_temp_view</b> function is
+used to create an empty window/buffer.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filename">filename</A></code> - is inserted into the header and footer parameters
+wherever a %f occurs.  Usually this is the buffer name.
+
+<p><i>cheader</i>, <i>cfooter</i>, <i>lheader</i>, <i>lfooter</i>,
+<i>rheader</i>, and <i>rfooter</i> are strings which may have escape
+sequences with the following meaning embedded into them:</p>
+
+<dl>
+<dt>%f</dt><dd>Buffer name</dd>
+<dt>%p</dt><dd>Page number</dd>
+<dt>%d</dt><dd>Date</dd>
+</dl>
+
+<p>The letters 'c', 'l', and 'r' correspond to the header or footer at the center,
+left, and right of the page.</p>
+
+<p>The header is printer at the top of each page.  The footer is printed at
+the bottom of each page.</p>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - is a string in the format:<br>
+
+<i>flags</i>, <i>bl_after_header</i>, <i>bl_before_footer</i>,
+<i>lines_per_page</i>,  <i>cols_per_line</i>,
+<i>linenums_every</i>,
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flags">flags</A></code> - are reserved and should be 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="bl_after_header">bl_after_header</A></code> - indicates the number of blank lines between
+the header line and the text on the page.  This value is ignored if all
+header parameters are blank.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="bl_before_footer">bl_before_footer</A></code> - indicates the number of blank lines between
+the last line of text printed on the page and the footer line.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="lines_per_page">lines_per_page</A></code> - indicates the maximum number of lines that
+can be printed.  This includes header, footer, and blank lines.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="cols_per_line">cols_per_line</A></code> - indicates the maximum number of columns that
+can be printed on a line.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="linenums_every">linenums_every</A></code> - when non-zero, lines at intervals of this value
+are printed with line numbers.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>void</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a></blockquote>
+</body>
+</html>

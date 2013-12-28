@@ -1,0 +1,113 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>qsearch</title>
+</head>
+<body>
+
+<h3><b>_str qsearch(_str options, _str incremental="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Prompts for a string to search for.  The <i>options</i> are the same as
+those supported by the find command and are displayed in a more
+English-like form in the message prompt.  Unlike the find command,
+this function does not use any default options not specified by the
+<i>options </i>parameter and always prompts for the search string
+argument so that no delimiters are required.  The <i>options
+</i>argument is a string of one or more of the following:<p>
+<dl>
+<dt>E</dt><dd>Exact case.</dd>
+<dt>I</dt><dd>Ignore case.</dd>
+<dt>-</dt><dd>Reverse search.</dd>
+<dt>M</dt><dd>Limit search to marked area.</dd>
+<dt><</dt><dd>If found, place cursor at beginning of word.</dd>
+<dt>></dt><dd>If found, place cursor at end of word.</dd>
+<dt>R</dt><dd>Interpret string as a SlickEdit regular expression.
+See section SlickEdit Regular Expressions for
+syntax of regular expression.</dd>
+<dt>U</dt><dd>Interpret string as a UNIX regular expression.   See
+section UNIX Regular Expressions.</dd>
+<dt>B</dt><dd>Interpret string as a Brief regular expression.   See
+section Brief Regular Expressions.</dd>
+<dt>H</dt><dd>Search through hidden lines.</dd>
+<dt>N</dt><dd>Do not interpret search string as a regular search
+string.</dd>
+<dt>P</dt><dd>Wrap to beginning/end when string not found.</dd>
+<dt>W</dt><dd>Limits search to words.  Used to search for
+variables.</dd><p>
+<dt>W=<i>SlickEdit-regular-expression</i></dt><dd>
+   Specifies the valid characters in a word.  The
+default value is [A-Za-z0-9_$].</dd><p>
+<dt>W:P</dt><dd>Limits search to word prefix.  For example,
+searching for "pre" matches "pre" and "prefix" but
+not "supreme" or "supre".</dd><p>
+<dt>W:PS</dt><dd>Limits search to strict word prefix.  For example,
+searching for "pre" matches "prefix" but not "pre",
+"supreme" or "supre".</dd><p>
+<dt>W:S</dt><dd>Limits search to word suffix.  For example,
+searching for "fix" matches "fix" and "sufix" but
+not "fixit".</dd><p>
+<dt>W:SS</dt><dd>Limits search to strict word suffix.  For example,
+searching for "fix" matches "sufix" but not "fix" or
+"fixit".</dd><p>
+<dt>Y</dt><dd>Binary search.  This allows start positions in the
+middle of a DBCS or UTF-8 character.  This option
+is useful when editing binary files (in SBCS/DBCS
+mode) which may contain characters which look
+like DBCS but are not.  For example, if you search
+for the character 'a', it will not be found as the
+second character of a DBCS sequence unless this
+option is specified.</dd><p>
+<dt>,</dt><dd>Delimiter to separate ambiguous options.</dd><p>
+<dt>X<i>CCLetters</i></dt><dd>Requires the first character of search string
+NOT be one of the color coding elements specified.
+For example, "XCS" requires that the first character
+not be in a comment or string. <i>CCLetters</i> is
+a string of one or more of the following color
+coding element letters:</dd><p>
+<dl>
+<dt>O</dt><dd>Other</dd>
+<dt>K</dt><dd>Keyword</dd>
+<dt>N</dt><dd>Number</dd>
+<dt>S</dt><dd>String</dd>
+<dt>C</dt><dd>Comment</dd>
+<dt>P</dt><dd>Preprocessing</dd>
+<dt>L</dt><dd>Line number</dd>
+<dt>1</dt><dd>Symbol 1</dd>
+<dt>2</dt><dd>Symbol 2</dd>
+<dt>3</dt><dd>Symbol 3</dd>
+<dt>4</dt><dd>Symbol 4</dd>
+<dt>F</dt><dd>Function color</dd>
+<dt>V</dt><dd>No save line</dd>
+</dl><p>
+<dt>C<i>CCLetters</i></dt><dd>Requires the first character of search string to
+be one of the color coding elements specified. See
+<i>CCLetters</i> above.</dd>
+</dl><p>
+<p>While you enter the <i>string</i> parameter the following keys take
+on a new meaning:</p><p>
+<dl>
+<dt>Ctrl+R</dt><dd>Searches in reverse for the next occurrence of the
+search string</dd>
+<dt>Ctrl+S</dt><dd>Searches forward for the next occurrence of the
+search string.</dd>
+<dt>Ctrl+T</dt><dd>Toggles regular expression pattern matching on/off.
+See section Regular Expressions for information
+on regular expressions.  The key bound to the
+BRIEF emulation command <b>re_toggle</b> will
+also toggle regular expression pattern matching.</dd>
+<dt>Ctrl+W</dt><dd>Toggles word searching on/off.</dd>
+<dt>Ctrl+C</dt><dd>Toggles case sensitivity.  The key bound to the
+BRIEF emulation command <b>case_toggle</b>
+will also toggle the case sensitivity.</dd>
+<dt>Ctrl+O</dt><dd>Toggles incremental search mode.</dd>
+<dt>Ctrl+Q</dt><dd>Quotes the next character typed.</dd>
+</dl><p>
+<p>A non-null value for <i>incremental</i> argument may be specified if
+you want searching to take place as the search string is entered.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if the search string specified is found.  Common return
+codes are STRING_NOT_FOUND_RC, INVALID_OPTION_RC, and
+INVALID_REGULAR_EXPRESSION_RC.  On error, message is
+displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Search_Functions.html">Search Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="qreplace.html">qreplace</a>, <a href="find.html">find</a>, <a href="replace.html">replace</a>, <a href="gui_find.html">gui_find</a>, <a href="gui_replace.html">gui_replace</a></blockquote>
+</body>
+</html>

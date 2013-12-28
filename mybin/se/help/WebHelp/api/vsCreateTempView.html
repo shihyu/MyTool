@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsCreateTempView</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsCreateTempView(int *pTempWindowId, int *pOrigWindowId=a, const char *pszReserved=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>This function creates an editor window and buffer.  Use this function
+when you want to do editor processing on a file but you do not want a
+visible window created.  Use the <b>vsActivateWindow</b> and/or the
+VSP_WINDOWID property to switch windows.  The call
+<b>vsPropGetI</b>(0,VSP_WINDOWID) returns the current window id.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pTempWindowId">pTempWindowId</A></code> - Set to newly created window id.
+<i>pOrigWindowId</i> Set to current window id.  There is always a
+valid current window id.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If successful, returns 0 and the temp window/buffer is active.
+Otherwise a negative error code is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+int status, temp_window_id, orig_window_id;
+status=vsCreateTempView(&temp_window_id,&orig_window_id);
+if (status) {
+    return(status);
+}
+vsInsertLine(0,"Insert text into temp window");
+// Free window and buffer
+vsDeleteTempView(temp_window_id);
+vsActiveWindow(orig_window_id);
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a>, <a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsDeleteTempView.html">vsDeleteTempView</a>, <a href="vsOpenTempView.html">vsOpenTempView</a></blockquote>
+</body>
+</html>

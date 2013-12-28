@@ -1,0 +1,200 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 14.  Slick-C® Macro Programming Guide</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="prev" href="ch13s12.htm" title="Emulation Tables"><link rel="next" href="ch14s02.htm" title="Differences Between Slick-C® and C++"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="chapter_bbe58e9b-240c-4b6a-ad22-d835cd356418"></a>Chapter 14. 
+      <a name="chap_slickc_11596_999119"></a>Slick-C<sup>®</sup> Macro Programming Guide
+    </h2></div></div></div><p class="NormalText">This guide contains the following topics:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14.htm#slick_c_intro_11615_89438">Introduction</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s02.htm">Differences Between Slick-C® and C++</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s03.htm">Four Ways to Use Slick-C®</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s04.htm">Language Constructs</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s05.htm">Types</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s06.htm">Mathematical Operators</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s07.htm">Declarations</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s08.htm">Statements</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s09.htm">Functions</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s10.htm">Preprocessing</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s11.htm">Defining Controls</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s12.htm">Defining Events and Event Tables</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s13.htm">Event-Driven Dialog Boxes</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s14.htm">Module Initializations</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s15.htm">Compiling and Loading Macros</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s16.htm">Debugging Macros</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s17.htm">Error Handling and the rc Variable</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s18.htm">Dialog Editor</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s19.htm">Creating Dialog Boxes</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s20.htm">Clipboard Inheritance®</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s21.htm">Objects and Instances</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s22.htm">Using Functions as Methods</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm">Built-in Controls</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s24.htm">Menus</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s25.htm">Common Macro Dialog Boxes</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s26.htm">String Functions</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s27.htm">Search Functions</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s28.htm">Selection Functions</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s29.htm">Writing Selection Filters</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s30.htm">Unicode and SBCS or DBCS Macro Programming</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s31.htm">Shelling Programs from a Slick-C® Macro</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s32.htm">Interfacing With Other Languages (DLL)</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s33.htm">Command Line Interface</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s34.htm">Hooking Startup and Exit</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s35.htm">State File Caching</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s36.htm">Windows Data Structure</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s37.htm">Tutorials</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s38.htm">Events</a>
+      </p></li></ul></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_intro_11615_89438"></a>
+    <a name="slick_c_intro_11615_935018"></a>Introduction</h2></div></div></div><p class="NormalText">Slick-C® is a macro programming language that blends object-oriented features from C++, Java, and Python. Much of the code in the SlickEdit® editor is written in Slick-C, which covers many of the actions normally performed in a code editor including navigation and buffer modification. The Slick-C source is provided when SlickEdit is installed. You can use Slick-C to modify the look and feel of the editor, write macros to perform custom operations, add new language support, and essentially extend the editor's functionality until it is completely customized according to your preferences. </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_intro_11615_1024343"></a>Working with the Slick-C® Source Code</h3></div></div></div><p class="NormalText">After SlickEdit® is installed, the Slick-C macro files are located in the <code class="filename">macros</code> subdirectory of your installation directory.</p><p class="NormalText">Slick-C macros are stored in files ending in the <code class="filename">.e</code> extension. The Slick-C macro translator compiles these files to byte code which is saved in a corresponding file with the <code class="filename">.ex</code> extension. </p><p class="NormalText">Slick-C follows a C-style linking model with the distinction that macros can be loaded and reloaded dynamically. Compiled macros and dialog box templates are stored in the state file <code class="filename">vslick.sta</code> (UNIX®: <code class="filename">vslick.stu</code>), which is located in your configuration directory. </p><p class="NormalText">
+      <a class="indexterm" name="slick-c_intro_80E3C176_6983"></a>Slick-C is preprocessed like C. Slick-C header files use the <code class="filename">.sh</code> extension. All Slick-C source files #include <code class="filename">slick.sh</code>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_intro_11615_86509"></a>
+      <a name="slick_c_intro_11615_1026334"></a>Slick-C® Naming Conventions</h3></div></div></div><p class="NormalText">The table below outlines Slick-C naming conventions.</p><div class="informaltable"><a name="table_1e7ed2cb-cc3a-481a-b103-ea2d258ad473"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Type</p>
+            </th><th>
+              <p class="CellHeading">Example Name</p>
+            </th><th>
+              <p class="CellHeading">Details</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">Namespaces</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">se.example</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Lowercase, with an underscore or dot to separate multiple words.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">Classes</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">ExampleName</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Mixed case, first letter must be capitalized, all caps only acceptable for acronyms like "FTP".</p>
+            </td></tr><tr><td>
+              <p class="CellBody">Interfaces</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">IExampleName</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Like class names, but with "I" prefix.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">Enums</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">ExampleName</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Like class names (idea of "E" prefix rejected).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">Enum Flags</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">ExampleFlags</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Like enums, but ends with "Flags" (idea of "F" prefix rejected).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">Member Funcs</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">exampleName</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Mixed case with the first letter lowercase.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">Member Vars</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">m_exampleName</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Mixed case, first letter lowercase, and an "m_" prefix.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">Properties</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">m_exampleName</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Same as member variables (should not distinguish from var).</p>
+            </td></tr><tr><td>
+              <p class="CellBody">Class Vars</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">s_exampleName</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Mixed case, first letter lowercase, and an "s_" prefix.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">Namespace Vars</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">g_exampleName</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Like member vars except with a "g_" prefix. </p>
+            </td></tr><tr><td>
+              <p class="CellBody">Namespace Funcs</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">example_name</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Lowercase with words separated with underscores.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">Global Vars</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">&lt;anything&gt;</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">No rules.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">Global funcs</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">&lt;anything&gt;</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">No rules.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">Typedefs</p>
+            </td><td>
+              <p class="CellBody">
+                <span><strong class="command">&lt;anything&gt;</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">No rules.</p>
+            </td></tr></tbody></table></div><p class="NormalText"></p></div></div></div></body></html>

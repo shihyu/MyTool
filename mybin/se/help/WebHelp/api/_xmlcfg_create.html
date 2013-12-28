@@ -1,0 +1,58 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_xmlcfg_create</title>
+</head>
+<body>
+
+<h3><b>int _xmlcfg_create(_str Filename, int iEncoding, int CreateOption=VSXMLCFG_CREATE_IF_EXISTS_CREATE)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Creates or opens an existing XMLCFG tree.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="Filename">Filename</A></code> - Name of XML file to create.  No disk I/O occurs.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="iEncoding">iEncoding</A></code> - For standard XML files, this parameter should be VSENCODING_UTF8.
+For Visual Studio 2002/2003 project files, this parameter should be
+VSCP_ACTIVE_CODEPAGE. For Visual Studio 2005, use VSENCODING_UTF8.
+Do not use VSENCODING_AUTOXML for creating new documents. But
+VSENCODING_AUTOXML is valid when using VSXMLCFG_CREATE_IF_EXISTS_OPEN.
+
+<P>encoding may be one of the following:
+
+<blockquote><pre>VSCP_ACTIVE_CODEPAGE
+VSCP_EBCDIC
+VSCP_CYRILLIC_KOI8_R
+VSCP_ISO_8859_1
+VSCP_ISO_8859_2
+VSCP_ISO_8859_3
+VSCP_ISO_8859_4
+VSCP_ISO_8859_5
+VSCP_ISO_8859_6
+VSCP_ISO_8859_7
+VSCP_ISO_8859_8
+VSCP_ISO_8859_9
+VSCP_ISO_8859_10
+Any valid Windows code page
+VSENCODING_AUTOUNICODE
+VSENCODING_UTF8
+VSENCODING_UTF8_WITH_SIGNATURE
+VSENCODING_UTF16LE
+VSENCODING_UTF16LE_WITH_SIGNATURE
+VSENCODING_UTF16BE
+VSENCODING_UTF16BE_WITH_SIGNATURE
+VSENCODING_UTF32LE
+VSENCODING_UTF32LE_WITH_SIGNATURE
+VSENCODING_UTF32BE
+VSENCODING_UTF32BE_WITH_SIGNATURE
+</pre></blockquote></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="CreateOption">CreateOption</A></code> - One of the following options.
+
+                 <DL>
+                 <DT>VSXMLCFG_CREATE_IF_EXISTS_CLEAR</DT>
+                 <DD>If this XMLCFG tree already exists, clear the contents of the tree.</DD>
+                 <DT>VSXMLCFG_CREATE_IF_EXISTS_OPEN</DT>
+                 <DD>If this XMLCFG tree already exists, just return the existing handle.</DD>
+                 <DT>VSXMLCFG_CREATE_IF_EXISTS_ERROR</DT>
+                 <DD>If  this XMLCFG tree already exists, return an error.</DD>
+                 <DT>VSXMLCFG_CREATE_IF_EXISTS_CREATE</DT>
+                 <DD>If  this XMLCFG tree already exists, create a new tree with the same name.</DD>
+                 </DL>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns XMLCFG tree handle if successful.  Otherwise a negative return code defined in "rc.sh" is returned
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="XMLCFG_Functions.html">XMLCFG Functions</a></blockquote>
+</body>
+</html>

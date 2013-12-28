@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>on_keystatechange</title>
+</head>
+<body>
+
+<h3><b>event on_keystatechange()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">The on_keystatechange event is returned by the <b>get_event</b>
+function to indicate that a shift key has been pressed or released.  You must
+call the <b>mou_mode</b> function with a one for this event to be returned by
+the get_event function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+defmain()
+{
+     mou_mode(1);
+OuterLoop:
+     for (;;) {
+         event=get_event();
+         switch( event ) {
+         case ESC:
+              break OuterLoop;
+          case ON_KEYSTATECHANGE:
+              if (_IsKeyDown(CTRL) ){
+                   message("CTRL is down");
+               } else {
+                    message("CTRL is not down");
+               }
+           }
+      }
+      mou_mode(0);
+           }
+
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote>
+</body>
+</html>

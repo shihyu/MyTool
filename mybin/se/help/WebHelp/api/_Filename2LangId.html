@@ -1,0 +1,37 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_Filename2LangId</title>
+</head>
+<body>
+
+<h3><b>_str _Filename2LangId(_str filename, int options=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns the language mode associated with the given file.<p>
+The <b>Language Options dialog box</b> allows you to map an
+extension that to a language mode.  This function performs
+that translation, and will also use the buffer
+name to determine the language mode.<p>
+If the file's actual extension matches a
+<code>_[ext]_Filename2LangId()</code> callback, it will first
+try the callback to see if the file, based on it's path or name
+should be referred to an alternate language.<p>
+Otherwise, if the file's actual extension matches a
+<code>suffix_[ext]</code> callback, it will open the file
+in a temporary view and try the callback to determine the
+file's actual language type.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - source file name with path</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - one or more of the following flags ORed together:
+<dl>
+<dt>F2LI_NO_CHECK_OPEN_BUFFERS</dt><dd>Do not go through open buffers
+to determine lang id.  Normally, we see if the file is already open
+and then return its p_LangId property.  If this flag is included,
+this step is skipped</dd>
+<dt>F2LI_NO_CHECK_PERFILE_DATA</dt><dd>Do not go through data saved
+for previously opened files to determine lang id.  Normally, we check
+the data stored in perfile.xml to see if this file has been opened
+before and has a stored lang id.  If this flag is included, this step
+is skipped</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the language ID for the given file.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="get_extension.html">get_extension</a>, <a href="_Ext2LangId.html">_Ext2LangId</a></blockquote>
+</body>
+</html>

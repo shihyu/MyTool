@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_ini_get_value</title>
+</head>
+<body>
+
+<h3><b>int _ini_get_value(_str filename, _str section_name, _str field_name, _str &result, _str default_value='', _str case_option=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Places value for <i>field_name</i> defined within section of file
+specified in <i>result</i> variable.  The start of a section is identified by
+a section name in square brackets.  All lines until the next section or end
+of file are part of the section.  If <i>section</i> or <i>field_name</i> do
+not exist, <i>default_value</i> is placed in <i>result</i>.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="default_value">default_value</A></code> - has no effect on ini file.  It only affects return
+value when section name or field name does not exist.
+
+<pre>
+   ".ini" File Syntax:
+         [<i>section1</i>]
+         <i>field_name1</i>=<i>value1</i>
+         <i>field_name2=value2</i>
+         ...
+         [<i>section2</i>]
+         <i>field_name1=value1</i>
+         field_name2=<i>value2</i>
+         ...
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a>, <a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

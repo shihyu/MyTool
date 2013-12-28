@@ -1,0 +1,69 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_menu_get_state</title>
+</head>
+<body>
+
+<h3><b>int _menu_get_state(int menu_handle, _str command_or_category, int &mf_flags, _str option='C', _str &caption="", _str &command="", _str &categories="", _str &help_command="", _str &help_message="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Gets menu item values for the menu items which contain the command or
+category specified.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="menu_handle">menu_handle</A></code> - Handle of loaded menu returned by
+<b>p_menu_handle</b>, <b>_menu_load</b>, <b>_menu_find</b>, or
+<b>_menu_get_state</b>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="command_or_category">command_or_category</A></code> - category, or position within <i>menu_handle</i> of menu item.  If
+a command is specified, the command must match exactly.  See <i>option</i>
+parameter.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - May be 'M', 'C', 'P'.  If the 'M' option is given,
+<i>command_or_category</i> is the command of the menu item to be found. If
+the 'C' option is given,  <i>command_or_category</i> is the category of the
+menu item to be found.  If the 'P' option is given,
+<i>command_or_category</i> is the position
+(0..<b>_menu_info</b>(<i>menu_handle</i>)-1) of the menu item with in
+<i>menu_handle</i>.  Defaults to 'C'.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mf_flags">mf_flags</A></code> - <i>mf_flags</i> may be zero or more of the following
+flags defined in "slick.sh":
+
+<ul>
+<li>MF_CHECKED</li>
+<li>MF_UNCHECKED</li>
+<li>MF_GRAYED</li>
+<li>MF_ENABLED</li>
+<li>MF_SUBMENU</li>
+</ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="caption">caption</A></code> - Menu item title.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="command">command</A></code> - For sub-menu, <i>command</i> is a menu handle which may be
+used in calls to <b>_menu_get_state</b> or <b>_menu_info</b>.  Otherwise,
+this is the command to be executed when the menu item is selected.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="categories">categories</A></code> - Menu item categories.  May be one or more categories
+separated with a '|' character.  See <b>_menu_set_state</b> function for more
+information about categories.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="help_command">help_command</A></code> - Menu item help command.  Executed when F1 pressed on
+menu item.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="help_message">help_message</A></code> - Menu item help message.  Displayed when cursor is on
+menu item.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// This code traverses a menu that has been loaded with _menu_load
+#include "slick.sh"
+defmain()
+{
+     traverse_menu(_mdi.p_menu_handle);
+}
+static void traverse_menu(menu_handle)
+{
+    Nofitems=_menu_info(menu_handle,'c');
+    for (i=0;i&lt;Nofitems;++i) {
+         _menu_get_state(menu_handle,i,mf_flags,'p',caption,command,
+                      categories,help_command,help_message);
+         messageNwait("p_caption="caption)
+         if (mf_flags & MF_SUBMENU) {
+             traverse_menu(command);
+         }
+    }
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Menu_Functions.html">Menu Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="on_init_menu.html">on_init_menu</a>, <a href="_menu_add_filehist.html">_menu_add_filehist</a>, <a href="_menu_add_hist.html">_menu_add_hist</a>, <a href="_menu_add_workspace_hist.html">_menu_add_workspace_hist</a>, <a href="_menu_delete.html">_menu_delete</a>, <a href="_menu_destroy.html">_menu_destroy</a>, <a href="_menu_find.html">_menu_find</a>, <a href="_menu_info.html">_menu_info</a>, <a href="_menu_insert.html">_menu_insert</a>, <a href="_menu_load.html">_menu_load</a>, <a href="_menu_match.html">_menu_match</a>, <a href="_menu_move.html">_menu_move</a>, <a href="_menu_set.html">_menu_set</a>, <a href="_menu_set_state.html">_menu_set_state</a>, <a href="_menu_show.html">_menu_show</a>, <a href="alt_menu.html">alt_menu</a>, <a href="insert_object.html">insert_object</a>, <a href="menu_mdi_bind_all.html">menu_mdi_bind_all</a>, <a href="mou_show_menu.html">mou_show_menu</a>, <a href="show.html">show</a></blockquote>
+</body>
+</html>

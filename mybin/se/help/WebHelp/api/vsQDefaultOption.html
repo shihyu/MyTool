@@ -1,0 +1,249 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsQDefaultOption</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsQDefaultOption(int option)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - One of the following options:
+
+<dl compact style="margin-left:20pt">
+<dt>VSOPTION_WARNING_ARRAY_SIZE</dt><dd>
+ A warning message is displayed if a Slick-C&reg;
+array of this size or larger is created.</dd>
+
+<dt>VSOPTION_WARNING_STRING_LENGTH</dt><dd>
+ A warning message is displayed if a Slick-C&reg;
+string of this size or larger is created.</dd>
+
+<dt>VSOPTION_VERTICAL_LINE_COL</dt><dd>
+ Column at which editor control displays a
+vertical line.  0 indicates no vertical line
+column.</dd>
+
+<dt>VSOPTION_WEAK_ERRORS</dt><dd>
+ Indicates whether a less server Slick-C&reg; error
+should set the <b>find_error</b> commands
+error location.</dd>
+
+<dt>VSOPTION_MAXIMIZE_FIRST_MDICHILD</dt><dd>
+ Indicates whether the first MDI Child should
+be created maximized.</dd>
+
+<dt>VSOPTION_MAXTABCOL</dt><dd>
+ Specifies the maximum column to expand
+tabs.  Tab characters after this column are
+not expanded.</dd>
+
+<dt>VSOPTION_CURSOR_BLINK</dt><dd>
+ Indicates whether the cursor should blink.</dd>
+
+<dt>VSOPTION_DISPLAY_TEMP_CURSOR</dt><dd>
+ Indicates whether the editor control should
+display a temporary cursor for an active MDI
+child which does not have focus.</dd>
+
+<dt>VSOPTION_LEFT_MARGIN</dt><dd>
+ Left margin in twips between the editor
+control text and the left edge of the window.
+This is ignored, when bitmaps are displayed.</dd>
+
+<dt>VSOPTION_DISPLAY_TOP_OF_FILE</dt><dd>
+ Indicates whether the editor control should
+display a "Top of File" line.</dd>
+
+<dt>VSOPTION_HORIZONTAL_SCROLL_BAR</dt><dd>
+ Indicates whether MDI Children should
+have scroll bars.</dd>
+
+<dt>VSOPTION_VERTICAL_SCROLL_BAR</dt><dd>
+ Indicates whether MDI Children should
+have scroll bars.</dd>
+
+<dt>VSOPTION_HIDE_MOUSE</dt><dd>
+ Indicates whether the mouse should be
+hidden when you start typing in an editor
+control.</dd>
+
+<dt>VSOPTION_ALT_ACTIVATES_MENU</dt><dd>
+ Indicates whether a lone alt key should
+activate the menu bar.</dd>
+
+<dt>VSOPTION_DRAW_BOX_AROUND_CURRENT_LINE</dt><dd>
+ Indicates whether the editor control draws a
+   dotted box or ruler around the current line.
+   <ul>
+   <li>VSCURRENT_LINE_BOXFOCUS_NONE    -- Do not draw box
+   <li>VSCURRENT_LINE_BOXFOCUS_ONLY    -- Just draw box, no ruler
+   <li>VSCURRENT_LINE_BOXFOCUS_TABS    -- Draw tabs ruler
+   <li>VSCURRENT_LINE_BOXFOCUS_INDENT  -- Draw syntax indent ruler
+   <li>VSCURRENT_LINE_BOXFOCUS_DECIMAL -- Darw decimal ruler
+   </ul>
+</dd>
+
+<dt>VSOPTION_MAX_MENU_FILENAME_LEN</dt><dd>
+ Indicates the maximum length of a filename
+displayed in a menu.</dd>
+
+<dt>VSOPTION_PROTECT_READONLY_MODE</dt><dd>
+ Indicates whether a read only mode editor
+control allows editing.  This option has no
+effect for a an editor control if
+VSP_PROTECTREADONLYMODE!=0.</dd>
+
+<dt>VSOPTION_PROCESS_BUFFER_CR_ERASE_LINE</dt><dd>
+ Indicates whether a carriage return not
+followed by a line feed erase the line in the
+current process buffer.</dd>
+
+<dt>VSOPTION_ENABLE_FONT_FLAGS</dt><dd>
+ No longer supported.</dd>
+
+<dt>VSOPTION_APIFLAGS</dt><dd>
+ VSINIT.APIFlags
+ You can not set this option.</dd>
+
+<dt>VSOPTION_HAVECMDLINE</dt><dd>
+ Indicates whether a command line is
+currently available.  This gets set when an
+event is dispatched or <b>vsExecute</b> is
+called.  You can not set this option.</dd>
+
+<dt>VSOPTION_QUIET</dt><dd>Indicates whether the -Q invocation
+option was specified.</dd>
+
+<dt>VSOPTION_SHOWTOOLTIPS</dt><dd>
+ Indicates whether tool tip message should be
+displayed.</dd>
+
+<dt>VSOPTION_TOOLTIPDELAY</dt><dd>
+ Determines the tool tip message delay in
+10ths of a second.</dd>
+
+<dt>VSOPTION_HAVEMESSAGELINE</dt><dd>
+ Indicates whether a message line is currently
+available.  This gets set when an event is
+dispatched or <b>vsExecute</b> is called.
+You can not set this option.</dd>
+
+<dt>VSOPTION_HAVEGETMESSAGELINE</dt><dd>
+ Indicates whether get message line is
+currently available.  This gets set when an
+event is dispatched or <b>vsExecute</b> is
+called.  You can not set this option.</dd>
+
+<dt>VSOPTION_MACRO_SOURCE_LEVEL</dt><dd>
+ Indicates the source code macro level stored
+in "vsapi.dll".</dd>
+
+<dt>VSOPTION_APPLY_LOCAL_STATE_FILE_CHANGES</dt><dd>
+ Indicates if local state file changes need to
+be applied to the global state file.</dd>
+
+<dt>VSOPTION_DISPLAYVERSIONMESSAGE</dt><dd>
+ Indicates whether the version of the editor
+message should be displayed when the
+editor starts.</dd>
+
+<dt>VSOPTION_CXDRAGMIN</dt><dd>
+ (Windows only) Indicates the minumum
+number of pixels in the X directory which
+indicate a drag instead of just a click
+operation.</dd>
+
+<dt>VSOPTION_CYDRAGMIN</dt><dd>
+ (Windows only) Indicates the minumum
+number of pixels in the Y directory which
+indicate a drag instead of just a click
+operation.</dd>
+
+<dt>VSOPTION_DRAGDELAY</dt><dd>
+ (Windows only) Indicates the minumum
+amount of time in milliseconds which
+indicate a drag instead of just a click
+operation.</dd>
+
+<dt>VSOPTION_NEXTWINDOWSTYLE</dt><dd>
+ This can be 0 or 1.  1 specifies "Smart next
+window" mode.</dd>
+
+<dt>VSOPTION_CODEHELP_FLAGS</dt><dd>
+ Zero or more of the following flags:</dd>
+
+<dt>VSCODEHELPFLAG_AUTO_FUNCTION_HELP</dt><dd>
+ Indicates whether auto Parameter
+Info is on/off.</dd>
+
+<dt>VSCODEHELPFLAG_AUTO_LIST_MEMBERS    0x2</dt><dd>
+ Indicates whether auto list members
+is on/off.</dd>
+
+<dt>VSCODEHELPFLAG_SPACE_INSERTS_SPACE</dt><dd>
+ When on, pressing space bar during
+list members always inserts a space. </dd>
+
+<dt>VSCODEHELPFLAG_INSERT_OPEN_PAREN</dt><dd>
+ When on, selecting an item during
+list members which requires an open
+paren,'&lt;', or additional characters,
+automatically inserts the additinal
+characters.</dd>
+
+<dt>VSCODEHELPFLAG_SPACE_COMPLETION</dt><dd>
+ When on, pressing space during list
+members completes the word.</dd>
+
+<dt>VSCODEHELPFLAG_DISPLAY_MEMBER_COMMENTS</dt><dd>
+ When on, source comments are
+displayed while in list help</dd>
+
+<dt>VSCODEHELPFLAG_DISPLAY_FUNCTION_COMMENTS</dt><dd>
+ When on, source comments are
+displayed while in Parameter Info</dd>
+
+<dt>VSCODEHELPFLAG_AUTO_SYNTAX_HELP</dt><dd>
+ Determines whether auto syntax help
+is on or off.  Only some languages
+which have Context Tagging&reg; such as
+COBOL have auto syntax help.</dd>
+
+<dt>VSCODEHELPFLAG_REPLACE_IDENTIFIER</dt><dd>
+ When on, the current identifier is
+replaced when an item is selected
+from list members.</dd>
+
+<dt>VSOPTION_LINE_NUMBERS_LEN</dt><dd>
+ Indicates the number of digits to use when
+displaying line numbers.  In addition, in
+ISPF emulation this indicates the number of
+'=' signs to display.</dd>
+
+<dt>VSOPTION_LCREADWRITE</dt><dd>
+ A non-zero value indicates that a prefix area
+should be displayed for read/write files.</dd>
+
+<dt>VSOPTION_LCREADONLY</dt><dd>
+ A non-zero value indicates that a prefix area
+should be displayed for read/only files.</dd>
+
+<dt>VSOPTION_LCMAXNOFLINECOMMANDS</dt><dd>
+ Indicates the maximumum number of line
+command data allowed durring a search and
+replace.  This is so that the error information
+does not get extremely large.</dd>
+
+<dt>VSOPTION_DOUBLE_CLICK_TIME</dt><dd>
+ The maximum amount of time between two
+clicks to be considered a double click.</dd>
+
+<dt>VSOPTION_LCNOCOLON</dt><dd>
+ A non-zero value indicates that no colon
+character should be displayed after line
+numbers.  This option is ignored in hex
+mode.</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns current setting of specified option.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsGetDefaultFont.html">vsGetDefaultFont</a>, <a href="vsSetDefaultFont.html">vsSetDefaultFont</a>, <a href="vsGetDefaultColor.html">vsGetDefaultColor</a>, <a href="vsSetDefaultColor.html">vsSetDefaultColor</a>, <a href="vsQDefaultOption.html">vsQDefaultOption</a>, <a href="vsGetDefaultOptionZ.html">vsGetDefaultOptionZ</a>, <a href="vsSetDefaultOption.html">vsSetDefaultOption</a>, <a href="vsSetDefaultOptionZ.html">vsSetDefaultOptionZ</a></blockquote>
+</body>
+</html>

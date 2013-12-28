@@ -1,0 +1,70 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMenuInsert</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsMenuInsert(int menu_handle, int position, int flags, const char *pszItemText, const char *pszCommand, const char *pszCategory, const char *pszHelpCommand, const char *pszHelpString)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Inserts a menu or menu item into a loaded menu or a menu resource.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="menu_handle">menu_handle</A></code> - Handle of loaded menu returned by
+VSP_MENUHANDLE, vsMenuLoad,
+vsMenuFind, or vsMenuGetState.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="position">position</A></code> - Position within menu <i>menu_handle</i>.
+Menu item is inserted before position.  The
+first menu item position is 0.  Specify -1 or a
+position greater than the last menu item to
+insert after the last menu item.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="mf_flags">mf_flags</A></code> - may be zero or more of the
+following flags defined in "vs.h":
+
+<ul>
+<li>VSMF_CHECKED</li>
+<li>VSMF_UNCHECKED</li>
+<li>VSMF_GRAYED</li>
+<li>VSMF_ENABLED</li>
+<li>VSMF_SUBMENU</li>
+</ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszItemText">pszItemText</A></code> - Menu item title.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszCategory">pszCategory</A></code> - Menu item categories. May be one or more
+categories separated with a '|' character.  See
+<b>vsMenuSetState</b> function for more
+information about categories.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszHelpCommand">pszHelpCommand</A></code> - Menu item help command.
+Executed when F1 is pressed while on the
+menu item.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszHelpMessage">pszHelpMessage</A></code> - Menu item help message.  Displayed when
+menu item is selected.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxHelpMessageLen">MaxHelpMessageLen</A></code> - Number of characters allocated to
+<i>pszHelpMessage</i>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+void VSAPI dllproc ()
+{
+     // Insert 2 items into a menu resource called menu1
+     int index;
+     index=vsFindIndex ("menu1",vsoi2type(VSOI_MENU));
+     if (!index) {  // IF menu1 does not already exist?
+         // Create new menu resource in names table
+         index=vsNameInsert ("menu1",vsoi2type(VSOI_MENU));
+         if (index&lt;=0) {
+             vsMessage("unable to create menu1");
+             return;
+         }
+     }
+     // Insert File menu
+     vsMenuInsert(index,0,VSMF_ENABLED|VSMF_SUBMENU,"&File",
+                               "","","help file menu","");
+     // Insert New menu item within File menu
+     vsMenuInsert(
+                  vsPropGetI(index,VSP_CHILD),
+                   0,VSMF_ENABLED,"&New","New","",
+                   "help file menu", "");
+     // Load and display the menu as a pop-up menu
+    vsExecute(0, "show menu1");
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Menu_Functions.html">Menu Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsMenuDelete.html">vsMenuDelete</a>, <a href="vsMenuDestroy.html">vsMenuDestroy</a>, <a href="vsMenuFind.html">vsMenuFind</a>, <a href="vsMenuGetState.html">vsMenuGetState</a>, <a href="vsMenuInsert.html">vsMenuInsert</a>, <a href="vsMenuLoad.html">vsMenuLoad</a>, <a href="vsMenuQInfo.html">vsMenuQInfo</a>, <a href="vsMenuSet.html">vsMenuSet</a>, <a href="vsMenuSetState.html">vsMenuSetState</a>, <a href="vsMenuShow.html">vsMenuShow</a></blockquote>
+</body>
+</html>

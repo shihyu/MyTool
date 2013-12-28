@@ -1,0 +1,42 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>alias</title>
+</head>
+<body>
+
+<h3><b>_command int alias(_str params='')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>
+The <b>alias</b> command displays, creates, or modifies aliases.  To expand an alias, execute the
+<b>expand_alias</b> command (Ctrl+Space bar).
+</p><p>
+<p>
+If no arguments are given or cmdline is "", you will prompted to pick an alias file and the
+Alias Editor dialog box will be displayed.  We recommend you use the alias editor for creating,
+deleting, viewing, or modifying aliases because it is easier to use than this command. </p><p>
+<p>Use the "-e" argument to edit aliases for the current file.  Use the
+"-surround" option to edit surround with aliases for the current file.
+</p><p>
+<p>Aliases are stored by default in a file called
+"alias.als.xml". Use the VSLICKALIAS environment variable
+to define one or more alias files.  Separate each alias
+filename with a ';' (UNIX: ':').
+New aliases created with the <b>alias</b> command are placed in the first file defined by
+the VSLICKALIAS environment variable.</p><p>
+<p>The value of the alias may have any of the following escape sequences  embedded in it.
+</p><p>
+<pre>
+%&lt;EnvVar&gt;%  Insert the value of the environment variable specified
+%\d   Insert the date
+%\t   Insert the time
+%\i   Indent
+%\b   Unindent
+%\c   Place cursor
+%\n   Current function name
+%(ParamName)   Argument replacement.
+</pre><p>
+Prefix the name of the alias with "-d" to delete an alias.<p>
+See <b>alias_cd</b> command for information on using an alias to change directory.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

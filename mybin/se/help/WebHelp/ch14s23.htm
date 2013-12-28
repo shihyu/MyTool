@@ -1,0 +1,518 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Built-in Controls</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s22.htm" title="Using Functions as Methods"><link rel="next" href="ch14s24.htm" title="Menus"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_builtincontrols_13082_13288"></a>
+    <a name="slick_c_builtincontrols_13082_1004392"></a>Built-in Controls</h2></div></div></div><p class="NormalText">Topics in this chapter:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_95776">Label Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_27144">Spin Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_15255">Text Box Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_82431">Editor Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_59522">Frame Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_91776">Command Button Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_64251">Radio Button Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_18739">Check Box Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_48180">Combo Box Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_87413">List Box Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_16045">Scroll Bar Controls</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_34853">Drive List Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_94517">File List Box Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_19646">Directory List Box Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_30494">Picture Box Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_13391">Gauge Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_Image_Control">Image Control</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s23.htm#slick_c_builtincontrols_13082_43872">Adding Dialog Box Retrieval</a>
+      </p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_95776"></a>
+      <a name="slick_c_builtincontrols_13082_1004407"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_399A1FEC_93B2"></a>Label Control</h3></div></div></div><p class="NormalText">The label control is used to display text in any font. A common use of a label control is to place it to the left of a text box to tell the user about what goes in the text box.</p><p class="NormalText">Labels can be aligned left or right, or centered horizontally and/or vertically. If you do not need to align the label, set the <span><strong class="command">p_auto_size</strong></span> property to TRUE to ensure that the text fits inside the window. To center the label to a text box, select the label control and use the <span><strong class="keycap">Up</strong></span>, <span><strong class="keycap">Down</strong></span>, <span><strong class="keycap">Left</strong></span>, and <span><strong class="keycap">Right</strong></span> arrow keys.</p><p class="NormalText">On the Dialog Editor, click the <span><strong class="guibutton">Insert Label Control</strong></span> button <span class="inlinemediaobject"><img src="Resources/label_control.png"></span> to place a label control on a form.</p><p class="NormalText">For a complete list of label control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_27144"></a>
+      <a name="slick_c_builtincontrols_13082_1004424"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_3A658B55_98D0"></a>Spin Control</h3></div></div></div><p class="NormalText">The most common use of a spin control is to increment or decrement a number displayed in a text box. This can be performed WITHOUT writing any code, by making the <span><strong class="command">tab_index</strong></span> property of the text box one less than the <span><strong class="command">tab_index</strong></span> property of the spin control. An error is displayed if there is no text box with a tab index one less than the spin control, unless the increment property of the spin control is set to zero. To create a spin control, complete the following steps: </p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Create the text box and then create the spin control.</p></li><li><p class="NormalText">Turn off the <span><strong class="command">auto_size</strong></span> property of the text box so you can make the height of the text box larger than the font.</p></li><li><p class="NormalText">Use the spin control to increment or decrement the value in a gauge or scroll bar control or increment or decrement a hexadecimal number displayed in a text box. The default increment is <span><strong class="command">1</strong></span>. Set the <span><strong class="command">increment</strong></span> property of the spin control to zero and process the <span><strong class="command">on_spin_up</strong></span> and <span><strong class="command">on_spin_down</strong></span> events. The <span><strong class="command">on_change</strong></span> event is called with a <span class="emphasis"><em>reason</em></span> set to <span><strong class="command">CHANGE_NEW_FOCUS</strong></span>, before an <span><strong class="command">on_spin_up</strong></span> or <span><strong class="command">on_spin_down</strong></span> event, to allow you to return the window ID of the control you want to get focus, after spinning is completed. Return an empty string (<span><strong class="command">''</strong></span>) if you do not want to change the event.</p></li></ol></div><p class="NormalText">Example:</p><pre class="programlisting">#include "slick.sh"
+ 
+// This example requires form name form1 with a text box and spin control.
+// The spin control should be named ctlspin1 and the increment property
+// should be zero. The tab index of the text box MUST be one less than
+// the spin control. This code does not reference the name of the text box
+// so that you can use Clipboard Inheritance(R) to create multiple working
+// copies of a spin control capable of incrementing/decrementing the value in
+// a text box control without writing any new code.
+defeventtab form1;
+ctlspin1.on_change(reason)
+{
+    if (reason==CHANGE_NEW_FOCUS) {
+       return(p_prev);
+    }
+}
+ctlspin1.on_spin_up()
+{
+    new_dec_value=hex2dec(p_prev.p_text)+1;
+    p_prev.p_text=dec2hex(new_dec_value);
+}
+ctlspin1.on_spin_down()
+{
+    new_dec_value=hex2dec(p_prev.p_text)-1;
+    p_prev.p_text=dec2hex(new_dec_value);
+}</pre><p class="NormalText">For a complete list of spin control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_15255"></a>
+      <a name="slick_c_builtincontrols_13082_1004478"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_F55B5B69_6189"></a>Text Box Control</h3></div></div></div><p class="NormalText">The text box control enables the user to enter a single line of text. Editor control determines the number of lines that can be entered. Text boxes support completion with the spacebar and question mark keys. Set the completion property of the text box.<span class="emphasis"><em></em></span>The <span><strong class="command">FILE_ARG</strong></span> completion type is the most common. It provides completion on file names. New commands can be written that operate in all text boxes, edit windows, and editor controls.</p><p class="NormalText">Example:</p><pre class="programlisting">#include "slick.sh"
+_command void upcase_line() name_info(','VSARG2_TEXT_BOX|VSARG2_REQUIRES_EDITORCTL)
+{
+    init_command_op();
+    get_line(line);
+    replace_line(upcase(line));
+    retrieve_command_results();
+}</pre><p class="NormalText">Bind the <span><strong class="command">upcase_line</strong></span> command in the previous example to <span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">F12</strong></span>. This command works in all text boxes, edit windows, and editor controls. The key binding might not work in a text box if you bind the <span><strong class="command">upcase_line</strong></span> to one of the CUA keys <span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">A</strong></span>, <span><strong class="keycap">Alt</strong></span>+<span><strong class="keycap">Z</strong></span>, <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">X</strong></span>, <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">C</strong></span>, or <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">V</strong></span>. Use the Redefine Common Keys dialog box (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Keyboard and Mouse </strong></span> &#8594; <span><strong class="guimenuitem">Redefine Common Keys</strong></span>) to allow all key bindings to be inherited into text box controls. </p><p class="NormalText">For a complete list of text box control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_82431"></a>
+      <a name="slick_c_builtincontrols_13082_1004511"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_8AF8B18C_AEF0"></a>Editor Control</h3></div></div></div><p class="NormalText">Editor control is used to enter multiple lines, view clipboards, to work with the calculator, and for version control comments. Almost all of the key bindings for an MDI edit window work in an editor control even when the emulation is changed. Use macro recording to write a new command that works in an edit window and editor control. Mark the <span><strong class="guilabel">Allow in non-MDI editor control</strong></span> check box when you finish recording the macro. </p><p class="NormalText">For a complete list of editor control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_59522"></a>
+      <a name="slick_c_builtincontrols_13082_1024452"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_B8C60710_8EF6"></a>Frame Control</h3></div></div></div><p class="NormalText">Frame control is used to group a set of related controls. Radio buttons are placed inside of a frame control to indicate to the dialog manager that only one of the radio buttons in the group can be turned on at a time. There are two ways to place a control inside of a frame control:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Click the left mouse button on the bitmap in the Properties dialog box of the control that you want to place inside the frame. Click and drag with the left mouse button inside the frame control to create the control with the size of the rectangle displayed.</p></li><li><p class="NormalText">Copy or cut the control you want to place inside the frame to the clipboard. Select the frame control and press <span><strong class="keycap">Ctrl</strong></span>+<span><strong class="keycap">V</strong></span> to paste the control inside the frame control.</p></li></ul></div><p class="NormalText">For a complete list of frame control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_91776"></a>
+      <a name="slick_c_builtincontrols_13082_1024471"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_CD109657_2E1D"></a>Command Button Control</h3></div></div></div><p class="NormalText">The command button control is most typically used to create an <span><strong class="guibutton">OK</strong></span>, <span><strong class="guibutton">Cancel</strong></span>, or <span><strong class="guibutton">Help</strong></span> button.</p><p class="NormalText">For a complete list of command button control properties, methods, and events, from the menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_64251"></a>
+      <a name="slick_c_builtincontrols_13082_1032377"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_DCBC5BF5_88F1"></a>Radio Button Control</h3></div></div></div><p class="NormalText">Radio buttons must be grouped. When one radio button is enabled, the other radio buttons in the same group are not available. Radio buttons are considered in the same group if they have the same parent. Usually, radio buttons are grouped by placing them inside a picture box or frame control. A picture box can have its <span><strong class="command">border_style</strong></span> property set to <span><strong class="command">BDS_NONE</strong></span> to display that the picture box control does not exist. Use one of the methods described under <a href="ch14s23.htm#slick_c_builtincontrols_13082_59522">Frame Control</a> to place a radio button inside a frame.</p><p class="NormalText">For a complete list of radio button control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_18739"></a>
+      <a name="slick_c_builtincontrols_13082_1032384"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_237146E8_3D1C"></a>Check Box Control</h3></div></div></div><p class="NormalText">A check box is used to set up a true or false option. Check boxes can be displayed to the left or right of the caption.</p><p class="NormalText">For a complete list of check box control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_87413"></a>
+      <a name="slick_c_builtincontrols_13082_1032712"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_20CD4B35_FE38"></a>List Box Control</h3></div></div></div><p class="NormalText">A list box provides a way to select from a fixed set of items. Multiple items from the list can be selected at one time by setting the <span><strong class="command">multi_select</strong></span> property to MS_SIMPLE_LIST or MS_EXTENDED (used by Open dialog box). A list box receives an <span><strong class="command">on_change</strong></span> event, with a reason argument set to CHANGE_SELECTED, when items are selected or deselected because of a key press or mouse event. None of the <span><strong class="command">_lb</strong></span><span class="emphasis"><em>xxx</em></span> functions cause an <span><strong class="command">on_change</strong></span> event. Use the <span><strong class="command">_find_longest_line()</strong></span> function to find the longest line in a list box.</p><p class="NormalText">The following example requires a form named "form1", a command button named "ok", and a list box named "ctllist1":</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1;
+ctllist1.on_change(reason)
+{
+    // Check the reason value. In the future we may add more reason values
+    // for the list box.
+    if (reason==CHANGE_SELECTED) {
+       // IF any items in the list box is selected.
+       if (p_Nofselected) {
+          ctlok.p_enabled=1;						// Enable the OK button.
+       } else if(!ctlok.p_enabled){
+          ctlok.p_enabled=0;						// Disable the OK button.
+       }
+    }
+}</pre><p class="NormalText">The following example illustrates how to resize a dialog box based on the longest item in a list box:</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1;
+ctllist1.on_create()
+{
+    _lbadd_item("Line1");
+    _lbadd_item("This is a longer line2");
+    _lbadd_item("This is the longest item in the list box");
+    longest=_find_longest_line();
+ 
+    // Add on a little to account for the left and right borders of the
+    // list box. Have to convert client width because it's in pixels.
+    list_width=longest+ p_width-_dx2lx(p_xyscale_mode,p_client_width);
+    form_wid=p_active_form;
+ 
+    // Again we have to account for the left and right borders.
+    // Multiply p_x of list box by two to show equal amounts of spacing on
+    // each side of the list box.
+    form_width=2*p_x+ list_width+ form_wid.p_width-
+    _dx2lx(form_wid.p_xyscale_mode,form_wid.p_client_width);
+ 
+    p_width=list_width;
+    form_wid.p_width=form_width;
+ 
+    // Now make sure the whole dialog box can be seen on screen.
+    form_wid._show_entire_form();
+}</pre><p class="NormalText">
+      <a class="indexterm" name="slick-c_builtincontrols_F19BA170_D83D"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_83EDAF38_0EBF"></a>The example below illustrates adding pictures to a list box.</p><pre class="programlisting">#include "slick.sh"
+#define PIC_LSPACE_Y 60    // Extra line spacing for list box.
+#define PIC_LINDENT_X 60   // Indent before for list box bitmap.
+ 
+defeventtab form1;
+ctllist1.on_create()
+{
+    // Add some extra line height.
+    p_pic_space_y=PIC_LSPACE_Y;
+    // _pic_xxx arguments are global variables defined in "slick.sh" which are
+    // name table indexes to pictures. You can create and load your own pictures.
+    // All the bitmaps are shipped with the editor. Use the bitmap file
+    // "_drremov.bmp" as a template for creating your own bitmap for a list box.
+    // You can load your own bitmap files with the _update_picture function.
+    _lbadd_item("a:",PIC_LINDENT_X,_pic_drremov);
+    _lbadd_item("b:",PIC_LINDENT_X,_pic_drremov);
+    _lbadd_item("c:",PIC_LINDENT_X,_pic_drfixed);
+    // The p_picture property must be set to indicate that this list box is
+    // displaying pictures and to provide a scaling picture for the
+    // p_pic_point_scale property. The p_pic_point_scale property allows the
+    // picture to be resized for fonts larger or smaller than the value of the
+    // p_pic_point_scale point size. If p_pic_point_scale is 0, the picture is
+    // not scaled.
+    p_picture=picture;
+    p_pic_point_scale=8;
+}</pre><p class="NormalText">Finally, the example below illustrates how to disable a list box and make the items in the list box appear grayed.</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1;
+ctllist1.on_create()
+{
+    _lbadd_item("item1");
+    _lbadd_item("item2");
+    p_no_select_color=1;
+    p_enabled=0;
+    p_forecolor=_rgb(80,80,80);
+}</pre><p class="NormalText">For a complete list of list box control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_48180"></a>
+      <a name="slick_c_builtincontrols_13082_1024536"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_ABCE48E4_EFAA"></a>Combo Box Control</h3></div></div></div><p class="NormalText">A combo box is used in place of a text box for combo box retrieval, when only a fixed set of responses is permitted, or when a common set of responses are known and a different response may be typed in. Combo box retrieval is a mechanism in that the combo list box displays the previous responses entered in the text box of the combo box. The combo box has two style properties:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">The <span><strong class="command">PSCBO_NOEDIT</strong></span> style is used when only a fixed set of responses are allowed. Combo boxes support completion with the spacebar and question mark keys. Set the <span><strong class="command">completion</strong></span> property of the combo box if there is an existing completion type that suits the needs.</p></li><li><p class="NormalText">The <span><strong class="command">FILE_ARG</strong></span> completion type is the most common. It provides completion on file names.</p></li></ul></div><p class="NormalText">The following example illustrates combo box retrieval. The example requires a form named "form1", an OK button named "ctlok", and combo box named "ctlcombo1":</p><pre class="programlisting">defeventtab form1;
+ctlok.lbutton_up()
+{
+    // When the OK button is pressed, you need to save combo box retrieve
+    // information.
+    _append_retrieve(_control ctlcombo1,ctlcombo1.p_text);
+}
+ctlok.on_create()
+{
+    // Fill in the combo box list.
+    ctlcombo1._retrieve_list();
+}</pre><p class="NormalText">A combo box consists of four controls: the root window, text box, picture box, and list box. The properties and methods of the sub-controls may be accessed individually with the <span><strong class="command">p_cb</strong></span>, <span><strong class="command">p_cb_text_box</strong></span>, <span><strong class="command">p_cb_picture</strong></span>, <span><strong class="command">p_cb_list_box</strong></span> instance handle properties. The <span><strong class="command">p_cb_picture</strong></span> property is only available when the control is displayed.</p><p class="NormalText">Example:</p><pre class="programlisting">defeventtab form1;
+ctlcombo1.on_create()
+{
+    // To make the loop a little more efficient, activate the list box of the
+    // combo box control
+    p_window_id=p_cb_list_box;
+    for (i=1;i&lt;=100;++i){
+       // Add an item to the active list box.
+       _lbadd_item("line="i);
+    }
+    // Activate the root window of the combo box.
+    p_window_id=p_cb;
+}</pre><p class="NormalText">Example:</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1;
+ctlcombo1.on_create()
+{
+    // Show a picture which indicates that clicking on the picture box
+    // button displays a dialog box. _pic_cbdots is a global
+    // variable defined in "slick.sh" which is a handle to a picture.
+vp_cb_picture.p_picture=_pic_cbdots;
+}
+ctlcombo1.lbutton_down()
+{
+    // Check if the left mouse button was clicked inside the picture box
+    // of the combo box.
+    if (p_cb_active==p_cb_picture) {
+       result=show("-modal form2");
+       // Process result here.
+    return("");
+    }
+    // Skip user level 1 inheritance and execute the default event handler
+    // defined by user level 2 inheritance.
+    call_event(p_window_id,lbutton_down,2);
+}</pre><p class="NormalText">The following example requires a form named "form1", command button named "ctlok", a combo box named "ctlcombo1", and another command button named "ctlcommand1":</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1;
+ctlok.lbutton_up()
+{
+    // Check if text in combo box text is valid. You might think you could
+    // use a non-editable style combo box. However, many users prefer typing
+    // in names using completion rather than using the mouse to select an item
+    // out of a list box.
+    status=ctlcombo1._cbi_search("","$");
+    if (status) {
+       _message_box("Combo box contains invalid input");
+       return("");
+    }
+    // Have valid input.
+}
+ctlcommand1.lbutton_up()
+{
+    // Add some items to the combo box list.
+    ctlcombo1.p_cb_list_box._lbadd_item("Hello")
+    ctlcombo1.p_cb_list_box._lbadd_item("Open");
+    ctlcombo1.p_cb_list_box._lbadd_item("New");
+    // Make the correct item in the combo box list current so combo box
+    // retrieval works better. _cbi_search searches for p_text in the combo
+    // list box. The "$" specifies that an exact match should be found and
+    // not a prefix match.
+    int status=ctlcombo1._cbi_search("","$");
+    if (!status) {
+       messageNwait("Found it!");
+       // Select the line in the combo box so that an up or down arrow
+       // selects the line above or below and not the current line.
+       ctlcombo1.p_cb_list_box._lbselect_line();
+    }
+}  </pre><p class="NormalText">A combo box receives an <span><strong class="command">on_change</strong></span> event with a <span class="emphasis"><em>reason</em></span> argument under the circumstances listed in the table below.</p><div class="informaltable"><a name="table_b1dd97fe-d565-4e1b-82fd-da0a532eef17"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Reason</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">CHANGE_OTHER</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">The <span><strong class="command">p_text</strong></span> property changed, probably because of typing.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">CHANGE_CLINE</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">The <span><strong class="command">p_text</strong></span> property changed because selected line in list box changed and the list was visible.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">CHANGE_CLINE_NOTVIS</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">The <span><strong class="command">p_text</strong></span> property changed because a key was pressed which scrolls the list (<span><strong class="keycap">Up</strong></span>, <span><strong class="keycap">Down</strong></span>, <span><strong class="keycap">PgUp</strong></span>, <span><strong class="keycap">PgDn</strong></span>) while the list was invisible.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">CHANGE_CLINE_NOTVIS2</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Same as <span><strong class="command">CHANGE_CLINE_NOTVIS</strong></span>. Sent to user level 2 inheritance only. User level 2 inheritance will receive the <span><strong class="command">CHANGE_CLINE_NOTVIS</strong></span> reason as well if the user level 1 inheritance does not catch the <span><strong class="command">on_change</strong></span> event.</p>
+            </td></tr></tbody></table></div><p class="NormalText">The <span><strong class="command">on_drop_down</strong></span> event is sent to a combo box with a <span class="emphasis"><em>reason</em></span> argument. The <span class="emphasis"><em>reason</em></span> argument specifies one of the conditions listed in the table below. </p><div class="informaltable"><a name="table_424d6d6b-b908-4796-a91e-25e255cbbb6a"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Reason</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">DROP_UP</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">After combo list box is made invisible.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">DROP_DOWN</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Before combo list box is made visible.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">DROP_INIT</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Before retrieve next/previous. Used to initialize list box before it is accessed.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">DROP_UP_SELECTED</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Mouse released while on valid selection in list box and list is visible.</p>
+            </td></tr></tbody></table></div><p class="NormalText">Example:</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1;
+ctlcombo1.on_drop_down(reason)
+{
+    if (reason==DROP_INIT) {
+       if (p_user=="") {
+          p_user=1;   // Indicate that the list box has been filled.
+          // Insert a lot of items.
+          p_cb_list_box._insert_name_list(COMMAND_TYPE);
+          p_cb_list_box._lbsort();
+          p_cb_list_box._lbtop();
+       }
+    }
+}</pre><p class="NormalText">For a complete list of combo box control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_16045"></a>
+      <a name="slick_c_builtincontrols_13082_1032860"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_BB3FA312_D61C"></a>Scroll Bar Controls</h3></div></div></div><p class="NormalText">There are two scroll bar controls that operate similarly: <span><strong class="command">vscroll</strong></span> and <span><strong class="command">hscroll</strong></span> (vertical and horizontal, respectively). The scroll bar controls are used to provide the user an avenue for selecting an integer that has a fixed range or a way for displaying the completion status of a process. Set the min, max, <span><strong class="command">small_change</strong></span>, and <span><strong class="command">large_change</strong></span> properties to define the minimum integer value, maximum integer value, increment/decrement that occurs when arrows are pressed, and increment/decrement that occurs when you click the left button between the arrow and thumb box respectively.</p><p class="NormalText">The <span><strong class="command">on_change</strong></span> event is sent after dragging the thumb box is completed. The <span><strong class="command">p_value</strong></span> property contains the new scroll position and will be in the range <span><strong class="command">p_min..p_max</strong></span>.</p><p class="NormalText">The <span><strong class="command">on_scroll</strong></span> event is sent while you click and drag the thumb box of a scroll bar.</p><p class="NormalText">Example:</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1;
+ctlvscroll1.on_scroll()
+{
+    message("on_scroll p_value="p_value);
+}
+ctlvscroll1.on_change()
+{
+    message("on_change p_value="p_value);
+}</pre><p class="NormalText">For a complete list of scroll bar control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_34853"></a>
+      <a name="slick_c_builtincontrols_13082_1024993"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_E8CE12C8_03D6"></a>Drive List Control</h3></div></div></div><p class="NormalText">The drive list is a combo box that allows selection of different disk drives. The Open dialog box uses this control.</p><p class="NormalText">The drive list control receives an <span><strong class="command">on_change</strong></span> event with a <span class="emphasis"><em>reason</em></span> argument of <span><strong class="command">CHANGE_DRIVE</strong></span> when the drive is changed by selecting a different drive from the combo list box.</p><p class="NormalText">Example:</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1;
+ctlcombo1.on_change(reason)
+{
+    if (reason==CHANGE_DRIVE) {
+       message("Item selected from list. Current drive is now "_dvldrive());
+    }
+}</pre><p class="NormalText">For a complete list of drive list control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_94517"></a>
+      <a name="slick_c_builtincontrols_13082_1025026"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_819A0303_4748"></a>File List Box Control</h3></div></div></div><p class="NormalText">The file list box control displays a list of files. Multiple files can be selected by setting the <span><strong class="command">multi_select</strong></span> property to <span><strong class="command">MS_SIMPLE_LIST</strong></span> or <span><strong class="command">MS_EXTENDED</strong></span> used by Open dialog box. A file list box receives an <span><strong class="command">on_change</strong></span> event with a <span class="emphasis"><em>reason</em></span> argument under the circumstances listed in the table below.</p><div class="informaltable"><a name="table_5b96ac55-c08a-4e22-8119-92fdb23661ca"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Reason</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">CHANGE_SELECTED</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Occurs when items are selected or cleared because of a key press or mouse event. None of the <span><strong class="command">_lb???</strong></span> functions cause an <span><strong class="command">on_change</strong></span> event.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">CHANGE_FILENAME</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">The <span><strong class="command">_filename()</strong></span> function was called which changed the file names listed.</p>
+            </td></tr></tbody></table></div><p class="NormalText">Example:</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1;
+ctlcommand1.lbutton_up()
+{
+    ctllist1._flfilename("*.bat","c:\\");
+}
+ctllist1.on_change(reason)
+{
+    if (reason==CHANGE_FILENAME) {
+       message("File list display directory "_flfilename());
+    }
+}</pre><p class="NormalText">For a complete list of file list box control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_19646"></a>
+      <a name="slick_c_builtincontrols_13082_1025075"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_D0599151_0340"></a>Directory List Box Control</h3></div></div></div><p class="NormalText">The directory list box control displays a list of directories. A file list box receives an <span><strong class="command">on_change</strong></span> event with one of the <span class="emphasis"><em>reason</em></span> arguments listed in the table below.</p><div class="informaltable"><a name="table_5f2d1904-8220-43ca-88a5-530a3ad15fd5"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Reason</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">CHANGE_SELECTED</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Occurs when items are selected or cleared because of a key press or mouse event. None of the<span><strong class="command"></strong></span><span><strong class="command">_lb???</strong></span> functions cause an <span><strong class="command">on_change</strong></span> event.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">CHANGE_PATH</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">The <span><strong class="command">_dlfilename()</strong></span> function was called which changed the file names listed, the left mouse button was double-clicked, or <span><strong class="keycap">Enter</strong></span> was pressed.</p>
+            </td></tr></tbody></table></div><p class="NormalText">The following example requires a form named "form1", a text box named "ctltext1", and a directory list box named "ctllist1":</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1;
+ctllist1.on_change(reason)
+{
+    if (reason==CHANGE_PATH) {
+       // Set the text in the text box to current directory. Changing
+       // directories with the directory list box control changes the
+       // editor's current directory.
+       ctltext1.set_command(_dlpath(),1);
+    }
+}</pre><p class="NormalText">For a complete list of directory list box control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_30494"></a>
+      <a name="slick_c_builtincontrols_13082_1025125"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_A5B22AF1_F967"></a>Picture Box Control</h3></div></div></div><p class="NormalText">The picture box is used to place other controls inside of it, like the frame control. The picture box is capable of displaying bitmaps, displaying bitmap buttons, and all the features of the image control. To display bitmaps and bitmap buttons, use the image control feature described in the topic <span class="bold"><strong><a href="ch14s23.htm#slick_c_builtincontrols_13082_Image_Control">Image Control</a></strong></span>.</p><p class="NormalText">For a complete list of picture box control properties, methods, and events, from the menu item select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_13391"></a>
+      <a name="slick_c_builtincontrols_13082_1025148"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_764CCFAD_AFC0"></a>Gauge Control</h3></div></div></div><p class="NormalText">Gauge control is typically used to indicate the completion status of a process.</p><p class="NormalText">Example: </p><pre class="programlisting">// Create a form with a command button named ctlcancel, and gauge named
+// ctlgauge1. Set the cancel and default properties of the command button
+// to true.
+ 
+#include "slick.sh"
+static boolean gcancel;
+_command test()
+{
+    // Need to tell compiler ctlgauge1 is a control because the 
+    // form1_wid.ctlgauge1 is too ambiguous.
+    _control ctlgauge1;
+ 
+    // Show the form modeless so there is no modal wait.
+    form1_wid=show("form1");
+    // Disable all forms except form1_wid.
+ 
+    disabled_wid_list=_enable_non_modal_forms(0,form1_wid);
+    gcancel=0;
+    for (i=1;i&lt;=100;++i) {
+       // Read mouse, key, and all other events until none are left or until
+       // the variable gcancel becomes true.
+       process_events(gcancel);
+       if (gcancel) {
+          break;
+       }
+       // Do work here. Replace the delay below with the operation you want to do.
+       // The delay makes this example look more real.
+       delay(10);
+ 
+       form1_wid.ctlgauge1.p_value=i;
+    }
+    // Enable all forms that were disabled.
+    _enable_non_modal_forms(1,0,disabled_wid_list);
+    form1_wid._delete_window();
+}
+defeventtab form1;
+ctlcancel.lbutton_up()
+{
+    gcancel=1;
+}</pre><p class="NormalText">For a complete list of gauge control properties, methods, and events, from the main menu, select <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Macro Functions by Category</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_Image_Control"></a>
+      <a name="slick_c_builtincontrols_13082_1028630"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_BF95526A_1E42"></a>Image Control</h3></div></div></div><p class="NormalText">Image control is for creating bitmap buttons or toolbar buttons. The image control performs a subset of the features of the picture box control. </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_builtincontrols_13082_1025371"></a>Adding a Bitmap Command Button or Check Box</h4></div></div></div><p class="NormalText">Perform the steps below to add a bitmap button to a dialog box. The same steps can also be used to add a check box.</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Create a new form for editing. From the main menu, select <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">New</strong></span>.</p></li><li><p class="NormalText">Create an image control. Double-click the <span><strong class="guibutton">Image Control</strong></span> bitmap.</p></li><li><p class="NormalText">Set the <span><strong class="command">p_picture</strong></span> property to <code class="filename">bbfind.bmp</code>. Make sure that you specify the full path (the default path used by the installation program is <code class="filename">c:\vslick\bitmaps</code> on Windows or <code class="filename">/usr/lib/vslick/bitmaps</code> on UNIX). In this step you enter the <code class="filename">bbfind.bmp</code> bitmap as an example.</p></li><li><p class="NormalText">Set the <span><strong class="command">p_command</strong></span> property to <span><strong class="command">gui_find</strong></span>. The <span><strong class="guibutton">Down</strong></span> arrow of the combo box displays all the editor commands.</p></li><li><p class="NormalText">Set the <span><strong class="command">p_message</strong></span> property to <span><strong class="guilabel">Searches for a string you specify</strong></span>.</p></li><li><p class="NormalText">Set the <span><strong class="command">p_style</strong></span> property to <span><strong class="command">PSPIC_FLAT_BUTTON</strong></span> or <span><strong class="command">PSPIC_BUTTON</strong></span>.</p></li></ol></div><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Tip</h3><p class="CellBody"> The <span><strong class="command">bb</strong></span> prefix indicates that this is a bitmap that can be used by a toolbar. You can edit the <code class="filename">bbfind.bmp</code> file with Paintbrush (<code class="filename">pbrush.exe</code>). Use <code class="filename">bbblank.bmp</code> as a template for creating your own bitmap buttons.</p></div><p class="NormalText">
+        <a class="indexterm" name="slick-c_builtincontrols_2FAFABF4_34B9"></a>
+        <a class="indexterm" name="slick-c_builtincontrols_08A29621_7876"></a>The following example illustrates how to load your own picture like a toolbar button:</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1;
+ctlimage1.on_create()
+{
+    index=_update_picture(-1,bitmap_path_search("bbfind.bmp"));
+    if (index&lt;0) {
+       if (index==FILE_NOT_FOUND_RC) {
+          _message_box("Picture bbfind.bmp was not found");
+       } else {
+          _message_box("Error loading picture bbfind.bmp\n\n"get_message(index));
+       }
+          return("");
+    }
+    p_picture=index;
+    p_command="gui_find";
+    p_message="Searches for a string you specify";
+    p_style=PSPIC_FLAT_BUTTON;
+}</pre><p class="NormalText">The following example illustrates how to give the appearance of a button being pushed in. While you can do this by setting styles, here you can see how some other functions accomplish this task. For this example, create a form named "form1" and an image control named "ctlimage1".</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1;
+ctlimage1.on_create()
+{
+    index=_update_picture(-1,bitmap_path_search("bbfind.bmp"));
+    if (index&lt;0) {
+       if (index==FILE_NOT_FOUND_RC) {
+          _message_box("Picture bbfind.bmp was not found");
+       } else {
+          _message_box("Error loading picture bbfind.bmp\n\n"get_message(index));
+       }
+       return("");
+    }
+    p_picture=index;
+    p_command="gui_find";
+    p_message="Searches for a string you specify";
+    p_style=PSPIC_BUTTON;
+}
+ctlimage1.lbutton_down()
+{
+    // Reset the button counter so we don't get double and triple click events.
+    get_event('B');
+    mou_mode(1)
+    mou_capture();
+    done=0;   
+    event=MOUSE_MOVE;
+    for (;;) {
+       switch (event) {
+       case MOUSE_MOVE:
+          mx=mou_last_x("m"); // "m" specifies mouse position in current scale mode
+          my=mou_last_y("m");
+ 
+          if (mx&gt;=0 &amp;&amp; my&gt;=0 &amp;&amp; mx&lt;p_width &amp;&amp; my&lt;p_height) {
+             if (!p_value) {
+                p_value=1;    // Show the button pushed in.
+             }
+          } else {
+             if (p_value) {
+                p_value=0;    // Show the button up.
+             }
+          }
+          break;
+       case LBUTTON_UP:
+       case ESC:
+          p_value=0;  // Restore the button state.
+          done=1;
+       }
+       if (done) break;
+       event=get_event();
+    }
+    mou_mode(0);
+    mou_release();
+    say('out');
+    return("");
+}</pre></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_builtincontrols_13082_43872"></a>
+      <a name="slick_c_builtincontrols_13082_1025473"></a>
+      <a class="indexterm" name="slick-c_builtincontrols_C773EFDA_3914"></a>Adding Dialog Box Retrieval</h3></div></div></div><p class="NormalText">Dialog box retrieval enables previous responses for check boxes, radio buttons, spin boxes, text boxes, and combo boxes to be retrieved. Press <span><strong class="keycap">F7</strong></span> to retrieve the previous response, and <span><strong class="keycap">F8</strong></span> to retrieve the next response. For example, the Insert Literal dialog box contains a spin box that is used to enter the character code of the character to insert. If you use it to enter a Hex value of <span><strong class="command">0xAE</strong></span> (to insert a registered trademark symbol), then later use it to enter a Hex value of <span><strong class="command">0x99</strong></span> (to insert an unregistered trademark symbol), the next time you use the dialog you can press <span><strong class="keycap">F7</strong></span> to retrieve the previous entry of <span><strong class="command">0xAE</strong></span>, and then <span><strong class="keycap">F8</strong></span> to retrieve the next entry of <span><strong class="command">0x99</strong></span>.</p><p class="NormalText">The responses to dialog boxes are saved for the next session when you exit the editor and auto-restore is enabled.</p><p class="NormalText">The example below illustrates how to add dialog box retrieval to your own dialog boxes. Create a form named "form1", a text box (any name), a check box (any name), and a command button named "ok".</p><pre class="programlisting">#include "slick.sh"
+defeventtab form1;
+ctlok.on_create()
+{
+    // Retrieve the previous response to this dialog box.
+    _retrieve_prev_form();
+}
+ctlok.lbutton_up()
+{
+    _save_form_response();
+    p_active_form._delete_window(1);
+}</pre><p class="NormalText"></p></div></div></body></html>

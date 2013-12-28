@@ -1,0 +1,68 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsResetIdle</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsResetIdle(int reserved=-)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Resets SlickEdit's idle time count to 0.  If an OEM does not call
+this function, SlickEdit will not be able to track idle time.  This
+will effect autosave and background tagging as well as any macro
+which calls the <b>vsQIdle</b>() function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">(Windows)
+<pre>
+static HHOOK ghook;
+static LRESULT CALLBACK GetMsgProc(
+    int code,    // hook code
+    WPARAM wparam,   // removal flag
+    LPARAM lparam    // address of structure with message
+   )
+{
+   if (wparam==PM_REMOVE) {
+      MSG *pmsg;
+      pmsg=(MSG *)lparam;
+      UINT message;
+      message=pmsg->message;
+      if ((message>=WM_KEYFIRST && message&lt;=WM_KEYLAST) ||
+          (message>=WM_MOUSEFIRST && message&lt;=WM_MOUSELASTX)
+          ) {
+         if (message==WM_MOUSEMOVE) {
+            static int old_mx= -1000,old_my=-1000;
+
+            int mx,my;
+            mx=(short)LOWORD(lparam);my=(short)HIWORD(lparam);
+            // IF the mouse did not move
+            if (mx!=old_mx || my!=old_my) {
+               old_mx=mx;old_my=my;
+               vsResetIdle();
+            }
+         } else {
+            vsResetIdle();
+         }
+      }
+   }
+   return(CallNextHookEx(ghook,code,wparam,lparam));
+}
+int PASCAL WinMain( ...)
+{
+
+   // Here we hook GetMessage so that we can accurately update
+   // SlickEdits Idle time for AutoSave save and background
+   // tagging.
+
+   // You may not have to unhook this hook function because
+   // it automatically gets unhooked when the process
+   // terminates.
+
+   ghook=SetWindowsHookEx(
+        WH_GETMESSAGE,   // type of hook to install
+        (HOOKPROC)GetMsgProc,    // address of hook procedure
+        hinstance,   // handle of application instance
+        GetCurrentThreadId()     // identity of thread to install hook for
+   );
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsQIdle.html">vsQIdle</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsSelectLine</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsSelectLine(int wid, int markid=-, int SelectFlags=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Starts or extends the character selection specified.  Used for
+processing lines of text.  The first <b>vsSelectLine</b> becomes the
+pivot point.  Subsequent <b>vsSelectLine</b> calls will extend the
+selection between the pivot point and the cursor.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="markid">markid</A></code> - <i>mark_id</i> is a selection handle
+allocated by <b>vsAllocSelection</b> or
+<b>vsDuplicateSelection</b>.  A
+<i>mark_id</i> of -1 specifies the active
+selection or selection showing and is always
+allocated.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="SelectFlags">SelectFlags</A></code> - Zero or more of the following flags Ored
+together:
+
+<dl>
+<dt>VSSELECT_BEGINEND</dt><dd>
+ Specifies that selecting an area of text requires
+<b>_select_char</b> be executed to select the end
+of the text area as well as the beginning.  If
+VSSELECT_CURSOREXTENDS is not specified,
+this select style is used.</dd>
+
+<dt>VSSELECT_CURSOREXTENDS</dt><dd>
+ Specifies that the selection extend as the cursor
+moves.</dd>
+
+<dt>VSSELECT_INCLUSIVE</dt><dd>
+ Specifies an inclusive selection.  Currently only
+character selections are affected by this option.</dd>
+
+<dt>VSSELECT_NONINCLUSIVE</dt><dd>
+ Specifies a non-inclusive selection.  Currently only
+character selections are affected by this option.  If
+the 'I' letter is not specified, the character selection
+will be non-inclusive selection.</dd>
+
+<dt>VSSELECT_PERSISTENT</dt><dd>
+ A value of 'P' specifies a persistent select style and
+may be specified in addition to the other options
+above.  Macros use this to help determine if a
+selection should be unhighlighted when the cursor
+moves.</dd>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Possible returns are
+TEXT_NOT_SELECT_RC.  and
+TEXT_ALREADY_SELECTED_RC.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="Selection_Functions.html">Selection Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsSelectChar.html">vsSelectChar</a>, <a href="vsSelectLine.html">vsSelectLine</a></blockquote>
+</body>
+</html>

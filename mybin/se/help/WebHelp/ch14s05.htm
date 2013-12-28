@@ -1,0 +1,374 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Types</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s04.htm" title="Language Constructs"><link rel="next" href="ch14s06.htm" title="Mathematical Operators"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_types_11595_73079"></a>
+    <a name="slick_c_types_11595_1001934"></a>Types</h2></div></div></div><p class="NormalText">Slick-C® types are similar to the types in C. The following types are available in Slick-C:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s05.htm#slick_c_types_11595_11509">Strings</a> - Slick-C has a built-in string type <span><strong class="command">_str</strong></span>.</p></li><li><p class="NormalText">
+        <a href="ch14s05.htm#slick_c_types_11595_27970">Enumerated Types</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s05.htm#slick_c_types_11595_51059">Arrays</a> - Array types are declared like C arrays, but cannot have a size limit. Array elements are always dynamically allocated.</p></li><li><p class="NormalText">
+        <a href="ch14s05.htm#slick_c_types_11595_75000">Hash Tables</a> - Slick-C provides a <span><strong class="command">:[]</strong></span> hash table operator which is similar to the array operator <span><strong class="command">[]</strong></span>, except that hash tables are indexed with a string type.</p></li><li><p class="NormalText">
+        <a href="ch14s05.htm#slick_c_types_11595_53284">Structs</a> and <a href="ch14s05.htm#slick_c_types_11595_33629">Unions</a> - Slick-C supports C-style structs and unions. Static structure members are not supported.</p></li><li><p class="NormalText">
+        <a href="ch14s05.htm#slick_c_types_11595_65301">Interfaces</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s05.htm#slick_c_types_11595_73111">Classes</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s05.htm#slick_c_types_11595_62794">Pointers</a> - Slick-C provides pointer and reference types in the same manner as in the C language.</p></li><li><p class="NormalText">
+        <a href="ch14s05.htm#slick_c_types_11595_86668">Typeless </a> - Typeless variables are declared using the <span><strong class="command">typeless</strong></span> type. A typeless variable can be assigned to or from any type, including structs, arrays, and hash tables.</p></li><li><p class="NormalText">
+        <span class="bold"><strong>Numeric types</strong></span> - The numeric types are <span><strong class="command">int</strong></span>, <span><strong class="command">long</strong></span>, and <span><strong class="command">double</strong></span>. All numeric types are signed. Slick-C does not support <span><strong class="command">char</strong></span>, <span><strong class="command">short</strong></span>, or <span><strong class="command">float</strong></span> types.</p></li><li><p class="NormalText">
+        <span class="bold"><strong>Boolean type</strong></span> - The built-in Slick-C Boolean type is <span><strong class="command">boolean</strong></span>.</p></li><li><p class="NormalText">
+        <span class="bold"><strong>Void type</strong></span> - <span><strong class="command">void</strong></span> is only permitted as the return type of a function.</p></li><li><p class="NormalText">
+        <span class="bold"><strong>Typedefs</strong></span> - Slick-C supports C-style <span><strong class="command">typedef</strong></span> type declaration statements.</p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_types_11595_11509"></a>
+      <a name="slick_c_types_11595_1026580"></a>
+      <a class="indexterm" name="slick-c_types_FFAD62E5_8B0F"></a>Strings</h3></div></div></div><p class="NormalText">String variables are declared using the <span><strong class="command">_str</strong></span> type. You can get the length of the string using the <span><strong class="command">length</strong></span> built-in.</p><p class="NormalText">Slick-C® has additional string operators so that the compiler always knows whether to perform a string or numeric operation. The <span><strong class="command">+</strong></span> operator always means add two numbers, and the concatenation operator <span><strong class="command">:+</strong></span> always means concatenate two strings.</p><p class="NormalText">See also <a href="ch14s05.htm#slick_c_types_11595_79988">Implicit Conversion to Strings</a>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_types_11595_27970"></a>
+      <a name="slick_c_types_11595_1026585"></a>Enumerated Types</h3></div></div></div><p class="NormalText">Slick-C® enumerated types are very much like C enumerated types, with the exception of having relaxed type checking with respect to arithmetic and bit operations.</p><pre class="programlisting">    enum BasicOptions {
+        OPTION1=1, 
+        OPTION2, 
+        OPTION3,
+     };</pre><p class="NormalText">In addition, Slick-C enumerated types introduce enumerated type flags, a convenient way to create a set of bit flags.</p><pre class="programlisting">    enum_flags OptionFlags {
+        FLAG1=0x4,
+        FLAG2, // 0x8
+        FLAG3, // 0x10
+        FLAGS_ALL=FLAG1|FLAG2|FLAG3
+    };</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_types_11595_51059"></a>
+      <a name="slick_c_types_11595_1001945"></a>
+      <a class="indexterm" name="slick-c_types_99584_17486"></a>
+      Arrays
+    </h3></div></div></div><p class="NormalText">Array types are declared like C arrays, but cannot have a size limit. Array elements are always dynamically allocated.</p><p class="NormalText">Use array variables to keep a list of items. To define an array variable, use the following syntax:</p><pre class="programlisting"><span><strong class="command">
+    [static] TypeName variable1[][={e1 ,e2 , ...}] , variable2[][={e1 ,e2 , ...}] ...;
+    </strong></span></pre><p class="NormalText">The first element of an array starts at 0. Use more than one set of brackets (<span><strong class="command">[]</strong></span>) for multi-dimensional arrays. Do not define the maximum number of elements in the array, because array elements are allocated when you access them. The maximum number of elements that can be placed in an array is approximately 2 billion. <a class="indexterm" name="slick-c_types_77718188_BDE4"></a>Use the <span><strong class="command">_length()</strong></span> method to determine the number of elements in an array. The syntax for using this method is <span><strong class="command">variable._length()</strong></span>.</p><p class="NormalText">
+      <a class="indexterm" name="slick-c_types_A26987E0_885F"></a>To empty an array, use the following statements:</p><pre class="programlisting">    array._makeempty();        // Empty the array.
+    array=null;                // Empty the array. Same as above.</pre><p class="NormalText">You can delete and insert items into an array using the <span><strong class="command">_deleteel()</strong></span> and <span><strong class="command">_insertel()</strong></span> built-in methods, respectively.</p><p class="NormalText">A Slick-C® class instance can be indexed using array syntax provided that the class implements the <span><strong class="command"><a class="indexterm" name="slick-c_types_AD5DB828_E366"></a>sc.lang.IIndexable</strong></span> interface. This is similar to overloading operator <span><strong class="command">[]</strong></span> in C++.</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_types_11595_1001962"></a>Differences from C++</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Space for array elements is allocated when you index into the array.</p></li><li><p class="NormalText">You cannot use pointer variables to traverse array elements.</p></li><li><p class="NormalText">You cannot limit the number of elements that the array may contain.</p></li><li><p class="NormalText">Specifying an array variable WITHOUT the <span><strong class="command">[]</strong></span> operator does not return a pointer to the first element. Instead, it refers to the entire array. This allows you to copy one array to another, or define a function which returns a copy of an array.</p></li><li><p class="NormalText">There is no <span><strong class="command">sizeof</strong></span> function which tells you the size of the array in bytes. There is a <span><strong class="command">_length</strong></span> method which tells you the number of elements in the array.</p></li><li><p class="NormalText">Array initializers are not supported for local variables.</p></li></ul></div><p class="NormalText">Example:</p><pre class="programlisting">int gai[]={1, 7, 12};
+int gaai[][]={{1},{1,2},{1,2,3}}; // Two dimensional array.
+_str    gastring1[]={"Value1", "Value2"};
+typeless   gat[]={"String", 1, 2.4};
+ 
+defmain()
+{
+    t=gai;              // Copy all the array elements into a local container
+                        // variable.
+    t[t._length()]=45;  // Add another array element.
+    for (i=0;i&lt;t._length();++i ) {
+       messageNwait("t["i"]="t[i]);
+    }
+}</pre></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_types_11595_75000"></a>
+      <a name="slick_c_types_11595_1001985"></a>
+      <a class="indexterm" name="slick-c_types_CF8EAADB_E612"></a>Hash Tables</h3></div></div></div><p class="NormalText">
+      Hash tables are declared similar to array types and 
+      indexed with a string <span><strong class="command">:[]</strong></span> operator.
+      Use the following syntax to define a hash table variable:
+    </p><pre class="programlisting"><span><strong class="command">
+      [static] TypeName variable1:[] [= {s1=&gt;e1, s2=&gt;e2, ...}], 
+                        variable2:[] [= {s1=&gt;e1, s2=&gt;e2, ...}] ...; 
+    </strong></span></pre><p class="NormalText">
+      You can delete an item from a hash table using <span><strong class="command">_deleteel()</strong></span>. 
+      Hash table initializers are not supported for local variables.
+    </p><p class="NormalText">
+      Hash tables support indexing by class objects.
+      The class must implement the <span><strong class="command">getHashKey()</strong></span> member of
+      the <span><strong class="command">IHashable</strong></span> interface.
+      For example:
+    </p><pre class="programlisting"><span><strong class="command">
+      #include "slick.sh"
+      #import "stdprocs.e"
+      #import "sc/lang/IHashable.e"
+
+      class FileName : sc.lang.IHashable {
+         private _str m_file;
+         _str getHashKey() {
+            return m_file;
+         }
+         _str getExtension() {
+            return get_extension(m_file);
+         }
+         _str getPath() {
+            return strip_filename(m_file,'N');
+         }
+         _str getFileName() {
+            return strip_filename(m_file,'P');
+         }
+         void makeAbsolute(_str toDir=null) {
+            m_file = absolute(m_file, toDir);
+         }
+         _str getRelative(_str toDir) {
+            return relative(m_file,toDir);
+         }
+         FileName(_str fname=null) {
+            m_file = fname;
+         }
+         _str get() {
+            return m_file;
+         }
+         void set(_str fname) {
+            m_file = fname;
+         }
+      };
+
+      defmain() {   
+        boolean ht:[];
+        FileName a("C:\\temp\\test.txt");
+        FileName b("C:\\Program Files\\");
+        FileName c("F:\\Public\\xkcd108.jpg");
+        ht:[a] = true;
+        ht:[b] = false;
+        ht:[c] = true;
+        FileName i;
+        foreach ( i =&gt; auto v in ht ) {
+          _assert(i instanceof FileName);
+          say("i="i.getHashKey()" v="v);
+        }
+      }
+    </strong></span></pre><p class="NormalText">
+    </p><p class="NormalText">
+      A Slick-C® class instance can be indexed using hash table syntax 
+      provided that the class implements the <span><strong class="command">_hash_el(_str key)</strong></span> 
+      function of the
+      <span><strong class="command">
+         <a class="indexterm" name="slick-c_types_51E70071_8996"></a>sc.lang.IHashIndexable
+      </strong></span> 
+      interface.
+      This is somewhat similar to overloading operator <span><strong class="command">[]</strong></span> in C++.
+      See <a href="ch14s05.htm#slick_c_types_11595_67991">Overloading Array Index Operators</a> for an example 
+      of using <span><strong class="command">IHashIndexable</strong></span>.
+    </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_types_11595_53284"></a>
+      <a name="slick_c_types_11595_1001992"></a>
+      <a class="indexterm" name="slick-c_types_12444ED0_646A"></a>Structs</h3></div></div></div><p class="NormalText">Structures (structs) are typically used to logically group data. For example, a record in a database might have a name, address, and phone number. This can be logically grouped into a ContactInfo structure which is more convenient to use than accessing the fields individually. Structures can also have the added effect of reducing the number of global variables.</p><p class="NormalText">Slick-C® supports C-style structs. Slick-C structs cannot have member functions. </p><p class="NormalText">For consistency, we recommend that structs use initial caps (camel case) identifiers.Use the following syntax for defining a struct:</p><pre class="programlisting"><span><strong class="command">
+    [static] struct StructName {
+    member-variable-decl1;
+    member-variable-decl2;
+    } ([variable1[={e1,e2, ...}] , variable2[={e1,e2, ...}], ...];)
+    </strong></span></pre><p class="NormalText">The <span><strong class="command">struct</strong></span> declaration provides the option of defining your own type called <span class="emphasis"><em>StructName</em></span> and to declare one or more variables. The syntax of <span class="emphasis"><em>member-variable-decls</em></span> is identical to declaring other variables, except that static structure members are not supported. Use the following syntax for accessing a member of a struct variable: </p><pre class="programlisting"><span><strong class="command">
+    variable.member_name
+    </strong></span></pre><p class="NormalText">Example:</p><pre class="programlisting">struct PHONERECORD {    // Define a type called PHONERECORD.
+    _str Name;
+    _str PhoneNumber;
+} gPhoneRecord;         // Declare a variable of that type.
+ 
+PHONERECORD gPR={       // Declare a variable of type PHONERECORD.
+    "Steve","555-1346"
+};
+PHONERECORD gRecordArray[];    // See arrays below.
+struct PHONERECORD2 {          // Define a type called PHONERECORD2.
+    _str Name;
+    _str PhoneNumber;
+    _str FaxNumber;
+};
+ 
+defmain()
+{
+    messageNwait("Name="gPR.Name" PhoneNumber="gPR.PhoneNumber);
+    typeless t = gPR;   // Copy phone record data into a local container variable.
+                        // Container variables can access structure elements 
+                        // as an array.
+    messageNwait("Name="t[0]" PhoneNumber="t[1]);
+}</pre><p class="NormalText">Slick-C structs support designated initializers:</p><pre class="programlisting">struct PhoneRecord {
+   _str name;
+   _str phoneNumber;
+};</pre><pre class="programlisting"></pre><pre class="programlisting">PhoneRecord shouldHaveKnown = { 
+   .phoneNumber = "867-5309", 
+   .name="Jenny" 
+};</pre><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_types_11595_1002030"></a>Differences from C++</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">There is no <span><strong class="command">sizeof</strong></span> operator like in C++. Since the Slick-C® interpreter stores all types as container variables, the <span><strong class="command">sizeof</strong></span> operator has no meaning.</p></li><li><p class="NormalText">Space for structure elements is allocated when you access the element.</p></li><li><p class="NormalText">Structure data is not contiguous. The Slick-C interpreter stores all types as container variables, including the members of a struct.</p></li></ul></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_types_11595_33629"></a>
+      <a name="slick_c_types_11595_1002035"></a>
+      <a class="indexterm" name="slick-c_types_40392F76_536E"></a>Unions</h3></div></div></div><p class="NormalText">Slick-C® supports C-style unions. Unions are typically used in place of a struct in the case where you have mutually exclusive member variables. In this case, a union requires less memory than a struct. Memory is only allocated for one member variable at a time. The syntax for defining a union is shown in the following example:</p><pre class="programlisting"><span><strong class="command">
+    [static] union [UnionName ] {
+    member-variable-decl1;
+    member-variable-decl2;
+    } [variable1[={e1}] , variable2[={e1}], ...];
+    </strong></span></pre><p class="NormalText">The <span><strong class="command">union</strong></span> declaration provides the option to define your own type named <span class="emphasis"><em>UnionName</em></span> and to declare one or more variables. The syntax of <span class="emphasis"><em>member-variable-decls</em></span> is identical to declaring other variables, except that static union members are not supported. The syntax for accessing a member union variable is <span class="emphasis"><em>variable.member_name</em></span>. </p><p class="NormalText">Example:</p><pre class="programlisting">union {
+    int i;
+    _str s;
+    double d;
+} gu={1};    // Type checking here is with first member variable.
+ 
+#define KIND_INT 1
+#define KIND_STRING 2
+#define KIND_DOUBLE 3
+defmain()
+{
+    struct {
+       int kind;
+       // Here we are nesting a union inside a struct.
+       // This union only requires space for one of these members at a time.
+       union {
+          int i;
+          _str s;
+          double d;
+       }u;
+    } x;
+ 
+    x.kind=KIND_INT;x.u.i=1;
+...
+    switch (x.kind) {
+    case KIND_INT:
+       messageNwait("x.u.i="x.u.i);
+       break;
+    case KIND_STRING:
+       messageNwait("x.u.s="x.u.s);
+       break;
+    case KIND_DOUBLE:
+       messageNwait("x.u.d="x.u.d);
+       break;
+    }
+}</pre><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_types_11595_1002087"></a>
+        <a class="indexterm" name="slick-c_types_941892BF_C76E"></a>Anonymous Unions</h4></div></div></div><p class="NormalText">An anonymous union is a union member variable that is not named. This saves you from having to type the union member variable name. </p><p class="NormalText">Example: </p><pre class="programlisting">defmain()
+{
+    struct {
+       int kind;
+       union {
+          int i;
+          _str s;
+          double d; 
+      };// No name for this union member variable.
+    } x;
+    x.kind=KIND_INT; x.i=1;
+}</pre></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_types_11595_65301"></a>
+      <a name="slick_c_types_11595_1026601"></a>Interfaces</h3></div></div></div><p class="NormalText">Interfaces use Java-like syntax. They do not allow constructors, destructors, 
+      or member variables; only prototypes. Interfaces can inherit from other interfaces. All the 
+      prototypes in an interface are implicitly public.</p><p class="NormalText">Example:</p><pre class="programlisting">    interface ICommunicationDevice {
+        void talk();
+        void hangup();
+    };</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_types_11595_73111"></a>
+      <a name="slick_c_types_11595_1026603"></a>Classes</h3></div></div></div><p class="NormalText">Classes use a Java-like syntax. For example:</p><pre class="programlisting">class Phone : ICommunicationDevice {
+ 
+   protected typeless m_dialer = null;
+   private typeless m_line = null;
+   private static typeless s_operator = null;
+ 
+   Phone(_str number="") {
+   }
+   ~Phone() { }
+   void talk() {
+   }
+   void hangup() {
+   }
+   static void getOperator() {
+   }
+};</pre><p class="NormalText">For consistency, Slick-C® class names should be in camel case. Member variables within classes should start with "m_".  Static member variables should start with "s_".  Finally, methods should be lowercase. If a method name contains multiple words, the trailing words should be camel case. </p><p class="NormalText">A few notes about Slick-C classes:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">A class can extend or inherit from only one other class.</p></li><li><p class="NormalText">A class can implement multiple interfaces.</p></li><li><p class="NormalText">Use the <span><strong class="command">instanceof</strong></span> operator to test if a class instance derives from a specific class or interface.</p></li><li><p class="NormalText">Member variables can have constant initializer expressions.</p></li><li><p class="NormalText">All member variables must be initialized, either using initializers or in the class constructor.</p></li><li><p class="NormalText">All member variables must be declared before the constructor.</p></li><li><p class="NormalText">There are no <span><strong class="command">extends</strong></span> or <span><strong class="command">implements</strong></span> keywords.</p></li><li><p class="NormalText">Classes are not allowed to derive from <span><strong class="command">struct</strong></span> types.</p></li><li><p class="NormalText">The default access level is public. There is a <span><strong class="command">public</strong></span> keyword, but it essentially does nothing.</p></li><li><p class="NormalText">Class members support <span><strong class="command">protected</strong></span> and <span><strong class="command">private</strong></span>.</p></li><li><p class="NormalText">There is no concept of a package scope like there is in Java.</p></li><li><p class="NormalText">Member functions are virtual by default, except for <span><strong class="command">static</strong></span> member functions.</p></li><li><p class="NormalText">
+          <span><strong class="command">static</strong></span> member variables may have initializers.</p></li><li><p class="NormalText">
+          <span><strong class="command">extern</strong></span> member function prototypes are implemented in a DLL.</p></li><li><p class="NormalText">A class is allowed one and only one constructor.</p></li><li><p class="NormalText">If a class constructor takes arguments, they must have defaults.</p></li><li><p class="NormalText">No explicit calls to <span><strong class="command">new</strong></span> or <span><strong class="command">delete</strong></span> (no <span><strong class="command">new</strong></span> or <span><strong class="command">delete</strong></span> keywords).</p></li><li><p class="NormalText">No function overloading.</p></li><li><p class="NormalText">No operator overloading.</p></li><li><p class="NormalText">No friend relationships.</p></li><li><p class="NormalText">No templates or generics.</p></li><li><p class="NormalText">No final and no <span><strong class="command">const</strong></span>.</p></li><li><p class="NormalText">No C#-style properties or delegates.</p></li><li><p class="NormalText">No default root "object" class.</p></li><li><p class="NormalText">No static constructors.</p></li></ul></div><p class="NormalText">The life-span of a Slick-C class instance is identical to that of a similar Slick-C struct. There are no <span><strong class="command">new</strong></span> or <span><strong class="command">delete</strong></span> operators.</p><pre class="programlisting">    // Construct an instance of a class, like C++.
+    C1 a;
+    C1 b;
+ 
+    // Assign a class instance to another (deep copy).
+    a = b;
+ 
+    // An array of class instances. Constructor not called here.
+    C1 array[];    
+    // Constructor called with no args followed by deep copy.
+    array[1] = a;</pre><p class="NormalText">See the following topics in this section for more information:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a href="ch14s05.htm#slick_c_types_11595_51090">Introspection</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s05.htm#slick_c_types_11595_79988">Implicit Conversion to Strings</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s05.htm#slick_c_types_11595_55250">Overloading Comparison and Assignment Operators</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s05.htm#slick_c_types_11595_67991">Overloading Array Index Operators</a>
+        </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_types_11595_51090"></a>
+        <a name="slick_c_types_11595_1029774"></a>Introspection</h4></div></div></div><p class="NormalText">Slick-C® supports introspection of <span><strong class="command">struct</strong></span> and <span><strong class="command">class</strong></span> instances through the built-in functions shown below. In each of the functions, "index" can be either an integer index or a string containing the field or method name.</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="command">v._callmethod(index)</strong></span> - Call a class method.</p></li><li><p class="NormalText">
+            <span><strong class="command">v._construct()</strong></span> - Construct an instance of a class.</p></li><li><p class="NormalText">
+            <span><strong class="command">v._fieldindex(name)</strong></span> - Find the position of a class field.</p></li><li><p class="NormalText">
+            <span><strong class="command">v._fieldname(i)</strong></span> - Get the name of a class field.</p></li><li><p class="NormalText">
+            <span><strong class="command">v._findmethod(name)</strong></span> - Find a class method.</p></li><li><p class="NormalText">
+            <span><strong class="command">v._getfield(index)</strong></span> - Get a reference to a class field.</p></li><li><p class="NormalText">
+            <span><strong class="command">v._instanceof(name)</strong></span> - Return true if variable is instance of or derives from the given class.</p></li><li><p class="NormalText">
+            <span><strong class="command">v._length</strong></span> - Return the number of fields in a class.</p></li><li><p class="NormalText">
+            <span><strong class="command">v._setfield(index,value)</strong></span> - Modify a class field.</p></li><li><p class="NormalText">
+            <span><strong class="command">v._typename()</strong></span> - Return the name of variables type.</p></li></ul></div><p class="NormalText">The C++ API for Slick-C includes the following functions:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <span><strong class="command">vsHvarTypename(hvar)</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="command">    vsHvarFieldIndex(hvar,name)</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="command">    vsHvarFieldName(hvar,i)</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="command">    vsHvarGetField(hvar,index)</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="command">    vsHvarGetFieldByName(hvar,name)</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="command">    vsHvarSetField(hvar,index,value)</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="command">    vsHvarSetFieldByName(hvar,name,value)</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="command">    vsHvarFindMethod(hvar,name)</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="command">    vsHvarCallMethod(hvar,index,args)</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="command">    vsHvarCallMethodByName(hvar,name,args)</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="command">    vsHvarInstanceOf(hvar,name)</strong></span>
+          </p></li><li><p class="NormalText">
+            <span><strong class="command">    vsHvarConstruct(name,args)</strong></span>
+          </p></li></ul></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_types_11595_79988"></a>
+        <a name="slick_c_types_11595_1026632"></a>Implicit Conversion to Strings</h4></div></div></div><p class="NormalText">Slick-C provides the interface <span><strong class="command">IToString</strong></span> for implicit string conversion (see <a href="ch14s05.htm#slick_c_types_11595_11509">Strings</a>). If a class implements <span><strong class="command"><a class="indexterm" name="slick-c_types_59E597AB_0E3F"></a>sc.lang.IToString</strong></span>, then an instance of that class can be implicitly converted to a string, without explicitly  calling the <span><strong class="command">toString()</strong></span> method.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_types_11595_55250"></a>
+        <a name="slick_c_types_11595_1026625"></a>Overloading Comparison and Assignment Operators</h4></div></div></div><p class="NormalText">By default, Slick-C® class instances are compared using a deep member-wise equality test. To override the default comparison methods for a class, Slick-C provides the interfaces <span><strong class="command">sc.lang.IEquals</strong></span> and <span><strong class="command">sc.lang.IComparable</strong></span>. If a class implements <span><strong class="command">sc.lang.IEquals</strong></span>, an instance of that class can be compared to another instance using operator <span><strong class="command">==</strong></span> or operator <span><strong class="command">!= </strong></span>as defined by the <span><strong class="command">equals()</strong></span> method. If a class implements <span><strong class="command">sc.lang.IComparable</strong></span>, then instances of the class can be compared using the standard comparison operators, as defined by the <span><strong class="command">compare()</strong></span> method. If a class implements <span><strong class="command">IComparable</strong></span>, it does not have to implement <span><strong class="command">IEquals</strong></span> to support equality and inequality tests.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_types_11595_67991"></a>
+        <a name="slick_c_types_11595_1026643"></a>Overloading Array Index Operators</h4></div></div></div><p class="NormalText">Slick-C® supports the overloading of the <span><strong class="command">[]</strong></span> and <span><strong class="command">:[]</strong></span> operators. For more information, see <a href="ch14s05.htm#slick_c_types_11595_75000">Hash Tables</a>.</p><p class="NormalText">Below is an example of <span><strong class="command">IIndexable</strong></span>:</p><pre class="programlisting">#import "sc/lang/IIndexable.e"
+ 
+class PerfectSquares : sc.lang.IIndexable {
+   typeless _array_el(int i) {
+      return i*i;
+   }
+};
+ 
+defmain()
+{
+   PerfectSquares ps;
+   say("defmain: 3^2="ps[3]);
+   say("defmain: 16^2="ps[16]);
+}</pre><p class="NormalText">Below is an example of <span><strong class="command">IHashIndexable</strong></span>:</p><pre class="programlisting">class PhoneBook : sc.lang.IHashIndexable {
+   _str m_numbers:[];
+   void loadNumbers() {
+      m_numbers:["Brittany"] = "555-3825";
+      m_numbers:["Vanessa"] = "555-1024";
+   }
+   typeless _hash_el(_str name) {
+      return m_numbers:[name];
+   }
+};
+defmain()
+{
+   PhoneBook pb;
+   pb.loadNumbers();
+   say("defmain:  Brittany's number is " pb:["Brittany"]);
+   say("defmain:  Vanessa's number is " pb:["Vanessa"]);
+} </pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_types_11595_1030335"></a>Overloading Assignment/Copy Semantics</h4></div></div></div><p class="NormalText">By default, Slick-C® class instances are copied using a deep, member-wise copy. To override this behavior, a class can implement the <span><strong class="command">sc.lang.IAssignTo</strong></span> interface and implement a custom <span><strong class="command">copy()</strong></span> method.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_types_11595_1030339"></a>Overloading Iteration Semantics</h4></div></div></div><p class="NormalText">A Slick-C® class can be customized to work seamlessly in a <span><strong class="command">foreach</strong></span> loop by implementing the <span><strong class="command">sc.lang.IIterable</strong></span> interface. The <span><strong class="command">sc.lang.Range</strong></span> class, which is included in the Slick-C class library, is an excellent example of how to implement and use <span><strong class="command">IIterable</strong></span>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_types_11595_1030343"></a>SlickEdit® Class Libraries</h4></div></div></div><p class="NormalText">SlickEdit ships with a small but growing core of Slick-C® classes and interfaces to build upon. There are two top-level namespaces: <span><strong class="command">sc</strong></span> (Slick-C) and <span><strong class="command">se</strong></span> (SlickEdit). The <span><strong class="command">sc</strong></span> namespace encompasses general purpose classes that support programming in Slick-C and are application-independent. It can be compared to <span><strong class="command">java.lang</strong></span> and <span><strong class="command">java.util</strong></span> in Java, the <span><strong class="command">System</strong></span> namespace in C#, or the <span><strong class="command">std</strong></span> namespace in C++ with respect to its purpose (not feature-by-feature). The <span><strong class="command">se</strong></span> namespace includes the foundations and implementations of select features of the SlickEdit editor. Not all SlickEdit features use Slick-C classes.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_types_11595_1030347"></a>Differences from C++ and Java</h4></div></div></div><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Slick-C® uses per-member access specifiers like Java rather than the grouping syntax employed by C++.</p></li><li><p class="NormalText">Slick-C supports destructors, just like C++ (Java does not have destructors).</p></li><li><p class="NormalText">Slick-C has no <span><strong class="command">new</strong></span> or <span><strong class="command">delete</strong></span>.</p></li><li><p class="NormalText">Slick-C does not support overloaded methods or <span><strong class="command">const</strong></span> methods.</p></li><li><p class="NormalText">Like C++, Slick-C class instances are passed by value, unless you specifically pass them by pointer or reference.</p></li><li><p class="NormalText">Like Java, <span><strong class="command">this</strong></span> is a reference to the current class instance, not a pointer as it is in C++.</p></li></ul></div><p class="NormalText">Additionally:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">No function overloading.</p></li><li><p class="NormalText">No operator overloading.</p></li><li><p class="NormalText">No friend relationships.</p></li><li><p class="NormalText">No templates or generics.</p></li><li><p class="NormalText">No final and no <span><strong class="command">const</strong></span>.</p></li><li><p class="NormalText">No C#-style properties or delegates.</p></li><li><p class="NormalText">No default root "object" class.</p></li><li><p class="NormalText">No static constructors.</p></li></ul></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_types_11595_62794"></a>
+      <a name="slick_c_types_11595_1026218"></a>
+      <a class="indexterm" name="slick-c_types_8D5558FE_37A7"></a>Pointers</h3></div></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_types_11595_1029745"></a>
+        <a class="indexterm" name="slick-c_types_3FB4AD10_4001"></a>Pointers to Variables</h4></div></div></div><p class="NormalText">Pointer variables are declared using the following syntax:</p><pre class="programlisting"><span><strong class="command">
+    [static] TypeName *variable1[=&amp;v1] , *variable2[=&amp;v2] ...;
+      </strong></span></pre><p class="NormalText">The unary <span><strong class="command">&amp;</strong></span> operator is used to return the address of a variable. The unary <span><strong class="command">*</strong></span> operator is used to dereference a pointer. Use the operator <span><strong class="command">-&gt;</strong></span> (for example, <span><strong class="command">p-&gt;</strong></span><span class="emphasis"><em>m-variable</em></span>) to access members of a pointer to a structure.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Caution</h3><p class="CellBody"> When a module is reloaded, static variable addresses change. Make sure you reinitialize global pointer variables which point to static (module scope) variables.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_types_11595_1002122"></a>Pointers to Functions</h4></div></div></div><p class="NormalText">Function pointer variables are useful for callback functions. The syntax for function pointers is:</p><pre class="programlisting"><span><strong class="command">
+    [static] TypeName (*variable1)([ArgDecl1, ArgDecl2,...]){=function_name};
+      </strong></span></pre><p class="NormalText">Where <span class="emphasis"><em>ArgDecl</em></span> has the almost the same syntax as a variable declarations, except <span><strong class="command">static</strong></span> is not supported and the ampersand (<span><strong class="command">&amp;</strong></span>) operator is used to specify call by reference parameters. Call by reference array and hash table parameters require parentheses around the ampersand (<span><strong class="command">&amp;</strong></span>) and <span class="emphasis"><em>id</em></span>.</p><p class="NormalText">The syntax for calling a pointer to function variable is:</p><pre class="programlisting"><span><strong class="command">
+    (*pfn)([e1, e2,...])
+      </strong></span></pre><p class="NormalText">If accessing an invalid function pointer, the Slick-C® macro stops.</p><div xmlns:fo="http://www.w3.org/1999/XSL/Format" class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="admon">Caution</h3><p class="CellBody"> When a module is reloaded, static function addresses change. Make sure you reinitialize global function pointer variables which point to static (module scope) functions.</p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_types_11595_86668"></a>
+      <a name="slick_c_types_11595_1026554"></a>
+      <a class="indexterm" name="slick-c_types_AD8F5F6B_23D7"></a>Typeless </h3></div></div></div><p class="NormalText">A typeless variable can be assigned to or from any type, including structs, arrays, and hash tables.</p><p class="NormalText">Typeless container variables can be declared using the <span><strong class="command">typeless</strong></span> type. A typeless container can be passed to a function using the <span><strong class="command">var</strong></span> type. The container variable can store the contents of any typed variable. This is easy for the interpreter since all typed variables are stored as container variables. At run time, the interpreter must check the current type of the container variable (and sometimes convert it) to perform an operation.</p><p class="NormalText">The compiler performs (double) floating point arithmetic on container variables. Currently, there is only a very small difference in speed between arithmetic operations on integer type variables and container variables, because the Slick-C® language has been optimized for string and container operations.</p><p class="NormalText">Note that there is no <span><strong class="command">sizeof</strong></span> operator. Since the Slick-C interpreter currently stores all types as container variables, the <span><strong class="command">sizeof</strong></span> operator has no meaning.</p><p class="NormalText">Example:</p><pre class="programlisting">    typeless t;
+    t=1;   // Store an integer.
+           // Convert the contents of the variable t to a 
+           // floating pointer number (double type) and add 1.
+           // NOTE: The interpreter is smart and will only perform
+           // integer arithmetic here.
+    t=t+1;
+    // Since + always means addition, the compiler converts
+    // string constants to the smallest possible numeric type.
+    t=t+"1";
+ 
+    // Declare string variable.
+    _str s;
+    s=1;   // Compiler will convert int to string.
+    t=1.2;
+    // Must cast string type to int or compiler will complain.
+    t=(int)t+(int)s; // Result is 2, not 2.2, because of the cast of t to int.
+ 
+    // Destroy the integer and make an array.
+    // Also make the 0 element an integer.
+    t[0]=1;
+    t[1]=2;   // Add another element.
+ 
+    t2=t;  // Copy the array and all its elements.
+    struct {
+       int x;
+       int y;
+    } st;
+    st.x=1;st.y=2;
+    t=st;
+    // Print out the elements of the structure.
+    for (i=0;i&lt;t._length();++i ) {
+         messageNwait("t["i"]="t[i]);
+    }</pre><p class="NormalText"></p></div></div></body></html>

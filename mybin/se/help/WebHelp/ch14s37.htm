@@ -1,0 +1,680 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Tutorials</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s36.htm" title="Windows Data Structure"><link rel="next" href="ch14s38.htm" title="Events"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_tutorials_12382_29864"></a>
+    <a name="slick_c_tutorials_12382_1006447"></a>Tutorials</h2></div></div></div><p class="NormalText">This chapter contains the following sections:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s37.htm#slick_c_tutorials_12382_91043">Defining Stack Routines</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s37.htm#slick_c_tutorials_12382_99367">Searching for a String Within a Current Function</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s37.htm#slick_c_tutorials_12382_97502">Reading and Modifying Buffers</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s37.htm#slick_c_tutorials_12382_38028">Working with Existing Macros</a>
+      </p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_tutorials_12382_91043"></a>
+      <a name="slick_c_tutorials_12382_1006448"></a>Defining Stack Routines</h3></div></div></div><p class="NormalText">These examples show you what can be done in a language that supports typed variables and untyped container variables. The following example code shows how to define a set of stack routines in Slick-C® that support any type of element:</p><pre class="programlisting">void stacknew(typeless &amp;stack)
+
+{
+
+    stack._makeempty();  // Destroy current contents of stack.
+
+    stack[0]=0;          // Make an array and use first element as top count.
+
+}
+
+void stackpush(typeless &amp;stack, typeless &amp;value)
+
+{
+
+    stack[++stack[0]]=value;
+
+}
+
+typeless stackpop(typeless &amp;stack)
+
+{
+
+    if (stack[0]&lt;=0) return('');
+
+    // Make a copy of the element.
+
+    result=stack[stack[0]--];
+
+    // Free space allocated by value and delete array element. _deleteel is a
+
+    // built-in method which operates on arrays and hash tables.
+
+    stack._deleteel(stack[0]+1);  
+
+    return(result);
+
+}
+
+defmain()
+
+{
+
+    // The above routines can handle variables of any type, including
+
+    // string constants.
+
+ 
+
+    struct RECORD {
+
+       int i;
+
+       _str s;
+
+    };
+
+    // You can't make a limit on the number of elements in an array.
+
+    // We will add support for initially allocating a specific number of elements.
+
+    RECORD arecord[];
+
+    arecord[0].i=4;arecord[0].s="element 0";
+
+    RECORD symboltable:[];        // Declare a hash table/associative array.
+
+    symboltable:["name1"].i=1;symboltable:["name1"].s="element 0";
+
+    stacknew(stack);
+
+    stackpush(stack,arecord);     // Push an array onto the stack.
+
+ 
+
+    stackpush(stack,symboltable); // Push a hash table/associative array onto
+
+                                  // the same stack.
+
+ 
+
+    stackpush(stack,"string");    // Push a string constant onto the same stack.
+
+}</pre><p class="NormalText">The following example shows how a container variable can access structure members as an array:</p><pre class="programlisting">/*
+
+    Read lines of a file which contains tab-delimited data into an array of 
+
+    structures. Each line represents an array structure element.
+
+ 
+
+    The tab-delimited data on each line represents fields in the structure. 
+
+    We will assume the file contains valid data for filling this structure.
+
+*/
+
+int ReadTable(_str filename,typeless (&amp;table)[])
+
+{
+
+    // Use an editor buffer to open and cache the file. Data is read 
+
+    // in blocks from the file only. We don't need this much power, but 
+
+    // Slick-C needs a few more non-editor file I/O functions.
+
+    status=_open_temp_view(filename,temp_view_id,orig_view_id);
+
+ 
+
+    if (status)  return(status);
+
+    top();up();  // Place cursor on line 0 before first line of file.
+
+    for (j=0;;++j) {
+
+       if (down())  break;
+
+       get_line(line);
+
+       if (line:=="") continue;
+
+       rest=line;
+
+       p= &amp;table[j]; // Make p point to this structure element.
+
+       // Here we access structure members as an array of elements.
+
+       p-&gt;[0]="";
+
+       // Note that loop supports fields which are strings of length 0.
+
+       for (i=0;;++i) {
+
+          if (rest:=="" &amp;&amp; i)	break;
+
+ 
+
+          // Parse is similar to REXX. We were unable to come up with a
+
+          // satisfactory function syntax so with went with a REXX-style syntax.
+
+          // Place text up to but not including tab character into value variable.
+
+          // Place tab character and rest of data in rest variable.
+
+          parse rest with value "\t" +0 rest;
+
+          if (substr(rest,1,1):=="\t") {
+
+              rest=substr(rest,2);
+
+          }
+
+          p-&gt;[i]=value;
+
+       }
+
+ 
+
+    }
+
+    _delete_temp_view(temp_view_id);
+
+    activate_view(orig_view_id);
+
+    return(0);
+
+}
+
+struct TABLE_ENTRY {
+
+    _str name;
+
+    int value;
+
+};
+
+// defmain is the main entry pointer for a Slick-C batch/script macro.
+
+defmain()
+
+{
+
+    TABLE_ENTRY table[];
+
+    // Table file should exist.
+
+    // NOTE: (TABLE_ENTRY []) is type compatible with (typeless []).
+
+    status=ReadTable("table",table);
+
+    if (status) {
+
+       _message_box("Failed to read table file");
+
+       return(1);
+
+    }
+
+    _message_box("First record:  name=":+table[0].name:+" value=":+table[0].value);
+
+}  </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_tutorials_12382_99367"></a>
+      <a name="slick_c_tutorials_12382_1024593"></a>Searching for a String Within a Current Function</h3></div></div></div><p class="NormalText">This macro can be used with many languages. It searches the current procedure or function for a specified string, with specified options. Use this macro in cases where references do not work, such as searching for a partial identifier name.</p><p class="NormalText">Several useful aspects of this macro, aspects that can be reused in other macros, are that it prompts the user for a string, it selects the current procedure, and it performs a search within the selection.</p><p class="NormalText">See the following sections:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a href="ch14s37.htm#slick_c_tutorials_12382_15218">Creating the Macro</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s37.htm#slick_c_tutorials_12382_25853">Analyzing the Macro</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s37.htm#slick_c_tutorials_12382_67313">Command Line Search Options</a>
+        </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_tutorials_12382_15218"></a>
+        <a name="slick_c_tutorials_12382_1030402"></a>Creating the Macro</h4></div></div></div><p class="NormalText">Complete the following steps:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Enter the macro code below into a file called <code class="filename">procsearch.e</code>.</p></li><li><p class="NormalText">To load the module, from the main menu, select <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Load Module</strong></span>.</p></li><li><p class="NormalText">Bind the command <span><strong class="command">proc_search</strong></span> to a key. To use the macro, press the appropriate key.</p></li><li><p class="NormalText">In the <span><strong class="guilabel">Search string</strong></span> text box, enter the text to search for, and in the <span><strong class="guilabel">Options</strong></span> text box, enter the search options (see <a href="ch14s37.htm#slick_c_tutorials_12382_67313">Command Line Search Options</a>).</p></li></ol></div><p class="NormalText">Contents of <code class="filename">procsearch.e</code>:</p><pre class="programlisting">#include 'slick.sh'
+
+ 
+
+_command int proc_search(...) name_info(','VSARG2_READ_ONLY|
+
+                                 VSARG2_REQUIRES_EDITORCTL|
+
+                                 VSARG2_MARK)
+
+{
+
+    // Save the original cursor position to restore later.
+
+    typeless original_position;
+
+    save_pos(original_position);
+
+ 
+
+    // Prompt the user for a search string, and search options.
+
+    _str result = show('-modal _textbox_form',
+
+                    'Search Function',  // Dialog box caption.
+
+                    TB_RETRIEVE_INIT,   // Flags.
+
+                    '',                 // Use default text box width.
+
+                    '',                 // Help item.
+
+                    '',                 // Button list.
+
+                    'procsearch',       // Retrieve name.
+
+                    'Search string:',   // First prompt.
+
+                    'Options:ixcs');    // Second prompt and default.
+
+    if ( result=='' ) {
+
+       // If the user clicked the Cancel button, just return.
+
+       return(COMMAND_CANCELLED_RC);
+
+    }
+
+ 
+
+    // The results from the text boxes.
+
+    _str search_string=_param1;
+
+    _str search_options=_param2;
+
+ 
+
+    int status=select_proc(); // Select the current proc.
+
+    if ( status ) {
+
+       // In rare cases select_proc can fail if a procedure is too complex.
+
+       // If select_proc failed, show an error messages, return the cursor to the
+
+       // original position, and return.
+
+       _message_box(nls("select_proc failed"));
+
+       restore_pos(original_position);
+
+       message(get_message(status)); 
+
+       return(status); 
+
+    }
+
+    lock_selection();   // Lock the selection.
+
+ 
+
+    begin_select();     // Move the cursor to the beginning of the selection.
+
+ 
+
+    status=find(search_string,'m':+search_options);  // Find the text that the
+
+                                                     // user specified using the
+
+                                                     // options specified. We 
+
+                                                     // prepend the 'm' option
+
+                                                     // since we know we are
+
+                                                     // searching in a selection.
+
+ 
+
+    if ( status ) {
+
+       // If the search string was not found, deselect and return the cursor to
+
+       // the original position. 
+
+       deselect();
+
+       restore_pos(original_position);
+
+    }
+
+ 
+
+    // Just return the status. This will leave the proc selected so that
+
+    // find_next works.
+
+    return(status);
+
+}</pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_tutorials_12382_25853"></a>
+        <a name="slick_c_tutorials_12382_1030475"></a>Analyzing the Macro</h4></div></div></div><p class="NormalText">The <span><strong class="command">save_pos()</strong></span> call at the beginning of the macro saves the current cursor position information. This function places the cursor in its original position if necessary.</p><p class="NormalText">The <span><strong class="command">show()</strong></span> function launches a dialog box. In this case, the <span><strong class="command">show()</strong></span> function launches a general purpose dialog box named <span><strong class="command">_text box_form</strong></span>. The dialog box <span><strong class="command">_text box_form</strong></span> prompts the user for one or more strings. After the first argument, the remaining arguments to <span><strong class="command">show()</strong></span> pass to the <span><strong class="command">on_create</strong></span> dialog box. In this case, there are several arguments.</p><p class="NormalText">The second argument to <span><strong class="command">show()</strong></span> is the caption for the <span><strong class="command">on_create</strong></span> dialog box.</p><p class="NormalText">The next argument is a set of flags. In this case, the only flag specified is <span><strong class="command">TB_RETRIEVE_INIT</strong></span>. The <span><strong class="command">TB_RETRIEVE_INIT</strong></span> flag tells the dialog box to initialize itself by retrieving the last values filled in for this dialog box.</p><p class="NormalText">Use the next three arguments to specify text box width, help, and a button list. These particular arguments are unused in this example, which is why they are shown here as <span><strong class="command">''</strong></span>.</p><p class="NormalText">The retrieve name is a unique name used to retrieve the values that were previously filled in for this dialog box. Any remaining arguments are interpreted as prompts for the user. Default values can be given by specifying the prompt as <span><strong class="command">prompt:defaultvalue</strong></span>. The first prompt is the search string, and the second is for search options. The options have default <span><strong class="command">ixcs</strong></span>, meaning case-insensitive, and exclude comments and strings. See the following section for a list of command line search options.</p><p class="NormalText">After the call to show, verify that the result is <span><strong class="command">''</strong></span>. If so, then the user clicked the <span><strong class="guibutton">Cancel</strong></span> button, so we return. Otherwise, SlickEdit® must obtain the values that the user provides. These values are returned in global variables <span><strong class="command">_param1.._param N</strong></span>. In this case, our search string is returned in <span><strong class="command">_param1</strong></span>, and the search options are in <span><strong class="command">_param2</strong></span>. These are saved in local variables.</p><p class="NormalText">SlickEdit calls <span><strong class="command">select_proc</strong></span> to select the current function. If <span><strong class="command">select_proc</strong></span> returns a non-zero status, then it failed, so it is returned. In rare cases, <span><strong class="command">select_proc</strong></span> can fail if a function is too long, or has preprocessing that keeps it from correctly identifying the end of the function.</p><p class="NormalText">Next, <span><strong class="command">lock_selection()</strong></span> is called, and then <span><strong class="command">begin_select()</strong></span> is called to move to the beginning of the selection.</p><p class="NormalText">Now, we can call <span><strong class="command">find()</strong></span> with the search string and the search options from the user. Insert <span><strong class="command">m</strong></span> at the beginning of the options string to specify search only in the selection.</p><p class="NormalText">Finally, check the status from <span><strong class="command">find</strong></span>. If the string is not found, clear the function and restore the original cursor position.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_tutorials_12382_67313"></a>
+        <a name="slick_c_tutorials_12382_1030489"></a>Command Line Search Options</h4></div></div></div><p class="NormalText">Command line search options include the characters listed in the table below.</p><div class="informaltable"><a name="table_264311c7-71bf-4773-b5f4-eb7d0067c297"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Option</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">+</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">(Default) Forward search.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">-</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Reverse search.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">&lt;</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">(Default) Place cursor at beginning of string found.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">&gt;</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Place cursor after end of string found.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">E</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">(Default) Case-sensitive search.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">I</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Case-insensitive search.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">M</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Search within visible mark.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">H</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Find text in hidden lines.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">R</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Search for SlickEdit® regular expression.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">U</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Interpret string as a UNIX regular expression.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">B</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Interpret string as a Brief regular expression.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">N</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">(Default) Do not interpret search string as a regular search string.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">@</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">No error message.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">W</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Limits search to words such as variable names.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">,</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Delimiter to separate ambiguous options.</p>
+              </td></tr></tbody></table></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_tutorials_12382_97502"></a>
+      <a name="slick_c_tutorials_12382_1024795"></a>Reading and Modifying Buffers</h3></div></div></div><p class="NormalText">Slick-C® includes the Slick-C API. The API covers many actions normally performed in a code editor, including navigating and modifying buffers.</p><p class="NormalText">Topics in this section:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a href="ch14s37.htm#slick_c_tutorials_12382_23629">Functions for Reading and Modifying Buffers</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s37.htm#slick_c_tutorials_12382_77357">Common Functions for Navigating Buffers</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s37.htm#slick_c_tutorials_12382_78631">Escape Backslashes Example</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s37.htm#slick_c_tutorials_12382_64830">Comment Out Debug Print Lines Example</a>
+        </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_tutorials_12382_23629"></a>
+        <a name="slick_c_tutorials_12382_1030574"></a>Functions for Reading and Modifying Buffers</h4></div></div></div><p class="NormalText">The table below contains functions for reading and modifying buffers. This table focuses on one particular category of the API, those functions that allow you to programmatically traverse and modify buffers. These powerful functions enable you to take tasks that you can do manually, and create a macro to perform the same tasks in seconds. </p><div class="informaltable"><a name="table_31332f7c-cbf4-4cee-8c47-777d51fbd914"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Function</p>
+              </th><th>
+                <p class="CellHeading">Action</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">_str cur_word( int &amp;</strong></span>
+                  <span class="emphasis"><em>start_col</em></span>
+                  <span><strong class="command"> [, _str </strong></span>
+                  <span class="emphasis"><em>from_cursor</em></span>
+                  <span><strong class="command">])</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Gets the current word at cursor.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">int delete_line()</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Deletes the current line.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">void _delete_text( int </strong></span>
+                  <span class="emphasis"><em>len</em></span>
+                  <span><strong class="command"> )</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Delete <span class="emphasis"><em>len</em></span> bytes starting from the cursor position.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">void get_line( _str &amp;</strong></span>
+                  <span class="emphasis"><em>line</em></span>
+                  <span><strong class="command"> )</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Retrieves current line.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">_str get_text([int </strong></span>
+                  <span class="emphasis"><em>count</em></span>
+                  <span><strong class="command"> [,int </strong></span>
+                  <span class="emphasis"><em>seek_pos</em></span>
+                  <span><strong class="command">]])</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Gets a stream of text starting at current line.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">void keyin( _str </strong></span>
+                  <span class="emphasis"><em>string</em></span>
+                  <span><strong class="command"> )</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts string of characters as if typed from the keyboard.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">void insert_line( _str </strong></span>
+                  <span class="emphasis"><em>line</em></span>
+                  <span><strong class="command"> )</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts <span class="emphasis"><em>line</em></span> after current line.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">void _insert_text( _str </strong></span>
+                  <span class="emphasis"><em>string</em></span>
+                  <span><strong class="command"> ) </strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Inserts <span class="emphasis"><em>string</em></span> at cursor position.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">void replace_line( _str </strong></span>
+                  <span class="emphasis"><em>line</em></span>
+                  <span><strong class="command"> )</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Replaces current line.</p>
+              </td></tr></tbody></table></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_tutorials_12382_77357"></a>
+        <a name="slick_c_tutorials_12382_1030618"></a>Common Functions for Navigating Buffers</h4></div></div></div><p class="NormalText">The table below contains functions that can be used for navigating buffers.</p><div class="informaltable"><a name="table_25f869f3-dbc4-45ef-94a3-4d1f285436a6"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Function</p>
+              </th><th>
+                <p class="CellHeading">Action</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">int up( [int </strong></span>
+                  <span class="emphasis"><em>num</em></span>
+                  <span><strong class="command">] )</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Moves cursor up <span class="emphasis"><em>num</em></span> lines, or one line if no value passed in.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">int down( [int </strong></span>
+                  <span class="emphasis"><em>num</em></span>
+                  <span><strong class="command">] )</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Moves cursor down <span class="emphasis"><em>num</em></span> lines, or one line if no value passed in.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">void left()</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Moves cursor one position to the left.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">void right()</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Moves cursor one position to the right.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">void top()</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Places cursor at first line and first column of buffer.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">void bottom()</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Places cursor at end of last line of buffer.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">void _begin_line()</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Places cursor at the beginning of the current line.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">void _end_line()</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Places cursor after the end of the current line.</p>
+              </td></tr></tbody></table></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_tutorials_12382_78631"></a>
+        <a name="slick_c_tutorials_12382_1030659"></a>Escape Backslashes Example</h4></div></div></div><p class="NormalText">Escape backslashes if, for every slash in a directory name, you actually need two for the compiler to handle the directory name or string properly.</p><p class="NormalText">Example: </p><pre class="programlisting">_command escape_slash(){
+
+    _str myLine;
+
+    get_line(myLine); // Set string szLine to the current line.
+
+    myLine = stranslate(myLine, "\\\\", "\\"); // Replace slash with double
+
+                                               // slashes.
+
+    replace_line(myLine); // Replace the line in the buffer.
+
+}</pre><p class="NormalText">The above command accepts the following line of code:</p><pre class="programlisting">myDirectory = "C:\Data\Corporate\Internal";</pre><p class="NormalText">and replaces it with:</p><pre class="programlisting">myDirectory = "C:\\Data\\Corporate\\Internal";</pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_tutorials_12382_64830"></a>
+        <a name="slick_c_tutorials_12382_1030677"></a>Comment Out Debug Print Lines Example</h4></div></div></div><p class="NormalText">Print or debug statements can be used to debug. These statements need to have supporting comments or they must be deleted. The following example shows a simple function that loops through your entire file. It contains supporting comments for all of the lines that have a <span><strong class="command">printf</strong></span> statement:</p><pre class="programlisting">_command comment_printf(){
+   typeless p;
+   save_pos(p);      // Save the original position in the buffer
+   top();            // Go to top of buffer
+   up();             // Get to the top line
+
+   for (;;) {
+      int status=search("printf","wxcs");   // search for printf as a whole
+                                            // word, but exclude comments and
+                                            // strings
+
+      if (status) break;                    // If no other instances are found,
+                                            // stop
+
+      _begin_line();                        // If printf exists, move cursor to
+                                            // the first column
+
+      _insert_text("//");                   // Add a comment
+
+      _end_line();                          // Move cursor to the end of the
+                                            // line
+   }
+
+   restore_pos(p);   // Restore the original position in the buffer
+}</pre><p class="NormalText">The function uses many of the buffer modifications
+        and navigation macros. Starting at the top of the file, it searches for
+        printf lines and adds a comment when necessary. Modify this macro to
+        meet your needs. For example, if you want the lines deleted instead of
+        commented, replace the
+        <span><strong class="command">_insert_text()</strong></span> call with
+        <span><strong class="command">delete_line()</strong></span>. </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_tutorials_12382_38028"></a>
+      <a name="slick_c_tutorials_12382_1030705"></a>Working with Existing Macros</h3></div></div></div><p class="NormalText">Every time you select a menu, click a button, or enter a key, a Slick-C® macro is called to perform an action. More than half of the code in SlickEdit products is written in Slick-C and this source is provided to you when you install, so you can tweak the product or use the Slick-C source as an example to help write your own macros. By default, the Slick-C source is located in the <code class="filename">macros</code> subdirectory of your SlickEdit® installation folder.</p><p class="NormalText">To make a macro change, or to recycle existing code, you need to know how to find a name to a particular command and how to find its location in the source code. These examples will walk you through the steps:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a href="ch14s37.htm#slick_c_tutorials_12382_89549">Example: Turning on Line Numbers for All Files</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s37.htm#slick_c_tutorials_12382_34600">Example: Counting Lines of Code</a>
+        </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_tutorials_12382_89549"></a>
+        <a name="slick_c_tutorials_12382_1030709"></a>Example: Turning on Line Numbers for All Files</h4></div></div></div><p class="NormalText">SlickEdit® includes a line number toggle option to turn line numbers on 
+        and off for each edit window. This option is located on the 
+        <span><strong class="guimenu">View</strong></span> menu (<span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Line Numbers</strong></span>). By default, 
+        all files are displayed without line numbers. When you enable them, they are enabled throughout 
+        sessions until you disable them. SlickEdit also provides an option to enable line numbers on a 
+        language-specific basis (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages </strong></span> &#8594; <span><strong class="guimenuitem">[Language Category] </strong></span> &#8594; <span><strong class="guimenuitem">[Language] </strong></span> &#8594; <span><strong class="guimenuitem">General</strong></span>).</p><p class="NormalText">To automatically turn on line numbers for all files that are opened or created in SlickEdit regardless of the language, you will need to write a macro, as outlined in the subsequent sections:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <a href="ch14s37.htm#slick_c_tutorials_12382_98935">Find the Command Definition</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch14s37.htm#slick_c_tutorials_12382_47379">Create the New Macro</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch14s37.htm#slick_c_tutorials_12382_48384">Load the Macro</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch14s37.htm#slick_c_tutorials_12382_93797">Results</a>
+          </p></li></ul></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="slick_c_tutorials_12382_98935"></a>
+          <a name="slick_c_tutorials_12382_1030712"></a>Find the Command Definition</h5></div></div></div><p class="NormalText">You need to find the command that is associated with <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Line Numbers</strong></span> in order to view its source code, so that you can obtain the function you®ll be using in your new macro.</p><p class="NormalText">To determine the command that is associated with <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Line Numbers</strong></span>:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Close any open files.</p></li><li><p class="NormalText">From the main menu, select <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Menus</strong></span>. The dialog box contains a list of all menus. To view the main menu, select <span><strong class="command">_mdi_menu</strong></span> and click <span><strong class="guibutton">Open</strong></span>. The Menu Editor dialog is displayed.</p></li><li><p class="NormalText">Navigate to <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Line Numbers</strong></span>. When you select <span><strong class="guimenu">Line Numbers</strong></span>, certain fields in the dialog box are populated. The <span><strong class="guilabel">Command</strong></span> field is populated with the Slick-C® command that is invoked when this menu item is selected. In this case, the command is <span><strong class="command">view-line-numbers-toggle</strong></span>. Every time that you click <span><strong class="guimenu">View </strong></span> &#8594; <span><strong class="guimenuitem">Line Numbers</strong></span> from the main menu, <span><strong class="command">view-line-numbers-toggle</strong></span> is called.</p><p class="NormalText">To view the source code for the <span><strong class="command">view-line-numbers-toggle</strong></span> command:</p></li><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Go to Slick-C Definition</strong></span>.</p></li><li><p class="NormalText">Start typing <span class="bold"><strong>view</strong></span>, and select <span><strong class="command">view_line_numbers_toggle()</strong></span> from the drop-down list, then click <span><strong class="guibutton">OK</strong></span>.</p></li><li><p class="NormalText">By viewing the source, it is a simple "if on then off, else on" algorithm, using bitwise logic. Note that you will need to use <span><strong class="command">p_LCBufFlags|=VSLCBUFFLAG_LINENUMBERS</strong></span> in your new macro to enable the display of line numbers.</p></li></ol></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="slick_c_tutorials_12382_47379"></a>
+          <a name="slick_c_tutorials_12382_1030722"></a>Create the New Macro</h5></div></div></div><div class="orderedlist"><ol type="1"><li><p class="NormalText">Create a new empty file named <code class="filename">DisplayAllLines.e</code>.</p></li><li><p class="NormalText">Copy and paste or type the following code into the file:</p></li></ol></div><pre class="programlisting">#include "slick.sh" 
+
+ 
+
+void _buffer_add_ViewLineNumbers()
+
+{
+
+    p_LCBufFlags|=VSLCBUFFLAG_LINENUMBERS;
+
+    p_line_numbers_len = _default_option(VSOPTION_LINE_NUMBERS_LEN);
+
+}</pre><p class="NormalText">Any Slick-C macro that starts with <span><strong class="command">_buffer_add_</strong></span> is called when a new edit window is displayed. To enable the numbers for every file, use the logic from Step 5 above. </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="slick_c_tutorials_12382_48384"></a>
+          <a name="slick_c_tutorials_12382_1030732"></a>Load the Macro</h5></div></div></div><p class="NormalText">The new macro needs to be loaded. To load the macro, from the main menu, select <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Load Module </strong></span> &#8594; <span><strong class="guimenuitem">DisplayAllLines.e</strong></span>.</p><p class="NormalText">If the macro was loaded properly, the message <span><strong class="command">Modules loaded</strong></span> is displayed in the SlickEdit® message line. If an error message is displayed, the macro did not load and the change did not take effect. Correct the error and load the macro again.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="slick_c_tutorials_12382_93797"></a>
+          <a name="slick_c_tutorials_12382_1030735"></a>Results</h5></div></div></div><p class="NormalText">Now every new file opened has line numbers. If any files were left open at the beginning, close and reopen them and they will all have line numbers.</p><p class="NormalText">To remove the functionality that turns on line numbers for all files, you need to unload <code class="filename">DisplayAllLines.e</code>: From the main menu select <span><strong class="command">Macro &gt; Unload Module</strong></span>. Select <code class="filename">DisplayAllLines.ex</code> from the list and click <span><strong class="guibutton">OK</strong></span>. The list shows a <code class="filename">.ex</code> extension on the module instead of a <code class="filename">.e</code> because you are actually compiling the source file into a binary file (<code class="filename">.ex</code>) and loading it, not the actual source code.</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_tutorials_12382_34600"></a>
+        <a name="slick_c_tutorials_12382_1030739"></a>Example: Counting Lines of Code</h4></div></div></div><p class="NormalText">The number of lines of code in your workspace, projects, or files is often used to measure and analyze performance, and can be determined by using a macro.</p><p class="NormalText">This example describes a macro, <code class="filename">linecount.e</code>, that loops through all projects in the current workspace and all files within each project in the current workspace, and then displays a report in a new editor window. </p><p class="NormalText">You can obtain <code class="filename">linecount.e</code> from the SlickEdit Web site at <span class="emphasis"><em>www.slickedit.com</em></span> in the Slick-C® Documentation section. Line numbers referenced in the subsections below:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+            <a href="ch14s37.htm#slick_c_tutorials_12382_53672">Gather Workspace, Project, and File Information</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch14s37.htm#slick_c_tutorials_12382_77825">Loop and Count</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch14s37.htm#slick_c_tutorials_12382_36584">Create the Report</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch14s37.htm#slick_c_tutorials_12382_71599">Load the Macro</a>
+          </p></li><li><p class="NormalText">
+            <a href="ch14s37.htm#slick_c_tutorials_12382_64345">Run the Macro</a>
+          </p></li></ul></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="slick_c_tutorials_12382_53672"></a>
+          <a name="slick_c_tutorials_12382_1030743"></a>Gather Workspace, Project, and File Information</h5></div></div></div><p class="NormalText">Get a list of all projects and files in the workspace. <span><strong class="command">_GetWorkspaceFiles()</strong></span> (Line 88) gets the list of all projects in a workspace and places the list in a temporary buffer. The loop following (Lines 93-95), parses through the buffer and stores the information in a temporary array for later reporting. This array, defined in Line 67, is a three-dimensional array to store multiple projects, and multiple files per project. </p><p class="NormalText">Loop through each project, starting at Line 98, and fill the array with all file names for each project. <span><strong class="command">GetProjectFiles()</strong></span> does this by placing the list in a temporary buffer. Grab the names from the buffer and put them in the array (Lines 109-124).</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="slick_c_tutorials_12382_77825"></a>
+          <a name="slick_c_tutorials_12382_1030746"></a>Loop and Count</h5></div></div></div><p class="NormalText">For each project, open up a temporary buffer for each file in the project. Think of it as an invisible buffer where you can move the cursor programmatically to check whether it is in a comment. </p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+              <span><strong class="command">_open_temp_view</strong></span> (Line 139) opens it.</p></li><li><p class="NormalText">
+              <span><strong class="command">up()</strong></span> and <span><strong class="command">top()</strong></span> (Line 158) places the cursor at the top to start.</p></li><li><p class="NormalText">
+              <span><strong class="command">down()</strong></span> (Line 161) will move the cursor down one line at a time.</p></li></ul></div><p class="NormalText">Loop through the file to read one line at a time, as mentioned above (Lines 161-202). This validates whether the current line is in a comment (Line 171), and if not, it increments the counter. If the current line is in a comment, the next step is to jump to the end of the comment or comment block (Line 168). Another check is made to see if the current line is in a comment and count it if it is not a comment.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="slick_c_tutorials_12382_36584"></a>
+          <a name="slick_c_tutorials_12382_1030752"></a>Create the Report</h5></div></div></div><p class="NormalText">All of the information is now stored in an array, so the next task is to generate a report and loop thru the array to display the results. This is done in Lines 220-263. </p><p class="NormalText">The <span><strong class="command">displayResultsInBuffer</strong></span> flag can be changed to false to only display the total lines in the entire workspace. </p><p class="NormalText">Now that you understand the macro, the next steps are to load and run it.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="slick_c_tutorials_12382_71599"></a>
+          <a name="slick_c_tutorials_12382_1030756"></a>Load the Macro</h5></div></div></div><p class="NormalText">To load <code class="filename">linecount.e</code>, be sure to save it to your local hard drive, then from the main menu, click <span><strong class="guimenu">Macros </strong></span> &#8594; <span><strong class="guimenuitem">Load Module</strong></span>. Find <code class="filename">linecount.e</code> and click <span><strong class="guibutton">Open</strong></span>.</p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="slick_c_tutorials_12382_64345"></a>
+          <a name="slick_c_tutorials_12382_1030758"></a>Run the Macro</h5></div></div></div><p class="NormalText">You can now run the macro. There are several ways to run macros: from the command line, through a menu item, or by using a keyboard shortcut.</p><p class="NormalText">To run the macro from the command line:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Open the command line by pressing <span><strong class="keycap">Esc</strong></span> or by clicking in the message line area.</p></li><li><p class="NormalText">Type <span class="bold"><strong>linecount</strong></span> and press <span><strong class="keycap">Enter</strong></span>.</p></li></ol></div><p class="NormalText">To associate the macro with a menu item:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Select <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Menus</strong></span>, then select menu on which you want to add the macro. For example, to add the macro to the right-click context menu, select <span><strong class="command">_ext_menu_default</strong></span>.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">Open</strong></span>.</p></li><li><p class="NormalText">In the Menu Editor dialog, click <span><strong class="guibutton">Insert</strong></span> to add a new menu item.</p></li><li><p class="NormalText">Type a new <span><strong class="guilabel">Caption</strong></span>, set the <span><strong class="guilabel">Command</strong></span> to <span class="bold"><strong>linecount</strong></span>. Use the <span><strong class="guibutton">Up</strong></span> and <span><strong class="guibutton">Down</strong></span> buttons to move the new item to the desired location in the list. Type "Menu Editor dialog box" in the Help Index (<span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Index</strong></span>) for more information about using the Menu Editor.</p></li></ol></div><p class="NormalText">To associate the macro with a key or key sequence:</p><div class="orderedlist"><ol type="1"><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Keyboard and Mouse </strong></span> &#8594; <span><strong class="guimenuitem">Key Bindings</strong></span>.</p></li><li><p class="NormalText">Find a key sequence that is not used®do not bind keys that are bound. To determine if a key or key sequence is already in use, place the focus in the <span><strong class="guilabel">Search by key sequence</strong></span> field and press the key/key sequence you want to check. For example, press <span><strong class="keycap">Enter</strong></span> and the table will be filtered to show all commands bound to the <span><strong class="keycap">Enter</strong></span> key.</p></li><li><p class="NormalText">After determining the key or key sequence you want to use for the new binding, close the Options dialog.</p></li><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">List Macros</strong></span>.</p></li><li><p class="NormalText">Select <span class="bold"><strong>linecount</strong></span>, then click <span><strong class="guibutton">Bind to Key</strong></span>. The Key Bindings option screen is displayed with <span><strong class="command">linecount</strong></span> selected.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">Add</strong></span> and when the Bind Key dialog appears, type the key sequence to bind.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">Bind</strong></span>, then <span><strong class="guibutton">OK</strong></span>.</p></li></ol></div><p class="NormalText"></p></div></div></div></div></body></html>

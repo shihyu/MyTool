@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_get_info</title>
+</head>
+<body>
+
+<h3><b>void tag_get_info(_str &tag_name, _str &type_name, _str &file_name, int &line_no, _str &class_name, int &tag_flags)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve general information about the current tag (as
+defined by calls to <i>tag_find_equal</i>, <i>tag_find_prefix</i>, <i>tag_find_in_file</i>,
+<i>tag_find_in_class</i>, etc.).  If the current tag is not defined, such as
+immediately after opening a database or a failed search), all strings
+will be set to '', and line_no and tag_flags will be set to 0.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - (Output) Tag string (native case)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_name">type_name</A></code> - (Output) Tag type name, see <a href="tag_get_type.html">tag_get_type</a>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - (Output) Full path of file the tag is located in</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="line_no">line_no</A></code> - (Output) line number of tag within file
+                  set to 0 if not defined.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - (Output) name of class that tag is present in,
+                  uses concatenation (as defined by language rules)
+                  to specify names of inner classes (see insert, above).
+                  set to empty string if not defined.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - (Output) Tag flags indicating symbol attributes, see
+                  <a href="tag_insert_simple.html">tag_insert_simple</a> for details.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_get_detail.html">tag_get_detail</a>, <a href="tag_find_equal.html">tag_find_equal</a>, <a href="tag_find_in_class.html">tag_find_in_class</a>, <a href="tag_find_in_file.html">tag_find_in_file</a>, <a href="tag_find_prefix.html">tag_find_prefix</a>, <a href="tag_next_equal.html">tag_next_equal</a>, <a href="tag_next_in_class.html">tag_next_in_class</a>, <a href="tag_next_in_file.html">tag_next_in_file</a>, <a href="tag_next_prefix.html">tag_next_prefix</a></blockquote>
+</body>
+</html>

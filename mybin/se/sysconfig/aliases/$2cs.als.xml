@@ -1,0 +1,43 @@
+<profile name="/language/cs/aliases">
+	<p n="=surround_with_try...catch">
+		<text>
+			try {
+			%\m sur_text -indent%
+			} catch () {
+			}
+		</text>
+	</p>
+	<p n="=surround_with_try...catch...finally">
+		<text>
+			try {
+			%\m sur_text -indent%
+			} catch () {
+			} finally {
+			}
+		</text>
+	</p>
+	<p n="=surround_with_#if">
+		<text>
+			%\m begin_line%#if %\c
+			%\m sur_text%
+			%\m begin_line%#endif
+		</text>
+	</p>
+	<p n="=surround_with_#if...else">
+		<text>
+			%\m begin_line%#if %\c
+			%\m sur_text%
+			%\m begin_line%#else
+			%\m sur_text%
+			%\m begin_line%#endif
+		</text>
+	</p>
+	<p n="=surround_with_try...finally">
+		<text>
+			try {
+			%\m sur_text -indent%
+			} finally {
+			}
+		</text>
+	</p>
+</profile>

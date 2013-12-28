@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!DOCTYPE SETemplate SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/setemplate.dtd">
+<SETemplate Version="1.0" Type="Item">
+
+  <TemplateDetails>
+    <Name>C++ Singleton  Class</Name>
+    <Description>C++ implementation of the Singleton design pattern</Description>
+    <SortOrder>0</SortOrder>
+    <DefaultName>SingletonName</DefaultName>
+  </TemplateDetails>
+  <TemplateContent>
+    <Parameters/>
+    <Files>
+      <File TargetFilename="$fileinputname$.h" ReplaceParameters="1">Singleton.h</File>
+      <File TargetFilename="$fileinputname$.cpp" ReplaceParameters="1">Singleton.cpp</File>
+    </Files>
+  </TemplateContent>
+
+</SETemplate>

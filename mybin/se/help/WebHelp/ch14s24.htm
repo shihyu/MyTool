@@ -1,0 +1,180 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Menus</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch14.htm" title="Chapter 14.  Slick-C® Macro Programming Guide"><link rel="prev" href="ch14s23.htm" title="Built-in Controls"><link rel="next" href="ch14s25.htm" title="Common Macro Dialog Boxes"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slick_c_menus_11636_97854"></a>
+    <a name="slick_c_menus_11636_1005329"></a>
+    <a class="indexterm" name="slick-c_menus_0567A944_4557"></a>Menus</h2></div></div></div><p class="NormalText">You can create a new menu and change or add menu items by using the Menu Editor dialog box (<span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Menus</strong></span>, select a menu to edit or click <span><strong class="guibutton">New</strong></span>). Or, to create a new menu, use the Open Menu dialog box (<span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Menus</strong></span>) and click <span><strong class="guibutton">New</strong></span>. A quick way to bind a pop-up menu to a mouse click is to use the <span><strong class="guibutton">Show</strong></span> button on the Open Menu dialog box while recording a macro. When you are finished recording the macro, the Key Bindings option screen (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Keyboard and Mouse </strong></span> &#8594; <span><strong class="guimenuitem">Key Bindings</strong></span>) is displayed which enables the binding of the new macro to a mouse click. </p><p class="NormalText">This section describes macro programming details about menus for advanced menu item enabling and for writing macros that manage menus. Topics are:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+        <a href="ch14s24.htm#slick_c_menus_11636_70516">Menu Editor Dialog Box</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s24.htm#slick_c_menus_11636_36927">Menu Item Alias Dialog Box</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s24.htm#slick_c_menus_11636_31298">Auto Enable Properties Dialog Box</a>
+      </p></li><li><p class="NormalText">
+        <a href="ch14s24.htm#slick_c_menus_11636_95422">Creating and Editing Menu Resources</a>
+      </p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_menus_11636_70516"></a>
+      <a name="slick_c_menus_11636_1005349"></a>
+      <a class="indexterm" name="slick-c_menus_D4BEC2CD_4897"></a>Menu Editor Dialog Box</h3></div></div></div><p class="NormalText">The Menu Editor dialog is used for editing menu resources. Use the Menu Editor to modify the SlickEdit MDI menu bar or an existing menu resource which can be displayed as a pop-up or menu bar. </p><p class="NormalText">To access this dialog, from the main SlickEdit® menu, select <span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Menus</strong></span>, then click <span><strong class="guibutton">Open</strong></span> to open a menu for editing, or <span><strong class="guibutton">New</strong></span> to create a new menu. The <span><strong class="guibutton">New</strong></span> button on the Open Menu dialog box creates a new menu resource and places you in the Menu Editor so you can add menu items. After creating a menu, you can use the <span><strong class="guibutton">Show</strong></span> button on the Open Menu dialog box while macro recording to create a command which runs a menu by displaying it as a pop-up. If you bind the recorded command to a left or right button mouse event, the menu will be displayed at the cursor position. </p><p class="NormalText">You DO NOT need to specify key bindings for menu items because our Menu Editor automatically determines the key bindings for you. Use the Advanced Appearance option screen (<span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Appearance </strong></span> &#8594; <span><strong class="guimenuitem">Advanced</strong></span>) to choose between short and long key names.</p><p class="NormalText">For information about each field and option on the Menu Editor dialog, see "Menu Editor dialog" in the SlickEdit <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Index</strong></span>. See <a href="ch14s24.htm#slick_c_menus_11636_95422">Creating and Editing Menu Resources</a> for information on creating forms with menu bars or advanced information.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_menus_11636_36927"></a>
+      <a name="slick_c_menus_11636_1005385"></a>Menu Item Alias Dialog Box</h3></div></div></div><p class="NormalText">When you click the <span><strong class="guibutton">Alias</strong></span> button on the <a href="ch14s24.htm#slick_c_menus_11636_70516">Menu Editor Dialog Box</a>, the Menu Item Alias dialog is displayed. This dialog box allows you to define aliases (similar commands) for the command that is being executed. Enter each alias command on a separate line. If one of the alias commands is bound to a key, that key name will be displayed to the right of the menu item. For example, the <span><strong class="command">e</strong></span> and <span><strong class="command">edit</strong></span> commands are absolutely identically in function except that the <span><strong class="command">e</strong></span> command requires fewer characters to type. The <span><strong class="command">gui_open</strong></span> command is identical to the <span><strong class="command">edit</strong></span> command except that it prompts the user with a dialog box, whereas the <span><strong class="command">edit</strong></span> command prompts for files on the command line. These two examples illustrate the best reasons for using aliases. See also "aliases" in the SlickEdit <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Index</strong></span> for more information.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_menus_11636_31298"></a>
+      <a name="slick_c_menus_11636_1005388"></a>Auto Enable Properties Dialog Box</h3></div></div></div><p class="NormalText">For convenience, SlickEdit® has some predefined enable/disable attributes which you can specify for any command. When these predefined auto-enabling attributes are not enough, then you need to implement a callback which determines the enable/disable state of the command. See <a href="ch14s24.htm#slick_c_menus_11636_95422">Creating and Editing Menu Resources</a> for information on enabling and disabling menu items with your own callback. For information about each field and option on the dialog, see "Auto Enable Properties dialog" in the SlickEdit <span><strong class="guimenu">Help </strong></span> &#8594; <span><strong class="guimenuitem">Index</strong></span>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="slick_c_menus_11636_95422"></a>
+      <a name="slick_c_menus_11636_1005449"></a>Creating and Editing Menu Resources</h3></div></div></div><p class="NormalText">Modified menus are stored in the state file <code class="filename">vslick.sta</code> (UNIX: <code class="filename">vslick.stu</code>) file. The easiest way to create or change a menu is to use the Open Menu dialog box (<span><strong class="guimenu">Macro </strong></span> &#8594; <span><strong class="guimenuitem">Menus</strong></span>). After you select the menu, the <a href="ch14s24.htm#slick_c_menus_11636_70516">Menu Editor Dialog Box</a> is displayed and you can edit the menu resource. After the menu is created, use the <span><strong class="command">show</strong></span>, <span><strong class="command">mou_show_menu</strong></span>, or <span><strong class="command">_menu_show</strong></span> function to run the menu by displaying it as a pop-up window. The <span><strong class="command">_menu_set</strong></span> method may be used to create a menu bar on a form. Another way to create or change a menu is to define or modify a menu resource. See the following topics:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">
+          <a href="ch14s24.htm#slick_c_menus_11636_80096">Defining a Menu Resource</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s24.htm#slick_c_menus_11636_16938">Predefined Attributes for Auto-Enabling Commands</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s24.htm#slick_c_menus_11636_80909">Macro Callbacks for Enabling Commands</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s24.htm#slick_c_menus_11636_96978">Placing a Menu Bar on a Form</a>
+        </p></li><li><p class="NormalText">
+          <a href="ch14s24.htm#slick_c_menus_11636_29324">Displaying a Menu as a Pop-Up</a>
+        </p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_menus_11636_80096"></a>
+        <a name="slick_c_menus_11636_1005464"></a>Defining a Menu Resource</h4></div></div></div><p class="NormalText">Use the <span><strong class="command">insert_object</strong></span> command to insert macro source code for a menu into the current buffer. Edit the resource properties and then run the macro to apply the resource changes. Ignore the message <span><strong class="command">No main entry point</strong></span> if it is displayed. Changing a menu resource does not change any menu bars. Menu bars represent menu resources that have been loaded. A menu definition has the following format:</p><pre class="programlisting">
+        <span><strong class="command">
+    _menu menu_name {
+    submenu menu_item, help_command, help_message, categories {
+    menu_item, command, categories, help_command, help_message
+    }
+    submenu
+    }endsubmenu
+    }
+      </strong></span>
+      </pre><p class="NormalText">The table below contains the menu items and their definitions:</p><div class="informaltable"><a name="table_43191e85-4411-4428-a8ce-445e2930d129"></a><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>
+                <p class="CellHeading">
+                  <span class="bold"><strong>Menu item</strong></span>
+                </p>
+              </td><td>
+                <p class="CellHeading">
+                  <span class="bold"><strong>Definition</strong></span>
+                </p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">menu_item</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Menu item name in double quotes. Use <span><strong class="keycap">&amp;</strong></span> to choose selection character.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">command</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Any editor command. Places the cursor on the command line and press <span><strong class="keycap">?</strong></span> to list all editor commands.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">help_command</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Command to be executed when <span><strong class="keycap">F1</strong></span> is pressed. Usually it is a <span><strong class="command">help</strong></span> or <span><strong class="command">popup_imessage</strong></span> command.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">categories</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Specifies zero or more help categories in double quotes. Multiple help categories are separated with <span><strong class="keycap">|</strong></span> (pipe).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">help_message</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">A single line message in double quotes displayed on message line.</p>
+              </td></tr></tbody></table></div><p class="NormalText">Example of a menu definition:</p><pre class="programlisting">_menu mymenu {
+    submenu "&amp;File", "Help file menu", "Displays File drop-down menu", "ncw" {
+       "&amp;New", "new", "ncw" , "help new", "Creates a new file to edit";
+       "&amp;Open\tCtrl+O", "gui_open", "help gui_open", "Open a file";
+    }
+    submenu "&amp;Edit", "Help edit menu", "Displays Edit drop-down menu","ncw" {
+     "Cu&amp;t", "cut", "sel|nrdonly", "help cut", "Deletes the selection and copies it
+to the clipboard";
+    }
+}</pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_menus_11636_16938"></a>
+        <a name="slick_c_menus_11636_1005527"></a>Predefined Attributes for Auto-Enabling Commands</h4></div></div></div><p class="NormalText">Predefined enabling or disabling attributes can be specified for any command. Specify these attributes in the <span><strong class="command">name_info</strong></span> of a command definition. Auto-enabling attributes affects the enable/disable state for a command placed in a menu or in a toolbar. The following command is disabled when there is no editor control on which to operate:</p><pre class="programlisting">#include slick.sh
+_command void top_of_buffer() 
+       name_info(',' VSARG2_READ_ONLY| VSARG2_REQUIRES_EDITORCTL)
+{
+
+}</pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_menus_11636_80909"></a>
+        <a name="slick_c_menus_11636_1005551"></a>Macro Callbacks for Enabling Commands</h4></div></div></div><p class="NormalText">If the auto-enable attributes do not provide the features that you want, you can define the enable and disable callback for the command. The name of the callback function you define is based on the name of the command as shown in the following example:</p><pre class="programlisting">#include "slick.sh"
+static boolean gSomeOtherState;
+/*
+    This function gets called if your command is used in a menu or toolbar. 
+    You must return a combination of the MF_ flags ORed together.
+ 
+    BEWARE: If an _OnUpdate callback causes a Slick-C run-time error, you 
+    may not see the error. In addition, the timer used for toolbars,
+    Context Tagging(R), AutoSave, and some other features may be 
+    automatically terminated. Exit and restart the editor to restart
+    this timer. Use the "say" function to debug your _OnUpdate
+    callback.
+*/
+int _OnUpdate_mycommand(CMDUI &amp;cmdui,int target_wid,_str command)
+{  
+    //say('h1');
+    // Lets assume this command requires the target to be an editor control
+    // with a selection. 
+    // IF the target is not an editor control:
+    if ( !target_wid || !target_wid._isEditorCtl()) {
+       //say('disabled at h2');
+       return(MF_GRAYED);
+    }
+    //say('h3');
+    // IF the editor control does not have a selection:
+ 
+    if (!target_wid.select_active2()) {
+       //say('disabled at h4');      
+       return(MF_GRAYED);
+    }
+    //say('h5');
+    if (gSomeOtherState) {
+       //say('disabled at h6');
+       return(MF_GRAYED);
+    }
+    //say('enabled at h7')
+    return(MF_ENABLED);
+}
+_command void mycommand() name_info(','VSARG2_REQUIRES_EDITORCTL)
+{
+    // Some code here...
+}
+// This command affects the enable/disable of mycommand.
+_command void mycommand2(_str argument="0")
+{
+    gSomeOtherState=(argument)?1:0;
+ 
+    // Indicate that the enable state of the toolbar buttons must be updated.
+    // The _tbSetRefreshBy function is very fast. Toolbars will be updated
+    // after the macro terminates and the user stops typing fast.
+    _tbSetRefreshBy(VSTBREFRESHBY_USER);
+}</pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_menus_11636_96978"></a>
+        <a name="slick_c_menus_11636_1005622"></a>Placing a Menu Bar on a Form</h4></div></div></div><p class="NormalText">The following sample code shows how to add a menu on a form as a menu bar:</p><pre class="programlisting">#include slick.sh
+// Create a form called form1 and set the border style to anything BUT 
+// BDS_DIALOG BOX. Windows does not allow forms with a dialog box style
+// border to have menu bars.
+defeventtab form1;
+form1.on_load()
+{
+    // Find index of MDI menu resource.
+    index=find_index(def_mdi_menu,oi2type(OI_MENU));
+    // Load this menu resource.
+    menu_handle=p_active_form._menu_load(index);
+    // _set_menu will fail if the form has a dialog box style border.
+    // Put a menu bar on this form.
+    _menu_set(menu_handle);
+    // You DO NOT need to call _menu_destroy. This menu is destroyed when
+    // the form window is deleted.
+}
+form1.on_init_menu()
+{
+    // Gray out all menu items that are not allowed when there are no child windows.
+    _menu_set_state(p_menu_handle,!ncw,MF_GRAYED,C);
+}</pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="slick_c_menus_11636_29324"></a>
+        <a name="slick_c_menus_11636_1005663"></a>Displaying a Menu as a Pop-Up</h4></div></div></div><p class="NormalText">If the <span><strong class="command">show</strong></span> or <span><strong class="command">mou_show_menu</strong></span> function meets your needs, use one of them. The following sample code shows how to display a menu as a pop-up:</p><pre class="programlisting">#include slick.sh
+defmain()
+{
+    // Low-level code to display menu bar as pop-up.
+    // Could just use show or mou_show_menu function.
+    index=find_index(_mdi_menu,oi2type(OI_MENU))
+    if (!index) {
+       message(Can't find _mdi_menu);
+    }
+    menu_handle=_menu_load(index,P);
+    // Display this menu in the menu of the screen.
+    x=_screen_width()/2;y=_screen_height()/2;
+    flags=VPM_CENTERALIGN|VPM_LEFTBUTTON;
+    _menu_show(menu_handle,flags,x,y);
+    _menu_destroy(menu_handle);
+}</pre><p class="NormalText"></p></div></div></div></body></html>

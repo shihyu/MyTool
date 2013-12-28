@@ -1,0 +1,125 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMultiByteFillBuf</title>
+</head>
+<body>
+
+<h3><b>char*VSAPI vsMultiByteFillBuf(int destEncoding, int codePage, int writeFirstBuffer, void *pDest, size_t DestLen, const char *pSrc, const char *pSrcEnd, unsigned *pNofBytesWritten=0, int *pstatus=0, VSUTF8_FILEINFO1 *pfile=0, int(VSAPI*pfnRead)(VSUTF8_FILEINFO1*pfile, const char*pCurrentPos)=0, int *pXlatError=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Converts the data from the multi-byte code page specified to the
+encoding specified UTF-8.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="destEncoding">destEncoding</A></code> - One of the following encodings:
+
+<ul>
+<li>VSENCODING_UTF16LE</li>
+<li>VSENCODING_UTF16LE_WITH_SIGNATURE</li>
+<li>VSENCODING_UTF16BE</li>
+<li>VSENCODING_UTF16BE_WITH_SIGNATURE</li>
+<li>VSENCODING_UTF32LE</li>
+<li>VSENCODING_UTF32LE_WITH_SIGNATURE</li>
+<li>VSENCODING_UTF32BE</li>
+<li>VSENCODING_UTF32BE_WITH_SIGNATURE</li>
+</ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="codePage">codePage</A></code> - One of the following code pages:
+
+<ul>
+<li>VSCP_ACTIVE_CODEPAGE</li>
+<li>VSCP_CYRILLIC_KOI8_R</li>
+<li>VSCP_ISO_8859_1</li>
+<li>VSCP_ISO_8859_2</li>
+<li>VSCP_ISO_8859_3</li>
+<li>VSCP_ISO_8859_4</li>
+<li>VSCP_ISO_8859_5</li>
+<li>VSCP_ISO_8859_6</li>
+<li>VSCP_ISO_8859_7</li>
+<li>VSCP_ISO_8859_8 </li>
+<li>VSCP_ISO_8859_9</li>
+<li>VSCP_ISO_8859_10</li>
+<li>Any valid Windows code page</li>
+</ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="writeFirstBuffer">writeFirstBuffer</A></code> - Indicates whether this is the first buffer is
+being written.  When this is non-zero and
+the encoding given has a signature, the
+signature is written.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pDest">pDest</A></code> - Destination buffer for data in the encoding
+format specified.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="DestLen">DestLen</A></code> - Number of bytes allocated to destination
+buffer.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pSrc">pSrc</A></code> - Pointer to multi-byte source data.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pSrcEnd">pSrcEnd</A></code> - Pointer to end of multi-byte source data.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pNofbytesWritten">pNofbytesWritten</A></code> - Receives number of bytes (not characters of
+encoding format) written.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pstatus">pstatus</A></code> - Set to 0 if no error.  Otherwise, a negative
+return code.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pfnRead">pfnRead</A></code> - Callback function to read more data when
+<i>pBuf</i>>=<i>pEndBuf</i>.  This
+allows you to write more efficient code
+which processes data directly from any
+source without having to make a copy of the
+data.  Returns 0 if successful, 1 if no more
+data, and a negative error code for an error.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pXlatError">pXlatError</A></code> - Set to 1 if a translation error occurs.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>char*VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns pointer to next character to read.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+static char gTempBuffer[32768];
+
+static int VSAPI CallbackFileRead1(VSUTF8_FILEINFO1 *pfile,const
+char *pCurrentPos)
+{
+   if (pCurrentPos<pfile->pEndBuf) {
+      pfile->pBuf=(char *)pCurrentPos;
+      return(1);  // No more data
+   }
+   int status=readfh(pfile->fh,gTempBuffer,sizeof(gTempBuffer));
+   pfile->pBuf=(char *)gTempBuffer;
+   pfile->pEndBuf=(char *)(gTempBuffer+status);
+   return(status);  // 0 for success, negative number for error.
+}
+
+static char gDestTempBuffer[32768];
+static int WriteFromUTF8(const char *pszFilename,int
+dest_encoding,int intput_fh)
+{
+   VSUTF8_FILEINFO1 fileinfo;
+   fileinfo.pBuf=fileinfo.pEndBuf=0;
+   fileinfo.fh=intput_fh;
+
+   int output_fh=vsFileOpen(pszFilename,1);
+   if (output_fh<0) {
+      return(output_fh);
+   }
+   int writeFirstBuffer=1;
+   int status;
+   for (;;) {
+      int Nofbytes;
+
+fileinfo.pBuf=vsMultiByteFillBuf(dest_encoding,VSCP_ACTI
+VE_CODEPAGE, writeFirstBuffer,
+
+gDestTempBuffer,sizeof(gDestTempBuffer),
+                             fileinfo.pBuf,fileinfo.pEndBuf,
+                             (unsigned
+*)&Nofbytes,&status,&fileinfo,CallbackFileRead1
+                             );
+      if (status<0) {
+         break;
+      }
+      if (Nofbytes<=0) {
+         status=Nofbytes;
+         break;
+      }
+      Nofbytes=writefh(output_fh,gDestTempBuffer,Nofbytes);
+      if (Nofbytes<0) {
+         status=Nofbytes;
+         break;
+      }
+      writeFirstBuffer=0;
+   }
+   closefh(output_fh);
+   return(status);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Unicode_Functions.html">Unicode Functions</a></blockquote>
+</body>
+</html>

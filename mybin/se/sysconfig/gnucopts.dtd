@@ -1,0 +1,10 @@
+<?xml encoding='UTF-8'?>
+<!ELEMENT GNUCOptions (OptionSet)*>
+  <!ATTLIST GNUCOptions Version (8.0) #REQUIRED>
+  <!ATTLIST GNUCOptions GCCVersion CDATA #REQUIRED>
+<!ELEMENT OptionSet (Option)*>
+  <!ATTLIST OptionSet Type CDATA #REQUIRED>
+  <!ATTLIST OptionSet Architecture CDATA #IMPLIED>
+<!ELEMENT Option EMPTY>
+  <!ATTLIST Option Name CDATA #REQUIRED>
+  <!ATTLIST Option Description CDATA #REQUIRED>

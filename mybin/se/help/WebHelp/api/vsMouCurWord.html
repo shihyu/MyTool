@@ -1,0 +1,84 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsMouCurWord</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsMouCurWord(int wid, int x, int y, int XYAreInScreenCoordinates, int MaybeReturnSelectedText, char *pszWord, int MaxWordLen, int *pPhyiscalStartCol=a, int option=a, int *pMaxWordLen=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - Window id of editor control.  0 specifies the
+current object.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="<i>x</i>,"><i>x</i>,</A></code> - <i>y</i> Pixel coordinates under which to check for
+word or selection.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="XYAreInScreenCoordinates">XYAreInScreenCoordinates</A></code> - If this is not zero, (<i>x</i>,<i>y</i>) are in
+screen coordinates, otherwise
+(<i>x</i>,<i>y</i>) are relative to the editor
+control specified by <i>wid</i>.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaybeReturnSelectedText">MaybeReturnSelectedText</A></code> - If non-zero and a single line of selected text
+exists under (<i>x</i>,<i>y</i>), the
+selected text is returned.  Otherwise, the
+word under (<i>x</i>,<i>y</i>) is returned.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszWord">pszWord</A></code> - Ouput buffer for word.  This can be 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxWordLen">MaxWordLen</A></code> - Number of characters allocated to
+<i>pszWord</i>.  We recommend
+VSMAXCURWORD.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pPhysicalStartCol">pPhysicalStartCol</A></code> - Recieves physical start column
+(1..vsQLineLength()) of word.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - May be one of the following:
+
+<dl>
+<dt>0</dt><dd>If the cursor is on a word character, all of
+that word is returned.  If the cursor is not on
+a word character and a word exists after the
+cursor, that word is returned.  If the cursor is
+not on a word character and a word does not
+exist after the cursor, the previous word is
+returned.  If no words exist on the current
+line, a non-zero status is returned.</dd>
+
+<dt>1</dt><dd>(EMACS style) Same as 0 except that if
+cursor is on a word character, no word
+characters before the current character are
+returned.</dd>
+
+<dt>2</dt><dd> Same as 0 except when the cursor is setting
+on the first non-word character after a word
+character, the previous word is returned.
+<i>pMaxWordLen</i>   If this is not 0, this is set to the number of
+characters you need to allocate to
+<i>pszWord</i>.</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">If successful, returns 0 and places word or selection at location (x,y) in
+<i>pszWord</i>.  Otherwise a non-zero value is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+extern "C" void VSAPI vsDllInit()
+{
+     vsDllExport("void mymouse_move()",0,0);
+     int index;
+
+     index=vsFindIndex("mymouse_move",VSTYPE_PROC|VSTYPE_COMMAND);
+     if (index) {
+          // Bind this function to a mouse move event.
+           vsSetEventTabIndex(vsQDefaultEventTab(),
+                          vsEvent2Index(VSEV_MOUSE_MOVE),
+                          index);
+
+     }
+}
+extern "C" void VSAPI mymouse_move()
+{
+     // IF the current object is not an editor control object.
+     //  Could check for VSP_OBJECT==VSOI_EDITOR, but this won't work
+     // for MDI Child use of the editor control which will return VSOI_FORM.
+     if (!vsPropGetI(0,VSP_HASBUFFER)>=0) return;
+     char word[VSMAXCURWORD];
+
+     vsMouCurWord(0,vsMouQLastX(),vsMouQLastY(),1,1,word,VSMAXCURWORD);
+     vsMessage(word);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Mouse_Functions.html">Mouse Functions</a></blockquote>
+</body>
+</html>

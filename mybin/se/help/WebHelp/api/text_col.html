@@ -1,0 +1,47 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>text_col</title>
+</head>
+<body>
+
+<h3><b>int text_col(_str string, int column=0, _str option="L")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Remarks <i>column</i> does not have a default value.
+The third parameter defaults to 'L'.<p>
+<p>Converts an imaginary column position to a physical string column
+position and visa versa.  The input and output values are described by
+the table below:</p><p>
+<dl>
+<dt>Third param.</dt><dd>Input column, Output column</dd>
+<dt>'P'</dt><dd>Imaginary, Physical</dd>
+<dt>'T'</dt><dd>Imaginary, Physical.  Position is negated if the
+imaginary column input corresponds to the middle
+of a tab character.</dd>
+<dt>'L'</dt><dd>Doesn't matter, imaginary length of string.</dd>
+<dt>'I'</dt><dd>Physical, Imaginary</dd>
+</dl><p>
+<p>The input column is returned if input column is less than or equal to
+zero and the third parameter is not 'L'.</p><p>
+<p>We use the term imaginary to describe column positions which
+correspond to a string as displayed on your screen.  Strings containing
+tab characters are expanded before displayed.  Hence, the need arises
+for a differentiation between physical and imaginary positions.  A
+physical position corresponds to a character in string.  The characters
+are number one to the length of string.  An imaginary position
+corresponds to a position in a string once tabs have been expanded.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">(Assume tabs are 1 9 17 25 ... (increments of 8))<br>
+<pre>
+text_col('abc'\t'def'\t'ghi') == 19
+text_col('abc'\t'def'\t'ghi',12,'P')   == 8
+text_col('abc'\t'def'\t'ghi',13,'P')   == 8
+text_col('abc'\t'def'\t'ghi',12,'T')   == 8
+text_col('abc'\t'def'\t'ghi',13,'T')   == -8
+text_col('abc'\t'def'\t'ghi',8,'I') == 12
+text_col('abc'\t'def'\t'ghi',-1,'P')   == -1
+text_col('abc'\t'def'\t'ghi',0,'P') == 0
+text_col('abc'\t'def'\t'ghi',0,'I') == 0
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="String_Functions.html">String Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="expand_tabs.html">expand_tabs</a>, <a href="_expand_tabsc.html">_expand_tabsc</a>, <a href="_text_colc.html">_text_colc</a>, <a href="_expand_tabsc_raw.html">_expand_tabsc_raw</a></blockquote>
+</body>
+</html>

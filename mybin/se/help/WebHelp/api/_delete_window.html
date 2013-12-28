@@ -1,0 +1,52 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_delete_window</title>
+</head>
+<body>
+
+<h3><b>int _delete_window(_str modalWaitResult="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Deletes the current window and all child controls on the window.  This
+function is typically used to close a dialog box and optionally return a
+value to _modal_wait.  When canceling a dialog box the modal_retvalue
+SHOULD NOT BE SPECIFIED unless it is ''.  This convention is used so that
+editing a dialog box which causes the dialog box to be deleted, is the
+same as canceling the dialog box.  Only modal dialog boxes can return a
+value.  You CAN NOT RELY on the focus returning to a particular window.
+This function leaves focus selection up to the operating system.  If the
+window being deleted is a form and (p_init_style &
+(IS_REINIT|IS_HIDEONDEL) is true when _delete_window is called, the form
+is made invisible and no windows are actually deleted.  Under UNIX, the
+show command options -reinit and -hideondel turn on these p_init_style
+flags.  The _load_template function is used to create an instance of a
+dialog box.  The function _modal_wait, may be called with the instance
+handle (window id) returned by _load_template, to wait for the dialog box
+to be closed by the _delete_window function.  The return value of
+_modal_wait is the modal_retvalue given to _delete_window function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+#include "slick.sh"
+_command test()
+{
+    index=find_index("form1", oi2type(OI_FORM));
+    // Normally the show command is called instead of the more low level
+    // function _load_template
+    wid=_load_template(index,_mdi);
+    result=_modal_wait(wid);
+    message('result='result);
+}
+
+defeventtab form1;
+ok.lbutton_up()
+{
+     p_active_form._delete_window("This is a test");
+}
+cancel.lbutton_up()
+{
+     // Return '' to _modal_wait
+     p_active_form._delete_window();
+
+}
+</PRE></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">All Window Objects</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Check_Box_Methods.html">Check Box Methods</a>, <a href="Combo_Box_Methods.html">Combo Box Methods</a>, <a href="Command_Button_Methods.html">Command Button Methods</a>, <a href="Directory_List_Box_Methods.html">Directory List Box Methods</a>, <a href="Drive_List_Methods.html">Drive List Methods</a>, <a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="File_List_Box_Methods.html">File List Box Methods</a>, <a href="Form_Methods.html">Form Methods</a>, <a href="Frame_Methods.html">Frame Methods</a>, <a href="Gauge_Methods.html">Gauge Methods</a>, <a href="Hscroll_Bar_Methods.html">Hscroll Bar Methods</a>, <a href="Image_Methods.html">Image Methods</a>, <a href="Label_Methods.html">Label Methods</a>, <a href="List_Box_Methods.html">List Box Methods</a>, <a href="Picture_Box_Methods.html">Picture Box Methods</a>, <a href="Radio_Button_Methods.html">Radio Button Methods</a>, <a href="Spin_Methods.html">Spin Methods</a>, <a href="Text_Box_Methods.html">Text Box Methods</a>, <a href="Vscroll_Bar_Methods.html">Vscroll Bar Methods</a>, <a href="Window_Functions.html">Window Functions</a></blockquote>
+</body>
+</html>

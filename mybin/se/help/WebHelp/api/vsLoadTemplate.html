@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsLoadTemplate</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsLoadTemplate(int index_or_wid, int parent, int flags, VSLOADDATA *pLoadData, int x=-, int y=-, int width=-, int height=-, int state='N')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Load a Slick-C resource template by index.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="index_or_wid">index_or_wid</A></code> - Resource template index or window id of
+                    already-created object. If VSLOAD_WINDOW
+                    or VSLOAD_REINIT flags are used, then it
+                    is the window id of the already-created
+                    object. Otherwise it is the resource
+                    template.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="parent">parent</A></code> - Parent window id.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flags">flags</A></code> - Load flags. See VSLOAD_*.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pLoadData">pLoadData</A></code> - Load data. This includes ON_CREATE
+                    arguments passed to the ON_CREATE events
+                    of the resource being loaded. Set to 0 if
+                    no load data. See VSLOADDATA type.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="x">x</A></code> - Initial window geometry that overrides
+                    what is stored in the template. Only
+                    useful when using VSLOAD_MDI_CHILDFORM
+                    because you cannot create an MDI child
+                    window hidden, move it, then make it
+                    visible.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="y">y</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="width">width</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="height">height</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="state">state</A></code> - Initial window state. 'N'=Normalized,
+                    'M'=Maximized, 'I'=Iconized/minimized.
+                    Ignored if not using
+                    VSLOAD_MDI_CHILDFORM.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Window id of loaded resource. Returns <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Window_Functions.html">Window Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsFindIndex.html">vsFindIndex</a></blockquote>
+</body>
+</html>

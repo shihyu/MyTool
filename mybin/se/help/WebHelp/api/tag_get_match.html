@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_get_match</title>
+</head>
+<body>
+
+<h3><b>int tag_get_match(int match_id, _str &tag_file, _str &tag_name, _str &type_name, _str &file_name, int &line_no, _str &class_name, int &tag_flags, _str &arguments, _str &return_type)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve information about the given tag match.  Though this function is highly
+optimized, it is often more efficient to use <a href="tag_get_detail2.html">tag_get_detail2</a> to retrieve only
+specific information about a match rather than everything.
+<p>
+For synchronization, macros should perform a tag_lock_matches(false)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="match_id">match_id</A></code> - Match ID [ from 1 to <a href="tag_get_num_of_matches.html">tag_get_num_of_matches</a>() ] of tag
+                        match to retrieve information about.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_file">tag_file</A></code> - (Output) tag file that match came from</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - (Output) Tag string (native case)</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_name">type_name</A></code> - (Output) Tag type name, see <a href="tag_get_type.html">tag_get_type</a>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="file_name">file_name</A></code> - (Output) Full path of file the tag is located in</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="line_no">line_no</A></code> - (Output) Start line number of tag within file</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - (Output) Name of class or package or other container that
+                        the tag belongs to.  See <a href="VS_TAGSEPARATOR_class.html">VS_TAGSEPARATOR_class</a> and
+                        <a href="VS_TAGSEPARATOR_package.html">VS_TAGSEPARATOR_package</a> for more details about constructing
+                        this value.  If the tag is not in a class scope, simple pass
+                        the empty string for this value.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_flags">tag_flags</A></code> - (Output) Tag flags indicating symbol attributes, see
+                        <a href="tag_insert_simple.html">tag_insert_simple</a> for details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="arguments">arguments</A></code> - (Output) arguments or formal parameters</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="return_type">return_type</A></code> - (Output) constant value or return type
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_clear_matches.html">tag_clear_matches</a>, <a href="tag_insert_match.html">tag_insert_match</a>, <a href="tag_insert_match_fast.html">tag_insert_match_fast</a>, <a href="tag_get_detail2.html">tag_get_detail2</a>, <a href="tag_get_num_of_matches.html">tag_get_num_of_matches</a>, <a href="tag_pop_matches.html">tag_pop_matches</a>, <a href="tag_push_matches.html">tag_push_matches</a></blockquote>
+</body>
+</html>

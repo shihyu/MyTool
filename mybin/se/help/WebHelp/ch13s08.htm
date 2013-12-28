@@ -1,0 +1,369 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>VLX File and Color Coding</title><link rel="stylesheet" href="slickedit_help.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.htm" title="Welcome to SlickEdit 2013"><link rel="up" href="ch13.htm" title="Chapter 13.  Appendix"><link rel="prev" href="ch13s07.htm" title="Advanced Help Configuration"><link rel="next" href="ch13s09.htm" title="Editing the Key Binding Source"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><p class="HeaderText"><a href="index.htm#contents">Contents</a> : <a href="ix01.htm">Index</a> : <a href="search.htm">Search</a></p><hr><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sect_vlxfileandcolorcoding_13937_28131"></a>
+    <a name="sect_vlxfileandcolorcoding_13937_1004658"></a>
+    <a class="indexterm" name="sect_vlxfileandcolorcoding_6DA52586_B156"></a>VLX File and Color Coding</h2></div></div></div><p class="NormalText">For more basic information about using Color Coding, see <a href="ch04s06.htm">Colors, Color Coding, and Symbol Colors</a>.</p><p class="NormalText">To modify the color coding for VLX files, use one of the following methods:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Use the language-specific <span><strong class="guilabel">Color Coding</strong></span> options screen (see <a href="ch12s11.htm#sect_options_menuanddialogs_14207_28494">Language-Specific Color Coding Options</a>).</p></li><li><p class="NormalText">Modify the <code class="filename">vslick.vlx</code> file.</p></li><li><p class="NormalText">Create a new VLX file.</p></li></ul></div><p class="NormalText">The <code class="filename">vslick.vlx</code> file defines language-specific coloring support for the following languages:</p><div class="itemizedlist"><ul type="disc"><li><p class="NormalText">Ada</p></li><li><p class="NormalText">Assembler</p></li><li><p class="NormalText">AWK</p></li><li><p class="NormalText">C</p></li><li><p class="NormalText">C++</p></li><li><p class="NormalText">CFScript</p></li><li><p class="NormalText">CICS</p></li><li><p class="NormalText">COBOL</p></li><li><p class="NormalText">dBASE</p></li><li><p class="NormalText">Delphi</p></li><li><p class="NormalText">Fortran</p></li><li><p class="NormalText">HTML</p></li><li><p class="NormalText">Java</p></li><li><p class="NormalText">Modula-2</p></li><li><p class="NormalText">Pascal</p></li><li><p class="NormalText">Perl</p></li><li><p class="NormalText">Python</p></li><li><p class="NormalText">REXX</p></li><li><p class="NormalText">Slick-C®</p></li><li><p class="NormalText">VHDL</p></li><li><p class="NormalText">Visual Basic .NET</p></li></ul></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_vlxfileandcolorcoding_13937_42523"></a>
+      <a name="sect_vlxfileandcolorcoding_13937_1004717"></a>
+      <a class="indexterm" name="sect_vlxfileandcolorcoding_17AF2AB6_7999"></a>
+      <a class="indexterm" name="sect_vlxfileandcolorcoding_525C0074_C061"></a>Modifying the VLX File to Change a Color Definition</h3></div></div></div><p class="NormalText">To modify an existing language-specific coloring definition, complete the following steps: </p><div class="orderedlist"><ol type="1"><li><p class="NormalText">Open <code class="filename">vslick.vlx</code> for editing.</p></li><li><p class="NormalText">Search for one of the section names: CPP, Java, Delphi, Pascal, AWK, REXX, Perl, HTML, Modula-2, AWK, COBOL, Python, CICS, Fortran, Visual Basic .NET, Ada, or Slick-C®.</p></li><li><p class="NormalText">Modify the definition. See below for information on the syntax of definitions.</p></li><li><p class="NormalText">Invoke the <span><strong class="command">cload</strong></span> command from the command line. If the current buffer has a <code class="filename">.vlx</code> extension, it will be loaded. Otherwise you will be prompted to specify a file name. Specify<span><strong class="command"></strong></span><code class="filename">vslick.vlx</code> including path as the file name.</p></li></ol></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sect_vlxfileandcolorcoding_13937_83313"></a>
+      <a name="sect_vlxfileandcolorcoding_13937_1004725"></a>
+      <a class="indexterm" name="sect_vlxfileandcolorcoding_F5CA6CE8_504A"></a>Creating a Lexer Name and a New VLX File</h3></div></div></div><p class="NormalText">To create a new lexer name (and thus a new section in the VLX file), first complete all of the preceding steps under <a href="ch13s08.htm#sect_vlxfileandcolorcoding_13937_42523">Modifying the VLX File to Change a Color Definition</a>, then complete the steps below. </p><div class="orderedlist"><ol type="1"><li><p class="NormalText">From the main menu, click <span><strong class="guimenu">Tools </strong></span> &#8594; <span><strong class="guimenuitem">Options </strong></span> &#8594; <span><strong class="guimenuitem">Languages</strong></span>, expand your language category and language, then select <span><strong class="guilabel">General</strong></span>.</p></li><li><p class="NormalText">If this lexer definition is for a new extension, create the extension with the <span><strong class="guibutton">New</strong></span> button. Otherwise, choose the appropriate extension.</p></li><li><p class="NormalText">Set the <span><strong class="guilabel">Lexer Name</strong></span> for the new lexer definition you created.</p></li><li><p class="NormalText">Turn on the <span><strong class="guilabel">Language Specific</strong></span> check box.</p></li><li><p class="NormalText">Click <span><strong class="guibutton">Update</strong></span> to commit the changes.</p></li></ol></div><p class="NormalText">Files with a <code class="filename">.vlx</code> extension are text files that have a syntax similar to a <code class="filename">.ini</code> file. If the first non-blank character in a line is a semicolon, the line is considered a comment. Each definition of a language starts with a section name (the lexer name) enclosed in square brackets. Within each section are statements that look like <span class="emphasis"><em>name</em></span><span><strong class="command">=</strong></span><span class="emphasis"><em>value</em></span>.</p><p class="NormalText">The table below shows the statements that can be used.</p><div class="informaltable"><a name="table_d99adc19-017b-4c4b-bc3d-7632b8b89134"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+              <p class="CellHeading">Statement</p>
+            </th><th>
+              <p class="CellHeading">Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">case-sensitive= [Y | N]</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines the case sensitivity for the language. This statement must be the first or second statement within the section.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">idchars=start_id_chars after_id_chars</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines the characters that are the start of a valid identifier and additional valid characters that may follow. This statement must be the first or second statement within the section. You may use a dash (<span><strong class="keycap">-</strong></span>) character to specify a range, for example, <span><strong class="command">A-Z</strong></span> specifies uppercase letters. To specify a dash or backslash (<span><strong class="keycap">\</strong></span>) character as a valid word character, place a backslash before the character.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">styles= </strong></span>
+                <span class="emphasis"><em>style</em></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines zero or more styles. See <a href="ch13s08.htm#sect_vlxfileandcolorcoding_13937_83313">Table of style Values</a> below for a list of available styles.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">mlcomment= </strong></span>
+                <span class="emphasis"><em>start_symbol end_symbol</em></span>
+                <span><strong class="command">[nesting] [followedby </strong></span>
+                <span class="emphasis"><em>idchars</em></span>
+                <span><strong class="command">] [</strong></span>
+                <span class="emphasis"><em>colorname</em></span>
+                <span><strong class="command">]</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines a multi-line comment. <span class="emphasis"><em>start_symbol</em></span> and <span class="emphasis"><em>end_symbol</em></span> define strings which start and end the comment. Specify <span><strong class="command">nesting</strong></span> if the lexer should look for another occurrence of <span class="emphasis"><em>start_symbol</em></span> when looking for the end comment symbol. The <span><strong class="command">followedby</strong></span><span class="emphasis"><em>idchars</em></span> is used to require certain characters to follow <span class="emphasis"><em>start_symbol</em></span>. You can use a dash (<span><strong class="keycap">-</strong></span>) character to specify a range, such as <span><strong class="command">A-Z</strong></span>, which specifies uppercase letters. To specify a dash (<span><strong class="keycap">-</strong></span>) or backslash (<span><strong class="keycap">\</strong></span>) character as a valid word character, place a backslash before the character. <span><strong class="command">followedby</strong></span><span><strong class="command"></strong></span>is ignored when the <span><strong class="command">html</strong></span> style is specified. Currently, <span class="emphasis"><em>start_symbol</em></span> and <span class="emphasis"><em>end_symbol</em></span> may not be valid identifiers. No more than four multi-line comments may be defined. <span class="emphasis"><em>colorname</em></span> can be used to indicate that a different color such as keyword color be used instead of comment color when a match is found. <span class="emphasis"><em>colorname</em></span> may be <span><strong class="command">keywordcolor</strong></span>, <span><strong class="command">numbercolor</strong></span>, <span><strong class="command">stringcolor</strong></span>, <span><strong class="command">commentcolor</strong></span>, <span><strong class="command">ppkeywordcolor</strong></span>, <span><strong class="command">linenumcolor</strong></span>, <span><strong class="command">symbol1color</strong></span>, <span><strong class="command">symbol2color</strong></span>, <span><strong class="command">symbol3color</strong></span>, or <span><strong class="command">symbol4color</strong></span>.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">mlcomment= </strong></span>
+                <span class="emphasis"><em>start_symbol start_col</em></span>
+                <span><strong class="command">[checkfirst|leading] </strong></span>
+                <span class="emphasis"><em>end_symbol</em></span>
+                <span><strong class="command"> [lastchar]</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines a multi-line comment. This construct was designed to handle comments for the ATLAS language. <span class="emphasis"><em>start_symbol</em></span> and <span class="emphasis"><em>end_symbol</em></span> define strings which start and end the comment. <span class="emphasis"><em>start_symbol</em></span> is only considered the start of a comment if it appears in column <span class="emphasis"><em>start_col</em></span>. <span><strong class="command">checkfirst</strong></span> specifies that the lexer should check if the line is a comment before determining the color coding of symbols in the line. When the <span><strong class="command">checkfirst</strong></span> option is specified, <span class="emphasis"><em>start_symbol</em></span> is limited to one character in length. <span><strong class="command">leading</strong></span> specifies that <span><strong class="command">symbol</strong></span> is considered a line comment only if it appears as the first non-blank character. Space or tab characters are considered blanks. Currently, <span class="emphasis"><em>end_symbol</em></span> may not be a valid identifier. <span><strong class="command">lastchar</strong></span> specifies that <span class="emphasis"><em>end_symbol</em></span> must appear as the last character on a line to terminate the comment. No more than two multi-line comments may be defined.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">mlckeywords= [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] ...</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines keywords for the last <span><strong class="command">mlcomment</strong></span> statement. When one of these keywords follows the <span class="emphasis"><em>start_symbol</em></span> defined for the last <span><strong class="command">mlcomment</strong></span> statement, the keyword color is used to color the comment instead of comment color. Keywords do not have to be valid identifiers. This statement is useful for tag languages like HTML. See the HTML definition in the file <code class="filename">vslick.vlx</code> for an example.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">keywordattrs= [</strong></span>
+                <span class="emphasis"><em>mlckeyword</em></span>
+                <span><strong class="command">] [</strong></span>
+                <span class="emphasis"><em>attribute</em></span>
+                <span><strong class="command"> ] [</strong></span>
+                <span class="emphasis"><em>attribute</em></span>
+                <span><strong class="command"> ] ...</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines attributes for the <span class="emphasis"><em>mlckeyword</em></span> specified which belongs to the last <span><strong class="command">mlcomment</strong></span> statement. Currently this statement only supports HTML syntax attributes and requires that the <span><strong class="command">HTML</strong></span> style be specified. For example, <span><strong class="command">keywordattrs=SCRIPT LANGUAGE SRC</strong></span></p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">linecomment= [</strong></span>
+                <span class="emphasis"><em>symbol</em></span>
+                <span><strong class="command"> ] [</strong></span>
+                <span class="emphasis"><em>col</em></span>
+                <span><strong class="command"> | </strong></span>
+                <span class="emphasis"><em>col</em></span>
+                <span><strong class="command">+ | </strong></span>
+                <span class="emphasis"><em>start_col</em></span>
+                <span><strong class="command"> - </strong></span>
+                <span class="emphasis"><em>end_col</em></span>
+                <span><strong class="command">] [checkfirst|leading]</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines a line comment. <span class="emphasis"><em>symbol</em></span> defines the character(s) which start this line comment. If no column limits are specified, the remainder of the line is considered a comment regardless of where <span class="emphasis"><em>symbol</em></span> appears. A plus sign (+) after a column specifies an unlimited <span class="emphasis"><em>end_col</em></span>. <span><strong class="command">checkfirst</strong></span> specifies that the lexer should check if the line is a comment before determining the color coding of symbols in the line. When the <span><strong class="command">checkfirst</strong></span> option is specified, <span class="emphasis"><em>symbol</em></span> is limited to one character in length. If <span class="emphasis"><em>symbol</em></span> is not specified, all characters will be ignored at or after the column specified (ex. <span><strong class="command">linecoment=73+</strong></span>). This is useful for Fortran which requires that all characters at or after column 73 be ignored. <span><strong class="command">leading</strong></span> specifies that <span><strong class="command">symbol</strong></span> is considered a line comment only if it appears as the first non-blank character. Space or tab characters are considered blanks.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">keywords= [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] ...</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines words that should be displayed in keyword color. Keywords do not have to be valid identifiers.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">cskeywords= [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] ...</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">(Case-sensitive keywords) Defines words that should be displayed in keyword color only if found in the case specified. This statement should only be used for languages such as HTML which are case insensitive except for a few words. For other languages, use the <span><strong class="command">case-sensitive</strong></span> and <span><strong class="command">keywords</strong></span> statements. Keywords do not have to be valid identifiers.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">ppkeywords= [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] ...</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines words that should be displayed in preprocessor color. The first character of a preprocessor keyword must not be a valid identifier. Preprocessing keywords must appear as the first non-blank symbol in the line.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">symbol1= [ </strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] [ </strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] ...</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines words that should be displayed in <span><strong class="command">symbol1</strong></span> color. Keywords do not have to be valid identifiers.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">symbol2= [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] ... </strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines words that should be displayed in <span><strong class="command">symbol2</strong></span> color. Keywords do not have to be valid identifiers.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">symbol3= [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] ...</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines words that should be displayed in <span><strong class="command">symbol3</strong></span> color. Keywords do not have to be valid identifiers.</p>
+            </td></tr><tr><td>
+              <p class="CellBody">
+                <span><strong class="command">symbol4= [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] [</strong></span>
+                <span class="emphasis"><em>keyword</em></span>
+                <span><strong class="command"> ] ...</strong></span>
+              </p>
+            </td><td>
+              <p class="CellBody">Defines words that should be displayed in <span><strong class="command">symbol4</strong></span> color. Keywords do not have to be valid identifiers.</p>
+            </td></tr></tbody></table></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="sect_vlxfileandcolorcoding_13937_1004804"></a>Table of Style Values</h4></div></div></div><p class="NormalText">The table below describes the <span class="emphasis"><em>style</em></span> values that can be used:</p><div class="informaltable"><a name="table_b0fae2ca-66ba-4d39-bb17-571b95e85b11"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>
+                <p class="CellHeading">Value of style</p>
+              </th><th>
+                <p class="CellHeading">Description</p>
+              </th></tr></thead><tbody><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">linenum</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Line numbers may be found as the first non-blank symbol of a line like BASIC.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">dqbackslash</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Color double-quoted strings. Characters following a backslash in a double-quoted string are included in the string (like C).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">dqbackslashml</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Color double-quoted strings. If a double-quoted string ends in a backslash, it continues the string to the next line (like C).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">dqmultiline</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Color double-quoted strings. String may span multiple lines.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">dqdoubles</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Color double-quoted strings. Two double quotes represent one double quote.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">dqterminate</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Do not color-code a double-quoted string until the string is terminated. This style does not support <span><strong class="command">dqmultiline</strong></span> or <span><strong class="command">dqbackslashml</strong></span>.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">dqlen1</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Color double-quoted strings. Double-quoted strings contain exactly one character.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">sqbackslash</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Color single-quoted strings. Characters following a backslash in a single-quoted string are included in the string (like C).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">sqbackslashml</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Color single-quoted strings. If a double-quoted string ends in a backslash, it continues the string to the next line.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">sqmultiline</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Color single-quoted strings. String may span multiple lines.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">sqdoubles</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Color single-quoted strings. Two consecutive single quotes represent one single quote (like Pascal).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">sqterminate</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Do not color-code a single-quoted string until the string is terminated. This style does not support <span><strong class="command">sqmultiline</strong></span> or <span><strong class="command">sqbackslashml</strong></span>.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">sqlen1</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Single-quoted strings contain exactly one character (like Ada).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">amphhex</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Hexadecimal numbers are of the form <span><strong class="command">&amp;H</strong></span><span class="emphasis"><em>dddd</em></span> (like BASIC).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">ampooct</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Octal numbers are of the form <span><strong class="command">&amp;O</strong></span><span class="emphasis"><em>dddd </em></span>(like BASIC).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">hexh</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Hexadecimal numbers are of the form <span class="emphasis"><em>dddd</em></span><span><strong class="command">H</strong></span> (like Intel Assembler).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">octo</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Octal numbers are of the form <span class="emphasis"><em>dddd</em></span><span><strong class="command">O</strong></span> (like Intel Assembler).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">octq</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Octal numbers are of the form <span class="emphasis"><em>dddd</em></span><span><strong class="command">Q</strong></span> (like Intel Assembler).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">poundbase</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Based numbers are of the form <span><strong class="command">#base#number#exponent</strong></span> (like Ada).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">underlineint</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Numbers may have underlines between the numbers (like Ada).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">xhex</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Hexadecimal numbers are of the form<span><strong class="command"></strong></span><span><strong class="command">0x</strong></span><span class="emphasis"><em>hhhh</em></span> (like C).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">nonumbers</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Do not color-code numbers. This style is useful for tag languages like HTML. Using this style with other number color-coding styles will produce unpredictable results.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">rexxhex</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Hexadecimal strings are followed by an upper or lowercase letter <span><strong class="keycap">X</strong></span>. For example, <span><strong class="command">'414141'X</strong></span> or <span><strong class="command">414141X</strong></span> are REXX-style hexadecimal strings that are both equivalent to the string <span><strong class="command">AAA</strong></span>.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">packageimport</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Language has Java syntax package and import statement where non-quoted file name follows <span><strong class="command">package</strong></span> and <span><strong class="command">import</strong></span> keyword.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">idparenfunction</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">An identifier followed by an open parenthesis indicates a function (like C++ and Java).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">html</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Enables HTML syntax embedded languages and attribute coloring.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">backslashescapechars</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Backslash escapes the character that follows.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">heredocument</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Enables support for <span><strong class="command">Here</strong></span><span><strong class="command"></strong></span>documents. Note that if you prefix the terminator with one of the lexer names, you will get embedded language color-coding.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">perl</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Adds support for Perl <span><strong class="command">format</strong></span> statement and some other Perl-specific changes.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">tcl</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Special support for TCL language color-coding.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">bquote</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Perl- and Linux Shell-style backquote (subshell).</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">model204</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Special support for Model 204 language.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">cics</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Special support for CICS embedded in COBOL.</p>
+              </td></tr><tr><td>
+                <p class="CellBody">
+                  <span><strong class="command">python</strong></span>
+                </p>
+              </td><td>
+                <p class="CellBody">Special support for Python.</p>
+              </td></tr></tbody></table></div><p class="NormalText"></p></div></div></div></body></html>

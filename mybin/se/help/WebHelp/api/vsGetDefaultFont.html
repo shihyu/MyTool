@@ -1,0 +1,43 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsGetDefaultFont</title>
+</head>
+<body>
+
+<h3><b>int VSAPI vsGetDefaultFont(int field, char *pszFontName, int MaxFontName, int *pFontSizex10, int *pFontFlags, int *pCharSet=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns information about the font configuration.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="field</i>">field</i></A></code> - Field to change font for.  One of the
+following constants defined in "vs.h":
+
+<dl>
+<dt>VSCFG_CMDLINE</dt><dd>
+ Font used by the command line.</dd>
+<dt>VSCFG_WINDOW_TEXT</dt><dd>
+ Font used by the editor control window text.</dd>
+<dt>VSCFG_MESSAGE</dt><dd>
+ Font used by the message line.</dd>
+<dt>VSCFG_STATUS</dt><dd>
+ Font used by the status line.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszFontName">pszFontName</A></code> - Output buffer for font name.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="MaxFontName">MaxFontName</A></code> - Number of characters for font name.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pFontSizex10">pFontSizex10</A></code> - Point size of font x 10.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pFontFlags">pFontFlags</A></code> - One or more of the following flags:
+
+<ul>
+<li>VSFONTFLAG_BOLD</li>
+<li>VSFONTFLAG_ITALIC</li>
+<li>VSFONTFLAG_STRIKE_THRU</li>
+<li>VSFONTFLAG_UNDERLINE</li>
+</ul>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pCharSet">pCharSet</A></code> - Indicates the character set of the font.  These
+character sets map directly onto the
+Windows character sets. See
+VSCHARSET_??? constants defined in
+"vs.h".  We do not expect this parameter to
+be used under UNIX.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if parameters are valid.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Functions.html">Edit Window Functions</a>, <a href="Editor_Control_Functions.html">Editor Control Functions</a>, <a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsSetDefaultFont.html">vsSetDefaultFont</a>, <a href="vsGetDefaultColor.html">vsGetDefaultColor</a>, <a href="vsSetDefaultColor.html">vsSetDefaultColor</a></blockquote>
+</body>
+</html>

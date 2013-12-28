@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tabs</title>
+</head>
+<body>
+
+<h3><b>_command void tabs(_str cmdline="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>Sets up to tab stops in increasing order.  The commands <b>ctab</b>
+and <b>cbacktab</b> may be used to move between tab stops.  The '+'
+symbol is used to set tabs according to an increment value.  Tab stops
+continue past the last tab stop by repeating the difference of the last
+two tab stop values.</p><p>
+<p>Command line examples:</p><p>
+<dl>
+<dt>tabs 1 7 13 16</dt><dd>Creates tab stops 1 7 13 16 19 21
+24 ...</dd>
+<dt>tabs +3</dt><dd>Creates tab stops 1 4 7 ...</dd>
+<dt>tabs 1 4</dt><dd>Creates tab stops 1 4 7 ...</dd>
+<dt>tabs 1 49 +3</dt><dd>Creates tab stops 1 4 7 ...</dd>
+<dt>tabs 1 49 +3 53 250 +4</dt><dd>Creates tab stops 1 4 7 ... 49 53 57
+61 65 69 ...</dd>
+<dt>tabs 10 +3</dt><dd>Creates tab stops 10 13 16 ...</dd>
+</dl>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="cmdline">cmdline</A></code> - is a string in the format: [+<i>t1</i>]: [+<i>t2</i>]:
+[+<i>t3</i>] ...
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="ctab.html">ctab</a>, <a href="cbacktab.html">cbacktab</a>, <a href="move_text_tab.html">move_text_tab</a>, <a href="gui_tabs.html">gui_tabs</a></blockquote>
+</body>
+</html>

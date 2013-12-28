@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>def_ctags_flags</title>
+</head>
+<body>
+
+<h3><b>int def_ctags_flags</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Bitwise flags that are checked in vsc_list_tags() to fine-tune
+tagging options.
+<ul>
+<li><b>1</b>   -- Do NOT skip over function definitions/prototypes
+                  that do not have a semicolon or open brace
+                  following the parameter list.  C++ source code
+                  that uses Microsoft MFC macro definitions are
+                  one of the reasons a user may want to skip over
+                  these types of definitions.  Set this option
+                  when you do not want old C-style function definitions
+                  skipped.
+<li><b>2</b>   -- Tag C/C++ prototypes.
+<li><b>4</b>   -- Do not skip over old style C/C++ prototypes
+                  that do not have an explicit return type.
+                  This should be off in order for local-variable
+                  search to work properly, otherwise it is very
+                  difficult to distinguish a function call from
+                  a prototype.
+<li><b>8</b>   -- Do not break out of parsing a function if we see
+                  a brace in column 1.  We normally do this as a
+                  safeguard against parsing past the end of a proc
+                  when the braces mismatch.
+<li><b>16</b>  -- Ignore stray identifiers that may be preprocessing.
+<li><b>32</b>  -- Ignore Visual C++ bracketted Attributes in C++ code.
+</ul>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Default:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">2</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Configuration_Variables.html">Configuration Variables</a>, <a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

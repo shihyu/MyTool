@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsSetDefaultExtensionOptions</title>
+</head>
+<body>
+
+<h3><b>void VSAPI vsSetDefaultExtensionOptions(const char *pszLangId, const VS_LANGUAGE_OPTIONS *pLangOptions, int reserved=a, int version=VS_LANGUAGE_OPTIONS_VERSION)</b></h3>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Deprecated.</B>&nbsp;<I>Use <a href="vsSetDefaultLanguageOptions.html">vsSetDefaultLanguageOptions</a>
+</i><br><br><P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sets language specific options for a specific file extension.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszExtension">pszExtension</A></code> - File extension.
+                     For list of file extension types,
+                     use our File Extension Manager dialog
+                     ("Tools", "Options...", "File Extension Manager")</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pLangOptions">pLangOptions</A></code> - New language specific options for
+                     <i>pszExtension</i>.  Since all options are
+                     must be set, use the
+                     <b>vsGetDefaultExtensionOptions</b>
+                     first to query the existing value before
+                     setting new values.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="reserved">reserved</A></code> - unused </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="version">version</A></code> - normally VS_LANGUAGE_OPTIONS_VERSION
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Functions.html">Edit Window Functions</a>, <a href="Editor_Control_Functions.html">Editor Control Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsGetDefaultExtensionOptions.html">vsGetDefaultExtensionOptions</a>, <a href="vsSetDefaultLanguageOptions.html">vsSetDefaultLanguageOptions</a>, <a href="vsSetDefaultExtensionReferTo.html">vsSetDefaultExtensionReferTo</a>, <a href="vsDeleteExtensionOptions.html">vsDeleteExtensionOptions</a>, <a href="vsDeleteLanguageOptions.html">vsDeleteLanguageOptions</a>, <a href="vsUpdateExistingBufferExtensionOptions.html">vsUpdateExistingBufferExtensionOptions</a>, <a href="vsUpdateExistingBufferLanguageOptions.html">vsUpdateExistingBufferLanguageOptions</a></blockquote>
+</body>
+</html>

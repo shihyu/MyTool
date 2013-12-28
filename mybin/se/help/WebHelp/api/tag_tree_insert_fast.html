@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_tree_insert_fast</title>
+</head>
+<body>
+
+<h3><b>int tag_tree_insert_fast(int tree_wid, int tree_index, int match_type, int local_or_context_id, int include_tab, int force_leaf, int tree_flags, int include_sig, int include_class, ...)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This optimized version of tag_tree_insert_tag is used to
+quickly insert an item from the current tag database,
+context, locals, or match set into a tree control at the
+specified location.  Use <a href="tag_tree_prepare_expand.html">tag_tree_prepare_expand</a> prior to
+calling this function in order to configure the browser
+bitmap set.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_wid">tree_wid</A></code> - Window ID of the tree control to insert into.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_index">tree_index</A></code> - Parent tree node index to insert item under.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="match_type">match_type</A></code> - Specifies where the tag to insert comes from:
+                  <dl>
+                  <dt>VS_TAGMATCH_tag<dd style="margin-left:120pt">     current tag from database
+                  <dt>VS_TAGMATCH_context<dd style="margin-left:120pt"> item in current context (buffer)
+                  <dt>VS_TAGMATCH_local<dd style="margin-left:120pt">      item in local variable set (function)
+                  <dt>VS_TAGMATCH_match<dd style="margin-left:120pt">   item in match set
+                  </dl></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="local_or_context_id">local_or_context_id</A></code> - 0 if inserting current tag from database, otherwise,
+                  specifies the unique integer ID of the item from the
+                  context, locals, or match set, as specified by <i>match_type</i>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="include_tab">include_tab</A></code> - append class name after signature if 1,
+                  prepend class name with :: if 0.
+                  See <a href="tag_tree_make_caption.html">tag_tree_make_caption</a> for further explanation.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="force_leaf">force_leaf</A></code> - If < 0, force leaf node, otherwise choose by tag type.
+                  Normally "container" tag types, such as classes or structs
+                  are automatically inserted as non-leaf nodes.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_flags">tree_flags</A></code> - Flags passed to <a href="_TreeAddItem.html">_TreeAddItem</a>.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="include_sig">include_sig</A></code> - include function/define/template signature</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="include_class">include_class</A></code> - include class name</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="user_info">user_info</A></code> - Per-node user data for tree control
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">tree index on success, <0 on error.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_TreeAddItem.html">_TreeAddItem</a>, <a href="tag_insert_context.html">tag_insert_context</a>, <a href="tag_insert_local.html">tag_insert_local</a>, <a href="tag_insert_match.html">tag_insert_match</a>, <a href="tag_insert_tag.html">tag_insert_tag</a>, <a href="tag_tree_insert_tag.html">tag_tree_insert_tag</a>, <a href="tag_tree_make_caption.html">tag_tree_make_caption</a>, <a href="tag_tree_prepare_expand.html">tag_tree_prepare_expand</a></blockquote>
+</body>
+</html>

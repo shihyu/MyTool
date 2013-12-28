@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsHvarNextEl</title>
+</head>
+<body>
+
+<h3><b>VSHVAR VSAPI vsHvarNextEl(VSHVAR hvarArrayOrHashTab, HVAR hvarstart)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="hvar">hvar</A></code> - Handle to hash table or array variable.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="hvarIndex">hvarIndex</A></code> - Handle to index variable.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>VSHVAR</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns reference to next element in array or hash table.  If
+<i>index</i> is empty (see <b>vsHvarMakeEmpty</b>()), the first
+element is returned.  If there are no more elements, <i>index</i> is set
+to empty and 0 is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+VSHVAR  hvar;
+VSHVAR hvarel;
+
+// Create hash table with ["a"]=1, ["b"]=2, and ["c"]=3
+hvar=vsHvarAlloc();
+hvarel=vsHvarHashTabEl(hvar,"a");vsHvarSetI(hvarel,1);
+hvarel=vsHvarHashTabEl(hvar,"b");vsHvarSetI(hvarel,2);
+hvarel=vsHvarHashTabEl(hvar,"c");vsHvarSetI(hvarel,3);
+// Traverse the elements in hash table
+VSHVAR hvarIndex;
+for (vsHvarMakeEmpty(hvarIndex);;) {
+   VSHVAR    hvarel;
+    hvarel=vsHvarNextEl(hvar,hvarIndex);
+    if (!hvarel) break;
+    vsMessageBox ((char *)vsHvarGetLstr (hvarel)->str);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

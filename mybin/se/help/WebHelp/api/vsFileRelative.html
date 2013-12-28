@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>vsFileRelative</title>
+</head>
+<body>
+
+<h3><b>const char*VSAPI vsFileRelative(char *pszDestFilename, const char *pszSourceFilename, const char *pszToDir=a, int AddDotDots=a)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Converts <i>pszSrcFilename</i> to a path specification which is
+relative to the directory specified by <i>pszToDir</i>.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszDestFilename">pszDestFilename</A></code> - Result of convert <i>pszSrcFilename</i> to
+a relative path specification.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszSrcFilename">pszSrcFilename</A></code> - Filename with fully qualified path
+specification.  This may NOT be a relative
+path specification.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszToDir">pszToDir</A></code> - Directory with or without trailing backslash
+(UNIX: forward slash).  If 0 or "" is given,
+the current directory is used.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="addDotDots">addDotDots</A></code> - Indicates with ".." are allowed in the result
+filename.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>const char*VSAPI</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns <i>pszDestFilename</i>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="File_Functions.html">File Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="vsFileAbsolute.html">vsFileAbsolute</a>, <a href="vsFileAbsoluteTo.html">vsFileAbsoluteTo</a>, <a href="vsFileRelative.html">vsFileRelative</a></blockquote>
+</body>
+</html>

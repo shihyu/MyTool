@@ -1,0 +1,42 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>math</title>
+</head>
+<body>
+
+<h3><b>_command void math(_str expr="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><p>Evaluates Slick-C&reg; <i>expression</i> given and places the results on the
+command line.  Unlike the Slick-C&reg; translator, octal numbers may be specified
+by prefixing the number with a 0 and binary numbers may be specified by
+prefixing the number with '0b' or 'b'.  If no operator is specified between
+two unary expressions, addition is assumed.</p><p>
+<p>Not all Slick-C&reg; operators are supported.</p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="expression">expression</A></code> - can have the following unary operators:
+<dl>
+<dt>~</dt><dd>bitwise complement</dd>
+<dt>-</dt><dd>Negation</dd>
+<dt>+</dt><dd>No change</dd>
+</dl>
+
+<p>The available binary operators are listed below from lowest to highest
+precedence.  A comma after the operator indicates that the next operator is
+of the same precedence.</p>
+
+<dl>
+<dt>|</dt><dd>bitwise or</dd>
+<dt>^</dt><dd>xor</dd>
+<dt>&</dt><dd>bitwise and</dd>
+<dt><<,</dt><dd>shift left</dd>
+<dt>>></dt><dd> shift right</dd>
+<dt>+,</dt><dd>addition</dd>
+<dt>blank(s),</dt><dd>Implied addition.</dd>
+<dt>-</dt><dd>subtraction</dd>
+<dt>/,</dt><dd>division</dd>
+<dt>*,</dt><dd>multiplication</dd>
+<dt>%,</dt><dd> remainder</dd>
+<dt>**</dt><dd>power</dd>
+</dl>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="mathx.html">mathx</a>, <a href="matho.html">matho</a>, <a href="mathb.html">mathb</a></blockquote>
+</body>
+</html>

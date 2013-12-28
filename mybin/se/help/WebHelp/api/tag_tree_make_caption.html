@@ -1,0 +1,48 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_tree_make_caption</title>
+</head>
+<body>
+
+<h3><b>_str tag_tree_make_caption(_str member_name, _str type_name, _str class_name, int flags, _str arguments, boolean include_tab=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Encode class name, member name, signature, etc. in order to make
+caption for tree item very quickly.  Returns the resulting tree caption
+as a NULL terminated string.<p>
+The output string is generally formatted as follows:
+<PRE>
+   member_name[()] &lt;tab&gt; [class_name::member_name[(arguments)]
+</PRE>
+Parenthesis are added only for function types (proc, proto, constr, destr, func).
+The result is returned as a pointer to a static character array.<p>
+<p>This function is highly optimized, since it is one of the most
+critical code paths used by the symbol browser.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="member_name">member_name</A></code> - Name of tag (symbol).</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="type_name">type_name</A></code> - Tag type (from <a href="tag_get_type.html">tag_get_type</a>).</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - Name of class or package or other container that the tag
+                  belongs to.  See <a href="VS_TAGSEPARATOR_class.html">VS_TAGSEPARATOR_class</a> and
+                  <a href="VS_TAGSEPARATOR_package.html">VS_TAGSEPARATOR_package</a> for more details about constructing
+                  this value.  If the tag is not in a class scope, simple
+                  pass the empty string for this value.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flags">flags</A></code> - Set of tag attribute flags.  See <a href="tag_insert_simple.html">tag_insert_simple</a> for more information about the tag flags.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="arguments">arguments</A></code> - Tag argumetns (from <a href="tag_get_detail.html">tag_get_detail</a>).</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="include_tab">include_tab</A></code> - append class name after signature if 1,
+                  prepend class name with :: if 0.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Caption formatted in standard form as normally presented in
+        symbol browser.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">The following example illustrates constructing a caption for the following C++ class member prototype:
+<pre>
+   static void MyClass::myMember(int a, bool x);
+</pre>
+The function would be invoked as follows:
+<pre>
+   tag_tree_make_caption("myMember", "func", "MyClass",
+        VS_TAGFLAG_static, "int a, bool x", include_tab);
+</pre>
+
+producing the following caption if include_tab is true:
+<pre>
+   myMember()&lt;tab&gt;MyClass::myMember(int a, bool x)
+</pre>
+and the following if include_tab is false.
+<pre>
+   MyClass::myMember(int a, bool x)
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_get_detail.html">tag_get_detail</a>, <a href="tag_get_info.html">tag_get_info</a>, <a href="tag_get_instance_info.html">tag_get_instance_info</a>, <a href="tag_tree_make_caption_fast.html">tag_tree_make_caption_fast</a></blockquote>
+</body>
+</html>
