@@ -11,7 +11,7 @@ Bundle 'scrooloose/nerdtree'
 "Bundle 'msanders/snipmate.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'vim-scripts/xptemplate'
-"Bundle 'vim-scripts/taglist.vim'
+Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'Shougo/neocomplcache'
@@ -293,35 +293,13 @@ highlight TabLineSel ctermfg=yellow ctermbg=darkblue cterm=bold
 highlight StatusLine ctermfg=yellow ctermbg=darkblue cterm=bold
 highlight LineNr ctermfg=yellow
 
-
 imap <C-F11> <C-R>=strftime("%x %X")<BAR><CR>. owen_wen@htc.com.<ESC> <C-R>
-nnoremap <F12> :TlistToggle<CR>
 nnoremap <silent> <F3> :NERDTree<CR>
-
 
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_max_files = 1000000
 let g:ctrlp_user_command = 'find %s -type f' 
 
-
-fun! ShowFuncName()
-  let lnum = line(".")
-  let col = col(".")
-  echohl ModeMsg
-
-
-  if &filetype=="java"
-      "java code
-      echo getline(search("\\h\\+\\s\\+\\h\\+\\s*(.*)", 'bW'))
-  else
-      " c/c++ code
-      echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
-  endif
-
-  echohl None
-  call search("\\%" . lnum . "l" . "\\%" . col . "c")
-endfun
-map F :call ShowFuncName() <CR>
 
 " Open .h if it's a cpp file, and vice versa.
 function! OpenComplementFile()
@@ -397,21 +375,54 @@ nnoremap <leader>df  :call DiffWithSaved()<CR>
 "endfunc 
 "au  BufWrite  *  if  &ft  !=  'mkd'  |  call  DeleteTrailingWhiteSpace ()  |  endif
 
+"Show_current_function_name_in_C_programs
+"fun! ShowFuncName()
+"  let lnum = line(".")
+"  let col = col(".")
+"  echohl ModeMsg
+"
+"
+"  if &filetype=="java"
+"      "java code
+"      echo getline(search("\\h\\+\\s\\+\\h\\+\\s*(.*)", 'bW'))
+"  else
+"      " c/c++ code
+"      echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
+"  endif
+"
+"  echohl None
+"  call search("\\%" . lnum . "l" . "\\%" . col . "c")
+"endfun
+"map F :call ShowFuncName() <CR>
 
-" taglist setting
+" TagList options
 " updatetime 加速
 set updatetime=100 
-nmap <silent> <F12> :TagbarToggle<CR>
+let Tlist_Close_On_Select = 1 "close taglist window once we selected something
+let Tlist_Exit_OnlyWindow = 1 "if taglist window is the only window left, exit vim
+let Tlist_Show_Menu = 1 "show Tags menu in gvim
+let Tlist_Show_One_File = 1 "show tags of only one file
+let Tlist_GainFocus_On_ToggleOpen = 1 "automatically switch to taglist window
+let Tlist_Highlight_Tag_On_BufEnter = 1 "highlight current tag in taglist window
+let Tlist_Process_File_Always = 1 "even without taglist window, create tags file, required for displaying tag in statusline
+let Tlist_Use_Right_Window = 1 "display taglist window on the right
+let Tlist_Display_Prototype = 1 "display full prototype instead of just function name
+set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tagname_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P
+map F :TlistShowPrototype <CR>
 map <F7> <ESC>:wincmd p<CR>
-let g:tagbar_ctags_bin = 'ctags'
-let g:tagbar_width = 30
-let Tlist_Show_One_File = 1 " Displaying tags for only one file~
-let Tlist_Exist_OnlyWindow = 1 " if you are the last, kill yourself
-let Tlist_Use_Right_Window = 0 " split to the right side of the screen
-let Tlist_Display_Prototype = 0 " do not show prototypes and not tags in the taglist window.
-let Tlist_Compart_Format = 1 " Remove extra information and blank lines from the taglist window.
-let Tlist_GainFocus_On_ToggleOpen = 1 " Jump to taglist window on open.
-let Tlist_Display_Tag_Scope = 1 " Show tag scope next to the tag name.
-let Tlist_Close_On_Select = 1 " Close the taglist window when a file or tag is selected.
-let Tlist_Enable_Fold_Column = 0 " Don't Show the fold indicator column in the taglist window.
-let Tlist_WinWidth = 40
+nmap <silent> <F12> :TagbarToggle<CR>
+
+" TagList options
+"let Tlist_Close_On_Select = 1 "close taglist window once we selected something
+"let Tlist_Exit_OnlyWindow = 1 "if taglist window is the only window left, exit vim
+"let Tlist_Show_Menu = 1 "show Tags menu in gvim
+"let Tlist_Show_One_File = 1 "show tags of only one file
+"let Tlist_GainFocus_On_ToggleOpen = 1 "automatically switch to taglist window
+"let Tlist_Highlight_Tag_On_BufEnter = 1 "highlight current tag in taglist window
+"let Tlist_Process_File_Always = 1 "even without taglist window, create tags file, required for displaying tag in statusline
+"let Tlist_Use_Right_Window = 1 "display taglist window on the right
+"let Tlist_Display_Prototype = 1 "display full prototype instead of just function name
+""let Tlist_Ctags_Cmd = /path/to/exuberant/ctags
+"nnoremap <F5> :TlistToggle
+"nnoremap <F6> :TlistShowPrototype
+"set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tagname_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P
