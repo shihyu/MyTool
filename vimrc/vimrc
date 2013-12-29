@@ -395,6 +395,7 @@ nnoremap <leader>df  :call DiffWithSaved()<CR>
 "endfun
 "map F :call ShowFuncName() <CR>
 
+
 " TagList options
 " updatetime 加速
 set updatetime=100 
@@ -411,6 +412,11 @@ set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tagname_By_Line()
 map F :TlistShowPrototype <CR>
 map <F7> <ESC>:wincmd p<CR>
 nmap <silent> <F12> :TagbarToggle<CR>
+"自動更新
+au! CursorHold *.[ch] nested exe "TlistUpdate" 
+au! CursorHold *.cpp nested exe "TlistUpdate" 
+au! CursorHold *.java nested exe "TlistUpdate" 
+
 
 " TagList options
 "let Tlist_Close_On_Select = 1 "close taglist window once we selected something
