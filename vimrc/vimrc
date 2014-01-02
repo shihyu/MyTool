@@ -36,7 +36,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'sjl/gundo.vim'
+"Bundle 'sjl/gundo.vim'
 Bundle 'kingbin/vim-arduino'
 Bundle 'rking/ag.vim'
 "sudo apt-get install vim-gnome
@@ -46,10 +46,10 @@ Bundle 'kshenoy/vim-signature'
 Bundle 'vim-scripts/Quich-Filter'
 filetype plugin indent on
 
-nmap <leader>U :GundoToggle<cr>
-let g:gundo_preview_bottom = 1
-let g:gundo_preview_height = 10
-let g:gundo_width = 30
+"nmap <leader>U :GundoToggle<cr>
+"let g:gundo_preview_bottom = 1
+"let g:gundo_preview_height = 10
+"let g:gundo_width = 30
 
 cabbrev ack ack<c-\>esubstitute(getcmdline(), '^ack\>', 'Ack!', '')<cr>
 if has ("Ack") 
@@ -439,3 +439,23 @@ au! CursorHold *.java nested exe "TlistUpdate"
 "vim-signature
 nmap <C-j> ']
 nmap <C-k> '[
+
+" Quich Filter {{{2
+" 自動跟著原始檔案
+"let g:filteringDefaultAutoFollow = 1
+
+" After / search, use this to show the search result window
+" just like quickfix list, but with sync scroll
+nmap <Leader>l :call FilteringNew().addToParameter('alt', @/).run()<CR>
+" After / search, use this to enter a keword filtering the search
+" i.e. do a second search in the first search result
+nmap <Leader>F :call FilteringNew().parseQuery(input('>'), '<Bar>').run()<CR>
+" Re-open previous "look" windows selectively
+nmap <Leader>g :call FilteringGetForSource().return()<CR>
+
+" Old settings, name are more intuitive to understand
+" nmap <Leader>F :call Gather(input("Filter on term: "), 0)<CR>
+" nmap <Leader>l :call Gather(@/, 0)<CR>:echo<CR>
+" nmap <Leader>g :call GotoOpenSearchBuffer()<CR>
+" }}}
+
