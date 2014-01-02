@@ -3,7 +3,6 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-
 Bundle 'vim-scripts/L9'
 Bundle 'vim-scripts/cscope_macros.vim'
 Bundle 'scrooloose/nerdtree'
@@ -43,6 +42,8 @@ Bundle 'rking/ag.vim'
 "sudo apt-get install vim-gnome
 "Bundle 'kana/vim-fakeclip'
 Bundle 'thinca/vim-logcat'
+Bundle 'kshenoy/vim-signature'
+Bundle 'vim-scripts/Quich-Filter'
 filetype plugin indent on
 
 nmap <leader>U :GundoToggle<cr>
@@ -126,7 +127,7 @@ function Compile_gcc()
     elseif &filetype=="cpp"
         set autochdir
         execute "w"
-        execute "!g++ -Wall -g % -o %:r"
+        execute "!g++ -Wall -g -std=c++11 % -o %:r"
     elseif &filetype=="java"
         set autochdir
         execute "w"
@@ -432,3 +433,9 @@ au! CursorHold *.java nested exe "TlistUpdate"
 "nnoremap <F5> :TlistToggle
 "nnoremap <F6> :TlistShowPrototype
 "set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tagname_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P
+
+
+
+"vim-signature
+nmap <C-j> ']
+nmap <C-k> '[
