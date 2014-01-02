@@ -24,7 +24,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/tir_black'
 "Bundle 'therealadam/vimfiles'
-"Bundle 'othree/eregex.vim'
+Bundle 'othree/eregex.vim'
 "Bundle 'vim-scripts/OmniCppComplete'
 "sudo aptitude install clang libclang-dev
 Bundle 'Rip-Rip/clang_complete'
@@ -162,7 +162,6 @@ imap <F2> <C-R>=strftime("YAO - [%c]")<CR>
 imap jj <ESC>
 "imap ,, -><C-X><C-O>
 
-
 " 删除所有行未尾空格
 nnoremap <F11> :%s/[ \t\r]\+$//g<cr>
 
@@ -174,6 +173,7 @@ nnoremap <leader>fb  :FufBuffer<CR>
 noremap <leader>m  :%s/\r//g<CR>
 
 "eregex.vim
+let g:eregex_default_enable = 0
 nnoremap ,/ :M/
 nnoremap ,? :M?
 "nnoremap ,/ /
@@ -183,6 +183,11 @@ nmap <tab> V>
 nmap <s-tab> V<
 vmap <tab> >gv
 vmap <s-tab> <gv
+
+"imap <C-h> <left>
+"imap <C-j> <down>
+"imap <C-k> <up>
+"imap <C-l> <right>
 
 "映射按鍵：剪切版、全選，系統有效  
 vmap <C-c> "+y  
@@ -433,8 +438,6 @@ au! CursorHold *.java nested exe "TlistUpdate"
 "nnoremap <F5> :TlistToggle
 "nnoremap <F6> :TlistShowPrototype
 "set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tagname_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P
-
-
 
 "vim-signature
 nmap <C-j> ']
