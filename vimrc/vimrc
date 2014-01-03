@@ -6,44 +6,43 @@ Bundle 'gmarik/vundle'
 Bundle 'vim-scripts/L9'
 Bundle 'vim-scripts/cscope_macros.vim'
 Bundle 'scrooloose/nerdtree'
-"au filetype python Bundle 'vim-scripts/Pydiction'
-"Bundle 'msanders/snipmate.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'vim-scripts/xptemplate'
-Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'Shougo/neocomplcache'
-Bundle 'vim-scripts/fakeclip'
 Bundle 'corntrace/bufexplorer'
 Bundle 'tpope/vim-surround'
-Bundle 'c9s/gsession.vim'
 Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'kevinw/pyflakes-vim'
-"Bundle 'vim-scripts/SuperTab'
 Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/tir_black'
-"Bundle 'therealadam/vimfiles'
 Bundle 'othree/eregex.vim'
-"Bundle 'vim-scripts/OmniCppComplete'
-"sudo aptitude install clang libclang-dev
-Bundle 'Rip-Rip/clang_complete'
-"Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/Wombat'
 Bundle 'vim-scripts/molokai'
 Bundle 'vim-scripts/CCTree'
+Bundle 'vim-scripts/taglist.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
-"Bundle 'sjl/gundo.vim'
-Bundle 'kingbin/vim-arduino'
 Bundle 'rking/ag.vim'
 "sudo apt-get install vim-gnome
-"Bundle 'kana/vim-fakeclip'
+Bundle 'vim-scripts/fakeclip'
 Bundle 'thinca/vim-logcat'
 Bundle 'kshenoy/vim-signature'
 Bundle 'vim-scripts/Quich-Filter'
+"au filetype python Bundle 'vim-scripts/Pydiction'
+"Bundle 'msanders/snipmate.vim'
+"Bundle 'c9s/gsession.vim'
+"Bundle 'kevinw/pyflakes-vim'
+"Bundle 'vim-scripts/SuperTab'
+"Bundle 'therealadam/vimfiles'
+"Bundle 'vim-scripts/OmniCppComplete'
+"sudo aptitude install clang libclang-dev
+"Bundle 'Rip-Rip/clang_complete'
+"Bundle 'Valloric/YouCompleteMe'
+"Bundle 'sjl/gundo.vim'
+"Bundle 'kingbin/vim-arduino'
 filetype plugin indent on
 
 "nmap <leader>U :GundoToggle<cr>
@@ -462,3 +461,9 @@ nmap <Leader>g :call FilteringGetForSource().return()<CR>
 " nmap <Leader>g :call GotoOpenSearchBuffer()<CR>
 " }}}
 
+"Ag.vim
+let g:agprg="ag --column"
+cabbrev ag ag<c-\>esubstitute(getcmdline(), '^ag\>', 'Ag', '')<cr>
+if has ("Ag") 
+    copen 30 
+endif
