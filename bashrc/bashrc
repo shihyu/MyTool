@@ -45,6 +45,7 @@ alias findc="find . -name '*.c'"
 alias findh="find . -name '*.h'"
 alias findmk="find . -name '*.mk'"
 alias findjava="find . -name '*.java'"
+alias ag='ag -a'
 
 rm_log() 
 {
