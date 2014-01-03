@@ -403,7 +403,7 @@ nnoremap <leader>df  :call DiffWithSaved()<CR>
 
 " TagList options
 " updatetime 加速
-"set updatetime=1000 
+set updatetime=100
 let Tlist_Close_On_Select = 1 "close taglist window once we selected something
 let Tlist_Exit_OnlyWindow = 1 "if taglist window is the only window left, exit vim
 let Tlist_Show_Menu = 1 "show Tags menu in gvim
@@ -448,12 +448,12 @@ nmap <C-k> '[
 
 " After / search, use this to show the search result window
 " just like quickfix list, but with sync scroll
-nmap <Leader>l :call FilteringNew().addToParameter('alt', @/).run()<CR>
+nmap <space>l :call FilteringNew().addToParameter('alt', @/).run()<CR>
 " After / search, use this to enter a keword filtering the search
 " i.e. do a second search in the first search result
-nmap <Leader>F :call FilteringNew().parseQuery(input('>'), '<Bar>').run()<CR>
+nmap <space>F :call FilteringNew().parseQuery(input('>'), '<Bar>').run()<CR>
 " Re-open previous "look" windows selectively
-nmap <Leader>g :call FilteringGetForSource().return()<CR>
+nmap <space>g :call FilteringGetForSource().return()<CR>
 
 " Old settings, name are more intuitive to understand
 " nmap <Leader>F :call Gather(input("Filter on term: "), 0)<CR>
@@ -467,3 +467,7 @@ cabbrev ag ag<c-\>esubstitute(getcmdline(), '^ag\>', 'Ag', '')<cr>
 if has ("Ag") 
     copen 30 
 endif
+
+" 快速移動函數頭尾
+nmap <leader>] ]}
+nmap <leader>[ [{
