@@ -422,7 +422,6 @@ au! CursorHold *.[ch] nested exe "TlistUpdate"
 au! CursorHold *.cpp nested exe "TlistUpdate" 
 au! CursorHold *.java nested exe "TlistUpdate" 
 
-
 " TagList options
 "let Tlist_Close_On_Select = 1 "close taglist window once we selected something
 "let Tlist_Exit_OnlyWindow = 1 "if taglist window is the only window left, exit vim
@@ -441,6 +440,9 @@ au! CursorHold *.java nested exe "TlistUpdate"
 "vim-signature
 nmap <C-j> ']
 nmap <C-k> '[
+nmap .. ']
+nmap ,, '[
+
 
 " Quich Filter {{{2
 " 自動跟著原始檔案
@@ -471,3 +473,6 @@ endif
 " 快速移動函數頭尾
 nmap <leader>] ]}
 nmap <leader>[ [{
+
+
+
