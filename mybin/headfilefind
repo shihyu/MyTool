@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+import os
+import sys
+import re
+
+def main(keyword, path1, path2=os.getcwd()):
+    headfilepath = '/tmp/headfile.txt'
+    headfilelist = []
+
+    p = re.compile("(\w+\.\w+)")
+    n = p.findall(path1)
+    #print n
+
+    if n[0].find('.cpp') > 0:
+        os.system("ack '#include\s+.*\w+\.h' " +  str(path1) + " | ack -o '\w+.h' > " + str(headfilepath));
+    else:
+        os.system("ack 'import\s+.*\w+\;' " +  str(path1) + " | ack -o '\w+\s*\;' > " + str(headfilepath));
+
+
+    os.chdir(str(path2))
+
+    f = open(headfilepath, 'r+')
+
+    if n[0].find('.cpp') > 0:
+        for line in f:
+            line = line.rstrip()
+            #line = line[:-1]
+            headfilelist.append(line)
+    else:
+        for line in f:
+            line = line.rstrip()
+            line = line[:-1]
+            headfilelist.append(line+".java")
+
+
+    #print headfilelist
+    #print os.getcwd()
+    keyword = "'"+keyword+"'"
+    #print keyword
+
+    for i in headfilelist:
+        #print i
+        #print "find . -name " + "'"+i+"'" + " | xargs -r ack -w " + keyword
+        os.system("find . -name " + "'"+i+"'" + " | xargs -r ack -H " + keyword)
+
+if __name__ == "__main__":
+    #print len(sys.argv)
+    if len(sys.argv) > 3:
+        main(sys.argv[1], sys.argv[2], sys.argv[3])
+    else:
+        main(sys.argv[1], sys.argv[2])
+
+
