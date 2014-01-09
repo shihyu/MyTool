@@ -474,5 +474,5 @@ endif
 nmap <leader>] ]}
 nmap <leader>[ [{
 
-
-
+"設定vim -p 檔案上限，不然會有限制的開啟前部分的檔案，後面就沒看到了。
+set tabpagemax=1000
