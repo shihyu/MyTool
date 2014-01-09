@@ -252,7 +252,9 @@ let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
-
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_max_files = 1000000
+let g:ctrlp_user_command = 'find %s -type f' 
 
 if has("gdb")
     set splitright              
@@ -300,11 +302,6 @@ highlight LineNr ctermfg=yellow
 
 imap <C-F11> <C-R>=strftime("%x %X")<BAR><CR>. owen_wen@htc.com.<ESC> <C-R>
 nnoremap <silent> <F3> :NERDTree<CR>
-
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_max_files = 1000000
-let g:ctrlp_user_command = 'find %s -type f' 
-
 
 " Open .h if it's a cpp file, and vice versa.
 function! OpenComplementFile()
@@ -476,3 +473,8 @@ nmap <leader>[ [{
 
 "設定vim -p 檔案上限，不然會有限制的開啟前部分的檔案，後面就沒看到了。
 set tabpagemax=1000
+
+nmap tl :tabnext<cr>
+nmap th :tabprev<cr>
+nmap tn :tabnew<cr>
+nmap td :tabclose<cr>
