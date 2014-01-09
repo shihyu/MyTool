@@ -437,8 +437,8 @@ au! CursorHold *.java nested exe "TlistUpdate"
 "vim-signature
 nmap <C-j> ']
 nmap <C-k> '[
-nmap .. ']
-nmap ,, '[
+nmap .. ]`
+nmap ,, [`
 
 
 " Quich Filter {{{2
