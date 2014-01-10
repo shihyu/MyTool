@@ -253,7 +253,7 @@ let g:ctrlp_custom_ignore = {
     \ }  
 let g:ctrlp_by_filename = 1 " only lookup file name
 let g:ctrlp_cache_dir = '/tmp/ctrlp/cache/'
-let g:ctrlp_working_path_mode=0
+let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
