@@ -245,7 +245,14 @@ let g:NeoComplCache_DisableAutoComplete = 1
 noremap <C-W><C-U> :CtrlPMRU<CR>
 nnoremap <C-W>u :CtrlPMRU<CR>
 
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
+"let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
+let g:ctrlp_custom_ignore = {  
+    \ 'dir': '\v[\/]\.(git|hg|svn)$',  
+    \ 'file': '\v\.(exe|so|dll|bak|gds)$',  
+    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',  
+    \ }  
+let g:ctrlp_by_filename = 1 " only lookup file name
+let g:ctrlp_cache_dir = '/tmp/ctrlp/cache/'
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height=15
@@ -254,7 +261,7 @@ let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_max_files = 1000000
-let g:ctrlp_user_command = 'find %s -type f' 
+let g:ctrlp_user_command = 'find %s -type f | grep -P "\.pl$|\.py$|\.lua$|\.xml$|\.sh$|\.mk$|\. h$|\.hh$|\.hpp$|\.c$|\.cc$|\.cpp$"'  
 
 if has("gdb")
     set splitright              
