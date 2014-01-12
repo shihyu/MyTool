@@ -45,7 +45,14 @@ alias findc="find . -name '*.c'"
 alias findh="find . -name '*.h'"
 alias findmk="find . -name '*.mk'"
 alias findjava="find . -name '*.java'"
-alias ag='ag -a'
+#alias ag='ag -a'
+
+HISTSIZE=10000
+HISTCONTROL=ignoreboth:ignoredups:erasedups
+shopt -s cmdhist
+shopt -s cdspell
+shopt -s histappend
+export PROMPT_COMMAND="history -a; history -n"
 
 rm_log() 
 {
