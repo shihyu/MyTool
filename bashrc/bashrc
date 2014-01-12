@@ -52,7 +52,7 @@ HISTCONTROL=ignoreboth:ignoredups:erasedups
 shopt -s cmdhist
 shopt -s cdspell
 shopt -s histappend
-export PROMPT_COMMAND="history -a; history -n"
+PROMPT_COMMAND="history -a; history -n;" 
 
 rm_log() 
 {
