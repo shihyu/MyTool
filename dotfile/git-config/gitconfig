@@ -2,7 +2,7 @@
     name = jason_yao
     email = jason_yao@htc.com
 [commit]
-    template = /home/shihyu/.git-template
+    template = $HOME/.git-template
 
 
  [color]
@@ -41,7 +41,7 @@
     ign = ls-files -o -i --exclude-standard
 [core]
     editor = vim
-	excludesfile = /home/shihyu/.gitignore_global
+	excludesfile = $HOME/.gitignore_global
 	quotepath = false
 
 
