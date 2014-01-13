@@ -36,8 +36,10 @@ alias dlx_envsetup='source build/envsetup.sh; choosecombo 1 dlx eng; export ANDR
 #alias m7dug_envsetup='source build/envsetup.sh; choosecombo 1 m7dug eng'
 alias m7cdug_envsetup='source build/envsetup.sh; choosecombo 1 m7cdug userdebug DEBUG'
 alias dlxp_envsetup='source build/envsetup.sh ; choosecombo 1 dlpdtu userdebug DEBUG'
+alias sense60_envsetup='export HTCFW_ENABLED=true; source build/envsetup.sh ; partner_setup m7 M7_Generic_WWE_DEBUG'
 alias img_zip='zip rom.zip -j android-info.txt *.img *.hdr'
 alias logcat='adb logcat -c && adb logcat -v threadtime 2>&1 | tee /tmp/logcat.txt'
+alias emulator_envsetup='source build/envsetup.sh; lunch full-eng'
 #alias rm_log='adb shell rm /data/htclog/*'
 alias eclipse='/home/shihyu/adt-bundle-linux-x86_64-20130917/eclipse/eclipse'
 alias findcpp="find . -name '*.cpp' -print"
@@ -58,7 +60,7 @@ rm_log()
 {
     adb shell rm /data/htclog/*;
     adb shell rm /data/log/*;
-    adb shell rm /data/tombstones/*;
+    adb shell rm /data/tombstones/tombstone_*;
 }
 
 #function dlx_envsetup()
@@ -362,7 +364,7 @@ gaia_rom()
 
 gaia_logparse()
 {
-   ack -w 'Exception|ANR|E\/|SIGSEGV|FATAL|EXCEPTION\:|W\/mutexwatch|die' $1 >  /tmp/aa ; vim /tmp/aa 
+   ack -w 'Exception|ANR|E\/|SIGSEGV|FATAL|EXCEPTION\:|W\/mutexwatch|die|>>> .* <<<|permission|Out of memory|Call stack\:|#[\d][\d]' $1 >  /tmp/aa ; vim /tmp/aa 
 }
 
 CD() 
@@ -383,8 +385,7 @@ export LESS_TERMCAP_md=$'\E[38;5;39m'
 export LESS_TERMCAP_me=$'\E[38;5;231m'
 export LESS_TERMCAP_se=$'\E[38;5;231m'
 export LESS_TERMCAP_so=$'\E[38;5;167m'
-export LESS_Td
-RMCAP_ue=$'\E[38;5;231m'
+export LESS_TERMCAP_ue=$'\E[38;5;231m'
 export LESS_TERMCAP_us=$'\E[38;5;167m'
 #export ANDROID_SOURCE=$(gettop)
 
@@ -408,13 +409,8 @@ CUR_PATH=`pwd`
         mkdir $CUR_PATH/build
     fi
 
-# 編譯
-    sourceFile=$CUR_PATH/build/$1
-    cd $CUR_PATH/build
-    sdcc -mmcs51 $CUR_PATH/$1
-    cd $CUR_PATH
-    ./stcisp -f ${sourceFile%.*}.ihx
-}
+export AUTOSSH_DEBUG=DEBUG
+export AUTOSSH_LOGFILE=~/.autohssh.log
 
 CD()
 {
