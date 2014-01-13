@@ -367,11 +367,6 @@ gaia_logparse()
    ack -w 'Exception|ANR|E\/|SIGSEGV|FATAL|EXCEPTION\:|W\/mutexwatch|die|>>> .* <<<|permission|Out of memory|Call stack\:|#[\d][\d]' $1 >  /tmp/aa ; vim /tmp/aa 
 }
 
-CD() 
-{
-    cd `dirname "$1"` 
-}
-
 logack()
 {
     ls -rt | find . -name "$1" | xargs ack -Q "$2" 
@@ -387,27 +382,10 @@ export LESS_TERMCAP_se=$'\E[38;5;231m'
 export LESS_TERMCAP_so=$'\E[38;5;167m'
 export LESS_TERMCAP_ue=$'\E[38;5;231m'
 export LESS_TERMCAP_us=$'\E[38;5;167m'
-#export ANDROID_SOURCE=$(gettop)
 
 
-# 一鍵編譯, 完成後在當前目錄下生成build文件夾
-stc-cc() {
-CUR_PATH=`pwd`
-    if [ ! -d $CUR_PATH/build ]; then
-        mkdir $CUR_PATH/build
-    fi
 
-    cd $CUR_PATH/build
-    sdcc -mmcs51 $CUR_PATH/$1
-}
 
-# 一鍵編譯&&燒寫
-stc-cisp() {
-CUR_PATH=`pwd`
-# 首先在當前目錄下生成build目錄
-    if [ ! -d $CUR_PATH/build ]; then
-        mkdir $CUR_PATH/build
-    fi
 
 export AUTOSSH_DEBUG=DEBUG
 export AUTOSSH_LOGFILE=~/.autohssh.log
@@ -421,29 +399,12 @@ CD()
     fi
 }
 
-export ANDROID_SWT="/home/shihyu/myandroid/prebuilt/linux-x86_64/swt"
 
-[[ -s /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh
 
 export PATH=$HOME/.mybin:$PATH
 eval "$(fasd --init auto)"
 
-
-export  PATH=$PATH:/opt/FriendlyARM/toolschain/4.4.3/bin 
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-
-PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opencv/lib/pkgconfig
-export PKG_CONFIG_PATH
-
-export PYTHONPATH=$PYTHONPATH:/usr/local/opencv/lib/python2.7/dist-packages
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/Qt5.1.1/5.1.1/gcc_64/bin/
-PATH=$PATH:/home/shihyu/adt-bundle-linux-x86_64-20130917/sdk/platform-tools/
-
+#boost
 export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/usr/local/boost/include
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/boost/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/boost/lib
