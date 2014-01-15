@@ -324,15 +324,31 @@ scopy()
     scp $1 shihyu@$2:~/upload
 }
 
+function htc_flash_zip()
+{
+    local OUT_ROOT=$(get_abs_build_var PRODUCT_OUT)
+    local file_name=( $(md5sum $OUT_ROOT/boot.img) )
+    file_name="$PWD/${file_name[0]}.zip"
+
+    local flash_cmd="sudo $HOME/.bin/htc_fastboot flash zip $file_name"
+
+    echo "Product: $TARGET_PRODUCT"
+    echo "Zipping file for fastbooting..."
+    sudo echo -n
+    zip -j $file_name $OUT_ROOT/{*.img,*.hdr,android-info.txt}
+
+    eval $flash_cmd $* || eval $flash_cmd $*
+}
+
 gaia_zip()
 {
     adb reboot-bootloader 
 
-    flash_zip 
+    htc_flash_zip 
 
     while [ $? = 1 ]; do
         sleep 3
-        flash_zip 
+        htc_flash_zip 
     done
 
     fastboot reboot
@@ -357,6 +373,30 @@ gaia_rom()
     while [ $? = 1 ]; do
         sleep 3
         fastboot flash zip $2
+    done
+    echo "COS rom end"
+    fastboot reboot
+}
+
+htc_fastboot_rom() 
+{
+    adb reboot-bootloader 
+    #if [ "`zip -sf $1 | grep qsc_radio.img`" != "" ]; then
+        #zip $1 -d qsc_radio.img
+    #fi
+    echo "partial rom start"
+    $HOME/.bin/htc_fastboot flash zip $1
+    while [ $? = 1 ]; do
+        sleep 3
+        $HOME/.bin/htc_fastboot flash zip $1
+    done
+    echo "partial rom end"
+    fastboot reboot-bootloader
+    echo "COS rom start"
+    $HOME/.bin/htc_fastboot flash zip $2
+    while [ $? = 1 ]; do
+        sleep 3
+        $HOME/.bin/htc_fastboot flash zip $2
     done
     echo "COS rom end"
     fastboot reboot
