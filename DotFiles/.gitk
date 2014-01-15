@@ -1,0 +1,32 @@
+set mainfont {{Bitstream Vera Sans} 11}
+set textfont {{Bitstream Vera Sans Mono} 11}
+set uifont {{Bitstream Vera Serif} 11}
+set tabstop 8
+set findmergefiles 0
+set maxgraphpct 50
+set maxwidth 16
+set cmitmode patch
+set wrapcomment none
+set autoselect 1
+set showneartags 1
+set showlocalchanges 1
+set datetimeformat {%Y-%m-%d %H:%M:%S}
+set limitdiffs 1
+set bgcolor white
+set fgcolor black
+set colors {green red blue magenta darkgrey brown orange}
+set diffcolors {red "#00a000" blue}
+set markbgcolor #e0e0ff
+set diffcontext 3
+set selectbgcolor gray85
+set extdifftool meld
+set perfile_attrs 0
+set geometry(main) 1211x841+70+109
+set geometry(state) normal
+set geometry(topwidth) 1209
+set geometry(topheight) 225
+set geometry(pwsash0) "467 1"
+set geometry(pwsash1) "701 1"
+set geometry(botwidth) 580
+set geometry(botheight) 604
+set permviews {}

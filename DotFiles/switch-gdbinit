@@ -1,0 +1,12 @@
+#!/bin/sh
+
+target=$1;
+
+if [ -z $target ] ; then
+	echo "Usage: "
+	echo "  $0 <version>"
+	exit;
+fi
+
+rm -f .gdbinit
+ln -sf .gdbinit-$target .gdbinit 

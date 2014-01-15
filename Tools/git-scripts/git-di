@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#git difftool --tool=vimdiff --no-prompt $@
+git diff --ignore-space-change --no-prefix $@ | levis 
+

@@ -1,0 +1,178 @@
+#$HOME/.screenrc
+#################################################################################
+# Usage:
+# [kent]@rd1-2:~$ screen -r     ==> resumes a detached screen session
+# [kent]@rd1-2:~$ screen -x     ==> Cool, Attach to a not detached screen session. (Multi display mode)
+# detach : Press F10 or "C-a d"
+# HELP: "C-a, ?"
+# "C-a C-a" : fast switch between 2 screens
+#################################################################################
+
+altscreen on # Refresh the display when exiting programs like vim, nano, irssi and etc.
+defutf8 on
+defc1 off # treat input chars 128 ~ 159 as control functions
+defflow on
+vbell_msg "Ding Ding!!"
+vbell off  # i.e. set to audible bell, used to redirect bell to terminal (putty) for "flashing effect"
+defencoding utf8
+# cjkwidth on
+
+# 256 Color Support
+termcapinfo xterm "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
+#for Mac
+termcapinfo xterm-color "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
+
+term $TERM # depend on $TERM
+term xterm # or specified term
+
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+attrcolor i "+b"
+
+# erase background with current bg color
+defbce on
+
+# some environment setting
+autodetach on
+startup_message off
+shell -$SHELL
+
+# dynamically udpate shell title, Sometimes it's bothersome...XD
+# Need to add this line PROMPT_COMMAND='echo -n -e "\033k\033\134"' to $HOME/.bashrc
+# shelltitle '$ |Bash'
+
+# setup 10,000 lines of available scrollback copy/paste
+# NOTE: memory eating monster...
+defscrollback 10000
+
+# If a window goes unresponsive, don't block the whole session waiting for it.
+nonblock on
+
+# fix scrollback in putty, this is cool!
+termcapinfo xterm* ti@:te@
+#termcapinfo xterm|xterms|xs|rxvt ti@:te@
+
+# turn-off log
+#log off
+logfile $HOME/tmp/screen-%Y%m%d-%n.log
+#deflog on
+
+# caption style
+#caption always "%{.KW} %-w%{.mW}[%n] %t%{.KW}%+w"
+#caption always "%{=u .G} %-w%<%{=ub .y}%n %t%{=u .G}%+w "
+#caption always "%{=u kC} %= %-w%L>%{=b G}[:%n %t:]%{-}%52<%+w %L="
+#caption always "%{= KW}%-w%{= ky} [%n] %t %{-}%+w %-= %{= Kk}[%l] %{= Kk}[%Y/%m/%d %c]"
+caption always "%{= KW}%-w%{= kc} [%n] %t %{-}%+w %-= %{= Kk}[%H | %l | %m/%d %c]"
+
+# hardstatus style
+hardstatus alwaysignore
+#hardstatus alwayslastline "%{= .K} [%l]%<%=%{= .W}@%H %=%{= .y} %Y/%m/%d%{= .m} %C %A"
+#hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+#hardstatus alwayslastline "%{R}[ %{w}%1` %{R}]%=%{M}%e %{G}%H %{Y} %c %{R} %d/%m/%Y %{K} Load: %l %{w}"
+#hardstatus alwayslastline "%{= wk} %{by} %H %{wk} | %-Lw%{kw}◣%{= g}%n%f* %t%{wk}◤%{wk}%+Lw%< %= %{kw}◣%{= R} [%m/%d %c] %{-}"
+
+# Ctrl + left : prev
+# Ctrl + right : next
+bindkey "^[O5D" prev
+bindkey "^[O5C" next
+bindkey "^[Od" prev
+bindkey "^[Oc" next
+bindkey "\033[D" prev
+bindkey "\033[C" next
+# putty
+bindkey "^[[D" prev
+bindkey "^[[C" next
+# gnome-terminal
+bindkey "^[[1;5D" prev
+bindkey "^[[1;5C" next
+
+# Vim HJKL-style
+# Alt + H : prev
+# Alt + L : next
+bindkey "^[H" prev
+bindkey "^[L" next
+
+# /*Need to hack putty*/
+# (Mac - iTerm) just add key mapping! Cool iTerm
+# (Win - PuTTY) Resolved by AutoHotkey
+#Ctrl + , : prev
+#Ctrl + . : next
+#bindkey "\274" prev
+#bindkey "\276" next
+
+# (Win - PuTTY) Resolved by AutoHotkey
+# <s>/*Need to hack putty*/</s>
+# Ctrl + Tab         : prev   (Firefox-way)
+# Ctrl + Shift + Tab : next   (Firefox-way)
+#bindkey "^[[27;5;9~" next
+#bindkey "^[[27;6;9~" prev
+
+# Ctrl + t : new screen       (Firefox-way), shit conflict with cscope
+#bindkey "\024" screen
+# Ctrl + w : close screen     (Firefox-way), shit conflict with vim - window control
+#bindkey "\027" kill
+
+
+# Alt + left/right, will conflict with my vimrc mapping
+#bindkey "^[^[OC" next
+#bindkey "^[^[OD" prev
+#Alt + ,/.
+#bindkey ^[, next
+#bindkey ^[. prev
+
+# C-a b : encoding big5
+# C-a u : encoding utf8
+bind b encoding big5 utf8
+bind u encoding utf8 utf8
+
+# C-a $num : Switch to window number 0 - 9, or to the blank window.
+bindkey "^[[A" number 1
+
+# F10 : detach
+bindkey -k k; detach
+
+# set the title for the default shell or specified program.
+screen -t Tab1     1
+screen -t Tab2     2
+screen -t Tab3     3
+screen -t Top      10 htop
+
+# Start at window 1
+bind c screen 1
+bind 0 select 10
+select 1
+
+#backtick 1 60 60 $HOME/Tools/get_freemem
+#hardstatus alwayslastline "Free: %1`"
+
+#Hotkey for window resizing
+bind = resize =
+bind + resize +1
+bind - resize -1
+bind _ resize max
+
+# Ctrl + ARROW_UP/ARROW_DOWN
+bindkey "^[[A" resize +1
+bindkey "^[[B" resize -1
+
+# Useful bindings as Vim(hjkl)
+bind j focus down
+bind k focus up
+bind h focus left
+bind l focus right
+
+# Integrating GNU Screen copy/scrollback mode with the local system clipboard. i.e. Copying to the Mac Clipboard
+# bind y eval "writebuf" "exec sh -c 'pbcopy < /tmp/screen-exchange'"
+
+# Buffer file : where the screen copy buffer will be saved to.
+bufferfile $HOME/tmp/screen-copy-buffer
+bind y eval "writebuf" "exec sh -c 'nc 172.16.2.54 4573 < ~/tmp/screen-copy-buffer'"
+
+# hardcopydir:  The directory which contains all hardcopies.
+hardcopydir ~/.screen
+
+msgwait 10
+setenv DISPLAY ':0'
+
+# mouse tracking allows to switch region focus by clicking
+# mousetrack on

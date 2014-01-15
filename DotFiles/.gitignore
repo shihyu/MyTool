@@ -1,0 +1,15 @@
+.cgdb/readline_history.txt
+.cgdb/readline_history.txt
+.DS_Store
+.ssh
+.subversion/auth/
+.svn
+*.[oa]
+*.out
+*~
+,*
+.*.sw?
+cscope.*out
+tags
+*.pyc
+.vnc

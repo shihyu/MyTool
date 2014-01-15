@@ -1,0 +1,92 @@
+#!/bin/sh
+# NOTE: source this file to enable ccache & distcc feature
+#
+# kent@ubuntu:scripts (1) >>> ll /usr/local/bin/arm-linux-gcc
+# lrwxrwxrwx 1 root root 15 2011-02-10 15:01 /usr/local/bin/arm-linux-gcc -> /usr/bin/ccache*
+#
+# (1) ccache tips:
+#       Set CCACHE_DIR to tmpfs/ramdisk to speed up and reduce journaling filesystem i/o times
+#
+# (2) how to tell a directory is tmpfs by dd tool? (speed difference)
+#     +----------------------------------------------------------------------------+
+#     | kent@rd1-2:~ >>> dd if=/dev/zero of=/dev/shm/testfile bs=8k count=128k     |
+#     | 1073741824 bytes (1.1 GB) copied, 1.34261 seconds, 800 MB/s                |
+#     | kent@rd1-2:~ >>> dd if=/dev/zero of=/tmp/testfile bs=8k count=128k         |
+#     | 1073741824 bytes (1.1 GB) copied, 3.07005 seconds, 350 MB/s                |
+#     +----------------------------------------------------------------------------+
+#
+
+##########
+# ccache # 
+##########
+
+platform=`\which -a arm-linux-gcc 2> /dev/null`
+case $platform in
+	*vivaldi*)
+		platform_suffix="Vivaldi"
+		;;
+	*bach*)
+		platform_suffix="Bach"
+		;;
+	*haydn*)
+		platform_suffix="Haydn"
+		;;
+	*mozart3e*|*mozart3v2*|*mozart3v3*)
+		platform_suffix="Mozart3x"
+		;;
+	*mozart3*)
+		platform_suffix="Mozart3"
+		;;
+	*montavista*)
+		platform_suffix="DM36X"
+		;;
+	*DM8127*)
+		platform_suffix="DM8127"
+		;;
+	*DM385*)
+		platform_suffix="DM385"
+		;;
+	*xarina*)
+		platform_suffix="Xarina"
+		;;
+	"")
+	echo "[Error] arm-linux-gcc not found."
+	return 1
+	;;
+esac
+
+echo "[Info] You are building on <${platform_suffix}> platform."
+
+CCACHE_BIN=/usr/bin/ccache
+
+# Refrence from "man ccache" -> "SHARING A CACHE"
+export CCACHE_UMASK="002"
+
+export PATH=/usr/local/bin:$PATH
+export CCACHE_DIR="/tmp/.ccache.${platform_suffix}"
+
+if [ -d "${CCACHE_DIR}" ]; then
+    echo "+----------------------------------------------------+"
+    echo "|              Current ccache statistics             |"
+    echo "+----------------------------------------------------+"
+    $CCACHE_BIN -s
+else
+    mkdir ${CCACHE_DIR} 
+    chmod 1777 ${CCACHE_DIR}
+
+    echo "+----------------------------------------------------+"
+    echo "|                Initial ccache                      |"
+    echo "+----------------------------------------------------+"
+    $CCACHE_BIN --max-size=3G -s
+
+    # Refrence from "man ccache" -> "SHARING A CACHE"
+    find ${CCACHE_DIR} -type d | xargs chmod g+s
+fi
+
+##########
+# distcc # 
+##########
+
+#export DISTCC_HOSTS='localhost 172.16.7.167'
+#export CCACHE_PREFIX="distcc"
+

@@ -1,0 +1,26 @@
+ABOUT
+=====
+
+Useful tools to help improving efficiency on Linux
+
+Usage
+=====
+
+1. Check out from github
+
+        git clone git://github.com/chenkaie/Tools.git ~/Tools
+
+2. Add below to your .bashrc
+
+        export PATH=$HOME/Tools:$HOME/Tools/subversion-scripts:$HOME/Tools/git-scripts:$PATH
+        
+3. source ~/.bashrc or Re-login for the change to take effect.
+
+AUTHOR
+======
+
+Kent Chen (chenkaie) <chenkaie@gmail.com>
+
+* [@chenkaie](https://twitter.com/#!/chenkaie) on Twitter
+* [@chenkaie](http://www.plurk.com/chenkaie) on Plurk 
+* <http://chenkaie.blogspot.com>

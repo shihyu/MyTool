@@ -1,0 +1,56 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	grep = auto
+	sh = auto
+
+[user]
+	name = Kent Chen
+	email = chenkaie@gmail.com
+
+[core]
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	autocrlf = false
+	excludesfile = ~/.gitignore
+[alias]
+	st = status
+	s = status --short
+	ci = commit --verbose
+	br = branch
+	co = checkout
+	lg = log --stat --decorate
+	sh = !git-sh
+	clog = log --graph --date=short --pretty=format:\"%C(124)%ad %C(24)%h %C(34)%an %C(252)%s%C(178)%d\" #--encoding="ISO-8859-1"
+	d = difftool
+	dc = diff --cached
+	pull = pull --rebase
+	zip = !git archive --format tar.gz -o $(git log --date=short --pretty=format:"%ad" -1).tar.gz HEAD
+
+[branch]
+	autosetupmerge = true
+	autosetuprebase = always
+
+[github]
+	user = chenkaie
+	token = bffcf6bc66d10d4fbb3bb9d334fe4b07
+[color "sh"]
+	branch = yellow ul
+	workdir = blue bold
+	dirty = red
+
+[merge]
+	tool = vimdiff
+
+[diff]
+	tool = vimdiff
+
+[difftool]
+	prompt = false
+
+[tig]
+	show-rev-graph = yes # Show revision graph?
+
+[http]
+	sslVerify = false
+	;proxy = http://172.16.2.54:8888/

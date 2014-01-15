@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# below IFS is the keypoint
+IFS=$'\t '
+
+result=`wcgrep "$1"`
+
+[ -z "$2" ] && INDEX=1 || INDEX=$2
+
+if [[ "$INDEX" == "a" ]]; then
+    #FIXME: Why "tr" executed before "cut" in this statement FILENAME=`echo $result | cut -d ":" -f 1 | tr '\n' '@' | sed 's/@/ /g' 
+    FILENAME=`echo $result | awk '{print $2}' | cut -d ":" -f 1 | uniq` 
+    FILENAME1=`echo $FILENAME | tr '\n' '@' | sed 's/@/ /g'`
+    echo Edit $INDEX, Filename: $FILENAME1
+    $EDITOR -X -p $FILENAME1
+else
+    str=`echo $result | sed -n "${INDEX}p" | awk '{print $2}'`
+    FILENAME=`echo $str | cut -d ":" -f 1`
+    LINENUMBER=`echo $str |  cut -d ":" -f 2`
+    $EDITOR $FILENAME +$LINENUMBER
+fi
+	

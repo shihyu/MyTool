@@ -1,0 +1,71 @@
+#!/bin/sh
+#
+#-i: ignore-case
+#--colour=auto: Surround the matching string with the marker find in GREP_COLOR environment variable (RECMOMMENDED)
+WCGREP_GREPARGS="-HnI --colour=auto --mmap"
+WCGREP_GREP="grep"
+WCGREP_IGNORE=".*/\.git\(/\|$\)\|.*/tags\|.*/cscope.out\|.*~$\|.*/\.svn.*\(/\|$\)"
+
+# below IFS is the keypoint
+IFS=$'\t '
+
+if [ "$#" -eq 0 ]; then
+	echo "Usage: wg PATTERN [INDEX]"
+	echo "       Open [INDEX]-th file by editor: $EDITOR"
+	exit 0
+fi
+
+pattern="$1"
+INDEX=$2
+
+function exist () { type "$1" &> /dev/null; }
+
+function _ag()
+{
+	ag --smart-case --nocolor --nogroup "$pattern" | sort | nl -n ln | grep -Ii --colour=auto "$pattern"
+	return 0;
+}
+
+function _wcgrep()
+{
+	case "$0" in
+		*WG*)
+		# [NOTE] Don't ignore case => Lightning fast
+		bGrepExcDir=`$WCGREP_GREP --help | grep "exclude-dir"`
+		if [ -n "$bGrepExcDir" ]; then
+			export GREP_OPTIONS="--exclude-dir=\*/.svn/\* --exclude-dir=\*/.git/\* --exclude=\*~ --exclude=\*.swp --exclude=cscope.* --exclude=tags"
+		else
+			export GREP_OPTIONS="--exclude=\*~ --exclude=\*.swp --exclude=cscope.* --exclude=tags"
+		fi
+		${WCGREP_GREP} "$pattern" . -R ${WCGREP_GREPARGS} | nl -n ln | grep -I --colour=auto "$pattern"
+		;;
+
+		*wg*)
+		# [NOTE] ignore case => slower
+		WCGREP_GREPARGS=${WCGREP_GREPARGS}" -i"
+		find $pathargs -regex ${WCGREP_IGNORE:-'.*/\.git\(/\|$\)\|.*~$\|.*/\.svn\(/\|$\)'} -prune -o \
+			-type f -print0 | xargs -r0 ${WCGREP_GREP:-grep} ${WCGREP_GREPARGS:--HnI} "$pattern" \
+			| nl -n ln | grep -Ii --colour=auto "$pattern"
+		;;
+	esac
+}
+
+if [ -n "$INDEX" ]; then
+	exist ag && result=$(_ag) || result=$(_wcgrep)
+
+	if [ "$INDEX" == "a" ]; then
+		#FIXME: Why "tr" executed before "cut" in this statement FILENAME=`echo $result | cut -d ":" -f 1 | tr '\n' '@' | sed 's/@/ /g'
+		FILENAME=`echo $result | awk '{print $2}' | cut -d ":" -f 1 | uniq`
+		FILENAME1=`echo $FILENAME | tr '\n' '@' | sed 's/@/ /g'`
+		echo Edit $INDEX, Filename: $FILENAME1
+		$EDITOR -X -p $FILENAME1
+	else
+		str=`echo $result | sed -n "${INDEX}p" | awk '{print $2}'`
+		FILENAME=`echo $str | cut -d ":" -f 1`
+		LINENUMBER=`echo $str |  cut -d ":" -f 2`
+		$EDITOR $FILENAME +$LINENUMBER
+	fi
+else
+	exist ag && _ag || _wcgrep
+fi
+

@@ -1,0 +1,9 @@
+backup/
+doc/tags-ja
+record/
+sessions/
+view/
+.VimballRecord
+undofiles/
+Powerline*.cache
+bundle

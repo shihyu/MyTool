@@ -1,0 +1,56 @@
+# ifdef...endif
+snippet ifdef
+	#ifdef ${1:FOO}
+		${2:#define }
+	#endif //$1
+# if
+snippet if
+	if (${1:/* condition */})
+	{
+		${2:/* code */}
+	}
+# else
+snippet el
+	else
+	{
+		${1}
+	}
+# While Loop
+snippet wh
+	while (${1:/* condition */})
+	{
+		${2:/* code */}
+	}
+# For Loop
+snippet for
+	for (${2:i} = 0; $2 < ${1:count}; $2${3:++})
+	{
+		${4:/* code */}
+	}
+# switch
+snippet switch
+	switch(${1:expression})
+	{
+		case '${3:case}':
+			${4:// code}
+			break;
+		${5}
+		default:
+			${2:// code}
+	}
+# case
+snippet case
+	case '${1:case}':
+		${2:// code}
+		break;
+	${3}
+# This is kind of convenient for debug print
+snippet prd
+	printf("[%s] ${1:%s}\n", __func__, ${2});${3}
+snippet prda
+	printf("[%s] %s:%d (%s) => ${1:%s}\n", __func__, __FILE__, __LINE__, __TIME__, ${2});${3}
+# fprintf (again, this isn't as nice as TextMate's version, but it works)
+snippet fprd
+	fprintf(${1:stderr}, "[%s] ${2:%s}\n", __func__, ${3});${4}
+snippet fprda
+	fprintf(${1:stderr}, "[%s] %s:%d (%s) => ${2:%s}\n", __func__, __FILE__, __LINE__, __TIME__, ${3});${4}

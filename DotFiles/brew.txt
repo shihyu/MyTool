@@ -1,0 +1,29 @@
+# Note you have to fix "awk -f" issue fisrt, only gawk support "-f" option.
+brew install gawk
+brew install wget
+brew install binutils
+brew install coreutils --default-names
+# This is a must for wcgrep, cause Lion -> find is not GNU find
+brew install findutils --default-names
+# Note Lion -> grep is already GNU grep
+brew install grep --default-names
+brew install gnu-sed --default-names
+brew install bash-completion
+brew install ctags
+brew install cscope
+brew install lesspipe
+brew install colordiff
+brew install cowsay
+brew install tig
+brew install htop
+brew install unrar
+brew install git-extras
+brew install tree
+brew install cgdb
+brew install ack
+brew install colormake
+brew install vim
+brew install hg
+brew install nmap
+brew install lighttpd
+brew install wireshark

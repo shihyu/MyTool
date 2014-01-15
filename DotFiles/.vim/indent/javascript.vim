@@ -1,0 +1,1 @@
+javascript.vim_SimpleJavascriptIndenter

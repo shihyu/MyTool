@@ -1,0 +1,27 @@
+#!/bin/sh
+
+LN="ln"
+DOTFILES_DIR=`pwd`
+DOTFILES_DIR=${DOTFILES_DIR//$HOME\//}
+
+# Configure correct $dotfiles path in .bashrc
+sed -i "s@^dotfiles=\(.*\)@dotfiles=\"\$HOME/$DOTFILES_DIR\"@" .bashrc
+
+#RCFILES=".bash_logout .lftp .ssh"
+RCFILES=".bashrc .bash_profile .inputrc .screenrc .vim .vimrc .cdargs .ctags .htoprc .muttrc .irssi .gitconfig .gitk .subversion .vnc .gitshrc .cgdb .gdbinit .gitignore .zshrc .agignore .config .tmux.conf .tigrc"
+
+for rcfile in $RCFILES; do
+    if [ -L $HOME/$rcfile ]; then
+        echo "[Symbolic Link] : $HOME/$rcfile exists, skip.";
+        # uncomment below line to to remove all exist symbolic links
+        # rm $HOME/$rcfile
+    elif [ -f $HOME/$rcfile ] || [ -d $HOME/$rcfile ]; then
+        echo "[File or Dirs ] : $HOME/$rcfile exists, skip.";
+    else
+        $LN -sf $DOTFILES_DIR/$rcfile $HOME/
+        echo "[Successfully!] : build symbolic link: $DOTFILES_DIR/$rcfile";
+    fi
+done
+
+test -L ~/.vimrc && test -L ~/.vim && vim +BundleInstall +qall
+

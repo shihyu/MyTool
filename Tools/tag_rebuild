@@ -1,0 +1,46 @@
+#!/bin/sh
+#################################################################################
+#        Filename: tag_rebuild
+#          Author: Wu Yin(吴垠)
+#           Email: lazy_fox@gmail.com
+#         Created: 2007-9-19
+#     Description: Rebuild Ctags and Cscope files at the path you assign
+#           Usage: tag_rebuild [PATH]
+#                  "tag_rebuild" will rebuild the Cscope tag file and Ctags
+#                  tag file at the PATH you gived. The current directory by default.
+#                  The following files will be created or rebuilded after you
+#                  run "tag_rebuild".
+#                  > cscope.in.out
+#                  > cscope.out
+#                  > cscope.po.out
+#                  > tags
+#################################################################################
+#                By Kent
+#                -R: Recurse directories for files
+#                -b: Build the cross-reference only
+#                -k: Kernel Mode - don't use /usr/include for #include files
+#                -q: Build an inverted index for quick symbol searching
+#                #cscope just scan *.c & *.h by default, if u want to scan other extension type, do it by below
+#                find . -name "*.h" -o -name "*.c" -o -name "*.cc" > cscope.files
+#                cscope -bkq -i cscope.files
+#
+################################################################################
+
+WORK_PATH=$1
+CSCOPE_TAG_PATH=$2
+CSCOPE_PRG=cscope
+CTAGS_PRG=ctags
+
+[ -z "$WORK_PATH" ] && WORK_PATH="" || cd $WORK_PATH
+
+echo "Cscope ... " $WORK_PATH
+# To avoid using wrong cscope(/opt/montavista/pro5.0/bin/cscope) once sourcing devel_IP8161_VVTK
+[ -f $HOME/usr/bin/cscope ] && CSCOPE_PRG="$HOME/usr/bin/cscope"
+$CSCOPE_PRG -bkqR
+
+echo "Ctags ... " $WORK_PATH
+[ -f $HOME/usr/bin/ctags ] && CTAGS_PRG="$HOME/usr/bin/ctags"
+#CTAGS_PRG -R --fields=+lS
+$CTAGS_PRG -R --c-kinds=+p --fields=+ialS --extra=+q --exclude=*jquery*
+
+[ -n "$CSCOPE_TAG_PATH" ] && cp cscope.* tags $CSCOPE_TAG_PATH || echo "Done!"

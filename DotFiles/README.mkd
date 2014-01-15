@@ -1,0 +1,35 @@
+About
+=====
+
+My dotfiles / rcfiles used on Unix OS, mainly on Linux & Mac OS X
+
+Usage
+=====
+
+1. Check out from github
+
+        git clone git://github.com/chenkaie/DotFiles.git ~/DotFiles
+        cd ~/DotFiles
+        git submodule update --init
+
+2. Simply executing below script to deploy these links! Once they are detected exist, remove them first, but 'be careful'!
+
+        ./deploy-links
+        
+Screenshots
+===========
+* tmux (tmux-powerline like) + vim (vim-powerline)
+![Vim+Tmux+Powerline.png](http://farm6.staticflickr.com/5508/11351632583_54c3fa5c70_o.png)
+
+Author
+======
+
+Kent Chen (chenkaie) <chenkaie@gmail.com>
+
+* [@chenkaie](https://twitter.com/chenkaie) on Twitter
+* [@chenkaie](https://github.com/chenkaie) on GitHub
+* [@chenkaie](http://www.slideshare.net/chenkaie) on SlideShare
+* [@chenkaie](http://www.linkedin.com/in/chenkaie) on LinkedIn
+* [@chenkaie](http://www.plurk.com/chenkaie) on Plurk 
+* <http://chenkaie.blogspot.com>
+

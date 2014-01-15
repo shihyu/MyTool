@@ -1,0 +1,234 @@
+ *MyNote.txt*
+==============================================================================
+  MyTempalte                                                      *MyTemplate*
+==============================================================================
+Notes: Please reference to |EasyGrep|
+
+Author:      
+Goal:       
+Version:     
+License:     
+
+==============================================================================
+ Vim Help Tips                                                 *kent-vim-help*
+==============================================================================
+
+1. Operatrion (like cscope/ctag operation):
+    Use |CTRL-]| command jump to the definition of the keyword under the cursor.
+    Use |CTRL-T| or |CTRL-O| to jump back.
+
+2. To Generate help tags (ref: *helptags* ) (eg, :helptags ~/.vim/doc)
+    :helpt[ags] [++t] {dir}
+        Generate the help tags file(s) for directory {dir}.
+        All "*.txt" and "*.??x" files in the directory are
+        scanned for a help tag definition in between stars.
+
+==============================================================================
+ User:Kent:VIM:Note                                            *kent-vim-note*
+==============================================================================
+
+1. To apend each line with '~'. search a new line by '\n', insert a new line by '\r'
+ eg:
+ test.txt 
+ "1 line1      line1~
+ "2 line2  =>  line2~
+ "3 line3      line3~
+ <EX-mode> 
+ :%s/\&\n/\~\r/g
+
+ NOTE: amazing substitue
+ :'<,'>s/<pan>.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*\n.*/<pan>\r<check>\"\%d\"\, \"1\~35200\"<\/check>\r<value\/>\r<\/pan>\r<tilt>\r<check>\"\%\d\"\, \"0\~8800\"<\/check>\r<value\/>\r<\/tilt>\r<zoom>\r<check>\"\%\d\"\, \"0\~16384\"<\/check>\r<value\/>\r<\/zoom>/
+------------------------------------------------------------------------------
+2. HTML2WIKI *html2wiki*
+Usage:
+      1st step: vim sample.sh => :TOhtml => save as sample.sh.html
+      2nd step: html2wiki sample.sh.html
+
+------------------------------------------------------------------------------
+3. NERD_Commenter
+
+The following key mappings are provided by default (there is also a menu
+with items corresponding to all the mappings below):
+
+[count],cc |NERDComComment|
+Comment out the current line or text selected in visual mode.
+
+[count],cn |NERDComNestedComment|
+Same as ,cc but forces nesting.
+
+[count],c<space> |NERDComToggleComment|
+Toggles the comment state of the selected line(s). If the topmost selected
+line is commented, all selected lines are uncommented and vice versa.
+
+[count],cm |NERDComMinimalComment|
+Comments the given lines using only one set of multipart delimiters.
+
+[count],ci |NERDComInvertComment|
+Toggles the comment state of the selected line(s) individually.
+
+[count],cs |NERDComSexyComment|
+Comments out the selected lines ``sexily''
+
+[count],cy |NERDComYankComment|
+Same as ,cc except that the commented line(s) are yanked first.
+
+[count],cu |NERDComUncommentLine|
+Uncomments the selected line(s).
+
+------------------------------------------------------------------------------
+4. EasyGrep
+
+    <leader>vv - Grep for the word under the cursor
+    <leader>va - Like vv, but add to existing list
+    <leader>vo - Select the files to search in and set grep options
+
+------------------------------------------------------------------------------
+5. minibufexpl.vim : Elegant buffer explorer - takes very little screen space *minibufexpl*
+    1. <Ctrl-Tab> and <Shift-Tab> move forward and backward respectively through the buffer list. 
+
+------------------------------------------------------------------------------
+6. Buffer Exploerer: Plugin for easily exploring (or browsing) Vim
+    \be  or  :BufExplorer
+    \bs  or  :HSBufExplorer
+    \bv  or  :VSBufExplorer
+
+------------------------------------------------------------------------------
+7. surround.vim: Delete/change/add parentheses/quotes/XML-tags/much more with ease 
+    
+    Normal mode
+    -----------
+    ds  - delete a surrounding
+    cs  - change a surrounding
+    ys  - add a surrounding
+    yS  - add a surrounding and place the surrounded text on a new line + indent it
+    yss - add a surrounding to the whole line
+    ySs - add a surrounding to the whole line, place it on a new line + indent it
+    ySS - same as ySs
+
+    Visual mode
+    -----------
+    s   - in visual mode, add a surrounding
+    S   - in visual mode, add a surrounding but place text on new line + indent it
+
+    Insert mode
+    -----------
+    <CTRL-s> - in insert mode, add a surrounding
+    <CTRL-s><CTRL-s> - in insert mode, add a new line + surrounding + indent
+    <CTRL-g>s - same as <CTRL-s>
+    <CTRL-g>S - same as <CTRL-s><CTRL-s>
+------------------------------------------------------------------------------
+8. vimgdb hotkeys
+
+    <Space> : launch the interactive gdb input-line window
+    Z       : send an interrupt to GDB and the program it is running
+    B       : info breakpoints
+    L       : info locals
+    A       : info args
+    S       : step
+    I       : stepi
+    CTRL-N  : next   => next source line, skipping all function calls
+    X       : nexti
+    F       : finish
+    R       : run
+    Q       : quit
+    C       : continue
+    W       : where
+    CTRL-U  : up     => go up one frame
+    CTRL-D  : down   => go down one frame
+    CTRL-B  : set a breakpoint on the line where the cursor is located
+    CTRL-E  : clear all breakpoints on the line where the cursor is located
+    CTRL-P  : Normal mode =>  print value of word under cursor
+    CTRL-X  : print value of data referenced by word under cursor
+
+    Visual mode: GDB command "createvar" selected expression, see |gdb-variables|
+    CTRL-B and CTRL-E operate both on source code and on disassembled code in
+    assembly buffers.
+
+------------------------------------------------------------------------------
+ Remove lines that contain [searchitem]
+    a. vim way
+         :g/color/d
+    b. Standard ex sequence:
+         :/color/d
+    c. *nix CLI 
+         :%!grep -v color
+
+------------------------------------------------------------------------------
+ diff
+     o use ':vnew' to new a window for realtime diff
+
+------------------------------------------------------------------------------
+ make
+     o :cl => list all errors, including
+     o :cn => jump to next error
+     o :cp => back to previous error
+     o :cc[number] => jump to number-th error
+     o :set errorformat=%f:%l:\ %m 
+
+------------------------------------------------------------------------------
+ Marks
+    o m[a,b,c,...,z] => mark this line as mark[a,b,c,...,z]
+    o `[a,b,c,...,z] => goto mark [a,b,c,...,z]
+    o  :marks => list all marks list 
+    --------------------------------------------------------------------------
+    ShowMarks
+    <Leader>mt   - Toggles ShowMarks on and off.
+    <Leader>mo   - Forces ShowMarks on.
+    <Leader>mh   - Clears the mark at the current line.
+    <Leader>ma   - Clears all marks in the current buffer.
+    <Leader>mm   - Places the next available mark on the current line.
+
+------------------------------------------------------------------------------
+ Go to last/prev edited line
+    Try g; and g,. They jump backward and forward in the changelist.
+    See |changelist| for more details.
+
+------------------------------------------------------------------------------
+ Vimball
+    1st. vim filename.vba
+    o list vimball file list
+        :VimballList            *:VimballList*
+    o install this vimball
+        :UseVimball [path]      *:UseVimball*
+    o unistall this vimball
+        :RmVimball vimballfile  *:RmVimball*
+
+------------------------------------------------------------------------------
+ Copy from search mode to ex mode
+    o <C-R>/
+        <C-R> allows you to insert the contents of a register, and the "/" register
+        contains the last search pattern used.
+    o <C-R>0
+        copy text from what you have yanked. 
+
+------------------------------------------------------------------------------
+ Web: http://172.16.5.30/rd1wiki/index.php/User:Kent:VIM:Note
+
+==============================================================================
+ User:Kent:Bash:Note                                            *kent-bash-note*
+==============================================================================
+
+1. GNU Screen
+    Lock   screen: xoff s (Ctrl-a , s)
+    Unlock Screen: xon  q (Ctrl-a , q)
+    Screen is locked in some cases, using "wrap ^R r" to unlock
+
+    Split screen: split S (Ctrl-a, S)
+        1. switch between splitted screen : Ctrl-Tab
+        2. close split window by (Ctrl-a, Q)
+
+    Fit screen: (Ctrl-a, F) used for login at iMac, but the screen size doesn't match that at VVTK
+    Move screen to n-th: goto command mode, :number n
+    Change SessionName : Ctrl-a, : -> enter sessionname ooxx
+
+------------------------------------------------------------------------------
+2. SVN tool
+    http://svn.collab.net/repos/svn/trunk/tools/client-side/
+    http://svn.collab.net/repos/svn/trunk/contrib/client-side/
+
+------------------------------------------------------------------------------
+3. regex of find/wcfind  (a.k.a. Emacs regex)
+    http://jamesthornton.com/emacs/node/emacs_97.html
+
+------------------------------------------------------------------------------
+ vim:tw=78:fo=tcq2:isk=!-~,^*,^\|,^\":ts=8:ft=help:norl:

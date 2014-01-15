@@ -1,0 +1,8 @@
+kent /home/kent
+rtsps /home/kent/Project/VS8102_VVTK/apps/app_cluster/network/streamingserver/app/rtsps
+virtualsensor /home/kent/Project/VS8102_VVTK/apps/app_cluster/media/libs/dm365/virtualsensor
+venc /home/kent/Project/VS8102_VVTK/apps/app_cluster/media/apps/dm365/venc
+sysparam_nand /home/kent/Project/VS8102_VVTK/apps/app_cluster/utility/sysparam/app/sysparam_nand
+shmem /home/kent/Project/VS8102_VVTK/apps/app_cluster/shmem
+serverpush /home/kent/Project/VS8102_VVTK/apps/app_cluster/network/serverpush/app/serverpush
+snapshotd /home/kent/Project/VS8102_VVTK/apps/app_cluster/cgi/snapshotd

@@ -1,0 +1,70 @@
+#$HOME/.muttrc
+charset-hook ^us-ascii$ utf-8
+charset-hook x-unknown utf-8
+set allow_ansi
+unset ascii_chars 
+set charset="UTF-8"
+set locale="UTF-8"
+#set assumed_charset="big5:gb2312:utf-8" 
+set send_charset = "utf-8:big5:gb2312:us-ascii:iso-8859-1"
+
+# Colors
+
+#color attachment brightmagenta default
+#color error      brightred    default
+#color hdrdefault red          default
+#color indicator  brightyellow red
+#color markers    brightcyan   default
+#color message    brightcyan   default
+#color normal     default      default
+#color quoted     brightblue   default
+#color search     default      green
+#color signature  red          default
+#color status     yellow       blue
+#color tilde      magenta      default
+#color tree       magenta      default
+
+
+color normal            default         default         # normal text
+color indicator         color214        color237        # actual message
+color tree              color99         default         # thread arrows
+color status            color118        color237        # status line
+color error             color196        default         # errors
+color message           color196        default         # info messages
+color signature         brightblack     default         # signature
+color attachment        brightblack     default         # MIME attachments
+color search            brightyellow    red             # search matches
+color tilde             brightmagenta   default         # ~ at bottom of msg
+color markers           red             default         # + at beginning of wrapped lines
+
+color hdrdefault        color33         default         # default header lines
+color bold              red             default         # hiliting bold patterns in body
+color underline         green           default         # hiliting underlined patterns in body
+
+color quoted            color107        default         # quoted text
+color quoted1           color66         default
+color quoted2           color32         default
+color quoted3           color30         default
+color quoted4           color99         default
+color quoted5           color36         default
+color quoted6           color114        default
+color quoted7           color109        default
+color quoted8           color41         default
+color quoted9           color138        default
+# header
+color header            color205        default         "^(From|Subject|To|Cc|Bcc):"
+
+# body
+color body              color214        default         "(http|https|ftp|news|telnet|finger)://[^ ]+"
+color body              color81         default         "[-a-z_0-9.+]+@[-a-z_0-9.]+"
+color body              red             default         "(^| )\\*[-a-z0-9*]+\\*[,.?]?[ \n]"
+color body              green           default         "(^| )_[-a-z0-9_]+_[,.?]?[ \n]"
+
+# index
+uncolor index *         # unset all color index entries
+color index             brightgreen     default         ~F      # Flagged
+color index             color74         default         ~N      # New
+color index             color169        default         ~T      # Tagged
+color index             brightblack     default         ~D      # Deleted
+
+# vim: syntax=muttrc
