@@ -75,10 +75,10 @@ set history=1000
 set nomore
 set laststatus=2
 "set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P>
-set statusline=%4*%<\ %1*[%F]
-set statusline+=%4*\ %5*[%{&encoding}, " encoding
-set statusline+=%{&fileformat}%{\"\".((exists(\"+bomb\")\ &&\ &bomb)?\",BOM\":\"\").\"\"}]%m
-set statusline+=%4*%=\ %6*%y%4*\ %3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>
+"set statusline=%4*%<\ %1*[%F]
+"set statusline+=%4*\ %5*[%{&encoding}, " encoding
+"set statusline+=%{&fileformat}%{\"\".((exists(\"+bomb\")\ &&\ &bomb)?\",BOM\":\"\").\"\"}]%m
+"set statusline+=%4*%=\ %6*%y%4*\ %3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>
 set ruler
 set softtabstop=4
 set nobackup
@@ -425,7 +425,8 @@ let Tlist_Highlight_Tag_On_BufEnter = 1 "highlight current tag in taglist window
 let Tlist_Process_File_Always = 1 "even without taglist window, create tags file, required for displaying tag in statusline
 let Tlist_Use_Right_Window = 1 "display taglist window on the right
 let Tlist_Display_Prototype = 1 "display full prototype instead of just function name
-set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tagname_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P
+set statusline=[%{&encoding}]\ [%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tagname_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P
+"set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tag_Prototype_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P
 map F :TlistShowPrototype <CR>
 map <F7> <ESC>:wincmd p<CR>
 nmap <silent> <C-F12> :TagbarToggle<CR>
