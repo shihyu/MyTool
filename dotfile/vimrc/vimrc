@@ -1,8 +1,8 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 Bundle 'vim-scripts/L9'
 Bundle 'vim-scripts/cscope_macros.vim'
 Bundle 'scrooloose/nerdtree'
@@ -123,7 +123,7 @@ function Compile_gcc()
     if &filetype=="c"
         set autochdir
         execute "w"
-        execute "!gcc -Wall -g % -o %:r"
+        execute "!gcc -Wall -g % -o %:r -lm"
     elseif &filetype=="cpp"
         set autochdir
         execute "w"
@@ -497,3 +497,4 @@ nmap tl :tabnext<cr>
 nmap th :tabprev<cr>
 nmap tn :tabnew<cr>
 nmap td :tabclose<cr>
+
