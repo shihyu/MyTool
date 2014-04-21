@@ -1,0 +1,42 @@
+#!/bin/sh
+SYMBOL_PATH=$(get_abs_build_var TARGET_OUT_UNSTRIPPED)
+#echo $SYMBOL_PATH
+
+# filename
+SYMBOL_FILE=`echo "$1" | sed 's/\(.*\)\(#[0-9][0-9]\)\s*pc\s*\([0-9a-fA-F]\{,8\}\)\s*\(.*\)/\4/g'`
+SYMBOL_FILE=`echo "$SYMBOL_FILE" | sed 's/ (.*)//g'`
+#replace lib path which in package
+SYMBOL_FILE=`echo "$SYMBOL_FILE" | sed 's/data\/data\/[^\/]*\/lib/system\/lib/g'`
+
+# function
+SYMBOL_FUNC=`echo "$1" | sed 's/\(.*\)\(#[0-9][0-9]\)\s*pc\s*\([0-9a-fA-F]\{,8\}\)\s*\(.*\)/\4/g'`
+SYMBOL_OFFSET=`echo "$SYMBOL_FUNC" | sed 's/.* (\(.*\)+\([0-9]*\))/\2/g'`
+SYMBOL_FUNC=`echo "$SYMBOL_FUNC" | sed 's/.* (\(.*\)+\([0-9]*\))/\1/g'`
+
+# address
+SYMBOL_ADDR=`echo "$1" | sed 's/\(.*\)\(#[0-9][0-9]\)\s*pc\s*\([0-9a-fA-F]\{,8\}\)\s*\(.*\)/\3/g'`
+
+#echo $SYMBOL_FUNC
+#echo $SYMBOL_OFFSET
+#echo $SYMBOL_FILE
+#echo $SYMBOL_ADDR
+SYMBOL_PATH_SYMBOL_FILE="$SYMBOL_PATH$SYMBOL_FILE"
+#echo "SYMBOL_PATH_SYMBOL_FILE : " $SYMBOL_PATH_SYMBOL_FILE
+
+SYMBOL_HEAD_ADDR=`arm-eabi-objdump -C -t $SYMBOL_PATH_SYMBOL_FILE | grep -F "$SYMBOL_FUNC" | grep "\.text"`
+echo 
+echo "arm-eabi-objdump -C -t $SYMBOL_PATH_SYMBOL_FILE | grep -F $SYMBOL_FUNC" 
+#echo "SYMBOL_HEAD_ADDR : " $SYMBOL_HEAD_ADDR
+
+SYMBOL_HEAD_ADDR=`echo $SYMBOL_HEAD_ADDR | sed 's/\([0-9a-fA-F]\{,8\}\).*/\1/g'`
+SYMBOL_NEW_ADDR=`echo 16o $((0x$SYMBOL_HEAD_ADDR)) $SYMBOL_OFFSET + p | dc`
+#echo "SYMBOL_NEW_ADDR : " $SYMBOL_NEW_ADDR
+
+#$TOP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-addr2line -f -C -e "$SYMBOL_PATH/$SYMBOL_FILE" "$SYMBOL_NEW_ADDR"
+
+echo
+echo "arm-eabi-addr2line -f -C -e $SYMBOL_PATH/$SYMBOL_FILE $SYMBOL_NEW_ADDR" 
+echo
+echo
+
+arm-eabi-addr2line -f -C -e "$SYMBOL_PATH/$SYMBOL_FILE" "$SYMBOL_NEW_ADDR"
