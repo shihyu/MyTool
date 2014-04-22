@@ -1,0 +1,57 @@
+#!/bin/bash
+
+function getGerritUserName()  # 自動取得你的gerrit使用者名稱
+{
+    sed -e "s/.*ssh:\/\/\([a-zA-Z0-9_\.]*\)@.*/\1/;tx;d;:x" .repo/manifests.git/config
+}
+
+function getHashClid() # 向gerrit 取得某個hash的comment 然後從中發現clid
+{
+    local CLID=`ssh -p 29419 $GERRIT_USER@git.htc.com "gerrit query --comments $1" | grep CLId | sed 's/.*(CLId=\([0-9]*\)).*/\1/g'`
+    echo $CLID
+}
+
+# 找出clid小於輸入值的hashcode
+function findHashLessThanClid()
+{
+    for hashcode in $(git log --pretty=format:'%H')
+    do
+        local RET=$(getHashClid $hashcode)
+        if [ "$RET" != "" ]; then
+            if [ "$RET" -gt "$1" ]; then
+                continue
+            fi
+        else
+            #echo "$hashcode didn't have clid"
+            continue
+        fi
+        echo $hashcode
+        break
+    done
+}
+
+function resetToClid()
+{
+    if [ "$1" == "" ]; then
+        echo "Usage: resetToClid <CLID>"
+        return 1
+    fi
+    echo -e "\e[93mWarning! This function may clean all your local commit in current branch.\e[0m"
+    echo "Press enter to continue."
+    read
+    echo "Running..."
+    TOP=$(gettop)
+    cd $TOP
+    export GERRIT_USER=$(getGerritUserName)
+    for line in $(cat .repo/project.list)
+    do
+        if [ "$line" != "" -a -d "$line" ]; then
+            pushd . > /dev/null
+            cd $line
+            local RET=$(findHashLessThanClid $1)
+            echo -e "\e[94mgit reset --hard $RET in $line\e[0m"
+            git reset --hard $RET
+            popd > /dev/null
+        fi
+    done
+}
