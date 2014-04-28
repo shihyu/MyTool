@@ -125,11 +125,11 @@ function Compile_gcc()
     if &filetype=="c"
         set autochdir
         execute "w"
-        execute "!gcc -Wall -g % -o %:r -lm"
+        execute "!gcc -Wall -Wextra -O2 -g % -o %:r -lm"
     elseif &filetype=="cpp"
         set autochdir
         execute "w"
-        execute "!g++ -Wall -g -std=c++11 % -o %:r"
+        execute "!g++ -Wall -Wextra -O2 -g -std=c++11 % -o %:r"
     elseif &filetype=="java"
         set autochdir
         execute "w"
