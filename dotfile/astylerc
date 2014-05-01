@@ -21,10 +21,10 @@
 # Attach a pointer or reference operator (* or &) to either the variable type
 # (left) or variable name (right), or place it between the type and name.
 # *,&這類字符靠近類型
-#--align-pointer=type
+--align-pointer=type
 
 # *,&這類字符靠近變量名字, 目前選擇這個
---align-pointer=name
+#--align-pointer=name
 
 # 在操作符號兩邊增加空格字符 ==
 --pad-oper
@@ -53,7 +53,8 @@
 --lineend=linux
 
 # switch case的代碼也按照標準縮進方式縮進
---indent-switches
+#--indent-switches
+--indent-cases
 
 # 如果函數開始後面({後面)第一行是註釋, 也進行縮進
 --indent-col1-comments
