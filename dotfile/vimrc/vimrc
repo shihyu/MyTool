@@ -125,7 +125,7 @@ function Compile_gcc()
     if &filetype=="c"
         set autochdir
         execute "w"
-        execute "!gcc -Wall -Wextra -O2 -g % -o %:r -lm"
+        execute "!gcc -Wall -Wextra -O2 -g  -std=c99  % -o %:r -lm"
     elseif &filetype=="cpp"
         set autochdir
         execute "w"
