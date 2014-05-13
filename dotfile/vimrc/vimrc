@@ -176,6 +176,9 @@ nnoremap <leader>fb  :FufBuffer<CR>
 "Remove the Windows ^M
 noremap <leader>m  :%s/\r//g<CR>
 
+"Remove the space
+noremap <leader><space> :% s/\s\+$//g<CR>
+
 "eregex.vim
 let g:eregex_default_enable = 0
 nnoremap ,/ :M/
@@ -504,5 +507,5 @@ nmap td :tabclose<cr>
 
 
 " 顯示每行空白
-"highlight Badspace ctermfg=red ctermbg=red
-"autocmd BufEnter * match Badspace /\s\+$/
+highlight Badspace ctermfg=red ctermbg=red
+autocmd BufEnter * match Badspace /\s\+$/
