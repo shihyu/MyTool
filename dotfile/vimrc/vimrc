@@ -35,6 +35,7 @@ Bundle 'bootleq/vim-tabline'
 Bundle 'scrooloose/syntastic'
 Bundle 'Raimondi/delimitMate'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'vim-scripts/ShowTrailingWhitespace'
 "au filetype python Bundle 'vim-scripts/Pydiction'
 "Bundle 'msanders/snipmate.vim'
 "Bundle 'c9s/gsession.vim'
@@ -501,3 +502,7 @@ nmap th :tabprev<cr>
 nmap tn :tabnew<cr>
 nmap td :tabclose<cr>
 
+
+" 顯示每行空白
+"highlight Badspace ctermfg=red ctermbg=red
+"autocmd BufEnter * match Badspace /\s\+$/
