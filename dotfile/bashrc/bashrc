@@ -1,25 +1,25 @@
-#export PS1='\[\e[36;1m\][\[\e[33;1m\]\u\[\e[35;1m\]@\[\e[32;1m\]\H \[\e[31;1m\]\w\[\e[36;1m\]]\[\e[34;1m\]\$ \[\e[37;1m\]' 
-export PS1='\[\e[36;1m\][\[\e[33;1m\]姚\[\e[35;1m\]@\[\e[32;1m\]\H \[\e[31;1m\]\w\[\e[36;1m\]]\[\e[34;1m\]\$ \[\e[37;1m\]' 
+#export PS1='\[\e[36;1m\][\[\e[33;1m\]\u\[\e[35;1m\]@\[\e[32;1m\]\H \[\e[31;1m\]\w\[\e[36;1m\]]\[\e[34;1m\]\$ \[\e[37;1m\]'
+export PS1='\[\e[36;1m\][\[\e[33;1m\]姚\[\e[35;1m\]@\[\e[32;1m\]\H \[\e[31;1m\]\w\[\e[36;1m\]]\[\e[34;1m\]\$ \[\e[37;1m\]'
 #export PS1="\[$(tput bold)$(tput setb 4)$(tput setaf 7)\]\u@\h:\w $ \[$(tput sgr0)\]"
 
 
-export LC_ALL=zh_TW.UTF-8 
-export LANG=zh_TW.UTF-8 
-export TERM=xterm 
-umask 022 
+export LC_ALL=zh_TW.UTF-8
+export LANG=zh_TW.UTF-8
+export TERM=xterm
+umask 022
 
-alias sr='shutdown -r now' 
-alias sd='shutdown -h now' 
-alias ls='ls --color=always' 
-alias ll='ls -l --block-size=M' 
-alias less='less -r' 
-alias rm='rm -f' 
-alias h='history' 
-alias hc='history -c' 
-alias mnt='mount' 
-alias umnt='umount' 
-alias sx='startx' 
-alias lt='logout' 
+alias sr='shutdown -r now'
+alias sd='shutdown -h now'
+alias ls='ls --color=always'
+alias ll='ls -l --block-size=M'
+alias less='less -r'
+alias rm='rm -f'
+alias h='history'
+alias hc='history -c'
+alias mnt='mount'
+alias umnt='umount'
+alias sx='startx'
+alias lt='logout'
 alias df='df -B G'
 alias cl='clear'
 alias vi='vim'
@@ -54,9 +54,9 @@ HISTCONTROL=ignoreboth:ignoredups:erasedups
 shopt -s cmdhist
 shopt -s cdspell
 shopt -s histappend
-PROMPT_COMMAND="history -a; history -n;" 
+PROMPT_COMMAND="history -a; history -n;"
 
-rm_log() 
+rm_log()
 {
     adb shell rm /data/htclog/*;
     adb shell rm /data/log/*;
@@ -64,7 +64,7 @@ rm_log()
 }
 
 #function dlx_envsetup()
-#{ 
+#{
     #unset GREP_OPTIONS
  #   source build/envsetup.sh; choosecombo 1 dlx eng
     #export GREP_OPTIONS
@@ -113,7 +113,7 @@ attach_pid()
 {
     PID=`adb shell ps | grep $1 | awk '{print $2}'`
     adb shell gdbserver :5039 --attach $PID
-} 
+}
 
 tar_bz2_dir()
 { # ©2007 dsplabs.com.au
@@ -135,10 +135,10 @@ tar_bz2_dir()
 
 
 d_bz2_dir()
-{ 
+{
 
     if [ "$1" != "" ]; then
-        time pbzip2 -dvc -m5000 $1 | tar x     
+        time pbzip2 -dvc -m5000 $1 | tar x
     fi
 }
 
@@ -159,7 +159,7 @@ function gdbgaia()
         select s in "${devices[@]}" "quit";
         do
             if [ -n "${s}" ]; then
-                case "${s}" in 
+                case "${s}" in
                 "All devices")
                     break;
                     ;;
@@ -254,7 +254,7 @@ push_so()
     adb reboot
 }
 
-gaia_lib() 
+gaia_lib()
 {
     time make $1 ONLYSDKAP=true -j8 2>&1 |tee build.log
 }
@@ -264,7 +264,7 @@ gaia_mm()
     time mm ONLYSDKAP=true -j8 2>&1 |tee build.log
 }
 
-gaia_sync() 
+gaia_sync()
 {
     #adb shell rm /data/log/* &&
     rm_log &&
@@ -315,11 +315,11 @@ get_maps()
 d_bz2_dir()
 {
     if [ "$1" != "" ]; then
-        time pbzip2 -dvc -m5000 $1 | tar x     
+        time pbzip2 -dvc -m5000 $1 | tar x
     fi
 }
 
-scopy() 
+scopy()
 {
     scp $1 shihyu@$2:~/upload
 }
@@ -342,21 +342,21 @@ function htc_flash_zip()
 
 gaia_zip()
 {
-    adb reboot-bootloader 
+    adb reboot-bootloader
 
-    htc_flash_zip 
+    htc_flash_zip
 
     while [ $? = 1 ]; do
         sleep 3
-        htc_flash_zip 
+        htc_flash_zip
     done
 
     fastboot reboot
 }
 
-gaia_rom() 
+gaia_rom()
 {
-    adb reboot-bootloader 
+    adb reboot-bootloader
     #if [ "`zip -sf $1 | grep qsc_radio.img`" != "" ]; then
         #zip $1 -d qsc_radio.img
     #fi
@@ -378,9 +378,9 @@ gaia_rom()
     fastboot reboot
 }
 
-htc_fastboot_rom() 
+htc_fastboot_rom()
 {
-    adb reboot-bootloader 
+    adb reboot-bootloader
     #if [ "`zip -sf $1 | grep qsc_radio.img`" != "" ]; then
         #zip $1 -d qsc_radio.img
     #fi
@@ -404,12 +404,12 @@ htc_fastboot_rom()
 
 gaia_logparse()
 {
-   ack -w 'Exception|ANR|E\/|SIGSEGV|FATAL|EXCEPTION\:|W\/mutexwatch|die|>>> .* <<<|permission|Out of memory|Call stack\:|#[\d][\d]' $1 >  /tmp/aa ; vim /tmp/aa 
+   ack -w 'Exception|ANR|E\/|SIGSEGV|FATAL|EXCEPTION\:|W\/mutexwatch|die|>>> .* <<<|permission|Out of memory|Call stack\:|#[\d][\d]' $1 >  /tmp/aa ; vim /tmp/aa
 }
 
 logack()
 {
-    ls -rt | find . -name "$1" | xargs ack -Q "$2" 
+    ls -rt | find . -name "$1" | xargs ack -Q "$2"
 }
 
 # colorful man page
