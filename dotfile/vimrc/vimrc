@@ -56,8 +56,8 @@ filetype plugin indent on
 "let g:gundo_width = 30
 
 cabbrev ack ack<c-\>esubstitute(getcmdline(), '^ack\>', 'Ack!', '')<cr>
-if has ("Ack") 
-    copen 30 
+if has ("Ack")
+    copen 30
 endif
 
 " Basic Settings:
@@ -196,12 +196,12 @@ vmap <s-tab> <gv
 "imap <C-k> <up>
 "imap <C-l> <right>
 
-"映射按鍵：剪切版、全選，系統有效  
-vmap <C-c> "+y  
-"vmap <C-x> "+x  
-"nmap <C-v> "+gP  
-"vmap <C-v> "+gP  
-nmap <C-a> ggVG  
+"映射按鍵：剪切版、全選，系統有效
+vmap <C-c> "+y
+"vmap <C-x> "+x
+"nmap <C-v> "+gP
+"vmap <C-v> "+gP
+nmap <C-a> ggVG
 
 " ,p toggles paste mode
 nnoremap ,p :set paste!<BAR>set paste?<CR>
@@ -254,11 +254,11 @@ noremap <C-W><C-U> :CtrlPMRU<CR>
 nnoremap <C-W>u :CtrlPMRU<CR>
 
 "let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
-let g:ctrlp_custom_ignore = {  
-    \ 'dir': '\v[\/]\.(git|hg|svn)$',  
-    \ 'file': '\v\.(exe|so|dll|bak|gds)$',  
-    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',  
-    \ }  
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll|bak|gds)$',
+    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+    \ }
 let g:ctrlp_by_filename = 1 " only lookup file name
 let g:ctrlp_cache_dir = '/tmp/ctrlp/cache/'
 let g:ctrlp_working_path_mode=0
@@ -269,8 +269,8 @@ let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_max_files = 1000000
-let g:ctrlp_user_command = 'find %s -type f | grep -P "\.h$|\.hpp$|\.c$|\.cc$|\.cpp$|\.java$"'  
-"let g:ctrlp_user_command = 'find %s -type f | grep -P "\.pl$|\.py$|\.lua$|\.xml$|\.sh$|\.mk$|\.h$|\.hh$|\.hpp$|\.c$|\.cc$|\.cpp$"'  
+let g:ctrlp_user_command = 'find %s -type f | grep -P "\.h$|\.hpp$|\.c$|\.cc$|\.cpp$|\.java$"'
+"let g:ctrlp_user_command = 'find %s -type f | grep -P "\.pl$|\.py$|\.lua$|\.xml$|\.sh$|\.mk$|\.h$|\.hh$|\.hpp$|\.c$|\.cc$|\.cpp$"'
 " CtrlP - open in new tab by default
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>', '<2-LeftMouse>'],
@@ -279,9 +279,9 @@ let g:ctrlp_prompt_mappings = {
 
 
 if has("gdb")
-    set splitright              
+    set splitright
     set previewheight=60
-    "set splitright             
+    "set splitright
     "set splitbelow
     set asm=0
     set gdbprg=gdb
@@ -306,7 +306,7 @@ au filetype php set complete-=k complete+=k
 
 
 "Preserve last editing position in VIM
-"need remove ~/.viminfo 
+"need remove ~/.viminfo
 if has("autocmd")
    autocmd BufRead *.txt set tw=78
    autocmd BufReadPost *
@@ -362,7 +362,7 @@ nnoremap <silent> <F4> :call OpenComplementFile()<CR>
 
 hi EasyMotionTarget ctermbg=none ctermfg=red
 hi EasyMotionShade  ctermbg=none ctermfg=blue
-                
+
 "let g:agprg="<custom-ag-path-goes-here> --column"
 "
 "
@@ -382,21 +382,21 @@ function! AdjustWindowHeight(minheight, maxheight)
 endfunction
 
 "將當前正在編輯但未保存的文件與已保存的做diff
-func  DiffWithSaved () 
+func  DiffWithSaved ()
     let  ft = &filetype
-     diffthis 
+     diffthis
     vnew  |  r  # |  normal!  1Gdd
-     diffthis 
-    exe  "setlocal bt=nofile bh=wipe nobl noswf ro ft="  .  ft 
-endfunc 
+     diffthis
+    exe  "setlocal bt=nofile bh=wipe nobl noswf ro ft="  .  ft
+endfunc
 nnoremap <leader>df  :call DiffWithSaved()<CR>
 
 "刪除行末空格
-"func  DeleteTrailingWhiteSpace () 
+"func  DeleteTrailingWhiteSpace ()
 "    normal  mZ
-"     % s / \s\+$ // e 
+"     % s / \s\+$ // e
 "    normal  `Z
-"endfunc 
+"endfunc
 "au  BufWrite  *  if  &ft  !=  'mkd'  |  call  DeleteTrailingWhiteSpace ()  |  endif
 
 "Show_current_function_name_in_C_programs
@@ -433,15 +433,15 @@ let Tlist_Process_File_Always = 1 "even without taglist window, create tags file
 let Tlist_Use_Right_Window = 1 "display taglist window on the right
 let Tlist_Display_Prototype = 1 "display full prototype instead of just function name
 "set statusline=[%{&encoding}]\ [%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tagname_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P
-set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tagname_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P\ [%{&encoding}] 
+set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tagname_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P\ [%{&encoding}]
 "set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tag_Prototype_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P
 map F :TlistShowPrototype <CR>
 map <F7> <ESC>:wincmd p<CR>
 nmap <silent> <C-F12> :TagbarToggle<CR>
 "自動更新
-au! CursorHold *.[ch] nested exe "TlistUpdate" 
-au! CursorHold *.cpp nested exe "TlistUpdate" 
-au! CursorHold *.java nested exe "TlistUpdate" 
+au! CursorHold *.[ch] nested exe "TlistUpdate"
+au! CursorHold *.cpp nested exe "TlistUpdate"
+au! CursorHold *.java nested exe "TlistUpdate"
 
 " TagList options
 "let Tlist_Close_On_Select = 1 "close taglist window once we selected something
@@ -489,8 +489,8 @@ nmap <space>g :call FilteringGetForSource().return()<CR>
 "Ag.vim
 let g:agprg="ag --column"
 cabbrev ag ag<c-\>esubstitute(getcmdline(), '^ag\>', 'Ag', '')<cr>
-if has ("Ag") 
-    copen 30 
+if has ("Ag")
+    copen 30
 endif
 
 " 快速移動函數頭尾
