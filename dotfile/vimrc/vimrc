@@ -39,6 +39,7 @@ Bundle 'vim-scripts/ShowTrailingWhitespace'
 
 " sudo pip install jedi
 Bundle 'davidhalter/jedi-vim'
+Bundle 'sudar/vim-arduino-syntax'
 "au filetype python Bundle 'vim-scripts/Pydiction'
 "Bundle 'msanders/snipmate.vim'
 "Bundle 'c9s/gsession.vim'
@@ -313,7 +314,9 @@ endif
 colorscheme molokai
 set cursorline
 "set cursorcolumn
-highlight CursorLine cterm=none ctermbg=237
+"highlight CursorLine cterm=none ctermbg=237
+"hi cursorcolumn cterm=bold ctermbg=237 ctermfg=none term=bold
+hi cursorline cterm=bold ctermbg=237 ctermfg=none term=bold
 highlight TabLineSel ctermfg=yellow ctermbg=darkblue cterm=bold
 highlight StatusLine ctermfg=yellow ctermbg=darkblue cterm=bold
 highlight LineNr ctermfg=yellow
