@@ -36,6 +36,9 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Raimondi/delimitMate'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'vim-scripts/ShowTrailingWhitespace'
+
+" sudo pip install jedi
+Bundle 'davidhalter/jedi-vim'
 "au filetype python Bundle 'vim-scripts/Pydiction'
 "Bundle 'msanders/snipmate.vim'
 "Bundle 'c9s/gsession.vim'
@@ -127,11 +130,11 @@ function Compile_gcc()
     if &filetype=="c"
         set autochdir
         execute "w"
-        execute "!gcc -Wall -Wextra -O2 -g  -std=c99  % -o %:r -lm"
+        execute "!gcc -Wall -Wextra -O0 -g  -std=c99  % -o %:r -lm"
     elseif &filetype=="cpp"
         set autochdir
         execute "w"
-        execute "!g++ -Wall -Wextra -O2 -g -std=c++11 % -o %:r"
+        execute "!g++ -Wall -Wextra -O0 -g -std=c++11 % -o %:r"
     elseif &filetype=="java"
         set autochdir
         execute "w"
