@@ -35,8 +35,6 @@ Bundle 'bootleq/vim-tabline'
 Bundle 'scrooloose/syntastic'
 Bundle 'Raimondi/delimitMate'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'vim-scripts/ShowTrailingWhitespace'
-
 " sudo pip install jedi
 Bundle 'davidhalter/jedi-vim'
 Bundle 'sudar/vim-arduino-syntax'
@@ -505,6 +503,9 @@ nmap tn :tabnew<cr>
 nmap td :tabclose<cr>
 
 
-" 顯示每行空白
-highlight Badspace ctermfg=red ctermbg=red
-autocmd BufEnter * match Badspace /\s\+$/
+" 顯示空白
+nmap <space>s :call ShowTrailingWhitespace()<CR>
+function ShowTrailingWhitespace()
+highlight WhitespaceEOL ctermbg=red guibg=red 
+match WhitespaceEOL /\s\+$/
+endfunction
