@@ -509,3 +509,6 @@ function ShowTrailingWhitespace()
 highlight WhitespaceEOL ctermbg=red guibg=red 
 match WhitespaceEOL /\s\+$/
 endfunction
+
+" 刪除指標閃爍 , Terminator Profiles -> General 把 Cursor blink 勾選拿掉
+set gcr=a:block-blinkon0
