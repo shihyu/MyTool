@@ -312,8 +312,8 @@ endif
 colorscheme molokai
 set cursorline
 set cursorcolumn
-highlight CursorLine cterm=none ctermbg=237
-"hi cursorcolumn cterm=bold ctermbg=237 ctermfg=none term=bold
+"highlight CursorLine cterm=none ctermbg=237
+hi cursorcolumn cterm=bold ctermbg=237 ctermfg=none term=bold
 hi cursorline cterm=bold ctermbg=237 ctermfg=none term=bold
 highlight TabLineSel ctermfg=yellow ctermbg=darkblue cterm=bold
 highlight StatusLine ctermfg=yellow ctermbg=darkblue cterm=bold
