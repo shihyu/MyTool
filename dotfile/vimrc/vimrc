@@ -311,13 +311,16 @@ endif
 
 colorscheme molokai
 set cursorline
-"set cursorcolumn
-"highlight CursorLine cterm=none ctermbg=237
+set cursorcolumn
+highlight CursorLine cterm=none ctermbg=237
 "hi cursorcolumn cterm=bold ctermbg=237 ctermfg=none term=bold
 hi cursorline cterm=bold ctermbg=237 ctermfg=none term=bold
 highlight TabLineSel ctermfg=yellow ctermbg=darkblue cterm=bold
 highlight StatusLine ctermfg=yellow ctermbg=darkblue cterm=bold
 highlight LineNr ctermfg=yellow
+
+" 刪除指標閃爍 , Terminator Profiles -> General 把 Cursor blink 勾選拿掉
+set gcr=a:block-blinkon0
 
 imap <C-F11> <C-R>=strftime("%x %X")<BAR><CR>. owen_wen@htc.com.<ESC> <C-R>
 nnoremap <silent> <F3> :NERDTree<CR>
@@ -510,5 +513,3 @@ highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 endfunction
 
-" 刪除指標閃爍 , Terminator Profiles -> General 把 Cursor blink 勾選拿掉
-set gcr=a:block-blinkon0
