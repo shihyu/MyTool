@@ -38,6 +38,7 @@ Bundle 'terryma/vim-multiple-cursors'
 " sudo pip install jedi
 Bundle 'davidhalter/jedi-vim'
 Bundle 'sudar/vim-arduino-syntax'
+Bundle 'vim-scripts/sessionman.vim'
 "au filetype python Bundle 'vim-scripts/Pydiction'
 "Bundle 'msanders/snipmate.vim'
 "Bundle 'c9s/gsession.vim'
