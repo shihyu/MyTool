@@ -58,6 +58,11 @@ shopt -s cdspell
 shopt -s histappend
 #PROMPT_COMMAND="history -a; history -n;"
 
+kill_process()
+{
+    ps x|grep $1|grep -v grep |awk '{print $1}'|xargs kill -9
+}
+
 rm_log()
 {
     adb shell rm /data/htclog/*;
