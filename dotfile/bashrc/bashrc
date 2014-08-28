@@ -60,7 +60,7 @@ shopt -s histappend
 
 kill_process()
 {
-    ps x|grep $1|grep -v grep |awk '{print $1}'|xargs kill -9
+    sudo kill -9  `ps aux | grep qemu | grep -v grep | awk '{print $2}'`
 }
 
 rm_log()
