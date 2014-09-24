@@ -167,7 +167,7 @@ function Run_gcc()
 endfunction
 
 imap <F1> <C-R>="[OOOOOOO]"<CR>
-imap <F2> <C-R>=strftime("YAO - [%c]")<CR>
+imap <F2> <C-R>=strftime("%F %T")<CR>
 imap jj <ESC>
 "imap ,, -><C-X><C-O>
 
