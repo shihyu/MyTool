@@ -109,16 +109,17 @@ set t_Co=256
 set backspace=indent,eol,start whichwrap+=<,>,[,]
 "autocmd FileType perl set keywordprg=perldoc\ -f
 "copen 25
-"
+
+nmap <F8> :w<CR> :!astyle %<CR><CR> :edit!<CR>
 
 "進行make的設置
-map <F8> :call Do_make()<CR>
-function Do_make()
-    set autochdir
-    set makeprg=make
-    execute "silent make"
-    execute "copen"
-endfunction
+"map <F8> :call Do_make()<CR>
+"function Do_make()
+"    set autochdir
+"    set makeprg=make
+"    execute "silent make"
+"    execute "copen"
+"endfunction
 
 map <F9> :call Do_makei_clean()<CR>
 function Do_makei_clean()
