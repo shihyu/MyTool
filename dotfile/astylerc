@@ -2,7 +2,7 @@
 --mode=c
 
 # java風格縮進
---style=java
+--style=kr
 
 # 縮進採用4個空格
 --indent=spaces=4
@@ -64,7 +64,19 @@
 --min-conditional-indent=1
 
 # 最大縮進對齊長度, 默認40, 最大120, 超過這個長度的多行()內語句不進行縮進, 考慮到現在語句都較長
---max-instatement-indent=80
+#--max-instatement-indent=80
+
+
+# if (thisVariable1 == thatVariable1 || thisVariable2 == thatVariable2 || thisVariable3 == thatVariable3)
+
+# if (thisVariable1 == thatVariable1 || 
+#     thisVariable2 == thatVariable2 || 
+#     thisVariable3 == thatVariable3)
+
+--break-after-logical
+--max-code-length=80
+
+
 
 
 # ref: http://blog.csdn.net/janepen/article/details/7022180
