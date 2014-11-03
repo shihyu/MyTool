@@ -459,3 +459,62 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/boost/lib
 
 export PATH="/home/shihyu/data/tq210_note/4.4.6/bin/:$PATH"
 export PATH="/home/shihyu/data/tq210_note/mkimage/:$PATH"
+export PATH="/usr/local/gdb-7.8/bin:$PATH"
+
+
+export PATH="/usr/local/qemu-linaro/bin:$PATH"
+
+
+
+JAVA_HOME=/media/shihyu/toshiba/jdk1.6.0_45
+export JRE_HOME=$JAVA_HOME/jre  
+export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH    
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH 
+
+export PATH="/home/shihyu/Bin/LiveSuit/bin:$PATH"
+
+export PATH="/home/shihyu/data/bluegriffon:$PATH"
+
+export PATH="/home/shihyu/.mybin/scitools/bin/linux64:$PATH"
+
+export PATH=/home/shihyu/Qt5.3.1/5.3/gcc_64/bin:$PATH
+
+export PATH=/usr/local/node-v0.10.31-linux-x64/bin:$PATH
+
+
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opencv/lib/pkgconfig
+export PKG_CONFIG_PATH
+
+ulimit -c unlimited
+
+
+
+# .bashrc - bash startup file
+#
+# Mon Oct 3 21:44:00 BST 2011
+#
+
+history(){
+  syncHistory
+  builtin history "$@"
+}
+
+syncHistory(){
+  builtin history -a
+  HISTFILESIZE=$HISTFILESIZE
+  builtin history -c
+  builtin history -r
+}
+
+promptCommand(){
+  if [ "$TERM" = xterm ]
+  then case "$DISPLAY" in
+       :*)  printf "\033]0;%s\007"                     "$PWD" ;;
+       *)   printf "\033]0;%s -- %s\007" "$HOST_UPPER" "$PWD" ;;
+       esac
+  fi
+  syncHistory
+}
+
+HOST_UPPER=`echo $HOSTNAME | tr '[a-z]' '[A-Z]'`
+PROMPT_COMMAND=promptCommand
