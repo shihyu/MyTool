@@ -80,6 +80,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+unsetopt NOMATCH
 
 export LC_ALL=zh_TW.UTF-8
 export LANG=zh_TW.UTF-8
