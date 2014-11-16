@@ -49,14 +49,7 @@ alias findh="find . -name '*.h'"
 alias findmk="find . -name '*.mk'"
 alias findjava="find . -name '*.java'"
 alias netpid="netstat -tlnp"
-#alias ag='ag -a'
-
-HISTSIZE=10000
-HISTCONTROL=ignoreboth:ignoredups:erasedups
-shopt -s cmdhist
-shopt -s cdspell
-shopt -s histappend
-#PROMPT_COMMAND="history -a; history -n;"
+alias arduino='./data/arduino-1.0.6/arduino'
 
 kill_process()
 {
@@ -89,7 +82,6 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
-shopt -s cdspell
 
 #alias gaia_zip="adb reboot-bootloader; flash_zip; fastboot reboot"
 
