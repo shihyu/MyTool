@@ -51,6 +51,36 @@ alias findjava="find . -name '*.java'"
 alias netpid="netstat -tlnp"
 alias arduino='./data/arduino-1.0.6/arduino'
 
+
+export HISTFILESIZE=10000
+export HISTSIZE=10000
+
+dlog()
+{
+    if ["$1" == ""]; then
+        adb logcat -c
+        adb logcat -v threadtime 2>&1 | tee /tmp/dlog.txt
+    else
+        local file="$1"
+        echo $1;
+        adb logcat -c
+        adb logcat -v threadtime 2>&1 | tee ${file}
+    fi
+}
+
+rlog()
+{
+    if ["$1" == ""]; then
+        adb logcat -c -b radio
+        adb logcat -v threadtime -b radio 2>&1 | tee /tmp/rlog.txt
+    else
+        local file="$1"
+        echo $1;
+        adb logcat -c -b radio
+        adb logcat -v threadtime -b radio 2>&1 | tee ${file}
+    fi
+}
+
 kill_process()
 {
     sudo kill -9  `ps aux | grep $1 | grep -v grep | awk '{print $2}'`
@@ -459,9 +489,9 @@ export PATH="/usr/local/qemu-linaro/bin:$PATH"
 
 
 JAVA_HOME=/media/shihyu/toshiba/jdk1.6.0_45
-export JRE_HOME=$JAVA_HOME/jre  
-export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH    
-export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH 
+export JRE_HOME=$JAVA_HOME/jre
+export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 
 export PATH="/home/shihyu/Bin/LiveSuit/bin:$PATH"
 
@@ -506,6 +536,17 @@ promptCommand(){
        esac
   fi
   syncHistory
+}
+
+
+function repo_sync()
+{
+    echo  "======start  repo  sync======"
+    repo sync
+    while [ $? -ne 0 ]
+    do
+    repo sync -j8
+    done
 }
 
 HOST_UPPER=`echo $HOSTNAME | tr '[a-z]' '[A-Z]'`
