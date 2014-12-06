@@ -57,12 +57,12 @@ export HISTSIZE=10000
 
 dlog()
 {
-    if ["$1" == ""]; then
+    DB_NAME=$1
+    if [ -z "$DB_NAME" ]; then
         adb logcat -c
         adb logcat -v threadtime 2>&1 | tee /tmp/dlog.txt
     else
         local file="$1"
-        echo $1;
         adb logcat -c
         adb logcat -v threadtime 2>&1 | tee ${file}
     fi
@@ -70,12 +70,12 @@ dlog()
 
 rlog()
 {
-    if ["$1" == ""]; then
+    DB_NAME=$1
+    if [ -z "$DB_NAME" ]; then
         adb logcat -c -b radio
         adb logcat -v threadtime -b radio 2>&1 | tee /tmp/rlog.txt
     else
         local file="$1"
-        echo $1;
         adb logcat -c -b radio
         adb logcat -v threadtime -b radio 2>&1 | tee ${file}
     fi
