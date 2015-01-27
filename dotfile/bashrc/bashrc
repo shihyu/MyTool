@@ -472,9 +472,6 @@ CD()
 
 
 
-export PATH=$HOME/.mybin:$PATH
-eval "$(fasd --init auto)"
-
 #boost
 export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/usr/local/boost/include
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/boost/lib
@@ -553,3 +550,7 @@ function repo_sync()
 
 HOST_UPPER=`echo $HOSTNAME | tr '[a-z]' '[A-Z]'`
 PROMPT_COMMAND=promptCommand
+
+export PATH=$HOME/.mybin:$PATH
+eval "$(fasd --init auto)"
+
