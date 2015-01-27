@@ -113,6 +113,8 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
+alias cd.='cd ..'
+alias cd..='cd ..'
 #alias gaia_zip="adb reboot-bootloader; flash_zip; fastboot reboot"
 
 export HISTTIMEFORMAT='%F %T'
