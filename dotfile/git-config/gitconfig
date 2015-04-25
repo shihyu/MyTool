@@ -1,6 +1,6 @@
 [user]
     name = jason_yao
-    email = jason_yao@htc.com
+    email = jason_yao
 [commit]
     template = $HOME/.git-template
 
