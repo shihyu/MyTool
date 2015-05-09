@@ -16,8 +16,13 @@ ${WGET} 'http://mengko616.googlepages.com/LiHeiProPC.ttf.tar.gz'
 ${TAR} xvfz LiHeiProPC.ttf.tar.gz
 ${MV} "LiHei ProPC.ttf" ~/.fonts
 
+${WGET} 'https://github.com/adobe-fonts/source-code-pro/archive/1.017R.tar.gz'
+${TAR} xvf 1.017R.tar.gz 
+${MV} source-code-pro-1.017R/TTF/* ~/.fonts
+
+
 ${CAT} > ~/.fonts.conf <<EOF
-<?xml version="1.0"?>
+<?xml version="1.0"?>http://slackbuilds.org/slackbuilds/14.1/system/adobe-source-code-pro-font.tar.gz
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
     <match target="pattern">
