@@ -32,7 +32,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Raimondi/delimitMate'
 Bundle 'terryma/vim-multiple-cursors'
 " sudo pip install jedi
-Bundle 'davidhalter/jedi-vim'
+" Bundle 'davidhalter/jedi-vim'
 Bundle 'sudar/vim-arduino-syntax'
 Bundle 'vim-scripts/sessionman.vim'
 Bundle 'Yggdroot/LeaderF'
@@ -134,11 +134,13 @@ function Compile_gcc()
     if &filetype=="c"
         set autochdir
         execute "w"
-        execute "!clang -Wall -Wextra -O2 -g  % -o %:r -lm"
+        execute "!gcc -Wall -Wextra -g  % -o %:r -lm"
+        "execute "!clang -Wall -Wextra -O2 -g  % -o %:r -lm"
     elseif &filetype=="cpp"
         set autochdir
         execute "w"
-        execute "!clang++ -Wall -Wextra -O2 -g -std=c++11 % -o %:r"
+        execute "!g++ -Wall -Wextra -g -std=c++11 % -o %:r"
+        "execute "!clang++ -Wall -Wextra -O2 -g -std=c++11 % -o %:r"
     elseif &filetype=="java"
         set autochdir
         execute "w"
