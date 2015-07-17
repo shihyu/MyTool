@@ -57,7 +57,8 @@ export HISTSIZE=10000
 
 doxygen_init()
 {
-    sed -ri.bak '/^RECURSIVE\s|^HAVE_DOT\s|^EXTRACT_ALL\s|^EXTRACT_PRIVATE\s|^EXTRACT_STATIC\s|^CALL_GRAPH\s|^CALLER_GRAPH\s/s/= NO/= YES/' $1
+    doxygen -g 
+    sed -ri.bak '/^RECURSIVE\s|^HAVE_DOT\s|^EXTRACT_ALL\s|^EXTRACT_PRIVATE\s|^EXTRACT_STATIC\s|^CALL_GRAPH\s|^CALLER_GRAPH\s/s/= NO/= YES/' Doxyfile
 }
 
 dlog()
