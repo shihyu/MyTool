@@ -82,8 +82,8 @@ do
     doc1="$doc""~" 
     echo $doc
     echo "$doc1" 
-    #opencc -i $doc -o $doc1 -c s2tw.json
-    opencc -i $doc -o $doc1 -c zhs2zht.ini
+    opencc -i $doc -o $doc1 -c s2tw.json
+    #opencc -i $doc -o $doc1 -c zhs2zht.ini
     mv "$doc1" "$doc"
 done 
 }
