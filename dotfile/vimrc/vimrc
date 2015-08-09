@@ -516,6 +516,10 @@ nmap th :tabprev<cr>
 nmap tn :tabnew<cr>
 nmap td :tabclose<cr>
 
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '➜'
+let g:gitgutter_sign_removed = '✘'
+
 
 " 顯示空白
 nmap <space>s :call ShowTrailingWhitespace()<CR>
