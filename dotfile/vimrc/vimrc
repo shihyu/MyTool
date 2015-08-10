@@ -37,6 +37,7 @@ Bundle 'sudar/vim-arduino-syntax'
 Bundle 'vim-scripts/sessionman.vim'
 Bundle 'Yggdroot/LeaderF'
 Bundle 'vim-scripts/Conque-GDB'
+Bundle 'vim-gitgutter'
 "Plugin 'Valloric/YouCompleteMe'
 "Bundle 'Shougo/unite.vim'
 "Bundle 'vim-scripts/DoxygenToolkit.vim'
@@ -514,6 +515,10 @@ nmap tl :tabnext<cr>
 nmap th :tabprev<cr>
 nmap tn :tabnew<cr>
 nmap td :tabclose<cr>
+
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '➜'
+let g:gitgutter_sign_removed = '✘'
 
 
 " 顯示空白
