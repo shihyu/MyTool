@@ -1,0 +1,32 @@
+# Two variables are required: 
+# - py_dist_path=YOUR_DISTRIBUTION_LOCATION
+# - py_dist_name=YOUR_DISTRIBUTION_NAME
+#
+# Then you can get completion by typing "python -m $py_dist_name"
+
+_my_py_dist() 
+{
+    local cur prev opts raws
+
+    # get executable python scripts
+    cd ${py_dist_path}
+    raws=$(find -name "*.py" -perm /u+x)
+    cd - > /dev/null
+    opts=$(for py in ${raws}; do module=$(echo $py | sed 's/^\.\///' | sed 's/\.py$//' | sed 's/\//\./g'); echo "$py_dist_name.${module}"; done)
+
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    if [[ ${prev} == -m ]]; then
+        if [[ ${cur} == ${py_dist_name}* ]]; then
+            COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+            return 0
+        fi
+    fi
+}
+
+
+if [ "$py_dist_name" != "" -a -e "$py_dist_path" ]; then
+    complete -F _my_py_dist -o default python 
+fi

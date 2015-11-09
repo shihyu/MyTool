@@ -1,0 +1,77 @@
+<project name="OrganicObject" default="test">
+    <!-- Define customized constant values -->
+    <property name="jar" value="PKG.jar"/>
+    <property name="test_target" value="PKG.AllUnitTestSuite"/>
+
+    <!-- Define constant values -->
+    <property name="src.dir" value="src"/>
+    <property name="src_main.dir" value="${src.dir}/main"/>
+    <property name="src_test.dir" value="${src.dir}/test"/>
+    <property name="build.dir" value="build"/>
+    <property name="build_main.dir" value="${build.dir}/main"/>
+    <property name="build_test.dir" value="${build.dir}/test"/>
+    <property name="build_lib.dir" value="${build.dir}/lib"/>
+    <property name="lib.dir" value="lib"/>
+
+    <!-- Setup classpath for all libs -->
+    <path id="classpath">
+        <pathelement location="${build_main.dir}"/>
+        <pathelement location="${build_test.dir}"/>
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+    </path>
+
+    <echo message="${ant.version}"/>
+
+    <!-- Prepare directories -->
+    <target name="init">
+        <mkdir dir="${build_main.dir}"/>
+    </target>
+
+    <target name="test_init">
+        <mkdir dir="${build_test.dir}"/>
+    </target>
+
+    <!-- Compile -->
+    <target name="compile" depends="init">
+        <javac srcdir="${src_main.dir}" destdir="${build_main.dir}" classpathref="classpath" encoding="utf-8"/>
+    </target>
+
+    <target name="compile_test" depends="test_init, compile">
+        <javac srcdir="${src_test.dir}" destdir="${build_test.dir}" classpathref="classpath" encoding="utf-8"/>
+    </target>
+
+    <!-- Test -->
+    <target name="test_package" depends="compile_test">
+        <junit fork="yes" haltonfailure="yes" printsummary="yes">
+            <test name="${test_target}"/>
+            <formatter type="plain" usefile="false"/>
+            <classpath refid="classpath"/>
+            <assertions>
+                <enable/>
+            </assertions>
+        </junit>
+    </target>
+
+    <target name="test" depends="test_package"/>
+
+    <!-- Clean bin/ -->
+    <target name="clean_bin">
+        <delete dir="${build_main.dir}"/>
+    </target>
+
+    <target name="clean_test">
+        <delete dir="${build_test.dir}"/>
+    </target>
+
+    <target name="clean_lib">
+        <delete dir="${build_lib.dir}"/>
+    </target>
+
+    <target name="clean" depends="clean_bin, clean_test, clean_lib"/>
+
+    <!-- Build jar -->
+    <target name="jar" depends="compile">
+        <mkdir dir="${build_lib.dir}"/>
+        <jar destfile="${build_lib.dir}/${jar}" basedir="${build_main.dir}"/>
+    </target>
+</project>

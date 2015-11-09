@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>def_expansion_overrides_locals</title>
+</head>
+<body>
+
+<h3><b>boolean def_expansion_overrides_locals</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">If set to true, syntax expansion can still expand a keyword prefix,
+even if there is a local variable with the same name as the prefix.
+For example:
+<pre>
+   void foobar(int i) {
+      i&lt;space&gt;
+   }</pre>
+will expand to:
+<pre>
+   void foobar(int i) {
+      if (&lt;cursor&gt;) {
+      }
+   }</pre>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Default:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">false</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Configuration_Variables.html">Configuration Variables</a></blockquote>
+</body>
+</html>

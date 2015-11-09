@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_set_timer</title>
+</head>
+<body>
+
+<h3><b>int _set_timer(int milli_interval, typeless pfnCallback=0, typeless callbackArgument=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Creates a timer and optionally calls a function you specify.
+<i>interval</i> is specified in milliseconds.  <i>callback</i> is a
+pointer to a function or names table index to a global function returned
+by <b>find_index</b>.  <i>arg1</i> is a an optional argument to pass
+to the call back function.  If only one argument is given, a
+<b>get_event</b> timer is created.  This allows you to use get_event
+in a loop and wait for a key or mouse event, or until the
+<b>on_timer</b> event occurs.  When the <i>callback</i> argument
+is not <b>null</b>, <b>get_event</b> is not effected.  Instead, the
+callback function is called with the <i>arg1</i> argument if given at
+intervals specified by <i>interval.</i>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns a timer handler >=0.  On error, negative error code is returned.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+_set_timer(1000);
+for(;;){
+   event=get_event();
+   if (event==on_timer){
+       message("on_timer event");
+   } else {
+       message(event2name(event));
+   }
+}
+_kill_timer();
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_kill_timer.html">_kill_timer</a></blockquote>
+</body>
+</html>

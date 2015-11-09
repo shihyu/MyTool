@@ -1,0 +1,101 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_SetLanguageOption</title>
+</head>
+<body>
+
+<h3><b>int _SetLanguageOption(_str lang, _str field_name, typeless value)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Sets default language-specific options.  Use the <a href="_update_buffers.html">_update_buffers</a>
+function to change language-specific options for files already loaded.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="lang">lang</A></code> - Language ID (see <a href="p_LangId.html">p_LangId</a>
+               For list of languages, use our Language Manager dialog
+               ("Tools", "Options...", "Language Manager").
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="field_name">field_name</A></code> - may be one of the following:
+<dl>
+<dt>p_mode_name or MN</dt>          <dd>Specifies mode name.</dd>
+<dt>p_tabs or TABS</dt>             <dd>Specifies tab settings.</dd>
+<dt>p_margins or MA</dt>            <dd>Specifies margins.</dd>
+<dt>p_mode_eventtab or KEYTAB</dt>  <dd>Specifies mode event table.</dd>
+<dt>p_word_wrap_style or WW</dt>    <dd>Specifies word wrap style.</dd>
+<dt>p_indent_with_tabs or IWT</dt>  <dd>Specifies indent with tabs.</dd>
+<dt>p_show_tabs or ST</dt>          <dd>Specifies to show tabs.</dd>
+<dt>p_indent_style or IN</dt>       <dd>Specifies indent style.</dd>
+<dt>p_word_chars or WC</dt>         <dd>Specifies word chaacters.</dd>
+<dt>p_lexer_name or LN</dt>         <dd>Specifies lexer name.</dd>
+<dt>p_color_flags or CF</dt>        <dd>Specifies color flags.</dd>
+<dt>p_line_numbers_len or LNL</dt>  <dd>Specifies line number area size</dd>
+<dt>p_softwrap or SW</dt>           <dd>Specifies soft wrap options</dd>
+<dt>p_softwraponword or SOW</dd>    <dd>Specifies soft wrap on word</dd>
+</dl>
+<p>
+For the above options, <i>value</i> may not contain a comma character.
+<p>
+Additional <i>field_name</i> values:
+<dl>
+<dt>LANGUAGE or SETUP</dt>          <dd>General language setup data.</dd>
+                                        This option is very sensitive to the
+                                        order of the options.  We recommend
+                                        that you use macro recording to
+                                        correctly generate calls that set
+                                        this option.</dd>
+<dt>ALIAS</dt>                      <dd>Language specific alias file</dd>
+<dt>SMARTPASTE</dt>                 <dd>Specifies Smart Paste(TM) options</dd>
+<dt>SMARTTAB</dt>                   <dd>Specifies tab expansion options</dd>
+<dt>SMARTTAB</dt>                   <dd>Set the smart tab value for this
+                                        language, one of the following:
+                                        <ul>
+                                        <li> VSSMARTTAB_INDENT
+                                        <li> VSSMARTTAB_MAYBE_REINDENT_STRICT
+                                        <li> VSSMARTTAB_MAYBE_REINDENT
+                                        <li> VSSMARTTAB_ALWAYS_REINDENT
+                                        </ul>
+                                    </dd>
+<dt>BEGINEND</dt>                   <dd>Specifies begin/end pairs</dd>
+<dt>OPTIONS</dt>                    <dd>Specifies extension specific options.
+                                        We recommend that you use macro
+                                        recording to correctly generate
+                                        calls that set this option.</dd>
+<dt>NUMBERING</dt>                  <dd>Specifies line numbering options</dd>
+<dt>SURROUND</dt>                   <dd>Specifies dynamic surround flags</dd>
+<dt>AUTOCOMPLETE</dt>               <dd>Specifies auto-complete flags</dd>
+<dt>AUTOCOMPLETEMIN</dt>            <dd>Min word length for auto-complete</dd>
+<dt>SYMBOLCOLORING</dt>             <dd>Symbol Coloring option flags/dd>
+<dt>INDENT</dt>                     <dd>Indentation options</dd>
+<dt>CODEHELP</dt>                   <dd>Context Tagging option flags</dd>
+<dt>COMMENTEDITING</dt>             <dd>Comment editing option flags</dd>
+<dt>DOCCOMMENT</dt>                 <dd>Documentation comment options</dd>
+<dt>COMMENT-WRAP</dt>               <dd>Specifies comment wrap options</dd>
+<dt>XML-WRAP</dt>                   <dd>Specifies XML wrap options</dd>
+<dt>AUTOVALIDATE</dt>               <dd>Specifies XML validation options</dd>
+<dt>INHERIT</dt>                    <dd>Specifies parent language for
+                                        tagging callback inheritance</dd>
+<dt>ADAPTIVE-FLAGS</dt>             <dd>Specifies adaptive flags</dd>
+<dt>ADAPTIVE-FORMATTING</dt>        <dd>Adaptive formatting flags</dd>
+</dl>
+<p>
+The following additional <i>field_name</i> options are actually stored
+per file extension rather than per language.
+<dl>
+<dt>LANG-FOR-EXT</dt>               <dd>Maps file extension to language</dd>
+<dt>ENCODING</dt>                   <dd>Extension-specific encoding</dd>
+<dt>ASSOCIATION</dt>                <dd>Extension-specific open application</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="value">value</A></code> - Value to set the option to.
+                  Note that some option values, as noted above,
+                  can not contain commas.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include "slick.sh"
+defmain()
+{
+   // Can specify "" instead of "fundamental" to refer to Plain Text mode
+   // Change the default margins for fundamental mode.
+    _SetLanguageOption("fundamental","p_margins","1 70 1");
+   // Update buffers already being edited
+    _update_buffers("fundamental","p_margins=1 70 1");
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_GetLanguageSpecificOption.html">_GetLanguageSpecificOption</a>, <a href="_GetLanguageSetupOptions.html">_GetLanguageSetupOptions</a>, <a href="_GetDefaultLanguageOptions.html">_GetDefaultLanguageOptions</a>, <a href="_update_buffers.html">_update_buffers</a></blockquote>
+</body>
+</html>

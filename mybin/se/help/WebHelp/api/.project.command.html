@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_project_command</title>
+</head>
+<body>
+
+<h3><b>int _project_command(_str field_name, _str buf_name, _str word, boolean AccumulateErrors=false, boolean AutoNextError=true, int ActionOverrideFlags=0, boolean buildFirstDone=false, _str debugStepType='go')</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Executes project command.<p>
+<p><p>
+Utility function called by project_compile() and _project_command2()
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="field_name">field_name</A></code> - Target name (e.g. 'Compile',
+                            'Execute', 'Debug').</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="buf_name">buf_name</A></code> - Parts of this buffer name may be
+                            used to fill in the command.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="word">word</A></code> - Parts of this word may be used to
+                            fill in the command.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="AccumulateErrors">AccumulateErrors</A></code> - If redirecting errors, appends to
+                            the file rather than overwriting
+                            if not redirecting errors, no
+                            effect</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="AutoNextError">AutoNextError</A></code> - If redirecting errors,
+                            automatically to to first error
+                            if not redirecting errors, no
+                            effect</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ActionOverrideFlags">ActionOverrideFlags</A></code> - One or more of bitwise flags
+                            OVERRIDE_*.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="buildFirstDone">buildFirstDone</A></code> - Set to true when build has
+                            already been done (e.g.
+                            a Build before a Debug).</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="debugStepType">debugStepType</A></code> - Applies to debug commands (e.g.
+                            'debug'). Valid values are
+                            'go'=run to next breakpoint;
+                            'into'=step into debugee;
+                            'reload'=restart debugging
+                            (buf_name becomes significant).
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Project_Functions.html">Project Functions</a></blockquote>
+</body>
+</html>

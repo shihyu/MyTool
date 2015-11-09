@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_help</title>
+</head>
+<body>
+
+<h3><b>_str p_help</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><b>Menu, Menu Item</b> - Gets or sets help command.  The <a href="help.html">help</a> command is executed
+when F1 is pressed while the menu/menu item is selected.  The help command
+is typically a <a href="help.html">help</a> or <a href="popup_imessage.html">popup_imessage</a> command.  When menus are displayed,
+there is no instance handle.  Menu and menu item properties can only be
+accessed in menu resources.  The <a href="_menu_get_state.html">_menu_get_state</a> and <a href="_menu_set_state.html">_menu_set_state</a>
+function may be used to get and set menu properties of displayed menus.<p>
+<P><b>Other objects</b> - Gets or sets a help string.  Help is displayed when F1 is
+pressed or when a command button with a help string defined (p_help!='')
+that does not have an <a href="lbutton_up.html">lbutton_up</a> event handler is pressed.  If the help
+string starts with a '?' character, the characters that follow are
+displayed in a message box.  The help string may also specify a unique
+keyword in the "vslick.hlp" (UNIX: "uvslick.hlp") help file.  The unique
+keywords for the help file are contained in the file "vslick.lst" (UNIX:
+"uvslick.lst").  In addition, you may specify a unique keyword for any
+windows help file by specifying a string in the format:
+<b><i>keyword</i>:<i>help_filename</i></b>.<p>
+<P>When F1 is pressed the dialog manager performs the following search to
+find the help to display:
+<OL>
+<LI>If the active control has help defined, display the help.
+<LI>If the active form has help defined, display the help.
+<LI>Search for any control with help defined.
+</OL>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">All Window Objects</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="All_Windows_Properties.html">All Windows Properties</a></blockquote>
+</body>
+</html>

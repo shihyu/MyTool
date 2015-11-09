@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>last_index</title>
+</head>
+<body>
+
+<h3><b>int last_index(_str new_value="", _str option="D")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">All index values returned by this function are indexes into the
+names table.  SlickEdit stores information for names of procedures,
+commands, variables, event tables, and more in the names table.
+
+<p>When the second parameter is 'D', this function returns (and sets if
+<i>new_value</i> not ''), the index of the last command executed by a key or
+the built-in <b>call_key</b> function.</p>
+
+<p>When the second parameter is 'C', this function returns (and sets if
+<i>new_value </i>not ''), the index of the last command executed by any
+mechanism.</p>
+
+<p>When the second parameter is 'P', this function returns the prefix key
+message displayed on the message line for the last key sequence executed.
+<i>new_value</i> parameter is ignored.</p>
+
+<p>When the second parameter is 'K', this function returns the index of
+the last event table used to determine a key binding.  <i>new_value</i>
+parameter is ignored.</p>
+
+<p>When the second parameter is 'W', this function returns (and sets if
+<i>new_value</i> not ''), the command line/menu wait value.  This flag is set
+to non-zero when a command is invoked from the command line or a menu.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Names_Table_Functions.html">Names Table Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="prev_index.html">prev_index</a></blockquote>
+</body>
+</html>

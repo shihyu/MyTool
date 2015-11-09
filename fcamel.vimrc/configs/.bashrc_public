@@ -1,0 +1,208 @@
+# NOTE: source bashrc_private before this
+
+OS=$(uname)
+
+alias oc=octave
+alias pp='ps -eLFw'
+alias p='psg'
+alias ppp='ps axwwwo cmd,pid,ppid,pgrp,session,pcpu,state,cutime,cstime,utime,vsize,tty,start_time,uid,priority'
+alias g='grep -i --color'
+alias gg='grep -i --color=always'
+alias scr='screen'
+alias h='history | tail -100'
+
+
+LS_COLOR_ARG="--color"
+if [ "$OS" = "Darwin" ]; then
+  LS_COLOR_ARG="-G"
+fi
+alias ll="ls -lF $LS_COLOR_ARG"
+alias ltr="ls -lFtr $LS_COLOR_ARG"
+alias ls="ls -F $LS_COLOR_ARG"
+
+alias ms='sudo -u mysql rsync -av --delete'
+
+alias mv='mv -i'
+alias cp='cp -i'
+alias rm='rm -i'
+
+alias vnc='vncserver -geometry 1440x900 -depth 24'
+alias vnc2='vncserver -geometry 1920x1200 -depth 24'
+
+# For virtualenv
+alias cdve='cd $(echo $PATH | ruby -ne '"'"'puts split(":")[0].split("/")[0..-2].join("/")'"'"')'
+alias cdvesrc='cd $(echo $PATH | ruby -ne '"'"'puts split(":")[0].split("/")[0..-2].join("/")'"'"')/src'
+alias cdvesite='cd $(echo $PATH | ruby -ne '"'"'puts split(":")[0].split("/")[0..-2].join("/")'"'"')/lib/python2.5/site-packages/'
+
+alias pc='pycscope.py -R .'
+alias uc='export PATH="/usr/lib/ccache:$PATH"'
+
+# Provide tab completion for sqlite3.
+[ $(which rlwrap) ] && alias sqlite3='rlwrap -a -r sqlite3'
+
+export PAGER='less'
+export LESS=-ir
+
+export PATH="$PATH:$HOME/bin:$HOME/.vim/bundle/gj/bin"
+
+# Define your prefered "hostname" in .bashrc. Otherwise use the real hostname.
+if [ "$host" = "" ]; then
+    host=$(hostname)
+fi
+export PS1="[\u@$host \w ]\n$ "
+
+# Use the following PS1 if you've installed hg-prompt and enable it in your ~/.hgrc
+# Show mercurial branch
+# hg_ps1() {
+#     hg prompt "{branch}:{node|short}:{status}" 2> /dev/null
+# }
+# export PS1='[\u@$host \w ($(hg_ps1))]\n$ '
+
+
+# colorful man page
+export PAGER="`which less` -s"
+export BROWSER="$PAGER"
+export LESS_TERMCAP_mb=$'\E[0;32m'
+export LESS_TERMCAP_md=$'\E[0;32m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[0;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[0;33m'
+
+stty erase ^?
+
+# turn on bash completion for sudo
+complete -cf sudo
+
+# shortcut for cd
+if [ "$OS" = "Darwin" ]; then
+  source /opt/local/etc/profile.d/cdargs-bash.sh
+else
+  source /usr/share/doc/cdargs/examples/cdargs-bash.sh
+fi
+
+
+#-------------------------------------------------------------------------------
+# VI
+#-------------------------------------------------------------------------------
+export EDITOR='vim'
+set -o vi
+bind -m vi-insert "C-l":clear-screen
+
+function vi() {
+  if [ $# -ne 1 ]; then
+    vim -X $@
+  else
+    r=$(echo $1 | grep ":[0-9]\+:[0-9]\+:")
+    if [ "$?" -eq 0 ]; then
+      file=$(echo $1 | sed 's/:\([0-9]\+\):\([0-9]\+\):$/ +\1/')
+    else
+      file=$(echo $1 | sed 's/:\([0-9]\+\)$/ +\1/')
+    fi
+    vim -X $file
+  fi
+}
+
+
+#-------------------------------------------------------------------------------
+# Python
+#-------------------------------------------------------------------------------
+
+function gp() {
+    if [ "$1" = "-p" ]; then
+        shift
+        find -name "*.py" | perl -ne 'print $_ if !($_ =~ /.*_test\.py/)'  | xargs grep -i --color $1
+    elif [ "$1" = "-t" ]; then
+        shift
+        find -name "*.py" | perl -ne 'print $_ if $_ =~ /.*_test\.py/'  | xargs grep -i --color $1
+    else
+        find -name "*.py" | xargs grep -i --color "$1"
+    fi
+}
+
+alias ep='export PYTHONPATH=`pwd`'
+alias epp='export PYTHONPATH=`pwd`/../'
+alias no='nosetests --processes=4'
+
+#-------------------------------------------------------------------------------
+# pip
+#-------------------------------------------------------------------------------
+
+export PIP_REQUIRE_VIRTUALENV=true
+source ~/.bash_completions/pip
+
+#-------------------------------------------------------------------------------
+# Django
+#-------------------------------------------------------------------------------
+
+source ~/.bash_completions/django_bash_completion
+
+#-------------------------------------------------------------------------------
+# Mercurial
+#-------------------------------------------------------------------------------
+
+alias hgst='hg st -a -r -d -m'
+alias hlog='hg log -G | less'
+alias hlogv='hg log -G -v | less'
+
+source ~/.bash_completions/mercurial_bash_completion
+
+export HGMERGE=kdiff3
+export HGENCODING=utf-8
+
+# Show repository name in promp. Not a good solution.
+function set_hg_rep() {
+    hg_rep=$(pwd | awk -F/ '{ print $5 }')
+    if [ "$hg_rep" != "" ]; then
+        hg_rep="(\033[1;31m$(pwd | awk -F/ '{ print $5 }')\033[m)"
+    fi
+    export PS1="[\u@$host \w $hg_rep]\n$ "
+}
+
+function my_cd() {
+    \cd $1 && set_hg_rep
+}
+
+#alias cd=my_cd
+
+#-------------------------------------------------------------------------------
+# Fabric
+#-------------------------------------------------------------------------------
+source ~/.bash_completions/fab_completion.bash
+
+#-------------------------------------------------------------------------------
+# Other
+#-------------------------------------------------------------------------------
+
+# Because Django also set the completion function of python,
+# place this line after Django to override it.
+source ~/.bash_completions/python_module
+
+#-------------------------------------------------------------------------------
+# Java
+#-------------------------------------------------------------------------------
+export JAVA_HOME='/usr/lib/jvm/java-6-sun/'
+
+#-------------------------------------------------------------------------------
+# Trace code
+#-------------------------------------------------------------------------------
+
+function see() {
+    vi `which $1`
+}
+
+complete -c command see
+
+ulimit -c unlimited
+
+#-------------------------------------------------------------------------------
+# Git
+#-------------------------------------------------------------------------------
+alias gl='git log --graph --stat'
+alias gs='git status'
+alias gd='git diff'
+alias gs='git status'
+alias gdc='git diff --cached'
+alias gc='git commit'
+alias ga='git add'

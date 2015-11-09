@@ -1,0 +1,64 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>find_index</title>
+</head>
+<body>
+
+<h3><b>int find_index(_str name, int name_type_flags)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="name">name</A></code> - symbol name to search for</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="name_type_flags">name_type_flags</A></code> - The name type flags are listed in the file "slick.sh".
+       <DL compact>
+       <DT>PROC_TYPE      <DD style="marginleft:90pt">Matches global function
+       <DT>VAR_TYPE       <DD style="marginleft:90pt">Matches global variable
+       <DT>EVENTTAB_TYPE  <DD style="marginleft:90pt">Matches event table
+       <DT>COMMAND_TYPE   <DD style="marginleft:90pt">Matches command
+       <DT>CLASS_TYPE     <DD style="marginleft:90pt">Matches class name
+       <DT>INTERFACE_TYPE <DD style="marginleft:90pt">Matches interface name
+       <DT>STRUCT_TYPE    <DD style="marginleft:90pt">Matches struct name
+       <DT>CONST_TYPE     <DD style="marginleft:90pt">Matches const name
+       <DT>ENUM_TYPE      <DD style="marginleft:90pt">Matches enumerated type
+       <DT>MODULE_TYPE    <DD style="marginleft:90pt">Matches module
+       <DT>PICTURE_TYPE   <DD style="marginleft:90pt">Matches picture.
+       <DT>BUFFER_TYPE    <DD style="marginleft:90pt">Matches buffer scope variable
+       <DT>OBJECT_TYPE    <DD style="marginleft:90pt">Matches any type of dialog box template.
+       Use the oi2type to build the correct object flags.  See example below.
+       <DT>MISC_TYPE      <DD style="marginleft:90pt">Matches miscellaneous.
+       <DT>IGNORECASE_TYPE<DD style="marginleft:90pt">Perform case insensitive search.
+       </DL>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns name table index to name of type name_t.
+        0 is returned if a match is not found.  A name type match
+        is considered if  (name_t & name_type(index)) is true.
+        Search is case sensitive unless one of the flags
+        MODULE_TYPE, PICTURE_TYPE, or IGNORECASE_TYPE is given.
+        When one of the flags MODULE_TYPE or PICTURE_TYPE is given,
+        search is case sensitive for file systems like UNIX which is
+        case sensitive.  The search is always case insensitive when
+        the IGNORECASE_TYPE flag is given.  All underscore characters
+        in name are converted to dash characters before searching
+        takes place.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<PRE>
+// Call a global function by index
+index=find_index("gui_open",COMMAND_TYPE);
+call_index(index);
+
+// Find the Calculator dialog box template.
+index=find_index("_calc_form",oi2type(OI_FORM));
+if (index) {
+     messageNwait("Found it");
+} else {
+     messageNwait("Did not find it");
+}
+// Some properties can be retrieved by the name table index.  However, none
+// can be set unless the dialog box is displayed.
+messageNwait("Dialog box caption is "index.p_caption);
+
+// Display the dialog box modelessly
+wid=show(index); // show(name_name(index)) also works
+// wid is the window id or instance handle for this dialog box.  We can use this to change
+// the caption
+wid.p_caption="Changed the caption";
+</PRE>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Names_Table_Functions.html">Names Table Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="name_match.html">name_match</a>, <a href="name_name.html">name_name</a>, <a href="name_type.html">name_type</a>, <a href="name_info.html">name_info</a>, <a href="call_index.html">call_index</a>, <a href="insert_name.html">insert_name</a>, <a href="set_name_info.html">set_name_info</a>, <a href="delete_name.html">delete_name</a>, <a href="oi2type.html">oi2type</a>, <a href="replace_name.html">replace_name</a></blockquote>
+</body>
+</html>

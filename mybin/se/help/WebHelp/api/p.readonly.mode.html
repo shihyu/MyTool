@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>p_readonly_mode</title>
+</head>
+<body>
+
+<h3><b>boolean p_readonly_mode</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">This property is identical to the p_ReadOnly property.<p>
+<p><b>Edit Window, Editor Control</b>: Determines whether the current buffer is read
+only.  This property may have no effect depending on the setting of
+<a href="p_ProtectReadOnlyMode.html">p_ProtectReadOnlyMode</a> and <a href="_default_option.html">_default_option</a>(VSOPTION_PROTECT_READONLY_MODE).
+Use the <a href="_QReadOnly.html">_QReadOnly</a>() method to test whether you should allow editing
+because it tests all necessary options.<p>
+<p><b>Text Box</b>: Determines whether the text in a text box can be modified.  This
+is some times more useful than disabling the control because the user can
+still make a selection and copy the text to the clipboard.  In addition,
+the color of the text is more readable when the text box is read only
+(<b>p_ReadOnly</b>=true) than when it is disabled (<a href="p_enabled.html">p_enabled</a>=false).
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Editor Control, Edit Window</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Editor_Control_Properties.html">Editor Control Properties</a>, <a href="Edit_Window_Properties.html">Edit Window Properties</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="p_readonly_set_by_user.html">p_readonly_set_by_user</a>, <a href="p_ReadOnly.html">p_ReadOnly</a>, <a href="p_readonly_mode.html">p_readonly_mode</a>, <a href="p_ProtectReadOnlyMode.html">p_ProtectReadOnlyMode</a>, <a href="_QReadOnly.html">_QReadOnly</a></blockquote>
+</body>
+</html>

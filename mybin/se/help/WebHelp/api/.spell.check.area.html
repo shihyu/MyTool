@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_spell_check_area</title>
+</head>
+<body>
+
+<h3><b>int _spell_check_area(_str &word, _str &replace_word, int &col, int start_col, int width=-1)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Spell checks a limited area of the current line.  start_col is an
+imaginary column position and specifies the column to start spell checking
+from.  width specifies the number of characters in the area to spell
+check.  This function is intended to used to assist in spell checking a
+selection.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="word">word</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="replace_word">replace_word</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="col">col</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="start_col">start_col</A></code> -  </blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="width">width</A></code> -  </blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Return values are as follows:
+<DL compact>
+<DT>SPELL_NO_MORE_WORDS_RC<DD style="marginleft:150pt">End of buffer reached.
+<DT>SPELL_REPEATED_WORD_RC<DD style="marginleft:150pt">Found two of the same words found in a row.
+<DT>SPELL_WORD_NOT_FOUND_RC<DD style="marginleft:150pt">Possible misspelled word.  word variable set to the misspelled word.
+<DT>SPELL_REPLACE_WORD_RC<DD style="marginleft:150pt">History word found.  Replace word at cursor with replace_word.
+<DT>SPELL_ERROR_READING_MAIN_DICT_RC<DD style="marginleft:150pt">
+</DL>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Editor Control, Edit Window
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a></blockquote>
+</body>
+</html>

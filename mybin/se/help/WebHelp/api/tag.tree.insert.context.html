@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_tree_insert_context</title>
+</head>
+<body>
+
+<h3><b>int tag_tree_insert_context(int tree_wid, int treeIndex, int filter_flags, int include_tab, int force_leaf, int tree_flags, int show_statements)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Insert all the context tags passing through the tag filter
+flags into the given tree.  Use <a href="tag_tree_prepare_expand.html">tag_tree_prepare_expand</a>
+prior to calling this function in order to configure the
+browser bitmap set.
+<p>
+For synchronization, perform a tag_lock_context(false)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_wid">tree_wid</A></code> - Window ID of the tree control to insert into.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="treeIndex">treeIndex</A></code> - Parent tree node index to insert item under.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="filter_flags">filter_flags</A></code> - Tag filter flags, only insert tags passing this filter.
+                  See <a href="tag_filter_type.html">tag_filter_type</a> for more details.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="include_tab">include_tab</A></code> - append class name after signature if 1,
+                  prepend class name with :: if 0.
+                  See <a href="tag_tree_make_caption.html">tag_tree_make_caption</a> for further explanation.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="force_leaf">force_leaf</A></code> - If < 0, force leaf node, if equal to 0, choose by tag type.
+                  Normally "container" tag types, such as classes or structs
+                  are automatically inserted as non-leaf nodes.  If > 0,
+                  insert the items from the current context as a tree,
+                  displaying the heirarchy of inner/outer nesting of tags,
+                  going by the positions calculated by <a href="tag_sort_context.html">tag_sort_context</a>().</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tree_flags">tree_flags</A></code> - tree flags to set for this item</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="show_statements">show_statements</A></code> - show statements in "Defs" tab
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_TreeAddItem.html">_TreeAddItem</a>, <a href="tag_filter_type.html">tag_filter_type</a>, <a href="tag_insert_context.html">tag_insert_context</a>, <a href="tag_tree_insert_tag.html">tag_tree_insert_tag</a>, <a href="tag_tree_make_caption.html">tag_tree_make_caption</a>, <a href="tag_tree_prepare_expand.html">tag_tree_prepare_expand</a></blockquote>
+</body>
+</html>

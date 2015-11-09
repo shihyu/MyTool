@@ -1,0 +1,48 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>buf_match</title>
+</head>
+<body>
+
+<h3><b>_str buf_match(_str name_prefix, int find_first, _str options="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="name_prefix">name_prefix</A></code> - Prefix to search for</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="find_first">find_first</A></code> - A non-zero value for find_first begins a new search,
+                           otherwise, the next matching buffer is returned.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options_letters">options_letters</A></code> - A string of one or more of the following:
+   <ul>
+   <li>H -- Return buffers with (p_buf_flags & VSBUFFLAG_HIDDEN) true.
+   <li>E -- Exact buffer name match instead of prefix matching.
+   <li>X -- Same as E option.
+   <li>V -- If the 'V' (verbose) option is specified,
+            a string of the following form is returned:
+            <pre>buf_id modify buf_flags buf_name</pre>
+   <li>B -- Find buffer names only.
+   <li>D -- Find document names only.
+   <li>I -- Return buffer ID only
+   <li>N -- Match the file name only (not the whole path or a
+            prefix)
+   <li>A -- name_prefix is an absolute filename with
+            symlinks resolved
+   </ul>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+Returns display name or buffer name of the buffer with prefix matching
+name_prefix.  A non-zero value for find_first, begins a new search.  If
+find_first is zero, the next matching buffer id is returned.  '' is
+returned if no match is found.  Search is not case sensitive except for
+file systems like UNIX which are case sensitive.  The global rc
+variable is set to a non-zero value if there are no more matches.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+   // Find names that start with p
+   name_prefix='p';
+   // Find first.  return verbose information.
+   buf_info= buf_match(name_prefix,1,'v');
+   for (;;) {
+      if (rc) break;
+      parse buf_info with buf_id ModifyFlags buf_flags buf_name;
+      messageNwait('id='buf_id' ModifyFlags='ModifyFlags' flags='buf_flags' name='buf_name);
+      buf_info= buf_match(name_prefix,0,'v');    // find next
+   }
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Buffer_Functions.html">Buffer Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="find_index.html">find_index</a>, <a href="name_match.html">name_match</a>, <a href="file_match.html">file_match</a></blockquote>
+</body>
+</html>

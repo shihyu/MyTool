@@ -1,0 +1,40 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_resume</title>
+</head>
+<body>
+
+<h3><b>void _resume()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Returns execution to the statement after the last <b>_suspend</b>.
+This function is used in conjunction with <b>_suspend</b> to check
+for critical errors which halt the interpreter.  Critical errors which halt
+the interpreter automatically issue a <b>_resume</b>.  If a
+<b>_suspend</b> was issued, the following statement receives control
+and can check the <b>rc</b> variable to determine the reason for the
+<b>_resume</b>.  Before executing the <b>_resume</b> statement
+you will want to set the <b>rc</b> variable to a positive value to
+distinguish your resume codes from internal error codes which are
+negative.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+_suspend(); // rc is set to 0 by
+_suspend in first pass.
+if (rc ) {
+     if (rc==1) { // normal return?
+         return(0);
+     }
+     message('Please specify floating point number');
+     return(1);
+}
+// If arg(1) is not a valid number, run time error will occur which
+cause _resume
+f=arg(1);
+++f;
+// Indicate normal return
+rc=1;
+_resume();
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_suspend.html">_suspend</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_dbcsSubstr</title>
+</head>
+<body>
+
+<h3><b>_str _dbcsSubstr(_str string, int StartCol, typeless Width="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns part of the input <i>string</i> starting from <i>StartCol</i>
+including the rest of the string or <i>Width</i> characters if specified.
+This function is identical to the <b>substr</b> function except when double
+byte characters are bisected, they are replaced with zeros.  This function
+does not yet support the <i>pad</i> argument.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+        // This will always mismatch if index 5 is the first or second character of
+        // a double byte character.
+        if (_dbcsSubstr(string,5,1)=='+') {
+             ...
+        }
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="String_Functions.html">String Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_dbcs.html">_dbcs</a>, <a href="_dbcsIsLeadByte.html">_dbcsIsLeadByte</a>, <a href="_dbcsStartOfDBCS.html">_dbcsStartOfDBCS</a></blockquote>
+</body>
+</html>

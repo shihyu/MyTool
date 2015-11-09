@@ -1,0 +1,74 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_TreeAddItem</title>
+</head>
+<body>
+
+<h3><b>int _TreeAddItem(int ItemIndex, _str caption, int flags=0, int NonCurrentBMIndex=0, int CurrentBMIndex=0, int ShowChildren=TREE_NODE_EXPANDED, int moreFlags=0, typeless userInfo=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Adds a new sibling or child item.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ItemIndex">ItemIndex</A></code> - Specifies a tree item.  The root of the tree
+can't be deleted and always has an item index of 0.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="caption">caption</A></code> - caption to be used for new tree node.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flags">flags</A></code> - One or more of the following flags ORed together.
+
+<dl>
+<dt>TREE_ADD_BEFORE</dt><dd>Add this item before the item
+specified.</dd>
+<dt>TREE_ADD_AS_CHILD</dt><dd>Add this item after last child of
+the item specified by
+<i>ItemIndex</i>.</dd>
+<dt>TREE_ADD_SORTED_CS</dt><dd>
+   Add this item sorted case
+sensitive.</dd>
+<dt>TREE_ADD_SORTED_CI</dt><dd>
+   Add this item sorted case
+insensitive.</dd>
+<dt>TREE_ADD_SORTED_FILENAME</dt><dd>
+   Add this item sorted by
+filename.</dd>
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="NonCurrentBMIndex">NonCurrentBMIndex</A></code> - Names table index to a picture which gets displayed to
+the left of the caption text when this node is not the
+current node.  We recommend you specify the same
+values for <i>NonCurrentBMIndex </i>and
+<i>CurrentBMIndex </i>for leaf items.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="CurrentBMIndex">CurrentBMIndex</A></code> - Names table index to a picture which gets displayed to
+the left of the caption text when this node is the current
+node.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ShowChildren">ShowChildren</A></code> - whether to show the children of this node.
+TREE_NODE_COLLAPSED specifies not to show the children. Specify
+TREE_NODE_EXPANDED to initially show children of this node.
+Set this to TREE_NODE_LEAF for leaf items.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="moreFlags">moreFlags</A></code> - Combination of TREENODE_* flags.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="userInfo">userInfo</A></code> - you to specify per-node user data.
+See <a href="_TreeSetUserInfo.html">_TreeSetUserInfo</a>.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the item index of the new item.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+#include "slick.sh"
+
+defeventtab form1;
+void tree1.on_create()
+{
+   flag=TREE_ADD_AS_CHILD;
+
+
+container1=prev=_TreeAddItem(0,"Container1",TREE_ADD_AS
+_CHILD, _pic_fldclos, _pic_fldaop,0);
+   for (i=0;i<3;++i) {
+      _TreeAddItem(container1,"item "i,TREE_ADD_AS_CHILD,
+_pic_file, _pic_file,-1);
+   }
+   container2=_TreeAddItem(container1,"Container2",0,
+_pic_fldclos, _pic_fldaop,0);
+   for (i=0;i<3;++i) {
+      _TreeAddItem(container2,"item "i,TREE_ADD_AS_CHILD,
+_pic_file,_pic_file,-1);
+   }
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Tree View
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tree_View_Methods.html">Tree View Methods</a></blockquote>
+</body>
+</html>

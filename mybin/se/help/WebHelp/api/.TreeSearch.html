@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_TreeSearch</title>
+</head>
+<body>
+
+<h3><b>int _TreeSearch(int ItemIndex, _str searchCaption, _str options="", _str searchUserInfo=null, int ColIndex=-1)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Searches a tree control.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ItemIndex">ItemIndex</A></code> - By default, this is the parent index of the
+children to be searched.  If the 'S' option is
+specified, this is the first sibling searched.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="searchCaption">searchCaption</A></code> - Item caption to search for.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - A string of zero or more of the following:
+
+<dl>
+<dt>'I'</dt><dd>Case insensitive search.</dd>
+<dt>'P'</dt><dd>Prefix match.</dd>
+<dt>'S'</dt><dd>Search siblings.  When this is specified,
+<i>itemIndex</i> is the first sibling
+searched.  By default, <i>itemIndex</i>
+is the parent of the items to be searched.</dd>
+<dt>'T'</dt><dd>Search recursively through the tree.  By
+default, only one level is searched.</dd>
+<dt>'H'</dt><dd>Search hidden nodes.</dd>
+
+</dl>
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="searchUserInfo">searchUserInfo</A></code> - Option item user info to search for.
+</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="ColIndex">ColIndex</A></code> - Column to search. First column is 0.
+                     The default is to search all columns.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the index of the tree item or -1 if the search fails.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Tree View
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tree_View_Methods.html">Tree View Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_TreeGetCaption.html">_TreeGetCaption</a>, <a href="_TreeSetInfo.html">_TreeSetInfo</a>, <a href="_TreeGetInfo.html">_TreeGetInfo</a>, <a href="_TreeSetUserInfo.html">_TreeSetUserInfo</a>, <a href="_TreeGetUserInfo.html">_TreeGetUserInfo</a></blockquote>
+</body>
+</html>

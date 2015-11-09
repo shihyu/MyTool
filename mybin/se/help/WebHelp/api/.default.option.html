@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_default_option</title>
+</head>
+<body>
+
+<h3><b>_str _default_option(_str option, _str newValue=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Gets and optionally sets an editor default option.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="option">option</A></code> - may be one of the following letters:
+                <DL compact style="margin-left:20pt;">
+                <DT>'A'  </DT><DD>boolean. Alt  menu.  When <b>true</b>, won't accidentally get placed on menu bar when press Alt key not followed by another key.</DD>
+                <DT>'C'  </DT><DD>boolean.  Display MDI child cursor position when do not have focus.  Default is on.</DD>
+                <DT>'E'  </DT><DD>boolean.  Set Slick-C&reg; error position on weak interpreter error.  Effects <b>find_error</b> command.</DD>
+                <DT>'F'  </DT><DD>boolean.  Maximize first MDI child.  Default is off.</DD>
+                <DT>'H'  </DT><DD>boolean.  Display horizontal scroll bar on edit window.  Default is on.</DD>
+                <DT>'I'  </DT><DD>boolean.  When on, a carriage return not followed by a new line in the build window erases current line.  Default is on.</DD>
+                <DT>'K'  </DT><DD>boolean.  Cursor blink.  Default is on.</DD>
+                <DT>'L'  int.  Window left margin in twips for edit window and editor control.  Ignored when there are selective display </DT><DD>bitmaps or any other line prefix bitmaps.  Default is 100.</DD>
+                <DT>'N'  _str.  Past EOF character.  Determines the character displayed on lines past the end of the file.  Useful for VI emulation.</DT><DD></DD>
+                <DT>'P'  </DT><DD>boolean.  Hide mouse when type character.  Default is off.</DD>
+                <DT>'Q'  _str.  This option is ignored.</DT><DD></DD>
+                <DT>VSOPTIONZ_SPECIAL_CHAR_XLAT_TAB</DT><DD>_str. Determines the characters display when special characters are display like tabs, new lines, spaces, etc.
+                                                            This strings must be 6 characters in length.  The special characters in order are EOLCH1, EOLCH2, TAB(9), SPACE(32), VIRTUAL TAB SPACE, and EOF(26).</DD>
+                <DT>'R'  Column to display vertical line in edit window.  0 specifies no vertical line.  Defaults to 0.</DT><DD></DD>
+                <DT>'S'  int.  Default search flags.</DT><DD></DD>
+                <DT>'T'  </DT><DD>boolean.  Display top of file line for edit window and editor control.  Defaults to on.</DD>
+                <DT>'U'  </DT><DD>boolean. Draw box focus rect around current line for edit window and editor control.  Defaults to off.</DD>
+                <DT>'V'  </DT><DD>boolean.  Display vertical scroll bar on edit window.  Defaults to on.</DD>
+                <DT>'W'  int.  Maximum length of filename placed in menu in </DT><DD>bytes.  Effects X windows only.  Defaults to 40.</DD>
+                <DT>'Z'  </DT><DD>boolean.  Protect read only mode.  When on, the editor will not allow read only files to be modified.  Saving a read only file always displays the Save As dialog box.  Defaults to on.</DD>
+                <DT>VSOPTION_WARNING_ARRAY_SIZE</DT><DD>int.  A message box is displayed when a macro creates an array larger than this value to optional let the use terminate the macro.</DD>
+                <DT>VSOPTION_WARNING_STRING_LENGTH</DT><DD>int.  A message box is displayed when a macro creates a string larger than this value to optional let the use terminate the macro.</DD>
+                </DL></blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="newValue">newValue</A></code> -  </blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the (possibly newly set) current value for corresponding option.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Miscellaneous_Functions.html">Miscellaneous Functions</a></blockquote>
+</body>
+</html>

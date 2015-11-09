@@ -1,0 +1,44 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_build_workspace_tag_file</title>
+</head>
+<body>
+
+<h3><b>int tag_build_workspace_tag_file(_str pszWorkspaceFile, _str pszTagDatabase, int rebuildFlags)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retag all the files in the given workspace tag file.
+<p>
+This function will start a thread which will retrieve the file list
+from the given workspace and schedule all the files which need to be
+retagged to be retagged in the background.
+<p>
+If the SYNCHRONOUS option is on, it will retrieve the file list in
+the foreground instead of doing that work in the background.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszWorkspaceFile">pszWorkspaceFile</A></code> - name of workspace to get source file list from</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="pszTagDatabase">pszTagDatabase</A></code> - name of tag file to rebuild</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="rebuildFlags">rebuildFlags</A></code> - bitset of VS_TAG_REBUILD_
+                        <ul>
+                        <li>VS_TAG_REBUILD_FROM_SCRATCH --
+                        Rebuild the tag file from scratch using the
+                        given file list.  Otherwise, the tag file is
+                        rebuilt incrementally.
+                        <li>VS_TAG_REBUILD_CHECK_DATES --
+                        Check dates of files and only rebuild ones
+                        that are out of date, if false, all
+                        the files will be retagged.
+                        <li>VS_TAG_REBUILD_DO_REFS --
+                        Build a symbol cross-reference
+                        <li>VS_TAG_REBUILD_SYNCHRONOUS --
+                        Retag the files in the foreground instead
+                        of queuing the files for the background
+                        tagging threads to finish.
+                        <li>VS_TAG_REBUILD_REMOVE_MISSING_FILES --
+                        Remove files from the database which
+                        no longer exist on disk.
+                        <li>VS_TAG_REBUILD_REMOVE_LEFTOVER_FILES --
+                        Remove leftover files that are no longer in
+                        the file list specified to be rebuilt.
+                        </ul>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Since:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">16.0
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote>
+</body>
+</html>

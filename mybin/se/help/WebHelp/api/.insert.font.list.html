@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_insert_font_list</title>
+</head>
+<body>
+
+<h3><b>int _insert_font_list(_str options="S", _str font_name="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Inserts a list of font names or font sizes.  If the <i>font_name</i>
+parameter is specified<i>,</i>, font sizes are inserted.  Otherwise, a list
+of font names are inserted.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="options">options</A></code> - is a string of zero or more of the following option
+letters:
+<dl>
+<dt>F</dt><dd>Display fixed fonts only.</dd>
+<dt>P</dt><dd>Display printer fonts.</dd>
+<dt>S</dt><dd>(Default) Display screen fonts.</dd>
+</dl>
+<p>
+The S and P options may not both be specified.</p>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+combo1.on_create()
+{
+     // Combo boxes have 3 separate controls.  Each of which can be
+accessed with all the
+     // properties and methods of the stand alone control.  See <b>Combo
+Box Control</b>.
+     _insert_font_list();
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Edit Window, Editor Control, List Box
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Categories:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Edit_Window_Methods.html">Edit Window Methods</a>, <a href="Editor_Control_Methods.html">Editor Control Methods</a>, <a href="List_Box_Methods.html">List Box Methods</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_font_type.html">_font_type</a>, <a href="_choose_font.html">_choose_font</a>, <a href="_font_form.html">_font_form</a>, <a href="_isscalable_font.html">_isscalable_font</a></blockquote>
+</body>
+</html>

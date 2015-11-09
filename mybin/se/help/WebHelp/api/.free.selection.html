@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_free_selection</title>
+</head>
+<body>
+
+<h3><b>void _free_selection(_str markid)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Frees the selection handle or bookmark handle corresponding to
+<i>mark_id</i>.  <b>_free_selection</b> will not free the active selection
+(the one that is seen on screen).  Use <b>_show_selection</b> if necessary to
+activate another selection before freeing the selection.  <i>mark_id</i> is a
+handle to a selection returned by one of the built-ins
+<b>_alloc_selection</b> or <b>_duplicate_selection</b>.  A <i>mark_id</i> of
+'' or no <i>mark_id</i> parameter identifies the active selection.<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+         // Get handle to active selection
+         current_mark_id=_duplicate_selection('');
+         // Allocate another mark.
+         mark_id=_alloc_selection();
+         _select_line(mark_id);
+         _show_selection(mark_id);get_event();
+         _show_selection(current_mark_id);
+         _free_selection(mark_id);
+</pre></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Selection_Functions.html">Selection Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_alloc_selection.html">_alloc_selection</a></blockquote>
+</body>
+</html>

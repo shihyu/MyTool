@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_tree_add_members_of</title>
+</head>
+<body>
+
+<h3><b>int tag_tree_add_members_of(_str class_name, _str in_file_name, int tag_file_id, int &in_count)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Add the members of the given class to the tree view, as
+configured using tag_tree_prepare_expand.  This function
+makes the assumption that the same qualified class name
+will not be used twice in one file to define separate
+classes.  Languages having preprocessing like C++ can have
+this problem, the result is that the members of both
+classes will be merged. The number of items inserted
+without prompting is defined by the following interpreter
+variables:
+<dl compact>
+<dt><b>def_cbrowser_low_refresh</b><dd style="margin-left:120pt"> During a refresh operation, stop at this many items.
+<dt><b>def_cbrowser_high_refresh</b><dd style="margin-left:120pt">   First prompt at this level, if not refresh operation.
+<dt><b>def_cbrowser_flood_refresh</b><dd style="margin-left:120pt">  Prompt at every multiple of this level.
+</dl>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="class_name">class_name</A></code> - Name of class to add members of, case-sensitive.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="in_file_name">in_file_name</A></code> - Only add class members located in this file, use empty string to ignore this constraint.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_file_id">tag_file_id</A></code> - Unique numeric ID for tag file, 0 for 'current' tag file.
+                  See <a href="tag_tree_set_user_info.html">tag_tree_set_user_info</a> for more information about the
+                  use of this parameter.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="in_count">in_count</A></code> - (Input/Output) Number of items inserted.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">0 on success, < 0 on error.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_tree_add_members_in_category.html">tag_tree_add_members_in_category</a>, <a href="tag_tree_add_members_in_section.html">tag_tree_add_members_in_section</a>, <a href="tag_tree_insert_tag.html">tag_tree_insert_tag</a>, <a href="tag_tree_prepare_expand.html">tag_tree_prepare_expand</a>, <a href="tag_tree_set_user_info.html">tag_tree_set_user_info</a></blockquote>
+</body>
+</html>

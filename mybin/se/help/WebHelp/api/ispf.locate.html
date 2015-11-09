@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>ispf_locate</title>
+</head>
+<body>
+
+<h3><b>_command void ispf_locate(_str cmdline="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">The locate command is used to find lines with specific attributes in the prefix
+line.  It can be used to find a line with a specific label, line number,
+command, changed line, error line, or no-save lines.<p>
+<p>Syntax:<pre>
+   LOCATE <i>line_number</i>
+   LOCATE <i>label</i>
+   LOCATE [NEXT | PREV | FIRST | LAST ]
+          [LABEL COMMAND CMD ERROR CHANGE CHG C SPECIAL S EXCLUDED X]
+          [range]
+</pre><p>
+Arguments:
+<dl compact style="margin-left:20pt">
+<dt><i>line_number</i><dd style="margin-left:80pt">Line number to go directly to.
+<dt><i>label</i><dd style="margin-left:80pt">ISPF label to go directly to.
+<dt><i>range</i><dd style="margin-left:80pt">Two numbers or labels, specifying the starting and ending lines to search within, inclusive.
+<dt>NEXT<dd style="margin-left:80pt">Find the next occurrence starting from the cursor.
+<dt>ALL<dd style="margin-left:80pt">Find all matches in the specified range.
+<dt>FIRST<dd style="margin-left:80pt">Find only the first occurrence in the specified range.
+<dt>LAST<dd style="margin-left:80pt">Find only the last occurrence in the specified range.
+<dt>PREV<dd style="margin-left:80pt">Find the previous occurrence starting from the cursor.
+<dt>CHANGE<dd style="margin-left:80pt">Search for lines with a change flag (==CHG>).
+<dt>COMMAND<dd style="margin-left:80pt">Search for lines containing an edit line command.
+<dt>ERROR<dd style="margin-left:80pt">Search for lines with an error flag (==ERR>).
+<dt>EXCLUDED<dd style="margin-left:80pt">Search only for excluded lines.
+<dt>LABEL<dd style="margin-left:80pt">Search for lines with a label.
+<dt>SPECIAL<dd style="margin-left:80pt">Search for lines with special non-data lines, (e.g. =COLS>)
+<dt>QUIET<dd style="margin-left:80pt">Do not display messages.
+</dl>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="ISPF_Primary_Commands.html">ISPF Primary Commands</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="ispf_do_lc.html">ispf_do_lc</a>, <a href="ispf_reset.html">ispf_reset</a>, <a href="../ch13s10.htm#sect_usingispfandxedit_1FD114B6_5B7C">ISPF Line Commands</a></blockquote>
+</body>
+</html>

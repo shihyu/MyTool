@@ -22,7 +22,7 @@ ${MV} source-code-pro-1.017R/TTF/* ~/.fonts
 
 
 ${CAT} > ~/.fonts.conf <<EOF
-<?xml version="1.0"?>http://slackbuilds.org/slackbuilds/14.1/system/adobe-source-code-pro-font.tar.gz
+<?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
     <match target="pattern">

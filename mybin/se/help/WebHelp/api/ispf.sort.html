@@ -1,0 +1,40 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>ispf_sort</title>
+</head>
+<body>
+
+<h3><b>_command int ispf_sort(_str arglist="")</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">The sort command sorts lines of data in a specified order.<p>
+
+<p>Syntax:<pre>
+   SORT [ line_range ] [X] [NX] <i>sort_field_1</i> ... <i>sort_field_n</i>
+</pre><p>
+Arguments:
+<dl compact style="margin-left:20pt">
+<dt><i>line_range</i><dd style="margin-left:70pt">Two numbers or labels, specifying the starting and ending range of lines to sort, inclusive.
+<dt>X<dd style="margin-left:70pt">Look for matches only in  lines.
+<dt>NX<dd style="margin-left:70pt">Do not report matches in excluded lines.
+<dt><i>sort_field_i</i><dd style="margin-left:70pt">Field specifications for sorting data.  See below.
+</dl><p>
+<p>Sort supports up to 100 sort fields.  Each one can have the following options:<p>
+<dl compact style="margin-left:20pt">
+<dt>A<dd>Sort data in ascending (non-decreasing) order.
+<dt>D<dd>Sort data in descending (non-decreasing) order.
+<dt>I<dd>Case insensitive sort.   This option has no effect if the -F or -N
+options are specified.
+<dt>E<dd>Case sensitive sort (default).   This option has no effect if the
+-F or -N options are specified.
+<dt>-F<dd>Sort data as file names (case sensitive on Unix).
+<dt>-N<dd>Sort data as integers.
+<dt><i>col1</i><dd>Starting physical column boundary for this field.
+<dt><i>col2</i><dd>Ending physical column boundary for the field.
+</dl>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 0 if successful.  Common return codes are 1 (you tried to
+sort the build window), NOT_ENOUGH_MEMORY_RC,
+TOO_MANY_SELECTIONS_RC, and INVALID_SELECTION_HANDLE_RC.  On
+error, a message is displayed.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="ISPF_Primary_Commands.html">ISPF Primary Commands</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="sort_buffer.html">sort_buffer</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>def_complete_flags</title>
+</head>
+<body>
+
+<h3><b>int def_complete_flags</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Word completion options.  Bitset of the following flags (COMPLETE_*)
+<ul>
+<li><b>COMPLETE_REVERSE_AT_CURSOR</b> Indicates that the
+"duplicate locations" cache should be cleared after changing
+directon. Don't confuse this cache with the "duplicates
+words" cache which the COMPLETE_ALLOW_DUP_MATCHES uses.
+<li><b>COMPLETE_CHECK_SCOPE</b> -- Indicates whether matches
+was found outside of scope of function.
+<li><b>COMPLETE_ALLOW_DUP_MATCHES</b> -- Indicates that once
+a particular word is found that any subsequent matches should
+be skipped. After change directions (i.e.  say do a
+complete_prev,complete_prev, and then a complete_next), the
+"duplicate words" cache is cleared.
+<li><b>COMPLETE_LOOK_FOR_ANYTHING</b> -- When off, applies
+some heuristics. By default (no COMPLETE_LOOK_FOR_ANYTHING flag),
+matches found in comments or strings are skipped if the
+cursor was not in a comment or string and the match is "far"
+away from the cursor (2 lines- second number from
+def_complete_vars).
+</ul>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Default:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">COMPLETE_REVERSE_AT_CURSOR|COMPLETE_ALLOW_DUP_MATCHES</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Configuration_Variables.html">Configuration Variables</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="complete_next.html">complete_next</a>, <a href="complete_prev.html">complete_prev</a>, <a href="complete_more.html">complete_more</a></blockquote>
+</body>
+</html>

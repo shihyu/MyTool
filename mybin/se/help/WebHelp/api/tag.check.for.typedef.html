@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>tag_check_for_typedef</title>
+</head>
+<body>
+
+<h3><b>int tag_check_for_typedef(_str symbol, _str(&tag_files)[], boolean case_sensitive, _str namesapce_name=null)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Lookup <i>tag_name</i> and see if it could be a typedef symbol.  If so,
+return 1, otherwise return 0.<p>
+<p>This function ignores class scope.  Simply put, if <i>tag_name</i> is a typedef,
+anywhere, this function may return true.  Thus, it's should really be used
+only as an arbiter prior to attempting to match <i>symbol</i> in context as a
+typedef.  The reason that this function behaves in this was is for speed
+and simplicity.  Otherwise, it would have to search all parent and outer
+class scopes, in addition to locals, context and tag files.
+<p>
+For synchronization, threads should perform a tag_lock_context(false)
+prior to invoking this function.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_name">tag_name</A></code> - Tag name to check if it is a typedef</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="tag_files">tag_files</A></code> - (Input) Tag files to search</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="case_sensitive">case_sensitive</A></code> - use case-sensitive comparisons?</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="namespace_name">namespace_name</A></code> - namespace or class to search
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns 1 if <i>tag_name</i> could be a typedef. Returns 0 if <i>tag_name</i> is not a typedef.
+        <0 on error.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Tagging_Functions.html">Tagging Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="tag_check_for_define.html">tag_check_for_define</a>, <a href="tag_check_for_package.html">tag_check_for_package</a>, <a href="tag_check_for_template.html">tag_check_for_template</a></blockquote>
+</body>
+</html>

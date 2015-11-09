@@ -1,0 +1,19 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_form_parent</title>
+</head>
+<body>
+
+<h3><b>int _form_parent()</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>int</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the parent window id of the active form.  If the p_parent
+property of the active form is 0, the active MDI edit window is returned
+(_mdi.<b>p_child</b>).   Some dialog boxes such as the Replace and Spelling
+dialog boxes determine what buffer they are operating on by calling this
+function.  It is probably sufficient to use the expression
+(<b>p_active_form.p_parent</b>).  We added this function just in case it is
+needed for portability.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Applies To:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">All Window Objects
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Form_Functions.html">Form Functions</a></blockquote>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_GetDialogInfoHt</title>
+</head>
+<body>
+
+<h3><b>typeless _GetDialogInfoHt(_str key, int wid=0, boolean usePUser2=false)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Retrieve data from a dialog indexed by key. Use this instead of using multiple p_user
+variables for several controls.
+<p>
+Use _SetDialogInfoHt to store data to a dialog by hash table key.
+<p>
+This function differs from _GetDialogInfo because it retrieves data from a
+hash table that is indexed by string key, rather than an array.
+Use _SetDialogInfo, _GetDialogInfo to store/retrieve data to/from a
+dialog by integer index.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="key">key</A></code> - A unique hash table key that represents a given item.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="wid">wid</A></code> - (optional). If specified, use this control's p_user instead
+                 of p_active_form. 0 specifies the active form.
+                 Defaults to 0.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="usePUser2">usePUser2</A></code> - If true, get the items from the p_user2 property
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>typeless</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Data found with hash table key.</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Form_Functions.html">Form Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_SetDialogInfoHt.html">_SetDialogInfoHt</a>, <a href="_SetDialogInfo.html">_SetDialogInfo</a>, <a href="_GetDialogInfo.html">_GetDialogInfo</a></blockquote>
+</body>
+</html>

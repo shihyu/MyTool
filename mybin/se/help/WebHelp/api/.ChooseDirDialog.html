@@ -1,0 +1,43 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_ChooseDirDialog</title>
+</head>
+<body>
+
+<h3><b>_str _ChooseDirDialog(_str title="Choose Directory", _str find_path="", _str find_file="", int flags=CDN_PATH_MUST_EXIST)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Display a modal dialog for choosing a directory.
+<p>
+On Windows, this function will display the Windows
+"Browse for Folder" directory chooser form, unless
+<code>file_file</code> is specified, or the <code>flags</code>
+are not <code>CDN_PATH_MUST_EXIST</code>.  Any other options
+specified require it to use _cd_form() to get the additional
+functionality.<p>
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="title">title</A></code> - title to display dialog using (default "Choose Directory")
+                     You can also use "" to get the default title.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="find_path">find_path</A></code> - path to initialize dialog to</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="find_file">find_file</A></code> - name of specific file to find</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="flags">flags</A></code> - dialog options
+                     <ul>
+                     <li>CDN_SHOW_EXPAND_ALIAS  -- show "Expand Alias" checkbox
+                     <li>CDN_SHOW_PROCESS_CHDIR -- show "Process chdir" checkbox
+                     <li>CDN_SHOW_SAVE_SETTINGS -- show "Save Settings" button
+                     <li>CDN_SHOW_RECURSIVE     -- show "Recursive" checkbox
+                     <li>CDN_PATH_MUST_EXIST    -- Selected path must exist
+                     <li>CDN_ALLOW_CREATE_DIR   -- Allow them to create a new directory
+                     <li>CDN_CHANGE_DIRECTORY   -- Change dir to 'find_path' on open
+                     <li>CDN_NO_SYS_DIR_CHOOSER -- Force us to use _cd_form
+                     </ul>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>_str</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns the selected directory.  Return '' on cancel or error.
+        <p>
+        If the "Process chdir", "Expand alias", or "Recursive" check boxes
+        are displayed, the selected options are prepended to the
+        returned path as follows and the path is quoted if it contains spaces:
+        <ul>
+        <li>+p -- "Process chdir" was checked
+        <li>-p -- "Process chdir" was not checked
+        <li>+a -- "Expand alias" was checked
+        <li>-a -- "Expand alias" was not checked
+        <li>+r -- "Recursive" was checked.
+        </ul
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Forms.html">Forms</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="_OpenDialog.html">_OpenDialog</a>, <a href="def_cd.html">def_cd</a></blockquote>
+</body>
+</html>

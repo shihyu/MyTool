@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>_iswindow_valid</title>
+</head>
+<body>
+
+<h3><b>boolean _iswindow_valid(int wid)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription"><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Returns:</B> <B><code>boolean</code></b><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">Returns <b>true</b> if <i>window_id</i> is a valid window handle.
+This function is used to loop through all windows and to check if a window
+was deleted.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+_find_formobj(form_name /*,'E' - Find edited forms only | 'N'-Find non-
+edited forms only*/)
+{
+   last=_last_window_id();
+   option=upcase(arg(2));
+   for (i=1;i&lt;=last;++i) {
+      if (_iswindow_valid(i) && i.p_object==OI_FORM &&
+           (option=='' || (option=='E' && i.p_edit) ||
+           (option=='N' && !i.p_edit)
+           )
+         ) {
+         if (name_eq(i.p_name,form_name)) {
+            return(i);
+         }
+      }
+   }
+   return(0);
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Window_Functions.html">Window Functions</a></blockquote>
+</body>
+</html>

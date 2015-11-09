@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="slickedit_api.css" type="text/css">
+<title>list_bindings</title>
+</head>
+<body>
+
+<h3><b>void list_bindings(int &keytab_index, VSEVENT_BINDING(&list)[], int match_index=0)</b></h3>
+<P style="margin-top:0pt;margin-bottom:0pt;" class="JavadocDescription">Finds all bindings to a name table index.
+<P style="margin-bottom:0pt;" class="JavadocHeading"><B>Parameters:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="keytab_index">keytab_index</A></code> - Names table index to event table.</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="list">list</A></code> - (Output) List of events and bindings</blockquote><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="text-indent:-13pt;margin-top:0pt;"><code><A NAME="match_index">match_index</A></code> - Index of command to find.
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Example:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;">
+<pre>
+// For a more complete example, see at source for append_key_bindings
+// in "bind.e".
+match_index=find_index("gui_find",COMMAND_TYPE);
+VSEVENT_BINDING list[];
+list_bindings(_default_keys,list,match_index);
+if (list._length()>0 ) {
+    message("Found bindings for this command");
+}
+</pre>
+</blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>Category:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="Keyboard_Functions.html">Keyboard Functions</a></blockquote><P style="margin-bottom:0pt;" class="JavadocHeading"><B>See Also:</B><blockquote style="margin-top:0pt;margin-bottom:0pt;"><p style="margin-top:0pt;margin-left:-13pt;"><a href="get_event.html">get_event</a>, <a href="test_event.html">test_event</a>, <a href="last_event.html">last_event</a>, <a href="call_key.html">call_key</a>, <a href="event2name.html">event2name</a>, <a href="event2index.html">event2index</a>, <a href="index2event.html">index2event</a>, <a href="eventtab_index.html">eventtab_index</a>, <a href="name2event.html">name2event</a></blockquote>
+</body>
+</html>
