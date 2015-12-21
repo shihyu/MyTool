@@ -568,6 +568,13 @@ function repo_sync()
     done
 }
 
+function git_init()
+{
+    git init &&
+    git add . &&
+    git ci -m 'first commit'
+}
+
 HOST_UPPER=`echo $HOSTNAME | tr '[a-z]' '[A-Z]'`
 PROMPT_COMMAND=promptCommand
 
