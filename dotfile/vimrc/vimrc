@@ -35,7 +35,7 @@ Bundle 'terryma/vim-multiple-cursors'
 " Bundle 'davidhalter/jedi-vim'
 Bundle 'sudar/vim-arduino-syntax'
 Bundle 'vim-scripts/sessionman.vim'
-Bundle 'Yggdroot/LeaderF'
+"Bundle 'Yggdroot/LeaderF'
 "Bundle 'vim-scripts/Conque-GDB'
 Bundle 'vim-gitgutter'
 Bundle 'chusiang/vim-sdcv'
@@ -266,24 +266,46 @@ noremap <C-W><C-U> :CtrlPMRU<CR>
 nnoremap <C-W>u :CtrlPMRU<CR>
 
 "let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
+
+"let g:ctrlp_custom_ignore = {
+"    \ 'dir': '\v[\/]\.(git|hg|svn)$',
+"    \ 'file': '\v\.(exe|so|dll|bak|gds)$',
+"    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+"    \ }
+"let g:ctrlp_by_filename = 1 " only lookup file name
+"let g:ctrlp_cache_dir = '/tmp/ctrlp/cache/'
+"let g:ctrlp_working_path_mode=0
+"let g:ctrlp_match_window_bottom=1
+"let g:ctrlp_max_height=15
+"let g:ctrlp_match_window_reversed=0
+"let g:ctrlp_mruf_max=500
+"let g:ctrlp_follow_symlinks=1
+""let g:ctrlp_clear_cache_on_exit = 0
+"let g:ctrlp_max_files = 1000000
+"let g:ctrlp_user_command = 'find %s -type f | grep -P "\.h$|\.hpp$|\.c$|\.cc$|\.cpp$|\.java$"'
+""let g:ctrlp_user_command = 'find %s -type f | grep -P "\.pl$|\.py$|\.lua$|\.xml$|\.sh$|\.mk$|\.h$|\.hh$|\.hpp$|\.c$|\.cc$|\.cpp$"'
+"" CtrlP - open in new tab by default
+"let g:ctrlp_prompt_mappings = {
+"    \ 'AcceptSelection("e")': ['<c-t>', '<2-LeftMouse>'],
+"    \ 'AcceptSelection("t")': ['<cr>'],
+"\ }
+
+let g:ctrlp_cmd = 'CtrlP'
+map <leader>f :CtrlPMRU<CR>
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/]\.(git|hg|svn)$',
-    \ 'file': '\v\.(exe|so|dll|bak|gds)$',
-    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
     \ }
 let g:ctrlp_by_filename = 1 " only lookup file name
 let g:ctrlp_cache_dir = '/tmp/ctrlp/cache/'
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_match_window_bottom=1
+let g:ctrlp_follow_symlinks=1
 let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
+let g:ctrlp_max_files = 1000000
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_max_files = 1000000
-let g:ctrlp_user_command = 'find %s -type f | grep -P "\.h$|\.hpp$|\.c$|\.cc$|\.cpp$|\.java$"'
-"let g:ctrlp_user_command = 'find %s -type f | grep -P "\.pl$|\.py$|\.lua$|\.xml$|\.sh$|\.mk$|\.h$|\.hh$|\.hpp$|\.c$|\.cc$|\.cpp$"'
-" CtrlP - open in new tab by default
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>', '<2-LeftMouse>'],
     \ 'AcceptSelection("t")': ['<cr>'],
