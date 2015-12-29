@@ -306,6 +306,9 @@ let g:ctrlp_match_window_reversed=0
 let g:ctrlp_max_files = 1000000
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
+let g:ctrlp_clear_cache_on_exit = 0
+"let g:ctrlp_user_command = 'find %s -type f | grep -P "\.h$|\.hpp$|\.c$|\.cc$|\.cpp$|\.java$"'
+
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>', '<2-LeftMouse>'],
     \ 'AcceptSelection("t")': ['<cr>'],
