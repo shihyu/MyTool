@@ -576,7 +576,14 @@ nnoremap <silent> <Leader>] :call fzf#run({
       \   'options':     '+m',
       \   'tmux_width': '20%'
       \ })<CR>
+
 let g:fzf_tmux_height = '20%'
 let g:fzf_tmux_width = '20%'
+
 noremap <F12> <ESC>:FZF<CR>
-nnoremap <silent><leader>o :FZF<CR>
+
+nnoremap <silent> <Leader>o :call fzf#run({
+      \   'sink':        'tabe',
+      \   'options':     '+m',
+      \   'tmux_width': '20%'
+      \ })<CR>
