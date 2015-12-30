@@ -551,9 +551,32 @@ nmap <leader>w :call SearchWord()<CR>
 " 顯示空白
 nmap <space>s :call ShowTrailingWhitespace()<CR>
 function ShowTrailingWhitespace()
-highlight WhitespaceEOL ctermbg=red guibg=red 
+highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 endfunction
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FZF
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" List of buffers
+function! BufList()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
 
+function! BufOpen(e)
+  execute 'buffer '. matchstr(a:e, '^[ 0-9]*')
+endfunction
 
+nnoremap <silent> <Leader>] :call fzf#run({
+      \   'source':      reverse(BufList()),
+      \   'sink':        function('BufOpen'),
+      \   'options':     '+m',
+      \   'tmux_width': '20%'
+      \ })<CR>
+let g:fzf_tmux_height = '20%'
+let g:fzf_tmux_width = '20%'
+noremap <F12> <ESC>:FZF<CR>
+nnoremap <silent><leader>o :FZF<CR>
