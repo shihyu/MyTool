@@ -606,3 +606,4 @@ endfunction
 
 cnoreabbrev ag Ag
 let g:ag_highlight=1
+let g:ag_format="%f:%l:%m"
