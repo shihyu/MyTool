@@ -40,6 +40,7 @@ Bundle 'vim-scripts/sessionman.vim'
 "Bundle 'vim-scripts/Conque-GDB'
 Bundle 'vim-gitgutter'
 Bundle 'chusiang/vim-sdcv'
+Bundle 'rking/ag.vim'
 "Plugin 'Valloric/YouCompleteMe'
 "Bundle 'Shougo/unite.vim'
 "Bundle 'vim-scripts/DoxygenToolkit.vim'
@@ -602,3 +603,5 @@ function! Z(...)
     exec 'cd ' . path
   endif
 endfunction
+
+cnoreabbrev ag Ag
