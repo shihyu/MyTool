@@ -556,6 +556,9 @@ highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 endfunction
 
+
+vnoremap <C-a> "-y:echo 'text' @- 'has length' strlen(@-)<CR>"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FZF
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
