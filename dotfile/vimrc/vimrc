@@ -524,8 +524,10 @@ nmap <space>g :call FilteringGetForSource().return()<CR>
 " }}}
 
 "Ag.vim
-let g:agprg="ag --column"
-cabbrev ag ag<c-\>esubstitute(getcmdline(), '^ag\>', 'Ag', '')<cr>
+let g:ag_highlight=1
+let g:grep_cmd_opts='--line-numbers --noheading'
+let g:ag_format="%f:%l:%m"
+cabbrev ag <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'Ag' : 'ag')<CR>
 if has ("Ag")
     copen 30
 endif
@@ -606,7 +608,3 @@ function! Z(...)
     exec 'cd ' . path
   endif
 endfunction
-
-cnoreabbrev ag Ag
-let g:ag_highlight=1
-let g:ag_format="%f:%l:%m"
