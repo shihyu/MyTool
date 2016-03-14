@@ -67,7 +67,7 @@ filetype plugin indent on
 "let g:gundo_preview_height = 10
 "let g:gundo_width = 30
 
-cabbrev ack ack<c-\>esubstitute(getcmdline(), '^ack\>', 'Ack!', '')<cr>
+cabbrev ack <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'Ack' : 'ack')<CR>
 if has ("Ack")
     copen 30
 endif
