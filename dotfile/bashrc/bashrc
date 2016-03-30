@@ -10,7 +10,7 @@ umask 022
 
 alias sr='shutdown -r now'
 alias sd='shutdown -h now'
-alias ls='ls --color=always'
+alias ls='ls --color=auto'
 alias ll='ls -l --block-size=M'
 alias less='less -r'
 alias rm='rm -f'
