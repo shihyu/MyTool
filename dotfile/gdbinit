@@ -1,4 +1,15 @@
-set history save on
 set history size 10000
-set history filename ~/.history/gdb
+set history filename ~/.gdb_history
+set history save on
 
+# 退出時不顯示提示信息
+set confirm off
+
+# 按照派生類型打印對象
+set print object on
+
+# 打印數組的索引下標
+set print array-indexes on
+
+# 每行打印一個結構體成員
+set print pretty on
