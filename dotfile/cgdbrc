@@ -1,0 +1,9 @@
+set arrowstyle=highlight
+set autosourcereload
+set shortcut
+set tabstop=4
+set winsplit=top_big
+hi Statement cterm=bold ctermfg=6
+hi PreProc cterm=bold ctermfg=4
+hi IncSearch ctermfg=2
+hi LineHighlight cterm=bold ctermfg=3 ctermbg=4

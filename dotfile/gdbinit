@@ -13,3 +13,8 @@ set print array-indexes on
 
 # 每行打印一個結構體成員
 set print pretty on
+
+set print union on
+
+set print address on 
+
