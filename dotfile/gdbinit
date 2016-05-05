@@ -18,3 +18,9 @@ set print union on
 
 set print address on 
 
+set print static-members on
+set print vtbl on
+set print demangle on
+set demangle-style gnu-v3
+set print sevenbit-strings off
+
