@@ -685,20 +685,21 @@ end
 # C++ related beautifiers (optional)
 #
 
+set height 0
 set history size 10000
 set history filename ~/.gdb_history
 set history save on
 
-# 退出時不顯示提示信息
+#退出時不顯示提示信息
 set confirm off
 
-# 按照派生類型打印對象
+#按照派生類型打印對象
 set print object on
 
-# 打印數組的索引下標
+#打印數組的索引下標
 set print array-indexes on
 
-# 每行打印一個結構體成員
+#每行打印一個結構體成員
 set print pretty on
 
 set print union on
@@ -711,3 +712,7 @@ set print demangle on
 set demangle-style gnu-v3
 set print sevenbit-strings off
 
+shell rm -f ./gdb.log
+set logging off
+set logging file ./gdb.log
+set logging on
