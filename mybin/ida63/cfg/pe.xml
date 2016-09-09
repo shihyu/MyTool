@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ida xmlns:xi="http://www.w3.org/2003/XInclude"
+     xmlns:xpath="http://www.idapro.com/ns/xpath"
+     xmlns:idc="http://www.idapro.com/ns/idc">
+  <templates>
+    <wizard X="pe_w">
+      <idc>
+        init_wizard_captions();
+      </idc>
+      
+      <page>
+        This wizard will guide you through the loading of a new PE file in IDA.
+
+        Select the advanced options you want to fine tune if required:
+        <checkbox xpath:visible="/ida/loaders/pe/@ordinals" variable="../../page[@X='pe_import_p']/@visible" caption="Imported DLL options"/>
+        <xi:include xpointer="xpointer(/ida/templates/checkbox[@X='analysis_c'])"/>
+        To continue, click Next.
+      </page>
+
+      <page xpath:visible="/ida/loaders/pe/@imports != 0 or /ida/loaders/pe/@resources != 0" title="Segment Creation" subtitle="How must IDA create particular segments defined in the input file?">
+        <checkbox xpath:visible="/ida/loaders/pe/@imports"   variable="/ida/loading/@neflags" idc:mask="NEF_IMPS" caption="Create imports segment" hint="Create a separate imports segment with external definitions"/>
+        <checkbox xpath:visible="/ida/loaders/pe/@resources" variable="/ida/loading/@neflags" idc:mask="NEF_RSCS" caption="Create resources segment"/>
+      </page>
+
+      <page X="pe_import_p" title="Imported DLL Options" subtitle="How must IDA handle DLLs imported by the input file?" visible="false">
+        <!-- not needed if the PE file doesn't import by ordinals -->
+        <folderselection variable="/ida/loading/@dlldir">
+          If you would like to select a different system DLL directory, click Browse.
+          (system directory subdirectories (system,system32) are added automatically)
+        </folderselection>
+        <checkbox variable="/ida/loading/@neflags" idc:mask="NEF_NAME" caption="Rename DLL entries" hint="Use mnemonic import names instead of ordinals"/>
+      </page>
+
+      <xi:include xpointer="xpointer(/ida/templates/page[@X='kernel_p'])"/>
+      <xi:include xpointer="xpointer(/ida/templates/page[starts-with(@X, 'processor_')])"/>
+      <xi:include xpointer="xpointer(/ida/templates/page[@X='analysis_p'])"/>
+    </wizard>
+  </templates>
+</ida>

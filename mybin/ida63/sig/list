@@ -1,0 +1,114 @@
+
+List of compilers supported by FLIRT (full version)
+---------------------------------------------------
+
+Aztec C v3.20d
+Borland C++ for OS/2 v1.0
+Borland C++ for OS/2 v1.5
+Borland C++ for OS/2 v2.0
+Borland C++ v2.0
+Borland C++ v3.1
+Borland C++ v4.0
+Borland C++ v4.5
+Borland C++ v5.0
+Borland C++ v5.01
+Borland C++ Builder v1.0
+Borland C++ Builder v3.0
+Borland C++ Builder v4.0
+Borland C++ Builder v5.0
+Borland C++ Builder v6.0
+Borland Developer Studio 2006
+Delphi v1.0
+Delphi v2.0
+Delphi v3.0
+Delphi v4.0
+Delphi v5.0
+EMX (GCC) for OS/2 v0.9b
+IBM C Set v2.00
+IBM C Set v2.01
+IBM C Set v2.10
+Lattice C v3.30
+Metaware High C for OS/2
+Microsoft C v5.0
+Microsoft C v6.0
+Microsoft C v7.0
+Microsoft Quick C v1.0
+Microsoft Quick C v2.01
+Microsoft Visual C++ v1.0
+Microsoft Visual C++ v1.5
+Microsoft Visual C++ v2.0
+Microsoft Visual C++ v4.0
+Microsoft Visual C++ v4.1
+Microsoft Visual C++ v4.2
+Microsoft Visual C++ v5.0
+Microsoft Visual C++ v6.0
+Microsoft Visual C++ v7.0
+Microsoft Visual C++ v8.0
+Microsoft Visual.Net
+NDP C v4.2
+Optima C++ v1.0
+Symantec C++ v6.0
+Symantec C++ v6.1
+Symantec C++ v7.2
+Turbo C v2.00
+Turbo C v2.01
+Turbo C++ v1.01
+Turbo Pascal for DOS v5.0
+Turbo Pascal for DOS v5.5
+Turbo Pascal for DOS v6.0
+Turbo Pascal for DOS v7.0
+Turbo Pascal for Windows v6.0
+Turbo Pascal for Windows v7.0
+Visual Age C++ v3.0
+Watcom C++ v9.01d
+Watcom C++ v9.5
+Watcom C++ v10.0
+Watcom C++ v10.0b
+Watcom C++ v10.5
+Watcom C++ v10.6
+Watcom C++ v10.6 for QNX
+Watcom C++ v11.0
+Zortech C++ v1.0
+Zortech C++ v3.1
+
+
+Standard libraries supported by FLIRT
+-------------------------------------
+
+MFC 16bit v2.0
+MFC 16bit v2.5
+MFC 32bit v3.1
+MFC 32bit v4.0
+MFC 32bit v4.2 for IBM PC
+MFC 64bit
+Vireo
+CTask
+
+Objective Grid Library v7.0
+Objective Common Library v6.0
+Objective Toolkit Pro Library v6.0
+MVC Library v6.0
+
+
+Additional things supported by FLIRT
+------------------------------------
+
+BDSI 3.1 kernel functions (incomplete)
+Intel C specific libraries (iclmat.sig)
+
+
+Non IBM PC platforms
+--------------------
+
+MFC 32bit v4.2   for ARM
+MFC 32bit v4.2   for SH3
+MFC 32bit v4.2   for SH4
+MFC 32bit v4.2   for MIPS
+MFC 32bit v4.2   for X86 emulation
+C runtime        for TMS320C6
+C runtime        for Sony Playstation
+GNU C v2.8.1     for H8/300
+Keil runtime     for C166
+CTOOLS           for Intel 960
+PSX, PSX2        for MIPS
+C runtime        for Trimedia
