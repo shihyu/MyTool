@@ -711,6 +711,7 @@ set print vtbl on
 set print demangle on
 set demangle-style gnu-v3
 set print sevenbit-strings off
+set step-mode on
 
 shell rm -f ./gdb.log
 set logging off
