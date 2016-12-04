@@ -141,12 +141,12 @@ function Compile_gcc()
         set autochdir
         execute "w"
         "execute "!clang -Wall -Wextra -O2 -g  % -o %:r -lm"
-        execute "!gcc  -Wall  -pedantic -ansi -g -O0 % -o %:r -lm"
+        execute "!gcc  -W -Wall  -pedantic -ansi -std=c99 -g -O0 % -o %:r -lm -lpthread"
     elseif &filetype=="cpp"
         set autochdir
         execute "w"
         "execute "!clang++ -Wall -Wextra -O2 -g -std=c++11 % -o %:r"
-        execute "!g++  -Wall  -pedantic -ansi -g -O0 % -o %:r -lm"
+        execute "!g++  -W -Wall  -pedantic -ansi -g -std=c++11 -O0 % -o %:r -lm"
     elseif &filetype=="java"
         set autochdir
         execute "w"
