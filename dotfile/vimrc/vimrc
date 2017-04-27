@@ -42,6 +42,7 @@ Bundle 'vim-gitgutter'
 Bundle 'chusiang/vim-sdcv'
 Bundle 'rking/ag.vim'
 Bundle 'jiangmiao/auto-pairs'
+Bundle 'w0rp/ale'
 "Plugin 'Valloric/YouCompleteMe'
 "Bundle 'Shougo/unite.vim'
 "Bundle 'vim-scripts/DoxygenToolkit.vim'
@@ -546,7 +547,7 @@ nmap tn :tabnew<cr>
 nmap td :tabclose<cr>
 
 let g:gitgutter_sign_added = '✚'
-let g:gitgutter_sign_modified = '➜'
+let g:gitgutter_sign_modified = '➡'
 let g:gitgutter_sign_removed = '✘'
 
 
