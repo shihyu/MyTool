@@ -591,10 +591,19 @@ let g:fzf_tmux_width = '20%'
 noremap <F12> <ESC>:FZF<CR>
 
 nnoremap <silent> <Leader>o :call fzf#run({
-      \   'sink':        'tabe',
-      \   'options':     '+m',
-      \   'tmux_width': '20%'
+      \   'sink':       'tabe',
+      \   'options':     '-m',
+      \   'tmux_width': '40%'
       \ })<CR>
+
+
+" -----------------------------------------
+"  ale.vim
+"  disable particular linters
+let g:ale_linters = {
+\   'java': ['eslint'],
+\}
+" -----------------------------------------
 
 
 " Z - cd to recent / frequent directories
