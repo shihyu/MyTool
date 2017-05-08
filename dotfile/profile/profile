@@ -21,9 +21,15 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+cd /home/shihyu/upload
+nohup python -m SimpleHTTPServer 1111 >/dev/null 2>&1 &
+cd ~
 
 nohup python /home/shihyu/.mybin/proxy/proxy.py  >/dev/null 2>&1 & # doesn't create nohup.out
 
 cd /media/shihyu/Toshiba/upload
 nohup python -m SimpleHTTPServer 8888  >/dev/null 2>&1 & # doesn't create nohup.out
 cd ~
+
+#nohup autossh -M 54321 -NfR 1234:localhost:22 shihyu@106.104.115.82 &
+nohup autossh -M 56789 -NfR 9999:localhost:22 shihyu@106.104.115.82 &
