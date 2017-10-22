@@ -38,11 +38,13 @@ Bundle 'sudar/vim-arduino-syntax'
 Bundle 'vim-scripts/sessionman.vim'
 "Bundle 'Yggdroot/LeaderF'
 "Bundle 'vim-scripts/Conque-GDB'
-Bundle 'vim-gitgutter'
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'chusiang/vim-sdcv'
 Bundle 'rking/ag.vim'
 Bundle 'jiangmiao/auto-pairs'
-Bundle 'w0rp/ale'
+"Bundle 'w0rp/ale'
+"Bundle 'JamshedVesuna/vim-markdown-preview'
 "Plugin 'Valloric/YouCompleteMe'
 "Bundle 'Shougo/unite.vim'
 "Bundle 'vim-scripts/DoxygenToolkit.vim'
@@ -550,6 +552,7 @@ let g:gitgutter_sign_added = '✚'
 "let g:gitgutter_sign_modified = '➡'
 let g:gitgutter_sign_modified = '✎'
 let g:gitgutter_sign_removed = '✘'
+let g:gitgutter_max_signs = 500
 
 
 nmap <leader>w :call SearchWord()<CR>
