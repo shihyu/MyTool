@@ -635,7 +635,13 @@ document pbitset
 	pbitset b - prints all bits in b
 end
 
+define savebps
+save breakpoints .gdb_bps
+end
 
+define loadbps
+source .gdb_bps
+end
 
 #
 # std::string
