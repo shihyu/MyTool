@@ -719,6 +719,8 @@ set demangle-style gnu-v3
 set print sevenbit-strings off
 set step-mode on
 
+set disassembly-flavor intel
+
 shell rm -f ./gdb.log
 set logging off
 set logging file ./gdb.log
