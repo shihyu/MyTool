@@ -1,0 +1,391 @@
+#export PS1='\[\e[36;1m\][\[\e[33;1m\]\u\[\e[35;1m\]@\[\e[32;1m\]\H \[\e[31;1m\]\w\[\e[36;1m\]]\[\e[34;1m\]\$ \[\e[37;1m\]'
+export PS1='\[\e[36;1m\][\[\e[33;1m\]姚\[\e[35;1m\]@\[\e[32;1m\]^^ \[\e[31;1m\]\w\[\e[36;1m\]]\[\e[34;1m\]\$ \[\e[37;1m\]'
+#PS1="\[$IBlack\]┌—————(\[$BWhite\]姚\[$IBlack\])—————(\[$IBlue\]\w\[$IBlack\]) \n└> \[$BRed\]$ \[$White\]"
+
+export LC_ALL=zh_TW.UTF-8
+export LANG=zh_TW.UTF-8
+export TERM=xterm
+#export TERM=linux
+umask 022
+
+alias sr='shutdown -r now'
+alias sd='shutdown -h now'
+alias ls='ls --color=auto'
+alias ll='ls -l --block-size=M'
+alias less='less -r'
+alias rm='rm -f'
+alias h='history'
+alias hc='history -c'
+alias mnt='mount'
+alias umnt='umount'
+alias sx='startx'
+alias lt='logout'
+alias df='df -B G'
+alias cl='clear'
+alias vi='vim'
+alias indent='indent -bad -bap -saf -sai -saw -npro -npcs -npsl -cli8 -i8 -ts8 -sob -l80 -ss -bl -bls -bli 0'
+alias gcc='gcc -Wall -g -pedantic'
+alias style='astyle --A2 --delete-empty-lines -s4 -K -f -p -H -U -c -n -N -L -Y -M -j -k1 -z2'
+
+alias pull='adb pull /data/htclog'
+alias tombstones='adb pull /data/tombstones'
+alias dlx_envsetup='source build/envsetup.sh; choosecombo 1 dlx eng; export ANDROID_SOURCE=$(gettop)'
+alias m7cdug_envsetup='source build/envsetup.sh; choosecombo 1 m7cdug userdebug DEBUG'
+alias dlxp_envsetup='source build/envsetup.sh ; choosecombo 1 dlpdtu userdebug DEBUG'
+alias a5tl_envsetup='source build/envsetup.sh ; partner_setup htc_a5tl A5TL_Generic_WWE_DEBUG'
+alias sense60_envsetup='export HTCFW_ENABLED=true; source build/envsetup.sh ; partner_setup m7 M7_Generic_WWE_DEBUG'
+alias img_zip='zip rom.zip -j android-info.txt *.img *.hdr'
+alias logcat='adb logcat -c && adb logcat -v threadtime 2>&1 | tee /tmp/logcat.txt'
+alias emulator_envsetup='source build/envsetup.sh; lunch full-eng'
+alias eclipse='/home/shihyu/adt-bundle-linux-x86_64-20130917/eclipse/eclipse'
+alias findcpp="find . -name '*.cpp' -print"
+alias findc="find . -name '*.c'"
+alias findh="find . -name '*.h'"
+alias findmk="find . -name '*.mk'"
+alias findjava="find . -name '*.java'"
+alias netpid="netstat -tlnp"
+alias arduino='sudo /home/shihyu/.mybin/arduino-1.8.1/arduino'
+alias matlab='/media/shihyu/ssd/matlab2017/bin/matlab'
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias cd.='cd ..'
+alias cd..='cd ..'
+
+export HISTTIMEFORMAT='%F %T'
+alias h1='history 10'
+alias h2='history 20'
+alias h3='history 30'
+
+export HISTFILESIZE=10000
+export HISTSIZE=10000
+
+function doxygen_init()
+{
+    doxygen -g 
+    sed -ri.bak '/^RECURSIVE\s|^HAVE_DOT\s|^EXTRACT_ALL\s|^EXTRACT_PRIVATE\s|^EXTRACT_STATIC\s|^CALL_GRAPH\s|^CALLER_GRAPH\s/s/= NO/= YES/' Doxyfile
+}
+
+function myopencc()
+{
+for doc in `find . -name '*.md'` 
+do  
+    doc=${doc#./} 
+    doc1="$doc""~" 
+    echo $doc
+    echo "$doc1" 
+    opencc -i $doc -o $doc1 -c s2tw.json
+    #opencc -i $doc -o $doc1 -c zhs2zht.ini
+    mv "$doc1" "$doc"
+done 
+}
+
+function kill_process()
+{
+    sudo kill -9  `ps aux | grep $1 | grep -v grep | awk '{print $2}'`
+}
+
+function rm_log()
+{
+    adb shell rm /data/htclog/*;
+    adb shell rm /data/log/*;
+    adb shell rm /data/tombstones/tombstone_*;
+}
+
+function logsort()
+{
+    ls -lrt `find . -name "$1"` | awk '{print $NF}'
+}
+
+function tar_bz2_dir()
+{ # ©2007 dsplabs.com.au
+    if [ "$1" != "" ]; then
+        FOLDER_IN=`echo $1 |sed -e 's/\/$//'`;
+        FILE_OUT="$FOLDER_IN.tar.bz2";
+        FOLDER_IN="$FOLDER_IN/";
+        echo "Compressing $FOLDER_IN into $FILE_OUT…";
+        echo "tar cjf $FILE_OUT $FOLDER_IN";
+        if [ -z "`apt-cache show pbzip2 2> /dev/null`" -o -z "pbzip2" ] ;
+        then
+            tar cjf "$FILE_OUT" "$FOLDER_IN";
+        else
+            time tar -c "$FOLDER_IN" | pbzip2 -cv -m5000 > "$FILE_OUT";
+        fi
+        echo "Done.";
+    fi
+}
+
+function d_bz2_dir()
+{
+
+    if [ "$1" != "" ]; then
+        time pbzip2 -dvc -m5000 $1 | tar x
+    fi
+}
+
+function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+
+function push_so()
+{
+    adb shell rm /data/log/* ;
+    adb shell rm /data/memleak/* ;
+    adb shell rm /data/tombstones/tomb* ;
+    adb remount ;
+    adb push $1 /system/lib ;
+    adb reboot
+}
+
+function gaia_sync()
+{
+    #adb shell rm /data/log/* &&
+    rm_log &&
+    adb remount &&
+    adb sync &&
+    adb reboot
+}
+
+function push_apk()
+{
+    adb shell rm /data/log/* ;
+    adb remount ;
+    adb push $1 /system/app ;
+    adb reboot
+}
+
+function attach_pid()
+{
+    PID=`adb shell ps | grep $1 | awk '{print $2}'`
+    adb shell gdbserver :5039 --attach $PID
+}
+
+function get_maps()
+{
+    PID=`adb shell ps | grep $1 | awk '{print $2}'`
+    adb shell cat /proc/$PID/maps > ~/maps
+    sh /home/shihyu/gen_add_symbol_file.sh /home/shihyu/maps
+}
+
+function d_bz2_dir()
+{
+    if [ "$1" != "" ]; then
+        time pbzip2 -dvc -m5000 $1 | tar x
+    fi
+}
+
+function scopy()
+{
+    scp $1 shihyu@$2:~/upload
+}
+
+function htc_flash_zip()
+{
+    local OUT_ROOT=$(get_abs_build_var PRODUCT_OUT)
+    local file_name=( $(md5sum $OUT_ROOT/boot.img) )
+    file_name="$PWD/${file_name[0]}.zip"
+
+    local flash_cmd="sudo $HOME/.bin/htc_fastboot flash zip $file_name"
+
+    echo "Product: $TARGET_PRODUCT"
+    echo "Zipping file for fastbooting..."
+    sudo echo -n
+    zip -j $file_name $OUT_ROOT/{*.img,*.hdr,android-info.txt}
+
+    eval $flash_cmd $* || eval $flash_cmd $*
+}
+
+function gaia_zip()
+{
+    adb reboot-bootloader
+
+    htc_flash_zip
+
+    while [ $? = 1 ]; do
+        sleep 3
+        htc_flash_zip
+    done
+
+    fastboot reboot
+}
+
+function gaia_rom()
+{
+    adb reboot-bootloader
+    #if [ "`zip -sf $1 | grep qsc_radio.img`" != "" ]; then
+        #zip $1 -d qsc_radio.img
+    #fi
+    echo "partial rom start"
+    fastboot flash zip $1
+    while [ $? = 1 ]; do
+        sleep 3
+        fastboot flash zip $1
+    done
+    echo "partial rom end"
+    fastboot reboot-bootloader
+    echo "COS rom start"
+    fastboot flash zip $2
+    while [ $? = 1 ]; do
+        sleep 3
+        fastboot flash zip $2
+    done
+    echo "COS rom end"
+    fastboot reboot
+}
+
+function htc_fastboot_rom()
+{
+    adb reboot-bootloader
+    #if [ "`zip -sf $1 | grep qsc_radio.img`" != "" ]; then
+        #zip $1 -d qsc_radio.img
+    #fi
+    echo "partial rom start"
+    $HOME/.bin/htc_fastboot flash zip $1
+    while [ $? = 1 ]; do
+        sleep 3
+        $HOME/.bin/htc_fastboot flash zip $1
+    done
+    echo "partial rom end"
+    fastboot reboot-bootloader
+    echo "COS rom start"
+    $HOME/.bin/htc_fastboot flash zip $2
+    while [ $? = 1 ]; do
+        sleep 3
+        $HOME/.bin/htc_fastboot flash zip $2
+    done
+    echo "COS rom end"
+    fastboot reboot
+}
+
+function logparse()
+{
+   ack -w 'Exception|ANR|E\/|SIGSEGV|FATAL|EXCEPTION\:|W\/mutexwatch|die|>>> .* <<<|permission|Out of memory|Call stack\:|#[\d][\d]' $1 >  /tmp/aa ; vim /tmp/aa
+}
+
+function logack()
+{
+    ls -rt | find . -name "$1" | xargs ack -Q "$2"
+}
+
+function CD()
+{
+    if [ -f "$1" ]; then
+        cd `dirname "$1"`
+    else
+        cd $1
+    fi
+}
+
+function repo_sync()
+{
+    echo  "======start  repo  sync======"
+    repo sync
+    while [ $? -ne 0 ]
+    do
+    repo sync -j8
+    done
+}
+
+function git_init()
+{
+    git init &&
+    git add . &&
+    git ci -m 'first commit'
+}
+
+# colorful man page
+export PAGER="`which less` -s"
+export BROWSER="$PAGER"
+export LESS_TERMCAP_mb=$'\E[38;5;167m'
+export LESS_TERMCAP_md=$'\E[38;5;39m'
+export LESS_TERMCAP_me=$'\E[38;5;231m'
+export LESS_TERMCAP_se=$'\E[38;5;231m'
+export LESS_TERMCAP_so=$'\E[38;5;167m'
+export LESS_TERMCAP_ue=$'\E[38;5;231m'
+export LESS_TERMCAP_us=$'\E[38;5;167m'
+
+
+##boost
+#export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/usr/local/boost/include
+#export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/boost/lib
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/boost/lib
+#
+#
+#export PATH="/home/shihyu/data/tq210_note/4.4.6/bin/:$PATH"
+#export PATH="/home/shihyu/data/tq210_note/mkimage/:$PATH"
+#export PATH="/usr/local/qemu-linaro/bin:$PATH"
+#export PATH="/home/shihyu/.mybin/opencc/bin:$PATH"
+#
+#
+#
+#
+#JAVA_HOME=/media/shihyu/toshiba/jdk1.6.0_45
+#export JRE_HOME=$JAVA_HOME/jre
+#export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
+#export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+#
+#export PATH="/home/shihyu/data/bluegriffon:$PATH"
+#
+#export PATH="/home/shihyu/.mybin/scitools/bin/linux64:$PATH"
+#
+#export PATH=/home/shihyu/Qt5.3.1/5.3/gcc_64/bin:$PATH
+#
+#export PATH=/usr/local/node-v0.10.31-linux-x64/bin:$PATH
+#
+#
+#PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opencv/lib/pkgconfig
+#export PKG_CONFIG_PATH
+#
+#ulimit -c unlimited
+#
+#
+#
+## .bashrc - bash startup file
+##
+## Mon Oct 3 21:44:00 BST 2011
+##
+#
+#history(){
+#  syncHistory
+#  builtin history "$@"
+#}
+#
+#syncHistory(){
+#  builtin history -a
+#  HISTFILESIZE=$HISTFILESIZE
+#  builtin history -c
+#  builtin history -r
+#}
+#
+#promptCommand(){
+#  if [ "$TERM" = xterm ]
+#  then case "$DISPLAY" in
+#       :*)  printf "\033]0;%s\007"                     "$PWD" ;;
+#       *)   printf "\033]0;%s -- %s\007" "$HOST_UPPER" "$PWD" ;;
+#       esac
+#  fi
+#  syncHistory
+#}
+#
+#
+
+#
+#HOST_UPPER=`echo $HOSTNAME | tr '[a-z]' '[A-Z]'`
+#PROMPT_COMMAND=promptCommand
+#
+#
+#
+
+export PATH=$HOME/.mybin:$PATH
+export PATH="/home/shihyu/.mybin/gdb_python3/bin:$PATH"
+export PATH=$HOME/.mybin/vim/bin:$PATH
+eval "$(fasd --init auto)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# added by Anaconda3 installer
+export PATH="/home/shihyu/anaconda3/bin:$PATH"
