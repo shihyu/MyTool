@@ -721,9 +721,9 @@ set step-mode on
 
 set disassembly-flavor intel
 
-shell rm -f ./gdb.log
+shell rm -f /tmp/gdb.log
 set logging off
-set logging file ./gdb.log
+set logging file /tmp/gdb.log
 set logging on
 
 python
