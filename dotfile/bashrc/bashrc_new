@@ -1,5 +1,5 @@
 #export PS1='\[\e[36;1m\][\[\e[33;1m\]\u\[\e[35;1m\]@\[\e[32;1m\]\H \[\e[31;1m\]\w\[\e[36;1m\]]\[\e[34;1m\]\$ \[\e[37;1m\]'
-export PS1='\[\e[36;1m\][\[\e[33;1m\]姚\[\e[35;1m\]@\[\e[32;1m\]^^ \[\e[31;1m\]\w\[\e[36;1m\]]\[\e[34;1m\]\$ \[\e[37;1m\]'
+export PS1='\[\e[36;1m\][\[\e[33;1m\]姚\[\e[35;1m\]@\[\e[32;1m\]🐍💎\[\e[31;1m\]\w\[\e[36;1m\]]\[\e[34;1m\]\$ \[\e[37;1m\]'
 #PS1="\[$IBlack\]┌—————(\[$BWhite\]姚\[$IBlack\])—————(\[$IBlue\]\w\[$IBlack\]) \n└> \[$BRed\]$ \[$White\]"
 
 export LC_ALL=zh_TW.UTF-8
@@ -57,6 +57,7 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias cd.='cd ..'
 alias cd..='cd ..'
+alias py_debug='python -m pudb'
 
 export HISTTIMEFORMAT='%F %T'
 alias h1='history 10'
@@ -317,16 +318,12 @@ export LESS_TERMCAP_us=$'\E[38;5;167m'
 #
 #export PATH="/home/shihyu/data/tq210_note/4.4.6/bin/:$PATH"
 #export PATH="/home/shihyu/data/tq210_note/mkimage/:$PATH"
-#export PATH="/usr/local/qemu-linaro/bin:$PATH"
-#export PATH="/home/shihyu/.mybin/opencc/bin:$PATH"
+export PATH="/home/shihyu/.mybin/qemu/bin:$PATH"
+export PATH="/home/shihyu/.mybin/opencc/bin:$PATH"
 #
 #
 #
 #
-#JAVA_HOME=/media/shihyu/toshiba/jdk1.6.0_45
-#export JRE_HOME=$JAVA_HOME/jre
-#export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
-#export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 #
 #export PATH="/home/shihyu/data/bluegriffon:$PATH"
 #
@@ -380,9 +377,24 @@ export LESS_TERMCAP_us=$'\E[38;5;167m'
 #
 #
 
+export ANDROID_HOME="/media/shihyu/Toshiba/vr_sdk_ndk/android-sdk-linux"
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JRE_HOME=${JAVA_HOME}/jre 
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+export JRE_HOME=${JAVA_HOME}/jre 
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+
+
 export PATH=$HOME/.mybin:$PATH
 export PATH="/home/shihyu/.mybin/gdb_python3/bin:$PATH"
 export PATH=$HOME/.mybin/vim/bin:$PATH
+#export PATH=$HOME/.mybin/node-v9.9.0-linux-x64/bin:$PATH
+
+export CPLUS_INCLUDE_PATH=/home/shihyu/.mybin/eigen-eigen-5a0156e40feb
+
 eval "$(fasd --init auto)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
