@@ -1,0 +1,20 @@
+# This file maintains persistent names for network interfaces.
+# See udev(7) for syntax.
+#
+# Entries are automatically added by the 75-persistent-net-generator.rules
+# file; however you are also free to add your own entries.
+
+# PCI device 0x10ec:0x8168 (r8169)
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="8c:89:a5:e1:93:8c", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth*", NAME="eth0"
+
+# USB device 0x0bda:0x8176 (usb)
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:d0:41:cb:54:72", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="wlan*", NAME="wlan0"
+
+# USB device 0x0bda:0x8176 (usb)
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:e0:4c:81:92:1b", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="wlan*", NAME="wlan1"
+
+# USB device 0x0bda:0x8176 (usb)
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:e0:4c:81:92:a3", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="wlan*", NAME="wlan2"
+
+# USB device 0x0bda:0x8176 (usb)
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:e0:4c:81:92:7b", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="wlan*", NAME="wlan3"

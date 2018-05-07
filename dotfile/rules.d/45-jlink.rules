@@ -1,0 +1,10 @@
+BUS=="usb", ACTION=="add", SUBSYSTEM!=="usb_device", GOTO="kcontrol_rules_end"
+
+# Give owner and group "rw" (MODE=66) access. Give all users "r" (MODE=4) access.
+ATTRS{idProduct}=="0101", ATTRS{idVendor}=="1366", MODE="664", GROUP="plugdev"
+ATTRS{idProduct}=="0102", ATTRS{idVendor}=="1366", MODE="664", GROUP="plugdev"
+ATTRS{idProduct}=="0103", ATTRS{idVendor}=="1366", MODE="664", GROUP="plugdev"
+ATTRS{idProduct}=="0104", ATTRS{idVendor}=="1366", MODE="664", GROUP="plugdev"
+# J-Link OBs with CDC functionality
+ATTRS{idProduct}=="0105", ATTRS{idVendor}=="1366", MODE="664", GROUP="plugdev"
+LABEL="kcontrol_rules_end"
