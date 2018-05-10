@@ -1,0 +1,21 @@
+# This file maintains persistent names for CD/DVD reader and writer devices.
+# See udev(7) for syntax.
+#
+# Entries are automatically added by the 75-cd-aliases-generator.rules
+# file; however you are also free to add your own entries provided you
+# add the ENV{GENERATED}=1 flag to your own rules as well.
+# DVD-RW_DVR-218L (pci-0000:00:1f.2-scsi-1:0:0:0)
+SUBSYSTEM=="block", ENV{ID_CDROM}=="?*", ENV{ID_PATH}=="pci-0000:00:1f.2-scsi-1:0:0:0", SYMLINK+="cdrom", ENV{GENERATED}="1"
+SUBSYSTEM=="block", ENV{ID_CDROM}=="?*", ENV{ID_PATH}=="pci-0000:00:1f.2-scsi-1:0:0:0", SYMLINK+="cdrw", ENV{GENERATED}="1"
+SUBSYSTEM=="block", ENV{ID_CDROM}=="?*", ENV{ID_PATH}=="pci-0000:00:1f.2-scsi-1:0:0:0", SYMLINK+="dvd", ENV{GENERATED}="1"
+SUBSYSTEM=="block", ENV{ID_CDROM}=="?*", ENV{ID_PATH}=="pci-0000:00:1f.2-scsi-1:0:0:0", SYMLINK+="dvdrw", ENV{GENERATED}="1"
+
+# Android_Phone (pci-0000:00:1a.0-usb-0:1.2:1.0-scsi-0:0:0:1)
+SUBSYSTEM=="block", ENV{ID_CDROM}=="?*", ENV{ID_SERIAL}=="HTC_Android_Phone_HT21JW100287-0:1", SYMLINK+="cdrom1", ENV{GENERATED}="1"
+
+# PIONEER_DVD-RW_DVR-218L (pci-0000:00:1f.2-scsi-0:0:0:0)
+SUBSYSTEM=="block", ENV{ID_CDROM}=="?*", ENV{ID_PATH}=="pci-0000:00:1f.2-scsi-0:0:0:0", SYMLINK+="cdrom2", ENV{GENERATED}="1"
+SUBSYSTEM=="block", ENV{ID_CDROM}=="?*", ENV{ID_PATH}=="pci-0000:00:1f.2-scsi-0:0:0:0", SYMLINK+="cdrw2", ENV{GENERATED}="1"
+SUBSYSTEM=="block", ENV{ID_CDROM}=="?*", ENV{ID_PATH}=="pci-0000:00:1f.2-scsi-0:0:0:0", SYMLINK+="dvd2", ENV{GENERATED}="1"
+SUBSYSTEM=="block", ENV{ID_CDROM}=="?*", ENV{ID_PATH}=="pci-0000:00:1f.2-scsi-0:0:0:0", SYMLINK+="dvdrw2", ENV{GENERATED}="1"
+

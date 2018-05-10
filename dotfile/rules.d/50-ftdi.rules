@@ -1,0 +1,9 @@
+# udev rules file for OpenJTAG of www.100ask.net
+#
+
+ACTION!="add", GOTO="OpenJTAG_rules_end"
+#SUBSYSTEM!="usb_device", GOTO="OpenJTAG_rules_end"
+
+SYSFS{idVendor}=="1457", SYSFS{idProduct}=="5118", MODE="664", GROUP="plugdev", RUN+="/sbin/modprobe ftdi_sio vendor=0x1457 product=0x5118"
+
+LABEL="OpenJTAG_rules_end"

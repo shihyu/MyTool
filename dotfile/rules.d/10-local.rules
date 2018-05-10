@@ -1,0 +1,5 @@
+SUBSYSTEM!="usb_device", ACTION!="add", GOTO="objdev_rules_end"
+#USBasp
+ATTRS{idVendor}=="1f3a", ATTRS{idProduct}=="efe8", GROUP="shihyu",
+MODE="0666"
+LABEL="objdev_rules_end"
