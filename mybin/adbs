@@ -1,0 +1,11 @@
+DEVICES=`adb devices | ag -v '\d+\.\d+' | tail  -n +2 |  cut -f1`
+
+echo $DEVICES
+
+for DEVICE in $DEVICES
+do
+  RUN="adb -s $DEVICE $@"
+  echo $RUN
+  ${RUN}
+done
+
