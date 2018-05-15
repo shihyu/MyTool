@@ -1,11 +1,17 @@
-DEVICES=`adb devices | ag -v '\d+\.\d+' | tail  -n +2 |  cut -f1`
-
-echo $DEVICES
+#DEVICES=`adb devices | ag -v '\d+\.\d+' | tail  -n +2 |  cut -f1`
+DEVICES=`adb devices | tail  -n +2 | cut -f1`
+#echo $DEVICES
 
 for DEVICE in $DEVICES
 do
-  RUN="adb -s $DEVICE $@"
-  echo $RUN
-  ${RUN}
+RUN="adb -s $DEVICE $@"
+    Vaild=`echo $DEVICE | ag -v '\d+\.\d+\.\d+\.\d+\:\d+'`
+    if [[ -n "$Vaild" ]]; then
+        #echo $Vaild
+        RUN="adb -s $DEVICE $@"
+        break
+    fi
 done
 
+echo $RUN
+${RUN}
