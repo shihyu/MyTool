@@ -378,6 +378,7 @@ export PATH="/home/shihyu/.mybin/opencc/bin:$PATH"
 #
 #
 
+ulimit -c unlimited
 export ANDROID_HOME="/media/shihyu/Toshiba/vr_sdk_ndk/android-sdk-linux"
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
@@ -399,6 +400,22 @@ export CPLUS_INCLUDE_PATH=/home/shihyu/.mybin/eigen-eigen-5a0156e40feb
 eval "$(fasd --init auto)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# FZF
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND='fd --type f'
+export FZF_ALT_C_COMMAND='fd --type d'
+export FZF_COMPLETION_TRIGGER=''
+export FZF_DEFAULT_OPTS="--height 40% --reverse --border --prompt '>>>' \
+    --bind 'alt-j:preview-down,alt-k:preview-up,alt-v:execute(vi {})+abort,ctrl-y:execute-silent(cat {} | pbcopy)+abort,?:toggle-preview' \
+    --header 'A-j/k: preview down/up, A-v: open in vim, C-y: copy, ?: toggle preview' \
+    --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null'"
+export FZF_CTRL_T_OPTS=$FZF_DEFAULT_OPTS
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window hidden:wrap --bind '?:toggle-preview'"
+export FZF_ALT_C_OPTS="--height 40% --reverse --border --prompt '>>>' \
+    --bind 'alt-j:preview-down,alt-k:preview-up,?:toggle-preview' \
+    --header 'A-j/k: preview down/up, A-v: open in vim, C-y: copy, ?: toggle preview' \
+    --preview 'tree -C {}'"
 
 # added by Anaconda3 installer
 export PATH="/home/shihyu/anaconda3/bin:$PATH"
