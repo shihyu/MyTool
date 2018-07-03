@@ -269,6 +269,11 @@ function htc_fastboot_rom()
     fastboot reboot
 }
 
+function lg()
+{
+    ack 'UsbHelper|\[ubeacon\]|ChirpDS|ChirpID|ChirpMain|GetFocusPoseState CTLR|E ActivityManager|ChirpDeviceStateRunnable|ChirpUSB' $1 > aa
+}
+
 function logparse()
 {
    ack -w 'Exception|ANR|E\/|SIGSEGV|FATAL|EXCEPTION\:|W\/mutexwatch|die|>>> .* <<<|permission|Out of memory|Call stack\:|#[\d][\d]' $1 >  /tmp/aa ; vim /tmp/aa
