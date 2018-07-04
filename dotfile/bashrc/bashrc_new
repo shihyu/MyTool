@@ -271,7 +271,8 @@ function htc_fastboot_rom()
 
 function lg()
 {
-    ack 'UsbHelper|\[ubeacon\]|ChirpDS|ChirpID|ChirpMain|GetFocusPoseState CTLR|E ActivityManager|ChirpDeviceStateRunnable|ChirpUSB' $1 > aa
+    ack -i  'isTrackedDeviceConnected|ANR|Crash|oemValid|UsbHelper|\[ubeacon\]|ChirpDS|ChirpID|ChirpMain|GetPoseState CTLR|E ActivityManager|ChirpDeviceStateRunnable|ChirpUSB' $1 > lg &&
+    ack  'ChirpID1\: \[\+\]Position|ChirpID1\: Head Position|ChirpID1\: Head Rotation|ChirpID1\: Tracker Position\[\-\]|ChirpID1\: Tracker Rotation\[\-\]' lg > ChirpID1_pose
 }
 
 function logparse()
