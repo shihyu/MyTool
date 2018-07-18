@@ -405,6 +405,7 @@ export PATH=${JAVA_HOME}/bin:$PATH
 export PATH=$HOME/.mybin:$PATH
 export PATH="/home/shihyu/.mybin/gdb_python3/bin:$PATH"
 export PATH=$HOME/.mybin/vim/bin:$PATH
+export RIPGREP_CONFIG_PATH=$HOME/.mybin/ripgreprc
 #export PATH=$HOME/.mybin/node-v9.9.0-linux-x64/bin:$PATH
 
 export CPLUS_INCLUDE_PATH=/home/shihyu/.mybin/eigen-eigen-5a0156e40feb
