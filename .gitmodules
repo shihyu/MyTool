@@ -1,0 +1,18 @@
+[submodule "common_tools/cgdb"]
+	path = common_tools/cgdb
+	url = https://github.com/cgdb/cgdb
+[submodule "common_tools/fzf"]
+	path = common_tools/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "common_tools/the_silver_searcher"]
+	path = common_tools/the_silver_searcher
+	url = https://github.com/ggreer/the_silver_searcher
+[submodule "common_tools/fasd"]
+	path = common_tools/fasd
+	url = https://github.com/clvv/fasd
+[submodule "common_tools/ripgrep"]
+	path = common_tools/ripgrep
+	url = https://github.com/BurntSushi/ripgrep
+[submodule "common_tools/ack2"]
+	path = common_tools/ack2
+	url = https://github.com/beyondgrep/ack2
