@@ -60,6 +60,7 @@ alias ......="cd ../../../../.."
 alias cd.='cd ..'
 alias cd..='cd ..'
 alias py_debug='python -m pudb'
+alias vf='vim `find -name "*.cpp" -o -name "*.cc" -o -name "*.java" -o -name "*.h" | fzf`'
 
 export HISTTIMEFORMAT='%F %T'
 alias h1='history 10'
@@ -190,6 +191,17 @@ function d_bz2_dir()
 function scopy()
 {
     scp $1 shihyu@$2:~/upload
+}
+
+function vg() {
+  local file
+
+  file="$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1 " +" $2}')"
+
+  if [[ -n $file ]]
+  then
+     vim $file
+  fi
 }
 
 function htc_flash_zip()
@@ -406,7 +418,6 @@ export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 
-
 export PATH=$HOME/.mybin:$PATH
 export PATH="/home/shihyu/.mybin/gdb_python3/bin:$PATH"
 export PATH=$HOME/.mybin/vim/bin:$PATH
@@ -421,16 +432,6 @@ eval "$(fasd --init auto)"
 
 # FZF
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
-vg() {
-  local file
-
-  file="$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1 " +" $2}')"
-
-  if [[ -n $file ]]
-  then
-     vim $file
-  fi
-}
 
 # added by Anaconda3 installer
 export PATH="/home/shihyu/anaconda3/bin:$PATH"
