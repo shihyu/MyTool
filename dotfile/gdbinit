@@ -721,6 +721,9 @@ set step-mode on
 
 set disassembly-flavor intel
 
+set print asm-demangle on
+set print vtbl on
+
 shell rm -f /tmp/gdb.log
 set logging off
 set logging file /tmp/gdb.log
