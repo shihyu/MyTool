@@ -285,8 +285,8 @@ function htc_fastboot_rom()
 function lg()
 {
     ack -i  'isTrackedDeviceConnected|ChirpJNI|ANR|Crash|oemValid|UsbHelper|\[ubeacon\]|ChirpDS|ChirpID|ChirpMain|GetPoseState CTLR|E ActivityManager|ChirpDevice      StateRunnable|ChirpUSB' $1 > lg &&
-    ack  'ChirpID1\: \[\+\]Position|ChirpID1\: Head Position|ChirpID1\: Head Rotation|ChirpID1\: Tracker Position\[\-\]|ChirpID1\: Tracker Rotation\[\-\]' lg > C      hirpID1_pose
-    ack  'ChirpID0\: \[\+\]Position|ChirpID0\: Head Position|ChirpID0\: Head Rotation|ChirpID0\: Tracker Position\[\-\]|ChirpID0\: Tracker Rotation\[\-\]' lg > C      hirpID0_pose
+    ack  'ChirpID1\: \[\+\]Position|ChirpID1\: Head Position|ChirpID1\: Head Rotation|ChirpID1\: Tracker Position\[\-\]|ChirpID1\: Tracker Rotation\[\-\]' lg > ChirpID1_pose
+    ack  'ChirpID0\: \[\+\]Position|ChirpID0\: Head Position|ChirpID0\: Head Rotation|ChirpID0\: Tracker Position\[\-\]|ChirpID0\: Tracker Rotation\[\-\]' lg > ChirpID0_pose
 
     ack 'ChirpDS|ChirpID|ChirpMain|GetPoseState CTLR|ChirpUSB' lg  | ack -o ' [A-Z] .*' > cc
     ack 'ChirpDS|ChirpID|ChirpMain|GetPoseState CTLR|ChirpUSB|ChirpJNI:' lg   > dd
