@@ -16,3 +16,6 @@
 [submodule "common_tools/ack2"]
 	path = common_tools/ack2
 	url = https://github.com/beyondgrep/ack2
+[submodule "common_tools/java-makefile-tools"]
+	path = common_tools/java-makefile-tools
+	url = https://github.com/osheroff/java-makefile-tools
