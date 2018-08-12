@@ -1,5 +1,5 @@
 [default]
-port	= /dev/ttyS0
+port	= /dev/ttyUSB0
 speed	= 115200
 bits	= 8
 stopbits	= 1
@@ -7,13 +7,9 @@ parity	= none
 flow	= none
 wait_delay	= 0
 wait_char	= -1
-rs485_rts_time_before_tx	= 30
-rs485_rts_time_after_tx	= 30
 echo	= False
 crlfauto	= False
 font	= "DejaVu Sans Mono 12"
-term_transparency	= False
-term_show_cursor	= True
 term_rows	= 80
 term_columns	= 25
 term_scrollback	= 200
@@ -24,5 +20,3 @@ term_foreground_green	= 43253
 term_background_red	= 0
 term_background_blue	= 0
 term_background_green	= 0
-term_background_saturation	= 0.500000
-
