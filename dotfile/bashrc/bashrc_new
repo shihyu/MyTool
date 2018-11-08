@@ -101,6 +101,11 @@ function kill_process()
     sudo kill -9  `ps aux | grep $1 | grep -v grep | awk '{print $2}'`
 }
 
+function cloneall() 
+{
+    curl -s https://api.github.com/users/$1/repos?per_page=200 | python -c $'import json, sys, os\nfor repo in json.load(sys.stdin): os.system("git clone " + repo["git_url"])'
+}
+
 function rm_log()
 {
     adb shell rm /data/htclog/*;
