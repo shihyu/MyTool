@@ -41,8 +41,8 @@ Bundle 'vim-scripts/sessionman.vim'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'chusiang/vim-sdcv'
-Bundle 'rking/ag.vim'
-Bundle 'jiangmiao/auto-pairs'
+Bundle 'MattesGroeger/vim-bookmarks'
+"Bundle 'rking/ag.vim'
 "Bundle 'w0rp/ale'
 "Bundle 'JamshedVesuna/vim-markdown-preview'
 "Plugin 'Valloric/YouCompleteMe'
@@ -623,3 +623,8 @@ function! Z(...)
     exec 'cd ' . path
   endif
 endfunction
+
+highlight BookmarkSign ctermbg=NONE ctermfg=160
+"highlight BookmarkLine ctermbg=194 ctermfg=NONE
+let g:bookmark_sign = '♥'
+"let g:bookmark_highlight_lines = 1
