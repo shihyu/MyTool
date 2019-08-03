@@ -83,8 +83,8 @@ filetype indent on
 colors tir_black
 language messages zh_TW.utf-8
 
-"set fencs=utf-8,gbk,big5,euc-jp,utf-16le
-set fencs=utf-8,gbk,big5
+set fencs=utf-8,gbk,big5,euc-jp,utf-16le
+"set fencs=utf-8,gbk,big5
 set fenc=utf-8 enc=utf-8 tenc=utf-8
 set t_ti= t_te=
 set expandtab
@@ -93,11 +93,12 @@ set tabstop=4
 set history=1000
 set nomore
 set laststatus=2
-"set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P>
-"set statusline=%4*%<\ %1*[%F]
-"set statusline+=%4*\ %5*[%{&encoding}, " encoding
-"set statusline+=%{&fileformat}%{\"\".((exists(\"+bomb\")\ &&\ &bomb)?\",BOM\":\"\").\"\"}]%m
-"set statusline+=%4*%=\ %6*%y%4*\ %3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P>
+set statusline=%4*%<\ %1*[%F]
+set statusline+=%4*\ %5*[%{&encoding}, " encoding
+set statusline+=%{&fileformat}%{\"\".((exists(\"+bomb\")\ &&\ &bomb)?\",BOM\":\"\").\"\"}]%m
+set statusline+=%4*%=\ %6*%y%4*\ %3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>
+
 set ruler
 set softtabstop=4
 set nobackup
