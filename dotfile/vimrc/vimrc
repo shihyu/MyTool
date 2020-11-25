@@ -134,11 +134,11 @@ nmap <F8> gg :w<CR> :!astyle %<CR><CR> :edit!<CR>
 "    execute "copen"
 "endfunction
 
-map <F9> :call Do_makei_clean()<CR>
-function Do_makei_clean()
-    set autochdir
-    execute "silent make clean"
-endfunction
+"map <F9> :call Do_makei_clean()<CR>
+"function Do_makei_clean()
+"    set autochdir
+"    execute "silent make clean"
+"endfunction
 
 "單檔gcc compile
 nmap <C-c><C-c> :call Compile_gcc()<CR>
@@ -147,12 +147,15 @@ function Compile_gcc()
         set autochdir
         execute "w"
         "execute "!clang -Wall -Wextra -O2 -g  % -o %:r -lm"
-        execute "!gcc  -W -Wall  -pedantic -ansi -std=c99 -g -O0 % -o %:r -lm -lpthread"
+        "execute "!gcc  -Wall -pedantic -g -O0 -std=gnu99 % -o %:r -lGL -lglut -lGLU -lSDL -lm -pthread"
+        execute "!gcc  -Wall -pedantic -g -O0 -std=gnu99 % -o %:r -lm -pthread"
     elseif &filetype=="cpp"
         set autochdir
         execute "w"
+        execute "!g++ -Wall -Wextra -g -std=c++11 -pthread % -o %:r"
         "execute "!clang++ -Wall -Wextra -O2 -g -std=c++11 % -o %:r"
-        execute "!g++  -W -Wall  -pedantic -ansi -g -std=c++11 -O0 % -o %:r -lm"
+        "execute "!g++  -Wall -pedantic -ansi -ggdb3 -std=c++11 -O0 % -o %:r -lGL -lglut -lGLU -lSDL -lGLEW -pthread `pkg-config --libs --cflags opencv2`"
+        "execute "!g++  -Wall -pedantic -ansi -ggdb3 -std=c++11 -O0 % -o %:r -lGL -lglut -lGLU -lGLEW -pthread"
     elseif &filetype=="java"
         set autochdir
         execute "w"
@@ -355,7 +358,7 @@ endif
 
 colorscheme molokai
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 "highlight CursorLine cterm=none ctermbg=237
 hi cursorcolumn cterm=bold ctermbg=237 ctermfg=none term=bold
 hi cursorline cterm=bold ctermbg=237 ctermfg=none term=bold
@@ -552,11 +555,11 @@ nmap tn :tabnew<cr>
 nmap td :tabclose<cr>
 
 let g:gitgutter_sign_added = '✚'
-"let g:gitgutter_sign_modified = '➡'
-let g:gitgutter_sign_modified = '✎'
+let g:gitgutter_sign_modified = '➡'
 let g:gitgutter_sign_removed = '✘'
-let g:gitgutter_max_signs = 500
-
+let g:gitgutter_sign_removed_first_line = '^^'
+let g:gitgutter_sign_modified_removed = 'ww'
+let g:gitgutter_max_signs = 5000
 
 nmap <leader>w :call SearchWord()<CR>
 
@@ -595,13 +598,21 @@ nnoremap <silent> <Leader>] :call fzf#run({
 let g:fzf_tmux_height = '20%'
 let g:fzf_tmux_width = '20%'
 
-noremap <F12> <ESC>:FZF<CR>
+"noremap <F12> <ESC>:FZF<CR>
 
 nnoremap <silent> <Leader>o :call fzf#run({
       \   'sink':       'tabe',
       \   'options':     '-m',
       \   'tmux_width': '40%'
       \ })<CR>
+
+let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
+  \ -g "!*.{min.js,swp,o,zip}"
+  \ -g "!{.git,node_modules,vendor}/*" '
+
+noremap <F12> <ESC>:call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)<CR>
 
 
 " -----------------------------------------
@@ -629,5 +640,5 @@ endfunction
 
 highlight BookmarkSign ctermbg=NONE ctermfg=160
 "highlight BookmarkLine ctermbg=194 ctermfg=NONE
-let g:bookmark_sign = '♥'
+let g:bookmark_sign = '⚑'
 "let g:bookmark_highlight_lines = 1
