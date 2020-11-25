@@ -62,6 +62,8 @@ alias cd..='cd ..'
 alias py_debug='python -m pudb'
 alias vf='vim `find -name "*.cpp" -o -name "*.cc" -o -name "*.java" -o -name "*.h" | fzf`'
 
+
+export VISUAL=vim
 export HISTTIMEFORMAT='%F %T'
 alias h1='history 10'
 alias h2='history 20'
