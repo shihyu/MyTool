@@ -3,7 +3,8 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.mybin/fzf
 call vundle#rc()
-Bundle 'gmarik/Vundle.vim'
+"Bundle 'gmarik/Vundle.vim'
+Bundle 'VundleVim/Vundle.vim'
 Bundle 'vim-scripts/L9'
 Bundle 'vim-scripts/cscope_macros.vim'
 Bundle 'scrooloose/nerdtree'
