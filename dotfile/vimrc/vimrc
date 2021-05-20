@@ -156,6 +156,10 @@ function Compile_gcc()
         "execute "!clang++ -Wall -Wextra -O2 -g -std=c++11 % -o %:r"
         "execute "!g++  -Wall -pedantic -ansi -ggdb3 -std=c++11 -O0 % -o %:r -lGL -lglut -lGLU -lSDL -lGLEW -pthread `pkg-config --libs --cflags opencv2`"
         "execute "!g++  -Wall -pedantic -ansi -ggdb3 -std=c++11 -O0 % -o %:r -lGL -lglut -lGLU -lGLEW -pthread"
+    elseif &filetype=="rust"
+        set autochdir
+        execute "w"
+        execute "!rustc %:r.rs"
     elseif &filetype=="java"
         set autochdir
         execute "w"
@@ -179,6 +183,9 @@ function Run_gcc()
         "sudo aptitude install php5-cli
         set autochdir
         execute "w !php"
+    elseif  &filetype=="rust"
+        set autochdir
+        execute "! ./%:r"
     elseif  &filetype=="java"
         set autochdir
         execute "w !java %:r"
