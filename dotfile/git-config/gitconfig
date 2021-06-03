@@ -39,6 +39,7 @@
  
     # Show files ignored by git:
     ign = ls-files -o -i --exclude-standard
+	adog = log --all --decorate --oneline --graph
 [core]
     editor = vim
 	excludesfile = $HOME/.gitignore_global
