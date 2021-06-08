@@ -123,7 +123,29 @@ set backspace=indent,eol,start whichwrap+=<,>,[,]
 "autocmd FileType perl set keywordprg=perldoc\ -f
 "copen 25
 
-nmap <F8> gg :w<CR> :!astyle %<CR><CR> :edit!<CR>
+"nmap <F8> gg :w<CR> :!astyle %<CR><CR> :edit!<CR>
+nmap <F8> :call FormartSrc()<CR>
+func FormartSrc()
+    exec "w"
+    if &filetype == 'c'
+        exec "!astyle %"
+    elseif &filetype == 'cpp' || &filetype == 'hpp'
+        exec "!astyle %"
+    elseif &filetype == 'rust'
+        exec "!rustfmt %"
+    elseif &filetype == 'perl'
+        exec "!astyle --style=gnu --suffix=none %"
+    elseif &filetype == 'py'||&filetype == 'python'
+        exec "r !pydent % > /dev/null 2>&1"
+    elseif &filetype == 'java'
+        exec "!astyle --style=java --suffix=none %"
+    elseif &filetype == 'jsp'
+        exec "!astyle --style=gnu --suffix=none %"
+    elseif &filetype == 'xml'
+        exec "!astyle --style=gnu --suffix=none %"
+    endif
+    exec "e! %"
+endfunc
 
 "進行make的設置
 "map <F8> :call Do_make()<CR>
@@ -160,6 +182,10 @@ function Compile_gcc()
         set autochdir
         execute "w"
         execute "!rustc %:r.rs"
+    elseif &filetype=="go"
+        set autochdir
+        execute "w"
+        execute "!go build %:r.go"
     elseif &filetype=="java"
         set autochdir
         execute "w"
@@ -184,6 +210,9 @@ function Run_gcc()
         set autochdir
         execute "w !php"
     elseif  &filetype=="rust"
+        set autochdir
+        execute "! ./%:r"
+    elseif  &filetype=="go"
         set autochdir
         execute "! ./%:r"
     elseif  &filetype=="java"
