@@ -1,0 +1,25 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>i-beam icon</title>
+    <desc>i-beam icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="480" y1="32" x2="265.3865" y2="446.9195" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#91a0af"/>
+            <stop offset="1" stop-color="#728090"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="464" x2="84.32585" y2="480.1005" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#6c7b8a"/>
+            <stop offset="1" stop-color="#6a7988"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="32" x2="111.99885" y2="47.9998" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#a6b3c1"/>
+            <stop offset="1" stop-color="#a3b0be"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M480,32l-448,0l0,35c0,16.5 12.5,30 29,31.5l118,11c16.5,1.5 29,15 29,31.5l0,230c0,16.5 -12.5,30 -29,31.5l-118,11c-16.5,1.5 -29,15 -29,31.5l0,35l448,0l0,-35c0,-16.5 -12.5,-30 -29,-31.5l-118,-11c-16.5,-1.5 -29,-15 -29,-31.5l0,-230c0,-16.5 12.5,-30 29,-31.5l118,-11c16.5,-1.5 29,-15 29,-31.5z" id="curve2" fill="url(#color-1)"/>
+        <path d="M32,464l0,16l448,0l0,-16z" id="curve1" fill="url(#color-2)"/>
+        <path d="M480,32l-448,0l0,16l448,0z" id="curve0" fill="url(#color-3)"/>
+    </g>
+</svg>

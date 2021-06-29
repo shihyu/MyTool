@@ -1,0 +1,28 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>drop down list icon</title>
+    <desc>drop down list icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="64" y1="144" x2="232.603" y2="482.864" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0f85c8"/>
+        </linearGradient>
+        <linearGradient x1="64" y1="144" x2="448" y2="144" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#1194df"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="32" x2="77.223" y2="93.926" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#4eb6f2"/>
+            <stop offset="1" stop-color="#26a6ef"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M448,144l0,320c0,9 -7,16 -16,16l-352,0c-9,0 -16,-7 -16,-16l0,-320z" id="curve5" fill="url(#color-1)"/>
+        <path d="M448,160l-384,0l0,-16l384,0z" id="curve4" fill="url(#color-2)"/>
+        <path d="M40,32l432,0c4.5,0 8,3.5 8,8l0,96c0,4.5 -3.5,8 -8,8l-432,0c-4.5,0 -8,-3.5 -8,-8l0,-96c0,-4.5 3.5,-8 8,-8z" id="curve3" fill="url(#color-3)"/>
+        <path d="M112,208l288,0l0,16l-288,0z M112,400l288,0l0,16l-288,0z M112,352l288,0l0,16l-288,0z M112,304l288,0l0,16l-288,0z M112,256l288,0l0,16l-288,0z" id="curve2" fill="#ffffff"/>
+        <path d="M112,208l288,0l0,16l-288,0z M112,400l288,0l0,16l-288,0z M112,352l288,0l0,16l-288,0z M112,304l288,0l0,16l-288,0z M112,256l288,0l0,16l-288,0z" id="curve1" fill="#ffffff"/>
+        <path d="M368,64l96,0l-48,64z M64,80l256,0l0,16l-256,0z" id="curve0" fill="#ffffff"/>
+    </g>
+</svg>

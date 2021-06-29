@@ -1,0 +1,7 @@
+﻿<?xml encoding='UTF-8'?>
+<!ELEMENT indexdata (key)*>
+<!ELEMENT key (topic)*>
+  <!ATTLIST key name CDATA #REQUIRED>
+  <!ATTLIST key url CDATA #REQUIRED>
+  <!ATTLIST key multiples (1|0) #IMPLIED>
+

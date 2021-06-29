@@ -1,0 +1,16 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>arrow out icon</title>
+    <desc>arrow out icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="80" x2="215.5498" y2="433.9895" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0f7cbb"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal" transform="translate(512,0) scale(-1.0,1.0)">
+        <path d="M352,448l0,-80c0,-79.5 -64.5,-144 -144,-144l-64,0l0,80l-112,-112l112,-112l0,80l64,0c115,0 208,93 208,208l0,80z" id="curve1" fill="url(#color-1)"/>
+        <path d="M64,448l384,0l0,64l-384,0z" id="curve0" fill="#91a0af"/>
+    </g>
+</svg>

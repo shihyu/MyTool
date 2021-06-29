@@ -1,0 +1,25 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>object cube icon</title>
+    <desc>object cube icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="16" x2="420.0898" y2="427.9417" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#77da26"/>
+            <stop offset="1" stop-color="#59a31d"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="16" x2="254.33265" y2="227.57035" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#3b6d13"/>
+            <stop offset="1" stop-color="#4f921a"/>
+        </linearGradient>
+        <linearGradient x1="256" y1="130" x2="258.206" y2="453.608" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#59a31d"/>
+            <stop offset="1" stop-color="#3b6d13"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M32,128l224,-112l224,112l0,256l-224,112l-224,-112z" id="curve2" fill="url(#color-1)"/>
+        <path d="M32,128l224,-112l224,112l-224,112z" id="curve1" fill="url(#color-2)"/>
+        <path d="M480,130l-224,110l0,256l224,-112z" id="curve0" fill="url(#color-3)"/>
+    </g>
+</svg>

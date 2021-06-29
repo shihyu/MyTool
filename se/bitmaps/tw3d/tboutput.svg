@@ -1,0 +1,36 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>window information icon</title>
+    <desc>window information icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="64" x2="283.785" y2="331.0915" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#40b0f1"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="128" x2="153.8695" y2="464.0005" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#e1f2fd"/>
+            <stop offset="1" stop-color="#cceafb"/>
+        </linearGradient>
+        <linearGradient x1="128" y1="160" x2="280.4311" y2="409.47789" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#49b4f2"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="128" y1="160" x2="280.4311" y2="409.47789" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#49b4f2"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="275" y1="365.5" x2="268.4875" y2="223.7065" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#f9f9f9"/>
+            <stop offset="1" stop-color="#e8ecf0"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M512,80l0,384l-512,0l0,-384c0,-9 7,-16 16,-16l480,0c9,0 16,7 16,16z" id="curve5" fill="url(#color-1)" fill-rule="nonzero"/>
+        <path d="M0,128l512,0l0,336l-512,0z" id="curve4" fill="url(#color-2)" fill-rule="nonzero"/>
+        <path d="M464,80c9,0 16,7 16,16c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16c0,-9 7,-16 16,-16z M416,80c9,0 16,7 16,16c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16c0,-9 7,-16 16,-16z" id="curve3" fill="#ffffff" fill-rule="nonzero"/>
+        <path d="M256,160c70.5,0 128,57.5 128,128c0,70.5 -57.5,128 -128,128c-70.5,0 -128,-57.5 -128,-128c0,-70.5 57.5,-128 128,-128z" id="curve2" fill="url(#color-3)" fill-rule="evenodd"/>
+        <path d="M256,160c70.5,0 128,57.5 128,128c0,70.5 -57.5,128 -128,128c-70.5,0 -128,-57.5 -128,-128c0,-70.5 57.5,-128 128,-128z" id="curve1" fill="url(#color-4)" fill-rule="evenodd"/>
+        <path d="M273.5,365.5l-34.5,0l0,-110l34.5,0z M237,227c0,-4.5 1.5,-9 5.5,-12c3.5,-3 8,-4.5 13.5,-4.5c5.5,0 10,1.5 13.5,4.5c4,3 5.5,7.5 5.5,12c0,5 -1.5,9 -5.5,12c-3.5,3.5 -8,5 -13.5,5c-5.5,0 -10,-1.5 -13.5,-5c-4,-3 -5.5,-7 -5.5,-12z" id="curve0" fill="url(#color-5)" fill-rule="nonzero"/>
+    </g>
+</svg>

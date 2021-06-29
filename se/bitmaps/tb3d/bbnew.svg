@@ -1,0 +1,35 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>document empty icon</title>
+    <desc>document empty icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="64" y1="0" x2="359.822" y2="512.00059" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#f3fafe"/>
+            <stop offset="1" stop-color="#cae9fb"/>
+        </linearGradient>
+        <linearGradient x1="310.5" y1="9.5" x2="396.703" y2="127.03825" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#c5e7fb"/>
+            <stop offset="1" stop-color="#94d3f8"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M288,0l-216,0c-4.5,0 -8,3.5 -8,8l0,496c0,4.5 3.5,8 8,8l368,0c4.5,0 8,-3.5 8,-8l0,-344c0,-9 -3.5,-17 -9.5,-22.5l-128,-128c-5.5,-6 -13.5,-9.5 -22.5,-9.5z" id="curve1" fill="url(#color-1)"/>
+        <path d="M438.5,137.5c-5.5,-6 -13.5,-9.5 -22.5,-9.5l-88,0c-4.5,0 -8,-3.5 -8,-8l0,-88c0,-8.5 -3.5,-16.5 -9.5,-22.5z" id="curve0" fill="url(#color-2)"/>
+        <path d="M128,272l256,0l0,192l-256,0z" id="curve0" fill="#a1afbf" stroke="none"/>
+    </g>
+
+<g transform="translate(-32,-32) scale(0.60,0.60)">
+    <g id="Layer1" name="Layer 1" opacity="1">
+        <g id="Shape1">
+            <desc shapeID="1" type="0" basicInfo-basicType="4" basicInfo-roundedRectRadius="12" basicInfo-polygonSides="6" basicInfo-starPoints="5" bounding="rect(-194.5,-198,389,396)" text="" font-familyName="Helvetica" font-pixelSize="20" font-bold="0" font-underline="0" font-alignment="1" strokeStyle="0" markerStart="0" markerEnd="0" shadowEnabled="0" shadowOffsetX="0" shadowOffsetY="2" shadowBlur="4" shadowOpacity="160" blurEnabled="0" blurRadius="4" transform="matrix(1.15167,0,0,1.13131,256.5,256.5)" pers-center="0,0" pers-size="0,0" pers-start="0,0" pers-end="0,0" locked="0" mesh="" flag=""/>
+            <path id="shapePath1" d="M32.5002,256.5 C32.5002,132.788 132.788,32.5001 256.5,32.5001 C380.212,32.5001 480.5,132.788 480.5,256.5 C480.5,380.212 380.212,480.5 256.5,480.5 C132.788,480.5 32.5001,380.212 32.5002,256.5 Z" style="stroke:url(#nestedLinearGradientStroke1);stroke-width:0;stroke-linejoin:miter;stroke-miterlimit:2;stroke-linecap:round;fill-rule:evenodd;fill:url(#nestedRadialGradientFill1);fill-opacity:1;"/><defs><linearGradient id="nestedLinearGradientStroke1" gradientUnits="userSpaceOnUse" x1="106.467" y1="273.248" x2="404.886" y2="273.248"><stop offset="0" stop-color="#bbc9d3" stop-opacity="1"/><stop offset="1" stop-color="#bfcdd7" stop-opacity="1"/></linearGradient><radialGradient id="nestedRadialGradientFill1" gradientUnits="userSpaceOnUse" cx="256.654" cy="258.724" r="242.16" fx="256.5" fy="256.5"><stop offset="0" stop-color="#ffcf59" stop-opacity="1"/><stop offset="0.512927" stop-color="#c8892f" stop-opacity="1"/><stop offset="1" stop-color="#baad58" stop-opacity="0"/></radialGradient></defs>
+        </g>
+        <g id="Shape2">
+            <desc shapeID="2" type="0" basicInfo-basicType="0" basicInfo-roundedRectRadius="12" basicInfo-polygonSides="6" basicInfo-starPoints="5" bounding="rect(-160,-162.5,320,325)" text="" font-familyName="Helvetica" font-pixelSize="20" font-bold="0" font-underline="0" font-alignment="1" strokeStyle="0" markerStart="0" markerEnd="0" shadowEnabled="0" shadowOffsetX="0" shadowOffsetY="2" shadowBlur="4" shadowOpacity="160" blurEnabled="0" blurRadius="4" transform="matrix(1.3,0,0,1.28,256.5,256.5)" pers-center="0,0" pers-size="0,0" pers-start="0,0" pers-end="0,0" locked="0" mesh="" flag=""/>
+            <path id="shapePath2" d="M256.5,48.5 L267.676,229.518 L403.578,109.422 L283.482,245.324 L464.5,256.501 L283.482,267.677 L403.577,403.579 L267.676,283.482 L256.498,464.5 L245.323,283.482 L109.42,403.577 L229.517,267.676 L48.4999,256.498 L229.518,245.323 L109.424,109.42 L245.324,229.517 L256.5,48.5 Z" style="stroke:url(#nestedRadialGradientStroke2);stroke-width:10;stroke-linejoin:miter;stroke-miterlimit:2;stroke-linecap:round;fill-rule:evenodd;fill:url(#nestedRadialGradientFill2);fill-opacity:1;"/><defs><radialGradient id="nestedRadialGradientStroke2" gradientUnits="userSpaceOnUse" cx="257.144" cy="256.449" r="207.856" fx="233.306" fy="232.768"><stop offset="0" stop-color="#6e6341" stop-opacity="0.243137"/><stop offset="1" stop-color="#675e44" stop-opacity="0"/></radialGradient><radialGradient id="nestedRadialGradientFill2" gradientUnits="userSpaceOnUse" cx="256.674" cy="259.017" r="273.35" fx="256.5" fy="256.5"><stop offset="0" stop-color="#ffffee" stop-opacity="1"/><stop offset="0.375909" stop-color="#ffe381" stop-opacity="1"/><stop offset="1" stop-color="#9a914b" stop-opacity="1"/></radialGradient></defs>
+        </g>
+    </g>
+</g>
+
+</svg>

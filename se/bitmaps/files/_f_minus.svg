@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512">
+    <desc iVinci="yes" version="4.6" gridStep="16" showGrid="yes" snapToGrid="yes" codePlatform="0"/>
+    <g>
+        <path id="shapePath1" d="M16.5,16.5 L496.5,16.5 L496.5,496.5 L16.5,496.5 L16.5,16.5 Z" style="stroke:#808080;stroke-opacity:1;stroke-width:24;stroke-linejoin:miter;stroke-miterlimit:2;stroke-linecap:round;fill:none;"/>
+    </g>
+
+<g transform="translate(64,64) scale(0.75,0.75)">
+    <title>minus icon</title>
+    <desc>minus icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="16" y1="192" x2="154.4053" y2="307.221" gradientUnits="userSpaceOnUse" id="minus-color-1">
+            <stop offset="0" stop-color="#ef5c51"/>
+            <stop offset="1" stop-color="#dc493e"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#minus-color-1)" fill-rule="nonzero" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M16,320l0,-128l480,0l0,128z" id="curve0"/>
+    </g>
+</g>
+
+</svg>

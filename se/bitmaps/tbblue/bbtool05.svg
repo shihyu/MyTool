@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>stopwatch icon</title>
+	<desc>stopwatch icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve3" fill="#252525" d="M8129 3391l0 -1c-187,-237 -402,-452 -639,-639l-1 0 511 -511 640 640 -511 511z"/>
+	<path id="curve2" fill="#252525" d="M5760 1984l-2 -1c-211,-35 -424,-53 -638,-53 -214,0 -427,18 -638,53l-2 1 0 -384 -320 0c-176,0 -320,-144 -320,-320l0 -640c0,-176 144,-320 320,-320l1920 0c176,0 320,144 320,320l0 640c0,176 -144,320 -320,320l-320 0 0 384z"/>
+	<path id="curve1" fill="#252525" d="M5120 1920c2121,0 3840,1719 3840,3840 0,2121 -1719,3840 -3840,3840 -2121,0 -3840,-1719 -3840,-3840 0,-2121 1719,-3840 3840,-3840zm0 960c-1591,0 -2880,1289 -2880,2880 0,1591 1289,2880 2880,2880 1591,0 2880,-1289 2880,-2880 0,-1591 -1289,-2880 -2880,-2880z"/>
+	<path id="curve0" fill="#3E9BD5" d="M5440 5206c191,110 320,317 320,554 0,353 -287,640 -640,640 -353,0 -640,-287 -640,-640 0,-237 129,-444 320,-554l0 -1986c105,-13 212,-20 320,-20 108,0 215,7 320,20l0 1986z"/>
+</svg>

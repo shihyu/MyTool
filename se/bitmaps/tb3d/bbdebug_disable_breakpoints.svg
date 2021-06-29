@@ -1,0 +1,47 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>breakpoints icon</title>
+    <desc>breakpoints icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="128" y1="32" x2="608.0002" y2="720.0005" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#eb5d5f"/>
+            <stop offset="1" stop-color="#b3a0ad"/>
+        </linearGradient>
+        <linearGradient x1="128" y1="128" x2="680.415" y2="906.41559" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#ea2516"/>
+            <stop offset="0.25098" stop-color="#af1d12"/>
+            <stop offset="1" stop-color="#73140d"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="96" x2="549.7996" y2="553.7005" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#ef5c51"/>
+            <stop offset="1" stop-color="#af1c11"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M160,32l320,0c17.5,0 32,14.5 32,32l0,320c0,17.5 -14.5,32 -32,32l-320,0c-17.5,0 -32,-14.5 -32,-32l0,-320c0,-17.5 14.5,-32 32,-32z" fill="url(#color-1)" fill-rule="evenodd"/>
+        <path d="M400,416l-240,0c-17.5,0 -32,-14.5 -32,-32l0,-256l240,0c17.5,0 32,14.5 32,32z" fill="url(#color-2)" fill-rule="evenodd"/>
+        <path d="M32,96l320,0c17.5,0 32,14.5 32,32l0,320c0,17.5 -14.5,32 -32,32l-320,0c-17.5,0 -32,-14.5 -32,-32l0,-320c0,-17.5 14.5,-32 32,-32z" fill="url(#color-3)" fill-rule="nonzero"/>
+    </g>
+
+
+<g transform="translate(256,256) scale(0.5,0.5)">
+    <title>checkbox unchecked icon</title>
+    <desc>checkbox unchecked icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="448.00045" y2="448.00055" gradientUnits="userSpaceOnUse" id="c-color-1">
+            <stop offset="0" stop-color="#77da26"/>
+            <stop offset="1" stop-color="#59a31d"/>
+        </linearGradient>
+        <linearGradient x1="96" y1="96" x2="386.9095" y2="416.0005" gradientUnits="userSpaceOnUse" id="c-color-2">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#edf1f5"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M48,32l416,0c9,0 16,7 16,16l0,416c0,9 -7,16 -16,16l-416,0c-9,0 -16,-7 -16,-16l0,-416c0,-9 7,-16 16,-16z" id="curve1" fill="url(#c-color-1)"/>
+        <path d="M96,96l320,0l0,320l-320,0z" id="curve0" fill="url(#c-color-2)"/>
+    </g>
+</g>
+
+</svg>

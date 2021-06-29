@@ -1,0 +1,32 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>document text icon</title>
+    <desc>document text icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="64" y1="0" x2="359.822" y2="512.00059" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#f3fafe"/>
+            <stop offset="1" stop-color="#cae9fb"/>
+        </linearGradient>
+        <linearGradient x1="310.5" y1="9.5" x2="396.703" y2="127.03825" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#c5e7fb"/>
+            <stop offset="1" stop-color="#94d3f8"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M288,0l-216,0c-4.5,0 -8,3.5 -8,8l0,496c0,4.5 3.5,8 8,8l368,0c4.5,0 8,-3.5 8,-8l0,-344c0,-9 -3.5,-17 -9.5,-22.5l-128,-128c-5.5,-6 -13.5,-9.5 -22.5,-9.5z" id="curve2" fill="url(#color-1)"/>
+        <path d="M438.5,137.5c-5.5,-6 -13.5,-9.5 -22.5,-9.5l-88,0c-4.5,0 -8,-3.5 -8,-8l0,-88c0,-8.5 -3.5,-16.5 -9.5,-22.5z" id="curve0" fill="url(#color-2)"/>
+    </g>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M112,48l128,0l0,16l-128,0z M112,144l128,0l0,16l-128,0z M112,352l288,0l0,16l-288,0z M112,208l288,0l0,16l-288,0z M112,96l128,0l0,16l-128,0z M112,256l288,0l0,16l-288,0z M112,304l288,0l0,16l-288,0z M112,432l112,0l0,16l-112,0z" id="curve1" fill="#717f8f"/>
+    </g>
+
+<g transform="translate(0,256) scale(0.5,0.5)">
+    <circle fill="blue" cx="256" cy="256" r="224" stroke="#252525" stroke-width="10"/>
+</g>
+
+<g transform="translate(0,0) scale(0.5,0.5)">
+    <circle fill="red" cx="256" cy="256" r="224" stroke="#252525" stroke-width="10"/>
+</g>
+
+</svg>

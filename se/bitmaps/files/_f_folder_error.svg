@@ -1,0 +1,44 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>folder icon</title>
+    <desc>folder icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="16" y1="64" x2="16" y2="480" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#f0ca62"/>
+            <stop offset="0.47843" stop-color="#deaf3d"/>
+            <stop offset="1" stop-color="#cc9418"/>
+        </linearGradient>
+        <linearGradient x1="16" y1="480" x2="16" y2="143.9995" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#ffd34d"/>
+            <stop offset="0.58823" stop-color="#fff863"/>
+            <stop offset="1" stop-color="#fffe79"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M186.5,78l14,20c6,9 15.5,14 26,14l261.5,0c4.5,0 8,3.5 8,8l0,352c0,4.5 -3.5,8 -8,8l-464,0c-4.5,0 -8,-3.5 -8,-8l0,-400c0,-4.5 3.5,-8 8,-8l136,0c11,0 20,5 26.5,14z" id="curve1" fill="url(#color-1)"/>
+        <path d="M165.5,176l-141.5,0c-4.5,0 -8,3.5 -8,8l0,288c0,4.5 3.5,8 8,8l464,0c4.5,0 8,-3.5 8,-8l0,-320c0,-4.5 -3.5,-8 -8,-8l-265,0c-9.5,0 -17.5,3.5 -23.5,10.5l-10.5,11c-6,7 -14,10.5 -23.5,10.5z" id="curve0" fill="url(#color-2)"/>
+    </g>
+
+
+<g transform="translate(256,256) scale(0.5,0.5)">
+    <title>error icon</title>
+    <desc>error icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="16" y1="16" x2="451.1475" y2="378.254" gradientUnits="userSpaceOnUse" id="error-color-1">
+            <stop offset="0" stop-color="#ef5c51"/>
+            <stop offset="1" stop-color="#c22f24"/>
+        </linearGradient>
+        <radialGradient cx="256.00477" cy="325.60147" r="277.68899" fx="256.00477" fy="325.60147" gradientUnits="userSpaceOnUse" id="error-color-2">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="0.34118" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M256,16c132.5,0 240,107.5 240,240c0,132.5 -107.5,240 -240,240c-132.5,0 -240,-107.5 -240,-240c0,-132.5 107.5,-240 240,-240z" id="curve1" fill="url(#error-color-1)" fill-rule="nonzero"/>
+        <path d="M165.5,414.5l-68,-68l90.5,-90.5l-90.5,-90.5l68,-68l90.5,90.5l90.5,-90.5l68,68l-90.5,90.5l90.5,90.5l-68,68l-90.5,-90.5z" id="curve0" fill="url(#error-color-2)" fill-rule="evenodd"/>
+    </g>
+</g>
+
+</svg>

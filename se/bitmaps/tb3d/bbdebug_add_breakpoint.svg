@@ -1,0 +1,31 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>breakpoint icon</title>
+    <desc>breakpoint icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="438.1385" y2="370.1045" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#ef5c51"/>
+            <stop offset="1" stop-color="#c22f24"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#color-1)" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M64,32l384,0c17.5,0 32,14.5 32,32l0,384c0,17.5 -14.5,32 -32,32l-384,0c-17.5,0 -32,-14.5 -32,-32l0,-384c0,-17.5 14.5,-32 32,-32z" id="curve0"/>
+    </g>
+
+
+<g transform="translate(256,256) scale(0.5,0.5)">
+    <title>plus icon</title>
+    <desc>plus icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="323.36915" y2="461.212" gradientUnits="userSpaceOnUse" id="p-color-1">
+            <stop offset="0" stop-color="#98e957"/>
+            <stop offset="1" stop-color="#5ea821"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#p-color-1)" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M192,480l0,-160l-160,0l0,-128l160,0l0,-160l128,0l0,160l160,0l0,128l-160,0l0,160z" id="curve0"/>
+    </g>
+</g>
+
+</svg>

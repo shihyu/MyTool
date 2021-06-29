@@ -1,0 +1,82 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>cash register icon</title>
+    <desc>cash register icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="256" y1="0" x2="280.587" y2="103.26495" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#91a0af"/>
+            <stop offset="1" stop-color="#717f8f"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="144" x2="85.93265" y2="370.518" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#91a0af"/>
+            <stop offset="1" stop-color="#717f8f"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="384" x2="0" y2="480.0005" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#91a0af"/>
+            <stop offset="1" stop-color="#798797"/>
+        </linearGradient>
+        <linearGradient x1="224" y1="400" x2="271.212" y2="449.876" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="96" y1="96" x2="96" y2="272.0005" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#f5f7f9"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="272" y1="16" x2="272.3325" y2="95.9997" gradientUnits="userSpaceOnUse" id="color-6">
+            <stop offset="0" stop-color="#b0df8a"/>
+            <stop offset="1" stop-color="#cef4b0"/>
+        </linearGradient>
+        <linearGradient x1="464" y1="16" x2="439.385" y2="31.99985" gradientUnits="userSpaceOnUse" id="color-7">
+            <stop offset="0" stop-color="#8cc65d"/>
+            <stop offset="1" stop-color="#8fc861"/>
+        </linearGradient>
+        <linearGradient x1="272" y1="192" x2="272" y2="224" gradientUnits="userSpaceOnUse" id="color-8">
+            <stop offset="0" stop-color="#f5f7f9"/>
+            <stop offset="1" stop-color="#d9e0e8"/>
+        </linearGradient>
+        <linearGradient x1="272" y1="240" x2="307.41" y2="277.4075" gradientUnits="userSpaceOnUse" id="color-9">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="336" y1="240" x2="371.41" y2="277.4075" gradientUnits="userSpaceOnUse" id="color-10">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="400" y1="240" x2="435.41" y2="277.4075" gradientUnits="userSpaceOnUse" id="color-11">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="336" y1="304" x2="371.41" y2="341.4075" gradientUnits="userSpaceOnUse" id="color-12">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="272" y1="304" x2="307.41" y2="341.4075" gradientUnits="userSpaceOnUse" id="color-13">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="400" y1="304" x2="435.41" y2="341.4075" gradientUnits="userSpaceOnUse" id="color-14">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M336,80l64,0l0,80l-64,0z" id="curve15" fill="#51616f"/>
+        <path d="M272,0l192,0c9,0 16,7 16,16l0,80c0,9 -7,16 -16,16l-192,0c-9,0 -16,-7 -16,-16l0,-80c0,-9 7,-16 16,-16z" id="curve14" fill="url(#color-1)"/>
+        <path d="M48,144l416,0c9,0 16,7 16,16l0,240l-448,0l0,-240c0,-9 7,-16 16,-16z" id="curve13" fill="url(#color-2)"/>
+        <path d="M0,384l512,0l0,96l-512,0z" id="curve12" fill="url(#color-3)"/>
+        <path d="M256,400c17.5,0 32,14.5 32,32c0,17.5 -14.5,32 -32,32c-17.5,0 -32,-14.5 -32,-32c0,-17.5 14.5,-32 32,-32z" id="curve11" fill="url(#color-4)"/>
+        <path d="M80,240l160,0c9,0 16,7 16,16l0,16c0,9 -7,16 -16,16l-160,0c-9,0 -16,-7 -16,-16l0,-16c0,-9 7,-16 16,-16z" id="curve10" fill="#36414a"/>
+        <path d="M96,96l128,0l0,176l-128,0z" id="curve9" fill="url(#color-5)"/>
+        <path d="M272,16l192,0l0,80l-192,0z" id="curve8" fill="url(#color-6)"/>
+        <path d="M272,16l192,0l0,16l-192,0z" id="curve7" fill="url(#color-7)"/>
+        <path d="M448,208c0,9 -7,16 -16,16l-144,0c-9,0 -16,-7 -16,-16c0,-9 7,-16 16,-16l144,0c9,0 16,7 16,16z" id="curve6" fill="url(#color-8)"/>
+        <path d="M296,240c13.5,0 24,10.5 24,24c0,13.5 -10.5,24 -24,24c-13.5,0 -24,-10.5 -24,-24c0,-13.5 10.5,-24 24,-24z" id="curve5" fill="url(#color-9)"/>
+        <path d="M360,240c13.5,0 24,10.5 24,24c0,13.5 -10.5,24 -24,24c-13.5,0 -24,-10.5 -24,-24c0,-13.5 10.5,-24 24,-24z" id="curve4" fill="url(#color-10)"/>
+        <path d="M424,240c13.5,0 24,10.5 24,24c0,13.5 -10.5,24 -24,24c-13.5,0 -24,-10.5 -24,-24c0,-13.5 10.5,-24 24,-24z" id="curve3" fill="url(#color-11)"/>
+        <path d="M360,304c13.5,0 24,10.5 24,24c0,13.5 -10.5,24 -24,24c-13.5,0 -24,-10.5 -24,-24c0,-13.5 10.5,-24 24,-24z" id="curve2" fill="url(#color-12)"/>
+        <path d="M296,304c13.5,0 24,10.5 24,24c0,13.5 -10.5,24 -24,24c-13.5,0 -24,-10.5 -24,-24c0,-13.5 10.5,-24 24,-24z" id="curve1" fill="url(#color-13)"/>
+        <path d="M424,304c13.5,0 24,10.5 24,24c0,13.5 -10.5,24 -24,24c-13.5,0 -24,-10.5 -24,-24c0,-13.5 10.5,-24 24,-24z" id="curve0" fill="url(#color-14)"/>
+    </g>
+</svg>

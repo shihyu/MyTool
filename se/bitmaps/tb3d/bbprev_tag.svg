@@ -1,0 +1,31 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>element icon</title>
+    <desc>element icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="96" y1="128" x2="351.5735" y2="384.001" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#4cb5f2"/>
+            <stop offset="1" stop-color="#19a1ee"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#color-1)" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M112,128l288,0c9,0 16,7 16,16l0,224c0,9 -7,16 -16,16l-288,0c-9,0 -16,-7 -16,-16l0,-224c0,-9 7,-16 16,-16z" id="curve0"/>
+    </g>
+
+
+<g transform="translate(256,0) scale(0.5,0.5)">
+    <title>arrow left icon</title>
+    <desc>arrow left icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="104" x2="368" y2="356" gradientUnits="userSpaceOnUse" id="badge-1">
+            <stop offset="0" stop-color="#f3501e"/>
+            <stop offset="1" stop-color="#ff6e00"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#badge-1)" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M160,100l-150,150l150,150l0,-100l342,0l0,-100l-342,0z" id="curve0"/>
+    </g>
+</g>
+
+</svg>

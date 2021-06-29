@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2048" height="1024" viewBox="0 0 20480 10240">
+<g transform="translate(6400,0) scale(1,1)">
+<g transform="translate(3328,1280) scale(0.75,0.75)">
+	<title>shape_circle icon</title>
+	<desc>shape_circle icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+        <circle fill="#ED9A56" cx="5120" cy="5120" r="3348"/>
+	<path id="curve0" fill="#4D82B8" d="M5120 1280c2121,0 3840,1719 3840,3840 0,2121 -1719,3840 -3840,3840 -2121,0 -3840,-1719 -3840,-3840 0,-2121 1719,-3840 3840,-3840zm0 640c-1767,0 -3200,1433 -3200,3200 0,1767 1433,3200 3200,3200 1767,0 3200,-1433 3200,-3200 0,-1767 -1433,-3200 -3200,-3200z"/>
+</g>
+
+<g transform="translate(-1280,8534) scale(0.66,-0.66)">
+	<title>arrow_down icon</title>
+	<desc>arrow_down icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#4D82B8" d="M2513 4411l1647 1647 0 -5120c0,-176 144,-320 320,-320l1280 0c176,0 320,144 320,320l0 5120 1647 -1647c47,-47 113,-60 174,-35 61,25 99,82 99,148l0 2064c0,176 -63,328 -187,452l-2467 2467c-124,124 -328,124 -452,0l-2467 -2467c-124,-124 -187,-276 -187,-452l0 -2064c0,-66 38,-123 99,-148 61,-25 127,-12 174,35z"/>
+</g>
+
+</g>
+</svg>

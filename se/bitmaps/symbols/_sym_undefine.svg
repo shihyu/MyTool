@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="512" viewBox="0 0 1024 512">
+<g transform="translate(320,0) scale(1,1)">
+<title>pound icon</title>
+<desc>based on icon from the IconExperience.com V-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+<desc>Hand-traced with iVinci Express.</desc>
+    <desc iVinci="yes" version="4.6" gridStep="16" showGrid="yes" snapToGrid="yes" codePlatform="0"/>
+    <g id="Layer1" name="Layer 1" opacity="1">
+        <g id="Shape1">
+            <path id="shapePath1" d="M415.678,360.096 L342.688,360.096 L329.146,448.5 L270.157,448.5 L283.929,360.096 L196.708,360.096 L183.166,448.5 L124.177,448.5 L137.719,360.096 L64.5,360.096 L73.4516,306.504 L146.441,306.504 L162.279,205.652 L89.289,205.652 L97.3225,152.271 L170.542,152.271 L184.084,64.5 L242.843,64.5 L228.842,152.271 L316.751,152.271 L330.064,64.5 L388.823,64.5 L375.051,152.271 L448.5,152.271 L440.696,205.652 L367.018,205.652 L350.951,306.504 L424.629,306.504 L415.678,360.096 M204.971,306.504 L292.421,306.504 L308.259,205.652 L220.808,205.652 L204.971,306.504 Z" style="stroke:#808080;stroke-opacity:1;stroke-width:4;stroke-linejoin:miter;stroke-miterlimit:2;stroke-linecap:round;fill-rule:nonzero;fill:#00a0a0;fill-opacity:1;"/>
+        </g>
+    </g>
+
+
+<g transform="translate(256,256) scale(0.025,0.025)">
+	<title>delete icon</title>
+	<desc>delete icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#E68497" d="M1273 7156l2037 -2036 -2037 -2036c-124,-125 -124,-328 0,-453l1358 -1358c125,-124 328,-124 453,0l2036 2037 2036 -2037c125,-124 328,-124 453,0l1358 1358c124,125 124,328 0,453l-2037 2036 2037 2036c124,125 124,328 0,453l-1358 1358c-125,124 -328,124 -453,0l-2036 -2037 -2036 2037c-125,124 -328,124 -453,0l-1358 -1358c-124,-125 -124,-328 0,-453z"/>
+</g>
+
+</g>
+</svg>

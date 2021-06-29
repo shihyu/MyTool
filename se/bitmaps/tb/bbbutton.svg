@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>button icon</title>
+	<desc>button icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#235DB8" d="M1280 3200l7680 0c353,0 640,287 640,640l0 2560c0,352 -287,640 -640,640l-7680 0c-353,0 -640,-288 -640,-640l0 -2560c0,-353 287,-640 640,-640zm1280 1935c0,394 111,704 332,928 221,225 519,337 894,337 370,0 666,-113 887,-339 221,-225 332,-538 332,-938 0,-403 -111,-717 -334,-944 -224,-226 -520,-339 -892,-339 -205,0 -386,33 -544,98 -117,49 -226,123 -325,223 -99,100 -178,213 -234,339 -77,171 -116,383 -116,635zm524 -17c0,-284 65,-497 193,-639 129,-140 298,-211 508,-211 210,0 379,69 505,209 128,139 191,351 191,634 0,287 -65,502 -195,646 -131,143 -298,215 -501,215 -203,0 -371,-72 -503,-217 -132,-145 -198,-357 -198,-637zm2325 1237l510 0 0 -747 410 -413 693 1160 658 0 -1000 -1508 951 -962 -684 0 -1028 1094 0 -1094 -510 0 0 2470z"/>
+</svg>

@@ -1,0 +1,70 @@
+<?xml encoding='UTF-8'?>
+
+<!-- External entities -->
+<!ENTITY % parameters SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/parameters.dtd">
+%parameters;
+
+<!--
+Description: Root element.
+-->
+<!ELEMENT SETemplate (TemplateDetails,TemplateContent)>
+  <!--
+  Description: The version of the template format used by the instance document (.setemplate file).
+
+  Example: Version="1.0"
+  -->
+  <!ATTLIST SETemplate Version (1.0) #REQUIRED>
+  <!--
+  Description:
+  The type of the template. Currently supported types are: Item.
+
+  Example: Type="Item"
+  -->
+  <!ATTLIST SETemplate Type (Item) #REQUIRED>
+
+<!ELEMENT TemplateDetails (Name,Description,SortOrder?,DefaultName?)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT SortOrder (#PCDATA)>
+<!--
+Used to provide user with sample item input name.
+Also used by template instantiation to map target file name parts and target file extension parts
+from parts of item input name (e.g. input file name part, input file extension part).
+If you are not explicitly naming your files using the TargetFilename attribute for the File element,
+then it is a good idea that the value match one of the //TemplateContent/Files/File values, so that the
+mapping can succeed.
+Example:
+DefaultName=Class.cpp, user enters Item=Foo.cxx
+If the template has a <File>Class.cpp</File>, then the target=Foo.cxx because name part "Class"=>"Foo" and extension part  "cpp"=>"cxx"
+Likewise, if the template has a <File>Class.h</File>, then the target=Foo.h because "Class"=>"Foo" and there is no mapping for extension "h" so it is unchanged.
+-->
+<!ELEMENT DefaultName (#PCDATA)>
+
+<!ELEMENT TemplateContent (Parameters,Files)>
+  <!--
+  Description: Optional. A single character delimiter used to mark up subsitution parameters in template content.
+                           Default: '$'
+
+  Example: Delimiter="$"
+  -->
+  <!ATTLIST TemplateContent Delimiter CDATA #IMPLIED>
+
+<!ELEMENT Files (File)*>
+
+<!ELEMENT File (#PCDATA)>
+  <!--
+  Description: Optional. The target filename for a File.
+  Defaults to the same name as the value of the File tag.
+
+  Example: TargetFilename="foo.cpp"
+  -->
+  <!ATTLIST File TargetFilename CDATA #IMPLIED>
+  <!--
+  Description: Optional. Determines whether substitution parameters in the File are replaced with known values.
+  0=Do not replace
+  1=Replace
+  Defaults to 1.
+
+  Example: ReplaceParameters="0"
+  -->
+  <!ATTLIST File ReplaceParameters (0|1) #IMPLIED>

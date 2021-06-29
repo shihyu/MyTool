@@ -1,0 +1,15 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>piece2 icon</title>
+    <desc>piece2 icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="32" x2="318.916" y2="480.00085" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#74d425"/>
+            <stop offset="1" stop-color="#57a01c"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#color-1)" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M120,144l77.5,0c18.5,0 22,-21 8.5,-29.5c-13.5,-8.5 -22,-21 -22,-34.5c0,-26.5 32,-48 72,-48c40,0 72,21.5 72,48c0,13.5 -8.5,26 -22,34.5c-13.5,8.5 -10,29.5 8.5,29.5l77.5,0c4.5,0 8,3.5 8,8l0,69.5c0,18.5 21,22 29.5,8.5c8.5,-13.5 21,-22 34.5,-22c26.5,0 48,32 48,72c0,40 -21.5,72 -48,72c-13.5,0 -26,-8.5 -34.5,-22c-8.5,-13.5 -29.5,-10 -29.5,8.5l0,133.5c0,4.5 -3.5,8 -8,8l-77.5,0c-18.5,0 -22,-21 -8.5,-29.5c13.5,-8.5 22,-21 22,-34.5c0,-26.5 -32,-48 -72,-48c-40,0 -72,21.5 -72,48c0,13.5 8.5,26 22,34.5c13.5,8.5 10,29.5 -8.5,29.5l-77.5,0c-4.5,0 -8,-3.5 -8,-8l0,-133.5c0,-18.5 -21,-22 -29.5,-8.5c-8.5,13.5 -21,22 -34.5,22c-26.5,0 -48,-32 -48,-72c0,-40 21.5,-72 48,-72c13.5,0 26,8.5 34.5,22c8.5,13.5 29.5,10 29.5,-8.5l0,-69.5c0,-4.5 3.5,-8 8,-8z" id="curve0"/>
+    </g>
+</svg>

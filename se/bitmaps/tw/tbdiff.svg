@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>documents_exchange icon</title>
+	<desc>documents_exchange icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve3" fill="#252525" d="M4480 640l2670 0c352,0 656,126 905,375l1170 1170c249,249 375,553 375,905l0 3950 -38 0c-26,-70 -65,-135 -116,-194l-486 -576 0 -2750c0,-176 -144,-320 -320,-320l-1600 0 0 -1600c0,-176 -144,-320 -320,-320l-1600 0 0 2747 -640 -640 0 -2747zm1600 5760l1184 0 -384 443c-52,60 -91,126 -118,197l-682 0 0 -640zm1600 -4800l0 960 960 0 -960 -960z"/>
+	<path id="curve2" fill="#252525" d="M640 3200l40 0c27,70 65,135 116,194l484 573 0 4993 3840 0 0 -2880c0,-176 -144,-320 -320,-320l-1600 0 0 -1600c0,-146 -98,-269 -232,-308l394 -455c49,-57 88,-120 114,-187 283,34 530,156 739,365l1170 1170c249,249 375,553 375,905l0 3950 -5120 0 0 -6400zm3200 960l0 960 960 0 -960 -960z"/>
+	<path id="curve1" fill="#235DB8" d="M7042 7264l0 736c0,68 40,126 103,150 64,24 133,8 177,-44l360 -426 0 640c0,176 -144,320 -320,320l-1282 0 0 960 0 0 1282 0c705,0 1280,-575 1280,-1280l0 -320 0 -320 360 426c44,52 113,68 177,44 63,-24 103,-82 103,-150l0 -736c0,-81 -28,-150 -80,-212l-787 -930c-129,-154 -355,-153 -487,-1l-806 931c-53,62 -80,131 -80,212z"/>
+	<path id="curve0" fill="#235DB8" d="M3200 2976l0 -736c0,-68 -40,-126 -103,-150 -64,-24 -133,-8 -177,44l-360 426 0 -640c0,-176 144,-320 320,-320l1280 0 0 -960 -1280 0c-705,0 -1280,575 -1280,1280l0 320 0 320 -360 -426c-44,-52 -113,-68 -177,-44 -63,24 -103,82 -103,150l0 736c0,81 28,150 80,212l787 930c129,154 355,153 487,1l806 -931c53,-62 80,-131 80,-212z"/>
+</svg>

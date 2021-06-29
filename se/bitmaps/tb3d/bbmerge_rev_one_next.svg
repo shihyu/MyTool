@@ -1,0 +1,17 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>nav redo icon</title>
+    <desc>nav redo icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="128" y1="352" x2="283.429" y2="160" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#e4e9ef"/>
+            <stop offset="0.67059" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#ffffff"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M16,256c0,132.5 107.5,240 240,240c132.5,0 240,-107.5 240,-240c0,-132.5 -107.5,-240 -240,-240c-132.5,0 -240,107.5 -240,240z" id="curve1" fill="#129eee"/>
+        <path d="M342,226l-52,-52c-9.5,-9.5 -21.5,-14 -34,-14l-128,0l0,96l108,0l39,39l-56,57l181,0l0,-185z" id="curve0" fill="url(#color-1)"/>
+    </g>
+</svg>

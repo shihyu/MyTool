@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>magic_wand icon</title>
+	<desc>magic_wand icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve2" fill="#252525" d="M9374 2585l-905 -905c-125,-124 -328,-124 -453,0l-6336 6336c-124,125 -124,328 0,453l905 905c125,124 328,124 453,0l6336 -6336c124,-125 124,-328 0,-453zm-5205 5205l-1357 1357 -905 -905 1357 -1357 905 905zm4978 -4978l-1357 1357 -905 -905 1357 -1357 905 905z"/>
+	<path id="curve1" fill="#EDCA36" d="M6163 383l192 578 596 -1c40,0 74,27 85,68 12,41 -3,83 -36,106l-476 336 188 558c13,39 2,81 -29,107 -30,26 -71,28 -103,5l-500 -356 -500 356c-32,23 -73,21 -103,-5 -31,-26 -42,-68 -29,-107l188 -558 -476 -336c-33,-23 -48,-65 -36,-106 11,-41 45,-68 85,-68l596 1 192 -578c13,-38 45,-63 83,-63 38,0 70,25 83,63z"/>
+	<path id="curve0" fill="#EDCA36" d="M2900 457l415 1252 1293 -3c86,0 159,58 184,147 24,89 -7,181 -79,232l-1030 726 406 1210c28,85 4,176 -62,232 -66,55 -154,59 -224,10l-1083 -770 -1083 770c-70,49 -158,45 -224,-10 -66,-56 -90,-147 -62,-232l406 -1210 -1030 -726c-72,-51 -103,-143 -79,-232 25,-89 98,-147 184,-147l1293 3 415 -1252c27,-84 98,-137 180,-137 82,0 153,53 180,137z"/>
+</svg>

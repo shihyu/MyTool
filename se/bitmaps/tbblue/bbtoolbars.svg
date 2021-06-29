@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>window_sidebar icon</title>
+	<desc>window_sidebar icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve4" fill="#252525" d="M6400,3190 7040,3190 7040,8330 6400,8330z"/>
+	<path id="curve3" fill="#252525" d="M1280 3200l7680 0 0 5120 -7680 0 0 -5120zm0 -1920c-352,0 -640,287 -640,640l0 6720c0,176 144,320 320,320l8320 0c176,0 320,-144 320,-320l0 -6720c0,-352 -287,-640 -640,-640l-7680 0z"/>
+	<path id="curve2" fill="#3E9BD5" d="M7360,6720 8640,6720 8640,8000 7360,8000z"/>
+	<path id="curve1" fill="#3E9BD5" d="M7360,5120 8640,5120 8640,6400 7360,6400z"/>
+	<path id="curve0" fill="#3E9BD5" d="M7360,3520 8640,3520 8640,4800 7360,4800z"/>
+</svg>

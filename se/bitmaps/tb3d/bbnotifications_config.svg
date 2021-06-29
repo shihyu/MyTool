@@ -1,0 +1,37 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>message icon</title>
+    <desc>message icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0.18639" y1="0.01548" x2="406.30189" y2="341.15363" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#ffd041"/>
+            <stop offset="1" stop-color="#ffc001"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M296,512c8,-32 8,-80 -19.5,-104.5c-9,2.5 -18.5,5 -28.5,6c-110,16 -226.5,-46.5 -245,-158.5c-19,-113.5 59.5,-232.5 197,-252c140.5,-20 285,62 308.5,201.5c25,150 -80.5,272 -212.5,307.5z" id="curve1" fill="url(#color-1)"/>
+        <path d="M144,176l224,0l0,16l-224,0z M144,128l224,0l0,16l-224,0z M144,272l224,0l0,16l-224,0z M144,224l224,0l0,16l-224,0z" id="curve0" fill="#ffffff"/>
+    </g>
+
+
+<g transform="translate(256,256) scale(0.5,0.5)">
+    <title>wrench icon</title>
+    <desc>wrench icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="10.37316" y1="11.35928" x2="255.26266" y2="396.27828" gradientUnits="userSpaceOnUse" id="w-color-1">
+            <stop offset="0" stop-color="#91a0af"/>
+            <stop offset="1" stop-color="#b3c0cd"/>
+        </linearGradient>
+        <linearGradient x1="260.5" y1="161" x2="333.856" y2="251.2215" gradientUnits="userSpaceOnUse" id="w-color-2">
+            <stop offset="0" stop-color="#b3c0cd"/>
+            <stop offset="1" stop-color="#ebedef"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M500.5,141c1.5,30 -8,59.5 -29.5,81c-31,31 -77.5,37.5 -120,21.5c-6,-2.5 -13,-1 -17.5,4l-213.5,235c-23.5,26 -65.5,25 -90.5,0c-25,-25 -26,-67 0,-90.5l235,-213.5c5,-4.5 6.5,-11.5 4,-17.5c-16,-42.5 -9.5,-89 21.5,-120c34.5,-34.5 89.5,-38.5 136,-14c2.5,1.5 4,4 4,7c0,3 -1.5,5.5 -4,7l-68,39.5c-7.5,4.5 -1.5,29.5 14,56.5c15.5,27 34.5,45 42,40.5l74.5,-43c2.5,-1.5 5.5,-1.5 8,0c2.5,1 4,3.5 4,6.5z M97.5,414.5c-12.5,-12.5 -32.5,-12.5 -45,0c-12.5,12.5 -12.5,32.5 0,45c12.5,12.5 32.5,12.5 45,0c12.5,-12.5 12.5,-32.5 0,-45z" id="curve1" fill="url(#w-color-1)"/>
+        <path d="M290,222c-12.5,-12 -22,-26 -29.5,-40l4,-3.5c5,-4.5 6.5,-11 4.5,-17.5c6.5,18 17.5,35 32.5,49.5c14.5,15 31.5,26 49.5,32.5c-6.5,-2 -13,-0.5 -17.5,4.5l-3.5,4c-14,-7.5 -28,-17 -40,-29.5z" id="curve0" fill="url(#w-color-2)"/>
+    </g>
+</g>
+
+</svg>

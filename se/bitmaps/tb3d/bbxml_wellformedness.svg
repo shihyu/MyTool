@@ -1,0 +1,15 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>check icon</title>
+    <desc>check icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="7" y1="34.5" x2="381.4277" y2="437.3215" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#77da26"/>
+            <stop offset="1" stop-color="#5ba61e"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#color-1)" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M432.5,34.5l79,79l-334.5,335l-170,-170l79.5,-79l90.5,90.5z" id="curve0"/>
+    </g>
+</svg>

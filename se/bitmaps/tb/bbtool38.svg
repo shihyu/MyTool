@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>network_node icon</title>
+	<desc>network_node icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve4" fill="#252525" d="M7680,4480 9600,4480 9600,5760 7680,5760z"/>
+	<path id="curve3" fill="#252525" d="M4480,7680 5760,7680 5760,9600 4480,9600z"/>
+	<path id="curve2" fill="#252525" d="M640,4480 2560,4480 2560,5760 640,5760z"/>
+	<path id="curve1" fill="#252525" d="M4480,640 5760,640 5760,2560 4480,2560z"/>
+	<path id="curve0" fill="#235DB8" d="M4160 7040l0 -726c-97,-56 -178,-137 -234,-234l-726 0c-176,0 -320,-144 -320,-320l0 -1280c0,-176 144,-320 320,-320l726 0c56,-97 137,-178 234,-234l0 -726c0,-176 144,-320 320,-320l1280 0c176,0 320,144 320,320l0 726c97,56 178,137 234,234l726 0c176,0 320,144 320,320l0 1280c0,176 -144,320 -320,320l-726 0c-56,97 -137,178 -234,234l0 726c0,176 -144,320 -320,320l-1280 0c-176,0 -320,-144 -320,-320z"/>
+</svg>

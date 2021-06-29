@@ -1,0 +1,31 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>smartphone icon</title>
+    <desc>smartphone icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="96" y1="0" x2="317.133" y2="510.30512" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#526270"/>
+        </linearGradient>
+        <linearGradient x1="128" y1="48" x2="128" y2="463.99935" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#4eb6f2"/>
+        </linearGradient>
+        <linearGradient x1="128" y1="48" x2="314.673" y2="64.00055" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#1196e2"/>
+            <stop offset="1" stop-color="#108ad0"/>
+        </linearGradient>
+        <linearGradient x1="232" y1="480" x2="239.9995" y2="496" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#f3f5f8"/>
+            <stop offset="1" stop-color="#e8ecf1"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M112,0l288,0c9,0 16,7 16,16l0,480c0,9 -7,16 -16,16l-288,0c-9,0 -16,-7 -16,-16l0,-480c0,-9 7,-16 16,-16z" id="curve4" fill="url(#color-1)"/>
+        <path d="M128,48l256,0l0,416l-256,0z" id="curve3" fill="url(#color-2)"/>
+        <path d="M384,48l0,16l-256,0l0,-16z" id="curve2" fill="url(#color-3)"/>
+        <path d="M232,16l48,0c4.5,0 8,3.5 8,8c0,4.5 -3.5,8 -8,8l-48,0c-4.5,0 -8,-3.5 -8,-8c0,-4.5 3.5,-8 8,-8z" id="curve1" fill="#36414a"/>
+        <path d="M240,480l32,0c4.5,0 8,3.5 8,8c0,4.5 -3.5,8 -8,8l-32,0c-4.5,0 -8,-3.5 -8,-8c0,-4.5 3.5,-8 8,-8z" id="curve0" fill="url(#color-4)"/>
+    </g>
+</svg>

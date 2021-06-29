@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>jar icon</title>
+	<desc>jar icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve2" fill="#3E9BD5" d="M3200,4480 7040,4480 7040,7040 3200,7040z"/>
+	<path id="curve1" fill="#252525" d="M3200 2272l0 -32 640 0c0,458 -320,881 -768,973 -296,60 -512,324 -512,627l0 4480 0 1 0 -2988 0 2987c0,346 282,640 640,640l3840 -1c358,0 640,-292 640,-640l0 -4480c-1,-302 -217,-566 -512,-626 -475,-97 -768,-497 -768,-973l320 0 320 0 0 32c0,154 105,283 256,314 583,119 1024,637 1024,1254l0 1920 0 2560c0,412 -196,780 -500,1014l0 0 -1 0c-216,167 -486,266 -779,266l-3840 0c-705,0 -1280,-575 -1280,-1280l0 -2560 0 -1920c0,-617 441,-1135 1024,-1254 151,-31 256,-160 256,-314z"/>
+	<path id="curve0" fill="#3E9BD5" d="M2880 640l4480 0c176,0 320,144 320,320l0 640c0,176 -144,320 -320,320l-4480 0c-176,0 -320,-144 -320,-320l0 -640c0,-176 144,-320 320,-320z"/>
+</svg>

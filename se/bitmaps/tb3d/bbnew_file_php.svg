@@ -1,0 +1,30 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>code php icon</title>
+    <desc>code php icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="64" y1="0" x2="374.8575" y2="512.00059" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#f3fafe"/>
+            <stop offset="1" stop-color="#c7e8fb"/>
+        </linearGradient>
+        <linearGradient x1="112" y1="32" x2="254.1805" y2="303.99985" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#8695a4"/>
+            <stop offset="1" stop-color="#778595"/>
+        </linearGradient>
+        <linearGradient x1="64" y1="336" x2="247.7395" y2="501.7415" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#be3ac6"/>
+            <stop offset="1" stop-color="#a533ad"/>
+        </linearGradient>
+        <linearGradient x1="146" y1="384" x2="227.689" y2="458.035" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#f2f4f7"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M64,0l384,0l0,512l-384,0z" id="curve3" fill="url(#color-1)"/>
+        <path d="M112,32l112,0l0,16l-112,0z M112,288l160,0l0,16l-160,0z M160,192l112,0l0,16l-112,0z M112,256l112,0l0,16l-112,0z M160,224l144,0l0,16l-144,0z M160,160l112,0l0,16l-112,0z M224,128l112,0l0,16l-112,0z M224,96l192,0l0,16l-192,0z M160,64l176,0l0,16l-176,0z" id="curve2" fill="url(#color-2)"/>
+        <path d="M64,336l384,0l0,176l-384,0z" id="curve1" fill="url(#color-3)"/>
+        <path d="M165,436l0,27l-19,0l0,-79l31.5,0c6,0 11,1 16,3.5c4.5,2 8,5 10.5,9.5c2.5,4 4,8.5 4,13.5c0,8 -3,14 -8.5,18.5c-5.5,4.5 -13,7 -22.5,7z M165,421.5l12.5,0c3.5,0 6.5,-1 8,-3c2,-1.5 3,-4.5 3,-7.5c0,-4 -1,-7 -3,-9c-2,-2 -4.5,-3.5 -8,-3.5l-12.5,0z M288,463l-19,0l0,-33l-28,0l0,33l-19,0l0,-79l19,0l0,31.5l28,0l0,-31.5l19,0z M323,436l0,27l-19,0l0,-79l31,0c6.5,0 11.5,1 16.5,3.5c4.5,2 8,5 10.5,9.5c2.5,4 4,8.5 4,13.5c0,8 -3,14 -8.5,18.5c-5.5,4.5 -13,7 -22.5,7z M323,421.5l12,0c4,0 6.5,-1 8.5,-3c2,-1.5 3,-4.5 3,-7.5c0,-4 -1,-7 -3,-9c-2,-2 -4.5,-3.5 -8,-3.5l-12.5,0z" id="curve0" fill="url(#color-4)"/>
+    </g>
+</svg>

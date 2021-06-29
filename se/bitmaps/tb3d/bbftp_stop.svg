@@ -1,0 +1,20 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>sign stop icon</title>
+    <desc>sign stop icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="16" y1="16" x2="451.1485" y2="378.255" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#ef5c51"/>
+            <stop offset="1" stop-color="#c22f24"/>
+        </linearGradient>
+        <linearGradient x1="464" y1="192" x2="463.3695" y2="320.0005" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#f9fbfc"/>
+            <stop offset="1" stop-color="#e2e8ee"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M156.5,16l199,0l140.5,140.5l0,199l-140.5,140.5l-199,0l-140.5,-140.5l0,-199z" id="curve1" fill="url(#color-1)"/>
+        <path d="M110,285.5c0,-4.5 -1.5,-8 -4.5,-10.5c-3,-2.5 -7.5,-5 -15,-7.5c-7,-3 -12.5,-5.5 -17,-8c-15,-8 -22,-18.5 -22,-32.5c0,-7 1.5,-13 5.5,-18.5c3.5,-5 8.5,-9 15.5,-12c6.5,-3 14,-4.5 22.5,-4.5c8,0 15,1.5 21.5,5c6.5,3 11.5,7.5 15,13.5c3.5,6 5.5,12.5 5.5,20l-27,0c0,-5 -1.5,-9 -4.5,-11.5c-2.5,-3 -6.5,-4.5 -11.5,-4.5c-4.5,0 -8.5,1.5 -11.5,3.5c-2.5,2.5 -4,5.5 -4,9c0,3.5 1.5,6.5 4.5,9c3,2.5 8.5,5 16.5,8c8,2.5 14,5.5 19,9c12.5,7.5 18.5,18.5 18.5,32c0,11 -4,19.5 -11,25.5c-7.5,6.5 -18,9.5 -31,9.5c-9,0 -17,-2 -24.5,-5.5c-7.5,-3.5 -13,-8.5 -17,-15c-3.5,-6 -5.5,-13.5 -5.5,-21.5l27.5,0c0,6.5 1.5,11.5 4.5,15c3,3 8,5 15,5c4.5,0 8,-1.5 11,-3.5c2.5,-2 4,-5 4,-9z M245,217l-34,0l0,101l-27,0l0,-101l-33,0l0,-23.5l94,0z M355.5,258.5c0,12 -2,23 -6,32.5c-4,9 -10,16.5 -17.5,21.5c-7.5,5 -16,7.5 -25.5,7.5c-10,0 -18.5,-2.5 -26,-7.5c-7,-4.5 -13,-11.5 -17,-21c-4.5,-9 -6.5,-19 -6.5,-31l0,-7c0,-12 2,-23 6,-32.5c4,-9 9.5,-16.5 17.5,-21.5c7.5,-5 16,-7.5 25.5,-7.5c9.5,0 18,2.5 25.5,7.5c7.5,5 13.5,12 17.5,21.5c4.5,9 6.5,20 6.5,32z M328,253.5c0,-12.5 -2,-22 -6,-28.5c-3.5,-6.5 -9,-9.5 -16,-9.5c-13.5,0 -20.5,11.5 -21.5,34l0,9c0,12.5 2,22 5.5,28.5c3.5,6.5 9,10 16.5,10c6.5,0 12,-3.5 15.5,-10c4,-6.5 6,-15.5 6,-28z M402.5,276l0,42l-27.5,0l0,-124.5l45,0c9,0 16.5,2 23,5.5c7,3.5 12,8.5 15.5,15c3.5,6.5 5.5,13.5 5.5,22c0,12 -4,21.5 -12,29c-7.5,7.5 -18.5,11 -32.5,11z M402.5,253l17.5,0c5.5,0 9.5,-1.5 12.5,-4.5c2.5,-3 4,-7 4,-12.5c0,-5.5 -1.5,-10.5 -4.5,-14c-2.5,-3.5 -6.5,-5 -11.5,-5l-18,0z" id="curve0" fill="url(#color-2)"/>
+    </g>
+</svg>

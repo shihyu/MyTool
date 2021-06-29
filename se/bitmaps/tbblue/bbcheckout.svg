@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>inbox_out icon</title>
+	<desc>inbox_out icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve2" fill="#252525" d="M640 5760l640 0c248,0 461,132 572,354l607 1212c111,222 324,354 572,354l4178 0c248,0 461,-132 572,-354l607 -1212c111,-222 324,-354 572,-354l640 0 0 3520c0,176 -144,320 -320,320l-8320 0c-176,0 -320,-144 -320,-320l0 -3520z"/>
+	<path id="curve1" fill="#252525" d="M7887 6400l-160 320 -5214 0 -160 -320 5534 0zm-320 640l-72 143c-57,114 -159,177 -286,177l-4178 0c-127,0 -229,-63 -286,-177l-72 -143 4894 0z"/>
+	<path id="curve0" fill="#3E9BD5" d="M6853 2747l-1507 -1506c-124,-124 -328,-124 -452,0l-1507 1506c-124,125 -187,277 -187,453l0 1159c0,66 38,122 99,147 61,26 127,13 174,-34l1007 -1007 0 2135c0,88 72,160 160,160l960 0c88,0 160,-72 160,-160l0 -2135 1007 1007c47,47 113,60 174,34 61,-25 99,-81 99,-147l0 -1159c0,-176 -63,-328 -187,-453z"/>
+</svg>

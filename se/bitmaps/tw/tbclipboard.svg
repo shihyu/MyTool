@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>clipboard_paste icon</title>
+	<desc>clipboard_paste icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve3" fill="#EDCA36" d="M2560 1920l0 320c0,242 69,471 243,646 265,269 678,314 1037,314l2560 0c359,0 772,-45 1037,-314 174,-175 243,-404 243,-646l0 -320c353,0 640,288 640,640l0 1600 -3360 0c-264,0 -480,216 -480,480l0 4320 -1920 0c-352,0 -640,-288 -640,-640l0 -5760c0,-353 288,-640 640,-640zm3840 1l-1 319 -2559 -1 0 -319 2560 1z"/>
+	<path id="curve2" fill="#252525" d="M3840 1600c-175,0 -320,145 -320,320l0 320c0,175 145,320 320,320l2560 0c175,0 320,-145 320,-320l0 -320c0,-176 -145,-320 -320,-320l-2560 0zm2560 -640c529,0 960,431 960,960l0 320c0,529 -431,640 -960,640l-2560 0c-529,0 -960,-111 -960,-640l0 -320c0,-529 431,-960 960,-960 0,-177 573,-640 1280,-640 707,0 1280,463 1280,640zm-1280 -320c-177,0 -320,143 -320,320 0,177 143,320 320,320 177,0 320,-143 320,-320 0,-177 -143,-320 -320,-320z"/>
+	<path id="curve1" fill="#252525" d="M4960 4480l4160 0c88,0 160,72 160,160l0 5120c0,88 -72,160 -160,160l-4160 0c-88,0 -160,-72 -160,-160l0 -5120c0,-88 72,-160 160,-160zm160 320l0 4800 3840 0 0 -4800 -3840 0z"/>
+	<path id="curve0" fill="#252525" d="M5440 8320l3200 0 0 640 -3200 0 0 -640zm0 -2560l1920 0 0 640 -1920 0 0 -640zm0 1280l3200 0 0 640 -3200 0 0 -640z"/>
+</svg>

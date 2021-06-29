@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512">
+<title>arrow_into_right_green icon</title>
+<desc>based on icon from the IconExperience.com V-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+<desc>Hand-traced with iVinci Express.</desc>
+    <desc iVinci="yes" version="4.6" gridStep="16" showGrid="yes" snapToGrid="yes" codePlatform="0"/>
+    <g id="Layer1" name="Layer 4" opacity="1">
+        <g id="Shape1">
+            <path id="shapePath1" d="M44.7668,480.5 C123.589,384.316 146.041,352.5 262.633,352.5 L262.633,480.5 L480.5,256.5 L262.633,32.5 L262.633,160.5 C125.797,160.5 -9.48572,266.5 44.7668,480.5 Z" style="stroke:url(#linearGradientStroke1);stroke-width:8;stroke-linejoin:miter;stroke-miterlimit:2;stroke-linecap:round;fill-rule:evenodd;fill:url(#radialGradientFill1);fill-opacity:1;"/><defs><linearGradient id="linearGradientStroke1" gradientUnits="userSpaceOnUse" x1="36.1784" y1="256.5" x2="476.822" y2="256.5"><stop offset="0" stop-color="#4c9532" stop-opacity="1"/><stop offset="1" stop-color="#2b6816" stop-opacity="1"/></linearGradient><radialGradient id="radialGradientFill1" gradientUnits="userSpaceOnUse" cx="391.605" cy="606.5" r="416.553" fx="291.514" fy="648.5"><stop offset="0" stop-color="#91e573" stop-opacity="1"/><stop offset="0.864404" stop-color="#76d455" stop-opacity="1"/><stop offset="0.879142" stop-color="#55bd30" stop-opacity="1"/></radialGradient></defs>
+        </g>
+    </g>
+</svg>

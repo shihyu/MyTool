@@ -1,0 +1,28 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>tab pane icon</title>
+    <desc>tab pane icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="192" y1="64" x2="275.2" y2="127.9995" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#108bd2"/>
+            <stop offset="0.5098" stop-color="#1087cc"/>
+            <stop offset="1" stop-color="#0f83c6"/>
+        </linearGradient>
+        <linearGradient x1="96" y1="64" x2="156.444" y2="127.9995" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#39adf1"/>
+            <stop offset="0.6" stop-color="#33abf1"/>
+            <stop offset="1" stop-color="#2ca8f0"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="64" x2="268.6673" y2="442.124" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#c5e7fb"/>
+            <stop offset="0.6" stop-color="#89cff7"/>
+            <stop offset="1" stop-color="#59bbf3"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M208,64l128,0c9,0 16,7 16,16l0,48l-160,0l0,-48c0,-9 7,-16 16,-16z" id="curve2" fill="url(#color-1)"/>
+        <path d="M112,64l128,0c9,0 16,7 16,16l0,48l-160,0l0,-48c0,-9 7,-16 16,-16z" id="curve1" fill="url(#color-2)"/>
+        <path d="M16,64l128,0c9,0 16,7 16,16l0,32l344,0c4.5,0 8,3.5 8,8l0,320c0,4.5 -3.5,8 -8,8l-496,0c-4.5,0 -8,-3.5 -8,-8l0,-360c0,-9 7,-16 16,-16z" id="curve0" fill="url(#color-3)"/>
+    </g>
+</svg>

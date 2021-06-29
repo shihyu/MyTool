@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>progress_bar icon</title>
+	<desc>progress_bar icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve4" fill="#252525" d="M960 3200l8320 0c176,0 320,144 320,320l0 2560c0,176 -144,320 -320,320l-8320 0c-176,0 -320,-144 -320,-320l0 -2560c0,-176 144,-320 320,-320zm320 640l0 1920 7680 0 0 -1920 -7680 0zm4160 320l960 0 0 1280 -960 0 0 -1280zm-1280 0l960 0 0 1280 -960 0 0 -1280zm-1280 0l960 0 0 1280 -960 0 0 -1280zm-1280 0l960 0 0 1280 -960 0 0 -1280z"/>
+	<path id="curve3" fill="#3E9BD5" d="M5440,4160 6400,4160 6400,5440 5440,5440z"/>
+	<path id="curve2" fill="#3E9BD5" d="M4160,4160 5120,4160 5120,5440 4160,5440z"/>
+	<path id="curve1" fill="#3E9BD5" d="M2880,4160 3840,4160 3840,5440 2880,5440z"/>
+	<path id="curve0" fill="#3E9BD5" d="M1600,4160 2560,4160 2560,5440 1600,5440z"/>
+</svg>

@@ -1,0 +1,22 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>logic or icon</title>
+    <desc>logic or icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="16" y1="96" x2="152.7008" y2="393.9155" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#4eb6f2"/>
+            <stop offset="1" stop-color="#1ea3ef"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="80" x2="162.32067" y2="422.533" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#5a6a78"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M176,96c29,0 56.5,8 80,21.5c23.5,-13.5 51,-21.5 80,-21.5c88.5,0 160,71.5 160,160c0,88.5 -71.5,160 -160,160c-29,0 -56.5,-8 -80,-21.5c-23.5,13.5 -51,21.5 -80,21.5c-88.5,0 -160,-71.5 -160,-160c0,-88.5 71.5,-160 160,-160z" id="curve3" fill="#ebedef" fill-rule="evenodd"/>
+        <path d="M496,256c0,88.5 -71.5,160 -160,160c-29,0 -56.5,-8 -80,-21.5c-23.5,13.5 -51,21.5 -80,21.5c-88.5,0 -160,-71.5 -160,-160z" id="curve2" fill="#cdd7db" fill-rule="evenodd"/>
+        <path d="M176,96c29,0 56.5,8 80,21.5c23.5,-13.5 51,-21.5 80,-21.5c88.5,0 160,71.5 160,160c0,88.5 -71.5,160 -160,160c-29,0 -56.5,-8 -80,-21.5c-23.5,13.5 -51,21.5 -80,21.5c-88.5,0 -160,-71.5 -160,-160c0,-88.5 71.5,-160 160,-160z" id="curve1" fill="url(#color-1)" fill-rule="nonzero"/>
+        <path d="M176,112c17,0 33,3 48,8c-39,32.5 -64,81.5 -64,136c0,54.5 25,103.5 64,136c-15,5 -31,8 -48,8c-79.5,0 -144,-64.5 -144,-144c0,-79.5 64.5,-144 144,-144z M256,136.5c38.5,25.5 64,69.5 64,119.5c0,50 -25.5,94 -64,119.5c-38.5,-25.5 -64,-69.5 -64,-119.5c0,-50 25.5,-94 64,-119.5z M336,112c79.5,0 144,64.5 144,144c0,79.5 -64.5,144 -144,144c-17,0 -33,-3 -48,-8c39,-32.5 64,-81.5 64,-136c0,-54.5 -25,-103.5 -64,-136c15,-5 31,-8 48,-8z M336,80c-29,0 -56,7 -80,19c-24,-12 -51,-19 -80,-19c-97,0 -176,79 -176,176c0,97 79,176 176,176c29,0 56,-7 80,-19c24,12 51,19 80,19c97,0 176,-79 176,-176c0,-97 -79,-176 -176,-176z" id="curve0" fill="url(#color-2)" fill-rule="nonzero"/>
+    </g>
+</svg>

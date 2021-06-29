@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>clock_back icon</title>
+	<desc>clock_back icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#252525" d="M4445 2761l995 1719 0 0c116,0 226,31 320,85l1159 -670c136,164 245,351 320,554l-1159 671 0 0c0,353 -287,640 -640,640 -353,0 -640,-287 -640,-640 0,-116 31,-226 85,-320l-994 -1718c170,-129 355,-238 554,-321z"/>
+	<path id="curve0" fill="#235DB8" d="M5440 2240c795,0 1515,322 2037,843 521,522 843,1242 843,2037 0,795 -322,1515 -843,2036 -522,522 -1242,844 -2037,844 -795,0 -1515,-322 -2036,-844 -28,-27 -55,-55 -81,-84l-724 724c-63,63 -132,115 -206,157 35,37 70,73 105,109 753,752 1793,1218 2942,1218 1149,0 2189,-466 2942,-1218 752,-753 1218,-1793 1218,-2942 0,-1149 -466,-2189 -1218,-2942 -753,-752 -1793,-1218 -2942,-1218 -1149,0 -2189,466 -2942,1218 -752,753 -1218,1793 -1218,2942l0 0 -687 -687c-47,-47 -113,-60 -174,-35 -61,26 -99,82 -99,148l0 1159c0,176 63,328 187,453l1187 1186c124,124 328,124 452,0l1187 -1186c124,-125 187,-277 187,-453l0 -1159c0,-66 -38,-122 -99,-147 -61,-26 -127,-13 -174,34l-687 687c0,-795 322,-1515 844,-2037 521,-521 1241,-843 2036,-843z"/>
+</svg>

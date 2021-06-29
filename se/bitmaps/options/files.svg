@@ -1,0 +1,36 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>magazine folder icon</title>
+    <desc>magazine folder icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="64" y1="32" x2="325.2305" y2="497.01535" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#4ab4f2"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="64" y1="32" x2="96" y2="186.62135" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#118fd8"/>
+            <stop offset="1" stop-color="#1087cd"/>
+        </linearGradient>
+        <linearGradient x1="160" y1="112" x2="229.333" y2="256" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#fbfcfd"/>
+            <stop offset="1" stop-color="#eef2f5"/>
+        </linearGradient>
+        <linearGradient x1="48" y1="144" x2="300.13495" y2="512.0005" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#6b7a89"/>
+            <stop offset="1" stop-color="#556573"/>
+        </linearGradient>
+        <linearGradient x1="48" y1="496" x2="157.71345" y2="512" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#4c5c69"/>
+            <stop offset="0.32941" stop-color="#4a5a67"/>
+            <stop offset="1" stop-color="#485764"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M64,32l368,0l0,480l-368,0z" id="curve4" fill="url(#color-1)"/>
+        <path d="M64,32l32,0l0,480l-32,0z" id="curve3" fill="url(#color-2)"/>
+        <path d="M160,112l208,0l0,144l-208,0z" id="curve2" fill="url(#color-3)"/>
+        <path d="M48,384l96,0c176,0 128,-240 240,-240l80,0l0,368l-416,0z" id="curve1" fill="url(#color-4)"/>
+        <path d="M48,512l416,0l0,-16l-416,0z" id="curve0" fill="url(#color-5)"/>
+    </g>
+</svg>

@@ -1,0 +1,102 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>calculator icon</title>
+    <desc>calculator icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="64" y1="0" x2="411.0205" y2="488.3992" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#566674"/>
+        </linearGradient>
+        <linearGradient x1="96" y1="32" x2="96.6915" y2="143.99985" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#a5d77c"/>
+            <stop offset="0.52941" stop-color="#b8e493"/>
+            <stop offset="1" stop-color="#cbf1ab"/>
+        </linearGradient>
+        <linearGradient x1="416" y1="32" x2="385.143" y2="47.9998" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#8cc65d"/>
+            <stop offset="0.58039" stop-color="#8dc75f"/>
+            <stop offset="1" stop-color="#8fc861"/>
+        </linearGradient>
+        <linearGradient x1="96" y1="176" x2="148.0475" y2="237.0485" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="176" y1="176" x2="228.048" y2="237.0485" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="256" y1="176" x2="308.0475" y2="237.0485" gradientUnits="userSpaceOnUse" id="color-6">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="176" y1="256" x2="228.048" y2="317.048" gradientUnits="userSpaceOnUse" id="color-7">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="96" y1="256" x2="148.0475" y2="317.048" gradientUnits="userSpaceOnUse" id="color-8">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="256" y1="256" x2="308.04762" y2="317.04864" gradientUnits="userSpaceOnUse" id="color-9">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="176" y1="336" x2="228.04762" y2="397.04864" gradientUnits="userSpaceOnUse" id="color-10">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="96" y1="336" x2="148.04762" y2="397.04864" gradientUnits="userSpaceOnUse" id="color-11">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="256" y1="336" x2="308.04762" y2="397.04864" gradientUnits="userSpaceOnUse" id="color-12">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="96" y1="416" x2="148.04762" y2="477.04864" gradientUnits="userSpaceOnUse" id="color-13">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="176" y1="416" x2="228.04762" y2="477.04864" gradientUnits="userSpaceOnUse" id="color-14">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="256" y1="416" x2="308.0475" y2="477.0485" gradientUnits="userSpaceOnUse" id="color-15">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="352" y1="336" x2="409.9585" y2="451.582" gradientUnits="userSpaceOnUse" id="color-16">
+            <stop offset="0" stop-color="#ffd041"/>
+            <stop offset="1" stop-color="#ffc412"/>
+        </linearGradient>
+        <linearGradient x1="352" y1="256" x2="400.6815" y2="311.136" gradientUnits="userSpaceOnUse" id="color-17">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0f84c7"/>
+        </linearGradient>
+        <linearGradient x1="352" y1="176" x2="400.682" y2="231.135" gradientUnits="userSpaceOnUse" id="color-18">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0f84c7"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M96,0l320,0c17.5,0 32,14.5 32,32l0,448c0,17.5 -14.5,32 -32,32l-320,0c-17.5,0 -32,-14.5 -32,-32l0,-448c0,-17.5 14.5,-32 32,-32z" id="curve17" fill="url(#color-1)"/>
+        <path d="M112,32l288,0c9,0 16,7 16,16l0,80c0,9 -7,16 -16,16l-288,0c-9,0 -16,-7 -16,-16l0,-80c0,-9 7,-16 16,-16z" id="curve16" fill="url(#color-2)"/>
+        <path d="M112,32l288,0c9,0 16,7 16,16l-320,0c0,-9 7,-16 16,-16z" id="curve15" fill="url(#color-3)"/>
+        <path d="M112,176l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve14" fill="url(#color-4)"/>
+        <path d="M192,176l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve13" fill="url(#color-5)"/>
+        <path d="M272,176l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve12" fill="url(#color-6)"/>
+        <path d="M192,256l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve11" fill="url(#color-7)"/>
+        <path d="M112,256l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve10" fill="url(#color-8)"/>
+        <path d="M272,256l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve9" fill="url(#color-9)"/>
+        <path d="M192,336l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve8" fill="url(#color-10)"/>
+        <path d="M112,336l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve7" fill="url(#color-11)"/>
+        <path d="M272,336l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve6" fill="url(#color-12)"/>
+        <path d="M112,416l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve5" fill="url(#color-13)"/>
+        <path d="M192,416l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve4" fill="url(#color-14)"/>
+        <path d="M272,416l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve3" fill="url(#color-15)"/>
+        <path d="M368,336l32,0c9,0 16,7 16,16l0,112c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-112c0,-9 7,-16 16,-16z" id="curve2" fill="url(#color-16)"/>
+        <path d="M368,256l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve1" fill="url(#color-17)"/>
+        <path d="M368,176l32,0c9,0 16,7 16,16l0,32c0,9 -7,16 -16,16l-32,0c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16z" id="curve0" fill="url(#color-18)"/>
+    </g>
+</svg>

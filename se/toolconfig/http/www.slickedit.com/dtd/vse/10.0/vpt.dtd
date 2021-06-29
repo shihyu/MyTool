@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!ELEMENT CopyChildren EMPTY >
+  <!ATTLIST CopyChildren From CDATA #REQUIRED>
+
+<!ELEMENT Templates (Template|TemplateData)*>
+  <!ATTLIST Templates Version (10.0) #REQUIRED >
+  <!ATTLIST Templates VendorName (SlickEdit) #REQUIRED>
+  <!ATTLIST Templates OEMVendorName CDATA #IMPLIED>
+
+<!ELEMENT TemplateData ANY>
+  <!ATTLIST TemplateData Name CDATA #REQUIRED>
+
+<!ELEMENT Template (Macro|Config|Dependencies|Files|Rules|CustomFolders|CopyChildren|SetAppType|List)*>
+  <!ATTLIST Template Name CDATA #REQUIRED>
+  <!ATTLIST Template InitMacro CDATA #IMPLIED>
+  <!ATTLIST Template OEMVendorName CDATA #IMPLIED>
+  <!ATTLIST Template VCSAuxPath CDATA #IMPLIED>
+  <!ATTLIST Template VCSLocalPath CDATA #IMPLIED>
+  <!ATTLIST Template AssociatedFileType CDATA #IMPLIED>
+  <!ATTLIST Template ShowOnMenu (1|0) #IMPLIED>
+  <!ATTLIST Template VCSProject CDATA #IMPLIED>
+  <!ATTLIST Template WorkingDir CDATA #IMPLIED>
+  <!ATTLIST Template AssociatedFile CDATA #IMPLIED>
+  <!ATTLIST Template Platforms CDATA #IMPLIED>
+  <!ATTLIST Template OutputFile CDATA #IMPLIED>
+  <!ATTLIST Template InitMacroBefore CDATA #IMPLIED>
+  <!ATTLIST Template DisableExeName (1|0) #IMPLIED>
+  <!ATTLIST Template DisableAddToWorkspace (1|0) #IMPLIED>
+  <!ATTLIST Template AlwaysCreateDirectoryFromProjectName (1|0) #IMPLIED>
+
+<!ELEMENT SetAppType EMPTY>
+  <!ATTLIST SetAppType AppType CDATA #REQUIRED>
+
+<!ELEMENT Files (F|Folder|CopyChildren)*>
+  <!ATTLIST Files AutoFolders CDATA #IMPLIED>
+<!ELEMENT Folder (F|Folder|CopyChildren|List)*>
+  <!ATTLIST Folder Name CDATA #REQUIRED>
+  <!ATTLIST Folder Filters CDATA #IMPLIED>
+  <!ATTLIST Folder Type CDATA #IMPLIED>
+<!ELEMENT F EMPTY>
+  <!ATTLIST F N CDATA #REQUIRED>
+  <!ATTLIST F C CDATA #IMPLIED>
+  <!ATTLIST F Configs CDATA #IMPLIED>
+  <!ATTLIST F Excludes CDATA #IMPLIED>
+  <!ATTLIST F Recurse (1|0) #IMPLIED>
+  <!ATTLIST F Refilter (1|0) #IMPLIED>
+
+<!ELEMENT CustomFolders (Folder|CopyChildren)*>
+
+<!ELEMENT Rules (Rule|CopyChildren)*>
+  <!ATTLIST Rules Name CDATA #REQUIRED>
+<!ELEMENT Includes (Include|CopyChildren)*>
+<!ELEMENT Include EMPTY>
+  <!ATTLIST Include Dir CDATA #REQUIRED>
+<!ELEMENT PreBuildCommands (Exec|CopyChildren)*>
+  <!ATTLIST PreBuildCommands StopOnError (1|0) #IMPLIED>
+<!ELEMENT Rule (Exec|CopyChildren)*>
+  <!ATTLIST Rule InputExts CDATA #REQUIRED>
+  <!ATTLIST Rule OutputExts CDATA #REQUIRED>
+  <!ATTLIST Rule EnableEdit (1|0) #IMPLIED>
+  <!ATTLIST Rule Deletable (1|0) #IMPLIED>
+  <!ATTLIST Rule DependsRef CDATA #IMPLIED>
+  <!ATTLIST Rule RunFromDir CDATA #IMPLIED>
+  <!ATTLIST Rule LinkObject (1|0) #IMPLIED>
+  <!ATTLIST Rule Dialog CDATA #IMPLIED>
+<!ELEMENT SysIncludes (Include|CopyChildren)*>
+<!ELEMENT Libs (Lib|CopyChildren)*>
+<!ELEMENT Lib EMPTY>
+  <!ATTLIST Lib File CDATA #REQUIRED>
+<!ELEMENT AppTypeTargets (AppTypeTarget|CopyChildren)*>
+  <!ATTLIST AppTypeTargets Name CDATA #REQUIRED>
+<!ELEMENT AppTypeTarget (Exec|CopyChildren)*>
+  <!ATTLIST AppTypeTarget AppType (application|applet|custom) #REQUIRED>
+  <!ATTLIST AppTypeTarget SaveOption (SaveWorkspaceFiles|SaveCurrent|SaveNone|SaveAll|SaveModified) #IMPLIED>
+  <!ATTLIST AppTypeTarget CaptureOutput (1|0) #IMPLIED>
+  <!ATTLIST AppTypeTarget EnableEdit (1|0) #IMPLIED>
+  <!ATTLIST AppTypeTarget Deletable (1|0) #IMPLIED>
+  <!ATTLIST AppTypeTarget DependsRef CDATA #IMPLIED>
+  <!ATTLIST AppTypeTarget CaptureOutputWith (Redirection|ProcessBuffer) #IMPLIED>
+  <!ATTLIST AppTypeTarget RunFromDir CDATA #IMPLIED>
+  <!ATTLIST AppTypeTarget PreMacro CDATA #IMPLIED>
+  <!ATTLIST AppTypeTarget EnableBuildFirst (1|0) #IMPLIED>
+  <!ATTLIST AppTypeTarget Verbose (1|0) #IMPLIED>
+  <!ATTLIST AppTypeTarget MenuCaption CDATA #REQUIRED>
+  <!ATTLIST AppTypeTarget OutputExts CDATA #IMPLIED>
+  <!ATTLIST AppTypeTarget LinkObject (1|0) #IMPLIED>
+  <!ATTLIST AppTypeTarget Dialog CDATA #IMPLIED>
+  <!ATTLIST AppTypeTarget BuildFirst (1|0) #IMPLIED>
+  <!ATTLIST AppTypeTarget AppletClass CDATA #IMPLIED>
+  <!ATTLIST AppTypeTarget Beep (1|0) #IMPLIED>
+  <!ATTLIST AppTypeTarget RunInXterm (1|0) #IMPLIED>
+  <!ATTLIST AppTypeTarget ShowOnMenu (Never|Always|HideIfNoCmdLine) #IMPLIED>
+  <!ATTLIST AppTypeTarget ClearProcessBuffer (1|0) #IMPLIED>
+<!ELEMENT PostBuildCommands (Exec|CopyChildren)*>
+  <!ATTLIST PostBuildCommands StopOnError (1|0) #REQUIRED>
+<!ELEMENT Menu (Target|CopyChildren)*>
+<!ELEMENT Target (Exec|Set|CallTarget|CopyChildren|List)*>
+  <!ATTLIST Target Name CDATA #REQUIRED>
+  <!ATTLIST Target SaveOption (SaveWorkspaceFiles|SaveCurrent|SaveNone|SaveAll|SaveModified) #IMPLIED>
+  <!ATTLIST Target CaptureOutput (1|0) #IMPLIED>
+  <!ATTLIST Target EnableEdit (1|0) #IMPLIED>
+  <!ATTLIST Target Deletable (1|0) #IMPLIED>
+  <!ATTLIST Target DependsRef CDATA #IMPLIED>
+  <!ATTLIST Target CaptureOutputWith (Redirection|ProcessBuffer) #IMPLIED>
+  <!ATTLIST Target RunFromDir CDATA #IMPLIED>
+  <!ATTLIST Target PreMacro CDATA #IMPLIED>
+  <!ATTLIST Target PostMacro CDATA #IMPLIED>
+  <!ATTLIST Target EnableBuildFirst (1|0) #IMPLIED>
+  <!ATTLIST Target Verbose (1|0) #IMPLIED>
+  <!ATTLIST Target MenuCaption CDATA #REQUIRED>
+  <!ATTLIST Target OutputExts CDATA #IMPLIED>
+  <!ATTLIST Target LinkObject (1|0) #IMPLIED>
+  <!ATTLIST Target Dialog CDATA #IMPLIED>
+  <!ATTLIST Target BuildFirst (1|0) #IMPLIED>
+  <!ATTLIST Target AppletClass CDATA #IMPLIED>
+  <!ATTLIST Target Beep (1|0) #IMPLIED>
+  <!ATTLIST Target RunInXterm (1|0) #IMPLIED>
+  <!ATTLIST Target ShowOnMenu (Never|Always|HideIfNoCmdLine) #IMPLIED>
+  <!ATTLIST Target ClearProcessBuffer (1|0) #IMPLIED>
+<!ELEMENT ClassPath (ClassPathElement|CopyChildren)*>
+<!ELEMENT ClassPathElement EMPTY>
+  <!ATTLIST ClassPathElement Value CDATA #REQUIRED>
+<!ELEMENT Dependencies (Dependency|CopyChildren)*>
+  <!ATTLIST Dependencies Name CDATA #REQUIRED>
+<!ELEMENT Dependency EMPTY>
+  <!ATTLIST Dependency Project CDATA #REQUIRED>
+  <!ATTLIST Dependency Target CDATA #IMPLIED>
+  <!ATTLIST Dependency Config CDATA #IMPLIED>
+<!ELEMENT Macro (ExecMacro|CopyChildren)*>
+<!ELEMENT ExecMacro EMPTY>
+  <!ATTLIST ExecMacro CmdLine CDATA #REQUIRED>
+<!ELEMENT Exec EMPTY>
+  <!ATTLIST Exec CmdLine CDATA #IMPLIED>
+  <!ATTLIST Exec OtherOpts CDATA #IMPLIED>
+  <!ATTLIST Exec OtherOptions CDATA #IMPLIED>
+  <!ATTLIST Exec StopOnError (1|0) #IMPLIED>
+  <!ATTLIST Exec Type CDATA #IMPLIED>
+<!ELEMENT Config (Libs|Includes|SysIncludes|PreBuildCommands|PostBuildCommands|ClassPath|Rules|Menu|AppTypeTargets|Dependencies|CopyChildren|List)*>
+  <!ATTLIST Config Name CDATA #REQUIRED>
+  <!ATTLIST Config AppTypeList CDATA #IMPLIED>
+  <!ATTLIST Config Version CDATA #IMPLIED>
+  <!ATTLIST Config BuildSystem CDATA #IMPLIED>
+  <!ATTLIST Config Type CDATA #IMPLIED>
+  <!ATTLIST Config BuildMakeFile CDATA #IMPLIED>
+  <!ATTLIST Config ObjectDir CDATA #IMPLIED>
+  <!ATTLIST Config DebugCallbackName CDATA #IMPLIED>
+  <!ATTLIST Config OutputFile CDATA #IMPLIED>
+  <!ATTLIST Config RefFile CDATA #IMPLIED>
+  <!ATTLIST Config AppType CDATA #IMPLIED>
+  <!ATTLIST Config CompilerConfigName CDATA #IMPLIED>
+  <!ATTLIST Config Defines CDATA #IMPLIED>
+<!ELEMENT Set EMPTY>
+  <!ATTLIST Set Value CDATA #REQUIRED>
+  <!ATTLIST Set Name CDATA #REQUIRED>
+<!ELEMENT CallTarget EMPTY>
+  <!ATTLIST CallTarget Project CDATA #IMPLIED>
+  <!ATTLIST CallTarget Target CDATA #IMPLIED>
+  <!ATTLIST CallTarget Config CDATA #IMPLIED>
+<!ELEMENT List (List|Item)*>
+  <!ATTLIST List Name CDATA #IMPLIED>
+  <!ATTLIST List Value CDATA #IMPLIED>
+  <!ATTLIST List VendorName CDATA #IMPLIED>
+<!ELEMENT Item EMPTY>
+  <!ATTLIST Item Name CDATA #IMPLIED>
+  <!ATTLIST Item Value CDATA #IMPLIED>

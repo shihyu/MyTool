@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>folder_document icon</title>
+	<desc>folder_document icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve2" fill="#252525" d="M9295 4800c219,0 407,100 530,281 122,181 145,393 64,597l-1247 3117c-199,496 -654,805 -1189,805l-5853 0c-529,0 -960,-431 -960,-960l0 -6080c0,-353 287,-640 640,-640l960 0 0 640 -960 1 0 6060c0,107 48,200 136,262 88,61 191,75 292,39 168,-60 303,-189 373,-364l776 -1941 0 0 566 -1415 5 -11 0 0 5 -11 0 -1 0 -1 4 -8 1 -2 0 0 0 -1 4 -8 1 -2 0 0 1 -1 4 -8 0 -2 1 -1 0 0 1 -2 3 -6 1 -2 0 0 1 -1 4 -8 1 -1 0 -1 1 -1 5 -9 0 0 0 0 1 -2 4 -7 1 -2 0 0 1 -1c115,-189 315,-302 544,-302l4303 0 640 0 335 0z"/>
+	<path id="curve1" fill="#3E9BD5" d="M3840 2560l1920 0 0 640 -1920 0 0 -640zm0 1280l3840 0 0 640 -3840 0 0 -640z"/>
+	<path id="curve0" fill="#3E9BD5" d="M2560 6498l566 -1415c21,-52 46,-101 74,-148l0 -3655 2880 0c176,0 320,144 320,320l0 1600 1600 0c176,0 320,144 320,320l0 960 640 0 0 -1390c0,-352 -126,-656 -375,-905l-1170 -1170c-249,-249 -553,-375 -905,-375l-3950 0 0 3520 0 2338zm4480 -4898l960 960 -960 0 0 -960z"/>
+</svg>

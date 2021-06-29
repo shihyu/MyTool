@@ -1,0 +1,16 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>arrow from icon</title>
+    <desc>arrow from icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="144" y1="0" x2="144" y2="368" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0e78b6"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal" transform="translate(0,512) scale(1.0,-1.0)">
+        <path d="M144,112l112,-112l112,112l-80,0l0,256l-64,0l0,-256z" id="curve1" fill="url(#color-1)"/>
+        <path d="M256,384c-35.5,0 -64,28.5 -64,64c0,35.5 28.5,64 64,64c35.5,0 64,-28.5 64,-64c0,-35.5 -28.5,-64 -64,-64z" id="curve0" fill="#91a0af"/>
+    </g>
+</svg>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2048" height="1024" viewBox="0 0 20480 10240">
+<g transform="translate(6400,0) scale(1,1)">
+<g transform="translate(1280,1280) scale(0.75,0.75)">
+	<title>shape_circle icon</title>
+	<desc>shape_circle icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+        <circle fill="#ED9A56" cx="5120" cy="5120" r="3348"/>
+	<path id="curve0" fill="#4D82B8" d="M5120 1280c2121,0 3840,1719 3840,3840 0,2121 -1719,3840 -3840,3840 -2121,0 -3840,-1719 -3840,-3840 0,-2121 1719,-3840 3840,-3840zm0 640c-1767,0 -3200,1433 -3200,3200 0,1767 1433,3200 3200,3200 1767,0 3200,-1433 3200,-3200 0,-1767 -1433,-3200 -3200,-3200z"/>
+</g>
+</g>
+</svg>

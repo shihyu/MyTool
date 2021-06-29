@@ -1,0 +1,9 @@
+LIBRARY simple
+
+DESCRIPTION 'SlickEdit Simple DLL Copyright (c) 1994-2018 SlickEdit Inc.'
+
+EXPORTS
+        vsDllInit
+        vsDllExit
+        dllcommand
+        dllproc

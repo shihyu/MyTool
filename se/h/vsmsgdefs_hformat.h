@@ -1,0 +1,6 @@
+#pragma once
+
+enum VSMSGDEFS_HFORMAT {
+    HFERROR_GENERAL_ERROR_RC = -700,
+    HFERROR_EOF_UNEXPECTED_RC = -701,
+};

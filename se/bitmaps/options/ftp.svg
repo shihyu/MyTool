@@ -1,0 +1,54 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>server client exchange icon</title>
+    <desc>server client exchange icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="16" y1="32" x2="207.9996" y2="32" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#546472"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="96" x2="191.99935" y2="96" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#6ac2f5"/>
+            <stop offset="0.6" stop-color="#41b1f2"/>
+            <stop offset="1" stop-color="#17a0ee"/>
+        </linearGradient>
+        <linearGradient x1="304" y1="423" x2="304" y2="464.1105" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#3c4851"/>
+            <stop offset="1" stop-color="#62707e"/>
+        </linearGradient>
+        <linearGradient x1="224" y1="240" x2="482.569" y2="448" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#8897a6"/>
+            <stop offset="1" stop-color="#566674"/>
+        </linearGradient>
+        <linearGradient x1="240" y1="432" x2="240" y2="270.666" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#4eb6f2"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="240" y1="272" x2="371.248" y2="256" gradientUnits="userSpaceOnUse" id="color-6">
+            <stop offset="0" stop-color="#1198e5"/>
+            <stop offset="1" stop-color="#108ed6"/>
+        </linearGradient>
+        <linearGradient x1="16" y1="320" x2="161.61" y2="481.7865" gradientUnits="userSpaceOnUse" id="color-7">
+            <stop offset="0" stop-color="#77da26"/>
+            <stop offset="1" stop-color="#59a31d"/>
+        </linearGradient>
+        <linearGradient x1="208" y1="64" x2="353.61" y2="225.7875" gradientUnits="userSpaceOnUse" id="color-8">
+            <stop offset="0" stop-color="#77da26"/>
+            <stop offset="1" stop-color="#59a31d"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M32,32l160,0c9,0 16,7 16,16l0,272l-192,0l0,-272c0,-9 7,-16 16,-16z" id="curve10" fill="url(#color-1)"/>
+        <path d="M32,96l160,0l0,48l-160,0z M32,160l160,0l0,48l-160,0z M32,224l160,0l0,48l-160,0z" id="curve9" fill="url(#color-2)"/>
+        <path d="M64,96l96,0l0,16l-96,0z M64,160l96,0l0,16l-96,0z M64,224l96,0l0,16l-96,0z" id="curve8" fill="#98e957"/>
+        <path d="M176,48c9,0 16,7 16,16c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16c0,-9 7,-16 16,-16z" id="curve7" fill="#98e957"/>
+        <path d="M323.5,423l73,0l0,20.5c0,10 10,20.5 19.5,20.5l16,0l0,16l-144,0l0,-16l16,0c9.5,0 19.5,-10.5 19.5,-20.5z" id="curve6" fill="#717f8f"/>
+        <path d="M323.5,423l73,0l0,20.5c0,10 10,20.5 19.5,20.5l-112,0c9.5,0 19.5,-10.5 19.5,-20.5z" id="curve5" fill="url(#color-3)"/>
+        <path d="M480,448l-240,0c-9,0 -16,-7 -16,-16l0,-176c0,-9 7,-16 16,-16l240,0c9,0 16,7 16,16l0,176c0,9 -7,16 -16,16z" id="curve4" fill="url(#color-4)"/>
+        <path d="M240,256l240,0l0,176l-240,0z" id="curve3" fill="url(#color-5)"/>
+        <path d="M480,272l-240,0l0,-16l240,0z" id="curve2" fill="url(#color-6)"/>
+        <path d="M144,336l80,80l-80,80l0,-48l-16,0c-61.5,0 -112,-50.5 -112,-112l0,-16l64,0l0,16c0,26.5 21.5,48 48,48l16,0z" id="curve1" fill="url(#color-7)"/>
+        <path d="M288,112l16,0c61.5,0 112,50.5 112,112l0,16l-64,0l0,-16c0,-26.5 -21.5,-48 -48,-48l-16,0l0,48l-80,-80l80,-80z" id="curve0" fill="url(#color-8)"/>
+    </g>
+</svg>

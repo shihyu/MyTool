@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2048" height="1024" viewBox="0 0 20480 10240">
+<g transform="translate(6400,0) scale(1,1)">
+
+<g transform="translate(10240,0) rotate(90)">
+	<title>arrow_to icon</title>
+	<desc>arrow_to icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#4D82B8" d="M6539 5362l-1186 -1186c-124,-124 -328,-124 -452,0l-1187 1186c-124,125 -186,277 -187,453l-7 839c-1,65 38,122 99,147 61,26 127,12 174,-34l687 -687c0,960 2,1920 2,2880l1276 0c0,-960 2,-1920 2,-2880l687 687c47,46 113,60 174,34 61,-25 98,-81 99,-147l7 -839c1,-176 -63,-328 -188,-453z"/>
+	<path id="curve0" fill="#808080" d="M5120 1280c707,0 1280,573 1280,1280 0,707 -573,1280 -1280,1280 -707,0 -1280,-573 -1280,-1280 0,-707 573,-1280 1280,-1280z"/>
+</g>
+
+</g>
+</svg>

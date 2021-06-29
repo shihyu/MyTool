@@ -1,0 +1,33 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>keyboard key a icon</title>
+    <desc>keyboard key a icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="394.4405" y2="406.939" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#89cff7"/>
+            <stop offset="0.25098" stop-color="#4eb6f2"/>
+            <stop offset="0.41177" stop-color="#0e76b2"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </linearGradient>
+        <linearGradient x1="416" y1="400" x2="115.999" y2="79.999" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#44ace8"/>
+            <stop offset="1" stop-color="#1c84c0"/>
+        </linearGradient>
+        <linearGradient x1="112" y1="96" x2="400.012" y2="349.45" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#157db9"/>
+            <stop offset="1" stop-color="#43abe7"/>
+        </linearGradient>
+        <linearGradient x1="123.5" y1="117" x2="188.944" y2="279.9375" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#e8edf1"/>
+            <stop offset="0.32941" stop-color="#f1f4f7"/>
+            <stop offset="1" stop-color="#fbfcfd"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M80,32l352,0c26.5,0 48,21.5 48,48l0,352c0,26.5 -21.5,48 -48,48l-352,0c-26.5,0 -48,-21.5 -48,-48l0,-352c0,-26.5 21.5,-48 48,-48z" id="curve3" fill="url(#color-1)" fill-rule="evenodd"/>
+        <path d="M100.5,395.5c-2.5,-3 -4.5,-7 -4.5,-11.5l0,-288c0,-9 7,-16 16,-16l288,0c4.5,0 8.5,2 11.5,4.5l0,0l0,0c2.5,3 4.5,7 4.5,11.5l0,288c0,9 -7,16 -16,16l-288,0c-4.5,0 -8.5,-2 -11.5,-4.5l0,0z" id="curve2" fill="url(#color-2)" fill-rule="evenodd"/>
+        <path d="M112,96l0,0l0,288l0,0l288,0l0,0l0,-288l0,0z" id="curve1" fill="url(#color-3)" fill-rule="evenodd"/>
+        <path d="M228.5,249.5l-53.5,0l-9.5,30.5l-42,0l59.5,-163l37,0l60.5,163l-42.5,0z M184,219l35,0l-17.5,-56.5z" id="curve0" fill="url(#color-4)" fill-rule="nonzero"/>
+    </g>
+</svg>

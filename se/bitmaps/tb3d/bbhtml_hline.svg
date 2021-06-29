@@ -1,0 +1,15 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>navigate minus icon</title>
+    <desc>navigate minus icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="208" x2="166.88235" y2="304" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#48b4f2"/>
+            <stop offset="1" stop-color="#21a4ef"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#color-1)" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M32,288l0,-64c0,-9 7,-16 16,-16l416,0c9,0 16,7 16,16l0,64c0,9 -7,16 -16,16l-416,0c-9,0 -16,-7 -16,-16z" id="curve0"/>
+    </g>
+</svg>

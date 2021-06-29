@@ -1,0 +1,61 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>floppy disks icon</title>
+    <desc>floppy disks icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="112" y1="32" x2="453.3295" y2="373.332" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+        <linearGradient x1="112" y1="128" x2="262.857" y2="416.0005" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#5a6775"/>
+            <stop offset="1" stop-color="#414d57"/>
+        </linearGradient>
+        <linearGradient x1="160" y1="32" x2="228.3375" y2="210.99535" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#e5f4fd"/>
+            <stop offset="1" stop-color="#c5e7fb"/>
+        </linearGradient>
+        <linearGradient x1="160" y1="128" x2="201.8505" y2="239.9985" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#bce4fa"/>
+            <stop offset="1" stop-color="#9ad6f8"/>
+        </linearGradient>
+        <linearGradient x1="448" y1="240" x2="446.933" y2="237.816" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#ff7901"/>
+            <stop offset="1" stop-color="#f87501"/>
+        </linearGradient>
+        <linearGradient x1="160" y1="192" x2="183.449" y2="240.001" gradientUnits="userSpaceOnUse" id="color-6">
+            <stop offset="0" stop-color="#ef7101"/>
+            <stop offset="1" stop-color="#e76d01"/>
+        </linearGradient>
+        <linearGradient x1="16" y1="96" x2="357.33135" y2="437.3315" gradientUnits="userSpaceOnUse" id="color-7">
+            <stop offset="0" stop-color="#51616f"/>
+            <stop offset="1" stop-color="#444850"/>
+        </linearGradient>
+        <linearGradient x1="64" y1="96" x2="146.3595" y2="303.998" gradientUnits="userSpaceOnUse" id="color-8">
+            <stop offset="0" stop-color="#eff9fe"/>
+            <stop offset="0.61177" stop-color="#def2fd"/>
+            <stop offset="1" stop-color="#cdeafc"/>
+        </linearGradient>
+        <linearGradient x1="352" y1="304" x2="350.9335" y2="301.816" gradientUnits="userSpaceOnUse" id="color-9">
+            <stop offset="0" stop-color="#ff7901"/>
+            <stop offset="1" stop-color="#f87501"/>
+        </linearGradient>
+        <linearGradient x1="96" y1="352" x2="226.148" y2="480.146" gradientUnits="userSpaceOnUse" id="color-10">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#e1e7ed"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M496,48l0,352c0,9 -7,16 -16,16l-336,0l-32,-32l0,-336c0,-9 7,-16 16,-16l352,0c9,0 16,7 16,16z" id="curve9" fill="url(#color-1)"/>
+        <path d="M416,416l-272,0l-32,-32l0,-256l288,0c9,0 16,7 16,16z" id="curve8" fill="url(#color-2)"/>
+        <path d="M160,32l288,0l0,192c0,9 -7,16 -16,16l-256,0c-9,0 -16,-7 -16,-16z" id="curve7" fill="url(#color-3)"/>
+        <path d="M416,240l-240,0c-9,0 -16,-7 -16,-16l0,-96l240,0c9,0 16,7 16,16z" id="curve6" fill="url(#color-4)"/>
+        <path d="M448,192l0,32c0,9 -7,16 -16,16l-256,0c-9,0 -16,-7 -16,-16l0,-32z" id="curve5" fill="url(#color-5)"/>
+        <path d="M416,240l-240,0c-9,0 -16,-7 -16,-16l0,-32l256,0z" id="curve4" fill="url(#color-6)"/>
+        <path d="M400,112l0,352c0,9 -7,16 -16,16l-336,0l-32,-32l0,-336c0,-9 7,-16 16,-16l352,0c9,0 16,7 16,16z" id="curve3" fill="url(#color-7)"/>
+        <path d="M64,96l288,0l0,192c0,9 -7,16 -16,16l-256,0c-9,0 -16,-7 -16,-16z" id="curve2" fill="url(#color-8)"/>
+        <path d="M352,256l0,32c0,9 -7,16 -16,16l-256,0c-9,0 -16,-7 -16,-16l0,-32z" id="curve1" fill="url(#color-9)"/>
+        <path d="M304,368l0,112l-208,0l0,-112c0,-9 7,-16 16,-16l176,0c9,0 16,7 16,16z M128,368l0,96l48,0l0,-96z" id="curve0" fill="url(#color-10)"/>
+    </g>
+</svg>

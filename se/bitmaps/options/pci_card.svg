@@ -1,0 +1,74 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>pci card icon</title>
+    <desc>pci card icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="48" y1="96" x2="800.002" y2="847.999" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#98e957"/>
+            <stop offset="1" stop-color="#3b6d13"/>
+        </linearGradient>
+        <linearGradient x1="208" y1="384" x2="208" y2="560.0015" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#ffc001"/>
+            <stop offset="1" stop-color="#c08300"/>
+        </linearGradient>
+        <linearGradient x1="312" y1="168" x2="817.6809" y2="697.3685" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#98e957"/>
+            <stop offset="0.27059" stop-color="#6aab35"/>
+            <stop offset="1" stop-color="#3b6d13"/>
+        </linearGradient>
+        <linearGradient x1="136" y1="168" x2="415.376" y2="460.463" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#98e957"/>
+            <stop offset="0.27059" stop-color="#6aab35"/>
+            <stop offset="1" stop-color="#3b6d13"/>
+        </linearGradient>
+        <linearGradient x1="136" y1="280" x2="415.37565" y2="572.463" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#98e957"/>
+            <stop offset="0.27059" stop-color="#6aab35"/>
+            <stop offset="1" stop-color="#3b6d13"/>
+        </linearGradient>
+        <linearGradient x1="304" y1="160" x2="563.5655" y2="417.889" gradientUnits="userSpaceOnUse" id="color-6">
+            <stop offset="0" stop-color="#51616f"/>
+            <stop offset="1" stop-color="#36414a"/>
+        </linearGradient>
+        <linearGradient x1="128" y1="160" x2="273.3125" y2="304.375" gradientUnits="userSpaceOnUse" id="color-7">
+            <stop offset="0" stop-color="#51616f"/>
+            <stop offset="1" stop-color="#36414a"/>
+        </linearGradient>
+        <linearGradient x1="128" y1="272" x2="273.312" y2="416.3755" gradientUnits="userSpaceOnUse" id="color-8">
+            <stop offset="0" stop-color="#51616f"/>
+            <stop offset="1" stop-color="#36414a"/>
+        </linearGradient>
+        <linearGradient x1="288" y1="320" x2="352.0005" y2="319.9985" gradientUnits="userSpaceOnUse" id="color-9">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#c5e7fb"/>
+        </linearGradient>
+        <linearGradient x1="448" y1="320" x2="512" y2="319.9985" gradientUnits="userSpaceOnUse" id="color-10">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#c5e7fb"/>
+        </linearGradient>
+        <linearGradient x1="64" y1="96" x2="79.9995" y2="848.0015" gradientUnits="userSpaceOnUse" id="color-11">
+            <stop offset="0" stop-color="#98e957"/>
+            <stop offset="0.27059" stop-color="#6aab35"/>
+            <stop offset="1" stop-color="#3b6d13"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="0" x2="220.9255" y2="866.6195" gradientUnits="userSpaceOnUse" id="color-12">
+            <stop offset="0" stop-color="#d8e0e8"/>
+            <stop offset="1" stop-color="#b3c0cd"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M48,96l464,0l0,336l-336,0l0,-48l-80,0l0,48l-48,0z" fill="url(#color-1)"/>
+        <path d="M208,448l32,0l0,-64l-32,0z M256,448l32,0l0,-64l-32,0z M304,448l32,0l0,-64l-32,0z M352,448l32,0l0,-64l-32,0z M400,448l32,0l0,-64l-32,0z M448,448l32,0l0,-64l-32,0z" fill="url(#color-2)"/>
+        <path d="M320,168l144,0c4.5,0 8,3.5 8,8l0,160c0,4.5 -3.5,8 -8,8l-144,0c-4.5,0 -8,-3.5 -8,-8l0,-160c0,-4.5 3.5,-8 8,-8z" fill="url(#color-3)"/>
+        <path d="M144,168l112,0c4.5,0 8,3.5 8,8l0,64c0,4.5 -3.5,8 -8,8l-112,0c-4.5,0 -8,-3.5 -8,-8l0,-64c0,-4.5 3.5,-8 8,-8z" fill="url(#color-4)"/>
+        <path d="M256,280l-112,0c-4.5,0 -8,3.5 -8,8l0,64c0,4.5 3.5,8 8,8l112,0c4.5,0 8,-3.5 8,-8l0,-64c0,-4.5 -3.5,-8 -8,-8z" fill="url(#color-5)"/>
+        <path d="M312,160l144,0c4.5,0 8,3.5 8,8l0,160c0,4.5 -3.5,8 -8,8l-144,0c-4.5,0 -8,-3.5 -8,-8l0,-160c0,-4.5 3.5,-8 8,-8z" fill="url(#color-6)"/>
+        <path d="M136,160l112,0c4.5,0 8,3.5 8,8l0,64c0,4.5 -3.5,8 -8,8l-112,0c-4.5,0 -8,-3.5 -8,-8l0,-64c0,-4.5 3.5,-8 8,-8z" fill="url(#color-7)"/>
+        <path d="M248,272l-112,0c-4.5,0 -8,3.5 -8,8l0,64c0,4.5 3.5,8 8,8l112,0c4.5,0 8,-3.5 8,-8l0,-64c0,-4.5 -3.5,-8 -8,-8z" fill="url(#color-8)"/>
+        <path d="M320,176l-32,0l0,16l32,0z M320,208l-32,0l0,16l32,0z M320,240l-32,0l0,16l32,0z M320,272l-32,0l0,16l32,0z M320,304l-32,0l0,16l32,0z" fill="url(#color-9)"/>
+        <path d="M480,176l-32,0l0,16l32,0z M480,208l-32,0l0,16l32,0z M480,240l-32,0l0,16l32,0z M480,272l-32,0l0,16l32,0z M480,304l-32,0l0,16l32,0z" fill="url(#color-10)"/>
+        <path d="M64,96l16,0l0,336l-16,0z" fill="url(#color-11)"/>
+        <path d="M0,0l32,0c17.5,0 32,14.5 32,32l0,480l-32,0l0,-472c0,-4.5 -3.5,-8 -8,-8l-24,0z" fill="url(#color-12)"/>
+    </g>
+</svg>

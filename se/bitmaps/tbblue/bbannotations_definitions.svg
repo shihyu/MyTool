@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>note_pinned icon</title>
+	<desc>note_pinned icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve2" fill="#252525" d="M1280 8960l5230 0c352,0 656,-126 905,-375l1170 -1170c249,-249 375,-553 375,-905l0 -5230 -5792 0c21,103 32,210 32,320 0,110 -11,217 -32,320l5152 0 0 4160c0,176 -144,320 -320,320l-1600 0 0 1600c0,176 -144,320 -320,320l-4160 0 0 -5152 0 0c-103,21 -210,32 -320,32 -110,0 -217,-11 -320,-32l0 5792zm5758 -903c1,-19 2,-38 2,-57l0 -960 960 0c19,0 38,-1 57,-2l-1019 1019z"/>
+	<path id="curve1" fill="#252525" d="M2414 2978l641 520c55,14 98,22 126,22 187,0 339,-152 339,-339 0,-29 -11,-77 -30,-137l-512 -630c-138,232 -332,426 -564,564z"/>
+	<path id="curve0" fill="#3E9BD5" d="M1600 320c707,0 1280,573 1280,1280 0,707 -573,1280 -1280,1280 -707,0 -1280,-573 -1280,-1280 0,-707 573,-1280 1280,-1280zm134 742c29,-114 -3,-226 -87,-308 -85,-81 -198,-110 -311,-77 -318,90 -569,341 -659,659 -33,113 -4,226 77,311 82,84 194,116 308,87l0 0c114,-28 198,-109 230,-222 31,-106 114,-189 220,-220 113,-32 194,-116 222,-230l0 0z"/>
+
+
+<g comp-op="clear">
+<g transform="translate(5120,5120) scale(0.5,0.5)"  stroke="#808080" stroke-width="512" stroke-linejoin="round">
+	<title>magnifying_glass icon</title>
+	<desc>magnifying_glass icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <circle fill="white" opacity="0.5" cx="3500" cy="3500" r="3000"/>
+	<path id="curve1" fill="#3E9BD5" d="M5986 6814l828 -828c124,-124 328,-124 452,0l2428 2428c124,124 124,328 0,452l-828 828c-124,124 -328,124 -452,0l-2428 -2428c-124,-124 -124,-328 0,-452z"/>
+	<path id="curve0" fill="#252525" d="M6082 5442l412 412 -640 640 -412 -412c-534,401 -1197,638 -1916,638 -1764,0 -3194,-1430 -3194,-3194 0,-1764 1430,-3194 3194,-3194 1764,0 3194,1430 3194,3194 0,719 -237,1382 -638,1916zm-2556 -4471c-1411,0 -2555,1144 -2555,2555 0,1411 1144,2555 2555,2555 1411,0 2555,-1144 2555,-2555 0,-1411 -1144,-2555 -2555,-2555z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(5120,5120) scale(0.5,0.5)">
+	<title>magnifying_glass icon</title>
+	<desc>magnifying_glass icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <circle fill="white" opacity="0.5" cx="3500" cy="3500" r="3000"/>
+	<path id="curve1" fill="#3E9BD5" d="M5986 6814l828 -828c124,-124 328,-124 452,0l2428 2428c124,124 124,328 0,452l-828 828c-124,124 -328,124 -452,0l-2428 -2428c-124,-124 -124,-328 0,-452z"/>
+	<path id="curve0" fill="#252525" d="M6082 5442l412 412 -640 640 -412 -412c-534,401 -1197,638 -1916,638 -1764,0 -3194,-1430 -3194,-3194 0,-1764 1430,-3194 3194,-3194 1764,0 3194,1430 3194,3194 0,719 -237,1382 -638,1916zm-2556 -4471c-1411,0 -2555,1144 -2555,2555 0,1411 1144,2555 2555,2555 1411,0 2555,-1144 2555,-2555 0,-1411 -1144,-2555 -2555,-2555z"/>
+</g>
+
+</svg>

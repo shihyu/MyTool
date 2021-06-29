@@ -1,0 +1,15 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>font style bold icon</title>
+    <desc>font style bold icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="96" y1="0" x2="357.6195" y2="414.23105" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#556573"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#color-1)" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M416,293c0,51.5 -12,91.5 -35,119c-23.5,28 -56.5,42 -99,42c-35.5,0 -63.5,-13 -85,-38.5l-4.5,32.5l-96.5,0l0,-448l107.5,0l0,158c20,-21 46,-31.5 77.5,-31.5c43,0 76.5,14.5 100,42.5c23,28 35,68 35,119z M308,286.5c0,-30 -4.5,-52 -13,-64.5c-9,-13 -22.5,-19.5 -41,-19.5c-24,0 -41,8.5 -50.5,25.5l0,125c9,16.5 26.5,25 51,25c25.5,0 41.5,-11 48.5,-33.5c3.5,-11.5 5,-30.5 5,-58z" id="curve0"/>
+    </g>
+</svg>

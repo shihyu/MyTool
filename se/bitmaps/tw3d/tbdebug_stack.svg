@@ -1,0 +1,25 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>phone pick up icon</title>
+    <desc>phone pick up icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0.13619" y1="256" x2="0.13619" y2="447.8375" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#1087cc"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </linearGradient>
+        <linearGradient x1="-0.02026" y1="256" x2="-0.02026" y2="399.318" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#1199e6"/>
+            <stop offset="1" stop-color="#1089cf"/>
+        </linearGradient>
+        <linearGradient x1="144" y1="16" x2="361.7685" y2="220.2047" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#77d926"/>
+            <stop offset="1" stop-color="#59a31d"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M255.5,256c83.5,0 176,27 239,83.5l15.5,47.5c3,8.5 0.5,18 -6,24.5l-34,34c-2.5,2.5 -5.5,3 -9,1.5l-105.5,-44.5c-2,-1 -3.5,-2.5 -4.5,-4.5l-25,-63c-2,-5 -6.5,-9 -12.5,-10c-18.5,-3 -38,-4.5 -58,-4.5c-20,0 -39.5,1.5 -58,4.5c-6,1 -10.5,5 -12.5,10l-25,63c-1,2 -2.5,3.5 -4.5,4.5l-105.5,44.5c-3,1.5 -6.5,1 -9,-1.5l-34,-34c-6.5,-6.5 -8.5,-16 -5.5,-24.5l15.5,-47.5c62.5,-56.5 155,-83.5 238.5,-83.5z" id="curve2" fill="url(#color-1)"/>
+        <path d="M255.5,256c83.5,0 176,27 239,83.5l15.5,47.5c1.5,4 1.5,8.5 0.5,12.5l-129.5,-55.5c-39.5,-16.5 -83,-23.5 -125.5,-23.5c-42.5,0 -86,7 -125,23.5l-130,55.5c-1,-4 -0.5,-8.5 1,-12.5l15.5,-47.5c62.5,-56.5 155,-83.5 238.5,-83.5z" id="curve1" fill="url(#color-2)"/>
+        <path d="M208,224l96,0l0,-96l64,0l-112,-112l-112,112l64,0z" id="curve0" fill="url(#color-3)"/>
+    </g>
+</svg>

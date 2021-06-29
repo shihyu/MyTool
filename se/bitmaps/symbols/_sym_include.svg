@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="512" viewBox="0 0 1024 512">
+<g transform="translate(320,0) scale(1,1)">
+    <title>object cylinder icon</title>
+    <desc>object cylinder icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient id="color-1" gradientUnits="userSpaceOnUse" x1="105.743" y1="286.214" x2="407.257" y2="286.214">            <stop offset="0" stop-color="#5b4026" stop-opacity="1"/>
+            <stop offset="0.195564" stop-color="#966f49" stop-opacity="1"/>
+            <stop offset="0.412244" stop-color="#b08359" stop-opacity="1"/>
+            <stop offset="0.845603" stop-color="#694b2e" stop-opacity="1"/>
+        </linearGradient>
+        <radialGradient id="color-2" gradientUnits="userSpaceOnUse" cx="96.5" cy="107.929" r="320" fx="250.566" fy="-0.635323">
+            <stop offset="0.219398" stop-color="#bb8c60" stop-opacity="1"/>
+            <stop offset="1" stop-color="#5b4026" stop-opacity="1"/>
+        </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M448,416c0,35.5 -86,64 -192,64c-106,0 -192,-28.5 -192,-64l0,-320c0,-35.5 86,-64 192,-64c106,0 192,28.5 192,64z" id="curve1" fill="url(#color-1)"/>
+        <path d="M256,32c106,0 192,28.5 192,64c0,35.5 -86,64 -192,64c-106,0 -192,-28.5 -192,-64c0,-35.5 86,-64 192,-64z" id="curve0" fill="url(#color-2)"/>
+    </g>
+
+    <g transform="translate(208,208) scale(0.033,0.033)">
+	<title>arrow_down_right icon</title>
+	<desc>arrow_down_right icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#4D82B8" d="M2713 6400l2330 0 -3621 -3620c-124,-125 -124,-328 0,-453l905 -905c125,-124 328,-124 453,0l3620 3621 0 -2329c0,-67 38,-123 99,-148 61,-26 128,-12 174,34l1460 1460c124,124 187,276 187,452l0 3488c0,176 -144,320 -320,320l-3488 0c-176,0 -328,-63 -452,-187l-1460 -1460c-46,-46 -60,-113 -34,-174 25,-61 81,-99 147,-99z" stroke="#252525" stroke-width="256" stroke-linejoin="round"/>
+    </g>
+
+
+</g>
+</svg>

@@ -1,0 +1,26 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>mail2 icon</title>
+    <desc>mail2 icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="64" x2="341.3335" y2="448" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#f1f9fe"/>
+            <stop offset="1" stop-color="#cae9fb"/>
+        </linearGradient>
+        <linearGradient x1="384" y1="112" x2="453.8185" y2="208" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#44b2f1"/>
+            <stop offset="1" stop-color="#23a5ef"/>
+        </linearGradient>
+        <linearGradient x1="64" y1="240" x2="185.311" y2="385.573" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#91a0af"/>
+            <stop offset="1" stop-color="#798797"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M16,64l480,0c9,0 16,7 16,16l0,352c0,9 -7,16 -16,16l-480,0c-9,0 -16,-7 -16,-16l0,-352c0,-9 7,-16 16,-16z" id="curve3" fill="url(#color-1)"/>
+        <path d="M368,96l112,0l0,128l-112,0z" id="curve2" fill="#ffffff"/>
+        <path d="M384,112l80,0l0,96l-80,0z" id="curve1" fill="url(#color-2)"/>
+        <path d="M64,240l224,0l0,16l-224,0z M64,304l224,0l0,16l-224,0z M64,368l144,0l0,16l-144,0z" id="curve0" fill="url(#color-3)"/>
+    </g>
+</svg>

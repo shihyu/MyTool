@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!ELEMENT Compilers (C_Configuration|Java_Configuration)*>
+   <!ATTLIST Compilers Version (10.0) #REQUIRED>
+<!ELEMENT C_Configuration (Includes)>
+   <!ATTLIST C_Configuration Name CDATA #REQUIRED>
+   <!ATTLIST C_Configuration Header CDATA #REQUIRED>
+<!ELEMENT Includes (Include*)>
+<!ELEMENT Include EMPTY>
+   <!ATTLIST Include Dir CDATA #REQUIRED>
+<!ELEMENT Java_Configuration (JARs)>
+   <!ATTLIST Java_Configuration Name CDATA #REQUIRED>
+   <!ATTLIST Java_Configuration Root CDATA #REQUIRED>
+<!ELEMENT JARs (JAR*)>
+<!ELEMENT JAR EMPTY>
+	<!ATTLIST JAR Dir CDATA #REQUIRED>

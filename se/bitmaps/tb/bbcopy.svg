@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>copy icon</title>
+	<desc>copy icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve3" fill="#252525" d="M4480 3840l1920 0 0 640 -1920 0 0 -640zm0 3840l3840 0 0 640 -3840 0 0 -640zm0 -1280l3840 0 0 640 -3840 0 0 -640zm0 -1280l3840 0 0 640 -3840 0 0 -640z"/>
+	<path id="curve2" fill="#235DB8" d="M3200 1920l3950 0c352,0 656,126 905,375l1170 1170c249,249 375,553 375,905l0 5230 -6400 0 0 -7680zm4480 960l0 960 960 0 -960 -960zm-3840 -320l0 6400 5120 0 0 -4160c0,-176 -144,-320 -320,-320l-1600 0 0 -1600c0,-176 -144,-320 -320,-320l-2880 0z"/>
+	<path id="curve1" fill="#252525" d="M1920 2560l960 0 0 640 -960 0 0 -640zm0 3840l960 0 0 640 -960 0 0 -640zm0 -1280l960 0 0 640 -960 0 0 -640zm0 -1280l960 0 0 640 -960 0 0 -640z"/>
+	<path id="curve0" fill="#252525" d="M640 640l3950 0c352,0 656,126 905,375l585 585 -960 0 -640 0c0,-176 -144,-320 -320,-320l-2880 0 0 6400 1600 0 0 320 0 320 -2240 0 0 -7680z"/>
+</svg>

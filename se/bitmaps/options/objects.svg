@@ -1,0 +1,42 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>objects icon</title>
+    <desc>objects icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <radialGradient cx="123.39854" cy="80.68973" r="296.89496" fx="123.39854" fy="80.68973" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#f5928b"/>
+            <stop offset="0.38824" stop-color="#ef5c51"/>
+            <stop offset="1" stop-color="#af1c11"/>
+        </radialGradient>
+        <linearGradient x1="192.07554" y1="400" x2="455.95604" y2="394.4355" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#ffd041"/>
+            <stop offset="0.30196" stop-color="#ffc001"/>
+            <stop offset="1" stop-color="#c08300"/>
+        </linearGradient>
+        <linearGradient x1="192.02086" y1="282.5" x2="336.02086" y2="314.5" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#ffc001"/>
+            <stop offset="1" stop-color="#c08300"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="176" x2="374.8565" y2="568.00005" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#77da26"/>
+            <stop offset="1" stop-color="#59a31d"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="176" x2="197.7715" y2="361.414" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#77da26"/>
+            <stop offset="1" stop-color="#59a31d"/>
+        </linearGradient>
+        <linearGradient x1="288" y1="240" x2="285.8285" y2="564.7425" gradientUnits="userSpaceOnUse" id="color-6">
+            <stop offset="0" stop-color="#59a31d"/>
+            <stop offset="1" stop-color="#3b6d13"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M208,32c70.5,0 128,57.5 128,128c0,70.5 -57.5,128 -128,128c-70.5,0 -128,-57.5 -128,-128c0,-70.5 57.5,-128 128,-128z" id="path43" fill="url(#color-1)"/>
+        <path d="M352,400c87.5,0 174,-32.5 158,-61.5l-158,-283l-158,283c-16,29 70.5,61.5 158,61.5z" id="path45" fill="url(#color-2)"/>
+        <path d="M225,282.5l97.5,25l-15,90c-69.5,-8.5 -127,-35 -113.5,-59z" id="path47" fill="url(#color-3)"/>
+        <path d="M0,240l144,-64l144,64l0,176l-144,64l-144,-64z" id="polygon49" fill="url(#color-4)"/>
+        <path d="M0,240l144,-64l144,64l-144,64z" id="polygon51" fill="url(#color-5)"/>
+        <path d="M288,240l-144,64l0,176l144,-64z" id="polygon53" fill="url(#color-6)"/>
+    </g>
+</svg>

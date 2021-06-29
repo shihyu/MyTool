@@ -1,0 +1,16 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>navigate plus icon</title>
+    <desc>navigate plus icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="479.9998" y2="480.0003" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#4eb6f2"/>
+            <stop offset="0.52941" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#color-1)" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M224,32l64,0c9,0 16,7 16,16l0,160l160,0c9,0 16,7 16,16l0,64c0,9 -7,16 -16,16l-160,0l0,160c0,9 -7,16 -16,16l-64,0c-9,0 -16,-7 -16,-16l0,-160l-160,0c-9,0 -16,-7 -16,-16l0,-64c0,-9 7,-16 16,-16l160,0l0,-160c0,-9 7,-16 16,-16z" id="curve0"/>
+    </g>
+</svg>

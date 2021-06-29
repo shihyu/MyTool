@@ -1,0 +1,41 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>thread icon</title>
+    <desc>thread icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="96" y1="64" x2="383.9995" y2="64" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#ffc001"/>
+            <stop offset="0.27059" stop-color="#ffd041"/>
+            <stop offset="0.54902" stop-color="#ffc001"/>
+            <stop offset="1" stop-color="#db9d00"/>
+        </linearGradient>
+        <linearGradient x1="96" y1="96" x2="384.001" y2="96" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#cd9000"/>
+            <stop offset="0.27843" stop-color="#eeb001"/>
+            <stop offset="1" stop-color="#c98b00"/>
+        </linearGradient>
+        <linearGradient x1="64" y1="32" x2="416" y2="32" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#a46526"/>
+            <stop offset="0.25882" stop-color="#d08730"/>
+            <stop offset="1" stop-color="#7c4e1e"/>
+        </linearGradient>
+        <linearGradient x1="222" y1="416" x2="317.2985" y2="416" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#b7762b"/>
+            <stop offset="1" stop-color="#83531f"/>
+        </linearGradient>
+        <linearGradient x1="192" y1="222.06123" x2="231.376" y2="261.43623" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#c5e7fb"/>
+            <stop offset="1" stop-color="#89cff7"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M352,140c-6.5,0 -12,-5.5 -12,-12c0,-6.5 5.5,-12 12,-12c39.5,0 67,5.5 84.5,14c10,5 17,11 21.5,18c5,7.5 7.5,15.5 7.5,23.5c0,8.5 -2.5,17.5 -7,26c-1.5,3.5 -3,7 -4.5,10.5c-1.5,5 -2.5,10 -2.5,14.5l-1.5,1.5c-3.5,1.5 -6.5,3.5 -9.5,6.5l-9,10.5l-2.5,0c-3,-12.5 -2.5,-26 2.5,-40.5c1.5,-4.5 3.5,-9 6,-14c2.5,-5 4,-10 4,-15c0,-3.5 -1,-7 -3,-10c-2.5,-3.5 -6.5,-7 -12.5,-10c-14.5,-7 -38,-11.5 -74,-11.5z" id="curve6" fill="#ffb100"/>
+        <path d="M96,64l288,0l0,384l-288,0z" id="curve5" fill="url(#color-1)"/>
+        <path d="M233.5,416l150.5,-49l0,32l-52,17z M96,112l98.5,0l189.5,61.5l0,-32l-91,-29.5l91,0l0,-16l-288,0z M239,223l-143,-46.5l0,32l94,30.5l-47,15.5l-47,-15.5l0,62.5l288,-93.5l0,-32l-46.5,15l-241.5,-78.5l0,32l192,62.5z M96,398.5l288,-94l0,32l-244,79.5l-44,0z M96,334.5l288,-94l0,32l-288,94z" id="curve4" fill="url(#color-2)"/>
+        <path d="M64,32l352,0l0,32c0,17.5 -14.5,32 -32,32l-288,0c-17.5,0 -32,-14.5 -32,-32z M96,416l288,0c17.5,0 32,14.5 32,32l0,32l-352,0l0,-32c0,-17.5 14.5,-32 32,-32z" id="curve3" fill="url(#color-3)"/>
+        <path d="M317,416l-82,64l-13,0l62,-64z" id="curve2" fill="url(#color-4)"/>
+        <path d="M473,229c9,9.5 9.5,25.5 0,34l-268,238.5l-13,10.5l10.5,-13l236.5,-270c9,-9.5 24.5,-9 34,0z M444.5,240.5l-8,8.5c-5,4.5 -5,12 0,17c4.5,4.5 12,4.5 16.5,0l8.5,-8.5c5,-4.5 5,-12.5 0,-17c-4.5,-4.5 -12,-4.5 -17,0z" id="curve1" fill="url(#color-5)"/>
+        <path d="M452.5,237c1,2.5 2,4.5 3,7c5,10.5 15,19.5 29,26.5c4.5,2 9.5,4.5 15.5,6c6,2 9.5,9 7.5,15c-2,6.5 -9,10 -15,8c-7,-2.5 -13,-5 -19,-8c-18.5,-9 -32,-21.5 -39.5,-37c0,0 -0.5,-0.5 -0.5,-1c0.5,-1.5 1.5,-3 3,-4.5l8,-8.5c2.5,-2 5.5,-3.5 8,-3.5z" id="curve0" fill="#ffb100"/>
+    </g>
+</svg>

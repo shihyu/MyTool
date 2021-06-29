@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="512" viewBox="0 0 1024 512">
+<g transform="translate(720,78) scale(0.0352,0.0352)">
+	<title>arrow_up icon</title>
+	<desc>arrow_up icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#808080" d="M7727 5807l-1647 -1647 0 5120c0,176 -144,320 -320,320l-1280 0c-176,0 -320,-144 -320,-320l0 -5120 -1647 1647c-47,47 -113,60 -174,35 -61,-26 -99,-82 -99,-148l0 -2064c0,-176 63,-328 187,-453l2467 -2466c124,-124 328,-124 452,0l2467 2466c124,125 187,277 187,453l0 2064c0,66 -38,122 -99,148 -61,25 -127,12 -174,-35z"/>
+</g>
+</svg>

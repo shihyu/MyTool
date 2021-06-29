@@ -1,0 +1,50 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>book icon</title>
+    <desc>book icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="80" y1="16" x2="196.843" y2="16.0325" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#0e76b2"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="432" y1="32" x2="400.0005" y2="480.0002" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#b3c0cd"/>
+        </linearGradient>
+        <linearGradient x1="48" y1="16" x2="338.23245" y2="496.0002" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#43b2f1"/>
+            <stop offset="1" stop-color="#19a1ee"/>
+        </linearGradient>
+        <linearGradient x1="48" y1="16" x2="113.44295" y2="16.3939" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#6d7c8b"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M448,48c0,138.5 0,277.5 0,416c0,17.5 -14.5,32 -32,32l-272,0c-35,0 -64,-28.5 -64,-64l0,-352c0,-35.5 29,-64 64,-64l272,0c17.5,0 32,14.5 32,32z" id="curve4" fill="url(#color-1)"/>
+        <path d="M416,32c9,0 16,7 16,16l0,416c0,9 -7,16 -16,16l-304,0c-35,0 -64,-29 -64,-64l0,-320c0,-35.5 28.5,-64 64,-64z" id="curve3" fill="url(#color-2)"/>
+        <path d="M416,48c0,138.5 0,277.5 0,416c0,17.5 -14.5,32 -32,32l-272,0c-35,0 -64,-28.5 -64,-64l0,-352c0,-35.5 28.5,-64 64,-64l272,0c17.5,0 32,14.5 32,32z" id="curve2" fill="url(#color-3)"/>
+        <path d="M96,16l32,0l0,480l-32,0c-26.5,0 -48,-21.5 -48,-48l0,-384c0,-26.5 21.5,-48 48,-48z" id="curve1" fill="url(#color-4)"/>
+        <path d="M112,16l16,0l0,480l-16,0z" id="curve0" fill="#36414a"/>
+    </g>
+
+
+<g transform="translate(128,64) scale(0.75,0.75)">
+    <title>arrow right icon</title>
+    <desc>arrow right icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="104" x2="492" y2="200" gradientUnits="userSpaceOnUse" id="a-color-1">
+            <stop offset="0" stop-color="#68ba1c"/>
+            <stop offset="1" stop-color="#53a616"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#a-color-1)" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal" transform="translate(0,48) scale(0.875,0.875)">
+        <path d="M352,100l150,150l-150,150l0,-100l-342,0l0,-100l342,0z" id="curve0"/>
+    </g>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal" transform="translate(512,0) rotate(90)">
+        <path d="M64,0l384,0l0,64l-384,0z" id="curve1" fill="#91a0af"/>
+    </g>
+</g>
+
+</svg>

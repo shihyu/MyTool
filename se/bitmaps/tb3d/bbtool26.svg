@@ -1,0 +1,43 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>screwdriver icon</title>
+    <desc>screwdriver icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="49" y1="216.5" x2="111.1095" y2="281.4155" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#91a0af"/>
+            <stop offset="0.38039" stop-color="#b3c0cd"/>
+            <stop offset="1" stop-color="#717f8f"/>
+        </linearGradient>
+        <linearGradient x1="235.5" y1="216.5" x2="281.988" y2="263.2975" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#717f8f"/>
+            <stop offset="0.23137" stop-color="#91a0af"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+        <linearGradient x1="1.5" y1="396.92943" x2="12.84743" y2="503.49793" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#d8e0e8"/>
+            <stop offset="1" stop-color="#b3c0cd"/>
+        </linearGradient>
+        <linearGradient x1="208" y1="1.74258" x2="339.9205" y2="136.78108" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="0.32157" stop-color="#4eb6f2"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </linearGradient>
+        <linearGradient x1="351.875" y1="88.25" x2="476.1725" y2="216.1325" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#0a527b"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="295.875" y1="31.875" x2="348.375" y2="78.125" gradientUnits="userSpaceOnUse" id="color-6">
+            <stop offset="0" stop-color="#0e76b2"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M92,386l169.5,-169.5l34,34l-169.5,169.5l-20.5,43l-56.5,-56.5z" id="curve5" fill="url(#color-1)"/>
+        <path d="M235.5,242.5l26,-26l34,34l-26,26z" id="curve4" fill="url(#color-2)"/>
+        <path d="M35.5,510.5l-34,-34l47.5,-70l44,-9c5.5,-1.5 10.5,0 14.5,4l3,3c4,4 5.5,9 4,14.5l-9,44z" id="curve3" fill="url(#color-3)"/>
+        <path d="M407.5,2c24.5,5 48,16.5 67,35.5c19,19 30.5,42.5 35.5,67c1,5 -1,10.5 -4.5,14l-133,133c-3.5,-2 -8,-3.5 -12.5,-3.5c-13.5,0 -24,10.5 -24,24c0,4.5 1.5,9 3.5,12.5l-19.5,19.5l-112,-112l19.5,-19.5c3.5,2 8,3.5 12.5,3.5c13.5,0 24,-10.5 24,-24c0,-4.5 -1.5,-9 -3.5,-12.5l133,-133c3.5,-3.5 9,-5.5 14,-4.5z" id="curve2" fill="url(#color-4)"/>
+        <path d="M359,175c-9.5,9.5 -9.5,24.5 0,34c9.5,9.5 24.5,9.5 34,0l80,-80c9,-9.5 9,-24.5 0,-34c-9.5,-9 -24.5,-9 -34,0z" id="curve1" fill="url(#color-5)"/>
+        <path d="M383,39c9.5,-9.5 24.5,-9.5 34,0c9.5,9.5 9.5,24.5 0,34l-80,80c-9.5,9.5 -24.5,9.5 -34,0c-9.5,-9.5 -9.5,-24.5 0,-34z" id="curve0" fill="url(#color-6)"/>
+    </g>
+</svg>

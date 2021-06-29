@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2048" height="1024" viewBox="0 0 20480 10240">
+<g transform="translate(6400,0) scale(1,1)">
+	<title>location_pin icon</title>
+	<desc>location_pin icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+        <circle fill="white" cx="5120" cy="3200" r="2560"/>
+	<path id="curve0" fill="#4D82B8" d="M5120 640c1767,0 3200,1433 3200,3200 0,962 -425,1825 -1097,2412 -527,460 -900,942 -1213,1568l-890 1780 -890 -1780c-313,-626 -686,-1108 -1213,-1568 -672,-587 -1097,-1450 -1097,-2412 0,-1767 1433,-3200 3200,-3200zm0 1280c-1060,0 -1920,860 -1920,1920 0,1060 860,1920 1920,1920 1060,0 1920,-860 1920,-1920 0,-1060 -860,-1920 -1920,-1920z"/>
+</g>
+</svg>

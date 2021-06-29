@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<!-- WARNING:  EDITS TO THIS FILE WILL AFFECT ALL USERS OF THE APPLICATION INSTALLED AT THIS LOCATION.  If 
+this file becomes corrupt, you can find a backup copy at Admin.xml.rescue.
+
+Registration
+    attribute:  menuItem - Enables/disables the Help > Register Product... menu item.  Set to 1 to make menu 
+    item visible (default).  Set to 0 to render this menu item invisible.
+
+        ex:  <Registration menuItem="1" />
+
+AutoUpdate
+    attribute:  menuItem - Enables/Disables the menu items under Help > Product Updates that relate to updates 
+    (New Updates... and Options...).  Set to 1 to make menu items visible (default).  Set to 0 for them to disappear
+
+    attribute:  check - Enables/disables the auto update check, which checks for new versions of SlickEdit.  
+    Set to 1 to allow the auto update check (default).  Set to 0 to disable it.
+
+        ex:  <AutoUpdate menuItem="1" check="1" />
+
+Pip
+    attribute:  onByDefault - Specifies whether the Product Improvement Program should be on by default.  
+    Set to 1 to turn on the PIP.  Set to 0 to turn it off. Set to 2 for it to prompt (default).
+
+    attribute:  options - Enables/disables the Product Improvement Program options in the options dialog (Tools > 
+    Options > Application Options > Product Improvement Program).  Set to 1 for these options to be visible 
+    (default).  Set to 0 to exclude them.
+
+        ex:  <Pip onByDefault="1" options="1" />
+
+AutoHotFix
+    attribute:  menuItem - Enables/Disables the hot fix menu item under Help > Product Updates (Load Hot Fix).  
+    Set to 1 to make menu items visible (default). Set to 0 for them to disappear
+
+    attribute:  prompt - Specifies whether to prompt the user before applying any auto-found hotfixes.  Set to 1 
+    to prompt the user to apply (or optionally ignore) hot fixes (default).  Set to 0 to just apply the hot fixes 
+    without asking first.  Setting this item to 0 will also remove the Apply Available Hot Fix... menu item.
+
+    attribute:  directory - Specifies the directory where hot fixes can be found to be automatically loaded.  
+    Include the full path to the directory.  Note that you will need to use XML escape sequences for certain 
+    characters, such as quotation marks or ampersands.
+
+        ex: <AutoHotFix prompt="1" directory="C:\h&amp;t\work\15.0.1\" /> 
+        This sets the directory to C:\h&t\work\15.0.1\
+
+-->
+
+<AdminOptions Version="16.0.0">
+    <!--Registration menuItem="1" /-->
+    <!--AutoUpdate menuItem="1" check="1" /-->
+    <!--Pip onByDefault="2" options="1" /-->
+    <!--AutoHotFix menuItem="1" prompt="1" directory="" /--> 
+</AdminOptions>
+

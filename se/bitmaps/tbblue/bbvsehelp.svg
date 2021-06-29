@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>question icon</title>
+	<desc>question icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#3E9BD5" d="M2888 3986c42,-460 246,-874 555,-1183 348,-347 828,-563 1357,-563l640 0c529,0 1009,216 1357,563 347,348 563,828 563,1357 0,395 -117,765 -329,1078 -210,310 -510,556 -878,703l-393 157 0 142c0,44 -16,82 -47,113 -31,31 -69,47 -113,47l-960 0c-88,0 -160,-72 -160,-160l0 -140c0,-261 79,-508 221,-718 140,-207 340,-371 584,-469l393 -157c128,-51 230,-133 298,-233 67,-99 104,-223 104,-363 0,-176 -72,-336 -188,-452 -116,-116 -276,-188 -452,-188l-640 0c-176,0 -336,72 -452,188 -87,87 -149,199 -175,324 -15,75 -80,128 -157,128l-969 0c-46,0 -86,-18 -118,-52 -31,-34 -45,-76 -41,-122zm1752 2734l960 0c88,0 160,72 160,160l0 960c0,88 -72,160 -160,160l-960 0c-88,0 -160,-72 -160,-160l0 -960c0,-88 72,-160 160,-160z"/>
+	<path id="curve0" fill="#252525" d="M5120 640c2474,0 4480,2006 4480,4480 0,2474 -2006,4480 -4480,4480 -2474,0 -4480,-2006 -4480,-4480 0,-2474 2006,-4480 4480,-4480zm0 640c-2121,0 -3840,1719 -3840,3840 0,2121 1719,3840 3840,3840 2121,0 3840,-1719 3840,-3840 0,-2121 -1719,-3840 -3840,-3840z"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>font style italics icon</title>
+    <desc>font style italics icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="168" y1="7.95825" x2="328.415" y2="261.9485" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#5e6d7c"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#color-1)" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M261.5,448l-93.5,0l62,-314l93,0z M240.5,53.5c-0.5,-13 4.5,-24 14.5,-32.5c10,-9 22,-13 36.5,-13c14,-0.5 26,3.5 36.5,11.5c10,8 15.5,18.5 16,31c0.5,12 -4,23 -13.5,32c-9.5,9 -22,13.5 -37.5,14c-13.5,0.5 -26,-3.5 -36,-11c-10.5,-8 -16,-18.5 -16.5,-32z" id="curve0"/>
+    </g>
+</svg>

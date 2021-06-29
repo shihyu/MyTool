@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!ELEMENT Projects (Project)*>
+<!ELEMENT Project EMPTY>
+  <!ATTLIST Project File CDATA #REQUIRED>
+<!ELEMENT TagFiles (TagFile)*>
+<!ELEMENT TagFile EMPTY>
+  <!ATTLIST TagFile File CDATA #REQUIRED>
+  <!ATTLIST TagFile AutoUpdateFrom CDATA #IMPLIED>
+<!ELEMENT Workspace (Environment|Projects|TagFiles|List|CompatibleVersions|Rules)*>
+  <!ATTLIST Workspace Version (10.0) #REQUIRED>
+  <!ATTLIST Workspace VendorName (SlickEdit) #REQUIRED>
+  <!ATTLIST Workspace OEMVendorName CDATA #IMPLIED>
+  <!ATTLIST Workspace AssociatedFile CDATA #IMPLIED>
+  <!ATTLIST Workspace AssociatedFileType CDATA #IMPLIED>
+  <!ATTLIST Workspace TagFileDir CDATA #IMPLIED>
+  <!ATTLIST Workspace VCSAuxPath CDATA #IMPLIED>
+  <!ATTLIST Workspace VCSLocalPath CDATA #IMPLIED>
+  <!ATTLIST Workspace VCSProject CDATA #IMPLIED>
+<!ELEMENT Environment (Set)*>
+<!ELEMENT Set EMPTY>
+  <!ATTLIST Set Value CDATA #REQUIRED>
+  <!ATTLIST Set Name CDATA #REQUIRED>
+  <!ATTLIST Set Append  (yes|no) #IMPLIED>
+  <!ATTLIST Set Prepend (yes|no) #IMPLIED>
+  <!ATTLIST Set Separator CDATA #IMPLIED>
+<!ELEMENT List (List|Item)*>
+  <!ATTLIST List Name CDATA #IMPLIED>
+  <!ATTLIST List Value CDATA #IMPLIED>
+  <!ATTLIST List VendorName CDATA #IMPLIED>
+<!ELEMENT Item EMPTY>
+  <!ATTLIST Item Name CDATA #IMPLIED>
+  <!ATTLIST Item Value CDATA #IMPLIED>
+<!ELEMENT CompatibleVersions (PrevVersion)*>
+<!ELEMENT PrevVersion EMPTY>
+  <!ATTLIST PrevVersion VersionNumber CDATA #IMPLIED>
+<!ELEMENT Rules (Rule)*>
+  <!ATTLIST Rules Name CDATA #REQUIRED>
+<!ELEMENT Rule (Exec)*>
+  <!ATTLIST Rule Configs CDATA #IMPLIED>
+  <!ATTLIST Rule InputExts CDATA #REQUIRED>
+  <!ATTLIST Rule OutputExts CDATA #REQUIRED>
+  <!ATTLIST Rule EnableEdit (1|0) #IMPLIED>
+  <!ATTLIST Rule Deletable (1|0) #IMPLIED>
+  <!ATTLIST Rule DependsRef CDATA #IMPLIED>
+  <!ATTLIST Rule RunFromDir CDATA #IMPLIED>
+  <!ATTLIST Rule LinkObject (1|0) #IMPLIED>
+  <!ATTLIST Rule Dialog CDATA #IMPLIED>
+<!ELEMENT Exec EMPTY>
+  <!ATTLIST Exec CmdLine CDATA #IMPLIED>
+  <!ATTLIST Exec OtherOptions CDATA #IMPLIED>
+  <!ATTLIST Exec StopOnError (1|0) #IMPLIED>
+  <!ATTLIST Exec Type CDATA #IMPLIED>

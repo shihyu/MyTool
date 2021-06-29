@@ -1,0 +1,35 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>inbox out icon</title>
+    <desc>inbox out icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="128" y1="0" x2="376.3615" y2="232.893" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#77da26"/>
+            <stop offset="1" stop-color="#59a31d"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="272" x2="194.5808" y2="383.9995" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#eef8fe"/>
+            <stop offset="1" stop-color="#dff2fd"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="272" x2="142.7678" y2="351.999" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#d1dae3"/>
+            <stop offset="1" stop-color="#c9d3dd"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="256" x2="506.52085" y2="456.697" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#dca264"/>
+            <stop offset="1" stop-color="#d59245"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="464" x2="120.726" y2="480" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#cb9053"/>
+            <stop offset="1" stop-color="#c58a4d"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M208,240l96,0l0,-112l80,0l-128,-128l-128,128l80,0z" id="curve4" fill="url(#color-1)"/>
+        <path d="M32,272l448,0l0,112l-448,0z" id="curve3" fill="url(#color-2)"/>
+        <path d="M32,272l448,0l0,16l-448,0z M32,304l448,0l0,16l-448,0z M32,336l448,0l0,16l-448,0z" id="curve2" fill="url(#color-3)"/>
+        <path d="M0,256l36,0c18,0 33,9 42,24l36,64c9,15 24,24 42,24l200,0c18,0 33,-9 42,-24l36,-64c9,-15 24,-24 42,-24l36,0l0,224l-512,0z" id="curve1" fill="url(#color-4)"/>
+        <path d="M0,464l512,0l0,16l-512,0z" id="curve0" fill="url(#color-5)"/>
+    </g>
+</svg>

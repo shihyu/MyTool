@@ -1,0 +1,48 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>plug lan icon</title>
+    <desc>plug lan icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="224" x2="0" y2="287.9995" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#91a0af"/>
+            <stop offset="1" stop-color="#717f8f"/>
+        </linearGradient>
+        <linearGradient x1="256" y1="160" x2="402.7665" y2="352" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#f6f8fa"/>
+            <stop offset="1" stop-color="#dfe6ec"/>
+        </linearGradient>
+        <linearGradient x1="256" y1="160" x2="256" y2="352" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#d8e0e8"/>
+            <stop offset="1" stop-color="#b6c2cf"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="128" x2="32" y2="384.001" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#3eb0f1"/>
+            <stop offset="0.52157" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0f7ebe"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal" transform="translate(0,-96)">
+        <path d="M0,224l80,0l0,64l-80,0z" id="curve4" fill="url(#color-1)"/>
+        <path d="M256,160l256,0l0,192l-256,0z" id="curve3" fill="url(#color-2)"/>
+        <path d="M256,160l144,0l0,42.5c0,8 -5.5,15 -13.5,15.5l-101,12c-8,0.5 -13.5,7.5 -13.5,15.5l0,18.5l0,18.5c0,8 5.5,15 13.5,15.5l101,12c8,0.5 13.5,7.5 13.5,15.5l0,26.5l-144,0z" id="curve2" fill="url(#color-3)"/>
+        <path d="M32,208c0,-9 7,-16 16,-16l16,0c24,0 48,-16 68,-32c25,-20 44,-32 108,-32l128,0c9,0 16,7 16,16l0,50.5c0,8 -5.5,15 -13.5,15.5l-101,12c-8,0.5 -13.5,7.5 -13.5,15.5l0,18.5l0,18.5c0,8 5.5,15 13.5,15.5l101,12c8,0.5 13.5,7.5 13.5,15.5l0,50.5c0,9 -7,16 -16,16l-128,0c-64,0 -83,-12 -108,-32c-20,-16 -44,-32 -68,-32l-16,0c-9,0 -16,-7 -16,-16z" id="curve1" fill="url(#color-4)"/>
+        <path d="M512,184l-80,0l0,16l80,0z M512,248l-80,0l0,16l80,0z M512,216l-80,0l0,16l80,0z M512,312l-80,0l0,16l80,0z M512,280l-80,0l0,16l80,0z" id="curve0" fill="#717f8f"/>
+    </g>
+
+
+<g transform="translate(0,0) scale(1.0,1.0)">
+    <title>spellcheck icon</title>
+    <desc>spellcheck icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="103.5" x2="416.2185" y2="288.037" gradientUnits="userSpaceOnUse" id="t-color-1">
+            <stop offset="0" stop-color="#6f7d8d"/>
+            <stop offset="1" stop-color="#596877"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal" transform="translate(0,208)">
+        <path d="M116,252l-59.5,0l-10.5,33.5l-46,0l66,-179.5l40.5,0l66.5,179.5l-46.5,0z M67,218.5l38.5,0l-19.5,-62z M195,285.5l0,-179.5l64,0c23.5,0 41,4 53,12.5c12,8.5 18,21 18,37c0,9.5 -2,17.5 -6.5,24c-4,6.5 -10.5,11.5 -19,14.5c9.5,2.5 17,7 22,14c5,6.5 7.5,14.5 7.5,24.5c0,17.5 -5.5,30.5 -17,39.5c-11,9 -27.5,13.5 -49.5,13.5z M238,209.5l0,42.5l28.5,0c7.5,0 13.5,-1.5 18,-5c4,-3.5 6,-8.5 6,-15c0,-15 -7.5,-22.5 -22,-22.5z M238,180.5l22.5,0c9.5,0 16.5,-1.5 20.5,-5c4,-3.5 6,-8.5 6,-15c0,-7.5 -2.5,-13 -6.5,-16c-4.5,-3.5 -11.5,-5 -21.5,-5l-21,0z M511.5,225c-0.5,12.5 -4,23.5 -10,33c-6,9.5 -15,17 -26,22c-11,5.5 -23.5,8 -38,8c-23.5,0 -42,-7.5 -56,-23c-13.5,-15.5 -20,-37 -20,-65l0,-9c0,-17.5 3,-33 9,-46c6,-13.5 15,-23.5 26.5,-31c11.5,-7 25,-10.5 40,-10.5c21.5,0 39,5.5 52.5,17c13,11.5 20.5,27.5 22.5,47.5l-43,0c-0.5,-11 -3,-19 -8.5,-23.5c-5,-5 -13,-7 -23.5,-7c-11,0 -18.5,4 -23.5,12c-5,8 -8,21 -8,38.5l0,12.5c0,19.5 2.5,33 7,41.5c5,8 13,12 25,12c10,0 17.5,-2 22.5,-7c5.5,-4.5 8.5,-12 8.5,-22z" id="curve2" fill="url(#t-color-1)" fill-rule="nonzero"/>
+    </g>
+</g>
+
+</svg>

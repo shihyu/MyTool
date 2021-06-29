@@ -1,0 +1,37 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>address book icon</title>
+    <desc>address book icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="80" y1="16" x2="160" y2="16" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#c05a00"/>
+            <stop offset="1" stop-color="#ff7901"/>
+        </linearGradient>
+        <linearGradient x1="432" y1="32" x2="400.0005" y2="480.0002" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#b3c0cd"/>
+        </linearGradient>
+        <linearGradient x1="48" y1="16" x2="333.177" y2="491.29465" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#ff9a41"/>
+            <stop offset="1" stop-color="#ff7e0a"/>
+        </linearGradient>
+        <linearGradient x1="48" y1="16" x2="113.44295" y2="16.3939" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#6d7c8b"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+        <radialGradient cx="272.18613" cy="270.3105" r="110.34029" fx="272.18613" fy="270.3105" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="0.58039" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M448,48c0,138.5 0,277.5 0,416c0,17.5 -14.5,32 -32,32l-272,0c-35,0 -64,-28.5 -64,-64l0,-352c0,-35.5 29,-64 64,-64l272,0c17.5,0 32,14.5 32,32z" id="curve5" fill="url(#color-1)"/>
+        <path d="M416,32c9,0 16,7 16,16l0,416c0,9 -7,16 -16,16l-304,0c-35,0 -64,-29 -64,-64l0,-320c0,-35.5 28.5,-64 64,-64z" id="curve4" fill="url(#color-2)"/>
+        <path d="M416,48c0,138.5 0,277.5 0,416c0,17.5 -14.5,32 -32,32l-272,0c-35,0 -64,-28.5 -64,-64l0,-352c0,-35.5 28.5,-64 64,-64l272,0c17.5,0 32,14.5 32,32z" id="curve3" fill="url(#color-3)"/>
+        <path d="M96,16l32,0l0,480l-32,0c-26.5,0 -48,-21.5 -48,-48l0,-384c0,-26.5 21.5,-48 48,-48z" id="curve2" fill="url(#color-4)"/>
+        <path d="M112,16l16,0l0,480l-16,0z" id="curve1" fill="#36414a"/>
+        <path d="M384,219c-1,23 -7,41.5 -17.5,55c-10.5,14 -24.5,20.5 -42.5,20.5c-7,0 -13.5,-1.5 -19,-4.5c-5.5,-3 -10,-7.5 -13,-13.5c-8.5,12 -20.5,17.5 -35,17.5c-8.5,0 -16,-2.5 -22,-7.5c-6.5,-5 -11.5,-12 -14.5,-21c-2.5,-9.5 -3.5,-19.5 -2.5,-31.5c2.5,-22 10,-39.5 21.5,-53c11.5,-13.5 25.5,-20 42.5,-20c13,0 24,3 33.5,8.5l8.5,6l-7,77.5c-1.5,12 3,18 13,18c7.5,0 13.5,-4.5 19,-14c5,-10 7.5,-22 8,-37c1.5,-29.5 -4.5,-52 -18,-68c-14,-16 -34,-24 -60.5,-24c-17,0 -32,4 -45,13c-13.5,8.5 -23.5,20.5 -31.5,36.5c-7.5,15.5 -12,33.5 -12.5,53.5c-1.5,31 4.5,54.5 18.5,71c13.5,16.5 34.5,24.5 62,24.5c7.5,0 15,-1 23.5,-2.5c8.5,-2 15,-4 20.5,-6l4.5,22c-5,3.5 -12.5,6.5 -21.5,8.5c-9.5,2.5 -18.5,3.5 -27.5,3.5c-24.5,0 -44.5,-4.5 -61.5,-14c-16.5,-9 -29,-23 -37,-41c-8,-18 -12,-40 -11,-65.5c1,-24.5 7,-46.5 17,-66c10,-19 24,-34 42,-44.5c17.5,-10.5 37.5,-16 60,-16c22,0 41.5,4.5 57.5,14c16.5,9 28.5,22.5 36.5,39.5c8,17.5 12,37.5 11,60.5z M251,234c-1,11.5 0,20 3,26c2.5,5.5 7,8.5 13.5,8.5c4,0 8,-1.5 11.5,-5.5c3.5,-3.5 6.5,-9 8.5,-15.5l5.5,-60c-3,-1 -5.5,-1 -8.5,-1c-10,0 -17.5,3.5 -22.5,11.5c-5.5,7.5 -9,19.5 -11,36z" id="curve0" fill="url(#color-5)"/>
+    </g>
+</svg>

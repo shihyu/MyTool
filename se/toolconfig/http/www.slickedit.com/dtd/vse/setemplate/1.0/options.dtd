@@ -1,0 +1,16 @@
+<?xml encoding='UTF-8'?>
+
+<!-- External entities -->
+<!ENTITY % parameters SYSTEM "http://www.slickedit.com/dtd/vse/setemplate/1.0/parameters.dtd">
+%parameters;
+
+<!--
+Description: Root element.
+-->
+<!ELEMENT Options (Parameters?)>
+  <!--
+  Description: The version of the options format used by the instance document (options.xml file).
+
+  Example: Version="1.0"
+  -->
+  <!ATTLIST Options Version (1.0) #REQUIRED>

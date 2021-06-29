@@ -1,0 +1,101 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>elements icon</title>
+    <desc>elements icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="160" y1="64" x2="480.0005" y2="317.793" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0f82c5"/>
+        </linearGradient>
+        <linearGradient x1="160" y1="208" x2="291.765" y2="320" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#108bd1"/>
+            <stop offset="1" stop-color="#0e7ab8"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="192" x2="287.5733" y2="448.0005" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#4db6f2"/>
+            <stop offset="1" stop-color="#19a1ee"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal" transform="translate(512,0) scale(-1.0,1.0)">
+        <path d="M176,64l288,0c9,0 16,7 16,16l0,224c0,9 -7,16 -16,16l-288,0c-9,0 -16,-7 -16,-16l0,-224c0,-9 7,-16 16,-16z" id="curve2" fill="url(#color-1)"/>
+        <path d="M368,320l-192,0c-9,0 -16,-7 -16,-16l0,-96l192,0c9,0 16,7 16,16z" id="curve1" fill="url(#color-2)" stroke="none"/>
+        <path d="M48,192l288,0c9,0 16,7 16,16l0,224c0,9 -7,16 -16,16l-288,0c-9,0 -16,-7 -16,-16l0,-224c0,-9 7,-16 16,-16z" id="curve0" fill="url(#color-3)"/>
+    </g>
+
+
+<g transform="translate(205,205) scale(0.60,0.60)">
+    <title>binocular2 icon</title>
+    <desc>binocular2 icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="288" y1="32" x2="384.0005" y2="32" gradientUnits="userSpaceOnUse" id="b-color-1">
+            <stop offset="0" stop-color="#51616f"/>
+            <stop offset="0.32941" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+        <linearGradient x1="288" y1="32" x2="356.941" y2="47.486" gradientUnits="userSpaceOnUse" id="b-color-2">
+            <stop offset="0" stop-color="#788896"/>
+            <stop offset="1" stop-color="#657583"/>
+        </linearGradient>
+        <linearGradient x1="288" y1="288" x2="480.0005" y2="288" gradientUnits="userSpaceOnUse" id="b-color-3">
+            <stop offset="0" stop-color="#51616f"/>
+            <stop offset="0.38039" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+        <linearGradient x1="288" y1="464" x2="316.724" y2="480" gradientUnits="userSpaceOnUse" id="b-color-4">
+            <stop offset="0" stop-color="#596877"/>
+            <stop offset="1" stop-color="#576675"/>
+        </linearGradient>
+        <linearGradient x1="128" y1="32" x2="224" y2="32" gradientUnits="userSpaceOnUse" id="b-color-5">
+            <stop offset="0" stop-color="#51616f"/>
+            <stop offset="0.32941" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+        <linearGradient x1="128" y1="32" x2="203.6435" y2="47.486" gradientUnits="userSpaceOnUse" id="b-color-6">
+            <stop offset="0" stop-color="#7a8998"/>
+            <stop offset="1" stop-color="#667584"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="288" x2="224.0003" y2="288" gradientUnits="userSpaceOnUse" id="b-color-7">
+            <stop offset="0" stop-color="#51616f"/>
+            <stop offset="0.36078" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="464" x2="60.7238" y2="480" gradientUnits="userSpaceOnUse" id="b-color-8">
+            <stop offset="0" stop-color="#596977"/>
+            <stop offset="1" stop-color="#576775"/>
+        </linearGradient>
+        <linearGradient x1="301.5" y1="304" x2="458.4215" y2="304.2975" gradientUnits="userSpaceOnUse" id="b-color-9">
+            <stop offset="0" stop-color="#5b6a79"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+        <linearGradient x1="45.5" y1="304" x2="202.4304" y2="304.5185" gradientUnits="userSpaceOnUse" id="b-color-10">
+            <stop offset="0" stop-color="#5e6d7c"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="96" x2="128.8125" y2="245.62" gradientUnits="userSpaceOnUse" id="b-color-11">
+            <stop offset="0" stop-color="#68ba1c"/>
+            <stop offset="1" stop-color="#53a616"/>
+        </linearGradient>
+        <linearGradient x1="208" y1="128" x2="304" y2="128" gradientUnits="userSpaceOnUse" id="b-color-12">
+            <stop offset="0" stop-color="#5b6a79"/>
+            <stop offset="0.38039" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#627180"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M304,32l64,0c9,0 16,7 16,16l0,64l-96,0l0,-64c0,-9 7,-16 16,-16z" id="curve11" fill="url(#b-color-1)"/>
+        <path d="M304,32l64,0c8.5,0 15.5,7 16,15.5l-96,0c0.5,-8.5 7.5,-15.5 16,-15.5z" id="curve10" fill="url(#b-color-2)"/>
+        <path d="M304,304l0,-16l160,0l0,16l16,112l0,48c0,9 -7,16 -16,16l-160,0c-9,0 -16,-7 -16,-16l0,-48z" id="curve9" fill="url(#b-color-3)"/>
+        <path d="M480,464c0,9 -7,16 -16,16l-160,0c-9,0 -16,-7 -16,-16z" id="curve8" fill="url(#b-color-4)"/>
+        <path d="M144,32l64,0c9,0 16,7 16,16l0,64l-96,0l0,-64c0,-9 7,-16 16,-16z" id="curve7" fill="url(#b-color-5)"/>
+        <path d="M144,32l64,0c8.5,0 15.5,7 16,15.5l-96,0c0.5,-8.5 7.5,-15.5 16,-15.5z" id="curve6" fill="url(#b-color-6)"/>
+        <path d="M48,304l0,-16l160,0l0,16l16,112l0,48c0,9 -7,16 -16,16l-160,0c-9,0 -16,-7 -16,-16l0,-48z" id="curve5" fill="url(#b-color-7)"/>
+        <path d="M224,464c0,9 -7,16 -16,16l-160,0c-9,0 -16,-7 -16,-16z" id="curve4" fill="url(#b-color-8)"/>
+        <path d="M466.5,320l-165,0l2.5,-16l160,0z" id="curve3" fill="url(#b-color-9)"/>
+        <path d="M210.5,320l-165,0l2.5,-16l160,0z" id="curve2" fill="url(#b-color-10)"/>
+        <path d="M125.5,96l98.5,0c9,0 16,7 16,16l0,176c0,9 -7,16 -16,16l-176,0c-9,0 -16,-7 -16,-16l0,-98.5c0,-9 3,-16.5 9.5,-23l61,-61c6.5,-6.5 14,-9.5 23,-9.5z M288,96l98.5,0c9,0 16.5,3 23,9.5l61,61c6.5,6.5 9.5,14 9.5,23l0,98.5c0,9 -7,16 -16,16l-176,0c-9,0 -16,-7 -16,-16l0,-176c0,-9 7,-16 16,-16z" id="curve1" fill="url(#b-color-11)"/>
+        <path d="M224,128l64,0c9,0 16,7 16,16l0,128c0,9 -7,16 -16,16l-64,0c-9,0 -16,-7 -16,-16l0,-128c0,-9 7,-16 16,-16z" id="curve0" fill="url(#b-color-12)"/>
+    </g>
+</g>
+
+</svg>

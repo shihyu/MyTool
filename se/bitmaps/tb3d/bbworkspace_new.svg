@@ -1,0 +1,92 @@
+<svg x="0" y="0" width="512" height="512" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+
+    <g transform="translate(0,208) scale(0.6,0.6)">
+        <title>object cube icon</title>
+        <desc>object cube icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+        <defs>
+            <linearGradient x1="32" y1="16" x2="420.0898" y2="427.9417" gradientUnits="userSpaceOnUse" id="y-color-1">
+                <stop offset="0" stop-color="#ffc822"/>
+                <stop offset="0.32941" stop-color="#ffd041"/>
+                <stop offset="1" stop-color="#e3ad24"/>
+            </linearGradient>
+            <linearGradient x1="32" y1="16" x2="254.33265" y2="227.57035" gradientUnits="userSpaceOnUse" id="y-color-2">
+                <stop offset="0" stop-color="#f5c437"/>
+                <stop offset="1" stop-color="#eab72c"/>
+            </linearGradient>
+            <linearGradient x1="256" y1="130" x2="258.206" y2="453.608" gradientUnits="userSpaceOnUse" id="y-color-3">
+                <stop offset="0" stop-color="#f9c93b"/>
+                <stop offset="1" stop-color="#cb900b"/>
+            </linearGradient>
+        </defs>
+        <g fill="none" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+            <path d="M32,128l224,-112l224,112l0,256l-224,112l-224,-112z" id="curve2" fill="url(#y-color-1)"/>
+            <path d="M32,128l224,-112l224,112l-224,112z" id="curve1" fill="url(#y-color-2)"/>
+            <path d="M480,130l-224,110l0,256l224,-112z" id="curve0" fill="url(#y-color-3)"/>
+        </g>
+    </g>
+
+    <g transform="translate(208,216) scale(0.6,0.6)">
+        <title>object cube icon</title>
+        <desc>object cube icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+        <defs>
+            <linearGradient x1="32" y1="16" x2="420.0898" y2="427.9417" gradientUnits="userSpaceOnUse" id="g-color-1">
+                <stop offset="0" stop-color="#77da26"/>
+                <stop offset="1" stop-color="#59a31d"/>
+            </linearGradient>
+            <linearGradient x1="32" y1="16" x2="254.33265" y2="227.57035" gradientUnits="userSpaceOnUse" id="g-color-2">
+                <stop offset="0" stop-color="#3b6d13"/>
+                <stop offset="1" stop-color="#4f921a"/>
+            </linearGradient>
+            <linearGradient x1="256" y1="130" x2="258.206" y2="453.608" gradientUnits="userSpaceOnUse" id="g-color-3">
+                <stop offset="0" stop-color="#59a31d"/>
+                <stop offset="1" stop-color="#3b6d13"/>
+            </linearGradient>
+        </defs>
+        <g fill="none" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+            <path d="M32,128l224,-112l224,112l0,256l-224,112l-224,-112z" id="curve2" fill="url(#g-color-1)"/>
+            <path d="M32,128l224,-112l224,112l-224,112z" id="curve1" fill="url(#g-color-2)"/>
+            <path d="M480,130l-224,110l0,256l224,-112z" id="curve0" fill="url(#g-color-3)"/>
+        </g>
+    </g>
+
+    <g transform="translate(128,16) scale(0.6,0.6)">
+        <title>object cube icon</title>
+        <desc>object cube icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+        <defs>
+            <linearGradient x1="32" y1="16" x2="420.0898" y2="427.9417" gradientUnits="userSpaceOnUse" id="b-color-1">
+                <stop offset="0" stop-color="#49b4f2"/>
+                <stop offset="1" stop-color="#129eee"/>
+            </linearGradient>
+            <linearGradient x1="32" y1="16" x2="254.33265" y2="227.57035" gradientUnits="userSpaceOnUse" id="b-color-2">
+                <stop offset="0" stop-color="#49b4f2"/>
+                <stop offset="1" stop-color="#0e78b5"/>
+            </linearGradient>
+            <linearGradient x1="256" y1="130" x2="258.206" y2="453.608" gradientUnits="userSpaceOnUse" id="b-color-3">
+                <stop offset="0" stop-color="#1195e1"/>
+                <stop offset="1" stop-color="#0e78b5"/>
+            </linearGradient>
+        </defs>
+        <g fill="none" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+            <path d="M32,128l224,-112l224,112l0,256l-224,112l-224,-112z" id="curve2" fill="url(#b-color-1)"/>
+            <path d="M32,128l224,-112l224,112l-224,112z" id="curve1" fill="url(#b-color-2)"/>
+            <path d="M480,130l-224,110l0,256l224,-112z" id="curve0" fill="url(#b-color-3)"/>
+        </g>
+    </g>
+
+
+<g transform="translate(256,0) scale(0.5,0.5)">
+    <g id="Layer1" name="Layer 1" opacity="1">
+        <g id="Shape1">
+            <desc shapeID="1" type="0" basicInfo-basicType="4" basicInfo-roundedRectRadius="12" basicInfo-polygonSides="6" basicInfo-starPoints="5" bounding="rect(-194.5,-198,389,396)" text="" font-familyName="Helvetica" font-pixelSize="20" font-bold="0" font-underline="0" font-alignment="1" strokeStyle="0" markerStart="0" markerEnd="0" shadowEnabled="0" shadowOffsetX="0" shadowOffsetY="2" shadowBlur="4" shadowOpacity="160" blurEnabled="0" blurRadius="4" transform="matrix(1.15167,0,0,1.13131,256.5,256.5)" pers-center="0,0" pers-size="0,0" pers-start="0,0" pers-end="0,0" locked="0" mesh="" flag=""/>
+            <path id="shapePath1" d="M32.5002,256.5 C32.5002,132.788 132.788,32.5001 256.5,32.5001 C380.212,32.5001 480.5,132.788 480.5,256.5 C480.5,380.212 380.212,480.5 256.5,480.5 C132.788,480.5 32.5001,380.212 32.5002,256.5 Z" style="stroke:url(#nestedLinearGradientStroke1);stroke-width:0;stroke-linejoin:miter;stroke-miterlimit:2;stroke-linecap:round;fill-rule:evenodd;fill:url(#nestedRadialGradientFill1);fill-opacity:1;"/><defs><linearGradient id="nestedLinearGradientStroke1" gradientUnits="userSpaceOnUse" x1="106.467" y1="273.248" x2="404.886" y2="273.248"><stop offset="0" stop-color="#bbc9d3" stop-opacity="1"/><stop offset="1" stop-color="#bfcdd7" stop-opacity="1"/></linearGradient><radialGradient id="nestedRadialGradientFill1" gradientUnits="userSpaceOnUse" cx="256.654" cy="258.724" r="242.16" fx="256.5" fy="256.5"><stop offset="0" stop-color="#ffcf59" stop-opacity="1"/><stop offset="0.512927" stop-color="#c8892f" stop-opacity="1"/><stop offset="1" stop-color="#baad58" stop-opacity="0"/></radialGradient></defs>
+        </g>
+        <g id="Shape2">
+            <desc shapeID="2" type="0" basicInfo-basicType="0" basicInfo-roundedRectRadius="12" basicInfo-polygonSides="6" basicInfo-starPoints="5" bounding="rect(-160,-162.5,320,325)" text="" font-familyName="Helvetica" font-pixelSize="20" font-bold="0" font-underline="0" font-alignment="1" strokeStyle="0" markerStart="0" markerEnd="0" shadowEnabled="0" shadowOffsetX="0" shadowOffsetY="2" shadowBlur="4" shadowOpacity="160" blurEnabled="0" blurRadius="4" transform="matrix(1.3,0,0,1.28,256.5,256.5)" pers-center="0,0" pers-size="0,0" pers-start="0,0" pers-end="0,0" locked="0" mesh="" flag=""/>
+            <path id="shapePath2" d="M256.5,48.5 L267.676,229.518 L403.578,109.422 L283.482,245.324 L464.5,256.501 L283.482,267.677 L403.577,403.579 L267.676,283.482 L256.498,464.5 L245.323,283.482 L109.42,403.577 L229.517,267.676 L48.4999,256.498 L229.518,245.323 L109.424,109.42 L245.324,229.517 L256.5,48.5 Z" style="stroke:url(#nestedRadialGradientStroke2);stroke-width:10;stroke-linejoin:miter;stroke-miterlimit:2;stroke-linecap:round;fill-rule:evenodd;fill:url(#nestedRadialGradientFill2);fill-opacity:1;"/><defs><radialGradient id="nestedRadialGradientStroke2" gradientUnits="userSpaceOnUse" cx="257.144" cy="256.449" r="207.856" fx="233.306" fy="232.768"><stop offset="0" stop-color="#6e6341" stop-opacity="0.243137"/><stop offset="1" stop-color="#675e44" stop-opacity="0"/></radialGradient><radialGradient id="nestedRadialGradientFill2" gradientUnits="userSpaceOnUse" cx="256.674" cy="259.017" r="273.35" fx="256.5" fy="256.5"><stop offset="0" stop-color="#ffffee" stop-opacity="1"/><stop offset="0.375909" stop-color="#ffe381" stop-opacity="1"/><stop offset="1" stop-color="#9a914b" stop-opacity="1"/></radialGradient></defs>
+        </g>
+    </g>
+</g>
+
+</svg>

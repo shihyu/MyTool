@@ -1,0 +1,79 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>link broken icon</title>
+    <desc>link broken icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="218.69174" y1="16.19174" x2="290.83424" y2="247.26494" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#18a1ee"/>
+            <stop offset="0.14118" stop-color="#19a1ee"/>
+            <stop offset="0.34902" stop-color="#4eb6f2"/>
+            <stop offset="1" stop-color="#1ba1ef"/>
+        </linearGradient>
+        <linearGradient x1="222.5" y1="152" x2="240.8865" y2="206.528" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#1087cc"/>
+            <stop offset="1" stop-color="#129dec"/>
+        </linearGradient>
+        <linearGradient x1="15.99042" y1="221.49042" x2="248.92997" y2="337.52892" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="0.12941" stop-color="#129eee"/>
+            <stop offset="0.32157" stop-color="#4eb6f2"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="163" y1="228" x2="228.687" y2="261.971" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#0f7cbb"/>
+            <stop offset="1" stop-color="#129eed"/>
+        </linearGradient>
+        <linearGradient x1="198" y1="111.14864" x2="219.268" y2="186.69214" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="0.15686" stop-color="#129eee"/>
+            <stop offset="0.38824" stop-color="#4eb6f2"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="122.72864" y1="199" x2="192.88414" y2="223.9985" gradientUnits="userSpaceOnUse" id="color-6">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="0.15686" stop-color="#129eee"/>
+            <stop offset="0.38824" stop-color="#4eb6f2"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="64" y1="174.625" x2="135.4885" y2="174.521" gradientUnits="userSpaceOnUse" id="color-7">
+            <stop offset="0" stop-color="#adbac8"/>
+            <stop offset="1" stop-color="#91a0af"/>
+        </linearGradient>
+        <linearGradient x1="91.5" y1="75.5" x2="146.98" y2="130.377" gradientUnits="userSpaceOnUse" id="color-8">
+            <stop offset="0" stop-color="#b2bfcc"/>
+            <stop offset="1" stop-color="#91a0af"/>
+        </linearGradient>
+        <linearGradient x1="161.375" y1="48" x2="161.9355" y2="119.50405" gradientUnits="userSpaceOnUse" id="color-9">
+            <stop offset="0" stop-color="#b0bdca"/>
+            <stop offset="1" stop-color="#91a0af"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M398,170c25,-6 40.5,-31 35,-56c-6,-25 -31,-40.5 -56,-35l-60.5,14c-25,6 -40.5,31 -35,56c6,25 31,40.5 56,35z M412,230.5l-60.5,14c-58,13.5 -116.5,-23 -130,-81.5l0,0c-13.5,-58 23,-116.5 81,-130l60.5,-14c58,-13.5 116.5,23 130,81l0,0c13.5,58.5 -23,117 -81,130.5z" id="curve8" fill="url(#color-1)"/>
+        <path d="M282.5,152c6.5,21 27,35 49,33c-3,1 -6,2 -9,3l-80,18.5c-9,-11 -16,-24 -20,-38.5z" id="curve7" fill="url(#color-2)"/>
+        <path d="M24,346.5l23.5,-57.5c22.5,-55.5 86.5,-82 141.5,-59.5l0,0c55.5,23 82,86.5 59.5,141.5l-23.5,57.5c-22.5,55.5 -86.5,82 -141.5,59.5l0,0c-55.5,-22.5 -82,-86.5 -59.5,-141.5z M81.5,370c-9.5,23.5 2,51 25.5,60.5c23.5,9.5 51,-2 60.5,-25.5l23.5,-57.5c9.5,-23.5 -1.5,-51 -25.5,-60.5c-23.5,-9.5 -51,2 -60.5,25.5z" id="curve6" fill="url(#color-3)"/>
+        <path d="M184,228c2,0.5 3.5,1 5,1.5l0,0c15.5,6.5 29,16 39.5,28l-31,76c-1.5,3 -3,5.5 -4.5,8c5.5,-22 -5.5,-45.5 -27.5,-54.5c-1,-0.5 -1.5,-0.5 -2.5,-1z" id="curve5" fill="url(#color-4)"/>
+        <path d="M204,135.5l101,-23.5c16.5,-4 33.5,6.5 37,23l0,0c4,16.5 -6.5,33.5 -23,37l-110.5,26l-10.5,-18l16.5,-27z" id="curve4" fill="url(#color-5)"/>
+        <path d="M125,304l43,-105l21,1.5l12,29.5l21,1.5l-39.5,96c-6.5,16 -24.5,23.5 -40.5,17l0,0c-15.5,-6.5 -23.5,-24.5 -17,-40.5z" id="curve3" fill="url(#color-6)"/>
+        <path d="M64,162.5l0,-5c0,-3.5 1.5,-6.5 4,-9c2.5,-2.5 6,-3.5 9.5,-3l51,6.5c4,0.5 7,4 7,8c0,4 -3,7.5 -7,8l-51,6.5c-3.5,0.5 -7,-0.5 -9.5,-3c-2.5,-2.5 -4,-5.5 -4,-9z" id="curve2" fill="url(#color-7)"/>
+        <path d="M95,82.5l3.5,-3.5c2.5,-2.5 5.5,-3.5 9,-3.5c4,0.5 7,2 9,4.5l31.5,41c2.5,3 2,7.5 -0.5,10.5c-3,2.5 -7.5,3 -10.5,0.5l-41,-31.5c-2.5,-2 -4,-5 -4.5,-9c0,-3.5 1,-6.5 3.5,-9z" id="curve1" fill="url(#color-8)"/>
+        <path d="M173.5,48l5,0c3.5,0 6.5,1.5 9,4c2.5,2.5 3.5,6 3,9.5l-6.5,51c-0.5,4 -4,7 -8,7c-4,0 -7.5,-3 -8,-7l-6.5,-51c-0.5,-3.5 0.5,-7 3,-9.5c2.5,-2.5 5.5,-4 9,-4z" id="curve0" fill="url(#color-9)"/>
+    </g>
+
+
+<g transform="translate(256,256) scale(0.5,0.5)">
+    <title>delete icon</title>
+    <desc>delete icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="29.5" y1="29.5" x2="446.554" y2="416.765" gradientUnits="userSpaceOnUse" id="d-color-1">
+            <stop offset="0" stop-color="#ef5c51"/>
+            <stop offset="1" stop-color="#c43126"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#d-color-1)" fill-rule="nonzero" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M392,29.5l90.5,90.5l-136,136l136,136l-90.5,90.5l-136,-136l-136,136l-90.5,-90.5l136,-136l-136,-136l90.5,-90.5l136,136z" id="curve0"/>
+    </g>
+</g>
+
+</svg>

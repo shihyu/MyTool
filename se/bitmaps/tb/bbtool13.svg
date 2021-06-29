@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>mail2 icon</title>
+	<desc>mail2 icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve2" fill="#2CA744" d="M6720,3200 8320,3200 8320,5120 6720,5120z"/>
+	<path id="curve1" fill="#252525" d="M1920 6400l2560 0 0 640 -2560 0 0 -640zm0 -2560l3840 0 0 640 -3840 0 0 -640zm0 1280l3840 0 0 640 -3840 0 0 -640z"/>
+	<path id="curve0" fill="#252525" d="M1280 2560l7680 0 0 5120 -7680 0 0 -5120zm-320 -640c-176,0 -320,144 -320,320l0 5760c0,176 144,320 320,320l8320 0c176,0 320,-144 320,-320l0 -5760c0,-176 -144,-320 -320,-320l-8320 0z"/>
+</svg>

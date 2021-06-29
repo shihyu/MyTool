@@ -1,0 +1,5 @@
+<?xml encoding='UTF-8'?>
+<!ELEMENT Config (Misc)>
+<!ELEMENT Misc (ConfigPathSuffix)>
+<!ELEMENT ConfigPathSuffix EMPTY>
+   <!ATTLIST ConfigPathSuffix Suffix CDATA #REQUIRED>
