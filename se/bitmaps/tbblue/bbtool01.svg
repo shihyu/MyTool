@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>first_aid_box icon</title>
-	<desc>first_aid_box icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve1" fill="#3E9BD5" d="M4800,6774 4160,6454 4160,7200 3200,6720 3200,5974 2560,5654 2560,4586 3200,4906 3200,4160 4160,4640 4160,5386 4800,5706z"/>
-	<path id="curve0" fill="#252525" d="M1634 1903l2560 -1280c186,-93 389,-99 572,0l3840 2080c222,111 354,324 354,573l0 4328c0,249 -132,462 -354,573l-2560 1280c-186,93 -389,99 -572,0l-3840 -2080c-219,-118 -354,-324 -354,-573l0 -4328c0,-249 132,-462 354,-573zm286 860l0 4041 3520 1907 0 -4041 -3520 -1907zm4160 5961l2240 -1120 0 -4048 -2240 1120 0 4048zm-313 -4604l2139 -1069 -3426 -1855 -2139 1069 3426 1855z"/>
-</svg>

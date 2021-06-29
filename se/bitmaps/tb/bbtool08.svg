@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>hammer icon</title>
-	<desc>hammer icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve1" fill="#FFFF2F" d="M3410 5473c-830,829 -1433,1433 -2263,2262 -249,250 -249,656 0,906l452 452c250,249 656,249 906,0 829,-830 1433,-1433 2262,-2263 125,-124 125,-328 0,-452 -301,-302 -603,-604 -905,-905 -124,-125 -328,-125 -452,0z"/>
-	<path id="curve0" fill="#252525" d="M8388 3210l0 0c-200,-200 -27,-479 -227,-679l-452 -452c-200,-200 -481,-25 -679,-227 -502,-512 -1411,-709 -2182,-192 -58,39 -95,97 -84,166 10,69 61,121 129,134 485,90 1667,815 1097,1385l-1901 1901 905 905 1810 -1810c249,-249 429,-475 679,-226l0 0c124,125 124,328 0,453l678 678c125,125 328,125 453,0l905 -905c125,-124 125,-328 0,-452l-679 -679c-124,125 -328,125 -452,0z"/>
-</svg>

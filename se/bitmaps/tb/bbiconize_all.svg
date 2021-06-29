@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>minimize icon</title>
-	<desc>minimize icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve2" fill="#235DB8" d="M3840 6400l0 2560 -2560 0 0 -2560 2560 0zm-1920 640l0 1280 1280 0 0 -1280 -1280 0z"/>
-	<path id="curve1" fill="#252525" d="M6720 4800l414 414c93,93 120,226 69,348 -50,123 -163,198 -296,198l-2107 0c-176,0 -320,-144 -320,-320l0 -2107c0,-133 75,-246 198,-296 122,-51 255,-24 348,69l414 414 1610 -1610 1274 0 6 6 0 1274 -1610 1610z"/>
-	<path id="curve0" fill="#252525" d="M8960,1280 8960,8960 4160,8960 4160,8320 8320,8320 8320,1920 1920,1920 1920,6080 1280,6080 1280,1280z"/>
-</svg>

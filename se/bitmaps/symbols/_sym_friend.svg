@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2048" height="1024" viewBox="0 0 20480 10240">
-<g transform="translate(6400,0) scale(1,1)">
-	<title>user icon</title>
-	<desc>user icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve1" fill="#76A797" d="M8320 8470c0,810 -1920,1130 -3200,1130 -1280,0 -3200,-320 -3200,-1129 0,-1760 582,-2029 1663,-2835 445,281 972,444 1537,444 565,0 1092,-163 1537,-444 1082,807 1663,1074 1663,2834z"/>
-	<path id="curve0" fill="#ED9A56" d="M5120 640c1414,0 2560,1146 2560,2560 0,1414 -1146,2560 -2560,2560 -1414,0 -2560,-1146 -2560,-2560 0,-1414 1146,-2560 2560,-2560z"/>
-</g>
-</svg>

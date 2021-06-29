@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>cd icon</title>
-	<desc>cd icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve2" fill="#235DB8" d="M5120 3840c707,0 1280,573 1280,1280 0,707 -573,1280 -1280,1280 -707,0 -1280,-573 -1280,-1280 0,-707 573,-1280 1280,-1280zm0 640c-353,0 -640,287 -640,640 0,353 287,640 640,640 353,0 640,-287 640,-640 0,-353 -287,-640 -640,-640z"/>
-	<path id="curve1" fill="#235DB8" d="M5120 1600c677,0 1309,191 1845,522l-1006 1635c-244,-150 -531,-237 -839,-237 -884,0 -1600,716 -1600,1600 0,224 46,437 129,630l-1765 757c-183,-426 -284,-895 -284,-1387 0,-1944 1576,-3520 3520,-3520zm1471 2890l1765 -757c183,426 284,895 284,1387 0,1944 -1576,3520 -3520,3520 -677,0 -1308,-191 -1845,-522l1006 -1635c244,150 531,237 839,237 884,0 1600,-716 1600,-1600 0,-224 -46,-437 -129,-630z"/>
-	<path id="curve0" fill="#235DB8" d="M5120 640c2474,0 4480,2006 4480,4480 0,2474 -2006,4480 -4480,4480 -2474,0 -4480,-2006 -4480,-4480 0,-2474 2006,-4480 4480,-4480zm0 640c-2121,0 -3840,1719 -3840,3840 0,2121 1719,3840 3840,3840 2121,0 3840,-1719 3840,-3840 0,-2121 -1719,-3840 -3840,-3840z"/>
-</svg>

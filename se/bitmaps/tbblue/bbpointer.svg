@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>mouse_pointer icon</title>
-	<desc>mouse_pointer icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve0" fill="#252525" d="M3106 735l4988 4987c93,94 120,227 69,349 -50,122 -163,198 -296,198l-1763 0 998 2399c67,163 -11,350 -174,418l-1182 490c-163,67 -351,-11 -418,-173l-982 -2361 -1240 1240c-93,94 -226,120 -348,70 -123,-51 -198,-164 -198,-296l0 -7095c0,-132 75,-245 198,-295 122,-51 255,-24 348,69zm94 999l0 5550 1370 -1371 1226 2949 591 -245 -1242 -2988 1950 0 -3895 -3895z"/>
-</svg>

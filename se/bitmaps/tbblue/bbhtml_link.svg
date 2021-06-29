@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>link icon</title>
-	<desc>link icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve2" fill="#252525" d="M6097 1427l-905 905c-462,463 -581,1142 -357,1716l1941 -1942c249,-248 657,-248 905,0l453 453c248,248 248,656 0,905l-1942 1941c574,224 1253,105 1716,-357l905 -905c623,-624 623,-1640 0,-2263l-453 -453c-623,-623 -1640,-623 -2263,0z"/>
-	<path id="curve1" fill="#252525" d="M3382 5953l2502 -2503c242,-241 643,-235 892,14l0 0c249,249 255,650 14,892l-2503 2502c-242,242 -642,236 -892,-13l0 0c-249,-250 -255,-650 -13,-892z"/>
-	<path id="curve0" fill="#252525" d="M2251 5274l-905 905c-624,623 -624,1640 0,2263l452 452c623,624 1640,624 2263,0l905 -905c462,-462 582,-1141 358,-1715l-1942 1942c-248,248 -657,248 -905,0l-453 -453c-248,-248 -248,-657 0,-905l1942 -1942c-574,-224 -1253,-104 -1715,358z"/>
-</svg>

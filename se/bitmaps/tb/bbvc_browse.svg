@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>equalizer icon</title>
-	<desc>equalizer icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve1" fill="#252525" d="M2240 1280l0 0c176,0 320,144 320,320l0 1600 -640 0 0 -1600c0,-176 144,-320 320,-320zm320 4160l0 3200c0,176 -144,320 -320,320l0 0c-176,0 -320,-144 -320,-320l0 -3200 640 0zm5440 -4160l0 0c176,0 320,144 320,320l0 640 -640 0 0 -640c0,-176 144,-320 320,-320zm320 3200l0 4160c0,176 -144,320 -320,320l0 0c-176,0 -320,-144 -320,-320l0 -4160 640 0zm-3200 -3200l0 0c176,0 320,144 320,320l0 4160 -640 0 0 -4160c0,-176 144,-320 320,-320zm320 6720l0 640c0,176 -144,320 -320,320l0 0c-176,0 -320,-144 -320,-320l0 -640 640 0z"/>
-	<path id="curve0" fill="#235DB8" d="M1600 3520l1280 0c176,0 320,144 320,320l0 320 -1920 0 0 -320c0,-176 144,-320 320,-320zm1600 960l0 320c0,176 -144,320 -320,320l-1280 0c-176,0 -320,-144 -320,-320l0 -320 1920 0zm4160 -1920l1280 0c176,0 320,144 320,320l0 320 -1920 0 0 -320c0,-176 144,-320 320,-320zm1600 960l0 320c0,176 -144,320 -320,320l-1280 0c-176,0 -320,-144 -320,-320l0 -320 1920 0zm-4480 2560l1280 0c176,0 320,144 320,320l0 320 -1920 0 0 -320c0,-176 144,-320 320,-320zm1600 960l0 320c0,176 -144,320 -320,320l-1280 0c-176,0 -320,-144 -320,-320l0 -320 1920 0z"/>
-</svg>

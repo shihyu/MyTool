@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>redo icon</title>
-	<desc>redo icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve0" fill="#252525" d="M6532 1463l2147 2146c124,125 124,328 0,453l-2147 2146c-124,125 -276,188 -452,188l-1159 0c-142,0 -214,-173 -113,-274l1647 -1646 -3255 0c-352,0 -640,288 -640,639l0 1283c0,351 288,640 640,640l960 2c176,0 320,144 320,320l0 636c0,176 -144,319 -320,319l-960 3c-1059,0 -1920,-862 -1920,-1920l0 -1283c0,-1058 862,-1920 1920,-1920 1085,0 2170,1 3255,1l-1647 -1647c-101,-101 -29,-273 113,-273l1159 0c176,0 328,62 452,187z"/>
-</svg>

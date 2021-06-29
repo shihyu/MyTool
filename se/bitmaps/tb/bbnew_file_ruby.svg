@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>code_ruby icon</title>
-	<desc>code_ruby icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve2" fill="#235DB8" d="M8640 6400c530,0 960,430 960,960 0,246 -92,470 -245,640 153,170 245,394 245,640l0 800c0,88 -72,160 -160,160l-320 0c-88,0 -160,-72 -160,-160l0 -800c0,-176 -144,-320 -320,-320l-960 0c0,373 0,747 0,1120 0,88 -72,160 -160,160l-320 0c-88,0 -160,-72 -160,-160l0 -2880c0,-88 72,-160 160,-160l1440 0zm-960 640l0 640 960 0c176,0 320,-144 320,-320 0,-176 -144,-320 -320,-320l-960 0z"/>
-	<path id="curve1" fill="#252525" d="M2560 7680l1920 0 0 640 -1920 0 0 -640zm0 -5760l1920 0 0 640 -1920 0 0 -640zm1280 960l2560 0 0 640 -2560 0 0 -640zm1280 960l2560 0 0 640 -2560 0 0 -640zm0 960l1920 0 0 640 -1920 0 0 -640zm-1280 960l1920 0 0 640 -1920 0 0 -640zm0 960l2560 0 0 640 -2560 0 0 -640z"/>
-	<path id="curve0" fill="#252525" d="M8960 640l-7680 0 0 8960 5467 0c-17,-50 -27,-104 -27,-160l0 -480 -4800 0 0 -7680 6400 0 0 4800 320 0c110,0 218,14 320,40l0 -5480z"/>
-</svg>

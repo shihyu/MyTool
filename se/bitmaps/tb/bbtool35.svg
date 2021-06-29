@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>astrologer icon</title>
-	<desc>astrologer icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve2" fill="#235DB8" d="M8000 8879c0,746 -1728,1041 -2880,1041 -1152,0 -2880,-295 -2880,-1040 0,-1165 501,-2192 1264,-2800 227,185 486,332 766,431 143,849 426,1809 850,1809 424,0 707,-960 850,-1809 280,-99 539,-246 766,-431 762,608 1264,1635 1264,2799z"/>
-	<path id="curve1" fill="#CFA79C" d="M7369 4160c-12,904 -563,1678 -1349,2017 40,-301 60,-565 60,-737 0,-176 -144,-320 -320,-320l-1280 0c-176,0 -320,144 -320,320 0,170 19,431 58,728 -773,-345 -1314,-1113 -1326,-2008l4477 0zm-2889 1280l1280 0 0 320 -1280 0 0 -320z"/>
-	<path id="curve0" fill="#235DB8" d="M4996 0l248 0c123,0 228,64 284,172 476,916 1214,2094 1592,2911l-60 184 -582 -1 472 341 -76 233 -3994 0c0,-492 757,-1741 1398,-2874l112 81 -181 553 470 -343 470 343 -181 -553 472 -341 -582 1 -162 -503 16 -32c57,-108 161,-172 284,-172zm-957 2240l-179 554 -582 -1 472 341 -181 553 470 -343 470 343 -181 -553 472 -341 -582 1 -179 -554zm1740 -731l-179 554 -582 -1 471 341 -181 554 471 -343 470 343 -181 -554 471 -341 -582 1 -178 -554zm-1356 -802c65,-117 128,-232 188,-344l-111 344 -77 0z"/>
-</svg>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>dictionary icon</title>
-	<desc>dictionary icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve0" fill="#252525" d="M8320 9600c353,0 640,-287 640,-640 0,-1920 0,-3840 0,-5760 0,-353 -287,-640 -640,-640l-5760 0c-353,0 -640,-287 -640,-640 0,-353 287,-640 640,-640l5440 0c177,0 320,143 320,320l0 640c237,0 463,86 640,245l0 -1205c0,-362 -287,-645 -640,-640 -1920,0 -3840,0 -5760,0 -707,0 -1280,573 -1280,1280l0 6400c0,707 573,1280 1280,1280l5760 0zm-5106 -3840l1252 0c-40,-444 -164,-874 -347,-1280l-558 0c-183,406 -307,836 -347,1280zm1266 640l-1280 0 0 640 -640 0 0 -960c0,-726 192,-1416 515,-2063 56,-111 168,-176 285,-176l960 0c117,0 229,65 285,176 323,647 515,1337 515,2063l0 960 -640 0 0 -640zm1280 1280c0,-82 31,-164 94,-226l1694 -1694 -1788 0 0 -640 2560 0 0 640c0,82 -31,164 -94,226l-1693 1694 1787 0 0 640 -2560 0 0 -640z"/>
-</svg>

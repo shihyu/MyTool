@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>font_style_bold icon</title>
-	<desc>font_style_bold icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve0" fill="#252525" d="M5440 8960c-1120,0 -2240,0 -3360,0 -88,0 -160,-72 -160,-160l0 -7360c0,-88 72,-160 160,-160 533,0 1067,0 1600,0 88,0 160,72 160,160l0 2400 1600 0c1410,0 2560,1150 2560,2560 0,0 0,0 0,0 0,1410 -1150,2560 -2560,2560zm-1600 -3840l0 2560 960 0c705,0 1280,-575 1280,-1280 0,-705 -575,-1280 -1280,-1280l-960 0z"/>
-</svg>

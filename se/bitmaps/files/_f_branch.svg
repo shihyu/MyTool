@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g transform="translate(10240,10240) scale(-1.0,-1.0)">
-	<title>arrow_junction icon</title>
-	<desc>arrow_junction icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve0" fill="#2B4D70" d="M5760 8320l0 -320c0,-442 -179,-842 -469,-1131 -289,-290 -689,-469 -1131,-469l-960 0 687 687c46,47 60,113 34,174 -25,61 -82,100 -147,99l-839 -7c-176,-1 -328,-63 -453,-187l-1186 -1187c-124,-124 -124,-328 0,-452l1186 -1186c125,-125 277,-189 453,-188l839 7c66,1 122,38 147,99 26,61 12,127 -34,174l-687 687 960 0c592,0 1142,179 1600,485l0 -2725 -687 687c-47,46 -113,60 -174,34 -61,-25 -100,-82 -99,-147l7 -839c1,-176 63,-328 187,-453l1187 -1186c124,-124 328,-124 452,0l1187 1186c124,125 188,277 187,453l-7 839c-1,66 -38,122 -99,147 -61,26 -127,12 -174,-34l-687 -687 0 6720 -1280 0 0 -1280z"/>
-</g>
-</svg>

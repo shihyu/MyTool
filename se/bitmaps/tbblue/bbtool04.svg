@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>objects_transform icon</title>
-	<desc>objects_transform icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve2" fill="#252525" d="M9533 4712c40,57 67,123 67,195 0,471 -1146,853 -2560,853 -340,0 -664,-22 -960,-62l0 -372c0,-100 -19,-195 -54,-282 335,54 682,76 1014,76 19,0 39,0 58,0 206,-2 382,-90 506,-254 124,-164 161,-357 107,-555l-671 -2445 -1631 2663 -574 -287 2023 -3305c40,-65 106,-102 182,-102 76,0 142,37 182,102l2311 3775z"/>
-	<path id="curve1" fill="#252525" d="M876 4944l2133 -1066c124,-62 258,-62 382,0l2133 1066c148,74 236,216 236,382l0 2459c0,166 -88,308 -236,382l-2133 1066c-124,63 -258,63 -382,0l-2133 -1066c-148,-74 -236,-216 -236,-382l0 -2459c0,-166 88,-308 236,-382zm404 794l0 1915 1600 800 0 -1915 -1600 -800zm1920 248l1488 -744 -1488 -744 -1488 744 1488 744z"/>
-	<path id="curve0" fill="#3E9BD5" d="M4256 3200l-736 0c-68,0 -126,-40 -150,-103 -24,-64 -8,-133 44,-177l426 -360 -640 0c-176,0 -320,144 -320,320l0 705c-5,2 -9,4 -14,6l-946 473 0 -1184c0,-705 575,-1280 1280,-1280l320 0 320 0 -426 -360c-51,-44 -68,-113 -44,-177 24,-63 82,-103 150,-103l736 0c81,0 150,28 212,80l930 787c154,129 153,355 1,487l-931 806c-62,53 -131,80 -212,80z"/>
-</svg>

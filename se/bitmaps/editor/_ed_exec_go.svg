@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>arrow_down icon</title>
-	<desc>arrow_down icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve0" fill="#FFFF2F" d="M2513 4411l1647 1647 0 -5120c0,-176 144,-320 320,-320l1280 0c176,0 320,144 320,320l0 5120 1647 -1647c47,-47 113,-60 174,-35 61,25 99,82 99,148l0 2064c0,176 -63,328 -187,452l-2467 2467c-124,124 -328,124 -452,0l-2467 -2467c-124,-124 -187,-276 -187,-452l0 -2064c0,-66 38,-123 99,-148 61,-25 127,-12 174,35z"/>
-</svg>

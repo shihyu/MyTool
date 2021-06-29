@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>drop_down_list icon</title>
-	<desc>drop_down_list icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve2" fill="#252525" d="M1920 5760l0 640 3840 0 0 -640 -3840 0zm0 1280l0 640 3840 0 0 -640 -3840 0z"/>
-	<path id="curve1" fill="#252525" d="M640 5110l6400 0 0 3850 -6400 0 0 -3850zm640 10l0 3200 5120 0 0 -3200 -5120 0z"/>
-	<path id="curve0" fill="#252525" d="M640 1920l8640 0c176,0 320,144 320,320l0 2560c0,176 -144,320 -320,320l-8640 0 0 -3200zm640 640l0 1920 5120 0 0 -1920 -5120 0zm5773 320c-63,0 -117,34 -144,91 -28,56 -20,120 19,169l947 1184c31,39 75,60 125,60 50,0 94,-21 125,-60l947 -1184c39,-49 47,-113 19,-169 -27,-57 -81,-91 -144,-91l-1894 0z"/>
-</svg>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>folders icon</title>
-	<desc>folders icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve1" fill="#3E9BD5" d="M4590 640c352,0 656,126 905,375l530 530c249,249 553,375 905,375l1710 0c353,0 640,288 640,640l0 320 -640 0 0 -320 -1710 0c-522,0 -988,-193 -1357,-562l-531 -531c-129,-129 -270,-187 -452,-187l-2349 0c-1,0 -1,0 -1,1l0 319 -640 0 0 -320c0,-353 287,-640 640,-640 783,0 1567,0 2350,0zm3485 2560l565 0 0 0 641 0c352,0 639,288 639,640 0,1067 0,2133 0,3200 0,595 -409,1097 -960,1239l0 -3159c0,-417 -268,-773 -640,-905l0 -375c0,-246 -93,-470 -245,-640z"/>
-	<path id="curve0" fill="#252525" d="M3310 1920c352,0 656,126 905,375l530 530c249,249 553,375 905,375l1710 0c352,0 640,288 640,640l0 320 -640 0 0 -320 -1710 0c-522,0 -988,-193 -1357,-562l-531 -531c-129,-129 -270,-187 -452,-187l-2349 0c-1,0 -1,0 -1,1l0 6079c0,176 144,320 320,320l0 0c176,0 320,-144 320,-320l0 -3520c0,-353 287,-640 640,-640l5120 0 0 0 641 0c352,0 639,288 639,640 0,1067 0,2133 0,3200 0,705 -575,1280 -1280,1280l-6080 0c-529,0 -960,-431 -960,-960l0 -6080c0,-353 287,-640 640,-640 783,0 1567,0 2350,0z"/>
-</svg>

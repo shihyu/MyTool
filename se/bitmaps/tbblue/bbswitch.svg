@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>switch3_on icon</title>
-	<desc>switch3_on icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve2" fill="#252525" d="M3200 2560c-1414,0 -2560,1146 -2560,2560 0,1414 1146,2560 2560,2560l2520 0c-314,-162 -593,-380 -826,-640l-1694 0c-1061,0 -1920,-859 -1920,-1920 0,-1061 859,-1920 1920,-1920l1694 0c233,-260 512,-478 826,-640l-2520 0z"/>
-	<path id="curve1" fill="#3E9BD5" d="M3200 3520l1445 0c-306,458 -485,1008 -485,1600 0,592 179,1142 485,1600l-1445 0c-884,0 -1600,-716 -1600,-1600 0,-884 716,-1600 1600,-1600z"/>
-	<path id="curve0" fill="#252525" d="M7040 2560c-1414,0 -2560,1146 -2560,2560 0,1414 1146,2560 2560,2560 1414,0 2560,-1146 2560,-2560 0,-1414 -1146,-2560 -2560,-2560zm0 1280c707,0 1280,573 1280,1280 0,707 -573,1280 -1280,1280 -707,0 -1280,-573 -1280,-1280 0,-707 573,-1280 1280,-1280z"/>
-</svg>

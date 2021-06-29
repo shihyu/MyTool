@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>code_line icon</title>
-	<desc>code_line icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve2" fill="#3E9BD5" d="M1920,3840 8320,3840 8320,4480 1920,4480z"/>
-	<path id="curve1" fill="#252525" d="M2560 7680l1920 0 0 640 -1920 0 0 -640zm0 -5760l1920 0 0 640 -1920 0 0 -640zm1280 960l2560 0 0 640 -2560 0 0 -640zm1280 1920l1920 0 0 640 -1920 0 0 -640zm-1280 960l1920 0 0 640 -1920 0 0 -640zm0 960l2560 0 0 640 -2560 0 0 -640zm2880 0l960 0 0 640 -960 0 0 -640z"/>
-	<path id="curve0" fill="#252525" d="M8960 640l-7680 0 0 8960 7680 0 0 -8960zm-640 640l0 2240 0 0c176,0 320,144 320,320l0 640c0,176 -144,320 -320,320l0 0 0 4160 -6400 0 0 -4160c-176,0 -320,-144 -320,-320l0 -640c0,-176 144,-320 320,-320l0 -2240 6400 0z"/>
-</svg>

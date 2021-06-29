@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>window_oscillograph icon</title>
-	<desc>window_oscillograph icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve1" fill="#FFFF2F" d="M1600 5440l508 0 226 -226c125,-125 327,-125 452,0l364 364 424 -635c98,-148 296,-187 443,-89 57,38 98,91 121,150l300 600 703 -1875c62,-165 245,-249 410,-188 111,41 185,138 204,247l0 -1 461 2766 530 -1238c69,-162 257,-238 419,-169 79,34 137,96 169,169l113 226 7 -7c62,-63 144,-94 226,-94l0 0 960 0 0 640 -827 0 -227 226 -1 -1c-23,24 -51,44 -82,60 -158,79 -349,15 -428,-142l-12 -25 -686 1599c-40,101 -130,179 -244,198 -174,29 -339,-89 -368,-263l-444 -2666 -542 1445 0 0c-28,73 -81,136 -156,174 -158,79 -349,15 -428,-143l-394 -787 -333 500c-12,18 -26,35 -42,51 -125,125 -327,125 -452,0l-414 -413 -92 91c-58,59 -139,96 -228,96l-640 0 0 -640z"/>
-	<path id="curve0" fill="#252525" d="M1280 1280l7680 0c353,0 640,288 640,640l0 6720c0,176 -144,320 -320,320l-8320 0c-176,0 -320,-144 -320,-320l0 -6720c0,-353 288,-640 640,-640zm0 1920l0 5120 7680 0 0 -5120 -7680 0z"/>
-</svg>

@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2048" height="1024" viewBox="0 0 20480 10240">
-<g transform="translate(0,192) scale(0.625,0.625)">
-	<title>sign_forbidden icon</title>
-	<desc>sign_forbidden icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-    <circle fill="white" cx="5120" cy="5120" r="3600"/>
-	<path id="curve0" fill="#808080" d="M640 5120c0,-2474 2006,-4480 4480,-4480 2474,0 4480,2006 4480,4480 0,2474 -2006,4480 -4480,4480 -2474,0 -4480,-2006 -4480,-4480zm1789 1731l4422 -4422c-499,-322 -1093,-509 -1731,-509 -1767,0 -3200,1433 -3200,3200 0,638 187,1232 509,1731zm5382 -3462l-4422 4422c499,322 1093,509 1731,509 1767,0 3200,-1433 3200,-3200 0,-638 -187,-1232 -509,-1731z"/>
-</g>
-</svg>

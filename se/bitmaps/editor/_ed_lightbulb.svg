@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>lightbulb_on icon</title>
-	<desc>lightbulb_on icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve1" fill="#252525" d="M6720 7533l0 1427c0,353 -287,640 -640,640l0 0 0 0 0 0c0,176 -216,320 -480,320l-960 0c-264,0 -480,-144 -480,-320l0 0 0 0 0 0c-353,0 -640,-287 -640,-640l0 -1427c139,49 286,78 427,98 382,53 787,49 1173,49 386,0 791,4 1173,-49 141,-20 288,-49 427,-98z"/>
-	<path id="curve0" fill="#EDCA36" d="M5120 320c1624,0 3200,1165 3200,2880 0,1600 -1280,2240 -1280,3200l0 320c0,640 -960,640 -1920,640 -960,0 -1920,0 -1920,-640l0 -320c0,-960 -1280,-1600 -1280,-3200 0,-1711 1572,-2880 3200,-2880zm642 715c-211,-49 -427,-75 -642,-75 -1266,0 -2560,884 -2560,2240 0,303 64,569 164,813 35,86 97,146 184,179 87,32 173,28 256,-14 149,-75 216,-252 153,-407 -73,-177 -117,-363 -117,-571 0,-994 1016,-1600 1920,-1600 164,0 331,20 496,58 146,35 292,-34 359,-168l0 -1c46,-90 47,-187 4,-279 -43,-91 -119,-152 -217,-175z"/>
-</svg>

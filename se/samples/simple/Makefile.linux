@@ -1,8 +1,0 @@
-CC=g++
-CCFLAGS=
-CCINC=-I../../h
-
-all:	libsimple.so
-
-libsimple.so:	simple.cpp
-	$(CC) $(CCFLAGS) -fPIC $(CCINC) simple.cpp -shared -o $@

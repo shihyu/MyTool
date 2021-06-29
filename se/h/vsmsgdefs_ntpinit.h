@@ -1,5 +1,0 @@
-#pragma once
-
-enum VSMSGDEFS_NTPINIT {
-    NTPINIT_ONLY_RUN_BY_SLICKEDIT_RC = -3700,
-};

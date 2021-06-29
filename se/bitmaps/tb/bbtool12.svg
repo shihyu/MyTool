@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>bomb icon</title>
-	<desc>bomb icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve1" fill="#252525" d="M5120 3200c534,0 1037,131 1480,362l330 -330c125,-124 328,-124 453,0l226 226 225 -224c165,135 366,229 585,267 -15,48 -41,94 -80,132l-277 278 226 226c124,125 124,328 0,453l-330 330c231,443 362,946 362,1480 0,1767 -1433,3200 -3200,3200 -1767,0 -3200,-1433 -3200,-3200 0,-1767 1433,-3200 3200,-3200zm0 640c-1414,0 -2560,1146 -2560,2560 0,97 5,192 16,286 10,96 57,174 137,228 79,55 169,71 262,46l0 0c155,-40 255,-186 237,-345 -8,-70 -12,-142 -12,-215 0,-1060 860,-1920 1920,-1920 71,0 141,4 209,11 159,18 305,-83 345,-238l0 0c24,-93 8,-183 -47,-262 -55,-79 -133,-126 -229,-136 -91,-10 -184,-15 -278,-15z"/>
-	<path id="curve0" fill="#FFFF2F" d="M8320 320c860,420 1280,1140 1280,1920 0,526 -423,953 -947,960 259,-7 467,-219 467,-480 0,-375 -595,-570 -340,-1030 -320,250 -620,585 -620,1030 0,261 208,473 467,480 -524,-7 -947,-434 -947,-960 0,-960 1080,-1080 640,-1920z"/>
-</svg>

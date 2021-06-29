@@ -1,8 +1,0 @@
-<?xml encoding='UTF-8'?>
-<!ELEMENT VSRefactor (Configuration*)>
-<!ELEMENT Configuration (Includes)>
-   <!ATTLIST Configuration Name CDATA #REQUIRED>
-   <!ATTLIST Configuration Filename CDATA #REQUIRED>
-<!ELEMENT Includes (Include*)>
-<!ELEMENT Include EMPTY>
-   <!ATTLIST Include Dir CDATA #REQUIRED>

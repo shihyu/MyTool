@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>signal_flag icon</title>
-	<desc>signal_flag icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve1" fill="#FFFF2F" d="M3520 2092c791,130 1818,73 2400,-172 760,-320 2280,-320 3040,0l0 3840c-760,-320 -2280,-320 -3040,0 -582,245 -1609,302 -2400,172l0 -3840z"/>
-	<path id="curve0" fill="#252525" d="M2720 640c442,0 800,448 800,800 0,352 -126,494 -320,640l0 7520 -960 0 0 -7520c-194,-146 -320,-288 -320,-640 0,-352 358,-800 800,-800z"/>
-</svg>

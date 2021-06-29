@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>sign_stop icon</title>
-	<desc>sign_stop icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve0" fill="#3E9BD5" d="M734 3106l2372 -2372c63,-63 138,-94 227,-94l3574 0c89,0 164,31 227,94l2372 2372c63,63 94,138 94,227l0 3574c0,89 -31,164 -94,227l-2372 2372c-63,63 -138,94 -227,94l-3574 0c-89,0 -164,-31 -227,-94l-2372 -2372c-63,-63 -94,-138 -94,-227l0 -3574c0,-89 31,-164 94,-227zm546 359l0 3310 2185 2185 3310 0 2185 -2185 0 -3310 -2185 -2185 -3310 0 -2185 2185zm640 265l0 2780 1810 1810 2780 0 1810 -1810 0 -2780 -1810 -1810 -2780 0 -1810 1810z"/>
-</svg>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>funnel icon</title>
-	<desc>funnel icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve0" fill="#252525" d="M9600 1920l0 562c0,265 -94,492 -281,679l-2958 2958c-187,187 -281,414 -281,679l0 1842c0,640 -1920,1280 -1920,640l0 -2482c0,-265 -94,-492 -281,-679l-2958 -2958c-187,-187 -281,-414 -281,-679l0 -562 0 0c0,-530 2006,-960 4480,-960 2474,0 4480,430 4480,960l0 0zm-4480 -640c-2121,0 -3840,287 -3840,640 0,353 1719,640 3840,640 2121,0 3840,-287 3840,-640 0,-353 -1719,-640 -3840,-640z"/>
-</svg>

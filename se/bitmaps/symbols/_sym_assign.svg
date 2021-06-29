@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2048" height="1024" viewBox="0 0 20480 10240">
-<g transform="translate(6400,0) scale(1,1)">
-	<title>arrow_left icon</title>
-	<desc>arrow_left icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve0" fill="#ED9A56" d="M5818 2502l-1647 1647 5120 0c176,0 320,144 320,320l0 1280c0,176 -144,320 -320,320l-5120 0 1647 1647c47,46 60,113 35,174 -26,61 -82,99 -148,99l-2064 0c-176,0 -328,-63 -452,-188l-2467 -2466c-124,-124 -124,-328 0,-452l2467 -2467c124,-124 276,-187 452,-187l2064 0c66,0 122,38 148,99 25,61 12,127 -35,174z"/>
-</g>
-</svg>

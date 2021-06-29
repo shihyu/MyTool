@@ -1,9 +1,0 @@
-#pragma once
-
-enum VSMSGDEFS_REGEX {
-    INVALID_REGULAR_EXPRESSION_RC = -2500,
-    EOL1_RC = -2501,
-    EOL2_RC = -2502,
-    RE_EOF_RC = -2503,
-    REBREAK_KEY_PRESSED_RC = -2504,
-};

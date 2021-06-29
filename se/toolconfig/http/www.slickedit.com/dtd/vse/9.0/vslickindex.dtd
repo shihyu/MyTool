@@ -1,8 +1,0 @@
-﻿<?xml encoding='UTF-8'?>
-<!ELEMENT indexdata (key)*>
-<!ELEMENT key (topic)*>
-  <!ATTLIST key name CDATA #REQUIRED>
-<!ELEMENT topic EMPTY>
-  <!ATTLIST topic name CDATA #REQUIRED>
-  <!ATTLIST topic url CDATA #REQUIRED>
-

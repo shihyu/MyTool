@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>odometer icon</title>
-	<desc>odometer icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve1" fill="#252525" d="M7680 3840l640 0c353,0 640,287 640,640l0 1280c0,353 -287,640 -640,640l-640 0c-353,0 -640,-287 -640,-640l0 -1280c0,-353 287,-640 640,-640zm0 640l0 1280 640 0 0 -1280 -640 0z"/>
-	<path id="curve0" fill="#252525" d="M960 2560l8320 0c353,0 640,287 640,640l0 3840c0,353 -287,640 -640,640l-8320 0c-352,0 -640,-287 -640,-640l0 -3840c0,-353 288,-640 640,-640zm960 1280c-353,0 -640,287 -640,640l0 1280c0,353 287,640 640,640l640 0c353,0 640,-287 640,-640l0 -1280c0,-353 -287,-640 -640,-640l-640 0zm0 640l0 1280 640 0 0 -1280 -640 0zm2880 -640c-353,0 -640,287 -640,640l0 1280c0,353 287,640 640,640l640 0c353,0 640,-287 640,-640l0 -1280c0,-353 -287,-640 -640,-640l-640 0zm0 640l0 1280 640 0 0 -1280 -640 0zm1920 -1280l0 3840 2560 0 0 -3840 -2560 0z"/>
-</svg>

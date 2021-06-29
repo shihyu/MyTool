@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>code_php icon</title>
-	<desc>code_php icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve2" fill="#235DB8" d="M2240 6400l1280 0c530,0 960,430 960,960 0,530 -430,960 -960,960l-640 0 0 1280 -640 0 0 -3200zm4160 0l640 0 0 3200 -640 0 0 -1280 -960 0 0 1280 -640 0 0 -3200 640 0 0 1280 960 0 0 -1280zm-2880 1280c177,0 320,-143 320,-320 0,-177 -143,-320 -320,-320l-640 0 0 640 640 0zm4160 -1280l1280 0c530,0 960,430 960,960 0,530 -430,960 -960,960l-640 0 0 1280 -640 0 0 -3200zm1280 1280c177,0 320,-143 320,-320 0,-177 -143,-320 -320,-320l-640 0 0 640 640 0z"/>
-	<path id="curve1" fill="#252525" d="M2560 1920l1920 0 0 640 -1920 0 0 -640zm1280 960l2560 0 0 640 -2560 0 0 -640zm1280 960l2560 0 0 640 -2560 0 0 -640zm0 960l1920 0 0 640 -1920 0 0 -640zm-1280 960l1920 0 0 640c0,-176 -144,-320 -320,-320l-640 0c-176,0 -320,144 -320,320l-113 0c-149,-131 -329,-229 -527,-280l0 -360zm1920 960l320 0 0 640 -320 0 0 -640z"/>
-	<path id="curve0" fill="#252525" d="M8960 640l-7680 0 0 8960 640 0 0 -8320 6400 0 0 4800 640 0 0 -5440zm-5760 8960l1280 0 0 -640 -1280 0 0 640zm2560 0l320 0 0 -640 -320 0 0 640zm2880 0l320 0 0 -960 -320 0 0 960z"/>
-</svg>

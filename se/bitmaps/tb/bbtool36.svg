@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>armour icon</title>
-	<desc>armour icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve2" fill="#252525" d="M7360 7680l-4480 0c-526,0 -847,870 -935,1559 -27,209 140,361 317,361l2054 0c144,0 266,-91 307,-230l497 -1690 497 1690c41,139 163,230 307,230l2054 0c177,0 344,-152 317,-361 -88,-689 -409,-1559 -935,-1559z"/>
-	<path id="curve1" fill="#252525" d="M3824 2096c357,179 744,278 1136,300l0 4964 -2196 0c-392,-1134 -639,-2404 -649,-3715 151,-24 292,-96 398,-214 328,-361 565,-710 1008,-950 157,-85 265,-226 303,-385zm1456 300c392,-22 779,-121 1136,-300 38,159 146,300 303,385 443,240 680,589 1008,950 106,118 247,190 398,214 -10,1311 -257,2581 -649,3715l-2196 0 0 -4964z"/>
-	<path id="curve0" fill="#252525" d="M8329 3323c221,-51 269,-595 1352,-422 95,15 204,-50 188,-154 -116,-751 -890,-1395 -1763,-1463 -483,-37 -1144,174 -1355,564 -69,127 -18,277 120,352 514,278 783,676 1092,1016 90,99 228,139 366,107zm-6418 0c-221,-51 -269,-595 -1352,-422 -95,15 -204,-50 -188,-154 116,-751 890,-1395 1763,-1463 483,-37 1144,174 1355,564 69,127 18,277 -120,352 -514,278 -783,676 -1092,1016 -90,99 -228,139 -366,107z"/>
-</svg>

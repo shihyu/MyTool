@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<title>book_open icon</title>
-	<desc>book_open icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve0" fill="#2CA744" d="M4160 8000c-640,-320 -2880,320 -3520,320 -183,0 -334,-137 -334,-320l0 -5824 320 -320 324 0c522,-1 1302,-112 1793,-275 398,-133 814,-301 1239,-301 446,0 814,185 1138,455 324,-270 692,-455 1138,-455 425,0 841,168 1239,301 491,163 1264,271 1786,271l324 0 320 320 0 5828c0,180 -147,324 -327,320 -640,0 -2880,-640 -3520,-320 0,176 -144,320 -320,320l-1280 0c-176,0 -320,-144 -320,-320zm5120 -640l7 -5173 -4 0c-607,0 -1414,-113 -1989,-305 -309,-103 -709,-268 -1036,-268 -284,0 -516,130 -728,307l-90 75 0 5168 83 -69c213,-178 444,-307 728,-307 327,0 727,165 1037,268 574,191 1381,304 1988,304l4 0zm-4480 -5364l-90 -75c-212,-177 -444,-307 -728,-307 -327,0 -727,165 -1036,268 -575,192 -1389,308 -1996,308l-4 0 -6 5174 4 0c607,0 1420,-116 1995,-308 309,-103 709,-268 1037,-268 283,0 515,129 728,307l96 80 0 -5179z"/>
-</svg>

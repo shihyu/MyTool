@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g transform="translate(10240,10240) scale(-1.0,1.0) rotate(-90)">
-	<title>arrow_turn_left icon</title>
-	<desc>arrow_turn_left icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
-	<path id="curve0" fill="#235DB8" d="M3200 2880l2560 0c529,0 1009,216 1357,563 347,348 563,828 563,1357l0 4160 -1280 0 0 -4160c0,-176 -72,-336 -188,-452 -116,-116 -276,-188 -452,-188 -853,0 -1707,0 -2560,0l687 687c46,47 60,113 34,174 -25,61 -82,100 -147,99l-839 -7c-176,-1 -328,-63 -453,-187l-1186 -1187c-124,-124 -124,-328 0,-452l1186 -1186c125,-125 277,-189 453,-188l839 7c66,1 122,38 147,99 26,61 12,127 -34,174l-687 687z"/>
-</g>
-</svg>
