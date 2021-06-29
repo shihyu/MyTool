@@ -1,0 +1,43 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>memory stick icon</title>
+    <desc>memory stick icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="176" y1="368" x2="325.096" y2="490.2855" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#d8e0e8"/>
+            <stop offset="1" stop-color="#c6d0db"/>
+        </linearGradient>
+        <linearGradient x1="176" y1="368" x2="336" y2="387.2" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#d0d9e2"/>
+            <stop offset="0.45098" stop-color="#c2ccd7"/>
+            <stop offset="1" stop-color="#b4bfcb"/>
+        </linearGradient>
+        <linearGradient x1="144" y1="0" x2="368.0005" y2="0" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#1ea3ef"/>
+            <stop offset="0.27843" stop-color="#4eb6f2"/>
+            <stop offset="0.74902" stop-color="#3daff1"/>
+            <stop offset="1" stop-color="#2794d3"/>
+        </linearGradient>
+        <linearGradient x1="144" y1="320" x2="368.0005" y2="320.4065" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#bfe4fb"/>
+            <stop offset="0.08627" stop-color="#b0defa"/>
+            <stop offset="0.16078" stop-color="#b9e2fb"/>
+            <stop offset="0.81961" stop-color="#acddfa"/>
+            <stop offset="1" stop-color="#a0d8f9"/>
+        </linearGradient>
+        <linearGradient x1="240" y1="64" x2="272" y2="64.5075" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#74d525"/>
+            <stop offset="1" stop-color="#5ca81e"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M176,368l160,0l0,144l-160,0z" id="curve6" fill="url(#color-1)"/>
+        <path d="M336,368l0,32l-160,0l0,-32z" id="curve5" fill="url(#color-2)"/>
+        <path d="M192,416l48,0l0,32l-48,0z M272,416l48,0l0,32l-48,0z" id="curve4" fill="#51616f"/>
+        <path d="M368,32l0,336c0,9 -7,16 -16,16l-192,0c-9,0 -16,-7 -16,-16l0,-336c0,-17.5 14.5,-32 32,-32l160,0c17.5,0 32,14.5 32,32z" id="curve3" fill="url(#color-3)"/>
+        <path d="M288,112c0,17.5 -14.5,32 -32,32c-17.5,0 -32,-14.5 -32,-32l0,-32c0,-17.5 14.5,-32 32,-32c17.5,0 32,14.5 32,32z" id="curve2" fill="#ffffff"/>
+        <path d="M368,320l-224,0l0,16l224,0z" id="curve1" fill="url(#color-4)"/>
+        <path d="M272,112c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16l0,-32c0,-9 7,-16 16,-16c9,0 16,7 16,16z" id="curve0" fill="url(#color-5)"/>
+    </g>
+</svg>

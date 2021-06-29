@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>object_cube icon</title>
+	<desc>object_cube icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#252525" d="M1634 3023l3200 -1600c186,-93 386,-93 572,0l3200 1600c222,111 354,324 354,573l0 3688c0,249 -132,462 -354,573l-3200 1600c-186,93 -386,93 -572,0l-3200 -1600c-222,-111 -354,-324 -354,-573l0 -3688c0,-249 132,-462 354,-573zm286 853l0 3408 2880 1440 0 -3408 -2880 -1440zm5968 -496l-2768 -1384 -2768 1384 2768 1384 2768 -1384z"/>
+
+
+<g comp-op="clear">
+<g transform="translate(0,0) scale(0.5,0.5)"  stroke="#808080" stroke-width="512" stroke-linejoin="round">
+	<title>arrow_right icon</title>
+	<desc>arrow_right icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#3E9BD5" d="M4422 7716l1647 -1647 -5120 0c-176,0 -320,-144 -320,-320l0 -1280c0,-176 144,-320 320,-320l5120 0 -1647 -1647c-47,-47 -60,-113 -35,-174 26,-61 82,-99 148,-99l2064 0c176,0 328,63 452,187l2467 2467c124,124 124,328 0,452l-2467 2466c-124,125 -276,188 -452,188l-2064 0c-66,0 -122,-38 -148,-99 -25,-61 -12,-128 35,-174z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(0,0) scale(0.5,0.5)">
+	<title>arrow_right icon</title>
+	<desc>arrow_right icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#3E9BD5" d="M4422 7716l1647 -1647 -5120 0c-176,0 -320,-144 -320,-320l0 -1280c0,-176 144,-320 320,-320l5120 0 -1647 -1647c-47,-47 -60,-113 -35,-174 26,-61 82,-99 148,-99l2064 0c176,0 328,63 452,187l2467 2467c124,124 124,328 0,452l-2467 2466c-124,125 -276,188 -452,188l-2064 0c-66,0 -122,-38 -148,-99 -25,-61 -12,-128 35,-174z"/>
+</g>
+
+</svg>

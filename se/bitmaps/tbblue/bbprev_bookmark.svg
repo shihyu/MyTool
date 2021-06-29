@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>bookmark icon</title>
+	<desc>bookmark icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#3E9BD5" d="M4480 1840l253 0c48,127 67,276 67,400l0 960c0,353 287,640 640,640 353,0 640,-287 640,-640l0 -960c0,-132 -11,-267 -32,-400l352 0c353,0 640,287 640,640l0 6400c0,353 -287,640 -640,640l-1920 0c-353,0 -640,-287 -640,-640l0 -3320c325,-949 320,-2008 320,-3000 0,-147 4,-432 47,-659 83,-39 175,-61 273,-61z"/>
+	<path id="curve0" fill="#252525" d="M5760 3200c0,177 -143,320 -320,320 -177,0 -320,-143 -320,-320l0 -960c0,-279 -70,-552 -210,-738 -101,-135 -244,-222 -430,-222l-10 0 -2 0 -7 0c-195,3 -341,49 -429,179 -126,185 -192,528 -192,1101 0,1328 0,2657 -694,3697 -98,148 -296,187 -443,89 -148,-98 -187,-296 -89,-443 580,-871 586,-2086 586,-3305l-6 23c-2,12 -5,23 -9,35 -198,795 -333,1318 -1311,2948 -91,151 -287,200 -438,110 -151,-91 -200,-287 -110,-438 935,-1558 1056,-2041 1244,-2793l0 -1c178,-710 455,-1164 783,-1445 341,-292 724,-393 1106,-397l2 0 1 0c6,0 12,0 18,0 409,0 722,189 940,479 227,302 340,715 340,1121l0 960z"/>
+
+
+<g comp-op="clear">
+<g transform="translate(0,5120) scale(0.5,0.5)"  stroke="#808080" stroke-width="512" stroke-linejoin="round">
+	<title>arrow_left icon</title>
+	<desc>arrow_left icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#252525" d="M5818 2502l-1647 1647 5120 0c176,0 320,144 320,320l0 1280c0,176 -144,320 -320,320l-5120 0 1647 1647c47,46 60,113 35,174 -26,61 -82,99 -148,99l-2064 0c-176,0 -328,-63 -452,-188l-2467 -2466c-124,-124 -124,-328 0,-452l2467 -2467c124,-124 276,-187 452,-187l2064 0c66,0 122,38 148,99 25,61 12,127 -35,174z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(0,5120) scale(0.5,0.5)">
+	<title>arrow_left icon</title>
+	<desc>arrow_left icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#252525" d="M5818 2502l-1647 1647 5120 0c176,0 320,144 320,320l0 1280c0,176 -144,320 -320,320l-5120 0 1647 1647c47,46 60,113 35,174 -26,61 -82,99 -148,99l-2064 0c-176,0 -328,-63 -452,-188l-2467 -2466c-124,-124 -124,-328 0,-452l2467 -2467c124,-124 276,-187 452,-187l2064 0c66,0 122,38 148,99 25,61 12,127 -35,174z"/>
+</g>
+
+</svg>

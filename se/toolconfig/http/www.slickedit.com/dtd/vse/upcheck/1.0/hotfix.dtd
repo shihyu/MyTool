@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Entities for registered trademarks and revision number -->
+<!ENTITY reg "®">
+<!ENTITY revision "1">
+<!ENTITY version "13.0.0">
+
+<!-- Top level hotfix includes description and contents -->
+<!ELEMENT HotFix (Description,Defect*,Contents) >
+<!ATTLIST HotFix Date CDATA #IMPLIED>
+<!ATTLIST HotFix Version CDATA #REQUIRED>
+<!ATTLIST HotFix CompatibleVersions CDATA #IMPLIED>
+<!ATTLIST HotFix Revision CDATA #IMPLIED>
+<!ATTLIST HotFix Restart (0|1) #IMPLIED>
+<!ATTLIST HotFix Requires CDATA #IMPLIED>
+<!ATTLIST HotFix Series CDATA #IMPLIED>
+<!ATTLIST HotFix DeleteFiles (0|1) #IMPLIED>
+
+<!-- Order list of items to process -->
+<!ELEMENT Contents (Module|File|Config|DLL|Command|Sysconfig|Plugin|Statefile)*>
+
+<!-- Short description of hot fix -->
+<!ELEMENT Description (#PCDATA)>
+
+<!-- Short description of an individual fix within a hot fix -->
+<!ELEMENT Defect (#PCDATA)>
+<!ATTLIST Defect Ids CDATA #IMPLIED>
+<!ATTLIST Defect Modules CDATA #REQUIRED>
+<!ATTLIST Defect Revision CDATA #IMPLIED>
+
+<!-- Slick-C file to load -->
+<!ELEMENT Module EMPTY>
+<!ATTLIST Module Name CDATA #REQUIRED>
+<!ATTLIST Module Load (0|1) #IMPLIED>
+<!ATTLIST Module Run  (0|1) #IMPLIED>
+
+<!-- System Configuration file to replace -->
+<!ELEMENT File EMPTY>
+<!ATTLIST File Name CDATA #REQUIRED>
+<!ATTLIST File Path CDATA #IMPLIED>
+<!ATTLIST File Arch CDATA #IMPLIED>
+
+<!-- User Configuration file to replace -->
+<!ELEMENT Config EMPTY>
+<!ATTLIST Config Name CDATA #REQUIRED>
+<!ATTLIST Config Path CDATA #IMPLIED>
+
+<!-- User Configuration file to replace -->
+<!ELEMENT Sysconfig EMPTY>
+<!ATTLIST Sysconfig Name CDATA #REQUIRED>
+<!ATTLIST Sysconfig Path CDATA #IMPLIED>
+
+<!-- Windows DLL to replace -->
+<!ELEMENT DLL EMPTY>
+<!ATTLIST DLL Name CDATA #REQUIRED>
+<!ATTLIST DLL Arch CDATA #IMPLIED>
+
+<!-- Slick-C command to run to finish up -->
+<!ELEMENT Command EMPTY>
+<!ATTLIST Command Exec CDATA #REQUIRED>
+
+<!-- Part of cumulative hot fix -->
+<!ELEMENT ZipFile EMPTY>
+<!ATTLIST ZipFile Name CDATA #REQUIRED>
+
+<!-- Plugins -->
+<!ELEMENT Plugin EMPTY>
+<!ATTLIST Plugin Name CDATA #REQUIRED>
+
+<!-- Slick-C state file -->
+<!ELEMENT Statefile EMPTY>
+<!ATTLIST Statefile Name CDATA #IMPLIED>
+

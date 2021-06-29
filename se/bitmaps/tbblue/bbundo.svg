@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>undo icon</title>
+	<desc>undo icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#252525" d="M3707 1465l-2146 2147c-125,124 -125,327 0,452l2146 2146c125,125 277,188 453,188l1159 0c142,0 214,-172 113,-273l-1647 -1647 3255 0c351,0 640,288 640,640l0 1282c0,352 -288,640 -640,640l-960 2c-176,1 -320,144 -320,320l0 636c0,176 144,319 320,320l960 2c1058,0 1920,-862 1920,-1920l0 -1282c0,-1059 -862,-1920 -1920,-1920 -1085,0 -2170,0 -3255,0l1647 -1647c101,-101 29,-273 -114,-273l-1158 0c-176,0 -328,63 -453,187z"/>
+</svg>

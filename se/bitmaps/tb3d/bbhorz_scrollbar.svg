@@ -1,0 +1,19 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>scroll bar horizontal icon</title>
+    <desc>scroll bar horizontal icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="96" y1="192" x2="96" y2="320.0005" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#4eb6f2"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M8,192l496,0c4.5,0 8,3.5 8,8l0,112c0,4.5 -3.5,8 -8,8l-496,0c-4.5,0 -8,-3.5 -8,-8l0,-112c0,-4.5 3.5,-8 8,-8z" id="curve4" fill="#d8e0e8"/>
+        <path d="M8,192l104,0c-9,0 -16,7 -16,16l0,96c0,9 7,16 16,16l-104,0c-4.5,0 -8,-3.5 -8,-8l0,-112c0,-4.5 3.5,-8 8,-8z M400,192l104,0c4.5,0 8,3.5 8,8l0,112c0,4.5 -3.5,8 -8,8l-104,0c9,0 16,-7 16,-16l0,-96c0,-9 -7,-16 -16,-16z" id="curve3" fill="#b3c0cd"/>
+        <path d="M112,192l176,0c9,0 16,7 16,16l0,96c0,9 -7,16 -16,16l-176,0c-9,0 -16,-7 -16,-16l0,-96c0,-9 7,-16 16,-16z" id="curve2" fill="url(#color-1)"/>
+        <path d="M80,208l0,96l-64,-48z" id="curve1" fill="#51616f"/>
+        <path d="M432,208l0,96l64,-48z" id="curve0" fill="#51616f"/>
+    </g>
+</svg>

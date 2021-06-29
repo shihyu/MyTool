@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>satellite_dish icon</title>
+	<desc>satellite_dish icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve2" fill="#808080" d="M6233 7871c448,370 750,911 806,1523 5,54 -9,103 -40,144 -32,41 -72,62 -119,62l-4143 0c-47,0 -88,-21 -119,-62 -32,-41 -45,-90 -40,-144 68,-743 498,-1381 1112,-1735l439 -1054c464,518 1046,914 1728,1154 120,42 246,80 376,112z"/>
+	<path id="curve1" fill="#ff8080" d="M8033 2601c316,-158 701,-30 859,286 158,316 30,700 -286,859 -187,93 -399,87 -573,0l-911 608 -466 -931 1034 -366c36,-190 157,-362 343,-456z"/>
+	<path id="curve0" fill="#8080ff" d="M8158 7537c-1049,381 -3331,96 -4416,-2071 -1086,-2168 53,-4165 987,-4777 40,-26 84,-33 129,-21 46,13 81,41 102,83l3286 6564c22,42 24,87 6,131 -17,44 -49,75 -94,91z"/>
+</svg>

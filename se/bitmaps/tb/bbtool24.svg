@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>book icon</title>
+	<desc>book icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#235DB8" d="M8320 9600c353,0 640,-287 640,-640 0,-1920 0,-3840 0,-5760 0,-353 -287,-640 -640,-640l0 0c-1921,2 -3844,0 -5760,0 -353,0 -640,-287 -640,-640 0,-353 287,-640 640,-640l5440 0c177,0 320,143 320,320l0 640 0 0c237,0 463,86 640,245l0 -1205c0,-362 -287,-645 -640,-640 -1920,0 -3840,0 -5760,0 -707,0 -1280,573 -1280,1280l0 6400c0,707 573,1280 1280,1280l5760 0zm-5440 -6080c176,0 320,144 320,320l0 4800c0,176 -144,320 -320,320 -176,0 -320,-144 -320,-320l0 -4800c0,-176 144,-320 320,-320z"/>
+
+
+<g comp-op="clear">
+<g transform="translate(5120,5120) scale(0.5,0.5)"  stroke="#252525" stroke-width="512" stroke-linejoin="round">
+	<title>magnifying_glass icon</title>
+	<desc>magnifying_glass icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <circle fill="white" opacity="0.5" cx="3500" cy="3500" r="3000"/>
+	<path id="curve1" fill="#EDCA36" d="M5986 6814l828 -828c124,-124 328,-124 452,0l2428 2428c124,124 124,328 0,452l-828 828c-124,124 -328,124 -452,0l-2428 -2428c-124,-124 -124,-328 0,-452z"/>
+	<path id="curve0" fill="#252525" d="M6082 5442l412 412 -640 640 -412 -412c-534,401 -1197,638 -1916,638 -1764,0 -3194,-1430 -3194,-3194 0,-1764 1430,-3194 3194,-3194 1764,0 3194,1430 3194,3194 0,719 -237,1382 -638,1916zm-2556 -4471c-1411,0 -2555,1144 -2555,2555 0,1411 1144,2555 2555,2555 1411,0 2555,-1144 2555,-2555 0,-1411 -1144,-2555 -2555,-2555z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(5120,5120) scale(0.5,0.5)">
+	<title>magnifying_glass icon</title>
+	<desc>magnifying_glass icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <circle fill="white" opacity="0.5" cx="3500" cy="3500" r="3000"/>
+	<path id="curve1" fill="#EDCA36" d="M5986 6814l828 -828c124,-124 328,-124 452,0l2428 2428c124,124 124,328 0,452l-828 828c-124,124 -328,124 -452,0l-2428 -2428c-124,-124 -124,-328 0,-452z"/>
+	<path id="curve0" fill="#252525" d="M6082 5442l412 412 -640 640 -412 -412c-534,401 -1197,638 -1916,638 -1764,0 -3194,-1430 -3194,-3194 0,-1764 1430,-3194 3194,-3194 1764,0 3194,1430 3194,3194 0,719 -237,1382 -638,1916zm-2556 -4471c-1411,0 -2555,1144 -2555,2555 0,1411 1144,2555 2555,2555 1411,0 2555,-1144 2555,-2555 0,-1411 -1144,-2555 -2555,-2555z"/>
+</g>
+
+</svg>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>font icon</title>
+	<desc>font icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#252525" d="M640 7040l2259 -6400 1363 0 1835 4622 -901 1184 -273 -686 -2476 0 -452 1280 -1355 0zm3775 -2560l-803 -2022 -714 2022 1517 0z"/>
+	<path id="curve0" fill="#235DB8" d="M5948 7040l1732 0 0 -2273 -1732 2273zm1412 1920l0 0c176,0 320,-144 320,-320l0 -960 -2220 0 -633 831c-60,79 -80,171 -57,268 23,96 82,170 170,214 107,52 180,161 180,287l0 320 -2240 0 0 -320c0,-176 144,-320 320,-320l324 0c103,0 192,-44 254,-126l4197 -5508c63,-82 151,-126 255,-126l410 0c176,0 320,144 320,320l0 5120c0,176 144,320 320,320l0 0c176,0 320,144 320,320l0 320 -2560 0 0 -320c0,-176 144,-320 320,-320z"/>
+</svg>

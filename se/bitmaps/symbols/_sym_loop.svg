@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="512" viewBox="0 0 1024 512">
+<g transform="translate(320,0) scale(1,1)">
+    <title>arrow circle2 icon</title>
+    <desc>arrow circle2 icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <circle fill="#d29931" cx="256" cy="256" r="172"/>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal" transform="translate(520,0) scale(-0.98,1.0)">
+        <path d="M336,190.5l0,-158.5l158.5,0l-56.5,56.5l8.5,9c42.5,42 65.5,99 65.5,158.5c0,57.5 -22,114.5 -65.5,158.5c-44,43.5 -101,65.5 -158.5,65.5c-8,0 -16.5,-0.5 -24.5,-1.5l0,-64.5c8,1.5 16.5,2 24.5,2c41,0 82,-15.5 113,-47c31.5,-31 47,-72 47,-113c0,-41 -15.5,-82 -46.5,-113.5l-9,-8.5z" id="curve1" fill="#4040a0" stroke="#808080" stroke-width="4"/>
+        <path d="M208,321.5l0,158.5l-158.5,0l56.5,-56.5l-8.5,-9c-42.5,-42 -65.5,-99 -65.5,-158.5c0,-57.5 22,-114.5 65.5,-158.5c44,-43.5 101,-65.5 158.5,-65.5c8,0 16.5,0.5 24.5,1.5l0,64.5c-8,-1.5 -16.5,-2 -24.5,-2c-41,0 -82,15.5 -113,47c-31.5,31 -47,72 -47,113c0,41 15.5,82 46.5,113.5l9,8.5z" id="curve0" fill="#4040a0" stroke="#808080" stroke-width="4"/>
+    </g>
+</g>
+</svg>

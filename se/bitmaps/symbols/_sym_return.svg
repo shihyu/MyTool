@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="512" viewBox="0 0 1024 512">
+<g transform="translate(320,0) scale(1,1)">
+<title>return_orange icon</title>
+<desc>based on icon from the IconExperience.com V-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+<desc>Hand-traced with iVinci Express.</desc>
+    <desc iVinci="yes" version="4.6" gridStep="16" showGrid="no" snapToGrid="yes" codePlatform="0"/>
+    <g id="Layer1" name="Layer 1" opacity="1">
+        <g id="Shape1">
+            <path id="shapePath1" d="M464.5,80.5 L464.5,256.501 L256.5,464.5 L48.5001,256.499 L48.5,80.5 L464.5,80.5 Z" style="stroke:#808080;stroke-opacity:1;stroke-width:4;stroke-linejoin:miter;stroke-miterlimit:2;stroke-linecap:round;fill-rule:evenodd;fill:#4040a0;fill-opacity:1;"/>
+        </g>
+        <g id="Shape2">
+            <path id="shapePath2" d="M432.5,112.5 L432.501,256.502 L256.501,432.501 L80.5007,256.5 L80.5,112.5 L432.5,112.5 Z" style="stroke:#808080;stroke-opacity:1;stroke-width:4;stroke-linejoin:miter;stroke-miterlimit:2;stroke-linecap:round;fill-rule:evenodd;fill:#d29931;fill-opacity:1;"/>
+        </g>
+    </g>
+</g>
+</svg>

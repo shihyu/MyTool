@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="512" viewBox="0 0 1024 512">
+<g transform="translate(320,0) scale(1,1)">
+    <title>package icon</title>
+    <desc>package icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="376.4048" y2="482.37615" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#ED9A56"/>
+            <stop offset="1" stop-color="#C08A06"/>
+        </linearGradient>
+        <linearGradient x1="44.5" y1="464" x2="467.9468" y2="464" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#C08A06"/>
+            <stop offset="1" stop-color="#A06A06"/>
+        </linearGradient>
+        <linearGradient x1="44.5" y1="32" x2="467.9468" y2="32" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#ED9A56"/>
+            <stop offset="1" stop-color="#C08A06"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="32" x2="311.9998" y2="480.00035" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#d0d0d0"/>
+            <stop offset="1" stop-color="#a0a0a0"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M480,432l0,-128c0,-17.5 -14.5,-48 -32,-48l0,0c17.5,0 32,-30.5 32,-48l0,-128c0,-26.5 -21.5,-48 -48,-48l-128,0c-17.5,0 -48,14.5 -48,32l0,0c0,-17.5 -30.5,-32 -48,-32l-128,0c-26.5,0 -48,21.5 -48,48l0,128c0,17.5 14.5,48 32,48l0,0c-17.5,0 -32,30.5 -32,48l0,128c0,26.5 21.5,48 48,48l16,0l112,0c17.5,0 48,-14.5 48,-32l0,0c0,17.5 30.5,32 48,32l112,0l16,0c26.5,0 48,-21.5 48,-48z" id="curve3" fill="url(#color-1)"/>
+        <path d="M44.5,464c8.5,10 21.5,16 35.5,16l16,0l112,0c12,0 29.5,-6.5 39.5,-16z M264.5,464c10,9.5 27.5,16 39.5,16l112,0l16,0c14,0 27,-6 35.5,-16z" id="curve2" fill="url(#color-2)"/>
+        <path d="M467.5,48c-8.5,-10 -21.5,-16 -35.5,-16l-128,0c-12,0 -29.5,6.5 -39.5,16z M247.5,48c-10,-9.5 -27.5,-16 -39.5,-16l-128,0c-14,0 -27,6 -35.5,16z" id="curve1" fill="url(#color-3)"/>
+        <path d="M256,32l0,0c9,0 16,7 16,16l0,192l192,0c9,0 16,7 16,16l0,0c0,9 -7,16 -16,16l-192,0l0,192c0,9 -7,16 -16,16l0,0c-9,0 -16,-7 -16,-16l0,-192l-192,0c-9,0 -16,-7 -16,-16l0,0c0,-9 7,-16 16,-16l192,0l0,-192c0,-9 7,-16 16,-16z" id="curve0" fill="url(#color-4)"/>
+    </g>
+</g>
+</svg>

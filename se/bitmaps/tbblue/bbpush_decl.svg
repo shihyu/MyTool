@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>element icon</title>
+	<desc>element icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<rect fill="#3E9BD5" x="3000" y="3600" width="4400" height="3000"/>
+	<path id="curve0" fill="#252525" d="M3200 3200l3840 0c353,0 640,288 640,640l0 2560c0,352 -288,640 -640,640l-3840 0c-353,0 -640,-287 -640,-640l0 -2560c0,-353 287,-640 640,-640zm0 640l0 2560 3840 0 0 -2560 -3840 0z"/>
+
+
+<g comp-op="clear">
+<g transform="translate(0,5120) scale(0.5,0.5)"  stroke="#808080" stroke-width="512" stroke-linejoin="round">
+	<title>arrow_up_right icon</title>
+	<desc>arrow_up_right icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#3E9BD5" d="M6400 7527l0 -2330 -3620 3621c-125,124 -328,124 -453,0l-905 -905c-124,-125 -124,-328 0,-453l3621 -3620 -2329 0c-67,0 -123,-38 -148,-99 -26,-61 -12,-128 34,-174l1460 -1460c124,-124 276,-187 452,-187l3488 0c176,0 320,144 320,320l0 3488c0,176 -63,328 -187,452l-1460 1460c-46,46 -113,60 -174,34 -61,-25 -99,-81 -99,-147z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(0,5120) scale(0.5,0.5)">
+	<title>arrow_up_right icon</title>
+	<desc>arrow_up_right icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#3E9BD5" d="M6400 7527l0 -2330 -3620 3621c-125,124 -328,124 -453,0l-905 -905c-124,-125 -124,-328 0,-453l3621 -3620 -2329 0c-67,0 -123,-38 -148,-99 -26,-61 -12,-128 34,-174l1460 -1460c124,-124 276,-187 452,-187l3488 0c176,0 320,144 320,320l0 3488c0,176 -63,328 -187,452l-1460 1460c-46,46 -113,60 -174,34 -61,-25 -99,-81 -99,-147z"/>
+</g>
+
+
+
+<g comp-op="clear">
+<g transform="translate(5120,0) scale(0.5,0.5)"  stroke="#808080" stroke-width="512" stroke-linejoin="round">
+	<title>star icon</title>
+	<desc>star icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#252525" d="M5725 1082l687 2148c43,135 163,223 305,222l2246 -4c279,-1 518,172 604,439 87,267 -3,548 -229,713l-1825 1332c-114,83 -159,223 -116,357l698 2155c87,268 -4,548 -231,713 -228,165 -522,164 -748,-2l-1806 -1330c-115,-84 -265,-84 -380,0l-1806 1330c-226,166 -520,167 -748,2 -227,-165 -318,-445 -231,-713l698 -2155c43,-134 -2,-274 -116,-357l-1824 -1332c-227,-165 -317,-446 -230,-713 86,-267 325,-440 604,-439l2246 4c142,1 262,-87 305,-222l687 -2148c86,-268 324,-442 605,-442 281,0 519,174 605,442z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(5120,0) scale(0.5,0.5)">
+	<title>star icon</title>
+	<desc>star icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#252525" d="M5725 1082l687 2148c43,135 163,223 305,222l2246 -4c279,-1 518,172 604,439 87,267 -3,548 -229,713l-1825 1332c-114,83 -159,223 -116,357l698 2155c87,268 -4,548 -231,713 -228,165 -522,164 -748,-2l-1806 -1330c-115,-84 -265,-84 -380,0l-1806 1330c-226,166 -520,167 -748,2 -227,-165 -318,-445 -231,-713l698 -2155c43,-134 -2,-274 -116,-357l-1824 -1332c-227,-165 -317,-446 -230,-713 86,-267 325,-440 604,-439l2246 4c142,1 262,-87 305,-222l687 -2148c86,-268 324,-442 605,-442 281,0 519,174 605,442z"/>
+</g>
+
+</svg>

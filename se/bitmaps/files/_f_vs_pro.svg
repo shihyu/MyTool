@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512">
+<title>slickedit_shield icon</title>
+<desc>based on icon from the IconExperience.com V-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+<desc>Hand-traced with iVinci Express.</desc>
+    <desc iVinci="yes" version="4.6" gridStep="32" showGrid="yes" snapToGrid="yes" codePlatform="0"/>
+    <g id="Layer1" name="Layer 1" opacity="1">
+        <g id="Shape1">
+            <path id="shapePath1" d="M32.5,160.5 L160.5,32.5 L448.5,32.5 L480.5,64.5 L480.5,352.5 L352.5,480.5 L64.5,480.5 L32.5,448.5 L32.5,160.5 Z" style="stroke:url(#linearGradientStroke1);stroke-width:4;stroke-linejoin:miter;stroke-miterlimit:2;stroke-linecap:round;fill-rule:evenodd;fill:url(#linearGradientFill1);fill-opacity:1;"/><defs><linearGradient id="linearGradientStroke1" gradientUnits="userSpaceOnUse" x1="34.5" y1="33.5" x2="478.5" y2="480.5"><stop offset="0" stop-color="#000000" stop-opacity="1"/><stop offset="0.860861" stop-color="#808080" stop-opacity="1"/></linearGradient><linearGradient id="linearGradientFill1" gradientUnits="userSpaceOnUse" x1="34.5" y1="34.5" x2="479.5" y2="480.5"><stop offset="0.153796" stop-color="#37623b" stop-opacity="1"/><stop offset="0.49994" stop-color="#79fb81" stop-opacity="1"/><stop offset="0.835028" stop-color="#38613b" stop-opacity="1"/></linearGradient></defs>
+        </g>
+    </g>
+</svg>

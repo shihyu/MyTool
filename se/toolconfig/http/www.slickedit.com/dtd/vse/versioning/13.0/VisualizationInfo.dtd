@@ -1,0 +1,31 @@
+<?xml encoding='UTF-8'?>
+<!ELEMENT VisualizationInfo (BaseScheme*)>
+<!ELEMENT BaseScheme (SchemeEntries*)>
+  <!ATTLIST BaseScheme type CDATA #REQUIRED>
+<!ELEMENT SchemeEntries (UserScheme*,FloatingDateScheme*,LabelScheme*)>
+<!ELEMENT UserScheme (User*)>
+  <!ATTLIST UserScheme name CDATA #REQUIRED>
+<!ELEMENT User EMPTY>
+   <!ATTLIST User name CDATA #REQUIRED>
+   <!ATTLIST User description CDATA #REQUIRED>
+   <!ATTLIST User fgcolor CDATA #REQUIRED>
+   <!ATTLIST User bgcolor CDATA #REQUIRED>
+   <!ATTLIST User type CDATA #REQUIRED>
+<!ELEMENT LabelScheme (Label*)>
+  <!ATTLIST LabelScheme name CDATA #REQUIRED>
+<!ELEMENT Label EMPTY>
+  <!ATTLIST Label start CDATA #IMPLIED>
+  <!ATTLIST Label end CDATA #IMPLIED>
+  <!ATTLIST Label type CDATA #REQUIRED>
+  <!ATTLIST Label description CDATA #REQUIRED>
+  <!ATTLIST Label fgcolor CDATA #REQUIRED>
+  <!ATTLIST Label bgcolor CDATA #REQUIRED>
+<!ELEMENT FloatingDateScheme (Range*)>
+  <!ATTLIST FloatingDateScheme name CDATA #REQUIRED>
+<!ELEMENT Range EMPTY>
+  <!ATTLIST Range type CDATA #REQUIRED>
+  <!ATTLIST Range age CDATA #IMPLIED>
+  <!ATTLIST Range description CDATA #REQUIRED>
+  <!ATTLIST Range fgcolor CDATA #REQUIRED>
+  <!ATTLIST Range bgcolor CDATA #REQUIRED>
+  <!ATTLIST Range fgcolor CDATA #REQUIRED>

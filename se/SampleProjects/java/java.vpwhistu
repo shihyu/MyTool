@@ -1,0 +1,11 @@
+[ActiveConfig]
+java.vpj=,Debug
+[Global]
+CurrentProject=java.vpj
+[TreeExpansion]
+java.vpj 1 1 0 0
+[State]
+SCREEN: 0 0 0 0 0 0 0 0 N 0 0 0 0 0 0
+WINDOW: 66 66 483 389 -1 -1 M  WF=0 WT=1
+BUFFER: BN="file1.java"
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=1 WI=5 BI=23 HT=0 HN=0 HF=0 HC=4

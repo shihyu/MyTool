@@ -1,0 +1,27 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>window split hor icon</title>
+    <desc>window split hor icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="64" x2="309.1075" y2="336.0145" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#40b1f1"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="128" x2="153.8695" y2="464.0005" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#e1f2fd"/>
+            <stop offset="1" stop-color="#cceafb"/>
+        </linearGradient>
+        <linearGradient x1="248" y1="112" x2="263.9995" y2="126.08" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#28a7ef"/>
+            <stop offset="1" stop-color="#26a6ef"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M512,80l0,384l-512,0l0,-384c0,-9 7,-16 16,-16l480,0c9,0 16,7 16,16z" id="curve3" fill="url(#color-1)"/>
+        <path d="M0,128l512,0l0,336l-512,0z" id="curve2" fill="url(#color-2)"/>
+        <path d="M464,80c9,0 16,7 16,16c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16c0,-9 7,-16 16,-16z M416,80c9,0 16,7 16,16c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16c0,-9 7,-16 16,-16z" id="curve1" fill="#ffffff"/>
+        <path d="M240,280l24,0l0,184l-24,0z" id="curve0" fill="url(#color-3)"/>
+        <path d="M0,272l512,0l0,24l-512,0z" id="curve0" fill="url(#color-3)"/>
+    </g>
+</svg>

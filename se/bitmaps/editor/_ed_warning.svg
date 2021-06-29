@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<g transform="translate(-4120,-5250) scale(1.8,1.8)">
+	<title>window_warning icon</title>
+	<desc>window_warning icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#EDCA36" d="M5402 3859l1914 3340c59,102 59,219 0,321 -58,102 -158,160 -275,160l-3828 0c-117,0 -217,-58 -275,-160 -59,-102 -59,-219 0,-321l1914 -3340c58,-102 158,-160 275,-160 117,0 217,58 275,160zm-282 2861c-177,0 -320,143 -320,320 0,177 143,320 320,320 177,0 320,-143 320,-320 0,-177 -143,-320 -320,-320zm-160 -1600c-88,0 -160,72 -160,160l0 401c0,55 6,102 19,155l126 503c9,37 40,61 77,61l196 0c37,0 68,-25 77,-61l126 -503c13,-53 19,-100 19,-155l0 -401c0,-88 -72,-160 -160,-160l-320 0z"/>
+</g>
+
+	<title>sign_warning icon</title>
+	<desc>sign_warning icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#252525" d="M5680 1282l3846 6712c117,205 117,439 0,644 -117,205 -319,322 -554,322l-7691 0c-234,0 -436,-117 -553,-322 -117,-205 -117,-439 0,-644l3846 -6712c117,-205 318,-322 553,-322 235,0 436,117 553,322zm-560 318l-3840 6720 7680 0 -3840 -6720z"/>
+	<path id="curve0" fill="black" d="M5120 6720c353,0 640,287 640,640 0,353 -287,640 -640,640 -353,0 -640,-287 -640,-640 0,-353 287,-640 640,-640zm-320 -2880l640 0c176,0 320,144 320,320l0 802c0,110 -12,204 -38,311l-252 1006c-18,72 -81,121 -155,121l-390 0c-74,0 -137,-49 -155,-121l-252 -1006c-26,-107 -38,-201 -38,-311l0 -802c0,-176 144,-320 320,-320z"/>
+</svg>

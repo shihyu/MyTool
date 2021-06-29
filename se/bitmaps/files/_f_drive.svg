@@ -1,0 +1,47 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>hard drive icon</title>
+    <desc>hard drive icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="64" y1="0" x2="309.9865" y2="508.37224" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#526270"/>
+        </linearGradient>
+        <linearGradient x1="80" y1="64" x2="308.799" y2="398.3995" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#89cff7"/>
+            <stop offset="0.43137" stop-color="#4eb6f2"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="196.31085" y1="330.24258" x2="258.25135" y2="412.20858" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#359dd9"/>
+            <stop offset="1" stop-color="#228ac6"/>
+        </linearGradient>
+        <linearGradient x1="208" y1="192" x2="254.223" y2="288.001" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#677685"/>
+            <stop offset="1" stop-color="#606f7e"/>
+        </linearGradient>
+        <linearGradient x1="196.31085" y1="314.24258" x2="282.85935" y2="447.91558" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#eef8fe"/>
+            <stop offset="1" stop-color="#d6eefc"/>
+        </linearGradient>
+        <linearGradient x1="352" y1="384" x2="375.1115" y2="432" gradientUnits="userSpaceOnUse" id="color-6">
+            <stop offset="0" stop-color="#677685"/>
+            <stop offset="1" stop-color="#606f7e"/>
+        </linearGradient>
+        <linearGradient x1="256" y1="320" x2="398.102" y2="476.783" gradientUnits="userSpaceOnUse" id="color-7">
+            <stop offset="0" stop-color="#91a0af"/>
+            <stop offset="1" stop-color="#738191"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M448,16l0,480c0,9 -7,16 -16,16l-352,0c-9,0 -16,-7 -16,-16l0,-480c0,-9 7,-16 16,-16l352,0c9,0 16,7 16,16z" id="curve7" fill="url(#color-1)" fill-rule="nonzero"/>
+        <path d="M256,64c97,0 176,79 176,176c0,97 -79,176 -176,176c-97,0 -176,-79 -176,-176c0,-97 79,-176 176,-176z" id="curve6" fill="url(#color-2)" fill-rule="evenodd"/>
+        <path d="M364.5,378.5c-21,16.5 -45.5,28 -72.5,34l-92.5,-67.5c-3,-2.5 -4,-6.5 -2.5,-10c2,-3.5 5.5,-5.5 9.5,-4.5z" id="curve5" fill="url(#color-3)" fill-rule="evenodd"/>
+        <path d="M256,192c26.5,0 48,21.5 48,48c0,26.5 -21.5,48 -48,48c-26.5,0 -48,-21.5 -48,-48c0,-26.5 21.5,-48 48,-48z" id="curve4" fill="url(#color-4)" fill-rule="nonzero"/>
+        <path d="M388,370c2,0.5 4,1 6,2c19.5,10 27.5,33.5 18,53c0.5,0 0,1 0,1c-10,19.5 -34,27.5 -54,18c-2,-1 -4,-2.5 -5.5,-3.5l-153,-111.5c-3,-2.5 -4,-6.5 -2.5,-10c2,-3.5 5.5,-5.5 9.5,-4.5z" id="curve3" fill="url(#color-5)" fill-rule="evenodd"/>
+        <path d="M376,432c-13.5,0 -24,-10.5 -24,-24c0,-13.5 10.5,-24 24,-24c13.5,0 24,10.5 24,24c0,13.5 -10.5,24 -24,24z" id="curve2" fill="url(#color-6)" fill-rule="nonzero"/>
+        <path d="M256,432l0,0c17,0 33.5,-2 49,-6.5l38,27.5c2.5,2 5,3.5 8,5c27.5,14 61.5,2.5 75,-25c0.5,-0.5 0.5,-1 0.5,-1.5c12.5,-25.5 3,-56.5 -21,-71l0,0c10,-12.5 18.5,-26 25,-40.5l17.5,0l0,176c0,9 -7,16 -16,16l-176,0z" id="curve1" fill="url(#color-7)" fill-rule="evenodd"/>
+        <path d="M96,16c9,0 16,7 16,16c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16c0,-9 7,-16 16,-16z M416,16c9,0 16,7 16,16c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16c0,-9 7,-16 16,-16z M96,464c9,0 16,7 16,16c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16c0,-9 7,-16 16,-16z M416,464c9,0 16,7 16,16c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16c0,-9 7,-16 16,-16z" id="curve0" fill="#ffffff" fill-rule="nonzero"/>
+    </g>
+</svg>

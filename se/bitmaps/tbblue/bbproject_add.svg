@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>object_cube icon</title>
+	<desc>object_cube icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#252525" d="M1634 3023l3200 -1600c186,-93 386,-93 572,0l3200 1600c222,111 354,324 354,573l0 3688c0,249 -132,462 -354,573l-3200 1600c-186,93 -386,93 -572,0l-3200 -1600c-222,-111 -354,-324 -354,-573l0 -3688c0,-249 132,-462 354,-573zm286 853l0 3408 2880 1440 0 -3408 -2880 -1440zm5968 -496l-2768 -1384 -2768 1384 2768 1384 2768 -1384z"/>
+
+
+<g comp-op="clear">
+<g transform="translate(5120,5120) scale(0.5,0.5)"  stroke="#808080" stroke-width="512" stroke-linejoin="round">
+	<title>plus icon</title>
+	<desc>plus icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#3E9BD5" d="M960 3840l2880 0 0 -2880c0,-176 144,-320 320,-320l1920 0c176,0 320,144 320,320l0 2880 2880 0c176,0 320,144 320,320l0 1920c0,176 -144,320 -320,320l-2880 0 0 2880c0,176 -144,320 -320,320l-1920 0c-176,0 -320,-144 -320,-320l0 -2880 -2880 0c-176,0 -320,-144 -320,-320l0 -1920c0,-176 144,-320 320,-320z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(5120,5120) scale(0.5,0.5)">
+	<title>plus icon</title>
+	<desc>plus icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#3E9BD5" d="M960 3840l2880 0 0 -2880c0,-176 144,-320 320,-320l1920 0c176,0 320,144 320,320l0 2880 2880 0c176,0 320,144 320,320l0 1920c0,176 -144,320 -320,320l-2880 0 0 2880c0,176 -144,320 -320,320l-1920 0c-176,0 -320,-144 -320,-320l0 -2880 -2880 0c-176,0 -320,-144 -320,-320l0 -1920c0,-176 144,-320 320,-320z"/>
+</g>
+
+</svg>

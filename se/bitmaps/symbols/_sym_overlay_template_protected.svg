@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="512" viewBox="0 0 1024 512">
+<g transform="translate(0,96) scale(0.625,0.625)">
+    <title>key icon</title>
+    <desc>key icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="16" y1="-0.12522" x2="216.4455" y2="194.44828" gradientUnits="userSpaceOnUse" id="key-color-1">
+            <stop offset="0" stop-color="#808080"/>
+            <stop offset="1" stop-color="#a0a0a0"/>
+        </linearGradient>
+        <linearGradient x1="16" y1="147" x2="72.506" y2="205.289" gradientUnits="userSpaceOnUse" id="key-color-2">
+            <stop offset="0" stop-color="#808080"/>
+            <stop offset="1" stop-color="#a0a0a0"/>
+        </linearGradient>
+        <linearGradient x1="66.5" y1="387.5" x2="188.811" y2="510.526" gradientUnits="userSpaceOnUse" id="key-color-3">
+            <stop offset="0" stop-color="#808080"/>
+            <stop offset="1" stop-color="#a0a0a0"/>
+        </linearGradient>
+        <linearGradient x1="92.75" y1="288.75" x2="186.736" y2="382.7365" gradientUnits="userSpaceOnUse" id="key-color-4">
+            <stop offset="0" stop-color="#808080"/>
+            <stop offset="1" stop-color="#909090"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M135,387.5l57,56.5l-23,22.5l-34,-34l-11.5,11.5l23,22.5l-11.5,11.5l11.5,11.5l-23,22.5l-57,-56.5c-6.5,6 -16.5,6 -23,0l-23,-23c-6,-6 -6,-16 0,-22.5l80,-79l-5.5,-6c-3,-3 -3,-8 0,-11l23,-23c3,-3 8,-3 11,0l6,6l151,-150c-24.5,-41 -22.5,-91 9,-122c37.5,-37.5 104,-32.5 148,11.5c44.5,43.5 49.5,109.5 11.5,147c-31,31 -81,33 -122.5,8.5l-151.5,150l6,6c3,3 3,8 0,11l-23,23c-3,3 -8.5,3 -11.5,0l-5.5,-6z M329,59c-19,19 -14,54.5 11.5,79.5c25,25 61,30 80,11c19,-18.5 13.5,-54 -11.5,-79c-25.5,-25 -61,-30 -80,-11.5z" id="curve3" fill="url(#key-color-1)"/>
+        <path d="M135,387.5l57,56.5l-23,22.5l-34,-34l-11.5,11.5l23,22.5l-11.5,11.5l11.5,11.5l-23,22.5l-57,-56.5c-6.5,6 -16.5,6 -23,0l-23,-23c-6,-6 -6,-16 0,-22.5l80,-79l-5.5,-6c-3,-3 -3,-8 0,-11l23,-23c3,-3 8,-3 11,0l6,6l151,-150c5.5,9 12,17.5 19.5,25c8,8.5 17,15 26,20.5l-151,149.5l6,6c3,3 3,8 0,11l-23,23c-3,3 -8.5,3 -11.5,0l-5.5,-6z" id="curve2" fill="url(#key-color-2)"/>
+        <path d="M135,387.5l57,56.5l-23,22.5l-34,-34l-11.5,11.5l23,22.5l-11.5,11.5l11.5,11.5l-23,22.5l-57,-56.5z" id="curve1" fill="url(#key-color-3)"/>
+        <path d="M95,325c-3,-3 -3,-8 0,-11l23,-23c3,-3 8,-3 11,0c19,19 38.5,38 57.5,57c3,3 3,8 0,11l-23,23c-3,3 -8.5,3 -11.5,0z" id="curve0" fill="url(#key-color-4)"/>
+    </g>
+</g>
+<g transform="translate(752,96) scale(0.625,0.625)">
+    <title>letter T icon</title>
+    <defs>
+        <linearGradient x1="32" y1="208" x2="166.88235" y2="304" gradientUnits="userSpaceOnUse" id="letter-color-1">
+            <stop offset="0" stop-color="#a0a0a0"/>
+            <stop offset="1" stop-color="#808080"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#letter-color-1)" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M216,432l0,-224l-120,0l0,-72l320,0l0,72l-120,0l0,224z" id="curve0"/>
+    </g>
+</g>
+</svg>

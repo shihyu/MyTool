@@ -1,0 +1,16 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>text align left icon</title>
+    <desc>text align left icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="63.9998" y2="141.93185" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#3fb0f1"/>
+            <stop offset="1" stop-color="#33abf0"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M32,32l32,0l0,464l-32,0z" id="curve1" fill="url(#color-1)"/>
+        <path d="M80,64l336,0l0,16l-336,0z M80,448l272,0l0,16l-272,0z M80,400l336,0l0,16l-336,0z M80,352l400,0l0,16l-400,0z M80,304l240,0l0,16l-240,0z M80,256l272,0l0,16l-272,0z M80,208l208,0l0,16l-208,0z M80,160l336,0l0,16l-336,0z M80,112l400,0l0,16l-400,0z" id="curve0" fill="#717f8f"/>
+    </g>
+</svg>

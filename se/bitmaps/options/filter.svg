@@ -1,0 +1,38 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>funnel icon</title>
+    <desc>funnel icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="479.9991" y2="32" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0f7cbb"/>
+        </linearGradient>
+        <linearGradient x1="204.5" y1="294" x2="307.136" y2="294" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#1299e7"/>
+            <stop offset="1" stop-color="#0f80c1"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="32" x2="480.00085" y2="32" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#37adf0"/>
+            <stop offset="0.41177" stop-color="#2394d5"/>
+            <stop offset="0.61177" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0f7bba"/>
+        </linearGradient>
+        <linearGradient x1="48" y1="80" x2="464.00045" y2="80" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#1192dc"/>
+            <stop offset="0.52941" stop-color="#0f7bb9"/>
+            <stop offset="1" stop-color="#0c6395"/>
+        </linearGradient>
+        <linearGradient x1="358.5" y1="96" x2="496.847" y2="223.206" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#108cd3"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M40,32l432,0c4.5,0 8,3.5 8,8l0,32c0,4.5 -3.5,8 -8,8l-8,0l-156.5,214c-2.5,3 -3.5,6.5 -3.5,10l0,119.5c0,5.5 -2.5,10 -7,13l-76.5,51c-2.5,2 -5.5,2 -8.5,0.5c-2.5,-1.5 -4,-4 -4,-7l0,-177c0,-3.5 -1,-7 -3.5,-10l-156.5,-214l-8,0c-4.5,0 -8,-3.5 -8,-8l0,-32c0,-4.5 3.5,-8 8,-8z" id="curve4" fill="url(#color-1)"/>
+        <path d="M307.5,294c-2.5,3 -3.5,6.5 -3.5,10l0,119.5c0,5.5 -2.5,10 -7,13l-76.5,51c-2.5,2 -5.5,2 -8.5,0.5c-2.5,-1.5 -4,-4 -4,-7l0,-177c0,-3.5 -1,-7 -3.5,-10z" id="curve3" fill="url(#color-2)"/>
+        <path d="M40,32l432,0c4.5,0 8,3.5 8,8l0,8l-448,0l0,-8c0,-4.5 3.5,-8 8,-8z" id="curve2" fill="url(#color-3)"/>
+        <path d="M464,80l-11.5,16l-393,0l-11.5,-16z" id="curve1" fill="url(#color-4)"/>
+        <path d="M512,160c0,35 -29,64 -64,64l-89.5,0c1,-13 9.5,-32 23.5,-32l66,0c17.5,0 32,-14.5 32,-32c0,-17.5 -14.5,-32 -32,-32l-19,0c7.5,-18.5 15.5,-29 23,-32c33.5,2.5 60,30 60,64z" id="curve0" fill="url(#color-5)"/>
+    </g>
+</svg>

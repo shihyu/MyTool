@@ -1,0 +1,16 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>text align center icon</title>
+    <desc>text align center icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="240" y1="32" x2="272" y2="141.93185" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#3fb0f1"/>
+            <stop offset="1" stop-color="#33abf0"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M240,32l32,0l0,464l-32,0z" id="curve1" fill="url(#color-1)"/>
+        <path d="M64,64l384,0l0,16l-384,0z M96,448l320,0l0,16l-320,0z M64,400l384,0l0,16l-384,0z M32,352l448,0l0,16l-448,0z M112,304l288,0l0,16l-288,0z M96,256l320,0l0,16l-320,0z M128,208l256,0l0,16l-256,0z M64,160l384,0l0,16l-384,0z M32,112l448,0l0,16l-448,0z" id="curve0" fill="#717f8f"/>
+    </g>
+</svg>

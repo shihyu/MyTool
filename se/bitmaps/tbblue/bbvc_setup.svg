@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>wrench icon</title>
+	<desc>wrench icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#252525" d="M5665 5966l-2505 2926c-458,536 -1312,499 -1810,0l0 0c-499,-498 -541,-1358 0,-1810l2957 -2474c495,-414 -679,-1584 679,-2941 482,-483 1171,-760 1804,-773 133,-2 248,72 300,195 53,122 27,257 -68,352l-1131 1131 452 1358 1358 452 1131 -1131c95,-95 230,-121 352,-68 123,52 197,167 195,300 -13,633 -290,1322 -773,1804 -1357,1358 -2487,149 -2941,679zm-2957 1568c-250,-249 -656,-249 -906,0 -249,250 -249,656 0,906 250,249 656,249 906,0 249,-250 249,-656 0,-906z"/>
+
+
+<g comp-op="clear">
+<g transform="translate(5120,5120) scale(0.5,0.5)"  stroke="#808080" stroke-width="512" stroke-linejoin="round">
+	<title>clock icon</title>
+	<desc>clock icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <circle fill="white" cx="5120" cy="5120" r="3600"/>
+	<path id="curve1" fill="#3E9BD5" d="M3803 2203l1317 2277 0 0c116,0 226,31 320,85l1718 -994c129,170 238,355 321,554l-1719 995 0 0c0,353 -287,640 -640,640 -353,0 -640,-287 -640,-640 0,-116 31,-226 85,-320l-1316 -2276c172,-125 358,-233 554,-321z"/>
+	<path id="curve0" fill="#252525" d="M5120 640c2474,0 4480,2006 4480,4480 0,2474 -2006,4480 -4480,4480 -2474,0 -4480,-2006 -4480,-4480 0,-2474 2006,-4480 4480,-4480zm0 960c-1944,0 -3520,1576 -3520,3520 0,1944 1576,3520 3520,3520 1944,0 3520,-1576 3520,-3520 0,-1944 -1576,-3520 -3520,-3520z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(5120,5120) scale(0.5,0.5)">
+	<title>clock icon</title>
+	<desc>clock icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <circle fill="white" cx="5120" cy="5120" r="3600"/>
+	<path id="curve1" fill="#3E9BD5" d="M3803 2203l1317 2277 0 0c116,0 226,31 320,85l1718 -994c129,170 238,355 321,554l-1719 995 0 0c0,353 -287,640 -640,640 -353,0 -640,-287 -640,-640 0,-116 31,-226 85,-320l-1316 -2276c172,-125 358,-233 554,-321z"/>
+	<path id="curve0" fill="#252525" d="M5120 640c2474,0 4480,2006 4480,4480 0,2474 -2006,4480 -4480,4480 -2474,0 -4480,-2006 -4480,-4480 0,-2474 2006,-4480 4480,-4480zm0 960c-1944,0 -3520,1576 -3520,3520 0,1944 1576,3520 3520,3520 1944,0 3520,-1576 3520,-3520 0,-1944 -1576,-3520 -3520,-3520z"/>
+</g>
+
+</svg>

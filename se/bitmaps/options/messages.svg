@@ -1,0 +1,20 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>messages icon</title>
+    <desc>messages icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="207.90147" y1="208.18867" x2="425.46147" y2="389.04317" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#4eb6f2"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="-0.10236" y1="0.18867" x2="167.78914" y2="208.05517" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#ffd041"/>
+            <stop offset="1" stop-color="#ffc001"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M384,512c4.5,-19 4.5,-47.5 -12,-62c-5.5,1.5 -11,3 -17,3.5c-65,9.5 -134,-27.5 -145.5,-94c-11,-67.5 35.5,-138 117,-149.5c83.5,-12 169.5,36.5 183.5,119.5c14.5,89 -48,161.5 -126,182.5z" id="curve1" fill="url(#color-1)"/>
+        <path d="M128,304c-4.5,-19 -4.5,-47.5 12,-62c5.5,1.5 11,3 17,3.5c65,9.5 134,-27.5 145.5,-94c11,-67.5 -35.5,-138 -117,-149.5c-83.5,-12 -169.5,36.5 -183.5,119.5c-14.5,89 48,161.5 126,182.5z" id="curve0" fill="url(#color-2)"/>
+    </g>
+</svg>

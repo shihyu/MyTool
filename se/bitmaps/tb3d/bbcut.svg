@@ -1,0 +1,23 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>cut icon</title>
+    <desc>cut icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="47.83789" y1="0" x2="239.83839" y2="112.0005" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#4eb6f2"/>
+            <stop offset="0.54902" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </linearGradient>
+        <linearGradient x1="464.16211" y1="0" x2="328.87211" y2="192" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#89cff7"/>
+            <stop offset="0.50196" stop-color="#4eb6f2"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M137.5,365c30,-2 56,20.5 57.5,50.5c2,30 -20.5,55.5 -50.5,57.5c-30,2 -55.5,-20.5 -57.5,-50.5c-2,-30 20.5,-56 50.5,-57.5z M135,326c-51,3.5 -90,47.5 -87,99c3.5,51 47.5,90 99,87c51,-3.5 90,-47.5 87,-99l0,0l0,0c-8,-123.5 55,-112 83,-160.5c39,-67 56,-97 83,-160.5c13.5,-32 5,-76 -21,-92l-170.5,259.5c-23.5,36 -11.5,62.5 -73.5,66.5l0,0z" id="curve2" fill="url(#color-1)"/>
+        <path d="M374.5,365c-30,-2 -56,20.5 -57.5,50.5c-2,30 20.5,55.5 50.5,57.5c30,2 55.5,-20.5 57.5,-50.5c2,-30 -20.5,-56 -50.5,-57.5z M377,326c51,3.5 90,47.5 87,99c-3.5,51 -47.5,90 -99,87c-51,-3.5 -90,-47.5 -87,-99l0,0l0,0c8,-123.5 -55,-112 -83,-160.5c-39,-67 -56,-97 -83,-160.5c-13.5,-32 -5,-76 21,-92l170.5,259.5c23.5,36 11.5,62.5 73.5,66.5l0,0z" id="curve1" fill="url(#color-2)"/>
+        <path d="M256,230.5c14,0 25.5,11.5 25.5,25.5c0,14 -11.5,25.5 -25.5,25.5c-14,0 -25.5,-11.5 -25.5,-25.5c0,-14 11.5,-25.5 25.5,-25.5z" id="curve0" fill="#d8e0e8"/>
+    </g>
+</svg>

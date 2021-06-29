@@ -1,0 +1,55 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>power drill icon</title>
+    <desc>power drill icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="128" x2="0.00059" y2="160" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#91a0af"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="128" x2="0.00059" y2="160" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#b3c0cd"/>
+            <stop offset="1" stop-color="#717f8f"/>
+        </linearGradient>
+        <linearGradient x1="336" y1="224" x2="368" y2="274.4515" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#647282"/>
+            <stop offset="0.34902" stop-color="#5b6a79"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+        <linearGradient x1="128" y1="416" x2="383.9975" y2="352" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="0.41961" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </linearGradient>
+        <linearGradient x1="224" y1="64" x2="224" y2="208.001" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#4eb6f2"/>
+            <stop offset="0.54902" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0f7dbd"/>
+        </linearGradient>
+        <linearGradient x1="128" y1="64" x2="128" y2="224.001" gradientUnits="userSpaceOnUse" id="color-6">
+            <stop offset="0" stop-color="#bcc8d4"/>
+            <stop offset="0.30196" stop-color="#d8e0e8"/>
+            <stop offset="1" stop-color="#7e8b9a"/>
+        </linearGradient>
+        <linearGradient x1="352" y1="448" x2="512.0025" y2="447.715" gradientUnits="userSpaceOnUse" id="color-7">
+            <stop offset="0" stop-color="#717f8f"/>
+            <stop offset="0.34902" stop-color="#61707f"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+        <linearGradient x1="224" y1="64" x2="224" y2="224" gradientUnits="userSpaceOnUse" id="color-8">
+            <stop offset="0" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#51616f"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M16,128l144,0l0,32l-144,0l-16,-16z" id="curve7" fill="url(#color-1)"/>
+        <path d="M16,128l32,32l-32,0l-16,-16z M144,160l-16,0l-32,-32l16,0z M112,160l-16,0l-32,-32l16,0z M80,160l-16,0l-32,-32l16,0z" id="curve6" fill="url(#color-2)"/>
+        <path d="M336,224l32,0l0,80l-16,0c-9,0 -16,-7 -16,-16z" id="curve5" fill="url(#color-3)"/>
+        <path d="M477.5,233.5l28,121.5c4,3 6.5,7.5 6.5,13l0,16l0,16c0,9 -7,16 -16,16l-128,0c-9,0 -16,-7 -16,-16l0,-32c0,-7 4.5,-13 10.5,-15c7.5,-3 12,-11 10,-19l-19.5,-85c-3.5,-15 -16.5,-25 -31.5,-25l-97.5,0c-64,0 -96,-32 -96,-48l0,-64c0,-16 32,-48 96,-48l256,0c17.5,0 32,14.5 32,32l0,96c0,16 -12,29.5 -28,31.5c-4.5,1 -8,5.5 -6.5,10z" id="curve4" fill="url(#color-4)"/>
+        <path d="M321.5,224l-97.5,0l0,-160l256,0c17.5,0 32,14.5 32,32l0,96c0,16 -12,29.5 -28,31.5z" id="curve3" fill="url(#color-5)"/>
+        <path d="M240,224l-16,0c-64,0 -96,-32 -96,-48l0,-64c0,-16 32,-48 96,-48l16,0z" id="curve2" fill="url(#color-6)"/>
+        <path d="M512,368l0,64c0,9 -7,16 -16,16l-128,0c-9,0 -16,-7 -16,-16l0,-64z" id="curve1" fill="url(#color-7)"/>
+        <path d="M224,64l16,0l0,160l-16,0z" id="curve0" fill="url(#color-8)"/>
+    </g>
+</svg>

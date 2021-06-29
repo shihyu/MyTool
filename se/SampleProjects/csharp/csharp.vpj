@@ -1,0 +1,157 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+    WorkingDir="."
+    Version="10.0"
+    VendorName="SlickEdit"
+    TemplateName="C# - Mono">
+    <Files>
+        <Folder
+            Name="Source Files"
+            Filters="*.cs"
+            GUID="{817A84CB-A71F-499F-8BA6-8B137AD4730A}">
+            <F N="TicTacToe.cs"/>
+        </Folder>
+        <Folder
+            Name="Resource Files"
+            Filters=""
+            GUID="{E5A3400F-4C9E-4ABD-87F3-ED527ED9FBFB}"/>
+        <Folder
+            Name="Bitmaps"
+            Filters=""
+            GUID="{CB402AC9-FF13-4C38-94FB-710E0DCE1670}"/>
+        <Folder
+            Name="Other Files"
+            Filters=""
+            GUID="{FBF30F8C-72BA-483F-A018-A604D3E88B92}"/>
+    </Files>
+    <Config
+        Name="Debug"
+        DebugCallbackName="mono"
+        OutputFile="TicTacToe.exe"
+        Type="mono"
+        CompilerConfigName="">
+        <Menu>
+            <Target
+                Name="Compile"
+                Dialog="_mono_options_form Compiler"
+                MenuCaption="&amp;Compile"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveCurrent"
+                RunFromDir="%rw">
+                <Exec CmdLine="mcs -debug -target:module -out:%bd%n.obj %f"/>
+            </Target>
+            <Target
+                Name="Build"
+                Dialog="_mono_options_form Compiler"
+                MenuCaption="&amp;Build"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveWorkspaceFiles"
+                RunFromDir="%rw">
+                <Exec CmdLine='mcs -debug  -target:exe -out:"%o" %{*.cs}'/>
+            </Target>
+            <Target
+                Name="Debug"
+                Dialog="_mono_options_form Interpreter"
+                MenuCaption="&amp;Debug"
+                RunFromDir="%rw"
+                BuildFirst="1"
+                CaptureOutputWith="ProcessBuffer"
+                Deletable="0">
+                <Exec CmdLine='mono --debugger-agent="transport=dt_socket,server=y,suspend=y,address=localhost:8000" "%o"'/>
+            </Target>
+            <Target
+                Name="DebugVS"
+                MenuCaption="Debug - &amp;Visual Studio"
+                SaveOption="SaveNone"
+                RunFromDir="%rw">
+                <Exec CmdLine='devenv "%o"'/>
+            </Target>
+            <Target
+                Name="Execute"
+                Dialog="_mono_options_form Interpreter"
+                MenuCaption="E&amp;xecute"
+                SaveOption="SaveNone"
+                RunFromDir="%rw"
+                CaptureOutputWith="ProcessBuffer">
+                <Exec CmdLine='mono "%o"'/>
+            </Target>
+            <Target
+                Name="Mono Options"
+                MenuCaption="Mono &amp;Options..."
+                ShowOnMenu="HideIfNoCmdLine"
+                Deletable="0">
+                <Exec
+                    CmdLine="mono_options"
+                    Type="Slick-C"/>
+            </Target>
+        </Menu>
+        <PreBuildCommands StopOnError="0">
+            <Exec CmdLine='mkdir "%bd"'/>
+        </PreBuildCommands>
+    </Config>
+    <Config
+        Name="Release"
+        DebugCallbackName="mono"
+        OutputFile="TicTacToe.exe"
+        Type="mono"
+        CompilerConfigName="">
+        <Menu>
+            <Target
+                Name="Compile"
+                Dialog="_mono_options_form Compiler"
+                MenuCaption="&amp;Compile"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveCurrent"
+                RunFromDir="%rw">
+                <Exec CmdLine="mcs -release -target:module -out:%bd%n.obj %f"/>
+            </Target>
+            <Target
+                Name="Build"
+                Dialog="_mono_options_form Compiler"
+                MenuCaption="&amp;Build"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveWorkspaceFiles"
+                RunFromDir="%rw">
+                <Exec CmdLine='mcs -release  -target:exe -out:"%o" %{*.cs}'/>
+            </Target>
+            <Target
+                Name="Debug"
+                Dialog="_mono_options_form Interpreter"
+                MenuCaption="&amp;Debug"
+                RunFromDir="%rw"
+                BuildFirst="1"
+                CaptureOutputWith="ProcessBuffer"
+                Deletable="0">
+                <Exec CmdLine='mono --debugger-agent="transport=dt_socket,server=y,suspend=y,address=localhost:8000" "%o"'/>
+            </Target>
+            <Target
+                Name="DebugVS"
+                MenuCaption="Debug - &amp;Visual Studio"
+                SaveOption="SaveNone"
+                RunFromDir="%rw">
+                <Exec CmdLine='devenv "%o"'/>
+            </Target>
+            <Target
+                Name="Execute"
+                Dialog="_mono_options_form Interpreter"
+                MenuCaption="E&amp;xecute"
+                SaveOption="SaveNone"
+                RunFromDir="%rw"
+                CaptureOutputWith="ProcessBuffer">
+                <Exec CmdLine='mono "%o"'/>
+            </Target>
+            <Target
+                Name="Mono Options"
+                MenuCaption="Mono &amp;Options..."
+                ShowOnMenu="HideIfNoCmdLine"
+                Deletable="0">
+                <Exec
+                    CmdLine="mono_options"
+                    Type="Slick-C"/>
+            </Target>
+        </Menu>
+        <PreBuildCommands StopOnError="0">
+            <Exec CmdLine='mkdir "%bd"'/>
+        </PreBuildCommands>
+    </Config>
+</Project>

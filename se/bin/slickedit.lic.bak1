@@ -1,0 +1,50 @@
+<!--
+************************************************************** 
+*     ANY MODIFICATION OF THE BELOW LICENSE INFORMATION      * 
+*             WILL INVALIDATE THIS LICENSE FILE              * 
+************************************************************** 
+-->
+<Licenses>
+    <License>
+        <LicenseProperties>
+            <Property name="Comment" value="SlickEdit Pro Development License (v24) -- Internal"/>
+            <Property name="IssueDate" value="2019-01-01"/>
+            <Property name="LicenseCount" value="1"/>
+            <Property name="LicenseType" value="STD"/>
+            <Property name="ProductID" value="VSEE"/>
+            <Property name="Serial" value="EE000000"/>
+            <Property name="Start" value="2019-01-01"/>
+            <Property name="Vendor" value="SlickEditInc"/>
+            <Property name="Version" value="24.00"/>
+        </LicenseProperties>
+        <Signature>
+            wnpg9pYwLeUn3p10z/2gq8f05CWoODWqonwwCAdv7C+SACZSJybAbX4IYcHYObz3
+            Hxz4JYuRea4lScxQQiBcTshtgVoJnYb30s+BIu33f7XbSLXF1ehVSUD5QgynlDtC
+            nz3y7UjUJykDV9G/J5QzFjVYEdPgUGMC6zUdQYyebsk+d8BZheExu2zkxHgdGNDS
+            /umWGg3F958VAHVYEizZAnUk8C4SxT4i5BYpam2pS6HsE8cFVOfzFHlUhUMXo/Pi
+            MEbZmcxJcoOqgZPIqif5pdNdSp/my8+XpeuaZ6setTyNmdLh9DvE4zIUYFlZ+7Mc
+            gx1viej+80r6FQ5C8aZcKQ==
+        </Signature>
+    </License>
+    <License>
+        <LicenseProperties>
+            <Property name="Comment" value="SlickEdit Standard Development License (v24) -- Internal"/>
+            <Property name="IssueDate" value="2019-01-01"/>
+            <Property name="LicenseCount" value="1"/>
+            <Property name="LicenseType" value="STD"/>
+            <Property name="ProductID" value="VSEES"/>
+            <Property name="Serial" value="EES000000"/>
+            <Property name="Start" value="2019-01-01"/>
+            <Property name="Vendor" value="SlickEditInc"/>
+            <Property name="Version" value="24.00"/>
+        </LicenseProperties>
+        <Signature>
+            S07V9d4tDWn3QNkBDYqEniOyhNssUle1CBgqQtykMKCyNt4pb2S7gH4uNmnhcGKe
+            lbWcQpCbzTbgOPRCJiHaeka8js9n8j/LY+qLBdjnnWYyLIzsAYOwnjrHRI0TARpT
+            uF405njMe9niy6fQVJHwvrByvBvK1LuX4uLaKxz9WJ0zQd4WFXcm1PT9QaMsLrp6
+            dOKb1I+toQA6KL6IxAKuMfC8nnQhePf4o9zfL+KQcBRqg8lf7+A323v+pa7YtFDX
+            sKriDsZJ/5IqwSLOx/unxVuMNtf9gLeOh7N3gjHPhEJKnAqgmwh0hoR5PgOkDv0O
+            RhnJyfIL0k8+BW5hENI/UA==
+        </Signature>
+    </License>
+</Licenses>

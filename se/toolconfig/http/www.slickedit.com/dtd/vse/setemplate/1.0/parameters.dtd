@@ -1,0 +1,40 @@
+<!--
+Parameters element is shared by templates and options, so we create a common file for both.
+
+IMPORTANT:
+If the format of this dtd changes, then version of setemplate.dtd and options.dtd must be incremented.
+-->
+
+<!ELEMENT Parameters (Parameter)*>
+
+<!ELEMENT Parameter (#PCDATA)>
+  <!--
+  Description: The name of the substitution parameter. This name will get subsituted with Value when the template is instantiated.
+                           IMPORTANT: Do not use substitution delimeters in Name.
+
+  Example: Name="copyright" (CORRECT)
+  Example: Name="$copyright$" (INCORRECT)
+  -->
+  <!ATTLIST Parameter Name CDATA #REQUIRED>
+  <!--
+  Description: The value of the substitution parameter Name. This value will get subsituted for every occurence of Name when the template is instantiated.
+
+  Example: Value="Copyright 1988-2006 SlickEdit Inc."
+  -->
+  <!ATTLIST Parameter Value CDATA #REQUIRED>
+  <!--
+  Description: Optional. Determines whether Parameter value is prompted for..
+  0=Do not prompt for value.
+  1=Prompt for value.
+  Defaults to 0.
+
+  Example: Prompt="1"
+  -->
+  <!ATTLIST Parameter Prompt CDATA #IMPLIED>
+  <!--
+  Description: Optional. Prompt string for a value that is prompted for. Has no effect if Prompt="0".
+
+  Example: PromptString="A number between 1 and 10"
+  -->
+  <!ATTLIST Parameter PromptString CDATA #IMPLIED>
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>logic_not icon</title>
+	<desc>logic_not icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#252525" d="M6720 1280c1944,0 3520,1576 3520,3520 0,1944 -1576,3520 -3520,3520 -576,0 -1120,-138 -1600,-384 -480,246 -1024,384 -1600,384 -1944,0 -3520,-1576 -3520,-3520 0,-1944 1576,-3520 3520,-3520 576,0 1120,138 1600,384 480,-246 1024,-384 1600,-384zm0 640c-337,0 -660,58 -960,164 782,646 1280,1623 1280,2716 0,1093 -498,2070 -1280,2716 300,106 623,164 960,164 1591,0 2880,-1289 2880,-2880 0,-1591 -1289,-2880 -2880,-2880zm-3200 0c-1591,0 -2880,1289 -2880,2880 0,1591 1289,2880 2880,2880 337,0 660,-58 960,-164 -782,-646 -1280,-1623 -1280,-2716 0,-1093 498,-2070 1280,-2716 -300,-106 -623,-164 -960,-164zm1600 5275c772,-517 1280,-1397 1280,-2395 0,-999 -508,-1878 -1280,-2395 -772,517 -1280,1396 -1280,2395 0,998 508,1878 1280,2395z"/>
+	<path id="curve0" fill="#2CA744" d="M3520 2240c109,0 215,7 320,20 -597,677 -960,1566 -960,2540 0,974 363,1863 960,2540 -105,13 -211,20 -320,20 -1414,0 -2560,-1146 -2560,-2560 0,-1414 1146,-2560 2560,-2560z"/>
+</svg>

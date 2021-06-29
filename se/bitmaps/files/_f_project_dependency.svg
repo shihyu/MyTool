@@ -1,0 +1,50 @@
+<svg x="0" y="0" width="512" height="512" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+    <title>blank icon</title>
+    <g>
+    </g>
+
+
+<g transform="translate(0,256) scale(0.5,0.5)">
+    <title>object cube icon</title>
+    <desc>object cube icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="16" x2="420.0898" y2="427.9417" gradientUnits="userSpaceOnUse" id="c-color-1">
+            <stop offset="0" stop-color="#fff822"/>
+            <stop offset="0.32941" stop-color="#ffe041"/>
+            <stop offset="1" stop-color="#f3dd24"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="16" x2="254.33265" y2="227.57035" gradientUnits="userSpaceOnUse" id="c-color-2">
+            <stop offset="0" stop-color="#f5d437"/>
+            <stop offset="1" stop-color="#ead72c"/>
+        </linearGradient>
+        <linearGradient x1="256" y1="130" x2="258.206" y2="453.608" gradientUnits="userSpaceOnUse" id="c-color-3">
+            <stop offset="0" stop-color="#f9d93b"/>
+            <stop offset="1" stop-color="#cba00b"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M32,128l224,-112l224,112l0,256l-224,112l-224,-112z" id="curve2" fill="url(#c-color-1)"/>
+        <path d="M32,128l224,-112l224,112l-224,112z" id="curve1" fill="url(#c-color-2)"/>
+        <path d="M480,130l-224,110l0,256l224,-112z" id="curve0" fill="url(#c-color-3)"/>
+    </g>
+</g>
+
+
+
+<g transform="translate(64,0) scale(0.75,0.75)">
+    <title>arrow right icon</title>
+    <desc>arrow right icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="104" x2="492" y2="200" gradientUnits="userSpaceOnUse" id="a-color-1">
+            <stop offset="0" stop-color="#68ba1c"/>
+            <stop offset="1" stop-color="#53a616"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#a-color-1)" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M352,100l150,150l-150,150l0,-100l-342,0l0,-100l342,0z" id="curve0"/>
+    </g>
+</g>
+
+</svg>

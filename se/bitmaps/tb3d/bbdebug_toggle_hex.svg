@@ -1,0 +1,37 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>odometer icon</title>
+    <desc>odometer icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="144" x2="0.31654" y2="355.687" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="0.65098" stop-color="#108ad0"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </linearGradient>
+        <linearGradient x1="352" y1="176" x2="352" y2="320" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="176" x2="32" y2="336.0005" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#91a0af"/>
+            <stop offset="1" stop-color="#717f8f"/>
+        </linearGradient>
+        <linearGradient x1="368" y1="192" x2="368" y2="320.0005" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#dd4a3f"/>
+            <stop offset="0.41177" stop-color="#cb382d"/>
+            <stop offset="1" stop-color="#b8251a"/>
+        </linearGradient>
+        <linearGradient x1="48" y1="192" x2="48" y2="307.2" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M32,144l448,0c17.5,0 32,14.5 32,32l0,160c0,17.5 -14.5,32 -32,32l-448,0c-17.5,0 -32,-14.5 -32,-32l0,-160c0,-17.5 14.5,-32 32,-32z" id="curve4" fill="url(#color-1)"/>
+        <path d="M352,176l128,0l0,160l-128,0z" id="curve3" fill="url(#color-2)"/>
+        <path d="M192,176l128,0l0,160l-128,0z M32,176l128,0l0,160l-128,0z" id="curve2" fill="url(#color-3)"/>
+        <path d="M400,288l0,-64l32,0l0,64z M432,192l-32,0c-17.5,0 -32,14.5 -32,32l0,64c0,17.5 14.5,32 32,32l32,0c17.5,0 32,-14.5 32,-32l0,-64c0,-17.5 -14.5,-32 -32,-32z" id="curve1" fill="url(#color-4)"/>
+        <path d="M240,288l0,-64l32,0l0,64z M272,192l-32,0c-17.5,0 -32,14.5 -32,32l0,64c0,17.5 14.5,32 32,32l32,0c17.5,0 32,-14.5 32,-32l0,-64c0,-17.5 -14.5,-32 -32,-32z M80,288l0,-64l32,0l0,64z M112,192l-32,0c-17.5,0 -32,14.5 -32,32l0,64c0,17.5 14.5,32 32,32l32,0c17.5,0 32,-14.5 32,-32l0,-64c0,-17.5 -14.5,-32 -32,-32z" id="curve0" fill="url(#color-5)"/>
+    </g>
+</svg>

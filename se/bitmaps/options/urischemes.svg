@@ -1,0 +1,22 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>environment icon</title>
+    <desc>environment icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <radialGradient cx="160.16464" cy="198.24058" r="448.84479" fx="160.16464" fy="198.24058" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#4eb6f2"/>
+            <stop offset="0.2" stop-color="#43abe7"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </radialGradient>
+        <radialGradient cx="159.97249" cy="203.1405" r="445.67971" fx="159.97249" fy="203.1405" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#c5e7fb"/>
+            <stop offset="0.21177" stop-color="#89cff7"/>
+            <stop offset="1" stop-color="#4eb6f2"/>
+        </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M256,16c132.5,0 240,107.5 240,240c0,132.5 -107.5,240 -240,240c-132.5,0 -240,-107.5 -240,-240c0,-132.5 107.5,-240 240,-240z" id="curve1" fill="url(#color-1)"/>
+        <path d="M258,16c131.5,1 238,108 238,240c0,132 -106.5,239 -238,240c-0.5,0 -1.5,0 -2,0c-0.5,0 -1.5,0 -2,0c-131.5,-1 -238,-108 -238,-240c0,-132 106.5,-239 238,-240c1.5,0 2.5,0 4,0z M321,41.5c14.5,12 27,27.5 38,46.5c7,12 13.5,25.5 19,40l62,0c-28.5,-41 -70,-71.5 -119,-86.5z M480,248c-1.5,-38 -12,-73 -30,-104l-66.5,0c10,31 15.5,66.5 16.5,104z M480,264l-80,0c-1,37.5 -6.5,73 -16.5,104l66.5,0l0,0c18,-30.5 28.5,-66 30,-104z M440,384l-62,0c-5.5,14.5 -12,28 -19,40c-11,19 -23.5,34.5 -38,46.5c49,-15 90.5,-45.5 119,-86.5z M191,470.5c-14.5,-12 -27,-27.5 -38,-46.5c-7,-12 -13.5,-25.5 -19,-40l-62,0c28.5,41 70,71.5 119,86.5z M32,264c1.5,38 12,73 30,104l66.5,0c-10,-31 -16,-66.5 -17,-104z M32,248l80,0c1,-37.5 6.5,-73 16.5,-104l-66.5,0c-18,31 -28.5,66.5 -30,104z M72,128l62,0c5.5,-14.5 12,-28 19,-40c11,-19 23.5,-34.5 38,-46.5c-49,15 -90.5,45.5 -119,86.5z M128,248l120,0l0,-104l-102.5,0c-10.5,31 -16.5,66 -17.5,104z M264,248l120,0c-1,-38 -7,-73 -17.5,-104l-102.5,0z M384,264l-120,0l0,104l102.5,0c10.5,-31 16.5,-66 17.5,-104z M248,264l-120,0c1,38 7,73 17.5,104l102.5,0z M151,128l97,0l0,-95.5c-31.5,3.5 -60,27 -81.5,63.5c-5.5,10 -11,20.5 -15.5,32z M264,128l97,0c-4.5,-11.5 -10,-22 -15.5,-32c-21.5,-36.5 -50,-60 -81.5,-63.5z M361,384l-97,0l0,95.5c31.5,-3.5 60,-27 81.5,-63.5c5.5,-10 11,-20.5 15.5,-32z M248,384l-97,0c4.5,11.5 10,22 15.5,32c21.5,36.5 50,60 81.5,63.5z" id="curve0" fill="url(#color-2)"/>
+    </g>
+</svg>

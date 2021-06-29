@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="512" viewBox="0 0 1024 512">
+<g transform="translate(320,0) scale(1,1)">
+    <title>shape square icon</title>
+    <desc>shape square icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="476.2878" y2="480.00035" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#68ba1c"/>
+            <stop offset="1" stop-color="#53a616"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#color-1)" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal" transform="translate(64,64) scale(0.75,0.75)">
+        <path d="M32,32l448,0l0,448l-448,0z" id="curve0"/>
+    </g>
+</g>
+</svg>

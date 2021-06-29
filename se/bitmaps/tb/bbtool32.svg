@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>server icon</title>
+	<desc>server icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve4" fill="#2CA744" d="M2890 7350l4480 0 0 1280 -4480 0 0 -1280zm3840 320c-177,0 -320,143 -320,320 0,177 143,320 320,320 177,0 320,-143 320,-320 0,-177 -143,-320 -320,-320z"/>
+	<path id="curve3" fill="#2CA744" d="M2880 5120l4480 0 0 1280 -4480 0 0 -1280zm3830 330c-177,0 -320,143 -320,320 0,177 143,320 320,320 177,0 320,-143 320,-320 0,-177 -143,-320 -320,-320z"/>
+	<path id="curve2" fill="#2CA744" d="M2880 2880l4480 0 0 1280 -4480 0 0 -1280zm3840 320c-177,0 -320,143 -320,320 0,177 143,320 320,320 177,0 320,-143 320,-320 0,-177 -143,-320 -320,-320z"/>
+	<path id="curve1" fill="#252525" d="M7040 1280c177,0 320,143 320,320 0,177 -143,320 -320,320 -177,0 -320,-143 -320,-320 0,-177 143,-320 320,-320z"/>
+	<path id="curve0" fill="#252525" d="M2240 640l5760 0c176,0 320,144 320,320l0 8640 -6400 0 0 -8640c0,-176 144,-320 320,-320zm320 6400l0 1920 5120 0 0 -1920 -5120 0zm0 -2240l0 1920 5120 0 0 -1920 -5120 0zm0 -2240l0 1920 5120 0 0 -1920 -5120 0zm4480 -1600c-353,0 -640,287 -640,640 0,353 287,640 640,640 353,0 640,-287 640,-640 0,-353 -287,-640 -640,-640z"/>
+</svg>

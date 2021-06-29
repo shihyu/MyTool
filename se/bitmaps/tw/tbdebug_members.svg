@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>box_closed icon</title>
+	<desc>box_closed icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#2CA744" d="M1634 3023l3200 -1600c186,-93 386,-93 572,0l671 335 -715 358 -242 -120 -2768 1384 244 122 -2 1c-208,104 -340,304 -353,534l-321 -161 0 3408 2880 1440 0 -3408 -640 -320 0 -280c0,0 0,0 0,0l431 -217 529 265 2768 -1384 -531 -266 715 -358 534 267c222,111 354,324 354,573l0 3688c0,249 -132,462 -354,573l-3200 1600c-186,93 -386,93 -572,0l-3200 -1600c-222,-111 -354,-324 -354,-573l0 -3688c0,-249 132,-462 354,-573zm3806 5701l2880 -1440 0 -3408 -2880 1440 0 3408z"/>
+	<path id="curve0" fill="#568777" d="M2737 3789l3663 -1831 1280 640 -3663 1831c-111,56 -177,162 -177,287l0 1082 -1280 -640 0 -1082c0,-125 66,-231 177,-287z"/>
+
+
+<g comp-op="clear">
+<g transform="translate(5120,5120) scale(0.5,0.5)"  stroke="#252525" stroke-width="512" stroke-linejoin="round">
+	<title>data icon</title>
+	<desc>data icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <rect fill="white" x="2560" y="1800" height="7400" width="3000"/>
+	<path id="curve0" fill="#252525" d="M7680 7040c353,0 640,288 640,640l0 1280c0,352 -288,640 -640,640l-5120 0c-352,0 -640,-287 -640,-640l0 -1280c0,-353 288,-640 640,-640l0 -320c-352,0 -640,-287 -640,-640l0 -1280c0,-353 288,-640 640,-640l0 -320c-352,0 -640,-288 -640,-640l0 -1280c0,-353 288,-640 640,-640l5120 0c353,0 640,288 640,640l0 1280c0,352 -288,640 -640,640l0 320c353,0 640,288 640,640l0 1280c0,352 -288,640 -640,640l0 320zm-4992 640c-70,0 -128,72 -128,160l0 960c0,88 58,160 128,160l2432 0 0 -1280 -2432 0zm0 -5760c-70,0 -128,72 -128,160l0 960c0,88 58,160 128,160l2432 0 0 -1280 -2432 0zm0 2880c-70,0 -128,72 -128,160l0 960c0,88 58,160 128,160l2432 0 0 -1280 -2432 0z"/>
+    <rect fill="#235DB8" x="6000" y="2000" height="7000" width="1000"/>
+</g>
+</g>
+
+
+
+<g transform="translate(5120,5120) scale(0.5,0.5)">
+	<title>data icon</title>
+	<desc>data icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <rect fill="white" x="2560" y="1800" height="7400" width="3000"/>
+	<path id="curve0" fill="#252525" d="M7680 7040c353,0 640,288 640,640l0 1280c0,352 -288,640 -640,640l-5120 0c-352,0 -640,-287 -640,-640l0 -1280c0,-353 288,-640 640,-640l0 -320c-352,0 -640,-287 -640,-640l0 -1280c0,-353 288,-640 640,-640l0 -320c-352,0 -640,-288 -640,-640l0 -1280c0,-353 288,-640 640,-640l5120 0c353,0 640,288 640,640l0 1280c0,352 -288,640 -640,640l0 320c353,0 640,288 640,640l0 1280c0,352 -288,640 -640,640l0 320zm-4992 640c-70,0 -128,72 -128,160l0 960c0,88 58,160 128,160l2432 0 0 -1280 -2432 0zm0 -5760c-70,0 -128,72 -128,160l0 960c0,88 58,160 128,160l2432 0 0 -1280 -2432 0zm0 2880c-70,0 -128,72 -128,160l0 960c0,88 58,160 128,160l2432 0 0 -1280 -2432 0z"/>
+    <rect fill="#235DB8" x="6000" y="2000" height="7000" width="1000"/>
+</g>
+
+</svg>

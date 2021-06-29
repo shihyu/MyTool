@@ -1,0 +1,31 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>maximize icon</title>
+    <desc>maximize icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="465.8678" y2="480.00035" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#4ab4f2"/>
+            <stop offset="0.47843" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0e7ab7"/>
+        </linearGradient>
+        <linearGradient x1="64" y1="64" x2="448" y2="438.18" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#eef8fe"/>
+            <stop offset="1" stop-color="#c6e7fb"/>
+        </linearGradient>
+        <linearGradient x1="144" y1="96" x2="288" y2="240" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="320" x2="191.9998" y2="480" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#b3c0cd"/>
+            <stop offset="1" stop-color="#91a0af"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M32,32l448,0l0,448l-448,0z" id="curve3" fill="url(#color-1)"/>
+        <path d="M64,64l384,0l0,384l-384,0z" id="curve2" fill="url(#color-2)"/>
+        <path d="M192,365.5l178.5,-179l45.5,45.5l0,-136l-136,0l45.5,45.5l-179,178.5l-2.5,48z" id="curve1" fill="url(#color-3)"/>
+        <path d="M32,320l160,0l0,160l-160,0z" id="curve0" fill="url(#color-4)"/>
+    </g>
+</svg>

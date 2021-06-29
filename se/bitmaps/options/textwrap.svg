@@ -1,0 +1,20 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>text icon</title>
+    <desc>text icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="64" y1="0" x2="359.822" y2="512.00059" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#f3fafe"/>
+            <stop offset="1" stop-color="#cae9fb"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M64,0l384,0l0,512l-384,0z" id="curve1" fill="url(#color-1)"/>
+        <path d="M112,64l288,0l0,16l-288,0z M112,352l288,0l0,16l-288,0z M112,448l208,0l0,16l-208,0z M112,400l288,0l0,16l-288,0z M112,208l288,0l0,16l-288,0z M112,304l288,0l0,16l-288,0z M112,256l288,0l0,16l-288,0z M112,160l288,0l0,16l-288,0z M112,112l288,0l0,16l-288,0z" id="curve0" fill="#717f8f"/>
+        <rect x="240" y="64" height="160" width="16" fill="url(#color-1)"/>
+        <rect x="256" y="64" height="160" width="160" fill="#76A797"/>
+        <rect x="240" y="304" height="160" width="16" fill="url(#color-1)"/>
+        <rect x="112" y="304" height="160" width="128" fill="#ED9A56"/>
+    </g>
+</svg>

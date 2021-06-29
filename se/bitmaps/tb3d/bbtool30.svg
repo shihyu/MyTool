@@ -1,0 +1,32 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>message icon</title>
+    <desc>message icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0.18639" y1="0.01548" x2="406.30189" y2="341.15363" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#ffd041"/>
+            <stop offset="1" stop-color="#ffc001"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M296,512c8,-32 8,-80 -19.5,-104.5c-9,2.5 -18.5,5 -28.5,6c-110,16 -226.5,-46.5 -245,-158.5c-19,-113.5 59.5,-232.5 197,-252c140.5,-20 285,62 308.5,201.5c25,150 -80.5,272 -212.5,307.5z" id="curve1" fill="url(#color-1)"/>
+        <path d="M144,176l224,0l0,16l-224,0z M144,128l224,0l0,16l-224,0z M144,272l224,0l0,16l-224,0z M144,224l224,0l0,16l-224,0z" id="curve0" fill="#ffffff"/>
+    </g>
+
+
+<g transform="translate(256,256) scale(0.5,0.5)">
+    <title>delete icon</title>
+    <desc>delete icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="29.5" y1="29.5" x2="446.554" y2="416.765" gradientUnits="userSpaceOnUse" id="delete-color-1">
+            <stop offset="0" stop-color="#ef5c51"/>
+            <stop offset="1" stop-color="#c43126"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#delete-color-1)" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M392,29.5l90.5,90.5l-136,136l136,136l-90.5,90.5l-136,-136l-136,136l-90.5,-90.5l136,-136l-136,-136l90.5,-90.5l136,136z" id="curve0"/>
+    </g>
+</g>
+
+</svg>

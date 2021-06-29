@@ -1,0 +1,41 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>calendar icon</title>
+    <desc>calendar icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="48" x2="463.36375" y2="504.013" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#f0f3f6"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="208" x2="73.8458" y2="224" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#f3f5f8"/>
+            <stop offset="1" stop-color="#f0f3f6"/>
+        </linearGradient>
+        <linearGradient x1="102" y1="253" x2="290.1565" y2="463.2915" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#6d7b8b"/>
+            <stop offset="1" stop-color="#576675"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="48" x2="181.1425" y2="156.33" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#ff7901"/>
+            <stop offset="1" stop-color="#f17201"/>
+        </linearGradient>
+        <linearGradient x1="112" y1="0" x2="144" y2="0" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#d8e0e8"/>
+            <stop offset="1" stop-color="#b3c0cd"/>
+        </linearGradient>
+        <linearGradient x1="368" y1="0" x2="400" y2="0" gradientUnits="userSpaceOnUse" id="color-6">
+            <stop offset="0" stop-color="#d8e0e8"/>
+            <stop offset="1" stop-color="#b3c0cd"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M48,48l416,0c9,0 16,7 16,16l0,432c0,9 -7,16 -16,16l-416,0c-9,0 -16,-7 -16,-16l0,-432c0,-9 7,-16 16,-16z" id="curve6" fill="url(#color-1)" fill-rule="evenodd"/>
+        <path d="M480,224l-448,0l0,-16l448,0z" id="curve5" fill="url(#color-2)" fill-rule="evenodd"/>
+        <path d="M197,463.5l-48,0l0,-153l-47,14l0,-37l91,-31.5l4,0z M404.5,463.5l-145,0l0,-31.5l67,-70c16.5,-18.5 24.5,-33.5 24.5,-44.5c0,-9 -2,-16 -6,-20.5c-3.5,-4.5 -9.5,-7 -16.5,-7c-7.5,0 -13.5,3 -18,9.5c-4.5,6 -7,14 -7,23l-48,0c0,-12.5 3,-24.5 9.5,-35c6.5,-11 15,-19.5 26.5,-25.5c11.5,-6 24,-9 38,-9c22.5,0 39.5,5 51.5,15.5c12.5,10.5 18.5,25.5 18.5,44.5c0,8.5 -1.5,16.5 -4.5,24c-3.5,8 -8,16 -14.5,24.5c-6.5,8.5 -16.5,19.5 -31,34l-26.5,31l81.5,0z" id="curve4" fill="url(#color-3)" fill-rule="nonzero"/>
+        <path d="M48,48l416,0c9,0 16,7 16,16l0,144l-448,0l0,-144c0,-9 7,-16 16,-16z" id="curve3" fill="url(#color-4)" fill-rule="evenodd"/>
+        <path d="M384,80c17.5,0 32,14.5 32,32c0,17.5 -14.5,32 -32,32c-17.5,0 -32,-14.5 -32,-32c0,-17.5 14.5,-32 32,-32z M128,80c17.5,0 32,14.5 32,32c0,17.5 -14.5,32 -32,32c-17.5,0 -32,-14.5 -32,-32c0,-17.5 14.5,-32 32,-32z" id="curve2" fill="#36414a" fill-rule="evenodd"/>
+        <path d="M128,0c9,0 16,7 16,16l0,96c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16l0,-96c0,-9 7,-16 16,-16z" id="curve1" fill="url(#color-5)" fill-rule="evenodd"/>
+        <path d="M384,0c9,0 16,7 16,16l0,96c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16l0,-96c0,-9 7,-16 16,-16z" id="curve0" fill="url(#color-6)" fill-rule="evenodd"/>
+    </g>
+</svg>

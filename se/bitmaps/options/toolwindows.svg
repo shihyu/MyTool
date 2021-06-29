@@ -1,0 +1,36 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>window dialog icon</title>
+    <desc>window dialog icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="64" x2="283.785" y2="331.0915" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#40b0f1"/>
+            <stop offset="1" stop-color="#129eee"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="128" x2="153.8695" y2="464.0005" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#e1f2fd"/>
+            <stop offset="1" stop-color="#cceafb"/>
+        </linearGradient>
+        <linearGradient x1="64" y1="160" x2="318.3585" y2="320" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#c2cdd8"/>
+            <stop offset="1" stop-color="#b8c5d1"/>
+        </linearGradient>
+        <linearGradient x1="192" y1="368" x2="270.4975" y2="416" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#9fadbc"/>
+            <stop offset="1" stop-color="#98a6b5"/>
+        </linearGradient>
+        <linearGradient x1="336" y1="368" x2="418.9085" y2="416" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#2ea9f0"/>
+            <stop offset="1" stop-color="#1ea3ef"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M512,80l0,384l-512,0l0,-384c0,-9 7,-16 16,-16l480,0c9,0 16,7 16,16z" id="curve5" fill="url(#color-1)" fill-rule="nonzero"/>
+        <path d="M0,128l512,0l0,336l-512,0z" id="curve4" fill="url(#color-2)" fill-rule="nonzero"/>
+        <path d="M464,80c9,0 16,7 16,16c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16c0,-9 7,-16 16,-16z M416,80c9,0 16,7 16,16c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16c0,-9 7,-16 16,-16z" id="curve3" fill="#ffffff" fill-rule="nonzero"/>
+        <path d="M64,160l384,0l0,160l-384,0z" id="curve2" fill="url(#color-3)" fill-rule="evenodd"/>
+        <path d="M200,368l96,0c4.5,0 8,3.5 8,8l0,32c0,4.5 -3.5,8 -8,8l-96,0c-4.5,0 -8,-3.5 -8,-8l0,-32c0,-4.5 3.5,-8 8,-8z" id="curve1" fill="url(#color-4)" fill-rule="evenodd"/>
+        <path d="M344,368l96,0c4.5,0 8,3.5 8,8l0,32c0,4.5 -3.5,8 -8,8l-96,0c-4.5,0 -8,-3.5 -8,-8l0,-32c0,-4.5 3.5,-8 8,-8z" id="curve0" fill="url(#color-5)" fill-rule="nonzero"/>
+    </g>
+</svg>

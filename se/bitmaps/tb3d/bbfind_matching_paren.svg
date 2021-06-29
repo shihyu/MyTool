@@ -1,0 +1,17 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>nav refresh icon</title>
+    <desc>nav refresh icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="408" y1="416" x2="175.273" y2="95.9995" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#dae2e9"/>
+            <stop offset="0.58039" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#ffffff"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M16,256c0,132.5 107.5,240 240,240c132.5,0 240,-107.5 240,-240c0,-132.5 -107.5,-240 -240,-240c-132.5,0 -240,107.5 -240,240z" id="curve1" fill="#129eee"/>
+        <path d="M303.5,208.5l-32,-32.5l-95.5,0l0,-80l112,0l0,0c10,0 20.5,4 28.5,11.5l44,44l47.5,-47.5l0,152l-152,0z M208.5,303.5l32,32.5l95.5,0l0,80l-112,0l0,0c-10,0 -20.5,-4 -28.5,-11.5l-44,-44l-47.5,47.5l0,-152l152,0z" id="curve0" fill="url(#color-1)"/>
+    </g>
+</svg>

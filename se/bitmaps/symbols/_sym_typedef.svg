@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="512" viewBox="0 0 1024 512">
+<g transform="translate(320,0) scale(1,1)">
+    <title>shape square icon</title>
+    <desc>shape square icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="476.2878" y2="480.00035" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#00a0a0"/>
+            <stop offset="1" stop-color="#009090"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#color-1)" fill-rule="evenodd" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal" transform="translate(64,64) scale(0.75,0.75)">
+        <path d="M32,32l448,0l0,448l-448,0z" id="curve0"/>
+    </g>
+
+
+<g transform="translate(0,0) scale(0.5,0.5)">
+    <title>new icon</title>
+    <desc>new icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="16" y1="16" x2="496.0002" y2="450.2862" gradientUnits="userSpaceOnUse" id="n-color-1">
+            <stop offset="0" stop-color="#ff9231"/>
+            <stop offset="1" stop-color="#ff7a03"/>
+        </linearGradient>
+        <linearGradient x1="45" y1="45" x2="424.75255" y2="455.13255" gradientUnits="userSpaceOnUse" id="n-color-2">
+            <stop offset="0" stop-color="#ffcf3e"/>
+            <stop offset="1" stop-color="#ffc001"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M256,16l26.5,39.5l35.5,-31.5l15.5,45l42.5,-21l3,47.5l46.5,-9l-9,46.5l47.5,3l-21,42.5l45,15.5l-31.5,35.5l39.5,26.5l-39.5,26.5l31.5,35.5l-45,15.5l21,42.5l-47.5,3l9,46.5l-46.5,-9l-3,47.5l-42.5,-21l-15.5,45l-35.5,-31.5l-26.5,39.5l-26.5,-39.5l-35.5,31.5l-15.5,-45l-42.5,21l-3,-47.5l-46.5,9l9,-46.5l-47.5,-3l21,-42.5l-45,-15.5l31.5,-35.5l-39.5,-26.5l39.5,-26.5l-31.5,-35.5l45,-15.5l-21,-42.5l47.5,-3l-9,-46.5l46.5,9l3,-47.5l42.5,21l15.5,-45l35.5,31.5z" id="curve1" fill="url(#n-color-1)"/>
+        <path d="M256,45l-13,19.5c-5.5,8 -16.5,9.5 -24,3l-17.5,-15.5l-8,22.5c-3,9 -13.5,13.5 -22,9l-21,-10.5l-1.5,23.5c-1,10 -9.5,16.5 -19,14.5l-23.5,-4.5l4.5,23.5c2,9.5 -4.5,18 -14.5,19l-23.5,1.5l10.5,21c4.5,8.5 0,19 -9,22l-22.5,8l15.5,17.5c6.5,7.5 5,18.5 -3,24l-19.5,13l19.5,13c8,5.5 9.5,16.5 3,24l-15.5,17.5l22.5,8c9,3 13.5,13.5 9,22l-10.5,21l23.5,1.5c10,1 16.5,9.5 14.5,19l-4.5,23.5l23.5,-4.5c9.5,-2 18,4.5 19,14.5l1.5,23.5l21,-10.5c8.5,-4.5 19,0 22,9l8,22.5l17.5,-15.5c7.5,-6.5 18.5,-5 24,3l13,19.5l13,-19.5c5.5,-8 16.5,-9.5 24,-3l17.5,15.5l8,-22.5c3,-9 13.5,-13.5 22,-9l21,10.5l1.5,-23.5c1,-10 9.5,-16.5 19,-14.5l23.5,4.5l-4.5,-23.5c-2,-9.5 4.5,-18 14.5,-19l23.5,-1.5l-10.5,-21c-4.5,-8.5 0,-19 9,-22l22.5,-8l-15.5,-17.5c-6.5,-7.5 -5,-18.5 3,-24l19.5,-13l-19.5,-13c-8,-5.5 -9.5,-16.5 -3,-24l15.5,-17.5l-22.5,-8c-9,-3 -13.5,-13.5 -9,-22l10.5,-21l-23.5,-1.5c-10,-1 -16.5,-9.5 -14.5,-19l4.5,-23.5l-23.5,4.5c-9.5,2 -18,-4.5 -19,-14.5l-1.5,-23.5l-21,10.5c-8.5,4.5 -19,0 -22,-9l-8,-22.5l-17.5,15.5c-7.5,6.5 -18.5,5 -24,-3z" id="curve0" fill="url(#n-color-2)"/>
+    </g>
+</g>
+
+</g>
+</svg>

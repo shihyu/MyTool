@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>error icon</title>
+	<desc>error icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#252525" d="M5120 640c2474,0 4480,2006 4480,4480 0,2474 -2006,4480 -4480,4480 -2474,0 -4480,-2006 -4480,-4480 0,-2474 2006,-4480 4480,-4480zm1829 2149c-126,-126 -331,-125 -455,3l-1422 1458 -1421 -1458c-125,-128 -329,-129 -455,-3l-508 508c-124,123 -125,324 -3,449l1439 1477 -1439 1476c-122,125 -121,326 3,450l508 507c126,126 330,125 455,-3l1421 -1458 1422 1458c124,128 329,129 455,3l508 -507c123,-124 125,-325 2,-450l-1439 -1476 1439 -1477c123,-125 121,-326 -2,-449l-508 -508z"/>
+</svg>

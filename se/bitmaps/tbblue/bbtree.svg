@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>text_tree icon</title>
+	<desc>text_tree icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve2" fill="#252525" d="M1280 640l7680 0 0 8960 -7680 0 0 -8960zm640 640l0 7680 6400 0 0 -7680 -6400 0z"/>
+	<path id="curve1" fill="#3E9BD5" d="M3200,3542 4480,3542 4480,4182 3200,4182 3200,4822 3840,4822 4480,4822 4480,5462 3840,5462 3840,6102 5120,6102 5120,6742 3840,6742 3840,7382 5120,7382 5120,8022 3840,8022 3200,8022 3200,7382 3200,6742 3200,6102 3200,5462 2560,5462 2560,4822 2560,4182 2560,3542 2560,2262 3200,2262z"/>
+	<path id="curve0" fill="#252525" d="M5760 7382l1920 0 0 640 -1920 0 0 -640zm0 -1280l1920 0 0 640 -1920 0 0 -640zm-640 -1280l1920 0 0 640 -1920 0 0 -640zm0 -1280l1920 0 0 640 -1920 0 0 -640zm-1280 -1302l2560 0 0 640 -2560 0 0 -640z"/>
+</svg>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(10240,0) scale(-1.0,1.0)">
+	<title>arrow_circle icon</title>
+	<desc>arrow_circle icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#FFFF2F" d="M4308 3973l-1186 -1187c-124,-124 -124,-328 0,-452l1186 -1187c125,-124 277,-186 453,-187l839 -7c65,0 122,38 147,99 26,61 12,128 -34,174l-687 687 94 7c884,0 1684,358 2263,937 579,579 937,1379 937,2263 0,884 -358,1684 -937,2263 -579,579 -1379,937 -2263,937 -884,0 -1684,-358 -2263,-937 -579,-579 -937,-1379 -937,-2263 0,-859 339,-1639 890,-2214 24,38 53,73 86,107l809 809c-313,342 -505,797 -505,1298 0,530 215,1010 562,1358 348,347 828,562 1358,562 530,0 1010,-215 1358,-562 347,-348 562,-828 562,-1358 0,-530 -215,-1010 -562,-1358 -348,-347 -828,-562 -1358,-562 -29,0 -57,1 -85,2l678 678c46,47 60,113 34,174 -25,61 -81,99 -147,99l-839 7c-176,1 -328,-63 -453,-187z"/>
+</g>
+</svg>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>radio_button_group icon</title>
+	<desc>radio_button_group icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve4" fill="#235DB8" d="M4480,6400 9600,6400 9600,8320 4480,8320z"/>
+	<path id="curve3" fill="#252525" d="M2240 5760c884,0 1600,716 1600,1600 0,884 -716,1600 -1600,1600 -884,0 -1600,-716 -1600,-1600 0,-884 716,-1600 1600,-1600zm0 640c-530,0 -960,430 -960,960 0,530 430,960 960,960 530,0 960,-430 960,-960 0,-530 -430,-960 -960,-960z"/>
+	<path id="curve2" fill="#235DB8" d="M4480,1920 9600,1920 9600,3840 4480,3840z"/>
+	<path id="curve1" fill="#252525" d="M2240 1280c884,0 1600,716 1600,1600 0,884 -716,1600 -1600,1600 -884,0 -1600,-716 -1600,-1600 0,-884 716,-1600 1600,-1600zm0 640c-530,0 -960,430 -960,960 0,530 430,960 960,960 530,0 960,-430 960,-960 0,-530 -430,-960 -960,-960z"/>
+	<path id="curve0" fill="#235DB8" d="M2240 2240c353,0 640,287 640,640 0,353 -287,640 -640,640 -353,0 -640,-287 -640,-640 0,-353 287,-640 640,-640z"/>
+</svg>

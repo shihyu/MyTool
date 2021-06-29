@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>view_1_1 icon</title>
+	<desc>view_1_1 icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve2" fill="#252525" d="M3526 332c1764,0 3194,1430 3194,3194 0,719 -237,1382 -638,1916l412 412 -640 640 -412 -412c-534,401 -1197,638 -1916,638 -1764,0 -3194,-1430 -3194,-3194 0,-1764 1430,-3194 3194,-3194zm-6 628c-1414,0 -2560,1146 -2560,2560 0,1414 1146,2560 2560,2560 1414,0 2560,-1146 2560,-2560 0,-1414 -1146,-2560 -2560,-2560z"/>
+	<path id="curve1" fill="#252525" d="M5986 6814l828 -828c124,-124 328,-124 452,0l2428 2428c124,124 124,328 0,452l-828 828c-124,124 -328,124 -452,0l-2428 -2428c-124,-124 -124,-328 0,-452z"/>
+	<path id="curve0" fill="#235DB8" d="M5120 2240c0,1447 0,1829 0,2560l-640 0c0,-852 0,-129 0,-1600l-320 0 0 -480 640 -480 320 0zm-2560 0c0,1447 0,1829 0,2560l-640 0c0,-852 0,-129 0,-1600l-320 0 0 -480 640 -480 320 0zm960 640c177,0 320,143 320,320 0,177 -143,320 -320,320 -177,0 -320,-143 -320,-320 0,-177 143,-320 320,-320zm0 1280c177,0 320,143 320,320 0,177 -143,320 -320,320 -177,0 -320,-143 -320,-320 0,-177 143,-320 320,-320z"/>
+</svg>

@@ -1,0 +1,42 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>dram icon</title>
+    <desc>dram icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="128" x2="219.624" y2="400" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#7fb753"/>
+            <stop offset="0.23137" stop-color="#74ab49"/>
+            <stop offset="1" stop-color="#699f3e"/>
+        </linearGradient>
+        <linearGradient x1="32" y1="352" x2="32" y2="400" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#ffd041"/>
+            <stop offset="1" stop-color="#ffc61b"/>
+        </linearGradient>
+        <linearGradient x1="64" y1="192" x2="105.10888" y2="304" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#54616d"/>
+            <stop offset="1" stop-color="#424e58"/>
+        </linearGradient>
+        <linearGradient x1="176" y1="192" x2="217.10888" y2="304" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#54616d"/>
+            <stop offset="1" stop-color="#424e58"/>
+        </linearGradient>
+        <linearGradient x1="288" y1="192" x2="329.10888" y2="304" gradientUnits="userSpaceOnUse" id="color-5">
+            <stop offset="0" stop-color="#54616d"/>
+            <stop offset="1" stop-color="#424e58"/>
+        </linearGradient>
+        <linearGradient x1="400" y1="192" x2="441.10888" y2="304" gradientUnits="userSpaceOnUse" id="color-6">
+            <stop offset="0" stop-color="#54616d"/>
+            <stop offset="1" stop-color="#424e58"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M16,128l480,0c9,0 16,7 16,16l0,80c-17.5,0 -32,14.5 -32,32c0,17.5 14.5,32 32,32l0,96c0,9 -7,16 -16,16l-480,0c-9,0 -16,-7 -16,-16l0,-96c17.5,0 32,-14.5 32,-32c0,-17.5 -14.5,-32 -32,-32l0,-80c0,-9 7,-16 16,-16z" id="curve6" fill="url(#color-1)"/>
+        <path d="M32,352l32,0l0,48l-32,0z M80,352l32,0l0,48l-32,0z M128,352l32,0l0,48l-32,0z M176,352l32,0l0,48l-32,0z M256,352l32,0l0,48l-32,0z M304,352l32,0l0,48l-32,0z M352,352l32,0l0,48l-32,0z M400,352l32,0l0,48l-32,0z M448,352l32,0l0,48l-32,0z" id="curve5" fill="url(#color-2)"/>
+        <path d="M80,272l48,0l0,16l-48,0l-32,0l0,-16z M48,240l32,0l48,0l0,16l-48,0l-32,0z M48,208l32,0l48,0l0,16l-48,0l-32,0z M160,272l32,0l48,0l0,16l-48,0l-32,0z M160,240l32,0l48,0l0,16l-48,0l-32,0z M160,208l32,0l48,0l0,16l-48,0l-32,0z M272,272l32,0l48,0l0,16l-48,0l-32,0z M272,240l32,0l48,0l0,16l-48,0l-32,0z M272,208l32,0l48,0l0,16l-48,0l-32,0z M416,272l48,0l0,16l-48,0l-32,0l0,-16z M384,240l32,0l48,0l0,16l-48,0l-32,0z M384,208l32,0l48,0l0,16l-48,0l-32,0z" id="curve4" fill="#d8e0e8"/>
+        <path d="M64,192l48,0l0,112l-48,0z" id="curve3" fill="url(#color-3)"/>
+        <path d="M176,192l48,0l0,112l-48,0z" id="curve2" fill="url(#color-4)"/>
+        <path d="M288,192l48,0l0,112l-48,0z" id="curve1" fill="url(#color-5)"/>
+        <path d="M400,192l48,0l0,112l-48,0z" id="curve0" fill="url(#color-6)"/>
+    </g>
+</svg>

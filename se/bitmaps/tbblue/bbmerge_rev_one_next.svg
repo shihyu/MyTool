@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>nav_redo icon</title>
+	<desc>nav_redo icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#3E9BD5" d="M6416 5191l-187 -187c-539,-539 -1087,-991 -1758,-1230 -621,-222 -1310,-252 -2131,13 -87,28 -152,86 -191,169 -39,83 -41,169 -7,255l237 593c63,155 232,236 391,187 505,-155 915,-140 1271,-12 449,160 861,508 1283,930l187 187 -2295 0c-66,0 -122,38 -148,99 -25,61 -11,127 35,174l769 804c122,127 276,187 453,187l3035 0c176,0 320,-144 320,-320l0 -3035c0,-177 -60,-331 -187,-453l-804 -769c-47,-46 -113,-60 -174,-35 -61,26 -99,82 -99,148l0 2295z"/>
+	<path id="curve0" fill="#252525" d="M640 5120c0,-2474 2006,-4480 4480,-4480 2474,0 4480,2006 4480,4480 0,2474 -2006,4480 -4480,4480 -2474,0 -4480,-2006 -4480,-4480zm4480 -3840c-2121,0 -3840,1719 -3840,3840 0,2121 1719,3840 3840,3840 2121,0 3840,-1719 3840,-3840 0,-2121 -1719,-3840 -3840,-3840z"/>
+</svg>

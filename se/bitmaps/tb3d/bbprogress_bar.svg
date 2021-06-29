@@ -1,0 +1,20 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>progress bar icon</title>
+    <desc>progress bar icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="0" y1="192" x2="0" y2="320.0005" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#f0f3f6"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="16" y1="208" x2="16" y2="304" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#6fcc24"/>
+            <stop offset="1" stop-color="#59a31d"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M8,192l40,0l456,0c4.5,0 8,3.5 8,8l0,112c0,4.5 -3.5,8 -8,8l-456,0l-40,0c-4.5,0 -8,-3.5 -8,-8l0,-112c0,-4.5 3.5,-8 8,-8z" id="curve1" fill="url(#color-1)"/>
+        <path d="M24,208l312,0l24,0c4.5,0 8,3.5 8,8l0,80c0,4.5 -3.5,8 -8,8l-336,0c-4.5,0 -8,-3.5 -8,-8l0,-80c0,-4.5 3.5,-8 8,-8z" id="curve0" fill="url(#color-2)"/>
+    </g>
+</svg>

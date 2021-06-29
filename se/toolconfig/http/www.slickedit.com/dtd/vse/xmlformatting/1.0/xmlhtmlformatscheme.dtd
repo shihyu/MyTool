@@ -1,0 +1,34 @@
+<!ELEMENT scheme (tag*)>
+<!ELEMENT tag (generalSettings, contentWrapSettings, tagLayoutSettings)>
+<!ELEMENT generalSettings (#PCDATA)>
+<!ELEMENT contentWrapSettings (#PCDATA)>
+<!ELEMENT tagLayoutSettings (#PCDATA)>
+<!ATTLIST scheme name CDATA #REQUIRED
+                 indentStyle CDATA #REQUIRED>
+<!ATTLIST tag name CDATA #REQUIRED 
+              usesDefault CDATA #REQUIRED>
+<!ATTLIST generalSettings hasEndTag CDATA #REQUIRED
+                          insertEndTag CDATA #REQUIRED
+                          requiredEndTag CDATA #REQUIRED>
+<!ATTLIST contentWrapSettings wrapMode         CDATA #REQUIRED
+                         wrapMethod       CDATA #REQUIRED
+                         fixedWidthCol    CDATA #REQUIRED
+                         fixedWidthMRC    CDATA #REQUIRED 
+                         autoWidthMRC     CDATA #REQUIRED 
+                         fixedRightCol    CDATA #REQUIRED
+                         useFixedWidthMRC CDATA #REQUIRED 
+                         useAutoWidthHMRC  CDATA #REQUIRED 
+                         includeTags      CDATA #REQUIRED
+                         preserveWidth    CDATA #REQUIRED> 
+<!ATTLIST tagLayoutSettings layoutStyle    CDATA #REQUIRED
+                         indentMethod   CDATA #REQUIRED
+                         indentFrom     CDATA #REQUIRED
+                         indentSpaces   CDATA #REQUIRED 
+                         linesBefore    CDATA #REQUIRED 
+                         linesAfter     CDATA #REQUIRED
+                         separateStartTag    CDATA #REQUIRED 
+                         separateEndTag      CDATA #REQUIRED 
+                         preserveLayout CDATA #REQUIRED
+                         applyLayout    CDATA #REQUIRED> 
+
+

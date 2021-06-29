@@ -1,0 +1,20 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>symbol percent icon</title>
+    <desc>symbol percent icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="66" y1="49" x2="251.247" y2="465.4857" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#51616f"/>
+            <stop offset="1" stop-color="#3b4751"/>
+        </linearGradient>
+        <linearGradient x1="98" y1="81" x2="238.9955" y2="424.447" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#ffd041"/>
+            <stop offset="1" stop-color="#ffc207"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M279,123l29.5,-48l94.5,47.5l-74.5,120c3,-0.5 6,-0.5 9,-0.5c28.5,0 56,8 77.5,27.5c21.5,20.5 31,47.5 31,77l0,16.5c0,28.5 -9.5,54.5 -30.5,74.5c-21.5,20 -49,28 -77.5,28c-29,0 -56,-8 -77.5,-27.5c-13.5,-12.5 -22.5,-27.5 -27,-44l-32,51l-94.5,-47.5l78.5,-125c-3.5,0 -7,0.5 -10.5,0.5c-29,0 -56,-8 -77.5,-27.5c-22,-20.5 -31.5,-47 -31.5,-76.5l0,-17c0,-28.5 10,-54.5 31,-74.5c21,-20 48.5,-28.5 77.5,-28.5c29,0 56.5,8 77.5,28.5c14,12.5 22.5,28 27,45.5z" id="curve1" fill="url(#color-1)" fill-rule="evenodd"/>
+        <path d="M98,152c0,-21 7,-38 21,-51.5c13.5,-13 32,-19.5 55.5,-19.5c23.5,0 42,6.5 55.5,19.5c14,13 20.5,30.5 20.5,53l0,17c0,21 -6.5,38 -20.5,51c-13.5,13 -32,19.5 -55,19.5c-23,0 -41.5,-6.5 -56,-19.5c-14,-12.5 -21,-30.5 -21,-52.5z M149,170.5c0,8 2.5,14.5 7,19.5c4.5,5.5 11,8 19,8c16.5,0 24.5,-10.5 24.5,-31.5l0,-14.5c0,-8 -2,-14.5 -6.5,-20c-4.5,-5.5 -10.5,-8 -18.5,-8c-8,0 -14,2.5 -18.5,7.5c-4.5,5.5 -7,12.5 -7,21z M261,345c0,-21.5 7,-38.5 21,-51.5c14,-13 32.5,-19.5 55.5,-19.5c23,0 42,6.5 55.5,19c14,13 21,30.5 21,53.5l0,16.5c0,21.5 -7,38.5 -20.5,51.5c-13.5,12.5 -32.5,19 -55.5,19c-23.5,0 -42,-6.5 -56,-19c-14,-13 -21,-30.5 -21,-53z M312,363c0,7.5 2.5,13.5 7.5,19.5c5,5.5 11,8 18.5,8c15,0 23.5,-7 24.5,-21.5l0.5,-24c0,-8.5 -2.5,-15.5 -7,-20.5c-4.5,-5 -11,-7.5 -18.5,-7.5c-7.5,0 -14,2.5 -18.5,7c-4.5,5 -6.5,11.5 -7,19.5z M190,403.5l-37,-19l167.5,-267.5l37,18.5z" id="curve0" fill="url(#color-2)" fill-rule="nonzero"/>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<g transform="translate(10240,0) scale(-1,1)">
+	<title>arrow_into icon</title>
+	<desc>arrow_into icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#3E9BD5" d="M1280 7680l2934 0 454 453c249,249 655,249 905,0l453 -453 2934 0 0 1280 -7680 0 0 -1280z"/>
+	<path id="curve0" fill="#252525" d="M3707 6721l1187 1186c124,124 328,124 452,0l1187 -1186c124,-125 186,-277 187,-453l7 -839c1,-142 -172,-214 -273,-113l-692 692 -2 -1208c-1,-538 426,-960 963,-960l2237 0 0 -1280 -2237 0c-1234,0 -2246,1005 -2243,2240l2 1208 -682 -692c-101,-101 -272,-30 -273,113l-7 839c-1,176 63,328 187,453z"/>
+</g>
+
+</svg>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>scroll_bar_horizontal icon</title>
+	<desc>scroll_bar_horizontal icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#252525" d="M640 6080l0 -1920c0,-176 144,-320 320,-320l8320 0c176,0 320,144 320,320l0 1920c0,176 -144,320 -320,320l-8320 0c-176,0 -320,-144 -320,-320zm7427 -307c0,62 33,115 88,143 56,28 118,22 168,-15l853 -640c42,-31 64,-76 64,-128 0,-52 -22,-97 -64,-128l-853 -640c-50,-37 -112,-43 -168,-15 -55,28 -88,81 -88,143l0 1280zm-5882 -5l0 -1281c0,-62 -33,-115 -88,-143 -56,-27 -118,-22 -168,15l-853 641c-42,31 -64,75 -64,128 0,52 22,96 64,127l853 641c50,37 112,42 168,15 55,-28 88,-81 88,-143zm695 -8l4480 0 0 -1280 -4480 0 0 1280z"/>
+</svg>

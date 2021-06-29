@@ -1,0 +1,18 @@
+<?xml encoding='UTF-8'?>
+<!ELEMENT DeltaFile (MostRecent?,Delta*)>
+   <!ATTLIST DeltaFile FormatVersion (9.0.0) #REQUIRED>
+<!ELEMENT MostRecent (Insert)>
+   <!ATTLIST MostRecent Version CDATA #REQUIRED>
+   <!ATTLIST MostRecent Date CDATA #REQUIRED>
+   <!ATTLIST MostRecent Time  CDATA #REQUIRED>
+   <!ATTLIST MostRecent NL CDATA #REQUIRED>
+   <!ATTLIST MostRecent Encoding CDATA  #REQUIRED>
+<!ELEMENT Delta (Insert|Copy|Delta)*>
+   <!ATTLIST Delta Version CDATA #REQUIRED>
+   <!ATTLIST Delta Date CDATA #REQUIRED>
+   <!ATTLIST Delta Time CDATA #REQUIRED>
+   <!ATTLIST Delta NL CDATA #REQUIRED>
+<!ELEMENT Insert (#PCDATA)*>
+<!ELEMENT Copy EMPTY>
+<!ATTLIST Copy StartSeek CDATA #REQUIRED>
+<!ATTLIST Copy EndSeek CDATA #REQUIRED>

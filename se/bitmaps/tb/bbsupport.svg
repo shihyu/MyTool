@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>headset icon</title>
+	<desc>headset icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve3" fill="#252525" d="M5440 7680c418,0 774,267 905,640l695 0c176,0 336,-72 452,-188 67,-67 120,-149 152,-241 102,69 224,109 356,109l279 0c-58,224 -175,425 -334,585 -232,231 -552,375 -905,375l-695 0c-131,373 -487,640 -905,640 -530,0 -960,-430 -960,-960 0,-530 430,-960 960,-960z"/>
+	<path id="curve2" fill="#252525" d="M8000 3840l320 0c705,0 1280,575 1280,1280l0 1280c0,705 -575,1280 -1280,1280l-320 0c-176,0 -320,-144 -320,-320l0 -3200c0,-176 144,-320 320,-320z"/>
+	<path id="curve1" fill="#252525" d="M1920 3840l320 0c176,0 320,144 320,320l0 3200c0,176 -144,320 -320,320l-320 0c-705,0 -1280,-575 -1280,-1280l0 -1280c0,-705 575,-1280 1280,-1280z"/>
+	<path id="curve0" fill="#252525" d="M5120 1280c1561,0 2905,932 3505,2269 -99,-19 -201,-29 -305,-29l-320 0c-35,0 -70,3 -103,8 -552,-961 -1589,-1608 -2777,-1608 -1188,0 -2225,647 -2777,1608 -33,-5 -68,-8 -103,-8l-320 0c-104,0 -206,10 -305,29 600,-1337 1944,-2269 3505,-2269z"/>
+</svg>

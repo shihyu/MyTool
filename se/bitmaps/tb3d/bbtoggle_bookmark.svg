@@ -1,0 +1,60 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>bookmark icon</title>
+    <desc>bookmark icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="176" y1="64" x2="336" y2="456.7265" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#4bb5f2"/>
+            <stop offset="1" stop-color="#149fee"/>
+        </linearGradient>
+        <linearGradient x1="272" y1="0" x2="176" y2="272.0003" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#91a0af"/>
+            <stop offset="1" stop-color="#717f8f"/>
+        </linearGradient>
+        <linearGradient x1="272" y1="0" x2="230.6605" y2="312.15985" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#b3c0cd"/>
+            <stop offset="1" stop-color="#91a0af"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M320,64l-128,0c-9,0 -16,7 -16,16l0,416c0,9 7,16 16,16l128,0c9,0 16,-7 16,-16l0,-416c0,-9 -7,-16 -16,-16z" id="curve3" fill="url(#color-1)" fill-rule="evenodd"/>
+        <path d="M256,80c17.5,0 32,14.5 32,32c0,17.5 -14.5,32 -32,32c-17.5,0 -32,-14.5 -32,-32c0,-17.5 14.5,-32 32,-32z" id="curve2" fill="#51616f" fill-rule="evenodd"/>
+        <path d="M272,112c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16l0,-32c0,-23 -15.5,-48 -40.5,-48c-10.5,0 -28,10 -43,25.5c-14,13.5 -25.5,31 -29,49.5c-8,40 -19.5,83.5 -33.5,114c-15,33.5 -33,60.5 -50.5,78.5l-23,-23c15.5,-15 31,-38.5 44.5,-68.5c13,-28 23.5,-70 31,-107c5,-25.5 20,-48.5 37.5,-66.5c21.5,-21 47,-34.5 66,-34.5c43,0 72.5,39.5 72.5,80z" id="curve1" fill="url(#color-2)" fill-rule="nonzero"/>
+        <path d="M272,112c0,9 -7,16 -16,16c-9,0 -16,-7 -16,-16l0,-32c0,-23 -15.5,-48 -40.5,-48c-10,0 -20.5,5 -28,14.5c-7,9 -11.5,23 -11.5,41.5l0,104c0,31 -3.5,58.5 -9.5,81c-6,25.5 -15,44.5 -25,55.5l-25,-20c7,-6.5 14,-21.5 19,-43c5,-20 8.5,-45 8.5,-73.5l-0.5,-104c0,-26 7.5,-46.5 19,-61c14,-18 33.5,-27 53,-27c43,0 72.5,39.5 72.5,80z" id="curve0" fill="url(#color-3)" fill-rule="nonzero"/>
+    </g>
+
+
+<g transform="translate(256,256) scale(0.5,0.5)">
+    <title>checkbox unchecked icon</title>
+    <desc>checkbox unchecked icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="448.00045" y2="448.00055" gradientUnits="userSpaceOnUse" id="c-color-1">
+            <stop offset="0" stop-color="#77da26"/>
+            <stop offset="1" stop-color="#59a31d"/>
+        </linearGradient>
+        <linearGradient x1="96" y1="96" x2="386.9095" y2="416.0005" gradientUnits="userSpaceOnUse" id="c-color-2">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#edf1f5"/>
+        </linearGradient>
+        <linearGradient x1="7" y1="34.5" x2="381.4277" y2="437.3215" gradientUnits="userSpaceOnUse" id="c-color-3">
+            <stop offset="0" stop-color="#4cb5f2"/>
+            <stop offset="1" stop-color="#19a1ee"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal" transform="translate(0,128) scale(0.75,0.75)">
+        <path d="M48,32l416,0c9,0 16,7 16,16l0,416c0,9 -7,16 -16,16l-416,0c-9,0 -16,-7 -16,-16l0,-416c0,-9 7,-16 16,-16z" id="curve1" fill="url(#c-color-1)"/>
+        <path d="M96,96l320,0l0,320l-320,0z" id="curve0" fill="url(#c-color-2)"/>
+    </g>
+
+    <title>check icon</title>
+    <desc>check icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+    </defs>
+    <g fill="url(#c-color-3)" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal" transform="translate(64,40) scale(0.875,0.875)">
+        <path d="M432.5,34.5l79,79l-334.5,335l-170,-170l79.5,-79l90.5,90.5z" id="curve0"/>
+    </g>
+
+</g>
+
+</svg>

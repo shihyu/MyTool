@@ -1,0 +1,33 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>keyboard key up icon</title>
+    <desc>keyboard key up icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="394.4405" y2="406.939" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#89cff7"/>
+            <stop offset="0.25098" stop-color="#4eb6f2"/>
+            <stop offset="0.41177" stop-color="#0e76b2"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </linearGradient>
+        <linearGradient x1="416" y1="400" x2="115.999" y2="79.999" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#44ace8"/>
+            <stop offset="1" stop-color="#1c84c0"/>
+        </linearGradient>
+        <linearGradient x1="256" y1="128" x2="144" y2="172.9845" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#e2e8ee"/>
+            <stop offset="0.32941" stop-color="#e9eef2"/>
+            <stop offset="1" stop-color="#f1f4f7"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M80,32l352,0c26.5,0 48,21.5 48,48l0,352c0,26.5 -21.5,48 -48,48l-352,0c-26.5,0 -48,-21.5 -48,-48l0,-352c0,-26.5 21.5,-48 48,-48z" id="curve3" fill="url(#color-1)" fill-rule="evenodd"/>
+        <path d="M100.5,395.5c-2.5,-3 -4.5,-7 -4.5,-11.5l0,-288c0,-9 7,-16 16,-16l288,0c4.5,0 8.5,2 11.5,4.5l0,0l0,0c2.5,3 4.5,7 4.5,11.5l0,288c0,9 -7,16 -16,16l-288,0c-4.5,0 -8.5,-2 -11.5,-4.5l0,0z" id="curve2" fill="url(#color-2)" fill-rule="evenodd"/>
+    </g>
+    <g transform="translate(0,-48) scale(1.25,1.25)">
+        <polygon points="144,176 176,176 176,288 224,288 224,176 256,176 200,128" fill="url(#color-4)" fill-rule="evenodd"/>
+    </g>
+    <g transform="translate(0,0) scale(1.25,1.25)">
+        <polygon points="144,240 176,240 176,128 224,128 224,240 256,240 200,288" fill="#ebedef"/>
+    </g>
+</svg>

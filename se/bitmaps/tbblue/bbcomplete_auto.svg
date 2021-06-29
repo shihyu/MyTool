@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>lightbulb_on icon</title>
+	<desc>lightbulb_on icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#252525" d="M6720 7533l0 1427c0,353 -287,640 -640,640l0 0 0 0 0 0c0,176 -216,320 -480,320l-960 0c-264,0 -480,-144 -480,-320l0 0 0 0 0 0c-353,0 -640,-287 -640,-640l0 -1427c139,49 286,78 427,98 382,53 787,49 1173,49 386,0 791,4 1173,-49 141,-20 288,-49 427,-98z"/>
+	<path id="curve0" fill="#3E9BD5" d="M5120 320c1624,0 3200,1165 3200,2880 0,1600 -1280,2240 -1280,3200l0 320c0,640 -960,640 -1920,640 -960,0 -1920,0 -1920,-640l0 -320c0,-960 -1280,-1600 -1280,-3200 0,-1711 1572,-2880 3200,-2880zm642 715c-211,-49 -427,-75 -642,-75 -1266,0 -2560,884 -2560,2240 0,303 64,569 164,813 35,86 97,146 184,179 87,32 173,28 256,-14 149,-75 216,-252 153,-407 -73,-177 -117,-363 -117,-571 0,-994 1016,-1600 1920,-1600 164,0 331,20 496,58 146,35 292,-34 359,-168l0 -1c46,-90 47,-187 4,-279 -43,-91 -119,-152 -217,-175z"/>
+
+
+<g comp-op="clear">
+<g transform="translate(5120,5120) scale(0.5,0.5)"  stroke="#808080" stroke-width="512" stroke-linejoin="round">
+	<title>scroll icon</title>
+	<desc>scroll icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<rect fill="white" x="2560" y="1800" height="6600" width="5400"/>
+	<rect fill="white" x="1200" y="7600" height="900" width="1600"/>
+	<rect fill="white" x="8200" y="1800" height="750" width="750"/>
+	<path id="curve0" fill="#252525" d="M8320 8000c0,530 -430,960 -960,960l-5760 0c-530,0 -960,-430 -960,-960 0,-530 430,-960 960,-960l5440 0c176,0 320,144 320,320l0 86c0,117 -58,218 -160,277 -96,55 -160,159 -160,277 0,177 143,320 320,320 177,0 320,-143 320,-320l0 -5760c0,-112 19,-220 55,-320l-4855 0c-177,0 -320,143 -320,320l0 4480 -640 0 0 -4480c0,-530 430,-960 960,-960l5760 0c530,0 960,430 960,960 0,530 -430,960 -960,960l0 -640c177,0 320,-143 320,-320 0,-177 -143,-320 -320,-320 -177,0 -320,143 -320,320l0 5760zm-1865 320c-73,-205 -73,-435 0,-640l-4855 0c-177,0 -320,143 -320,320 0,177 143,320 320,320l4855 0z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(5120,5120) scale(0.5,0.5)">
+	<title>scroll icon</title>
+	<desc>scroll icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<rect fill="white" x="2560" y="1800" height="6600" width="5400"/>
+	<rect fill="white" x="1200" y="7600" height="900" width="1600"/>
+	<rect fill="white" x="8200" y="1800" height="750" width="750"/>
+	<path id="curve0" fill="#252525" d="M8320 8000c0,530 -430,960 -960,960l-5760 0c-530,0 -960,-430 -960,-960 0,-530 430,-960 960,-960l5440 0c176,0 320,144 320,320l0 86c0,117 -58,218 -160,277 -96,55 -160,159 -160,277 0,177 143,320 320,320 177,0 320,-143 320,-320l0 -5760c0,-112 19,-220 55,-320l-4855 0c-177,0 -320,143 -320,320l0 4480 -640 0 0 -4480c0,-530 430,-960 960,-960l5760 0c530,0 960,430 960,960 0,530 -430,960 -960,960l0 -640c177,0 320,-143 320,-320 0,-177 -143,-320 -320,-320 -177,0 -320,143 -320,320l0 5760zm-1865 320c-73,-205 -73,-435 0,-640l-4855 0c-177,0 -320,143 -320,320 0,177 143,320 320,320l4855 0z"/>
+</g>
+
+</svg>

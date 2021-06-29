@@ -1,0 +1,49 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>bug icon</title>
+    <desc>bug icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <radialGradient cx="233.68498" cy="95.26555" r="167.80378" fx="233.68498" fy="95.26555" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#717f8f"/>
+            <stop offset="1" stop-color="#36414a"/>
+        </radialGradient>
+        <radialGradient cx="163.06978" cy="243.33372" r="344.65527" fx="163.06978" fy="243.33372" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#f5928b"/>
+            <stop offset="0.6902" stop-color="#d54237"/>
+            <stop offset="1" stop-color="#af1c11"/>
+        </radialGradient>
+        <linearGradient x1="146.5" y1="83" x2="186.5" y2="135.0005" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+        <linearGradient x1="304" y1="83" x2="344" y2="135.462" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d8e0e8"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M33,442l32,-80c1,-2 2,-4 3.5,-5.5l0,0l48,-48l23,23l-46,45.5l-38,73z M4.5,292.5l48,-48c2.5,-2 5.5,-3.5 8.5,-4l63,-16l8,31l-60,15l-51.5,38z M68,62.5l26,71l57,28l-14,28.5l-63,-31c-4.5,-2 -8.5,-6.5 -9.5,-12l-16,-79.5z M479,442l-32,-80c-1,-2 -2,-4 -3.5,-5.5l0,0l-48,-48l-23,23l46,45.5l38,73z M507.5,292.5l-48,-48c-2.5,-2 -5.5,-3.5 -8.5,-4l-63,-16l-8,31l60,15l51.5,38z M444,62.5l-26,71l-57,28l14,28.5l63,-31c4.5,-2 8.5,-6.5 9.5,-12l16,-79.5z" id="curve4" fill="#717f8f" fill-rule="nonzero"/>
+        <path d="M256,230.5c-64,0 -112,-59 -112,-67c0,-6 1,-12.5 2.5,-18.5l5,-0.5c6.5,-23.5 23.5,-44 43.5,-57.5l-2.5,-4c1.5,-8.5 8,-16.5 17,-22.5l-7,-7c-1,-0.5 -1.5,-1.5 -2,-2.5l-15.5,-31.5l14,-7l15.5,30.5l10,10c9.5,-3 20,-5 31.5,-5c11.5,0 22,2 31.5,5l10,-10l15.5,-30.5l14,7l-15.5,31.5c-0.5,1 -1,2 -2,2.5l-7,7c9,6 15.5,14 17,22.5l-2.5,4c20,13.5 37,34 43.5,57.5l5,0.5c1.5,6 2.5,12.5 2.5,18.5c0,8 -48,67 -112,67z" id="curve3" fill="url(#color-1)" fill-rule="evenodd"/>
+        <path d="M238.5,477.5c-62.5,-18 -142.5,-57.5 -142.5,-189.5c0,-48.5 0,-86.5 32,-128c17,-22 96,0 128,32.5c32,-32.5 111,-54.5 128,-32.5c32,41.5 32,79.5 32,128c0,132 -80,171.5 -142.5,189.5c-12,3.5 -23,3.5 -35,0z" id="curve2" fill="url(#color-2)" fill-rule="nonzero"/>
+        <path d="M192.5,83c9.5,3 15.5,11.5 15.5,22.5c0,17.5 -16,36.5 -35.5,42.5c-10.5,2.5 -19.5,1.5 -26,-3c0,-27 20.5,-54 46,-62z" id="curve1" fill="url(#color-3)" fill-rule="evenodd"/>
+        <path d="M319.5,83c-9.5,3 -15.5,8 -15.5,22.5c0,14.5 20.5,38 35.5,42c15,4.5 19.5,2 26,-2.5c0,-27 -21,-54 -46,-62z" id="curve0" fill="url(#color-4)" fill-rule="evenodd"/>
+    </g>
+
+
+<g transform="translate(256,256) scale(0.5,0.5)">
+    <title>media stop icon</title>
+    <desc>media stop icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="32" y1="32" x2="495.9998" y2="480.00035" gradientUnits="userSpaceOnUse" id="m-color-1">
+            <stop offset="0" stop-color="#4eb6f2"/>
+            <stop offset="0.5098" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#m-color-1)" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M48,32l416,0c9,0 16,7 16,16l0,416c0,9 -7,16 -16,16l-416,0c-9,0 -16,-7 -16,-16l0,-416c0,-9 7,-16 16,-16z"/>
+    </g>
+</g>
+
+</svg>

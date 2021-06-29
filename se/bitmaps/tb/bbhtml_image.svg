@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>photo_landscape icon</title>
+	<desc>photo_landscape icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve3" fill="#2CA744" d="M5048 6149c-1372,-548 -1869,-1385 -3448,-69l0 617 115 44c1294,498 2300,242 3333,-592z"/>
+	<path id="curve2" fill="#2CA744" d="M1600 7040c4160,1600 5120,-4480 7040,-1600l0 2560 -7040 0 0 -960z"/>
+	<path id="curve1" fill="#235DB8" d="M1600 2240l7040 0 0 2668c-278,-323 -633,-584 -1077,-574 -481,11 -904,341 -1246,647 -338,303 -652,629 -990,931 -244,-88 -482,-196 -728,-320 -393,-199 -802,-438 -1241,-511 -665,-109 -1249,198 -1758,589l0 -3430zm2880 320c-707,0 -1280,573 -1280,1280 0,707 573,1280 1280,1280 707,0 1280,-573 1280,-1280 0,-707 -573,-1280 -1280,-1280z"/>
+	<path id="curve0" fill="#252525" d="M640 1280l8960 0 0 7680 -8960 0 0 -7680zm640 640l0 6400 7680 0 0 -6400 -7680 0z"/>
+</svg>

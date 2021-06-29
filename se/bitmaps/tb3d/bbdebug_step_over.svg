@@ -1,0 +1,20 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>arrow over icon</title>
+    <desc>arrow over icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="112" y1="0" x2="112" y2="512.00059" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0e78b6"/>
+        </linearGradient>
+    </defs>
+    <g transform="translate(512,0) rotate(90)">
+    <g transform="translate(512,0) scale(-1.0,1.0)">
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M64,256l384,0l0,80l-384,0z" id="curve1" fill="#91a0af"/>
+        <path d="M256,112l0,52c61,14.5 104,69.5 104,132c0,62.5 -43,117.5 -104,132l0,84l-64,0l0,-97c0,-24 18,-44.5 42,-47.5c35.5,-5 62,-35.5 62,-71.5c0,-36 -26.5,-66.5 -62,-71.5c-24,-3 -42,-23.5 -42,-47.5l0,-65l-80,0l112,-112l112,112z" id="curve0" fill="url(#color-1)"/>
+    </g>
+    </g>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>text icon</title>
+	<desc>text icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#252525" d="M1280 640l7680 0 0 8960 -7680 0 0 -8960zm640 640l0 7680 6400 0 0 -7680 -6400 0z"/>
+        <rect x="2560" y="2250" height="650" width="2048" fill="#252525"/>
+        <rect x="2560" y="3550" height="650" width="2048" fill="#252525"/>
+        <rect x="5120" y="4800" height="650" width="2700" fill="#252525"/>
+        <rect x="5120" y="6100" height="650" width="2400" fill="#252525"/>
+        <rect x="5120" y="7370" height="650" width="1200" fill="#252525"/>
+        <rect x="6800" y="7370" height="650" width="1024" fill="#252525"/>
+        <rect x="5120" y="2250" height="1950" width="2560" fill="#2CA744"/>
+        <rect x="2560" y="4800" height="3220" width="2048" fill="#FFFF2F"/>
+</svg>

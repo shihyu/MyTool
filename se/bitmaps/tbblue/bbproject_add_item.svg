@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>object_cube icon</title>
+	<desc>object_cube icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#252525" d="M1634 3023l3200 -1600c186,-93 386,-93 572,0l3200 1600c222,111 354,324 354,573l0 3688c0,249 -132,462 -354,573l-3200 1600c-186,93 -386,93 -572,0l-3200 -1600c-222,-111 -354,-324 -354,-573l0 -3688c0,-249 132,-462 354,-573zm286 853l0 3408 2880 1440 0 -3408 -2880 -1440zm5968 -496l-2768 -1384 -2768 1384 2768 1384 2768 -1384z"/>
+
+
+<g comp-op="clear">
+<g transform="translate(0,0) scale(0.5,0.5)"  stroke="#808080" stroke-width="512" stroke-linejoin="round">
+	<title>document_text icon</title>
+	<desc>document_text icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<rect fill="#ffffff" x="1280" y="1280" width="6400" height="8000"/>
+	<rect fill="#ffffff" x="7400" y="2000" width="950" height="7000"/>
+	<path id="curve1" fill="#3E9BD5" d="M2560 7680l1920 0 0 640 -1920 0 0 -640zm0 -5760l1920 0 0 640 -1920 0 0 -640zm0 1280l1920 0 0 640 -1920 0 0 -640zm0 1920l5120 0 0 640 -5120 0 0 -640zm0 1280l4480 0 0 640 -4480 0 0 -640z"/>
+	<path id="curve0" fill="#252525" d="M1280 640l5230 0c352,0 656,126 905,375l1170 1170c249,249 375,553 375,905l0 6510 -7680 0 0 -8960zm640 640l0 7680 6400 0 0 -5440c0,-176 -144,-320 -320,-320l-1600 0 0 -1600c0,-176 -144,-320 -320,-320l-4160 0zm5120 320l0 960 960 0 -960 -960z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(0,0) scale(0.5,0.5)">
+	<title>document_text icon</title>
+	<desc>document_text icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<rect fill="#ffffff" x="1280" y="1280" width="6400" height="8000"/>
+	<rect fill="#ffffff" x="7400" y="2000" width="950" height="7000"/>
+	<path id="curve1" fill="#3E9BD5" d="M2560 7680l1920 0 0 640 -1920 0 0 -640zm0 -5760l1920 0 0 640 -1920 0 0 -640zm0 1280l1920 0 0 640 -1920 0 0 -640zm0 1920l5120 0 0 640 -5120 0 0 -640zm0 1280l4480 0 0 640 -4480 0 0 -640z"/>
+	<path id="curve0" fill="#252525" d="M1280 640l5230 0c352,0 656,126 905,375l1170 1170c249,249 375,553 375,905l0 6510 -7680 0 0 -8960zm640 640l0 7680 6400 0 0 -5440c0,-176 -144,-320 -320,-320l-1600 0 0 -1600c0,-176 -144,-320 -320,-320l-4160 0zm5120 320l0 960 960 0 -960 -960z"/>
+</g>
+
+
+
+<g comp-op="clear">
+<g transform="translate(5120,5120) scale(0.5,0.5)"  stroke="#808080" stroke-width="512" stroke-linejoin="round">
+	<title>plus icon</title>
+	<desc>plus icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#3E9BD5" d="M960 3840l2880 0 0 -2880c0,-176 144,-320 320,-320l1920 0c176,0 320,144 320,320l0 2880 2880 0c176,0 320,144 320,320l0 1920c0,176 -144,320 -320,320l-2880 0 0 2880c0,176 -144,320 -320,320l-1920 0c-176,0 -320,-144 -320,-320l0 -2880 -2880 0c-176,0 -320,-144 -320,-320l0 -1920c0,-176 144,-320 320,-320z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(5120,5120) scale(0.5,0.5)">
+	<title>plus icon</title>
+	<desc>plus icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#3E9BD5" d="M960 3840l2880 0 0 -2880c0,-176 144,-320 320,-320l1920 0c176,0 320,144 320,320l0 2880 2880 0c176,0 320,144 320,320l0 1920c0,176 -144,320 -320,320l-2880 0 0 2880c0,176 -144,320 -320,320l-1920 0c-176,0 -320,-144 -320,-320l0 -2880 -2880 0c-176,0 -320,-144 -320,-320l0 -1920c0,-176 144,-320 320,-320z"/>
+</g>
+
+</svg>

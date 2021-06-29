@@ -1,0 +1,23 @@
+<svg x="0" y="0" width="512" height="512" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+    <title>blank icon</title>
+    <g>
+    </g>
+
+
+<g transform="translate(256,256) scale(0.5,0.5)">
+    <title>delete icon</title>
+    <desc>delete icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="29.5" y1="29.5" x2="446.554" y2="416.765" gradientUnits="userSpaceOnUse" id="badge-color-1">
+            <stop offset="0" stop-color="#ef5c51"/>
+            <stop offset="1" stop-color="#c43126"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#badge-color-1)" fill-rule="nonzero" stroke="#252525" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M392,29.5l90.5,90.5l-136,136l136,136l-90.5,90.5l-136,-136l-136,136l-90.5,-90.5l136,-136l-136,-136l90.5,-90.5l136,136z" id="curve0"/>
+    </g>
+</g>
+
+</svg>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>cubes icon</title>
+	<desc>cubes icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#252525" d="M6863 4605l34 -17c93,-46 193,-46 286,0l1600 800c111,56 177,162 177,286l0 1845c0,124 -66,231 -177,286l-1600 800c-93,47 -193,47 -286,0l-1600 -800c-111,-55 -177,-162 -177,-286 -15,123 -66,231 -177,286l-1600 800c-93,47 -193,47 -286,0l-1600 -800c-111,-55 -177,-162 -177,-286l0 -1845c0,-124 66,-230 177,-286l1600 -800c93,-46 193,-46 286,0l34 17c-106,-66 -177,-162 -177,-286l0 -1845c0,-124 66,-230 177,-286l1600 -800c93,-46 193,-46 286,0l1600 800c111,56 177,162 177,286l0 1845c0,124 -73,219 -177,286zm-3343 -1990l0 1704 1440 720 0 -1704 -1440 -720zm1600 444l1384 -693 -1384 -692 -1384 692 1384 693zm-3520 2756l0 1704 1440 720 0 -1704 -1440 -720zm1600 444l1384 -693 -1384 -692 -1384 692 1384 693zm2240 -444l0 1704 1440 720 0 -1704 -1440 -720zm1600 444l1384 -693 -1384 -692 -1384 692 1384 693z"/>
+
+
+<g comp-op="clear">
+<g transform="translate(5120,5120) scale(0.5,0.5)"  stroke="#808080" stroke-width="512" stroke-linejoin="round">
+	<title>clock icon</title>
+	<desc>clock icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <circle fill="white" cx="5120" cy="5120" r="3600"/>
+	<path id="curve1" fill="#3E9BD5" d="M3803 2203l1317 2277 0 0c116,0 226,31 320,85l1718 -994c129,170 238,355 321,554l-1719 995 0 0c0,353 -287,640 -640,640 -353,0 -640,-287 -640,-640 0,-116 31,-226 85,-320l-1316 -2276c172,-125 358,-233 554,-321z"/>
+	<path id="curve0" fill="#252525" d="M5120 640c2474,0 4480,2006 4480,4480 0,2474 -2006,4480 -4480,4480 -2474,0 -4480,-2006 -4480,-4480 0,-2474 2006,-4480 4480,-4480zm0 960c-1944,0 -3520,1576 -3520,3520 0,1944 1576,3520 3520,3520 1944,0 3520,-1576 3520,-3520 0,-1944 -1576,-3520 -3520,-3520z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(5120,5120) scale(0.5,0.5)">
+	<title>clock icon</title>
+	<desc>clock icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <circle fill="white" cx="5120" cy="5120" r="3600"/>
+	<path id="curve1" fill="#3E9BD5" d="M3803 2203l1317 2277 0 0c116,0 226,31 320,85l1718 -994c129,170 238,355 321,554l-1719 995 0 0c0,353 -287,640 -640,640 -353,0 -640,-287 -640,-640 0,-116 31,-226 85,-320l-1316 -2276c172,-125 358,-233 554,-321z"/>
+	<path id="curve0" fill="#252525" d="M5120 640c2474,0 4480,2006 4480,4480 0,2474 -2006,4480 -4480,4480 -2474,0 -4480,-2006 -4480,-4480 0,-2474 2006,-4480 4480,-4480zm0 960c-1944,0 -3520,1576 -3520,3520 0,1944 1576,3520 3520,3520 1944,0 3520,-1576 3520,-3520 0,-1944 -1576,-3520 -3520,-3520z"/>
+</g>
+
+</svg>

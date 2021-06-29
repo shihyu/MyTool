@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>stapler icon</title>
+	<desc>stapler icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve2" fill="#252525" d="M8762 7680l-3886 0c-249,0 -462,-132 -573,-354l-463 -926 -352 0c-148,730 -794,1280 -1568,1280 -523,0 -988,-251 -1280,-640l0 1600c0,176 144,320 320,320l8122 0c114,0 212,-55 272,-152 60,-97 65,-209 14,-311l-320 -640c-55,-111 -162,-177 -286,-177z"/>
+	<path id="curve1" fill="#252525" d="M8320 6400l-4122 0 320 640 3482 0c176,0 320,-144 320,-320l0 -320z"/>
+	<path id="curve0" fill="#3E9BD5" d="M8320 3840c-276,0 -553,0 -640,0 -2965,7 -7040,125 -7040,2240 0,707 573,1280 1280,1280 619,0 1136,-440 1254,-1024 31,-150 160,-256 314,-256l5152 0c176,0 320,-144 320,-320l0 -1280c0,-353 -287,-640 -640,-640zm-6400 1920c177,0 320,143 320,320 0,177 -143,320 -320,320 -177,0 -320,-143 -320,-320 0,-177 143,-320 320,-320z"/>
+</svg>

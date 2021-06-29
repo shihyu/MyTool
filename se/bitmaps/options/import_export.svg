@@ -1,0 +1,30 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+    <title>signpost icon</title>
+    <desc>signpost icon from the IconExperience.com G-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+    <defs>
+        <linearGradient x1="224" y1="0" x2="287.9995" y2="0" gradientUnits="userSpaceOnUse" id="color-1">
+            <stop offset="0" stop-color="#d08730"/>
+            <stop offset="1" stop-color="#9c5f24"/>
+        </linearGradient>
+        <linearGradient x1="224" y1="128" x2="351.999" y2="128" gradientUnits="userSpaceOnUse" id="color-2">
+            <stop offset="0" stop-color="#d08730"/>
+            <stop offset="1" stop-color="#674019"/>
+        </linearGradient>
+        <linearGradient x1="208" y1="160" x2="478.2815" y2="272.7845" gradientUnits="userSpaceOnUse" id="color-3">
+            <stop offset="0" stop-color="#77da26"/>
+            <stop offset="1" stop-color="#59a31d"/>
+        </linearGradient>
+        <linearGradient x1="0" y1="48" x2="361.89" y2="245.9045" gradientUnits="userSpaceOnUse" id="color-4">
+            <stop offset="0" stop-color="#129eee"/>
+            <stop offset="1" stop-color="#0e76b2"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" text-anchor="none" style="mix-blend-mode: normal">
+        <path d="M224,0l64,0l0,512l-64,0z" fill="url(#color-1)"/>
+        <path d="M288,272l-64,0l0,-144l64,0z" fill="url(#color-2)"/>
+        <path d="M432,160l-224,0l0,96l224,0l48,-48z" fill="url(#color-3)"/>
+        <path d="M48,48l256,0l0,96l-256,0l-48,-48z" fill="url(#color-4)"/>
+    </g>
+</svg>

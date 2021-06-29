@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="nonzero" clip-rule="evenodd" viewBox="0 0 10240 10240" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>binocular icon</title>
+	<desc>binocular icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve1" fill="#235DB8" d="M2720 5440c619,0 1120,501 1120,1120 0,619 -501,1120 -1120,1120 -619,0 -1120,-501 -1120,-1120 0,-135 24,-264 70,-390 84,138 236,230 410,230 265,0 480,-215 480,-480 0,-174 -92,-326 -230,-410 126,-46 256,-70 390,-70zm4800 0c619,0 1120,501 1120,1120 0,619 -501,1120 -1120,1120 -619,0 -1120,-501 -1120,-1120 0,-135 24,-264 70,-390 84,138 236,230 410,230 265,0 480,-215 480,-480 0,-174 -92,-326 -230,-410 127,-47 254,-70 390,-70z"/>
+	<path id="curve0" fill="#252525" d="M3360 1920c424,0 793,236 983,583 215,-165 485,-263 777,-263 292,0 562,98 777,263 190,-347 559,-583 983,-583 420,0 806,221 978,574 510,1050 1060,2119 1543,3177 127,270 199,571 199,889 0,1149 -931,2080 -2080,2080 -1114,0 -2023,-875 -2077,-1976 -101,36 -210,56 -323,56 -113,0 -222,-20 -323,-56 -54,1101 -963,1976 -2077,1976 -1149,0 -2080,-931 -2080,-2080 0,-318 72,-619 199,-889 483,-1059 1033,-2127 1543,-3177 172,-353 558,-574 978,-574zm-640 3200c-795,0 -1440,645 -1440,1440 0,795 645,1440 1440,1440 795,0 1440,-645 1440,-1440 0,-795 -645,-1440 -1440,-1440zm4800 0c-795,0 -1440,645 -1440,1440 0,795 645,1440 1440,1440 795,0 1440,-645 1440,-1440 0,-795 -645,-1440 -1440,-1440z"/>
+
+
+<g comp-op="clear">
+<g transform="translate(0,0) scale(0.5,0.5)"  stroke="#252525" stroke-width="512" stroke-linejoin="round">
+	<title>arrow_up_right icon</title>
+	<desc>arrow_up_right icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#235DB8" d="M6400 7527l0 -2330 -3620 3621c-125,124 -328,124 -453,0l-905 -905c-124,-125 -124,-328 0,-453l3621 -3620 -2329 0c-67,0 -123,-38 -148,-99 -26,-61 -12,-128 34,-174l1460 -1460c124,-124 276,-187 452,-187l3488 0c176,0 320,144 320,320l0 3488c0,176 -63,328 -187,452l-1460 1460c-46,46 -113,60 -174,34 -61,-25 -99,-81 -99,-147z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(0,0) scale(0.5,0.5)">
+	<title>arrow_up_right icon</title>
+	<desc>arrow_up_right icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#235DB8" d="M6400 7527l0 -2330 -3620 3621c-125,124 -328,124 -453,0l-905 -905c-124,-125 -124,-328 0,-453l3621 -3620 -2329 0c-67,0 -123,-38 -148,-99 -26,-61 -12,-128 34,-174l1460 -1460c124,-124 276,-187 452,-187l3488 0c176,0 320,144 320,320l0 3488c0,176 -63,328 -187,452l-1460 1460c-46,46 -113,60 -174,34 -61,-25 -99,-81 -99,-147z"/>
+</g>
+
+
+
+<g comp-op="clear">
+<g transform="translate(5120,0) scale(0.5,0.5)"  stroke="#252525" stroke-width="512" stroke-linejoin="round">
+	<title>arrow_down_right icon</title>
+	<desc>arrow_down_right icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#FFFF2F" d="M2713 6400l2330 0 -3621 -3620c-124,-125 -124,-328 0,-453l905 -905c125,-124 328,-124 453,0l3620 3621 0 -2329c0,-67 38,-123 99,-148 61,-26 128,-12 174,34l1460 1460c124,124 187,276 187,452l0 3488c0,176 -144,320 -320,320l-3488 0c-176,0 -328,-63 -452,-187l-1460 -1460c-46,-46 -60,-113 -34,-174 25,-61 81,-99 147,-99z"/>
+</g>
+</g>
+
+
+
+<g transform="translate(5120,0) scale(0.5,0.5)">
+	<title>arrow_down_right icon</title>
+	<desc>arrow_down_right icon from the IconExperience.com O-Collection. Copyright by INCORS GmbH (www.incors.com).</desc>
+	<path id="curve0" fill="#FFFF2F" d="M2713 6400l2330 0 -3621 -3620c-124,-125 -124,-328 0,-453l905 -905c125,-124 328,-124 453,0l3620 3621 0 -2329c0,-67 38,-123 99,-148 61,-26 128,-12 174,34l1460 1460c124,124 187,276 187,452l0 3488c0,176 -144,320 -320,320l-3488 0c-176,0 -328,-63 -452,-187l-1460 -1460c-46,-46 -60,-113 -34,-174 25,-61 81,-99 147,-99z"/>
+</g>
+
+</svg>
