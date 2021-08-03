@@ -56,6 +56,16 @@ alias arduino='./data/arduino-1.0.6/arduino'
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 
+st()
+{
+    echo
+    if [ -z "$ORIG" ]; then
+            ORIG=$PS1
+    fi
+    TITLE="\[\e]2;$*\a\]"
+    PS1=${ORIG}${TITLE}
+}
+
 doxygen_init()
 {
     doxygen -g 
