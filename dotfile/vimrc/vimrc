@@ -678,3 +678,12 @@ highlight BookmarkSign ctermbg=NONE ctermfg=160
 "highlight BookmarkLine ctermbg=194 ctermfg=NONE
 let g:bookmark_sign = '⚑'
 "let g:bookmark_highlight_lines = 1
+
+
+" ctags mapping
+map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map tt <c-]>
+map qq <c-t>
+map <c-b> :tprevious<CR>
+map <c-n> :tnext<CR>
+"nnoremap <C-]> viwy:tab tag <C-R>"<CR>
