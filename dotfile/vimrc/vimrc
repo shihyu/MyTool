@@ -44,6 +44,7 @@ Bundle 'maksimr/vim-jsbeautify'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'chusiang/vim-sdcv'
 Bundle 'MattesGroeger/vim-bookmarks'
+Bundle 'ludovicchabant/vim-gutentags'
 "Bundle 'rking/ag.vim'
 "Bundle 'w0rp/ale'
 "Bundle 'JamshedVesuna/vim-markdown-preview'
@@ -687,3 +688,172 @@ map qq <c-t>
 map <c-b> :tprevious<CR>
 map <c-n> :tnext<CR>
 "nnoremap <C-]> viwy:tab tag <C-R>"<CR>
+"
+"command -nargs=1 TabExpand call HandleTabTagExpand( <f-args> )
+"let s:commentchar = """
+"function HandleTabTagExpand(tagnumber)
+"    let tagident = expand("<cword>")
+"    redir @a
+"    try
+"        sil exe "tselect ".tagident
+"    catch /^Vim(\a\+):E433:/ " no tag file
+"        echom "No tag file found."
+"        return
+"    catch /^Vim(\a\+):E426:/ " tag not found
+"        echom "Tag not found."
+"        return
+"    endtry
+"    redir END
+"    let tagresults = split(@a, "\n")
+"    let tagmatches = []
+"    let linenum = 0
+"    for line in tagresults
+"        if linenum % 3 != 1
+"            " every third line contains the file names
+"            let linenum = linenum + 1
+"            continue
+"        endif
+"        " figure out where the filename actually starts
+"        " (it's usually column 32, but it might be farther)
+"        " one before 32 is 31, but index is 30 since arrays begin at zero
+"        let filestart = 30
+"        let c = line[filestart]
+"        while (filestart < strlen(line))
+"            let filestart = filestart + 1
+"            if c == " "
+"                break
+"            endif
+"            let c = line[filestart]
+"        endwhile
+"        " store the parsed match in an array
+"        call add(tagmatches, strpart(line, filestart))
+"        let linenum = linenum + 1
+"    endfor
+"    " navigate to the match specified by tagnumber
+"    try
+"        exe "tab drop ".tagmatches[a:tagnumber-1]
+"    catch /^Vim(\a\+):E471:/ " argument required (means no tag found)
+"        echom "Tag not found."
+"    endtry
+"    let done = 0
+"    let matchcount = 0
+"    let f_line = ""
+"    while done < 1 && matchcount < 1000
+"        sil exe "/".tagident
+"        let f_line = getline(".")
+"        let matchcount = matchcount + 1
+"        if match(f_line, "^\s+".s:commentchar) < 0
+"            let done = 1
+"        endif
+"    endwhile
+"    let f_index = stridx( f_line, tagident )
+"    sil exe "normal 0"
+"    sil exe "normal ".f_index."l"
+"endfunction
+
+""設置標簽tags
+set tags=./.tags;,.tags
+"設置根據打開文件自動更換目錄
+"set autochdir
+
+" gutentags 搜索工程目錄的標志，當前文件路徑向上遞歸直到碰到這些文件/目錄名
+let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+" 所生成的數據文件的名稱
+let g:gutentags_ctags_tagfile = '.tags'
+
+" 同時開啟 ctags 和 gtags 支持：
+let g:gutentags_modules = []
+if executable('ctags')
+    let g:gutentags_modules += ['ctags']
+endif
+if executable('gtags-cscope') && executable('gtags')
+    let g:gutentags_modules += ['gtags_cscope']
+endif
+
+" 將自動生成的 ctags/gtags 文件全部放入 ~/.cache/tags 目錄中，避免污染工程目錄
+let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
+" 檢測 ~/.cache/tags 不存在就新建 "
+if !isdirectory(s:vim_tags)
+   silent! call mkdir(s:vim_tags, 'p')
+endif
+
+" 配置 ctags 的參數
+let g:gutentags_ctags_extra_args = ['--fields=+niazSl']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+
+" Get ctags version
+let g:ctags_version = system('ctags --version')[0:8]
+
+" 如果使用 universal ctags 需要增加下面一行
+if g:ctags_version == "Universal"
+  let g:gutentags_ctags_extra_args += ['--extras=+q', '--output-format=e-ctags']
+endif
+
+" 禁用 gutentags 自動加載 gtags 數據庫的行為
+let g:gutentags_auto_add_gtags_cscope = 1
+"Change focus to quickfix window after search (optional).
+let g:gutentags_plus_switch = 1
+"Enable advanced commands: GutentagsToggleTrace, etc.
+let g:gutentags_define_advanced_commands = 1
+let g:gutentags_trace = 0
+
+""cscope
+if has("cscope")
+    if executable('gtags-cscope') && executable('gtags')
+        "禁用原GscopeFind按鍵映射
+        let g:gutentags_plus_nomap = 1
+        "Find this C symbol 查找C語言符號，即查找函數名、宏、枚舉值等出現的地方
+        nmap <C-\>s :GscopeFind s <C-R>=expand("<cword>")<CR><CR>
+        "Find this difinition 查找函數、宏、枚舉等定義的位置，類似ctags所提供的功能
+        nmap <C-\>g :GscopeFind g <C-R>=expand("<cword>")<CR><CR>
+        "Find functions called by this function 查找本函數調用的函數
+        nmap <C-\>d :GscopeFind d <C-R>=expand("<cword>")<CR><CR>
+        "Find functions calling this function 查找調用本函數的函數
+        nmap <C-\>c :GscopeFind c <C-R>=expand("<cword>")<CR><CR>
+        "Find this text string 查找指定的字符串
+        nmap <C-\>t :GscopeFind t <C-R>=expand("<cword>")<CR><CR>
+        "Find this egrep pattern 查找egrep模式，相當於egrep功能，但查找速度快多了
+        nmap <C-\>e :GscopeFind e <C-R>=expand("<cword>")<CR><CR>
+        "Find this file 查找並打開文件，類似vim的能
+        nmap <C-\>f :GscopeFind f <C-R>=expand("<cfile>")<CR><CR>
+        "Find files #including this file 查找包含本文件的文件
+        nmap <C-\>i :GscopeFind i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    else
+        set csto=1
+        set cst
+        set nocsverb
+        " add any database in current directory
+        if filereadable("cscope.out")
+            cs add cscope.out
+        endif
+        set csverb
+
+        nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+        nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+
+        nmap <C-F12> :cs add cscope.out<CR>
+        "F12用ctags生成tags
+        nmap <F12> :!ctags -R --c++-kinds=+p --fields=+ialS --extra=+q -f .tags<CR>
+        "--language-force=C++
+        nmap <S-F12> :!cscope -Rbkq<CR>
+        " cscope參數
+        "-R: 在生成索引文件時，搜索子目錄樹中的代碼
+        "-b: 只生成索引文件，不進入cscope的界面
+        "-d: 只調出cscope gui界面，不跟新cscope.out
+        "-k: 在生成索引文件時，不搜索/usr/include目錄
+        "-q: 生成cscope.in.out和cscope.po.out文件，加快cscope的索引速度
+        "-i: 如果保存文件列表的文件名不是cscope.files時，需要加此選項告訴cscope到哪兒去找源文件列表。可以使用"-"，表示由標准輸入獲得文件列表。
+        "-I dir: 在-I選項指出的目錄中查找頭文件
+        "-u: 掃描所有文件，重新生成交叉索引文件
+        "-C: 在搜索時忽略大小寫
+        "-P path: 在以相對路徑表示的文件前加上的path，這樣，你不用切換到你數據庫文件所在的目錄也可以使用
+    endif
+endif
