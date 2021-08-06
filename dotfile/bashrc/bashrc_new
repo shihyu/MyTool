@@ -337,6 +337,16 @@ function git_init()
     git ci -m 'first commit'
 }
 
+function st()
+{
+    echo
+    if [ -z "$ORIG" ]; then
+            ORIG=$PS1
+    fi
+    TITLE="\[\e]2;$*\a\]"
+    PS1=${ORIG}${TITLE}
+}
+
 # colorful man page
 export PAGER="`which less` -s"
 export BROWSER="$PAGER"
@@ -434,6 +444,7 @@ export RIPGREP_CONFIG_PATH=$HOME/.mybin/ripgreprc
 #export PATH=$HOME/.mybin/node-v9.9.0-linux-x64/bin:$PATH
 
 export CPLUS_INCLUDE_PATH=/home/shihyu/.mybin/eigen-eigen-5a0156e40feb
+export PATH=$HOME/.mybin/Sourcetrail/bin:$PATH
 
 eval "$(fasd --init auto)"
 
