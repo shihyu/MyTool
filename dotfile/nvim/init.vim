@@ -492,7 +492,7 @@ set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tagname_By_Line()
 "set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tag_Prototype_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P
 "map F :TlistShowPrototype <CR>
 map <F7> <ESC>:wincmd p<CR>
-nmap <silent> <C-F12> :TagbarToggle<CR>
+nmap <silent> <F12> :TagbarToggle<CR>
 "自動更新
 au! CursorHold *.[ch] nested exe "TlistUpdate"
 au! CursorHold *.cpp nested exe "TlistUpdate"
@@ -620,7 +620,7 @@ let g:rg_command = '
   \ -g "!*.{min.js,swp,o,zip}"
   \ -g "!{.git,node_modules,vendor}/*" '
 
-noremap <F12> <ESC>:call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)<CR>
+"noremap <F12> <ESC>:call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)<CR>
 
 
 " -----------------------------------------
@@ -771,64 +771,64 @@ let g:gutentags_plus_switch = 1
 let g:gutentags_define_advanced_commands = 1
 let g:gutentags_trace = 0
 
-""cscope
-if has("cscope")
-    if executable('gtags-cscope') && executable('gtags')
-        "禁用原GscopeFind按鍵映射
-        let g:gutentags_plus_nomap = 1
-        "Find this C symbol 查找C語言符號，即查找函數名、宏、枚舉值等出現的地方
-        nmap <C-\>s :GscopeFind s <C-R>=expand("<cword>")<CR><CR>
-        "Find this difinition 查找函數、宏、枚舉等定義的位置，類似ctags所提供的功能
-        nmap <C-\>g :GscopeFind g <C-R>=expand("<cword>")<CR><CR>
-        "Find functions called by this function 查找本函數調用的函數
-        nmap <C-\>d :GscopeFind d <C-R>=expand("<cword>")<CR><CR>
-        "Find functions calling this function 查找調用本函數的函數
-        nmap <C-\>c :GscopeFind c <C-R>=expand("<cword>")<CR><CR>
-        "Find this text string 查找指定的字符串
-        nmap <C-\>t :GscopeFind t <C-R>=expand("<cword>")<CR><CR>
-        "Find this egrep pattern 查找egrep模式，相當於egrep功能，但查找速度快多了
-        nmap <C-\>e :GscopeFind e <C-R>=expand("<cword>")<CR><CR>
-        "Find this file 查找並打開文件，類似vim的能
-        nmap <C-\>f :GscopeFind f <C-R>=expand("<cfile>")<CR><CR>
-        "Find files #including this file 查找包含本文件的文件
-        nmap <C-\>i :GscopeFind i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    else
-        set csto=1
-        set cst
-        set nocsverb
-        " add any database in current directory
-        if filereadable("cscope.out")
-            cs add cscope.out
-        endif
-        set csverb
-
-        nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-        nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-
-        nmap <C-F12> :cs add cscope.out<CR>
-        "F12用ctags生成tags
-        nmap <F12> :!ctags -R --c++-kinds=+p --fields=+ialS --extra=+q -f .tags<CR>
-        "--language-force=C++
-        nmap <S-F12> :!cscope -Rbkq<CR>
-        " cscope參數
-        "-R: 在生成索引文件時，搜索子目錄樹中的代碼
-        "-b: 只生成索引文件，不進入cscope的界面
-        "-d: 只調出cscope gui界面，不跟新cscope.out
-        "-k: 在生成索引文件時，不搜索/usr/include目錄
-        "-q: 生成cscope.in.out和cscope.po.out文件，加快cscope的索引速度
-        "-i: 如果保存文件列表的文件名不是cscope.files時，需要加此選項告訴cscope到哪兒去找源文件列表。可以使用"-"，表示由標准輸入獲得文件列表。
-        "-I dir: 在-I選項指出的目錄中查找頭文件
-        "-u: 掃描所有文件，重新生成交叉索引文件
-        "-C: 在搜索時忽略大小寫
-        "-P path: 在以相對路徑表示的文件前加上的path，這樣，你不用切換到你數據庫文件所在的目錄也可以使用
-    endif
-endif
+"cscope
+"if has("cscope")
+"    if executable('gtags-cscope') && executable('gtags')
+"        "禁用原GscopeFind按鍵映射
+"        let g:gutentags_plus_nomap = 1
+"        "Find this C symbol 查找C語言符號，即查找函數名、宏、枚舉值等出現的地方
+"        nmap <C-\>s :GscopeFind s <C-R>=expand("<cword>")<CR><CR>
+"        "Find this difinition 查找函數、宏、枚舉等定義的位置，類似ctags所提供的功能
+"        nmap <C-\>g :GscopeFind g <C-R>=expand("<cword>")<CR><CR>
+"        "Find functions called by this function 查找本函數調用的函數
+"        nmap <C-\>d :GscopeFind d <C-R>=expand("<cword>")<CR><CR>
+"        "Find functions calling this function 查找調用本函數的函數
+"        nmap <C-\>c :GscopeFind c <C-R>=expand("<cword>")<CR><CR>
+"        "Find this text string 查找指定的字符串
+"        nmap <C-\>t :GscopeFind t <C-R>=expand("<cword>")<CR><CR>
+"        "Find this egrep pattern 查找egrep模式，相當於egrep功能，但查找速度快多了
+"        nmap <C-\>e :GscopeFind e <C-R>=expand("<cword>")<CR><CR>
+"        "Find this file 查找並打開文件，類似vim的能
+"        nmap <C-\>f :GscopeFind f <C-R>=expand("<cfile>")<CR><CR>
+"        "Find files #including this file 查找包含本文件的文件
+"        nmap <C-\>i :GscopeFind i ^<C-R>=expand("<cfile>")<CR>$<CR>
+"    else
+"        set csto=1
+"        set cst
+"        set nocsverb
+"        " add any database in current directory
+"        if filereadable("cscope.out")
+"            cs add cscope.out
+"        endif
+"        set csverb
+"
+"        nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+"        nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+"        nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+"        nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+"        nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+"        nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+"        nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+"        nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+"
+"        nmap <C-F12> :cs add cscope.out<CR>
+"        "F12用ctags生成tags
+"        nmap <F12> :!ctags -R --c++-kinds=+p --fields=+ialS --extra=+q -f .tags<CR>
+"        "--language-force=C++
+"        nmap <S-F12> :!cscope -Rbkq<CR>
+"        " cscope參數
+"        "-R: 在生成索引文件時，搜索子目錄樹中的代碼
+"        "-b: 只生成索引文件，不進入cscope的界面
+"        "-d: 只調出cscope gui界面，不跟新cscope.out
+"        "-k: 在生成索引文件時，不搜索/usr/include目錄
+"        "-q: 生成cscope.in.out和cscope.po.out文件，加快cscope的索引速度
+"        "-i: 如果保存文件列表的文件名不是cscope.files時，需要加此選項告訴cscope到哪兒去找源文件列表。可以使用"-"，表示由標准輸入獲得文件列表。
+"        "-I dir: 在-I選項指出的目錄中查找頭文件
+"        "-u: 掃描所有文件，重新生成交叉索引文件
+"        "-C: 在搜索時忽略大小寫
+"        "-P path: 在以相對路徑表示的文件前加上的path，這樣，你不用切換到你數據庫文件所在的目錄也可以使用
+"    endif
+"endif
 
 let g:rainbow_active = 1
 let g:rainbow_conf = {
@@ -952,5 +952,3 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
  
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-
