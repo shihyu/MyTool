@@ -25,6 +25,7 @@ alias lt='logout'
 alias df='df -B G'
 alias cl='clear'
 alias vi='vim'
+alias vim='/home/shihyu/.mybin/nvim/bin/nvim'
 alias indent='indent -bad -bap -saf -sai -saw -npro -npcs -npsl -cli8 -i8 -ts8 -sob -l80 -ss -bl -bls -bli 0'
 alias gcc='gcc -Wall -g -pedantic'
 alias style='astyle --A2 --delete-empty-lines -s4 -K -f -p -H -U -c -n -N -L -Y -M -j -k1 -z2'
@@ -72,10 +73,14 @@ alias h3='history 30'
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 
-function kill_app() {
-    echo kill process:
-    adb shell ps | grep -i $1
-    adb shell kill `adb shell ps | grep -i $1 | grep -v grep|awk '{print $2}'`
+function st()
+{
+        echo
+        if [ -z "$ORIG" ]; then
+                ORIG=$PS1
+        fi
+        TITLE="\[\e]2;$*\a\]"
+        PS1=${ORIG}${TITLE}
 }
 
 function doxygen_init()
