@@ -162,6 +162,10 @@ function Compile_gcc()
         set autochdir
         execute "w"
         execute "!javac %:r.java"
+    elseif &filetype=="kotlin"
+        set autochdir
+        execute "w"
+        execute '!kotlinc %:t -include-runtime -d %:r.jar'
     endif
 endfunction
 
@@ -190,6 +194,10 @@ function Run_gcc()
     elseif  &filetype=="java"
         set autochdir
         execute "w !java %:r"
+    elseif &filetype=="kotlin"
+        set autochdir
+        execute "w"
+        execute '!kotlin %:r.jar'
     endif
 endfunction
 
@@ -567,7 +575,7 @@ let g:gitgutter_sign_modified = '➡'
 let g:gitgutter_sign_removed = '✘'
 let g:gitgutter_sign_removed_first_line = '^^'
 let g:gitgutter_sign_modified_removed = 'ww'
-let g:gitgutter_max_signs = 5000
+let g:gitgutter_max_signs = 50000
 
 nmap <leader>w :call SearchWord()<CR>
 
