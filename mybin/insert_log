@@ -17,9 +17,15 @@ def InsertToFunc(lines, funcLines, FileName):
                     break
 
                 if str(FileName).find('.java') != -1:
-                    lines.insert(j+1, '\tSlog.d(Thread.currentThread().getStackTrace()[2].getClassName(), "YAO ["+ Thread.currentThread().getStackTrace()[2].getMethodName() +" | "+Thread.currentThread().getStackTrace()[2].getFileName()+":"+Thread.currentThread().getStackTrace()[2].getLineNumber()+"]");\n');
-                elif str(FileName).find('.cpp') != -1 or str(FileName).find('.c') != -1:
-                    lines.insert(j+1, '\t::printf ("This is line %d of file %s (function %s)\\n", __LINE__, __FILE__, __func__);\n')
+                    #lines.insert(j+1, '\tSlog.d(Thread.currentThread().getStackTrace()[2].getClassName(), "YAO ["+ Thread.currentThread().getStackTrace()[2].getMethodName() +" | "+Thread.currentThread().getStackTrace()[2].getFileName()+":"+Thread.currentThread().getStackTrace()[2].getLineNumber()+"]");\n');
+                    #lines.insert(j+1, '\tLog.d(Thread.currentThread().getStackTrace()[2].getClassName(), "YAO ["+ Thread.currentThread().getStackTrace()[2].getMethodName() +" | "+Thread.currentThread().getStackTrace()[2].getFileName()+":"+Thread.currentThread().getStackTrace()[2].getLineNumber()+"]");\n');
+                    lines.insert(j+1, '\tSystem.out.println("YAO [" + Thread.currentThread().getStackTrace()[2].getClassName() + "|" + Thread.currentThread().getStackTrace()[2].getMethodName() + "|" + Thread.currentThread().getStackTrace()[2].getFileName() + ":" + Thread.currentThread().getStackTrace()[2].getLineNumber()+"]");\n');
+
+                    #lines.insert(j+1, '\tSystem.out.println((new Throwable()).getStackTrace()[0].toString());\n');
+                elif str(FileName).find('.cpp') != -1 or str(FileName).find('.c') != -1 or str(FileName).find('.cc') != -1:
+                    #lines.insert(j+1, '\t#ifdef DEBUG\n\t ::printf ("This is line %d of file %s (function %s)\\n", __LINE__, __FILE__, __func__);\n\t #endif\n')
+                    lines.insert(j+1, '::printf ("This is line %d of file %s (function %s)\\n", __LINE__, __FILE__, __func__);')
+                    #lines.insert(j+1, '\t__android_log_print(ANDROID_LOG_DEBUG , "native YAO","%s %d %s",__FILE__, __LINE__,__func__);\n')
 
                 break
     return lines
