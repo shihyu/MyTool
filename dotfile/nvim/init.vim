@@ -1,6 +1,7 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 call plug#begin('~/.vim/plugged')
+Plug 'github/copilot.vim'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/cscope_macros.vim'
 Plug 'scrooloose/nerdtree'
@@ -105,6 +106,8 @@ func FormartSrc()
         exec "!astyle %"
     elseif &filetype == 'rust'
         exec "!rustfmt %"
+    elseif &filetype == 'go'
+        exec "!gofmt -l -w %"
     elseif &filetype == 'perl'
         exec "!astyle --style=gnu --suffix=none %"
     elseif &filetype == 'py'||&filetype == 'python'
