@@ -91,7 +91,13 @@ function doxygen_init()
 
 function myopencc()
 {
-for doc in `find . -name '*.md'` 
+if [ "$1" == '' ] 
+then
+    FILES=$(find . -name "*.md")
+else
+    FILES=$(find . -name "*.$1")
+fi
+for doc in $FILES
 do  
     doc=${doc#./} 
     doc1="$doc""~" 
