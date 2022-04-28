@@ -62,6 +62,12 @@ alias cd.='cd ..'
 alias cd..='cd ..'
 alias py_debug='python -m pudb'
 alias vf='vim `find -name "*.cpp" -o -name "*.cc" -o -name "*.java" -o -name "*.h" | fzf`'
+# Docker
+alias docker-start='docker start $(docker ps -aq)'
+alias docker-stop='docker stop $(docker ps -aq)'
+alias docker-rm='docker rm $(docker ps -aq)'
+alias docker-rmi='docker rmi -f $(docker images -aq)'
+alias docker-rmv='docker volume rm $(docker volume ls -q)'
 
 
 export VISUAL=vim
