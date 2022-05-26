@@ -26,6 +26,8 @@ def InsertToFunc(lines, funcLines, FileName):
                     #lines.insert(j+1, '\t#ifdef DEBUG\n\t ::printf ("This is line %d of file %s (function %s)\\n", __LINE__, __FILE__, __func__);\n\t #endif\n')
                     lines.insert(j+1, '::printf ("This is line %d of file %s (function %s)\\n", __LINE__, __FILE__, __func__);')
                     #lines.insert(j+1, '\t__android_log_print(ANDROID_LOG_DEBUG , "native YAO","%s %d %s",__FILE__, __LINE__,__func__);\n')
+                elif str(FileName).find('.go'): 
+                    lines.insert(j+1,'\tfmt.Println("func name: " + runtime.FuncForPC(funcName).Name())')
 
                 break
     return lines
@@ -38,6 +40,8 @@ def main():
         os.system("ctags-exuberant -x " + FileName + " | ack -o -w 'method\s+.*' | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr > /tmp/test.txt")
     elif str(FileName).find('.cpp') != -1 or str(FileName).find('.c') != -1:
         os.system("ctags-exuberant -x " + FileName + " | ack -o -w 'function\s+.*' | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr > /tmp/test.txt")
+    elif str(FileName).find('.go') != -1:
+        os.system("ctags-exuberant -x " + FileName + " | ack -o -w 'func.*'  | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr > /tmp/test.txt")
     else:
         print 'noknow type'
         sys.exit(0)
