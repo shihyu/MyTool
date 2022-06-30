@@ -62,7 +62,10 @@ alias cd.='cd ..'
 alias cd..='cd ..'
 alias py_debug='python -m pudb'
 alias vf='vim `find -name "*.cpp" -o -name "*.cc" -o -name "*.java" -o -name "*.h" | fzf`'
-# Docker
+# Docker alias
+alias dockerstop='docker stop $(docker ps -a -q)'
+alias dockerclean='docker rm $(docker ps -a -q)'
+alias dockerrmi='docker rmi $(docker images -q)'
 alias docker-start='docker start $(docker ps -aq)'
 alias docker-stop='docker stop $(docker ps -aq)'
 alias docker-rm='docker rm $(docker ps -aq)'

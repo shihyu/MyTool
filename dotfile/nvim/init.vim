@@ -1,6 +1,6 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'github/copilot.vim'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/cscope_macros.vim'
@@ -739,27 +739,61 @@ set tags=./.tags;,.tags
 "設置根據打開文件自動更換目錄
 "set autochdir
 
-" gutentags 搜索工程目錄的標志，當前文件路徑向上遞歸直到碰到這些文件/目錄名
-let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
-" 所生成的數據文件的名稱
-let g:gutentags_ctags_tagfile = '.tags'
-
-" 同時開啟 ctags 和 gtags 支持：
-let g:gutentags_modules = []
-if executable('ctags')
-    let g:gutentags_modules += ['ctags']
-endif
-if executable('gtags-cscope') && executable('gtags')
-    let g:gutentags_modules += ['gtags_cscope']
-endif
-
-" 將自動生成的 ctags/gtags 文件全部放入 ~/.cache/tags 目錄中，避免污染工程目錄
-let s:vim_tags = expand('~/.cache/tags')
-let g:gutentags_cache_dir = s:vim_tags
-" 檢測 ~/.cache/tags 不存在就新建 "
-if !isdirectory(s:vim_tags)
-   silent! call mkdir(s:vim_tags, 'p')
-endif
+"for init.vim
+let g:gutentags_add_default_project_roots = 0
+let g:gutentags_project_root  = ['package.json', '.git', '.hg', '.svn']
+let g:gutentags_cache_dir = expand('~/.gutentags_cache')
+let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
+let g:gutentags_generate_on_new = 1
+let g:gutentags_generate_on_missing = 1
+let g:gutentags_generate_on_write = 1
+let g:gutentags_generate_on_empty_buffer = 0
+let g:gutentags_ctags_extra_args = ['--tag-relative=yes', '--fields=+ailmnS']
+let g:gutentags_ctags_exclude = [
+\  '*.git', '*.svn', '*.hg',
+\  'cache', 'build', 'dist', 'bin', 'node_modules', 'bower_components',
+\  '*-lock.json',  '*.lock',
+\  '*.min.*',
+\  '*.bak',
+\  '*.zip',
+\  '*.pyc',
+\  '*.class',
+\  '*.sln',
+\  '*.csproj', '*.csproj.user',
+\  '*.tmp',
+\  '*.cache',
+\  '*.vscode',
+\  '*.pdb',
+\  '*.exe', '*.dll', '*.bin',
+\  '*.mp3', '*.ogg', '*.flac',
+\  '*.swp', '*.swo',
+\  '.DS_Store', '*.plist',
+\  '*.bmp', '*.gif', '*.ico', '*.jpg', '*.png', '*.svg',
+\  '*.rar', '*.zip', '*.tar', '*.tar.gz', '*.tar.xz', '*.tar.bz2',
+\  '*.pdf', '*.doc', '*.docx', '*.ppt', '*.pptx', '*.xls',
+\]
+"let g:gutentags_add_default_project_roots = 0
+"" gutentags 搜索工程目錄的標志，當前文件路徑向上遞歸直到碰到這些文件/目錄名
+"let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+"" 所生成的數據文件的名稱
+"let g:gutentags_ctags_tagfile = '.tags'
+"
+"" 同時開啟 ctags 和 gtags 支持：
+"let g:gutentags_modules = []
+"if executable('ctags')
+"    let g:gutentags_modules += ['ctags']
+"endif
+"if executable('gtags-cscope') && executable('gtags')
+"    let g:gutentags_modules += ['gtags_cscope']
+"endif
+"
+"" 將自動生成的 ctags/gtags 文件全部放入 ~/.cache/tags 目錄中，避免污染工程目錄
+"let s:vim_tags = expand('~/.cache/tags')
+"let g:gutentags_cache_dir = s:vim_tags
+"" 檢測 ~/.cache/tags 不存在就新建 "
+"if !isdirectory(s:vim_tags)
+"   silent! call mkdir(s:vim_tags, 'p')
+"endif
 
 " 配置 ctags 的參數
 let g:gutentags_ctags_extra_args = ['--fields=+niazSl']

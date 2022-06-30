@@ -23,7 +23,7 @@ else
 
 	AUTOSSH_DEBUG=1 AUTOSSH_LOGFILE=/tmp/autossh.log  AUTOSSH_POLL=5 autossh -M 65432 -NfR 3333:localhost:22 -i /home/shihyu/.ssh/id_rsa yaoshihyu@35.236.179.104
 
-	AUTOSSH_DEBUG=1 AUTOSSH_LOGFILE=/tmp/autossh_ubuntu.log  AUTOSSH_POLL=5 autossh -M 12345 -NfR 6666:localhost:22 -i /home/shihyu/.ssh/id_rsa ubuntu@106.104.166.224
+	AUTOSSH_DEBUG=1 AUTOSSH_LOGFILE=/tmp/autossh_ubuntu.log  AUTOSSH_POLL=5 autossh -M 12345 -NfR 6666:localhost:22 -i /home/shihyu/.ssh/id_rsa ubuntu@219.68.169.119
 
     #AUTOSSH_DEBUG=1 AUTOSSH_LOGFILE=/tmp/autossh.log  AUTOSSH_POLL=5 autossh -M 65432 -NfR 3333:localhost:22 yaoshihyu@35.236.179.104
 fi
