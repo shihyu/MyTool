@@ -364,6 +364,17 @@ function st()
     PS1=${ORIG}${TITLE}
 }
 
+function go_init_mod()
+{
+    if [ "$1" == '' ] 
+        go mod init test
+        go get golang.org/x/sys/unix
+    then
+        go mod init test
+        go get $1 
+    fi
+}
+
 # colorful man page
 export PAGER="`which less` -s"
 export BROWSER="$PAGER"
@@ -387,6 +398,9 @@ export LESS_TERMCAP_us=$'\E[38;5;167m'
 export PATH="/home/shihyu/.mybin/qemu/bin:$PATH"
 export PATH="/home/shihyu/.mybin/opencc/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+#export GOROOT=$HOME/go
+#export GOPATH=$HOME/gopath
+#export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 #
 #
 #
