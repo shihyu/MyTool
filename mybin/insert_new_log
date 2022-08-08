@@ -1,0 +1,22 @@
+import os
+import sys
+
+def main():
+    FileName = sys.argv[1]
+    result = (
+        os.popen(
+            f"ctags-exuberant -x {FileName} | ack -o -w 'func.*' | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr"
+        )
+        .read()
+        .strip()
+    )  ## not  os.system
+    result = result.splitlines()
+    result = list(map(int, result))
+    for line in result:
+        os.system(f"sed -i 'N;{line}autils.Trace(\"\")' {FileName}")
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        main()
+    else:
+        print("Please input file name")
