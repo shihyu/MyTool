@@ -6,6 +6,7 @@ import sys
 def main():
     FileName = sys.argv[1]
     print(FileName)
+    _, extension = os.path.splitext(FileName)
     result = (
         os.popen(
             f"ctags-exuberant -x {FileName} | ack -o -w 'func.*' | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr"
@@ -16,7 +17,10 @@ def main():
     result = result.splitlines()
     result = list(map(int, result))
     for line in result:
-        os.system(f"sed -i '{line}a utils.Trace(\"\")' {FileName}")
+        if extension == '.go':
+            os.system(f"sed -i '{line} a utils.Trace(\"\")' {FileName}")
+        if extension == '.py':
+            os.system(f"sed -i '{line} a \ \ \ \ print(\"%s %s:%s\" % (os.path.basename(__file__), __name__, sys._getframe().f_lineno))' {FileName}")
 
 
 if __name__ == "__main__":
