@@ -796,7 +796,7 @@ let g:gutentags_ctags_exclude = [
 "endif
 
 " 配置 ctags 的參數
-let g:gutentags_ctags_extra_args = ['--fields=+niazSl']
+" let g:gutentags_ctags_extra_args = ['--fields=+niazSl']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
