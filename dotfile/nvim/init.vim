@@ -86,7 +86,7 @@ set hidden
 set nofoldenable
 set noswapfile
 set number
-"set mouse=nv
+set mouse=
 set hlsearch
 set incsearch
 set viminfo+=h
