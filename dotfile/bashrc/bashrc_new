@@ -72,6 +72,7 @@ alias docker-rm='docker rm $(docker ps -aq)'
 alias docker-rmi='docker rmi -f $(docker images -aq)'
 alias docker-rmv='docker volume rm $(docker volume ls -q)'
 
+alias port_used="sudo lsof -i -P -n | grep LISTEN"
 
 export VISUAL=vim
 export HISTTIMEFORMAT='%F %T'
