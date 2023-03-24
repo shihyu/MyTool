@@ -156,7 +156,7 @@ function Compile_gcc()
     elseif &filetype=="rust"
         set autochdir
         execute "w"
-        execute "!rustc %:r.rs"
+        execute "!rustc -C debuginfo=2 %:r.rs"
     elseif &filetype=="go"
         set autochdir
         execute "w"
