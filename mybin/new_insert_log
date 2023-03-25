@@ -4,30 +4,45 @@
 import os
 import sys
 
+
 def insert_to_func(lines, func_lines, file_name):
     for i in func_lines:
-        for j in range(i-1, len(lines)):
-            if str(lines[j]).find(';') != -1:
+        for j in range(i - 1, len(lines)):
+            if str(lines[j]).find(";") != -1:
                 break
 
-            if str(lines[j]).find('{') != -1:
-                if str(lines[j]).find('}') != -1:
+            if str(lines[j]).find("{") != -1:
+                if str(lines[j]).find("}") != -1:
                     break
 
-                if str(file_name).find('.java') != -1:
-                    lines.insert(j+1, '\tSystem.out.println("YAO [" + Thread.currentThread().getStackTrace()[2].getClassName() + "|" + Thread.currentThread().getStackTrace()[2].getMethodName() + "|" + Thread.currentThread().getStackTrace()[2].getFileName() + ":" + Thread.currentThread().getStackTrace()[2].getLineNumber()+"]");\n')
-                elif str(file_name).find('.cpp') != -1 or str(file_name).find('.c') != -1 or str(file_name).find('.cc') != -1:
-                    lines.insert(j+1, '::printf ("This is line %d of file %s (function %s)\\n", __LINE__, __FILE__, __func__);')
-                elif str(file_name).find('.rs') != -1: 
-                    lines.insert(j+1,'\tprintln!("Current position: {}:{} - {}", file!(), line!(), module_path!());')
-                elif str(file_name).find('.go') != -1: 
-                    lines.insert(j+1,'\tutils.Trace("")')
+                if str(file_name).find(".java") != -1:
+                    lines.insert(
+                        j + 1,
+                        '\tSystem.out.println("YAO [" + Thread.currentThread().getStackTrace()[2].getClassName() + "|" + Thread.currentThread().getStackTrace()[2].getMethodName() + "|" + Thread.currentThread().getStackTrace()[2].getFileName() + ":" + Thread.currentThread().getStackTrace()[2].getLineNumber()+"]");\n',
+                    )
+                elif (
+                    str(file_name).find(".cpp") != -1
+                    or str(file_name).find(".c") != -1
+                    or str(file_name).find(".cc") != -1
+                ):
+                    lines.insert(
+                        j + 1,
+                        '::printf ("This is line %d of file %s (function %s)\\n", __LINE__, __FILE__, __func__);',
+                    )
+                elif str(file_name).find(".rs") != -1:
+                    lines.insert(
+                        j + 1,
+                        '\tprintln!("function name is={}, Current position: {}:{} - {}", function_name!(), file!(), line!(), module_path!());',
+                    )
+                elif str(file_name).find(".go") != -1:
+                    lines.insert(j + 1, '\tutils.Trace("")')
 
                 break
 
-    if str(file_name).find('.rs') != -1: 
-        lines.insert(0, "use stdext::function_name;\n") 
+    if str(file_name).find(".rs") != -1:
+        lines.insert(0, "use stdext::function_name;\n")
     return lines
+
 
 def main():
     if len(sys.argv) < 2:
@@ -36,30 +51,46 @@ def main():
 
     file_name = sys.argv[1]
     print(file_name)
- 
-    if str(file_name).find('.java') != -1:
-        os.system("ctags-exuberant -x " + file_name + " | ack -o -w 'method\s+.*' | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr > /tmp/test.txt")
-    elif str(file_name).find('.cpp') != -1 or str(file_name).find('.c') != -1:
-        os.system("ctags-exuberant -x " + file_name + " | ack -o -w 'function\s+.*' | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr > /tmp/test.txt")
-    elif str(file_name).find('.go') != -1:
-        os.system("ctags-exuberant -x " + file_name + " | ack -o -w 'func.*'  | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr > /tmp/test.txt")
-    elif str(file_name).find('.rs') != -1:
-        os.system("ctags-universal -x " + file_name + " | ack -o -w 'func.*'  | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr > /tmp/test.txt")
+
+    if str(file_name).find(".java") != -1:
+        os.system(
+            "ctags-exuberant -x "
+            + file_name
+            + " | ack -o -w 'method\s+.*' | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr > /tmp/test.txt"
+        )
+    elif str(file_name).find(".cpp") != -1 or str(file_name).find(".c") != -1:
+        os.system(
+            "ctags-exuberant -x "
+            + file_name
+            + " | ack -o -w 'function\s+.*' | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr > /tmp/test.txt"
+        )
+    elif str(file_name).find(".go") != -1:
+        os.system(
+            "ctags-exuberant -x "
+            + file_name
+            + " | ack -o -w 'func.*'  | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr > /tmp/test.txt"
+        )
+    elif str(file_name).find(".rs") != -1:
+        os.system(
+            "ctags-universal -x "
+            + file_name
+            + " | ack -o -w 'func.*'  | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr > /tmp/test.txt"
+        )
     else:
-        print('unknown file type')
+        print("unknown file type")
         return
 
-    with open('/tmp/test.txt', 'r+') as f:
+    with open("/tmp/test.txt", "r+") as f:
         func_lines = [int(i) for i in f.read().splitlines()]
 
-    with open(file_name, 'r+') as f:
+    with open(file_name, "r+") as f:
         lines = f.read().splitlines()
 
     insert_list_finish = insert_to_func(lines, func_lines, file_name)
     with open(file_name, "w+") as new_file:
         for l in insert_list_finish:
-            new_file.write(l + '\n')
+            new_file.write(l + "\n")
 
-if __name__=='__main__':
+
+if __name__ == "__main__":
     main()
-
