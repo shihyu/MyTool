@@ -368,15 +368,22 @@ function st()
     PS1=${ORIG}${TITLE}
 }
 
-function go_init_mod()
-{
-    if [ "$1" == '' ] 
-        go mod init test
-        go get golang.org/x/sys/unix
-    then
-        go mod init test
-        go get $1 
-    fi
+function new_rust_progect {
+  # 檢查使用者是否提供了專案名稱
+  if [ $# -eq 0 ]
+  then
+    echo "Error: Project name not specified"
+    return 1
+  fi
+
+  # 使用 cargo new 命令建立專案
+  cargo new $1
+
+  # 切換到專案目錄下
+  cd $1
+
+  # 打開編輯器以編輯你的程式碼
+  # code .
 }
 
 # colorful man page
