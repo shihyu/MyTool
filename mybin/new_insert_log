@@ -74,7 +74,7 @@ def main():
         os.system(
             "ctags-universal -x "
             + file_name
-            + " | ack -o -w 'func.*'  | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr > /tmp/test.txt"
+            + " | ack -o -w 'func.*|method.*'  | ack -o '\d+\s+.*' | ack -o '^\d+\s+' | sort -k 1 -nr > /tmp/test.txt"
         )
     else:
         print("unknown file type")
