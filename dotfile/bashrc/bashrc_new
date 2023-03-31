@@ -71,6 +71,7 @@ alias docker-stop='docker stop $(docker ps -aq)'
 alias docker-rm='docker rm $(docker ps -aq)'
 alias docker-rmi='docker rmi -f $(docker images -aq)'
 alias docker-rmv='docker volume rm $(docker volume ls -q)'
+alias docker-prune='docker system prune -a --volumes'
 
 alias port_used="sudo lsof -i -P -n | grep LISTEN"
 
