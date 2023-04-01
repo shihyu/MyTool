@@ -3,6 +3,7 @@ filetype off                   " required!
 call plug#begin('~/.config/nvim/plugged')
 Plug 'github/copilot.vim'
 Plug 'vim-scripts/L9'
+"Plug 'mattn/vim-chatgpt'
 Plug 'vim-scripts/cscope_macros.vim'
 Plug 'scrooloose/nerdtree'
 "Plug 'SirVer/ultisnips'
@@ -31,7 +32,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'chusiang/vim-sdcv'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'skywind3000/gutentags_plus'
+"Plug 'skywind3000/gutentags_plus'
 Plug 'junegunn/fzf'
 "Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
