@@ -31,7 +31,7 @@ Plug 'maksimr/vim-jsbeautify'
 Plug 'airblade/vim-gitgutter'
 Plug 'chusiang/vim-sdcv'
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 "Plug 'skywind3000/gutentags_plus'
 Plug 'junegunn/fzf'
 "Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next' }
@@ -150,7 +150,7 @@ function Compile_gcc()
     elseif &filetype=="cpp"
         set autochdir
         execute "w"
-        execute "!g++ -Wall -Wextra -g -std=c++11 -pthread % -o %:r"
+        execute "!g++ -Wall -Wextra -g -std=c++14 -pthread % -o %:r"
         "execute "!clang++ -Wall -Wextra -O2 -g -std=c++11 % -o %:r"
         "execute "!g++  -Wall -pedantic -ansi -ggdb3 -std=c++11 -O0 % -o %:r -lGL -lglut -lGLU -lSDL -lGLEW -pthread `pkg-config --libs --cflags opencv2`"
         "execute "!g++  -Wall -pedantic -ansi -ggdb3 -std=c++11 -O0 % -o %:r -lGL -lglut -lGLU -lGLEW -pthread"
@@ -296,6 +296,10 @@ let g:NeoComplCache_DisableAutoComplete = 1
 
 noremap <C-W><C-U> :CtrlPMRU<CR>
 nnoremap <C-W>u :CtrlPMRU<CR>
+
+let g:LanguageClient_serverCommands = {
+  \ 'rust': ['rust-analyzer'],
+  \ }
 
 "let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
 
@@ -525,6 +529,9 @@ au! CursorHold *.java nested exe "TlistUpdate"
 "nnoremap <F6> :TlistShowPrototype
 "set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tagname_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P
 
+" vim-go
+" let g:go_gopls_enabled = 0
+
 "vim-signature
 nmap <C-j> ']
 nmap <C-k> '[
@@ -735,87 +742,127 @@ map <c-n> :tnext<CR>
 "    sil exe "normal ".f_index."l"
 "endfunction
 
-""設置標簽tags
-set tags=./.tags;,.tags
-"設置根據打開文件自動更換目錄
-"set autochdir
 
-"for init.vim
-let g:gutentags_add_default_project_roots = 0
-let g:gutentags_project_root  = ['package.json', '.git', '.hg', '.svn']
-let g:gutentags_cache_dir = expand('~/.gutentags_cache')
-let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
-let g:gutentags_generate_on_new = 1
-let g:gutentags_generate_on_missing = 1
-let g:gutentags_generate_on_write = 1
-let g:gutentags_generate_on_empty_buffer = 0
-let g:gutentags_ctags_extra_args = ['--tag-relative=yes', '--fields=+ailmnS']
-let g:gutentags_ctags_exclude = [
-\  '*.git', '*.svn', '*.hg',
-\  'cache', 'build', 'dist', 'bin', 'node_modules', 'bower_components',
-\  '*-lock.json',  '*.lock',
-\  '*.min.*',
-\  '*.bak',
-\  '*.zip',
-\  '*.pyc',
-\  '*.class',
-\  '*.sln',
-\  '*.csproj', '*.csproj.user',
-\  '*.tmp',
-\  '*.cache',
-\  '*.vscode',
-\  '*.pdb',
-\  '*.exe', '*.dll', '*.bin',
-\  '*.mp3', '*.ogg', '*.flac',
-\  '*.swp', '*.swo',
-\  '.DS_Store', '*.plist',
-\  '*.bmp', '*.gif', '*.ico', '*.jpg', '*.png', '*.svg',
-\  '*.rar', '*.zip', '*.tar', '*.tar.gz', '*.tar.xz', '*.tar.bz2',
-\  '*.pdf', '*.doc', '*.docx', '*.ppt', '*.pptx', '*.xls',
-\]
-"let g:gutentags_add_default_project_roots = 0
-"" gutentags 搜索工程目錄的標志，當前文件路徑向上遞歸直到碰到這些文件/目錄名
-"let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
-"" 所生成的數據文件的名稱
-"let g:gutentags_ctags_tagfile = '.tags'
-"
-"" 同時開啟 ctags 和 gtags 支持：
-"let g:gutentags_modules = []
-"if executable('ctags')
-"    let g:gutentags_modules += ['ctags']
-"endif
-"if executable('gtags-cscope') && executable('gtags')
-"    let g:gutentags_modules += ['gtags_cscope']
-"endif
-"
-"" 將自動生成的 ctags/gtags 文件全部放入 ~/.cache/tags 目錄中，避免污染工程目錄
-"let s:vim_tags = expand('~/.cache/tags')
-"let g:gutentags_cache_dir = s:vim_tags
-"" 檢測 ~/.cache/tags 不存在就新建 "
-"if !isdirectory(s:vim_tags)
-"   silent! call mkdir(s:vim_tags, 'p')
-"endif
 
-" 配置 ctags 的參數
-" let g:gutentags_ctags_extra_args = ['--fields=+niazSl']
+"==============================================================================
+" gtags + ctags 
+"==============================================================================
+let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+
+" 所生成的数据文件的名称 "
+let g:gutentags_ctags_tagfile = '.tags'
+
+" 同时开启 ctags 和 gtags 支持：
+let g:gutentags_modules = []
+if executable('ctags')
+    let g:gutentags_modules += ['ctags']
+endif
+if executable('gtags-cscope') && executable('gtags')
+    let g:gutentags_modules += ['gtags_cscope']
+endif
+" 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录 "
+let s:vim_tags = expand('/dev/shm/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
+" 检测 ~/.cache/tags 不存在就新建 "
+if !isdirectory(s:vim_tags)
+   silent! call mkdir(s:vim_tags, 'p')
+endif
+
+" 配置 ctags 的参数，老的 Exuberant-ctags 不能有 --extra=+q，注意
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
-" Get ctags version
-let g:ctags_version = system('ctags --version')[0:8]
+" 如果使用 universal ctags 需要增加下面一行，老的 Exuberant-ctags 不能加下一行
+let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
 
-" 如果使用 universal ctags 需要增加下面一行
-if g:ctags_version == "Universal"
-  let g:gutentags_ctags_extra_args += ['--extras=+q', '--output-format=e-ctags']
-endif
+" 禁用 gutentags 自动加载 gtags 数据库的行为
+let g:gutentags_auto_add_gtags_cscope = 0
 
-" 禁用 gutentags 自動加載 gtags 數據庫的行為
-let g:gutentags_auto_add_gtags_cscope = 1
-"Change focus to quickfix window after search (optional).
-let g:gutentags_plus_switch = 1
-"Enable advanced commands: GutentagsToggleTrace, etc.
 let g:gutentags_define_advanced_commands = 1
-let g:gutentags_trace = 0
+
+
+""設置標簽tags
+"set tags=./.tags;,.tags
+""設置根據打開文件自動更換目錄
+""set autochdir
+"
+""for init.vim
+"let g:gutentags_add_default_project_roots = 0
+"let g:gutentags_project_root  = ['package.json', '.git', '.hg', '.svn']
+"let g:gutentags_cache_dir = expand('~/.gutentags_cache')
+"let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
+"let g:gutentags_generate_on_new = 1
+"let g:gutentags_generate_on_missing = 1
+"let g:gutentags_generate_on_write = 1
+"let g:gutentags_generate_on_empty_buffer = 0
+"let g:gutentags_ctags_extra_args = ['--tag-relative=yes', '--fields=+ailmnS']
+"let g:gutentags_ctags_exclude = [
+"\  '*.git', '*.svn', '*.hg',
+"\  'cache', 'build', 'dist', 'bin', 'node_modules', 'bower_components',
+"\  '*-lock.json',  '*.lock',
+"\  '*.min.*',
+"\  '*.bak',
+"\  '*.zip',
+"\  '*.pyc',
+"\  '*.class',
+"\  '*.sln',
+"\  '*.csproj', '*.csproj.user',
+"\  '*.tmp',
+"\  '*.cache',
+"\  '*.vscode',
+"\  '*.pdb',
+"\  '*.exe', '*.dll', '*.bin',
+"\  '*.mp3', '*.ogg', '*.flac',
+"\  '*.swp', '*.swo',
+"\  '.DS_Store', '*.plist',
+"\  '*.bmp', '*.gif', '*.ico', '*.jpg', '*.png', '*.svg',
+"\  '*.rar', '*.zip', '*.tar', '*.tar.gz', '*.tar.xz', '*.tar.bz2',
+"\  '*.pdf', '*.doc', '*.docx', '*.ppt', '*.pptx', '*.xls',
+"\]
+""let g:gutentags_add_default_project_roots = 0
+""" gutentags 搜索工程目錄的標志，當前文件路徑向上遞歸直到碰到這些文件/目錄名
+""let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+""" 所生成的數據文件的名稱
+""let g:gutentags_ctags_tagfile = '.tags'
+""
+""" 同時開啟 ctags 和 gtags 支持：
+""let g:gutentags_modules = []
+""if executable('ctags')
+""    let g:gutentags_modules += ['ctags']
+""endif
+""if executable('gtags-cscope') && executable('gtags')
+""    let g:gutentags_modules += ['gtags_cscope']
+""endif
+""
+""" 將自動生成的 ctags/gtags 文件全部放入 ~/.cache/tags 目錄中，避免污染工程目錄
+""let s:vim_tags = expand('~/.cache/tags')
+""let g:gutentags_cache_dir = s:vim_tags
+""" 檢測 ~/.cache/tags 不存在就新建 "
+""if !isdirectory(s:vim_tags)
+""   silent! call mkdir(s:vim_tags, 'p')
+""endif
+"
+"" 配置 ctags 的參數
+"" let g:gutentags_ctags_extra_args = ['--fields=+niazSl']
+"let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+"let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+"
+"" Get ctags version
+"let g:ctags_version = system('ctags --version')[0:8]
+"
+"" 如果使用 universal ctags 需要增加下面一行
+"if g:ctags_version == "Universal"
+"  let g:gutentags_ctags_extra_args += ['--extras=+q', '--output-format=e-ctags']
+"endif
+"
+"" 禁用 gutentags 自動加載 gtags 數據庫的行為
+"let g:gutentags_auto_add_gtags_cscope = 1
+""Change focus to quickfix window after search (optional).
+"let g:gutentags_plus_switch = 1
+""Enable advanced commands: GutentagsToggleTrace, etc.
+"let g:gutentags_define_advanced_commands = 1
+"let g:gutentags_trace = 0
 
 let g:coc_node_path = "/home/shihyu/.mybin/node-v17.8.0-linux-x64//bin/node"
 
