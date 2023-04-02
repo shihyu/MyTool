@@ -84,6 +84,7 @@ alias h3='history 30'
 
 export HISTFILESIZE=10000
 export HISTSIZE=10000
+export BIN=$HOME/.mybin
 
 function st()
 {
