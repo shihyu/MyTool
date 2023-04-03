@@ -102,6 +102,20 @@ function doxygen_init()
     sed -ri.bak '/^RECURSIVE\s|^HAVE_DOT\s|^EXTRACT_ALL\s|^EXTRACT_PRIVATE\s|^EXTRACT_STATIC\s|^CALL_GRAPH\s|^CALLER_GRAPH\s/s/= NO/= YES/' Doxyfile
 }
 
+function s2t_convert() {
+    # 在脚本所在的目录下创建一个 output 目录，用于存储转换后的文件名
+    mkdir -p output
+
+    # 使用 opencc 库中的 s2tw.json 配置文件将文件名中的简体中文转换为繁体中文，并写入新文件名中
+    for file in *; do
+        if [ -f "$file" ]; then
+          new_file=$(echo "$file" | opencc -c s2tw.json)
+          mv "$file" "output/$new_file"
+        fi
+    done
+}
+
+
 function myopencc()
 {
 if [ "$1" == '' ] 
