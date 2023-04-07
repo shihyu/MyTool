@@ -74,6 +74,7 @@ alias docker-rmv='docker volume rm $(docker volume ls -q)'
 alias docker-prune='docker system prune -a --volumes'
 
 alias port_used="sudo lsof -i -P -n | grep LISTEN"
+alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 
 export VISUAL=vim
 export HISTTIMEFORMAT='%F %T'
@@ -83,6 +84,7 @@ alias h3='history 30'
 
 export HISTFILESIZE=10000
 export HISTSIZE=10000
+export BIN=$HOME/.mybin
 
 function st()
 {
@@ -100,24 +102,40 @@ function doxygen_init()
     sed -ri.bak '/^RECURSIVE\s|^HAVE_DOT\s|^EXTRACT_ALL\s|^EXTRACT_PRIVATE\s|^EXTRACT_STATIC\s|^CALL_GRAPH\s|^CALLER_GRAPH\s/s/= NO/= YES/' Doxyfile
 }
 
+function s2t_convert() {
+    # 在脚本所在的目录下创建一个 output 目录，用于存储转换后的文件名
+    mkdir -p output
+
+    # 使用 opencc 库中的 s2tw.json 配置文件将文件名中的简体中文转换为繁体中文，并写入新文件名中
+    for file in *; do
+        if [ -f "$file" ]; then
+          new_file=$(echo "$file" | opencc -c s2tw.json)
+          mv "$file" "output/$new_file"
+        fi
+    done
+}
+
+
 function myopencc()
 {
-if [ "$1" == '' ] 
-then
-    FILES=$(find . -name "*.md")
-else
-    FILES=$(find . -name "*.$1")
-fi
-for doc in $FILES
-do  
-    doc=${doc#./} 
-    doc1="$doc""~" 
-    echo $doc
-    echo "$doc1" 
-    opencc -i $doc -o $doc1 -c s2tw.json
-    #opencc -i $doc -o $doc1 -c zhs2zht.ini
-    mv "$doc1" "$doc"
-done 
+    if [ "$1" == '' ] 
+    then
+        FILES=$(find . -name "*.md")
+    else
+        FILES=$(find . -name "*.$1")
+    fi
+    IFS=$'\n'
+    for doc in $FILES
+    do  
+        doc=${doc#./} 
+        doc1="$doc""~" 
+        echo "$doc"
+        echo "$doc1" 
+        opencc -i "$doc" -o "$doc1" -c s2tw.json
+        #opencc -i "$doc" -o "$doc1" -c zhs2zht.ini
+        mv "$doc1" "$doc"
+    done 
+    unset IFS
 }
 
 function kill_process()
