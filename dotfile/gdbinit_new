@@ -1,0 +1,4 @@
+set pagination off
+set print pretty
+set logging file ./test.log
+set logging enabled on
