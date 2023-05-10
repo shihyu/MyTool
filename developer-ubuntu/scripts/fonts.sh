@@ -16,9 +16,9 @@ ${WGET} 'http://mengko616.googlepages.com/LiHeiProPC.ttf.tar.gz'
 ${TAR} xvfz LiHeiProPC.ttf.tar.gz
 ${MV} "LiHei ProPC.ttf" ~/.fonts
 
-${WGET} 'https://github.com/adobe-fonts/source-code-pro/archive/1.017R.tar.gz'
-${TAR} xvf 1.017R.tar.gz 
-${MV} source-code-pro-1.017R/TTF/* ~/.fonts
+${WGET} 'https://github.com/adobe-fonts/source-code-pro/archive/refs/tags/2.042R-u/1.062R-i/1.026R-vf.tar.gz'
+${TAR} xvf 1.026R-vf.tar.gz
+${MV} source-code-pro-2.042R-u-1.062R-i-1.026R-vf/TTF/* ~/.fonts
 
 
 ${CAT} > ~/.fonts.conf <<EOF
