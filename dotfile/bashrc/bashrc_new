@@ -115,6 +115,30 @@ function s2t_convert() {
     done
 }
 
+function start_chrome() {
+    sudo chmod o+w /sys/fs/cgroup/cgroup.procs
+    sudo cgcreate -t $USER:$USER -a $USER:$USER -g memory,cpuset:limitchrome
+    echo 0-4 | sudo tee /sys/fs/cgroup/limitchrome/cpuset.cpus
+    cgexec -g memory,cpuset:limitchrome /opt/google/chrome/google-chrome --profile-directory=Default
+}
+
+function compile_cython() 
+{
+  # Check if the user provided a filename argument
+  if [ -z "$1" ]
+    then
+      echo "Please provide a filename argument"
+      return 1
+  fi
+
+  # Compile the Cython file into a shared library
+  python setup.py build_ext --inplace
+
+  # Move the shared library to the current directory
+  # mv $(basename $1 .pyx).so .
+
+  echo "Compilation complete"
+}
 
 function myopencc()
 {
