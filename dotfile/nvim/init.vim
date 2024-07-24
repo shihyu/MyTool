@@ -106,9 +106,11 @@ func FormartSrc()
     elseif &filetype == 'cpp' || &filetype == 'hpp'
         exec "!astyle %"
     elseif &filetype == 'rust'
-        exec "!rustfmt %"
+        exec "!rustfmt --edition 2021 %"
     elseif &filetype == 'go'
         exec "!gofmt -l -w %"
+    elseif &filetype == 'py'||&filetype == 'python'
+        exec "r !black % > /dev/null 2>&1"
     elseif &filetype == 'perl'
         exec "!astyle --style=gnu --suffix=none %"
     elseif &filetype == 'py'||&filetype == 'python'
@@ -381,6 +383,7 @@ if has("autocmd")
 endif
 
 colorscheme molokai
+set notermguicolors
 set cursorline
 "set cursorcolumn
 "highlight CursorLine cterm=none ctermbg=237
