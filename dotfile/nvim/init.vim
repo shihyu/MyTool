@@ -868,7 +868,8 @@ let g:gutentags_define_advanced_commands = 1
 "let g:gutentags_define_advanced_commands = 1
 "let g:gutentags_trace = 0
 
-let g:coc_node_path = "/home/shihyu/.mybin/node-v17.8.0-linux-x64//bin/node"
+"let g:coc_node_path = "/home/shihyu/.mybin/node-v17.8.0-linux-x64//bin/node"
+let g:coc_node_path = expand("$HOME/.mybin/node-v21.2.0-linux-x64/bin/node")
 
 "cscope
 "if has("cscope")
