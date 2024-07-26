@@ -1,0 +1,254 @@
+# PS1 - Prompt設定
+export PS1='\[\e[36;1m\][\[\e[33;1m\]姚\[\e[35;1m\]@\[\e[32;1m\]🐳🐬\[\e[31;1m\]\w\[\e[36;1m\]]\[\e[34;1m\]\$ \[\e[37;1m\]'
+
+# 環境變數
+export LC_ALL=zh_TW.UTF-8
+export LANG=zh_TW.UTF-8
+export TERM=xterm
+umask 022
+
+# 別名
+alias sr='shutdown -r now'
+alias sd='shutdown -h now'
+alias ls='ls --color=auto'
+alias ll='ls -l --block-size=M'
+alias less='less -r'
+alias rm='rm -f'
+alias h='history'
+alias hc='history -c'
+alias mnt='mount'
+alias umnt='umount'
+alias sx='startx'
+alias lt='logout'
+alias df='df -B G'
+alias cl='clear'
+alias vi='vim'
+alias vim='/home/shihyu/.mybin/nvim_new/bin/nvim'
+alias indent='indent -bad -bap -saf -sai -saw -npro -npcs -npsl -cli8 -i8 -ts8 -sob -l80 -ss -bl -bls -bli 0'
+alias gcc='gcc -Wall -g -pedantic'
+alias style='astyle --A2 --delete-empty-lines -s4 -K -f -p -H -U -c -n -N -L -Y -M -j -k1 -z2'
+alias pull='adb pull /data/htclog'
+alias tombstones='adb pull /data/tombstones'
+alias dlx_envsetup='source build/envsetup.sh; choosecombo 1 dlx eng; export ANDROID_SOURCE=$(gettop)'
+alias m7cdug_envsetup='source build/envsetup.sh; choosecombo 1 m7cdug userdebug DEBUG'
+alias dlxp_envsetup='source build/envsetup.sh ; choosecombo 1 dlpdtu userdebug DEBUG'
+alias a5tl_envsetup='source build/envsetup.sh ; partner_setup htc_a5tl A5TL_Generic_WWE_DEBUG'
+alias sense60_envsetup='export HTCFW_ENABLED=true; source build/envsetup.sh ; partner_setup m7 M7_Generic_WWE_DEBUG'
+alias img_zip='zip rom.zip -j android-info.txt *.img *.hdr'
+alias logcat='adb logcat -c && adb logcat -v threadtime 2>&1 | tee /tmp/logcat.txt'
+alias emulator_envsetup='source build/envsetup.sh; lunch full-eng'
+alias eclipse='/home/shihyu/adt-bundle-linux-x86_64-20130917/eclipse/eclipse'
+alias findcpp="find . -name '*.cpp' -print"
+alias findc="find . -name '*.c'"
+alias findh="find . -name '*.h'"
+alias findmk="find . -name '*.mk'"
+alias findjava="find . -name '*.java'"
+alias netpid="netstat -tlnp"
+alias arduino='sudo /home/shihyu/.mybin/arduino-1.8.1/arduino'
+alias matlab='/media/shihyu/ssd/matlab2017/bin/matlab'
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias cd.='cd ..'
+alias cd..='cd ..'
+alias py_debug='python -m pudb'
+alias vf='vim `find -name "*.cpp" -o -name "*.cc" -o -name "*.java" -o -name "*.h" | fzf`'
+alias dockerstop='docker stop $(docker ps -a -q)'
+alias dockerclean='docker rm $(docker ps -a -q)'
+alias dockerrmi='docker rmi $(docker images -q)'
+alias docker-start='docker start $(docker ps -aq)'
+alias docker-stop='docker stop $(docker ps -aq)'
+alias docker-rm='docker rm $(docker ps -aq)'
+alias docker-rmi='docker rmi -f $(docker images -aq)'
+alias docker-rmv='docker volume rm $(docker volume ls -q)'
+alias docker-prune='docker system prune -a --volumes'
+alias port_used="sudo lsof -i -P -n | grep LISTEN"
+
+# 設定顏色的 less 分頁器
+export PAGER="`which less` -s"
+export BROWSER="$PAGER"
+export LESS_TERMCAP_mb=$'\E[38;5;167m'
+export LESS_TERMCAP_md=$'\E[38;5;39m'
+export LESS_TERMCAP_me=$'\E[38;5;231m'
+export LESS_TERMCAP_se=$'\E[38;5;231m'
+export LESS_TERMCAP_so=$'\E[38;5;167m'
+export LESS_TERMCAP_ue=$'\E[38;5;231m'
+export LESS_TERMCAP_us=$'\E[38;5;167m'
+
+# 虛擬環境設定
+export BIN=$HOME/.mybin
+
+# 自訂函數
+function st() {
+    echo
+    if [ -z "$ORIG" ]; then
+        ORIG=$PS1
+    fi
+    TITLE="\[\e]2;$*\a\]"
+    PS1=${ORIG}${TITLE}
+}
+
+function doxygen_init() {
+    doxygen -g
+    sed -ri.bak '/^RECURSIVE\s|^HAVE_DOT\s|^EXTRACT_ALL\s|^EXTRACT_PRIVATE\s|^EXTRACT_STATIC\s|^CALL_GRAPH\s|^CALLER_GRAPH\s/s/= NO/= YES/' Doxyfile
+}
+
+function s2t_convert() {
+    mkdir -p output
+    for file in *; do
+        if [ -f "$file" ]; then
+            new_file=$(echo "$file" | opencc -c s2tw.json)
+            mv "$file" "output/$new_file"
+        fi
+    done
+}
+
+function start_chrome() {
+    sudo chmod o+w /sys/fs/cgroup/cgroup.procs
+    sudo cgcreate -t $USER:$USER -a $USER:$USER -g memory,cpuset:limitchrome
+    echo 0-4 | sudo tee /sys/fs/cgroup/limitchrome/cpuset.cpus
+    cgexec -g memory,cpuset:limitchrome /opt/google/chrome/google-chrome --profile-directory=Default
+}
+
+function compile_cython() {
+    if [ -z "$1" ]; then
+        echo "Please provide a filename argument"
+        return 1
+    fi
+    python setup.py build_ext --inplace
+    echo "Compilation complete"
+}
+
+function myopencc() {
+    if [ "$1" == '' ]; then
+        FILES=$(find . -name "*.md")
+    else
+        FILES=$(find . -name "*.$1")
+    fi
+    IFS=$'\n'
+    for doc in $FILES; do
+        doc=${doc#./}
+        doc1="$doc""~"
+        echo "$doc"
+        echo "$doc1"
+        opencc -i "$doc" -o "$doc1" -c s2tw.json
+        mv "$doc1" "$doc"
+    done
+    unset IFS
+}
+
+function kill_process() {
+    sudo kill -9  $(ps aux | grep $1 | grep -v grep | awk '{print $2}')
+}
+
+function cloneall() {
+    curl -s https://api.github.com/users/$1/repos?per_page=200 | python -c $'import json, sys, os\nfor repo in json.load(sys.stdin): os.system("git clone " + repo["git_url"])'
+}
+
+function rm_log() {
+    adb shell rm /data/htclog/*;
+    adb shell rm /data/log/*;
+    adb shell rm /data/tombstones/tombstone_*;
+}
+
+function logsort() {
+    ls -lrt $(find . -name "$1") | awk '{print $NF}'
+}
+
+function tar_bz2_dir() {
+    if [ "$1" != "" ]; then
+        FOLDER_IN=$(echo $1 | sed -e 's/\/$//')
+        FILE_OUT="$FOLDER_IN.tar.bz2"
+        FOLDER_IN="$FOLDER_IN/"
+        echo "Compressing $FOLDER_IN into $FILE_OUT…"
+        echo "tar cjf $FILE_OUT $FOLDER_IN"
+        if [ -z "$(apt-cache show pbzip2 2> /dev/null)" -o -z "pbzip2" ]; then
+            tar cjf "$FILE_OUT" "$FOLDER_IN"
+        else
+            time tar -c "$FOLDER_IN" | pbzip2 -cv -m5000 > "$FILE_OUT"
+        fi
+        echo "Done."
+    fi
+}
+
+function d_bz2_dir() {
+    if [ "$1" != "" ]; then
+        time pbzip2 -dvc -m5000 $1 | tar x
+    fi
+}
+
+function create_and_activate_env() {
+    local version="$1"
+    local env_name="$2"
+    python${version} -m venv ${env_name}
+    source ${env_name}/bin/activate
+}
+
+function new_rust_project() {
+    cargo new $1 --bin
+    cd $1
+    cargo run
+}
+
+function push_so() {
+    adb push $1 /system/lib/
+}
+
+function push_apk() {
+    adb push $1 /system/app/
+}
+
+function gaia_sync() {
+    adb shell am broadcast -a com.google.android.gms.gcm.ACTION_TASK_READY --es task_name com.google.android.gms.gcm.sync.SyncTask
+}
+
+function st() {
+    echo
+    if [ -z "$ORIG" ]; then
+        ORIG=$PS1
+    fi
+    TITLE="\[\e]2;$*\a\]"
+    PS1=${ORIG}${TITLE}
+}
+
+function create_and_activate_env() {
+    local version="$1"
+    local env_name="$2"
+    python${version} -m venv ${env_name}
+    source ${env_name}/bin/activate
+}
+
+function new_rust_project() {
+    cargo new $1 --bin
+    cd $1
+    cargo run
+}
+
+
+eval "$(fasd --init auto)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# FZF
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/shihyu/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/shihyu/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/shihyu/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/shihyu/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
