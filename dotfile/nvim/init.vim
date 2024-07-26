@@ -388,11 +388,15 @@ set notermguicolors
 set cursorline
 "set cursorcolumn
 "highlight CursorLine cterm=none ctermbg=237
+
 hi cursorcolumn cterm=bold ctermbg=237 ctermfg=none term=bold
 hi cursorline cterm=bold ctermbg=237 ctermfg=none term=bold
-highlight TabLineSel ctermfg=yellow ctermbg=darkblue cterm=bold
-highlight StatusLine ctermfg=yellow ctermbg=darkblue cterm=bold
-highlight LineNr ctermfg=yellow
+hi TabLineSel ctermfg=yellow ctermbg=darkblue cterm=bold
+hi StatusLine ctermfg=yellow ctermbg=darkblue cterm=bold
+hi LineNr ctermfg=yellow
+" 設定 Visual 模式下的反色效果
+highlight Visual cterm=reverse ctermbg=none ctermfg=none guibg=none guifg=none
+
 
 " 刪除指標閃爍 , Terminator Profiles -> General 把 Cursor blink 勾選拿掉
 set gcr=a:block-blinkon0
