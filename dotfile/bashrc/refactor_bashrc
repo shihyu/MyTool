@@ -230,6 +230,15 @@ function new_rust_project() {
     cargo run
 }
 
+function CD()
+{
+    if [ -f "$1" ]; then
+        cd `dirname "$1"`
+    else
+        cd $1
+    fi
+}
+
 
 eval "$(fasd --init auto)"
 
