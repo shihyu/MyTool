@@ -8,78 +8,52 @@
 --indent=spaces=4
 
 # 對於單行的語句增加括號
-# Add brackets to unbracketed one line conditional statements
-# (e.g. 'if', 'for', 'while').
---add-brackets
+--add-braces
 
 # 強制轉換TAB為空格
 --convert-tabs
 
 # 將preprocessor(#define)這類語句, 如果有多行時前面填充對齊, 是對單語句（多行）進行填充
---indent-preprocessor
+--indent-preproc-block
+--indent-preproc-cond
 
-# Attach a pointer or reference operator (* or &) to either the variable type
-# (left) or variable name (right), or place it between the type and name.
 # *,&這類字符靠近類型
 --align-pointer=type
-
-# *,&這類字符靠近變量名字, 目前選擇這個
-#--align-pointer=name
 
 # 在操作符號兩邊增加空格字符 ==
 --pad-oper
 
 # 在幾個關鍵字後面增加空格
-# insert space padding after paren headers only (e.g. 'if', 'for', 'while'...).
 --pad-header
 
 # 在if, for, while等代碼段前後增加空行, 這個其實挺好, 但如果你不喜歡, 可以關閉
-# Pad empty lines around header blocks (e.g. 'if', 'for', 'while'...).
 --break-blocks
 
-# 去掉括號兩邊多餘的空格,
-# 暫時放棄, 不是特別喜歡這個
-# Remove extra space padding around parenthesis on the inside and outside.
---unpad-paren
+# 放棄括號內外的空格移除
+#--unpad-paren
 
-# 備份文件的後綴, 默認是.orig,=none表示不進行備份，
-# 放棄備份文件, 以Astyle的版本, 目前做這個沒有什麼差別. 而且備份文件會影響你的代碼
+# 備份文件的後綴, 默認是.orig,=none表示不進行備份
 --suffix=none
 
-# 行結束用什麼文件格式, UNIX的還是Windows的，
-#--lineend=windows
-
-# 後台開放統一用UNIX的方式
+# 行結束用什麼文件格式, UNIX的還是Windows的
 --lineend=linux
 
 # switch case的代碼也按照標準縮進方式縮進
-#--indent-switches
 --indent-cases
 
 # 如果函數開始後面({後面)第一行是註釋, 也進行縮進
 --indent-col1-comments
 
 # 多行條件語句如何進行縮進, =0表示和(對齊, =1表示縮進一次, =2表示縮進兩次, =3縮進一個半
-# MS visual studio的默認格式化是縮進一個.
 --min-conditional-indent=1
 
-# 最大縮進對齊長度, 默認40, 最大120, 超過這個長度的多行()內語句不進行縮進, 考慮到現在語句都較長
+# 最大縮進對齊長度, 默認40, 最大120, 超過這個長度的多行()內語句不進行縮進
 #--max-instatement-indent=80
 
-
 # if (thisVariable1 == thatVariable1 || thisVariable2 == thatVariable2 || thisVariable3 == thatVariable3)
-
 # if (thisVariable1 == thatVariable1 || 
 #     thisVariable2 == thatVariable2 || 
 #     thisVariable3 == thatVariable3)
-
 --break-after-logical
 --max-code-length=80
-
-
-
-
-# ref: http://blog.csdn.net/janepen/article/details/7022180
-
-
 
