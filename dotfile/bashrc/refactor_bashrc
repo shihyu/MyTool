@@ -239,6 +239,8 @@ function CD()
 
 
 export PATH=$HOME/.mybin:$PATH
+export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/rc
+export PATH=$HOME/.mybin/node-v20.11.1-linux-x64/bin:$PATH
 eval "$(fasd --init auto)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
