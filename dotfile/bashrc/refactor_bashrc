@@ -81,8 +81,6 @@ export LESS_TERMCAP_so=$'\E[38;5;167m'
 export LESS_TERMCAP_ue=$'\E[38;5;231m'
 export LESS_TERMCAP_us=$'\E[38;5;167m'
 
-# 虛擬環境設定
-export BIN=$HOME/.mybin
 
 # 自訂函數
 function st() {
@@ -240,6 +238,7 @@ function CD()
 }
 
 
+export PATH=$HOME/.mybin:$PATH
 eval "$(fasd --init auto)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
