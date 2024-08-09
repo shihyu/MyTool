@@ -82,6 +82,19 @@ export LESS_TERMCAP_ue=$'\E[38;5;231m'
 export LESS_TERMCAP_us=$'\E[38;5;167m'
 
 
+# 增加歷史記錄的行數
+HISTSIZE=100000
+HISTFILESIZE=200000
+# 在每個命令行之前顯示時間戳
+HISTTIMEFORMAT="%F %T "
+# 追加歷史記錄而不是覆蓋
+shopt -s histappend
+# 每次命令後立即保存歷史記錄
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# 忽略某些命令
+export HISTIGNORE="&:ls:[bf]g:exit:history:clear"
+
+
 # 自訂函數
 function st() {
     echo
