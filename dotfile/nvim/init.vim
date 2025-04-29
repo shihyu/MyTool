@@ -60,9 +60,10 @@ filetype indent on
 colors tir_black
 language messages zh_TW.utf-8
 
+"set fencs=utf-8,gbk,big5,euc-jp,utf-16le
+"set fenc=utf-8 enc=utf-8 tenc=utf-8
 set fencs=utf-8,gbk,big5,euc-jp,utf-16le
-"set fencs=utf-8,gbk,big5
-set fenc=utf-8 enc=utf-8 tenc=utf-8
+set fenc=utf-8 enc=utf-8
 set t_ti= t_te=
 set expandtab
 set shiftwidth=4
