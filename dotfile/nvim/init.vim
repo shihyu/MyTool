@@ -108,7 +108,7 @@ func FormartSrc()
     elseif &filetype == 'cpp' || &filetype == 'hpp'
         exec "!astyle %"
     elseif &filetype == 'rust'
-        exec "!rustfmt --edition 2021 %"
+        exec "!rustfmt --edition 2024 %"
     elseif &filetype == 'go'
         exec "!gofmt -l -w %"
     elseif &filetype == 'py'||&filetype == 'python'
@@ -116,7 +116,7 @@ func FormartSrc()
     elseif &filetype == 'perl'
         exec "!astyle --style=gnu --suffix=none %"
     elseif &filetype == 'py'||&filetype == 'python'
-        exec "r !pydent % > /dev/null 2>&1"
+        exec "r !black % > /dev/null 2>&1"
     elseif &filetype == 'java'
         exec "!astyle --style=java --suffix=none %"
     elseif &filetype == 'jsp'
@@ -150,18 +150,19 @@ function Compile_gcc()
         execute "w"
         "execute "!clang -Wall -Wextra -O2 -g  % -o %:r -lm"
         "execute "!gcc  -Wall -pedantic -g -O0 -std=gnu99 % -o %:r -lGL -lglut -lGLU -lSDL -lm -pthread"
+        " execute "!gcc  -Wall -Werror -fanalyzer -pedantic -g -O0 -std=gnu99 % -o %:r -lm -pthread"
         execute "!gcc  -Wall -pedantic -g -O0 -std=gnu99 % -o %:r -lm -pthread"
     elseif &filetype=="cpp"
         set autochdir
         execute "w"
-        execute "!g++ -Wall -Wextra -g -std=c++14 -pthread % -o %:r"
+        execute "!g++ -Wall -Wextra -g -std=c++17 -pthread % -o %:r"
         "execute "!clang++ -Wall -Wextra -O2 -g -std=c++11 % -o %:r"
         "execute "!g++  -Wall -pedantic -ansi -ggdb3 -std=c++11 -O0 % -o %:r -lGL -lglut -lGLU -lSDL -lGLEW -pthread `pkg-config --libs --cflags opencv2`"
         "execute "!g++  -Wall -pedantic -ansi -ggdb3 -std=c++11 -O0 % -o %:r -lGL -lglut -lGLU -lGLEW -pthread"
     elseif &filetype=="rust"
         set autochdir
         execute "w"
-        execute "!rustc -C debuginfo=2 %:r.rs"
+        execute "!rustc -C debuginfo=2 --edition 2024  %:r.rs"
     elseif &filetype=="go"
         set autochdir
         execute "w"
