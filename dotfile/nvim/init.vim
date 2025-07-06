@@ -683,9 +683,9 @@ let g:bookmark_sign = '⚑'
 
 " ctags mapping
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-map tt <c-]>
+"map tt <c-]>
 "map tt :TabExpand 2<CR>
-map qq <c-t>
+" map qq <c-t>
 map <c-b> :tprevious<CR>
 map <c-n> :tnext<CR>
 "nnoremap <C-]> viwy:tab tag <C-R>"<CR>
@@ -1049,6 +1049,13 @@ xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
+
+
+" LSP mappings
+nnoremap gb <C-o>
+nnoremap qq <C-o>
+nmap <silent> tt <Plug>(coc-definition)
+
  
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
