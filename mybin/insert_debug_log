@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Code Instrumentation Tool
+Code Instrumentation Tool - Improved Version
 Automatically inserts debug/trace statements into source code files.
 Supports Java, C/C++, Rust, and Go.
 """
@@ -9,6 +9,7 @@ Supports Java, C/C++, Rust, and Go.
 import os
 import sys
 import tempfile
+import re
 from pathlib import Path
 from typing import List, Dict, Optional
 from dataclasses import dataclass
@@ -17,38 +18,48 @@ from dataclasses import dataclass
 @dataclass
 class LanguageConfig:
     """Configuration for each supported language."""
+
     file_extensions: List[str]
     ctags_command: str
     trace_statement: str
     import_statement: Optional[str] = None
+    macro_definition: Optional[str] = None
 
 
 class CodeInstrumenter:
     """Main class for instrumenting code with debug statements."""
-    
+
     LANGUAGE_CONFIGS = {
-        'java': LanguageConfig(
-            file_extensions=['.java'],
+        "java": LanguageConfig(
+            file_extensions=[".java"],
             ctags_command="ctags-exuberant -x {file} | ack -o -w 'method\\s+.*' | ack -o '\\d+\\s+.*' | ack -o '^\\d+\\s+' | sort -k 1 -nr",
-            trace_statement='\\tSystem.out.println("YAO [" + Thread.currentThread().getStackTrace()[2].getClassName() + "|" + Thread.currentThread().getStackTrace()[2].getMethodName() + "|" + Thread.currentThread().getStackTrace()[2].getFileName() + ":" + Thread.currentThread().getStackTrace()[2].getLineNumber()+"]");\\n'
+            trace_statement='\\tSystem.out.println("YAO [" + Thread.currentThread().getStackTrace()[2].getClassName() + "|" + Thread.currentThread().getStackTrace()[2].getMethodName() + "|" + Thread.currentThread().getStackTrace()[2].getFileName() + ":" + Thread.currentThread().getStackTrace()[2].getLineNumber()+"]");\\n',
         ),
-        'cpp': LanguageConfig(
-            file_extensions=['.cpp', '.c', '.cc'],
+        "cpp": LanguageConfig(
+            file_extensions=[".cpp", ".c", ".cc"],
             ctags_command="ctags-exuberant -x {file} | ack -o -w 'function\\s+.*' | ack -o '\\d+\\s+.*' | ack -o '^\\d+\\s+' | sort -k 1 -nr",
-            trace_statement='::printf ("This is line %d of file %s (function %s)\\\\n", __LINE__, __FILE__, __func__);'
+            trace_statement='\\tprintf("🔍 [%s] File: %s, Line: %d\\\\n", __func__, __FILE__, __LINE__);',
         ),
-        'rust': LanguageConfig(
-            file_extensions=['.rs'],
+        "rust": LanguageConfig(
+            file_extensions=[".rs"],
             ctags_command="ctags-universal -x {file} | ack -o -w 'func.*|method.*' | ack -o '\\d+\\s+.*' | ack -o '^\\d+\\s+' | sort -k 1 -nr",
-            trace_statement='\\tprintln!("function name is={}, Current position: {}:{} - {}", function_name!(), file!(), line!(), module_path!());',
-            import_statement="use stdext::function_name;\\n"
+            trace_statement='\\ttrace!("{function_name}");',
+            macro_definition="""// 自動生成的追蹤宏
+macro_rules! trace {
+    ($func_name:expr) => {
+        println!("🔍 [{}] File: {}, Line: {}", 
+                $func_name, file!(), line!());
+    };
+}
+
+""",
         ),
-        'go': LanguageConfig(
-            file_extensions=['.go'],
+        "go": LanguageConfig(
+            file_extensions=[".go"],
             ctags_command="ctags-exuberant -x {file} | ack -o -w 'func.*' | ack -o '\\d+\\s+.*' | ack -o '^\\d+\\s+' | sort -k 1 -nr",
             trace_statement=None,  # Will be handled specially
-            import_statement='import (\\n\\t"fmt"\\n\\t"runtime"\\n)'
-        )
+            import_statement='import (\\n\\t"fmt"\\n\\t"runtime"\\n)',
+        ),
     }
 
     def __init__(self):
@@ -57,7 +68,7 @@ class CodeInstrumenter:
     def detect_language(self, file_path: Path) -> Optional[str]:
         """Detect the programming language based on file extension."""
         file_ext = file_path.suffix.lower()
-        
+
         for lang, config in self.LANGUAGE_CONFIGS.items():
             if file_ext in config.file_extensions:
                 return lang
@@ -66,19 +77,21 @@ class CodeInstrumenter:
     def extract_function_lines(self, file_path: Path, language: str) -> List[int]:
         """Extract line numbers where functions are defined using ctags."""
         config = self.LANGUAGE_CONFIGS[language]
-        
-        with tempfile.NamedTemporaryFile(mode='w+', delete=False, suffix='.txt') as temp_file:
+
+        with tempfile.NamedTemporaryFile(
+            mode="w+", delete=False, suffix=".txt"
+        ) as temp_file:
             self.temp_file = temp_file.name
-            
+
         command = f"{config.ctags_command.format(file=file_path)} > {self.temp_file}"
-        
+
         try:
             os.system(command)
-            
-            with open(self.temp_file, 'r') as f:
+
+            with open(self.temp_file, "r") as f:
                 lines = f.read().strip().splitlines()
                 return [int(line.split()[0]) for line in lines if line.strip()]
-                
+
         except (OSError, ValueError) as e:
             print(f"Error extracting function lines: {e}")
             return []
@@ -86,43 +99,72 @@ class CodeInstrumenter:
             if os.path.exists(self.temp_file):
                 os.unlink(self.temp_file)
 
+    def extract_function_name(self, lines: List[str], func_line: int) -> str:
+        """Extract function name from the function declaration line."""
+        if func_line <= 0 or func_line > len(lines):
+            return "unknown"
+
+        # Look at the function declaration line (func_line - 1 because line numbers are 1-based)
+        func_declaration = lines[func_line - 1].strip()
+
+        # Rust function pattern: fn function_name(...) or pub fn function_name(...)
+        rust_pattern = r"(?:pub\s+)?fn\s+([a-zA-Z_][a-zA-Z0-9_]*)"
+        match = re.search(rust_pattern, func_declaration)
+        if match:
+            return match.group(1)
+
+        # For impl blocks, might need to look at context
+        if "impl" in func_declaration and "fn" in func_declaration:
+            # Look for method name after 'fn'
+            parts = func_declaration.split("fn")
+            if len(parts) > 1:
+                method_part = parts[1].strip()
+                method_name = method_part.split("(")[0].strip()
+                # Handle generic methods like new<T>
+                method_name = method_name.split("<")[0]
+                return method_name
+
+        return "unknown"
+
     def find_insertion_point(self, lines: List[str], func_line: int) -> Optional[int]:
         """Find the appropriate insertion point for the trace statement."""
         for j in range(func_line - 1, len(lines)):
             line = lines[j].strip()
-            
+
             # Skip if line ends with semicolon (likely a declaration)
-            if line.endswith(';'):
+            if line.endswith(";"):
                 break
-                
+
             # Look for opening brace
-            if '{' in line:
+            if "{" in line:
                 # If it's a single-line block, skip it
-                if '}' in line:
+                if "}" in line:
                     break
                 return j + 1
-                
+
         return None
 
     def get_line_indent(self, line: str) -> str:
         """Extract the indentation from a line."""
         indent = ""
         for char in line:
-            if char in [' ', '\t']:
+            if char in [" ", "\t"]:
                 indent += char
             else:
                 break
         return indent
 
-    def insert_trace_statements(self, lines: List[str], func_lines: List[int], language: str) -> List[str]:
+    def insert_trace_statements(
+        self, lines: List[str], func_lines: List[int], language: str
+    ) -> List[str]:
         """Insert trace statements at appropriate locations."""
         config = self.LANGUAGE_CONFIGS[language]
         modified_lines = lines.copy()
-        
+
         # Process function lines in reverse order to maintain line numbers
         for func_line in sorted(func_lines, reverse=True):
             insertion_point = self.find_insertion_point(modified_lines, func_line)
-            
+
             if insertion_point is not None:
                 # Get the indentation of the next line for proper formatting
                 base_indent = ""
@@ -130,30 +172,71 @@ class CodeInstrumenter:
                     base_indent = self.get_line_indent(modified_lines[insertion_point])
                 else:
                     base_indent = "\t"  # Default indentation
-                
-                # Special handling for Go language
-                if language == 'go':
+
+                # Special handling for different languages
+                if language == "go":
                     go_trace_lines = [
                         f"{base_indent}pc, file, line, ok := runtime.Caller(0)",
                         f"{base_indent}if ok {{",
                         f"{base_indent}\tfn := runtime.FuncForPC(pc)",
-                        f'{base_indent}\tfmt.Printf("檔案: %s, 行號: %d, 函數: %s\\n", file, line, fn.Name())',
-                        f"{base_indent}}}"
+                        f'{base_indent}\tfmt.Printf("🔍 [%s] 檔案: %s, 行號: %d\\n", fn.Name(), file, line)',
+                        f"{base_indent}}}",
                     ]
-                    
+
                     # Insert trace lines in reverse order to maintain line numbers
                     for trace_line in reversed(go_trace_lines):
                         modified_lines.insert(insertion_point, trace_line)
+
+                elif language == "rust":
+                    # Extract function name
+                    func_name = self.extract_function_name(modified_lines, func_line)
+
+                    # Create trace statement with actual function name
+                    trace_statement = config.trace_statement.replace(
+                        "{function_name}", func_name
+                    )
+                    trace_statement = trace_statement.replace("\\n", "\n").replace(
+                        "\\t", "\t"
+                    )
+
+                    # Add proper indentation
+                    indented_trace = base_indent + trace_statement.strip()
+                    modified_lines.insert(insertion_point, indented_trace)
+
                 else:
-                    trace_statement = config.trace_statement.replace('\\n', '\n').replace('\\t', '\t').replace('\\\\', '\\')
-                    modified_lines.insert(insertion_point, trace_statement)
+                    trace_statement = (
+                        config.trace_statement.replace("\\n", "\n")
+                        .replace("\\t", "\t")
+                        .replace("\\\\", "\\")
+                    )
+                    indented_trace = base_indent + trace_statement.strip()
+                    modified_lines.insert(insertion_point, indented_trace)
+
+        # Add macro definition for Rust (at the beginning)
+        if language == "rust" and config.macro_definition:
+            macro_def = config.macro_definition.replace("\\n", "\n").replace(
+                "\\t", "\t"
+            )
+            # Insert macro after any existing use statements
+            insert_pos = 0
+            for i, line in enumerate(modified_lines):
+                if line.strip().startswith("use ") or line.strip().startswith("//"):
+                    insert_pos = i + 1
+                elif line.strip() == "":
+                    insert_pos = i + 1
+                else:
+                    break
+
+            modified_lines.insert(insert_pos, macro_def)
 
         # Add import statement if needed
         if config.import_statement:
-            import_stmt = config.import_statement.replace('\\n', '\n').replace('\\t', '\t')
-            
+            import_stmt = config.import_statement.replace("\\n", "\n").replace(
+                "\\t", "\t"
+            )
+
             # For Go language, check if imports already exist
-            if language == 'go':
+            if language == "go":
                 modified_lines = self._handle_go_imports(modified_lines, import_stmt)
             else:
                 modified_lines.insert(0, import_stmt)
@@ -164,60 +247,62 @@ class CodeInstrumenter:
         """Handle Go import statements, merging with existing imports if present."""
         # Required packages for tracing
         required_packages = ['"fmt"', '"runtime"']
-        
+
         # Find existing import block
         import_start = -1
         import_end = -1
         existing_packages = set()
-        
+
         for i, line in enumerate(lines):
             stripped = line.strip()
-            if stripped.startswith('import ('):
+            if stripped.startswith("import ("):
                 import_start = i
-            elif import_start != -1 and stripped == ')':
+            elif import_start != -1 and stripped == ")":
                 import_end = i
                 break
             elif import_start != -1 and stripped.startswith('"'):
                 # Extract package name
                 pkg_name = stripped.split()[0]
                 existing_packages.add(pkg_name)
-        
+
         # Find single line imports
         single_import_lines = []
         for i, line in enumerate(lines):
             stripped = line.strip()
-            if stripped.startswith('import ') and not stripped.startswith('import ('):
+            if stripped.startswith("import ") and not stripped.startswith("import ("):
                 single_import_lines.append(i)
                 # Extract package name from single import
                 parts = stripped.split()
                 if len(parts) >= 2:
                     existing_packages.add(parts[1])
-        
+
         # Determine what packages need to be added
-        missing_packages = [pkg for pkg in required_packages if pkg not in existing_packages]
-        
+        missing_packages = [
+            pkg for pkg in required_packages if pkg not in existing_packages
+        ]
+
         if not missing_packages:
             # All required packages already imported
             return lines
-        
+
         if import_start != -1 and import_end != -1:
             # Add missing packages to existing import block
             for pkg in missing_packages:
-                lines.insert(import_end, f'\t{pkg}')
+                lines.insert(import_end, f"\t{pkg}")
         elif single_import_lines:
             # Convert single imports to block and add missing packages
             # Remove single import lines (in reverse order)
             for line_idx in reversed(single_import_lines):
                 lines.pop(line_idx)
-            
+
             # Create new import block
-            import_block = ['import (']
+            import_block = ["import ("]
             for pkg in existing_packages:
-                import_block.append(f'\t{pkg}')
+                import_block.append(f"\t{pkg}")
             for pkg in missing_packages:
-                import_block.append(f'\t{pkg}')
-            import_block.append(')')
-            
+                import_block.append(f"\t{pkg}")
+            import_block.append(")")
+
             # Insert at the position of the first single import
             for i, line in enumerate(import_block):
                 lines.insert(single_import_lines[0] + i, line)
@@ -226,30 +311,30 @@ class CodeInstrumenter:
             # Find the best position (after package declaration)
             insert_pos = 0
             for i, line in enumerate(lines):
-                if line.strip().startswith('package '):
+                if line.strip().startswith("package "):
                     insert_pos = i + 1
                     break
-            
+
             # Add empty line after package if needed
-            if insert_pos < len(lines) and lines[insert_pos].strip() != '':
-                lines.insert(insert_pos, '')
+            if insert_pos < len(lines) and lines[insert_pos].strip() != "":
+                lines.insert(insert_pos, "")
                 insert_pos += 1
-            
+
             # Add import block
-            import_block = ['', 'import (']
+            import_block = ["", "import ("]
             for pkg in required_packages:
-                import_block.append(f'\t{pkg}')
-            import_block.append(')')
-            
+                import_block.append(f"\t{pkg}")
+            import_block.append(")")
+
             for i, line in enumerate(import_block):
                 lines.insert(insert_pos + i, line)
-        
+
         return lines
 
     def instrument_file(self, file_path: str) -> bool:
         """Main method to instrument a source code file."""
         file_path_obj = Path(file_path)
-        
+
         if not file_path_obj.exists():
             print(f"Error: File '{file_path}' does not exist.")
             return False
@@ -269,18 +354,22 @@ class CodeInstrumenter:
 
         try:
             # Read original file
-            with open(file_path, 'r', encoding='utf-8') as f:
+            with open(file_path, "r", encoding="utf-8") as f:
                 lines = f.read().splitlines()
 
             # Insert trace statements
-            instrumented_lines = self.insert_trace_statements(lines, func_lines, language)
+            instrumented_lines = self.insert_trace_statements(
+                lines, func_lines, language
+            )
 
             # Write back to file
-            with open(file_path, 'w', encoding='utf-8') as f:
+            with open(file_path, "w", encoding="utf-8") as f:
                 for line in instrumented_lines:
-                    f.write(line + '\n')
+                    f.write(line + "\n")
 
-            print(f"Successfully instrumented {len(func_lines)} functions in '{file_path}'")
+            print(
+                f"Successfully instrumented {len(func_lines)} functions in '{file_path}'"
+            )
             return True
 
         except IOError as e:
@@ -293,11 +382,16 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python code_instrumenter.py <filename>")
         print("Supported file types: .java, .cpp, .c, .cc, .rs, .go")
+        print("\nFeatures:")
+        print("- Rust: Auto-generates trace! macro with function name detection")
+        print("- Go: Uses runtime.Caller for detailed tracing")
+        print("- C/C++: Uses __func__, __FILE__, __LINE__ macros")
+        print("- Java: Uses stack trace for detailed information")
         sys.exit(1)
 
     instrumenter = CodeInstrumenter()
     success = instrumenter.instrument_file(sys.argv[1])
-    
+
     sys.exit(0 if success else 1)
 
 
