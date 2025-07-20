@@ -69,6 +69,8 @@ alias docker-rmi='docker rmi -f $(docker images -aq)'
 alias docker-rmv='docker volume rm $(docker volume ls -q)'
 alias docker-prune='docker system prune -a --volumes'
 alias port_used="sudo lsof -i -P -n | grep LISTEN"
+alias yapf='yapf -i --style facebook'
+alias venv='venv_manager'
 
 # 設定顏色的 less 分頁器
 export PAGER="`which less` -s"
@@ -112,6 +114,61 @@ function st() {
     TITLE="\[\e]2;$*\a\]"
     PS1=${ORIG}${TITLE}
 }
+
+# 完整的虛擬環境管理
+venv_manager() {
+    case "$1" in
+        "create"|"new")
+            ENV_NAME=${2:-"venv"}
+            python -m venv "$ENV_NAME"
+            source "$ENV_NAME/bin/activate"
+            echo "✅ 虛擬環境 '$ENV_NAME' 已建立並啟動"
+            ;;
+        "activate"|"on")
+            ENV_NAME=${2:-"venv"}
+            if [ -d "$ENV_NAME" ]; then
+                source "$ENV_NAME/bin/activate"
+                echo "✅ 虛擬環境 '$ENV_NAME' 已啟動"
+            else
+                echo "❌ 找不到虛擬環境: $ENV_NAME"
+            fi
+            ;;
+        "deactivate"|"off")
+            if [[ "$VIRTUAL_ENV" != "" ]]; then
+                deactivate
+                echo "✅ 虛擬環境已停用"
+            else
+                echo "❌ 目前沒有啟動的虛擬環境"
+            fi
+            ;;
+        "list"|"ls")
+            echo "可用的虛擬環境："
+            find . -maxdepth 2 -name "pyvenv.cfg" -exec dirname {} \; 2>/dev/null
+            ;;
+        "remove"|"rm")
+            ENV_NAME=${2:-"venv"}
+            if [ -d "$ENV_NAME" ]; then
+                echo "確定要刪除虛擬環境 '$ENV_NAME'？(y/n)"
+                read -r response
+                if [[ "$response" =~ ^[Yy]$ ]]; then
+                    rm -rf "$ENV_NAME"
+                    echo "✅ 虛擬環境 '$ENV_NAME' 已刪除"
+                fi
+            else
+                echo "❌ 找不到虛擬環境: $ENV_NAME"
+            fi
+            ;;
+        *)
+            echo "用法: venv_manager [create|activate|deactivate|list|remove] [環境名稱]"
+            echo "  create/new     - 建立新虛擬環境"
+            echo "  activate/on    - 啟動虛擬環境"
+            echo "  deactivate/off - 停用虛擬環境"
+            echo "  list/ls        - 列出可用虛擬環境"
+            echo "  remove/rm      - 刪除虛擬環境"
+            ;;
+    esac
+}
+
 
 function doxygen_init() {
     doxygen -g
