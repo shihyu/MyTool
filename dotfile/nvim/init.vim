@@ -14,6 +14,13 @@ language messages zh_TW.utf-8
 set fencs=utf-8,gbk,big5,euc-jp,utf-16le
 set fenc=utf-8 enc=utf-8
 
+" Clipboard configuration
+if has('unnamedplus')
+    set clipboard=unnamedplus  " Use system clipboard
+else
+    set clipboard=unnamed      " Fallback
+endif
+
 " Basic editor settings
 syntax on
 filetype plugin indent on
@@ -152,6 +159,22 @@ vmap <s-tab> <gv
 " File operations
 nmap <C-a> ggVG
 nnoremap ,p :set paste!<BAR>set paste?<CR>
+
+" Clipboard operations - with fallback support
+if has('clipboard')
+    " Use system clipboard if available
+    vmap <C-c> "+y
+    nmap <C-c> "+yy
+    imap <C-v> <ESC>"+pa
+    nmap <C-v> "+p
+    vmap <C-v> "+p
+else
+    " Fallback to external commands
+    vmap <C-c> :w !xclip -selection clipboard<CR><CR>
+    nmap <C-c> :.w !xclip -selection clipboard<CR><CR>
+    nmap <C-v> :r !xclip -selection clipboard -o<CR>
+    imap <C-v> <ESC>:r !xclip -selection clipboard -o<CR>a
+endif
 
 " Text manipulation
 nnoremap <F11> :%s/[ \t\r]\+$//g<CR>
@@ -295,7 +318,7 @@ function! FormartSrc()
 endfunction
 
 " Compile function
-nmap <C-c><C-c> :call Compile_gcc()<CR>
+nmap <C-x><C-x> :call Compile_gcc()<CR>
 function! Compile_gcc()
     if &filetype=="c"
         set autochdir
