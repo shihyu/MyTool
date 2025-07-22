@@ -1,0 +1,12 @@
+# ChCore 簡潔配置 - 解決 **str 和 ++(*str) 問題
+BasedOnStyle: LLVM
+IndentWidth: 4
+UseTab: Never
+ColumnLimit: 80
+BreakBeforeBraces: Linux
+PointerAlignment: Left
+SpacesInParentheses: false
+SpaceBeforeParens: ControlStatements
+IndentCaseLabels: true
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: false
