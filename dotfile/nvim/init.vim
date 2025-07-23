@@ -14,13 +14,6 @@ language messages zh_TW.utf-8
 set fencs=utf-8,gbk,big5,euc-jp,utf-16le
 set fenc=utf-8 enc=utf-8
 
-" Clipboard configuration
-if has('unnamedplus')
-    set clipboard=unnamedplus  " Use system clipboard
-else
-    set clipboard=unnamed      " Fallback
-endif
-
 " Basic editor settings
 syntax on
 filetype plugin indent on
