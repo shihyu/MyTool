@@ -166,8 +166,6 @@ if has('clipboard')
     vmap <C-c> "+y
     nmap <C-c> "+yy
     imap <C-v> <ESC>"+pa
-    nmap <C-v> "+p
-    vmap <C-v> "+p
 else
     " Fallback to external commands
     vmap <C-c> :w !xclip -selection clipboard<CR><CR>
