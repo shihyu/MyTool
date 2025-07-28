@@ -1,11 +1,14 @@
 " ============================================================================
-" Neovim Configuration - Refactored and Organized
+" Neovim Configuration - Clean & Organized
 " Author: Jason-Yao
+" Description: A well-structured Neovim configuration for development
 " ============================================================================
 
 " ============================================================================
-" Basic Settings
+" BASIC SETTINGS
 " ============================================================================
+
+" Compatibility and core settings
 set nocompatible
 filetype off
 
@@ -14,101 +17,104 @@ language messages zh_TW.utf-8
 set fencs=utf-8,gbk,big5,euc-jp,utf-16le
 set fenc=utf-8 enc=utf-8
 
-" Basic editor settings
+" Editor behavior
 syntax on
 filetype plugin indent on
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-set autoindent
-set smartindent
-set number
-set ruler
-set showcmd
-set hidden
-set history=1000
-set nomore
-set nobackup
-set noswapfile
-set hlsearch
-set incsearch
-set viminfo+=h
-set nocp
-set t_Co=256
-set backspace=indent,eol,start
-set whichwrap+=<,>,[,]
-set nofoldenable
-set mouse=
-set helplang=Cn
-set t_ti= t_te=
+set expandtab                   " Use spaces instead of tabs
+set shiftwidth=4               " Number of spaces for autoindent
+set tabstop=4                  " Number of spaces per tab
+set softtabstop=4              " Backspace removes this many spaces
+set autoindent                 " Auto indent new lines
+set smartindent                " Smart indentation
+set number                     " Show line numbers
+set ruler                      " Show cursor position
+set showcmd                    " Show command in status line
+set hidden                     " Allow hidden buffers
+set history=1000               " Command history size
+set nomore                     " Don't pause for long messages
+set nobackup                   " Don't create backup files
+set noswapfile                 " Don't create swap files
+set hlsearch                   " Highlight search results
+set incsearch                  " Incremental search
+set viminfo+=h                 " Don't highlight when loading viminfo
+set nocp                       " No compatible mode
+set t_Co=256                   " 256 colors
+set backspace=indent,eol,start " Backspace behavior
+set whichwrap+=<,>,[,]        " Cursor movement wrapping
+set nofoldenable               " Disable folding by default
+set mouse=                     " Disable mouse
+set helplang=Cn               " Help language
+set t_ti= t_te=               " Terminal settings
+
+" Visual enhancements
+set cursorline                 " Highlight current line
+set signcolumn=yes            " Always show sign column
+set updatetime=300            " Faster completion
+set shortmess+=c              " Don't show completion messages
+set tabpagemax=1000           " Maximum number of tabs
 
 " Status line configuration
 set laststatus=2
 set statusline=[%n]\ %<%f\ %([%1*%M%*%R%Y]%)\ \ \ [%{Tlist_Get_Tagname_By_Line()}]\ %=%-19(\LINE\ [%l/%L]\ COL\ [%02c%03V]%)\ %P\ [%{&encoding}]
 
-" Tab settings
-set tabpagemax=1000
-
-" Visual enhancements
-set cursorline
-set signcolumn=yes
-set updatetime=300
-set shortmess+=c
-
 " ============================================================================
-" Plugin Management
+" PLUGIN MANAGEMENT
 " ============================================================================
+
 call plug#begin('~/.config/nvim/plugged')
 
-" AI and completion
+" AI and Code Completion
 Plug 'github/copilot.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" File management and navigation
+" File Management & Navigation
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'vim-scripts/FuzzyFinder'
 
-" Development tools
+" Code Analysis & Tags
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/taglist.vim'
-Plug 'luochen1990/rainbow'
-Plug 'airblade/vim-gitgutter'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-surround'
-Plug 'Raimondi/delimitMate'
+Plug 'vim-scripts/cscope_macros.vim'
 
-" Language support
-Plug 'sudar/vim-arduino-syntax'
-Plug 'maksimr/vim-jsbeautify'
+" Development Tools
+Plug 'airblade/vim-gitgutter'              " Git integration
+Plug 'terryma/vim-multiple-cursors'        " Multiple cursors
+Plug 'tpope/vim-surround'                  " Surrounding text objects
+Plug 'Raimondi/delimitMate'               " Auto-closing brackets
+Plug 'Lokaltog/vim-easymotion'            " Easy text navigation
+Plug 'kshenoy/vim-signature'              " Mark management
+
+" Language Support
+Plug 'sudar/vim-arduino-syntax'           " Arduino syntax
+Plug 'maksimr/vim-jsbeautify'             " JavaScript beautifier
+
+" Visual Enhancements
+Plug 'luochen1990/rainbow'                " Rainbow parentheses
+Plug 'vim-scripts/tir_black'              " Color scheme
+Plug 'vim-scripts/Wombat'                 " Color scheme
+Plug 'tomasr/molokai'                     " Color scheme
 
 " Utilities
-Plug 'vim-scripts/L9'
-Plug 'vim-scripts/cscope_macros.vim'
-Plug 'drmingdrmer/xptemplate'
-Plug 'Lokaltog/vim-easymotion'
-Plug 'othree/eregex.vim'
-Plug 'thinca/vim-logcat'
-Plug 'kshenoy/vim-signature'
-Plug 'vim-scripts/Quich-Filter'
-Plug 'bootleq/vim-tabline'
-Plug 'vim-scripts/sessionman.vim'
-Plug 'chusiang/vim-sdcv'
-Plug 'MattesGroeger/vim-bookmarks'
-Plug 'mhinz/vim-startify'
-
-" Color schemes
-Plug 'vim-scripts/tir_black'
-Plug 'vim-scripts/Wombat'
-Plug 'tomasr/molokai'
-Plug 'vim-scripts/CCTree'
+Plug 'vim-scripts/L9'                     " Vim script library
+Plug 'drmingdrmer/xptemplate'             " Template system
+Plug 'othree/eregex.vim'                  " Enhanced regex
+Plug 'thinca/vim-logcat'                  " Android logcat
+Plug 'vim-scripts/Quich-Filter'           " Text filtering
+Plug 'bootleq/vim-tabline'                " Enhanced tabline
+Plug 'vim-scripts/sessionman.vim'         " Session management
+Plug 'chusiang/vim-sdcv'                  " Dictionary
+Plug 'MattesGroeger/vim-bookmarks'        " Bookmark management
+Plug 'mhinz/vim-startify'                 " Start screen
+Plug 'vim-scripts/CCTree'                 " Call tree
 
 call plug#end()
 
 " ============================================================================
-" Color Scheme and Appearance
+" COLOR SCHEME & APPEARANCE
 " ============================================================================
+
+" Color scheme
 colors tir_black
 colorscheme molokai
 set notermguicolors
@@ -128,35 +134,40 @@ hi BookmarkSign ctermbg=NONE ctermfg=160
 set gcr=a:block-blinkon0
 
 " ============================================================================
-" Key Mappings
+" KEY MAPPINGS
 " ============================================================================
 
-" Basic mappings
-imap jj <ESC>
-imap <F1> <C-R>="[OOOOOOO]"<CR>
-imap <F2> <C-R>=strftime("%F %T")<CR>
-imap <C-F11> <C-R>=strftime("%x %X")<BAR><CR>. owen_wen@htc.com.<ESC>
+" --- Basic Mappings ---
+imap jj <ESC>                              " Quick escape
+imap <F1> <C-R>="[OOOOOOO]"<CR>          " Insert marker
+imap <F2> <C-R>=strftime("%F %T")<CR>     " Insert timestamp
 
-" Tab management
-nmap tl :tabnext<CR>
-nmap th :tabprev<CR>
-nmap tn :tabnew<CR>
-nmap td :tabclose<CR>
+" --- Tab Management ---
+nmap tl :tabnext<CR>                       " Next tab
+nmap th :tabprev<CR>                       " Previous tab
+nmap tn :tabnew<CR>                        " New tab
+nmap td :tabclose<CR>                      " Close tab
 
-" Indentation
-nmap <tab> V>
-nmap <s-tab> V<
-vmap <tab> >gv
-vmap <s-tab> <gv
+" --- Indentation ---
+nmap <tab> V>                              " Indent line
+nmap <s-tab> V<                            " Unindent line
+vmap <tab> >gv                             " Indent selection
+vmap <s-tab> <gv                           " Unindent selection
 
-" File operations
-nmap <C-a> ggVG
-nnoremap ,p :set paste!<BAR>set paste?<CR>
+" --- Text Selection & Manipulation ---
+nmap <C-a> ggVG                            " Select all
+nnoremap ,p :set paste!<BAR>set paste?<CR> " Toggle paste mode
+nnoremap <F11> :%s/[ \t\r]\+$//g<CR>      " Remove trailing whitespace
+noremap <leader>m :%s/\r//g<CR>            " Remove Windows line endings
+noremap <leader><space> :%s/\s\+$//g<CR>  " Remove trailing spaces
 
+" --- Navigation ---
+nnoremap gb <C-o>                          " Go back
+nnoremap qq <C-o>                          " Go back (alternative)
+map <c-b> :tprevious<CR>                   " Previous tag
+map <c-n> :tnext<CR>                       " Next tag
 
-nmap <space>l :call FilteringNew().addToParameter('alt', @/).run()<CR>
-
-" Clipboard operations - with fallback support
+" --- Clipboard Operations ---
 if has('clipboard')
     " Use system clipboard if available
     vmap <C-c> "+y
@@ -170,33 +181,28 @@ else
     imap <C-v> <ESC>:r !xclip -selection clipboard -o<CR>a
 endif
 
-" Text manipulation
-nnoremap <F11> :%s/[ \t\r]\+$//g<CR>
-noremap <leader>m :%s/\r//g<CR>
-noremap <leader><space> :%s/\s\+$//g<CR>
-
-" Navigation
-nnoremap gb <C-o>
-nnoremap qq <C-o>
-map <c-b> :tprevious<CR>
-map <c-n> :tnext<CR>
+" --- Quick Filter ---
+nmap <space>l :call FilteringNew().addToParameter('alt', @/).run()<CR>
+nmap <space>F :call FilteringNew().parseQuery(input('>'), '<Bar>').run()<CR>
+nmap <space>g :call FilteringGetForSource().return()<CR>
+nmap <space>s :call ShowTrailingWhitespace()<CR>
 
 " ============================================================================
-" Plugin Configurations
+" PLUGIN CONFIGURATIONS
 " ============================================================================
 
-" NERDTree
+" --- NERDTree ---
 nnoremap <leader>p :NERDTreeToggle<CR>
 nnoremap <silent> <F3> :NERDTree<CR>
 
-" FuzzyFinder
+" --- FuzzyFinder ---
 nnoremap <leader>ff :FufFile<CR>
 nnoremap <leader>fb :FufBuffer<CR>
 
-" Tagbar
+" --- Tagbar ---
 nmap <silent> <F12> :TagbarToggle<CR>
 
-" GitGutter
+" --- GitGutter ---
 let g:gitgutter_sign_added = '✚'
 let g:gitgutter_sign_modified = '➡'
 let g:gitgutter_sign_removed = '✘'
@@ -204,35 +210,47 @@ let g:gitgutter_sign_removed_first_line = '^^'
 let g:gitgutter_sign_modified_removed = 'ww'
 let g:gitgutter_max_signs = 50000
 
-" Rainbow parentheses
+" --- Rainbow Parentheses ---
 let g:rainbow_active = 1
 let g:rainbow_conf = {
 \   'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
 \   'ctermfgs': ['lightyellow', 'lightcyan','lightblue', 'lightmagenta'],
 \   'operators': '_,_',
 \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\   'separately': {
+\       '*': {},
+\       'vim': {
+\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold'],
+\       },
+\       'html': {
+\           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+\       },
+\       'css': 0,
+\   }
 \}
 
-" Bookmarks
+" --- Bookmarks ---
 let g:bookmark_sign = '⚑'
 
-" EasyMotion
+" --- EasyMotion & Regex ---
 let g:eregex_default_enable = 0
 nnoremap ,/ :M/
 nnoremap ,? :M?
 
-" Vim-signature
-nmap <C-j> ']
-nmap <C-k> '[
-nmap <C-.> ]`
-nmap <C-,> [`
+" --- Vim-signature (Marks) ---
+nmap <C-j> ']                              " Next mark
+nmap <C-k> '[                              " Previous mark
+nmap <C-.> ]`                              " Next mark (by position)
+nmap <C-,> [`                              " Previous mark (by position)
 
 " ============================================================================
-" CoC Configuration
+" COC CONFIGURATION
 " ============================================================================
+
+" Node.js path for CoC
 let g:coc_node_path = expand("$HOME/.mybin/node-v24.4.1-linux-x64/bin/node")
 
-" Tab completion
+" --- Tab Completion ---
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
@@ -244,20 +262,10 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Trigger completion
+" --- Completion & Documentation ---
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Navigation
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> tt <Plug>(coc-definition)
-
-" Documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -268,24 +276,33 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Refactoring
+" --- Navigation ---
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> tt <Plug>(coc-definition)
+
+" --- Refactoring ---
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>qf <Plug>(coc-fix-current)
 
-" Commands
+" --- Commands ---
 command! -nargs=0 Format :call CocAction('format')
 command! -nargs=? Fold :call CocAction('fold', <f-args>)
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 
-" Auto commands
+" --- Auto Commands ---
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " ============================================================================
-" Development Functions
+" DEVELOPMENT FUNCTIONS
 " ============================================================================
 
-" Code formatting
+" --- Code Formatting ---
 nmap <F8> :call FormartSrc()<CR>
 function! FormartSrc()
     exec "w"
@@ -311,7 +328,7 @@ function! FormartSrc()
     exec "e! %"
 endfunction
 
-" Compile function
+" --- Compilation ---
 nmap <C-x><C-x> :call Compile_gcc()<CR>
 function! Compile_gcc()
     if &filetype=="c"
@@ -341,7 +358,7 @@ function! Compile_gcc()
     endif
 endfunction
 
-" Run function
+" --- Execution ---
 nmap <C-r><C-r> :call Run_gcc()<CR>
 function! Run_gcc()
     if &filetype=="c" || &filetype=="cpp" || &filetype=="rust" || &filetype=="go"
@@ -363,7 +380,7 @@ function! Run_gcc()
     endif
 endfunction
 
-" Switch between header and source
+" --- Header/Source Switching ---
 nmap ,s :call SwitchSourceHeader()<CR>
 function! SwitchSourceHeader()
     if (expand("%:e") == "cpp")
@@ -373,45 +390,47 @@ function! SwitchSourceHeader()
     endif
 endfunction
 
-" Show trailing whitespace
-nmap <space>s :call ShowTrailingWhitespace()<CR>
+" --- Utility Functions ---
 function! ShowTrailingWhitespace()
     highlight WhitespaceEOL ctermbg=red guibg=red
     match WhitespaceEOL /\s\+$/
 endfunction
 
 " ============================================================================
-" TagList Configuration
+" TAGLIST CONFIGURATION
 " ============================================================================
-let Tlist_Close_On_Select = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Show_Menu = 1
-let Tlist_Show_One_File = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_Highlight_Tag_On_BufEnter = 1
-let Tlist_Process_File_Always = 1
-let Tlist_Use_Right_Window = 1
-let Tlist_Display_Prototype = 1
 
-map <F7> <ESC>:wincmd p<CR>
+let Tlist_Close_On_Select = 1              " Close on selection
+let Tlist_Exit_OnlyWindow = 1              " Exit if only window
+let Tlist_Show_Menu = 1                    " Show menu in GUI
+let Tlist_Show_One_File = 1                " Show one file only
+let Tlist_GainFocus_On_ToggleOpen = 1      " Focus on toggle
+let Tlist_Highlight_Tag_On_BufEnter = 1    " Highlight current tag
+let Tlist_Process_File_Always = 1          " Always process files
+let Tlist_Use_Right_Window = 1             " Use right window
+let Tlist_Display_Prototype = 1            " Display prototypes
 
-" Auto update
+map <F7> <ESC>:wincmd p<CR>               " Switch window
+
+" Auto update tags
 au! CursorHold *.[ch] nested exe "TlistUpdate"
 au! CursorHold *.cpp nested exe "TlistUpdate"
 au! CursorHold *.java nested exe "TlistUpdate"
 
 " ============================================================================
-" CTags Configuration
+" CTAGS CONFIGURATION
 " ============================================================================
+
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 
 " ============================================================================
-" FZF Configuration
+" FZF CONFIGURATION
 " ============================================================================
+
 let g:fzf_tmux_height = '20%'
 let g:fzf_tmux_width = '20%'
 
-" Buffer list
+" --- Buffer Management ---
 function! BufList()
   redir => ls
   silent ls
@@ -437,7 +456,7 @@ nnoremap <silent> <Leader>o :call fzf#run({
       \ })<CR>
 
 " ============================================================================
-" Auto Commands
+" AUTO COMMANDS
 " ============================================================================
 
 " Preserve last editing position
@@ -460,13 +479,13 @@ augroup RustSingleFile
 augroup END
 
 " ============================================================================
-" Utility Commands
+" UTILITY COMMANDS
 " ============================================================================
 
 " Change directory to current file
 cmap cd. lcd %:p:h
 
-" Z command for quick directory navigation
+" Z command for quick directory navigation (requires fasd)
 command! -nargs=* Z :call Z(<f-args>)
 function! Z(...)
   let cmd = 'fasd -d -e printf'
@@ -481,9 +500,29 @@ function! Z(...)
 endfunction
 
 " ============================================================================
-" Legacy and Commented Configurations
+" QUICK REFERENCE
 " ============================================================================
-" Note: Many legacy configurations have been commented out or removed
-" for clarity. Uncomment and adapt as needed for specific use cases.
-
-" End of configuration
+"
+" Key Mappings Quick Reference:
+" =============================
+" jj                    -> Escape to normal mode
+" <space>l              -> Show search results window
+" <space>s              -> Show trailing whitespace
+" <F3>                  -> Open NERDTree
+" <F7>                  -> Switch between windows
+" <F8>                  -> Format source code
+" <F11>                 -> Remove trailing whitespace
+" <F12>                 -> Toggle Tagbar
+" <Leader>p             -> Toggle NERDTree
+" <Leader>ff            -> FuzzyFinder files
+" <Leader>fb            -> FuzzyFinder buffers
+" <C-x><C-x>           -> Compile current file
+" <C-r><C-r>           -> Run current file
+" tt                    -> Go to definition (CoC)
+" gd                    -> Go to definition (CoC)
+" gr                    -> Show references (CoC)
+" K                     -> Show documentation
+" ,s                    -> Switch between header/source
+" tl/th/tn/td          -> Tab navigation
+"
+" ============================================================================
