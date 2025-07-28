@@ -153,6 +153,9 @@ vmap <s-tab> <gv
 nmap <C-a> ggVG
 nnoremap ,p :set paste!<BAR>set paste?<CR>
 
+
+nmap <space>l :call FilteringNew().addToParameter('alt', @/).run()<CR>
+
 " Clipboard operations - with fallback support
 if has('clipboard')
     " Use system clipboard if available
