@@ -317,30 +317,6 @@ function CD()
     fi
 }
 
-
-claude_retry_custom() {
-    local wait_time=${1:-3600}
-    shift
-    local cmd="$*"
-
-    echo "開始執行: claude --dangerously-skip-permissions $cmd"
-    echo "重試間隔: $wait_time 秒"
-
-    while true; do
-        output=$(claude --dangerously-skip-permissions $cmd)
-        printf "%s\n" "$output"
-
-        # 判斷輸出是否包含「成功的訊號」
-        if echo "$output" | grep -qE "完成|通過|成功|程式碼|\`\`\`"; then
-            echo "✅ 任務完成！"
-            break
-        else
-            echo "❌ 沒符合預期，等待 $wait_time 秒後重試..."
-            sleep "$wait_time"
-        fi
-    done
-}
-
 # GitHub clone all repos function
 clone_all_repos() {
     if [ -z "$1" ]; then
