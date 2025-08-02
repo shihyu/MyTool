@@ -317,45 +317,26 @@ function CD()
     fi
 }
 
-# Claude Code 自動重試 function
-claude_retry() {
-    local cmd="$*"  # 接收所有參數
-    local wait_time=3600  # 預設等1小時
-    
-    echo "開始執行: claude --dangerously-skip-permissions $cmd"
-    
-    while true; do
-        claude --dangerously-skip-permissions $cmd
-        local exit_code=$?
-        
-        if [ $exit_code -eq 0 ]; then
-            echo "✅ 任務成功完成！"
-            break
-        else
-            echo "❌ 遇到限制或錯誤 (exit code: $exit_code)"
-            echo "⏰ 等待 $wait_time 秒後重試..."
-            sleep $wait_time
-        fi
-    done
-}
 
-# 更進階版本，可以自定義等待時間
 claude_retry_custom() {
-    local wait_time=${1:-3600}  # 第一個參數是等待時間，預設1小時
-    shift  # 移除第一個參數
+    local wait_time=${1:-3600}
+    shift
     local cmd="$*"
-    
+
     echo "開始執行: claude --dangerously-skip-permissions $cmd"
     echo "重試間隔: $wait_time 秒"
-    
+
     while true; do
-        claude --dangerously-skip-permissions $cmd
-        if [ $? -eq 0 ]; then
+        output=$(claude --dangerously-skip-permissions $cmd)
+        printf "%s\n" "$output"
+
+        # 判斷輸出是否包含「成功的訊號」
+        if echo "$output" | grep -qE "完成|通過|成功|程式碼|\`\`\`"; then
             echo "✅ 任務完成！"
             break
         else
-            echo "❌ 失敗，等待 $wait_time 秒..."
-            sleep $wait_time
+            echo "❌ 沒符合預期，等待 $wait_time 秒後重試..."
+            sleep "$wait_time"
         fi
     done
 }
