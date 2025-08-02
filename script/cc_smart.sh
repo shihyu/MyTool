@@ -196,11 +196,11 @@ show_help() {
 Claude Code 智能包裝器 - cc
 
 用法:
-  cc [Claude Code 參數...]              # 正常執行 Claude Code
-  cc --cc-help                         # 顯示此幫助
-  cc --cc-config                       # 顯示當前配置
-  cc --cc-usage                        # 顯示使用統計
-  cc --cc-reset-config                 # 重置配置文件
+  cc [Claude Code 參數...]         # 正常執行 Claude Code
+  cc -h                           # 顯示此幫助
+  cc -c                           # 顯示當前配置
+  cc -u                           # 顯示使用統計
+  cc -r                           # 重置配置文件
 
 功能:
   ✅ 自動重試機制（速率限制時等待重置）
@@ -252,17 +252,17 @@ main() {
     read_config
 
     case "${1:-}" in
-        --cc-help)
+        -h|--help)
             show_help; exit 0 ;;
-        --cc-config)
+        -c|--config)
             show_config; exit 0 ;;
-        --cc-usage)
+        -u|--usage)
             show_usage; exit 0 ;;
-        --cc-reset-config)
+        -r|--reset)
             rm -f "$CONFIG_FILE"; init_config
             echo "✅ 配置文件已重置"; exit 0 ;;
         "")
-            echo "💡 使用 'cc --cc-help' 查看幫助"
+            echo "💡 使用 'cc -h' 查看幫助"
             echo "💡 使用 'cc [your-prompt]' 開始對話"
             exit 0 ;;
     esac
@@ -273,4 +273,3 @@ main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     main "$@"
 fi
-
