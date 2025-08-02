@@ -71,7 +71,8 @@ alias docker-prune='docker system prune -a --volumes'
 alias port_used="sudo lsof -i -P -n | grep LISTEN"
 alias yapf='yapf -i --style facebook'
 alias venv='venv_manager'
-alias cc="claude --dangerously-skip-permissions"
+# alias cc="claude --dangerously-skip-permissions"
+alias cc="/home/shihyu/.mybin/cc_smart.sh"
 alias claude-auto="claude --dangerously-skip-permissions"
 
 # 設定顏色的 less 分頁器
