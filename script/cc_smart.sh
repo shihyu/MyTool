@@ -21,7 +21,8 @@ init_config() {
     "wait_hours": 5,
     "enable_monitoring": true,
     "enable_cost_tracking": true,
-    "notification_enabled": true
+    "notification_enabled": true,
+    "show_process": true
 }
 EOF
     fi
@@ -35,6 +36,7 @@ read_config() {
         ENABLE_MONITORING=$(jq -r '.enable_monitoring // true' "$CONFIG_FILE")
         ENABLE_COST=$(jq -r '.enable_cost_tracking // true' "$CONFIG_FILE")
         NOTIFICATION=$(jq -r '.notification_enabled // true' "$CONFIG_FILE")
+        SHOW_PROCESS=$(jq -r '.show_process // true' "$CONFIG_FILE")
     else
         # 默認值（如果沒有 jq）
         MAX_RETRIES=3
@@ -42,6 +44,7 @@ read_config() {
         ENABLE_MONITORING=true
         ENABLE_COST=true
         NOTIFICATION=true
+        SHOW_PROCESS=true
     fi
 }
 
@@ -52,9 +55,15 @@ log_event() {
     local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
     echo "[$timestamp] [$level] $message" >> "$LOG_FILE"
     
-    # 同時輸出到終端（除了 DEBUG 級別）
-    if [[ "$level" != "DEBUG" ]]; then
-        echo "🤖 [$level] $message"
+    # 根據配置決定是否顯示處理過程
+    if [[ "$SHOW_PROCESS" == "true" && "$level" != "DEBUG" ]]; then
+        case "$level" in
+            "INFO")    echo "ℹ️  $message" ;;
+            "SUCCESS") echo "✅ $message" ;;
+            "WARN")    echo "⚠️  $message" ;;
+            "ERROR")   echo "❌ $message" ;;
+            *)         echo "🤖 $message" ;;
+        esac
     fi
 }
 
@@ -65,7 +74,7 @@ check_usage() {
             log_event "INFO" "檢查當前使用量..."
             ccusage daily --quiet || true
         else
-            log_event "WARN" "ccusage 未安裝，建議安裝以監控使用量: npm install -g ccusage"
+            log_event "DEBUG" "ccusage 未安裝，建議安裝以監控使用量: npm install -g ccusage"
         fi
     fi
 }
@@ -119,7 +128,16 @@ is_rate_limit_error() {
     local error_msg="$1"
     local error_lower=$(echo "$error_msg" | tr '[:upper:]' '[:lower:]')
     
-    if [[ "$error_lower" =~ (usage.limit|rate.limit|quota.*exceeded|too.many.requests|limit.*reached) ]]; then
+    # Claude Code 實際的速率限制錯誤訊息模式
+    if [[ "$error_lower" =~ (rate.limit|usage.limit|quota.*exceeded|too.many.requests|limit.*reached) ]] || \
+       [[ "$error_msg" =~ "rate_limit_error" ]] || \
+       [[ "$error_msg" =~ "This request would exceed your account's rate limit" ]] || \
+       [[ "$error_msg" =~ "usage limit reached" ]] || \
+       [[ "$error_msg" =~ "limit will reset at" ]] || \
+       [[ "$error_msg" =~ "429" ]] || \
+       [[ "$error_lower" =~ "rate limit exceeded" ]] || \
+       [[ "$error_lower" =~ "sorry, you have reached the rate limit" ]] || \
+       [[ "$error_lower" =~ "rate.limited" ]]; then
         return 0
     fi
     return 1
@@ -136,33 +154,44 @@ parse_reset_time() {
 # 主要執行函數
 execute_claude() {
     local cmd_args=("$@")
-    local temp_output=$(mktemp)
     local temp_error=$(mktemp)
     local exit_code=0
 
-    trap 'rm -f "$temp_output" "$temp_error"' EXIT
+    trap 'rm -f "$temp_error"' EXIT
+
+    # 顯示開始處理
+    if [[ "$SHOW_PROCESS" == "true" ]]; then
+        echo "🚀 啟動 Claude Code..."
+        echo "📝 問題: ${cmd_args[*]}"
+        echo "────────────────────────────────────"
+    fi
 
     while [[ $RETRY_COUNT -le $MAX_RETRIES ]]; do
         log_event "INFO" "執行 Claude Code (嘗試 $((RETRY_COUNT + 1))/$((MAX_RETRIES + 1)))"
         
         check_usage
         
-        claude --dangerously-skip-permissions "${cmd_args[@]}" \
-            > "$temp_output" 2> "$temp_error"
-        exit_code=$?
-        
-        local output=$(cat "$temp_output")
-        local error_msg=$(cat "$temp_error")
-        
-        if [[ -n "$output" ]]; then
-            echo "$output"
+        # 顯示正在處理
+        if [[ "$SHOW_PROCESS" == "true" ]]; then
+            echo "🤖 Claude 正在思考中..."
+            echo "💬 Claude 回應:"
+            echo "────────────────────────────────────"
         fi
         
+        # 即時顯示 Claude 輸出，同時捕獲錯誤
+        claude --dangerously-skip-permissions "${cmd_args[@]}" 2> "$temp_error"
+        exit_code=$?
+        
+        local error_msg=$(cat "$temp_error")
+        
         if [[ $exit_code -eq 0 ]]; then
+            if [[ "$SHOW_PROCESS" == "true" ]]; then
+                echo ""
+                echo "────────────────────────────────────"
+            fi
             log_event "SUCCESS" "Claude Code 執行成功"
-            if [[ "$ENABLE_COST" == "true" ]]; then
-                log_event "DEBUG" "嘗試獲取成本信息..."
-                echo "💰 使用 'ccusage daily' 查看詳細使用量" >&2
+            if [[ "$ENABLE_COST" == "true" && "$SHOW_PROCESS" == "true" ]]; then
+                echo "💰 使用 'cc -u' 查看詳細使用量"
             fi
             break
         fi
@@ -196,11 +225,13 @@ show_help() {
 Claude Code 智能包裝器 - cc
 
 用法:
-  cc [Claude Code 參數...]         # 正常執行 Claude Code
+  cc "你的問題"                    # 執行 Claude Code 並顯示處理過程
+  cc --file script.py "解釋程式"   # 分析檔案
   cc -h                           # 顯示此幫助
   cc -c                           # 顯示當前配置
   cc -u                           # 顯示使用統計
   cc -r                           # 重置配置文件
+  cc -q "問題"                     # 安靜模式（不顯示處理過程）
 
 功能:
   ✅ 自動重試機制（速率限制時等待重置）
@@ -210,6 +241,7 @@ Claude Code 智能包裝器 - cc
   ✅ 系統通知
   ✅ 詳細日誌記錄
   ✅ 可配置參數
+  ✅ 處理過程顯示
 
 配置文件位置: ~/.claude/cc_config.json
 日誌文件位置: ~/.claude/cc_usage.log
@@ -252,6 +284,16 @@ main() {
     read_config
 
     case "${1:-}" in
+        -q|--quiet)
+            # 安靜模式
+            SHOW_PROCESS=false
+            shift
+            if [[ $# -eq 0 ]]; then
+                echo "❌ 安靜模式需要提供問題"
+                echo "💡 用法: cc -q '你的問題'"
+                exit 1
+            fi
+            execute_claude "$@"; exit 0 ;;
         -h|--help)
             show_help; exit 0 ;;
         -c|--config)
@@ -263,11 +305,12 @@ main() {
             echo "✅ 配置文件已重置"; exit 0 ;;
         "")
             echo "💡 使用 'cc -h' 查看幫助"
-            echo "💡 使用 'cc [your-prompt]' 開始對話"
+            echo "💡 使用 'cc \"你的問題\"' 開始提問"
             exit 0 ;;
+        *)
+            # 執行 Claude Code
+            execute_claude "$@"; exit 0 ;;
     esac
-
-    execute_claude "$@"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
