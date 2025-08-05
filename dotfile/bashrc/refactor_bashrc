@@ -359,7 +359,12 @@ clone_all_repos() {
 
 export PATH=$HOME/.mybin:$PATH
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/rc
-export PATH=$HOME/.mybin/node-v20.11.1-linux-x64/bin:$PATH
+export PATH=$HOME/.mybin/node-v24.4.1-linux-x64/bin:$PATH
+export GEMINI_API_KEY=AIzaSyCGh93yRtndWwzacb2LMiXrq6_MdLeeM_A
+export GOROOT=$HOME/go
+export GOPATH=$HOME/gopath
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
 eval "$(fasd --init auto)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
