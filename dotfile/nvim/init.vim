@@ -199,6 +199,10 @@ nnoremap <silent> <F3> :NERDTree<CR>
 nnoremap <leader>ff :FufFile<CR>
 nnoremap <leader>fb :FufBuffer<CR>
 
+" --- logcat ---
+nnoremap ,l :set filetype=logcat<CR>
+nnoremap ,k :set filetype=<CR>
+
 " --- Tagbar ---
 nmap <silent> <F12> :TagbarToggle<CR>
 
