@@ -1,51 +1,74 @@
+# =============================================================================
+# SHELL 設定
+# =============================================================================
+
 # PS1 - Prompt設定
 export PS1='\[\e[36;1m\][\[\e[33;1m\]姚\[\e[35;1m\]@\[\e[32;1m\]🐳🐬\[\e[31;1m\]\w\[\e[36;1m\]]\[\e[34;1m\]\$ \[\e[37;1m\]'
 
+# 歷史記錄設定
+HISTSIZE=100000
+HISTFILESIZE=200000
+HISTTIMEFORMAT="%F %T "
+export HISTIGNORE="&:ls:[bf]g:exit:history:clear"
+shopt -s histappend
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+trap 'history -a; history -c; history -r' EXIT
+
+# =============================================================================
 # 環境變數
+# =============================================================================
+
 export LC_ALL=zh_TW.UTF-8
 export LANG=zh_TW.UTF-8
 export TERM=xterm
+export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/rc
+export GEMINI_API_KEY=AIzaSyCGh93yRtndWwzacb2LMiXrq6_MdLeeM_A
+
 umask 022
 
-# 別名
+# Less 分頁器顏色設定
+export PAGER="`which less` -s"
+export BROWSER="$PAGER"
+export LESS_TERMCAP_mb=$'\E[38;5;167m'
+export LESS_TERMCAP_md=$'\E[38;5;39m'
+export LESS_TERMCAP_me=$'\E[38;5;231m'
+export LESS_TERMCAP_se=$'\E[38;5;231m'
+export LESS_TERMCAP_so=$'\E[38;5;167m'
+export LESS_TERMCAP_ue=$'\E[38;5;231m'
+export LESS_TERMCAP_us=$'\E[38;5;167m'
+
+# FZF 設定
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+
+# =============================================================================
+# PATH 設定
+# =============================================================================
+
+export PATH=$HOME/.mybin:$PATH
+export PATH=$HOME/.mybin/node-v24.4.1-linux-x64/bin:$PATH
+export GOROOT=$HOME/go
+export GOPATH=$HOME/gopath
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# =============================================================================
+# 系統管理別名
+# =============================================================================
+
 alias sr='shutdown -r now'
 alias sd='shutdown -h now'
+alias lt='logout'
+alias sx='startx'
+
+# =============================================================================
+# 檔案操作別名
+# =============================================================================
+
 alias ls='ls --color=auto'
 alias ll='ls -l --block-size=M'
-alias less='less -r'
 alias rm='rm -f'
-alias h='history'
-alias hc='history -c'
+alias df='df -B G'
 alias mnt='mount'
 alias umnt='umount'
-alias sx='startx'
-alias lt='logout'
-alias df='df -B G'
-alias cl='clear'
-alias vi='vim'
-alias vim='/home/shihyu/.mybin/nvim_new/bin/nvim'
-alias indent='indent -bad -bap -saf -sai -saw -npro -npcs -npsl -cli8 -i8 -ts8 -sob -l80 -ss -bl -bls -bli 0'
-alias gcc='gcc -Wall -g -pedantic'
-alias style='astyle --A2 --delete-empty-lines -s4 -K -f -p -H -U -c -n -N -L -Y -M -j -k1 -z2'
-alias pull='adb pull /data/htclog'
-alias tombstones='adb pull /data/tombstones'
-alias dlx_envsetup='source build/envsetup.sh; choosecombo 1 dlx eng; export ANDROID_SOURCE=$(gettop)'
-alias m7cdug_envsetup='source build/envsetup.sh; choosecombo 1 m7cdug userdebug DEBUG'
-alias dlxp_envsetup='source build/envsetup.sh ; choosecombo 1 dlpdtu userdebug DEBUG'
-alias a5tl_envsetup='source build/envsetup.sh ; partner_setup htc_a5tl A5TL_Generic_WWE_DEBUG'
-alias sense60_envsetup='export HTCFW_ENABLED=true; source build/envsetup.sh ; partner_setup m7 M7_Generic_WWE_DEBUG'
-alias img_zip='zip rom.zip -j android-info.txt *.img *.hdr'
-alias logcat='adb logcat -c && adb logcat -v threadtime 2>&1 | tee /tmp/logcat.txt'
-alias emulator_envsetup='source build/envsetup.sh; lunch full-eng'
-alias eclipse='/home/shihyu/adt-bundle-linux-x86_64-20130917/eclipse/eclipse'
-alias findcpp="find . -name '*.cpp' -print"
-alias findc="find . -name '*.c'"
-alias findh="find . -name '*.h'"
-alias findmk="find . -name '*.mk'"
-alias findjava="find . -name '*.java'"
-alias netpid="netstat -tlnp"
-alias arduino='sudo /home/shihyu/.mybin/arduino-1.8.1/arduino'
-alias matlab='/media/shihyu/ssd/matlab2017/bin/matlab'
 alias ..="cd .."
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
@@ -57,8 +80,65 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias cd.='cd ..'
 alias cd..='cd ..'
-alias py_debug='python -m pudb'
+
+# =============================================================================
+# 終端機工具別名
+# =============================================================================
+
+alias less='less -r'
+alias cl='clear'
+alias h='history'
+alias hc='history -c'
+
+# =============================================================================
+# 編輯器別名
+# =============================================================================
+
+alias vi='vim'
+alias vim='/home/shihyu/.mybin/nvim_new/bin/nvim'
+
+# =============================================================================
+# 程式開發相關別名
+# =============================================================================
+
+# C/C++ 工具
+alias indent='indent -bad -bap -saf -sai -saw -npro -npcs -npsl -cli8 -i8 -ts8 -sob -l80 -ss -bl -bls -bli 0'
+alias gcc='gcc -Wall -g -pedantic'
+alias style='astyle --A2 --delete-empty-lines -s4 -K -f -p -H -U -c -n -N -L -Y -M -j -k1 -z2'
+
+# 檔案搜尋
+alias findcpp="find . -name '*.cpp' -print"
+alias findc="find . -name '*.c'"
+alias findh="find . -name '*.h'"
+alias findmk="find . -name '*.mk'"
+alias findjava="find . -name '*.java'"
 alias vf='vim `find -name "*.cpp" -o -name "*.cc" -o -name "*.java" -o -name "*.h" | fzf`'
+
+# Python 工具
+alias py_debug='python -m pudb'
+alias yapf='yapf -i --style facebook'
+
+# =============================================================================
+# Android 開發別名
+# =============================================================================
+
+alias pull='adb pull /data/htclog'
+alias tombstones='adb pull /data/tombstones'
+alias logcat='adb logcat -c && adb logcat -v threadtime 2>&1 | tee /tmp/logcat.txt'
+
+# Android 編譯環境
+alias dlx_envsetup='source build/envsetup.sh; choosecombo 1 dlx eng; export ANDROID_SOURCE=$(gettop)'
+alias m7cdug_envsetup='source build/envsetup.sh; choosecombo 1 m7cdug userdebug DEBUG'
+alias dlxp_envsetup='source build/envsetup.sh ; choosecombo 1 dlpdtu userdebug DEBUG'
+alias a5tl_envsetup='source build/envsetup.sh ; partner_setup htc_a5tl A5TL_Generic_WWE_DEBUG'
+alias sense60_envsetup='export HTCFW_ENABLED=true; source build/envsetup.sh ; partner_setup m7 M7_Generic_WWE_DEBUG'
+alias emulator_envsetup='source build/envsetup.sh; lunch full-eng'
+alias img_zip='zip rom.zip -j android-info.txt *.img *.hdr'
+
+# =============================================================================
+# Docker 管理別名
+# =============================================================================
+
 alias dockerstop='docker stop $(docker ps -a -q)'
 alias dockerclean='docker rm $(docker ps -a -q)'
 alias dockerrmi='docker rmi $(docker images -q)'
@@ -68,47 +148,30 @@ alias docker-rm='docker rm $(docker ps -aq)'
 alias docker-rmi='docker rmi -f $(docker images -aq)'
 alias docker-rmv='docker volume rm $(docker volume ls -q)'
 alias docker-prune='docker system prune -a --volumes'
+
+# =============================================================================
+# 網路工具別名
+# =============================================================================
+
+alias netpid="netstat -tlnp"
 alias port_used="sudo lsof -i -P -n | grep LISTEN"
-alias yapf='yapf -i --style facebook'
+
+# =============================================================================
+# 應用程式別名
+# =============================================================================
+
+alias eclipse='/home/shihyu/adt-bundle-linux-x86_64-20130917/eclipse/eclipse'
+alias arduino='sudo /home/shihyu/.mybin/arduino-1.8.1/arduino'
+alias matlab='/media/shihyu/ssd/matlab2017/bin/matlab'
 alias venv='venv_manager'
-# alias cc="claude --dangerously-skip-permissions"
 alias cc="/home/shihyu/.mybin/cc_smart.sh"
 alias claude-auto="claude --dangerously-skip-permissions"
 
-# 設定顏色的 less 分頁器
-export PAGER="`which less` -s"
-export BROWSER="$PAGER"
-export LESS_TERMCAP_mb=$'\E[38;5;167m'
-export LESS_TERMCAP_md=$'\E[38;5;39m'
-export LESS_TERMCAP_me=$'\E[38;5;231m'
-export LESS_TERMCAP_se=$'\E[38;5;231m'
-export LESS_TERMCAP_so=$'\E[38;5;167m'
-export LESS_TERMCAP_ue=$'\E[38;5;231m'
-export LESS_TERMCAP_us=$'\E[38;5;167m'
-
-
-# 增加歷史記錄的行數
-HISTSIZE=100000
-HISTFILESIZE=200000
-
-# 在每個命令行之前顯示時間戳
-HISTTIMEFORMAT="%F %T "
-
-# 追加歷史記錄而不是覆蓋
-shopt -s histappend
-
-# 每次命令後立即保存歷史記錄
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-
-# 忽略某些命令
-export HISTIGNORE="&:ls:[bf]g:exit:history:clear"
-
-# 在退出時清除並重新加載歷史記錄
-trap 'history -a; history -c; history -r' EXIT
-
-
-
+# =============================================================================
 # 自訂函數
+# =============================================================================
+
+# 設定終端標題
 function st() {
     echo
     if [ -z "$ORIG" ]; then
@@ -118,7 +181,16 @@ function st() {
     PS1=${ORIG}${TITLE}
 }
 
-# 完整的虛擬環境管理
+# 取得對外IP
+myip() {
+    local ip
+    ip=$(curl -s --connect-timeout 3 ipinfo.io/ip 2>/dev/null) || \
+    ip=$(curl -s --connect-timeout 3 ifconfig.me 2>/dev/null) || \
+    ip="無法獲取IP"
+    echo "$ip"
+}
+
+# 虛擬環境管理
 venv_manager() {
     case "$1" in
         "create"|"new")
@@ -172,12 +244,13 @@ venv_manager() {
     esac
 }
 
-
+# Doxygen 初始化
 function doxygen_init() {
     doxygen -g
     sed -ri.bak '/^RECURSIVE\s|^HAVE_DOT\s|^EXTRACT_ALL\s|^EXTRACT_PRIVATE\s|^EXTRACT_STATIC\s|^CALL_GRAPH\s|^CALLER_GRAPH\s/s/= NO/= YES/' Doxyfile
 }
 
+# 簡繁體轉換
 function s2t_convert() {
     mkdir -p output
     for file in *; do
@@ -186,22 +259,6 @@ function s2t_convert() {
             mv "$file" "output/$new_file"
         fi
     done
-}
-
-function start_chrome() {
-    sudo chmod o+w /sys/fs/cgroup/cgroup.procs
-    sudo cgcreate -t $USER:$USER -a $USER:$USER -g memory,cpuset:limitchrome
-    echo 0-4 | sudo tee /sys/fs/cgroup/limitchrome/cpuset.cpus
-    cgexec -g memory,cpuset:limitchrome /opt/google/chrome/google-chrome --profile-directory=Default
-}
-
-function compile_cython() {
-    if [ -z "$1" ]; then
-        echo "Please provide a filename argument"
-        return 1
-    fi
-    python setup.py build_ext --inplace
-    echo "Compilation complete"
 }
 
 function myopencc() {
@@ -222,103 +279,34 @@ function myopencc() {
     unset IFS
 }
 
+# Chrome 限制啟動
+function start_chrome() {
+    sudo chmod o+w /sys/fs/cgroup/cgroup.procs
+    sudo cgcreate -t $USER:$USER -a $USER:$USER -g memory,cpuset:limitchrome
+    echo 0-4 | sudo tee /sys/fs/cgroup/limitchrome/cpuset.cpus
+    cgexec -g memory,cpuset:limitchrome /opt/google/chrome/google-chrome --profile-directory=Default
+}
+
+# Cython 編譯
+function compile_cython() {
+    if [ -z "$1" ]; then
+        echo "Please provide a filename argument"
+        return 1
+    fi
+    python setup.py build_ext --inplace
+    echo "Compilation complete"
+}
+
+# 程序管理
 function kill_process() {
     sudo kill -9  $(ps aux | grep $1 | grep -v grep | awk '{print $2}')
 }
 
+# GitHub clone all repos
 function cloneall() {
     curl -s https://api.github.com/users/$1/repos?per_page=200 | python -c $'import json, sys, os\nfor repo in json.load(sys.stdin): os.system("git clone " + repo["git_url"])'
 }
 
-function rm_log() {
-    adb shell rm /data/htclog/*;
-    adb shell rm /data/log/*;
-    adb shell rm /data/tombstones/tombstone_*;
-}
-
-function logsort() {
-    ls -lrt $(find . -name "$1") | awk '{print $NF}'
-}
-
-function tar_bz2_dir() {
-    if [ "$1" != "" ]; then
-        FOLDER_IN=$(echo $1 | sed -e 's/\/$//')
-        FILE_OUT="$FOLDER_IN.tar.bz2"
-        FOLDER_IN="$FOLDER_IN/"
-        echo "Compressing $FOLDER_IN into $FILE_OUT…"
-        echo "tar cjf $FILE_OUT $FOLDER_IN"
-        if [ -z "$(apt-cache show pbzip2 2> /dev/null)" -o -z "pbzip2" ]; then
-            tar cjf "$FILE_OUT" "$FOLDER_IN"
-        else
-            time tar -c "$FOLDER_IN" | pbzip2 -cv -m5000 > "$FILE_OUT"
-        fi
-        echo "Done."
-    fi
-}
-
-function d_bz2_dir() {
-    if [ "$1" != "" ]; then
-        time pbzip2 -dvc -m5000 $1 | tar x
-    fi
-}
-
-function create_and_activate_env() {
-    local version="$1"
-    local env_name="$2"
-    python${version} -m venv ${env_name}
-    source ${env_name}/bin/activate
-}
-
-function new_rust_project() {
-    cargo new $1 --bin
-    cd $1
-    cargo run
-}
-
-function push_so() {
-    adb push $1 /system/lib/
-}
-
-function push_apk() {
-    adb push $1 /system/app/
-}
-
-function gaia_sync() {
-    adb shell am broadcast -a com.google.android.gms.gcm.ACTION_TASK_READY --es task_name com.google.android.gms.gcm.sync.SyncTask
-}
-
-function st() {
-    echo
-    if [ -z "$ORIG" ]; then
-        ORIG=$PS1
-    fi
-    TITLE="\[\e]2;$*\a\]"
-    PS1=${ORIG}${TITLE}
-}
-
-function create_and_activate_env() {
-    local version="$1"
-    local env_name="$2"
-    python${version} -m venv ${env_name}
-    source ${env_name}/bin/activate
-}
-
-function new_rust_project() {
-    cargo new $1 --bin
-    cd $1
-    cargo run
-}
-
-function CD()
-{
-    if [ -f "$1" ]; then
-        cd `dirname "$1"`
-    else
-        cd $1
-    fi
-}
-
-# GitHub clone all repos function
 clone_all_repos() {
     if [ -z "$1" ]; then
         echo "Usage: clone_all_repos <username> [github_token]"
@@ -357,29 +345,89 @@ clone_all_repos() {
     echo "下載完成！"
 }
 
-myip() {
-    local ip
-    ip=$(curl -s --connect-timeout 3 ipinfo.io/ip 2>/dev/null) || \
-    ip=$(curl -s --connect-timeout 3 ifconfig.me 2>/dev/null) || \
-    ip="無法獲取IP"
-    echo "$ip"
+# Android 日誌管理
+function rm_log() {
+    adb shell rm /data/htclog/*;
+    adb shell rm /data/log/*;
+    adb shell rm /data/tombstones/tombstone_*;
 }
 
-export PATH=$HOME/.mybin:$PATH
-export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/rc
-export PATH=$HOME/.mybin/node-v24.4.1-linux-x64/bin:$PATH
-export GEMINI_API_KEY=AIzaSyCGh93yRtndWwzacb2LMiXrq6_MdLeeM_A
-export GOROOT=$HOME/go
-export GOPATH=$HOME/gopath
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+function logsort() {
+    ls -lrt $(find . -name "$1") | awk '{print $NF}'
+}
+
+# 壓縮工具
+function tar_bz2_dir() {
+    if [ "$1" != "" ]; then
+        FOLDER_IN=$(echo $1 | sed -e 's/\/$//')
+        FILE_OUT="$FOLDER_IN.tar.bz2"
+        FOLDER_IN="$FOLDER_IN/"
+        echo "Compressing $FOLDER_IN into $FILE_OUT…"
+        echo "tar cjf $FILE_OUT $FOLDER_IN"
+        if [ -z "$(apt-cache show pbzip2 2> /dev/null)" -o -z "pbzip2" ]; then
+            tar cjf "$FILE_OUT" "$FOLDER_IN"
+        else
+            time tar -c "$FOLDER_IN" | pbzip2 -cv -m5000 > "$FILE_OUT"
+        fi
+        echo "Done."
+    fi
+}
+
+function d_bz2_dir() {
+    if [ "$1" != "" ]; then
+        time pbzip2 -dvc -m5000 $1 | tar x
+    fi
+}
+
+# Python 虛擬環境
+function create_and_activate_env() {
+    local version="$1"
+    local env_name="$2"
+    python${version} -m venv ${env_name}
+    source ${env_name}/bin/activate
+}
+
+# Rust 專案
+function new_rust_project() {
+    cargo new $1 --bin
+    cd $1
+    cargo run
+}
+
+# Android 檔案推送
+function push_so() {
+    adb push $1 /system/lib/
+}
+
+function push_apk() {
+    adb push $1 /system/app/
+}
+
+# Google 服務同步
+function gaia_sync() {
+    adb shell am broadcast -a com.google.android.gms.gcm.ACTION_TASK_READY --es task_name com.google.android.gms.gcm.sync.SyncTask
+}
+
+# 智能 CD（文件或目錄）
+function CD()
+{
+    if [ -f "$1" ]; then
+        cd `dirname "$1"`
+    else
+        cd $1
+    fi
+}
+
+# =============================================================================
+# 外部工具初始化
+# =============================================================================
 
 eval "$(fasd --init auto)"
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# FZF
-export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
-
+# =============================================================================
+# Conda 初始化
+# =============================================================================
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
