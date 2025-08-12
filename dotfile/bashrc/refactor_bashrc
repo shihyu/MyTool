@@ -357,6 +357,14 @@ clone_all_repos() {
     echo "下載完成！"
 }
 
+myip() {
+    local ip
+    ip=$(curl -s --connect-timeout 3 ipinfo.io/ip 2>/dev/null) || \
+    ip=$(curl -s --connect-timeout 3 ifconfig.me 2>/dev/null) || \
+    ip="無法獲取IP"
+    echo "$ip"
+}
+
 export PATH=$HOME/.mybin:$PATH
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/rc
 export PATH=$HOME/.mybin/node-v24.4.1-linux-x64/bin:$PATH
