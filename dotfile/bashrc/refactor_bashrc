@@ -181,6 +181,13 @@ function st() {
     PS1=${ORIG}${TITLE}
 }
 
+function git_init() {
+    local msg="${1:-first commit}"
+    git init -b main
+    git add .
+    git commit -m "$msg"
+}
+
 # 取得對外IP
 myip() {
     local ip
