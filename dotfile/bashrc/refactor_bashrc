@@ -171,6 +171,19 @@ alias claude-auto="claude --dangerously-skip-permissions"
 # 自訂函數
 # =============================================================================
 
+format_python() {
+    local dir="${1:-.}"  # 預設為當前目錄
+    echo "正在格式化 $dir 中的 Python 檔案..."
+    
+    # 先執行 isort
+    find "$dir" -name "*.py" -exec isort {} +
+    
+    # 再執行 black
+    find "$dir" -name "*.py" -exec black {} +
+    
+    echo "格式化完成！"
+}
+
 # 設定終端標題
 function st() {
     echo
