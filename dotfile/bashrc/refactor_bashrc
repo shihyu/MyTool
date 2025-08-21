@@ -95,7 +95,7 @@ alias hc='history -c'
 # =============================================================================
 
 alias vi='vim'
-alias vim='/home/shihyu/.mybin/nvim_new/bin/nvim'
+alias vim='$HOME/.mybin/nvim/bin/nvim'
 
 # =============================================================================
 # 程式開發相關別名
@@ -160,11 +160,11 @@ alias port_used="sudo lsof -i -P -n | grep LISTEN"
 # 應用程式別名
 # =============================================================================
 
-alias eclipse='/home/shihyu/adt-bundle-linux-x86_64-20130917/eclipse/eclipse'
-alias arduino='sudo /home/shihyu/.mybin/arduino-1.8.1/arduino'
-alias matlab='/media/shihyu/ssd/matlab2017/bin/matlab'
+alias eclipse='$HOME/adt-bundle-linux-x86_64-20130917/eclipse/eclipse'
+alias arduino='sudo $HOME/.mybin/arduino-1.8.1/arduino'
+alias matlab='$HOME/ssd/matlab2017/bin/matlab'
 alias venv='venv_manager'
-alias cc="/home/shihyu/.mybin/cc_smart.sh"
+alias cc="$HOME/.mybin/cc_smart.sh"
 alias claude-auto="claude --dangerously-skip-permissions"
 
 # =============================================================================
@@ -431,21 +431,3 @@ function CD()
 
 eval "$(fasd --init auto)"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# =============================================================================
-# Conda 初始化
-# =============================================================================
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/shihyu/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/shihyu/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/shihyu/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/shihyu/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
