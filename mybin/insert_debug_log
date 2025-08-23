@@ -32,12 +32,12 @@ class CodeInstrumenter:
     LANGUAGE_CONFIGS = {
         "java": LanguageConfig(
             file_extensions=[".java"],
-            ctags_command="ctags-exuberant -x {file} | ack -o -w 'method\\s+.*' | ack -o '\\d+\\s+.*' | ack -o '^\\d+\\s+' | sort -k 1 -nr",
+            ctags_command="ctags-universal -x {file} | ack -o -w 'method\\s+.*' | ack -o '\\d+\\s+.*' | ack -o '^\\d+\\s+' | sort -k 1 -nr",
             trace_statement='\\tSystem.out.println("YAO [" + Thread.currentThread().getStackTrace()[2].getClassName() + "|" + Thread.currentThread().getStackTrace()[2].getMethodName() + "|" + Thread.currentThread().getStackTrace()[2].getFileName() + ":" + Thread.currentThread().getStackTrace()[2].getLineNumber()+"]");\\n',
         ),
         "cpp": LanguageConfig(
             file_extensions=[".cpp", ".c", ".cc"],
-            ctags_command="ctags-exuberant -x {file} | ack -o -w 'function\\s+.*' | ack -o '\\d+\\s+.*' | ack -o '^\\d+\\s+' | sort -k 1 -nr",
+            ctags_command="ctags-universal -x {file} | ack -o -w 'function\\s+.*' | ack -o '\\d+\\s+.*' | ack -o '^\\d+\\s+' | sort -k 1 -nr",
             trace_statement='\\tprintf("🔍 [%s] File: %s, Line: %d\\\\n", __func__, __FILE__, __LINE__);',
         ),
         "rust": LanguageConfig(
@@ -56,7 +56,7 @@ macro_rules! trace {
         ),
         "go": LanguageConfig(
             file_extensions=[".go"],
-            ctags_command="ctags-exuberant -x {file} | ack -o -w 'func.*' | ack -o '\\d+\\s+.*' | ack -o '^\\d+\\s+' | sort -k 1 -nr",
+            ctags_command="ctags-universal -x {file} | ack -o -w 'func.*' | ack -o '\\d+\\s+.*' | ack -o '^\\d+\\s+' | sort -k 1 -nr",
             trace_statement=None,  # Will be handled specially
             import_statement='import (\\n\\t"fmt"\\n\\t"runtime"\\n)',
         ),
