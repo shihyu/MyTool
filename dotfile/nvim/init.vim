@@ -254,6 +254,22 @@ nmap <C-,> [`                              " Previous mark (by position)
 " Node.js path for CoC
 let g:coc_node_path = expand("$HOME/.mybin/node-v24.4.1-linux-x64/bin/node")
 
+" CoC global settings - auto enable for all buffers
+let g:coc_start_at_startup = 1
+let g:coc_global_extensions = [
+  \ 'coc-clangd',
+  \ 'coc-java',
+  \ 'coc-tsserver',
+  \ 'coc-json',
+  \ 'coc-python',
+  \ 'coc-go',
+  \ 'coc-rust-analyzer'
+  \ ]
+
+" Auto enable CoC for all supported file types
+autocmd VimEnter * let g:coc_enabled = 1
+autocmd BufEnter * let b:coc_enabled = 1
+
 " --- Tab Completion ---
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
