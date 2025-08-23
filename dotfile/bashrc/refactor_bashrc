@@ -166,6 +166,7 @@ alias matlab='$HOME/ssd/matlab2017/bin/matlab'
 alias venv='venv_manager'
 alias cc="$HOME/.mybin/cc_smart.sh"
 alias claude-auto="claude --dangerously-skip-permissions"
+alias input-leap="$HOME/.mybin/input-leap-ubuntu-24-04/bin/input-leap"
 
 # =============================================================================
 # 自訂函數
