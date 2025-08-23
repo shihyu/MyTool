@@ -5,53 +5,77 @@
 " ============================================================================
 
 " ============================================================================
-" BASIC SETTINGS
+" COMPATIBILITY & CORE SETTINGS
 " ============================================================================
 
-" Compatibility and core settings
+" Compatibility settings
 set nocompatible
 filetype off
+set nocp                       " No compatible mode
 
 " Language and encoding
 language messages zh_TW.utf-8
 set fencs=utf-8,gbk,big5,euc-jp,utf-16le
 set fenc=utf-8 enc=utf-8
+set helplang=Cn               " Help language
 
-" Editor behavior
+" ============================================================================
+" EDITOR BEHAVIOR
+" ============================================================================
+
+" File type detection
 syntax on
 filetype plugin indent on
+
+" Indentation settings
 set expandtab                   " Use spaces instead of tabs
 set shiftwidth=4               " Number of spaces for autoindent
 set tabstop=4                  " Number of spaces per tab
 set softtabstop=4              " Backspace removes this many spaces
 set autoindent                 " Auto indent new lines
 set smartindent                " Smart indentation
-set number                     " Show line numbers
-set ruler                      " Show cursor position
-set showcmd                    " Show command in status line
-set hidden                     " Allow hidden buffers
-set history=1000               " Command history size
-set nomore                     " Don't pause for long messages
-set nobackup                   " Don't create backup files
-set noswapfile                 " Don't create swap files
+
+" Search settings
 set hlsearch                   " Highlight search results
 set incsearch                  " Incremental search
 set viminfo+=h                 " Don't highlight when loading viminfo
-set nocp                       " No compatible mode
-set t_Co=256                   " 256 colors
+
+" Buffer and file management
+set hidden                     " Allow hidden buffers
+set nobackup                   " Don't create backup files
+set noswapfile                 " Don't create swap files
+set history=1000               " Command history size
+
+" Cursor and navigation
 set backspace=indent,eol,start " Backspace behavior
 set whichwrap+=<,>,[,]        " Cursor movement wrapping
-set nofoldenable               " Disable folding by default
 set mouse=                     " Disable mouse
-set helplang=Cn               " Help language
-set t_ti= t_te=               " Terminal settings
+set nofoldenable               " Disable folding by default
+
+" ============================================================================
+" VISUAL & DISPLAY SETTINGS
+" ============================================================================
+
+" Line numbers and ruler
+set number                     " Show line numbers
+set ruler                      " Show cursor position
+set showcmd                    " Show command in status line
 
 " Visual enhancements
 set cursorline                 " Highlight current line
 set signcolumn=yes            " Always show sign column
+set t_Co=256                   " 256 colors
+set notermguicolors
+
+" Interface settings
+set nomore                     " Don't pause for long messages
 set updatetime=300            " Faster completion
 set shortmess+=c              " Don't show completion messages
 set tabpagemax=1000           " Maximum number of tabs
+
+" Terminal settings
+set t_ti= t_te=               " Terminal settings
+set gcr=a:block-blinkon0      " Disable cursor blinking
 
 " Status line configuration
 set laststatus=2
@@ -117,7 +141,6 @@ call plug#end()
 " Color scheme
 colors tir_black
 colorscheme molokai
-set notermguicolors
 
 " Custom highlighting
 hi cursorcolumn cterm=bold ctermbg=237 ctermfg=none term=bold
@@ -130,9 +153,6 @@ hi EasyMotionTarget ctermbg=none ctermfg=red
 hi EasyMotionShade ctermbg=none ctermfg=blue
 hi BookmarkSign ctermbg=NONE ctermfg=160
 
-" Disable cursor blinking
-set gcr=a:block-blinkon0
-
 " ============================================================================
 " KEY MAPPINGS
 " ============================================================================
@@ -142,17 +162,17 @@ imap jj <ESC>                              " Quick escape
 imap <F1> <C-R>="[OOOOOOO]"<CR>          " Insert marker
 imap <F2> <C-R>=strftime("%F %T")<CR>     " Insert timestamp
 
+" --- Navigation ---
+nnoremap gb <C-o>                          " Go back
+nnoremap qq <C-o>                          " Go back (alternative)
+map <c-b> :tprevious<CR>                   " Previous tag
+map <c-n> :tnext<CR>                       " Next tag
+
 " --- Tab Management ---
 nmap tl :tabnext<CR>                       " Next tab
 nmap th :tabprev<CR>                       " Previous tab
 nmap tn :tabnew<CR>                        " New tab
 nmap td :tabclose<CR>                      " Close tab
-
-" --- Indentation ---
-nmap <tab> V>                              " Indent line
-nmap <s-tab> V<                            " Unindent line
-vmap <tab> >gv                             " Indent selection
-vmap <s-tab> <gv                           " Unindent selection
 
 " --- Text Selection & Manipulation ---
 nmap <C-a> ggVG                            " Select all
@@ -161,11 +181,11 @@ nnoremap <F11> :%s/[ \t\r]\+$//g<CR>      " Remove trailing whitespace
 noremap <leader>m :%s/\r//g<CR>            " Remove Windows line endings
 noremap <leader><space> :%s/\s\+$//g<CR>  " Remove trailing spaces
 
-" --- Navigation ---
-nnoremap gb <C-o>                          " Go back
-nnoremap qq <C-o>                          " Go back (alternative)
-map <c-b> :tprevious<CR>                   " Previous tag
-map <c-n> :tnext<CR>                       " Next tag
+" --- Indentation ---
+nmap <tab> V>                              " Indent line
+nmap <s-tab> V<                            " Unindent line
+vmap <tab> >gv                             " Indent selection
+vmap <s-tab> <gv                           " Unindent selection
 
 " --- Clipboard Operations ---
 if has('clipboard')
@@ -181,7 +201,7 @@ else
     imap <C-v> <ESC>:r !xclip -selection clipboard -o<CR>a
 endif
 
-" --- Quick Filter ---
+" --- Quick Filter & Utility ---
 nmap <space>l :call FilteringNew().addToParameter('alt', @/).run()<CR>
 nmap <space>F :call FilteringNew().parseQuery(input('>'), '<Bar>').run()<CR>
 nmap <space>g :call FilteringGetForSource().return()<CR>
@@ -191,22 +211,20 @@ nmap <space>s :call ShowTrailingWhitespace()<CR>
 " PLUGIN CONFIGURATIONS
 " ============================================================================
 
-" --- NERDTree ---
+" --- File Management & Navigation ---
+" NERDTree
 nnoremap <leader>p :NERDTreeToggle<CR>
 nnoremap <silent> <F3> :NERDTree<CR>
 
-" --- FuzzyFinder ---
+" FuzzyFinder
 nnoremap <leader>ff :FufFile<CR>
 nnoremap <leader>fb :FufBuffer<CR>
 
-" --- logcat ---
-nnoremap ,l :set filetype=logcat<CR>
-nnoremap ,k :set filetype=<CR>
-
-" --- Tagbar ---
+" Tagbar
 nmap <silent> <F12> :TagbarToggle<CR>
 
-" --- GitGutter ---
+" --- Development Tools ---
+" GitGutter
 let g:gitgutter_sign_added = '✚'
 let g:gitgutter_sign_modified = '➡'
 let g:gitgutter_sign_removed = '✘'
@@ -214,7 +232,27 @@ let g:gitgutter_sign_removed_first_line = '^^'
 let g:gitgutter_sign_modified_removed = 'ww'
 let g:gitgutter_max_signs = 50000
 
-" --- Rainbow Parentheses ---
+" Bookmarks
+let g:bookmark_sign = '⚑'
+
+" Vim-signature (Marks)
+nmap <C-j> ']                              " Next mark
+nmap <C-k> '[                              " Previous mark
+nmap <C-.> ]`                              " Next mark (by position)
+nmap <C-,> [`                              " Previous mark (by position)
+
+" EasyMotion & Regex
+let g:eregex_default_enable = 0
+nnoremap ,/ :M/
+nnoremap ,? :M?
+
+" --- Language Support ---
+" logcat
+nnoremap ,l :set filetype=logcat<CR>
+nnoremap ,k :set filetype=<CR>
+
+" --- Visual Enhancements ---
+" Rainbow Parentheses
 let g:rainbow_active = 1
 let g:rainbow_conf = {
 \   'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
@@ -233,28 +271,12 @@ let g:rainbow_conf = {
 \   }
 \}
 
-" --- Bookmarks ---
-let g:bookmark_sign = '⚑'
-
-" --- EasyMotion & Regex ---
-let g:eregex_default_enable = 0
-nnoremap ,/ :M/
-nnoremap ,? :M?
-
-" --- Vim-signature (Marks) ---
-nmap <C-j> ']                              " Next mark
-nmap <C-k> '[                              " Previous mark
-nmap <C-.> ]`                              " Next mark (by position)
-nmap <C-,> [`                              " Previous mark (by position)
-
 " ============================================================================
-" COC CONFIGURATION
+" COC CONFIGURATION (Code Completion & LSP)
 " ============================================================================
 
-" Node.js path for CoC
+" --- CoC Basic Settings ---
 let g:coc_node_path = expand("$HOME/.mybin/node-v24.4.1-linux-x64/bin/node")
-
-" CoC global settings - auto enable for all buffers
 let g:coc_start_at_startup = 1
 let g:coc_global_extensions = [
   \ 'coc-clangd',
@@ -269,6 +291,7 @@ let g:coc_global_extensions = [
 " Auto enable CoC for all supported file types
 autocmd VimEnter * let g:coc_enabled = 1
 autocmd BufEnter * let b:coc_enabled = 1
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " --- Tab Completion ---
 inoremap <silent><expr> <TAB>
@@ -315,11 +338,8 @@ command! -nargs=0 Format :call CocAction('format')
 command! -nargs=? Fold :call CocAction('fold', <f-args>)
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 
-" --- Auto Commands ---
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
 " ============================================================================
-" DEVELOPMENT FUNCTIONS
+" DEVELOPMENT FUNCTIONS & COMMANDS
 " ============================================================================
 
 " --- Code Formatting ---
@@ -417,9 +437,10 @@ function! ShowTrailingWhitespace()
 endfunction
 
 " ============================================================================
-" TAGLIST CONFIGURATION
+" TAG SYSTEM CONFIGURATION
 " ============================================================================
 
+" --- Taglist Settings ---
 let Tlist_Close_On_Select = 1              " Close on selection
 let Tlist_Exit_OnlyWindow = 1              " Exit if only window
 let Tlist_Show_Menu = 1                    " Show menu in GUI
@@ -430,6 +451,7 @@ let Tlist_Process_File_Always = 1          " Always process files
 let Tlist_Use_Right_Window = 1             " Use right window
 let Tlist_Display_Prototype = 1            " Display prototypes
 
+" Window management
 map <F7> <ESC>:wincmd p<CR>               " Switch window
 
 " Auto update tags
@@ -437,16 +459,14 @@ au! CursorHold *.[ch] nested exe "TlistUpdate"
 au! CursorHold *.cpp nested exe "TlistUpdate"
 au! CursorHold *.java nested exe "TlistUpdate"
 
-" ============================================================================
-" CTAGS CONFIGURATION
-" ============================================================================
-
+" --- Ctags ---
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 
 " ============================================================================
 " FZF CONFIGURATION
 " ============================================================================
 
+" --- FZF Settings ---
 let g:fzf_tmux_height = '20%'
 let g:fzf_tmux_width = '20%'
 
@@ -476,18 +496,20 @@ nnoremap <silent> <Leader>o :call fzf#run({
       \ })<CR>
 
 " ============================================================================
-" AUTO COMMANDS
+" AUTO COMMANDS & FILE HANDLING
 " ============================================================================
 
-" Preserve last editing position
+" --- General File Behavior ---
 if has("autocmd")
    autocmd BufRead *.txt set tw=78
+   " Preserve last editing position
    autocmd BufReadPost *
       \ if line("'\"") > 0 && line ("'\"") <= line("$") |
       \   exe "normal g'\"" |
       \ endif
 endif
 
+" --- Language-Specific Auto Commands ---
 " Rust single file configuration
 augroup RustSingleFile
   autocmd!
@@ -499,9 +521,10 @@ augroup RustSingleFile
 augroup END
 
 " ============================================================================
-" UTILITY COMMANDS
+" UTILITY COMMANDS & SHORTCUTS
 " ============================================================================
 
+" --- Directory Navigation ---
 " Change directory to current file
 cmap cd. lcd %:p:h
 
